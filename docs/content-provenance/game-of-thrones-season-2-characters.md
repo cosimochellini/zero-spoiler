@@ -370,3 +370,119 @@ Jaime belongs to her record, filed by #1464.
   Ganes the butcher.
 - **Other groups:** Brienne of Tarth (#1464), who escorts Jaime from episode 18
   and Catelyn VII.
+
+## Winterfell and the Iron Islands (#1466)
+
+Theon's return to Pyke and his taking of Winterfell, Bran's court and its
+household, the Reeds and the Bolton bastard. Candidates come from the Game of
+Thrones Wiki's ten season-2 episode pages (Firsts, cast lists, Winterfell and
+Iron Islands synopses, "In the books") and its character pages, and from A Wiki
+of Ice and Fire's chapter pages for Theon I–VI (site chapters 85, 98, 111, 124,
+130, 140) and Bran I–VII (78, 90, 95, 102, 109, 120, 143), read through
+Firecrawl. Each gives a synopsis and the characters appearing and mentioned, but
+does not say whether a name is said in speech or narration, so every book gate
+below is an open point under `unverified`, and the lower chapters where a
+character first appears are owner checks.
+
+Counts: 15 filed, 0 pending, 58 omitted; 4 stage-1 records stepped.
+
+### Filed
+
+Gates as episode / site chapter. `source` records give the other number only to
+order them.
+
+| Record                       | Show                                                                                                                                     | Books                                                                                                                          |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `balon-greyjoy`              | 12, "The Night Lands": Theon meets him at Pyke; Catelyn names him in episode 11 (Theon page, GOT201). `nameSaidAt` 4                     | 85, Theon I: Aeron brings Theon to Balon's castle and Balon receives him                                                       |
+| `asha-greyjoy`               | 12, "The Night Lands": Balon greets her and says Yara has only left the islands by ship (Balon page). Shown as Yara (`episodeName`)      | 98, Theon II: Esgred is his sister Asha; Theon I (85) only mentions her                                                        |
+| `aeron-greyjoy`              | 55, "The Door", the safe later pin; "Home" (52) is his first appearance, but no line read names him. The priest of episode 13 is unnamed | 85, Theon I: the priest at Lordsport is his uncle Aeron                                                                        |
+| `victarion-greyjoy` (books)  | none: "did not appear in the series"; 13 orders him                                                                                      | 98, Theon II: in Balon's solar when Balon reveals his plan                                                                     |
+| `dagmer`                     | 15, "The Ghost of Harrenhal": Theon asks who he is and he introduces himself as the first mate (Dagmer page)                             | 111, Theon III: Theon lays out his plan to him aboard Foamdrinker; Theon I and II only mention him                             |
+| `black-lorren` (books)       | none: episodes 15–20 give him lines, but no quote has his name said (owner check); 17 orders him                                         | 124, Theon IV: he and Urzen show Theon the dead guards, the safe pin; Bran VI (120) lists him (owner check)                    |
+| `wex-pyke` (books)           | none: a Wex stands at Theon's speech in episode 20, never named aloud; 13 orders him                                                     | 98, Theon II: Theon takes him as squire in a horse bargain (Wex page, ACOK 24)                                                 |
+| `farlen` (books)             | none: episode 16 has him defy Theon, but no source read quotes his name said (owner check, as Hallyne); 16 orders him                    | 124, Theon IV: Theon asks him whether the dogs follow the wrong wolves; Bran III (95) and Bran VI (120) list him (owner check) |
+| `meera-reed`                 | 22, "Dark Wings, Dark Words": she and Jojen find Bran; no quote has her name                                                             | 95, Bran III: greeted at the harvest feast in her father's name                                                                |
+| `jojen-reed`                 | 22, "Dark Wings, Dark Words": a dream, then the woods; no quote has his name                                                             | 95, Bran III: as Meera                                                                                                         |
+| `ramsay-snow`                | 32, "The Lion and the Rose": the Game of Thrones Wiki's first citation of his name (GOT402); unnamed in season 3                         | 140, Theon VI: he takes off his helm and names himself Ramsay Snow; at Winterfell as "Reek" from Bran V (109), an owner check  |
+| `big-walder-frey` (books)    | none: the show has no Frey wards; 13 orders him                                                                                          | 90, Bran II: at Bran's audiences; Bran I (78) only tells of the Walders' coming                                                |
+| `little-walder-frey` (books) | none: as Big Walder                                                                                                                      | 90, Bran II: as Big Walder                                                                                                     |
+| `wyman-manderly`             | 60, "The Winds of Winter", his one appearance; no quote has his name. `nameSaidAt` 29, for Wendel's books-only story                     | 90, Bran II: at Winterfell for the harvest feast, with business for Bran                                                       |
+| `donella-hornwood` (books)   | none: no page; 13 orders her                                                                                                             | 90, Bran II: widowed, she fears the Bolton bastard means to seize her lands                                                    |
+
+- Balon Greyjoy: Lord of the Iron Islands, then King of the Iron Islands at 16 /
+  120 (Theon tells Winterfell his father is crowned; Bran VI, the safe pin).
+  Italian "Balon Greyjoy" (Casa Greyjoy).
+- Asha Greyjoy: ironborn captain, alive. One record under the books' name, with
+  `episodeName` Yara at chapter 345, past the books (owner check: Robin Arryn,
+  the only earlier renamed record, takes the show's name instead). Italian "Asha
+  Greyjoy" / "Yara Greyjoy" (Casa Greyjoy).
+- Aeron Greyjoy: priest of the Drowned God. Italian "Aeron Greyjoy".
+- Victarion Greyjoy: ironborn captain. Italian kept; Mondadori not checked.
+- Dagmer: ironborn raider. The show's betrayal of Theon and spearing of Luwin
+  (20) and the books' defeat at Torrhen's Square (told at 130) change no field.
+  Italian "Dagmer" (TV cast list).
+- Black Lorren: ironborn raider; deceased at 143 (Bran VII, his body among the
+  dead), episode 20 ordering it. Italian kept as "Black Lorren" (the TV cast
+  list has "Lorren").
+- Wex Pyke: Theon's squire. Italian kept.
+- Farlen: kennelmaster of Winterfell; deceased at 130 (Theon V: Theon beheads
+  him as the scapegoat for three ironmen), episode 18 ordering it. Italian
+  "Farlen" (Casa Stark's servants).
+- Meera and Jojen Reed: children of Howland Reed, House Reed. Jojen's greensight
+  (told from Bran IV, 102) waits for a later step. Italian "Meera Reed", "Jojen
+  Reed".
+- Ramsay Snow: bastard of Roose Bolton, House Bolton; filed under his name
+  inside the stage, not the later Bolton. Italian kept as "Ramsay Snow" (Italian
+  Wikipedia heads him Ramsay Bolton, "nato Snow").
+- Big and Little Walder Frey: wards at Winterfell, House Frey. Italian kept.
+- Wyman Manderly: Lord of White Harbor. Italian "Wyman Manderly".
+- Donella Hornwood: Lady of the Hornwood; `captured` at 102 (Bran IV, taken to
+  wife by force), deceased at 109 (Bran V, Ser Rodrik returns with a prisoner
+  held for her murder), episodes 14 and 15 ordering them. Italian kept.
+
+### Stage-1 records stepped
+
+Steps in `season-1.ts`, as episode / site chapter.
+
+- Theon Greyjoy: role Robb Stark's envoy to the Iron Islands, 11 / 81 ("The
+  North Remembers"; Catelyn I); affiliation House Greyjoy, 13 / 98 (his baptism;
+  Theon II); role Prince of Winterfell, 16 / 120 ("The Old Gods and the New";
+  Bran VI); `captured` at 20 in the show alone (his men knock him out for the
+  Boltons), 140 ordering it. The books leave him struck down in the sack.
+- Bran Stark: role lord of Winterfell in his brother's absence, 11 / 90 ("The
+  North Remembers"; Bran II); `captured` at 120 and `alive` at 124 in the books
+  alone (Bran VI, Theon IV). The show has him yield and escape in episode 16, so
+  episodes 16 and 17 only order the book steps.
+- Rickon Stark: `captured` at 120 and `alive` at 124, the books alone, as Bran.
+- Osha: role on the run with Bran and Rickon Stark, `alive`, and affiliation
+  House Stark, 16 / 124 ("The Old Gods and the New"; Theon IV).
+
+Not stepped: Luwin (death at 20 / 143 already filed), Rodrik Cassel (death at 16
+/ 140 already filed), Mikken (the books' death at 120 already filed), Hodor, Old
+Nan, Summer and Shaggydog (no field changes in the stage).
+
+### Omitted
+
+- **Ironborn bit parts:** Drennan (show: killed by Osha in his second episode;
+  books: found dead at 124), Stygg (books: kills Mikken, sent to Asha; show: an
+  unnamed face at the speech), Gelmarr (show: a face at the speech; books: dies
+  off the page), and the books' background raiders Urzen, Werlag, Kromm, Aggar,
+  Gynir Rednose, Todric, Maron Botley, Tymor, Red Rolfe, Kenned the Whale, Ulf
+  the Ill, Harrag Sharp, Dykk Harlaw, Endehar, Gariss, Murch and Squint.
+- **Descriptors:** the captain of the _Myraham_ and his daughter, the Lordsport
+  dockhand, the Drowned Man of episode 13, the Winterfell shepherd and his wife
+  Bernadette, Theon's master of hounds, the miller's wife and sons.
+- **Bit parts at Winterfell:** Palla (the kennelmaster's daughter, background in
+  both media), Kyra (books: Theon's bedmate), Beth Cassel (books: a hostage
+  shown at the parley), Septon Chayle (books: one scene before his death), Gage,
+  Hayhead, Joseth, Alebelly, Poxy Tym; Jack and Billy (show: the orphans named
+  in episode 17, seen only as burned bodies).
+- **Northern lords with no scene of their own:** Leobald Tallhart and Cley
+  Cerwyn (books: at the harvest feast; their bodies are shown to Theon at 140),
+  Hother and Mors Umber (books: background at the feast), Benfred Tallhart
+  (books: one scene, captured and drowned in Theon III).
+- **Only mentioned:** Howland Reed, Euron Greyjoy, Alannys Harlaw, Sawane and
+  Sargon Botley, Sigrin, Otter Gimpknee, Andrik the Unsmiling, Qarl the Maid,
+  Dunstan Drumm, the real Reek (killed in Ramsay's place inside the stage, but
+  never named or seen as himself); Helya (one scene as a servant at Pyke).
+- **Other groups:** Torrhen Karstark (Robb's camp, #1465).

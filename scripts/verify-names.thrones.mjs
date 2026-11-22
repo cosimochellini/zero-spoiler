@@ -206,6 +206,18 @@ export const THRONES_ITALIAN_TITLES = {
   'amory-lorch': OTHERS,
   'polliver': OTHERS,
   'cleos-frey': 'Casa Lannister#Genna Lannister',
+  // #1466, the second stage's Winterfell and Iron Islands cast.
+  'balon-greyjoy': 'Casa Greyjoy#Balon Greyjoy',
+  'asha-greyjoy': 'Casa Greyjoy#Asha Greyjoy',
+  'aeron-greyjoy': 'Casa Greyjoy#Aeron Greyjoy',
+  'victarion-greyjoy': 'Casa Greyjoy#Victarion Greyjoy',
+  'dagmer': OTHERS,
+  'black-lorren': OTHERS,
+  'farlen': STARK_SERVANTS,
+  'meera-reed': characters('Meera Reed'),
+  'jojen-reed': characters('Jojen Reed'),
+  'ramsay-snow': characters('Ramsay Bolton'),
+  'wyman-manderly': characters('Wyman Manderly'),
 }
 
 /**
@@ -286,4 +298,17 @@ export const THRONES_NAMES_KEPT = {
   'tickler': 'Tickler',
   'chiswyck': 'Chiswyck',
   'weese': 'Weese',
+  // #1466. Italian Wikipedia names Dagmer and Lorren only in its TV cast
+  // list, Farlen inside the Starks' servants and Ramsay under his later name
+  // (Ramsay Bolton, "nato Snow"); it has no entry for the book-only Wex
+  // Pyke, the two Walder Freys and Donella Hornwood, whose names stay as
+  // they are until the Mondadori forms are checked.
+  'dagmer': 'Dagmer',
+  'black-lorren': 'Black Lorren',
+  'farlen': 'Farlen',
+  'ramsay-snow': 'Ramsay Snow',
+  'wex-pyke': 'Wex Pyke',
+  'big-walder-frey': 'Big Walder Frey',
+  'little-walder-frey': 'Little Walder Frey',
+  'donella-hornwood': 'Donella Hornwood',
 }

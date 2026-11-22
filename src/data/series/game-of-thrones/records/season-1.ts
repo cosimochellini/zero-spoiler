@@ -3209,15 +3209,39 @@ export const season1: ThronesSaga = {
     'bran-stark': {
       relationships: season1Relationships['bran-stark'],
       chronicle: season1Chronicles['bran-stark'],
-      role: {
-        it: 'Figlio di lord Eddard Stark',
-        en: 'Son of Lord Eddard Stark',
-      },
+      role: [
+        {
+          episode: 1,
+          chapter: 2,
+          value: {
+            it: 'Figlio di lord Eddard Stark',
+            en: 'Son of Lord Eddard Stark',
+          },
+        },
+        // He hears the lords and smallfolk of the North in Robb's place:
+        // "The North Remembers" (episode 11) and Bran II (chapter 90).
+        {
+          episode: 11,
+          chapter: 90,
+          value: {
+            it: 'Signore di Grande Inverno in assenza del fratello',
+            en: 'Lord of Winterfell in his brother’s absence',
+          },
+        },
+      ],
       log: {
         it: 'Per la prima volta il padre lo porta a vedere un’esecuzione, quella di un disertore. Sulla via del ritorno prende uno dei cuccioli di meta-lupo trovati dai fratelli.',
         en: 'For the first time his father takes him to see an execution, that of a deserter. On the way home he takes one of the direwolf pups his brothers find.',
       },
-      status: [{ episode: 1, chapter: 2, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 2, value: 'alive' },
+        // The books' alone: Theon holds him in Winterfell from Bran VI
+        // (chapter 120) until Theon IV (chapter 124) finds him gone. The
+        // show has him yield and escape in the same episode, so episodes 16
+        // and 17 only order the changes.
+        { episode: 16, chapter: 120, source: 'chapter', value: 'captured' },
+        { episode: 17, chapter: 124, source: 'chapter', value: 'alive' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3239,6 +3263,10 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 1, chapter: 5, value: 'alive' },
+        // As Bran's: held by Theon from Bran VI (chapter 120) to his escape
+        // in Theon IV (chapter 124), the books' alone.
+        { episode: 16, chapter: 120, source: 'chapter', value: 'captured' },
+        { episode: 17, chapter: 124, source: 'chapter', value: 'alive' },
         { episode: 59, chapter: 344, source: 'episode', value: 'deceased' },
       ],
       affiliation: [
@@ -3453,13 +3481,44 @@ export const season1: ThronesSaga = {
     'theon-greyjoy': {
       relationships: season1Relationships['theon-greyjoy'],
       chronicle: season1Chronicles['theon-greyjoy'],
-      role: { it: 'Pupillo di Eddard Stark', en: 'Eddard Stark’s ward' },
+      role: [
+        {
+          episode: 1,
+          chapter: 2,
+          value: { it: 'Pupillo di Eddard Stark', en: 'Eddard Stark’s ward' },
+        },
+        // Robb sends him to his father with the offer of an alliance: "The
+        // North Remembers" (episode 11) and Catelyn I (chapter 81).
+        {
+          episode: 11,
+          chapter: 81,
+          value: {
+            it: 'Inviato di Robb Stark alle Isole di Ferro',
+            en: 'Robb Stark’s envoy to the Iron Islands',
+          },
+        },
+        // He takes Winterfell and has himself called its prince: "The Old
+        // Gods and the New" (episode 16) and Bran VI (chapter 120).
+        {
+          episode: 16,
+          chapter: 120,
+          value: {
+            it: 'Principe di Grande Inverno',
+            en: 'Prince of Winterfell',
+          },
+        },
+      ],
       log: {
         it: 'Accompagna Lord Stark all’esecuzione di un disertore dei Guardiani della notte. Al ritorno è con i ragazzi quando trovano una lupa morta e i suoi cuccioli, e vorrebbe ucciderli.',
         en: 'He rides with Lord Stark to the execution of a deserter from the Night’s Watch. On the way back he is with the boys when they find a dead direwolf and her pups, and he wants to kill the pups.',
       },
       status: [
         { episode: 1, chapter: 2, value: 'alive' },
+        // His own men knock him out and hand him to the Boltons besieging
+        // Winterfell: "Valar Morghulis" (episode 20). In Theon VI the
+        // Bastard of Bolton strikes him down in the sack, and the books
+        // leave his fate open past the stage; chapter 140 only orders it.
+        { episode: 20, chapter: 140, source: 'episode', value: 'captured' },
         { episode: 70, chapter: 344, source: 'episode', value: 'deceased' },
       ],
       affiliation: [
@@ -3470,6 +3529,14 @@ export const season1: ThronesSaga = {
             it: 'Casa Greyjoy, pupillo di Casa Stark',
             en: 'House Greyjoy, ward of House Stark',
           },
+        },
+        // He chooses his father's side against the Starks: baptised in the
+        // Drowned God's faith in "What Is Dead May Never Die" (episode 13),
+        // and given his part in Balon's war in Theon II (chapter 98).
+        {
+          episode: 13,
+          chapter: 98,
+          value: { it: 'Casa Greyjoy', en: 'House Greyjoy' },
         },
       ],
     },
@@ -3585,6 +3652,17 @@ export const season1: ThronesSaga = {
             en: 'Captive servant at Winterfell',
           },
         },
+        // She slips out of Winterfell with Bran, Rickon and Hodor while
+        // Theon holds it: "The Old Gods and the New" (episode 16) and Theon
+        // IV (chapter 124).
+        {
+          episode: 16,
+          chapter: 124,
+          value: {
+            it: 'In fuga con Bran e Rickon Stark',
+            en: 'On the run with Bran and Rickon Stark',
+          },
+        },
       ],
       log: {
         it: 'Con un gruppo di fuorilegge assale Bran mentre cavalca fuori da Grande Inverno. Quando i suoi compagni vengono uccisi, si arrende a Robb. Robb la porta al castello come prigioniera.',
@@ -3593,6 +3671,8 @@ export const season1: ThronesSaga = {
       status: [
         // Taken alive in the wolfswood in both media (#1361).
         { episode: 6, chapter: 38, value: 'captured' },
+        // Free once she flees Winterfell with the boys, at the role's pin.
+        { episode: 16, chapter: 124, value: 'alive' },
         { episode: 54, chapter: 344, source: 'episode', value: 'deceased' },
       ],
       affiliation: [
@@ -3604,6 +3684,12 @@ export const season1: ThronesSaga = {
             it: 'Grande Inverno, prigioniera',
             en: 'Winterfell, captive',
           },
+        },
+        // Sworn to nobody, she now keeps the Stark boys: at the role's pin.
+        {
+          episode: 16,
+          chapter: 124,
+          value: { it: 'Casa Stark', en: 'House Stark' },
         },
       ],
     },

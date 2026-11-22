@@ -52,7 +52,7 @@ site.
   about 290 characters, 30 Nen abilities and 40 places. The abilities page
   groups the Nen abilities by Nen type.
 - **Game of Thrones**, the first season and the first book, with the second
-  season and book being filed: about 180 characters and 60 places.
+  season and book being filed: about 190 characters and 60 places.
 
 Every entry has its own line drawing, made for this project, except the newest
 Game of Thrones characters, which show a placeholder until theirs is drawn;
