@@ -40,9 +40,9 @@ const ROSTER_TOLD = {
 /**
  * One Zodiac seat, under its sign as the members' epithets spell it, held
  * from the roster. Several holders open later than the roster in the manga
- * (Gel, Pariston and Saiyu at chapter 321, Mizaistom and Saccho at 326), and
- * their seats stay a title alone until then. Cluck's record is the anime's
- * alone, so a chapter reader sees the Chicken's seat as a title alone.
+ * (Kanzai, Pyon, Ginta and Cluck at chapter 320, Gel, Pariston and Saiyu at
+ * 321, Mizaistom and Saccho at 326), and their seats stay a title alone
+ * until then.
  */
 function zodiac(
   sign: { en: string; it: string },

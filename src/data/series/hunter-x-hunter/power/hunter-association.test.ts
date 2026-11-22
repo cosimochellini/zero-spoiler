@@ -35,6 +35,7 @@ const ZODIACS_319: Seats = [
 const ZODIACS_320: Seats = ZODIACS_319.with(4, 'kanzai')
   .with(5, 'pyon')
   .with(9, 'ginta')
+  .with(11, 'cluck')
 const ZODIACS_321: Seats = ZODIACS_320.with(1, 'pariston-hill')
   .with(2, 'pariston-hill')
   .with(7, 'gel')
@@ -48,7 +49,6 @@ const WITHDRAWN_340: Seats = VICE_335.with(0, 'cheadle-yorkshire')
   .with(1, V)
   .with(2, V)
   .with(13, V)
-// Cluck's record is the anime's alone: the Chicken stays a title in the manga.
 const NEW_346: Seats = WITHDRAWN_340.with(2, 'kurapika').with(
   13,
   'leorio-paradinight',
