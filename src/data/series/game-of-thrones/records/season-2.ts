@@ -1,6 +1,7 @@
 import type { PlaceDossier } from '~/data/types'
 
 import type { ThronesSaga, ThronesVocabulary } from './saga'
+import { season2Chronicles } from './season-2.chronicle'
 import { season2Relationships } from './season-2.relationships'
 
 /**
@@ -2851,6 +2852,7 @@ export const season2: ThronesSaga = {
     // #1468: Essos and Qarth.
     'kovarro': {
       relationships: season2Relationships.kovarro,
+      chronicle: season2Chronicles.kovarro,
       role: {
         it: 'Cavaliere di sangue di Daenerys',
         en: 'Daenerys’s bloodrider',
@@ -2871,6 +2873,7 @@ export const season2: ThronesSaga = {
     },
     'xaro-xhoan-daxos': {
       relationships: season2Relationships['xaro-xhoan-daxos'],
+      chronicle: season2Chronicles['xaro-xhoan-daxos'],
       role: [
         {
           episode: 15,
@@ -2917,6 +2920,7 @@ export const season2: ThronesSaga = {
     },
     'pyat-pree': {
       relationships: season2Relationships['pyat-pree'],
+      chronicle: season2Chronicles['pyat-pree'],
       role: { it: 'Stregone di Qarth', en: 'Warlock of Qarth' },
       log: {
         it: 'È venuto da Qarth con Xaro Xhoan Daxos e Quaithe per vedere i draghi di Daenerys. Jorah le consiglia di chiedere aiuto a lui.',
@@ -2936,6 +2940,7 @@ export const season2: ThronesSaga = {
     },
     'quaithe': {
       relationships: season2Relationships.quaithe,
+      chronicle: season2Chronicles.quaithe,
       role: { it: 'Donna dell’Ombra', en: 'Woman of the Shadow' },
       log: {
         it: 'Arriva da Qarth insieme ad altri due stranieri, attraverso il Deserto Rosso, in cerca di draghi. Jhogo li porta da Daenerys nella città in rovina dove il khalasar si è fermato.',
@@ -2953,6 +2958,7 @@ export const season2: ThronesSaga = {
     },
     'malakho': {
       relationships: season2Relationships.malakho,
+      chronicle: season2Chronicles.malakho,
       role: { it: 'Guerriero dothraki', en: 'Dothraki warrior' },
       log: {
         it: 'Segue Daenerys a Qarth. Alla festa di Xaro Xhoan Daxos, lui e Kovarro discutono se rubare una statua d’oro, e Daenerys glielo vieta.',
@@ -2972,6 +2978,7 @@ export const season2: ThronesSaga = {
     },
     'drogon': {
       relationships: season2Relationships.drogon,
+      chronicle: season2Chronicles.drogon,
       role: { it: 'Drago di Daenerys', en: 'Daenerys’s dragon' },
       log: {
         it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
@@ -2988,6 +2995,7 @@ export const season2: ThronesSaga = {
     },
     'rhaegal': {
       relationships: season2Relationships.rhaegal,
+      chronicle: season2Chronicles.rhaegal,
       role: { it: 'Drago di Daenerys', en: 'Daenerys’s dragon' },
       log: {
         it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
@@ -3011,6 +3019,7 @@ export const season2: ThronesSaga = {
     },
     'viserion': {
       relationships: season2Relationships.viserion,
+      chronicle: season2Chronicles.viserion,
       role: { it: 'Drago di Daenerys', en: 'Daenerys’s dragon' },
       log: {
         it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
@@ -3034,6 +3043,7 @@ export const season2: ThronesSaga = {
     },
     'strong-belwas': {
       relationships: season2Relationships['strong-belwas'],
+      chronicle: season2Chronicles['strong-belwas'],
       role: { it: 'Ex combattente delle arene', en: 'Former pit fighter' },
       log: {
         it: 'Al porto di Qarth, lui e il suo scudiero salvano Daenerys da un assassino. Dice che li manda il magistro Illyrio, per riportarla a Pentos.',
@@ -3053,6 +3063,7 @@ export const season2: ThronesSaga = {
     },
     'arstan-whitebeard': {
       relationships: season2Relationships['arstan-whitebeard'],
+      chronicle: season2Chronicles['arstan-whitebeard'],
       role: { it: 'Scudiero di Belwas il Forte', en: 'Strong Belwas’s squire' },
       log: {
         it: 'Al porto di Qarth fa cadere dalle mani di Daenerys la scatola con la manticora. Dice di venire dai Sette Regni e che il magistro Illyrio ha mandato lui e Belwas a riportarla a Pentos.',

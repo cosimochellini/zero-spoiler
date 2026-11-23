@@ -4099,18 +4099,39 @@ function lineOf({ chapter, episode, id, medium, title }: Row): string {
   return `${id} ${medium} ${String(episode)} ${String(chapter)} ${title}`
 }
 
-/** The data's stories, in the table's shape. */
-const FILED: Row[] = Object.entries(season1Chronicles).flatMap(
-  ([id, stories]) =>
-    stories.map((story) => ({
-      // Every story pins its chapter; a missing one fails the comparison.
-      chapter: story.chapter ?? 0,
-      episode: story.episode,
-      id,
-      medium: mediumOf(story),
-      title: story.value.title.en,
-    })),
-)
+/** A story in the table's shape. */
+function rowOf(id: string, story: Dated<Story>): Row {
+  return {
+    // Every story pins its chapter; a missing one fails the comparison.
+    chapter: story.chapter ?? 0,
+    episode: story.episode,
+    id,
+    medium: mediumOf(story),
+    title: story.value.title.en,
+  }
+}
+
+/**
+ * Whether a row opens inside the stage in each medium it is told in. A
+ * returning character's later stories sit in this module too (#1478), and
+ * `thronesSeason2Chronicle.test.ts` holds them.
+ */
+function inStage({ chapter, episode, medium }: Row): boolean {
+  const shown = medium === 'books' || episode <= LAST_EPISODE
+  const told = medium === 'show' || chapter <= LAST_CHAPTER
+
+  return shown && told
+}
+
+/** The data's stories of the stage, in the table's shape. */
+const FILED: Row[] = Object.entries(season1Chronicles)
+  .flatMap(([id, stories]) => stories.map((story) => rowOf(id, story)))
+  .filter((row) => inStage(row))
+
+/** The data's stories past the stage, filed on returning characters. */
+const LATER: Row[] = Object.entries(season1Chronicles)
+  .flatMap(([id, stories]) => stories.map((story) => rowOf(id, story)))
+  .filter((row) => !inStage(row))
 
 /** The filed stories by owner. */
 const BY_OWNER = new Map<string, Dated<Story>[]>(
@@ -4243,10 +4264,32 @@ describe.each(LOCALES)('the Essos chronicles in %s', (locale) => {
         locale,
       )
 
+      const later = LATER.filter((row) => row.id === id)
+      const shownNext = titlesOf(
+        [
+          ...owned.filter(({ medium }) => medium !== 'books'),
+          ...later.filter(
+            ({ episode, medium }) =>
+              medium !== 'books' && episode <= LAST_EPISODE + 1,
+          ),
+        ],
+        locale,
+      )
+      const toldNext = titlesOf(
+        [
+          ...owned.filter(({ medium }) => medium !== 'show'),
+          ...later.filter(
+            ({ chapter, medium }) =>
+              medium !== 'show' && chapter <= LAST_CHAPTER + 1,
+          ),
+        ],
+        locale,
+      )
+
       expect(at(owner, ep(LAST_EPISODE))).toStrictEqual(shown)
-      expect(at(owner, ep(LAST_EPISODE + 1))).toStrictEqual(shown)
+      expect(at(owner, ep(LAST_EPISODE + 1))).toStrictEqual(shownNext)
       expect(at(owner, ch(LAST_CHAPTER))).toStrictEqual(told)
-      expect(at(owner, ch(LAST_CHAPTER + 1))).toStrictEqual(told)
+      expect(at(owner, ch(LAST_CHAPTER + 1))).toStrictEqual(toldNext)
     },
   )
 })

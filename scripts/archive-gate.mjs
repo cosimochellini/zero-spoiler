@@ -268,11 +268,15 @@ export function proseCanaries(repositoryRoot, folder) {
     const source = readFileSync(path.join(repositoryRoot, file), 'utf8')
     const phrase = canaryFrom(source)
 
-    // `saga.ts` is the shape of a saga, not a saga, and a saga that files no
-    // dossier and no entry yet holds only its name: no prose, nothing to say.
+    // `saga.ts` is the shape of a saga, not a saga, `chronicle.ts` holds the
+    // helpers that build the chronicles' stories, not a story, and a saga
+    // that files no dossier and no entry yet holds only its name: no prose,
+    // nothing to say.
     if (
       phrase === null
-      && (file.endsWith('saga.ts') || NO_ENTRIES.test(source))
+      && (file.endsWith('saga.ts')
+        || file.endsWith('/chronicle.ts')
+        || NO_ENTRIES.test(source))
     ) {
       return []
     }
