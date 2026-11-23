@@ -4,7 +4,11 @@ import { useEffect, useState } from 'react'
  * What `ask` answers, `null` until it has. It asks as the component mounts
  * and again whenever `ask` changes, so a caller keeps it steady with
  * `useCallback`. An answer that comes after the next asking has begun, or
- * after the component has gone, is dropped.
+ * after the component has gone, is dropped. The last answer stays until the
+ * next one arrives.
+ *
+ * `ask` must resolve: a caller turns a failure into a value, as `answerFor`
+ * and `tableOrNull` do. A rejection would leave the answer `null` for good.
  */
 export function useLoaded<T>(ask: () => Promise<T>): null | T {
   const [answer, setAnswer] = useState<null | T>(null)
