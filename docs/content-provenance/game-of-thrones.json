@@ -89,12 +89,15 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_47",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_64",
       "https://iceandfire.fandom.com/wiki/Arya_Stark",
-      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell"
+      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_30",
+      "https://gameofthrones.fandom.com/wiki/Polliver"
     ],
     "unverified": [
       "Chapter gate 5 (Eddard I): AWOIAF lists her as appearing; that she is named in Eddard I is not stated by the synopsis. If not, the gate is 6 (Jon I, named as Tommen's partner at the feast).",
       "Stages (#1285, owner 2026-11-15): Polliver takes Needle in episode 13 (Fandom \"Needle\", GOT203) and in Arya V, ACOK chapter 19 (site 93, the capture the Lommy stage cites); she takes it back in episode 31 (GOT401) and in Arya XIII, ASOS chapter 74 (site 218); she hides it in episode 43 (GOT503) and in Arya II, AFFC chapter 22 (site 248; A Wiki of Ice and Fire, Needle); she takes it back from the stones in episode 56 (GOT606), the show's alone, ordered by chapter 344. The other two book chapters are from memory, not checked on AWOIAF. Episodes not viewed; AWOIAF was read only for Needle's hiding chapter (#1285).",
-      "Stage 2 (#1465): captured in episode 13 and Arya V (93), out of Harrenhal in episode 18 and Arya X (138). Her service as Tywin's cupbearer (show, episode 14) and as Roose Bolton's (books, Arya IX, 121) is not filed as a role: she stays a prisoner in disguise. Episodes not viewed."
+      "Stage 2 (#1465): captured in episode 13 and Arya V (93), out of Harrenhal in episode 18 and Arya X (138). Her service as Tywin's cupbearer (show, episode 14) and as Roose Bolton's (books, Arya IX, 121) is not filed as a role: she stays a prisoner in disguise. Episodes not viewed.",
+      "Costume stage (#1472): the flagon and cup while she serves at Harrenhal under a name not her own, Tywin's cupbearer from \"Garden of Bones\" (episode 14; Polliver page, GOT204) and, in the books, running errands and filling wine cups in the Barracks Hall for Weese, A Clash of Kings, Chapter 30 (Arya VII, site 104; A Wiki of Ice and Fire's chapter page). The belt with Needle again from her escape, \"The Prince of Winterfell\" (episode 18) and Arya X (site 138), the filed `alive`. Not viewed. Her \"Arry\" disguise from season 1 has no stage; it is stage 1's to add."
     ]
   },
   "bran-stark": {
@@ -3248,7 +3251,9 @@
     "unverified": [
       "Show gate 11: the Game of Thrones Wiki names him only in narration in \"The North Remembers\", \"The Night Lands\" and \"A Man Without Honor\", and its quotes never say his name. The naming line, Robb's \"You'll ride at daybreak, Ser Alton\", comes from a fan transcript (gameofthronesscripts.wordpress.com, S02E01), outside the lawful sources; \"A Man Without Honor\" has Robb and Rickard Karstark say \"Ser Alton\" in the genius.com script. Episode not viewed. Owner ruling (2026-11-22): keep the show gate at 11.",
       "Books: no such character; the Game of Thrones Wiki says Cleos Frey has his part (chapter 81 only orders him). Death: Jaime kills him in \"A Man Without Honor\" (episode 17, Fandom DeathEp), show only.",
-      "Italian: Alton Lannister (Italian Wikipedia, Personaggi, \"Alton Lannister\"); the dub form is assumed."
+      "Italian: Alton Lannister (Italian Wikipedia, Personaggi, \"Alton Lannister\"); the dub form is assumed.",
+      "Drawing (#1472): Robb's terms, rolled and sealed, before the manacles of a prisoner, \"The North Remembers\" (episode 11; Game of Thrones Wiki, Alton Lannister page). Scroll, seal and cuffs drawn by eye; episode not viewed. Tint moved from red to ivory: the seal's colour is not shown, so the accent is not red in the show.",
+      "Death stage (#1472), show only: the terms knocked askew and the cuffs fallen empty, \"A Man Without Honor\" (episode 17), at the filed `deceased` 17 / 113."
     ]
   },
   "cleos-frey": {
@@ -3257,12 +3262,15 @@
       "https://awoiaf.westeros.org/index.php/Cleos_Frey",
       "https://gameofthrones.fandom.com/wiki/Alton_Lannister",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://it.wikipedia.org/wiki/Casa_Lannister"
+      "https://it.wikipedia.org/wiki/Casa_Lannister",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_20"
     ],
     "unverified": [
       "Book gate 81: A Wiki of Ice and Fire (read through Firecrawl) footnotes his capture, Robb's errand to King's Landing and Grey Wind alarming him to Catelyn I (A Clash of Kings 7); that the chapter says his name in speech or thought was not seen in the text. Neither the episodes nor the books were viewed.",
       "Show: the Game of Thrones Wiki redirects \"Cleos Frey\" to Alton Lannister, who has his part; the record is the books' alone. His return with Tyrion's terms (Tyrion VI, 99), the failed rescue and his new cell (Catelyn V, 113) change no field, so they are not filed.",
-      "Italian: Cleos Frey, named in Genna's section of Italian Wikipedia's Casa Lannister; the Mondadori form was not checked."
+      "Italian: Cleos Frey, named in Genna's section of Italian Wikipedia's Casa Lannister; the Mondadori form was not checked.",
+      "Drawing (#1472): the peace banner his party rides under, A Clash of Kings, Chapter 20 (Tyrion V, site 94), per A Wiki of Ice and Fire's Cleos Frey page (through Firecrawl). Its quartered Frey and Lannister arms are told only in A Storm of Swords (Jaime I, 145), so they are not drawn. Not viewed.",
+      "Death (#1472, #1238), books only: hit by arrows and dragged by his horse, A Storm of Swords, Chapter 21 (Jaime III, site 165), per A Wiki of Ice and Fire. Filed `deceased` 22 / 165 with the drawing's stage, the banner fallen across its staff; episode 22, where the show's Jaime and Brienne are taken on the same road, only orders it. Not viewed."
     ]
   },
   "talisa-maegyr": {
@@ -3276,7 +3284,9 @@
     "unverified": [
       "Show gate 16: her page names her family, Maegyr, in \"The Old Gods and the New\" (episode 16), and the record, filed under the full name and its id, opens there (review round 1 of #1512). Owner check: \"Garden of Bones\" (episode 14) has her introduce herself as Talisa of Volantis; if a record named only Talisa should open at 14, it needs a new id. Episode not viewed.",
       "Marriage: she and Robb marry before a septon in \"Valar Morghulis\" (episode 20). Books: no such character; Robb's bride in the books is Jeyne Westerling, past the stage.",
-      "Italian: Talisa Maegyr (Italian Wikipedia, Personaggi, \"Talisa Maegyr\")."
+      "Italian: Talisa Maegyr (Italian Wikipedia, Personaggi, \"Talisa Maegyr\").",
+      "Drawing (#1472): the saw she takes a wounded soldier's leg off with after Oxcross, \"Garden of Bones\" (episode 14, Talisa Stark page), and a roll of bandage. The saw's shape is drawn by eye; episode not viewed.",
+      "Death (#1472, #1238), show only: killed at the Red Wedding, \"The Rains of Castamere\" (episode 29); filed `deceased` 29 / 195 with the drawing's stage, the saw dropped and the bandage run out. Chapter 195, the books' wedding, only orders it. Not viewed."
     ]
   },
   "amory-lorch": {
@@ -3296,7 +3306,9 @@
     "unverified": [
       "Show gate 16: Arya names him to Jaqen as her second death in \"The Old Gods and the New\" (Arya Stark page); \"What Is Dead May Never Die\" and \"Garden of Bones\" name him only in narration. Owner check: lower to 13 if Yoren or his men say his name on screen. He dies in the same episode, so the show record opens dead.",
       "Book gate 88: A Wiki of Ice and Fire's Arya IV page (A Clash of Kings 14) has him ride forward and introduce himself as Ser Amory Lorch. Castellan in Arya VIII (112), killed in the bear pit in Arya IX (121), both on A Wiki of Ice and Fire's chapter pages. A Game of Thrones names him only in Tywin's orders (Tyrion IX). Neither the episodes nor the books were viewed.",
-      "Italian: Amory Lorch (Italian Wikipedia, TV cast list)."
+      "Italian: Amory Lorch (Italian Wikipedia, TV cast list).",
+      "Drawing (#1472): his shield with a manticore on it, A Clash of Kings, Chapter 14 (Arya IV, site 88), per A Wiki of Ice and Fire's Amory Lorch page (through Firecrawl). The show gives him no arms of his own; the shield is the book's. The manticore's pose is drawn by eye. Tint moved from vermilion to violet: the accent is not red in the show.",
+      "Death stage (#1472), books only: the shield fallen flat, Arya IX (site 121, the bear pit; A Wiki of Ice and Fire's chapter page). The show record opens dead at 16, so the stage is the book's and episode 16 only orders it, as Lommy's (#1457)."
     ]
   },
   "polliver": {
@@ -3308,13 +3320,15 @@
       "https://iceandfire.fandom.com/wiki/Polliver",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_19",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_26",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri_personaggi"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri_personaggi",
+      "https://awoiaf.westeros.org/index.php/Polliver"
     ],
     "unverified": [
       "Show gate 14: the Arya Stark page has her add \"the Mountain and Polliver\" to the names she recites each night in \"Garden of Bones\"; \"What Is Dead May Never Die\", where he takes Needle and kills Lommy, names him only in narration. Owner check: lower to 13 if his name is said there. Episode not viewed.",
       "Book gate 100: A Wiki of Ice and Fire's Arya VI page (A Clash of Kings 26) has \"a black-bearded, balding man called Polliver\" wearing Needle, and Arya hating him for taking it; its Arya V page (93), where Gregor's men take her, does not name him. Neither the episodes nor the books were viewed.",
-      "Death past the stage in both media (\"Two Swords\", episode 31; A Storm of Swords), not filed here.",
-      "Italian: Polliver (Italian Wikipedia, TV cast list)."
+      "Italian: Polliver (Italian Wikipedia, TV cast list).",
+      "Drawing (#1472): his sword belt with Needle thrust through it beside his own scabbard; he takes Needle in \"What Is Dead May Never Die\" (episode 13) and wears it in his belt in \"Garden of Bones\" (episode 14, Polliver page). Not viewed.",
+      "Death (#1472, #1238), both media: the inn at the crossroads, \"Two Swords\" (episode 31, Fandom DeathEp) and A Storm of Swords, Chapter 74 (Arya XIII, site 218; Sandor kills him there, per the Polliver page's book notes). Filed `deceased` 31 / 218 with the drawing's stage, the belt on the ground without Needle. Not viewed."
     ]
   },
   "tickler": {
@@ -3323,36 +3337,45 @@
       "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
       "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
       "https://gameofthrones.fandom.com/wiki/Arya_Stark",
-      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_26"
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_26",
+      "https://awoiaf.westeros.org/index.php/Tickler"
     ],
     "unverified": [
       "Show gate 15: Arya names him to Jaqen as her first death in \"The Ghost of Harrenhal\"; \"Garden of Bones\" calls him \"one known as the Tickler\" in narration. Owner check: lower to 14 if a prisoner or soldier says the name on screen. He dies in episode 15, so the show record opens dead. Episode not viewed.",
-      "Book gate 100: A Wiki of Ice and Fire's Arya VI page (A Clash of Kings 26): \"They call the ordinary-looking man who did the questioning, the Tickler.\" The Ice and Fire Wiki has no page for him. His book death (Arya kills him in A Storm of Swords, Game of Thrones Wiki, Bookref ASOS 74) is past the stage and not filed. Neither the episodes nor the books were viewed.",
-      "Italian: no Italian page names him and the Italian Game of Thrones Wiki has no page; the name stays \"Tickler\" until the dub and Mondadori forms are checked."
+      "Book gate 100: A Wiki of Ice and Fire's Arya VI page (A Clash of Kings 26): \"They call the ordinary-looking man who did the questioning, the Tickler.\" The Ice and Fire Wiki has no page for him. Neither the episodes nor the books were viewed.",
+      "Italian: no Italian page names him and the Italian Game of Thrones Wiki has no page; the name stays \"Tickler\" until the dub and Mondadori forms are checked.",
+      "Drawing (#1472): the bucket with a rat under it and the torch held to it, his questioning in \"Garden of Bones\" (episode 14, Tickler page). The books give him no bucket; the show is the reference. Not viewed.",
+      "Death (#1472, #1238), books: Arya stabs him at the inn at the crossroads, A Storm of Swords, Chapter 74 (Arya XIII, site 218), per A Wiki of Ice and Fire (through Firecrawl). Filed `deceased` 31 / 218 for the books beside the show's at his gate, with the drawing's stage, the bucket on its side; episode 31, the show's inn, only orders it."
     ]
   },
   "chiswyck": {
     "sources": [
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_26",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_30",
-      "https://gameofthrones.fandom.com/wiki/Tickler"
+      "https://gameofthrones.fandom.com/wiki/Tickler",
+      "https://awoiaf.westeros.org/index.php/Chiswyck"
     ],
     "unverified": [
       "Book gate 100: A Wiki of Ice and Fire's Arya VI page (A Clash of Kings 26) has him assist the Tickler and Arya hate him \"for thinking he is funny\". Death: he falls to his death in Arya VII (104), after Arya names him to Jaqen. The Ice and Fire Wiki has no page for him. Neither the episodes nor the books were viewed.",
       "Show: no such character (the Game of Thrones Wiki's Tickler page lists him among the books' Mountain's men only).",
-      "Italian: no Italian page; the name stays \"Chiswyck\" until the Mondadori form is checked."
+      "Italian: no Italian page; the name stays \"Chiswyck\" until the Mondadori form is checked.",
+      "Drawing (#1472): a shield with the three dogs of House Clegane, whose men he rides with (A Wiki of Ice and Fire's Chiswyck page: \"one of the Mountain's men\"). That he bears the dogs himself is not told; the arms stand in as his lord's, since the book gives him no object of his own (old, stoop-shouldered, dirty chainmail). Owner check. Tint moved from wine to yellow: the record is the books' alone.",
+      "Death stage (#1472): the shield fallen flat, Arya VII (site 104), at the filed `deceased`."
     ]
   },
   "weese": {
     "sources": [
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_26",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_30",
-      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_38"
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_38",
+      "https://awoiaf.westeros.org/index.php/Weese"
     ],
     "unverified": [
       "Book gate 104 (review round 1 of #1512): A Wiki of Ice and Fire's Arya VII page (A Clash of Kings 30) has him the understeward of the Wailing Tower, which his role states. Owner check: its Arya VI page (100) lists and names him first, before the title is told. Death: found dead with his spotted dog on his chest in Arya VIII (112). The Ice and Fire Wiki has no page for him. Neither the episodes nor the books were viewed.",
       "Show: no such character on the Game of Thrones Wiki.",
-      "Italian: no Italian page; the name stays \"Weese\" until the Mondadori form is checked."
+      "Italian: no Italian page; the name stays \"Weese\" until the Mondadori form is checked.",
+      "Drawing (#1472): his spotted bitch, which he threatens to feed Arya's tongue to in Arya VII (site 104; A Wiki of Ice and Fire's chapter page) and keeps in Arya VIII (112). Drawn by eye. Not viewed.",
+      "Death stage (#1472): the bitch lying on her side, Arya VIII (site 112), at the filed `deceased`; how he dies is not drawn."
     ]
   },
   "vargo-hoat": {
@@ -3361,12 +3384,17 @@
       "https://awoiaf.westeros.org/index.php/Vargo_Hoat",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_30",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_47",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Vargo_Hoat"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Vargo_Hoat",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_62",
+      "https://awoiaf.westeros.org/index.php/A_Feast_for_Crows-Chapter_20",
+      "https://awoiaf.westeros.org/index.php/A_Feast_for_Crows-Chapter_27"
     ],
     "unverified": [
       "Book gate 104: A Wiki of Ice and Fire lists him as appearing in Arya VII (A Clash of Kings 30), and the Ice and Fire Wiki has Arya see him at Harrenhal; A Game of Thrones names him only in Tywin's orders. Which line of the chapter names him was not seen. Turns his cloak and hands Harrenhal to Roose Bolton in Arya IX (121). Neither the episodes nor the books were viewed.",
       "Show: no such character; Italian Wikipedia and A Wiki of Ice and Fire say the show gives his later part to Locke.",
-      "Italian: Vargo Hoat (Italian Wikipedia, Personaggi, \"Vargo Hoat\"); \"Bravi Camerati\" from the same section."
+      "Italian: Vargo Hoat (Italian Wikipedia, Personaggi, \"Vargo Hoat\"); \"Bravi Camerati\" from the same section.",
+      "Drawing (#1472): his goat's-head helm and his chain of linked coins, A Clash of Kings, Chapter 30 (Arya VII, site 104), per A Wiki of Ice and Fire's Vargo Hoat page (through Firecrawl). Drawn by eye. Not viewed.",
+      "Death (#1472, #1238), books only: filed `deceased` 38 / 253 with the drawing's stage, the helm on its side. A Wiki of Ice and Fire's Vargo page tells the death from A Feast for Crows, Chapter 27 (Jaime III, site 253: Raff and Shitmouth tell Jaime). It also cites Chapter 20 (Brienne IV, site 246) for \"Gregor finished Vargo off\", but that chapter's synopsis does not tell it, and A Storm of Swords, Chapter 62 (Jaime VII, 206) has him still alive; the pin takes 253, the sure telling. Owner check: 246 if Brienne IV tells the death. Episode 38 only orders it."
     ]
   },
   "stannis-baratheon": {

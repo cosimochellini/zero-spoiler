@@ -178,11 +178,11 @@ const PERSON: Stroke[] = [
  * the Riverlands cast's in `riverlands.ts` (#1057), with the four leads
  * drawn for the launch here (owner, #856). Every season-1 character has its
  * own drawing, and so have the season-2 King's Landing cast, in `court.ts`
- * (#1470), and stormlands cast, in `stormlands.ts` (#1471); the season-2
- * Riverlands and Harrenhal cast (#1465), Winterfell and Iron Islands cast
- * (#1466), Wall cast (#1467) and Essos cast (#1468) show `PERSON` until their
- * drawing children draw them. `satisfies` rather than an annotation, so
- * `ArtId` below stays the literal keys.
+ * (#1470), stormlands cast, in `stormlands.ts` (#1471), and Riverlands and
+ * Harrenhal cast, in `riverlands.ts` (#1472); the season-2 Winterfell and
+ * Iron Islands cast (#1466), Wall cast (#1467) and Essos cast (#1468) show
+ * `PERSON` until their drawing children draw them. `satisfies` rather than an
+ * annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
   ...WINTERFELL_DRAWINGS,
@@ -199,16 +199,6 @@ export const DRAWINGS = {
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': DRAGON_EGG,
-  // #1465, Robb's war, the Riverlands and Harrenhal.
-  'alton-lannister': PERSON,
-  'cleos-frey': PERSON,
-  'talisa-maegyr': PERSON,
-  'amory-lorch': PERSON,
-  'polliver': PERSON,
-  'tickler': PERSON,
-  'chiswyck': PERSON,
-  'weese': PERSON,
-  'vargo-hoat': PERSON,
   // #1466: Winterfell and the Iron Islands.
   'balon-greyjoy': PERSON,
   'asha-greyjoy': PERSON,
