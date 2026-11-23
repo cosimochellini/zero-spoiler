@@ -226,6 +226,15 @@ of "The Ghost of Harrenhal" is named only in the credits, so the record stays
 the books'), Petyr Baelish (his visit to Renly's camp is stepped by #1463),
 Hallis Mollen and Wendel Manderly (in Catelyn's party; no field changes).
 
+### Drawings (#1471)
+
+Each record has its own drawing in `art/stormlands.ts`; the objects, stages and
+sources are in `game-of-thrones.json`. Later deaths the show alone tells are
+filed now, `deceased` with the drawing's stage and chapter 344 to order them
+(#1238): Stannis (50), Melisandre (71), Selyse (50), Shireen (49), Margaery and
+Mace (60). Renly gains his crown at 13 / 96. Selyse's tint moves from wine to
+azure, as her accent is not red.
+
 ### Omitted
 
 - **Bit parts, one scene in the stage:** Pylos and Patchface (the prologue and

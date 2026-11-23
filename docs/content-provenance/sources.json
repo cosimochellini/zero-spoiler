@@ -37351,6 +37351,36 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27382",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27382",
       "contentSha256": "06426de4e855f7a4dde9d1890a46a65e2a09070a8d27c9e9e07b0137b16ea0a6"
+    },
+    "got-en-Lightbringer-668655.json": {
+      "locale": "en",
+      "title": "Lightbringer",
+      "revision": 668655,
+      "revisionDate": "2024-03-08T13:12:06Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lightbringer",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=668655",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=668655",
+      "contentSha256": "d14f2a1199bc19fdefa01d705e5731363bbafada93336979c62087a8822b70cd"
+    },
+    "got-en-Crown-685409.json": {
+      "locale": "en",
+      "title": "Crown",
+      "revision": 685409,
+      "revisionDate": "2024-06-13T11:46:16Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Crown",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=685409",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=685409",
+      "contentSha256": "c31843a2e286204b098abf940f62787cdc1acf4fed9cbe3aa229e979147062a3"
+    },
+    "got-en-Kingsguard-748510.json": {
+      "locale": "en",
+      "title": "Kingsguard",
+      "revision": 748510,
+      "revisionDate": "2026-08-29T17:54:22Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Kingsguard",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748510",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748510",
+      "contentSha256": "f510d2c08224f47259bca463e4c3f4c50a86dfc85e114600a87f45445806c0fd"
     }
   }
 }
