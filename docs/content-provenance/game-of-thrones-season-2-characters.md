@@ -492,6 +492,18 @@ Not stepped: Luwin (death at 20 / 143 already filed), Rodrik Cassel (death at 16
 / 140 already filed), Mikken (the books' death at 120 already filed), Hodor, Old
 Nan, Summer and Shaggydog (no field changes in the stage).
 
+### Drawings (#1473)
+
+The Iron Islands cast is drawn in `art/ironborn.ts`, the Winterfell and northern
+cast in `art/north.ts`; the objects, stages and sources are in
+`game-of-thrones.json`. Later deaths are filed now with their drawings' stages
+(#1238): Balon at 52 / 189 in both media; Dagmer (30), Jojen (40) and Ramsay
+(59) in the show alone, chapter 344 ordering them; Little Walder at 323 in the
+books alone, episode 50 ordering it. Theon gains the kraken banner over
+Winterfell at 16 / 120 and goes back to the kraken at 20 / 140. Black Lorren's
+tint moves from wine to yellow and Ramsay's from vermilion to pink, as neither
+accent is red.
+
 ### Omitted
 
 - **Ironborn bit parts:** Drennan (show: killed by Osha in his second episode;

@@ -1514,13 +1514,17 @@ const STAGES: {
   { id: 'grey-wind', episode: 29, chapter: 198 },
   { id: 'summer-direwolf', episode: 55, chapter: 344, source: 'episode' },
   { id: 'shaggydog', episode: 53, chapter: 344, source: 'episode' },
-  { id: 'theon-greyjoy', episode: 30, chapter: 284 },
+  // Theon's kraken banner over Winterfell and its return to the sea
+  // (#1473), before his stages as Reek and his death.
+  { id: 'theon-greyjoy', episode: 16, chapter: 120 },
+  { id: 'theon-greyjoy', episode: 20, chapter: 140, stage: 1 },
+  { id: 'theon-greyjoy', episode: 30, chapter: 284, stage: 2 },
   {
     id: 'theon-greyjoy',
     episode: 70,
     chapter: 344,
     source: 'episode',
-    stage: 1,
+    stage: 3,
   },
   { id: 'luwin', episode: 20, chapter: 143 },
   { id: 'rodrik-cassel', episode: 16, chapter: 140 },
