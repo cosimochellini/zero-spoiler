@@ -1683,9 +1683,13 @@ const STAGES: {
   { id: 'jaremy-rykker', episode: 8, chapter: 61, source: 'chapter' },
   // The leads and the Essos cast redrawn from the drawing audit (#1292).
   { id: 'eddard-stark', episode: 31, chapter: 204, stage: 1 },
-  { id: 'jon-snow', episode: 50, chapter: 341 },
-  { id: 'jon-snow', episode: 52, chapter: 344, source: 'episode', stage: 1 },
-  { id: 'jon-snow', episode: 67, chapter: 344, source: 'episode', stage: 2 },
+  // Jon's feigned desertion to the wildlings and his escape back to the
+  // Wall (#1474).
+  { id: 'jon-snow', episode: 20, chapter: 142 },
+  { id: 'jon-snow', episode: 29, chapter: 199, stage: 1 },
+  { id: 'jon-snow', episode: 50, chapter: 341, stage: 2 },
+  { id: 'jon-snow', episode: 52, chapter: 344, source: 'episode', stage: 3 },
+  { id: 'jon-snow', episode: 67, chapter: 344, source: 'episode', stage: 4 },
   { id: 'daenerys-targaryen', episode: 10, chapter: 73 },
   {
     id: 'daenerys-targaryen',

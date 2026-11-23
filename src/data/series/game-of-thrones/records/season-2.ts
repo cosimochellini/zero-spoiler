@@ -2359,7 +2359,13 @@ export const season2: ThronesSaga = {
         it: 'Sostiene che il lord comandante dovrebbe restare a Castello Nero e lasciare a lui la spedizione oltre la Barriera. Jeor Mormont rifiuta.',
         en: 'He argues that the Lord Commander should stay at Castle Black and leave the ranging beyond the Wall to him. Jeor Mormont refuses.',
       },
-      status: [{ episode: 11, chapter: 80, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 80, source: 'chapter', value: 'alive' },
+        // He dies at the Fist of the First Men, told by Samwell II of A
+        // Storm of Swords (chapter 177), the safe later chapter, filed with
+        // his drawing's stage (#1474). Episode 21 only orders it.
+        { episode: 21, chapter: 177, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 11,
@@ -2378,7 +2384,13 @@ export const season2: ThronesSaga = {
         it: 'Cavalca con i Guardiani della notte oltre la Barriera, insieme a Jon Snow e ai suoi amici, e accoglie ogni disagio con una battuta cupa.',
         en: 'He rides beyond the Wall with the Night’s Watch, alongside Jon Snow and his friends, and meets every hardship with a gloomy joke.',
       },
-      status: [{ episode: 20, chapter: 87, value: 'alive' }],
+      status: [
+        { episode: 20, chapter: 87, value: 'alive' },
+        // The show's alone: he dies at Winterfell in "The Long Night"
+        // (episode 70), filed with his drawing's stage (#1474). The books
+        // keep him alive, so chapter 344, their last, orders it.
+        { episode: 70, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 20,
@@ -2434,7 +2446,13 @@ export const season2: ThronesSaga = {
         it: 'La spedizione del lord comandante si ferma al suo fortino. Ha sposato le sue stesse figlie, e dice ai Guardiani della notte che i bruti si radunano attorno a Mance Rayder.',
         en: 'The Lord Commander’s ranging stops at his keep. He has married his own daughters, and he tells the Night’s Watch that the wildlings are gathering around Mance Rayder.',
       },
-      status: [{ episode: 11, chapter: 97, value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 97, value: 'alive' },
+        // The mutineers kill him in his hall: "And Now His Watch Is Ended"
+        // (episode 24) and Samwell II of A Storm of Swords (chapter 177),
+        // filed with his drawing's stage (#1474).
+        { episode: 24, chapter: 177, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 11, chapter: 97, value: { it: 'Bruti', en: 'Wildlings' } },
       ],
@@ -2511,7 +2529,13 @@ export const season2: ThronesSaga = {
         it: 'È tra le vedette dei bruti sulle montagne. I ranger di Qhorin il Monco uccidono i suoi compagni, e Jon Snow resta solo con lei per giustiziarla, ma non ci riesce.',
         en: 'She is one of the wildling lookouts in the mountains. Qhorin Halfhand’s rangers kill her companions, and Jon Snow is left to put her to death, but he cannot do it.',
       },
-      status: [{ episode: 16, chapter: 125, value: 'alive' }],
+      status: [
+        { episode: 16, chapter: 125, value: 'alive' },
+        // She dies in the attack on Castle Black: "The Watchers on the
+        // Wall" (episode 39) and Jon VII of A Storm of Swords (chapter
+        // 199), filed with her drawing's stage (#1474).
+        { episode: 39, chapter: 199, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 16, chapter: 125, value: { it: 'Bruti', en: 'Wildlings' } },
       ],
@@ -2575,6 +2599,10 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 18, chapter: 142, source: 'chapter', value: 'alive' },
+        // Burned at Castle Black under a glamour as Mance Rayder, which
+        // Melisandre I of A Dance with Dragons (chapter 303) tells, filed
+        // with his drawing's stage (#1474). Episode 41 only orders it.
+        { episode: 41, chapter: 303, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {

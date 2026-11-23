@@ -16,6 +16,7 @@ import { SOUTH_DRAWINGS, southRedrawn } from './south'
 import { REFORGED, STORMLANDS_DRAWINGS, stormlandsRedrawn } from './stormlands'
 import { VALE_DRAWINGS, valeRedrawn } from './vale'
 import { WALL_DRAWINGS, wallRedrawn } from './wall'
+import { WILDLING_DRAWINGS, wildlingsRedrawn } from './wildlings'
 import { WINTERFELL_DRAWINGS, winterfellRedrawn } from './winterfell'
 
 /**
@@ -178,9 +179,10 @@ const PERSON: Stroke[] = [
  * the Riverlands cast's in `riverlands.ts` (#1057), with the four leads
  * drawn for the launch here (owner, #856). Every season-1 character has its
  * own drawing, and so have the season-2 King's Landing cast, in `court.ts`
- * (#1470), and stormlands cast, in `stormlands.ts` (#1471); the season-2
- * Riverlands and Harrenhal cast (#1465), Winterfell and Iron Islands cast
- * (#1466), Wall cast (#1467) and Essos cast (#1468) show `PERSON` until their
+ * (#1470), stormlands cast, in `stormlands.ts` (#1471), and Wall cast, the
+ * rangers in `wall.ts` and the wildlings in `wildlings.ts` (#1474); the
+ * season-2 Riverlands and Harrenhal cast (#1465), Winterfell and Iron
+ * Islands cast (#1466) and Essos cast (#1468) show `PERSON` until their
  * drawing children draw them. `satisfies` rather than an annotation, so
  * `ArtId` below stays the literal keys.
  */
@@ -195,6 +197,7 @@ export const DRAWINGS = {
   ...COURT_DRAWINGS,
   ...RIVERLANDS_DRAWINGS,
   ...STORMLANDS_DRAWINGS,
+  ...WILDLING_DRAWINGS,
   'eddard-stark': ICE_STANDING,
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
@@ -225,19 +228,7 @@ export const DRAWINGS = {
   'little-walder-frey': PERSON,
   'wyman-manderly': PERSON,
   'donella-hornwood': PERSON,
-  // #1467: the Wall and beyond, until its drawing child draws it.
-  'thoren-smallwood': PERSON,
-  'eddison-tollett': PERSON,
-  'jarman-buckwell': PERSON,
-  'mallador-locke': PERSON,
-  'craster': PERSON,
-  'gilly': PERSON,
-  'qhorin-halfhand': PERSON,
-  'stonesnake': PERSON,
-  'ygritte': PERSON,
-  'ebben': PERSON,
-  'dalbridge': PERSON,
-  'lord-of-bones': PERSON,
+  // #1468: Essos and Qarth.
   'kovarro': PERSON,
   'xaro-xhoan-daxos': PERSON,
   'pyat-pree': PERSON,
@@ -259,7 +250,8 @@ export type ArtId = keyof typeof DRAWINGS
  * Watch's from `wall.ts`, the Essos cast's from `essos.ts`, the northern
  * household's from `north.ts`, the Vale cast's from `vale.ts`, the King's
  * Landing cast's from `court.ts`, the Riverlands cast's from
- * `riverlands.ts` and the stormlands cast's from `stormlands.ts`. Eddard
+ * `riverlands.ts`, the stormlands cast's from `stormlands.ts` and the
+ * wildlings' from `wildlings.ts`. Eddard
  * Stark is beheaded with Ice in "Baelor" (episode 9) and in Arya V
  * (chapter 66): from there the blade lies flat on the ground, with nobody
  * to hold it.
@@ -274,6 +266,7 @@ export const REDRAWINGS: Redrawings = {
   ...courtRedrawn,
   ...riverlandsRedrawn,
   ...stormlandsRedrawn,
+  ...wildlingsRedrawn,
   ...placesRedrawn,
   'eddard-stark': [
     {
@@ -300,6 +293,32 @@ export const REDRAWINGS: Redrawings = {
     },
   ],
   'jon-snow': [
+    // The runt beside a spear with a black cloak hung from a crossbar on
+    // it, the cloak hatched: on Qhorin Halfhand's orders Jon kills him so
+    // that the wildlings will take him for a deserter, and rides with them
+    // still sworn to the Watch, in "Valar Morghulis" (episode 20) and in
+    // Jon VIII (chapter 142).
+    {
+      episode: 20,
+      chapter: 142,
+      value: [
+        ...moved(RUNT, 'translate(-26 0)'),
+        { d: 'M134 150 V28 M130 28 L134 12 L138 28 Z M116 42 H152' },
+        {
+          d: 'M118 42 Q114 84 116 124 Q126 118 134 126 Q142 118 152 124 Q154 84 150 42',
+        },
+        { d: 'M126 46 Q124 84 126 120 M142 46 Q144 84 142 120', role: 'soft' },
+        {
+          d: 'M118 62 l5 -3 M118 78 l5 -3 M118 94 l5 -3 M118 110 l5 -3 M144 66 l5 -3 M145 82 l5 -3 M145 98 l5 -3',
+          role: 'ambient',
+        },
+      ],
+    },
+    // The runt alone again: Jon turns on the wildlings and escapes them
+    // back to the Wall in "The Rains of Castamere" (episode 29). A Storm of
+    // Swords has him back at Castle Black by Jon VII (chapter 199), the
+    // safe later chapter.
+    { episode: 29, chapter: 199, value: RUNT },
     // The runt howling in the snow: Jon is killed at Castle Black in
     // "Mother's Mercy" (episode 50) and left for dead in Jon XIII of A
     // Dance with Dragons (chapter 341). Ghost howls for him in the show.
