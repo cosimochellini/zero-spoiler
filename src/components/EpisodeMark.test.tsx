@@ -13,6 +13,23 @@ vi.mock(import('~/components/BookmarkForm'), () => {
 })
 
 describe('EpisodeMark', () => {
+  // A trial point is not a bookmark, and the mark does not look like one
+  // (#1399).
+  it('says a trial point is being tried, dashed, and not saved', () => {
+    renderWithProviders(<EpisodeMark />, { bookmark: ep(37), trial: true })
+    const mark = screen.getByRole('button', { name: 'Trying EP 37, not saved' })
+
+    expect(mark).toHaveTextContent('TryingEP 37')
+  })
+
+  it('names a saved bookmark as one to change', () => {
+    renderWithProviders(<EpisodeMark />, { bookmark: ep(37) })
+
+    expect(
+      screen.getByRole('button', { name: 'Change bookmark (EP 37)' }),
+    ).toHaveTextContent(/^EP 37$/u)
+  })
+
   it('says so in the dialog when the form cannot be fetched, and the page stays up', async () => {
     const user = userEvent.setup()
     renderWithProviders(<EpisodeMark />, { bookmark: ep(650) })

@@ -14,6 +14,9 @@ import {
   z,
 } from '~/styles/tokens.stylex'
 
+// The height of each of the dial's two lines that fold away when it pins.
+const FOLD_LINE = '1rem'
+
 /**
  * The onboarding, a control and its playground: the dial is the hero, and the page under it is its live preview.
  */
@@ -49,30 +52,45 @@ export const styles = stylex.create({
     maxWidth: '44ch',
   },
 
+  // Above the dial and scrolling away with the page: what the range is, and
+  // the arc its point is in.
+  dialHead: { gap: space.xs2, display: 'grid', paddingBlockEnd: space.sm },
   // Pinned while the preview scrolls under it, so moving the dial and seeing
-  // what it opened happen on one screen.
+  // what it opened happen on one screen. Three lines: the unit, the scale,
+  // then the numeral, the range and the button. The first two are a fixed
+  // height, so the offset that tucks them under the site bar is known here,
+  // and pinned the dial is its last line alone, about 64px on a phone.
   dial: {
-    gap: space.sm,
     marginInline: `calc(-1 * ${space.md})`,
-    paddingBlock: space.sm,
     paddingInline: space.md,
+    alignItems: 'center',
     backgroundColor: color.paper,
     borderBlockEndColor: color.accent,
     borderBlockEndStyle: 'solid',
     borderBlockEndWidth: rule.fine,
+    columnGap: space.sm,
     display: 'grid',
-    insetBlockStart: pin.bar,
+    gridTemplateColumns: 'auto minmax(0, 1fr) auto',
+    gridTemplateRows: `${FOLD_LINE} ${FOLD_LINE} auto`,
+    insetBlockStart: `calc(${pin.bar} - 2 * ${FOLD_LINE} - ${space.xs})`,
+    paddingBlockEnd: space.sm,
     position: 'sticky',
+    rowGap: space.xs,
     zIndex: z.sticky,
   },
-  readout: {
-    gap: space.md,
-    alignItems: 'end',
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
+  unit: { gridColumnEnd: '-1', gridColumnStart: '1' },
+  // The last line, the one that stays on screen. Pinned, it sits inside the
+  // document's scroll padding, the room it keeps for a sticky head under the
+  // bar (`stickyStyles.document`); without the margin that gives that room
+  // back, focusing the range or the button scrolled the page back up until
+  // the dial unpinned.
+  fold: {
+    gridRow: '3',
+    scrollMarginBlockStart: `calc(-1 * (2.75rem + ${space.xs}))`,
   },
-  point: { gap: space.xs2, display: 'grid', minWidth: 0 },
+  // The numeral as wide as the widest point, so the range does not shift
+  // under the thumb as the numeral gains a digit.
+  digits: (count: number) => ({ minWidth: `${String(count)}ch` }),
   unitLabel: {
     color: color.muted,
     fontFamily: font.mono,
@@ -109,7 +127,10 @@ export const styles = stylex.create({
     height: '44px',
     width: '100%',
   },
+  // The ends of the range, over it.
   scale: {
+    gridColumn: '2',
+    gridRow: '2',
     color: color.muted,
     display: 'flex',
     fontFamily: font.mono,
@@ -215,14 +236,16 @@ export const styles = stylex.create({
     minWidth: 0,
   },
   // Room for the pinned dial, so a card reached with the keyboard scrolls
-  // into view below it rather than under it.
+  // into view below it rather than under it: folded to its last line, the
+  // dial is at most 34px taller than the room the document's scroll padding
+  // already keeps under the bar for a sticky head.
   cardLink: {
     borderColor: { 'default': color.rule2, ':hover': color.accent },
     outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
     outlineOffset: space.xs3,
     outlineStyle: 'solid',
     outlineWidth: rule.fine,
-    scrollMarginBlockStart: `calc(18rem + ${pin.bar})`,
+    scrollMarginBlockStart: space.xl,
     transform: { 'default': 'none', ':active': 'translateY(1px)' },
     transitionDuration: dur.micro,
     transitionProperty: 'border-color, transform',

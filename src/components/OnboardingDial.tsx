@@ -59,9 +59,16 @@ function readingOf(
 }
 
 /**
- * The dial, pinned while the preview scrolls under it: the point in large
- * figures, the arc it is in, and a native range input over the series' demo
- * span (East Blue for One Piece).
+ * The dial: the arc its point is in, then one row, the point in large
+ * figures, a native range input over the series' demo span (East Blue for
+ * One Piece) and the button that saves it.
+ *
+ * The row is pinned while the preview scrolls under it, folded to its last
+ * line: the arc and the label scroll away above it, and the unit and the
+ * scale, its first two lines, tuck under the site bar. Pinned, the whole dial
+ * took a third of a phone's screen (#1399). The fold is the sticky offset
+ * alone, so nothing moves, nothing is animated, and the range keeps its name,
+ * its value text and its keys.
  */
 export function OnboardingDial({
   arc,
@@ -73,87 +80,102 @@ export function OnboardingDial({
   const series = useBookmarkSeries()
   const last = dialLast(point.mode, series)
   const reading = readingOf(t, point, series.books)
-  // On a series with books the readout counts within the book, so the ends
-  // of the scale say the same, not the absolute chapter.
-  const edge = (value: number): string => {
-    if (point.mode !== 'chapter' || series.books === undefined) {
-      return String(value)
-    }
-    const at = readingOf(t, { ...point, value }, series.books)
-    return `${at.unit} ${String(at.value)}`
-  }
+  // On a series with books the numeral counts within the book, and so do the
+  // ends of the scale; the unit over them names the book.
+  const edge = (value: number): string =>
+    String(readingOf(t, { ...point, value }, series.books).value)
+  const widest = edge(last)
 
   return (
-    <div {...stylex.props(styles.dial)}>
-      <Readout
+    <>
+      <DialHead
         arc={arc}
-        point={point}
+        rangeId={id}
       />
 
-      <label
-        htmlFor={id}
-        {...stylex.props(styles.unitLabel)}
-      >
-        {t('onboarding.dial')}
-      </label>
-      <input
-        aria-valuetext={`${reading.unit} ${String(reading.value)}`}
-        id={id}
-        max={last}
-        min={1}
-        onChange={(event) => {
-          onPoint({ ...point, value: event.currentTarget.valueAsNumber })
-        }}
-        type="range"
-        value={point.value}
-        {...stylex.props(styles.range)}
-      />
-      <div
-        aria-hidden="true"
-        {...stylex.props(styles.scale)}
-      >
-        <span>{edge(1)}</span>
-        <span>{edge(last)}</span>
+      <div {...stylex.props(styles.dial)}>
+        <span {...stylex.props(styles.unitLabel, styles.unit)}>
+          {reading.unit}
+        </span>
+        <div
+          aria-hidden="true"
+          {...stylex.props(styles.scale)}
+        >
+          <span>{edge(1)}</span>
+          <span>{widest}</span>
+        </div>
+        <span
+          {...stylex.props(
+            styles.numeral,
+            styles.fold,
+            styles.digits(widest.length),
+          )}
+        >
+          {reading.value}
+        </span>
+        <input
+          aria-valuetext={`${reading.unit} ${String(reading.value)}`}
+          id={id}
+          max={last}
+          min={1}
+          onChange={(event) => {
+            onPoint({ ...point, value: event.currentTarget.valueAsNumber })
+          }}
+          type="range"
+          value={point.value}
+          {...stylex.props(styles.range, styles.fold)}
+        />
+        <HereButton point={point} />
       </div>
-    </div>
+    </>
+  )
+}
+
+/** "I'm here": saves the dial's point as the bookmark. */
+function HereButton({
+  point,
+}: Pick<OnboardingDialProps, 'point'>): ReactElement {
+  const t = useT()
+  const save = useSave()
+
+  return (
+    <Button
+      onClick={() => {
+        save(dialBookmark(point))
+      }}
+      sx={[styles.primary, styles.fold]}
+    >
+      {t('onboarding.here')}
+    </Button>
   )
 }
 
 /**
- * The point in large figures, the arc it is in, and the button that saves
- * it. Announced politely as the dial moves.
+ * Over the dial, scrolling away when it pins: what the range is, and the
+ * arc its point is in, announced politely as the dial moves.
  */
-function Readout({
+function DialHead({
   arc,
-  point,
-}: Pick<OnboardingDialProps, 'arc' | 'point'>): ReactElement {
+  rangeId,
+}: Pick<OnboardingDialProps, 'arc'> & { rangeId: string }): ReactElement {
   const t = useT()
-  const save = useSave()
-  const series = useBookmarkSeries()
-  const { unit, value } = readingOf(t, point, series.books)
 
   return (
-    <div {...stylex.props(styles.readout)}>
-      <div {...stylex.props(styles.point)}>
-        <span {...stylex.props(styles.unitLabel)}>{unit}</span>
-        <span {...stylex.props(styles.numeral)}>{value}</span>
-        {arc !== undefined && (
-          <span
-            aria-live="polite"
-            {...stylex.props(styles.arcName)}
-          >
-            {arc}
-          </span>
-        )}
-      </div>
-      <Button
-        onClick={() => {
-          save(dialBookmark(point))
-        }}
-        sx={styles.primary}
+    <div {...stylex.props(styles.dialHead)}>
+      <label
+        htmlFor={rangeId}
+        {...stylex.props(styles.unitLabel)}
       >
-        {t('onboarding.here')}
-      </Button>
+        {t('onboarding.dial')}
+      </label>
+      {arc !== undefined && (
+        <span
+          aria-live="polite"
+          {...stylex.props(styles.arcName)}
+        >
+          {arc}
+        </span>
+      )}
     </div>
   )
 }
