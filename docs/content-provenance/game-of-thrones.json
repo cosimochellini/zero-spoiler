@@ -4360,7 +4360,7 @@
       "https://awoiaf.westeros.org/index.php/Deepwood_Motte"
     ],
     "unverified": [
-      "Show gate 13: Balon sends Yara with thirty ships to seize it (the place page). Neither the episodes nor the books were viewed.",
+      "Show gate 13: Balon sends Yara to seize it (the place page). Neither the episodes nor the books were viewed.",
       "Book gate 98 (Theon II), Balon's plan; Bran II (90) is cited for its steward at the harvest feast and may name it first: the safe later chapter is kept (owner check). AWOIAF footnotes cite claims, not first namings; the book gate is the earliest A Clash of Kings chapter they cite, not checked against the text.",
       "Italian: \"Deepwood Motte\", the Italian Game of Thrones Wiki's page."
     ]
@@ -4373,8 +4373,9 @@
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Forte_Terrore"
     ],
     "unverified": [
-      "Show gate 16: the place page's lead cites GOT206; the line is not quoted (owner check). Neither the episodes nor the books were viewed.",
-      "Book gate 90 (Bran II): Lady Hornwood learns that men are massing at the Dreadfort. AWOIAF footnotes cite claims, not first namings; the book gate is the earliest A Clash of Kings chapter they cite, not checked against the text."
+      "Show gate 16: \"The Old Gods and the New\"'s Appearances page lists it among the places mentioned; the line is not quoted. Neither the episodes nor the books were viewed.",
+      "Book gate 90 (Bran II): Lady Hornwood learns that men are massing at the Dreadfort. AWOIAF footnotes cite claims, not first namings; the book gate is the earliest A Clash of Kings chapter they cite, not checked against the text.",
+      "nameSaidAt 14: a books-only story of Roose Bolton (chapter 54) names it; the book names it in that chapter (Bran VI; A Wiki of Ice and Fire's Dreadfort page cites A Game of Thrones, Chapter 53)."
     ]
   },
   "seagard": {
@@ -4406,11 +4407,12 @@
     "sources": [
       "https://gameofthrones.fandom.com/wiki/Crag",
       "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor",
+      "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor/Appearances",
       "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell/Appearances",
       "https://awoiaf.westeros.org/index.php/Crag"
     ],
     "unverified": [
-      "Show gate 18: \"A Man Without Honor\" (17) sends Robb to settle its surrender, and \"The Prince of Winterfell\" (18) lists the Crag among its locations; whether the show sets a scene there (#1252) is an owner check. The gate is 18 either way. Neither the episodes nor the books were viewed.",
+      "The show visits it and the book only names it (#1252): Talisa names it in \"A Man Without Honor\" (17), and \"The Prince of Winterfell\" (18), whose Appearances page lists it under Locations, sets the first scene there. Show gate 18. Neither the episodes nor the books were viewed.",
       "Book gate 129 (Catelyn VII): word at Riverrun that Robb has taken it; Catelyn VI (119) is cited for his raids and may name it first. AWOIAF footnotes cite claims, not first namings; the book gate is the earliest A Clash of Kings chapter they cite, not checked against the text.",
       "Italian: \"Crag\", as the Italian Game of Thrones Wiki's Casa Westerling page writes it (\"Lord del Crag\")."
     ]
@@ -4433,24 +4435,26 @@
       "https://gameofthrones.fandom.com/wiki/Highgarden",
       "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
       "https://awoiaf.westeros.org/index.php/Highgarden",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Alto_Giardino"
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Alto_Giardino",
+      "https://iceandfire.fandom.com/wiki/Daenerys_I_-_A_Game_of_Thrones"
     ],
     "unverified": [
       "Show gate 13: Margaery shouts \"Highgarden!\" at Renly's tourney (the place page). Neither the episodes nor the books were viewed.",
-      "Book gate 84 (Davos I): Renly marches from Highgarden; the prologue (74) may name it first (not checked). AWOIAF footnotes cite claims, not first namings; the book gate is the earliest A Clash of Kings chapter they cite, not checked against the text."
+      "Book gate 84 (Davos I): Renly marches from Highgarden; the prologue (74) may name it first (not checked). AWOIAF footnotes cite claims, not first namings; the book gate is the earliest A Clash of Kings chapter they cite, not checked against the text.",
+      "nameSaidAt 5: a books-only story of Loras Tyrell (chapter 30) names it; the book names it at chapter 4 (Daenerys I, whose Ice and Fire Wiki page lists Highgarden)."
     ]
   },
   "tarth": {
     "sources": [
       "https://gameofthrones.fandom.com/wiki/Tarth",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die/Appearances",
       "https://gameofthrones.fandom.com/wiki/Brienne_of_Tarth",
-      "https://gameofthrones.fandom.com/wiki/Shipbreaker_Bay",
       "https://awoiaf.westeros.org/index.php/Tarth",
       "https://iceandfire.fandom.com/wiki/Prologue_-_A_Clash_of_Kings",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Tarth"
     ],
     "unverified": [
-      "Show gate 18: Brienne's house is cited to GOT208, and Tyrion hears that Stannis's fleet is past Tarth (the Shipbreaker Bay page); neither line is quoted (owner check). Whether episode 13 says \"Brienne of Tarth\" is not checked; her name says it there, hence nameSaidAt 13. Neither the episodes nor the books were viewed.",
+      "Show gate 13: Colen calls her \"Brienne of Tarth\" in \"What Is Dead May Never Die\", and the episode's Appearances page lists Tarth among the places mentioned; the line is not quoted. Neither the episodes nor the books were viewed.",
       "Book gate 74 (the prologue): Davos's report of his meeting with Lord Tarth; the Ice and Fire Wiki's prologue page lists House Tarth. AWOIAF footnotes cite claims, not first namings; the book gate is the earliest A Clash of Kings chapter they cite, not checked against the text."
     ]
   },
@@ -4460,22 +4464,23 @@
       "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
       "https://awoiaf.westeros.org/index.php/Lorath",
       "https://iceandfire.fandom.com/wiki/Jaqen_H%27ghar",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Lorath"
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Lorath",
+      "https://iceandfire.fandom.com/wiki/Lorath"
     ],
     "unverified": [
-      "Show gate 12: Jaqen claims to be from Lorath (the place page). Neither the episodes nor the books were viewed.",
-      "Book gate 79 (Arya II): A Wiki of Ice and Fire says Jaqen \"claims to be Lorathi\"; whether the chapter names the city, not only the demonym, is an owner check. AWOIAF footnotes cite claims, not first namings; the book gate is the earliest A Clash of Kings chapter they cite, not checked against the text."
+      "Show gate 12: Jaqen claims to be from Lorath (the place page; the episode's Appearances page lists Lorath). Neither the episodes nor the books were viewed.",
+      "Book gate 121 (Arya IX), the safe later chapter: the Ice and Fire Wiki says Jaqen claims to come from Lorath in A Clash of Kings, without a chapter, and Arya IX is his last chapter in the book. A Wiki of Ice and Fire cites Arya II (79) for his \"claims to be Lorathi\", which may be the demonym only (AWOIAF not read further: Firecrawl credits exhausted)."
     ]
   },
   "summer-isles": {
     "sources": [
       "https://gameofthrones.fandom.com/wiki/Summer_Isles",
-      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
+      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell/Appearances",
       "https://awoiaf.westeros.org/index.php/Summer_Isles",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Isole_dell%27Estate"
     ],
     "unverified": [
-      "Show gate 14: Xaro was born in the Summer Isles (the place page). Neither the episodes nor the books were viewed.",
+      "Show gate 18: Varys, \"In the Summer Isles they worship…\" (quoted on the place page); episode 14's line about Xaro's birth is not an explicit naming. Neither the episodes nor the books were viewed.",
       "Book gate 85 (Theon I): the Myraham carries feathers from the Summer Isles; Tyrion II (82) gives Shae a bird from the islands and may name them first. AWOIAF footnotes cite claims, not first namings; the book gate is the earliest A Clash of Kings chapter they cite, not checked against the text.",
       "Form \"island\" (owner, 2026-11-23), in the region the Seas."
     ]

@@ -37861,6 +37861,26 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=737710",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=737710",
       "contentSha256": "470cc42681ca36189eb4ad83755502225e96640e138ba2ae6a319a0cbfea5fe4"
+    },
+    "iaf-en-Lorath-27334.json": {
+      "locale": "en",
+      "title": "Lorath",
+      "revision": 27334,
+      "revisionDate": "2025-05-13T03:42:28Z",
+      "url": "https://iceandfire.fandom.com/wiki/Lorath",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27334",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27334",
+      "contentSha256": "af5ddc745020cffa82079243ccce6b9f7a8aeb26196375df7a669a38f3b3917b"
+    },
+    "iaf-en-Daenerys_I_-_A_Game_of_Thrones-25456.json": {
+      "locale": "en",
+      "title": "Daenerys I - A Game of Thrones",
+      "revision": 25456,
+      "revisionDate": "2022-08-26T11:59:44Z",
+      "url": "https://iceandfire.fandom.com/wiki/Daenerys_I_-_A_Game_of_Thrones",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25456",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25456",
+      "contentSha256": "0c3b4c8c50acb4fd18091204a5ba94615493f051cdbfbf856bbe88b50781092e"
     }
   }
 }

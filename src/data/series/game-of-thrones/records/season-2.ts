@@ -1375,8 +1375,6 @@ export const season2: ThronesSaga = {
       kind: 'place',
       revealedAtEpisode: 13,
       revealedAtChapter: 98,
-      // Named before its show gate in the text of Galbart Glover (episode 8) as his seat.
-      nameSaidAt: 8,
       name: { it: 'Deepwood Motte', en: 'Deepwood Motte' },
       summary: { it: 'Un castello del Nord.', en: 'A castle in the North.' },
       visual: { art: 'deepwood-motte', tint: 'ocher' },
@@ -1390,7 +1388,10 @@ export const season2: ThronesSaga = {
       kind: 'place',
       revealedAtEpisode: 16,
       revealedAtChapter: 90,
-      // Named before its show gate in the text of Roose Bolton (episode 14) as his seat.
+      // The book names it at chapter 54 (Bran VI of A Game of Thrones, A Wiki
+      // of Ice and Fire's Dreadfort page); the leak scan reads one episode
+      // axis, and this books-only text, a story of Roose Bolton at chapter
+      // 54, orders at episode 14.
       nameSaidAt: 14,
       name: { it: 'Forte Terrore', en: 'the Dreadfort' },
       summary: {
@@ -1407,13 +1408,8 @@ export const season2: ThronesSaga = {
       kind: 'place',
       revealedAtEpisode: 20,
       revealedAtChapter: 81,
-      // Named before its show gate in the text of Jason Mallister (episode 4) as his seat.
-      nameSaidAt: 4,
       name: { it: 'Seagard', en: 'Seagard' },
-      summary: {
-        it: 'Un castello sulla costa delle Terre dei Fiumi.',
-        en: 'A castle on the coast of the Riverlands.',
-      },
+      summary: { it: 'Un castello sulla costa.', en: 'A castle on the coast.' },
       visual: { art: 'seagard', tint: 'lavender' },
     },
     // Show: "Valar Morghulis", Jaime asks the Stark patrol whether they have
@@ -1430,10 +1426,10 @@ export const season2: ThronesSaga = {
       },
       visual: { art: 'ashemark', tint: 'orange' },
     },
-    // Show: "A Man Without Honor" sends Robb to settle its surrender, and the
-    // Game of Thrones Wiki lists it among the locations of "The Prince of
-    // Winterfell" (owner check). Books: Catelyn VII (site chapter 129), word
-    // at Riverrun that Robb has taken it.
+    // The show visits it and the book only names it (#1252). Show: Talisa
+    // names it in "A Man Without Honor" (episode 17), and "The Prince of
+    // Winterfell" (18) sets a scene there, its first. Books: Catelyn VII
+    // (site chapter 129), word at Riverrun that Robb has taken it.
     {
       id: 'the-crag',
       kind: 'place',
@@ -1468,26 +1464,25 @@ export const season2: ThronesSaga = {
       kind: 'place',
       revealedAtEpisode: 13,
       revealedAtChapter: 84,
-      // Named before its show gate in the text of a story of Loras Tyrell (episode 5).
+      // The book names it at chapter 4 (Daenerys I); the leak scan reads one
+      // episode axis, and this books-only text, a story of Loras Tyrell at
+      // chapter 30, orders at episode 5.
       nameSaidAt: 5,
       name: { it: 'Alto Giardino', en: 'Highgarden' },
       summary: {
-        it: 'Il castello di Casa Tyrell, nell’Altopiano.',
-        en: 'The castle of House Tyrell, in the Reach.',
+        it: 'Un castello dell’Altopiano.',
+        en: 'A castle in the Reach.',
       },
       visual: { art: 'highgarden', tint: 'yellow' },
     },
-    // Show: "The Prince of Winterfell", Brienne's house and Stannis's fleet
-    // past Tarth (neither line quoted; owner check). Books: the prologue
-    // (site chapter 74), Davos's report of his meeting with Lord Tarth.
+    // Show: "What Is Dead May Never Die", Colen calls her Brienne of Tarth
+    // (the episode's Appearances page lists Tarth). Books: the prologue (site
+    // chapter 74), Davos's report of his meeting with Lord Tarth.
     {
       id: 'tarth',
       kind: 'place',
-      revealedAtEpisode: 18,
+      revealedAtEpisode: 13,
       revealedAtChapter: 74,
-      // Brienne's name says it before its show gate: she opens in "What Is
-      // Dead May Never Die" (episode 13).
-      nameSaidAt: 13,
       name: { it: 'Tarth', en: 'Tarth' },
       summary: {
         it: 'Un’isola al largo delle Terre della Tempesta.',
@@ -1495,25 +1490,26 @@ export const season2: ThronesSaga = {
       },
       visual: { art: 'tarth', tint: 'blue' },
     },
-    // Show: "The Night Lands", Jaqen says he is from Lorath. Books: Arya II
-    // (site chapter 79), the same claim (owner check: the city or only the
-    // demonym).
+    // Show: "The Night Lands", Jaqen says he is from Lorath. Books: Jaqen's
+    // claim to come from Lorath (Ice and Fire Wiki), at the latest in Arya IX
+    // (site chapter 121), his last chapter in the book; Arya II (79) may
+    // name it first.
     {
       id: 'lorath',
       kind: 'place',
       revealedAtEpisode: 12,
-      revealedAtChapter: 79,
+      revealedAtChapter: 121,
       name: { it: 'Lorath', en: 'Lorath' },
       summary: { it: 'Una delle Città Libere.', en: 'One of the Free Cities.' },
       visual: { art: 'lorath', tint: 'ice' },
     },
-    // Show: "Garden of Bones", Xaro was born in the Summer Isles. Books:
-    // Theon I (site chapter 85), the Myraham carries feathers from the
-    // Summer Isles.
+    // Show: "The Prince of Winterfell", Varys: "In the Summer Isles they
+    // worship…". Books: Theon I (site chapter 85), the Myraham carries
+    // feathers from the Summer Isles.
     {
       id: 'summer-isles',
       kind: 'place',
-      revealedAtEpisode: 14,
+      revealedAtEpisode: 18,
       revealedAtChapter: 85,
       name: { it: 'Isole dell’Estate', en: 'the Summer Isles' },
       summary: {
@@ -3153,8 +3149,8 @@ export const SEASON_2_PLACES: Record<
       en: 'A wooden palisade on top of a mound',
     },
     log: {
-      it: 'Balon Greyjoy manda sua figlia con trenta navi a prendere questo castello.',
-      en: 'Balon Greyjoy sends his daughter with thirty ships to take this castle.',
+      it: 'Balon Greyjoy manda sua figlia a prendere questo castello.',
+      en: 'Balon Greyjoy sends his daughter to take this castle.',
     },
     filedHere: [],
   },
@@ -3179,8 +3175,8 @@ export const SEASON_2_PLACES: Record<
       en: 'A tall tower with a bell, over the sea',
     },
     log: {
-      it: 'È un castello sulla costa delle Terre dei Fiumi.',
-      en: 'It is a castle on the coast of the Riverlands.',
+      it: 'È un castello sulla costa.',
+      en: 'It is a castle on the coast.',
     },
     filedHere: [],
   },
@@ -3231,8 +3227,8 @@ export const SEASON_2_PLACES: Record<
       en: 'Walls and towers under the banner of the rose',
     },
     log: {
-      it: 'È la sede di Casa Tyrell.',
-      en: 'It is the seat of House Tyrell.',
+      it: 'È un castello dell’Altopiano.',
+      en: 'It is a castle in the Reach.',
     },
     filedHere: [],
   },

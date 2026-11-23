@@ -1864,8 +1864,8 @@ const ASHEMARK: Stroke[] = [
 ]
 
 /**
- * The Crag: towers on a great rock over the sea, for the castle Robb rides
- * to in episode 17, named in Catelyn VII (chapter 129). The rock's far side
+ * The Crag: towers on a great rock over the sea, for the castle Robb goes
+ * to in episode 18, named in Catelyn VII (chapter 129). The rock's far side
  * is hatched; the accent is the lit windows.
  */
 const THE_CRAG: Stroke[] = [
@@ -1947,7 +1947,7 @@ const HIGHGARDEN: Stroke[] = [
 /**
  * Tarth: an island's mountains over the sea, a waterfall down their side
  * and a small castle on the shore, named in the prologue (chapter 74) and
- * in episode 18. The far slopes are hatched; the accent is the waterfall.
+ * in episode 13. The far slopes are hatched; the accent is the waterfall.
  */
 const TARTH: Stroke[] = [
   {
@@ -1970,7 +1970,7 @@ const TARTH: Stroke[] = [
 /**
  * Lorath: a walled city's pointed towers on an island, a ship on the sea
  * before it, for the Free City Jaqen says he comes from in episode 12 and
- * in Arya II (chapter 79). The far slope is hatched; the accent is the
+ * in the book by Arya IX (chapter 121). The far slope is hatched; the accent is the
  * towers' roofs.
  */
 const LORATH: Stroke[] = [
@@ -1992,7 +1992,7 @@ const LORATH: Stroke[] = [
 
 /**
  * The Summer Isles: two islands with palm trees and a ship between them,
- * named in episode 14 (Xaro's birthplace) and in Theon I (chapter 85). The
+ * named in Theon I (chapter 85) and in episode 18, by Varys. The
  * trunks are hatched; the accent is the palms' fronds.
  */
 const SUMMER_ISLES: Stroke[] = [

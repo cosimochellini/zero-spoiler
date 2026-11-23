@@ -39,6 +39,7 @@ const PLACES: {
   { id: 'storms-end', episode: 18, chapter: 105 },
   { id: 'blackwater-bay', episode: 18, chapter: 132 },
   { id: 'house-of-the-undying', episode: 20, chapter: 122 },
+  { id: 'the-crag', episode: 18, chapter: 129 },
 ]
 
 /**
@@ -48,13 +49,12 @@ const PLACES: {
 const NAMED: { chapter: number; episode: number; id: string }[] = [
   { id: 'torrhens-square', episode: 11, chapter: 90 },
   { id: 'flea-bottom', episode: 11, chapter: 84 },
-  { id: 'lorath', episode: 12, chapter: 79 },
+  { id: 'lorath', episode: 12, chapter: 121 },
   { id: 'deepwood-motte', episode: 13, chapter: 98 },
   { id: 'highgarden', episode: 13, chapter: 84 },
-  { id: 'summer-isles', episode: 14, chapter: 85 },
+  { id: 'summer-isles', episode: 18, chapter: 85 },
   { id: 'dreadfort', episode: 16, chapter: 90 },
-  { id: 'the-crag', episode: 18, chapter: 129 },
-  { id: 'tarth', episode: 18, chapter: 74 },
+  { id: 'tarth', episode: 13, chapter: 74 },
   { id: 'seagard', episode: 20, chapter: 81 },
   { id: 'ashemark', episode: 20, chapter: 109 },
 ]

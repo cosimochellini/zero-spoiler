@@ -97,7 +97,9 @@ export interface Entity {
    * record itself opens: Fish-Man Island is a destination at 320 and a
    * heading at 526. Text dated at or after it may name the record in plain
    * words; text before it may not. Below `revealedAtEpisode` by definition,
-   * which a data test holds, and read by the leak scan alone.
+   * which a data test holds, and read by the leak scan alone. For a series
+   * with two media, it is the earliest point either medium says the name,
+   * placed on the episode axis.
    */
   nameSaidAt?: number
   /**
