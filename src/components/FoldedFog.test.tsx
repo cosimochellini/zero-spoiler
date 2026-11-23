@@ -11,6 +11,7 @@ import { act, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 
+import { KEPT } from '~/components/foldMemory'
 import { LocaleProvider } from '~/i18n/LocaleProvider'
 import { BookmarkProvider } from '~/lib/progress/BookmarkProvider'
 import { ONE_PIECE_BOOKMARK, ONE_PIECE_SERIES } from '~/lib/progress/series'
@@ -333,6 +334,48 @@ describe('FoldedFog under the router', () => {
     pushed.mockRestore()
     replaced.mockRestore()
   })
+
+  it('keeps a note per entry, however many keystrokes replace one, and drops the oldest past the cap', async () => {
+    const { go } = await onRouter('/fruits')
+
+    // Left folded at the first entry; opened at the second.
+    await go((history) => {
+      history.push('/fruits?form=paramecia')
+    })
+    await userEvent.click(
+      within(region('5 under fog')).getByRole('button', { name: 'Expand' }),
+    )
+    // Each keystroke replaces the second entry with a new key.
+    for (let typed = 1; typed <= KEPT + 10; typed += 1) {
+      await go((history) => {
+        history.replace(`/fruits?form=paramecia&q=${'o'.repeat(typed)}`)
+      })
+    }
+    await go((history) => {
+      history.back()
+    })
+
+    // The first entry's note is still there: folded, as it was left.
+    expect(expandButton()).toBeInTheDocument()
+
+    // Now push past the cap from the second entry on.
+    await go((history) => {
+      history.forward()
+    })
+    for (let pushed = 1; pushed <= KEPT; pushed += 1) {
+      await go((history) => {
+        history.push(`/fruits?n=${String(pushed)}`)
+      })
+    }
+    await go((history) => {
+      history.go(-(KEPT + 1))
+    })
+
+    // The oldest note is gone, so the entry is taken as new: the fold
+    // stays as it is, open.
+    expect(expandButton()).not.toBeInTheDocument()
+    // A hundred-odd router navigations, each awaited.
+  }, 30_000)
 
   it('is as the reader left it on Back and Forward within the page', async () => {
     const { go } = await onRouter('/fruits')

@@ -1,22 +1,39 @@
 import { useRouterState } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
+/** A history entry: its place in the tab's history, and the router's key. */
+interface Entry {
+  index: number
+  key: string
+}
+
 /**
- * Whether a fold is open, by the router's key of each history entry the
- * page has stood at. Kept in memory for the tab's life, like the album
- * (`fruits/-album.ts`), and never written to the history entry or to
- * storage: the router owns both, and writing either made it reload.
+ * Whether a fold is open, in each history entry the page has stood at, by
+ * the entry's place in the tab's history. One place holds one entry at a
+ * time, as the history does: a search replaces the entry and a push after
+ * Back replaces the ones ahead, and either takes the place over with a new
+ * key. So the notes count real entries, however much the reader types.
+ * Kept in memory for the tab's life, like the album (`fruits/-album.ts`),
+ * and never written to the history entry or to storage: the router owns
+ * both, and writing either made it reload.
  */
-const notes = new Map<string, Map<string, boolean>>()
+const notes = new Map<number, { folds: Map<string, boolean>; key: string }>()
 
-/** The entries kept; the oldest goes once there are more. */
-const KEPT = 50
+/** The entries kept; the oldest noted goes once there are more. */
+export const KEPT = 50
 
-function note(entry: string, id: string, open: boolean): void {
-  let folds = notes.get(entry)
+/** The folds noted in `entry`, if the page has stood at it. */
+function notesOf({ index, key }: Entry): Map<string, boolean> | undefined {
+  const at = notes.get(index)
+  return at?.key === key ? at.folds : undefined
+}
+
+function note(entry: Entry, id: string, open: boolean): void {
+  let folds = notesOf(entry)
   if (folds === undefined) {
     folds = new Map<string, boolean>()
-    notes.set(entry, folds)
+    notes.delete(entry.index)
+    notes.set(entry.index, { folds, key: entry.key })
     const [oldest] = notes.keys()
     if (oldest !== undefined && notes.size > KEPT) {
       notes.delete(oldest)
@@ -37,27 +54,30 @@ function note(entry: string, id: string, open: boolean): void {
 export function useEntryFold(id: string): [open: boolean, unfold: () => void] {
   // A navigation, even one that replaces the entry, brings a new key; Back
   // and Forward bring an old one back.
-  const entry = useRouterState({
+  const index = useRouterState({
+    select: ({ location }) => location.state.__TSR_index,
+  })
+  const key = useRouterState({
     select: ({ location }) => location.state.__TSR_key ?? location.href,
   })
   const [shown, setShown] = useState(() => ({
-    entry,
-    open: notes.get(entry)?.get(id) === true,
+    key,
+    open: notesOf({ index, key })?.get(id) === true,
   }))
   let { open } = shown
-  if (shown.entry !== entry) {
-    const left = notes.get(entry)
+  if (shown.key !== key) {
+    const left = notesOf({ index, key })
     open = left === undefined ? shown.open : left.get(id) === true
-    setShown({ entry, open })
+    setShown({ key, open })
   }
   useEffect(() => {
-    note(entry, id, open)
-  }, [entry, id, open])
+    note({ index, key }, id, open)
+  }, [id, index, key, open])
 
   return [
     open,
     () => {
-      setShown({ entry, open: true })
+      setShown({ key, open: true })
     },
   ]
 }
