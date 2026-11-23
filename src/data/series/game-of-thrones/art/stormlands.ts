@@ -515,10 +515,10 @@ export const stormlandsRedrawn: Redrawings = {
     },
     // The choker lying alone in the snow: she takes it off outside the
     // gates of Winterfell and dies before dawn in "The Long Night" (episode
-    // 71). The show's alone (the books leave her alive); chapter 344 orders
+    // 70). The show's alone (the books leave her alive); chapter 344 orders
     // it.
     {
-      episode: 71,
+      episode: 70,
       chapter: 344,
       source: 'episode',
       value: [

@@ -1291,9 +1291,9 @@ export const season2: ThronesSaga = {
       status: [
         { episode: 11, chapter: 74, value: 'alive' },
         // The show alone: she takes off her choker outside Winterfell and
-        // dies before dawn in "The Long Night" (episode 71); the books leave
+        // dies before dawn in "The Long Night" (episode 70); the books leave
         // her alive, so chapter 344 only orders it (#1471).
-        { episode: 71, chapter: 344, source: 'episode', value: 'deceased' },
+        { episode: 70, chapter: 344, source: 'episode', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -1410,8 +1410,9 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 25, chapter: 74, value: 'alive' },
-        // The show alone: she hangs herself in "Mother's Mercy" (episode 50); the books leave her alive, so chapter
-        // 344 only orders it (#1471).
+        // The show alone: she hangs herself in "Mother's Mercy" (episode
+        // 50); the books leave her alive, so chapter 344 only orders it
+        // (#1471).
         { episode: 50, chapter: 344, source: 'episode', value: 'deceased' },
       ],
       affiliation: [
@@ -1433,9 +1434,9 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 25, chapter: 74, value: 'alive' },
-        // The show alone: she is burned as an offering in "The Dance of Dragons"
-        // (episode 49); the books leave her alive, so chapter
-        // 344 only orders it (#1471).
+        // The show alone: she is burned as an offering in "The Dance of
+        // Dragons" (episode 49); the books leave her alive, so chapter 344
+        // only orders it (#1471).
         { episode: 49, chapter: 344, source: 'episode', value: 'deceased' },
       ],
       affiliation: [

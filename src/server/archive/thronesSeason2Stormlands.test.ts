@@ -69,7 +69,7 @@ const CHANGES: {
   ...(
     [
       ['stannis-baratheon', 50],
-      ['melisandre', 71],
+      ['melisandre', 70],
       ['selyse-baratheon', 50],
       ['shireen-baratheon', 49],
       ['margaery-tyrell', 60],
@@ -107,7 +107,7 @@ const STAGES: {
   },
   { id: 'melisandre', episode: 14, chapter: 116 },
   { id: 'melisandre', episode: 51, chapter: 344, source: 'episode', stage: 1 },
-  { id: 'melisandre', episode: 71, chapter: 344, source: 'episode', stage: 2 },
+  { id: 'melisandre', episode: 70, chapter: 344, source: 'episode', stage: 2 },
   { id: 'matthos-seaworth', episode: 19, chapter: 132 },
   { id: 'selyse-baratheon', episode: 41, chapter: 316, source: 'chapter' },
   {
