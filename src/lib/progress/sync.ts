@@ -56,8 +56,10 @@ export async function askSync(body: SyncRequest): Promise<unknown> {
     keepalive: body.op === 'push',
     method: 'POST',
   })
-  // A 404 is an answer: the record is gone. The body says so.
-  if (!response.ok && response.status !== NOT_FOUND) {
+  if (response.status === NOT_FOUND) {
+    return null
+  }
+  if (!response.ok) {
     throw new Error(`sync ${body.op}: ${String(response.status)}`)
   }
   const text = await response.text()

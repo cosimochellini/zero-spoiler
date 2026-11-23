@@ -19,8 +19,7 @@ import {
   type SyncRecord,
 } from '~/lib/progress/sync'
 import { bookmarkPoint } from '~/lib/progress/threshold'
-import { recordStyles } from '~/routes/$series/$locale/-record.styles'
-import { color, font, leading, space, text } from '~/styles/tokens.stylex'
+import { color, font, leading, rule, space, text } from '~/styles/tokens.stylex'
 
 /** Where the page stands: a notice, a wait, or the link's record. */
 type Step =
@@ -69,36 +68,71 @@ export function SyncPage({ series }: { series: Series[] }): ReactElement {
       title={t('sync.title')}
     >
       <div {...stylex.props(styles.body)}>
-        {step.kind === 'ready' && (
-          <Connect
-            changes={changesOf(step.record, series, { locale, t })}
-            onConnect={() => {
-              void join(step.id)
-            }}
-          />
-        )}
-        {step.kind === 'failed' && (
-          <LoadFailed
-            onRetry={() => {
-              void check(step.id)
-            }}
-            t={t}
-          />
-        )}
-        {step.kind === 'checking' && (
-          <p
-            role="status"
-            {...stylex.props(styles.text)}
-          >
-            {t('dialog.loading')}
-          </p>
-        )}
-        {(step.kind === 'already'
-          || step.kind === 'incomplete'
-          || step.kind === 'unknown') && <Notice kind={step.kind} />}
+        <StepBody
+          onConnect={(id) => {
+            void join(id)
+          }}
+          onRetry={(id) => {
+            void check(id)
+          }}
+          series={series}
+          step={step}
+        />
       </div>
     </ArchivePage>
   )
+}
+
+/** What the page shows at one step. */
+function StepBody({
+  onConnect,
+  onRetry,
+  series,
+  step,
+}: {
+  onConnect: (id: string) => void
+  onRetry: (id: string) => void
+  series: Series[]
+  step: Step
+}): ReactElement {
+  const t = useT()
+  const { locale } = useLocale()
+
+  switch (step.kind) {
+    case 'checking': {
+      return (
+        <p
+          role="status"
+          {...stylex.props(styles.text)}
+        >
+          {t('dialog.loading')}
+        </p>
+      )
+    }
+    case 'failed': {
+      return (
+        <LoadFailed
+          onRetry={() => {
+            onRetry(step.id)
+          }}
+          t={t}
+        />
+      )
+    }
+    case 'ready': {
+      return (
+        <Connect
+          changes={changesOf(step.record, series, { locale, t })}
+          onConnect={() => {
+            onConnect(step.id)
+          }}
+        />
+      )
+    }
+    default: {
+      return <Notice kind={step.kind} />
+    }
+  }
 }
 
 /** Reads the fragment once the page is in the browser. */
@@ -178,7 +212,7 @@ function Notice({
         <Link
           params={{ locale }}
           to="/$locale"
-          {...stylex.props(recordStyles.backLink)}
+          {...stylex.props(styles.link)}
         >
           ← {t('sync.toHub')}
         </Link>
@@ -215,6 +249,17 @@ function changesOf(
 }
 
 const styles = stylex.create({
+  link: {
+    color: { 'default': color.ink2, ':hover': color.accent },
+    fontSize: text.base,
+    fontWeight: 600,
+    outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
+    outlineOffset: space.xs3,
+    outlineStyle: 'solid',
+    outlineWidth: rule.fine,
+    textDecorationLine: 'underline',
+    textUnderlineOffset: '0.25em',
+  },
   body: { gap: space.lg, display: 'grid', justifyItems: 'start' },
   text: {
     color: color.ink2,

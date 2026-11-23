@@ -1,7 +1,7 @@
+import { OPEN_SERIES } from '~/data/series'
 import { parseCookieHeader } from '~/lib/cookies'
 import { SYNC_ENDPOINT } from '~/lib/endpoints'
 import type { SyncRecord } from '~/lib/progress/sync'
-import { openDescriptions } from '~/server/archive/hub.server'
 
 import { answer, attempt, bookmarkCookie, STATUS, syncCookie } from './answer'
 import { syncEndpoint } from './endpoint'
@@ -15,7 +15,7 @@ import {
 import type { SyncStore } from './store'
 
 /** Start's handler, or whatever answers a request sync leaves alone. */
-type Next = (request: Request) => Promise<Response>
+export type Next = (request: Request) => Promise<Response>
 
 /** A synced device: its id and the store its record lives in. */
 interface Synced {
@@ -105,7 +105,7 @@ async function synchronised(
 ): Promise<Response> {
   const written = cookiesSetBy(response)
   let fresh = record
-  for (const series of openDescriptions()) {
+  for (const { description: series } of OPEN_SERIES) {
     const value = written.get(series.cookie)
     if (value !== undefined) {
       fresh = withSeries(fresh, series.slug, value)

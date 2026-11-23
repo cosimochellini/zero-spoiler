@@ -1,6 +1,6 @@
+import { descriptionOf } from '~/data/series'
 import { parseCookieHeader } from '~/lib/cookies'
 import { isSyncId, type SyncRequest } from '~/lib/progress/sync'
-import { openDescriptions } from '~/server/archive/hub.server'
 
 import { answer, attempt, bookmarkCookie, STATUS, syncCookie } from './answer'
 import {
@@ -97,8 +97,8 @@ async function create({ jar, store }: Context): Promise<Response> {
  */
 async function push(slug: string, { jar, store }: Context): Promise<Response> {
   const id = syncIdOf(jar)
-  const series = openDescriptions().find((open) => open.slug === slug)
-  if (id === null || series === undefined) {
+  const series = descriptionOf(slug)
+  if (id === null || series === null) {
     return answer(null, STATUS.badRequest)
   }
   const stored = (await storedRecord(store, id)) ?? {}

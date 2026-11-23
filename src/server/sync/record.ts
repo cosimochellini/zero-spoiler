@@ -1,9 +1,14 @@
+import { OPEN_SERIES } from '~/data/series'
 import { parseBookmark, serialiseBookmark } from '~/lib/progress/episode'
 import type { BookmarkSeries } from '~/lib/progress/series'
 import { isSyncId, SYNC_COOKIE, type SyncRecord } from '~/lib/progress/sync'
-import { openDescriptions } from '~/server/archive/hub.server'
 
 import type { SyncStore } from './store'
+
+/** The series a record can hold: the open ones. */
+function openSeries(): BookmarkSeries[] {
+  return OPEN_SERIES.map(({ description }) => description)
+}
 
 /** A series' bookmark value, `null` when it does not parse (fail closed). */
 function bookmarkValue(
@@ -20,7 +25,7 @@ function bookmarkValue(
  */
 export function validRecord(record: SyncRecord): SyncRecord {
   const valid: Record<string, string> = {}
-  for (const series of openDescriptions()) {
+  for (const series of openSeries()) {
     const value =
       Object.hasOwn(record, series.slug) ?
         bookmarkValue(record[series.slug], series)
@@ -36,7 +41,7 @@ export function validRecord(record: SyncRecord): SyncRecord {
 export function recordFromCookies(jar: Map<string, string>): SyncRecord {
   return validRecord(
     Object.fromEntries(
-      openDescriptions().flatMap((series) => {
+      openSeries().flatMap((series) => {
         const value = jar.get(series.cookie)
         return value === undefined ? [] : [[series.slug, value]]
       }),
@@ -66,7 +71,7 @@ export function sameRecord(a: SyncRecord, b: SyncRecord): boolean {
 export function cookiesOf(
   record: SyncRecord,
 ): { name: string; value: string }[] {
-  return openDescriptions().flatMap((series) => {
+  return openSeries().flatMap((series) => {
     const value = record[series.slug]
     return value === undefined ? [] : { name: series.cookie, value }
   })
