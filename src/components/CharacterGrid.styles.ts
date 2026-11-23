@@ -33,20 +33,6 @@ export const styles = stylex.create({
     maxWidth: '58ch',
   },
 
-  grid: {
-    columnGap: space.md,
-    display: 'grid',
-    gridTemplateColumns: {
-      'default': 'repeat(2, minmax(0, 1fr))',
-      '@media (min-width: 40rem)': 'repeat(3, minmax(0, 1fr))',
-      '@media (min-width: 60rem)': 'repeat(4, minmax(0, 1fr))',
-      '@media (min-width: 76rem)': 'repeat(5, minmax(0, 1fr))',
-    },
-    listStyleType: 'none',
-    paddingInlineStart: 0,
-    rowGap: space.xl,
-  },
-
   // A shelf: a hairline above, the arc's name and its two facts, then the
   // tiles four across on a wide page and one across on a phone. Shelves keep
   // their real height so Back can restore a position inside the long list.

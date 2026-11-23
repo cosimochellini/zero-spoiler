@@ -9,7 +9,7 @@ import * as stylex from '@stylexjs/stylex'
 import { type ReactElement, type ReactNode, Suspense, use } from 'react'
 
 import { CharacterCard } from '~/components/CharacterCard'
-import { CharacterCardList } from '~/components/CharacterGrid'
+import { CharacterCardList } from '~/components/CharacterCardList'
 import { FruitRail } from '~/components/FruitRail'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import type { TranslationKey } from '~/i18n/types'
