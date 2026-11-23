@@ -7,7 +7,10 @@ const pixels = (length: string): number => Number(length.replace('px', ''))
  * Scrolls the box, and nothing else, until the link is wholly inside the
  * box's padding, the room its focus ring needs.
  */
-function reveal(box: HTMLElement, link: Element): void {
+function reveal(box: HTMLElement, link: Element | null): void {
+  if (link === null) {
+    return
+  }
   const view = box.getBoundingClientRect()
   const { left, right } = link.getBoundingClientRect()
   const style = getComputedStyle(box)
@@ -22,10 +25,13 @@ function reveal(box: HTMLElement, link: Element): void {
 
 /**
  * Keeps a page link of a row that scrolls sideways wholly in view: the
- * current page once the page is drawn and after every move, and any link
- * focus reaches. A browser scrolls a focused link in only when it is nearly
- * all out of sight, so a page half shown at the window's edge kept its ring
- * cut, and the current page could load half hidden (#1377).
+ * current page once the page is drawn, after every move and whenever the row
+ * changes size (a turned phone, larger text), and any link the keyboard
+ * reaches. A browser scrolls a focused link in only when it is nearly all
+ * out of sight, so a page half shown at the window's edge kept its ring cut,
+ * and the current page could load half hidden (#1377). A press focuses a
+ * link before it lets go, so focus from a pointer moves nothing: the row
+ * sliding under a tap on the edge would make the tap miss.
  */
 export function useRevealedPage(
   boxRef: RefObject<HTMLElement | null>,
@@ -37,18 +43,24 @@ export function useRevealedPage(
     if (box === null) {
       return
     }
-    const current = box.querySelector('[aria-current="page"]')
-    if (current !== null) {
-      reveal(box, current)
+    const revealCurrent = (): void => {
+      reveal(box, box.querySelector('[aria-current="page"]'))
     }
+    revealCurrent()
     const onFocusIn = ({ target }: FocusEvent): void => {
-      if (target instanceof Element) {
+      if (target instanceof Element && target.matches(':focus-visible')) {
         reveal(box, target)
       }
     }
     box.addEventListener('focusin', onFocusIn)
+    const resize =
+      typeof ResizeObserver === 'undefined' ? undefined : (
+        new ResizeObserver(revealCurrent)
+      )
+    resize?.observe(box)
     return () => {
       box.removeEventListener('focusin', onFocusIn)
+      resize?.disconnect()
     }
   }, [boxRef, pathname])
 }
