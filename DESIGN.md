@@ -248,6 +248,9 @@ largest; the clamps are in `src/styles/tokens.stylex.ts` and
 - **Label** (600, uppercase, tracked): the word above or beside a value.
 - **Numeral** and **Micro** (mono, tabular figures): numbers.
 
+Headings balance their lines, and running text wraps `pretty`, so neither ends
+on one short word (`src/styles/global.css`, `src/routes/__root.tsx`).
+
 ### Named Rules
 
 **The Two Plus One Rule.** Two families and one outlier, and never a fourth.
@@ -351,13 +354,11 @@ Under `prefers-reduced-motion` spatial motion becomes a crossfade.
   of the inks in every set, so colour alone cannot.
 - **Do** space siblings with `gap` in new work; see Layout for today's state.
 - **Do** keep controls at least 44px tall. Under it today, for the surface
-  passes (#1375 to #1383) to fix: the wordmark link, back links and relationship
-  rows.
-- **Do** keep running text to a measure of 52 to 66ch. Wider today, for the same
-  passes: the footer (72ch). In Instrument Sans a line holds about 1.4
-  characters per `ch`, so the 60 to 75 characters a line the impeccable skill
-  asks for is about 44 to 54ch. The legal page sets 48ch, about 67 characters
-  (#1383).
+  passes (#1375 to #1383) to fix: relationship rows.
+- **Do** keep running text to a measure of 52 to 66ch. In Instrument Sans a line
+  holds about 1.4 characters per `ch`, so the 60 to 75 characters a line the
+  impeccable skill asks for is about 44 to 54ch. The legal page sets 48ch, about
+  67 characters (#1383), and the footer 52ch (#1377).
 - **Do** check every pass at a width of 390px. Mobile is the owner's second
   priority, after the bookmark and progress and before fog.
 

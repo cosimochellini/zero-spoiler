@@ -23,12 +23,8 @@ export interface Fold {
  *
  * The folded row is the bar's last child. It is `display: none` where the
  * bar never folds, and then it has no offset parent and the bar tucks by
- * nothing. Pinned means the bar's top has reached the line it pins at, the
- * foot of the site bar on a phone and the top of the window elsewhere. The
- * root's top edge is pulled in to a pixel below that line, so a bar pinned on
- * it is cut as well as one pinned above it, and a bar in its own place never
- * is. The line moves when the window crosses the phone breakpoint, and the
- * observer is drawn again when it does.
+ * nothing. The line the bar pins at moves when the window crosses the phone
+ * breakpoint, and the pin is watched afresh when it does.
  */
 export function watch(
   bar: HTMLElement,
@@ -36,39 +32,20 @@ export function watch(
   tuckProperty: string,
   onPin: (pinned: boolean) => void,
 ): { read: () => Fold; stop: () => void } {
-  let pinned = false
   let tuck = 0
   let offset = 0
-  const read = (): Fold => ({ offset, pinned, tuck })
   const row = bar.lastElementChild
   if (
     typeof ResizeObserver === 'undefined'
     || typeof IntersectionObserver === 'undefined'
     || !(row instanceof HTMLElement)
   ) {
-    return { read, stop: ignore }
+    return { read: () => ({ offset, pinned: false, tuck }), stop: ignore }
   }
   // The stack goes on the document, where the scroll padding reads it too,
   // so a control or tile that focus scrolls to is never left under the bar.
   const root = document.documentElement.style
-  const watchPin = (): IntersectionObserver => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry === undefined) {
-          return
-        }
-
-        pinned =
-          entry.intersectionRatio < 1
-          && entry.boundingClientRect.top < offset + 1
-        onPin(pinned)
-      },
-      { rootMargin: `-${String(offset + 1)}px 0px 0px`, threshold: 1 },
-    )
-    observer.observe(bar)
-    return observer
-  }
-  let pin = watchPin()
+  const pin = watchPin(bar, () => offset, onPin)
   const resize = new ResizeObserver(() => {
     const box = bar.getBoundingClientRect()
     tuck =
@@ -81,20 +58,77 @@ export function watch(
     if (next === offset) {
       return
     }
+
     offset = next
-    pin.disconnect()
-    pin = watchPin()
+    pin.redraw()
   })
   resize.observe(bar)
   // The row too: crossing the phone breakpoint shows or hides it.
   resize.observe(row)
 
   return {
-    read,
+    read: () => ({ offset, pinned: pin.pinned(), tuck }),
     stop: () => {
       resize.disconnect()
-      pin.disconnect()
+      pin.stop()
       root.removeProperty(STACK_PROPERTY)
+    },
+  }
+}
+
+/**
+ * Whether the bar has pinned: its top has reached the line it pins at, the
+ * foot of the site bar on a phone and the top of the window elsewhere.
+ *
+ * The observer's root has its top edge pulled in to a pixel below that line,
+ * so a bar pinned on it is cut as well as one pinned above it, and a bar in
+ * its own place never is. A jump (the End key, an in-page link) can take the
+ * bar from part in sight to pinned without crossing the observer's
+ * threshold, and Chrome then reports nothing (#1377), so where a scroll ends
+ * the bar's own top decides too.
+ */
+function watchPin(
+  bar: HTMLElement,
+  /** How far down the window the line is, in pixels. */
+  line: () => number,
+  onPin: (pinned: boolean) => void,
+): { pinned: () => boolean; redraw: () => void; stop: () => void } {
+  let pinned = false
+  const decide = (top: number): void => {
+    if (top < line() + 1 === pinned) {
+      return
+    }
+
+    pinned = !pinned
+    onPin(pinned)
+  }
+  const observe = (): IntersectionObserver => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry !== undefined) {
+          decide(entry.boundingClientRect.top)
+        }
+      },
+      { rootMargin: `-${String(line() + 1)}px 0px 0px`, threshold: 1 },
+    )
+    observer.observe(bar)
+    return observer
+  }
+  let observer = observe()
+  const atScrollEnd = (): void => {
+    decide(bar.getBoundingClientRect().top)
+  }
+  globalThis.addEventListener('scrollend', atScrollEnd)
+
+  return {
+    pinned: () => pinned,
+    redraw: () => {
+      observer.disconnect()
+      observer = observe()
+    },
+    stop: () => {
+      globalThis.removeEventListener('scrollend', atScrollEnd)
+      observer.disconnect()
     },
   }
 }

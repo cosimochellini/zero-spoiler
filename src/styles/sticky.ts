@@ -12,7 +12,7 @@ export const STACK_PROPERTY = '--sticky-stack'
 
 /**
  * A series page's bar keeps two rows up to `BAR.seriesWide`, where the site's
- * own bar is one row from 40rem. Set on `<html>` on a series page, so
+ * own bar is one row at every width. Set on `<html>` on a series page, so
  * everything that pins under the bar reads the same height.
  */
 export const seriesBarPin = stylex.createTheme(pin, {
