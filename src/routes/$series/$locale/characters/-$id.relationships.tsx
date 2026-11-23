@@ -159,10 +159,10 @@ const relations = stylex.create({
     overflow: 'hidden',
     aspectRatio: '1',
     backgroundColor: color.paper,
+    // The drawing sets its own colours; this keeps the link, and the drawing's
+    // rings, from the browser's link blue.
+    color: color.ink,
     display: 'block',
-    // Out of the tab order, but a ring the browser draws on it is the focus
-    // colour, not its link blue.
-    outlineColor: color.focus,
   },
   body: { gap: space.xs, display: 'grid', minWidth: 0 },
   history: { gridColumnEnd: '-1', gridColumnStart: '1', minWidth: 0 },
