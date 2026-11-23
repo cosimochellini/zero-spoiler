@@ -1,7 +1,6 @@
 import * as stylex from '@stylexjs/stylex'
 import {
   type ReactElement,
-  type ReactNode,
   Suspense,
   use,
   useDeferredValue,
@@ -11,6 +10,7 @@ import {
 
 import { CatalogueSection } from '~/components/CatalogueSection'
 import { CharacterCard } from '~/components/CharacterCard'
+import { CharacterCardList } from '~/components/CharacterCardList'
 import { styles } from '~/components/CharacterGrid.styles'
 import { CharacterSearch } from '~/components/CharacterSearch'
 import {
@@ -342,18 +342,4 @@ function FeaturedCrests({
       </FogBand>
     </CatalogueSection>
   )
-}
-
-/**
- * The grid the cards sit on: two across on a phone, up to five on a wide
- * page, every column the same width. `minmax(0, 1fr)` rather than `1fr`
- * because each cell holds a drawing, and a bare `1fr` track lets a long name
- * push the row past the viewport.
- */
-export function CharacterCardList({
-  children,
-}: {
-  children: ReactNode
-}): ReactElement {
-  return <ul {...stylex.props(styles.grid)}>{children}</ul>
 }

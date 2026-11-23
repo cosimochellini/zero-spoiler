@@ -16,6 +16,7 @@ import {
   zoomView,
 } from '~/components/chartView'
 import { type ChartHands, toChart, useHands } from '~/components/useChartHands'
+import { ASSUMED_PHONE, useFrameWidth } from '~/components/useFrameWidth'
 
 /**
  * The chart's window across, and the hands that move it (owner, #728): Ctrl
@@ -28,11 +29,10 @@ import { type ChartHands, toChart, useHands } from '~/components/useChartHands'
  */
 
 /**
- * How wide the chart is drawn before the page has measured it: across, at
- * its widest; upright, on a common phone.
+ * How wide the chart is drawn across before the page has measured it, at its
+ * widest; upright, it is `ASSUMED_PHONE`.
  */
 const ASSUMED_WIDTH = 1200
-export const ASSUMED_PHONE = 375
 /** One press of + or −. */
 const STEP = 1.6
 /** How hard the wheel zooms, per pixel it turns. */
@@ -160,32 +160,6 @@ function movesOf({
       move(zoomView(read(), direction === 1 ? STEP : 1 / STEP))
     },
   }
-}
-
-/** The frame's width, measured where the browser can, assumed elsewhere. */
-export function useFrameWidth(
-  element: HTMLDivElement | null,
-  assumed: number,
-): number {
-  const [width, setWidth] = useState(assumed)
-
-  useEffect(() => {
-    if (element === null || typeof ResizeObserver === 'undefined') {
-      return
-    }
-    const observer = new ResizeObserver(([entry]) => {
-      if (entry !== undefined && entry.contentRect.width > 0) {
-        setWidth(entry.contentRect.width)
-      }
-    })
-    observer.observe(element)
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [element])
-
-  return width
 }
 
 /** Ctrl or ⌘ with the wheel zooms about the pointer; a plain wheel scrolls. */

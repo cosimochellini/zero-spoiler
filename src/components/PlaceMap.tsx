@@ -27,7 +27,7 @@ import {
   type StopName,
 } from '~/components/seaChartNames'
 import { Spot } from '~/components/SeaChartPins'
-import { ASSUMED_PHONE, useFrameWidth } from '~/components/useChartZoom'
+import { ASSUMED_PHONE, useFrameWidth } from '~/components/useFrameWidth'
 import { regionsFor } from '~/lib/view/chart'
 import type { PlaceChartView } from '~/lib/view/places'
 import { color, radius, rule } from '~/styles/tokens.stylex'
