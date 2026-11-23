@@ -179,20 +179,112 @@ describe('EpisodeMark', () => {
     expect(screen.getByRole('button', { name: /CH 1044/u })).toBeInTheDocument()
   })
 
-  it('empties the field when the unit changes rather than converting', async () => {
+  it('keeps a draft per unit, converting only between episode and season', async () => {
     const user = userEvent.setup()
-    renderMark(ep(650))
+    renderMark(ep(20))
 
     await open(user)
+    await user.click(screen.getByRole('radio', { name: 'Season' }))
 
-    expect(field('Last episode you watched')).toHaveValue('650')
+    // Episode 20 is the twentieth of season 1, exactly.
+    expect(seasonSelect()).toHaveValue('1')
+    expect(field('Episode in that season')).toHaveValue('20')
 
     await user.click(screen.getByRole('radio', { name: 'Chapter' }))
 
+    // An episode is not a chapter: nothing is carried across.
     expect(field('Last chapter you read')).toHaveValue('')
     expect(button('Save')).toBeDisabled()
+
+    await user.type(field('Last chapter you read'), '300')
+    await user.click(screen.getByRole('radio', { name: 'Episode' }))
+
+    expect(field('Last episode you watched')).toHaveValue('20')
+
+    await user.click(screen.getByRole('radio', { name: 'Chapter' }))
+
+    expect(field('Last chapter you read')).toHaveValue('300')
+
+    // A new season empties its number; the episode keeps what it held.
+    await user.click(screen.getByRole('radio', { name: 'Season' }))
+    await user.selectOptions(seasonSelect(), '2')
+
+    expect(field('Episode in that season')).toHaveValue('')
+
+    await user.click(screen.getByRole('radio', { name: 'Episode' }))
+
+    expect(field('Last episode you watched')).toHaveValue('20')
+    expect(button('Save')).toBeEnabled()
+
+    await user.click(screen.getByRole('radio', { name: 'Season' }))
+    await user.type(field('Episode in that season'), '3')
+    await user.click(screen.getByRole('radio', { name: 'Episode' }))
+
+    expect(field('Last episode you watched')).toHaveValue('64')
     // Nothing has been saved yet.
-    expect(stored()).toBe('650')
+    expect(stored()).toBe('20')
+  })
+
+  it('saves the unit on screen and nothing from the others', async () => {
+    const user = userEvent.setup()
+    renderMark(ep(20))
+
+    await open(user)
+    await user.click(screen.getByRole('radio', { name: 'Chapter' }))
+    await user.type(field('Last chapter you read'), '300')
+    await user.click(screen.getByRole('radio', { name: 'Season' }))
+    await user.selectOptions(seasonSelect(), '2')
+    await user.type(field('Episode in that season'), '3')
+    await user.click(button('Save'))
+    await settle()
+
+    expect(stored()).toBe('s2e3')
+    expect(document.cookie).toContain('zs_one-piece=s2e3')
+  })
+
+  it('opens every unit on the saved bookmark it can say exactly', async () => {
+    const user = userEvent.setup()
+    renderMark({ mode: 'chapter', chapter: 1044 })
+
+    await open(user)
+
+    expect(field('Last chapter you read')).toHaveValue('1044')
+
+    await user.click(screen.getByRole('radio', { name: 'Episode' }))
+
+    expect(field('Last episode you watched')).toHaveValue('')
+
+    await user.click(screen.getByRole('radio', { name: 'Season' }))
+
+    expect(seasonSelect()).toHaveValue('')
+    expect(field('Episode in that season')).toHaveValue('')
+  })
+
+  it('fills the episode from a season bookmark', async () => {
+    const user = userEvent.setup()
+    renderMark({ mode: 'season', season: 2, episode: 3 })
+
+    await open(user)
+    await user.click(screen.getByRole('radio', { name: 'Episode' }))
+
+    expect(field('Last episode you watched')).toHaveValue('64')
+  })
+
+  it('shows the problem of a unit left out of range when the reader comes back', async () => {
+    const user = userEvent.setup()
+    renderMark(ep(20))
+
+    await open(user)
+    await user.clear(field('Last episode you watched'))
+    await user.type(field('Last episode you watched'), '99999')
+    await user.click(screen.getByRole('radio', { name: 'Chapter' }))
+
+    expect(within(dialog()).queryByRole('alert')).not.toBeInTheDocument()
+
+    await user.click(screen.getByRole('radio', { name: 'Episode' }))
+
+    expect(within(dialog()).getByRole('alert')).toHaveTextContent(/1 to/u)
+    expect(button('Save')).toBeDisabled()
   })
 
   it('steps the number with the two controls', async () => {

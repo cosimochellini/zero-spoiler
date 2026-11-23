@@ -98,6 +98,8 @@ export const itDictionary: Dictionary = {
   'mark.chapter': 'CH {threshold}',
   'mark.book': 'L{book} · CH {chapter}',
   'mark.change': 'Cambia segnalibro ({threshold})',
+  'mark.trial': 'In prova',
+  'mark.trialHint': 'In prova {threshold}, non salvato',
 
   'dialog.title': 'A che punto sei?',
   'dialog.lede': 'Quello che viene dopo resta nella nebbia.',

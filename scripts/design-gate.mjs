@@ -17,11 +17,18 @@
  * in-file ignore comments are therefore never read, so a developer's machine
  * and CI agree. Advisory rules never fail the gate.
  *
- * The detector's `design-system-*` rules are not part of the gate. They need
- * `DESIGN.md`, and engine 0.1.24 loads it only for a local file target, found
- * upwards from that file: never for an HTTP address, whatever the working
- * directory, the config or the environment (probed in #1385). Scanning saved
- * copies of the pages would be a second scan of pages no reader gets.
+ * The detector's `design-system-*` rules need `DESIGN.md`, and engine 0.1.24
+ * loads it only for a local file target, found upwards from that file: never
+ * for an HTTP address, whatever the working directory, the config or the
+ * environment (probed in #1385). So a fifth run, in
+ * `design-gate.tokens.mjs`, scans saved copies of the same pages at 1440 px
+ * and keeps only those rules, with a canary page set in a font and a colour
+ * outside the tokens that proves the engine read `DESIGN.md`. A font or a
+ * colour outside the tokens blocks; a radius or a type size off the scale
+ * stays advisory, as the engine rates it (#1403). The copies are the server's
+ * markup with no script (streamed sections and `<details>` opened), so what
+ * the browser builds after hydration, most of the characters, places, fruits
+ * and abilities indexes, is not checked; the gate prints those pages.
  *
  * The bookmark: `?ep=N` answers 302 and sets the series cookie. The detector's
  * browser follows it and keeps cookies for the rest of one run, on a profile
@@ -35,7 +42,8 @@
  *   1  findings that no waiver covers
  *   2  the gate cannot vouch for the scan: no build, the server did not
  *      start, the page list is short, a page was not served as asked, the
- *      detector could not scan a target or ran out of time, or a waiver gives
+ *      detector could not scan a target or ran out of time, the token scan's
+ *      canary page was not flagged as expected, or a waiver gives
  *      no reason, is one the detector would not apply, or is temporary and
  *      matches nothing
  */
@@ -63,6 +71,7 @@ import {
   pagesOf,
   refusedWaivers,
 } from './design-gate.rules.mjs'
+import { scanTokens, TOKEN_VIEWPORT } from './design-gate.tokens.mjs'
 
 const EXIT_CLEAN = 0
 const EXIT_FINDINGS = 1
@@ -149,13 +158,14 @@ function fail(headline) {
  * Starts this Node binary on a script, in a process group of its own, and
  * keeps what it prints.
  * @param {string[]} args The script and its arguments.
+ * @param {string} [cwd] Where it runs.
  * @returns {{child: import('node:child_process').ChildProcess, output: {stdout: string, stderr: string}}}
  *   The child and both streams, filled as it writes.
  */
-function start(args) {
+function start(args, cwd = repositoryRoot) {
   // fallow-ignore-next-line security-sink -- this Node binary, on a script path this file builds
   const child = spawn(process.execPath, args, {
-    cwd: repositoryRoot,
+    cwd,
     detached: true,
     // The scan passes --no-config, which also skips the config's own
     // `telemetry: false`.
@@ -256,23 +266,32 @@ async function serve() {
 }
 
 /**
+ * @param {string} url A page with no bookmark.
+ * @returns {Promise<{problem: null | string, html: string}>} What is wrong
+ *   with it, or null, and the page.
+ */
+async function pageAnswer(url) {
+  const answer = await ask(url)
+  return { problem: pageProblem(answer), html: answer.html }
+}
+
+/**
  * Sets the bookmark as the detector's browser will, then asks for the page
  * with it.
  * @param {string} origin The preview server.
  * @param {object} page A bookmarked page of `pagesOf`.
- * @returns {Promise<null | string>} What is wrong with it, or null.
+ * @returns {Promise<{problem: null | string, html: string}>} What is wrong
+ *   with it, or null, and the page.
  */
-async function bookmarkedProblem(origin, page) {
+async function bookmarkedAnswer(origin, page) {
   const redirect = await ask(`${origin}${page.path}?ep=${page.ep}`)
   const problem = bookmarkProblem(page, redirect)
   if (problem !== null) {
-    return problem
+    return { problem, html: '' }
   }
   const [cookie] = redirect.setCookie.split(';', 1)
-  return bookmarkedPageProblem(
-    page,
-    await ask(origin + redirect.location, cookie),
-  )
+  const answer = await ask(origin + redirect.location, cookie)
+  return { problem: bookmarkedPageProblem(page, answer), html: answer.html }
 }
 
 /**
@@ -281,23 +300,24 @@ async function bookmarkedProblem(origin, page) {
  * asked for first.
  * @param {string} origin The preview server.
  * @param {{landing: string[], bookmarked: object[]}} pages The page list.
+ * @returns {Promise<{address: string, html: string}[]>} Every page as served,
+ *   under the address the detector scans.
  */
 async function assertServed(origin, { landing, bookmarked }) {
   const checks = [
-    ...landing.map((page) => [
-      page,
-      async () => pageProblem(await ask(origin + page)),
-    ]),
+    ...landing.map((page) => [origin + page, () => pageAnswer(origin + page)]),
     ...bookmarked.map((page) => [
-      page.path,
-      () => bookmarkedProblem(origin, page),
+      `${origin}${page.path}?ep=${page.ep}`,
+      () => bookmarkedAnswer(origin, page),
     ]),
   ]
   const problems = []
-  for (const [page, check] of checks) {
-    const problem = await check()
+  const served = []
+  for (const [address, check] of checks) {
+    const { problem, html } = await check()
+    served.push({ address, html })
     if (problem !== null) {
-      problems.push(`${page} ${problem}`)
+      problems.push(`${address.replace(origin, '')} ${problem}`)
     }
   }
   if (problems.length > 0) {
@@ -305,25 +325,28 @@ async function assertServed(origin, { landing, bookmarked }) {
       `${problems.length} page(s) were not served as the gate asked:\n    ${problems.join('\n    ')}`,
     )
   }
+  return served
 }
 
 /**
  * One detector run: one browser profile, one viewport.
  * @param {string} viewport Width and height, as `390x844`.
  * @param {string[]} urls Addresses, scanned in order; never empty.
+ * @param {string} [cwd] Where it runs; any other than the repository's root
+ *   is a run of saved copies, with their design context and no config.
  * @returns {Promise<object[]>} The raw findings, each with its viewport.
  */
-async function detect(viewport, urls) {
-  const { child, output } = start([
-    // The npm shim: it runs the engine of this platform's optional package.
-    fileURLToPath(import.meta.resolve('impeccable/cli/bin/cli.js')),
-    'detect',
-    '--json',
-    '--no-config',
-    '--viewport',
-    viewport,
-    ...urls,
-  ])
+async function detect(viewport, urls, cwd = repositoryRoot) {
+  // `--no-config` would drop DESIGN.md too. The saved copies sit in a
+  // directory that holds no config, so none is read there either.
+  const flag = cwd === repositoryRoot ? '--no-config' : '--no-inline-ignores'
+  // The npm shim: it runs the engine of this platform's optional package.
+  // Resolved here, inside `main`, so a missing package is a tool failure.
+  const cli = fileURLToPath(import.meta.resolve('impeccable/cli/bin/cli.js'))
+  const { child, output } = start(
+    [cli, 'detect', '--json', flag, '--viewport', viewport, ...urls],
+    cwd,
+  )
   const timer = setTimeout(() => {
     killGroup(child)
   }, DETECT_TIMEOUT_MS)
@@ -344,28 +367,29 @@ async function detect(viewport, urls) {
 
 /**
  * Scans every page at every width, each run in a browser of its own, side by
- * side: in sequence they take four times as long.
+ * side: in sequence they take four times as long. The saved copies get a
+ * fifth browser, at one width.
  * @param {string} origin The preview server.
  * @param {string} sitemap Its sitemap.
  * @returns {Promise<object[]>} Every raw finding.
  */
 async function scan(origin, sitemap) {
   const pages = pagesOf(sitemap, SAMPLES, LOCALE)
-  await assertServed(origin, pages)
-  const landing = pages.landing.map((page) => origin + page)
-  const bookmarked = pages.bookmarked.map(
-    (page) => `${origin}${page.path}?ep=${page.ep}`,
-  )
+  const served = await assertServed(origin, pages)
+  const addresses = served.map(({ address }) => address)
+  const landing = addresses.slice(0, pages.landing.length)
+  const bookmarked = addresses.slice(pages.landing.length)
   const thin = pages.thin.map((line) => `  no sample for ${line}\n`)
   process.stdout.write(
-    `design gate: scanning ${landing.length + bookmarked.length} page(s) at ${VIEWPORTS.join(' and ')}\n${thin.join('')}`,
+    `design gate: scanning ${landing.length + bookmarked.length} page(s) at ${VIEWPORTS.join(' and ')}, and saved copies of them against DESIGN.md at ${TOKEN_VIEWPORT}\n${thin.join('')}`,
   )
-  const runs = await Promise.all(
-    VIEWPORTS.flatMap((viewport) => [
+  const runs = await Promise.all([
+    ...VIEWPORTS.flatMap((viewport) => [
       detect(viewport, landing),
       detect(viewport, bookmarked),
     ]),
-  )
+    scanTokens(repositoryRoot, served, detect),
+  ])
   return runs.flat()
 }
 

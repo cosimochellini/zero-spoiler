@@ -7,7 +7,31 @@ import {
 } from '@tanstack/react-router'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
+import type { Bookmark } from '~/lib/progress/episode'
+import { type BookmarkSeries, ONE_PIECE_BOOKMARK } from '~/lib/progress/series'
+import { Route as LandingRoute } from '~/routes/$series/$locale/index'
+
 import { getRouter } from './router'
+
+// The cookie readers ask the request for its headers, and there is none
+// here: the trial is read from the document's cookie, as in the browser.
+vi.mock(import('~/lib/progress/readBookmark'), async (importOriginal) => ({
+  ...(await importOriginal()),
+  readTrial: vi.fn<(series: BookmarkSeries | null) => Bookmark>((series) =>
+    series !== null && document.cookie.includes(`${series.trialCookie}=`) ?
+      { mode: 'episode', episode: 37 }
+    : null,
+  ),
+}))
+
+/** The landing's reload rule, reached through `unknown`: it is typed for its own route. */
+function reloadsLanding(context: object): unknown {
+  const option: unknown = LandingRoute.options.shouldReload
+  if (typeof option !== 'function') {
+    throw new TypeError('the landing has no reload rule')
+  }
+  return Reflect.apply(option, undefined, [context])
+}
 
 /** The cache options under test, read from the app's own router. */
 function cacheOptions(): object {
@@ -33,6 +57,8 @@ function cacheOptions(): object {
  */
 async function pages(
   start = '/a',
+  /** `/a` reloads as the landing does, on One Piece. */
+  landing = false,
 ): Promise<{
   hold: () => void
   reads: { a: number; b: number }
@@ -60,6 +86,9 @@ async function pages(
     getParentRoute: () => root,
     path: '/a',
     loader: read('a'),
+    // `undefined` is no rule: the stale times decide.
+    shouldReload: (context: object) =>
+      landing ? reloadsLanding(context) : undefined,
   })
   const b = createRoute({
     getParentRoute: () => root,
@@ -69,6 +98,7 @@ async function pages(
   const router = createRouter({
     routeTree: root.addChildren([a, b]),
     history: createMemoryHistory({ initialEntries: [start] }),
+    context: { series: ONE_PIECE_BOOKMARK },
     ...cacheOptions(),
   })
   await router.load()
@@ -102,7 +132,31 @@ async function moveTheBookmark(router: AnyRouter): Promise<void> {
 describe('the router keeps a page as read', { timeout: 15_000 }, () => {
   afterEach(() => {
     document.cookie = 'zs_one-piece=; path=/; max-age=0'
+    document.cookie = `${ONE_PIECE_BOOKMARK.trialCookie}=; path=/; max-age=0`
     vi.useRealTimers()
+  })
+
+  // A trial starts on a click that leaves the landing, and the landing kept
+  // from before it was read with no trial point (#1399).
+  it('except the landing, read again when it is entered on a trial', async () => {
+    const { reads, router } = await pages('/a', true)
+    document.cookie = `${ONE_PIECE_BOOKMARK.trialCookie}=37; path=/`
+    router.clearCache()
+    await router.navigate({ href: '/b' })
+    await router.navigate({ href: '/a' })
+
+    expect(reads.a).toBe(2)
+    expect(shownAt(router)).toStrictEqual({
+      cookie: `${ONE_PIECE_BOOKMARK.trialCookie}=37`,
+    })
+  })
+
+  it('and the landing kept as read off a trial', async () => {
+    const { reads, router } = await pages('/a', true)
+    await router.navigate({ href: '/b' })
+    await router.navigate({ href: '/a' })
+
+    expect(reads).toStrictEqual({ a: 1, b: 1 })
   })
 
   it('across a return to it', async () => {

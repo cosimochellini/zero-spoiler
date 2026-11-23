@@ -22,7 +22,8 @@ export function getRouter(): ReturnType<typeof createRouter<typeof routeTree>> {
     defaultPreload: 'intent',
     // A page read once is kept as read for half an hour from the read, and
     // read again sooner only when something invalidates it: a bookmark move
-    // (BookmarkProvider) or a retry. Re-read on every entry, Back to the
+    // (BookmarkProvider) or a retry; the landing also on entry during a trial
+    // (its `shouldReload`). Re-read on every entry, Back to the
     // characters re-rendered its few thousand nodes a second time
     // mid-crossfade when the identical answer landed (#939). A bookmark
     // moved in another tab is not followed (owner, #940). The page the

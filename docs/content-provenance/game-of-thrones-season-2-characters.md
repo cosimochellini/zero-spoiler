@@ -365,6 +365,20 @@ Edmure, Hoster and Brynden Tully, Yoren (death filed by #1290) and Lommy (his
 book-side cards are #1481's and his chronicle #1486's). Brienne's escort of
 Jaime belongs to her record, filed by #1464.
 
+### Drawings (#1472)
+
+Each record has its own drawing in `art/riverlands.ts`; the objects, stages and
+sources are in `game-of-thrones.json`. Every death is a stage, drawn as the
+object fallen. Later deaths are filed now, `deceased` with the drawing's stage
+(#1238): Cleos Frey (books, 22 / 165), Talisa (show, 29 / 195), Polliver (31 /
+218), the Tickler in the books (31 / 218, beside the show's death at his gate)
+and Vargo Hoat (books, 38 / 253). The Tickler's and Amory Lorch's show records
+open dead, so their stages are the books'. Arya takes a costume stage, the
+flagon of her service at Harrenhal, at 14 / 104, and the belt with Needle again
+from her escape at 18 / 138. Alton Lannister's tint moves from red to ivory,
+Amory Lorch's from vermilion to violet and Chiswyck's from wine to yellow, as
+none of their accents is red in the show.
+
 ### Omitted
 
 - **Bit parts, one scene in the stage:** Torrhen Karstark (killed by Jaime in "A
@@ -477,6 +491,18 @@ Steps in `season-1.ts`, as episode / site chapter.
 Not stepped: Luwin (death at 20 / 143 already filed), Rodrik Cassel (death at 16
 / 140 already filed), Mikken (the books' death at 120 already filed), Hodor, Old
 Nan, Summer and Shaggydog (no field changes in the stage).
+
+### Drawings (#1473)
+
+The Iron Islands cast is drawn in `art/ironborn.ts`, the Winterfell and northern
+cast in `art/north.ts`; the objects, stages and sources are in
+`game-of-thrones.json`. Later deaths are filed now with their drawings' stages
+(#1238): Balon at 52 / 189 in both media; Dagmer (30), Jojen (40) and Ramsay
+(59) in the show alone, chapter 344 ordering them; Little Walder at 323 in the
+books alone, episode 50 ordering it. Theon gains the kraken banner over
+Winterfell at 16 / 120 and goes back to the kraken at 20 / 140. Black Lorren's
+tint moves from wine to yellow and Ramsay's from vermilion to pink, as neither
+accent is red.
 
 ### Omitted
 

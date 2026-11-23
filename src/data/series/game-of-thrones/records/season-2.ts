@@ -360,7 +360,7 @@ export const season2: ThronesSaga = {
         it: 'Un giovane cavaliere di Casa Lannister, prigioniero dell’esercito di Robb Stark.',
         en: 'A young knight of House Lannister, a prisoner of Robb Stark’s army.',
       },
-      visual: { art: 'alton-lannister', tint: 'red' },
+      visual: { art: 'alton-lannister', tint: 'ivory' },
     },
     // Books only: Catelyn I (site chapter 81), Robb sends him from Riverrun
     // to King's Landing with his peace terms. The show gives his part to
@@ -411,7 +411,7 @@ export const season2: ThronesSaga = {
         it: 'Un cavaliere al servizio dei Lannister che guida una banda di predoni nelle Terre dei Fiumi.',
         en: 'A knight in the Lannisters’ service who leads a band of raiders in the riverlands.',
       },
-      visual: { art: 'amory-lorch', tint: 'vermilion' },
+      visual: { art: 'amory-lorch', tint: 'violet' },
     },
     // Show: "Garden of Bones" (episode 14), Arya adds him to the names she
     // recites each night. Books: Arya VI (site chapter 100), a man called
@@ -458,7 +458,7 @@ export const season2: ThronesSaga = {
         it: 'Un vecchio uomo d’arme di Gregor Clegane, curvo nelle spalle.',
         en: 'An old, stoop-shouldered man-at-arms of Gregor Clegane’s.',
       },
-      visual: { art: 'chiswyck', tint: 'wine' },
+      visual: { art: 'chiswyck', tint: 'yellow' },
     },
     // Books only: Arya VII (site chapter 104), where he is the understeward
     // of the Wailing Tower who works Arya at Harrenhal. Arya VI (100) names
@@ -600,7 +600,8 @@ export const season2: ThronesSaga = {
         it: 'Uno degli uomini di ferro che prendono Grande Inverno con Theon Greyjoy.',
         en: 'One of the ironborn who take Winterfell with Theon Greyjoy.',
       },
-      visual: { art: 'black-lorren', tint: 'wine' },
+      // Not wine: his drawing's accent, the axe's grip, is not red (#1473).
+      visual: { art: 'black-lorren', tint: 'yellow' },
     },
     // Books: Theon II (site chapter 98), Theon takes him as his squire in a
     // bargain for a horse. The show has a Wex at the speech of episode 20,
@@ -681,7 +682,9 @@ export const season2: ThronesSaga = {
         it: 'Il figlio bastardo di Roose Bolton.',
         en: 'Roose Bolton’s bastard son.',
       },
-      visual: { art: 'ramsay-snow', tint: 'vermilion' },
+      // Not vermilion: his drawing's accent, the knife's edge, is not red;
+      // pink is House Bolton's colour (#1473).
+      visual: { art: 'ramsay-snow', tint: 'pink' },
     },
     // Books: Bran II (site chapter 90), he and Little Walder are at Bran's
     // audiences; Bran I (78) only tells of their coming. The show has no
@@ -1855,6 +1858,10 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 11, chapter: 81, source: 'chapter', value: 'captured' },
+        // Outlaws ambush him on the road to King's Landing and he dies, in
+        // Jaime III of A Storm of Swords (chapter 165); episode 22, where the
+        // show's Jaime and Brienne are taken on that road, only orders it.
+        { episode: 22, chapter: 165, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -1888,6 +1895,9 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 16, chapter: 100, source: 'episode', value: 'alive' },
+        // She is killed at the Red Wedding in "The Rains of Castamere"
+        // (episode 29); chapter 195, the books' wedding, only orders it.
+        { episode: 29, chapter: 195, source: 'episode', value: 'deceased' },
       ],
       // She tends Lannister and Stark wounded alike and tells Robb she takes
       // no side in his war ("Garden of Bones").
@@ -1952,7 +1962,13 @@ export const season2: ThronesSaga = {
         it: 'È tra i soldati che catturano Arya Stark e i suoi compagni, e tiene per sé Ago, la spada di lei. Arya aggiunge il suo nome a quelli che ripete ogni notte.',
         en: 'He is one of the soldiers who capture Arya Stark and her companions, and he keeps her sword, Needle, for himself. Arya adds his name to the ones she repeats each night.',
       },
-      status: [{ episode: 14, chapter: 100, value: 'alive' }],
+      status: [
+        { episode: 14, chapter: 100, value: 'alive' },
+        // He dies at the inn at the crossroads, where Arya takes Needle back,
+        // in "Two Swords" (episode 31) and in Arya XIII of A Storm of Swords
+        // (chapter 218).
+        { episode: 31, chapter: 218, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 14,
@@ -1977,6 +1993,9 @@ export const season2: ThronesSaga = {
         // opens dead. The books keep him alive past the stage; chapter 104
         // only orders it.
         { episode: 15, chapter: 104, source: 'episode', value: 'deceased' },
+        // Arya kills him at the inn at the crossroads, in Arya XIII of A Storm
+        // of Swords (chapter 218); episode 31, the show's inn, only orders it.
+        { episode: 31, chapter: 218, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -2045,6 +2064,10 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 15, chapter: 104, source: 'chapter', value: 'alive' },
+        // Gregor Clegane takes Harrenhal back and kills him, as Raff and
+        // Shitmouth tell Jaime in Jaime III of A Feast for Crows (chapter
+        // 253); episode 38 only orders it.
+        { episode: 38, chapter: 253, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -2097,7 +2120,13 @@ export const season2: ThronesSaga = {
         it: 'Theon torna a Pyke con l’offerta di alleanza di Robb Stark. Balon la rifiuta: vuole prendersi la corona con la forza.',
         en: 'Theon comes home to Pyke with Robb Stark’s offer of an alliance. Balon refuses it: he means to take his crown by force.',
       },
-      status: [{ episode: 12, chapter: 85, value: 'alive' }],
+      status: [
+        { episode: 12, chapter: 85, value: 'alive' },
+        // He falls from a bridge at Pyke in "Home" (episode 52); the books
+        // first tell it in Catelyn V of A Storm of Swords (chapter 189),
+        // filed now with his drawing's stage (#1473, #1238).
+        { episode: 52, chapter: 189, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 12,
@@ -2161,7 +2190,13 @@ export const season2: ThronesSaga = {
         it: 'Theon gli spiega il suo piano: colpire Piazza di Torrhen per attirare lontano dal castello i difensori di Grande Inverno.',
         en: 'Theon tells him his plan: to strike at Torrhen’s Square and draw the defenders of Winterfell away from the castle.',
       },
-      status: [{ episode: 15, chapter: 111, value: 'alive' }],
+      status: [
+        { episode: 15, chapter: 111, value: 'alive' },
+        // The show alone: Balon and Yara read that the Boltons flayed him
+        // and his men, in "Mhysa" (episode 30). The books leave him
+        // holding Torrhen's Square, so chapter 344 only orders it (#1473).
+        { episode: 30, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 15,
@@ -2254,7 +2289,13 @@ export const season2: ThronesSaga = {
         it: 'Con la sorella Meera raggiunge Bran Stark e resta al suo fianco.',
         en: 'With his sister Meera he comes to Bran Stark and stays at his side.',
       },
-      status: [{ episode: 22, chapter: 95, value: 'alive' }],
+      status: [
+        { episode: 22, chapter: 95, value: 'alive' },
+        // The show alone: he dies at the mouth of the Three-Eyed Raven's
+        // cave in "The Children" (episode 40). The books leave him alive,
+        // so chapter 344 only orders it (#1473).
+        { episode: 40, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 22,
@@ -2269,7 +2310,13 @@ export const season2: ThronesSaga = {
         it: 'I suoi uomini tolgono Grande Inverno agli uomini di ferro e la danno alle fiamme.',
         en: 'His men take Winterfell from the ironborn and set it on fire.',
       },
-      status: [{ episode: 32, chapter: 140, value: 'alive' }],
+      status: [
+        { episode: 32, chapter: 140, value: 'alive' },
+        // The show alone: he dies at Winterfell at the end of "Battle of
+        // the Bastards" (episode 59). The books leave him alive, so chapter
+        // 344 only orders it (#1473).
+        { episode: 59, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 32,
@@ -2300,7 +2347,14 @@ export const season2: ThronesSaga = {
         it: 'Lui e il cugino Big Walder sono pupilli a Grande Inverno, secondo il patto tra Robb Stark e lord Walder Frey.',
         en: 'He and his cousin Big Walder are wards at Winterfell, under the pact between Robb Stark and Lord Walder Frey.',
       },
-      status: [{ episode: 13, chapter: 90, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 13, chapter: 90, source: 'chapter', value: 'alive' },
+        // His frozen body is found in a snowbank at Winterfell, in Theon I
+        // of A Dance with Dragons (chapter 323), filed now with his
+        // drawing's stage (#1473). Episode 50, where the show's Winterfell
+        // reaches the same days, only orders it.
+        { episode: 50, chapter: 323, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 13,

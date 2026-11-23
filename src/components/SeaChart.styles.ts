@@ -286,6 +286,10 @@ export const styles = stylex.create({
     },
     alignItems: 'center',
     backgroundColor: 'transparent',
+    // Nothing is painted in it (the dot sets its own colours), but a link or
+    // a button left to the browser's colour gives its ring, and every ring
+    // inside it, the link blue or black, colours outside the tokens.
+    color: color.ink,
     cursor: 'pointer',
     display: 'grid',
     justifyItems: 'center',
