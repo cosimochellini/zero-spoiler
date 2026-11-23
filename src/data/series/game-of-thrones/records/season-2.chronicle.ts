@@ -120,11 +120,19 @@ export const season2Chronicles = {
   ],
   'quaithe': [
     inBooks(
+      [15, 86],
+      { it: 'La donna mascherata', en: 'The masked woman' },
+      {
+        it: 'Il khalasar di [[daenerys-targaryen|Daenerys]] riposa nella città morta quando [[jhogo|Jhogo]], l’ultimo esploratore a tornare, porta da lei tre qarthiani. Una di loro è Quaithe dell’Ombra, una donna mascherata che dice il proprio nome. I tre sono venuti a vedere i draghi di Daenerys.',
+        en: 'Daenerys’s people are resting in the dead city when [[jhogo|Jhogo]], the last scout to come back, brings three Qartheen to [[daenerys-targaryen|Daenerys]]. One of them is Quaithe of the Shadow, a masked woman who gives her own name. The three have come to see Daenerys’s dragons.',
+      },
+    ),
+    inBooks(
       [15, 114],
       { it: 'La scala di fuoco', en: 'The ladder of fire' },
       {
-        it: 'Quaithe dell’Ombra, una donna mascherata, è venuta con [[pyat-pree|Pyat Pree]] e [[xaro-xhoan-daxos|Xaro Xhoan Daxos]] a vedere i draghi di [[daenerys-targaryen|Daenerys]]. Arrivati a Qarth, ha avvertito Daenerys di guardarsi da tutti, perché tutti bramano i suoi draghi. Al mercato le dice che la scala di fuoco di un mago non è un trucco: il potere del mago è cresciuto grazie ai draghi. La avverte che deve lasciare presto Qarth, o non le sarà mai più permesso di andarsene, e le dice che ad Asshai troverà la verità.',
-        en: 'Quaithe of the Shadow, a masked woman, came with [[pyat-pree|Pyat Pree]] and [[xaro-xhoan-daxos|Xaro Xhoan Daxos]] to see [[daenerys-targaryen|Daenerys]]’s dragons. When they reached Qarth she warned Daenerys to beware of everyone, for all of them covet her dragons. In the bazaar she tells her that a firemage’s ladder of fire is no trick: his power has grown because of the dragons. She warns her to leave Qarth soon or never be allowed to leave, and tells her she will find truth in Asshai.',
+        it: 'Entrata a Qarth, [[daenerys-targaryen|Daenerys]] si sente avvertire da Quaithe di guardarsi da tutti, perché tutti bramano i suoi draghi. Al mercato Quaithe le dice che la scala di fuoco di un mago non è un trucco: il potere del mago è cresciuto grazie ai draghi. Le dice di lasciare presto Qarth, o non le sarà mai più permesso di andarsene, e che ad Asshai troverà la verità. [[xaro-xhoan-daxos|Xaro Xhoan Daxos]] la mette in guardia dal fidarsi di lei.',
+        en: 'Once in Qarth, [[daenerys-targaryen|Daenerys]] hears Quaithe warn her to beware of everyone, for all of them covet her dragons. In the bazaar Quaithe tells her that a firemage’s ladder of fire is no trick: his power has grown because of the dragons. She tells her to leave Qarth soon or never be allowed to leave, and that she will find truth in Asshai. [[xaro-xhoan-daxos|Xaro Xhoan Daxos]] warns her not to trust her.',
       },
     ),
   ],

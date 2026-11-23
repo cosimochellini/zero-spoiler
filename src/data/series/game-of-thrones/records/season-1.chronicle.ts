@@ -1,6 +1,6 @@
 import type { Story, Timeline } from '~/data/types'
 
-import { inBoth, inBooks, onScreen } from './chronicle'
+import { inBooks, inBoth, onScreen } from './chronicle'
 
 /**
  * Season 1 and *A Game of Thrones*: the stories of the Essos cast (#1360),

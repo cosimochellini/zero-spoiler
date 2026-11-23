@@ -2845,9 +2845,13 @@ export const GAME_OF_THRONES_SOURCES = {
     },
   },
   'quaithe': {
+    '15:86': {
+      source: ACOK_12,
+      note: 'Daenerys I (site 86): Jhogo returns last with three strangers from Qarth seeking the dragons, and the masked woman gives her name, the explicit signal that sets her book gate at 86 (owner, 2026-11-22; the Ice and Fire Wiki’s Quaithe page and Daenerys I synopsis have the masked woman among the three emissaries). The other two are left unnamed and unlinked: Xaro and Pyat Pree open in the books at 114. Episode 15 is her order marker.',
+    },
     '15:114': {
       source: ACOK_40,
-      note: 'Daenerys II (site 101): the shadowbinder’s warning to beware of everyone, for they all lust for the dragons’ power; Daenerys III (site 114): the firemage’s ladder of fire no trick, his power grown because of Daenerys, “You must leave this city soon”, and truth to be found in Asshai. Her mask is on the Ice and Fire Wiki’s Quaithe page. Pinned at 114, her book gate on main; #1477 moves the gate to 86.',
+      note: 'Daenerys II (site 101): the shadowbinder’s warning to beware of everyone, for they all lust for the dragons’ power; Daenerys III (site 114): the firemage’s ladder of fire no trick, his power grown because of Daenerys, “You must leave this city soon”, truth to be found in Asshai, and Xaro’s counsel not to trust her. The 101 warning sits in this story because its other facts are not told before 114 and Xaro’s book gate is 114.',
     },
   },
   'drogon': {

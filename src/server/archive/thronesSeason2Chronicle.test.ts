@@ -368,6 +368,13 @@ const STORIES: Row[] = [
     id: 'quaithe',
     medium: 'books',
     episode: 15,
+    chapter: 86,
+    title: 'The masked woman',
+  },
+  {
+    id: 'quaithe',
+    medium: 'books',
+    episode: 15,
     chapter: 114,
     title: 'The ladder of fire',
   },
@@ -425,7 +432,7 @@ const FIRST: { chapter: number; episode: number; id: string }[] = [
   { id: 'kovarro', episode: 11, chapter: 86 },
   { id: 'xaro-xhoan-daxos', episode: 15, chapter: 114 },
   { id: 'pyat-pree', episode: 14, chapter: 114 },
-  { id: 'quaithe', episode: 15, chapter: 114 },
+  { id: 'quaithe', episode: 15, chapter: 86 },
   { id: 'malakho', episode: 15, chapter: 114 },
   { id: 'drogon', episode: 40, chapter: 86 },
   { id: 'rhaegal', episode: 41, chapter: 86 },
@@ -484,15 +491,17 @@ function inStage1({ chapter, episode, medium }: Row): boolean {
 /** Every filed story, both modules, in the table's shape. */
 const ALL: Row[] = [...rowsOf(season1Chronicles), ...rowsOf(season2Chronicles)]
 
+/** Every character's stories, from both modules. */
+const STORIES_BY_ID = new Map<string, Dated<Story>[]>(
+  Object.entries({ ...season1Chronicles, ...season2Chronicles }),
+)
+
 /** The data's stories of the second stage. */
 const FILED: Row[] = ALL.filter((row) => !inStage1(row))
 
 /** A row's title in one locale, read from the data. */
 function titleIn({ id, title }: Row, locale: Locale): string {
-  const stories: Dated<Story>[] =
-    id in season2Chronicles ?
-      season2Chronicles[id as keyof typeof season2Chronicles]
-    : season1Chronicles[id as keyof typeof season1Chronicles]
+  const stories: Dated<Story>[] = STORIES_BY_ID.get(id) ?? []
   const found = stories.find(({ value }) => value.title.en === title)
   if (found === undefined) {
     throw new Error(`No story ${title} for ${id}`)
