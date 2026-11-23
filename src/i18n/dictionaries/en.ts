@@ -143,6 +143,7 @@ export const enDictionary = {
   'dialog.loading': 'Loading…',
   'dialog.loadFailed': 'Loading failed. Check your connection and try again.',
   'dialog.retry': 'Try again',
+  'sync.pageTitle': 'Sync bookmarks | Zero Spoiler',
 
   'veil.locked.episode': 'Under fog until episode {threshold}',
   'veil.locked.season': 'Under fog until {threshold}',
@@ -229,13 +230,13 @@ export const enDictionary = {
 
   'footer.lead': 'A {series} wiki that hides what comes after your bookmark.',
   'footer.colophon':
-    'All the drawings are made for this site; no official artwork is used. Your bookmark is saved in a cookie on this device.',
+    'All the drawings are made for this site; no official artwork is used. Your bookmark is saved in a cookie on this device, and in a shared record if you connect other devices.',
 
   'footer.unofficial':
     'Unofficial fan project, not endorsed by the {series} rights holders.',
   'footer.sharedLead': 'Wikis that hide what comes after your bookmark.',
   'footer.sharedColophon':
-    'All the drawings are made for this site; no official artwork is used. Your bookmarks are saved in cookies on this device, one for each series.',
+    'All the drawings are made for this site; no official artwork is used. Your bookmarks are saved in cookies on this device, one for each series, and in a shared record if you connect other devices.',
   'footer.sharedUnofficial':
     'Unofficial fan project, not endorsed by the rights holders of the series.',
   'footer.openSource': 'Zero Spoiler is open source: if you find it useful,',

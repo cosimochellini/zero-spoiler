@@ -4,6 +4,9 @@ import {
   defaultStreamHandler,
 } from '@tanstack/react-start/server'
 
+import { syncStoreFromEnv } from '~/server/sync/kv'
+import { syncedFetch } from '~/server/sync/request'
+
 const handler = createStartHandler(defaultStreamHandler)
 
 /**
@@ -30,5 +33,17 @@ const entry = createServerEntry({
     }),
 })
 
+/**
+ * What workerd calls: the bookmark sync (#1560) around Start. The store is
+ * the KV namespace bound as `SYNC`; without the binding, as under Vitest,
+ * every request goes straight to Start.
+ */
+const worker = {
+  fetch: async (request: Request, env?: unknown): Promise<Response> =>
+    syncedFetch(request, syncStoreFromEnv(env), async (forwarded) =>
+      entry.fetch(forwarded),
+    ),
+}
+
 // eslint-disable-next-line import-x/no-default-export -- workerd runs the default export of the module wrangler.jsonc's `main` names.
-export default entry
+export default worker

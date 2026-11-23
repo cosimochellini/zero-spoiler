@@ -122,7 +122,7 @@ export const hunterXHunterEn = {
     'Both. You can count by anime episode, by season and episode, or by manga chapter. Every entry has an episode number and a chapter number. When the exact point is uncertain, the later one is used, so an entry is more likely to open late than early.',
   'faq.animeQ': 'Anime or manga?',
   'faq.bookmarkA':
-    'In a cookie on this device. The server reads it before it builds the page, so entries past your bookmark are not in the page you receive. Without a bookmark, this page carries the Hunter Exam for the dial and nothing past it. There is no account and no tracking.',
+    'In a cookie on this device, and, if you connect other devices under “More devices?”, in a record they share. The server reads it before it builds the page, so entries past your bookmark are not in the page you receive. Without a bookmark, this page carries the Hunter Exam for the dial and nothing past it. There is no account and no tracking.',
   'legal.credits':
     'Hunter x Hunter was created by Yoshihiro Togashi. Credit for the 2011 anime: © POT (Yoshihiro Togashi) 1998-2011 © VAP・NTV・Madhouse/Shueisha for episodes 1–100, and © POT (Yoshihiro Togashi) 1998-2011 © VAP・NTV・Madhouse for episodes 101–148.',
   'onboarding.lede':

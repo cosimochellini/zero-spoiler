@@ -43,7 +43,7 @@ export const gameOfThronesEn = {
     'Both. You can count by show episode, by season and episode, or by book and chapter. Every entry has an episode number and a chapter number. An entry that appears in only one of the two stays hidden from someone who counts by the other. When the exact point is uncertain, the later one is used, so an entry is more likely to open late than early.',
   'faq.animeQ': 'Show or books?',
   'faq.bookmarkA':
-    'In a cookie on this device. The server reads it before it builds the page, so entries past your bookmark are not in the page you receive. Without a bookmark, this page carries the first season and the first book for the dial and nothing past them. There is no account and no tracking.',
+    'In a cookie on this device, and, if you connect other devices under “More devices?”, in a record they share. The server reads it before it builds the page, so entries past your bookmark are not in the page you receive. Without a bookmark, this page carries the first season and the first book for the dial and nothing past them. There is no account and no tracking.',
   'legal.credits':
     'Game of Thrones is an HBO series based on A Song of Ice and Fire by George R. R. Martin. © Home Box Office, Inc. All rights reserved.',
   'onboarding.lede':

@@ -9,7 +9,7 @@ import {
 import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import type { ReactElement } from 'react'
-import { afterEach, describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, type MockInstance, vi } from 'vitest'
 
 import { expireCookie, parseCookieHeader, writeCookie } from '~/lib/cookies'
 import { ep, renderWithProviders } from '~/test/providers'
@@ -183,5 +183,76 @@ describe('route-scoped bookmark writes', () => {
     })
 
     expect(screen.getByRole('status')).toHaveTextContent('one-piece:45')
+  })
+})
+
+/** Every request the page sends, each answered with an empty 204. */
+function pushes(): MockInstance<typeof fetch> {
+  return vi
+    .spyOn(globalThis, 'fetch')
+    .mockResolvedValue(new Response(null, { status: 204 }))
+}
+
+describe('a synced device (#1560)', () => {
+  const id = '0f8fad5b-d9cb-469f-a165-70867728950e'
+
+  afterEach(() => {
+    expireCookie('zs_sync')
+    expireCookie('zs_sync_pending')
+    expireCookie('zs_one-piece')
+  })
+
+  it('pushes a saved and a cleared bookmark to its record', async () => {
+    const user = userEvent.setup()
+    const sent = pushes()
+    writeCookie('zs_sync', id)
+    renderWithProviders(<Controls />)
+
+    await user.click(screen.getByRole('button', { name: 'Save' }))
+    await user.click(screen.getByRole('button', { name: 'Forget' }))
+
+    expect(sent.mock.calls.map(([, init]) => init?.body)).toStrictEqual([
+      '{"op":"push","series":"one-piece"}',
+      '{"op":"push","series":"one-piece"}',
+    ])
+  })
+
+  it('keeps the saved cookie when the push fails', async () => {
+    const user = userEvent.setup()
+    vi.spyOn(globalThis, 'fetch').mockRejectedValue(new TypeError('offline'))
+    writeCookie('zs_sync', id)
+    renderWithProviders(<Controls />)
+
+    await user.click(screen.getByRole('button', { name: 'Save' }))
+
+    // The save lands although its push failed.
+    await screen.findByText('one-piece:45')
+
+    expect(document.cookie).toContain('zs_one-piece=45')
+    // The next full load writes it to the record instead of reading over it.
+    expect(document.cookie).toContain('zs_sync_pending=one-piece')
+  })
+
+  it('takes a series off the pending list once a push lands', async () => {
+    const user = userEvent.setup()
+    pushes()
+    writeCookie('zs_sync', id)
+    writeCookie('zs_sync_pending', 'one-piece')
+    renderWithProviders(<Controls />)
+
+    await user.click(screen.getByRole('button', { name: 'Save' }))
+    await screen.findByText('one-piece:45')
+
+    expect(document.cookie).not.toContain('zs_sync_pending')
+  })
+
+  it('sends nothing from a device that is not synced', async () => {
+    const user = userEvent.setup()
+    const sent = pushes()
+    renderWithProviders(<Controls />)
+
+    await user.click(screen.getByRole('button', { name: 'Save' }))
+
+    expect(sent).not.toHaveBeenCalled()
   })
 })

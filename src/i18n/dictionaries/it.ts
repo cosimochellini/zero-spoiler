@@ -134,6 +134,7 @@ export const itDictionary: Dictionary = {
   'dialog.loadFailed':
     'Caricamento non riuscito. Controlla la connessione e riprova.',
   'dialog.retry': 'Riprova',
+  'sync.pageTitle': 'Sincronizza i segnalibri | Zero Spoiler',
 
   'veil.locked.episode': 'Nella nebbia fino all’episodio {threshold}',
   'veil.locked.season': 'Nella nebbia fino a {threshold}',
@@ -222,14 +223,14 @@ export const itDictionary: Dictionary = {
   'footer.lead':
     'Una wiki di {series} che nasconde quello che viene dopo il tuo segnalibro.',
   'footer.colophon':
-    'Tutti i disegni sono fatti per questo sito e non ci sono immagini ufficiali. Il segnalibro viene salvato in un cookie su questo dispositivo.',
+    'Tutti i disegni sono fatti per questo sito e non ci sono immagini ufficiali. Il segnalibro viene salvato in un cookie su questo dispositivo e, se colleghi altri dispositivi, in un record condiviso.',
 
   'footer.unofficial':
     'Progetto amatoriale non ufficiale, non approvato dai titolari dei diritti di {series}.',
   'footer.sharedLead':
     'Wiki che nascondono quello che viene dopo il tuo segnalibro.',
   'footer.sharedColophon':
-    'Tutti i disegni sono fatti per questo sito e non ci sono immagini ufficiali. I segnalibri vengono salvati in cookie su questo dispositivo, uno per ogni serie.',
+    'Tutti i disegni sono fatti per questo sito e non ci sono immagini ufficiali. I segnalibri vengono salvati in cookie su questo dispositivo, uno per ogni serie, e, se colleghi altri dispositivi, in un record condiviso.',
   'footer.sharedUnofficial':
     'Progetto amatoriale non ufficiale, non approvato dai titolari dei diritti delle serie.',
   'footer.openSource': 'Zero Spoiler è open source: se ti è utile,',

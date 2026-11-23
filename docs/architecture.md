@@ -382,6 +382,36 @@ entries they have not reached. `src/server.ts` is the Worker entry: it adds a
 `Link` header for the stylesheet and the fonts the root route preloads, which
 Cloudflare replays as a `103 Early Hints`.
 
+### Bookmark sync
+
+A reader can keep one bookmark per series on several devices (#1560). "More
+devices?" in the bookmark dialog ties the device to a record in Workers KV and
+shows a link, `/<locale>/sync#<id>`, as a QR code and a copy button. The id is a
+random UUID kept in the `zs_sync` cookie; it works as a bearer secret and never
+goes in a path or a query string, which Workers Logs keep. The record,
+`sync:<id>`, holds each series' bookmark cookie string, written with a one-year
+`expirationTtl`.
+
+`src/server.ts` runs `syncedFetch` (`src/server/sync/request.ts`) around Start.
+It answers `POST /_serverFn/sync` (`create`, `push`, `read`, `join`; the
+bookmarks and the id come from the request's cookies, only `read` and `join`
+name an id in the body). On a full page load (`Sec-Fetch-Dest: document`) of a
+synced device it reads the record, replaces each bookmark cookie in the request
+before Start sees it, sets the same cookies on the response, and writes any
+bookmark cookie the response sets (a shared link's) to the record. Server
+functions and assets pass untouched. A synced device's save is pushed before the
+pages are re-read (`BookmarkProvider`). Every page carries only the cookie check
+(`src/lib/progress/synced.ts`); the endpoint client, the panel, the QR encoder
+and the copy (`src/i18n/dictionaries/sync.ts`) load in lazy chunks. A series
+cleared on one device is kept as an empty value, so the others drop that cookie
+on their next load; a joining device fills it with its own. A save is listed in
+the session cookie `zs_sync_pending` before its push and comes off only once the
+record has it: a full load that finds a listed series writes this device's value
+to the record instead of reading the record's over it. Every value is checked
+with `parseBookmark` on the way in and out, and a store that fails is skipped.
+All of it talks to `SyncStore` (`src/server/sync/store.ts`); `kv.ts` is the only
+module that knows the store is KV.
+
 ## Social pictures
 
 An open record page's head points `og:image` at a wide card

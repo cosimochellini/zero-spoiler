@@ -25,6 +25,7 @@ import {
 import { type Bookmark, serialiseBookmark } from './episode'
 import { readOpenEntries } from './openEntries'
 import type { BookmarkSeries } from './series'
+import { pushIfSynced } from './synced'
 
 /**
  * One bookmark is held for the whole document, so every veil on the page
@@ -110,6 +111,8 @@ function SeriesBookmarkProvider({
       startTransition(async () => {
         // Before the await, so it lands in this transition with the records.
         setStored((was) => savedOver(was, next, seen))
+        // A synced device's record first (#1560): a reload then reads it.
+        await pushIfSynced(series.slug)
         await router.invalidate()
       })
     },

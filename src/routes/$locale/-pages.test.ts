@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from 'vitest'
 import { Route as HubRoute } from '.'
 import { Route as LegalRoute } from './legal'
 import { Route as PrivacyRoute } from './privacy'
+import { Route as SyncRoute } from './sync'
 
 vi.mock(import('~/server/series'), async (importOriginal) => {
   const original = await importOriginal()
@@ -56,6 +57,7 @@ describe('the privacy notice address', () => {
 describe.each([
   ['hub', HubRoute],
   ['legal page', LegalRoute],
+  ['sync page', SyncRoute],
 ])('the %s', (_name, route) => {
   // Both read the reader's bookmark, so a shared cache must never keep them.
   it('is never cached', () => {
@@ -82,5 +84,24 @@ describe('the legal page head', () => {
         params: { locale: 'en' },
       }),
     ).not.toStrictEqual({})
+  })
+})
+
+describe('the sync page head', () => {
+  it('keeps the page out of search results', () => {
+    expect(call(SyncRoute, 'head', { params: { locale: 'it' } })).toStrictEqual(
+      {
+        meta: [
+          { title: 'Sincronizza i segnalibri | Zero Spoiler' },
+          { name: 'robots', content: 'noindex' },
+        ],
+      },
+    )
+  })
+
+  it('says nothing for an unknown locale', () => {
+    expect(call(SyncRoute, 'head', { params: { locale: 'xx' } })).toStrictEqual(
+      {},
+    )
   })
 })

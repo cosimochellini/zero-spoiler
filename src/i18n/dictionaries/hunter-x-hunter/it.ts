@@ -123,7 +123,7 @@ export const hunterXHunterIt: SeriesWords<'hunter-x-hunter'> = {
     'Tutti e due. Puoi contare per episodio dell’anime, per stagione ed episodio o per capitolo del manga. Ogni voce ha un numero di episodio e uno di capitolo. Quando il punto esatto è incerto si usa quello più avanti, così è più facile che una voce si apra tardi che presto.',
   'faq.animeQ': 'Anime o manga?',
   'faq.bookmarkA':
-    'In un cookie su questo dispositivo. Il server lo legge prima di generare la pagina, quindi le voci dopo il segnalibro non sono nella pagina che ricevi. Senza segnalibro, questa pagina contiene l’Esame Hunter per il cursore e niente dopo. Non serve un account e non c’è nessun tracciamento.',
+    'In un cookie su questo dispositivo e, se colleghi altri dispositivi da “Altri dispositivi?”, in un record che condividono. Il server lo legge prima di generare la pagina, quindi le voci dopo il segnalibro non sono nella pagina che ricevi. Senza segnalibro, questa pagina contiene l’Esame Hunter per il cursore e niente dopo. Non serve un account e non c’è nessun tracciamento.',
   'legal.credits':
     'Hunter x Hunter è un’opera di Yoshihiro Togashi. Crediti dell’anime del 2011: © POT (Yoshihiro Togashi) 1998-2011 © VAP・NTV・Madhouse/Shueisha per gli episodi 1–100 e © POT (Yoshihiro Togashi) 1998-2011 © VAP・NTV・Madhouse per gli episodi 101–148.',
   'onboarding.lede':

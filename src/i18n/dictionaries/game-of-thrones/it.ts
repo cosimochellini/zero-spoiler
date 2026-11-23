@@ -41,7 +41,7 @@ export const gameOfThronesIt: SeriesWords<'game-of-thrones'> = {
     'Tutti e due. Puoi contare per episodio della serie, per stagione ed episodio o per libro e capitolo. Ogni voce ha un numero di episodio e uno di capitolo. Una voce che compare solo in uno dei due resta nascosta a chi conta con l’altro. Quando il punto esatto è incerto si usa quello più avanti, così è più facile che una voce si apra tardi che presto.',
   'faq.animeQ': 'Serie o libri?',
   'faq.bookmarkA':
-    'In un cookie su questo dispositivo. Il server lo legge prima di generare la pagina, quindi le voci dopo il segnalibro non sono nella pagina che ricevi. Senza segnalibro, questa pagina contiene la prima stagione e il primo libro per il cursore e niente dopo. Non serve un account e non c’è nessun tracciamento.',
+    'In un cookie su questo dispositivo e, se colleghi altri dispositivi da “Altri dispositivi?”, in un record che condividono. Il server lo legge prima di generare la pagina, quindi le voci dopo il segnalibro non sono nella pagina che ricevi. Senza segnalibro, questa pagina contiene la prima stagione e il primo libro per il cursore e niente dopo. Non serve un account e non c’è nessun tracciamento.',
   'legal.credits':
     'Il Trono di Spade (Game of Thrones) è una serie HBO tratta dalle Cronache del ghiaccio e del fuoco di George R. R. Martin. © Home Box Office, Inc. Tutti i diritti riservati.',
   'onboarding.lede':

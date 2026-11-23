@@ -9,7 +9,7 @@ import type { Locale } from '~/i18n/locales'
  */
 const privacyEn = {
   'privacy.title': 'Privacy and cookies',
-  'privacy.updated': 'Last checked: 20 November 2026.',
+  'privacy.updated': 'Last checked: 23 November 2026.',
   'privacy.controllerTitle': 'Who runs the site',
   'privacy.controller':
     'Zero Spoiler is a personal, nonprofit fan project. Its operator and data controller is a private individual based in Italy, reachable as @cosimochellini on GitHub. Use the GitHub contact link below for an initial request.',
@@ -20,13 +20,15 @@ const privacyEn = {
   'privacy.cookiesIntro':
     'These first-party cookies support features you request. They are not used for advertising or tracking across sites. They do not require a consent banner under the Italian rules for necessary technical cookies.',
   'privacy.bookmark':
-    'zs_one-piece, zs_hunter-x-hunter and zs_game-of-thrones: your bookmark for each series, by episode, season, chapter, book or live action where supported; kept for 365 days after saving it, or until you clear it. Opening a shared bookmark link also sets this cookie. The value is sent to the server to hide later events.',
+    'zs_one-piece, zs_hunter-x-hunter and zs_game-of-thrones: your bookmark for each series, by episode, season, chapter, book or live action where supported; kept for 365 days after saving it, or until you clear it; on a synced device, 365 days after its last page load. Opening a shared bookmark link also sets this cookie. The value is sent to the server to hide later events.',
   'privacy.language':
     'opzs_lang: your selected language (it or en); kept for 365 days after choosing it. Sent to the server to remember the language on later visits.',
   'privacy.trial':
     'zs_one-piece_try, zs_hunter-x-hunter_try and zs_game-of-thrones_try: a temporary bookmark for each series set when you try the site; a session cookie with no fixed expiry, removed when you save or clear a bookmark or leave the trial. Browser session restore can preserve session cookies.',
+  'privacy.sync':
+    'zs_sync: set only when you open “More devices?” in the bookmark dialog, or connect another device with the link it gives. It holds a random id; kept for 365 days after your last page load on that device, or until you choose “Disconnect this device”. Under that id, Cloudflare Workers KV keeps one record with your bookmark for each series, as the cookies above hold them, or an empty value for a bookmark you cleared: at most three short values. The record holds no IP address and nothing else about you. Any device with the id, from the cookie or the link, can read and change it, so share the link only with your own devices. Each change to a bookmark on a synced device is written to the record, and every page load on a synced device reads it. A record that no device changes for a year is deleted. zs_sync_pending: the series whose last change could not reach the record; a session cookie, removed once the next page load has written them.',
   'privacy.attributes':
-    'All seven cookies use Path=/ and SameSite=Lax, with no Domain, Secure or HttpOnly attribute. The site is served over HTTPS. They can be read by this site’s JavaScript and sent on applicable same-site requests and top-level cross-site navigations.',
+    'All nine cookies use Path=/ and SameSite=Lax, with no Domain, Secure or HttpOnly attribute. The site is served over HTTPS. They can be read by this site’s JavaScript and sent on applicable same-site requests and top-level cross-site navigations.',
   'privacy.storage':
     'opzs_welcome is a sessionStorage flag used to show a welcome once after saving a bookmark. It is removed when the home page reads it, or when the tab session ends; it is not sent to the server. zs-copy-reloaded: followed by a page’s address is a sessionStorage flag, value 1, set when that page’s text fails to load and the page reloads, so it reloads only once. It is removed once the text loads, or when the tab session ends; it is not sent to the server. The application does not use localStorage.',
   'privacy.controlTitle': 'Your choices',
@@ -34,7 +36,7 @@ const privacyEn = {
     'You can clear the bookmark in its dialog and remove cookies and site storage in your browser settings. Blocking them prevents the site from remembering your preferences; without a bookmark you see the introductory view. There are no optional tracking cookies to accept or reject.',
   'privacy.hostingTitle': 'Hosting, logs and transfers',
   'privacy.hosting':
-    'Cloudflare, Inc. hosts and delivers the site through its network and Cloudflare Workers. A request is handled in a Cloudflare data centre, usually one near you, which can be outside the EEA. Cloudflare is a US company, so data can be transferred to the United States. The site uses no Cloudflare database, file storage, analytics or forms. Netlify, Inc. still receives requests to the old address one-piece-zero-spoiler.netlify.app and only redirects them to zerospoiler.app.',
+    'Cloudflare, Inc. hosts and delivers the site through its network and Cloudflare Workers. A request is handled in a Cloudflare data centre, usually one near you, which can be outside the EEA. Cloudflare is a US company, so data can be transferred to the United States. The site uses no Cloudflare file storage, analytics or forms; its one database holds the synced bookmarks described above. Netlify, Inc. still receives requests to the old address one-piece-zero-spoiler.netlify.app and only redirects them to zerospoiler.app.',
   'privacy.logs':
     'Workers Logs is turned on to find faults and abuse. Each request the Worker handles is logged in the site’s Cloudflare account. That covers pages and the drawings loaded with them. A log entry holds the requested address with its query, the method, the response status and any error. It also holds the request headers, with your IP address, browser information and possibly cookies, and the location Cloudflare derives from the request. On the Workers Free plan the site uses, Cloudflare keeps these logs for 3 days. Fonts, icons and other static files are served without a log entry. Cloudflare also processes request data on its network for security and for aggregate traffic metrics; how long it keeps that data is not verified for this site. No function runs on the old address, so Netlify writes no function logs; how long its network keeps request data is not verified. No analytics does not mean no personal data is processed.',
   'privacy.terms':
@@ -61,7 +63,7 @@ export type PrivacyKey = keyof typeof privacyEn
 
 const privacyIt: Record<PrivacyKey, string> = {
   'privacy.title': 'Privacy e cookie',
-  'privacy.updated': 'Ultima verifica: 20 novembre 2026.',
+  'privacy.updated': 'Ultima verifica: 23 novembre 2026.',
   'privacy.controllerTitle': 'Chi gestisce il sito',
   'privacy.controller':
     'Zero Spoiler è un progetto amatoriale personale e senza scopo di lucro. Il gestore e titolare del trattamento è una persona privata in Italia, contattabile su GitHub come @cosimochellini. Per una richiesta iniziale usa il link di contatto GitHub qui sotto.',
@@ -72,13 +74,15 @@ const privacyIt: Record<PrivacyKey, string> = {
   'privacy.cookiesIntro':
     'Questi cookie di prima parte servono alle funzioni che richiedi. Non sono usati per pubblicità o tracciamento tra siti. Le regole italiane sui cookie tecnici necessari non richiedono un banner di consenso per questi usi.',
   'privacy.bookmark':
-    'zs_one-piece, zs_hunter-x-hunter e zs_game-of-thrones: il tuo segnalibro per ciascuna serie, per episodio, stagione, capitolo, libro o live action dove disponibile; dura 365 giorni dal salvataggio, oppure fino alla cancellazione. Anche aprire un link con un segnalibro imposta questo cookie. Il valore viene inviato al server per nascondere gli eventi successivi.',
+    'zs_one-piece, zs_hunter-x-hunter e zs_game-of-thrones: il tuo segnalibro per ciascuna serie, per episodio, stagione, capitolo, libro o live action dove disponibile; dura 365 giorni dal salvataggio, oppure fino alla cancellazione; su un dispositivo sincronizzato, 365 giorni dall’ultimo caricamento di una pagina. Anche aprire un link con un segnalibro imposta questo cookie. Il valore viene inviato al server per nascondere gli eventi successivi.',
   'privacy.language':
     'opzs_lang: la lingua scelta (it o en); dura 365 giorni dalla scelta. Viene inviato al server per ricordare la lingua nelle visite successive.',
   'privacy.trial':
     'zs_one-piece_try, zs_hunter-x-hunter_try e zs_game-of-thrones_try: un segnalibro temporaneo per ciascuna serie impostato quando provi il sito; è un cookie di sessione senza scadenza fissa, rimosso quando salvi o cancelli un segnalibro o esci dalla prova. Il ripristino della sessione del browser può conservarlo.',
+  'privacy.sync':
+    'zs_sync: impostato solo quando apri “Altri dispositivi?” nella finestra del segnalibro, o colleghi un altro dispositivo con il link che ti dà. Contiene un identificativo casuale; dura 365 giorni dall’ultimo caricamento di una pagina su quel dispositivo, oppure finché non scegli “Scollega questo dispositivo”. Con quell’identificativo, Cloudflare Workers KV conserva un record con il tuo segnalibro per ciascuna serie, come lo contengono i cookie sopra, o un valore vuoto per un segnalibro che hai cancellato: al massimo tre valori brevi. Il record non contiene l’indirizzo IP né altro su di te. Qualsiasi dispositivo con l’identificativo, dal cookie o dal link, può leggerlo e cambiarlo, quindi condividi il link solo con i tuoi dispositivi. Ogni modifica a un segnalibro su un dispositivo sincronizzato viene scritta nel record, e ogni caricamento di una pagina su un dispositivo sincronizzato lo legge. Un record che nessun dispositivo modifica per un anno viene cancellato. zs_sync_pending: le serie la cui ultima modifica non ha raggiunto il record; è un cookie di sessione, rimosso quando il caricamento successivo di una pagina le ha scritte.',
   'privacy.attributes':
-    'Tutti e sette i cookie usano Path=/ e SameSite=Lax, senza attributi Domain, Secure o HttpOnly. Il sito è servito tramite HTTPS. Sono leggibili dal JavaScript del sito e vengono inviati nelle richieste pertinenti allo stesso sito e nelle navigazioni principali da altri siti.',
+    'Tutti e nove i cookie usano Path=/ e SameSite=Lax, senza attributi Domain, Secure o HttpOnly. Il sito è servito tramite HTTPS. Sono leggibili dal JavaScript del sito e vengono inviati nelle richieste pertinenti allo stesso sito e nelle navigazioni principali da altri siti.',
   'privacy.storage':
     'opzs_welcome è un indicatore in sessionStorage che mostra un benvenuto una sola volta dopo il salvataggio del segnalibro. Viene rimosso quando la pagina iniziale lo legge o alla fine della sessione della scheda; non viene inviato al server. zs-copy-reloaded: seguito dall’indirizzo di una pagina è un indicatore in sessionStorage, valore 1, impostato quando il testo di quella pagina non si carica e la pagina si ricarica, così si ricarica una volta sola. Viene rimosso quando il testo si carica o alla fine della sessione della scheda; non viene inviato al server. L’applicazione non usa localStorage.',
   'privacy.controlTitle': 'Le tue scelte',
@@ -86,7 +90,7 @@ const privacyIt: Record<PrivacyKey, string> = {
     'Puoi cancellare il segnalibro dalla sua finestra e rimuovere cookie e memoria del sito dalle impostazioni del browser. Bloccarli impedisce di ricordare le preferenze; senza segnalibro vedi la vista introduttiva. Non ci sono cookie di tracciamento facoltativi da accettare o rifiutare.',
   'privacy.hostingTitle': 'Hosting, log e trasferimenti',
   'privacy.hosting':
-    'Cloudflare, Inc. ospita e consegna il sito tramite la propria rete e Cloudflare Workers. Ogni richiesta viene gestita in un data center Cloudflare, di solito vicino a te, che può trovarsi fuori dallo SEE. Cloudflare è una società statunitense, quindi i dati possono essere trasferiti negli Stati Uniti. Il sito non usa database, archiviazione di file, analytics o moduli di Cloudflare. Netlify, Inc. riceve ancora le richieste al vecchio indirizzo one-piece-zero-spoiler.netlify.app e si limita a reindirizzarle a zerospoiler.app.',
+    'Cloudflare, Inc. ospita e consegna il sito tramite la propria rete e Cloudflare Workers. Ogni richiesta viene gestita in un data center Cloudflare, di solito vicino a te, che può trovarsi fuori dallo SEE. Cloudflare è una società statunitense, quindi i dati possono essere trasferiti negli Stati Uniti. Il sito non usa archiviazione di file, analytics o moduli di Cloudflare; il suo unico database contiene i segnalibri sincronizzati descritti sopra. Netlify, Inc. riceve ancora le richieste al vecchio indirizzo one-piece-zero-spoiler.netlify.app e si limita a reindirizzarle a zerospoiler.app.',
   'privacy.logs':
     'Workers Logs è attivo per individuare guasti e abusi. Ogni richiesta gestita dal Worker viene registrata nell’account Cloudflare del sito. Sono comprese le pagine e i disegni caricati con esse. Una voce del log contiene l’indirizzo richiesto con i suoi parametri, il metodo, lo stato della risposta e gli eventuali errori. Contiene anche le intestazioni della richiesta, con il tuo indirizzo IP, informazioni sul browser ed eventualmente i cookie, e la località che Cloudflare ricava dalla richiesta. Con il piano Workers Free usato dal sito, Cloudflare conserva questi log per 3 giorni. Font, icone e altri file statici vengono serviti senza voce nel log. Cloudflare tratta inoltre i dati delle richieste sulla propria rete per la sicurezza e per metriche aggregate sul traffico; per quanto tempo li conserva non è verificato per questo sito. Sul vecchio indirizzo non gira nessuna funzione, quindi Netlify non scrive log delle funzioni; per quanto tempo la sua rete conserva i dati delle richieste non è verificato. L’assenza di analytics non significa assenza di trattamento di dati personali.',
   'privacy.terms':

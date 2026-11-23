@@ -45,6 +45,7 @@ export function PrivacyNotice(): ReactElement {
         <li>{t('privacy.bookmark')}</li>
         <li>{t('privacy.language')}</li>
         <li>{t('privacy.trial')}</li>
+        <li>{t('privacy.sync')}</li>
       </ul>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.attributes')}</p>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.storage')}</p>

@@ -13,6 +13,11 @@
   "workers_dev": false,
   "preview_urls": false,
   "routes": [{ "pattern": "zerospoiler.app", "custom_domain": true }],
+  // The synced bookmarks (#1560): one key per reader, `sync:<id>`, read only
+  // through src/server/sync/kv.ts. No id: the first deploy creates the
+  // namespace and later ones keep it. The privacy notice says what it holds
+  // (src/i18n/dictionaries/privacy.ts, `privacy.sync`).
+  "kv_namespaces": [{ "binding": "SYNC" }],
   // Workers Logs keeps invocation and console logs for 3 days on Workers Free.
   // The privacy notice says so; changing this means rewriting it
   // (src/i18n/dictionaries/privacy.ts, `privacy.logs`).

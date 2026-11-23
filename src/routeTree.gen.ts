@@ -17,6 +17,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
 import { Route as LocaleLegalRouteImport } from './routes/$locale/legal'
 import { Route as LocalePrivacyRouteImport } from './routes/$locale/privacy'
+import { Route as LocaleSyncRouteImport } from './routes/$locale/sync'
 import { Route as SeriesLocaleRouteImport } from './routes/$series/$locale'
 import { Route as SeriesLocaleIndexRouteImport } from './routes/$series/$locale/index'
 import { Route as SeriesLocaleFillerRouteImport } from './routes/$series/$locale/filler'
@@ -68,6 +69,11 @@ const LocaleLegalRoute = LocaleLegalRouteImport.update({
 const LocalePrivacyRoute = LocalePrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleSyncRoute = LocaleSyncRouteImport.update({
+  id: '/sync',
+  path: '/sync',
   getParentRoute: () => LocaleRoute,
 } as any)
 const SeriesLocaleRoute = SeriesLocaleRouteImport.update({
@@ -142,6 +148,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$locale/legal': typeof LocaleLegalRoute
   '/$locale/privacy': typeof LocalePrivacyRoute
+  '/$locale/sync': typeof LocaleSyncRoute
   '/$series/$locale': typeof SeriesLocaleRouteWithChildren
   '/$locale/': typeof LocaleIndexRoute
   '/$series/$locale/filler': typeof SeriesLocaleFillerRoute
@@ -163,6 +170,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$locale/legal': typeof LocaleLegalRoute
   '/$locale/privacy': typeof LocalePrivacyRoute
+  '/$locale/sync': typeof LocaleSyncRoute
   '/$locale': typeof LocaleIndexRoute
   '/$series/$locale/filler': typeof SeriesLocaleFillerRoute
   '/$series/$locale/ranks': typeof SeriesLocaleRanksRoute
@@ -185,6 +193,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$locale/legal': typeof LocaleLegalRoute
   '/$locale/privacy': typeof LocalePrivacyRoute
+  '/$locale/sync': typeof LocaleSyncRoute
   '/$series/$locale': typeof SeriesLocaleRouteWithChildren
   '/$locale/': typeof LocaleIndexRoute
   '/$series/$locale/filler': typeof SeriesLocaleFillerRoute
@@ -209,6 +218,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/$locale/legal'
     | '/$locale/privacy'
+    | '/$locale/sync'
     | '/$series/$locale'
     | '/$locale/'
     | '/$series/$locale/filler'
@@ -230,6 +240,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/$locale/legal'
     | '/$locale/privacy'
+    | '/$locale/sync'
     | '/$locale'
     | '/$series/$locale/filler'
     | '/$series/$locale/ranks'
@@ -251,6 +262,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/$locale/legal'
     | '/$locale/privacy'
+    | '/$locale/sync'
     | '/$series/$locale'
     | '/$locale/'
     | '/$series/$locale/filler'
@@ -330,6 +342,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/$locale/privacy'
       preLoaderRoute: typeof LocalePrivacyRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/sync': {
+      id: '/$locale/sync'
+      path: '/sync'
+      fullPath: '/$locale/sync'
+      preLoaderRoute: typeof LocaleSyncRouteImport
       parentRoute: typeof LocaleRoute
     }
     '/$series/$locale': {
@@ -422,12 +441,14 @@ declare module '@tanstack/react-router' {
 interface LocaleRouteChildren {
   LocaleLegalRoute: typeof LocaleLegalRoute
   LocalePrivacyRoute: typeof LocalePrivacyRoute
+  LocaleSyncRoute: typeof LocaleSyncRoute
   LocaleIndexRoute: typeof LocaleIndexRoute
 }
 
 const LocaleRouteChildren: LocaleRouteChildren = {
   LocaleLegalRoute: LocaleLegalRoute,
   LocalePrivacyRoute: LocalePrivacyRoute,
+  LocaleSyncRoute: LocaleSyncRoute,
   LocaleIndexRoute: LocaleIndexRoute,
 }
 
