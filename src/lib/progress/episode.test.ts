@@ -240,27 +240,22 @@ describe('twinDraft', () => {
     ).toStrictEqual(draft('episode', '', '64'))
   })
 
-  it('leaves the other unit empty rather than guess', () => {
-    const empty = draft('season', '', '')
+  it('gives a draft that is not a bookmark yet no twin', () => {
+    // Empty, out of range, no season chosen.
+    expect(twinDraft(draft('episode', '', ''), ONE_PIECE_BOOKMARK)).toBeNull()
+    expect(twinDraft(draft('episode', '', '0'), ONE_PIECE_BOOKMARK)).toBeNull()
+    expect(twinDraft(draft('season', '', '3'), ONE_PIECE_BOOKMARK)).toBeNull()
+  })
 
-    // Not a bookmark yet: empty, out of range, no season chosen.
-    expect(
-      twinDraft(draft('episode', '', ''), ONE_PIECE_BOOKMARK),
-    ).toStrictEqual(empty)
-    expect(
-      twinDraft(draft('episode', '', '0'), ONE_PIECE_BOOKMARK),
-    ).toStrictEqual(empty)
-    expect(
-      twinDraft(draft('season', '', '3'), ONE_PIECE_BOOKMARK),
-    ).toStrictEqual(draft('episode', '', ''))
-
-    // An episode before the first season the table holds.
+  it('leaves the season empty for an episode the table does not reach', () => {
     const late = {
       ...ONE_PIECE_BOOKMARK,
       seasons: [{ number: 7, first: 11, last: 26 }],
     }
 
-    expect(twinDraft(draft('episode', '', '5'), late)).toStrictEqual(empty)
+    expect(twinDraft(draft('episode', '', '5'), late)).toStrictEqual(
+      draft('season', '', ''),
+    )
   })
 
   it('gives a chapter no twin', () => {

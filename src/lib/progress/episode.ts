@@ -6,6 +6,7 @@ import {
   locateEpisode,
   resolveEpisode,
   seasonLength,
+  type SeasonPosition,
 } from './seasons'
 import type { BookmarkSeries } from './series'
 import { type Gated, thresholdIn } from './spoiler'
@@ -298,34 +299,30 @@ function chapterDraft(chapter: number, series: BookmarkSeries): Draft {
 /**
  * The same point in the other anime unit, the one conversion that is exact:
  * an episode draft as its season and the episode in it, a season draft as the
- * absolute episode, both through the season table. A draft that is not a
- * bookmark yet, or an episode the table does not reach, gives the other unit
- * an empty draft rather than a guess. A chapter has no twin: `null`.
+ * absolute episode, both through the season table. An episode the table does
+ * not reach gives an empty season draft rather than a guess. A chapter, or a
+ * draft that is not a bookmark yet, has no twin: `null`, and the other unit
+ * keeps what it held.
  */
 export function twinDraft(draft: Draft, series: BookmarkSeries): Draft | null {
-  if (draft.mode === 'chapter') {
-    return null
-  }
-
   const { bookmark } = gradeDraft(draft, series)
-  return draft.mode === 'episode' ?
-      seasonTwin(bookmark, series)
-    : episodeTwin(bookmark, series)
+  switch (bookmark?.mode) {
+    case 'episode': {
+      return seasonTwin(locateEpisode(bookmark.episode, series))
+    }
+    case 'season': {
+      const episode = absoluteEpisodeOf(bookmark, series)
+      return { mode: 'episode', group: '', number: String(episode ?? '') }
+    }
+    default: {
+      return null
+    }
+  }
 }
 
-function seasonTwin(bookmark: Bookmark, series: BookmarkSeries): Draft {
-  const at =
-    bookmark?.mode === 'episode' ?
-      locateEpisode(bookmark.episode, series)
-    : null
+function seasonTwin(at: null | SeasonPosition): Draft {
   const [group, number] = at === null ? ['', ''] : [at.season, at.episode]
   return { mode: 'season', group: String(group), number: String(number) }
-}
-
-function episodeTwin(bookmark: Bookmark, series: BookmarkSeries): Draft {
-  const episode =
-    bookmark?.mode === 'season' ? absoluteEpisodeOf(bookmark, series) : null
-  return { mode: 'episode', group: '', number: String(episode ?? '') }
 }
 
 /**

@@ -40,9 +40,9 @@ const EMPTY: Drafts = {
 }
 
 /**
- * Stores a draft under its unit. An episode or season draft also rewrites the
- * other of the two, which says the same point exactly, so the two never hold
- * different points.
+ * Stores a draft under its unit. A valid episode or season draft also rewrites
+ * the other of the two, which says the same point exactly; a half-typed one
+ * leaves it as it was.
  */
 function keep(drafts: Drafts, draft: Draft, series: BookmarkSeries): Drafts {
   const twin = twinDraft(draft, series)
@@ -95,7 +95,12 @@ export function useBookmarkDraft(
     },
     onMode: (next) => {
       setMode(next)
-      setTouched(false)
+      // A number left out of range in that unit shows its problem again on
+      // return; an empty one stays quiet until it is left.
+      const back = drafts[next]
+      setTouched(
+        back.number.trim() !== '' && gradeDraft(back, series).problem !== null,
+      )
     },
     onSubmit: (event) => {
       event.preventDefault()
