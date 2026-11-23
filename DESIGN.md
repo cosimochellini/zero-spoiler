@@ -271,6 +271,8 @@ to #1383) fix them.
 
 The site bar is pinned at every width, at the height the `pin.bar` token gives,
 and a listing's controls and sticky heads pin under it (`src/styles/sticky.ts`).
+Where the control bar folds to one row (`CONTROLS.whole`), the places index's
+group heads scroll instead, and the row names the group in view (#1380).
 
 Breakpoints are `min-width` queries in rem, written where they are used; there
 is no named scale. Two exceptions: `max-width: 39.99rem` for the bottom sheets,

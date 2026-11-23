@@ -10,6 +10,7 @@ import { Link } from '@tanstack/react-router'
 import {
   type ReactElement,
   type RefObject,
+  useCallback,
   useId,
   useRef,
   useSyncExternalStore,
@@ -60,12 +61,15 @@ export interface PlaceIndexProps extends Omit<
  * the foot, the same whatever is picked: a line per sea would tell how many
  * stops a sea still holds, and so where the next one begins.
  */
-export function PlaceIndex(props: PlaceIndexProps): null | ReactElement {
+export function PlaceIndex({
+  mapAbove,
+  ...props
+}: PlaceIndexProps): null | ReactElement {
   if (props.open.length > 0) {
     return <OpenIndex {...props} />
   }
 
-  return props.mapAbove ? null : <FogLine count={props.covered.length} />
+  return mapAbove ? null : <FogLine count={props.covered.length} />
 }
 
 /** The index with a place reached: the bar, the groups, the fog line. */
@@ -75,7 +79,7 @@ function OpenIndex({
   onParams,
   shown,
   ...picks
-}: PlaceIndexProps): ReactElement {
+}: Omit<PlaceIndexProps, 'mapAbove'>): ReactElement {
   const controls = { onParams, ...picks }
   const t = useT()
   const { regionOf } = usePlaceLabels(controls.words, controls.seas)
@@ -147,15 +151,6 @@ function NoneShown({
   )
 }
 
-/** Calls `onChange` on every scroll of the window. */
-function onScroll(onChange: () => void): () => void {
-  globalThis.addEventListener('scroll', onChange, { passive: true })
-
-  return () => {
-    globalThis.removeEventListener('scroll', onChange)
-  }
-}
-
 /**
  * Which group of the index is under the pinned control bar: the last one
  * whose top has scrolled above the bar's foot, by its place among the
@@ -163,8 +158,31 @@ function onScroll(onChange: () => void): () => void {
  * do not pin, so the bar's folded row names the group instead (#1380).
  */
 function useGroupInView(indexRef: RefObject<HTMLDivElement | null>): number {
+  // A turned phone or a resized window moves the groups with no scroll, and
+  // so does a list that changes height under a pick.
+  const subscribe = useCallback(
+    (onChange: () => void) => {
+      const resize =
+        typeof ResizeObserver === 'undefined' ? null : (
+          new ResizeObserver(onChange)
+        )
+      if (indexRef.current !== null) {
+        resize?.observe(indexRef.current)
+      }
+      globalThis.addEventListener('scroll', onChange, { passive: true })
+      globalThis.addEventListener('resize', onChange)
+
+      return () => {
+        resize?.disconnect()
+        globalThis.removeEventListener('scroll', onChange)
+        globalThis.removeEventListener('resize', onChange)
+      }
+    },
+    [indexRef],
+  )
+
   return useSyncExternalStore(
-    onScroll,
+    subscribe,
     () => {
       const index = indexRef.current
       // The control bar is the index's first child (`ControlBar`).

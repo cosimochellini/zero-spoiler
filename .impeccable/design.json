@@ -792,7 +792,7 @@
       {
         "name": "32rem (min-height)",
         "value": "32rem",
-        "purpose": "With min-width: 40rem, the window in which a listing's control bar pins whole; in a shorter or narrower one it folds to one row (ControlBar.tsx)."
+        "purpose": "With min-width: 40rem, the window in which a listing's control bar pins whole and a places index's group heads pin under it; in a shorter or narrower one the bar folds to one row that names the places group in view, and those heads scroll (CONTROLS.whole in tokens.stylex.ts)."
       },
       {
         "name": "37.5rem",

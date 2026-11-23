@@ -39,4 +39,18 @@ describe('the window the chart opens on', () => {
       openingView(points, points.at(-1) ?? null).width,
     )
   })
+
+  it('opens on the Grand Line as before, with no fog dots in it', () => {
+    const grandLine = [
+      stop({ id: 'whisky-peak', ...at(64), chart: { x: 1520, y: 365 } }),
+      stop({ id: 'enies-lobby', ...at(264), chart: { x: 1010, y: 414 } }),
+    ].map((port) => ({ ...port, saga: 2 }))
+    const here = grandLine.at(-1) ?? null
+    const from = pointOf(here!)
+    // Far dots: three of them reach the New World's end.
+    const tail = tailOf(from, 3)
+    const view = openingOf(grandLine, here, tail)
+
+    expect(view).toStrictEqual(openingOf(grandLine, here, []))
+  })
 })

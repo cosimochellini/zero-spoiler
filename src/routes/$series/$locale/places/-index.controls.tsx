@@ -274,15 +274,16 @@ function counted(
 }
 
 /**
- * The folded bar's words: "New World · Island · “wano”". Scrolled into a
- * group, the group in view stands for the sea: "East Blue · 5 places ·
- * Island".
+ * The folded bar's words: "New World · Island · “wano”". With no sea
+ * picked, the group in view stands for "All seas" once the reader has
+ * scrolled into one: "East Blue · 5 places · Island". A picked sea is
+ * named as picked, so a pick never reads like a scroll position.
  */
 function summaryOf(
   { allRegions, formOf, regionOf }: PlaceLabels,
   {
     form,
-    inView,
+    inView = allRegions,
     q = '',
     saga,
     sea,
@@ -293,7 +294,7 @@ function summaryOf(
   const query = q.trim()
 
   return [
-    inView ?? (sea === undefined ? allRegions : regionOf(sea)),
+    sea === undefined ? inView : regionOf(sea),
     ...(form === undefined ? [] : [formOf(form)]),
     ...(title === undefined ? [] : [title]),
     ...(query === '' ? [] : [`“${query}”`]),

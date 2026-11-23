@@ -90,15 +90,21 @@ function foldedToggle(): HTMLElement {
 
 /** Where the bar's foot is, scrolled: everything but a group starts at 0. */
 const BAR_FOOT = 156
-/** East Blue's group has scrolled above the bar's foot, the next has not. */
-const TOPS: Record<string, number> = { 'east-blue': -500, 'grand-line': 400 }
 
-/** A group's top, by the sea its heading id ends in; 0 for the rest. */
-function topOf(element: Element): number {
-  const label = element.getAttribute('aria-labelledby') ?? ''
-  const sea = Object.keys(TOPS).find((key) => label.endsWith(`-${key}`))
+/**
+ * Lays the page out with each group's top where `tops` says, by the sea its
+ * heading id ends in, and everything else at 0, its foot at the bar's.
+ */
+function layOut(tops: Record<string, number>): void {
+  vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(
+    function (this: Element) {
+      const label = this.getAttribute('aria-labelledby') ?? ''
+      const sea = Object.keys(tops).find((key) => label.endsWith(`-${key}`))
+      const top = sea === undefined ? 0 : (tops[sea] ?? 0)
 
-  return sea === undefined ? 0 : (TOPS[sea] ?? 0)
+      return DOMRect.fromRect({ y: top, height: BAR_FOOT })
+    },
+  )
 }
 
 describe('the places index', () => {
@@ -232,14 +238,27 @@ describe('the places index', () => {
 
     expect(foldedToggle()).toHaveAccessibleName(/All seas$/u)
 
-    vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(
-      function (this: Element) {
-        return DOMRect.fromRect({ y: topOf(this), height: BAR_FOOT })
-      },
-    )
+    // East Blue's group has scrolled above the bar's foot, the next has not.
+    layOut({ 'east-blue': -500, 'grand-line': 400 })
     fireEvent.scroll(globalThis.window)
 
     expect(foldedToggle()).toHaveAccessibleName(/East Blue · 2 places$/u)
+
+    // A turned phone moves the groups with no scroll.
+    layOut({ 'east-blue': -900, 'grand-line': -100 })
+    fireEvent(globalThis.window, new Event('resize'))
+
+    expect(foldedToggle()).toHaveAccessibleName(/Grand Line · 1 place$/u)
+
+    vi.restoreAllMocks()
+  })
+
+  it('names a picked sea as picked, wherever the reader is', async () => {
+    await draw('?sea=grand-line')
+    layOut({ 'grand-line': -500 })
+    fireEvent.scroll(globalThis.window)
+
+    expect(foldedToggle()).toHaveAccessibleName(/\. Grand Line$/u)
 
     vi.restoreAllMocks()
   })

@@ -254,3 +254,13 @@ export const BAR = stylex.defineConsts({
  * and everything else that pins pins under it, so the two cannot drift apart.
  */
 export const pin = stylex.defineVars({ bar: BAR.oneRow })
+
+/**
+ * The window in which a listing's control bar pins whole: wide and tall
+ * enough to spare it. In a narrower or shorter one it pins only its folded
+ * row (`ControlBar`), and a places index's group heads do not pin at all,
+ * because that row names the group in view (`stickyStyles.wideOnly`).
+ */
+export const CONTROLS = stylex.defineConsts({
+  whole: '@media (min-width: 40rem) and (min-height: 32rem)',
+})

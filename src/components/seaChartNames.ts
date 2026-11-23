@@ -305,12 +305,12 @@ const FOG_AHEAD = 3
 const HALF = 0.5
 
 /**
- * The window the chart opens on: every open stop of the reader's saga and
- * the first few dots of the fog tail (`tail`, nearest first). In a Blue it
- * centres on them, so the reader's sea fills the window rather than a corner
- * of it (#1380). In the Grand Line it takes in the band, both Calm Belts and
- * the sagas' names past them, the reader's own stop at its middle across and
- * the band's middle at the window's.
+ * The window the chart opens on: every open stop of the reader's saga. In a
+ * Blue it also takes in the first few dots of the fog tail (`tail`, nearest
+ * first) and centres on them all, so the reader's sea fills the window
+ * rather than a corner of it (#1380). In the Grand Line it takes in the
+ * band, both Calm Belts and the sagas' names past them, the reader's own
+ * stop at its middle across and the band's middle at the window's.
  */
 export function openingOf(
   open: StopView[],
@@ -322,9 +322,10 @@ export function openingOf(
   }
 
   const at = pointOf(here)
-  const points = [...pointsIn(open, here.saga), ...tail.slice(0, FOG_AHEAD)]
+  const points = pointsIn(open, here.saga)
   if (at.y < BELT_TOP) {
-    return openingView(points, middleOf(points))
+    const framed = [...points, ...tail.slice(0, FOG_AHEAD)]
+    return openingView(framed, middleOf(framed))
   }
 
   return openingView(
