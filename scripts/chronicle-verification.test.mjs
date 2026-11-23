@@ -258,7 +258,7 @@ function sourceOf(story) {
   )
 }
 
-/** The Game of Thrones Wiki's season 1 episode pages, in airing order. */
+/** The Game of Thrones Wiki's episode pages, in airing order (seasons 1–2). */
 const THRONES_EPISODE_PAGES = [
   'Winter_Is_Coming',
   'The_Kingsroad',
@@ -270,6 +270,16 @@ const THRONES_EPISODE_PAGES = [
   'The_Pointy_End',
   'Baelor',
   'Fire_and_Blood',
+  'The_North_Remembers',
+  'The_Night_Lands',
+  'What_Is_Dead_May_Never_Die',
+  'Garden_of_Bones_(episode)',
+  'The_Ghost_of_Harrenhal',
+  'The_Old_Gods_and_the_New',
+  'A_Man_Without_Honor',
+  'The_Prince_of_Winterfell',
+  'Blackwater',
+  'Valar_Morghulis',
 ]
 
 /**

@@ -90,6 +90,13 @@ const WALL_AGOT_70 = `${WALL_AWOIAF}70`
 const ACOK_PROLOGUE = `${BOOKS}Prologue_-_A_Clash_of_Kings`
 const ACOK_AWOIAF = `${AWOIAF}A_Clash_of_Kings-Chapter_`
 /* eslint-enable @typescript-eslint/no-unused-vars -- back on after the A Clash of Kings pattern */
+// The Essos and Qarth cast of the second stage (#1478): Daenerys I to V of
+// A Clash of Kings, site chapters 86, 101, 114, 122 and 137.
+const ACOK_12 = `${ACOK_AWOIAF}12`
+const ACOK_27 = `${ACOK_AWOIAF}27`
+const ACOK_40 = `${ACOK_AWOIAF}40`
+const ACOK_48 = `${ACOK_AWOIAF}48`
+const ACOK_63 = `${ACOK_AWOIAF}63`
 
 /** The note on a book pin past the Ice and Fire Wiki's chapter pages. */
 const PAST_CHAPTER_PAGES =
@@ -152,6 +159,54 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:73': {
       source: EPISODE_10,
       note: `The synopsis has the son dead, the smothering, the pyre, the eggs, Mirri bound, Jorah’s plea, the walk into the flames and the three dragons at dawn. The relationship pins at 10/73 hold the pyre, Mirri and Jorah kneeling in both media; the episode adapts Daenerys X. ${PAST_CHAPTER_PAGES}`,
+    },
+    '11:episode': {
+      source: EPISODE_11,
+      note: 'The Red Waste synopsis: east into the Red Waste to avoid her rivals, Jorah’s warning that her enemies would kill her and take her dragons, the dragons refusing the meat, starvation, the white mare’s death, and the three bloodriders sent out on the last horses; the names are Daenerys’s line quoted on the Aggo (The North Remembers) page (GOT201).',
+    },
+    '11:chapter': {
+      source: ACOK_12,
+      note: 'Daenerys I (site 86): the red comet, Jorah’s warning about the other khalasars, the seared meat after Viserys’s words, the dragons named for Rhaegar, Viserys and Drogo, the deaths on the march and Doreah’s death holding her hand, the dead city, Jorah’s story of Lynesse Hightower, her realizing that he loves her, and Jhogo’s return with three strangers from Qarth seeking dragons. The three are left unnamed: none of them opens before chapter 114 in the books.',
+    },
+    '12:86': {
+      source: EPISODE_12,
+      note: 'The Red Waste synopsis: the wait in the heat, the water dwindling, Rakharo’s riderless horse, his head and braid in the saddlebag, Jorah surmising a rival khalasar, Irri’s fear for the Night Lands, and the promised funeral; the Daenerys Targaryen page adds the burning of his body (GOT202).',
+    },
+    '14:101': {
+      source: EPISODE_14,
+      note: 'The Qarth synopsis: Kovarro’s return with the Thirteen’s invitation, Jorah on the Garden of Bones, the Thirteen demanding to see the dragons, her refusal until her people are fed and sheltered, the vow of fire and blood, and Sumai. Xaro opens on screen only at episode 15, so the story leaves the one who vouches for her unnamed (GOT204).',
+    },
+    '15:114': {
+      source: EPISODE_15,
+      note: 'The Qarth synopsis: the dragons breathing fire on command, Xaro’s hospitality and feast, the warlock’s tricks and his invitation, Xaro’s proposal, Jorah’s advice about a single ship and his feelings unanswered; the Daenerys Targaryen page has “dracarys”, Doreah sent to learn about Xaro, the vault and the news of Robert’s death (GOT205). Pyat Pree is the books’ record, so the warlock stays unnamed. Chapter 114, Xaro’s book gate, orders it.',
+    },
+    '16:114': {
+      source: EPISODE_16,
+      note: 'The Qarth synopsis: the Spice King refusing ships to a queen with no army and no open supporters, the return to Xaro’s mansion with him, the guards dead, Irri strangled and the dragons gone; Doreah missing is on the Daenerys Targaryen page (GOT206).',
+    },
+    '17:114': {
+      source: EPISODE_17,
+      note: 'The Qarth synopsis: Jorah sent to find the dragons, Daenerys with Kovarro before the Thirteen, the warlock’s confession, Xaro proclaimed King of Qarth, the doubles slitting the throats of the Thirteen, the flight and the invitation to the House of the Undying (GOT207). The Daenerys Targaryen page has the meeting at Xaro’s house.',
+    },
+    '18:114': {
+      source: EPISODE_18,
+      note: 'The Qarth synopsis: Jorah’s advice to leave the dragons, the passage booked to Astapor, and her asking him to lead her to the House of the Undying; the courtyard and the shared certainty of a trap are on the Daenerys Targaryen and Kovarro pages (GOT208).',
+    },
+    '20:episode': {
+      source: EPISODE_20,
+      note: 'The Qarth synopsis: parted from Jorah and Kovarro, the ruined throne room under snow, Drogo and the son she lost in his tent, the chained dragons, the warlock chaining her, “dracarys”, Xaro in bed with Doreah, the empty vault, both locked inside and enough salvaged to buy a ship (GOT210). The son is left unnamed: Rhaego has no record.',
+    },
+    '20:122': {
+      source: ACOK_48,
+      note: 'Daenerys IV (site 122): she enters alone with Drogon, Pyat Pree’s rules (the door on the right, stairs up only, no room entered), the visions of past and future, the Undying’s three fires, three mounts and three treasons, Drogon tearing the heart, the burning house, Pyat Pree’s dagger, Jhogo’s whip, Rakharo striking him down and Jorah comforting her. The visions are not described one by one.',
+    },
+    '20:chapter': {
+      source: ACOK_63,
+      note: 'Daenerys V (site 137): Xaro’s warning about the warlocks and two of the merchant consortiums, the refused proposal, ten ships for a dragon, the Sorrowful Man’s box with the manticore knocked away by the old man, Arstan Whitebeard and Strong Belwas sent by Illyrio, and the three ships renamed Balerion, Meraxes and Vhagar. The old man’s recognition of Jorah is left out: it hints at the books’ later reveal.',
+    },
+    '15:101': {
+      source: ACOK_27,
+      note: 'Daenerys II (site 101): the entry into Qarth with Drogon on her shoulder, the three carved walls, a wing of Xaro’s palace, ships and swords instead of gifts, Jorah’s return from the docks with the Summer Islander captain Quhuru Mo, Robert dead, Joffrey on the throne, Robert’s brothers fled, the Seven Kingdoms flying to pieces like Drogo’s khalasar, and “dragons die, but so do dragon-slayers”. Xaro and Pyat Pree open in the books at 114, so the story leaves them unnamed.',
     },
   },
   'viserys-targaryen': {
@@ -279,6 +334,38 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_10,
       note: `The synopsis has Mirri bound, Jorah’s plea, the walk into the flames and Jorah kneeling at dawn. The relationship pin at 10/73 holds the plea, the binding and the kneeling in both media. ${PAST_CHAPTER_PAGES}`,
     },
+    '12:86': {
+      source: EPISODE_12,
+      note: 'Jorah Mormont page: Lhazar or the Dothraki Sea would mean death and the loss of her dragons, and she must stay strong (GOT201); the riderless horse, the bleeding saddlebag, Rakharo’s head and braid, his warning not to look and Khal Pono or Khal Jhaqo, opposed to a woman leading a khalasar (GOT202).',
+    },
+    '15:114': {
+      source: EPISODE_15,
+      note: 'Jorah Mormont page: he stops the Dothraki stealing from their host, the masked woman’s warning about those who lust after the dragons, his counsel against Xaro’s money, a single ship and his feelings unreturned (GOT205); the lords calling it Xaro’s conquest is on the Xaro Xhoan Daxos page (GOT205). Quaithe is the books’ record, so she stays unnamed.',
+    },
+    '17:114': {
+      source: EPISODE_17,
+      note: 'Jorah Mormont page: away seeking a ship when the dragons are stolen (GOT206), sent to find them, the masked woman’s warning that the thief is with Daenerys, the Thirteen, the warlock’s confession, the double stabbed and the escape with Kovarro (GOT207); the episode synopsis has her knowing he once spied on Daenerys.',
+    },
+    '20:episode': {
+      source: EPISODE_20,
+      note: 'Jorah Mormont page and the episode 18 synopsis: the advice to flee, passage booked to Astapor (GOT208); calling for her outside the House of the Undying, Xaro and Doreah found in bed and locked in the empty vault, the gold and jewels real enough to buy a ship and his order to take them (GOT210).',
+    },
+    '11:86': {
+      source: ACOK_12,
+      note: 'Daenerys I (site 86): Jorah’s “go where no one else does”, the wound from Qotho not yet healed, the peach in the dead city, Lynesse Hightower won at the Lannisport tourney, his ruin, the flight to Lys, her leaving him for the merchant prince Tregar Ormollen, “she looked a lot like you”, and Daenerys tending his hip wound until it heals.',
+    },
+    '15:101': {
+      source: ACOK_27,
+      note: 'Daenerys II (site 101): his muttered warning against both the merchant prince and the warlock, the docks, the captain with the news of Robert’s death, his doubt that Eddard betrayed him, and the reminder of gold, armies, ships and Robert’s warhammer. The “crow calls the raven black” line is paraphrased.',
+    },
+    '16:114': {
+      source: ACOK_40,
+      note: 'Daenerys III (site 114): no help in Qarth, the Qartheen wedding gift that cannot be refused, Xaro after a dragon, Illyrio caring only for himself, the man Robert sent to kill her, and his urging her to go to Pyat Pree.',
+    },
+    '20:chapter': {
+      source: ACOK_63,
+      note: 'Daenerys IV (site 122) has him comfort her after the House of the Undying. Daenerys V (site 137): the ride to the port with her questions about the visions, his answers, his warning about the scarred man and the old man with a staff, the manticore, and the two sent by Illyrio.',
+    },
   },
   'illyrio-mopatis': {
     '1:4': {
@@ -315,6 +402,14 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_6,
       note: 'The synopsis has the egg on the brazier and Irri’s burned hands, and Irri translating Viserys’s threat to Drogo.',
     },
+    '12:86': {
+      source: EPISODE_12,
+      note: 'Irri page: Rakharo’s horse returns, his severed head, her fear that without cremation he cannot reach the Night Lands, and Daenerys comforting her (GOT202); the funeral promise is the episode synopsis.',
+    },
+    '16:114': {
+      source: EPISODE_16,
+      note: 'Irri page: the mended clothes, Daenerys calling her a friend, khaleesi against Doreah’s princess, the dress worn as a courtesy to Xaro (GOT205), and her body found strangled in Xaro’s mansion (GOT206). Chapter 114 orders it, after Xaro’s book gate.',
+    },
   },
   'doreah': {
     '3:24': {
@@ -332,6 +427,18 @@ export const GAME_OF_THRONES_SOURCES = {
     '4:37': {
       source: EPISODE_4,
       note: `The synopsis has the invitation, Viserys dragging Doreah to the tent, the belt and the warning. The relationship pin at 4/37 holds the dragging in both media; the episode adapts Daenerys IV. ${PAST_CHAPTER_PAGES}`,
+    },
+    '11:86': {
+      source: ACOK_12,
+      note: 'Daenerys I (site 86): Doreah’s warning that only grim red lands lie that way, her illness, the fever, too weak to mount, and Daenerys holding her hand until she dies. The Ice and Fire Wiki’s Doreah page has the same death.',
+    },
+    '15:114': {
+      source: EPISODE_15,
+      note: 'Doreah page: Daenerys teaching Drogon to cook his meat with “dracarys” on the balcony, “the dragon loves you”, Xaro the wealthiest man in Qarth, the seduction of Xaro’s fellow citizens and her charming guests at the reception (GOT205). Drogon’s name is left out: the show says it only at episode 40.',
+    },
+    '20:137': {
+      source: EPISODE_20,
+      note: 'Doreah page: missing after the theft (GOT206), believed dead (GOT207), found asleep in Xaro’s bed, her betrayal, her pleas and the vault (GOT210).',
     },
   },
   'rakharo': {
@@ -354,6 +461,22 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:chapter': {
       source: `${SHOW}Rakharo`,
       note: `In the books: the arakh from her bride gifts, named her ko, the promise to ride with her only as far as Vaes Dothrak and the dosh khaleen, and the oath after the fire. ${PAST_CHAPTER_PAGES}`,
+    },
+    '11:episode': {
+      source: EPISODE_11,
+      note: 'Rakharo page: named a bloodrider, sent northeast on the last horses, Daenerys’s goodbye, “you have never failed me” and his answer (GOT201).',
+    },
+    '12:86': {
+      source: EPISODE_12,
+      note: 'Rakharo page and the Jorah Mormont page: the riderless horse in red war paint, the head and braid, a rival khalasar, Irri’s fear for the Night Lands, and the funeral promise in the episode synopsis (GOT202).',
+    },
+    '11:chapter': {
+      source: ACOK_12,
+      note: 'Daenerys I (site 86): Aggo, Jhogo and Rakharo scout the dead city, then each rides out with three horses; Rakharo returns first, the waste running south to the ocean, and is set to pulling up the plaza for grass.',
+    },
+    '20:122': {
+      source: ACOK_48,
+      note: 'Daenerys IV (site 122): outside the burning House of the Undying, after Jhogo’s whip knocks Pyat Pree’s knife aside, Rakharo slaps the warlock to the ground. The synopsis lists Jorah, Jhogo, Aggo and Xaro among her companions at the door.',
     },
   },
   'mirri-maz-duur': {
@@ -425,6 +548,10 @@ export const GAME_OF_THRONES_SOURCES = {
       source: DANY_II,
       note: 'Chapter 12: Irri and Jhiqui, Dothraki, and Doreah, from Lys, as Viserys’s gift. Teaching the tongue is the relationship pin at 2/12 and the Ice and Fire Wiki’s Jhiqui page.',
     },
+    '11:86': {
+      source: ACOK_12,
+      note: 'Daenerys I (site 86): Irri and Jhiqui carry two dragons in a cage between their horses, and Jhiqui insists the dead city is haunted and best avoided before Daenerys leads the khalasar in.',
+    },
   },
   'aggo': {
     '11:62': {
@@ -438,6 +565,14 @@ export const GAME_OF_THRONES_SOURCES = {
     '11:73': {
       source: `${BOOKS}Aggo`,
       note: `Later her bloodrider; the refusal because only a man can lead a khalasar and the kneeling are the relationship pin at 73. Which bride gift he receives is not checked, so the story does not say. ${PAST_CHAPTER_PAGES}`,
+    },
+    '11:episode': {
+      source: EPISODE_11,
+      note: 'Aggo (The North Remembers) page: loyal when Drogo’s khalasar fractures, named a bloodrider with Rakharo and Kovarro, and sent southeast on the last horses (GOT201).',
+    },
+    '11:chapter': {
+      source: ACOK_12,
+      note: 'Daenerys I (site 86): Aggo calls the black dragon Balerion reborn, scouts the dead city with Jhogo and Rakharo, returns from his ride with only two smaller deserted cities found, and is set to repairing the gates.',
     },
   },
   'jhogo': {
@@ -456,6 +591,14 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:73': {
       source: `${BOOKS}Jhogo`,
       note: `Later her bloodrider; the refusal because it would shame him and the kneeling are the relationship pin at 10/73. ${PAST_CHAPTER_PAGES}`,
+    },
+    '11:86': {
+      source: ACOK_12,
+      note: 'Daenerys I (site 86): the scouting of the dead city, the ride out with three horses, his return last and long after, with three strangers from Qarth seeking dragons. The three are left unnamed: they open in the books at 114.',
+    },
+    '20:122': {
+      source: ACOK_48,
+      note: 'Daenerys IV (site 122): Jorah, Jhogo, Aggo and Xaro tell her to turn back, Drogon distracts Pyat Pree, Jhogo’s whip knocks the knife aside, and Rakharo slaps him to the ground.',
     },
   },
   'quaro': {
@@ -2647,6 +2790,98 @@ export const GAME_OF_THRONES_SOURCES = {
     '29:56': {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_55`,
       note: 'Books only, Catelyn VIII: Lord Wyman, too fat to sit a horse, keeps White Harbor and sends Ser Wylis and Ser Wendel with fifteen hundred men, riding with Catelyn and Brynden to Moat Cailin.',
+    },
+  },
+  'kovarro': {
+    '11:86': {
+      source: `${SHOW}Kovarro`,
+      note: 'Kovarro page: his loyalty sworn after the dragons hatch, one of three bloodriders, sent east on the last horses (GOT201).',
+    },
+    '14:101': {
+      source: `${SHOW}Kovarro`,
+      note: 'Kovarro page: the only one to return so far, Qarth three days east on the sea, the new horse from the Thirteen, their invitation on hearing of the dragons, and leading the khalasar to the city (GOT204); Aggo’s fate unknown is on the Daenerys Targaryen page (GOT204).',
+    },
+    '20:137': {
+      source: `${SHOW}Kovarro`,
+      note: 'Kovarro page: guarding Daenerys before the Thirteen and ushering her out (GOT207), the House of the Undying and his watch outside, Xaro found with Doreah, and the raid on the palace for a ship (GOT210).',
+    },
+  },
+  'malakho': {
+    '15:114': {
+      source: `${SHOW}Malakho`,
+      note: 'Malakho and Kovarro pages: an aged Dothraki who stayed (GOT201), the jeweled golden peacock at Xaro’s reception, “too heavy to carry”, Kovarro calling him an idiot and his plan to pry out the jewels, and Daenerys’s rebuke (GOT205). Chapter 114 orders it, after Xaro’s book gate.',
+    },
+  },
+  'xaro-xhoan-daxos': {
+    '15:114': {
+      source: EPISODE_15,
+      note: 'Xaro Xhoan Daxos page: Sumai at the gates (GOT204), the reception, the vault opened only with the key at his neck, the offer to share his fortune in marriage, and the news of Robert’s death and the war (GOT205).',
+    },
+    '17:114': {
+      source: EPISODE_17,
+      note: 'Xaro Xhoan Daxos page: his feigned distress, the council of the Thirteen at his home, the warlock’s coup proclaiming him King of Qarth and the eleven killed (GOT207); the secret alliance is the episode synopsis. Pyat Pree stays unnamed on screen.',
+    },
+    '20:episode': {
+      source: EPISODE_20,
+      note: 'Xaro Xhoan Daxos and Malakho pages: found in bed with Doreah, his promise of ships, the vault opened with his key and found empty, Malakho forcing him in, both locked inside, and the house ransacked (GOT210).',
+    },
+    '16:114': {
+      source: ACOK_40,
+      note: 'Daenerys II (site 101) has him ride beside her into Qarth, offer anything she sees, give her a wing of his palace and warn her against warlocks; Daenerys III (site 114) has the Pureborn’s refusal, no warships, the renewed proposal and refusal, his warning against the warlocks and his agreeing with her bloodriders not to trust Quaithe. A Wiki of Ice and Fire, Chapter 27 and Chapter 40.',
+    },
+    '20:chapter': {
+      source: ACOK_63,
+      note: 'Daenerys V (site 137): the warlocks gathering their power, two consortiums wanting her expelled or killed, the refused proposal, ten ships for one dragon, and a third of all the ships in the world.',
+    },
+  },
+  'pyat-pree': {
+    '14:114': {
+      source: ACOK_40,
+      note: 'Daenerys II (site 101): beside her as she rides into Qarth, “Qarth itself is hers” and the invitation to drink wisdom and truth at the House of the Undying; Daenerys III (site 114): Jorah implores her to go to Pyat Pree. Xaro and Quaithe are named unlinked: their show gate is 15, after this story’s episode.',
+    },
+    '20:122': {
+      source: ACOK_48,
+      note: 'Daenerys IV (site 122): alone or not at all, the door to the right, stairs leading up, no room entered; outside the burning house his dagger, Jhogo’s whip and Rakharo striking him down.',
+    },
+  },
+  'quaithe': {
+    '15:114': {
+      source: ACOK_40,
+      note: 'Daenerys II (site 101): the shadowbinder’s warning to beware of everyone, for they all lust for the dragons’ power; Daenerys III (site 114): the firemage’s ladder of fire no trick, his power grown because of Daenerys, “You must leave this city soon”, and truth to be found in Asshai. Her mask is on the Ice and Fire Wiki’s Quaithe page. Pinned at 114, her book gate on main; #1477 moves the gate to 86.',
+    },
+  },
+  'drogon': {
+    '40:86': {
+      source: ACOK_12,
+      note: 'Daenerys I (site 86): the dragons refuse raw meat until she sears it, then eat several times their weight a day; Aggo calls the black one Balerion reborn; she names the black-and-scarlet one Drogon after her husband, among those the gods have taken from her. Episode 40 is his show gate.',
+    },
+    '40:122': {
+      source: ACOK_48,
+      note: 'Daenerys IV (site 122): Drogon hisses at the ruin, enters with her, tears the Undying’s heart to pieces, and distracts Pyat Pree outside.',
+    },
+  },
+  'rhaegal': {
+    '41:86': {
+      source: ACOK_12,
+      note: 'Daenerys I (site 86): seared meat for all three, the green-and-bronze one named Rhaegal after Rhaegar, and Irri and Jhiqui carrying two dragons in a cage while one rides on her shoulder each night. Episode 41 is his show gate.',
+    },
+  },
+  'viserion': {
+    '41:86': {
+      source: ACOK_12,
+      note: 'Daenerys I (site 86): Viserys’s words that only men and dragons eat cooked meat, the dragons thriving, names after those the gods have taken, and the cream-and-gold one named Viserion after Viserys. Episode 41 is his show gate.',
+    },
+  },
+  'strong-belwas': {
+    '20:137': {
+      source: ACOK_63,
+      note: 'Daenerys V (site 137): the big scarred man following them, his squire knocking away the manticore, the huge scarred eunuch and pit fighter Strong Belwas, sent by Illyrio with three ships to bring her back to Pentos.',
+    },
+  },
+  'arstan-whitebeard': {
+    '20:137': {
+      source: ACOK_63,
+      note: 'Daenerys V (site 137): the old man with a staff following them, the manticore knocked out of her hands, Arstan Whitebeard, Belwas’s squire, from the Seven Kingdoms, squire to a knight of House Swann as a young man, sent by Illyrio. Nothing hints at who he is.',
     },
   },
 }

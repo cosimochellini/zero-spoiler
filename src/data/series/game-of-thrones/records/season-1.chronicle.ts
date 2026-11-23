@@ -1,37 +1,6 @@
-import type { Dated, LocalizedText, Story, Timeline } from '~/data/types'
+import type { Story, Timeline } from '~/data/types'
 
-/** Where a story sits: the episode, then the site chapter. */
-type At = [episode: number, chapter: number]
-
-/**
- * A story both media tell the same way: the episode and the chapter each
- * complete it, and both vouch for the pair.
- */
-function inBoth(
-  [episode, chapter]: At,
-  title: LocalizedText,
-  body: LocalizedText,
-): Dated<Story> {
-  return { episode, chapter, value: { title, body } }
-}
-
-/** A story the show alone tells, or tells its own way; the chapter only orders it. */
-function onScreen(
-  [episode, chapter]: At,
-  title: LocalizedText,
-  body: LocalizedText,
-): Dated<Story> {
-  return { episode, chapter, source: 'episode', value: { title, body } }
-}
-
-/** A story the books alone tell, or tell their own way; the episode only orders it. */
-function inBooks(
-  [episode, chapter]: At,
-  title: LocalizedText,
-  body: LocalizedText,
-): Dated<Story> {
-  return { episode, chapter, source: 'chapter', value: { title, body } }
-}
+import { inBoth, inBooks, onScreen } from './chronicle'
 
 /**
  * Season 1 and *A Game of Thrones*: the stories of the Essos cast (#1360),
@@ -173,6 +142,113 @@ export const season1Chronicles = {
       {
         it: 'Il figlio è morto e Daenerys ha soffocato con le proprie mani [[drogo|Drogo]], rimasto vivo ma vuoto. Gli prepara la pira funebre. Fa mettere sulla pira le sue tre uova di drago e ci fa legare [[mirri-maz-duur|Mirri Maz Duur]]. [[jorah-mormont|Ser Jorah]], che teme che voglia morire, la supplica di non farlo. Lei accende la pira ed entra tra le fiamme. All’alba il fuoco si spegne, e Daenerys siede illesa tra le ceneri con tre draghi appena nati. Jorah e i cavalieri rimasti si inginocchiano davanti a lei.',
         en: 'Her son is dead, and Daenerys has smothered [[drogo|Drogo]], left alive but empty, with her own hands. She builds his funeral pyre. She has her three dragon eggs placed on it and [[mirri-maz-duur|Mirri Maz Duur]] bound to it. [[jorah-mormont|Ser Jorah]], afraid that she means to die, begs her not to. She lights the pyre and walks into the flames. At dawn the fire dies down, and she sits unharmed in the ashes with three newly hatched dragons. Jorah and the riders who stayed kneel to her.',
+      },
+    ),
+    onScreen(
+      [11, 86],
+      { it: 'Nel Deserto Rosso', en: 'Into the Red Waste' },
+      {
+        it: 'Daenerys guida verso est, nel Deserto Rosso, ciò che resta del suo khalasar, lontano dai rivali. [[jorah-mormont|Ser Jorah]] le dice che i suoi nemici la ucciderebbero per prenderle i draghi. I draghi rifiutano la carne cruda che lei offre loro, e la sua gente rischia di morire di fame. Quando muore la giumenta bianca che le aveva regalato Drogo, Daenerys ferma la marcia e manda i suoi tre cavalieri di sangue, [[rakharo|Rakharo]], [[aggo|Aggo]] e [[kovarro|Kovarro]], a esplorare in tre direzioni con gli ultimi cavalli.',
+        en: 'Daenerys leads what is left of her khalasar east into the Red Waste, away from her rivals. [[jorah-mormont|Ser Jorah]] tells her that her enemies would kill her and take her dragons. The dragons refuse the raw meat she offers them, and her people face starvation. When the white mare Drogo gave her dies, she halts the march and sends her three bloodriders, [[rakharo|Rakharo]], [[aggo|Aggo]] and [[kovarro|Kovarro]], to scout in three directions on the last horses.',
+      },
+    ),
+    onScreen(
+      [12, 86],
+      { it: 'La testa di Rakharo', en: 'Rakharo’s head' },
+      {
+        it: 'Nel Deserto Rosso il khalasar aspetta i cavalieri di sangue sotto il sole, e l’acqua scarseggia. Il cavallo di [[rakharo|Rakharo]] torna senza di lui. [[jorah-mormont|Ser Jorah]] trova nella bisaccia la testa di Rakharo e la sua treccia tagliata, e pensa che lo abbia ucciso un khalasar rivale. [[irri|Irri]] teme che, mutilato così, Rakharo non possa raggiungere l’aldilà dei dothraki. Daenerys promette di celebrare il suo funerale e di bruciarne il corpo, perché possa raggiungere i suoi antenati.',
+        en: 'In the Red Waste the khalasar waits in the heat for the bloodriders, and the water runs low. [[rakharo|Rakharo]]’s horse comes back without him. [[jorah-mormont|Ser Jorah]] finds Rakharo’s head and his cut braid in the saddlebag, and thinks a rival khalasar killed him. [[irri|Irri]] fears that, mutilated, Rakharo cannot reach the Night Lands, the Dothraki land of the dead. Daenerys promises to hold his funeral and burn his body, so that he can join his ancestors.',
+      },
+    ),
+    onScreen(
+      [14, 101],
+      { it: 'Alle porte di Qarth', en: 'At the gates of Qarth' },
+      {
+        it: '[[kovarro|Kovarro]] torna su un cavallo nuovo: i Tredici, che governano Qarth, hanno saputo dei draghi e invitano Daenerys in città. [[jorah-mormont|Ser Jorah]] la avverte che il deserto intorno a Qarth è pieno delle ossa dei viaggiatori che la città ha respinto. Alle porte i Tredici chiedono di vedere prima i draghi, e Daenerys rifiuta finché la sua gente non avrà cibo e riparo. Quando la respingono, giura che tornerà con il fuoco e il sangue. Allora uno dei Tredici garantisce per lei con un giuramento di sangue, il Sumai, e la sua gente entra a Qarth.',
+        en: '[[kovarro|Kovarro]] comes back on a new horse: the Thirteen, who rule Qarth, have heard of the dragons and invite Daenerys to the city. [[jorah-mormont|Ser Jorah]] warns her that the desert around Qarth is called the Garden of Bones, for the travelers the city turns away. At the gates the Thirteen ask to see her dragons first, and Daenerys refuses until her people are fed and sheltered. When they turn her away, she swears to come back with fire and blood. One of the Thirteen then vouches for her with a blood oath, the Sumai, and her people enter Qarth.',
+      },
+    ),
+    onScreen(
+      [15, 114],
+      { it: 'Ospite di Xaro', en: 'Xaro’s guest' },
+      {
+        it: 'A Qarth Daenerys è ospite di [[xaro-xhoan-daxos|Xaro Xhoan Daxos]], e ormai i suoi draghi sputano fuoco al suo comando, “dracarys”. Chiede a [[doreah|Doreah]] di scoprire qualcosa su Xaro dagli uomini della città. A una festa nei giardini di Xaro uno stregone mostra i suoi trucchi e la invita alla Casa degli Eterni. Xaro le mostra la sua camera del tesoro e si offre di finanziare l’invasione del Westeros se lei lo sposerà, e le dà la notizia che re Robert è morto. [[jorah-mormont|Ser Jorah]] le consiglia di non indebitarsi con Xaro e di partire per il Westeros anche con una sola nave. Quando Jorah le lascia capire cosa prova per lei, Daenerys non ricambia.',
+        en: 'In Qarth Daenerys is the guest of [[xaro-xhoan-daxos|Xaro Xhoan Daxos]], and her dragons now breathe fire on her command, “dracarys”. She asks [[doreah|Doreah]] to learn about Xaro from the men of the city. At a feast in Xaro’s gardens a warlock shows his tricks and invites her to the House of the Undying. Xaro shows her his vault and offers to pay for her invasion of Westeros if she marries him, and tells her that King Robert is dead. [[jorah-mormont|Ser Jorah]] advises her not to owe Xaro anything, and to sail for Westeros even with a single ship. When Jorah lets slip what he feels for her, she does not answer it.',
+      },
+    ),
+    onScreen(
+      [16, 114],
+      { it: 'I draghi rubati', en: 'The stolen dragons' },
+      {
+        it: 'Daenerys chiede navi al Re delle Spezie per tornare nel Westeros, ma lui non vuole rischiarle per una regina senza esercito e senza alleati dichiarati. Quando torna con [[xaro-xhoan-daxos|Xaro]] nella dimora di lui, trova le guardie uccise, [[irri|Irri]] strangolata e i draghi spariti. Di [[doreah|Doreah]] non c’è traccia.',
+        en: 'Daenerys asks the Spice King for ships to return to Westeros, but he will not risk them on a queen with no army and no open supporters there. When she comes back to [[xaro-xhoan-daxos|Xaro]]’s house with him, she finds her guards dead, [[irri|Irri]] strangled and her dragons gone. [[doreah|Doreah]] is missing.',
+      },
+    ),
+    onScreen(
+      [17, 114],
+      { it: 'Il re di Qarth', en: 'The King of Qarth' },
+      {
+        it: 'Daenerys manda [[jorah-mormont|ser Jorah]] a cercare i draghi e, con la scorta di [[kovarro|Kovarro]], chiede aiuto ai Tredici riuniti nella dimora di [[xaro-xhoan-daxos|Xaro]]. Lo stregone conosciuto alla festa di Xaro confessa di aver preso lui i draghi e proclama Xaro re di Qarth. I doppi dello stregone tagliano la gola agli altri membri dei Tredici. Daenerys fugge con Jorah e Kovarro, e lo stregone le dice che troverà i draghi nella Casa degli Eterni.',
+        en: 'Daenerys sends [[jorah-mormont|Ser Jorah]] to find her dragons and, guarded by [[kovarro|Kovarro]], appeals to the Thirteen gathered in [[xaro-xhoan-daxos|Xaro]]’s house. The warlock from Xaro’s feast admits that he took the dragons and proclaims Xaro King of Qarth. The warlock’s doubles cut the throats of the rest of the Thirteen. Daenerys flees with Jorah and Kovarro, and the warlock tells her she will find her dragons in the House of the Undying.',
+      },
+    ),
+    onScreen(
+      [18, 114],
+      {
+        it: 'Verso la Casa degli Eterni',
+        en: 'Toward the House of the Undying',
+      },
+      {
+        it: 'Dopo la strage dei Tredici, Daenerys si rifugia in un cortile abbandonato con [[jorah-mormont|ser Jorah]] e [[kovarro|Kovarro]]. Jorah le consiglia di lasciare i draghi e fuggire da Qarth: ha prenotato un passaggio per Astapor. Lei non vuole abbandonarli, anche se sa che può essere una trappola, e gli chiede di portarla alla Casa degli Eterni.',
+        en: 'After the Thirteen are killed, Daenerys takes refuge in a disused courtyard with [[jorah-mormont|Ser Jorah]] and [[kovarro|Kovarro]]. Jorah advises her to leave her dragons and flee Qarth: he has booked passage to Astapor. She will not leave them, though she knows it may be a trap, and asks him to take her to the House of the Undying.',
+      },
+    ),
+    onScreen(
+      [20, 137],
+      { it: 'Dracarys', en: 'Dracarys' },
+      {
+        it: 'Alla Casa degli Eterni Daenerys viene separata da [[jorah-mormont|ser Jorah]] e [[kovarro|Kovarro]]. Dentro vede la sala del trono di Approdo del Re in rovina sotto la neve, poi [[drogo|Drogo]] nella sua tenda con il figlio che lei ha perso. Trova i draghi incatenati, e lo stregone incatena anche lei: dice che sono loro a ridargli la magia. Daenerys pronuncia “dracarys” e i draghi lo bruciano. Tornata nella dimora di [[xaro-xhoan-daxos|Xaro]], lo trova a letto con [[doreah|Doreah]]. La camera del tesoro di Xaro si rivela vuota, e Daenerys li fa chiudere dentro entrambi. Con ciò che c’è nella casa di Xaro può comprare una nave.',
+        en: 'At the House of the Undying Daenerys is parted from [[jorah-mormont|Ser Jorah]] and [[kovarro|Kovarro]]. Inside she sees the throne room of King’s Landing ruined under snow, then [[drogo|Drogo]] in his tent with the son she lost. She finds her dragons chained, and the warlock chains her too, saying they bring back his magic. She says “dracarys”, and the dragons burn him. Back at [[xaro-xhoan-daxos|Xaro]]’s house she finds him in bed with [[doreah|Doreah]]. His vault turns out to be empty, and she has the two of them locked inside it. With what Xaro’s house holds she can buy a ship.',
+      },
+    ),
+    inBooks(
+      [11, 86],
+      { it: 'La cometa rossa', en: 'The red comet' },
+      {
+        it: 'Daenerys guida il suo piccolo khalasar dietro la cometa rossa, nel cuore del deserto rosso, perché gli altri khalasar la ucciderebbero o le prenderebbero i draghi. I draghi rifiutano la carne cruda finché lei non ricorda che solo gli uomini e i draghi mangiano la carne cotta. Li chiama Rhaegal, dal nome del fratello Rhaegar, Viserion, dal nome di Viserys, e Drogon, dal nome di [[drogo|Drogo]]. Molti dei suoi muoiono lungo la strada, e [[doreah|Doreah]] muore di febbre tenendole la mano. In una città morta trovano acqua e frutta, e [[jorah-mormont|ser Jorah]] le parla della sua seconda moglie, Lynesse Hightower. Daenerys capisce che lui la ama. Manda i cavalieri di sangue in esplorazione, e [[jhogo|Jhogo]] torna con tre stranieri venuti da Qarth per vedere i draghi.',
+        en: 'Daenerys leads her small khalasar after the red comet, deep into the red waste, because the other khalasars would kill her or take her dragons. The dragons refuse raw meat until she remembers that only men and dragons eat their meat cooked. She names them Rhaegal, after her brother Rhaegar, Viserion, after Viserys, and Drogon, after [[drogo|Drogo]]. Many of her people die on the way, and [[doreah|Doreah]] dies of a fever, holding her hand. In a dead city they find water and fruit, and [[jorah-mormont|Ser Jorah]] tells her of his second wife, Lynesse Hightower. Daenerys realizes that he loves her. She sends her bloodriders to scout, and [[jhogo|Jhogo]] comes back with three strangers from Qarth who have come to see her dragons.',
+      },
+    ),
+    inBooks(
+      [15, 101],
+      { it: 'L’arrivo a Qarth', en: 'Arrival in Qarth' },
+      {
+        it: 'Daenerys entra a Qarth con Drogon sulla spalla, oltre tre mura scolpite, e un principe mercante dei Tredici le cede un’intera ala del suo palazzo. A lui e a uno stregone dice che non vuole doni, ma navi e spade. Manda [[jorah-mormont|ser Jorah]] al porto a cercare notizie, e lui torna con il capitano di una nave delle Isole dell’Estate: re Robert è morto, sul trono siede Joffrey e i fratelli di Robert sono fuggiti. Daenerys dice che i Sette Regni vanno in pezzi come il khalasar alla morte di Drogo. Jorah le ricorda che le servono ancora oro, eserciti e navi, e lei risponde che i draghi muoiono, ma muoiono anche gli uccisori di draghi.',
+        en: 'Daenerys enters Qarth with Drogon on her shoulder, through three carved walls, and a merchant prince of the Thirteen gives her a whole wing of his palace. She tells him and a warlock that she wants no gifts but ships and swords. She sends [[jorah-mormont|Ser Jorah]] to the docks for news, and he comes back with a Summer Islander captain: King Robert is dead, Joffrey sits the throne and Robert’s brothers have fled. Daenerys says that the Seven Kingdoms are flying apart as the khalasar did when Drogo died. Jorah reminds her that she still needs gold, armies and ships, and she answers that dragons die, but so do dragon-slayers.',
+      },
+    ),
+    inBooks(
+      [16, 114],
+      { it: 'Niente navi a Qarth', en: 'No ships in Qarth' },
+      {
+        it: 'L’antica nobiltà di Qarth nega a Daenerys navi e uomini, anche se lei ha speso per ottenerli tutto il ricavato dei doni che ha venduto. [[xaro-xhoan-daxos|Xaro Xhoan Daxos]] non ha navi da guerra da darle, e le chiede di nuovo di sposarlo. Al mercato [[quaithe|Quaithe]] le dice che il potere del mago del fuoco è cresciuto grazie ai suoi draghi, e che deve lasciare presto la città, o non potrà lasciarla mai più, e andare ad Asshai. [[jorah-mormont|Ser Jorah]] la avverte che Xaro vuole sposarla per chiederle un drago come dono di nozze, e che il magistro [[illyrio-mopatis|Illyrio]] non la aiuterebbe. Le consiglia di chiedere aiuto allo stregone [[pyat-pree|Pyat Pree]].',
+        en: 'The Pureborn of Qarth refuse Daenerys ships and men, though she has spent on them everything her gifts fetched. [[xaro-xhoan-daxos|Xaro Xhoan Daxos]] has no warships to give her, and asks her again to marry him. In the bazaar [[quaithe|Quaithe]] tells her that the firemage’s power has grown because of her dragons, and that she must leave the city soon or never leave it, and go to Asshai. [[jorah-mormont|Ser Jorah]] warns her that Xaro wants to marry her to claim a dragon as his wedding gift, and that Magister [[illyrio-mopatis|Illyrio]] would not help her. He urges her to ask the warlock [[pyat-pree|Pyat Pree]] for help.',
+      },
+    ),
+    inBooks(
+      [20, 122],
+      { it: 'La Casa degli Eterni', en: 'The House of the Undying' },
+      {
+        it: 'Daenerys entra da sola nella Casa degli Eterni, con Drogon. [[pyat-pree|Pyat Pree]] le dice di prendere sempre la porta a destra, di salire soltanto e di non entrare in nessuna stanza. Lei vede visioni del passato e di giorni che verranno. Gli Eterni le parlano nella testa di tre fuochi, tre cavalcature e tre tradimenti, poi cercano di divorarla, finché Drogon non fa a pezzi il loro cuore. Daenerys fugge dalla casa in fiamme. Fuori Pyat Pree la aggredisce con un pugnale: la frusta di [[jhogo|Jhogo]] gli fa volare via la lama e [[rakharo|Rakharo]] lo butta a terra. [[jorah-mormont|Ser Jorah]] la stringe a sé.',
+        en: 'Daenerys enters the House of the Undying alone, with Drogon. [[pyat-pree|Pyat Pree]] tells her always to take the door on her right, to climb only, and to enter no room. She sees visions of the past and of days to come. The Undying speak in her head of three fires, three mounts and three treasons, then try to consume her, until Drogon tears their heart to pieces. She flees the burning house. Outside Pyat Pree attacks her with a dagger: [[jhogo|Jhogo]]’s whip knocks the knife aside and [[rakharo|Rakharo]] strikes him to the ground. [[jorah-mormont|Ser Jorah]] holds her.',
+      },
+    ),
+    inBooks(
+      [20, 137],
+      { it: 'La manticora', en: 'The manticore' },
+      {
+        it: '[[xaro-xhoan-daxos|Xaro]] avverte Daenerys che gli stregoni la vogliono morta e che due delle grandi gilde mercantili della città la vogliono cacciata o uccisa. Lei rifiuta ancora di sposarlo, e rifiuta anche dieci navi in cambio di un drago. Al porto un mercante le regala uno scrigno con dentro una manticora. Un vecchio glielo fa cadere dalle mani: è [[arstan-whitebeard|Arstan Barbabianca]], scudiero dell’eunuco [[strong-belwas|Belwas il Forte]]. I due dicono che il magistro [[illyrio-mopatis|Illyrio]] li ha mandati con tre navi per riportarla a Pentos. Daenerys accetta di lasciare Qarth, e ordina di dare alle navi i nomi di Balerion, Meraxes e Vhagar.',
+        en: '[[xaro-xhoan-daxos|Xaro]] warns Daenerys that the warlocks want her dead and that two of the city’s great merchant guilds want her expelled or killed. She refuses again to marry him, and refuses ten ships for one of her dragons. At the docks a merchant hands her a box with a manticore inside. An old man knocks it out of her hands: he is [[arstan-whitebeard|Arstan Whitebeard]], squire to the eunuch [[strong-belwas|Strong Belwas]]. The two say Magister [[illyrio-mopatis|Illyrio]] has sent them with three ships to bring her back to Pentos. Daenerys agrees to leave Qarth, and orders the ships renamed Balerion, Meraxes and Vhagar.',
       },
     ),
   ],
@@ -424,6 +500,70 @@ export const season1Chronicles = {
         en: '[[daenerys-targaryen|Daenerys]] builds a pyre for [[drogo|Khal Drogo]] and orders Jorah to bind [[mirri-maz-duur|Mirri Maz Duur]] to it. Afraid that she means to die in the fire, Jorah pleads with her not to. Daenerys lights the pyre and walks into the flames. When the fire dies at dawn, Jorah finds her unharmed in the ashes with three newly hatched dragons, and he kneels to her.',
       },
     ),
+    onScreen(
+      [12, 86],
+      { it: 'Una testa nella bisaccia', en: 'A head in the saddlebag' },
+      {
+        it: 'Nel Deserto Rosso Jorah ricorda a [[daenerys-targaryen|Daenerys]] che tornare in Lhazar o nel Mare Dothraki le costerebbe la vita e i draghi, e che deve restare forte per la sua gente. Quando il cavallo di [[rakharo|Rakharo]] torna senza cavaliere, Jorah apre la bisaccia gocciolante di sangue e trova la testa e la treccia tagliata di Rakharo. Dice a Daenerys di non guardare, e pensa che a ucciderlo siano stati khal Pono o khal Jhaqo, che non accettano una donna alla guida di un khalasar.',
+        en: 'In the Red Waste Jorah reminds [[daenerys-targaryen|Daenerys]] that going back to Lhazar or the Dothraki Sea would cost her her life and her dragons, and that she must stay strong for her people. When [[rakharo|Rakharo]]’s horse comes back riderless, Jorah opens the bloody saddlebag and finds Rakharo’s head and cut braid. He tells Daenerys not to look, and thinks Khal Pono or Khal Jhaqo killed him, men who will not have a woman lead a khalasar.',
+      },
+    ),
+    onScreen(
+      [15, 114],
+      { it: 'Una sola nave', en: 'A single ship' },
+      {
+        it: 'Alla festa di [[xaro-xhoan-daxos|Xaro]] Jorah impedisce ai dothraki di derubare il padrone di casa. Una donna mascherata lo avverte che Daenerys deve essere protetta da chi brama i suoi draghi. Quando Xaro si offre di finanziare la guerra di [[daenerys-targaryen|Daenerys]] in cambio delle nozze, Jorah le sconsiglia di indebitarsi con lui: i lord direbbero che la conquista è di Xaro. Le dice che potrebbe vincere il trono anche con una sola nave, e le lascia capire cosa prova per lei. Daenerys segue il suo consiglio, ma non ricambia.',
+        en: 'At [[xaro-xhoan-daxos|Xaro]]’s feast Jorah stops the Dothraki from stealing from their host. A masked woman warns him that Daenerys needs protection from those who covet her dragons. When Xaro offers to pay for [[daenerys-targaryen|Daenerys]]’s war if she marries him, Jorah advises her against owing him: the lords would call it Xaro’s conquest. He tells her she could win her throne with a single ship, and lets slip what he feels for her. She takes his advice, but does not return his feelings.',
+      },
+    ),
+    onScreen(
+      [17, 114],
+      { it: 'Il ladro accanto a lei', en: 'The thief beside her' },
+      {
+        it: 'Mentre Jorah è via a cercare una nave, i draghi di [[daenerys-targaryen|Daenerys]] vengono rubati, e lei lo manda a ritrovarli. La donna mascherata gli dice di sapere che un tempo lui spiava Daenerys, e che il ladro è già con lei. Jorah raggiunge Daenerys davanti ai Tredici mentre lo stregone confessa il furto e proclama re [[xaro-xhoan-daxos|Xaro]], e trafigge uno dei doppi dello stregone mentre la porta via con [[kovarro|Kovarro]].',
+        en: 'While Jorah is away looking for a ship, [[daenerys-targaryen|Daenerys]]’s dragons are stolen, and she sends him to find them. The masked woman tells him she knows he once spied on Daenerys, and that the thief is already with her. Jorah reaches Daenerys before the Thirteen as the warlock admits the theft and proclaims [[xaro-xhoan-daxos|Xaro]] king, and he stabs one of the warlock’s doubles as he leads her away with [[kovarro|Kovarro]].',
+      },
+    ),
+    onScreen(
+      [20, 137],
+      { it: 'L’oro di Xaro', en: 'Xaro’s gold' },
+      {
+        it: 'Jorah consiglia a [[daenerys-targaryen|Daenerys]] di lasciare i draghi e fuggire da Qarth, con un passaggio già prenotato per Astapor, ma lei si fa portare alla Casa degli Eterni. Lì Jorah la perde e la chiama a gran voce da fuori. Quando Daenerys torna con i draghi, trovano [[xaro-xhoan-daxos|Xaro]] a letto con [[doreah|Doreah]] e li chiudono entrambi nella camera del tesoro vuota di Xaro. Jorah dice a Daenerys che l’oro e i gioielli di Xaro sono abbastanza veri da comprare una nave, e ordina ai dothraki di prenderli.',
+        en: 'Jorah urges [[daenerys-targaryen|Daenerys]] to leave her dragons and flee Qarth, with passage booked to Astapor, but she has him lead her to the House of the Undying. There he loses her, and calls for her outside. Once she is back with her dragons, they find [[xaro-xhoan-daxos|Xaro]] in bed with [[doreah|Doreah]] and lock the two in Xaro’s empty vault. Jorah tells her that Xaro’s gold and jewels are real enough to buy a ship, and orders the Dothraki to take them.',
+      },
+    ),
+    inBooks(
+      [11, 86],
+      { it: 'Lynesse', en: 'Lynesse' },
+      {
+        it: 'Jorah dice a [[daenerys-targaryen|Daenerys]] che non vivrà a lungo se non andrà dove nessun altro va, e la segue nel deserto rosso anche se la ferita che gli ha inferto Qotho non è guarita. Nella città morta le porta una pesca e le parla della sua seconda moglie, Lynesse Hightower: l’ha conquistata a un torneo, si è rovinato per accontentarla ed è fuggito con lei a Lys, dove lei lo ha lasciato per un principe mercante. Le dice che Lynesse le somigliava molto. Daenerys gli cura la ferita finché non comincia a guarire.',
+        en: 'Jorah tells [[daenerys-targaryen|Daenerys]] that she will not live long unless she goes where no one else does, and follows her into the red waste, though the wound Qotho gave him has not healed. In the dead city he brings her a peach and tells her of his second wife, Lynesse Hightower: he won her at a tourney, ruined himself to please her and fled with her to Lys, where she left him for a merchant prince. He tells Daenerys that Lynesse looked much like her. Daenerys tends his wound until it starts to heal.',
+      },
+    ),
+    inBooks(
+      [15, 101],
+      { it: 'Notizie dal porto', en: 'News from the docks' },
+      {
+        it: 'A Qarth Jorah consiglia a [[daenerys-targaryen|Daenerys]] di non fidarsi né del principe mercante né dello stregone che l’hanno accompagnata in città. Lei lo manda al porto, e Jorah torna con un capitano che le annuncia la morte di re Robert. Jorah dubita che Eddard Stark lo abbia tradito, e le ricorda che le servono ancora oro, eserciti e navi, e che Robert ha ucciso un drago con un martello da guerra.',
+        en: 'In Qarth Jorah tells [[daenerys-targaryen|Daenerys]] to trust neither the merchant prince nor the warlock who brought her to the city. She sends him to the docks, and he comes back with a captain who tells her that King Robert is dead. Jorah doubts that Eddard Stark betrayed the king, and reminds her that she still needs gold, armies and ships, and that Robert killed a dragon with a warhammer.',
+      },
+    ),
+    inBooks(
+      [16, 114],
+      { it: 'Il dono di nozze', en: 'The wedding gift' },
+      {
+        it: 'Jorah dice a [[daenerys-targaryen|Daenerys]] che a Qarth non troverà aiuto. Alle nozze dei qarthiani ognuno dei due sposi può chiedere all’altro un dono che non si può rifiutare, e Jorah è certo che [[xaro-xhoan-daxos|Xaro]] chiederebbe un drago. La avverte che il magistro [[illyrio-mopatis|Illyrio]] pensa solo a sé stesso, e le ricorda che Robert ha già mandato un uomo a ucciderla. Le consiglia di chiedere aiuto allo stregone [[pyat-pree|Pyat Pree]].',
+        en: 'Jorah tells [[daenerys-targaryen|Daenerys]] that she will find no help in Qarth. At a Qartheen wedding each spouse may ask the other for one gift that cannot be refused, and he is sure [[xaro-xhoan-daxos|Xaro]] would ask for a dragon. He warns her that Magister [[illyrio-mopatis|Illyrio]] cares only for himself, and reminds her that Robert once sent a man to kill her. He urges her to go to the warlock [[pyat-pree|Pyat Pree]] for help.',
+      },
+    ),
+    inBooks(
+      [20, 137],
+      { it: 'Seguiti al porto', en: 'Followed at the docks' },
+      {
+        it: 'Dopo la Casa degli Eterni, Jorah consola [[daenerys-targaryen|Daenerys]], poi la accompagna al porto di Qarth a cercare una nave, rispondendo come può alle sue domande sulle visioni. Al porto la avverte che un uomo enorme e sfregiato e un vecchio con un bastone li stanno seguendo. Il vecchio la salva da una manticora e si presenta come [[arstan-whitebeard|Arstan Barbabianca]], scudiero di [[strong-belwas|Belwas il Forte]], mandato dal magistro [[illyrio-mopatis|Illyrio]].',
+        en: 'After the House of the Undying, Jorah comforts [[daenerys-targaryen|Daenerys]], then rides with her to the port of Qarth to find a ship, answering her questions about the visions as best he can. At the docks he warns her that a huge scarred man and an old man with a staff are following them. The old man saves her from a manticore and names himself [[arstan-whitebeard|Arstan Whitebeard]], squire to [[strong-belwas|Strong Belwas]], sent by Magister [[illyrio-mopatis|Illyrio]].',
+      },
+    ),
   ],
   'illyrio-mopatis': [
     inBoth(
@@ -492,6 +632,22 @@ export const season1Chronicles = {
         en: 'In Vaes Dothrak, Irri finds [[daenerys-targaryen|Daenerys]] taking a dragon egg off a hot brazier and grabs it from her, afraid that she will be burned. Daenerys is unharmed, but Irri burns her own hands. At a feast Irri translates for [[drogo|Khal Drogo]] when [[viserys-targaryen|Viserys]] draws his sword and threatens Daenerys and her child. She watches Drogo kill him with molten gold.',
       },
     ),
+    onScreen(
+      [12, 86],
+      { it: 'Il lutto per Rakharo', en: 'Mourning Rakharo' },
+      {
+        it: 'Nel Deserto Rosso, mentre il khalasar aspetta i cavalieri di sangue, il cavallo di [[rakharo|Rakharo]] torna con la sua testa nella bisaccia. Irri è distrutta: crede che, se il corpo di Rakharo non verrà bruciato, lui non potrà raggiungere i suoi antenati nell’aldilà. [[daenerys-targaryen|Daenerys]] la consola e promette un funerale per Rakharo.',
+        en: 'In the Red Waste, while the khalasar waits for the bloodriders, [[rakharo|Rakharo]]’s horse comes back with his head in the saddlebag. Irri is devastated: unless his body is burned, she believes, he cannot reach the Night Lands to ride with his ancestors. [[daenerys-targaryen|Daenerys]] comforts her and promises Rakharo a funeral.',
+      },
+    ),
+    onScreen(
+      [16, 114],
+      { it: 'Nella dimora di Xaro', en: 'In Xaro’s house' },
+      {
+        it: 'A Qarth Irri ricuce i vestiti di [[daenerys-targaryen|Daenerys]], che la chiama amica. Quando [[doreah|Doreah]] chiama Daenerys principessa, Irri la corregge: è una khaleesi. Poi la convince a indossare l’abito fatto per lei da [[xaro-xhoan-daxos|Xaro]], per cortesia verso il padrone di casa. Mentre Daenerys è fuori a chiedere navi, Irri viene strangolata nella dimora di Xaro, e Daenerys la trova morta.',
+        en: 'In Qarth Irri mends [[daenerys-targaryen|Daenerys]]’s clothes, and Daenerys calls her a friend. When [[doreah|Doreah]] calls Daenerys a princess, Irri corrects her: she is a khaleesi. She then urges her to wear the gown [[xaro-xhoan-daxos|Xaro]] had made for her, as a courtesy to their host. While Daenerys is out asking for ships, Irri is strangled in Xaro’s house, and Daenerys finds her dead.',
+      },
+    ),
   ],
   'doreah': [
     onScreen(
@@ -524,6 +680,30 @@ export const season1Chronicles = {
       {
         it: 'A Vaes Dothrak [[daenerys-targaryen|Daenerys]] manda Doreah a invitare a cena il fratello [[viserys-targaryen|Viserys]]. Viserys prende l’invito per un ordine, si infuria e trascina Doreah dalla sorella. Lì aggredisce Daenerys, che lo colpisce con una cintura e lo avverte che, se la toccherà ancora, perderà le mani.',
         en: 'In Vaes Dothrak, [[daenerys-targaryen|Daenerys]] sends Doreah to invite her brother [[viserys-targaryen|Viserys]] to supper. Viserys takes the invitation for an order, flies into a rage and drags Doreah back to his sister. There he attacks Daenerys, who strikes him with a belt and warns him that he will lose his hands if he touches her again.',
+      },
+    ),
+    inBooks(
+      [11, 86],
+      { it: 'La febbre', en: 'The fever' },
+      {
+        it: 'Doreah avverte [[daenerys-targaryen|Daenerys]] che dietro la cometa rossa ci sono solo terre rosse e desolate, poi la segue nel deserto. È malata da tempo, e durante la marcia le viene la febbre e diventa troppo debole per salire a cavallo. Daenerys ferma il khalasar e resta con lei, tenendole la mano finché Doreah non muore.',
+        en: 'Doreah warns [[daenerys-targaryen|Daenerys]] that only grim red lands lie the way the red comet points, then follows her into the waste. She has been ill for some time, and on the march she falls into a fever and grows too weak to mount her horse. Daenerys halts the khalasar and sits with her, holding her hand until she dies.',
+      },
+    ),
+    onScreen(
+      [15, 114],
+      { it: 'Gli uomini di Qarth', en: 'The men of Qarth' },
+      {
+        it: 'Nella dimora di [[xaro-xhoan-daxos|Xaro]] Doreah guarda [[daenerys-targaryen|Daenerys]] insegnare ai draghi a cuocersi la carne con il fuoco, e Daenerys le dice che uno di loro le vuole bene. Doreah dice che Xaro è l’uomo più ricco di Qarth. Daenerys le chiede di sedurre gli uomini della città per scoprire cosa sanno del padrone di casa, e alla festa di Xaro Doreah conquista diversi ospiti.',
+        en: 'In [[xaro-xhoan-daxos|Xaro]]’s house Doreah watches [[daenerys-targaryen|Daenerys]] teach her dragons to cook their meat with fire, and Daenerys tells her one of them loves her. Doreah says that Xaro is the richest man in Qarth. Daenerys asks her to seduce men of the city and learn what they know of their host, and at Xaro’s feast Doreah charms several of the guests.',
+      },
+    ),
+    onScreen(
+      [20, 137],
+      { it: 'Nella camera del tesoro', en: 'In the vault' },
+      {
+        it: 'Quando i draghi di [[daenerys-targaryen|Daenerys]] vengono rubati, Doreah è sparita, e Daenerys la crede morta. Dopo la Casa degli Eterni, Daenerys la trova addormentata nel letto di [[xaro-xhoan-daxos|Xaro]]: Doreah l’ha tradita. Doreah implora pietà, ma Daenerys la fa chiudere con Xaro nella camera del tesoro vuota di lui, e li lascia lì a morire.',
+        en: 'When [[daenerys-targaryen|Daenerys]]’s dragons are stolen, Doreah is missing, and Daenerys believes her dead. After the House of the Undying, Daenerys finds her asleep in [[xaro-xhoan-daxos|Xaro]]’s bed: Doreah has betrayed her. She begs for her life, but Daenerys has her locked with Xaro in his empty vault, and leaves them there to die.',
       },
     ),
   ],
@@ -566,6 +746,38 @@ export const season1Chronicles = {
       {
         it: 'Quando gran parte dei cavalieri di [[drogo|khal Drogo]] se ne va, Rakharo resta. Prima della pira [[daenerys-targaryen|Daenerys]] gli dona l’arakh che era stato il suo dono di nozze e lo nomina suo ko. Lui accetta, ma promette soltanto di proteggerla fino a Vaes Dothrak, dove lei dovrà unirsi alle vecchie delle dosh khaleen. Quando Daenerys viene trovata illesa tra le ceneri con tre draghi appena nati, si inginocchia davanti a lei.',
         en: 'When most of [[drogo|Khal Drogo]]’s riders leave, Rakharo stays. Before the pyre, [[daenerys-targaryen|Daenerys]] gives him the arakh that was her bride gift and names him her ko. He accepts, but only promises to keep her safe as far as Vaes Dothrak, where she is to join the crones of the dosh khaleen. When she is found unharmed in the ashes with three newly hatched dragons, he kneels to her.',
+      },
+    ),
+    onScreen(
+      [11, 86],
+      { it: 'Un brutto momento per cominciare', en: 'A bad time to start' },
+      {
+        it: 'Nel Deserto Rosso [[daenerys-targaryen|Daenerys]] manda Rakharo, ora suo cavaliere di sangue, in esplorazione verso nord-est con uno degli ultimi cavalli. Lo saluta di persona e gli dice che non l’ha mai delusa, e Rakharo risponde che sarebbe un brutto momento per cominciare.',
+        en: 'In the Red Waste [[daenerys-targaryen|Daenerys]] sends Rakharo, now her bloodrider, to scout to the northeast on one of the last horses. She says goodbye to him herself and tells him he has never failed her, and he answers that this would be a bad time to start.',
+      },
+    ),
+    onScreen(
+      [12, 86],
+      { it: 'Il cavallo senza cavaliere', en: 'The riderless horse' },
+      {
+        it: 'Il cavallo di Rakharo torna al khalasar senza di lui, dipinto per la guerra. Nella bisaccia [[jorah-mormont|ser Jorah]] trova la testa e la treccia tagliata di Rakharo, e pensa che lo abbia ucciso un khalasar rivale. [[irri|Irri]] teme che lo spirito di Rakharo non possa raggiungere l’aldilà, e [[daenerys-targaryen|Daenerys]] promette per lui un funerale.',
+        en: 'Rakharo’s horse comes back to the khalasar without him, painted for war. In the saddlebag [[jorah-mormont|Ser Jorah]] finds Rakharo’s head and cut braid, and thinks a rival khalasar killed him. [[irri|Irri]] fears that his spirit cannot reach the Night Lands, and [[daenerys-targaryen|Daenerys]] promises him a funeral.',
+      },
+    ),
+    inBooks(
+      [11, 86],
+      { it: 'Fino al mare', en: 'As far as the sea' },
+      {
+        it: 'Nel deserto rosso Rakharo esplora una città morta con [[aggo|Aggo]] e [[jhogo|Jhogo]], e [[daenerys-targaryen|Daenerys]] vi conduce il khalasar. Poi li manda di nuovo in esplorazione, ognuno con tre cavalli. Rakharo torna per primo: il deserto si stende a sud fino al mare. Daenerys gli affida il compito di divellere il lastricato della piazza, perché cresca più erba per i cavalli.',
+        en: 'In the red waste Rakharo scouts a dead city with [[aggo|Aggo]] and [[jhogo|Jhogo]], and [[daenerys-targaryen|Daenerys]] leads the khalasar into it. She then sends each of them out again with three horses. Rakharo comes back first: the waste stretches south all the way to the sea. Daenerys puts him in charge of pulling up the plaza, so that more grass can grow for the horses.',
+      },
+    ),
+    inBooks(
+      [20, 122],
+      { it: 'Lo stregone a terra', en: 'The warlock on the ground' },
+      {
+        it: 'Rakharo aspetta fuori dalla Casa degli Eterni con [[jorah-mormont|ser Jorah]] e gli altri cavalieri di sangue, mentre [[daenerys-targaryen|Daenerys]] entra da sola. Quando lei fugge dalla casa in fiamme, [[pyat-pree|Pyat Pree]] la aggredisce con un pugnale. La frusta di [[jhogo|Jhogo]] fa volare via la lama, e Rakharo butta a terra lo stregone.',
+        en: 'Rakharo waits outside the House of the Undying with [[jorah-mormont|Ser Jorah]] and the other bloodriders, while [[daenerys-targaryen|Daenerys]] goes in alone. When she flees the burning house, [[pyat-pree|Pyat Pree]] attacks her with a dagger. [[jhogo|Jhogo]]’s whip knocks the knife aside, and Rakharo strikes the warlock to the ground.',
       },
     ),
   ],
@@ -701,6 +913,14 @@ export const season1Chronicles = {
         en: 'At the wedding of [[daenerys-targaryen|Daenerys]] and [[drogo|Khal Drogo]], her brother [[viserys-targaryen|Viserys]] gives the bride three handmaidens. Jhiqui is one of the two Dothraki among them, with [[irri|Irri]]; the third, [[doreah|Doreah]], comes from Lys. Jhiqui’s task is to teach the khaleesi the Dothraki tongue.',
       },
     ),
+    inBooks(
+      [11, 86],
+      { it: 'Posti infestati', en: 'Haunted places' },
+      {
+        it: 'Nel deserto rosso Jhiqui e [[irri|Irri]] portano due dei draghi di [[daenerys-targaryen|Daenerys]] in una gabbia appesa tra i loro cavalli. Quando i cavalieri di sangue trovano una città morta, Jhiqui insiste che posti così sono infestati dai fantasmi ed è meglio evitarli, ma Daenerys vi conduce il khalasar.',
+        en: 'In the red waste Jhiqui and [[irri|Irri]] carry two of [[daenerys-targaryen|Daenerys]]’s dragons in a cage slung between their horses. When the bloodriders find a dead city, Jhiqui insists that such places are haunted by ghosts and best avoided, but Daenerys leads the khalasar inside.',
+      },
+    ),
   ],
   'aggo': [
     inBooks(
@@ -728,6 +948,22 @@ export const season1Chronicles = {
       {
         it: 'Quando [[drogo|khal Drogo]] muore e gran parte dei suoi cavalieri se ne va, Aggo resta con [[daenerys-targaryen|Daenerys]]. Prima della pira lei gli dona uno dei suoi doni di nozze, lo nomina suo ko e gli chiede il giuramento di cavaliere di sangue. Lui rifiuta, dicendo che solo un uomo può guidare un khalasar. Quando lei viene trovata illesa tra le ceneri con tre draghi appena nati, si inginocchia davanti a lei.',
         en: 'When [[drogo|Khal Drogo]] dies and most of his riders leave, Aggo stays with [[daenerys-targaryen|Daenerys]]. Before the pyre she gives him one of her bride gifts, names him her ko and asks for his oath as a bloodrider. He refuses, saying that only a man can lead a khalasar. When she is found unharmed in the ashes with three newly hatched dragons, he kneels to her.',
+      },
+    ),
+    onScreen(
+      [11, 86],
+      { it: 'Uno dei tre cavalieri', en: 'One of three riders' },
+      {
+        it: 'Aggo è uno dei dothraki rimasti fedeli a [[daenerys-targaryen|Daenerys]] quando il khalasar di Drogo si disperde, e lei lo nomina suo cavaliere di sangue insieme a [[rakharo|Rakharo]] e [[kovarro|Kovarro]]. Nel Deserto Rosso, con la sua gente alla fame, Daenerys manda i tre in esplorazione con gli ultimi cavalli, Aggo verso sud-est.',
+        en: 'Aggo is one of the Dothraki who stay loyal to [[daenerys-targaryen|Daenerys]] when Drogo’s khalasar breaks apart, and she names him one of her bloodriders, with [[rakharo|Rakharo]] and [[kovarro|Kovarro]]. In the Red Waste, with her people starving, she sends the three of them to scout on the last horses, Aggo to the southeast.',
+      },
+    ),
+    inBooks(
+      [11, 86],
+      { it: 'Balerion rinato', en: 'Balerion reborn' },
+      {
+        it: 'Durante la marcia nel deserto rosso Aggo dice che il drago nero di [[daenerys-targaryen|Daenerys]] è Balerion rinato. Esplora una città morta con [[rakharo|Rakharo]] e [[jhogo|Jhogo]], poi riparte con tre cavalli e trova solo due città deserte più piccole. Daenerys gli affida la riparazione delle porte della città.',
+        en: 'On the march through the red waste Aggo says that [[daenerys-targaryen|Daenerys]]’s black dragon is Balerion reborn. He scouts a dead city with [[rakharo|Rakharo]] and [[jhogo|Jhogo]], then rides out again with three horses and finds only two smaller deserted cities. Daenerys sets him to repairing the city gates.',
       },
     ),
   ],
@@ -762,6 +998,22 @@ export const season1Chronicles = {
       {
         it: 'Jhogo resta con [[daenerys-targaryen|Daenerys]] quando gran parte dei cavalieri di [[drogo|khal Drogo]] se ne va. Prima della pira lei lo nomina suo ko e gli chiede il giuramento di cavaliere di sangue. Lui rifiuta, dicendo che per lui sarebbe una vergogna. Quando Daenerys viene trovata illesa tra le ceneri con tre draghi appena nati, si inginocchia davanti a lei.',
         en: 'Jhogo stays with [[daenerys-targaryen|Daenerys]] when most of [[drogo|Khal Drogo]]’s riders leave. Before the pyre she names him her ko and asks for his oath as a bloodrider. He refuses, saying that it would shame him. When Daenerys is found unharmed in the ashes with three newly hatched dragons, he kneels to her.',
+      },
+    ),
+    inBooks(
+      [11, 86],
+      { it: 'Tre stranieri da Qarth', en: 'Three strangers from Qarth' },
+      {
+        it: 'Nel deserto rosso Jhogo esplora una città morta con [[aggo|Aggo]] e [[rakharo|Rakharo]]. Poi [[daenerys-targaryen|Daenerys]] lo manda in esplorazione con tre cavalli, e Jhogo torna per ultimo, molto dopo gli altri: porta con sé tre stranieri della grande città di Qarth, venuti in cerca di draghi.',
+        en: 'In the red waste Jhogo scouts a dead city with [[aggo|Aggo]] and [[rakharo|Rakharo]]. [[daenerys-targaryen|Daenerys]] then sends him out with three horses, and he is the last to return, long after the others: he brings three strangers from the great city of Qarth, who have come seeking dragons.',
+      },
+    ),
+    inBooks(
+      [20, 122],
+      { it: 'La frusta contro il pugnale', en: 'Whip against dagger' },
+      {
+        it: 'Jhogo è tra quelli che, con [[jorah-mormont|ser Jorah]], [[aggo|Aggo]] e [[xaro-xhoan-daxos|Xaro]], chiedono a [[daenerys-targaryen|Daenerys]] di non entrare nella Casa degli Eterni, ma lei entra. Quando fugge dalla casa in fiamme e [[pyat-pree|Pyat Pree]] la aggredisce con un pugnale, Drogon distrae lo stregone, la frusta di Jhogo gli fa volare via la lama e [[rakharo|Rakharo]] lo butta a terra.',
+        en: 'Jhogo is among those, with [[jorah-mormont|Ser Jorah]], [[aggo|Aggo]] and [[xaro-xhoan-daxos|Xaro]], who urge [[daenerys-targaryen|Daenerys]] to turn back from the House of the Undying, but she goes in. When she flees the burning house and [[pyat-pree|Pyat Pree]] attacks her with a dagger, Drogon distracts the warlock, Jhogo’s whip knocks the knife aside and [[rakharo|Rakharo]] strikes him to the ground.',
       },
     ),
   ],
