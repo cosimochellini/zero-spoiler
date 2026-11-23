@@ -1,4 +1,10 @@
-import { type RefObject, useEffect, useRef, useState } from 'react'
+import {
+  type RefObject,
+  useEffect,
+  useEffectEvent,
+  useRef,
+  useState,
+} from 'react'
 
 import type { Point, Rect } from '~/components/chartGeometry'
 import {
@@ -188,10 +194,7 @@ function useWheel(
   viewRef: RefObject<Rect>,
   move: (next: Rect) => void,
 ): void {
-  const moveRef = useRef(move)
-  useEffect(() => {
-    moveRef.current = move
-  })
+  const onMove = useEffectEvent(move)
 
   useEffect(() => {
     if (element === null) {
@@ -206,9 +209,7 @@ function useWheel(
         x: event.clientX,
         y: event.clientY,
       })
-      moveRef.current(
-        zoomView(viewRef.current, Math.exp(-event.deltaY * WHEEL), anchor),
-      )
+      onMove(zoomView(viewRef.current, Math.exp(-event.deltaY * WHEEL), anchor))
     }
     element.addEventListener('wheel', onWheel, { passive: false })
 
