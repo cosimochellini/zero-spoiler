@@ -1,14 +1,17 @@
-import { expireCookie, parseCookieHeader } from '~/lib/cookies'
+import { expireCookie, parseCookieHeader, writeCookie } from '~/lib/cookies'
 
-/**
- * The cookie that ties a device to a synced record (#1560). It holds the
- * record's id, a random UUID that works as a bearer secret: whoever has it can
- * read and write the record, so it never goes in a path or a query string.
- */
-export const SYNC_COOKIE = 'zs_sync'
+import { SYNC_COOKIE, SYNC_PENDING_COOKIE } from './syncCookie'
+
+export { SYNC_COOKIE, SYNC_PENDING_COOKIE } from './syncCookie'
 
 /** The one failing status that is an answer: the record is gone. */
 const NOT_FOUND = 404
+
+/**
+ * How long a request may take. A save waits on its push before the pages are
+ * re-read, so a stalled push must not hold them.
+ */
+const TIMEOUT_MS = 3000
 
 const SYNC_ID =
   /^[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ab][\da-f]{3}-[\da-f]{12}$/u
@@ -30,6 +33,7 @@ export function readSyncId(): null | string {
 /** Stops syncing this device. Its bookmarks and the stored record stay. */
 export function disconnectSync(): void {
   expireCookie(SYNC_COOKIE)
+  expireCookie(SYNC_PENDING_COOKIE)
 }
 
 /** One bookmark per series slug, each in its cookie's own grammar. */
@@ -57,6 +61,7 @@ export async function askSync(body: SyncRequest): Promise<unknown> {
     // A push may still be in flight when the reader reloads.
     keepalive: body.op === 'push',
     method: 'POST',
+    signal: AbortSignal.timeout(TIMEOUT_MS),
   })
   if (response.status === NOT_FOUND) {
     return null
@@ -87,8 +92,9 @@ export function asSyncRecord(raw: unknown): null | SyncRecord {
 
 /**
  * Sends one series' bookmark, as its cookie now holds it, to the synced
- * record, when this device is synced. A failure is swallowed: the cookie
- * stays, and a later save sends it again.
+ * record, when this device is synced. A failure is not shown: the series goes
+ * on the pending list, and the next full page load writes this device's
+ * bookmark to the record instead of reading the record's over it.
  */
 export async function pushBookmark(series: string): Promise<void> {
   if (readSyncId() === null) {
@@ -96,8 +102,28 @@ export async function pushBookmark(series: string): Promise<void> {
   }
   try {
     await askSync({ op: 'push', series })
+    markPending(series, false)
   } catch {
-    // The store refused or the network failed; the page goes on without it.
+    markPending(series, true)
+  }
+}
+
+/** Adds a series to the pending list, or takes it off. */
+function markPending(series: string, pending: boolean): void {
+  const listed = new Set(
+    (parseCookieHeader(document.cookie).get(SYNC_PENDING_COOKIE) ?? '')
+      .split(',')
+      .filter((slug) => slug !== ''),
+  )
+  if (pending) {
+    listed.add(series)
+  } else {
+    listed.delete(series)
+  }
+  if (listed.size === 0) {
+    expireCookie(SYNC_PENDING_COOKIE)
+  } else {
+    writeCookie(SYNC_PENDING_COOKIE, [...listed].join(','))
   }
 }
 

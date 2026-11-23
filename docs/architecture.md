@@ -400,10 +400,12 @@ synced device it reads the record, replaces each bookmark cookie in the request
 before Start sees it, sets the same cookies on the response, and writes any
 bookmark cookie the response sets (a shared link's) to the record. Server
 functions and assets pass untouched. A synced device's save is pushed before the
-pages are re-read (`BookmarkProvider`). Every value is checked with
-`parseBookmark` on the way in and out, and a store that fails is skipped. All of
-it talks to `SyncStore` (`src/server/sync/store.ts`); `kv.ts` is the only module
-that knows the store is KV.
+pages are re-read (`BookmarkProvider`). Every page carries only the cookie check
+(`src/lib/progress/synced.ts`); the endpoint client, the panel, the QR encoder
+and the copy (`src/i18n/dictionaries/sync.ts`) load in lazy chunks. Every value
+is checked with `parseBookmark` on the way in and out, and a store that fails is
+skipped. All of it talks to `SyncStore` (`src/server/sync/store.ts`); `kv.ts` is
+the only module that knows the store is KV.
 
 ## Social pictures
 

@@ -142,30 +142,7 @@ export const enDictionary = {
   'dialog.loading': 'Loading…',
   'dialog.loadFailed': 'Loading failed. Check your connection and try again.',
   'dialog.retry': 'Try again',
-  'dialog.devices': 'More devices?',
-  'dialog.devicesHelp':
-    'Scan this code with another device, or open the link there. Both then keep the same bookmarks.',
-  'dialog.devicesWarning':
-    'Anyone with this link can see and change your bookmarks.',
-  'dialog.devicesCode': 'QR code of the link',
-  'dialog.devicesCopy': 'Copy link',
-  'dialog.devicesCopied': 'Link copied.',
-  'dialog.devicesCopyFailed': 'Copying failed. Try again.',
-  'dialog.devicesDisconnect': 'Disconnect this device',
-
   'sync.pageTitle': 'Sync bookmarks | Zero Spoiler',
-  'sync.title': 'Same bookmarks on this device',
-  'sync.lede':
-    'This device takes the bookmarks of the device the link comes from. From then on, a bookmark you move on one of them is on the other at its next page load.',
-  'sync.change': 'Your {series} bookmark becomes {point}.',
-  'sync.add': 'Your {series} bookmark is set to {point}.',
-  'sync.connect': 'Connect this device',
-  'sync.incomplete':
-    'This link is incomplete. Copy it again on the other device, from “More devices?” in the bookmark dialog.',
-  'sync.unknown':
-    'This link does not work any more. Open “More devices?” in the bookmark dialog on the other device and copy it again.',
-  'sync.already': 'This device already has these bookmarks.',
-  'sync.toHub': 'All series',
 
   'veil.locked.episode': 'Under fog until episode {threshold}',
   'veil.locked.season': 'Under fog until {threshold}',
@@ -251,13 +228,13 @@ export const enDictionary = {
 
   'footer.lead': 'A {series} wiki that hides what comes after your bookmark.',
   'footer.colophon':
-    'All the drawings are made for this site; no official artwork is used. Your bookmark is saved in a cookie on this device.',
+    'All the drawings are made for this site; no official artwork is used. Your bookmark is saved in a cookie on this device, and in a shared record if you connect other devices.',
 
   'footer.unofficial':
     'Unofficial fan project, not endorsed by the {series} rights holders.',
   'footer.sharedLead': 'Wikis that hide what comes after your bookmark.',
   'footer.sharedColophon':
-    'All the drawings are made for this site; no official artwork is used. Your bookmarks are saved in cookies on this device, one for each series.',
+    'All the drawings are made for this site; no official artwork is used. Your bookmarks are saved in cookies on this device, one for each series, and in a shared record if you connect other devices.',
   'footer.sharedUnofficial':
     'Unofficial fan project, not endorsed by the rights holders of the series.',
   'footer.openSource': 'Zero Spoiler is open source: if you find it useful,',

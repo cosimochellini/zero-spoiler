@@ -1,9 +1,13 @@
-/** Compare raw client JavaScript bytes with a separately built PR base. */
+/**
+ * Compare the raw bytes of the client JavaScript every page loads with a
+ * separately built PR base. A chunk loaded only through a dynamic `import()`
+ * (a route's own code, a dialog's form, a QR encoder) is left out: it costs
+ * only the reader who opens it. The archive gate still scans every chunk.
+ */
 import console from 'node:console'
-import { realpathSync } from 'node:fs'
+import { readFileSync, realpathSync, statSync } from 'node:fs'
+import path from 'node:path'
 import process from 'node:process'
-
-import { clientChunks } from './archive-gate.mjs'
 
 const GROWTH_BUDGET = 2048
 
@@ -21,16 +25,55 @@ export function judgeClientBudget(base, head, body) {
 }
 
 /**
- * Measure the same assets the archive leak gate reads, refusing an empty build.
+ * The scripts every page loads: each entry of the build's Vite manifest and
+ * everything it imports statically, followed to the end. Dynamic imports are
+ * not followed.
+ * @param {Record<string, {file: string, imports?: string[], isEntry?: boolean}>} manifest The build's `.vite/manifest.json`.
+ * @returns {string[]} Their files, relative to the client directory.
+ */
+export function eagerScripts(manifest) {
+  const seen = new Set()
+  const visit = (key) => {
+    if (seen.has(key) || manifest[key] === undefined) {
+      return
+    }
+    seen.add(key)
+    const { imports } = manifest[key]
+    if (imports !== undefined) {
+      for (const imported of imports) {
+        visit(imported)
+      }
+    }
+  }
+  for (const [key, chunk] of Object.entries(manifest)) {
+    if (chunk.isEntry === true) {
+      visit(key)
+    }
+  }
+  return [...seen]
+    .map((key) => manifest[key].file)
+    .filter((file) => file.endsWith('.js'))
+}
+
+/**
+ * Measure the eager scripts of one build, refusing a build without them.
  * @param {string} directory A built client directory.
- * @returns {number} Total raw JavaScript bytes.
+ * @returns {number} Their total raw bytes.
  */
 function clientBytes(directory) {
-  const chunks = clientChunks(directory)
-  if (chunks.length === 0) {
-    throw new Error(`no client scripts in ${directory}`)
+  const manifest = JSON.parse(
+    // fallow-ignore-next-line security-sink -- directory is a build folder named on the command line.
+    readFileSync(path.join(directory, '.vite', 'manifest.json'), 'utf8'),
+  )
+  const files = eagerScripts(manifest)
+  if (files.length === 0) {
+    throw new Error(`no entry scripts in ${directory}`)
   }
-  return chunks.reduce((total, { bytes }) => total + bytes, 0)
+  return files.reduce(
+    // fallow-ignore-next-line security-sink -- a file the build's own manifest names.
+    (total, file) => total + statSync(path.join(directory, file)).size,
+    0,
+  )
 }
 
 /**

@@ -3,16 +3,26 @@ import { parseCookieHeader } from '~/lib/cookies'
 import { SYNC_ENDPOINT } from '~/lib/endpoints'
 import type { SyncRecord } from '~/lib/progress/sync'
 
-import { answer, attempt, bookmarkCookie, STATUS, syncCookie } from './answer'
+import {
+  answer,
+  attempt,
+  bookmarkCookie,
+  pendingCleared,
+  STATUS,
+  syncCookie,
+} from './answer'
 import { syncEndpoint } from './endpoint'
 import {
   cookiesOf,
   sameRecord,
   storedRecord,
   syncIdOf,
+  withPending,
   withSeries,
 } from './record'
 import type { SyncStore } from './store'
+
+const SET_COOKIE = 'Set-Cookie'
 
 /** Start's handler, or whatever answers a request sync leaves alone. */
 export type Next = (request: Request) => Promise<Response>
@@ -72,16 +82,49 @@ async function syncedDocument(
   if (stored === undefined) {
     return next(request)
   }
-  const record = stored ?? {}
-  const response = await next(withStoredCookies(request, record))
-  return synchronised(response, record, synced)
+  // A change this device could not push wins over the record, once.
+  const { pending, record } = withPending(
+    stored ?? {},
+    parseCookieHeader(request.headers.get('cookie')),
+  )
+  const settled =
+    pending.length > 0
+    && (sameRecord(record, stored ?? {}) || (await saved(synced, record)))
+  const response = await synchronised(
+    await next(withStoredCookies(request, record)),
+    record,
+    synced,
+  )
+  if (settled) {
+    response.headers.append(SET_COOKIE, pendingCleared())
+  }
+  return response
 }
 
-/** The request with each stored bookmark in place of its cookie. */
+/** Writes the record, and says whether the store took it. */
+async function saved(
+  { id, store }: Synced,
+  record: SyncRecord,
+): Promise<boolean> {
+  const done = await attempt('write', async () => {
+    await store.set(id, record)
+    return true
+  })
+  return done === true
+}
+
+/**
+ * The request with each stored bookmark in place of its cookie, and no
+ * cookie for a series cleared on another device.
+ */
 function withStoredCookies(request: Request, record: SyncRecord): Request {
   const jar = parseCookieHeader(request.headers.get('cookie'))
   for (const { name, value } of cookiesOf(record)) {
-    jar.set(name, value)
+    if (value === '') {
+      jar.delete(name)
+    } else {
+      jar.set(name, value)
+    }
   }
   const headers = new Headers(request.headers)
   headers.set(
@@ -118,10 +161,10 @@ async function synchronised(
   const synced = new Response(response.body, response)
   for (const { name, value } of cookiesOf(record)) {
     if (!written.has(name)) {
-      synced.headers.append('Set-Cookie', bookmarkCookie(name, value))
+      synced.headers.append(SET_COOKIE, bookmarkCookie(name, value))
     }
   }
-  synced.headers.append('Set-Cookie', syncCookie(id))
+  synced.headers.append(SET_COOKIE, syncCookie(id))
   synced.headers.set('Cache-Control', 'no-store')
   return synced
 }

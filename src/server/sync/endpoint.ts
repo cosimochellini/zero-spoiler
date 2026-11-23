@@ -2,14 +2,21 @@ import { descriptionOf } from '~/data/series'
 import { parseCookieHeader } from '~/lib/cookies'
 import { isSyncId, type SyncRequest } from '~/lib/progress/sync'
 
-import { answer, attempt, bookmarkCookie, STATUS, syncCookie } from './answer'
+import {
+  answer,
+  attempt,
+  bookmarkCookie,
+  pendingCleared,
+  STATUS,
+  syncCookie,
+} from './answer'
 import {
   cookiesOf,
+  joinedRecord,
   recordFromCookies,
   sameRecord,
   storedRecord,
   syncIdOf,
-  validRecord,
   withSeries,
 } from './record'
 import type { SyncStore } from './store'
@@ -34,12 +41,9 @@ export async function syncEndpoint(
   request: Request,
   store: SyncStore,
 ): Promise<Response> {
-  if (request.method !== 'POST') {
-    return answer(null, STATUS.notAllowed)
-  }
-  const site = request.headers.get('Sec-Fetch-Site')
-  if (site !== null && site !== 'same-origin') {
-    return answer(null, STATUS.forbidden)
+  const refused = refusal(request)
+  if (refused !== null) {
+    return answer(null, refused)
   }
   const asked = operationOf(await bodyOf(request))
   if (asked === null) {
@@ -51,6 +55,25 @@ export async function syncEndpoint(
   }
   const answered = await attempt(asked.op, async () => operate(asked, context))
   return answered ?? answer(null, STATUS.unavailable)
+}
+
+/**
+ * Why a request is refused before its body is read, or `null`. A JSON body
+ * makes another site's browser ask first (a preflight this endpoint never
+ * answers), which covers the browsers that send no `Sec-Fetch-Site`.
+ */
+function refusal(request: Request): null | number {
+  const site = request.headers.get('Sec-Fetch-Site')
+  if (request.method !== 'POST') {
+    return STATUS.notAllowed
+  }
+  if (site !== null && site !== 'same-origin') {
+    return STATUS.forbidden
+  }
+  const json =
+    request.headers.get('Content-Type')?.startsWith('application/json') === true
+  const length = Number(request.headers.get('Content-Length') ?? 0)
+  return json && length <= MAX_BODY_LENGTH ? null : STATUS.badRequest
 }
 
 async function operate(
@@ -119,13 +142,14 @@ async function join(id: string, { jar, store }: Context): Promise<Response> {
   if (stored === null) {
     return answer({ record: null }, STATUS.notFound)
   }
-  const joined = validRecord({ ...recordFromCookies(jar), ...stored })
+  const joined = joinedRecord(stored, recordFromCookies(jar))
   if (!sameRecord(joined, stored)) {
     await store.set(id, joined)
   }
   return answer({ record: joined }, STATUS.ok, [
     ...cookiesOf(joined).map(({ name, value }) => bookmarkCookie(name, value)),
     syncCookie(id),
+    pendingCleared(),
   ])
 }
 

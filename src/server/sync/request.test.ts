@@ -24,7 +24,11 @@ function page(
 function ask(body: unknown, cookie = '', site = 'same-origin'): Request {
   return new Request(`${ORIGIN}${SYNC_ENDPOINT}`, {
     body: JSON.stringify(body),
-    headers: { 'Cookie': cookie, 'Sec-Fetch-Site': site },
+    headers: {
+      'Content-Type': 'application/json',
+      'Cookie': cookie,
+      'Sec-Fetch-Site': site,
+    },
     method: 'POST',
   })
 }
@@ -190,6 +194,81 @@ describe('a full page load of a synced device', () => {
   })
 })
 
+describe('a cleared or undelivered bookmark (#1560)', () => {
+  it('clears on this device a series cleared on another', async () => {
+    const store = await seeded({ 'one-piece': '', 'game-of-thrones': 's2e3' })
+    const { next, seen } = start()
+
+    const response = await syncedFetch(
+      page(`zs_sync=${ID}; zs_one-piece=700`),
+      store,
+      next,
+    )
+
+    expect(seen[0]?.headers.get('cookie')).not.toContain('zs_one-piece')
+    expect(response.headers.getSetCookie()).toContain(
+      'zs_one-piece=; Path=/; SameSite=Lax; Max-Age=0',
+    )
+  })
+
+  it('writes a change the push did not deliver over the record, once', async () => {
+    const store = await seeded({
+      'one-piece': '1100',
+      'hunter-x-hunter': 'c10',
+    })
+    const { next, seen } = start()
+
+    const response = await syncedFetch(
+      page(
+        `zs_sync=${ID}; zs_one-piece=500; zs_sync_pending=one-piece,hunter-x-hunter`,
+      ),
+      store,
+      next,
+    )
+
+    expect(seen[0]?.headers.get('cookie')).toContain('zs_one-piece=500')
+    await expect(store.get(ID)).resolves.toStrictEqual({
+      'hunter-x-hunter': '',
+      'one-piece': '500',
+    })
+    expect(response.headers.getSetCookie()).toContain(
+      'zs_sync_pending=; Path=/; SameSite=Lax; Max-Age=0',
+    )
+  })
+
+  it('keeps the pending list while the store still refuses', async () => {
+    quietWarn()
+    const store = await seeded({ 'one-piece': '1100' })
+    vi.spyOn(store, 'set').mockRejectedValue(new Error('429'))
+    const { next, seen } = start()
+
+    const response = await syncedFetch(
+      page(`zs_sync=${ID}; zs_one-piece=500; zs_sync_pending=one-piece`),
+      store,
+      next,
+    )
+
+    expect(seen[0]?.headers.get('cookie')).toContain('zs_one-piece=500')
+    expect(response.headers.getSetCookie().join(',')).not.toContain(
+      'zs_sync_pending',
+    )
+  })
+
+  it('lets a joining device fill a series cleared in the record', async () => {
+    const store = await seeded({ 'one-piece': '', 'game-of-thrones': 's2e3' })
+
+    const response = await syncedFetch(
+      ask({ id: ID, op: 'join' }, 'zs_one-piece=40'),
+      store,
+      start().next,
+    )
+
+    await expect(response.json()).resolves.toStrictEqual({
+      record: { 'game-of-thrones': 's2e3', 'one-piece': '40' },
+    })
+  })
+})
+
 describe('the sync endpoint', () => {
   it('answers at the address the browser asks', () => {
     expect(SYNC_ENDPOINT).toBe('/_serverFn/sync')
@@ -227,7 +306,7 @@ describe('the sync endpoint', () => {
     await expect(store.get(ID)).resolves.toStrictEqual({ 'one-piece': '900' })
   })
 
-  it('pushes one series from its cookie, and removes a cleared one', async () => {
+  it('pushes one series from its cookie, and marks a cleared one', async () => {
     const store = await seeded({ 'one-piece': '600', 'hunter-x-hunter': 'c10' })
 
     const moved = await syncedFetch(
@@ -245,7 +324,10 @@ describe('the sync endpoint', () => {
     )
 
     expect(moved.status).toBe(204)
-    await expect(store.get(ID)).resolves.toStrictEqual({ 'one-piece': '650' })
+    await expect(store.get(ID)).resolves.toStrictEqual({
+      'hunter-x-hunter': '',
+      'one-piece': '650',
+    })
   })
 
   it('reads a record, and answers 404 for an unknown one', async () => {
@@ -281,6 +363,7 @@ describe('the sync endpoint', () => {
       expect.stringMatching(/^zs_one-piece=1120;/u),
       expect.stringMatching(/^zs_game-of-thrones=s2e3;/u),
       expect.stringMatching(new RegExp(`^zs_sync=${ID};`, 'u')),
+      'zs_sync_pending=; Path=/; SameSite=Lax; Max-Age=0',
     ])
   })
 
@@ -289,7 +372,31 @@ describe('the sync endpoint', () => {
     ['a GET', new Request(`${ORIGIN}${SYNC_ENDPOINT}`), 405],
     [
       'a body that is not JSON',
-      new Request(`${ORIGIN}${SYNC_ENDPOINT}`, { body: '{', method: 'POST' }),
+      new Request(`${ORIGIN}${SYNC_ENDPOINT}`, {
+        body: '{',
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+      }),
+      400,
+    ],
+    [
+      'a body that is not sent as JSON',
+      new Request(`${ORIGIN}${SYNC_ENDPOINT}`, {
+        body: '{"op":"create"}',
+        method: 'POST',
+      }),
+      400,
+    ],
+    [
+      'a body announced too long',
+      new Request(`${ORIGIN}${SYNC_ENDPOINT}`, {
+        body: '{"op":"create"}',
+        headers: {
+          'Content-Length': '9999',
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      }),
       400,
     ],
     ['an id that is not one', ask({ id: 'x', op: 'read' }), 400],

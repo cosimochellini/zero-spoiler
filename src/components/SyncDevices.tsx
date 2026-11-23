@@ -5,6 +5,7 @@ import type { QrCodeGenerateResult } from 'uqr'
 import { LoadFailed } from '~/components/BookmarkSkeleton'
 import { syncStyles as styles } from '~/components/SyncDevices.styles'
 import { Button } from '~/components/ui/Button'
+import { syncTranslator } from '~/i18n/dictionaries/sync'
 import { useLocale, useT } from '~/i18n/LocaleContext'
 import type { Locale } from '~/i18n/locales'
 import { askSync, disconnectSync, isSyncId } from '~/lib/progress/sync'
@@ -44,9 +45,7 @@ export function SyncDevices(): ReactElement {
   const disconnect = (): void => {
     disconnectSync()
     setPanel('closed')
-    if (detailsRef.current !== null) {
-      detailsRef.current.open = false
-    }
+    detailsRef.current?.removeAttribute('open')
   }
 
   return (
@@ -59,7 +58,9 @@ export function SyncDevices(): ReactElement {
       ref={detailsRef}
       {...stylex.props(styles.devices)}
     >
-      <summary {...stylex.props(styles.summary)}>{t('dialog.devices')}</summary>
+      <summary {...stylex.props(styles.summary)}>
+        {syncTranslator(locale)('dialog.devices')}
+      </summary>
       <div {...stylex.props(styles.panel)}>
         {panel === 'loading' && (
           <p
@@ -113,7 +114,7 @@ function SyncLinkPanel({
   link: SyncLink
   onDisconnect: () => void
 }): ReactElement {
-  const t = useT()
+  const words = syncTranslator(useLocale().locale)
   const [copied, setCopied] = useState<'copied' | 'failed' | null>(null)
 
   const copy = async (): Promise<void> => {
@@ -127,13 +128,13 @@ function SyncLinkPanel({
 
   return (
     <>
-      <p {...stylex.props(styles.text)}>{t('dialog.devicesHelp')}</p>
+      <p {...stylex.props(styles.text)}>{words('dialog.devicesHelp')}</p>
       <QrCode
         code={link.code}
-        label={t('dialog.devicesCode')}
+        label={words('dialog.devicesCode')}
       />
       <p {...stylex.props(styles.text, styles.warning)}>
-        {t('dialog.devicesWarning')}
+        {words('dialog.devicesWarning')}
       </p>
       <div {...stylex.props(styles.actions)}>
         <Button
@@ -141,21 +142,21 @@ function SyncLinkPanel({
             void copy()
           }}
         >
-          {t('dialog.devicesCopy')}
+          {words('dialog.devicesCopy')}
         </Button>
         <Button
           onClick={onDisconnect}
           sx={styles.disconnect}
         >
-          {t('dialog.devicesDisconnect')}
+          {words('dialog.devicesDisconnect')}
         </Button>
       </div>
       <p
         aria-live="polite"
         {...stylex.props(styles.text)}
       >
-        {copied === 'copied' && t('dialog.devicesCopied')}
-        {copied === 'failed' && t('dialog.devicesCopyFailed')}
+        {copied === 'copied' && words('dialog.devicesCopied')}
+        {copied === 'failed' && words('dialog.devicesCopyFailed')}
       </p>
     </>
   )

@@ -5,6 +5,7 @@ import { type ReactElement, useEffect, useState } from 'react'
 import { ArchivePage } from '~/components/ArchivePage'
 import { LoadFailed } from '~/components/BookmarkSkeleton'
 import { Button } from '~/components/ui/Button'
+import { syncTranslator } from '~/i18n/dictionaries/sync'
 import { useLocale, useT } from '~/i18n/LocaleContext'
 import type { Locale } from '~/i18n/locales'
 import type { Translate } from '~/i18n/types'
@@ -35,7 +36,7 @@ type Step =
  * else sent never takes over this device's bookmarks on its own.
  */
 export function SyncPage({ series }: { series: Series[] }): ReactElement {
-  const t = useT()
+  const words = syncTranslator(useLocale().locale)
   const [step, setStep] = useState<Step>({ kind: 'checking' })
 
   const check = async (id: string): Promise<void> => {
@@ -63,8 +64,8 @@ export function SyncPage({ series }: { series: Series[] }): ReactElement {
 
   return (
     <ArchivePage
-      count={t('sync.lede')}
-      title={t('sync.title')}
+      count={words('sync.lede')}
+      title={words('sync.title')}
     >
       <div {...stylex.props(styles.body)}>
         <StepBody
@@ -82,7 +83,10 @@ export function SyncPage({ series }: { series: Series[] }): ReactElement {
   )
 }
 
-/** What the page shows at one step. */
+/**
+ * What the page shows at one step. Once joined, a full load of the hub,
+ * which reads the cookies the join has just set.
+ */
 function StepBody({
   onConnect,
   onRetry,
@@ -118,7 +122,6 @@ function StepBody({
         />
       )
     }
-    // A full load of the hub, which reads the cookies the join has just set.
     case 'joined': {
       return (
         <Navigate
@@ -178,7 +181,7 @@ function Connect({
   changes: string[]
   onConnect: () => void
 }): ReactElement {
-  const t = useT()
+  const words = syncTranslator(useLocale().locale)
 
   return (
     <>
@@ -189,7 +192,7 @@ function Connect({
           ))}
         </ul>
       )}
-      <Button onClick={onConnect}>{t('sync.connect')}</Button>
+      <Button onClick={onConnect}>{words('sync.connect')}</Button>
     </>
   )
 }
@@ -200,8 +203,8 @@ function Notice({
 }: {
   kind: 'already' | 'incomplete' | 'unknown'
 }): ReactElement {
-  const t = useT()
   const { locale } = useLocale()
+  const words = syncTranslator(locale)
 
   return (
     <>
@@ -209,7 +212,7 @@ function Notice({
         role={kind === 'already' ? 'status' : 'alert'}
         {...stylex.props(styles.text)}
       >
-        {t(`sync.${kind}`)}
+        {words(`sync.${kind}`)}
       </p>
       <p>
         <Link
@@ -217,7 +220,7 @@ function Notice({
           to="/$locale"
           {...stylex.props(styles.link)}
         >
-          ← {t('sync.toHub')}
+          ← {words('sync.toHub')}
         </Link>
       </p>
     </>
@@ -234,6 +237,7 @@ function changesOf(
   series: Series[],
   { locale, t }: { locale: Locale; t: Translate },
 ): string[] {
+  const words = syncTranslator(locale)
   const jar = parseCookieHeader(document.cookie)
   return series.flatMap((one) => {
     const stored = parseBookmark(record[one.slug], one)
@@ -244,7 +248,7 @@ function changesOf(
     ) {
       return []
     }
-    return t(own === null ? 'sync.add' : 'sync.change', {
+    return words(own === null ? 'sync.add' : 'sync.change', {
       point: bookmarkPoint(t, stored, one.books),
       series: one.name[locale],
     })

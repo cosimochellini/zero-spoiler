@@ -133,30 +133,7 @@ export const itDictionary: Dictionary = {
   'dialog.loadFailed':
     'Caricamento non riuscito. Controlla la connessione e riprova.',
   'dialog.retry': 'Riprova',
-  'dialog.devices': 'Altri dispositivi?',
-  'dialog.devicesHelp':
-    'Inquadra questo codice con un altro dispositivo, o apri lì il link. Da quel momento hanno gli stessi segnalibri.',
-  'dialog.devicesWarning':
-    'Chi ha questo link può vedere e cambiare i tuoi segnalibri.',
-  'dialog.devicesCode': 'Codice QR del link',
-  'dialog.devicesCopy': 'Copia link',
-  'dialog.devicesCopied': 'Link copiato.',
-  'dialog.devicesCopyFailed': 'Copia non riuscita. Riprova.',
-  'dialog.devicesDisconnect': 'Scollega questo dispositivo',
-
   'sync.pageTitle': 'Sincronizza i segnalibri | Zero Spoiler',
-  'sync.title': 'Gli stessi segnalibri su questo dispositivo',
-  'sync.lede':
-    'Questo dispositivo prende i segnalibri del dispositivo da cui arriva il link. Da quel momento, un segnalibro che sposti su uno dei due si ritrova sull’altro al successivo caricamento di una pagina.',
-  'sync.change': 'Il tuo segnalibro di {series} diventa {point}.',
-  'sync.add': 'Il tuo segnalibro di {series} viene impostato a {point}.',
-  'sync.connect': 'Collega questo dispositivo',
-  'sync.incomplete':
-    'Questo link è incompleto. Copialo di nuovo sull’altro dispositivo, da “Altri dispositivi?” nella finestra del segnalibro.',
-  'sync.unknown':
-    'Questo link non funziona più. Apri “Altri dispositivi?” nella finestra del segnalibro sull’altro dispositivo e copialo di nuovo.',
-  'sync.already': 'Questo dispositivo ha già questi segnalibri.',
-  'sync.toHub': 'Tutte le serie',
 
   'veil.locked.episode': 'Nella nebbia fino all’episodio {threshold}',
   'veil.locked.season': 'Nella nebbia fino a {threshold}',
@@ -244,14 +221,14 @@ export const itDictionary: Dictionary = {
   'footer.lead':
     'Una wiki di {series} che nasconde quello che viene dopo il tuo segnalibro.',
   'footer.colophon':
-    'Tutti i disegni sono fatti per questo sito e non ci sono immagini ufficiali. Il segnalibro viene salvato in un cookie su questo dispositivo.',
+    'Tutti i disegni sono fatti per questo sito e non ci sono immagini ufficiali. Il segnalibro viene salvato in un cookie su questo dispositivo e, se colleghi altri dispositivi, in un record condiviso.',
 
   'footer.unofficial':
     'Progetto amatoriale non ufficiale, non approvato dai titolari dei diritti di {series}.',
   'footer.sharedLead':
     'Wiki che nascondono quello che viene dopo il tuo segnalibro.',
   'footer.sharedColophon':
-    'Tutti i disegni sono fatti per questo sito e non ci sono immagini ufficiali. I segnalibri vengono salvati in cookie su questo dispositivo, uno per ogni serie.',
+    'Tutti i disegni sono fatti per questo sito e non ci sono immagini ufficiali. I segnalibri vengono salvati in cookie su questo dispositivo, uno per ogni serie, e, se colleghi altri dispositivi, in un record condiviso.',
   'footer.sharedUnofficial':
     'Progetto amatoriale non ufficiale, non approvato dai titolari dei diritti delle serie.',
   'footer.openSource': 'Zero Spoiler è open source: se ti è utile,',

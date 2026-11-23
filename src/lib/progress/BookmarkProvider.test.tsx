@@ -198,6 +198,7 @@ describe('a synced device (#1560)', () => {
 
   afterEach(() => {
     expireCookie('zs_sync')
+    expireCookie('zs_sync_pending')
     expireCookie('zs_one-piece')
   })
 
@@ -228,6 +229,21 @@ describe('a synced device (#1560)', () => {
     await screen.findByText('one-piece:45')
 
     expect(document.cookie).toContain('zs_one-piece=45')
+    // The next full load writes it to the record instead of reading over it.
+    expect(document.cookie).toContain('zs_sync_pending=one-piece')
+  })
+
+  it('takes a series off the pending list once a push lands', async () => {
+    const user = userEvent.setup()
+    pushes()
+    writeCookie('zs_sync', id)
+    writeCookie('zs_sync_pending', 'one-piece')
+    renderWithProviders(<Controls />)
+
+    await user.click(screen.getByRole('button', { name: 'Save' }))
+    await screen.findByText('one-piece:45')
+
+    expect(document.cookie).not.toContain('zs_sync_pending')
   })
 
   it('sends nothing from a device that is not synced', async () => {
