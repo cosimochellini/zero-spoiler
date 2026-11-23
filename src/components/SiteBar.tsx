@@ -1,10 +1,11 @@
 import * as stylex from '@stylexjs/stylex'
-import { Link, useMatch } from '@tanstack/react-router'
-import type { ReactElement } from 'react'
+import { Link, useLocation, useMatch } from '@tanstack/react-router'
+import { type ReactElement, useRef } from 'react'
 
 import { EpisodeMark } from '~/components/EpisodeMark'
 import { LocaleSwitch } from '~/components/LocaleSwitch'
 import { type PageEntry, usePageLinks } from '~/components/usePageLinks'
+import { useRevealedPage } from '~/components/useRevealedPage'
 import { useLocale, useT } from '~/i18n/LocaleContext'
 import type { TranslationKey } from '~/i18n/types'
 import { useBookmark, useSeriesParams } from '~/lib/progress/BookmarkContext'
@@ -147,9 +148,12 @@ function SeriesNavigation(): ReactElement {
   const t = useT()
   const params = useSeriesParams()
   const links = usePageLinks(NAV, ONE_PIECE_NAV, HUNTER_NAV)
+  const boxRef = useRef<HTMLElement>(null)
+  useRevealedPage(boxRef, useLocation().pathname)
   return (
     <nav
       aria-label={t('nav.label')}
+      ref={boxRef}
       {...stylex.props(styles.pages)}
     >
       {links.map(({ label, to }) => (

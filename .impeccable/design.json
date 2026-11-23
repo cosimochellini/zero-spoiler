@@ -802,7 +802,7 @@
       {
         "name": "40rem",
         "value": "40rem",
-        "purpose": "The line between phone and wider. Below it (max-width: 39.99rem) dialogs and peeks are bottom sheets. From it the site bar's pinned height on a page with no series drops from 6rem to 3.25rem."
+        "purpose": "The line between phone and wider. Below it (max-width: 39.99rem) dialogs and peeks are bottom sheets. From it a series page's site bar pins at 6rem only up to 56rem; a page with no series pins at 3.25rem at every width."
       },
       {
         "name": "48rem",
