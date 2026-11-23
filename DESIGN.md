@@ -273,14 +273,13 @@ The site bar is pinned at every width, at the height the `pin.bar` token gives,
 and a listing's controls and sticky heads pin under it (`src/styles/sticky.ts`).
 Where the control bar folds to one row (`CONTROLS.whole`), the places index's
 group heads scroll instead, and the row names the group in view (#1380). Below
-40rem a fruit fog band draws its first row of tiles and folds the rest behind a
-count and an Expand button; from 40rem the wall is whole (#1381).
+40rem the fruits page draws the first row of each group's fog tiles and folds
+the rest behind a count and an Expand button; from 40rem the wall is whole, and
+an opened fold stays open on Back (#1381).
 
 Breakpoints are `min-width` queries in rem, written where they are used; there
-is no named scale. Three exceptions: `max-width: 39.99rem` for the bottom
-sheets, the two ranges below 37.5rem and from 37.5rem to 39.99rem that fold a
-fog band to the album's first row (two tiles across, then three), and one
-`min-height: 32rem` paired with 40rem for a listing's controls.
+is no named scale. Two exceptions: `max-width: 39.99rem` for the bottom sheets,
+and one `min-height: 32rem` paired with 40rem for a listing's controls.
 `.impeccable/design.json` lists each with its use. 40rem is the line between a
 phone and a wider window.
 

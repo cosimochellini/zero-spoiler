@@ -27,7 +27,9 @@ Hunter) the reader has reached, and reading one in full.
   (`AbilityAlbum.tsx`).
 - A fruit's eater has its own fog: knowing the fruit is not knowing who ate it
   (`fruits/$id.tsx`).
-- Below 40rem a fruit fog band draws its first row and folds the rest; the fold
-  hides tiles already on the page and says only how many (`FogFold.tsx`).
+- Below 40rem each group's fog tiles fold to their first row; the fold hides
+  tiles already on the page and says only how many (`FogFold.tsx`). An opened
+  fold stays open on Back, so the page keeps its height and Back lands on the
+  same tile.
 
 **Open points:** none recorded.

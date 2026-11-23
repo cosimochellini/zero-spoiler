@@ -3,7 +3,7 @@ import type { ReactElement, ReactNode } from 'react'
 
 import { EpisodeMark } from '~/components/EpisodeMark'
 import { FogFold } from '~/components/FogFold'
-import { fogHint, fogTitle } from '~/components/fogWords'
+import { fogHint, fogTitle, foldWords } from '~/components/fogWords'
 import type { SeriesSlug, Translate, TranslationKey } from '~/i18n/types'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { color, font, leading, rule, space, text } from '~/styles/tokens.stylex'
@@ -33,21 +33,26 @@ export interface FogTitles<S extends SeriesSlug = never> {
   hintUnset: TranslationKey<S>
   many: TranslationKey<S>
   one: TranslationKey<S>
-  /**
-   * Set where the band is a wall of fog tiles, folded to its first row on a
-   * phone (`FogFold`): what is left under the fold, and the button.
-   */
-  fold?: {
-    more: TranslationKey<S>
-    moreOne: TranslationKey<S>
-    open: TranslationKey<S>
-  }
+}
+
+/** What a folded grid says under its first row: how many more, the button. */
+export interface FoldKeys<S extends SeriesSlug = never> {
+  more: TranslationKey<S>
+  moreOne: TranslationKey<S>
+  open: TranslationKey<S>
 }
 
 /** The band, its heading, and whatever list of covered records it holds. */
 export interface FogBandProps<S extends SeriesSlug = never> {
   children: ReactNode
   count: number
+  /**
+   * Set where the band is a wall of fog tiles, folded to its first row on a
+   * phone (`FogFold`): its list's id, the same on every visit (no `useId`,
+   * which a navigation renumbers), and its words. The band's children are
+   * then the tiles, and the fold draws their list.
+   */
+  fold?: undefined | { id: string; keys: FoldKeys<S> }
   headingId: string
   /**
    * The heading's level: `h3` under a section of its own, `h2` for a band
@@ -63,13 +68,13 @@ export interface FogBandProps<S extends SeriesSlug = never> {
 export function FogBand<S extends SeriesSlug = never>({
   children,
   count,
+  fold,
   headingId,
   level: Heading = 'h3',
   t,
   words,
 }: FogBandProps<S>): ReactElement {
   const { bookmark } = useBookmark()
-  const { fold } = words
 
   return (
     <section
@@ -94,11 +99,8 @@ export function FogBand<S extends SeriesSlug = never>({
             children
           : <FogFold
               count={count}
-              words={{
-                more: (more) =>
-                  more === 1 ? t(fold.moreOne) : t(fold.more, { count: more }),
-                open: t(fold.open),
-              }}
+              id={fold.id}
+              words={foldWords(t, fold.keys)}
             >
               {children}
             </FogFold>

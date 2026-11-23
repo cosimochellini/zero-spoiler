@@ -5,7 +5,7 @@ import {
   AlbumControls,
   type AlbumControlsProps,
 } from '~/components/AlbumControls'
-import { FRUIT_FOG, groupingOf } from '~/components/albumGrouping'
+import { FRUIT_FOG, FRUIT_FOLD, groupingOf } from '~/components/albumGrouping'
 import { AlbumGroups } from '~/components/AlbumGroups'
 import { AlbumNoMatch } from '~/components/AlbumNoMatch'
 import { LoadFailed } from '~/components/BookmarkSkeleton'
@@ -290,6 +290,7 @@ function Plate({
 
       <FogBand
         count={band.covered.length}
+        fold={{ id: `fold-${band.form}`, keys: FRUIT_FOLD }}
         headingId={`${headingId}-fog`}
         t={t}
         words={FRUIT_FOG}
@@ -319,7 +320,7 @@ function CoveredTiles({
   peek: (handle: string) => Promise<FruitView>
 }): ReactElement {
   return (
-    <ul {...stylex.props(styles.grid)}>
+    <>
       {band.covered.map((entry, at) => {
         return (
           <FruitTile
@@ -327,11 +328,12 @@ function CoveredTiles({
             form={band.form}
             index={band.open.length + at}
             peek={peek}
+            rank={at}
             slot={{ open: false, covered: entry }}
           />
         )
       })}
-    </ul>
+    </>
   )
 }
 

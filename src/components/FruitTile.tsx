@@ -50,6 +50,8 @@ export interface FruitTileProps {
    */
   morph?: boolean
   peek: (handle: string) => Promise<FruitView>
+  /** A covered tile's place among the covered tiles of a folded grid. */
+  rank?: number
   slot: Slot<FruitView>
 }
 
@@ -73,6 +75,7 @@ export function FruitTile({
   index,
   morph = true,
   peek,
+  rank,
   slot,
 }: FruitTileProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
@@ -111,6 +114,7 @@ export function FruitTile({
       ]}
       peek={peek}
       phase={index}
+      rank={rank}
     />
   )
 }

@@ -24,6 +24,13 @@ import {
 // column, and the page with it, wider than a phone.
 const ONE_COLUMN = 'minmax(0, 1fr)'
 
+/**
+ * How many tiles the grid's first row holds on a phone: two across, then
+ * three from 37.5rem. A folded fog grid (`FogFold`, `AlbumTile`) keeps that
+ * row, so it reads the same numbers the grid is drawn with.
+ */
+export const FIRST_ROW = { narrow: 2, wide: 3 } as const
+
 // The small-caps tracking every label on the sheet is set in.
 const LABEL_TRACKING = '0.12em'
 
@@ -109,8 +116,8 @@ export const styles = stylex.create({
     columnGap: { 'default': space.md, '@media (min-width: 40rem)': space.lg },
     display: 'grid',
     gridTemplateColumns: {
-      'default': `repeat(2, ${ONE_COLUMN})`,
-      '@media (min-width: 37.5rem)': `repeat(3, ${ONE_COLUMN})`,
+      'default': `repeat(${String(FIRST_ROW.narrow)}, ${ONE_COLUMN})`,
+      '@media (min-width: 37.5rem)': `repeat(${String(FIRST_ROW.wide)}, ${ONE_COLUMN})`,
       '@media (min-width: 50rem)': `repeat(4, ${ONE_COLUMN})`,
       '@media (min-width: 64rem)': `repeat(5, ${ONE_COLUMN})`,
       '@media (min-width: 80rem)': `repeat(6, ${ONE_COLUMN})`,

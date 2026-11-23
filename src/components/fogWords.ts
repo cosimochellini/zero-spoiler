@@ -1,4 +1,5 @@
-import type { FogTitles } from '~/components/FogBand'
+import type { FogTitles, FoldKeys } from '~/components/FogBand'
+import type { FoldWords } from '~/components/FogFold'
 import type { SeriesSlug, Translate } from '~/i18n/types'
 import type { Bookmark } from '~/lib/progress/episode'
 
@@ -23,6 +24,17 @@ export function fogTitle<S extends SeriesSlug>(
   }
 
   return t(words.many, { count })
+}
+
+/** What a fold says, in the page's words: how many more, and its button. */
+export function foldWords<S extends SeriesSlug>(
+  t: Translate<S>,
+  keys: FoldKeys<S>,
+): FoldWords {
+  return {
+    more: (count) => (count === 1 ? t(keys.moreOne) : t(keys.more, { count })),
+    open: t(keys.open),
+  }
 }
 
 /**

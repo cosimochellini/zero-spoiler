@@ -1,9 +1,14 @@
-import * as stylex from '@stylexjs/stylex'
 import type { ComponentProps, ReactElement } from 'react'
 
-import type { AlbumGroup, AlbumGrouping } from '~/components/albumGrouping'
+import {
+  type AlbumGroup,
+  type AlbumGrouping,
+  FRUIT_FOLD,
+} from '~/components/albumGrouping'
 import { CatalogueSection } from '~/components/CatalogueSection'
 import { FogBand } from '~/components/FogBand'
+import { FogFold } from '~/components/FogFold'
+import { foldWords } from '~/components/fogWords'
 import { FruitTile, OpenTiles } from '~/components/FruitTile'
 import {
   type EaterMatch,
@@ -11,7 +16,6 @@ import {
   type Match,
   matchesIn,
 } from '~/components/recordMatches'
-import { styles } from '~/components/SpecimenBands.styles'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import type {
   CoveredRecord,
@@ -116,17 +120,16 @@ export function AlbumGroups({
 
       <FogBand
         count={laterTiles.length}
+        fold={{ id: 'fold-later', keys: FRUIT_FOLD }}
         headingId={`${fieldId}-later`}
         level="h2"
         t={t}
         words={words}
       >
-        <ul {...stylex.props(styles.grid)}>
-          <CoveredTiles
-            peek={peek}
-            tiles={laterTiles}
-          />
-        </ul>
+        <CoveredTiles
+          peek={peek}
+          tiles={laterTiles}
+        />
       </FogBand>
     </>
   )
@@ -193,7 +196,11 @@ function Group({
       sticky
       title={group.title}
     >
-      <ul {...stylex.props(styles.grid)}>
+      <FogFold
+        count={fog.length}
+        id={`fold-${group.anchor}`}
+        words={foldWords(t, FRUIT_FOLD)}
+      >
         <OpenTiles
           matches={matches}
           needle={needle}
@@ -203,7 +210,7 @@ function Group({
           peek={peek}
           tiles={fog}
         />
-      </ul>
+      </FogFold>
     </CatalogueSection>
   )
 }
@@ -218,13 +225,14 @@ function CoveredTiles({
 }): ReactElement {
   return (
     <>
-      {tiles.map((tile) => {
+      {tiles.map((tile, rank) => {
         return (
           <FruitTile
             key={`fog-${tile.covered.handle}`}
             form={tile.form}
             index={tile.index}
             peek={peek}
+            rank={rank}
             slot={{ open: false, covered: tile.covered }}
           />
         )
