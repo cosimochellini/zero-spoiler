@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
+import { reveal } from '~/data/reveal'
 import { SERIES } from '~/data/series'
 import { archiveIn } from '~/data/source'
 import { ONE_PIECE_LOADED } from '~/test/series'
@@ -10,16 +11,33 @@ import { hubFor, hubSeries, openArchives, openDescriptions } from './hub.server'
 describe('hubSeries', () => {
   const { archive } = ONE_PIECE_LOADED
 
-  it('carries only the series, its count and the bookmark', () => {
+  it('carries only the series, its counts and the bookmark', () => {
     const bookmark = { mode: 'season', season: 14, episode: 3 } as const
+    const told = archiveIn(archive, 'episode').entities
 
     expect(hubSeries(archive, bookmark)).toStrictEqual({
       slug: 'one-piece',
       name: { en: 'One Piece', it: 'One Piece' },
       theme: 'one-piece',
-      count: archiveIn(archive, 'episode').entities.length,
+      count: told.length,
+      open: told.filter((entity) =>
+        reveal(bookmark, archive.series).sees(entity),
+      ).length,
       bookmark,
     })
+  })
+
+  it('opens what the bookmark has reached, in the source it counts in', () => {
+    const early = hubSeries(archive, { mode: 'episode', episode: 20 })
+    const later = hubSeries(archive, { mode: 'chapter', chapter: 300 })
+
+    expect(early.open).toBeGreaterThan(0)
+    expect(early.open).toBeLessThan(later.open)
+    expect(later.open).toBeLessThan(later.count)
+  })
+
+  it('opens nothing with no bookmark', () => {
+    expect(hubSeries(archive, null).open).toBe(0)
   })
 
   it('says nothing of a bookmark the reader has not saved', () => {

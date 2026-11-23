@@ -32,6 +32,7 @@ export const enDictionary = {
   'hub.lede':
     'One wiki per series, each with its own bookmark. Entries past your bookmark stay under fog.',
   'hub.count': '{count} entries',
+  'hub.countOpen': '{open} of {count} open',
   'hub.noBookmark': 'No bookmark yet',
   'hub.coming': 'Coming later',
   'seo.imageAlt':
