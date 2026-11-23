@@ -1,5 +1,6 @@
 import type { LocalizedText } from '~/data/types'
 
+import { elbafChronicles } from './elbaf.chronicle'
 import { elbafRelationships } from './elbaf.relationships'
 import type { OnePieceSaga } from './saga'
 
@@ -377,6 +378,7 @@ export const elbaf: OnePieceSaga = {
     },
     'loki': {
       relationships: elbafRelationships.loki,
+      chronicle: elbafChronicles.loki,
       role: { it: 'Principe di Erbaf', en: 'Prince of Elbaph' },
       log: {
         it: 'Da anni è incatenato ai piedi di un albero colossale, bendato, nel buio gelido sotto il villaggio. Lo chiamano il Principe Maledetto e la Vergogna di Erbaf, perché l’isola dice che ha ucciso il re suo padre per il frutto del diavolo della famiglia reale. A Rufy si presenta come il Dio del Sole che porterà la fine del mondo.',
@@ -522,6 +524,7 @@ export const elbaf: OnePieceSaga = {
     },
     'manmayer-gunko': {
       relationships: elbafRelationships['manmayer-gunko'],
+      chronicle: elbafChronicles['manmayer-gunko'],
       role: KNIGHT_ROLE,
       log: {
         it: 'Arriva su Erbaf dentro un cerchio magico, avvolta in un mantello col cappuccio calato sul viso, e mette fuori combattimento due guardie giganti del castello. Con le bende dei suoi vestiti solleva per il collo perfino un lupo del Mondo Sotterraneo. Dice di essere un Cavaliere di Dio, e di essere venuta a cercare Loki.',
@@ -592,6 +595,7 @@ export const elbaf: OnePieceSaga = {
     },
     'scopper-gaban': {
       relationships: elbafRelationships['scopper-gaban'],
+      chronicle: elbafChronicles['scopper-gaban'],
       role: { it: 'Ex membro dei Pirati di Roger', en: 'Former Roger Pirate' },
       log: {
         it: 'Su Erbaf viveva da anni come Mr. Ya, un vecchio umano con due asce, ex pirata, che i giganti chiamavano con rispetto Ya-san. Poi si rivela Scopper Gabin, il Mangiamontagne, la Mano Sinistra del Re dei Pirati, che navigò con Roger fino alla fine. È il marito di Ripley e il padre di Collon.',
@@ -619,6 +623,7 @@ export const elbaf: OnePieceSaga = {
     },
     'shepherd-sommers': {
       relationships: elbafRelationships['shepherd-sommers'],
+      chronicle: elbafChronicles['shepherd-sommers'],
       role: KNIGHT_ROLE,
       log: {
         it: 'Il cerchio magico lo trascina su Erbaf mentre è ancora in mutande e si lamenta della carenza di cibo a Marijoa. Vestendosi chiede a Shamrock se è lì per visitare la tomba di Harald. Poi ascolta il piano del comandante per rapire i bambini dei giganti.',
@@ -670,6 +675,7 @@ export const elbaf: OnePieceSaga = {
     },
     'kiba': {
       relationships: elbafRelationships.kiba,
+      chronicle: elbafChronicles.kiba,
       role: {
         it: 'Preside della Scuola Walrus',
         en: 'Walrus School principal',

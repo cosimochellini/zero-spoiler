@@ -1063,6 +1063,7 @@ export const alabasta: OnePieceSaga = {
     },
     'brogy': {
       relationships: alabastaRelationships.brogy,
+      chronicle: alabastaChronicles.brogy,
       role: { it: 'Guerriero gigante di Erbaf', en: 'Giant warrior of Elbaph' },
       log: {
         it: 'Ha una barba a forma di lama d’ascia e una risata che si sente dall’altra parte dell’isola, e porta un’ascia che nessun uomo riuscirebbe a sollevare. Ogni volta che il vulcano erutta scende nel campo di battaglia e affronta lo stesso avversario, come fa da cento anni.',
