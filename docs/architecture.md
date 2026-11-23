@@ -524,8 +524,8 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Arcs, places, ships       | 34 · 39 · 2                                             |
 | Saga modules              | 12, plus one for the devil fruits                       |
 | Line drawings             | 742, one per record, plus 433 redrawings of 240 records |
-| Chronicle stories         | 792, for 189 characters                                 |
-| Dated timelines           | 2755                                                    |
+| Chronicle stories         | 810, for 195 characters                                 |
+| Dated timelines           | 2761                                                    |
 | Affiliation steps         | 830                                                     |
 | Status steps              | 804                                                     |
 | Origins that link a place | 118                                                     |
