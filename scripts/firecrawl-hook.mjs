@@ -49,6 +49,7 @@ const MAX_KEY = 150
  */
 export function cacheDir(env, cwd) {
   if (env.FIRECRAWL_CACHE_DIR) {
+    // fallow-ignore-next-line security-sink -- the test-only override, set by the person running the hook
     return path.resolve(env.FIRECRAWL_CACHE_DIR)
   }
   const root =
@@ -61,6 +62,7 @@ export function cacheDir(env, cwd) {
       ).trim(),
     )
 
+  // fallow-ignore-next-line security-sink -- the project root Claude Code names, or Git's own common directory, and literals
   return path.join(root, '.gate', 'firecrawl')
 }
 
@@ -141,11 +143,13 @@ function formatNames(formats) {
  * @returns {string | undefined} The date, `YYYY-MM-DD`, or undefined.
  */
 function cachedOn(dir, key) {
+  // fallow-ignore-next-line security-sink -- the cache folder and a page key, which holds only [\w.-] characters, so it cannot leave the folder
   const page = path.join(dir, `${key}.md`)
   if (!existsSync(page)) {
     return
   }
   try {
+    // fallow-ignore-next-line security-sink -- the cache folder and a page key, which holds only [\w.-] characters, so it cannot leave the folder
     const meta = JSON.parse(readFileSync(path.join(dir, `${key}.json`), 'utf8'))
 
     return String(meta.fetched).slice(0, 10)
@@ -191,6 +195,7 @@ export function beforeScrape(input, dir) {
   const key = pageKey(input.url)
   const date = cachedOn(dir, key)
   if (date !== undefined) {
+    // fallow-ignore-next-line security-sink -- the cache folder and a page key, which holds only [\w.-] characters, so it cannot leave the folder
     const file = path.join(dir, `${key}.md`)
 
     return {
@@ -317,10 +322,12 @@ function writeAtomic(file, text) {
 export function savePage(dir, { url, markdown, fetched }) {
   mkdirSync(dir, { recursive: true })
   const key = pageKey(url)
+  // fallow-ignore-next-line security-sink -- the cache folder and a page key, which holds only [\w.-] characters, so it cannot leave the folder
   const file = path.join(dir, `${key}.md`)
   const meta = { url, fetched, characters: markdown.length }
   writeAtomic(file, markdown)
   writeAtomic(
+    // fallow-ignore-next-line security-sink -- the cache folder and a page key, which holds only [\w.-] characters, so it cannot leave the folder
     path.join(dir, `${key}.json`),
     `${JSON.stringify(meta, undefined, 2)}\n`,
   )
