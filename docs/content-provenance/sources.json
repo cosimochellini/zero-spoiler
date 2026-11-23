@@ -37421,6 +37421,26 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735394",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735394",
       "contentSha256": "46f41c9113b44017b1424e908605b6040d02770116c51dba24e90cc19f9d1166"
+    },
+    "got-en-Jon_Snow-749120.json": {
+      "locale": "en",
+      "title": "Jon Snow",
+      "revision": 749120,
+      "revisionDate": "2026-10-20T10:46:55Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Jon_Snow",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749120",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749120",
+      "contentSha256": "e55003c955b99358ee2661322961a3d5be9b59ccbafea1c61614b05f11b66876"
+    },
+    "iaf-en-A_Storm_of_Swords-26385.json": {
+      "locale": "en",
+      "title": "A Storm of Swords",
+      "revision": 26385,
+      "revisionDate": "2023-06-03T01:50:28Z",
+      "url": "https://iceandfire.fandom.com/wiki/A_Storm_of_Swords",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26385",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26385",
+      "contentSha256": "0ee7943be8b92216bf63ff450dcda4200b548fd9af5a94423cf7551848d4b6b6"
     }
   }
 }
