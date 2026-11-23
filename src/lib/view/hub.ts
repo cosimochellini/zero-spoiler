@@ -4,9 +4,9 @@ import type { Book } from '~/lib/progress/series'
 import type { SeriesTheme } from '~/styles/themes'
 
 /**
- * One series on the hub: its name, its colours, how many entries it holds
- * and the reader's own bookmark on it. A count says how many, never which,
- * so the hub names no record of any series.
+ * One series on the hub: its name, its colours, how many entries it holds,
+ * how many of them are open, and the reader's own bookmark on it. A count
+ * says how many, never which, so the hub names no record of any series.
  */
 export interface HubSeries {
   bookmark: Bookmark
@@ -14,6 +14,8 @@ export interface HubSeries {
   books?: Book[]
   count: number
   name: Record<Locale, string>
+  /** How many of the `count` entries the bookmark has reached; 0 with none. */
+  open: number
   slug: string
   theme: SeriesTheme
 }

@@ -23,13 +23,16 @@ export const recordStyles = stylex.create({
 
   back: { marginBlockEnd: `calc(-1 * ${space.xl})` },
   // The rule under the word, and the two colours it takes. What the link is
-  // for is said where it is rendered.
+  // for is said where it is rendered. 44px tall like every control, its
+  // words centred in it at their own size.
   backLink: {
+    alignItems: 'center',
     color: {
       'default': color.ink2,
       ':hover': color.accent,
       ':active': color.ink,
     },
+    display: 'inline-flex',
     fontSize: text.base,
     fontWeight: 600,
     outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
@@ -44,5 +47,6 @@ export const recordStyles = stylex.create({
     transitionProperty: 'color, text-decoration-color',
     transitionTimingFunction: ease.out,
     whiteSpace: 'nowrap',
+    minHeight: '44px',
   },
 })

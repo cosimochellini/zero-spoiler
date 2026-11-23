@@ -27,7 +27,9 @@ elsewhere.
    `docs/architecture.md` from the PR revision
    (`/usr/bin/git show <head-sha>:<path>` or the GitHub contents API with
    `ref=<head-sha>`). Load `tone-of-voice` or `line-drawings` when their content
-   is in scope. Owner rulings are not defects.
+   is in scope. Owner rulings are not defects. Check A Wiki of Ice and Fire
+   facts in the main checkout's `.gate/firecrawl/` before any Firecrawl scrape:
+   the implementer's pages are already there.
 3. Use `/usr/bin/git` for git commands. Locate the existing PR worktree with
    `/usr/bin/git worktree list --porcelain` and verify that its HEAD matches the
    PR head SHA before reading its files. Read that worktree without changing it.

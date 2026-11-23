@@ -15,9 +15,8 @@ import {
  * The drawing is a line drawing in a 160×200 box, drawn with the same 2px
  * pen at every size. Set at the height of the frame it is a few lines on a
  * lot of dark paper, which is the point: the frame is the drawing's, not a
- * card it sits in. A wash of the arc's own colour sits behind it so the
- * frame is not flat black, and the scrim is one round element seated in the
- * corner the words occupy, so it has no edge anywhere.
+ * card it sits in. The scrim is one round element seated in the corner the
+ * words occupy, so it has no edge anywhere.
  */
 export const styles = stylex.create({
   fold: {
@@ -53,15 +52,6 @@ export const styles = stylex.create({
       content: '',
       position: 'absolute',
     },
-  },
-  // The arc's colour, as a soft light behind the drawing rather than a fill:
-  // a drawing is never filled, so the colour is in the air around it.
-  halo: (image: string) => ({ backgroundImage: image }),
-  haloBox: {
-    insetBlock: '-10%',
-    insetInlineEnd: { 'default': '-20%', '@media (min-width: 40rem)': '-4%' },
-    position: 'absolute',
-    width: { 'default': '140%', '@media (min-width: 40rem)': '72%' },
   },
   // The drawing is set taller than the frame and cropped by it: its box has
   // air above and below the object, and the crop takes that rather than the

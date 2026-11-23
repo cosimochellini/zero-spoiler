@@ -361,5 +361,8 @@ const styles = stylex.create({
     fontSize: text.base,
     lineHeight: leading.body,
     textRendering: 'optimizeLegibility',
+    // Inherited by all running text: a paragraph does not end on one short
+    // word. Headings balance their lines instead (src/styles/global.css).
+    textWrap: 'pretty',
   },
 })

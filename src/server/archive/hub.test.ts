@@ -2,24 +2,32 @@ import { describe, expect, it } from 'vitest'
 
 import { SERIES } from '~/data/series'
 import { archiveIn } from '~/data/source'
-import { ONE_PIECE_LOADED } from '~/test/series'
+import type { Bookmark } from '~/lib/progress/episode'
+import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 import { plant } from '~/test/sourceOnly'
 
+import { abilitySheet } from './abilities.server'
+import { fruitSheet } from './fruits.server'
 import { hubFor, hubSeries, openArchives, openDescriptions } from './hub.server'
+import { shelvesPage } from './pages.server'
+import { placesPage } from './places.server'
+import { readerFor } from './reader.server'
 
 describe('hubSeries', () => {
   const { archive } = ONE_PIECE_LOADED
 
-  it('carries only the series, its count and the bookmark', () => {
+  it('carries only the series, its counts and the bookmark', () => {
     const bookmark = { mode: 'season', season: 14, episode: 3 } as const
+    const { count, open, ...rest } = hubSeries(archive, bookmark)
 
-    expect(hubSeries(archive, bookmark)).toStrictEqual({
+    expect(rest).toStrictEqual({
       slug: 'one-piece',
       name: { en: 'One Piece', it: 'One Piece' },
       theme: 'one-piece',
-      count: archiveIn(archive, 'episode').entities.length,
       bookmark,
     })
+    expect(count).toBe(archiveIn(archive, 'episode').entities.length)
+    expect(open).toBeLessThanOrEqual(count)
   })
 
   it('says nothing of a bookmark the reader has not saved', () => {
@@ -91,6 +99,62 @@ describe('the count on the hub', () => {
   it('counts only what both sources tell for a reader with no bookmark', () => {
     expect(countAt(episodeOnly, null)).toBe(archive.entities.length)
     expect(countAt(chapterOnly, null)).toBe(archive.entities.length)
+  })
+})
+
+/**
+ * The open count against what the listings send at the same bookmark: the
+ * arcs and characters on the shelves, the places and ships on the places
+ * page, the fruits' plates and the abilities' bands. Two known differences:
+ * One Piece's first arc, East Blue, is an entry no shelf carries, and Game of
+ * Thrones' shelves are headed by seasons that are not entries.
+ */
+describe('the open count on the hub', () => {
+  /** Arcs the hub counts that no shelf heads. */
+  const UNSHELVED: Partial<Record<string, string[]>> = {
+    'one-piece': ['east-blue'],
+  }
+  const bookmarks: NonNullable<Bookmark>[] = [
+    { mode: 'episode', episode: 20 },
+    { mode: 'episode', episode: 60 },
+    { mode: 'chapter', chapter: 300 },
+  ]
+  const cases = LOADED_SERIES.flatMap(({ slug, archive }) =>
+    bookmarks.map((bookmark) => ({ slug, archive, bookmark })),
+  )
+
+  it.each(cases)(
+    'adds up the listings of $slug at $bookmark',
+    ({ slug, archive, bookmark }) => {
+      const r = readerFor(archive, bookmark, 'en')
+      const shelves = shelvesPage(r)
+      // Game of Thrones' season headings are not entries, so they are not counted.
+      const shelvedArcs = shelves.filter(
+        ({ arc }) =>
+          arc.open && r.archive.getEntity(arc.record.id) !== undefined,
+      )
+      const unshelved = (UNSHELVED[slug] ?? []).filter((id) => {
+        const arc = r.archive.getEntity(id)
+        return arc !== undefined && r.sees(arc)
+      })
+      const places = placesPage(r)
+      const listed =
+        shelvedArcs.length
+        + unshelved.length
+        + shelves.reduce((sum, shelf) => sum + shelf.open.length, 0)
+        + places.open.length
+        + places.ships.length
+        + fruitSheet(r).plates.reduce((sum, plate) => sum + plate.opened, 0)
+        + abilitySheet(r).bands.reduce((sum, band) => sum + band.open.length, 0)
+
+      expect(hubSeries(archive, bookmark).open).toBe(listed)
+    },
+  )
+
+  it('opens nothing with no bookmark', () => {
+    for (const { archive } of LOADED_SERIES) {
+      expect(hubSeries(archive, null).open).toBe(0)
+    }
   })
 })
 

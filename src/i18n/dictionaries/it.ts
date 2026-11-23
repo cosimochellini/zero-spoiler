@@ -19,6 +19,7 @@ export const itDictionary: Dictionary = {
   'hub.lede':
     'Una wiki per ogni serie, ognuna con il suo segnalibro. Le voci dopo il segnalibro restano nella nebbia.',
   'hub.count': '{count} voci',
+  'hub.countOpen': '{open} su {count} visibili',
   'hub.noBookmark': 'Nessun segnalibro',
   'hub.coming': 'In arrivo',
   'seo.imageAlt':
@@ -145,6 +146,7 @@ export const itDictionary: Dictionary = {
   'veil.revealing': 'Caricamento…',
   'veil.peekFailed': 'Caricamento non riuscito. Riprova.',
   'veil.placeholder': 'Spoiler',
+  'veil.entry': 'Voce nella nebbia',
 
   'chart.opensAt.episode': 'Episodio {threshold}',
   'chart.opensAt.season': '{threshold}',

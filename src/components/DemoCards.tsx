@@ -220,9 +220,9 @@ function Drawn({
 }
 
 /**
- * A record under fog: the bare seal or the bare plate, the word "Spoiler",
- * and where it opens. The name and the drawing are not drawn, though for an
- * East Blue record its name is in the dial's data.
+ * A record under fog: the bare seal or the bare plate, "Entry under fog" in
+ * the glossary's words, and where it opens. The name and the drawing are not
+ * drawn, though for an East Blue record its name is in the dial's data.
  */
 export function FogCard({
   entry,
@@ -241,9 +241,7 @@ export function FogCard({
           <CharacterCrest />
         : <PortPlate />}
       </div>
-      <p {...stylex.props(styles.name, styles.fogName)}>
-        {t('veil.placeholder')}
-      </p>
+      <p {...stylex.props(styles.name, styles.fogName)}>{t('veil.entry')}</p>
       <p {...stylex.props(styles.threshold)}>
         {describeThreshold({
           gated: entry,

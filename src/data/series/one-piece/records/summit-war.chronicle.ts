@@ -165,6 +165,20 @@ export const summitWarChronicles = {
         },
       },
     },
+    {
+      episode: 1175,
+      chapter: 1145,
+      value: {
+        title: {
+          it: 'La proiezione sulle fiamme',
+          en: 'A throw at the flames',
+        },
+        body: {
+          it: 'La squadra antincendio dei giganti non riesce a spegnere l’incendio appiccato da [[loki|Loki]], e i bambini sonnambuli continuano a camminare verso le fiamme, con [[jaguar-d-saul|Sauro]] che gli corre dietro. Allora Jinbe lancia una massa enorme di nuvole marine sul fuoco con una proiezione sulla spalla e lo spegne. I bambini sono salvi per ora, anche se seguono ancora la freccia di [[manmayer-gunko|Gunko]]. I giganti si complimentano con i loro pompieri, che sanno bene di non essere stati loro, e Jinbe risale sulla nave di [[colon|Collon]] senza farsi vedere. Subito dopo Gunko compare a prua.',
+          en: 'The giants’ firefighting team cannot put out the fire [[loki|Loki]] started, and the sleepwalking children keep walking toward it, with [[jaguar-d-saul|Saul]] running after them. Then Jinbe hurls a huge mass of sea clouds at the flames with a shoulder throw and puts the fire out. The children are safe for now, though they still follow [[manmayer-gunko|Gunko]]’s arrow. The giants praise their firefighters, who know it was not them, and Jinbe slips back aboard [[colon|Colon]]’s ship unseen. Then Gunko appears on its bow.',
+        },
+      },
+    },
   ],
 
   'trafalgar-law': [

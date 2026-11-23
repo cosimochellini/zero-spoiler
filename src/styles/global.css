@@ -278,6 +278,16 @@
   }
 
   /*
+   * A heading's lines are balanced, so it never ends on one short word. Set
+   * here because StyleX cannot select by element, and every heading is styled
+   * where it is used; running text is wrapped `pretty` from the body, in
+   * src/routes/__root.tsx. A component's own `text-wrap` still wins.
+   */
+  :is(h1, h2, h3, h4, h5, h6) {
+    text-wrap: balance;
+  }
+
+  /*
    * A modal dialog is open: the page behind it is inert, so it does not
    * scroll either. Without this the bookmark sheet's own scroll runs on into
    * the page under it on a phone.

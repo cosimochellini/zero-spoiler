@@ -104,14 +104,16 @@ const styles = stylex.create({
     paddingBlockStart: space.lg,
   },
 
-  // A colophon is read once, slowly, so it keeps a measure.
+  // A colophon is read once, slowly, so it keeps a measure: the narrow end
+  // of the running text's 52 to 66ch, which in this face is under 80
+  // characters a line in both languages.
   colophon: {
     color: color.muted,
     fontFamily: font.body,
     fontSize: text.base,
     lineHeight: leading.body,
     marginBlockEnd: space.sm,
-    maxWidth: '72ch',
+    maxWidth: '52ch',
   },
   link: {
     color: color.ink2,

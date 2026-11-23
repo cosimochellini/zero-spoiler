@@ -802,7 +802,7 @@
       {
         "name": "40rem",
         "value": "40rem",
-        "purpose": "The line between phone and wider. Below it (max-width: 39.99rem) dialogs and peeks are bottom sheets. From it the site bar's pinned height on a page with no series drops from 6rem to 3.25rem."
+        "purpose": "The line between phone and wider. Below it (max-width: 39.99rem) dialogs and peeks are bottom sheets. From it grids, type sizes and spacing across the site take their wider steps, and the site bar's gaps widen. No bar height depends on it: the bar's height changes at 56rem (seriesWide)."
       },
       {
         "name": "48rem",
@@ -908,7 +908,7 @@
     "rules": [
       {
         "name": "The One Accent Rule",
-        "body": "One accent per series, never a large fill (owner, 2026-11-17). The accent is a line, a word, a border or a dot. The code fills a few surfaces with it, and they are the accepted set: the button of a primary action (Save in the bookmark dialog, owner 2026-10-12, and the landing page's primary buttons); the marks for filler in `FillerCountdown.styles.ts` and `FillerStrip.tsx`; and small marks such as a picked chip's dot. The hub also lights each series card with a low-alpha beam of its accent, and the home sets a glow behind its drawing. The design gate holds both glows under a temporary waiver until the owner says whether they stay; leave them as they are. Text on a filled accent surface is Accent Ink. Keep these filled, and add no other.",
+        "body": "One accent per series, never a large fill (owner, 2026-11-17). The accent is a line, a word, a border or a dot. The code fills a few surfaces with it, and they are the accepted set: the button of a primary action (Save in the bookmark dialog, owner 2026-10-12, and the landing page's primary buttons); the marks for filler in `FillerCountdown.styles.ts` and `FillerStrip.tsx`; and small marks such as a picked chip's dot. Text on a filled accent surface is Accent Ink. Keep these filled, and add no other. The hub's series cards and the home's drawing sit on plain paper, with no glow behind them (owner, 2026-11-23, #1378).",
         "section": "colors"
       },
       {
@@ -934,8 +934,8 @@
       "**Do** set numerals, counts and short uppercase labels in JetBrains Mono, and nothing longer: never a sentence or a heading. Impeccable treats mono outside code as a costume; here it is the voice of data by design (owner, 2026-11-17).",
       "**Do** mark a link inside text with an underline. The accent sits within 3:1 of the inks in every set, so colour alone cannot.",
       "**Do** space siblings with `gap` in new work; see Layout for today's state.",
-      "**Do** keep controls at least 44px tall. Under it today, for the surface passes (#1375 to #1383) to fix: the wordmark link, back links and relationship rows.",
-      "**Do** keep running text to a measure of 52 to 66ch. Wider today, for the same passes: the footer (72ch). In Instrument Sans a line holds about 1.4 characters per `ch`, so the 60 to 75 characters a line the impeccable skill asks for is about 44 to 54ch. The legal page sets 48ch, about 67 characters (#1383).",
+      "**Do** keep controls at least 44px tall. Under it today, for the surface passes (#1375 to #1383) to fix: relationship rows.",
+      "**Do** keep running text to a measure of 52 to 66ch. In Instrument Sans a line holds about 1.4 characters per `ch`, so the 60 to 75 characters a line the impeccable skill asks for is about 44 to 54ch. The legal page sets 48ch, about 67 characters (#1383), and the footer 52ch (#1377).",
       "**Do** check every pass at a width of 390px. Mobile is the owner's second priority, after the bookmark and progress and before fog."
     ],
     "donts": [

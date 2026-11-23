@@ -1,10 +1,11 @@
 import * as stylex from '@stylexjs/stylex'
-import { Link, useMatch } from '@tanstack/react-router'
-import type { ReactElement } from 'react'
+import { Link, useMatch, useRouter } from '@tanstack/react-router'
+import { type ReactElement, useRef } from 'react'
 
 import { EpisodeMark } from '~/components/EpisodeMark'
 import { LocaleSwitch } from '~/components/LocaleSwitch'
 import { type PageEntry, usePageLinks } from '~/components/usePageLinks'
+import { useRevealedPage } from '~/components/useRevealedPage'
 import { useLocale, useT } from '~/i18n/LocaleContext'
 import type { TranslationKey } from '~/i18n/types'
 import { useBookmark, useSeriesParams } from '~/lib/progress/BookmarkContext'
@@ -31,7 +32,8 @@ import {
  * follows, read and not shown, so the link is "HxH Hunter x Hunter". Past
  * them the row is empty. It stays pinned at every width, so the pages and
  * the bookmark are one tap away from anywhere down a long listing. Below
- * `ROOMY` a series bar folds the name and the pages onto a second row.
+ * `ROOMY` a series bar folds the name and the pages onto a second row, where
+ * the name keeps its width and the pages scroll sideways.
  * The right edge carries the series' pages, the reader's bookmark and the
  * language select, and no more. The bookmark is the one control the whole
  * site turns on, so it lives here, on every page, as a single mark that opens
@@ -146,9 +148,12 @@ function SeriesNavigation(): ReactElement {
   const t = useT()
   const params = useSeriesParams()
   const links = usePageLinks(NAV, ONE_PIECE_NAV, HUNTER_NAV)
+  const boxRef = useRef<HTMLElement>(null)
+  useRevealedPage(boxRef, useRouter())
   return (
     <nav
       aria-label={t('nav.label')}
+      ref={boxRef}
       {...stylex.props(styles.pages)}
     >
       {links.map(({ label, to }) => (
@@ -171,9 +176,11 @@ const WIDE = '@media (min-width: 40rem)'
 // A series bar needs more room for one row: the wordmark, the short name,
 // its pages, the bookmark and the language fit from `BAR.seriesWide` with the
 // most pages (four, One Piece's and Hunter x Hunter's, in Italian). Below it
-// the name and the pages fold under, as on a phone, where the name gives way
-// first.
+// the name and the pages fold under, as on a phone, where the name keeps its
+// width and the pages scroll sideways.
 const ROOMY = BAR.seriesWide
+// The least height of every control in the bar, the wordmark's included.
+const TAP = '44px'
 
 const styles = stylex.create({
   // One grid at every width, pinned to the top of the window, its height
@@ -184,24 +191,36 @@ const styles = stylex.create({
   // Below it the first row has the wordmark, bookmark and language, and the
   // series' row folds under.
   bar: {
-    paddingBlock: space.xs2,
-    paddingInline: space.md,
-    alignItems: 'center',
-    // Frosted, so the lantern bloom still shows where the page begins and a
-    // page scrolling under the bar is never read through it.
-    backdropFilter: 'blur(14px) saturate(1.4)',
-    backgroundColor: color.veil,
-    columnGap: { [WIDE]: space.lg, default: space.sm },
-    display: 'grid',
-    gridTemplateColumns: {
+    'paddingBlock': space.xs2,
+    'paddingInline': space.md,
+    'alignItems': 'center',
+    'columnGap': { [WIDE]: space.lg, default: space.sm },
+    'display': 'grid',
+    'gridTemplateColumns': {
       [ROOMY]: 'auto auto minmax(0, 1fr) auto auto auto',
       default: 'minmax(0, 1fr) auto auto',
     },
-    insetBlockStart: 0,
-    position: 'sticky',
-    zIndex: z.bar,
-    height: pin.bar,
-    minWidth: 0,
+    'insetBlockStart': 0,
+    'position': 'sticky',
+    'zIndex': z.bar,
+    'height': pin.bar,
+    'minWidth': 0,
+    // The glass, frosted so the lantern bloom still shows where the page
+    // begins and a page scrolling under the bar is never read through it. It
+    // runs to both edges of the window while the bar's row keeps the
+    // column's 76rem: drawn on the bar's own box, it ended at the column's
+    // edge, a hard line through the bloom on a wide screen. `100vw` counts a
+    // classic scrollbar too, which only paints under it; the document clips
+    // what spills past (src/styles/global.css).
+    '::before': {
+      insetBlock: 0,
+      insetInline: 'calc(50% - 50vw)',
+      backdropFilter: 'blur(14px) saturate(1.4)',
+      backgroundColor: color.veil,
+      content: '""',
+      position: 'absolute',
+      zIndex: -1,
+    },
   },
   sharedBar: {
     gridTemplateColumns: {
@@ -209,11 +228,28 @@ const styles = stylex.create({
       default: 'minmax(0, 1fr) auto',
     },
   },
+  // Below `ROOMY` the pages scroll sideways in their own box, out to the
+  // window's edge, where the next page cut in half says there is more: the
+  // name before them keeps its width. The box reaches past the row by the
+  // focus ring's room, a ring's width and its offset, so a scroll box that
+  // clips at its edge never cuts a ring; the margins take that room back.
+  // No scrollbar: it would take the row's height on a desktop mouse.
   pages: {
     gap: space.xs,
+    marginBlock: { [ROOMY]: 0, default: `calc(-1 * ${space.xs2})` },
+    paddingBlock: { [ROOMY]: 0, default: space.xs2 },
     alignItems: 'center',
     display: 'flex',
-    flexShrink: 0,
+    flexShrink: { [ROOMY]: 0, default: 1 },
+    marginInlineEnd: { [ROOMY]: 0, default: `calc(-1 * ${space.md})` },
+    marginInlineStart: { [ROOMY]: 0, default: `calc(-1 * ${space.xs2})` },
+    paddingInlineEnd: { [ROOMY]: 0, default: space.md },
+    paddingInlineStart: { [ROOMY]: 0, default: space.xs2 },
+    scrollbarWidth: 'none',
+    minWidth: 0,
+    overflowX: { [ROOMY]: 'visible', default: 'auto' },
+    // A swipe that reaches either end stops there, not in the history.
+    overscrollBehaviorX: 'contain',
   },
   // A phone's second row: the series' name, a hairline, then its pages,
   // flush with the wordmark above. The row spans the bar rather than the
@@ -226,6 +262,7 @@ const styles = stylex.create({
     display: { [ROOMY]: 'contents', default: 'flex' },
     gridColumnEnd: { [ROOMY]: 'auto', default: -1 },
     gridColumnStart: { [ROOMY]: 'auto', default: 1 },
+    minWidth: 0,
   },
   // A column of no width, the glyph centred on it, so the slash sits halfway
   // between the wordmark and the name whatever its own width.
@@ -238,7 +275,8 @@ const styles = stylex.create({
     justifyContent: 'center',
     width: 0,
   },
-  // On a narrow phone the name gives way first, so the pages stay whole.
+  // On a phone the name keeps its width and the pages scroll beside it; from
+  // `ROOMY` it is the row's free column, and a long name ends in an ellipsis.
   seriesName: {
     alignItems: 'center',
     borderInlineEndColor: color.rule2,
@@ -246,6 +284,7 @@ const styles = stylex.create({
     borderInlineEndWidth: rule.hair,
     color: { 'default': color.ink, ':hover': color.accent },
     display: 'inline-flex',
+    flexShrink: 0,
     fontFamily: font.display,
     fontSize: { [ROOMY]: text.lg, default: text.base },
     fontStretch: 'semi-condensed',
@@ -263,7 +302,7 @@ const styles = stylex.create({
     textTransform: 'none',
     whiteSpace: 'nowrap',
     maxWidth: '100%',
-    minHeight: '44px',
+    minHeight: TAP,
     minWidth: 0,
   },
   seriesText: { overflow: 'hidden', textOverflow: 'ellipsis' },
@@ -279,8 +318,11 @@ const styles = stylex.create({
   // On a series page the series' name is the louder of the two.
   quiet: { color: { 'default': color.ink2, ':hover': color.accent } },
 
+  // The way to the hub, as tall as the other controls, its type the same.
   wordmark: {
+    alignItems: 'center',
     color: color.ink,
+    display: 'flex',
     fontFamily: font.display,
     fontSize: { [WIDE]: text.lg, default: text.base },
     fontWeight: 800,
@@ -294,6 +336,7 @@ const styles = stylex.create({
     textTransform: 'uppercase',
     // A wordmark is one line or it is not a wordmark.
     whiteSpace: 'nowrap',
+    minHeight: TAP,
   },
 
   // The same voice as the language switch beside it; the current page is
@@ -326,6 +369,6 @@ const styles = stylex.create({
     transitionProperty: 'color',
     transitionTimingFunction: ease.out,
     whiteSpace: 'nowrap',
-    minHeight: '44px',
+    minHeight: TAP,
   },
 })
