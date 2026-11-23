@@ -143,8 +143,8 @@ function DraftForm({
  * runs after every ref of that commit, so the dialog is not open yet.
  *
  * A ref callback with one identity, so it runs when the form attaches and not
- * on every render, which would pull the focus back from wherever the reader
- * put it, the close button or the "More devices?" link.
+ * on every render, which would pull the focus back from the close button
+ * whenever the reader typed.
  */
 function focusOnArrival(form: HTMLFormElement | null): void {
   if (
