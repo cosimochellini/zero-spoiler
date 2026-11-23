@@ -193,6 +193,9 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
   'fruits.foggedHintUnset':
     'I loro nomi sono nascosti, quindi la ricerca non li trova. Imposta il segnalibro per vederli.',
   'fruits.allOpen': 'Nessun frutto di questo tipo è nella nebbia.',
+  'fruits.foldMore': 'E altri {count} nella nebbia',
+  'fruits.foldMoreOne': 'E un altro nella nebbia',
+  'fruits.unfold': 'Espandi',
   'fruits.albumFailed': 'Caricamento dei frutti del diavolo non riuscito.',
   'fruits.albumRetry': 'Riprova',
   'fruits.marquee': '{saga}: {count} frutti finora',

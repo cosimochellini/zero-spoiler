@@ -16,7 +16,8 @@ import {
  *
  * Three plates, each a pinned head over a grid of tiles: two across on a
  * phone, where the drawing is what you browse by, and up to six on a wide
- * page. The head is one line on a phone so the tiles start high.
+ * page. The head is one line on a phone so the tiles start high, and two
+ * below 22rem, where a long name would not fit beside its label.
  */
 // The floor every grid column here takes. `1fr` on its own has `min-content`
 // for a floor, and one `white-space: nowrap` child is then enough to push a
@@ -65,7 +66,12 @@ export const styles = stylex.create({
     alignItems: 'baseline',
     columnGap: { 'default': space.sm, '@media (min-width: 60rem)': space.lg },
     display: 'grid',
-    gridTemplateColumns: `auto ${ONE_COLUMN}`,
+    // Below 22rem a long name goes under its label rather than losing its
+    // last letters beside it.
+    gridTemplateColumns: {
+      'default': ONE_COLUMN,
+      '@media (min-width: 22rem)': `auto ${ONE_COLUMN}`,
+    },
     rowGap: space.xs,
   },
   plateNumber: {
@@ -88,7 +94,7 @@ export const styles = stylex.create({
     letterSpacing: NAME_TRACKING,
     lineHeight: leading.heading,
     textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
+    whiteSpace: { 'default': 'normal', '@media (min-width: 22rem)': 'nowrap' },
     minWidth: 0,
   },
   plateLede: {

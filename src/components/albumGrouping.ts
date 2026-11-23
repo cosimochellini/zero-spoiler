@@ -15,6 +15,11 @@ import type {
 /** What a plate's fog band calls itself at each count. */
 export const FRUIT_FOG: FogTitles<'one-piece'> = {
   allOpen: 'fruits.allOpen',
+  fold: {
+    more: 'fruits.foldMore',
+    moreOne: 'fruits.foldMoreOne',
+    open: 'fruits.unfold',
+  },
   hint: 'fruits.foggedHint',
   hintUnset: 'fruits.foggedHintUnset',
   many: 'fruits.foggedTitle',
@@ -23,9 +28,8 @@ export const FRUIT_FOG: FogTitles<'one-piece'> = {
 
 /** What the later sagas' band calls itself at each count. */
 const LATER_FOG: FogTitles<'one-piece'> = {
+  ...FRUIT_FOG,
   allOpen: 'fruits.laterAllOpen',
-  hint: 'fruits.foggedHint',
-  hintUnset: 'fruits.foggedHintUnset',
   many: 'fruits.later',
   one: 'fruits.laterOne',
 }

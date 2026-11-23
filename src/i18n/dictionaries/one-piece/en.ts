@@ -193,6 +193,9 @@ export const onePieceEn = {
   'fruits.foggedHintUnset':
     'Their names are hidden, so search does not find them. Set your bookmark to see them.',
   'fruits.allOpen': 'Nothing of this type is under fog.',
+  'fruits.foldMore': 'And {count} more under fog',
+  'fruits.foldMoreOne': 'And 1 more under fog',
+  'fruits.unfold': 'Expand',
   'fruits.albumFailed': 'The devil fruits could not be loaded.',
   'fruits.albumRetry': 'Try again',
   'fruits.marquee': '{saga}: {count} fruits so far',

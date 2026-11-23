@@ -4,6 +4,7 @@ import type { ReactElement } from 'react'
 
 import { Marked } from '~/components/CharacterCard'
 import { FogTile } from '~/components/FogTile'
+import { useFolded } from '~/components/foldContext'
 import { OpenArt } from '~/components/FruitArt'
 import { FruitEater } from '~/components/FruitEater'
 import type { EaterMatch } from '~/components/recordMatches'
@@ -56,8 +57,10 @@ export function CoveredTile<T extends RecordView>({
   peek: (handle: string) => Promise<T>
   phase: number
 }): ReactElement {
+  const folded = useFolded()
+
   return (
-    <li {...stylex.props(styles.tile)}>
+    <li {...stylex.props(styles.tile, folded && styles.foldedTile)}>
       <FogTile
         covered={covered}
         lines={lines}
@@ -192,6 +195,21 @@ const META_TRACKING = '0.08em'
 
 const styles = stylex.create({
   tile: { gap: space.xs2, alignContent: 'start', display: 'grid', minWidth: 0 },
+  // In a folded band (`FogFold`), every tile past the grid's first row on a
+  // phone: the third on from two across, the fourth on from three across.
+  foldedTile: {
+    display: {
+      'default': 'grid',
+      '@media (max-width: 37.49rem)': {
+        'default': 'grid',
+        ':is(* + * + *)': 'none',
+      },
+      '@media (min-width: 37.5rem) and (max-width: 39.99rem)': {
+        'default': 'grid',
+        ':is(* + * + * + *)': 'none',
+      },
+    },
+  },
   // The kind sits at the foot of the row, so it lines up across a row whose
   // names and eaters wrap to different heights.
   openTile: { gridTemplateRows: 'auto auto 1fr' },

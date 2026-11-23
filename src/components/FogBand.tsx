@@ -2,6 +2,7 @@ import * as stylex from '@stylexjs/stylex'
 import type { ReactElement, ReactNode } from 'react'
 
 import { EpisodeMark } from '~/components/EpisodeMark'
+import { FogFold } from '~/components/FogFold'
 import { fogHint, fogTitle } from '~/components/fogWords'
 import type { SeriesSlug, Translate, TranslationKey } from '~/i18n/types'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
@@ -32,6 +33,15 @@ export interface FogTitles<S extends SeriesSlug = never> {
   hintUnset: TranslationKey<S>
   many: TranslationKey<S>
   one: TranslationKey<S>
+  /**
+   * Set where the band is a wall of fog tiles, folded to its first row on a
+   * phone (`FogFold`): what is left under the fold, and the button.
+   */
+  fold?: {
+    more: TranslationKey<S>
+    moreOne: TranslationKey<S>
+    open: TranslationKey<S>
+  }
 }
 
 /** The band, its heading, and whatever list of covered records it holds. */
@@ -59,6 +69,7 @@ export function FogBand<S extends SeriesSlug = never>({
   words,
 }: FogBandProps<S>): ReactElement {
   const { bookmark } = useBookmark()
+  const { fold } = words
 
   return (
     <section
@@ -79,7 +90,19 @@ export function FogBand<S extends SeriesSlug = never>({
               <EpisodeMark placement="fold" />
             </div>
           : null}
-          {children}
+          {fold === undefined ?
+            children
+          : <FogFold
+              count={count}
+              words={{
+                more: (more) =>
+                  more === 1 ? t(fold.moreOne) : t(fold.more, { count: more }),
+                open: t(fold.open),
+              }}
+            >
+              {children}
+            </FogFold>
+          }
         </>
       )}
     </section>
