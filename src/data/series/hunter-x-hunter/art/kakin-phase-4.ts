@@ -802,8 +802,9 @@ export const kakinPhaseFourRedrawn: Redrawings = {
     // A costume: his long black trench coat in 3/4 (`QUOROLLE_COAT`),
     // hatched, open on the black round-neck top under it, the coat's collar
     // in tint. He wears it on the twelfth day, level 51 with Tevelares and
-    // Daemon, chapter 405. The wiki places him in no later chapter, so the
-    // coat has no exit yet.
+    // Daemon, chapter 405. No later scene in the wiki's Plot shows him
+    // (chapters 408 and 410 list him only in an image, a frame check), so
+    // the coat has no exit yet.
     { episode: 148, chapter: 405, source: 'chapter', value: QUOROLLE_COAT },
   ],
   'borksen': [
