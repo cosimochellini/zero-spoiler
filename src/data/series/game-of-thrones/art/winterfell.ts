@@ -267,6 +267,27 @@ const KRAKEN_SEA: Stroke[] = [
 const KRAKEN: Stroke[] = [...KRAKEN_BODY, ...KRAKEN_SEA]
 
 /**
+ * The kraken on a banner, hung from its staff over a run of battlements,
+ * the wall's courses soft: Theon's stage as the prince of Winterfell. The
+ * kraken keeps its accent arm.
+ */
+const KRAKEN_BANNER: Stroke[] = [
+  { d: `${circle(40, 14, 4)} M40 18 V112` },
+  { d: 'M40 26 H134' },
+  { d: 'M48 26 V100 L91 88 L134 100 V26' },
+  ...moved(KRAKEN_BODY, 'translate(91 58) scale(0.56) translate(-80 -88)'),
+  { d: 'M54 32 Q52 64 56 94 M128 32 Q130 64 126 94', role: 'soft' },
+  {
+    d: 'M14 150 V118 H24 V112 H34 V118 H46 V112 H56 V118 H68 V112 H78 V118 H90 V112 H100 V118 H112 V112 H122 V118 H134 V112 H146 V150',
+  },
+  {
+    d: 'M14 132 H146 M30 132 V150 M62 132 V150 M94 132 V150 M126 132 V150 M46 118 V132 M78 118 V132 M110 118 V132',
+    role: 'soft',
+  },
+  { d: 'M10 152 H150', role: 'ambient', dashed: true },
+]
+
+/**
  * Luwin: a maester's chain laid on a table in a loop, its links of mixed
  * metals, the far ones drawn lighter and the dark iron ones hatched. The
  * accent is one link.
@@ -857,6 +878,15 @@ export const winterfellRedrawn: Redrawings = {
     },
   ],
   'theon-greyjoy': [
+    // The kraken on a banner flying over Winterfell's battlements, the arm
+    // still in the accent: Theon takes the castle and calls himself its
+    // prince in "The Old Gods and the New" (episode 16) and in Bran VI
+    // (chapter 120).
+    { episode: 16, chapter: 120, value: KRAKEN_BANNER },
+    // The kraken back in the sea, the castle lost: his own men hand him to
+    // the Boltons in "Valar Morghulis" (episode 20), and the Bastard of
+    // Bolton strikes him down in the sack in Theon VI (chapter 140).
+    { episode: 20, chapter: 140, value: KRAKEN },
     // The kraken dragged out of the sea and huddled on bare ground, an iron
     // ring round one arm chained to a stake: Ramsay breaks him into Reek,
     // naming him so in "Mhysa" (episode 30) and in Reek I of A Dance with

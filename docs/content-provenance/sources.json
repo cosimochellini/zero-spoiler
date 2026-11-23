@@ -37081,6 +37081,46 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425749",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425749",
       "contentSha256": "974bcbf72fa360c07734d0766d3eb2e397bf9a6163fb9d173d8e01d03b74f9d9"
+    },
+    "got-en-Salt_Throne-722818.json": {
+      "locale": "en",
+      "title": "Salt Throne",
+      "revision": 722818,
+      "revisionDate": "2026-01-12T04:14:53Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Salt_Throne",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722818",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722818",
+      "contentSha256": "fb720a99433d03be91cc8c8000e0f1fd88998c956c17a7bbdd5de2e17d2aa37b"
+    },
+    "got-en-House_Hornwood-735786.json": {
+      "locale": "en",
+      "title": "House Hornwood",
+      "revision": 735786,
+      "revisionDate": "2026-05-14T14:31:52Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_Hornwood",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735786",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735786",
+      "contentSha256": "07b37eee18392e37102510e929dc9a70d60ac959fdd2b76549088db1bb1ae0ac"
+    },
+    "got-en-House_Manderly-743407.json": {
+      "locale": "en",
+      "title": "House Manderly",
+      "revision": 743407,
+      "revisionDate": "2026-07-13T05:41:15Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_Manderly",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=743407",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=743407",
+      "contentSha256": "356d6f76971803ad6cde4b9027efbf7082745bdc232410c727d621f9d01e97d7"
+    },
+    "got-en-House_Reed-735394.json": {
+      "locale": "en",
+      "title": "House Reed",
+      "revision": 735394,
+      "revisionDate": "2026-05-12T10:19:00Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_Reed",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735394",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735394",
+      "contentSha256": "46f41c9113b44017b1424e908605b6040d02770116c51dba24e90cc19f9d1166"
     }
   }
 }

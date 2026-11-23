@@ -295,7 +295,8 @@
     "unverified": [
       "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”.",
       "Stages (#1285): Reek from episode 30, where Ramsay names him (Fandom AKA ref GOT310), and in the books from Reek I, ADWD chapter 12 (site 284), a chapter from memory, not checked on AWOIAF; dies in episode 70 (Fandom DeathEp), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285).",
-      "Stage-2 steps (#1466): Robb's envoy at 11 / 81 (Catelyn I, from \"The North Remembers\", \"In the books\"); House Greyjoy at 13 / 98 (his baptism in episode 13; Theon II, where he takes his part in Balon's war); Prince of Winterfell at 16 / 120 (\"You'll address me as Prince Theon\", the Game of Thrones Wiki's quote; Bran VI); captured at 20 in the show alone (Dagmer knocks him out for the Boltons), chapter 140 only ordering it. In Theon VI the books leave him struck down in the sack, his fate untold in the stage."
+      "Stage-2 steps (#1466): Robb's envoy at 11 / 81 (Catelyn I, from \"The North Remembers\", \"In the books\"); House Greyjoy at 13 / 98 (his baptism in episode 13; Theon II, where he takes his part in Balon's war); Prince of Winterfell at 16 / 120 (\"You'll address me as Prince Theon\", the Game of Thrones Wiki's quote; Bran VI); captured at 20 in the show alone (Dagmer knocks him out for the Boltons), chapter 140 only ordering it. In Theon VI the books leave him struck down in the sack, his fate untold in the stage.",
+      "Prince of Winterfell stage (#1473): the kraken on a banner over Winterfell from \"The Old Gods and the New\" (episode 16) and Bran VI (chapter 120), the pins of his \"Prince of Winterfell\" step; back to the kraken in the sea from \"Valar Morghulis\" (episode 20) and Theon VI (chapter 140), where the castle is lost. Not viewed."
     ]
   },
   "luwin": {
@@ -3535,13 +3536,17 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_11",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_46",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://it.wikipedia.org/wiki/Casa_Greyjoy"
+      "https://it.wikipedia.org/wiki/Casa_Greyjoy",
+      "https://awoiaf.westeros.org/index.php/Balon_Greyjoy",
+      "https://gameofthrones.fandom.com/wiki/Salt_Throne"
     ],
     "unverified": [
       "Show gate 12: the Game of Thrones Wiki has Catelyn name him in \"The North Remembers\" (Theon page, GOT201) and Theon meet him at Pyke in \"The Night Lands\". Book gate 85 (Theon I): Aeron brings Theon to Balon's castle and Balon receives him. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "King of the Iron Islands at 16 / 120: Theon tells Winterfell his father has crowned himself in \"The Old Gods and the New\" (the Farlen quote on the Game of Thrones Wiki); the book pin takes Bran VI (chapter 120), where Theon calls himself a prince. The chapter that first tells Balon crowned is not confirmed.",
       "nameSaidAt 4: Theon's season-1 story has Tyrion name him in \"Cripples, Bastards, and Broken Things\".",
-      "Italian: Balon Greyjoy (Italian Wikipedia, Casa Greyjoy)."
+      "Italian: Balon Greyjoy (Italian Wikipedia, Casa Greyjoy).",
+      "Drawing (#1473): Robb's letter burning in a brazier. He burns the letter in \"The Night Lands\" (episode 12, Game of Thrones Wiki) and in Theon I (chapter 85, A Wiki of Ice and Fire's summary: \"Balon burns the letter\"). Owner check: a brazier rather than a hearth, in either medium. Neither the episodes nor the books were viewed; drawn by eye from the wikis.",
+      "Death stage (#1473): \"Home\" (episode 52, Fandom DeathEp) and A Storm of Swords, Catelyn V (chapter 45, site 189), which A Wiki of Ice and Fire gives as the first report. No crown stage: the show never puts a crown on him, and the books describe his driftwood crown only in A Feast for Crows (The Iron Captain)."
     ]
   },
   "asha-greyjoy": {
@@ -3553,12 +3558,14 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_24",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_56",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://it.wikipedia.org/wiki/Casa_Greyjoy"
+      "https://it.wikipedia.org/wiki/Casa_Greyjoy",
+      "https://awoiaf.westeros.org/index.php/Asha_Greyjoy"
     ],
     "unverified": [
       "Show gate 12: the Game of Thrones Wiki's Balon page has Balon greet her and say that Yara has only been off the Iron Islands on a ship. Book gate 98 (Theon II): Esgred turns out to be his sister Asha. Theon I (85) only mentions her. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Name: one record under the books' name, with the show's Yara as `episodeName` at chapter 345, past the books, as Hunter x Hunter's Hagya has Leol. Robin Arryn, the only earlier renamed record, takes the show's name instead. Owner ruling (2026-11-22): acceptable as filed.",
-      "Italian: Asha Greyjoy (Italian Wikipedia, Casa Greyjoy, which says the show calls her Yara Greyjoy)."
+      "Italian: Asha Greyjoy (Italian Wikipedia, Casa Greyjoy, which says the show calls her Yara Greyjoy).",
+      "Drawing (#1473): her throwing axe crossed over her dirk. At the feast in Theon II (chapter 98) she splits Theon's trencher with a caught axe, \"her husband\", and draws a dirk, \"her suckling babe\" (A Wiki of Ice and Fire's chapter summary). The show's Yara has no object of her own in season 2. Neither the episodes nor the books were viewed; drawn by eye from the wikis."
     ]
   },
   "aeron-greyjoy": {
@@ -3569,12 +3576,14 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_24",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_37",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://it.wikipedia.org/wiki/Casa_Greyjoy"
+      "https://it.wikipedia.org/wiki/Casa_Greyjoy",
+      "https://awoiaf.westeros.org/index.php/Aeron_Greyjoy"
     ],
     "unverified": [
       "Book gate 85 (Theon I): the priest who meets Theon at Lordsport is his uncle Aeron. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Show gate 55 (\"The Door\"), the safe later pin: the Game of Thrones Wiki lists \"Home\" (episode 52) as his first appearance but quotes no line naming him there. The Drowned Man who baptises Theon in episode 13 is a separate, unnamed character on the Game of Thrones Wiki.",
-      "Italian: Aeron Greyjoy (Italian Wikipedia, Casa Greyjoy)."
+      "Italian: Aeron Greyjoy (Italian Wikipedia, Casa Greyjoy).",
+      "Drawing (#1473): a waterskin pouring seawater. In Theon I (chapter 85) he \"drenches his head with seawater from a waterskin\" (A Wiki of Ice and Fire's chapter summary). The show's Aeron (episode 55) was not checked for a waterskin. Neither the episodes nor the books were viewed; drawn by eye from the wikis."
     ]
   },
   "victarion-greyjoy": {
@@ -3582,12 +3591,14 @@
       "https://gameofthrones.fandom.com/wiki/Victarion_Greyjoy",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_24",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://it.wikipedia.org/wiki/Casa_Greyjoy"
+      "https://it.wikipedia.org/wiki/Casa_Greyjoy",
+      "https://awoiaf.westeros.org/index.php/Victarion_Greyjoy"
     ],
     "unverified": [
       "Book gate 98 (Theon II): A Wiki of Ice and Fire lists him as appearing in Balon's solar. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Show: the Game of Thrones Wiki says he does not appear in the series, so the record is the books' alone; episode 13 only orders it.",
-      "Italian: Victarion Greyjoy (Italian Wikipedia, Casa Greyjoy); the Mondadori form was not checked."
+      "Italian: Victarion Greyjoy (Italian Wikipedia, Casa Greyjoy); the Mondadori form was not checked.",
+      "Drawing (#1473): the Iron Victory under sail. A Wiki of Ice and Fire calls him Lord Captain of the Iron Fleet with the Iron Victory as his flagship, and lists the ship in Theon II (chapter 98); that the chapter names it as his is an owner check. Neither the episodes nor the books were viewed; drawn by eye from the wikis."
     ]
   },
   "dagmer": {
@@ -3599,11 +3610,14 @@
       "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_37",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://awoiaf.westeros.org/index.php/Dagmer"
     ],
     "unverified": [
       "Show gate 15: the Game of Thrones Wiki's Dagmer page has Theon ask who he is and Dagmer explain that he is the first mate. Book gate 111 (Theon III): Theon tells him his plan aboard Foamdrinker; Theon I and II (85, 98) only mention him. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
-      "Italian: Dagmer, from Italian Wikipedia's TV cast list; the Mondadori form (the books' Dagmer Cleftjaw) was not checked."
+      "Italian: Dagmer, from Italian Wikipedia's TV cast list; the Mondadori form (the books' Dagmer Cleftjaw) was not checked.",
+      "Drawing (#1473): his rings. Theon III (chapter 111): \"many rings, gold and silver and bronze, set with sapphires and garnets and dragonglass\", won by the iron price (A Wiki of Ice and Fire). The show's rings were not checked. Neither the episodes nor the books were viewed; drawn by eye from the wikis.",
+      "Death stage (#1473): Balon and Yara read that the Boltons flayed him and his men, \"Mhysa\" (episode 30, Fandom DeathEp, fate confirmed); the books keep him at Torrhen's Square (A Dance with Dragons, appendix), so chapter 344 orders it. Episode not viewed."
     ]
   },
   "black-lorren": {
@@ -3617,13 +3631,15 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_66",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://awoiaf.westeros.org/index.php/Black_Lorren"
     ],
     "unverified": [
       "Book gate 124 (Theon IV), the safe pin: he and Urzen show Theon the dead guards. Owner check: Bran VI (120) lists him as appearing, and Theon III (111) mentions him. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Owner check, show: the Game of Thrones Wiki has him in episodes 15, 16, 17 and 20, but no quote has his name said, so he is the books' alone. If an episode says it, the show gate is that episode.",
       "Death at 143 (Bran VII): A Wiki of Ice and Fire lists him among the dead Bran finds; the Game of Thrones Wiki's book notes say four men took to kill him. Episode 20 only orders it.",
-      "Italian: Black Lorren kept; Italian Wikipedia's TV cast list calls him Lorren, and the Mondadori form was not checked."
+      "Italian: Black Lorren kept; Italian Wikipedia's TV cast list calls him Lorren, and the Mondadori form was not checked.",
+      "Drawing (#1473): a longaxe, the weapon A Wiki of Ice and Fire gives him in Theon VI (\"axe and sword\"). Death stage at Bran VII (chapter 143), where his body is found in the yard. Retinted from wine to yellow: the accent is not red. Neither the episodes nor the books were viewed; drawn by eye from the wikis."
     ]
   },
   "wex-pyke": {
@@ -3634,12 +3650,14 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_37",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_50",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_66",
-      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/Wex_Pyke"
     ],
     "unverified": [
       "Book gate 98 (Theon II): the Game of Thrones Wiki's book notes (ACOK 24) and A Wiki of Ice and Fire put his taking as Theon's squire there. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Show: a Wex stands at Theon's speech in \"Valar Morghulis\"; no quote has his name said, so the record is the books' alone. Episode 13 only orders it.",
-      "Italian: Wex Pyke kept; no Italian page names him, and the Mondadori form was not checked."
+      "Italian: Wex Pyke kept; no Italian page names him, and the Mondadori form was not checked.",
+      "Drawing (#1473): the head of Smiler, the warhorse Theon buys in Theon II (chapter 98); Wex is taken as squire in the same bargain and saddles it (A Wiki of Ice and Fire's chapter summary). A stand-in, as nothing of his own is told in the stage. Neither the episodes nor the books were viewed; drawn by eye from the wikis."
     ]
   },
   "farlen": {
@@ -3653,13 +3671,15 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_50",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_56",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://it.wikipedia.org/wiki/Casa_Stark"
+      "https://it.wikipedia.org/wiki/Casa_Stark",
+      "https://awoiaf.westeros.org/index.php/Farlen"
     ],
     "unverified": [
       "Book gate 124 (Theon IV): Theon asks him whether the dogs follow the wrong wolves. Owner checks: Bran III (95) and Bran VI (120) list him as appearing; Bran I (78) mentions him. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Owner check, show: \"The Old Gods and the New\" (episode 16) has him defy Theon (the Game of Thrones Wiki quotes his lines), but no source read quotes his name said, so he is the books' alone, as Hallyne is. If the episode says it, the show gate is 16.",
       "Death at 130 (Theon V): Theon beheads him, blaming him for the deaths of three ironmen. Episode 18 only orders it.",
-      "Italian: Farlen (Italian Wikipedia, Casa Stark, the Starks' servants)."
+      "Italian: Farlen (Italian Wikipedia, Casa Stark, the Starks' servants).",
+      "Drawing (#1473): a hound on a collar; his red bitch begs for bones at the harvest feast in Bran III (chapter 95). Death stage at Theon V (chapter 130), where Theon beheads him (A Wiki of Ice and Fire). Neither the episodes nor the books were viewed; drawn by eye from the wikis."
     ]
   },
   "meera-reed": {
@@ -3675,7 +3695,8 @@
     "unverified": [
       "Book gate 95 (Bran III): she and Jojen are greeted at the harvest feast in their father's name. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Show gate 22 (\"Dark Wings, Dark Words\"): the Game of Thrones Wiki's first appearance; no quote has her name said there.",
-      "Italian: Meera Reed (Italian Wikipedia, Membri di Casa Reed)."
+      "Italian: Meera Reed (Italian Wikipedia, Membri di Casa Reed).",
+      "Drawing (#1473): a longbow and a quiver, the show's weapons (Game of Thrones Wiki: \"Unlike in the series, Meera is armed with net and a three prong frog spear, not bow and arrows\"; Sam gives her dragonglass for her arrows in \"Mhysa\"). The book's frog spear and net (Bran III, chapter 95) are the book's alone. Neither the episodes nor the books were viewed; drawn by eye from the wikis."
     ]
   },
   "jojen-reed": {
@@ -3686,12 +3707,16 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_35",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://awoiaf.westeros.org/index.php/Jojen_Reed",
+      "https://gameofthrones.fandom.com/wiki/House_Reed"
     ],
     "unverified": [
       "Book gate 95 (Bran III): he and Meera are greeted at the harvest feast in their father's name. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Show gate 22 (\"Dark Wings, Dark Words\"): the Game of Thrones Wiki's first appearance, a dream and then the woods; no quote has his name said there.",
-      "Italian: Jojen Reed (Italian Wikipedia, Membri di Casa Reed)."
+      "Italian: Jojen Reed (Italian Wikipedia, Membri di Casa Reed).",
+      "Drawing (#1473): the black lizard-lion of House Reed biting its tail (Game of Thrones Wiki House Reed: \"a black lizard-lion licking its own tail\"), as Jojen carries nothing of his own (Bran III, chapter 95: unarmed, dressed in green). Neither the episodes nor the books were viewed; drawn by eye from the wikis.",
+      "Death stage (#1473): \"The Children\" (episode 40, Fandom DeathEp); the books leave him alive, so chapter 344 orders it. Episode not viewed."
     ]
   },
   "ramsay-snow": {
@@ -3712,7 +3737,9 @@
       "Book gate 140 (Theon VI): the Dreadfort leader takes off his helm and tells Theon his name is Ramsay Snow. Owner check: from Bran V (109) he is at Winterfell as the captive Reek, under that name; Bran II (90) and Bran IV (102) name him only in talk of his crimes. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Show gate 32 (\"The Lion and the Rose\"): the Game of Thrones Wiki cites GOT402 for his birth name; he is unnamed in season 3. Episode not viewed.",
       "Name: filed as Ramsay Snow, his name inside the stage; the Game of Thrones Wiki titles him Ramsay Bolton.",
-      "Italian: Ramsay Snow kept; Italian Wikipedia heads him Ramsay Bolton, \"nato Snow\"."
+      "Italian: Ramsay Snow kept; Italian Wikipedia heads him Ramsay Bolton, \"nato Snow\".",
+      "Drawing (#1473): a flaying knife stood in a chopping block. The show's Ramsay comes at Theon with a knife (GOT307) and flays the ironborn; the book's house flays its enemies. No knife is checked in Theon VI (chapter 140). Retinted from vermilion to pink, House Bolton's colour: the accent is not red. Reek: the book's captive Reek is Ramsay, revealed only at Theon VI (140), the record's own gate, so no earlier stage. Neither the episodes nor the books were viewed; drawn by eye from the wikis.",
+      "Death stage (#1473): \"Battle of the Bastards\" (episode 59, Fandom DeathEp); the books leave him alive, so chapter 344 orders it. Episode not viewed."
     ]
   },
   "big-walder-frey": {
@@ -3721,12 +3748,14 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_16",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_21",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_35",
-      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/Big_Walder_Frey"
     ],
     "unverified": [
       "Book gate 90 (Bran II): A Wiki of Ice and Fire lists him as appearing; Bran I (78) only mentions the Walders' coming. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Show: the show has no Frey wards at Winterfell, so the record is the books' alone; episode 13 only orders it.",
-      "Italian: Big Walder Frey kept until the Mondadori form is checked."
+      "Italian: Big Walder Frey kept until the Mondadori form is checked.",
+      "Drawing (#1473): a closed helm with a castle crest, \"Walder's crest is shaped like a castle\", Bran II (chapter 90, A Wiki of Ice and Fire). Neither the episodes nor the books were viewed; drawn by eye from the wikis."
     ]
   },
   "little-walder-frey": {
@@ -3736,12 +3765,15 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_21",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_35",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_50",
-      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/Little_Walder_Frey"
     ],
     "unverified": [
       "Book gate 90 (Bran II): A Wiki of Ice and Fire lists him as appearing; Bran I (78) only mentions the Walders' coming. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Show: the show has no Frey wards at Winterfell, so the record is the books' alone; episode 13 only orders it.",
-      "Italian: Little Walder Frey kept until the Mondadori form is checked."
+      "Italian: Little Walder Frey kept until the Mondadori form is checked.",
+      "Drawing (#1473): a closed helm with a crest of silk streamers, Bran II (chapter 90, A Wiki of Ice and Fire). Neither the episodes nor the books were viewed; drawn by eye from the wikis.",
+      "Death stage (#1473): his frozen body is found in a snowbank, A Dance with Dragons, Theon I (chapter 51, site 323); episode 50 orders it, where the show's Winterfell reaches the same days (an owner check)."
     ]
   },
   "wyman-manderly": {
@@ -3750,13 +3782,15 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_16",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_21",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://awoiaf.westeros.org/index.php/Wyman_Manderly"
     ],
     "unverified": [
       "Book gate 90 (Bran II): he comes to Winterfell for the harvest feast with business for Bran. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Show gate 60 (\"The Winds of Winter\"), his one appearance on the Game of Thrones Wiki; no quote has his name said. Episode not viewed.",
       "nameSaidAt 29: Wendel Manderly's season-1 story, books only, names his father; the books name him from Catelyn's landing (chapter 56), which that story orders at episode 29.",
-      "Italian: Wyman Manderly (Italian Wikipedia's characters list)."
+      "Italian: Wyman Manderly (Italian Wikipedia's characters list).",
+      "Drawing (#1473): the litter he is carried in, Bran II (chapter 90): \"so fat he can no longer ride a horse and must be carried in a litter\" (A Wiki of Ice and Fire). The show's Wyman (episode 60) has no object of his own. Neither the episodes nor the books were viewed; drawn by eye from the wikis."
     ]
   },
   "donella-hornwood": {
@@ -3765,13 +3799,16 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_21",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_28",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_35",
-      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/Donella_Hornwood",
+      "https://gameofthrones.fandom.com/wiki/House_Hornwood"
     ],
     "unverified": [
       "Book gate 90 (Bran II): she comes to Winterfell widowed and fears Roose Bolton's bastard means to seize her lands. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
       "Captured at 102 (Bran IV): the Bastard of Bolton has taken her as his wife by force. Deceased at 109 (Bran V): Ser Rodrik returns with a prisoner held for her murder. Episodes 14 and 15 only order them.",
       "Show: no Game of Thrones Wiki page; the record is the books' alone.",
-      "Italian: Donella Hornwood kept until the Mondadori form is checked."
+      "Italian: Donella Hornwood kept until the Mondadori form is checked.",
+      "Drawing (#1473): a shield with the Hornwood moose's head (Game of Thrones Wiki: \"a black moose head on an orange field\"). Death stage at Bran V (chapter 109), where Ser Rodrik finds her dead (A Wiki of Ice and Fire). Neither the episodes nor the books were viewed; drawn by eye from the wikis."
     ]
   },
   "thoren-smallwood": {

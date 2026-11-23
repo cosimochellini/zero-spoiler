@@ -9,6 +9,7 @@ import type { Stroke } from '~/lib/view/records'
 
 import { COURT_DRAWINGS, courtRedrawn } from './court'
 import { DRAGON_SIGIL, ESSOS_DRAWINGS, essosRedrawn } from './essos'
+import { IRONBORN_DRAWINGS, ironbornRedrawn } from './ironborn'
 import { NORTH_DRAWINGS, northRedrawn } from './north'
 import { PLACE_DRAWINGS, placesRedrawn } from './places'
 import { RIVERLANDS_DRAWINGS, riverlandsRedrawn } from './riverlands'
@@ -196,10 +197,11 @@ const PERSON: Stroke[] = [
  * in `vale.ts` (#1055), the King's Landing cast's in `court.ts` (#1056) and
  * the Riverlands cast's in `riverlands.ts` (#1057), with the four leads
  * drawn for the launch here (owner, #856). Every season-1 character has its
- * own drawing; the season-2 King's Landing cast (#1463), stormlands
- * cast (#1464), Riverlands and Harrenhal cast (#1465), Winterfell and
- * Iron Islands cast (#1466), Wall cast (#1467) and Essos cast (#1468) show
- * `PERSON` until their drawing children draw them. `satisfies`
+ * own drawing. Of the season-2 cast, the Iron Islands cast's are in
+ * `ironborn.ts` and the Winterfell and northern cast's in `north.ts`
+ * (#1473); the King's Landing cast (#1463), stormlands cast (#1464),
+ * Riverlands and Harrenhal cast (#1465), Wall cast (#1467) and Essos cast
+ * (#1468) show `PERSON` until their drawing children draw them. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -212,6 +214,7 @@ export const DRAWINGS = {
   ...VALE_DRAWINGS,
   ...COURT_DRAWINGS,
   ...RIVERLANDS_DRAWINGS,
+  ...IRONBORN_DRAWINGS,
   'eddard-stark': ICE_STANDING,
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
@@ -246,22 +249,6 @@ export const DRAWINGS = {
   'chiswyck': PERSON,
   'weese': PERSON,
   'vargo-hoat': PERSON,
-  // #1466: Winterfell and the Iron Islands.
-  'balon-greyjoy': PERSON,
-  'asha-greyjoy': PERSON,
-  'aeron-greyjoy': PERSON,
-  'victarion-greyjoy': PERSON,
-  'dagmer': PERSON,
-  'black-lorren': PERSON,
-  'wex-pyke': PERSON,
-  'farlen': PERSON,
-  'meera-reed': PERSON,
-  'jojen-reed': PERSON,
-  'ramsay-snow': PERSON,
-  'big-walder-frey': PERSON,
-  'little-walder-frey': PERSON,
-  'wyman-manderly': PERSON,
-  'donella-hornwood': PERSON,
   // #1467: the Wall and beyond, until its drawing child draws it.
   'thoren-smallwood': PERSON,
   'eddison-tollett': PERSON,
@@ -295,8 +282,9 @@ export type ArtId = keyof typeof DRAWINGS
  * from `winterfell.ts`, the southern cast's from `south.ts`, the Night's
  * Watch's from `wall.ts`, the Essos cast's from `essos.ts`, the northern
  * household's from `north.ts`, the Vale cast's from `vale.ts`, the King's
- * Landing cast's from `court.ts` and the Riverlands cast's from
- * `riverlands.ts`. Eddard Stark is beheaded with Ice in "Baelor" (episode 9)
+ * Landing cast's from `court.ts`, the Riverlands cast's from
+ * `riverlands.ts` and the second stage's Iron Islands cast's from
+ * `ironborn.ts`. Eddard Stark is beheaded with Ice in "Baelor" (episode 9)
  * and in Arya V (chapter 66): from there the blade lies flat on the ground,
  * with nobody to hold it.
  */
@@ -309,6 +297,7 @@ export const REDRAWINGS: Redrawings = {
   ...valeRedrawn,
   ...courtRedrawn,
   ...riverlandsRedrawn,
+  ...ironbornRedrawn,
   ...placesRedrawn,
   'eddard-stark': [
     {
