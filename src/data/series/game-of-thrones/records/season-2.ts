@@ -358,7 +358,7 @@ export const season2: ThronesSaga = {
         it: 'Un giovane cavaliere di Casa Lannister, prigioniero dell’esercito di Robb Stark.',
         en: 'A young knight of House Lannister, a prisoner of Robb Stark’s army.',
       },
-      visual: { art: 'alton-lannister', tint: 'red' },
+      visual: { art: 'alton-lannister', tint: 'ivory' },
     },
     // Books only: Catelyn I (site chapter 81), Robb sends him from Riverrun
     // to King's Landing with his peace terms. The show gives his part to
@@ -409,7 +409,7 @@ export const season2: ThronesSaga = {
         it: 'Un cavaliere al servizio dei Lannister che guida una banda di predoni nelle Terre dei Fiumi.',
         en: 'A knight in the Lannisters’ service who leads a band of raiders in the riverlands.',
       },
-      visual: { art: 'amory-lorch', tint: 'vermilion' },
+      visual: { art: 'amory-lorch', tint: 'violet' },
     },
     // Show: "Garden of Bones" (episode 14), Arya adds him to the names she
     // recites each night. Books: Arya VI (site chapter 100), a man called
@@ -456,7 +456,7 @@ export const season2: ThronesSaga = {
         it: 'Un vecchio uomo d’arme di Gregor Clegane, curvo nelle spalle.',
         en: 'An old, stoop-shouldered man-at-arms of Gregor Clegane’s.',
       },
-      visual: { art: 'chiswyck', tint: 'wine' },
+      visual: { art: 'chiswyck', tint: 'yellow' },
     },
     // Books only: Arya VII (site chapter 104), where he is the understeward
     // of the Wailing Tower who works Arya at Harrenhal. Arya VI (100) names
@@ -1576,6 +1576,10 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 11, chapter: 81, source: 'chapter', value: 'captured' },
+        // Outlaws ambush him on the road to King's Landing and he dies, in
+        // Jaime III of A Storm of Swords (chapter 165); episode 22, where the
+        // show's Jaime and Brienne are taken on that road, only orders it.
+        { episode: 22, chapter: 165, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -1609,6 +1613,9 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 16, chapter: 100, source: 'episode', value: 'alive' },
+        // She is killed at the Red Wedding in "The Rains of Castamere"
+        // (episode 29); chapter 195, the books' wedding, only orders it.
+        { episode: 29, chapter: 195, source: 'episode', value: 'deceased' },
       ],
       // She tends Lannister and Stark wounded alike and tells Robb she takes
       // no side in his war ("Garden of Bones").
@@ -1673,7 +1680,13 @@ export const season2: ThronesSaga = {
         it: 'È tra i soldati che catturano Arya Stark e i suoi compagni, e tiene per sé Ago, la spada di lei. Arya aggiunge il suo nome a quelli che ripete ogni notte.',
         en: 'He is one of the soldiers who capture Arya Stark and her companions, and he keeps her sword, Needle, for himself. Arya adds his name to the ones she repeats each night.',
       },
-      status: [{ episode: 14, chapter: 100, value: 'alive' }],
+      status: [
+        { episode: 14, chapter: 100, value: 'alive' },
+        // He dies at the inn at the crossroads, where Arya takes Needle back,
+        // in "Two Swords" (episode 31) and in Arya XIII of A Storm of Swords
+        // (chapter 218).
+        { episode: 31, chapter: 218, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 14,
@@ -1698,6 +1711,9 @@ export const season2: ThronesSaga = {
         // opens dead. The books keep him alive past the stage; chapter 104
         // only orders it.
         { episode: 15, chapter: 104, source: 'episode', value: 'deceased' },
+        // Arya kills him at the inn at the crossroads, in Arya XIII of A Storm
+        // of Swords (chapter 218); episode 31, the show's inn, only orders it.
+        { episode: 31, chapter: 218, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -1766,6 +1782,10 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 15, chapter: 104, source: 'chapter', value: 'alive' },
+        // Gregor Clegane takes Harrenhal back and kills him, as Raff and
+        // Shitmouth tell Jaime in Jaime III of A Feast for Crows (chapter
+        // 253); episode 38 only orders it.
+        { episode: 38, chapter: 253, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {

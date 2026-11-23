@@ -1527,9 +1527,12 @@ const STAGES: {
   { id: 'hodor', episode: 55, chapter: 344, source: 'episode' },
   { id: 'osha', episode: 54, chapter: 344, source: 'episode' },
   { id: 'arya-stark', episode: 13, chapter: 93 },
-  { id: 'arya-stark', episode: 31, chapter: 218, stage: 1 },
-  { id: 'arya-stark', episode: 43, chapter: 248, stage: 2 },
-  { id: 'arya-stark', episode: 56, chapter: 344, source: 'episode', stage: 3 },
+  // Her costume at Harrenhal and its end, stage 2 (#1472).
+  { id: 'arya-stark', episode: 14, chapter: 104, stage: 1 },
+  { id: 'arya-stark', episode: 18, chapter: 138, stage: 2 },
+  { id: 'arya-stark', episode: 31, chapter: 218, stage: 3 },
+  { id: 'arya-stark', episode: 43, chapter: 248, stage: 4 },
+  { id: 'arya-stark', episode: 56, chapter: 344, source: 'episode', stage: 5 },
   // The King's Landing court redrawn from the drawing audit (#1289).
   { id: 'meryn-trant', episode: 50, chapter: 344, source: 'episode' },
   { id: 'mandon-moore', episode: 19, chapter: 141, source: 'chapter' },

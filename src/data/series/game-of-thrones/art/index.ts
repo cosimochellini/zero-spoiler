@@ -194,12 +194,13 @@ const PERSON: Stroke[] = [
  * and the Essos cast's in `essos.ts` (#1052), the places' in `places.ts`
  * (#1053), the northern household's in `north.ts` (#1054), the Vale cast's
  * in `vale.ts` (#1055), the King's Landing cast's in `court.ts` (#1056) and
- * the Riverlands cast's in `riverlands.ts` (#1057), with the four leads
- * drawn for the launch here (owner, #856). Every season-1 character has its
- * own drawing; the season-2 King's Landing cast (#1463), stormlands
- * cast (#1464), Riverlands and Harrenhal cast (#1465), Winterfell and
- * Iron Islands cast (#1466), Wall cast (#1467) and Essos cast (#1468) show
- * `PERSON` until their drawing children draw them. `satisfies`
+ * the Riverlands cast's in `riverlands.ts` (#1057), the season-2
+ * Riverlands and Harrenhal cast's (#1465) with them (#1472), with the four
+ * leads drawn for the launch here (owner, #856). Every season-1 character
+ * has its own drawing; the season-2 King's Landing cast (#1463), stormlands
+ * cast (#1464), Winterfell and Iron Islands cast (#1466), Wall cast (#1467)
+ * and Essos cast (#1468) show `PERSON` until their drawing children draw
+ * them. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -236,16 +237,6 @@ export const DRAWINGS = {
   'margaery-tyrell': PERSON,
   'mace-tyrell': PERSON,
   'cortnay-penrose': PERSON,
-  // #1465, Robb's war, the Riverlands and Harrenhal.
-  'alton-lannister': PERSON,
-  'cleos-frey': PERSON,
-  'talisa-maegyr': PERSON,
-  'amory-lorch': PERSON,
-  'polliver': PERSON,
-  'tickler': PERSON,
-  'chiswyck': PERSON,
-  'weese': PERSON,
-  'vargo-hoat': PERSON,
   // #1466: Winterfell and the Iron Islands.
   'balon-greyjoy': PERSON,
   'asha-greyjoy': PERSON,
@@ -295,10 +286,10 @@ export type ArtId = keyof typeof DRAWINGS
  * from `winterfell.ts`, the southern cast's from `south.ts`, the Night's
  * Watch's from `wall.ts`, the Essos cast's from `essos.ts`, the northern
  * household's from `north.ts`, the Vale cast's from `vale.ts`, the King's
- * Landing cast's from `court.ts` and the Riverlands cast's from
- * `riverlands.ts`. Eddard Stark is beheaded with Ice in "Baelor" (episode 9)
- * and in Arya V (chapter 66): from there the blade lies flat on the ground,
- * with nobody to hold it.
+ * Landing cast's from `court.ts` and the Riverlands cast's, both seasons'
+ * (#1472), from `riverlands.ts`. Eddard Stark is beheaded with Ice in
+ * "Baelor" (episode 9) and in Arya V (chapter 66): from there the blade
+ * lies flat on the ground, with nobody to hold it.
  */
 export const REDRAWINGS: Redrawings = {
   ...winterfellRedrawn,
