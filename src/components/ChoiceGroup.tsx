@@ -227,6 +227,9 @@ const styles = stylex.create({
     appearance: 'none',
     cursor: 'inherit',
     opacity: 0,
+    // Never seen (the label draws the ring), but the browser's black outline
+    // is a colour outside the tokens.
+    outlineColor: color.focus,
     position: 'absolute',
   },
   dot: {
