@@ -108,9 +108,8 @@ Fifteen places, under the issue's split point of about 25.
 - Book only: Daenerys I (86) finds and names the ruined city. The show has no
   ruined city. Episode 11 orders it.
 - Italian "Vaes Tolorro", as Italian Wikipedia's Jorah Mormont page writes it.
-- Filed here: none. Quaithe meets Daenerys here (owner, 2026-11-22), but her
-  record still opens at chapter 114 in Qarth; #1477 moves her gate, and may move
-  her here.
+- Filed here: Quaithe, who introduces herself to Daenerys here (Daenerys I, 86;
+  owner, 2026-11-22, filed by #1477).
 
 #### `lordsport`
 
@@ -215,6 +214,8 @@ Fifteen places, under the issue's split point of about 25.
 - Show: Pyat Pree invites Daenerys to it in episode 15 (reported speech); she
   enters it in episode 20. Book: named in Daenerys III (114), entered in
   Daenerys IV (122). Gate 20 / 122.
+- `nameSaidAt` 14: the Essos relationship cards of chapter 114 (#1477) name it,
+  and order at episode 14.
 - Its burning: the book's Drogon sets it alight in the chapter that opens it,
   and the show's in the episode that opens it, so the first drawing shows the
   house as she enters it and no stage follows in this stage.
@@ -237,8 +238,8 @@ Fifteen places, under the issue's split point of about 25.
   the other captives ("Garden of Bones"; Arya VI). Filed here: the Tickler,
   Chiswyck, Weese and Vargo Hoat.
 - `qarth` 14 / 101: Daenerys is let into the city ("Garden of Bones"; Daenerys
-  II). Filed here: Xaro Xhoan Daxos, Pyat Pree, Quaithe, Malakho, Strong Belwas
-  and Arstan Whitebeard.
+  II). Filed here: Xaro Xhoan Daxos, Pyat Pree, Malakho, Strong Belwas and
+  Arstan Whitebeard.
 
 ### Omitted
 

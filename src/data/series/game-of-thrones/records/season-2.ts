@@ -1,6 +1,7 @@
 import type { PlaceDossier } from '~/data/types'
 
 import type { ThronesSaga, ThronesVocabulary } from './saga'
+import { season2Relationships } from './season-2.relationships'
 
 /**
  * Season 2 of the show and *A Clash of Kings*: the second stage (#1455),
@@ -1000,22 +1001,19 @@ export const season2: ThronesSaga = {
       summary: { it: 'Uno stregone di Qarth.', en: 'A warlock of Qarth.' },
       visual: { art: 'pyat-pree', tint: 'blue' },
     },
-    // Books: Daenerys III (chapter 114), the safe later pin: she finds
-    // Daenerys at the firemage in the bazaar and tells her to leave Qarth.
-    // No synopsis read has her name said: Jhogo's line bringing "Quaithe of
-    // the Shadow" in Daenerys I (chapter 86) counts as narration (owner,
-    // 2026-11-22), and Daenerys II (chapter 101) has only "a shadowbinder
-    // named Quaithe". Chapter 114 is the last chapter of the stage where
-    // she speaks with Daenerys (an open point). The show has her in "The
-    // Ghost of Harrenhal" (episode 15) and "A Man Without Honor", where she
-    // tells Jorah "I am no one"; no synopsis or quote has her name said, so
-    // she is the books' alone (an owner check). Episode 15 only orders her.
+    // Books: Daenerys I (chapter 86), she introduces herself to Daenerys at
+    // Vaes Tolorro (A Wiki of Ice and Fire's Quaithe page, citing Chapter
+    // 12), an explicit signal of her own beside Jhogo's narration-level line
+    // (owner, 2026-11-22). The show has her in "The Ghost of Harrenhal"
+    // (episode 15) and "A Man Without Honor", where she tells Jorah "I am no
+    // one"; no synopsis or quote has her name said, so she is the books'
+    // alone (an owner check). Episode 15 only orders her.
     {
       id: 'quaithe',
       kind: 'character',
       source: 'chapter',
       revealedAtEpisode: 15,
-      revealedAtChapter: 114,
+      revealedAtChapter: 86,
       name: { it: 'Quaithe', en: 'Quaithe' },
       summary: {
         it: 'Una donna dell’Ombra che raggiunge Daenerys da Qarth.',
@@ -1341,6 +1339,11 @@ export const season2: ThronesSaga = {
       kind: 'place',
       revealedAtEpisode: 20,
       revealedAtChapter: 122,
+      // Named before its first scene in both media: Pyat Pree invites
+      // Daenerys in "The Ghost of Harrenhal" (episode 15) and in Daenerys III
+      // (chapter 114). The leak scan reads one episode axis, and the book
+      // cards of chapter 114 order at episode 14, so the name opens there.
+      nameSaidAt: 14,
       name: { it: 'Casa degli Eterni', en: 'the House of the Undying' },
       summary: {
         it: 'La dimora degli stregoni di Qarth.',
@@ -2539,6 +2542,7 @@ export const season2: ThronesSaga = {
     },
     // #1468: Essos and Qarth.
     'kovarro': {
+      relationships: season2Relationships.kovarro,
       role: {
         it: 'Cavaliere di sangue di Daenerys',
         en: 'Daenerys’s bloodrider',
@@ -2558,6 +2562,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'xaro-xhoan-daxos': {
+      relationships: season2Relationships['xaro-xhoan-daxos'],
       role: [
         {
           episode: 15,
@@ -2603,6 +2608,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'pyat-pree': {
+      relationships: season2Relationships['pyat-pree'],
       role: { it: 'Stregone di Qarth', en: 'Warlock of Qarth' },
       log: {
         it: 'È venuto da Qarth con Xaro Xhoan Daxos e Quaithe per vedere i draghi di Daenerys. Jorah le consiglia di chiedere aiuto a lui.',
@@ -2621,24 +2627,24 @@ export const season2: ThronesSaga = {
       ],
     },
     'quaithe': {
+      relationships: season2Relationships.quaithe,
       role: { it: 'Donna dell’Ombra', en: 'Woman of the Shadow' },
       log: {
-        it: 'È venuta da Qarth con Pyat Pree e Xaro Xhoan Daxos per vedere i draghi di Daenerys. Le dice che tutti vorranno i draghi, e che deve lasciare presto la città e andare ad Asshai.',
-        en: 'She came from Qarth with Pyat Pree and Xaro Xhoan Daxos to see Daenerys’s dragons. She tells her that everyone will covet them, and that she must leave the city soon and go to Asshai.',
+        it: 'Arriva da Qarth insieme ad altri due stranieri, attraverso il Deserto Rosso, in cerca di draghi. Jhogo li porta da Daenerys nella città in rovina dove il khalasar si è fermato.',
+        en: 'She comes from Qarth with two other strangers, across the Red Waste, looking for dragons. Jhogo brings them to Daenerys in the ruined city where her khalasar has stopped.',
       },
-      status: [
-        { episode: 15, chapter: 114, source: 'chapter', value: 'alive' },
-      ],
+      status: [{ episode: 15, chapter: 86, source: 'chapter', value: 'alive' }],
       affiliation: [
         {
           episode: 15,
-          chapter: 114,
+          chapter: 86,
           source: 'chapter',
           value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
         },
       ],
     },
     'malakho': {
+      relationships: season2Relationships.malakho,
       role: { it: 'Guerriero dothraki', en: 'Dothraki warrior' },
       log: {
         it: 'Segue Daenerys a Qarth. Alla festa di Xaro Xhoan Daxos, lui e Kovarro discutono se rubare una statua d’oro, e Daenerys glielo vieta.',
@@ -2657,6 +2663,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'drogon': {
+      relationships: season2Relationships.drogon,
       role: { it: 'Drago di Daenerys', en: 'Daenerys’s dragon' },
       log: {
         it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
@@ -2672,6 +2679,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'rhaegal': {
+      relationships: season2Relationships.rhaegal,
       role: { it: 'Drago di Daenerys', en: 'Daenerys’s dragon' },
       log: {
         it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
@@ -2687,6 +2695,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'viserion': {
+      relationships: season2Relationships.viserion,
       role: { it: 'Drago di Daenerys', en: 'Daenerys’s dragon' },
       log: {
         it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
@@ -2702,6 +2711,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'strong-belwas': {
+      relationships: season2Relationships['strong-belwas'],
       role: { it: 'Ex combattente delle arene', en: 'Former pit fighter' },
       log: {
         it: 'Al porto di Qarth, lui e il suo scudiero salvano Daenerys da un assassino. Dice che li manda il magistro Illyrio, per riportarla a Pentos.',
@@ -2720,6 +2730,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'arstan-whitebeard': {
+      relationships: season2Relationships['arstan-whitebeard'],
       role: { it: 'Scudiero di Belwas il Forte', en: 'Strong Belwas’s squire' },
       log: {
         it: 'Al porto di Qarth fa cadere dalle mani di Daenerys la scatola con la manticora. Dice di venire dai Sette Regni e che il magistro Illyrio ha mandato lui e Belwas a riportarla a Pentos.',
@@ -2759,8 +2770,8 @@ export const SEASON_2_PLACES: Record<
       en: 'A low hall of logs inside an earthen wall',
     },
     log: {
-      it: 'Craster vive qui oltre la Barriera con le sue molte mogli, che sono anche sue figlie. I Guardiani della Notte vi fanno sosta durante la spedizione, e lui racconta che i bruti hanno lasciato i loro villaggi.',
-      en: 'Craster lives here beyond the Wall with his many wives, who are also his daughters. The Night’s Watch stops here on its ranging, and he tells them the wildlings have left their villages.',
+      it: 'Craster vive qui oltre la Barriera con le sue molte mogli, che sono anche sue figlie. I Guardiani della Notte vi fanno sosta durante la spedizione, e lui racconta che i bruti si stanno radunando.',
+      en: 'Craster lives here beyond the Wall with his many wives, who are also his daughters. The Night’s Watch stops here on its ranging, and he tells them the wildlings are gathering.',
     },
     filedHere: ['craster', 'gilly', 'eddison-tollett'],
   },
@@ -2798,10 +2809,10 @@ export const SEASON_2_PLACES: Record<
       en: 'Cracked white walls around an empty city',
     },
     log: {
-      it: 'La gente di Daenerys trova questa città abbandonata nel deserto, con un pozzo d’acqua pulita e alberi da frutto tra le rovine. Lei la chiama la Città delle Ossa, e vi si ferma mentre i suoi cavalieri esplorano le terre intorno.',
-      en: 'Daenerys’s people find this empty city in the desert, with a well of clean water and fruit trees among the ruins. She names it the City of Bones, and rests there while her riders search the land around it.',
+      it: 'La gente di Daenerys trova questa città abbandonata nel deserto, con un pozzo d’acqua pulita e alberi da frutto tra le rovine. La chiamano la Città delle Ossa, e lei vi si ferma mentre i suoi cavalieri esplorano le terre intorno.',
+      en: 'Daenerys’s people find this empty city in the desert, with a well of clean water and fruit trees among the ruins. They call it the City of Bones, and she rests there while her riders search the land around it.',
     },
-    filedHere: [],
+    filedHere: ['quaithe'],
   },
   'lordsport': {
     form: 'town',
@@ -2889,8 +2900,8 @@ export const SEASON_2_PLACES: Record<
       en: 'Jars of green wildfire in its vaults',
     },
     log: {
-      it: 'I piromanti della gilda producono qui l’altofuoco, un fuoco verde che l’acqua non spegne. Tyrion Lannister viene a scoprire quanto ne ha ordinato la regina.',
-      en: 'The guild’s pyromancers make wildfire here, a green fire that water cannot put out. Tyrion Lannister comes to learn how much of it the queen has ordered.',
+      it: 'I piromanti della gilda producono qui l’altofuoco, un fuoco verde che l’acqua non spegne. Tyrion Lannister viene a sapere quanto ne sta producendo la gilda.',
+      en: 'The guild’s pyromancers make wildfire here, a green fire that water cannot put out. Tyrion Lannister comes to learn how much of it the guild is making.',
     },
     filedHere: ['hallyne'],
   },
@@ -2915,8 +2926,8 @@ export const SEASON_2_PLACES: Record<
       en: 'A narrow way between snowy peaks',
     },
     log: {
-      it: 'Un piccolo gruppo dei Guardiani della Notte sale nel passo per eliminare le vedette dei bruti. Jon Snow prende viva l’ultima di loro, una giovane donna di nome Ygritte.',
-      en: 'A small party of the Night’s Watch climbs into the pass to kill the wildlings’ lookouts. Jon Snow takes the last of them alive, a young woman named Ygritte.',
+      it: 'Un piccolo gruppo dei Guardiani della Notte incontra delle vedette dei bruti nel passo. Jon Snow prende viva l’ultima di loro, una giovane donna di nome Ygritte.',
+      en: 'A small party of the Night’s Watch meets wildling scouts in the pass. Jon Snow takes the last of them alive, a young woman named Ygritte.',
     },
     filedHere: ['ygritte', 'ebben', 'dalbridge', 'lord-of-bones'],
   },

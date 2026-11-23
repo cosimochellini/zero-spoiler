@@ -37,8 +37,8 @@ other record takes another tint, which is why the Greed Island arc is
   ground line at y 150 or an object standing on its own base, with `shadow()`
   at y 150–160 (the tower on its ground, the gavel on its block, the console
   on its table); at sea, on `...SEA` with no shadow (the exam ship in a
-  storm). An object that is itself the map or the ground needs no shadow (the
-  Kakin map, over a wave).
+  storm, the Black Whale). An object that is itself the map or the ground
+  needs no shadow (the map of the Dark Continent).
 
 ## Nen
 

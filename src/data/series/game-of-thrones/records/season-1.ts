@@ -8003,7 +8003,6 @@ export const SEASON_1_PLACES: Record<
     filedHere: [
       'xaro-xhoan-daxos',
       'pyat-pree',
-      'quaithe',
       'malakho',
       'strong-belwas',
       'arstan-whitebeard',
