@@ -4,7 +4,14 @@ import {
   type Redrawings,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
+import {
+  circle,
+  dots,
+  ellipse,
+  polygon,
+  SEA,
+  shadow,
+} from '~/lib/svg/primitives'
 
 /**
  * The three-headed dragon of House Targaryen, with no eyes: three necks
@@ -443,7 +450,293 @@ const LAMB_AND_CROOK: Stroke[] = [
   shadow(80, 154, 40),
 ]
 
-/** The first season's Essos cast (#1052), keyed by record id. */
+/**
+ * Kovarro: a horse walking, side on and with no face, the bridle's reins in
+ * the accent. In "The North Remembers" (episode 11) Daenerys sends him east
+ * across the Red Waste on one of the last horses, and he rides back with the
+ * news of Qarth in "Garden of Bones" (episode 14). The far legs are soft and
+ * the belly is hatched.
+ */
+const HORSE: Stroke[] = [
+  {
+    d: 'M64 78 Q90 86 112 80 Q128 80 126 96 Q124 110 112 112 H66 Q52 110 50 98 Q46 88 40 82 L30 96 Q22 100 18 94 L38 54 Q42 46 48 48 Q58 56 64 78 Z',
+  },
+  { d: 'M42 49 L43 41 L48 47', role: 'soft' },
+  { d: 'M50 46 q6 2 6 8 q6 2 6 8 q6 2 6 10', role: 'soft' },
+  { d: 'M24 92 L38 74 Q52 76 66 86', role: 'accent' },
+  { d: 'M64 112 L64 146 M110 112 Q118 128 114 146', role: 'soft' },
+  { d: 'M60 112 L58 148 H64 M70 112 L74 148 H80' },
+  { d: 'M104 112 Q112 128 106 148 H112 M116 110 Q126 128 118 148 H124' },
+  { d: 'M126 86 Q140 94 136 126 M130 90 Q144 104 140 124', role: 'soft' },
+  { d: 'M78 110 l5 -4 M92 110 l5 -4 M106 108 l5 -4', role: 'ambient' },
+  { d: 'M16 150 H146', role: 'ambient' },
+  shadow(84, 154, 46),
+]
+
+/**
+ * Malakho: the golden peacock in Xaro's garden, its tail fanned and set
+ * with jewels, on its plinth. "Malakho says the statue is too heavy to
+ * carry," Jorah tells Daenerys in "The Ghost of Harrenhal" (episode 15). No
+ * face; the accent is the jewels, the plinth's far side is hatched.
+ */
+const PEACOCK: Stroke[] = [
+  { d: 'M38 118 A50 50 0 1 1 134 118' },
+  { d: 'M52 114 A36 36 0 1 1 120 114', role: 'soft' },
+  {
+    d: 'M86 110 L48 84 M86 110 L58 62 M86 110 L78 48 M86 110 L100 48 M86 110 L118 62 M86 110 L126 86',
+    role: 'soft',
+  },
+  {
+    d: `${circle(48, 84, 4)} ${circle(58, 62, 4)} ${circle(78, 48, 4)} ${circle(100, 48, 4)} ${circle(118, 62, 4)} ${circle(126, 86, 4)}`,
+    role: 'accent',
+  },
+  {
+    d: 'M70 128 Q62 112 74 102 Q78 96 76 86 Q72 76 70 70 Q70 62 76 62 Q82 64 80 72 Q82 86 88 96 Q100 110 94 128 Z',
+  },
+  { d: 'M70 66 L63 69 L70 70 M74 62 L70 54 M77 62 L78 54', role: 'soft' },
+  { d: 'M78 106 Q84 112 82 124 M84 102 Q92 110 90 124', role: 'soft' },
+  {
+    d: 'M58 128 H114 L106 136 H50 Z M50 136 V150 H106 V136 M106 150 L114 142 V128',
+  },
+  { d: 'M108 146 l5 -4 M108 138 l5 -4', role: 'ambient' },
+  shadow(82, 154, 38),
+]
+
+/**
+ * Xaro's vault: the round door in its wall, in 3/4 with its thickness
+ * hatched, the inner ring and the bolts. His first drawing and his death
+ * share it.
+ */
+const VAULT_DOOR: Stroke[] = [
+  { d: 'M24 150 V30 H136 V150' },
+  {
+    d: `${ellipse(76, 90, 44, 50)} M120 90 Q124 60 108 46 M120 90 Q124 120 108 134`,
+  },
+  { d: ellipse(76, 90, 34, 40), role: 'soft' },
+  {
+    d: dots([
+      [76, 44],
+      [104, 58],
+      [114, 90],
+      [104, 122],
+      [76, 136],
+      [48, 122],
+      [38, 90],
+      [48, 58],
+    ]),
+    role: 'soft',
+  },
+  { d: 'M122 70 l6 -4 M124 90 l6 -4 M122 110 l6 -4', role: 'ambient' },
+  { d: 'M16 150 H144', role: 'ambient' },
+]
+
+/**
+ * Xaro Xhoan Daxos: his vault door with the round key pendant in its lock,
+ * the key he wears around his neck and the only one that opens it, shown
+ * to Daenerys in "The Ghost of Harrenhal" (episode 15). The accent is the
+ * key.
+ */
+const LOCKED_VAULT: Stroke[] = [
+  ...VAULT_DOOR,
+  {
+    d: `${circle(76, 90, 10)} ${circle(76, 90, 4)} M76 80 V64`,
+    role: 'accent',
+  },
+]
+
+/**
+ * Pyat Pree: a cut gem in 3/4, its table in the accent and the far facets
+ * hatched, the gem he gives Daenerys in "The Ghost of Harrenhal" (episode
+ * 15) and tells her to look into until she sees herself in its facets. The
+ * book has no gem; the show is the reference.
+ */
+const GEM: Stroke[] = [
+  { d: 'M44 74 L60 58 H100 L116 74 L80 132 Z' },
+  { d: 'M44 74 H116', role: 'soft' },
+  { d: 'M66 58 L60 74 L80 132 L100 74 L94 58', role: 'soft' },
+  { d: 'M60 74 L80 58 L100 74', role: 'accent' },
+  { d: 'M104 84 l6 -2 M98 96 l6 -2 M92 108 l6 -2', role: 'ambient' },
+  { d: 'M36 50 l-6 -6 M80 46 V36 M124 50 l6 -6', role: 'soft' },
+  shadow(80, 152, 22),
+]
+
+/**
+ * Quaithe: her mask, in 3/4 with its rim and its ties, the eyeholes cut in
+ * it and hexagons worked over it, as the show makes it. The book's is dark
+ * red lacquer, worn when she comes to Daenerys in Daenerys I (chapter 86).
+ * The accent is the mask's edge; nothing is behind the eyeholes.
+ */
+const MASK: Stroke[] = [
+  {
+    d: 'M80 34 Q112 34 116 66 Q118 100 102 124 Q92 138 80 140 Q68 138 58 124 Q42 100 44 66 Q48 34 80 34 Z',
+    role: 'accent',
+  },
+  { d: 'M116 66 Q124 98 106 128 Q96 142 82 144', role: 'soft' },
+  { d: 'M56 80 L64 74 L74 80 L64 84 Z M86 80 L96 74 L104 80 L96 84 Z' },
+  {
+    d: `${polygon(68, 54, 8, 6)} ${polygon(92, 54, 8, 6)} ${polygon(80, 62, 6, 6)} ${polygon(58, 102, 8, 6)} ${polygon(102, 102, 8, 6)} ${polygon(70, 118, 8, 6)} ${polygon(90, 118, 8, 6)} ${polygon(80, 100, 6, 6)}`,
+    role: 'soft',
+  },
+  { d: 'M44 66 Q30 70 24 84 M116 66 Q130 70 136 84', role: 'soft' },
+  { d: 'M112 90 l6 -3 M108 104 l6 -3 M102 118 l6 -3', role: 'ambient' },
+  shadow(80, 160, 28),
+]
+
+/**
+ * A young dragon's head in profile, facing left, with no eye, and its two
+ * horns; each dragon places them at the top of its neck.
+ */
+const DRAGON_HEAD = 'M0 0 Q-8 -8 -16 -7 L-28 -3 Q-32 0 -28 3 L-14 6 Q-6 8 0 6'
+const DRAGON_HORNS = 'M-5 -6 Q1 -13 10 -15 M-10 -7 Q-6 -15 0 -20'
+
+/** The head and horns, placed by `at`. */
+function dragonHead(at: string): Stroke[] {
+  return [
+    { d: DRAGON_HEAD, transform: at },
+    { d: DRAGON_HORNS, transform: at, role: 'soft' },
+  ]
+}
+
+/**
+ * Drogon: the young black dragon in flight, side on, both wings raised,
+ * the near wing's membrane in the accent and the far wing hatched, at the
+ * size of the hatchlings Daenerys names in Daenerys I (chapter 86).
+ */
+const FLYING_DRAGON: Stroke[] = [
+  { d: 'M54 98 Q70 84 96 88 Q112 92 120 102 Q104 110 84 108 Q64 108 54 98 Z' },
+  { d: 'M58 92 Q46 86 40 72 M56 102 Q40 94 32 80' },
+  ...dragonHead('translate(38 76) rotate(10)'),
+  { d: 'M120 102 Q134 108 140 120 Q144 130 136 136 M136 136 l-7 -1 l3 7 Z' },
+  { d: 'M76 108 L70 118 L64 118 M100 106 L106 116 L100 118', role: 'soft' },
+  { d: 'M78 90 L70 54 L48 28 M70 54 L44 50 M70 54 L56 66' },
+  {
+    d: 'M48 28 Q54 42 58 48 Q50 48 44 50 Q54 58 56 66 Q68 72 72 80 Q80 84 92 88',
+    role: 'accent',
+  },
+  { d: 'M90 88 L112 50 L140 30 M112 50 L144 50', role: 'soft' },
+  { d: 'M140 30 Q128 46 124 52 Q134 50 144 50 Q122 64 102 90', role: 'soft' },
+  { d: 'M118 62 l6 -2 M112 72 l6 -2 M106 82 l6 -2', role: 'ambient' },
+  shadow(88, 154, 34),
+]
+
+/**
+ * Rhaegal's folded wing: the bone from shoulder to wrist and back, the
+ * fingers, and the scalloped membrane in the accent. His first drawing and
+ * his death share it.
+ */
+const FOLDED_WING: Stroke[] = [
+  { d: 'M66 118 L94 100 L132 114' },
+  {
+    d: 'M66 118 Q76 112 84 118 Q94 110 104 120 Q116 112 132 114',
+    role: 'accent',
+  },
+  { d: 'M94 100 L84 118 M94 100 L104 120', role: 'soft' },
+]
+
+/**
+ * Rhaegal: the young green dragon lying down, side on, neck raised, wing
+ * folded along his back and tail curled round in front, the hatchling
+ * Daenerys names in Daenerys I (chapter 86). The flank is hatched.
+ */
+const RESTING_DRAGON: Stroke[] = [
+  { d: 'M50 150 Q44 126 64 116 Q90 106 114 118 Q128 128 124 150' },
+  { d: 'M62 140 Q52 146 40 150 M50 150 H40', role: 'soft' },
+  { d: 'M64 118 Q50 106 46 90 M76 112 Q62 100 58 84' },
+  ...dragonHead('translate(52 88) rotate(-6)'),
+  ...FOLDED_WING,
+  { d: 'M124 148 Q142 150 146 138 Q148 128 138 128' },
+  { d: 'M110 132 l6 -3 M114 142 l6 -3', role: 'ambient' },
+  { d: 'M20 150 H150', role: 'ambient' },
+  shadow(86, 154, 44),
+]
+
+/**
+ * Viserion sitting up, side on: the body, the neck and head, the tail round
+ * his feet, and the bones of both wings half raised. His first drawing and
+ * his return share it.
+ */
+const SITTING_DRAGON: Stroke[] = [
+  { d: 'M70 148 Q60 128 66 108 Q72 92 86 92 Q100 96 100 116 Q102 136 94 148' },
+  { d: 'M76 94 Q66 78 66 58 M88 94 Q80 76 78 56' },
+  ...dragonHead('translate(74 56) rotate(-20)'),
+  { d: 'M94 148 Q114 154 124 144 Q130 134 120 132' },
+  { d: 'M72 148 V138 H64 M90 148 V138 H82', role: 'soft' },
+  { d: 'M94 124 l5 -3 M95 134 l5 -3', role: 'ambient' },
+  { d: 'M94 104 L116 72 L138 60 M116 72 L136 86 M116 72 L126 100' },
+  { d: 'M70 104 L50 78 L32 70 M50 78 L38 92', role: 'soft' },
+  { d: 'M20 150 H140', role: 'ambient' },
+  shadow(84, 154, 32),
+]
+
+/**
+ * Viserion: the young cream dragon sitting up with his wings half raised,
+ * the near wing's membrane in the accent, the hatchling Daenerys names in
+ * Daenerys I (chapter 86).
+ */
+const SITTING_UP: Stroke[] = [
+  ...SITTING_DRAGON,
+  {
+    d: 'M138 60 Q130 74 136 86 Q126 92 126 100 Q112 104 100 120',
+    role: 'accent',
+  },
+  { d: 'M32 70 Q38 84 38 92 Q52 96 66 112', role: 'soft' },
+]
+
+/**
+ * Strong Belwas: a huge bare chest and belly crossed with scars, the
+ * accent, for the scarred eunuch who comes to Daenerys at the port of Qarth
+ * in Daenerys V (chapter 137). No head and no face; the far side is
+ * hatched. The show has no Belwas.
+ */
+const SCARRED_CHEST: Stroke[] = [
+  {
+    d: 'M62 34 Q56 44 36 48 Q16 54 16 78 L20 112 M98 34 Q104 44 124 48 Q144 54 144 78 L140 112',
+  },
+  {
+    d: 'M36 70 Q30 104 42 130 Q58 152 80 152 Q102 152 118 130 Q130 104 124 70',
+  },
+  { d: 'M44 70 Q62 82 80 74 Q98 82 116 70', role: 'soft' },
+  { d: 'M80 132 h0.01 M60 34 Q80 42 100 34', role: 'soft' },
+  {
+    d: 'M46 58 L66 86 M96 54 L112 80 M74 50 L86 64 M58 102 L90 94 M94 116 L120 102 M50 116 L70 136 M28 70 L34 94',
+    role: 'accent',
+  },
+  { d: 'M120 90 l6 -3 M120 104 l6 -3 M116 118 l6 -3', role: 'ambient' },
+  shadow(80, 160, 46),
+]
+
+/**
+ * Arstan Whitebeard: his tall hardwood staff, the accent, with its knots,
+ * beside the box it knocks from Daenerys's hands at the port of Qarth in
+ * Daenerys V (chapter 137), fallen open, and the manticore on its back.
+ * The staff's far side and the box's are hatched. The show has no Arstan.
+ */
+const STAFF_AND_BOX: Stroke[] = [
+  {
+    d: 'M98 20 Q108 20 106 30 L90 150 H80 L94 28 Q92 20 98 20 Z',
+    role: 'accent',
+  },
+  { d: 'M98 44 q4 2 3 7 M93 82 q4 2 3 7 M88 118 q4 2 3 7', role: 'soft' },
+  {
+    d: 'M102 40 l2 -2 M98 72 l2 -2 M94 104 l2 -2 M91 132 l2 -2',
+    role: 'ambient',
+  },
+  {
+    d: 'M22 150 V128 H50 V150 Z M50 150 L60 142 V120 L50 128 M22 128 L32 120 H60',
+  },
+  { d: 'M22 128 L14 108 L42 104 L50 128', role: 'soft' },
+  { d: 'M54 140 l4 -3 M54 132 l4 -3', role: 'ambient' },
+  {
+    d: `${ellipse(120, 145, 8, 5)} M114 141 l-4 -5 M120 140 l0 -6 M126 141 l4 -5 M128 145 Q138 139 134 131 Q130 127 128 131`,
+  },
+  { d: 'M14 150 H146', role: 'ambient' },
+  shadow(82, 154, 52),
+]
+
+/**
+ * The Essos cast, keyed by record id: the first season's (#1052) and the
+ * second season's Essos and Qarth cast (#1475).
+ */
 export const ESSOS_DRAWINGS = {
   'viserys-targaryen': [...BANNER, shadow(36, 153, 14)],
   'drogo': [...BRAID, shadow(87, 160, 18)],
@@ -462,10 +755,101 @@ export const ESSOS_DRAWINGS = {
   'quaro': LEANING_ARAKH,
   'mago': FLAT_ARAKH,
   'eroeh': LAMB_AND_CROOK,
+  'kovarro': HORSE,
+  'xaro-xhoan-daxos': LOCKED_VAULT,
+  'pyat-pree': GEM,
+  'quaithe': MASK,
+  'malakho': PEACOCK,
+  'drogon': FLYING_DRAGON,
+  'rhaegal': RESTING_DRAGON,
+  'viserion': SITTING_UP,
+  'strong-belwas': SCARRED_CHEST,
+  'arstan-whitebeard': STAFF_AND_BOX,
 } satisfies Drawings
 
 /** The Essos cast drawn again later in the story. */
 export const essosRedrawn: Redrawings = {
+  'xaro-xhoan-daxos': [
+    // The vault shut, its key fallen on the floor in front of it: Daenerys
+    // has him locked in his empty vault in "Valar Morghulis" (episode 20),
+    // the show's alone. The books keep him alive; Daenerys V (chapter 137),
+    // the chapter the episode adapts, orders it.
+    {
+      episode: 20,
+      chapter: 137,
+      source: 'episode',
+      value: [
+        ...VAULT_DOOR,
+        { d: circle(76, 90, 6), role: 'soft' },
+        {
+          d: `${ellipse(100, 146, 10, 3.5)} ${ellipse(100, 146, 4, 1.5)} M90 146 Q74 150 60 144`,
+          role: 'accent',
+        },
+      ],
+    },
+  ],
+  'viserion': [
+    // The same dragon with his wings torn to rags: the Night King kills him
+    // beyond the Wall and raises him as a wight in "Beyond the Wall"
+    // (episode 66), the show's alone. The books leave him alive, so chapter
+    // 344, their last, orders it.
+    {
+      episode: 66,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...SITTING_DRAGON,
+        {
+          d: 'M138 60 L132 68 L136 72 L132 78 L136 86 L130 88 M126 100 L118 102 L114 108 M106 112 L100 120',
+          role: 'accent',
+        },
+        {
+          d: 'M32 70 L36 78 L34 84 L38 92 M48 96 L56 100 M60 106 L66 112',
+          role: 'soft',
+        },
+        { d: 'M122 82 l4 2 l-2 4 Z M112 92 l4 1 l-2 4 Z', role: 'soft' },
+      ],
+    },
+    // The torn dragon down on the ground, neck and tail stretched out, one
+    // ragged wing over him: he falls with the Night King in "The Long
+    // Night" (episode 70), the show's alone; chapter 344 orders it.
+    {
+      episode: 70,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        { d: 'M50 150 Q46 132 70 126 Q96 122 112 134 Q120 142 118 150' },
+        { d: 'M54 142 Q40 142 28 148 M60 132 Q42 130 30 138' },
+        ...dragonHead('translate(30 144) rotate(-14)'),
+        { d: 'M118 148 Q134 152 148 146' },
+        { d: 'M78 126 L98 108 L134 116 M98 108 L112 128' },
+        {
+          d: 'M134 116 L128 120 L130 126 L122 128 M112 128 L104 127 L100 132 M90 128 L78 126',
+          role: 'accent',
+        },
+        { d: 'M68 140 l5 -3 M80 142 l5 -3 M98 140 l5 -3', role: 'ambient' },
+        { d: 'M12 152 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'rhaegal': [
+    // His folded wing and his back going down into the sea, the tail's tip
+    // still above the waves, with nothing of how: he falls into the sea off
+    // Dragonstone in "The Last of the Starks" (episode 71), the show's
+    // alone. The books leave him alive; chapter 344 orders it.
+    {
+      episode: 71,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...SEA,
+        { d: 'M40 158 Q60 140 90 146 Q112 150 124 158' },
+        ...moved(FOLDED_WING, 'translate(-8 38) rotate(12 92 110)'),
+        { d: 'M36 158 Q28 146 18 150', role: 'soft' },
+        { d: 'M128 158 Q134 140 146 142 Q152 148 146 154' },
+      ],
+    },
+  ],
   'jorah-mormont': [
     // The same sword with a little bird on its guard, Varys's: from the
     // episode and the chapter that tell he reports to King's Landing, "The
