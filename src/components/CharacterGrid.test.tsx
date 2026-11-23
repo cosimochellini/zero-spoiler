@@ -268,6 +268,55 @@ describe('CharacterGrid', () => {
     ).not.toBeInTheDocument()
   })
 
+  it('folds no shelf while every one has someone open', () => {
+    const heading = record({
+      id: 'later',
+      kind: 'arc',
+      name: 'Later',
+      ...at(9),
+    })
+    const later = aShelf({
+      arc: openSlot(heading),
+      total: 2,
+      open: [nami],
+      covered: [coveredRecord(at(9))],
+    })
+    book({ shelves: [eastBlue, later] })
+
+    expect(within(shelf(/Later/u)).getByText('Episode 9')).toBeVisible()
+  })
+
+  it('keeps a folded shelf as its head alone while a query has a match', async () => {
+    const user = userEvent.setup()
+    book({ shelves: [eastBlue, alabasta, laterArc(300)] })
+
+    await user.type(screen.getByRole('searchbox'), 'nami')
+
+    const past = screen.getAllByRole('region', { name: /Arc under fog/u })[1]
+
+    expect(within(past!).getByText('From episode 300')).toBeVisible()
+    expect(within(past!).queryByRole('list')).not.toBeInTheDocument()
+  })
+
+  it('pins the search in a control bar whose folded row reads the query', async () => {
+    const user = userEvent.setup()
+    book()
+
+    expect(
+      screen.getByRole('button', { name: 'Search characters. All characters' }),
+    ).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'Search' }))
+
+    expect(screen.getByRole('searchbox')).toHaveFocus()
+
+    await user.type(screen.getByRole('searchbox'), 'nami')
+
+    expect(
+      screen.getByRole('button', { name: 'Search characters. “nami”' }),
+    ).toBeInTheDocument()
+  })
+
   it('mounts a shelf when it nears the viewport and leaves distant shelves light', async () => {
     const enter = observeShelves()
     book()

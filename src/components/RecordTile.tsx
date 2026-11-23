@@ -190,10 +190,13 @@ const styles = stylex.create({
   // The name answers the pointer on the card as it did on its own: the
   // accent, and the rule under it, reserved at rest.
   linkedName: {
+    // Exclusive, so the pressed colour holds whatever order the rules land
+    // in: StyleX does not order two `:is()` keys as it orders `:hover` and
+    // `:active`.
     color: {
       'default': color.ink,
       ':is(a:active *)': color.ink2,
-      ':is(a:hover *)': color.accent,
+      ':is(a:hover:not(:active) *)': color.accent,
     },
     textDecorationColor: {
       'default': 'transparent',
