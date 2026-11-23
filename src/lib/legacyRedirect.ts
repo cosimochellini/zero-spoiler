@@ -15,6 +15,7 @@ export function legacyRedirect(request: Request): Response | undefined {
     || page === ''
     || page === 'legal'
     || page === 'privacy'
+    || page === 'sync'
     || !isLocale(locale)
   ) {
     return undefined

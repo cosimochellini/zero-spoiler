@@ -3,6 +3,7 @@ import { type ReactElement, useEffect, useRef } from 'react'
 
 import { styles } from '~/components/BookmarkDialog.styles'
 import { NumberField, UnitFields } from '~/components/BookmarkFields'
+import { SyncDevices } from '~/components/SyncDevices'
 import { Button } from '~/components/ui/Button'
 import { useT } from '~/i18n/LocaleContext'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
@@ -70,6 +71,8 @@ export function BookmarkForm({ onDone }: BookmarkFormProps): ReactElement {
           commit(null)
         }}
       />
+
+      <SyncDevices />
     </form>
   )
 }

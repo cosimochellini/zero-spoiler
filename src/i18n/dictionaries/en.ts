@@ -142,6 +142,30 @@ export const enDictionary = {
   'dialog.loading': 'Loading…',
   'dialog.loadFailed': 'Loading failed. Check your connection and try again.',
   'dialog.retry': 'Try again',
+  'dialog.devices': 'More devices?',
+  'dialog.devicesHelp':
+    'Scan this code with another device, or open the link there. Both then keep the same bookmarks.',
+  'dialog.devicesWarning':
+    'Anyone with this link can see and change your bookmarks.',
+  'dialog.devicesCode': 'QR code of the link',
+  'dialog.devicesCopy': 'Copy link',
+  'dialog.devicesCopied': 'Link copied.',
+  'dialog.devicesCopyFailed': 'Copying failed. Try again.',
+  'dialog.devicesDisconnect': 'Disconnect this device',
+
+  'sync.pageTitle': 'Sync bookmarks | Zero Spoiler',
+  'sync.title': 'Same bookmarks on this device',
+  'sync.lede':
+    'This device takes the bookmarks of the device the link comes from. From then on, a bookmark you move on one of them is on the other at its next page load.',
+  'sync.change': 'Your {series} bookmark becomes {point}.',
+  'sync.add': 'Your {series} bookmark is set to {point}.',
+  'sync.connect': 'Connect this device',
+  'sync.incomplete':
+    'This link is incomplete. Copy it again on the other device, from “More devices?” in the bookmark dialog.',
+  'sync.unknown':
+    'This link does not work any more. Open “More devices?” in the bookmark dialog on the other device and copy it again.',
+  'sync.already': 'This device already has these bookmarks.',
+  'sync.toHub': 'All series',
 
   'veil.locked.episode': 'Under fog until episode {threshold}',
   'veil.locked.season': 'Under fog until {threshold}',

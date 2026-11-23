@@ -9,33 +9,37 @@ intro it served and the copy-reload flag (#938) was listed (#1432).
 
 ## Application inventory
 
-| Item                              | Value/purpose                                                    | Lifetime and destination                                                                                                                                             | Source                                                                   |
-| --------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `zs_one-piece`                    | Episode, chapter or live-action bookmark for spoiler filtering   | 31,536,000 seconds (365 days) after saving, or deletion; sent with applicable same-origin requests                                                                   | `src/lib/progress/BookmarkProvider.tsx`, `episode.ts`, `linkBookmark.ts` |
-| `zs_hunter-x-hunter`              | Episode, season or chapter bookmark for Hunter x Hunter          | 365 days after saving, or deletion; sent with applicable same-origin requests                                                                                        | `src/lib/progress/series.ts`, `BookmarkProvider.tsx`, `linkBookmark.ts`  |
-| `zs_game-of-thrones`              | Episode, season or book-and-chapter bookmark for Game of Thrones | 365 days after saving, or deletion; sent with applicable same-origin requests                                                                                        | `src/lib/progress/series.ts`, `BookmarkProvider.tsx`, `linkBookmark.ts`  |
-| `opzs_lang`                       | Chosen `it`/`en` locale                                          | 365 days after choosing; sent with applicable same-origin requests                                                                                                   | `src/components/LocaleSwitch.tsx`, `src/i18n/locales.ts`                 |
-| `zs_one-piece_try`                | Temporary introductory bookmark                                  | Session, no `Max-Age`; expired when saving/clearing a bookmark or leaving the trial; browser restore may preserve the session                                        | `src/lib/progress/BookmarkProvider.tsx`, `src/lib/progress/series.ts`    |
-| `zs_hunter-x-hunter_try`          | Temporary introductory HxH bookmark                              | Session, no `Max-Age`; expired when saving/clearing a bookmark or leaving the trial                                                                                  | `src/lib/progress/series.ts`, `BookmarkProvider.tsx`                     |
-| `zs_game-of-thrones_try`          | Temporary introductory Game of Thrones bookmark                  | Session, no `Max-Age`; expired when saving/clearing a bookmark or leaving the trial                                                                                  | `src/lib/progress/series.ts`, `BookmarkProvider.tsx`                     |
-| `opzs_welcome`                    | One-time welcome flag, value `1`                                 | `sessionStorage`, consumed on the home page or removed with the tab session; not sent to the server                                                                  | `src/lib/progress/welcome.ts`                                            |
-| `zs-copy-reloaded:<path><search>` | Page reloaded once after its copy failed to load, value `1`      | `sessionStorage`, set when a page's dictionary chunk fails to load and the page reloads; removed once the copy loads or with the tab session; not sent to the server | `src/i18n/translate.ts`                                                  |
+| Item                              | Value/purpose                                                       | Lifetime and destination                                                                                                                                             | Source                                                                   |
+| --------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `zs_one-piece`                    | Episode, chapter or live-action bookmark for spoiler filtering      | 31,536,000 seconds (365 days) after saving, or deletion; sent with applicable same-origin requests                                                                   | `src/lib/progress/BookmarkProvider.tsx`, `episode.ts`, `linkBookmark.ts` |
+| `zs_hunter-x-hunter`              | Episode, season or chapter bookmark for Hunter x Hunter             | 365 days after saving, or deletion; sent with applicable same-origin requests                                                                                        | `src/lib/progress/series.ts`, `BookmarkProvider.tsx`, `linkBookmark.ts`  |
+| `zs_game-of-thrones`              | Episode, season or book-and-chapter bookmark for Game of Thrones    | 365 days after saving, or deletion; sent with applicable same-origin requests                                                                                        | `src/lib/progress/series.ts`, `BookmarkProvider.tsx`, `linkBookmark.ts`  |
+| `opzs_lang`                       | Chosen `it`/`en` locale                                             | 365 days after choosing; sent with applicable same-origin requests                                                                                                   | `src/components/LocaleSwitch.tsx`, `src/i18n/locales.ts`                 |
+| `zs_one-piece_try`                | Temporary introductory bookmark                                     | Session, no `Max-Age`; expired when saving/clearing a bookmark or leaving the trial; browser restore may preserve the session                                        | `src/lib/progress/BookmarkProvider.tsx`, `src/lib/progress/series.ts`    |
+| `zs_hunter-x-hunter_try`          | Temporary introductory HxH bookmark                                 | Session, no `Max-Age`; expired when saving/clearing a bookmark or leaving the trial                                                                                  | `src/lib/progress/series.ts`, `BookmarkProvider.tsx`                     |
+| `zs_game-of-thrones_try`          | Temporary introductory Game of Thrones bookmark                     | Session, no `Max-Age`; expired when saving/clearing a bookmark or leaving the trial                                                                                  | `src/lib/progress/series.ts`, `BookmarkProvider.tsx`                     |
+| `zs_sync`                         | Random sync id (UUID) tying the device to its synced record (#1560) | 365 days, refreshed on each synced page load; expired by "Disconnect this device"                                                                                    | `src/lib/progress/sync.ts`, `src/server/sync/request.ts`                 |
+| `opzs_welcome`                    | One-time welcome flag, value `1`                                    | `sessionStorage`, consumed on the home page or removed with the tab session; not sent to the server                                                                  | `src/lib/progress/welcome.ts`                                            |
+| `zs-copy-reloaded:<path><search>` | Page reloaded once after its copy failed to load, value `1`         | `sessionStorage`, set when a page's dictionary chunk fails to load and the page reloads; removed once the copy loads or with the tab session; not sent to the server | `src/i18n/translate.ts`                                                  |
 
-All seven cookies are first party, host-only (no `Domain`) with `Path=/` and
+All eight cookies are first party, host-only (no `Domain`) with `Path=/` and
 `SameSite=Lax`; neither `Secure` nor `HttpOnly` is currently written. Production
 uses HTTPS. Lax cookies can also accompany top-level safe cross-site
 navigations; they are not excluded from every cross-site request. This issue
 documents the attributes rather than changing cookie behavior.
 
 The application does not use `localStorage`, analytics SDKs, advertising,
-third-party fonts, visitor accounts or an application database. `src/start.ts`
-adds response-only timing durations and a cold-start indicator; it does not log
-bookmark values. Fonts and drawings are same-origin. The CSP in
-`src/security-headers.ts` limits connections to self. Requests include the IP
-address, URL, user agent and applicable cookie values; server functions read
-preferences to produce the censored response. Shared bookmark links briefly put
-the bookmark in the request URL before the redirect removes its query parameter.
-They can therefore appear in infrastructure request logs.
+third-party fonts, or visitor accounts. Its one store is the Workers KV
+namespace `SYNC` (#1560): one key `sync:<id>` per synced reader, holding up to
+three bookmark strings and nothing else, written with a one-year `expirationTtl`
+and read only through `src/server/sync/kv.ts`. `src/start.ts` adds response-only
+timing durations and a cold-start indicator; it does not log bookmark values.
+Fonts and drawings are same-origin. The CSP in `src/security-headers.ts` limits
+connections to self. Requests include the IP address, URL, user agent and
+applicable cookie values; server functions read preferences to produce the
+censored response. Shared bookmark links briefly put the bookmark in the request
+URL before the redirect removes its query parameter. They can therefore appear
+in infrastructure request logs.
 
 The necessary technical storage serves the reader’s requested spoiler boundary,
 language, trial, welcome and copy-reload features. The
@@ -121,14 +125,14 @@ Worker on `https://zerospoiler.app`. The Worker's configuration is
 `wrangler.jsonc`; `npm run build` writes the deployed form to
 `dist/server/wrangler.json`, and it was read there before `wrangler deploy`.
 
-| Setting         | Value                                                                             |
-| --------------- | --------------------------------------------------------------------------------- |
-| `observability` | Workers Logs on since #873: invocation and console logs, 100% sampled, traces off |
-| `workers_dev`   | `false`: no second address on `workers.dev`                                       |
-| `preview_urls`  | `false`: no per-version preview addresses                                         |
-| `routes`        | `zerospoiler.app` as a custom domain, nothing else                                |
-| Bindings        | none: no KV, R2, D1, Durable Objects, queues or Analytics Engine                  |
-| `assets`        | the built client (`dist/client`), cache rules in `public/_headers`                |
+| Setting         | Value                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------- |
+| `observability` | Workers Logs on since #873: invocation and console logs, 100% sampled, traces off        |
+| `workers_dev`   | `false`: no second address on `workers.dev`                                              |
+| `preview_urls`  | `false`: no per-version preview addresses                                                |
+| `routes`        | `zerospoiler.app` as a custom domain, nothing else                                       |
+| Bindings        | `SYNC`, one KV namespace (#1560); no R2, D1, Durable Objects, queues or Analytics Engine |
+| `assets`        | the built client (`dist/client`), cache rules in `public/_headers`                       |
 
 A request to the production origin returned no injected script (Rocket Loader,
 email decoding, Web Analytics beacon or challenge page). `wrangler tail` streams
