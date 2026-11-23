@@ -352,7 +352,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '11:86': {
       source: ACOK_12,
-      note: 'Daenerys I (site 86): Jorah’s “go where no one else does”, the wound from Qotho not yet healed, the peach in the dead city, Lynesse Hightower won at the Lannisport tourney, his ruin, the flight to Lys, her leaving him for the merchant prince Tregar Ormollen, “she looked a lot like you”, and Daenerys tending his hip wound until it heals.',
+      note: 'Daenerys I (site 86): Jorah’s “go where no one else does”, the wound from Qotho not yet healed, the peach in the dead city, Lynesse Hightower won at the Lannisport tourney, his ruin, the flight to Lys, her leaving him for the merchant prince Tregar Ormollen, “she looked a bit like you”, and Daenerys tending his hip wound until it heals.',
     },
     '15:101': {
       source: ACOK_27,
@@ -2811,6 +2811,10 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Malakho`,
       note: 'Malakho and Kovarro pages: an aged Dothraki who stayed (GOT201), the jeweled golden peacock at Xaro’s reception, “too heavy to carry”, Kovarro calling him an idiot and his plan to pry out the jewels, and Daenerys’s rebuke (GOT205). Chapter 114 orders it, after Xaro’s book gate.',
     },
+    '20:137': {
+      source: EPISODE_20,
+      note: 'Malakho and Xaro Xhoan Daxos pages: Xaro found in bed with Doreah, his vault opened and found empty, Malakho forcing him inside, both locked in (GOT210). Chapter 137 orders it, after Xaro’s book gate.',
+    },
   },
   'xaro-xhoan-daxos': {
     '15:114': {
@@ -2885,7 +2889,7 @@ export const GAME_OF_THRONES_SOURCES = {
   'arstan-whitebeard': {
     '20:137': {
       source: ACOK_63,
-      note: 'Daenerys V (site 137): the old man with a staff following them, the manticore knocked out of her hands, Arstan Whitebeard, Belwas’s squire, from the Seven Kingdoms, squire to a knight of House Swann as a young man, sent by Illyrio. Nothing hints at who he is.',
+      note: 'Daenerys V (site 137): the old man with a staff following them, the manticore knocked out of her hands, Arstan Whitebeard, Belwas’s squire, from the Seven Kingdoms, sent by Illyrio. His past as a squire is left out: it hints at who he is.',
     },
   },
 }

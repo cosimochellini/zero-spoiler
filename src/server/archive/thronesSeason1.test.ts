@@ -884,13 +884,7 @@ const STEPS: {
     episode: 10,
     id: 'daenerys-targaryen',
   },
-  {
-    chapter: 73,
-    en: 'Daenerys’s bloodrider',
-    episode: 10,
-    id: 'rakharo',
-    source: 'chapter',
-  },
+  { chapter: 73, en: 'Daenerys’s bloodrider', episode: 11, id: 'rakharo' },
   { chapter: 73, en: 'Daenerys’s khalasar', episode: 10, id: 'rakharo' },
   { chapter: 73, en: 'Daenerys’s khalasar', episode: 11, id: 'aggo' },
   {

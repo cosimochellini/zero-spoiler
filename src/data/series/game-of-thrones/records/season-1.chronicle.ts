@@ -164,8 +164,8 @@ export const season1Chronicles = {
       [14, 101],
       { it: 'Alle porte di Qarth', en: 'At the gates of Qarth' },
       {
-        it: '[[kovarro|Kovarro]] torna su un cavallo nuovo: i Tredici, che governano Qarth, hanno saputo dei draghi e invitano Daenerys in città. [[jorah-mormont|Ser Jorah]] la avverte che il deserto intorno a Qarth è pieno delle ossa dei viaggiatori che la città ha respinto. Alle porte i Tredici chiedono di vedere prima i draghi, e Daenerys rifiuta finché la sua gente non avrà cibo e riparo. Quando la respingono, giura che tornerà con il fuoco e il sangue. Allora uno dei Tredici garantisce per lei con un giuramento di sangue, il Sumai, e la sua gente entra a Qarth.',
-        en: '[[kovarro|Kovarro]] comes back on a new horse: the Thirteen, who rule Qarth, have heard of the dragons and invite Daenerys to the city. [[jorah-mormont|Ser Jorah]] warns her that the desert around Qarth is called the Garden of Bones, for the travelers the city turns away. At the gates the Thirteen ask to see her dragons first, and Daenerys refuses until her people are fed and sheltered. When they turn her away, she swears to come back with fire and blood. One of the Thirteen then vouches for her with a blood oath, the Sumai, and her people enter Qarth.',
+        it: '[[kovarro|Kovarro]] torna su un cavallo nuovo: i Tredici, che governano Qarth, hanno saputo dei draghi e invitano Daenerys in città. [[jorah-mormont|Ser Jorah]] la avverte che il deserto intorno a Qarth si chiama Giardino delle Ossa, per i viaggiatori che la città respinge. Alle porte i Tredici chiedono di vedere prima i draghi, e Daenerys rifiuta finché la sua gente non avrà cibo e riparo. Quando la respingono, giura di vendicarsi di Qarth con il fuoco e il sangue. Allora uno dei Tredici garantisce per lei con un giuramento di sangue, il Sumai, e la sua gente entra a Qarth.',
+        en: '[[kovarro|Kovarro]] comes back on a new horse: the Thirteen, who rule Qarth, have heard of the dragons and invite Daenerys to the city. [[jorah-mormont|Ser Jorah]] warns her that the desert around Qarth is called the Garden of Bones, for the travelers the city turns away. At the gates the Thirteen ask to see her dragons first, and Daenerys refuses until her people are fed and sheltered. When they turn her away, she swears vengeance on Qarth with fire and blood. One of the Thirteen then vouches for her with a blood oath, the Sumai, and her people enter Qarth.',
       },
     ),
     onScreen(
@@ -536,8 +536,8 @@ export const season1Chronicles = {
       [11, 86],
       { it: 'Lynesse', en: 'Lynesse' },
       {
-        it: 'Jorah dice a [[daenerys-targaryen|Daenerys]] che non vivrà a lungo se non andrà dove nessun altro va, e la segue nel deserto rosso anche se la ferita che gli ha inferto Qotho non è guarita. Nella città morta le porta una pesca e le parla della sua seconda moglie, Lynesse Hightower: l’ha conquistata a un torneo, si è rovinato per accontentarla ed è fuggito con lei a Lys, dove lei lo ha lasciato per un principe mercante. Le dice che Lynesse le somigliava molto. Daenerys gli cura la ferita finché non comincia a guarire.',
-        en: 'Jorah tells [[daenerys-targaryen|Daenerys]] that she will not live long unless she goes where no one else does, and follows her into the red waste, though the wound Qotho gave him has not healed. In the dead city he brings her a peach and tells her of his second wife, Lynesse Hightower: he won her at a tourney, ruined himself to please her and fled with her to Lys, where she left him for a merchant prince. He tells Daenerys that Lynesse looked much like her. Daenerys tends his wound until it starts to heal.',
+        it: 'Jorah dice a [[daenerys-targaryen|Daenerys]] che non vivrà a lungo se non andrà dove nessun altro va, e la segue nel deserto rosso anche se la ferita che gli ha inferto Qotho non è guarita. Nella città morta le porta una pesca e le parla della sua seconda moglie, Lynesse Hightower: l’ha conquistata a un torneo, si è rovinato per accontentarla ed è fuggito con lei a Lys, dove lei lo ha lasciato per un principe mercante. Le dice che Lynesse le somigliava un po’. Daenerys gli cura la ferita finché non comincia a guarire.',
+        en: 'Jorah tells [[daenerys-targaryen|Daenerys]] that she will not live long unless she goes where no one else does, and follows her into the red waste, though the wound Qotho gave him has not healed. In the dead city he brings her a peach and tells her of his second wife, Lynesse Hightower: he won her at a tourney, ruined himself to please her and fled with her to Lys, where she left him for a merchant prince. He tells Daenerys that Lynesse looked a little like her. Daenerys tends his wound until it starts to heal.',
       },
     ),
     inBooks(
@@ -561,7 +561,7 @@ export const season1Chronicles = {
       { it: 'Seguiti al porto', en: 'Followed at the docks' },
       {
         it: 'Dopo la Casa degli Eterni, Jorah consola [[daenerys-targaryen|Daenerys]], poi la accompagna al porto di Qarth a cercare una nave, rispondendo come può alle sue domande sulle visioni. Al porto la avverte che un uomo enorme e sfregiato e un vecchio con un bastone li stanno seguendo. Il vecchio la salva da una manticora e si presenta come [[arstan-whitebeard|Arstan Barbabianca]], scudiero di [[strong-belwas|Belwas il Forte]], mandato dal magistro [[illyrio-mopatis|Illyrio]].',
-        en: 'After the House of the Undying, Jorah comforts [[daenerys-targaryen|Daenerys]], then rides with her to the port of Qarth to find a ship, answering her questions about the visions as best he can. At the docks he warns her that a huge scarred man and an old man with a staff are following them. The old man saves her from a manticore and names himself [[arstan-whitebeard|Arstan Whitebeard]], squire to [[strong-belwas|Strong Belwas]], sent by Magister [[illyrio-mopatis|Illyrio]].',
+        en: 'After the House of the Undying, Jorah comforts [[daenerys-targaryen|Daenerys]], then goes with her to the port of Qarth to find a ship, answering her questions about the visions as best he can. At the docks he warns her that a huge scarred man and an old man with a staff are following them. The old man saves her from a manticore and names himself [[arstan-whitebeard|Arstan Whitebeard]], squire to [[strong-belwas|Strong Belwas]], sent by Magister [[illyrio-mopatis|Illyrio]].',
       },
     ),
   ],
@@ -644,8 +644,8 @@ export const season1Chronicles = {
       [16, 114],
       { it: 'Nella dimora di Xaro', en: 'In Xaro’s house' },
       {
-        it: 'A Qarth Irri ricuce i vestiti di [[daenerys-targaryen|Daenerys]], che la chiama amica. Quando [[doreah|Doreah]] chiama Daenerys principessa, Irri la corregge: è una khaleesi. Poi la convince a indossare l’abito fatto per lei da [[xaro-xhoan-daxos|Xaro]], per cortesia verso il padrone di casa. Mentre Daenerys è fuori a chiedere navi, Irri viene strangolata nella dimora di Xaro, e Daenerys la trova morta.',
-        en: 'In Qarth Irri mends [[daenerys-targaryen|Daenerys]]’s clothes, and Daenerys calls her a friend. When [[doreah|Doreah]] calls Daenerys a princess, Irri corrects her: she is a khaleesi. She then urges her to wear the gown [[xaro-xhoan-daxos|Xaro]] had made for her, as a courtesy to their host. While Daenerys is out asking for ships, Irri is strangled in Xaro’s house, and Daenerys finds her dead.',
+        it: 'A Qarth Irri ricuce i vestiti di [[daenerys-targaryen|Daenerys]], che la chiama amica. Quando [[doreah|Doreah]] chiama Daenerys principessa, Irri la corregge: è una khaleesi. Poi convince Daenerys a indossare l’abito fatto per lei da [[xaro-xhoan-daxos|Xaro]], per cortesia verso il padrone di casa. Mentre Daenerys è fuori a chiedere navi, Irri viene strangolata nella dimora di Xaro, e Daenerys la trova morta.',
+        en: 'In Qarth Irri mends [[daenerys-targaryen|Daenerys]]’s clothes, and Daenerys calls her a friend. When [[doreah|Doreah]] calls Daenerys a princess, Irri corrects her: she is a khaleesi. She then urges Daenerys to wear the gown [[xaro-xhoan-daxos|Xaro]] had made for her, as a courtesy to their host. While Daenerys is out asking for ships, Irri is strangled in Xaro’s house, and Daenerys finds her dead.',
       },
     ),
   ],

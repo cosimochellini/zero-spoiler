@@ -5054,11 +5054,12 @@ export const season1: ThronesSaga = {
           chapter: 24,
           value: { it: 'Guardia di Daenerys', en: 'Daenerys’s guard' },
         },
-        // The books alone name him her bloodrider before the pyre.
+        // The books name him her bloodrider before the pyre (chapter 73),
+        // the show when she sends him out in episode 11, so both media tell
+        // it at the later episode.
         {
-          episode: 10,
+          episode: 11,
           chapter: 73,
-          source: 'chapter',
           value: {
             it: 'Cavaliere di sangue di Daenerys',
             en: 'Daenerys’s bloodrider',

@@ -316,6 +316,13 @@ const STORIES: Row[] = [
     title: 'The golden peacock',
   },
   {
+    id: 'malakho',
+    medium: 'show',
+    episode: 20,
+    chapter: 137,
+    title: 'The empty vault',
+  },
+  {
     id: 'xaro-xhoan-daxos',
     medium: 'show',
     episode: 15,
