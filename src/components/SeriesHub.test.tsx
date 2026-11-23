@@ -17,6 +17,7 @@ const onePiece = (bookmark: HubSeries['bookmark']): HubSeries => ({
   name: { en: 'One Piece', it: 'One Piece' },
   theme: 'one-piece',
   count: 737,
+  open: bookmark === null ? 0 : 58,
   bookmark,
 })
 
@@ -52,7 +53,22 @@ describe('SeriesHub', () => {
 
     expect(card).toHaveAttribute('href', '/one-piece/it')
     expect(card).toHaveTextContent('Episodio 650')
-    expect(card).toHaveTextContent('737 voci')
+    expect(card).toHaveTextContent('58 su 737 visibili')
+  })
+
+  it('gives the size alone with no bookmark', () => {
+    renderWithProviders(
+      <SeriesHub
+        coming={[]}
+        series={[onePiece(null)]}
+      />,
+      { path: '/en' },
+    )
+
+    const card = screen.getByRole('link', { name: /One Piece/u })
+
+    expect(card).toHaveTextContent('737 entries')
+    expect(card).not.toHaveTextContent('open')
   })
 
   it.each([

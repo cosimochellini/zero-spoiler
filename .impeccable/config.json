@@ -56,26 +56,14 @@
         "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: the fruits index draws a card inside a card."
       },
       {
-        "rule": "radial-spotlight-glow",
-        "value": "*",
-        "files": [
-          "http://127.0.0.1:*/*/en?ep=*",
-          "http://127.0.0.1:*/en"
-        ],
-        "createdAt": "2026-11-17T12:52:42.381Z",
-        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: the series cards of the hub and the hero drawing of a bookmarked series home sit under an accent-coloured radial glow."
-      },
-      {
         "rule": "line-length",
         "value": "*",
         "files": [
           "http://127.0.0.1:*/*/*/characters/*",
-          "http://127.0.0.1:*/*/*/places/*",
-          "http://127.0.0.1:*/*/en",
-          "http://127.0.0.1:*/*/en?ep=*"
+          "http://127.0.0.1:*/*/*/places/*"
         ],
         "createdAt": "2026-11-17T12:52:42.460Z",
-        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: at 1440px prose runs 87 to 112 characters a line: the landing introduction, the stories of a series home, and the summary and dated entries of a character or place page."
+        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: at 1440px prose runs 87 to 112 characters a line: the summary and dated entries of a character or place page."
       }
     ]
   },

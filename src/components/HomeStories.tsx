@@ -272,7 +272,8 @@ const styles = stylex.create({
     color: color.ink2,
     fontSize: text.base,
     lineHeight: leading.body,
-    maxWidth: '60ch',
+    // About 75 characters a line in the body face, the footer's measure.
+    maxWidth: '52ch',
   },
   closed: { minWidth: 0 },
   // The title is the whole control: a plain line with the native marker in

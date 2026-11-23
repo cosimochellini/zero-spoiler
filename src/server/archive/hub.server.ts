@@ -1,4 +1,4 @@
-import { sourceOf } from '~/data/reveal'
+import { reveal, sourceOf } from '~/data/reveal'
 import { archiveOf, COMING_SERIES, OPEN_SERIES } from '~/data/series'
 import { archiveIn } from '~/data/source'
 import type { SeriesArchive } from '~/data/types'
@@ -10,19 +10,26 @@ import type { ComingSeries, HubSeries } from '~/lib/view/hub'
  * A series' card on the hub, at the reader's saved bookmark on it. The count
  * is of the entries the reader's source tells (`~/data/source`): a chapter
  * reader's leaves out the anime's own records, and a reader with no bookmark,
- * who counts in neither source, gets only the records both tell.
+ * who counts in neither source, gets only the records both tell. `open` is
+ * how many of them the bookmark has reached, read by the same `reveal` every
+ * listing reads; with no bookmark it is none. Two numbers, never a record.
  */
 export function hubSeries(
   archive: SeriesArchive,
   bookmark: Bookmark,
 ): HubSeries {
   const { series } = archive
+  const { entities } = archiveIn(archive, sourceOf(bookmark))
+  const { sees } = reveal(bookmark, series)
 
   return {
     slug: series.slug,
     name: series.name,
     theme: series.theme,
-    count: archiveIn(archive, sourceOf(bookmark)).entities.length,
+    count: entities.length,
+    // Every kind: characters, places, ships, fruits, abilities and arcs, East
+    // Blue included though no shelf carries it.
+    open: entities.filter((entity) => sees(entity)).length,
     bookmark,
     ...(series.books !== undefined && { books: series.books }),
   }

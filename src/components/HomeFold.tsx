@@ -2,14 +2,13 @@ import * as stylex from '@stylexjs/stylex'
 import type { ReactElement } from 'react'
 
 import { ChartArt } from '~/components/ChartArt'
-import { tintOf } from '~/components/drawing'
 import { EpisodeMark } from '~/components/EpisodeMark'
 import { styles } from '~/components/HomeFold.styles'
 import { useT } from '~/i18n/LocaleContext'
 import { useBookmarkSeries } from '~/lib/progress/BookmarkContext'
 import type { Bookmark } from '~/lib/progress/episode'
 import { bookmarkPoint } from '~/lib/progress/threshold'
-import type { TintId, WaypointView } from '~/lib/view/records'
+import type { WaypointView } from '~/lib/view/records'
 import { settleStyles } from '~/styles/settle'
 
 /** What the fold shows, all of it already reached. */
@@ -26,18 +25,10 @@ export interface HomeFoldProps {
 }
 
 /**
- * The arc's colour as a soft light behind the drawing rather than a fill: a
- * drawing is never filled, so the colour is in the air around it.
- */
-function haloOf(hue: TintId): string {
-  return `radial-gradient(closest-side, color-mix(in oklch, ${tintOf(hue)} 24%, transparent), transparent)`
-}
-
-/**
  * The fold, a marquee hero: the arc the reader is in, and nothing else above the fold.
  *
- * The arc's own drawing fills the frame, set large and on a wash of its own
- * colour, and fades into the paper along the lower edge where the words
+ * The arc's own drawing fills the frame, set large on the paper, and fades
+ * into the paper along the lower edge where the words
  * sit: the reader's point in the mono outlier, the arc's name as the one
  * headline, its sentence, and the control that moves the bookmark. Below
  * 40rem the words sit under the drawing in the page; from there up they are
@@ -59,12 +50,6 @@ export function HomeFold({ band, point, saga }: HomeFoldProps): ReactElement {
         aria-hidden="true"
         {...stylex.props(styles.figure)}
       >
-        <div
-          {...stylex.props(
-            styles.haloBox,
-            styles.halo(haloOf(saga.visual.tint)),
-          )}
-        />
         <div {...stylex.props(styles.art)}>
           <ChartArt {...saga.visual} />
         </div>

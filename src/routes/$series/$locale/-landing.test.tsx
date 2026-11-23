@@ -162,6 +162,8 @@ describe('LandingPage', () => {
     expect(screen.getAllByText('Romance Dawn')).toHaveLength(2)
     expect(screen.queryByText('Roronoa Zoro')).not.toBeInTheDocument()
     expect(screen.getByText('Under fog until episode 2')).toBeInTheDocument()
+    expect(screen.getAllByText('Entry under fog').length).toBeGreaterThan(0)
+    expect(screen.queryByText('Spoiler')).not.toBeInTheDocument()
 
     const dial = screen.getByRole('slider', { name: 'Point in the story' })
     fireEvent.change(dial, { target: { value: '2' } })
