@@ -72,9 +72,11 @@ export function PlaceIndex(props: PlaceIndexProps): null | ReactElement {
 function OpenIndex({
   covered,
   needle,
+  onParams,
   shown,
-  ...controls
+  ...picks
 }: PlaceIndexProps): ReactElement {
+  const controls = { onParams, ...picks }
   const t = useT()
   const { regionOf } = usePlaceLabels(controls.words, controls.seas)
   const fieldId = useId()
@@ -99,7 +101,7 @@ function OpenIndex({
       />
 
       {shown.length === 0 && isPicked(controls.params) ?
-        <NoneShown onParams={controls.onParams} />
+        <NoneShown onParams={onParams} />
       : null}
 
       {groups.map(({ sea, stops, total }) => {
