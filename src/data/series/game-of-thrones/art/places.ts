@@ -1887,8 +1887,8 @@ const THE_CRAG: Stroke[] = [
 
 /**
  * Flea Bottom: crooked hovels along a lane, a pot steaming over a fire
- * between them, for the district named in episode 11 and in Davos I
- * (chapter 84). The houses' sides are hatched; the accent is the steam.
+ * between them, for the district named in episode 11 and in Arya I
+ * (chapter 75). The houses' sides are hatched; the accent is the steam.
  */
 const FLEA_BOTTOM: Stroke[] = [
   { d: 'M10 150 V104 L24 92 L38 104 V150 M38 150 V112 L50 100 L62 112 V150' },
@@ -1970,8 +1970,8 @@ const TARTH: Stroke[] = [
 /**
  * Lorath: a walled city's pointed towers on an island, a ship on the sea
  * before it, for the Free City Jaqen says he comes from in episode 12 and
- * in the book by Arya IX (chapter 121). The far slope is hatched; the accent is the
- * towers' roofs.
+ * in the book by Arya IX (chapter 121). The far slope is hatched; the
+ * accent is the towers' roofs.
  */
 const LORATH: Stroke[] = [
   { d: 'M10 140 Q20 116 40 112 H102 Q114 118 116 140' },
@@ -1992,7 +1992,7 @@ const LORATH: Stroke[] = [
 
 /**
  * The Summer Isles: two islands with palm trees and a ship between them,
- * named in Theon I (chapter 85) and in episode 18, by Varys. The
+ * named in the prologue (chapter 74) and in episode 18, by Varys. The
  * trunks are hatched; the accent is the palms' fronds.
  */
 const SUMMER_ISLES: Stroke[] = [
@@ -2012,6 +2012,29 @@ const SUMMER_ISLES: Stroke[] = [
   { d: SAIL, role: 'soft', transform: 'translate(100 158) scale(0.9)' },
   { d: 'M22 132 Q42 126 64 132', role: 'soft' },
   ...SEA,
+]
+
+/**
+ * Oldtown: the Hightower, a tall stepped tower with a beacon burning at its
+ * top over the city's roofs, named in episode 11 and in the prologue
+ * (chapter 74) and never visited in the stage. The tiers' far sides are
+ * hatched; the accent is the beacon.
+ */
+const OLDTOWN: Stroke[] = [
+  { d: 'M50 150 V112 H110 V150 M58 112 V84 H102 V112' },
+  { d: 'M64 84 V58 H96 V84 M70 58 V36 H90 V58' },
+  { d: 'M74 36 V28 H86 V36', role: 'soft' },
+  { d: 'M80 28 q-6 -6 -2 -14 q2 5 4 2 q5 6 -2 12', role: 'accent' },
+  { d: 'M76 70 h8 M72 96 h16 M64 128 h32', role: 'soft' },
+  {
+    d: 'M14 150 V132 L24 124 L34 132 V150 M126 150 V128 L136 120 L146 128 V150',
+  },
+  {
+    d: 'M102 120 l5 -3 M102 136 l5 -3 M94 92 l5 -3 M88 66 l5 -3 M86 46 l4 -2',
+    role: 'ambient',
+  },
+  GROUND,
+  shadow(80, 158, 70),
 ]
 
 /**
@@ -2106,6 +2129,7 @@ export const PLACE_DRAWINGS = {
   'tarth': TARTH,
   'lorath': LORATH,
   'summer-isles': SUMMER_ISLES,
+  'oldtown': OLDTOWN,
 } satisfies Drawings
 
 /** Smoke rising from a ruin: two curls. */

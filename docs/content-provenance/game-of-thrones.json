@@ -4422,11 +4422,12 @@
       "https://gameofthrones.fandom.com/wiki/Flea_Bottom",
       "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
       "https://awoiaf.westeros.org/index.php/Flea_Bottom",
+      "https://iceandfire.fandom.com/wiki/Arya_I_-_A_Clash_of_Kings",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Il_Fondo_delle_Pulci"
     ],
     "unverified": [
       "Show gate 11: Ros tells Daisy that Armeca is from Flea Bottom (the place page). Neither the episodes nor the books were viewed.",
-      "Book gate 84 (Davos I): Davos begged in Flea Bottom as a boy. AWOIAF footnotes cite claims, not first namings; the book gate is the earliest A Clash of Kings chapter they cite, not checked against the text.",
+      "Book gate 75 (Arya I): the Ice and Fire Wiki's chapter page lists Flea Bottom among the places mentioned; close-third narration counts for places (owner, 2026-11-13). A Wiki of Ice and Fire's footnotes cite Davos I (84) first.",
       "Form \"district\" (owner, 2026-11-23), filed as the Street of Steel is."
     ]
   },
@@ -4477,12 +4478,27 @@
       "https://gameofthrones.fandom.com/wiki/Summer_Isles",
       "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell/Appearances",
       "https://awoiaf.westeros.org/index.php/Summer_Isles",
+      "https://iceandfire.fandom.com/wiki/Prologue_-_A_Clash_of_Kings",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Isole_dell%27Estate"
     ],
     "unverified": [
       "Show gate 18: Varys, \"In the Summer Isles they worship…\" (quoted on the place page); episode 14's line about Xaro's birth is not an explicit naming. Neither the episodes nor the books were viewed.",
-      "Book gate 85 (Theon I): the Myraham carries feathers from the Summer Isles; Tyrion II (82) gives Shae a bird from the islands and may name them first. AWOIAF footnotes cite claims, not first namings; the book gate is the earliest A Clash of Kings chapter they cite, not checked against the text.",
+      "Book gate 74 (the prologue): the Ice and Fire Wiki's chapter page lists the Summer Isles among the places mentioned.",
       "Form \"island\" (owner, 2026-11-23), in the region the Seas."
+    ]
+  },
+  "oldtown": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Oldtown",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers/Appearances",
+      "https://iceandfire.fandom.com/wiki/Prologue_-_A_Clash_of_Kings",
+      "https://iceandfire.fandom.com/wiki/Oldtown",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Vecchia_Citt%C3%A0"
+    ],
+    "unverified": [
+      "Show gate 11: \"The North Remembers\"'s Appearances page lists Oldtown among the places mentioned; the line is not quoted. Neither the episodes nor the books were viewed.",
+      "Book gate 74 (the prologue): the Ice and Fire Wiki's chapter page lists Oldtown among the places mentioned.",
+      "Italian: \"Vecchia Città\", Italian Wikipedia's places page."
     ]
   }
 }

@@ -1443,12 +1443,13 @@ export const season2: ThronesSaga = {
       visual: { art: 'the-crag', tint: 'azure' },
     },
     // Show: "The North Remembers", Ros tells Daisy that Armeca is from Flea
-    // Bottom. Books: Davos I (site chapter 84), Davos begged there as a boy.
+    // Bottom. Books: Arya I (site chapter 75), whose Ice and Fire Wiki page
+    // lists Flea Bottom among the places mentioned.
     {
       id: 'flea-bottom',
       kind: 'place',
       revealedAtEpisode: 11,
-      revealedAtChapter: 84,
+      revealedAtChapter: 75,
       name: { it: 'Fondo delle Pulci', en: 'Flea Bottom' },
       summary: {
         it: 'Un quartiere povero di Approdo del Re.',
@@ -1504,19 +1505,32 @@ export const season2: ThronesSaga = {
       visual: { art: 'lorath', tint: 'ice' },
     },
     // Show: "The Prince of Winterfell", Varys: "In the Summer Isles they
-    // worship…". Books: Theon I (site chapter 85), the Myraham carries
-    // feathers from the Summer Isles.
+    // worship…". Books: the prologue (site chapter 74), whose Ice and Fire
+    // Wiki page lists the Summer Isles among the places mentioned.
     {
       id: 'summer-isles',
       kind: 'place',
       revealedAtEpisode: 18,
-      revealedAtChapter: 85,
+      revealedAtChapter: 74,
       name: { it: 'Isole dell’Estate', en: 'the Summer Isles' },
       summary: {
         it: 'Un gruppo di isole lontane, oltre il mare.',
         en: 'A group of distant islands across the sea.',
       },
       visual: { art: 'summer-isles', tint: 'teal' },
+    },
+    // Show: "The North Remembers", the episode's Appearances page lists
+    // Oldtown among the places mentioned. Books: the prologue (site chapter
+    // 74), whose Ice and Fire Wiki page lists Oldtown among the places
+    // mentioned.
+    {
+      id: 'oldtown',
+      kind: 'place',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 74,
+      name: { it: 'Vecchia Città', en: 'Oldtown' },
+      summary: { it: 'Una città dell’Altopiano.', en: 'A city in the Reach.' },
+      visual: { art: 'oldtown', tint: 'orange' },
     },
   ],
   dossiers: {
@@ -3268,6 +3282,19 @@ export const SEASON_2_PLACES: Record<
     log: {
       it: 'Sono isole lontane, oltre il mare.',
       en: 'They are distant islands across the sea.',
+    },
+    filedHere: [],
+  },
+  'oldtown': {
+    form: 'city',
+    region: 'the-reach',
+    landmark: {
+      it: 'Un’alta torre a gradoni con un faro in cima',
+      en: 'A tall stepped tower with a beacon on top',
+    },
+    log: {
+      it: 'È una città dell’Altopiano.',
+      en: 'It is a city in the Reach.',
     },
     filedHere: [],
   },

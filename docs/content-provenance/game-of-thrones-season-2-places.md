@@ -287,7 +287,7 @@ in, under the owner's rulings of 2026-11-13, restated for the stage:
   claims, not first namings: each book gate is the earliest _A Clash of Kings_
   chapter they cite, and where an earlier chapter may name the place first, the
   safe later chapter is kept. Neither the episodes nor the books were viewed.
-- **Split.** Eleven places survive the book check, under the issue's split point
+- **Split.** Twelve places survive the book check, under the issue's split point
   of about 15, so they are filed together (owner, 2026-11-23).
 - **Show namings** are checked against each episode's Appearances page, whose
   lists of places mentioned give the first episode that names each place (#1476
@@ -300,20 +300,21 @@ in, under the owner's rulings of 2026-11-13, restated for the stage:
 
 | Place             | Episode | Chapter | Region          | Naming (show; book)                        |
 | ----------------- | ------- | ------- | --------------- | ------------------------------------------ |
-| `flea-bottom`     | 11      | 84      | the Crownlands  | Ros: Armeca is from Flea Bottom; Davos I   |
+| `flea-bottom`     | 11      | 75      | the Crownlands  | Ros: Armeca is from Flea Bottom; Arya I    |
+| `oldtown`         | 11      | 74      | the Reach       | episode 11 mentions it; the prologue       |
 | `torrhens-square` | 11      | 90      | the North       | a northern lord at Winterfell; Bran II     |
 | `lorath`          | 12      | 121     | Essos           | Jaqen says he is from Lorath; by Arya IX   |
 | `tarth`           | 13      | 74      | the Stormlands  | Colen: "Brienne of Tarth"; the prologue    |
 | `highgarden`      | 13      | 84      | the Reach       | Margaery shouts "Highgarden!"; Davos I     |
 | `deepwood-motte`  | 13      | 98      | the North       | Balon sends Yara to take it; Theon II      |
 | `dreadfort`       | 16      | 90      | the North       | word of Winterfell reaches it; Bran II     |
-| `summer-isles`    | 18      | 85      | the Seas        | Varys on the Summer Isles; Theon I         |
+| `summer-isles`    | 18      | 74      | the Seas        | Varys on the Summer Isles; the prologue    |
 | `seagard`         | 20      | 81      | the Riverlands  | Theon's speech to his men; Catelyn I       |
 | `ashemark`        | 20      | 109     | the Westerlands | "You've been to Ashemark?" (Jaime); Bran V |
 
 The Crag, which #1469 left here, turns out to be a place the show visits and the
-book only names (#1252): see "Visited in one medium" below. Ten places are named
-only, and with the Crag the issue files eleven.
+book only names (#1252): see "Visited in one medium" below. Eleven places are
+named only, and with the Crag the issue files twelve.
 
 Texts that named a place before the show says it (#1476 review): Roose Bolton's
 summary, role and log no longer name the Dreadfort; Galbart Glover's summary,
@@ -349,8 +350,15 @@ which the book names at chapter 4 (Daenerys I), so 5; Roose Bolton's
   feast. #1469 left it to this issue: its scenes are off screen and off the
   page. Italian "Piazza di Torrhen", Italian Wikipedia's places page.
 - `flea-bottom`: show 11: Ros tells Daisy that Armeca is from Flea Bottom. Book:
-  Davos I (84), Davos begged in Flea Bottom as a boy. Italian "Fondo delle
-  Pulci", Italian Wikipedia's places page.
+  Arya I (75), whose Ice and Fire Wiki page lists Flea Bottom among the places
+  mentioned; close-third narration counts for places. A Wiki of Ice and Fire's
+  footnotes cite Davos I (84) first. Italian "Fondo delle Pulci", Italian
+  Wikipedia's places page.
+- `oldtown`: show 11, "The North Remembers": the episode's Appearances page
+  lists it among the places mentioned; the line is not quoted. Book: the
+  prologue (74), whose Ice and Fire Wiki page lists it among the places
+  mentioned. The drawing is the Hightower. Italian "Vecchia Città", Italian
+  Wikipedia's places page.
 - `lorath`: show 12, "The Night Lands": Jaqen claims to be from Lorath (the
   episode's Appearances page lists it). Book: the Ice and Fire Wiki says Jaqen
   claims to come from Lorath in _A Clash of Kings_, without a chapter; Arya IX
@@ -367,10 +375,9 @@ which the book names at chapter 4 (Daenerys I), so 5; Roose Bolton's
   first (not checked). Italian "Alto Giardino", Italian Wikipedia.
 - `summer-isles`: show 18, "The Prince of Winterfell": Varys, "In the Summer
   Isles they worship…" (quoted on the place page). Episode 14 tells that Xaro
-  was born there without an explicit naming. Book: Theon I (85), the Myraham's
-  cargo has feathers from the Summer Isles; Tyrion II (82) gives Shae a bird
-  from the islands and may name them first. Italian "Isole dell’Estate", Italian
-  Wikipedia.
+  was born there without an explicit naming. Book: the prologue (74), whose Ice
+  and Fire Wiki page lists the Summer Isles among the places mentioned. Italian
+  "Isole dell’Estate", Italian Wikipedia.
 - `dreadfort`: show 16, "The Old Gods and the New": the episode's Appearances
   page lists it among the places mentioned; the line is not quoted. Book: Bran
   II (90), Lady Hornwood learns that men are massing at the Dreadfort. Italian
@@ -412,11 +419,6 @@ which the book names at chapter 4 (Daenerys I), so 5; Roose Bolton's
   line is cited as naming it; the book names it.
 - The Smoking Sea: Quaithe's sailor must sail within sight of Valyria (episode
   17); the sea is not named.
-- Oldtown: the season names it in episode 11 (its Appearances page lists it
-  among the places mentioned), but the book's naming in the stage is not
-  confirmed (Ice and Fire Wiki; AWOIAF not read: Firecrawl credits exhausted). A
-  Wiki of Ice and Fire's Summer Isles page says the Myraham comes to Lordsport
-  from Oldtown in Theon I (85), in a sentence cited for its cargo.
 - Dorne: a region; Myrcella is sent there in both media, but no Dornish place is
   named in season 2, so nothing brings the region in (#1250).
 - The Westerlands, the Reach, the Stormlands, the Riverlands, the Iron Islands:

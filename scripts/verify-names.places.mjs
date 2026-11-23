@@ -84,6 +84,7 @@ export const PLACE_ITALIAN_TITLES = {
     'tarth': `${PLACES}#Tarth`,
     'lorath': `${PLACES}#Lorath`,
     'summer-isles': `${PLACES}#Isole dell'Estate`,
+    'oldtown': `${PLACES}#Vecchia Città`,
   },
 }
 

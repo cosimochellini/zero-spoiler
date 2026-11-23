@@ -344,11 +344,12 @@ is being filed under #1455. So far `records/season-2.ts` holds its heading, the
 characters filed by cast group above and, in `SEASON_2_PLACES`, the 15 places a
 scene of the stage is set in (#1469), three of them the book's alone and the
 Garden of Bones the show's, and the 11 places both media name in the stage and
-neither visits (#1476), filed with no one at them; the five places season 1
-filed as named only and the stage visits (Dragonstone, Pyke, the Gods Eye,
-Harrenhal, Qarth) keep their records and take the visit as a dated `visits`
-entry. A character season 1 filed takes its new dated steps in
-`records/season-1.ts`, and the demo stays at stage 1.
+neither visits, plus the Crag, which the show visits and the book only names
+(#1252), all filed by #1476 with no one at them; the five places season 1 filed
+as named only and the stage visits (Dragonstone, Pyke, the Gods Eye, Harrenhal,
+Qarth) keep their records and take the visit as a dated `visits` entry. A
+character season 1 filed takes its new dated steps in `records/season-1.ts`, and
+the demo stays at stage 1.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -553,11 +554,11 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                   |
 | ---------------------- | ------------------------------------------------------- |
-| Records                | 299                                                     |
+| Records                | 300                                                     |
 | Characters             | 213                                                     |
-| Places                 | 86                                                      |
+| Places                 | 87                                                      |
 | Saga modules           | 2                                                       |
-| Line drawings          | 299, one per record, plus 158 redrawings of 117 records |
+| Line drawings          | 300, one per record, plus 158 redrawings of 117 records |
 | Chronicle stories      | 565, for 144 characters                                 |
 | Dated timelines        | 890                                                     |
 | Affiliation steps      | 243                                                     |

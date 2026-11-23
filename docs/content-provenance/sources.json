@@ -37881,6 +37881,16 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25456",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25456",
       "contentSha256": "0c3b4c8c50acb4fd18091204a5ba94615493f051cdbfbf856bbe88b50781092e"
+    },
+    "iaf-en-Oldtown-20989.json": {
+      "locale": "en",
+      "title": "Oldtown",
+      "revision": 20989,
+      "revisionDate": "2018-02-02T14:15:05Z",
+      "url": "https://iceandfire.fandom.com/wiki/Oldtown",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=20989",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=20989",
+      "contentSha256": "dbd24146545cdc93f5c0e3023089302b6d89f979105116e6c39a3ca96510b3be"
     }
   }
 }

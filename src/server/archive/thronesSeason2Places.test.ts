@@ -48,11 +48,12 @@ const PLACES: {
  */
 const NAMED: { chapter: number; episode: number; id: string }[] = [
   { id: 'torrhens-square', episode: 11, chapter: 90 },
-  { id: 'flea-bottom', episode: 11, chapter: 84 },
+  { id: 'flea-bottom', episode: 11, chapter: 75 },
+  { id: 'oldtown', episode: 11, chapter: 74 },
   { id: 'lorath', episode: 12, chapter: 121 },
   { id: 'deepwood-motte', episode: 13, chapter: 98 },
   { id: 'highgarden', episode: 13, chapter: 84 },
-  { id: 'summer-isles', episode: 18, chapter: 85 },
+  { id: 'summer-isles', episode: 18, chapter: 74 },
   { id: 'dreadfort', episode: 16, chapter: 90 },
   { id: 'tarth', episode: 13, chapter: 74 },
   { id: 'seagard', episode: 20, chapter: 81 },
