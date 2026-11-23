@@ -121,6 +121,16 @@ function stops(): HTMLElement {
   return across
 }
 
+/** The frame the chart's hands are lent to, around its stops. */
+function frameOf(inside: HTMLElement): HTMLElement {
+  const frame = inside.closest<HTMLElement>('[data-chart-orientation]')
+  if (frame === null) {
+    throw new Error('no frame')
+  }
+
+  return frame
+}
+
 describe('SeaChart', () => {
   it('draws it once, across in a wide window', () => {
     const { container } = draw({
@@ -299,6 +309,30 @@ describe('SeaChart', () => {
       'aria-disabled',
       'false',
     )
+  })
+
+  it('zooms about the pointer on Ctrl or ⌘ with the wheel, and leaves a plain wheel to the page', () => {
+    draw({ bookmark: ep(30), open: eastBlue })
+    fireEvent.click(screen.getByRole('button', { name: 'See all' }))
+    const frame = frameOf(stops())
+    // jsdom lays nothing out: give the frame a box to turn the pointer into the chart.
+    vi.spyOn(frame, 'getBoundingClientRect').mockReturnValue(
+      new DOMRect(0, 0, 1000, 500),
+    )
+    const zoomOut = screen.getByRole('button', { name: 'Zoom out' })
+
+    expect(fireEvent.wheel(frame, { deltaY: -400 })).toBe(true)
+    expect(zoomOut).toHaveAttribute('aria-disabled', 'true')
+
+    expect(
+      fireEvent.wheel(frame, {
+        clientX: 250,
+        clientY: 125,
+        ctrlKey: true,
+        deltaY: -400,
+      }),
+    ).toBe(false)
+    expect(zoomOut).toHaveAttribute('aria-disabled', 'false')
   })
 
   it('moves between the stops with the arrow keys, one tab stop for all', async () => {

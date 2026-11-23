@@ -3,6 +3,7 @@ import {
   type MouseEvent,
   type PointerEvent,
   useEffect,
+  useEffectEvent,
   useId,
   useRef,
   useState,
@@ -161,6 +162,8 @@ interface Dismiss {
  * one in the meantime keeps it. A press inside holds a hovered peek open.
  */
 function useDismiss({ element, onEscape, open, set }: Dismiss): void {
+  const escape = useEffectEvent(onEscape)
+
   useEffect(() => {
     if (open === null) {
       return
@@ -176,7 +179,7 @@ function useDismiss({ element, onEscape, open, set }: Dismiss): void {
     }
     const onKey = (event: KeyboardEvent): void => {
       if (event.key === 'Escape') {
-        onEscape()
+        escape()
       }
     }
 
@@ -188,7 +191,7 @@ function useDismiss({ element, onEscape, open, set }: Dismiss): void {
       document.removeEventListener('pointerdown', drop)
       document.removeEventListener('focusin', drop)
     }
-  }, [open, element, set, onEscape])
+  }, [open, element, set])
 }
 
 /** What a target's handlers are built from. */
