@@ -9,8 +9,6 @@ import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 import {
   BESIDE_THE_BEAST,
   FALLEN,
-  FROM_BEHIND,
-  SKULL,
   TURNED_BACK,
   TURNED_BODY,
   TURNED_COLLAR,
@@ -85,6 +83,15 @@ const TRACKSUIT: Stroke[] = [
 ]
 
 /**
+ * The black of a suit or a dress across the back of `TURNED_BODY`, hatched
+ * over both shoulders.
+ */
+const BLACK_BACK: Stroke = {
+  d: 'M24 168 l10 -8 M30 178 l12 -9 M36 150 l10 -8 M108 136 l8 -6 M110 160 l8 -6',
+  role: 'ambient',
+}
+
+/**
  * Fukataki's head from behind and a little to her left: the hair pulled
  * back into a bun at the back of her head, the bun held in a hairnet and
  * the pin through it in tint, over the collar of her maid's black dress,
@@ -104,10 +111,7 @@ const FUKATAKI: Stroke[] = [
   { d: `M64 78 L108 100 ${circle(60.6, 76.3, 3.5)}`, role: 'accent' },
   { d: TURNED_EAR },
   { d: TURNED_COLLAR },
-  {
-    d: 'M24 168 l10 -8 M30 178 l12 -9 M36 150 l10 -8 M108 136 l8 -6 M110 160 l8 -6',
-    role: 'ambient',
-  },
+  BLACK_BACK,
 ]
 
 /**
@@ -153,16 +157,64 @@ const QUOROLLE_COAT: Stroke[] = [
 ]
 
 /**
- * Borksen's light hair from behind, falling past her ears and curling up at
- * the ends, in tint, over a soldier's collar.
+ * Borksen's light hair from behind and a little to her left, falling past
+ * her ears and curling up at the ends, in tint, over a soldier's collar.
  */
 const BORKSEN: Stroke[] = [
   {
-    d: 'M56 98 C50 66 62 52 80 52 C98 52 110 66 104 98 C106 104 112 104 114 98 M56 98 C54 104 48 104 46 98',
+    d: 'M38 104 C40 112 48 112 50 106 C42 70 56 46 80 46 C104 46 114 70 108 106 C110 112 116 112 118 104',
     role: 'accent',
   },
-  { d: 'M68 58 C64 74 62 86 62 98 M92 58 C96 74 98 86 98 98', role: 'soft' },
-  ...FROM_BEHIND,
+  {
+    d: 'M66 52 C60 70 58 88 60 108 M82 47 C80 70 80 90 82 110 M98 54 C102 70 102 90 100 108',
+    role: 'soft',
+  },
+  { d: 'M50 106 Q79 116 108 106' },
+  TURNED_FAR_SIDE,
+  { d: TURNED_COLLAR },
+  ...TURNED_BODY,
+]
+
+/**
+ * Sodom's unkempt hair from behind and a little to his left, its uneven
+ * tufts in tint, the far side hatched.
+ */
+const SODOM_HAIR: Stroke[] = [
+  {
+    d: 'M52 104 Q44 102 42 94 Q46 92 48 90 Q36 84 38 76 Q44 76 48 74 Q38 62 44 56 Q50 60 54 60 Q50 46 58 42 Q62 48 66 50 Q68 36 78 34 Q78 42 82 46 Q90 36 100 40 Q96 46 96 52 Q108 48 114 56 Q106 60 106 64 Q118 70 116 80 Q110 80 108 82 Q116 92 110 98 Q108 98 106 102',
+    role: 'accent',
+  },
+  {
+    d: 'M60 66 l6 10 M76 58 l2 12 M94 60 l-4 10 M62 84 l4 8 M84 76 l-1 10 M98 80 l-4 8',
+    role: 'soft',
+  },
+  TURNED_FAR_SIDE,
+]
+
+/**
+ * The large book Yokotani carries, lying in 3/4, the bands on its spine in
+ * tint, the page edges, and the shadow under it.
+ */
+const YOKOTANI_BOOK: Stroke[] = [
+  { d: 'M22 96 L100 80 L140 104 L62 122 Z' },
+  { d: 'M22 96 V124 L62 152 V122' },
+  { d: 'M62 152 L140 134 V104' },
+  { d: 'M30 106 L56 124 M30 114 L56 132', role: 'accent' },
+  { d: 'M66 130 L136 114 M66 136 L136 120 M66 142 L136 126', role: 'soft' },
+  { d: 'M44 98 L96 88 L118 102 L66 114 Z', role: 'soft' },
+  { d: 'M34 128 l6 -4 M40 136 l6 -4 M48 142 l6 -4', role: 'ambient' },
+  shadow(80, 170, 60),
+]
+
+/**
+ * One of the puppets LSDF conjures, a plain figure with no face, both hands
+ * out to seize the intruder.
+ */
+const LSDF_PUPPET: Stroke[] = [
+  { d: circle(36, 34, 10) },
+  { d: 'M26 48 Q36 44 46 48 L48 88 Q36 92 24 88 Z' },
+  { d: 'M46 54 L60 48 M46 64 L62 62 M28 90 L22 120 M44 90 L50 120' },
+  { d: 'M60 48 l3 -6 M60 48 l6 -3 M62 62 l5 -4 M62 62 l6 0', role: 'soft' },
 ]
 
 /** The floor a fallen guard or servant lies on, and the shadow on it. */
@@ -539,88 +591,97 @@ export const KAKIN_PHASE_4_DRAWINGS = {
     ...TURNED_BODY,
   ],
 
-  // Sodom's unkempt hair from behind, its ragged outline in tint: a
-  // Heil-Ly back-alley doctor, chapter 394.
-  'sodom': [
-    {
-      d: 'M56 106 L50 96 L56 90 L48 80 L58 76 L52 62 L64 64 L64 50 L74 56 L80 44 L86 56 L96 50 L96 64 L108 62 L102 76 L112 80 L104 90 L110 96 L104 106',
-      role: 'accent',
-    },
-    {
-      d: 'M66 72 l4 8 M80 64 v10 M92 72 l-4 8 M72 88 l2 8 M88 88 l-2 8',
-      role: 'soft',
-    },
-    ...FROM_BEHIND,
-  ],
+  // Sodom's unkempt hair from behind and a little to his left, its uneven
+  // tufts in tint and the far side hatched, over the collar of his jacket:
+  // the Heil-Ly back-alley doctor who volunteers to capture a guard, chapter
+  // 394. The ability he gains at level 31 is only described, never shown,
+  // so it is not drawn.
+  'sodom': [...SODOM_HAIR, { d: TURNED_COLLAR }, ...TURNED_BODY],
 
-  // Borksen's light hair from behind, falling past her ears and curling up
-  // at the ends, in tint, over a soldier's collar: a provisional Hunter in
-  // Tserriednich's army, chapter 394.
+  // Borksen's light hair from behind and a little to her left, falling past
+  // her ears and curling up at the ends, in tint, over the collar of a Kakin
+  // soldier's jacket: a private first class in the royal quarters security
+  // detail, chapter 394. The collar is a convention: the wiki says only the
+  // standard attire of a Kakin soldier.
   'borksen': BORKSEN,
 
-  // Otocin's light hair from behind, parted on his left, in tint, over a
-  // soldier's collar: one of Tserriednich's soldiers, chapter 394.
+  // Otocin's light hair from behind and a little to his left, the parting
+  // on his left in tint and the hair combed over from it, over the collar
+  // of a Kakin soldier's jacket: one of the soldiers searching for the
+  // Heil-Ly, chapter 394. The collar is a convention.
   'otocin': [
-    { d: 'M56 102 C50 70 62 54 80 54 C98 54 110 70 104 102', role: 'accent' },
-    { d: 'M68 56 C66 70 66 84 64 98', role: 'soft' },
+    { d: TURNED_SKULL },
+    { d: 'M60 50 C54 60 52 70 52 80', role: 'accent' },
     {
-      d: 'M68 62 C80 66 92 74 100 88 M68 74 C78 80 88 88 94 100',
+      d: 'M62 54 C80 56 96 66 102 82 M55 70 C70 76 84 90 88 108',
       role: 'soft',
     },
-    ...FROM_BEHIND,
+    { d: 'M50 104 Q79 113 108 104' },
+    TURNED_FAR_SIDE,
+    { d: TURNED_COLLAR },
+    ...TURNED_BODY,
   ],
 
-  // Gipper's buzz cut from behind, the stubble dotted and the round of his
-  // head in tint, over a soldier's collar: the corporal leading the search
-  // for the Mafia, chapter 394.
+  // Gipper's buzz cut from behind and a little to his left, the stubble
+  // dotted, and the receding hairline at his temple in tint, over the
+  // collar of a Kakin soldier's jacket: the corporal leading the search for
+  // the Heil-Ly, chapter 394. The collar is a convention.
   'gipper': [
-    { d: SKULL, role: 'accent' },
+    { d: TURNED_SKULL },
+    { d: 'M47 72 C54 68 58 62 58 56 C58 51 61 48 66 47', role: 'accent' },
     {
       d: dots([
-        [68, 70],
-        [80, 66],
+        [70, 56],
+        [84, 54],
+        [96, 60],
+        [64, 68],
+        [78, 66],
         [92, 70],
-        [64, 84],
-        [76, 80],
-        [88, 80],
-        [96, 86],
-        [70, 96],
-        [82, 94],
-        [92, 98],
+        [62, 82],
+        [74, 80],
+        [88, 84],
+        [100, 82],
+        [68, 96],
+        [82, 96],
+        [96, 96],
       ]),
       role: 'soft',
     },
-    {
-      d: 'M54 90 C48 88 46 96 50 102 M106 90 C112 88 114 96 110 102',
-      role: 'soft',
-    },
-    ...FROM_BEHIND,
+    { d: TURNED_EAR },
+    TURNED_FAR_SIDE,
+    { d: TURNED_COLLAR },
+    ...TURNED_BODY,
   ],
 
-  // Momolly's long dark hair from behind, hatched, its outline in tint,
-  // over a soldier's collar: one of Tserriednich's soldiers, chapter 394.
+  // Momolly's dark hair from behind and a little to her left, hatched,
+  // falling past her face, and the edge of her bangs showing at the side in
+  // tint, over the collar of a Kakin soldier's jacket: one of the soldiers
+  // searching for the Heil-Ly, chapter 394. The collar is a convention.
   'momolly': [
+    { d: 'M48 114 C40 76 56 46 80 46 C104 46 116 76 110 114 Q79 122 48 114' },
+    { d: 'M52 56 C44 58 40 66 40 76 L54 78', role: 'accent' },
     {
-      d: 'M54 128 C48 84 60 54 80 54 C100 54 112 84 106 128 Z',
-      role: 'accent',
-    },
-    {
-      d: 'M58 80 l14 -10 M56 98 l22 -16 M58 114 l30 -22 M70 122 l32 -24 M88 124 l18 -14',
+      d: 'M58 74 l14 -10 M56 92 l24 -18 M58 108 l34 -26 M74 112 l30 -23 M92 112 l14 -11',
       role: 'ambient',
     },
-    ...FROM_BEHIND,
+    { d: TURNED_COLLAR },
+    ...TURNED_BODY,
   ],
 
-  // Father Lisores's priest's hat in 3/4, a round crown on a broad brim,
-  // the band in tint: he welcomes the children to the church in Meteor
-  // City, chapter 395. The hat's shape is a frame check.
+  // Father Lisores's priest's hat seen from a little below, so the round
+  // crown stands over the broad brim and the underside of the brim shows
+  // round the opening, the band in tint and the far side of the crown
+  // hatched: he welcomes Chrollo to the church in Meteor City, chapter 395.
+  // The hat's shape and its band are a frame check: the wiki says only a
+  // hat reminiscent of a Catholic priest's attire.
   'lisores': [
-    { d: ellipse(80, 118, 64, 18) },
-    { d: 'M46 112 C44 60 116 60 114 112' },
-    { d: 'M44 104 Q80 116 116 104 V112 Q80 124 44 112 Z', role: 'accent' },
-    { d: ellipse(80, 118, 50, 12), role: 'soft' },
-    { d: 'M98 84 l6 -4 M104 94 l6 -4 M108 104 l6 -4', role: 'ambient' },
-    shadow(80, 154, 56),
+    { d: ellipse(80, 116, 62, 14) },
+    { d: ellipse(80, 120, 34, 7), role: 'soft' },
+    { d: 'M48 104 C44 64 60 50 80 50 C100 50 116 64 112 104' },
+    { d: 'M48 94 Q80 82 112 94 L112 104 Q80 92 48 104 Z', role: 'accent' },
+    { d: 'M98 60 l6 -4 M104 72 l6 -4 M106 84 l6 -4', role: 'ambient' },
+    { d: 'M30 122 l8 -4 M122 122 l8 -4', role: 'ambient' },
+    shadow(80, 156, 54),
   ],
 
   // Sarasa's heart-shaped purse in tint, its strap and its clasp: she is
@@ -661,127 +722,149 @@ export const KAKIN_PHASE_4_DRAWINGS = {
   ],
 
   // The large book Yokotani carries, lying in 3/4, the bands on its spine
-  // in tint: the Heil-Ly lawyer, chapter 399. No title.
-  'yokotani': [
-    { d: 'M22 96 L100 80 L140 104 L62 122 Z' },
-    { d: 'M22 96 V124 L62 152 V122' },
-    { d: 'M62 152 L140 134 V104' },
-    { d: 'M30 106 L56 124 M30 114 L56 132', role: 'accent' },
-    { d: 'M66 130 L136 114 M66 136 L136 120 M66 142 L136 126', role: 'soft' },
-    { d: 'M44 98 L96 88 L118 102 L66 114 Z', role: 'soft' },
-    { d: 'M34 128 l6 -4 M40 136 l6 -4 M48 142 l6 -4', role: 'ambient' },
-    shadow(80, 170, 60),
-  ],
+  // in tint: the Heil-Ly lawyer, chapter 394 (the book is seen in 399). No
+  // title. His ability is a stage of its own, from chapter 399.
+  'yokotani': YOKOTANI_BOOK,
 
-  // A hand making a finger gun, out of the black sleeve of his suit, the
-  // shirt cuff in tint: Madwig plays a hitman with amnesia who remembers
-  // only how to handle a gun, and holds up a finger gun, chapter 400.
+  // A hand making a finger gun, the thumb raised and the index pointing,
+  // the other fingers curled under, out of the black sleeve of his suit,
+  // hatched, seen end on at the cuff, the shirt cuff in tint and the
+  // underside of the hand hatched: Madwig plays a hitman with amnesia who
+  // remembers only how to handle a gun, and holds up a finger gun, chapter
+  // 400. Which hand is a frame check.
   'madwig': [
-    { d: 'M6 118 L50 104 L58 130 L14 144 Z' },
-    { d: 'M50 104 L60 101 L68 127 L58 130 Z', role: 'accent' },
+    { d: 'M6 114 L50 100 M14 148 L60 132' },
+    { d: 'M50 100 A8 16.5 -18 0 1 60 132', role: 'soft' },
+    { d: 'M18 142 l6 -26 M28 139 l6 -26 M38 136 l6 -26', role: 'ambient' },
+    { d: 'M50 100 L60 97 L70 128 L60 132', role: 'accent' },
     {
-      d: 'M64 104 L84 98 L84 70 Q84 62 90 62 Q96 62 96 70 L98 96 L136 92 Q144 92 144 99 Q144 105 136 105 L100 108 M100 108 C106 110 108 116 102 120 M102 120 C106 124 104 130 98 130 L72 130 L66 127',
+      d: 'M60 97 L84 92 L84 66 Q84 58 90 58 Q96 58 96 66 L97 90 L136 87 Q144 87 144 94 Q144 100 136 100 L100 103 C106 106 108 112 102 116 C106 120 104 126 98 127 L72 128',
     },
     {
-      d: 'M100 108 C94 110 90 114 92 120 M92 120 Q96 124 102 120',
+      d: 'M66 102 Q84 98 100 103 M84 80 Q90 84 96 80 M118 88 V100',
       role: 'soft',
     },
-    { d: 'M84 88 Q90 92 96 88 M116 94 V104', role: 'soft' },
-    { d: 'M20 138 l8 -6 M32 134 l8 -6 M44 130 l8 -6', role: 'ambient' },
+    { d: 'M74 106 l6 -4 M80 114 l8 -6 M88 120 l8 -6', role: 'ambient' },
     shadow(80, 168, 58),
   ],
 
-  // Himoncé's light hair from behind, falling past his ears, in tint, over
-  // his black suit: one of Tyson's staff, chapter 400.
+  // Himoncé's light hair from behind and a little to his left, falling past
+  // his ears, in tint, the edge of his fringe showing at the side, over the
+  // collar of his black suit, hatched: one of Tyson's guards, chapter 400.
+  // The tie is on the front, out of sight.
   'himonce': [
+    { d: 'M52 108 C42 70 58 46 80 46 C102 46 116 70 108 108', role: 'accent' },
+    { d: 'M54 56 L46 60 L49 64 L42 68 L48 72', role: 'soft' },
     {
-      d: 'M54 108 C48 70 62 52 80 52 C98 52 112 70 106 108 L98 100 L92 106 L80 98 L68 106 L62 100 Z',
-      role: 'accent',
-    },
-    {
-      d: 'M68 58 C64 74 64 88 66 100 M92 58 C96 74 96 88 94 100',
+      d: 'M66 52 C60 70 58 88 60 108 M82 47 C80 70 80 90 82 112 M98 54 C102 70 102 90 100 110',
       role: 'soft',
     },
-    ...FROM_BEHIND,
+    { d: 'M52 108 Q80 118 108 108' },
+    TURNED_FAR_SIDE,
+    { d: TURNED_COLLAR },
+    BLACK_BACK,
+    ...TURNED_BODY,
   ],
 
-  // Anzel's hair from behind, light on one side, in tint, and dark on the
-  // other, hatched: one of Tyson's staff, chapter 400.
+  // Anzel's hair from behind and a little to his left, light on one side,
+  // in tint, and dark on the other, hatched, its long lock falling past the
+  // far side where it covers the right side of his face, over the collar of
+  // his black suit, hatched: one of Tyson's guards, chapter 400. Which side
+  // is light is a frame check.
   'anzel': [
-    { d: 'M80 54 C62 54 52 72 56 104 H80 Z', role: 'accent' },
-    { d: 'M80 54 C98 54 108 72 104 104 H80' },
+    { d: 'M80 46 C60 46 46 68 52 106 L80 110 Z', role: 'accent' },
     {
-      d: 'M84 64 l12 -8 M84 78 l16 -11 M84 92 l16 -11 M86 102 l14 -10',
+      d: 'M80 46 C102 46 114 70 108 104 C114 112 116 122 112 132 L104 120 L102 106 L80 110',
+    },
+    {
+      d: 'M86 58 l14 -9 M84 74 l20 -13 M84 90 l22 -14 M86 104 l18 -12 M106 116 l6 -4',
       role: 'ambient',
     },
-    { d: 'M66 62 C62 76 62 90 64 102', role: 'soft' },
-    ...FROM_BEHIND,
+    { d: 'M64 52 C58 70 58 90 62 106', role: 'soft' },
+    { d: TURNED_COLLAR },
+    BLACK_BACK,
+    ...TURNED_BODY,
   ],
 
-  // Hyuga's rectangular-framed glasses, open in 3/4, the frames in tint:
-  // one of Tyson's staff, chapter 400.
+  // Hyuga's rectangular-framed glasses in 3/4, the frames in tint with the
+  // top edge of each showing, the near arm reaching back to its bend and
+  // the far one behind, a glint on each lens: one of Tyson's guards, who
+  // plays a legendary tutor, chapter 400.
   'hyuga': [
-    { d: 'M30 92 H72 V116 H30 Z M88 90 H126 V112 H88 Z', role: 'accent' },
-    { d: 'M72 102 Q80 96 88 100' },
-    { d: 'M30 96 L20 88 L24 128 M126 94 L134 86 L132 124' },
-    { d: 'M36 98 l8 -4 M94 96 l8 -4', role: 'soft' },
-    { d: 'M60 112 l8 -6 M114 108 l8 -6', role: 'ambient' },
-    shadow(78, 140, 54),
-  ],
-
-  // The small device with one button, a box in 3/4 with the button domed
-  // on its top in tint, that Kaiser hands Steiner to press if the First
-  // Prince's men or the army come: chapter 400. Its shape is a frame check.
-  'kaiser': [
-    { d: 'M30 104 L96 88 L132 108 L66 126 Z' },
-    { d: 'M30 104 V122 L66 146 V126 M66 146 L132 128 V108' },
     {
-      d: `M66 104 C66 86 98 82 98 98 ${ellipse(82, 101, 16, 5)}`,
+      d: 'M22 92 L68 96 L66 122 L24 118 Z M84 96 L120 94 L118 116 L84 120 Z',
       role: 'accent',
     },
-    { d: 'M76 96 Q82 92 88 94', role: 'soft' },
-    {
-      d: 'M76 134 l8 -4 M92 130 l8 -4 M108 126 l8 -4 M120 122 l8 -4',
-      role: 'ambient',
-    },
-    shadow(82, 162, 56),
+    { d: 'M22 88 L68 92 L68 96 M84 92 L120 90 L120 94' },
+    { d: 'M68 102 Q76 94 84 102' },
+    { d: 'M22 90 L104 62 L110 68 M120 92 L144 80 L148 86' },
+    { d: 'M32 112 l12 -10 M38 116 l6 -5 M92 112 l10 -9', role: 'soft' },
+    shadow(80, 148, 56),
   ],
 
-  // The church in Meteor City from the front, its arched door in tint:
-  // the children watch videos there, chapter 395. The wiki only calls it a
-  // large church, so the gabled front, the round window and the tower are
-  // drawn by convention and are a frame check. Its faith is not named, so
-  // no symbol is drawn.
+  // The small button Kaiser hands Steiner, to press if the First Prince's
+  // men or the army come: the domed button in tint on its rim, in a round
+  // housing seen in 3/4, the far side hatched, chapter 400. The housing's
+  // shape is a frame check: the wiki says only a small button.
+  'kaiser': [
+    { d: ellipse(80, 104, 32, 10) },
+    { d: 'M48 104 V124 C48 138 112 138 112 124 V104' },
+    { d: ellipse(80, 100, 20, 6), role: 'soft' },
+    { d: 'M62 100 C62 80 98 80 98 100', role: 'accent' },
+    { d: 'M70 88 Q76 84 82 85', role: 'soft' },
+    { d: 'M100 116 l6 -4 M102 126 l6 -4', role: 'ambient' },
+    shadow(80, 150, 40),
+  ],
+
+  // The church in Meteor City in 3/4, its gabled front with the arched door
+  // in tint and the side wall turning away, hatched, and before it the
+  // small graves outside that Chrollo mentions to the priest, chapter 395.
+  // The wiki only calls it a large church: the gable, the round window and
+  // the graves' stones are drawn by convention and are a frame check. Its
+  // faith is not named, so no symbol is drawn.
   'all-faiths-church': [
-    { d: 'M30 150 V86 L74 50 L118 86 V150' },
-    { d: 'M60 150 V118 C60 100 88 100 88 118 V150', role: 'accent' },
-    { d: circle(74, 82, 8), role: 'soft' },
-    { d: 'M118 150 V40 H142 V150 M118 40 L130 18 L142 40' },
-    { d: 'M124 60 H136 V76 H124 Z', role: 'soft' },
+    { d: 'M22 150 V96 L54 50 L86 96 V150' },
+    { d: 'M86 96 L138 86 V146 L86 150 M54 50 L108 42 L138 86' },
     {
-      d: 'M126 94 l10 -8 M126 110 l10 -8 M126 126 l10 -8 M126 142 l10 -8',
+      d: 'M96 112 l16 -12 M96 130 l28 -21 M100 144 l32 -24 M118 98 l14 -10',
       role: 'ambient',
     },
+    { d: circle(54, 80, 7), role: 'soft' },
+    { d: 'M42 150 V128 C42 114 66 114 66 128 V150', role: 'accent' },
     { d: 'M4 150 H156', role: 'ambient' },
-    shadow(80, 160, 70),
+    {
+      d: 'M28 184 V170 Q34 162 40 170 V184 M74 188 V174 Q80 166 86 174 V188 M118 184 V170 Q124 162 130 170 V184',
+    },
+    {
+      d: 'M20 186 Q34 180 48 186 M66 190 Q80 184 94 190 M110 186 Q124 180 138 186',
+      role: 'soft',
+    },
+    shadow(80, 158, 62),
   ],
 
-  // The edge of Uga Forest, and before it the dump where a pile of
-  // videotapes lies, one tape in tint: chapter 396.
+  // Uga Forest's large trees, their trunks marked with bark and hatched on
+  // the side that turns away, over the very short layer of vegetation at
+  // their feet, and before them the pile of videotapes at the corporate
+  // dump near the forest, one tape in tint: Sarasa sets off for it, chapter
+  // 396. Where the dump lies is a convention.
   'uga-forest': [
+    { d: 'M18 150 C24 140 26 120 26 4 M52 150 C46 140 46 120 46 4' },
+    { d: 'M76 150 V20 M96 150 V20' },
+    { d: 'M120 150 V40 M134 150 V40' },
     {
-      d: 'M6 112 C4 84 26 74 36 88 C40 64 66 62 70 84 C76 60 104 60 108 82 C116 66 140 72 140 92 C152 92 158 104 154 116',
-    },
-    { d: 'M22 112 V150 M56 104 V150 M92 102 V150 M134 112 V150' },
-    {
-      d: 'M14 100 l10 -8 M44 90 l12 -9 M80 86 l12 -9 M118 92 l12 -9',
+      d: 'M40 30 l6 -4 M40 60 l6 -4 M40 90 l6 -4 M40 120 l6 -4 M90 50 l6 -4 M90 90 l6 -4 M90 130 l6 -4 M130 70 l4 -3 M130 110 l4 -3',
       role: 'ambient',
     },
-    { d: 'M30 150 C40 126 60 118 80 118 C104 118 124 128 134 150' },
-    { d: 'M58 132 L86 126 L90 140 L62 146 Z', role: 'accent' },
-    { d: `${circle(68, 137, 3)} ${circle(80, 134, 3)}`, role: 'soft' },
-    { d: 'M92 126 L118 130 L114 142 L90 140', role: 'soft' },
+    { d: 'M32 44 q4 6 0 12 M84 70 q3 6 0 12 M126 90 q3 5 0 10', role: 'soft' },
+    {
+      d: 'M4 150 l4 -6 l4 6 l4 -6 l4 6 M58 150 l4 -6 l4 6 l4 -6 l4 6 M100 150 l4 -6 l4 6 l4 -6 l4 6 M140 150 l4 -6 l4 6 l4 -6 l4 6',
+      role: 'soft',
+    },
     { d: 'M4 150 H156', role: 'ambient' },
+    { d: 'M60 182 C68 166 84 160 100 160 C116 160 130 168 136 182' },
+    { d: 'M78 172 L100 166 L103 176 L81 182 Z', role: 'accent' },
+    { d: 'M104 168 L124 172 L120 180 L104 178 M70 178 L84 170', role: 'soft' },
+    { d: 'M44 186 H152', role: 'ambient', dashed: true },
   ],
 } satisfies Drawings
 
@@ -842,8 +925,9 @@ export const kakinPhaseFourRedrawn: Redrawings = {
     },
   ],
   'sarasa': [
-    // Her purse laid in her open coffin, seen from above, among the flowers
-    // the others put in with her: she is abducted and killed, chapter 397. No body is drawn.
+    // Her purse in her open casket, seen from above, among the flowers the
+    // others put in: she is abducted and killed, and at the church Chrollo
+    // adds her heart-shaped pouch, chapter 397. No body is drawn.
     {
       episode: 148,
       chapter: 397,
@@ -863,6 +947,46 @@ export const kakinPhaseFourRedrawn: Redrawings = {
           role: 'soft',
         },
         { d: 'M112 80 l6 -4 M110 110 l6 -4 M108 140 l6 -4', role: 'ambient' },
+      ],
+    },
+  ],
+  'sodom': [
+    // A costume: the same hair over the broad collar of the plain white coat
+    // he wears on the twelfth day, when he sets off with Dogman, chapter
+    // 405. The collar's shape is a convention. After 405 he is only
+    // pictured (chapters 408 and 410, a frame check), so the coat has no
+    // exit yet.
+    {
+      episode: 148,
+      chapter: 405,
+      source: 'chapter',
+      value: [
+        ...SODOM_HAIR,
+        { d: 'M56 106 Q80 118 102 108 L108 124 Q80 140 48 122 Z' },
+        { d: 'M48 122 L38 132 M108 124 L120 132', role: 'soft' },
+        ...TURNED_BODY,
+      ],
+    },
+  ],
+  'yokotani': [
+    // The same book made small at the foot, and above it two of the puppets
+    // LSDF conjures, plain figures with no face, leaning in to seize the
+    // intruder, with open lines round them for the aura that swells as they
+    // appear: Yokotani introduces himself, and his puppets restrain
+    // Nobunaga and expel him, chapter 399. The puppets' shape is a frame
+    // check, and the numbers on their heads are not drawn.
+    {
+      episode: 148,
+      chapter: 399,
+      source: 'chapter',
+      value: [
+        ...moved(YOKOTANI_BOOK, BESIDE_THE_BEAST),
+        ...moved(LSDF_PUPPET, 'rotate(5 36 120)'),
+        ...moved(LSDF_PUPPET, 'matrix(-1 0 0 1 160 0) rotate(5 36 120)'),
+        {
+          d: 'M16 20 C8 40 8 70 16 90 M144 20 C152 40 152 70 144 90 M60 14 Q80 6 100 14',
+          role: 'ambient',
+        },
       ],
     },
   ],

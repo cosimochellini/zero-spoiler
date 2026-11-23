@@ -8,24 +8,6 @@ import {
 import { circle, ellipse, SEA, shadow } from '~/lib/svg/primitives'
 
 /**
- * A royal bodyguard or servant seen from behind, below the hair each one is
- * drawn by: the neck, the shoulders of the black suit or the robe, its
- * collar, and the shade across the back hatched.
- */
-const FROM_BEHIND_BODY: Stroke[] = [
-  { d: 'M66 106 V122 M94 106 V122' },
-  { d: 'M24 176 C28 140 46 126 66 122 M136 176 C132 140 114 126 94 122' },
-  { d: 'M66 122 Q80 130 94 122', role: 'soft' },
-  {
-    d: 'M34 162 l8 -6 M40 172 l10 -7 M126 162 l-8 -6 M120 172 l-10 -7',
-    role: 'ambient',
-  },
-]
-
-/** The same back standing, with the shadow it throws. */
-export const FROM_BEHIND: Stroke[] = [...FROM_BEHIND_BODY, shadow(80, 184, 54)]
-
-/**
  * A head and shoulders from behind tipped onto the floor, head to the
  * left: how a guard or servant drawn from behind lies once killed.
  */
@@ -206,9 +188,9 @@ const MYUHAN_ROLL: Stroke[] = [
 /**
  * The Black Whale 1 in 3/4 from the bow: the hull and its deck, the five
  * tiers stepped up the ship with a row of windows each, the dome on top in
- * tint, on the water.
+ * tint, on the water. The Kakin arc is drawn as the same ship.
  */
-const BLACK_WHALE: Stroke[] = [
+export const BLACK_WHALE: Stroke[] = [
   { d: 'M4 120 L28 130 H150 L134 114 H16 Z' },
   { d: 'M4 120 C8 138 16 148 32 152 H144 L150 130' },
   {
