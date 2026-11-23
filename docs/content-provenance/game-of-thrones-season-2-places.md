@@ -292,7 +292,7 @@ in, under the owner's rulings of 2026-11-13, restated for the stage:
 - **Show namings** are checked against each episode's Appearances page, whose
   lists of places mentioned give the first episode that names each place (#1476
   review).
-- **New words.** Form `district` (Flea Bottom, filed as the Street of Steel is),
+- **New words.** Form `district` (Flea Bottom, a new form, owner, 2026-11-23),
   Italian "Quartiere", a plain word not checked against the dub. The Summer
   Isles take the form `island` in the region the Seas (owner, 2026-11-23).
 
@@ -304,7 +304,7 @@ in, under the owner's rulings of 2026-11-13, restated for the stage:
 | `oldtown`         | 11      | 74      | the Reach       | episode 11 mentions it; the prologue       |
 | `torrhens-square` | 11      | 90      | the North       | a northern lord at Winterfell; Bran II     |
 | `lorath`          | 12      | 121     | Essos           | Jaqen says he is from Lorath; by Arya IX   |
-| `tarth`           | 13      | 74      | the Stormlands  | Colen: "Brienne of Tarth"; the prologue    |
+| `tarth`           | 13      | 96      | the Stormlands  | Colen: "Brienne of Tarth"; Catelyn II      |
 | `highgarden`      | 13      | 84      | the Reach       | Margaery shouts "Highgarden!"; Davos I     |
 | `deepwood-motte`  | 13      | 98      | the North       | Balon sends Yara to take it; Theon II      |
 | `dreadfort`       | 16      | 90      | the North       | word of Winterfell reaches it; Bran II     |
@@ -384,9 +384,10 @@ which the book names at chapter 4 (Daenerys I), so 5; Roose Bolton's
   "Forte Terrore", Italian Wikipedia.
 - `tarth`: show 13, "What Is Dead May Never Die": Colen calls her Brienne of
   Tarth, and the episode's Appearances page lists Tarth (episode 18's does not).
-  Book: the prologue (74), Davos's report of his meeting with Lord Tarth; the
-  Ice and Fire Wiki's prologue page lists House Tarth. Italian "Tarth", Italian
-  Wikipedia.
+  Book: Catelyn II (96), where Brienne of Tarth is introduced, the safe later
+  chapter. The Ice and Fire Wiki's prologue page (74) lists only House Tarth,
+  not the island (AWOIAF not read: Firecrawl credits exhausted). Italian
+  "Tarth", Italian Wikipedia.
 - `seagard`: show 20, "Valar Morghulis": Theon's speech names "the shores of
   Seagard and Faircastle" (quoted on the Faircastle page). Book: Catelyn I (81).
   Italian "Seagard", the Italian Game of Thrones Wiki's page.

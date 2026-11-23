@@ -1477,13 +1477,14 @@ export const season2: ThronesSaga = {
       visual: { art: 'highgarden', tint: 'yellow' },
     },
     // Show: "What Is Dead May Never Die", Colen calls her Brienne of Tarth
-    // (the episode's Appearances page lists Tarth). Books: the prologue (site
-    // chapter 74), Davos's report of his meeting with Lord Tarth.
+    // (the episode's Appearances page lists Tarth). Books: Catelyn II (site
+    // chapter 96), where Brienne of Tarth is introduced, the safe later
+    // chapter; the prologue only lists House Tarth.
     {
       id: 'tarth',
       kind: 'place',
       revealedAtEpisode: 13,
-      revealedAtChapter: 74,
+      revealedAtChapter: 96,
       name: { it: 'Tarth', en: 'Tarth' },
       summary: {
         it: 'Un’isola al largo delle Terre della Tempesta.',

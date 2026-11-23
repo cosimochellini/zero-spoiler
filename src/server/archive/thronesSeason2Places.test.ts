@@ -55,7 +55,7 @@ const NAMED: { chapter: number; episode: number; id: string }[] = [
   { id: 'highgarden', episode: 13, chapter: 84 },
   { id: 'summer-isles', episode: 18, chapter: 74 },
   { id: 'dreadfort', episode: 16, chapter: 90 },
-  { id: 'tarth', episode: 13, chapter: 74 },
+  { id: 'tarth', episode: 13, chapter: 96 },
   { id: 'seagard', episode: 20, chapter: 81 },
   { id: 'ashemark', episode: 20, chapter: 109 },
 ]
