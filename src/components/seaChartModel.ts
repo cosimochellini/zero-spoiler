@@ -113,8 +113,7 @@ export function modelOf(
       []
     : [t('places.stage', { index: open.length, total }), here.name]
   const main = open.findLast((port) => isOnRoute(pointOf(port))) ?? null
-  const from = main === null ? ORIGIN : pointOf(main)
-  const tail = tailOf(from, covered.length)
+  const tail = tailOf(main === null ? ORIGIN : pointOf(main), covered.length)
 
   return {
     covered,
@@ -127,7 +126,7 @@ export function modelOf(
     marks: marksOf(props.ships, reached),
     ...namesOf(open, here, props.sagas),
     open,
-    opening: openingOf(open, here, { from, tail }),
+    opening: openingOf(open, here, tail),
     regions: [...regionsFor(open.flatMap((port) => port.sea))],
     seas: props.seas,
     summary: [

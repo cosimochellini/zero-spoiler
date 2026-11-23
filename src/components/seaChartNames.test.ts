@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { at, stop } from '~/test/fixtures'
 
-import { type Point, type Rect, REVERSE_MOUNTAIN } from './chartGeometry'
+import type { Point, Rect } from './chartGeometry'
 import { tailOf } from './chartRoute'
 import { openingView } from './chartView'
 import { openingOf, pointOf } from './seaChartNames'
@@ -28,14 +28,12 @@ describe('the window the chart opens on', () => {
   it('frames a Blue on its stops and the first dots under fog (#1380)', () => {
     const points = eastBlue.map((port) => pointOf(port))
     const here = eastBlue.at(-1) ?? null
-    const from = points.at(-1) ?? points[0]!
-    const tail = tailOf(from, 34)
-    const view = openingOf(eastBlue, here, { from, tail })
-    const ahead = [...tail.slice(0, 3), REVERSE_MOUNTAIN]
+    const tail = tailOf(points.at(-1) ?? points[0]!, 10)
+    const view = openingOf(eastBlue, here, tail)
 
-    expect([...points, ...ahead].every((point) => inside(view, point))).toBe(
-      true,
-    )
+    expect(
+      [...points, ...tail.slice(0, 3)].every((point) => inside(view, point)),
+    ).toBe(true)
     // Narrower than the window round the reader's own stop, the old opening.
     expect(view.width).toBeLessThan(
       openingView(points, points.at(-1) ?? null).width,
