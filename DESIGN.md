@@ -275,7 +275,7 @@ Where the control bar folds to one row (`CONTROLS.whole`), the places index's
 group heads scroll instead, and the row names the group in view (#1380). Below
 40rem the fruits page draws the first row of each group's fog tiles and folds
 the rest behind a count and an Expand button; from 40rem the wall is whole, and
-an opened fold stays open on Back (#1381).
+Back and Forward bring each fold back as it was left (#1381).
 
 Breakpoints are `min-width` queries in rem, written where they are used; there
 is no named scale. Two exceptions: `max-width: 39.99rem` for the bottom sheets,
