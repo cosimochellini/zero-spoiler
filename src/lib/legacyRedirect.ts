@@ -3,6 +3,9 @@ import { hasPage, type Series } from '~/lib/progress/series'
 
 const PREFIX_PARTS = 3
 
+/** The pages that live under the locale itself, and never moved. */
+const LOCALE_PAGES = new Set(['', 'legal', 'privacy', 'sync'])
+
 /** Old archive URLs keep their path and exact query through one permanent hop. */
 export function legacyRedirect(request: Request): Response | undefined {
   if (request.method !== 'GET' && request.method !== 'HEAD') {
@@ -10,14 +13,7 @@ export function legacyRedirect(request: Request): Response | undefined {
   }
   const url = new URL(request.url)
   const [, locale, page] = url.pathname.split('/', PREFIX_PARTS)
-  if (
-    page === undefined
-    || page === ''
-    || page === 'legal'
-    || page === 'privacy'
-    || page === 'sync'
-    || !isLocale(locale)
-  ) {
+  if (page === undefined || LOCALE_PAGES.has(page) || !isLocale(locale)) {
     return undefined
   }
   return new Response(null, {

@@ -71,6 +71,7 @@ describe('the permanent hop from a legacy archive address', () => {
     '/it/privacy',
     '/en/legal?ep=650',
     '/it/privacy?ep=650',
+    '/en/sync',
     '/one-piece/en/characters/nami',
     '/fr/characters/nami',
     '/_serverFn/function',
