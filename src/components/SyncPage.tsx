@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
-import { Link } from '@tanstack/react-router'
+import { Link, Navigate } from '@tanstack/react-router'
 import { type ReactElement, useEffect, useState } from 'react'
 
 import { ArchivePage } from '~/components/ArchivePage'
@@ -25,7 +25,7 @@ import { color, font, leading, rule, space, text } from '~/styles/tokens.stylex'
 type Step =
   | { id: string; kind: 'failed' }
   | { id: string; kind: 'ready'; record: SyncRecord }
-  | { kind: 'already' | 'checking' | 'incomplete' | 'unknown' }
+  | { kind: 'already' | 'checking' | 'incomplete' | 'joined' | 'unknown' }
 
 /**
  * The page a link from "More devices?" opens (#1560). The record's id is in
@@ -36,7 +36,6 @@ type Step =
  */
 export function SyncPage({ series }: { series: Series[] }): ReactElement {
   const t = useT()
-  const { locale } = useLocale()
   const [step, setStep] = useState<Step>({ kind: 'checking' })
 
   const check = async (id: string): Promise<void> => {
@@ -51,7 +50,7 @@ export function SyncPage({ series }: { series: Series[] }): ReactElement {
   const join = async (id: string): Promise<void> => {
     setStep({ kind: 'checking' })
     try {
-      setStep(joinedStep(await askSync({ id, op: 'join' }), locale))
+      setStep(joinedStep(await askSync({ id, op: 'join' })))
     } catch {
       setStep({ id, kind: 'failed' })
     }
@@ -119,6 +118,16 @@ function StepBody({
         />
       )
     }
+    // A full load of the hub, which reads the cookies the join has just set.
+    case 'joined': {
+      return (
+        <Navigate
+          params={{ locale }}
+          reloadDocument
+          to="/$locale"
+        />
+      )
+    }
     case 'ready': {
       return (
         <Connect
@@ -155,16 +164,10 @@ function readStep(id: string, answer: unknown): Step {
   return record === null ? { kind: 'unknown' } : { id, kind: 'ready', record }
 }
 
-/**
- * After joining, a full load of the hub, which reads the cookies the answer
- * has just set; the page waits on it.
- */
-function joinedStep(answer: unknown, locale: Locale): Step {
-  if (answeredRecord(answer) === null) {
-    return { kind: 'unknown' }
-  }
-  globalThis.location.assign(`/${locale}`)
-  return { kind: 'checking' }
+function joinedStep(answer: unknown): Step {
+  return answeredRecord(answer) === null ?
+      { kind: 'unknown' }
+    : { kind: 'joined' }
 }
 
 /** What connecting changes, and the button that does it. */

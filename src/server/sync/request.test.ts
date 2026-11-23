@@ -191,6 +191,10 @@ describe('a full page load of a synced device', () => {
 })
 
 describe('the sync endpoint', () => {
+  it('answers at the address the browser asks', () => {
+    expect(SYNC_ENDPOINT).toBe('/_serverFn/sync')
+  })
+
   const unused = start().next
 
   it('creates a record from the device’s bookmarks, never its trial', async () => {

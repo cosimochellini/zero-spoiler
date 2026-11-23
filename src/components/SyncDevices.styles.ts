@@ -35,6 +35,11 @@ export const syncStyles = stylex.create({
     outlineOffset: space.xs3,
     outlineStyle: 'solid',
     outlineWidth: rule.fine,
+    // Underlined like the forget line, so it reads as a control.
+    textDecorationColor: { 'default': color.rule2, ':hover': color.ink },
+    textDecorationLine: 'underline',
+    textDecorationThickness: rule.hair,
+    textUnderlineOffset: '0.25em',
     minHeight: '44px',
   },
   panel: {
