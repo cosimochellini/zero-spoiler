@@ -132,9 +132,10 @@ export const season2: ThronesSaga = {
       visual: { art: 'alayaya', tint: 'magenta' },
     },
     // Books: Sansa VIII (site chapter 139), at Joffrey's court after the
-    // battle he is the knight who wore Renly's armour, and asks the king to
-    // wed his sister. The show gives both to Loras and has no Garlan;
-    // episode 20 only orders him.
+    // battle he asks the king to wed his sister. That he wore Renly's armour
+    // is told only in Jaime VIII of A Storm of Swords (211), his drawing's
+    // stage. The show gives the request to Loras and has no Garlan; episode
+    // 20 only orders him.
     {
       id: 'garlan-tyrell',
       kind: 'character',
@@ -1378,7 +1379,14 @@ export const season2: ThronesSaga = {
         it: 'Tyrion Lannister lo mette a capo della Guardia cittadina al posto di Janos Slynt.',
         en: 'Tyrion Lannister gives him command of the City Watch in Janos Slynt’s place.',
       },
-      status: [{ episode: 12, chapter: 82, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 12, chapter: 82, source: 'chapter', value: 'alive' },
+        // Bronn tells Tyrion that the gold cloaks killed him on the walls
+        // when the king left them, in Tyrion I of A Storm of Swords (site
+        // chapter 148). The books' alone; episode 20, where Tyrion wakes
+        // after the battle, orders it.
+        { episode: 20, chapter: 148, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 12,
@@ -1455,9 +1463,9 @@ export const season2: ThronesSaga = {
         it: 'Tyrion Lannister va da lei al bordello per coprire le sue visite a Shae. La regina la fa prendere, credendola la sua amante.',
         en: 'Tyrion Lannister visits her at the brothel to cover his visits to Shae. The queen has her seized, taking her for his lover.',
       },
-      // Tywin has her flogged and sent away while Tyrion recovers from the
-      // battle; whether A Clash of Kings tells it is unconfirmed, so her
-      // release waits for the next stage.
+      // Tywin has her whipped and thrown out of the Red Keep, as Bronn tells
+      // Tyrion in Tyrion I of A Storm of Swords (site chapter 148); her
+      // release is left to a status issue of a later stage.
       status: [
         { episode: 18, chapter: 128, source: 'chapter', value: 'captured' },
       ],
@@ -1473,8 +1481,8 @@ export const season2: ThronesSaga = {
     'garlan-tyrell': {
       role: { it: 'Cavaliere di Casa Tyrell', en: 'Knight of House Tyrell' },
       log: {
-        it: 'Entra nella battaglia delle Acque Nere con l’armatura di Renly Baratheon. A corte, dopo la vittoria, chiede al re di sposare sua sorella Margaery.',
-        en: 'He rides into the battle on the Blackwater wearing Renly Baratheon’s armour. At court, after the victory, he asks the king to marry his sister Margaery.',
+        it: 'A corte, dopo la vittoria sulle Acque Nere, chiede al re di sposare sua sorella Margaery.',
+        en: 'At court, after the victory on the Blackwater, he asks the king to marry his sister Margaery.',
       },
       status: [
         { episode: 20, chapter: 139, source: 'chapter', value: 'alive' },
