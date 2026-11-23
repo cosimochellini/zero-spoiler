@@ -55,37 +55,50 @@ function focus(link: HTMLElement, keyboard: boolean): void {
   link.dispatchEvent(new FocusEvent('focusin', { bubbles: true }))
 }
 
-function mount(): ReturnType<typeof renderHook<void, { path: string }>> {
+/** The router's `onRendered`, fired by hand after its scroll restoration. */
+const rendered = new Set<() => void>()
+const router = {
+  subscribe: (_event: 'onRendered', listener: () => void): (() => void) => {
+    rendered.add(listener)
+    return () => rendered.delete(listener)
+  },
+}
+
+function mount(): ReturnType<typeof renderHook> {
   const box = document.querySelector('nav')
-  return renderHook(
-    ({ path }) => {
-      useRevealedPage({ current: box }, path)
-    },
-    { initialProps: { path: '/one-piece/it/ranks' } },
-  )
+  return renderHook(() => {
+    useRevealedPage({ current: box }, router)
+  })
 }
 
 describe('a page link in a row that scrolls', () => {
   afterEach(() => {
     vi.unstubAllGlobals()
     vi.restoreAllMocks()
+    rendered.clear()
     document.body.replaceChildren()
   })
 
-  it('scrolls the current page wholly in, on load, on a move and on a resize', () => {
+  it('scrolls the current page wholly in, on load, on a resize and after the router restores the row', () => {
     stubResizeObserver()
-    const { scrollBy } = row()
-    const { rerender } = mount()
+    const { first, scrollBy } = row()
+    mount()
 
     expect(scrollBy).toHaveBeenLastCalledWith({ left: 46 })
 
-    rerender({ path: '/one-piece/it/characters' })
+    heard.resize?.()
 
     expect(scrollBy).toHaveBeenCalledTimes(2)
 
-    heard.resize?.()
+    // A move to "Personaggi": the router put the old scroll back, so the
+    // new current page is out at the start when the page is drawn.
+    document.querySelector('[aria-current]')?.removeAttribute('aria-current')
+    first.setAttribute('aria-current', 'page')
+    for (const listener of rendered) {
+      listener()
+    }
 
-    expect(scrollBy).toHaveBeenCalledTimes(3)
+    expect(scrollBy).toHaveBeenLastCalledWith({ left: -46 })
   })
 
   it('scrolls a link the keyboard reaches back in, and not one a press reaches', () => {
@@ -113,5 +126,6 @@ describe('a page link in a row that scrolls', () => {
 
     expect(scrollBy).not.toHaveBeenCalled()
     expect(heard.disconnect).toHaveBeenCalledWith()
+    expect(rendered.size).toBe(0)
   })
 })

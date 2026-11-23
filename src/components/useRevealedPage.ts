@@ -23,11 +23,19 @@ function reveal(box: HTMLElement, link: Element | null): void {
   }
 }
 
+/** The one router event the row waits for: a page drawn after a move. */
+export interface RenderedEvents {
+  subscribe: (event: 'onRendered', listener: () => void) => () => void
+}
+
 /**
  * Keeps a page link of a row that scrolls sideways wholly in view: the
  * current page once the page is drawn, after every move and whenever the row
  * changes size (a turned phone, larger text), and any link the keyboard
- * reaches. A browser scrolls a focused link in only when it is nearly all
+ * reaches. After a move it waits for the router's `onRendered`: by then the
+ * new page's links (a language switch renames them) are drawn, and the
+ * router's scroll restoration, which subscribed first, has put back the
+ * row's old `scrollLeft`, so the reveal comes last. A browser scrolls a focused link in only when it is nearly all
  * out of sight, so a page half shown at the window's edge kept its ring cut,
  * and the current page could load half hidden (#1377). A press focuses a
  * link before it lets go, so focus from a pointer moves nothing: the row
@@ -35,8 +43,7 @@ function reveal(box: HTMLElement, link: Element | null): void {
  */
 export function useRevealedPage(
   boxRef: RefObject<HTMLElement | null>,
-  /** The page's address: a move to another page reveals the new current. */
-  pathname: string,
+  router: RenderedEvents,
 ): void {
   useEffect(() => {
     const box = boxRef.current
@@ -58,9 +65,11 @@ export function useRevealedPage(
         new ResizeObserver(revealCurrent)
       )
     resize?.observe(box)
+    const stopRendered = router.subscribe('onRendered', revealCurrent)
     return () => {
       box.removeEventListener('focusin', onFocusIn)
       resize?.disconnect()
+      stopRendered()
     }
-  }, [boxRef, pathname])
+  }, [boxRef, router])
 }

@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
-import { Link, useLocation, useMatch } from '@tanstack/react-router'
+import { Link, useMatch, useRouter } from '@tanstack/react-router'
 import { type ReactElement, useRef } from 'react'
 
 import { EpisodeMark } from '~/components/EpisodeMark'
@@ -149,7 +149,7 @@ function SeriesNavigation(): ReactElement {
   const params = useSeriesParams()
   const links = usePageLinks(NAV, ONE_PIECE_NAV, HUNTER_NAV)
   const boxRef = useRef<HTMLElement>(null)
-  useRevealedPage(boxRef, useLocation().pathname)
+  useRevealedPage(boxRef, useRouter())
   return (
     <nav
       aria-label={t('nav.label')}
@@ -176,8 +176,8 @@ const WIDE = '@media (min-width: 40rem)'
 // A series bar needs more room for one row: the wordmark, the short name,
 // its pages, the bookmark and the language fit from `BAR.seriesWide` with the
 // most pages (four, One Piece's and Hunter x Hunter's, in Italian). Below it
-// the name and the pages fold under, as on a phone, where the name gives way
-// first.
+// the name and the pages fold under, as on a phone, where the name keeps its
+// width and the pages scroll sideways.
 const ROOMY = BAR.seriesWide
 // The least height of every control in the bar, the wordmark's included.
 const TAP = '44px'
