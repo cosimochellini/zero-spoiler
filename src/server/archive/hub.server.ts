@@ -27,6 +27,8 @@ export function hubSeries(
     name: series.name,
     theme: series.theme,
     count: entities.length,
+    // Every kind: characters, places, ships, fruits, abilities and arcs, East
+    // Blue included though no shelf carries it.
     open: entities.filter((entity) => sees(entity)).length,
     bookmark,
     ...(series.books !== undefined && { books: series.books }),

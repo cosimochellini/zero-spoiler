@@ -133,7 +133,7 @@ function DarkStage({ name }: { name: string }): ReactElement {
         aria-hidden="true"
         {...stylex.props(styles.fog)}
       />
-      <div {...stylex.props(styles.copy)}>
+      <div {...stylex.props(styles.copy, styles.wholeRow)}>
         <h2 {...stylex.props(styles.name, styles.unlitName)}>{name}</h2>
         <span {...stylex.props(styles.mono, styles.point, styles.unset)}>
           {t('hub.coming')}
@@ -147,6 +147,8 @@ function DarkStage({ name }: { name: string }): ReactElement {
 const TALL = '@media (min-width: 40rem)'
 // The stages sit side by side once two fit at a readable width.
 const WIDE = '@media (min-width: 48rem)'
+// One column that never grows past its box.
+const ONE_COLUMN = 'minmax(0, 1fr)'
 
 const styles = stylex.create({
   page: {
@@ -179,7 +181,7 @@ const styles = stylex.create({
     display: 'grid',
     gridTemplateColumns: {
       [WIDE]: 'repeat(2, minmax(0, 1fr))',
-      default: 'minmax(0, 1fr)',
+      default: ONE_COLUMN,
     },
     paddingInlineStart: 0,
   },
@@ -201,10 +203,7 @@ const styles = stylex.create({
     columnGap: space.md,
     display: 'grid',
     // On a phone the drawing takes the row's start, and the words the rest.
-    gridTemplateColumns: {
-      [TALL]: 'minmax(0, 1fr)',
-      default: '34% minmax(0, 1fr)',
-    },
+    gridTemplateColumns: { [TALL]: ONE_COLUMN, default: '34% minmax(0, 1fr)' },
     position: 'relative',
     minHeight: { [TALL]: '28rem', [WIDE]: '36rem', default: '10rem' },
   },
@@ -215,7 +214,7 @@ const styles = stylex.create({
     outlineWidth: rule.fine,
     textDecorationLine: 'none',
   },
-  dark: { backgroundColor: color.paper2 },
+  dark: { backgroundColor: color.paper2, gridTemplateColumns: ONE_COLUMN },
 
   art: {
     insetInline: { [TALL]: '12%', default: 'auto' },
@@ -237,6 +236,8 @@ const styles = stylex.create({
     position: 'relative',
     rowGap: space.xs,
   },
+  // A dark stage has no drawing, so on a phone its words take the whole row.
+  wholeRow: { gridColumn: '1' },
   name: {
     gridRow: '2',
     color: color.ink,
