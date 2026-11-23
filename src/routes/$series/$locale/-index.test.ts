@@ -29,6 +29,7 @@ describe('the landing route', () => {
     vi.mocked(readTrial).mockReturnValue({ mode: 'episode', episode: 37 })
 
     expect(reloads('enter')).toBe(true)
+    expect(readTrial).toHaveBeenLastCalledWith(ONE_PIECE_BOOKMARK)
     // Left to the router's own rules: a re-read of the page on screen, and
     // a preload, which reads the trial cookie already set.
     expect(reloads('stay')).toBeUndefined()

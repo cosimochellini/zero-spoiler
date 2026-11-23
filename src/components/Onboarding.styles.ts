@@ -14,7 +14,10 @@ import {
   z,
 } from '~/styles/tokens.stylex'
 
-// The height of each of the dial's two lines that fold away when it pins.
+// The height of each of the dial's two lines that fold away when it pins,
+// at one line of text. A unit that wraps, as "Book 1, chapter" can on a
+// narrow phone with large text, makes its line taller: the dial then keeps a
+// little more on screen when pinned, and nothing overprints.
 const FOLD_LINE = '1rem'
 
 // Where the numeral, a range of at least 9rem and the button fit on one
@@ -72,8 +75,8 @@ export const styles = stylex.create({
   // Pinned while the preview scrolls under it, so moving the dial and seeing
   // what it opened happen on one screen. The unit, the scale, then the
   // numeral, the range and the button on one line. The first two lines are
-  // a fixed height, so the offset that tucks them under the site bar is
-  // known here, and pinned the dial is its last line alone, about 64px on a
+  // one line of text each, so the offset that tucks them under the site bar
+  // is known here, and pinned the dial is its last line alone, about 64px on a
   // phone. Below `ONE_ROW` the dial is a wrapping row instead: the range has
   // that line to itself, and the numeral and the button share the next, or
   // take one each when the text is large.
@@ -89,7 +92,7 @@ export const styles = stylex.create({
     display: { [ONE_ROW]: 'grid', default: 'flex' },
     flexWrap: 'wrap',
     gridTemplateColumns: 'auto minmax(0, 1fr) auto',
-    gridTemplateRows: `${FOLD_LINE} ${FOLD_LINE}`,
+    gridTemplateRows: 'auto auto',
     insetBlockStart: `calc(${pin.bar} - 2 * ${FOLD_LINE} - ${space.xs})`,
     paddingBlockEnd: space.sm,
     position: 'sticky',
@@ -100,7 +103,8 @@ export const styles = stylex.create({
     flexBasis: '100%',
     gridColumnEnd: '-1',
     gridColumnStart: '1',
-    height: FOLD_LINE,
+    lineHeight: FOLD_LINE,
+    minHeight: FOLD_LINE,
   },
   // The scale over the range, across the dial where the range is.
   scale: {
@@ -112,7 +116,8 @@ export const styles = stylex.create({
     fontFamily: font.mono,
     fontSize: text.xs,
     justifyContent: 'space-between',
-    height: FOLD_LINE,
+    lineHeight: FOLD_LINE,
+    minHeight: FOLD_LINE,
   },
   // The numeral and the button: beside the range, or on the line under it.
   beside: { gridRow: '3' },
@@ -259,16 +264,18 @@ export const styles = stylex.create({
     minWidth: 0,
   },
   // Room for the pinned dial, so a card reached with the keyboard scrolls
-  // into view below it rather than under it: folded to its last line, the
-  // dial is at most 34px taller than the room the document's scroll padding
-  // already keeps under the bar for a sticky head.
+  // into view below it rather than under it, on top of the room the
+  // document's scroll padding keeps under the bar for a sticky head. On one
+  // line the pinned dial is at most 2.25rem taller than that room; wrapped,
+  // with the range on a line of its own and the button on another, about
+  // 7rem.
   cardLink: {
     borderColor: { 'default': color.rule2, ':hover': color.accent },
     outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
     outlineOffset: space.xs3,
     outlineStyle: 'solid',
     outlineWidth: rule.fine,
-    scrollMarginBlockStart: space.xl,
+    scrollMarginBlockStart: { [ONE_ROW]: space.xl, default: '8rem' },
     transform: { 'default': 'none', ':active': 'translateY(1px)' },
     transitionDuration: dur.micro,
     transitionProperty: 'border-color, transform',
