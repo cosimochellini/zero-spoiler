@@ -263,3 +263,175 @@ Fifteen places, under the issue's split point of about 25.
   reaches it in the third book.
 - Chataya's: a house inside King's Landing, as Littlefinger's brothel was in
   season 1.
+
+## Named-only places (#1476)
+
+Places that season 2 and _A Clash of Kings_ both name and neither sets a scene
+in, under the owner's rulings of 2026-11-13, restated for the stage:
+
+- **Gate.** The first explicit naming signal in each medium: quoted or reported
+  speech, a caption or a title card in the show; speech or a POV character's
+  thought in the book, close-third POV narration included. Chapters are site
+  chapters (_A Clash of Kings_' chapter N, prologue 0, is 74 + N).
+- **Scope.** Only places both media name inside the stage (episodes 11–20,
+  chapters 74–143). A name only one medium gives there is omitted, with its
+  reason. Places season 1 and #1469 filed are not filed again. Roads are not
+  filed, and a region or a land stays a region, as in season 1 (#1248, #1250,
+  #1251). No one is filed at a named-only place (`filedHere: []`), and each has
+  a drawing of its own in `art/places.ts`.
+- **Sources.** Show namings come from the Game of Thrones Wiki: each season 2
+  episode's Appearances page, the place pages that cite a season 2 episode, and
+  the lines those pages quote. Book namings come from A Wiki of Ice and Fire's
+  footnotes, read through the Firecrawl tool until its credits ran out, and from
+  the Ice and Fire Wiki after that (owner, 2026-11-23). The footnotes cite
+  claims, not first namings: each book gate is the earliest _A Clash of Kings_
+  chapter they cite, and where an earlier chapter may name the place first, the
+  safe later chapter is kept. Neither the episodes nor the books were viewed.
+- **Split.** Twelve places survive the book check, under the issue's split point
+  of about 15, so they are filed together (owner, 2026-11-23).
+- **Show namings** are checked against each episode's Appearances page, whose
+  lists of places mentioned give the first episode that names each place (#1476
+  review).
+- **New words.** Form `district` (Flea Bottom, a new form, owner, 2026-11-23),
+  Italian "Quartiere", a plain word not checked against the dub. The Summer
+  Isles take the form `island` in the region the Seas (owner, 2026-11-23).
+
+### Filed (#1476)
+
+| Place             | Episode | Chapter | Region          | Naming (show; book)                        |
+| ----------------- | ------- | ------- | --------------- | ------------------------------------------ |
+| `flea-bottom`     | 11      | 75      | the Crownlands  | Ros: Armeca is from Flea Bottom; Arya I    |
+| `oldtown`         | 11      | 74      | the Reach       | episode 11 mentions it; the prologue       |
+| `torrhens-square` | 11      | 90      | the North       | a northern lord at Winterfell; Bran II     |
+| `lorath`          | 12      | 121     | Essos           | Jaqen says he is from Lorath; by Arya IX   |
+| `tarth`           | 13      | 96      | the Stormlands  | Colen: "Brienne of Tarth"; Catelyn II      |
+| `highgarden`      | 13      | 84      | the Reach       | Margaery shouts "Highgarden!"; Davos I     |
+| `deepwood-motte`  | 13      | 98      | the North       | Balon sends Yara to take it; Theon II      |
+| `dreadfort`       | 16      | 90      | the North       | word of Winterfell reaches it; Bran II     |
+| `summer-isles`    | 18      | 74      | the Seas        | Varys on the Summer Isles; the prologue    |
+| `seagard`         | 20      | 81      | the Riverlands  | Theon's speech to his men; Catelyn I       |
+| `ashemark`        | 20      | 109     | the Westerlands | "You've been to Ashemark?" (Jaime); Bran V |
+
+The Crag, which #1469 left here, turns out to be a place the show visits and the
+book only names (#1252): see "Visited in one medium" below. Eleven places are
+named only, and with the Crag the issue files twelve.
+
+Texts that named a place before the show says it (#1476 review): Roose Bolton's
+summary, role and log no longer name the Dreadfort; Galbart Glover's summary,
+role, log and two stories and Robett Glover's summary, log and story no longer
+name Deepwood Motte; Jason Mallister's summary and role no longer name Seagard;
+Jaqen H'ghar's summary no longer names Lorath. Two books-only stories keep their
+name, each with a `nameSaidAt` at the episode the story orders at, since the
+leak scan reads one episode axis: Loras Tyrell's (chapter 30) names Highgarden,
+which the book names at chapter 4 (Daenerys I), so 5; Roose Bolton's
+(chapter 54) names the Dreadfort, which the book names in that same chapter
+(Bran VI; A Wiki of Ice and Fire's Dreadfort page), so 14.
+
+### Visited in one medium (#1476)
+
+| Place      | Episode | Chapter | Region          | Note                                                |
+| ---------- | ------- | ------- | --------------- | --------------------------------------------------- |
+| `the-crag` | 18      | 129     | the Westerlands | the show visits it; the book names it (Catelyn VII) |
+
+- The show names it in "A Man Without Honor" (17), when Talisa speaks of it, and
+  sets its first scene there in "The Prince of Winterfell" (18), whose
+  Appearances page lists it under Locations. The book never visits it: Catelyn
+  VII (129) has word at Riverrun that Robb has taken it, and Catelyn VI (119),
+  cited for his raids, may name it first. Gate 18 / 129 (#1252). No character is
+  first met there, so `filedHere` is empty. Italian "Crag", as the Italian Game
+  of Thrones Wiki's Casa Westerling page writes it.
+
+### Open points
+
+- `torrhens-square`: show 11, "The North Remembers": a northern lord at
+  Winterfell's audience cites a new tower at Torrhen's Square (the place page's
+  `GOT201` ref); "The Ghost of Harrenhal" (15) names it again. Book: Bran II
+  (90), Leobald Tallhart brings a party from Torrhen's Square to the harvest
+  feast. #1469 left it to this issue: its scenes are off screen and off the
+  page. Italian "Piazza di Torrhen", Italian Wikipedia's places page.
+- `flea-bottom`: show 11: Ros tells Daisy that Armeca is from Flea Bottom. Book:
+  Arya I (75), whose Ice and Fire Wiki page lists Flea Bottom among the places
+  mentioned; close-third narration counts for places. A Wiki of Ice and Fire's
+  footnotes cite Davos I (84) first. Italian "Fondo delle Pulci", Italian
+  Wikipedia's places page.
+- `oldtown`: show 11, "The North Remembers": the episode's Appearances page
+  lists it among the places mentioned; the line is not quoted. Book: the
+  prologue (74), whose Ice and Fire Wiki page lists it among the places
+  mentioned. The drawing is the Hightower. Italian "Vecchia Città", Italian
+  Wikipedia's places page.
+- `lorath`: show 12, "The Night Lands": Jaqen claims to be from Lorath (the
+  episode's Appearances page lists it). Book: the Ice and Fire Wiki says Jaqen
+  claims to come from Lorath in _A Clash of Kings_, without a chapter; Arya IX
+  (121), his last chapter in the book, is the safe later gate. A Wiki of Ice and
+  Fire cites Arya II (79) for his "claims to be Lorathi", which may be the
+  demonym only. Italian "Lorath", Italian Wikipedia.
+- `deepwood-motte`: show 13, "What Is Dead May Never Die": Balon sends Yara with
+  thirty ships to seize it. Book: Theon II (98) names it in Balon's plan. Bran
+  II (90) is cited for its steward at the harvest feast and may name it first;
+  the safe later chapter is kept (owner check). Italian "Deepwood Motte", the
+  Italian Game of Thrones Wiki's page.
+- `highgarden`: show 13: Margaery shouts "Highgarden!" at Renly's tourney. Book:
+  Davos I (84), Renly marches from Highgarden. The prologue (74) may name it
+  first (not checked). Italian "Alto Giardino", Italian Wikipedia.
+- `summer-isles`: show 18, "The Prince of Winterfell": Varys, "In the Summer
+  Isles they worship…" (quoted on the place page). Episode 14 tells that Xaro
+  was born there without an explicit naming. Book: the prologue (74), whose Ice
+  and Fire Wiki page lists the Summer Isles among the places mentioned. Italian
+  "Isole dell’Estate", Italian Wikipedia.
+- `dreadfort`: show 16, "The Old Gods and the New": the episode's Appearances
+  page lists it among the places mentioned; the line is not quoted. Book: Bran
+  II (90), Lady Hornwood learns that men are massing at the Dreadfort. Italian
+  "Forte Terrore", Italian Wikipedia.
+- `tarth`: show 13, "What Is Dead May Never Die": Colen calls her Brienne of
+  Tarth, and the episode's Appearances page lists Tarth (episode 18's does not).
+  Book: Catelyn II (96), where Brienne of Tarth is introduced, the safe later
+  chapter. The Ice and Fire Wiki's prologue page (74) lists only House Tarth,
+  not the island (AWOIAF not read: Firecrawl credits exhausted). Italian
+  "Tarth", Italian Wikipedia.
+- `seagard`: show 20, "Valar Morghulis": Theon's speech names "the shores of
+  Seagard and Faircastle" (quoted on the Faircastle page). Book: Catelyn I (81).
+  Italian "Seagard", the Italian Game of Thrones Wiki's page.
+- `ashemark`: show 20: Jaime asks the Stark patrol "You've been to Ashemark?".
+  Book: Bran V (109), Robb takes Ashemark. Italian "Ashemark", the Italian Game
+  of Thrones Wiki's page.
+
+### Omitted (#1476)
+
+- Maidenpool (episode 15, Arya's lie to Tywin), Barrowton (episode 15, her
+  second answer), Meereen (episode 15, a guest at Xaro's feast), the Rhoyne
+  (episode 18, Talisa), Astapor (episode 18, Jorah's ship), Faircastle (episode
+  20, Theon's speech) and Haystack Hall (episode 11, Daisy): the book's naming
+  in the stage is not confirmed (Ice and Fire Wiki; AWOIAF not read: Firecrawl
+  credits exhausted). The Ice and Fire Wiki's sections on Maidenpool's Lord
+  Mooton tell later books' events, its House Errol page names Haystack Hall only
+  in the appendix's list of houses, and A Wiki of Ice and Fire cites Maidenpool
+  only on the book's map and the barrowlands, not Barrowton, in Bran VI (120).
+- Castamere: the book names it in the stage (the Greatjon takes its gold mines,
+  chapter 39, site 113, the Ice and Fire Wiki's Jon Umber page), but the show's
+  sung line naming Castamere in episode 19 is not confirmed; the closing credits
+  don't count. "Blackwater"'s Appearances page lists the song and no mention of
+  Castamere.
+- The Acorn Water: the show never names it (#1469).
+- Red Harbor (episode 15, Yara), Salt Rock (episode 20, the Stark patrol) and
+  the Yellow Fork (episode 17, Robb's battle): the show only; the Game of
+  Thrones Wiki says the books have no such places.
+- Silverhill: written on a letter on Tywin's table in episode 16, never said.
+- Shipbreaker Bay: the show's parley in episode 14 is on a cliff over it, but no
+  line is cited as naming it; the book names it.
+- The Smoking Sea: Quaithe's sailor must sail within sight of Valyria (episode
+  17); the sea is not named.
+- Dorne: a region; Myrcella is sent there in both media, but no Dornish place is
+  named in season 2, so nothing brings the region in (#1250).
+- The Westerlands, the Reach, the Stormlands, the Riverlands, the Iron Islands:
+  regions already filed.
+- Places only the book names in the stage, among them Duskendale, Rosby,
+  Driftmark, Sunspear, the Stepstones, Hornwood, Karhold, Last Hearth, Greywater
+  Watch, the Shadow Tower, Hardhome, the Milkwater, Saltpans, Raventree Hall,
+  Stoney Sept, Mummer's Ford, the Isle of Faces, Great Wyk, Harlaw, Old Wyk, Ten
+  Towers, Yi Ti and the Jade Sea: the Game of Thrones Wiki cites no season 2
+  naming for any of them.
+- Lhazar, Volantis, Qohor, Asshai, Lys, Pentos, Braavos, Valyria, Casterly Rock,
+  Lannisport, the Golden Tooth, the Arbor, White Harbor, Moat Cailin, the
+  Kingswood, the Trident and the Whispering Wood: season 2 names them again, but
+  season 1 filed them.
+- The Frostfangs: folded into the Skirling Pass (#1469).

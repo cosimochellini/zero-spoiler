@@ -1099,8 +1099,8 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 54,
       name: { it: 'Roose Bolton', en: 'Roose Bolton' },
       summary: {
-        it: 'Il lord di Forte Terrore, un signore del Nord silenzioso che combatte nell’esercito di Robb Stark.',
-        en: 'The lord of the Dreadfort, a quiet northern lord who fights in Robb Stark’s host.',
+        it: 'Un signore del Nord silenzioso, a capo di Casa Bolton, che combatte nell’esercito di Robb Stark.',
+        en: 'A quiet northern lord, head of House Bolton, who fights in Robb Stark’s host.',
       },
       visual: { art: 'roose-bolton', tint: 'lavender' },
     },
@@ -1112,8 +1112,8 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 56,
       name: { it: 'Galbart Glover', en: 'Galbart Glover' },
       summary: {
-        it: 'Il lord di Deepwood Motte, uno dei signori del Nord nell’esercito di Robb Stark.',
-        en: 'The lord of Deepwood Motte, one of the northern lords in Robb Stark’s host.',
+        it: 'Un signore del Nord, a capo di Casa Glover, nell’esercito di Robb Stark.',
+        en: 'A northern lord, head of House Glover, in Robb Stark’s host.',
       },
       visual: { art: 'galbart-glover', tint: 'green' },
     },
@@ -1125,8 +1125,8 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 54,
       name: { it: 'Robett Glover', en: 'Robett Glover' },
       summary: {
-        it: 'Un membro di Casa Glover, la casata del Nord che ha sede a Deepwood Motte.',
-        en: 'A member of House Glover, the northern house whose seat is Deepwood Motte.',
+        it: 'Un membro di Casa Glover, una casata del Nord.',
+        en: 'A member of House Glover, a northern house.',
       },
       visual: { art: 'robett-glover', tint: 'blue' },
     },
@@ -1619,8 +1619,8 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 29,
       name: { it: 'Jason Mallister', en: 'Jason Mallister' },
       summary: {
-        it: 'Il lord di Seagard, un vassallo di Casa Tully nelle Terre dei Fiumi.',
-        en: 'The lord of Seagard, a riverlands lord sworn to House Tully.',
+        it: 'Un lord delle Terre dei Fiumi, vassallo di Casa Tully.',
+        en: 'A riverlands lord sworn to House Tully.',
       },
       visual: { art: 'jason-mallister', tint: 'lavender' },
     },
@@ -1789,8 +1789,8 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 79,
       name: { it: "Jaqen H'ghar", en: "Jaqen H'ghar" },
       summary: {
-        it: 'Un prigioniero di Lorath, in catene nella gabbia sul carro di Yoren.',
-        en: 'A prisoner from Lorath, chained in the cage on Yoren’s wagon.',
+        it: 'Un prigioniero in catene nella gabbia sul carro di Yoren.',
+        en: 'A prisoner chained in the cage on Yoren’s wagon.',
       },
       visual: { art: 'jaqen-hghar', tint: 'magenta' },
     },
@@ -5366,7 +5366,7 @@ export const season1: ThronesSaga = {
         {
           episode: 14,
           chapter: 54,
-          value: { it: 'Lord di Forte Terrore', en: 'Lord of the Dreadfort' },
+          value: { it: 'Capo di Casa Bolton', en: 'Head of House Bolton' },
         },
         {
           episode: 14,
@@ -5391,8 +5391,8 @@ export const season1: ThronesSaga = {
         },
       ],
       log: {
-        it: 'È a capo di Casa Bolton, che ha sede a Forte Terrore. Parla poco e a voce bassa, e ha portato i suoi uomini nell’esercito di Robb.',
-        en: 'He is the head of House Bolton, whose seat is the Dreadfort. He speaks little and softly, and he has brought his men to Robb’s host.',
+        it: 'È a capo di Casa Bolton. Parla poco e a voce bassa, e ha portato i suoi uomini nell’esercito di Robb.',
+        en: 'He is the head of House Bolton. He speaks little and softly, and he has brought his men to Robb’s host.',
       },
       status: [
         { episode: 14, chapter: 54, value: 'alive' },
@@ -5414,10 +5414,10 @@ export const season1: ThronesSaga = {
     'galbart-glover': {
       relationships: season1Relationships['galbart-glover'],
       chronicle: season1Chronicles['galbart-glover'],
-      role: { it: 'Lord di Deepwood Motte', en: 'Lord of Deepwood Motte' },
+      role: { it: 'Capo di Casa Glover', en: 'Head of House Glover' },
       log: {
-        it: 'È a capo di Casa Glover, che ha sede a Deepwood Motte. Risponde alla chiamata alle armi di Robb insieme agli altri signori del Nord e siede al suo consiglio di guerra.',
-        en: 'He is the head of House Glover, whose seat is Deepwood Motte. He answers Robb’s call to arms with the other northern lords and sits at his war council.',
+        it: 'È a capo di Casa Glover. Risponde alla chiamata alle armi di Robb insieme agli altri signori del Nord e siede al suo consiglio di guerra.',
+        en: 'He is the head of House Glover. He answers Robb’s call to arms with the other northern lords and sits at his war council.',
       },
       status: [
         { episode: 8, chapter: 56, value: 'alive' },
@@ -5454,8 +5454,8 @@ export const season1: ThronesSaga = {
       chronicle: season1Chronicles['robett-glover'],
       role: { it: 'Membro di Casa Glover', en: 'Member of House Glover' },
       log: {
-        it: 'Appartiene a Casa Glover, una casata del Nord. La sua sede è Deepwood Motte.',
-        en: 'He belongs to House Glover, a house of the North. Its seat is Deepwood Motte.',
+        it: 'Appartiene a Casa Glover, una casata del Nord.',
+        en: 'He belongs to House Glover, a house of the North.',
       },
       status: [{ episode: 57, chapter: 54, value: 'alive' }],
       affiliation: [
@@ -6288,7 +6288,7 @@ export const season1: ThronesSaga = {
     'jason-mallister': {
       relationships: season1Relationships['jason-mallister'],
       chronicle: season1Chronicles['jason-mallister'],
-      role: { it: 'Lord di Seagard', en: 'Lord of Seagard' },
+      role: { it: 'Capo di Casa Mallister', en: 'Head of House Mallister' },
       log: {
         it: 'Passa con i suoi uomini davanti alla locanda all’incrocio, diretto al torneo del Primo Cavaliere. Catelyn Stark lo vede passare.',
         en: 'He rides past the inn at the crossroads with his men, on his way to the Hand’s tourney. Catelyn Stark sees him go by.',

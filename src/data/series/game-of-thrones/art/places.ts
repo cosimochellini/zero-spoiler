@@ -1731,8 +1731,316 @@ const HOUSE_OF_THE_UNDYING: Stroke[] = [
 ]
 
 /**
+ * Torrhen's Square: a stone keep between four towers behind its wall, on
+ * the shore of its lake, named in episode 11 and in Bran II (chapter 90)
+ * and never visited in the stage. The towers' far faces are hatched; the
+ * accent is the gate.
+ */
+const TORRHENS_SQUARE: Stroke[] = [
+  { d: 'M22 132 V76 H40 V132 M120 132 V76 H138 V132' },
+  { d: 'M40 132 V96 H120 V132' },
+  {
+    d: 'M22 76 V70 H28 V76 M34 76 V70 H40 V76 M120 76 V70 H126 V76 M132 76 V70 H138 V76',
+    role: 'soft',
+  },
+  {
+    d: 'M60 96 V62 H100 V96 M60 62 V56 H68 V62 M76 62 V56 H84 V62 M92 62 V56 H100 V62',
+  },
+  { d: 'M70 132 V114 H90 V132', role: 'accent' },
+  { d: 'M40 104 H60 M100 104 H120 M44 116 H64 M96 116 H116', role: 'soft' },
+  {
+    d: 'M130 86 l5 -3 M130 100 l5 -3 M130 114 l5 -3 M92 70 l5 -3 M92 84 l5 -3',
+    role: 'ambient',
+  },
+  { d: 'M10 132 H150' },
+  {
+    d: 'M10 142 q10 -4 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0',
+    role: 'ambient',
+    dashed: true,
+  },
+  {
+    d: 'M24 152 q8 -3 16 0 M72 154 q8 -3 16 0 M118 152 q8 -3 16 0',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Deepwood Motte: a wooden hall inside a palisade on top of its mound,
+ * pines at either side, for the castle Balon sends his daughter to take in
+ * episode 13 and in Theon II (chapter 98). The mound's far side is hatched;
+ * the accent is the palisade.
+ */
+const DEEPWOOD_MOTTE: Stroke[] = [
+  { d: 'M24 150 Q40 108 80 104 Q120 108 136 150' },
+  {
+    d: 'M44 112 V84 M52 108 V80 M60 106 V78 M68 105 V77 M76 104 V76 M84 104 V76 M92 105 V77 M100 106 V78 M108 108 V80 M116 112 V84',
+    role: 'accent',
+  },
+  { d: 'M62 77 V58 H98 V77 M58 60 L80 44 L102 60' },
+  { d: 'M66 64 H94 M66 70 H94', role: 'soft' },
+  { d: 'M10 150 L20 120 L30 150 M130 150 L140 116 L150 150', role: 'soft' },
+  { d: 'M20 120 V114 M140 116 V110', role: 'soft' },
+  {
+    d: 'M112 124 l6 -3 M118 136 l6 -3 M124 146 l6 -3 M90 52 l5 -3',
+    role: 'ambient',
+  },
+  GROUND,
+  shadow(80, 158, 60),
+]
+
+/**
+ * The Dreadfort: two dark towers either side of the gate, with the flayed
+ * man's banner over it, named in episode 16 and in Bran II (chapter 90) and
+ * never visited in the stage. The towers are hatched all over, for their
+ * dark stone; the accent is the banner.
+ */
+const DREADFORT: Stroke[] = [
+  { d: 'M24 150 V80 H48 V150 M112 150 V80 H136 V150' },
+  { d: 'M48 150 V100 H112 V150' },
+  {
+    d: 'M24 80 V74 H30 V80 M36 80 V74 H42 V80 M112 80 V74 H118 V80 M124 80 V74 H130 V80',
+    role: 'soft',
+  },
+  { d: 'M70 150 V128 Q80 118 90 128 V150' },
+  { d: 'M80 100 V36' },
+  { d: 'M80 38 H106 V68 H80', role: 'accent' },
+  {
+    d: 'M93 47 V58 M87 49 L93 52 L99 49 M89 64 L93 58 L97 64 M93 43 V43.1',
+    role: 'soft',
+  },
+  {
+    d: 'M38 90 l6 -3 M38 104 l6 -3 M38 118 l6 -3 M38 132 l6 -3 M126 90 l6 -3 M126 104 l6 -3 M126 118 l6 -3 M126 132 l6 -3 M56 112 l6 -3 M100 112 l6 -3 M100 128 l6 -3',
+    role: 'ambient',
+  },
+  GROUND,
+  shadow(80, 158, 70),
+]
+
+/**
+ * Seagard: a tall bell tower between the castle's walls on the shore, named
+ * in episode 20 and in Catelyn I (chapter 81) and never visited in the
+ * stage. The tower's far side is hatched; the accent is the bell.
+ */
+const SEAGARD: Stroke[] = [
+  { d: 'M12 136 V108 H62 V136 M104 136 V112 H148 V136' },
+  {
+    d: 'M62 136 V42 H104 V136 M62 42 V36 H70 V42 M78 42 V36 H88 V42 M96 42 V36 H104 V42',
+  },
+  { d: 'M74 52 Q83 46 92 52 V68 H74 Z M83 68 V72', role: 'accent' },
+  {
+    d: 'M12 108 V102 H18 V108 M26 108 V102 H32 V108 M120 112 V106 H126 V112 M134 112 V106 H140 V112',
+    role: 'soft',
+  },
+  { d: 'M76 136 V120 Q83 112 90 120 V136', role: 'soft' },
+  {
+    d: 'M96 80 l5 -3 M96 96 l5 -3 M96 112 l5 -3 M140 118 l5 -3',
+    role: 'ambient',
+  },
+  { d: 'M8 136 H152 L150 146 H10 Z' },
+  ...SEA,
+]
+
+/**
+ * Ashemark: two towers and a gate on a hilltop, a banner over them, named
+ * in episode 20 and in Bran V (chapter 109) and never visited in the
+ * stage. The tower's far side is hatched; the accent is the banner.
+ */
+const ASHEMARK: Stroke[] = [
+  {
+    d: 'M10 150 Q34 118 58 124 Q80 104 104 122 Q128 112 150 150',
+    role: 'soft',
+  },
+  { d: 'M50 118 V78 H70 V112 M90 108 V70 H110 V120' },
+  { d: 'M70 112 V92 H90 V108' },
+  {
+    d: 'M50 78 V72 H56 V78 M64 78 V72 H70 V78 M90 70 V64 H96 V70 M104 70 V64 H110 V70',
+    role: 'soft',
+  },
+  { d: 'M100 64 V30' },
+  { d: 'M100 32 H124 L118 40 L124 48 H100', role: 'accent' },
+  { d: 'M74 108 V100 Q80 94 86 100 V108', role: 'soft' },
+  { d: 'M104 80 l5 -3 M104 94 l5 -3 M104 108 l5 -3', role: 'ambient' },
+  GROUND,
+]
+
+/**
+ * The Crag: towers on a great rock over the sea, for the castle Robb goes
+ * to in episode 18, named in Catelyn VII (chapter 129). The rock's far side
+ * is hatched; the accent is the lit windows.
+ */
+const THE_CRAG: Stroke[] = [
+  { d: 'M10 150 L26 112 Q40 96 52 92 L72 88 Q96 90 108 108 L120 150' },
+  { d: 'M44 92 V62 H64 V88 M64 74 H88 V89 M88 89 V56 H104 V100' },
+  {
+    d: 'M44 62 V56 H50 V62 M58 62 V56 H64 V62 M88 56 V50 H94 V56 M98 56 V50 H104 V56',
+    role: 'soft',
+  },
+  { d: 'M52 72 V80 M94 64 V72', role: 'accent' },
+  {
+    d: 'M96 116 l6 -3 M102 128 l6 -3 M108 140 l6 -3 M98 78 l5 -3',
+    role: 'ambient',
+  },
+  { d: 'M30 132 Q40 120 38 108 M66 112 Q76 104 86 110', role: 'soft' },
+  { d: 'M126 128 q8 -4 16 0 M130 136 q6 -3 12 0', role: 'soft' },
+  ...SEA,
+]
+
+/**
+ * Flea Bottom: crooked hovels along a lane, a pot steaming over a fire
+ * between them, for the district named in episode 11 and in Arya I
+ * (chapter 75). The houses' sides are hatched; the accent is the steam.
+ */
+const FLEA_BOTTOM: Stroke[] = [
+  { d: 'M10 150 V104 L24 92 L38 104 V150 M38 150 V112 L50 100 L62 112 V150' },
+  {
+    d: 'M98 150 V110 L112 98 L126 110 V150 M126 150 V100 L138 90 L150 100 V150',
+  },
+  { d: 'M24 92 L30 80 M112 98 L118 84 M30 80 V74 M118 84 V78', role: 'soft' },
+  { d: 'M66 132 H94 L90 150 H70 Z' },
+  {
+    d: 'M72 128 q-4 -8 2 -14 q-4 -8 2 -14 M86 128 q-4 -8 2 -14',
+    role: 'accent',
+  },
+  {
+    d: 'M70 154 L66 160 M90 154 L94 160 M74 152 l4 -6 l4 6 l4 -6',
+    role: 'soft',
+  },
+  { d: 'M18 120 h8 M46 124 h8 M106 124 h8 M134 116 h8', role: 'soft' },
+  {
+    d: 'M30 132 l5 -3 M54 136 l5 -3 M118 136 l5 -3 M142 130 l5 -3',
+    role: 'ambient',
+  },
+  GROUND,
+]
+
+/**
+ * Highgarden: walls and towers under the Tyrells' banner of the rose, with
+ * rose bushes before the walls, named in episode 13 and in Davos I
+ * (chapter 84) and never visited in the stage. The towers' far faces are
+ * hatched; the accent is the rose.
+ */
+const HIGHGARDEN: Stroke[] = [
+  { d: 'M20 150 V108 H40 V150 M120 150 V108 H140 V150 M40 150 V122 H120 V150' },
+  { d: 'M62 122 V76 H98 V122' },
+  {
+    d: 'M20 108 V102 H26 V108 M34 108 V102 H40 V108 M120 108 V102 H126 V108 M134 108 V102 H140 V108 M62 76 V70 H68 V76 M77 76 V70 H83 V76 M92 76 V70 H98 V76',
+    role: 'soft',
+  },
+  { d: 'M72 150 V134 Q80 126 88 134 V150' },
+  { d: 'M80 70 V24' },
+  { d: 'M80 26 H112 V54 H80', role: 'soft' },
+  {
+    d: 'M96 34 q-6 2 -5 7 q-4 5 2 8 q4 3 8 -1 q6 -2 4 -8 q-1 -6 -9 -6 Z M96 38 q-3 2 0 5 q3 1 3 -3',
+    role: 'accent',
+  },
+  {
+    d: 'M10 150 Q16 140 22 150 M138 150 Q144 140 150 150 M44 150 Q50 140 56 150 M104 150 Q110 140 116 150',
+    role: 'soft',
+  },
+  {
+    d: 'M130 116 l5 -3 M130 130 l5 -3 M90 86 l5 -3 M90 102 l5 -3',
+    role: 'ambient',
+  },
+  GROUND,
+]
+
+/**
+ * Tarth: an island's mountains over the sea, a waterfall down their side
+ * and a small castle on the shore, named in the prologue (chapter 74) and
+ * in episode 13. The far slopes are hatched; the accent is the waterfall.
+ */
+const TARTH: Stroke[] = [
+  {
+    d: 'M10 140 Q22 112 40 104 L58 80 L74 98 L92 70 L112 100 Q134 110 150 140',
+  },
+  { d: 'M84 84 Q80 104 86 124 Q90 134 86 140', role: 'accent' },
+  { d: 'M50 88 L58 80 L66 90 M86 78 L92 70 L98 80', role: 'soft' },
+  {
+    d: 'M26 112 V98 H40 V108 M26 98 V94 H31 V98 M35 98 V94 H40 V98',
+    role: 'soft',
+  },
+  {
+    d: 'M104 98 l5 -3 M112 108 l5 -3 M124 118 l6 -3 M132 128 l6 -3',
+    role: 'ambient',
+  },
+  { d: 'M40 126 Q60 118 76 124 M100 124 Q116 118 132 128', role: 'soft' },
+  ...SEA,
+]
+
+/**
+ * Lorath: a walled city's pointed towers on an island, a ship on the sea
+ * before it, for the Free City Jaqen says he comes from in episode 12 and
+ * in the book by Arya IX (chapter 121). The far slope is hatched; the
+ * accent is the towers' roofs.
+ */
+const LORATH: Stroke[] = [
+  { d: 'M10 140 Q20 116 40 112 H102 Q114 118 116 140' },
+  { d: 'M30 112 V88 H50 V112 M56 112 V72 H74 V112 M80 112 V82 H100 V112' },
+  {
+    d: 'M56 72 L65 58 L74 72 M30 88 L40 78 L50 88 M80 82 L90 70 L100 82',
+    role: 'accent',
+  },
+  { d: 'M62 86 h6 M36 98 h8 M86 96 h8', role: 'soft' },
+  {
+    d: 'M68 96 l4 -2 M92 104 l4 -2 M104 124 l5 -3 M108 132 l5 -3',
+    role: 'ambient',
+  },
+  ...moved(SHIP_HULL, 'translate(134 156)'),
+  { d: SAIL, role: 'soft', transform: 'translate(134 156)' },
+  ...SEA,
+]
+
+/**
+ * The Summer Isles: two islands with palm trees and a ship between them,
+ * named in the prologue (chapter 74) and in episode 18, by Varys. The
+ * trunks are hatched; the accent is the palms' fronds.
+ */
+const SUMMER_ISLES: Stroke[] = [
+  {
+    d: 'M10 142 Q24 112 50 110 Q72 112 84 142 M118 142 Q126 124 140 124 Q148 128 152 142',
+  },
+  { d: 'M40 112 Q42 90 50 72 M134 124 Q134 108 138 96' },
+  {
+    d: 'M50 72 Q36 66 28 74 M50 72 Q44 58 32 58 M50 72 Q62 60 72 64 M50 72 Q66 72 70 84 M138 96 Q128 88 120 94 M138 96 Q146 86 154 90 M138 96 Q140 82 134 78',
+    role: 'accent',
+  },
+  {
+    d: 'M44 98 l5 -2 M47 86 l4 -2 M135 112 l4 -2 M66 128 l6 -3',
+    role: 'ambient',
+  },
+  ...moved(SHIP_HULL, 'translate(100 158) scale(0.9)'),
+  { d: SAIL, role: 'soft', transform: 'translate(100 158) scale(0.9)' },
+  { d: 'M22 132 Q42 126 64 132', role: 'soft' },
+  ...SEA,
+]
+
+/**
+ * Oldtown: the Hightower, a tall stepped tower with a beacon burning at its
+ * top over the city's roofs, named in episode 11 and in the prologue
+ * (chapter 74) and never visited in the stage. The tiers' far sides are
+ * hatched; the accent is the beacon.
+ */
+const OLDTOWN: Stroke[] = [
+  { d: 'M50 150 V112 H110 V150 M58 112 V84 H102 V112' },
+  { d: 'M64 84 V58 H96 V84 M70 58 V36 H90 V58' },
+  { d: 'M74 36 V28 H86 V36', role: 'soft' },
+  { d: 'M80 28 q-6 -6 -2 -14 q2 5 4 2 q5 6 -2 12', role: 'accent' },
+  { d: 'M76 70 h8 M72 96 h16 M64 128 h32', role: 'soft' },
+  {
+    d: 'M14 150 V132 L24 124 L34 132 V150 M126 150 V128 L136 120 L146 128 V150',
+  },
+  {
+    d: 'M102 120 l5 -3 M102 136 l5 -3 M94 92 l5 -3 M88 66 l5 -3 M86 46 l4 -2',
+    role: 'ambient',
+  },
+  GROUND,
+  shadow(80, 158, 70),
+]
+
+/**
  * The first season's places (#1053), the ones it only names (#1035), and
- * the second stage's visited places (#1469), keyed by record id.
+ * the second stage's visited places (#1469) and named ones (#1476), keyed
+ * by record id.
  */
 export const PLACE_DRAWINGS = {
   'haunted-forest': HAUNTED_FOREST,
@@ -1810,6 +2118,18 @@ export const PLACE_DRAWINGS = {
   'skirling-pass': SKIRLING_PASS,
   'blackwater-bay': BLACKWATER_BAY,
   'house-of-the-undying': HOUSE_OF_THE_UNDYING,
+  'torrhens-square': TORRHENS_SQUARE,
+  'deepwood-motte': DEEPWOOD_MOTTE,
+  'dreadfort': DREADFORT,
+  'seagard': SEAGARD,
+  'ashemark': ASHEMARK,
+  'the-crag': THE_CRAG,
+  'flea-bottom': FLEA_BOTTOM,
+  'highgarden': HIGHGARDEN,
+  'tarth': TARTH,
+  'lorath': LORATH,
+  'summer-isles': SUMMER_ISLES,
+  'oldtown': OLDTOWN,
 } satisfies Drawings
 
 /** Smoke rising from a ruin: two curls. */

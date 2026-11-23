@@ -32,6 +32,7 @@ export const GAME_OF_THRONES_PLACE_WORDS: PlaceWords<ThronesVocabulary> = {
     'city': { en: 'City', it: 'Città' },
     'coast': { en: 'Coast', it: 'Costa' },
     'desert': { en: 'Desert', it: 'Deserto' },
+    'district': { en: 'District', it: 'Quartiere' },
     'forest': { en: 'Forest', it: 'Foresta' },
     'fortress': { en: 'Fortress', it: 'Fortezza' },
     'hill': { en: 'Hill', it: 'Collina' },

@@ -4882,8 +4882,8 @@ export const season1Chronicles = {
       [14, 54],
       { it: 'Il lord silenzioso', en: 'The silent lord' },
       {
-        it: 'Roose Bolton è il lord di Forte Terrore, e porta i suoi uomini a Grande Inverno quando [[robb-stark|Robb Stark]] chiama a raccolta i vessilli del padre. Fra tutti i vassalli è quello che Robb trova più spaventoso: non dice mai una parola, si limita a guardare. Robb racconta a [[bran-stark|Bran]] che, ogni volta che Bolton fissa Robb, pensa alla stanza di Forte Terrore dove si dice che i Bolton appendano le pelli dei nemici. Bran ribatte che è solo una delle storie della Vecchia Nan.',
-        en: 'Roose Bolton is the lord of the Dreadfort, and he brings his men to Winterfell when [[robb-stark|Robb Stark]] calls his father’s banners. Of all the bannermen, he is the one Robb finds most frightening: he never says a word, he only looks. Robb tells [[bran-stark|Bran]] that whenever Bolton looks at him, he thinks of the room in the Dreadfort where the Boltons are said to hang the skins of their enemies. Bran says that is only one of Old Nan’s stories.',
+        it: 'Roose Bolton è a capo di Casa Bolton, e porta i suoi uomini a Grande Inverno quando [[robb-stark|Robb Stark]] chiama a raccolta i vessilli del padre. Fra tutti i vassalli è quello che Robb trova più spaventoso: non dice mai una parola, si limita a guardare. Robb racconta a [[bran-stark|Bran]] che, ogni volta che Bolton fissa Robb, pensa alla stanza di Forte Terrore dove si dice che i Bolton appendano le pelli dei nemici. Bran ribatte che è solo una delle storie della Vecchia Nan.',
+        en: 'Roose Bolton is the head of House Bolton, and he brings his men to Winterfell when [[robb-stark|Robb Stark]] calls his father’s banners. Of all the bannermen, he is the one Robb finds most frightening: he never says a word, he only looks. Robb tells [[bran-stark|Bran]] that whenever Bolton looks at him, he thinks of the room in the Dreadfort where the Boltons are said to hang the skins of their enemies. Bran says that is only one of Old Nan’s stories.',
       },
     ),
     inBooks(
@@ -4900,16 +4900,16 @@ export const season1Chronicles = {
       [8, 56],
       { it: 'L’avanguardia', en: 'The vanguard' },
       {
-        it: 'Galbart Glover è il lord di Deepwood Motte, uno dei lord del Nord che rispondono alla chiamata alle armi di [[robb-stark|Robb Stark]] dopo l’arresto del padre. Al banchetto di Grande Inverno Robb gli affida l’avanguardia. [[greatjon-umber|Greatjon Umber]] non vuole marciare dietro a un Glover e minaccia di tornarsene a casa, finché [[grey-wind|Vento Grigio]] non stacca due dita al Greatjon con un morso. Più tardi Galbart siede al consiglio di guerra di Robb, che si interrompe quando arriva [[catelyn-stark|Catelyn]] e chiede di parlare da sola con il figlio.',
-        en: 'Galbart Glover is the lord of Deepwood Motte, one of the northern lords who answer [[robb-stark|Robb Stark]]’s call to arms after his father’s arrest. At the feast in Winterfell, Robb gives him the vanguard. [[greatjon-umber|Greatjon Umber]] will not march behind a Glover and threatens to go home, until [[grey-wind|Grey Wind]] bites off two of his fingers. Later Galbart sits at Robb’s war council, which breaks up when [[catelyn-stark|Catelyn]] arrives and asks to speak with her son alone.',
+        it: 'Galbart Glover è uno dei lord del Nord che rispondono alla chiamata alle armi di [[robb-stark|Robb Stark]] dopo l’arresto del padre. Al banchetto di Grande Inverno Robb gli affida l’avanguardia. [[greatjon-umber|Greatjon Umber]] non vuole marciare dietro a un Glover e minaccia di tornarsene a casa, finché [[grey-wind|Vento Grigio]] non stacca due dita al Greatjon con un morso. Più tardi Galbart siede al consiglio di guerra di Robb, che si interrompe quando arriva [[catelyn-stark|Catelyn]] e chiede di parlare da sola con il figlio.',
+        en: 'Galbart Glover is one of the northern lords who answer [[robb-stark|Robb Stark]]’s call to arms after his father’s arrest. At the feast in Winterfell, Robb gives him the vanguard. [[greatjon-umber|Greatjon Umber]] will not march behind a Glover and threatens to go home, until [[grey-wind|Grey Wind]] bites off two of his fingers. Later Galbart sits at Robb’s war council, which breaks up when [[catelyn-stark|Catelyn]] arrives and asks to speak with her son alone.',
       },
     ),
     inBooks(
       [8, 56],
       { it: 'Al consiglio di guerra di Robb', en: 'At Robb’s war council' },
       {
-        it: 'Galbart Glover è il lord di Deepwood Motte, uno dei lord del Nord che rispondono alla chiamata alle armi di [[robb-stark|Robb Stark]] dopo l’arresto del padre. Siede al consiglio di guerra di Robb mentre l’esercito marcia verso sud. Quando [[catelyn-stark|Catelyn]] raggiunge l’esercito, chiede di parlare da sola con il figlio, e i lord li lasciano soli.',
-        en: 'Galbart Glover is the lord of Deepwood Motte, one of the northern lords who answer [[robb-stark|Robb Stark]]’s call to arms after his father’s arrest. He sits at Robb’s war council as the host marches south. When [[catelyn-stark|Catelyn]] reaches the host, she asks to speak with her son alone, and the lords leave the two of them together.',
+        it: 'Galbart Glover è uno dei lord del Nord che rispondono alla chiamata alle armi di [[robb-stark|Robb Stark]] dopo l’arresto del padre. Siede al consiglio di guerra di Robb mentre l’esercito marcia verso sud. Quando [[catelyn-stark|Catelyn]] raggiunge l’esercito, chiede di parlare da sola con il figlio, e i lord li lasciano soli.',
+        en: 'Galbart Glover is one of the northern lords who answer [[robb-stark|Robb Stark]]’s call to arms after his father’s arrest. He sits at Robb’s war council as the host marches south. When [[catelyn-stark|Catelyn]] reaches the host, she asks to speak with her son alone, and the lords leave the two of them together.',
       },
     ),
     inBoth(
@@ -4926,8 +4926,8 @@ export const season1Chronicles = {
       [57, 54],
       { it: 'La richiesta di un comando', en: 'Asking for a command' },
       {
-        it: 'Robett Glover appartiene a Casa Glover, la casata del Nord che ha sede a Deepwood Motte. Quando [[robb-stark|Robb Stark]] chiama a raccolta i vessilli del padre, Robett è tra gli uomini del Nord che arrivano a Grande Inverno per marciare con lui. Come altri lord che mettono alla prova il giovane Robb, gli chiede un comando. Robb nega il comando supremo a chiunque lo chieda e piega i lord alla sua volontà, come faceva il padre.',
-        en: 'Robett Glover belongs to House Glover, the northern house whose seat is Deepwood Motte. When [[robb-stark|Robb Stark]] calls his father’s banners, Robett is among the northmen who come to Winterfell to march with him. Like other lords who test the young Robb, he asks him for a command. Robb refuses supreme command to everyone who asks, and bends the lords to his will as his father did.',
+        it: 'Robett Glover appartiene a Casa Glover, una casata del Nord. Quando [[robb-stark|Robb Stark]] chiama a raccolta i vessilli del padre, Robett è tra gli uomini del Nord che arrivano a Grande Inverno per marciare con lui. Come altri lord che mettono alla prova il giovane Robb, gli chiede un comando. Robb nega il comando supremo a chiunque lo chieda e piega i lord alla sua volontà, come faceva il padre.',
+        en: 'Robett Glover belongs to House Glover, a northern house. When [[robb-stark|Robb Stark]] calls his father’s banners, Robett is among the northmen who come to Winterfell to march with him. Like other lords who test the young Robb, he asks him for a command. Robb refuses supreme command to everyone who asks, and bends the lords to his will as his father did.',
       },
     ),
   ],
