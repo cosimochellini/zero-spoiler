@@ -154,7 +154,7 @@ describe('a place’s entry', () => {
     )
 
     expect(
-      screen.getByRole('heading', { level: 3, name: 'From here' }),
+      screen.getByRole('heading', { level: 2, name: 'From here' }),
     ).toBeVisible()
     expect(screen.getByRole('link', { name: 'Zeff' })).toHaveAttribute(
       'href',

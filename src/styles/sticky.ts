@@ -1,6 +1,14 @@
 import * as stylex from '@stylexjs/stylex'
 
-import { BAR, color, pin, rule, space, z } from '~/styles/tokens.stylex'
+import {
+  BAR,
+  color,
+  CONTROLS,
+  pin,
+  rule,
+  space,
+  z,
+} from '~/styles/tokens.stylex'
 
 /**
  * The custom property a pinned control bar (`ControlBar`) writes on the
@@ -41,6 +49,10 @@ export const stickyStyles = stylex.create({
     insetBlockStart: `calc(${pin.bar} + var(${STACK_PROPERTY}, 0px))`,
   },
   whileOpen: { position: { 'default': 'static', ':is([open] > *)': 'sticky' } },
+  // A head that pins only where the whole control bar does. On a phone the
+  // bar keeps its folded row pinned, which names the group in view, so the
+  // head scrolls away with its group (#1380).
+  wideOnly: { position: { default: 'static', [CONTROLS.whole]: 'sticky' } },
   document: {
     scrollPaddingBlockStart: `calc(${pin.bar} + var(${STACK_PROPERTY}, 0px) + ${HEAD_ROOM})`,
   },

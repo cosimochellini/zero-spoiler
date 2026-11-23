@@ -27,7 +27,7 @@ export function FiledHere({
 
   return (
     <div {...stylex.props(styles.filed)}>
-      <h3 {...stylex.props(styles.filedTitle)}>{title}</h3>
+      <h2 {...stylex.props(styles.filedTitle)}>{title}</h2>
       <ul {...stylex.props(styles.crew)}>
         {filed.map((slot) => {
           return (

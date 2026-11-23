@@ -30,6 +30,11 @@ export interface PlaceControlsProps {
   count: number
   fieldId: string
   /**
+   * The group of the index under the bar, in its head's words ("East Blue ·
+   * 5 places"); `undefined` above the first. The folded row says it.
+   */
+  inView?: string | undefined
+  /**
    * Moves the page to new picks: `replace` for the query, which would leave
    * one history entry per letter otherwise, a new entry for any pick.
    */
@@ -56,6 +61,7 @@ type Pick = (next: Record<string, unknown>, replace?: boolean) => void
 export function PlaceControls({
   count,
   fieldId,
+  inView,
   onParams,
   open,
   params,
@@ -74,7 +80,7 @@ export function PlaceControls({
   return (
     <ControlBar
       searchLabel={t('places.searchOpen')}
-      summary={summaryOf(labels, params, sagas)}
+      summary={summaryOf(labels, { ...params, inView }, sagas)}
       toggleLabel={t('places.controls')}
     >
       <PlaceSearch
@@ -267,17 +273,28 @@ function counted(
   return rows
 }
 
-/** The folded bar's words: "New World · Island · “wano”". */
+/**
+ * The folded bar's words: "New World · Island · “wano”". With no sea
+ * picked, the group in view stands for "All seas" once the reader has
+ * scrolled into one: "East Blue · 5 places · Island". A picked sea is
+ * named as picked, so a pick never reads like a scroll position.
+ */
 function summaryOf(
   { allRegions, formOf, regionOf }: PlaceLabels,
-  { form, q = '', saga, sea }: PlaceParams,
+  {
+    form,
+    inView = allRegions,
+    q = '',
+    saga,
+    sea,
+  }: PlaceParams & { inView?: string | undefined },
   sagas: SagaPick[],
 ): string {
   const title = sagas.find((candidate) => candidate.number === saga)?.title
   const query = q.trim()
 
   return [
-    sea === undefined ? allRegions : regionOf(sea),
+    sea === undefined ? inView : regionOf(sea),
     ...(form === undefined ? [] : [formOf(form)]),
     ...(title === undefined ? [] : [title]),
     ...(query === '' ? [] : [`“${query}”`]),

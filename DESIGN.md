@@ -256,9 +256,9 @@ on one short word (`src/styles/global.css`, `src/routes/__root.tsx`).
 
 **The Mono Rule.** JetBrains Mono is the voice of data: numerals, counts and
 short uppercase labels (owner, 2026-11-17). It is never used for a sentence or a
-heading. The code uses it in 54 style lines in 31 files, and those uses stand.
-One is a sentence set in mono today, the map's hint; the places pass judges it.
-The trial strip's line was the other, and is in the body face since #1375.
+heading. The code uses it in 50 style lines in 29 files, and those uses stand.
+Two sentences were set in mono, the trial strip's line and the map's hint; they
+are in the body face since #1375 and #1380, and so are the map's zoom buttons.
 
 ## Layout
 
@@ -271,6 +271,8 @@ to #1383) fix them.
 
 The site bar is pinned at every width, at the height the `pin.bar` token gives,
 and a listing's controls and sticky heads pin under it (`src/styles/sticky.ts`).
+Where the control bar folds to one row (`CONTROLS.whole`), the places index's
+group heads scroll instead, and the row names the group in view (#1380).
 
 Breakpoints are `min-width` queries in rem, written where they are used; there
 is no named scale. Two exceptions: `max-width: 39.99rem` for the bottom sheets,

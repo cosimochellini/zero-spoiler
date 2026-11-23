@@ -7,7 +7,14 @@
  */
 import * as stylex from '@stylexjs/stylex'
 import { Link } from '@tanstack/react-router'
-import { type ReactElement, useId } from 'react'
+import {
+  type ReactElement,
+  type RefObject,
+  useCallback,
+  useId,
+  useRef,
+  useSyncExternalStore,
+} from 'react'
 
 import { CatalogueSection } from '~/components/CatalogueSection'
 import { Marked } from '~/components/CharacterCard'
@@ -31,7 +38,7 @@ const NUMBER_WIDTH = 2
 /** What the index draws, and the picks it reads and moves. */
 export interface PlaceIndexProps extends Omit<
   PlaceControlsProps,
-  'count' | 'fieldId'
+  'count' | 'fieldId' | 'inView'
 > {
   covered: CoveredRecord[]
   /**
@@ -55,54 +62,64 @@ export interface PlaceIndexProps extends Omit<
  * stops a sea still holds, and so where the next one begins.
  */
 export function PlaceIndex({
-  covered,
   mapAbove,
-  needle,
-  shown,
-  ...controls
+  ...props
 }: PlaceIndexProps): null | ReactElement {
+  if (props.open.length > 0) {
+    return <OpenIndex {...props} />
+  }
+
+  return mapAbove ? null : <FogLine count={props.covered.length} />
+}
+
+/** The index with a place reached: the bar, the groups, the fog line. */
+function OpenIndex({
+  covered,
+  needle,
+  onParams,
+  shown,
+  ...picks
+}: Omit<PlaceIndexProps, 'mapAbove'>): ReactElement {
+  const controls = { onParams, ...picks }
   const t = useT()
   const { regionOf } = usePlaceLabels(controls.words, controls.seas)
   const fieldId = useId()
-  const { onParams, open, params } = controls
-
-  if (open.length === 0) {
-    return mapAbove ? null : <FogLine count={covered.length} />
-  }
+  const indexRef = useRef<HTMLDivElement>(null)
+  const groups = groupsOf(controls.open, shown)
+  const inView = groups[useGroupInView(indexRef)]
 
   return (
-    <div {...stylex.props(styles.index)}>
+    <div
+      ref={indexRef}
+      {...stylex.props(styles.index)}
+    >
       <PlaceControls
         count={shown.length}
         fieldId={fieldId}
+        inView={
+          inView === undefined ? undefined : (
+            `${regionOf(inView.sea)} · ${countOf(t, inView.total)}`
+          )
+        }
         {...controls}
       />
 
-      {shown.length === 0 && isPicked(params) ?
-        <div {...stylex.props(styles.empty)}>
-          <p>{t('places.noneShown')}</p>
-          <Button
-            onClick={() => {
-              onParams({}, false)
-            }}
-          >
-            {t('places.showAll')}
-          </Button>
-        </div>
+      {shown.length === 0 && isPicked(controls.params) ?
+        <NoneShown onParams={onParams} />
       : null}
 
-      {groupsOf(open, shown).map(({ sea, stops, total }) => {
+      {groups.map(({ sea, stops, total }) => {
         return (
           <CatalogueSection
             key={sea}
             headingId={`${fieldId}-${sea}`}
             lede={countOf(t, total)}
-            sticky
+            sticky="wide"
             title={regionOf(sea)}
           >
             <Stops
               needle={needle}
-              open={open}
+              open={controls.open}
               stops={stops}
             />
           </CatalogueSection>
@@ -111,6 +128,74 @@ export function PlaceIndex({
 
       <FogLine count={covered.length} />
     </div>
+  )
+}
+
+/** The picks leave nothing: says so, with the button that clears them. */
+function NoneShown({
+  onParams,
+}: Pick<PlaceIndexProps, 'onParams'>): ReactElement {
+  const t = useT()
+
+  return (
+    <div {...stylex.props(styles.empty)}>
+      <p>{t('places.noneShown')}</p>
+      <Button
+        onClick={() => {
+          onParams({}, false)
+        }}
+      >
+        {t('places.showAll')}
+      </Button>
+    </div>
+  )
+}
+
+/**
+ * Which group of the index is under the pinned control bar: the last one
+ * whose top has scrolled above the bar's foot, by its place among the
+ * groups; -1 above the first, and on the server. On a phone the group heads
+ * do not pin, so the bar's folded row names the group instead (#1380).
+ */
+function useGroupInView(indexRef: RefObject<HTMLDivElement | null>): number {
+  // A turned phone or a resized window moves the groups with no scroll, and
+  // so does a list that changes height under a pick.
+  const subscribe = useCallback(
+    (onChange: () => void) => {
+      const resize =
+        typeof ResizeObserver === 'undefined' ? null : (
+          new ResizeObserver(onChange)
+        )
+      if (indexRef.current !== null) {
+        resize?.observe(indexRef.current)
+      }
+      globalThis.addEventListener('scroll', onChange, { passive: true })
+      globalThis.addEventListener('resize', onChange)
+
+      return () => {
+        resize?.disconnect()
+        globalThis.removeEventListener('scroll', onChange)
+        globalThis.removeEventListener('resize', onChange)
+      }
+    },
+    [indexRef],
+  )
+
+  return useSyncExternalStore(
+    subscribe,
+    () => {
+      const index = indexRef.current
+      // The control bar is the index's first child (`ControlBar`).
+      const foot = index?.firstElementChild?.getBoundingClientRect().bottom
+      if (index === null || foot === undefined) {
+        return -1
+      }
+
+      return [...index.querySelectorAll(':scope > section')].findLastIndex(
+        (section) => section.getBoundingClientRect().top < foot,
+      )
+    },
+    () => -1,
   )
 }
 

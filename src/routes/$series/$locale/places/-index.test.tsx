@@ -1,7 +1,7 @@
-import { screen, within } from '@testing-library/react'
+import { fireEvent, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import type { ReactElement } from 'react'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import type { SagaPick, StopView } from '~/lib/view/places'
 import type { CoveredRecord } from '~/lib/view/records'
@@ -81,6 +81,30 @@ function seas(): string[] {
   return screen
     .getAllByRole('heading', { level: 2 })
     .map((heading) => heading.textContent)
+}
+
+/** The folded row's toggle, which carries the bar's summary in its name. */
+function foldedToggle(): HTMLElement {
+  return screen.getByRole('button', { expanded: false })
+}
+
+/** Where the bar's foot is, scrolled: everything but a group starts at 0. */
+const BAR_FOOT = 156
+
+/**
+ * Lays the page out with each group's top where `tops` says, by the sea its
+ * heading id ends in, and everything else at 0, its foot at the bar's.
+ */
+function layOut(tops: Record<string, number>): void {
+  vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(
+    function (this: Element) {
+      const label = this.getAttribute('aria-labelledby') ?? ''
+      const sea = Object.keys(tops).find((key) => label.endsWith(`-${key}`))
+      const top = sea === undefined ? 0 : (tops[sea] ?? 0)
+
+      return DOMRect.fromRect({ y: top, height: BAR_FOOT })
+    },
+  )
 }
 
 describe('the places index', () => {
@@ -205,6 +229,38 @@ describe('the places index', () => {
     expect(
       screen.queryByRole('button', { name: 'Show all' }),
     ).not.toBeInTheDocument()
+  })
+
+  // On a phone the group heads scroll away, so the folded row says which
+  // sea is under the bar (#1380).
+  it('names the sea in view in the folded row', async () => {
+    await draw()
+
+    expect(foldedToggle()).toHaveAccessibleName(/All seas$/u)
+
+    // East Blue's group has scrolled above the bar's foot, the next has not.
+    layOut({ 'east-blue': -500, 'grand-line': 400 })
+    fireEvent.scroll(globalThis.window)
+
+    expect(foldedToggle()).toHaveAccessibleName(/East Blue · 2 places$/u)
+
+    // A turned phone moves the groups with no scroll.
+    layOut({ 'east-blue': -900, 'grand-line': -100 })
+    fireEvent(globalThis.window, new Event('resize'))
+
+    expect(foldedToggle()).toHaveAccessibleName(/Grand Line · 1 place$/u)
+
+    vi.restoreAllMocks()
+  })
+
+  it('names a picked sea as picked, wherever the reader is', async () => {
+    await draw('?sea=grand-line')
+    layOut({ 'grand-line': -500 })
+    fireEvent.scroll(globalThis.window)
+
+    expect(foldedToggle()).toHaveAccessibleName(/\. Grand Line$/u)
+
+    vi.restoreAllMocks()
   })
 
   it('is not there with nothing open', async () => {

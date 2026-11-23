@@ -10,8 +10,11 @@ export interface CatalogueSectionProps {
   /** The id the section is labelled by, put on the heading. */
   headingId: string
   lede: string
-  /** Pins the heading and its sentence under the control bar as it scrolls. */
-  sticky?: boolean
+  /**
+   * Pins the heading and its sentence under the control bar as it scrolls;
+   * `'wide'` only where the whole bar pins, never under a phone's folded row.
+   */
+  sticky?: 'wide' | boolean
   title: string
 }
 
@@ -38,7 +41,8 @@ export function CatalogueSection({
       <div
         {...stylex.props(
           styles.partHead,
-          sticky && [stickyStyles.bar, stickyStyles.underBar],
+          sticky !== false && [stickyStyles.bar, stickyStyles.underBar],
+          sticky === 'wide' && stickyStyles.wideOnly,
         )}
       >
         <h2

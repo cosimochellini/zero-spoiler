@@ -22,7 +22,7 @@ describe('FiledHere', () => {
     )
 
     expect(
-      screen.getByRole('heading', { level: 3, name: 'Found here' }),
+      screen.getByRole('heading', { level: 2, name: 'Found here' }),
     ).toBeVisible()
     expect(screen.getByRole('link', { name: 'Sanji' })).toBeVisible()
     expect(screen.getByText('Episode 24')).toBeVisible()

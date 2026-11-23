@@ -11,7 +11,16 @@ import {
 
 import { listen, watch } from '~/components/controlBarFold'
 import { Button } from '~/components/ui/Button'
-import { color, font, pin, rule, space, text, z } from '~/styles/tokens.stylex'
+import {
+  color,
+  CONTROLS,
+  font,
+  pin,
+  rule,
+  space,
+  text,
+  z,
+} from '~/styles/tokens.stylex'
 
 /** How far up the bar slides to leave only its folded row on screen. */
 const TUCK_PROPERTY = '--bar-tuck'
@@ -216,10 +225,7 @@ const styles = stylex.create({
   row: {
     gap: space.xs,
     alignItems: 'center',
-    display: {
-      'default': 'flex',
-      '@media (min-width: 40rem) and (min-height: 32rem)': 'none',
-    },
+    display: { default: 'flex', [CONTROLS.whole]: 'none' },
     paddingBlockStart: space.xs,
   },
   rowHidden: { visibility: 'hidden' },
