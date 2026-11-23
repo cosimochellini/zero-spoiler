@@ -27,7 +27,7 @@ tests, build and quality gates. Report failed or unexecuted checks. For changed
 content, run the relevant `verify:*` scripts in `package.json`; network checks
 are outside `check`. Regenerate counts with `docs:counts` and chronicle evidence
 with `docs:chronicle` when their inputs change. CI measures the client
-JavaScript every page loads: the build's entry and what it imports statically,
+JavaScript the entry loads: the build's entry and what it imports statically,
 from `dist/client/.vite/manifest.json`. A chunk reached only through a dynamic
 `import()` does not count. Growth over 2,048 bytes needs a standalone
 `client-budget: <reason>` in the PR body; leak checks remain blocking and scan

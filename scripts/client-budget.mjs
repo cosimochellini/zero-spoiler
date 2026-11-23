@@ -1,5 +1,5 @@
 /**
- * Compare the raw bytes of the client JavaScript every page loads with a
+ * Compare the raw bytes of the client entry's JavaScript with a
  * separately built PR base. A chunk loaded only through a dynamic `import()`
  * (a route's own code, a dialog's form, a QR encoder) is left out: it costs
  * only the reader who opens it. The archive gate still scans every chunk.
@@ -25,7 +25,7 @@ export function judgeClientBudget(base, head, body) {
 }
 
 /**
- * The scripts every page loads: each entry of the build's Vite manifest and
+ * The scripts the entry loads: each entry of the build's Vite manifest and
  * everything it imports statically, followed to the end. Dynamic imports are
  * not followed.
  * @param {Record<string, {file: string, imports?: string[], isEntry?: boolean}>} manifest The build's `.vite/manifest.json`.

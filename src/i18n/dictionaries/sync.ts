@@ -24,7 +24,7 @@ const syncEn = {
 
   'sync.title': 'Same bookmarks on this device',
   'sync.lede':
-    'This device and the one the link comes from will keep the same bookmarks. A bookmark you move on one is on the other at its next page load.',
+    'This device and the one the link comes from will keep the same bookmarks, this device’s own included. A bookmark you move on one is usually on the other at its next page load.',
   'sync.change': 'Your {series} bookmark becomes {point}.',
   'sync.add': 'Your {series} bookmark is set to {point}.',
   'sync.connect': 'Connect this device',
@@ -53,7 +53,7 @@ const syncIt: Record<SyncKey, string> = {
 
   'sync.title': 'Gli stessi segnalibri su questo dispositivo',
   'sync.lede':
-    'Questo dispositivo e quello da cui arriva il link avranno gli stessi segnalibri. Un segnalibro che sposti su uno si ritrova sull’altro al caricamento successivo di una pagina.',
+    'Questo dispositivo e quello da cui arriva il link avranno gli stessi segnalibri, compresi quelli di questo dispositivo. Un segnalibro che sposti su uno di solito si ritrova sull’altro al caricamento successivo di una pagina.',
   'sync.change': '{series}: il segnalibro diventa {point}.',
   'sync.add': '{series}: il segnalibro viene impostato su {point}.',
   'sync.connect': 'Collega questo dispositivo',
