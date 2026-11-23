@@ -81,7 +81,8 @@ export function FogFold({
   const nextRef = useRef<HTMLElement | null>(null)
   const listRef = useRef<HTMLUListElement>(null)
   useEffect(() => {
-    nextRef.current?.focus()
+    // It is drawn where the button was, so the window stays where it is.
+    nextRef.current?.focus({ preventScroll: true })
     nextRef.current = null
   }, [open])
   const folded = !open && count > FIRST_ROW.narrow
