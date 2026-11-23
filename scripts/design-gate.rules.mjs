@@ -465,7 +465,12 @@ export function clientBuilt(addresses) {
 /**
  * A page as the detector reads it from a file: its scripts gone, so nothing
  * hydrates or navigates away from `file://`, and a `<base>` to its address,
- * so its stylesheets and fonts load from the server that rendered it. With no
+ * so its stylesheets load from the server that rendered it. Its web fonts do
+ * not (CORS blocks them for a `file://` page), so the copy renders in the
+ * fallback faces; the font rule reads the declared `font-family`, which the
+ * stylesheet still sets. Only a `div` streamed segment and an unnamed
+ * `<details>` are handled: React's table and SVG segments and a named
+ * (exclusive) `<details>` group are not, and none is served today. With no
  * script, React never moves a streamed Suspense section (`<div hidden
  * id="S:0">`, numbered in hex) into its place, and the detector skips a
  * hidden element, so the section is shown where it was streamed, at the end
