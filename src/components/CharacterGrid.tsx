@@ -12,6 +12,7 @@ import {
 import { CatalogueSection } from '~/components/CatalogueSection'
 import { CharacterCard } from '~/components/CharacterCard'
 import { styles } from '~/components/CharacterGrid.styles'
+import { CharacterSearch } from '~/components/CharacterSearch'
 import {
   CharacterShelves,
   type Shelves,
@@ -21,7 +22,6 @@ import { FogBand, type FogTitles } from '~/components/FogBand'
 import { fogNote } from '~/components/fogWords'
 import { matchesIn } from '~/components/recordMatches'
 import {
-  SearchField,
   SearchNoMatch,
   SearchResults,
   SearchStatus as StatusLine,
@@ -92,7 +92,6 @@ export function CharacterGrid({
   onRetry,
   peek,
 }: CharacterGridProps): ReactElement {
-  const t = useT()
   const fieldId = useId()
   const [query, setQuery] = useState('')
   const trimmed = query.trim()
@@ -102,12 +101,9 @@ export function CharacterGrid({
 
   return (
     <div {...stylex.props(styles.book)}>
-      <SearchField
-        clearLabel={t('characters.searchClear')}
+      <CharacterSearch
         fieldId={fieldId}
-        label={t('characters.searchLabel')}
         onQuery={setQuery}
-        placeholder="Nami"
         query={query}
         status={
           <SearchStatus

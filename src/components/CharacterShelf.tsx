@@ -23,15 +23,21 @@ import type {
 } from '~/lib/view/records'
 import { stickyStyles } from '~/styles/sticky'
 
-/** One shelf: its head, then the open tiles and every covered one. */
+/**
+ * One shelf: its head, then the open tiles and every covered one; folded, the
+ * head alone.
+ */
 export function CharacterShelf({
   featured,
+  folded = false,
   section,
   headingId,
   needle,
   peek,
 }: {
   featured: Set<string>
+  /** A shelf under fog past the next one: its count and threshold, no tiles. */
+  folded?: boolean
   headingId: string
   needle: string
   peek: (handle: string) => Promise<CharacterView>
@@ -54,16 +60,21 @@ export function CharacterShelf({
         headingId={headingId}
         peek={peek}
       />
-      <ShelfTiles
-        covered={section.covered}
-        featured={featured}
-        needle={needle}
-        peek={peek}
-        shown={shown}
-      />
+      {folded ? null : (
+        <ShelfTiles
+          covered={section.covered}
+          featured={featured}
+          needle={needle}
+          peek={peek}
+          shown={shown}
+        />
+      )}
     </section>
   )
 }
+
+// Pinned under the listing's control bar, as the other listings' heads are.
+const SHELF_HEAD = [stickyStyles.bar, stickyStyles.underBar, styles.shelfHead]
 
 /** The arc's name and threshold; its name stays veiled until it opens. */
 function ShelfHead({
@@ -82,7 +93,7 @@ function ShelfHead({
 
   return (
     <>
-      <div {...stylex.props(stickyStyles.bar, styles.shelfHead)}>
+      <div {...stylex.props(SHELF_HEAD)}>
         <div {...stylex.props(styles.shelfName)}>
           <SpoilerVeil
             density="inline"

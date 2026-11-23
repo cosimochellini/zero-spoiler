@@ -23,6 +23,9 @@ has told about them so far.
   away behind one line and a Clear search button (`CharacterGrid.tsx`,
   `CharacterShelves.tsx`).
 - A covered shelf puts no arc id in the markup (`CharacterShelves.tsx`).
+- The first shelf with nothing open keeps its covered tiles; every shelf with
+  nothing open after it is its head alone: name, count and threshold. The
+  search pins in the listing's `ControlBar` (#1379).
 - With no story reached the chronicle draws nothing, not a heading over an
   empty list (`characters/-$id.chronicle.tsx`).
 - Relationships show only when one is reached; otherwise the section is

@@ -81,13 +81,13 @@ export const styles = stylex.create({
     maxWidth: '52ch',
   },
   // The log entry proper, after the facts: body size, a measure that holds
-  // three sentences without a wall.
+  // three sentences without a wall, about 75 characters a line (#1379).
   entry: {
     color: color.ink2,
     fontSize: text.base,
     lineHeight: leading.body,
     marginBlockStart: space.xs,
-    maxWidth: '60ch',
+    maxWidth: '52ch',
   },
 
   sectionTitle: {

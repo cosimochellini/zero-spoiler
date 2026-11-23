@@ -62,6 +62,34 @@ const alabasta: ShelfView = aShelf({
   covered: [robinCovered],
 })
 
+/** A covered arc past Alabasta: two covered, and any open ones given. */
+function laterArc(
+  episode: number,
+  open: SearchableCharacter[] = [],
+): ShelfView {
+  const covered = [coveredRecord(at(episode)), coveredRecord(at(episode))]
+
+  return aShelf({
+    arc: coveredSlot({ kind: 'arc', ...at(episode) }),
+    total: open.length + covered.length,
+    open,
+    covered,
+  })
+}
+
+/** A shelf whose heading is sent open, as Game of Thrones' seasons are. */
+function season(episode: number): ShelfView {
+  const name = `Season ${String(episode)}`
+  const heading = record({ id: name, kind: 'arc', name, ...at(episode) })
+
+  return aShelf({
+    arc: openSlot(heading),
+    total: 1,
+    open: [],
+    covered: [coveredRecord(at(episode))],
+  })
+}
+
 /** Characters, with the shelves already here rather than streaming. */
 function book({
   featuredCovered = [robinCovered],
@@ -209,6 +237,35 @@ describe('CharacterGrid', () => {
     expect(within(covered).queryByRole('link')).not.toBeInTheDocument()
     expect(covered.querySelectorAll('path')).toHaveLength(0)
     expect(within(covered).getByText('Episode 130')).toBeVisible()
+  })
+
+  it('draws a shelf under fog past the next one as its head alone', () => {
+    book({
+      shelves: [eastBlue, alabasta, laterArc(300), laterArc(400, [nami])],
+    })
+
+    const [next, past, cameo] = screen.getAllByRole('region', {
+      name: /Arc under fog/u,
+    })
+
+    // The next arc keeps its covered tile; the one past it says how many and
+    // from when, and draws none.
+    expect(within(next!).getByText('Episode 130')).toBeVisible()
+    expect(within(past!).getByText('2 characters')).toBeVisible()
+    expect(within(past!).getByText('From episode 300')).toBeVisible()
+    expect(within(past!).queryByRole('list')).not.toBeInTheDocument()
+    // A shelf with an open character is drawn whole, fog and all.
+    expect(within(cameo!).getByRole('link', { name: /Nami/u })).toBeVisible()
+    expect(within(cameo!).getAllByText('Episode 400')).toHaveLength(2)
+  })
+
+  it('starts the fog at the first shelf with nothing open when every heading is open', () => {
+    book({ shelves: [eastBlue, season(11), season(21)] })
+
+    expect(within(shelf(/Season 11/u)).getByText('Episode 11')).toBeVisible()
+    expect(
+      within(shelf(/Season 21/u)).queryByRole('list'),
+    ).not.toBeInTheDocument()
   })
 
   it('mounts a shelf when it nears the viewport and leaves distant shelves light', async () => {

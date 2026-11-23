@@ -130,6 +130,13 @@ function Shelves({
     )
   }
 
+  // The next arc under fog keeps its covered tiles. Every shelf after it
+  // with nothing open is drawn as its head alone, which already says how
+  // many it holds and from when (#1379): a phone was scrolling eighty screens
+  // of fog at an early bookmark. A shelf with an open character is always
+  // drawn whole, so search finds every one.
+  const next = nextUnderFog(sections)
+
   return (
     <>
       {sections.map((section, index) => {
@@ -148,6 +155,7 @@ function Shelves({
               : `fog-${section.arc.covered.handle}`
             }
             featured={featured}
+            folded={next !== -1 && index > next && section.open.length === 0}
             headingId={headingId}
             needle={needle}
             peek={peek}
@@ -157,6 +165,19 @@ function Shelves({
       })}
     </>
   )
+}
+
+/**
+ * Where the fog starts: the first shelf whose arc is covered, or, where every
+ * heading is sent open (Game of Thrones' seasons), the first with no open
+ * character. `-1` with neither.
+ */
+function nextUnderFog(sections: ShelfView[]): number {
+  const covered = sections.findIndex((section) => !section.arc.open)
+
+  return covered === -1 ?
+      sections.findIndex((section) => section.open.length === 0)
+    : covered
 }
 
 /**
