@@ -160,6 +160,9 @@ const relations = stylex.create({
     aspectRatio: '1',
     backgroundColor: color.paper,
     display: 'block',
+    // Out of the tab order, but a ring the browser draws on it is the focus
+    // colour, not its link blue.
+    outlineColor: color.focus,
   },
   body: { gap: space.xs, display: 'grid', minWidth: 0 },
   history: { gridColumnEnd: '-1', gridColumnStart: '1', minWidth: 0 },

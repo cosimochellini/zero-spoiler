@@ -71,7 +71,7 @@ function entryOf(
 /**
  * The frontmatter of DESIGN.md as one flat map, `colors.blackout-paper` to
  * its value. A line with no key continues the scalar above it, which is how
- * Prettier folds a long string.
+ * Prettier folds a long string; a comment line is skipped.
  */
 function frontmatter(): Record<string, string> {
   const [, yaml = ''] = read('../../DESIGN.md').split('---\n', 2)
@@ -79,7 +79,12 @@ function frontmatter(): Record<string, string> {
   const open: { indent: number; key: string }[] = []
   let last = ''
 
-  for (const line of yaml.split('\n')) {
+  // A comment, such as the `# prettier-ignore` over `typography`, is no entry.
+  const lines = yaml
+    .split('\n')
+    .filter((line) => !line.trimStart().startsWith('#'))
+
+  for (const line of lines) {
     const entry = entryOf(line)
     if (entry === null) {
       flat[last] = `${flat[last] ?? ''} ${line.trim()}`.trim()

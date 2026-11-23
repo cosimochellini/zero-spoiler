@@ -280,15 +280,16 @@ export const styles = stylex.create({
     padding: 0,
     borderRadius: radius.pill,
     borderStyle: 'none',
-    outline: {
-      'default': 'none',
-      ':focus-visible': `${rule.fine} solid ${color.focus}`,
-    },
     alignItems: 'center',
     backgroundColor: 'transparent',
     cursor: 'pointer',
     display: 'grid',
     justifyItems: 'center',
+    // A clear ring until the keyboard reaches it, not `none`: that leaves the
+    // ring the browser's link blue, a colour outside the tokens.
+    outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
+    outlineStyle: 'solid',
+    outlineWidth: rule.fine,
     pointerEvents: 'auto',
     height: '100%',
     width: '100%',

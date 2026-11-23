@@ -402,3 +402,58 @@ export function judge(findings, config) {
   )
   return { blocking, stale }
 }
+
+/**
+ * The rules that hold a page to the tokens in `DESIGN.md`. The detector loads
+ * that file only for a local file target, so they run on saved copies.
+ */
+const DESIGN_SYSTEM = 'design-system-'
+
+/**
+ * Of those, the ones the gate blocks on. The engine calls a colour outside the
+ * palette advisory; the gate does not. Radius and type size keep the engine's
+ * severity, advisory: they are in the report and never fail the gate.
+ */
+export const BLOCKING_TOKEN_RULES = new Set([
+  'design-system-font',
+  'design-system-color',
+])
+
+/**
+ * A page as the detector reads it from a file: its scripts gone, so nothing
+ * hydrates or navigates away from `file://`, and a `<base>` to its address,
+ * so its stylesheets and fonts load from the server that rendered it.
+ * @param {string} html The page as the server sent it.
+ * @param {string} address Where it was served.
+ * @returns {string} The copy to save.
+ */
+export function savedCopy(html, address) {
+  return html
+    .replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/giu, '')
+    .replace(/<head\b[^>]*>/iu, (head) => `${head}<base href="${address}">`)
+}
+
+/**
+ * The token findings of a scan of saved copies, each under the address its
+ * copy was saved from, so the report names the page and a waiver's glob reads
+ * the same address as on the address scan.
+ * @param {object[]} findings The raw findings of the saved copies.
+ * @param {Map<string, string>} addresses Each copy's file, as the detector
+ *   names it, to its page's address.
+ * @returns {object[]} The `design-system-*` findings, the blocking ones no
+ *   longer advisory.
+ * @throws {Error} When a finding names a file the gate did not save.
+ */
+export function tokenFindings(findings, addresses) {
+  return findings
+    .filter((finding) => finding.antipattern.startsWith(DESIGN_SYSTEM))
+    .map((finding) => {
+      const file = addresses.get(finding.file)
+      if (file === undefined) {
+        throw new Error(`a token finding names ${finding.file}, no saved page`)
+      }
+      return BLOCKING_TOKEN_RULES.has(finding.antipattern) ?
+          { ...finding, file, advisory: false }
+        : { ...finding, file }
+    })
+}
