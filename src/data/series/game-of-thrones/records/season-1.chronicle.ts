@@ -148,8 +148,8 @@ export const season1Chronicles = {
       [11, 86],
       { it: 'Nel Deserto Rosso', en: 'Into the Red Waste' },
       {
-        it: 'Daenerys guida verso est, nel Deserto Rosso, ciò che resta del suo khalasar, lontano dai rivali. [[jorah-mormont|Ser Jorah]] le dice che i suoi nemici la ucciderebbero per prenderle i draghi. I draghi rifiutano la carne cruda che lei offre loro, e la sua gente rischia di morire di fame. Quando muore la giumenta bianca che le aveva regalato Drogo, Daenerys ferma la marcia e manda i suoi tre cavalieri di sangue, [[rakharo|Rakharo]], [[aggo|Aggo]] e [[kovarro|Kovarro]], a esplorare in tre direzioni con gli ultimi cavalli.',
-        en: 'Daenerys leads what is left of her khalasar east into the Red Waste, away from her rivals. [[jorah-mormont|Ser Jorah]] tells her that her enemies would kill her and take her dragons. The dragons refuse the raw meat she offers them, and her people face starvation. When the white mare Drogo gave her dies, she halts the march and sends her three bloodriders, [[rakharo|Rakharo]], [[aggo|Aggo]] and [[kovarro|Kovarro]], to scout in three directions on the last horses.',
+        it: 'Daenerys guida verso est, nel Deserto Rosso, ciò che resta del suo khalasar, lontano dai rivali. [[jorah-mormont|Ser Jorah]] le dice che i suoi nemici la ucciderebbero per prenderle i draghi. I draghi rifiutano la carne cruda che lei offre loro, e la sua gente rischia di morire di fame. Quando muore la giumenta bianca che le aveva regalato Drogo, Daenerys ferma la marcia e manda [[rakharo|Rakharo]], [[aggo|Aggo]] e [[kovarro|Kovarro]] a esplorare in tre direzioni con gli ultimi cavalli.',
+        en: 'Daenerys leads what is left of her khalasar east into the Red Waste, away from her rivals. [[jorah-mormont|Ser Jorah]] tells her that her enemies would kill her and take her dragons. The dragons refuse the raw meat she offers them, and her people face starvation. When the white mare Drogo gave her dies, she halts the march and sends [[rakharo|Rakharo]], [[aggo|Aggo]] and [[kovarro|Kovarro]] to scout in three directions on the last horses.',
       },
     ),
     onScreen(
