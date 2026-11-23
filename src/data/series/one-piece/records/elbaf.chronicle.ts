@@ -50,8 +50,8 @@ export const elbafChronicles = {
       value: {
         title: { it: 'Gabin si arrende', en: 'Gaban gives up' },
         body: {
-          it: 'Dopo che Gabin ha tagliato in due [[shepherd-sommers|Sommers]], la ferita non si richiude, e lui corre a salvare i bambini. [[manmayer-gunko|Gunko]] sente [[colon|Collon]] chiamarlo padre e prende Collon in ostaggio, con la punta di una freccia contro il collo. Gabin dice al figlio di resistere ancora un secondo, ma con l’Haki dell’osservazione vede che non riuscirà a salvarlo in tempo. Lascia cadere le asce e si arrende. Gunko lo riempie di frecce, lo chiama debole e lo getta giù dai rami. Lui cade chiedendo scusa al figlio e a Erbaf.',
-          en: 'After Gaban cuts [[shepherd-sommers|Sommers]] in half, the wound will not close, and he runs on to save the children. [[manmayer-gunko|Gunko]] hears [[colon|Colon]] call him father and takes Colon hostage with an arrow held to his neck. Gaban tells his son to hold on for one more second, but his Observation Haki shows him that he cannot save Colon in time. He drops his axes and gives up. Gunko fills him with arrows, calls him weak and throws him off the branches. He falls apologising to his son and to Elbaph.',
+          it: 'Dopo che Gabin ha abbattuto [[shepherd-sommers|Sommers]] con un solo fendente, la ferita non si richiude, e lui corre a salvare i bambini. [[manmayer-gunko|Gunko]] sente [[colon|Collon]] chiamarlo padre e prende Collon in ostaggio, con la punta di una freccia contro il collo. Gabin dice al figlio di resistere ancora un secondo, ma con l’Haki dell’osservazione vede che non riuscirà a salvarlo in tempo. Lascia cadere le asce e si arrende. Gunko lo riempie di frecce, lo chiama debole e lo getta giù dai rami. Lui cade chiedendo scusa al figlio e a Erbaf.',
+          en: 'After Gaban cuts [[shepherd-sommers|Sommers]] down with a single slash, the wound will not close, and he runs on to save the children. [[manmayer-gunko|Gunko]] hears [[colon|Colon]] call him father and takes Colon hostage with an arrow held to his neck. Gaban tells his son to hold on for one more second, but his Observation Haki shows him that he cannot save Colon in time. He drops his axes and gives up. Gunko fills him with arrows, calls him weak and throws him off the branches. He falls apologising to his son and to Elbaph.',
         },
       },
     },
@@ -164,8 +164,8 @@ export const elbafChronicles = {
           en: 'Two knights instead of one',
         },
         body: {
-          it: 'Nel Regno del Sole, con la Scuola Walrus sotto di loro, [[figarland-shamrock|Shamrock]] e Gunko guardano i bambini. Gunko apre un cerchio magico per chiamare un rinforzo, ma ne escono due altri Cavalieri di Dio. Nessuno dei due si aspettava di essere evocato. Dicono a Shamrock che lo vogliono di nuovo a Marijoa, dove da un po’ tutto va a rotoli. Shamrock dà ai tre i loro ordini: prendere i bambini dei giganti e trasformare tutto in un gioco.',
-          en: 'In the Sun World, with the Walrus School below them, [[figarland-shamrock|Shamrock]] and Gunko look down at the children. Gunko opens a magic circle to call in a reinforcement, but two other Knights of God come through it. Neither expected to be summoned. They tell Shamrock that he is wanted back at Mary Geoise, where everything has been falling apart. Shamrock gives the three of them their orders: take the giants’ children and make a game of it.',
+          it: 'Nel Regno del Sole, [[figarland-shamrock|Shamrock]] e Gunko atterrano tra i rami dell’albero su un uccello fatto di frecce, che alcuni bambini della Scuola Walrus vedono passare. Gunko apre un cerchio magico per chiamare un rinforzo, ma ne escono due altri Cavalieri di Dio. Nessuno dei due si aspettava di essere evocato. Dicono a Shamrock che lo vogliono di nuovo a Marijoa, dove da un po’ tutto va a rotoli. Shamrock dà ai tre i loro ordini: prendere i bambini dei giganti e trasformare tutto in un gioco.',
+          en: 'In the Sun World, [[figarland-shamrock|Shamrock]] and Gunko land on the tree’s branches on a bird made of arrows, which some of the Walrus School children see fly past. Gunko opens a magic circle to call in a reinforcement, but two other Knights of God come through it. Neither expected to be summoned. They tell Shamrock that he is wanted back at Mary Geoise, where everything has been falling apart. Shamrock gives the three of them their orders: take the giants’ children and make a game of it.',
         },
       },
     },
@@ -195,10 +195,10 @@ export const elbafChronicles = {
       episode: 1179,
       chapter: 1149,
       value: {
-        title: { it: 'Imu prende il controllo', en: 'Imu takes control' },
+        title: { it: 'Im prende il controllo', en: 'Im takes control' },
         body: {
-          it: 'Gunko punta una freccia al collo di [[colon|Collon]] finché [[scopper-gaban|Gabin]] non si arrende, poi riempie Gabin di frecce e lui cade dal ramo. Il grido di Collon verso il padre le fa tornare in mente un ricordo legato a Brook. Capisce che il Soul King è [[brook|Brook]] e si dirige dritta verso di lui. Prima che lo raggiunga, Imu parla ai tre cavalieri e chiede perché reclutare i giganti richieda così tanto tempo. Poi Imu prende il controllo del corpo di Gunko e dice che mostrerà a Erbaf il potere di un dio.',
-          en: 'Gunko holds an arrow to [[colon|Colon]]’s neck until [[scopper-gaban|Gaban]] gives up, then fills Gaban with arrows and he falls off the branch. Colon’s cry for his father brings back a memory of Brook. She works out that the Soul King is [[brook|Brook]] and heads straight for him. Before she reaches him, Imu speaks to all three knights and asks why recruiting the giants is taking so long. Then Imu takes control of Gunko’s body and says they will show Elbaph the power of a god.',
+          it: 'Gunko punta una freccia al collo di [[colon|Collon]] finché [[scopper-gaban|Gabin]] non si arrende, poi riempie Gabin di frecce e lui cade dal ramo. Il grido di Collon verso il padre le fa tornare in mente un ricordo legato a Brook. Capisce che il Soul King è [[brook|Brook]] e si dirige dritta verso di lui. Prima che lo raggiunga, [[im|Im]] parla ai tre cavalieri e chiede perché reclutare i giganti richieda così tanto tempo. Poi Im prende il controllo del corpo di Gunko e dice che mostrerà a Erbaf il potere di un dio.',
+          en: 'Gunko holds an arrow to [[colon|Colon]]’s neck until [[scopper-gaban|Gaban]] gives up, then fills Gaban with arrows and he falls off the branch. Colon’s cry for his father brings back a memory of Brook. She works out that the Soul King is [[brook|Brook]] and heads straight for him. Before she reaches him, [[im|Im]] speaks to all three knights and asks why recruiting the giants is taking so long. Then Im takes control of Gunko’s body and says they will show Elbaph the power of a god.',
         },
       },
     },
@@ -244,10 +244,10 @@ export const elbafChronicles = {
       episode: 1179,
       chapter: 1149,
       value: {
-        title: { it: 'Tagliato in due', en: 'Cut in half' },
+        title: { it: 'Un solo fendente', en: 'A single slash' },
         body: {
-          it: '[[scopper-gaban|Gabin]] attacca Sommers, che lo ferma con una barriera di spine e indietreggia. Poi Sommers riempie il terreno di spine, senza un solo punto dove appoggiare i piedi, e Gabin lo taglia in due e corre a salvare i bambini, lasciandolo infilzato sulle sue stesse spine. La ferita non si richiude.',
-          en: '[[scopper-gaban|Gaban]] attacks Sommers, who stops him with a barrier of thorns and backs away. Then Sommers covers the ground in a field of thorns with no safe place to stand, and Gaban cuts him in half and runs on to save the children, leaving him impaled on his own thorns. The wound does not close.',
+          it: '[[scopper-gaban|Gabin]] attacca Sommers, che lo ferma con una barriera di spine e indietreggia. Poi Sommers riempie il terreno di spine, senza un solo punto dove appoggiare i piedi, e Gabin lo abbatte con un solo fendente e corre a salvare i bambini, lasciandolo infilzato sulle sue stesse spine. La ferita non si richiude.',
+          en: '[[scopper-gaban|Gaban]] attacks Sommers, who stops him with a barrier of thorns and backs away. Then Sommers covers the ground in a field of thorns with no safe place to stand, and Gaban cuts him down with a single slash and runs on to save the children, leaving him impaled on his own thorns. The wound does not close.',
         },
       },
     },

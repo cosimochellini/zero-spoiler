@@ -3578,7 +3578,7 @@ export const CHRONICLE_SOURCES = {
     },
     1179: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1179',
-      note: 'Episode_1179 short summary: Gaban easily defeats Sommers, Chopper follows to learn how he stopped Sommers from regenerating, Colon calls out and reveals the family tie, Gunko takes Colon hostage and Gaban forfeits after his Observation Haki foresees a horrible outcome, then Imu takes control of Gunko. Chapter_1149, which the episode adapts (pages 3 to 19), adds the cut that halves Sommers, the arrows and the fall off the branch with his apology. The presumed-dead status entry is pinned at the same episode and chapter. Chopper’s rescue is chapter 1151, which no episode adapts yet, so the story stops at the fall.',
+      note: 'Episode_1179 short summary: Gaban easily defeats Sommers, Chopper follows to learn how he stopped Sommers from regenerating, Colon calls out and reveals the family tie, Gunko takes Colon hostage and Gaban forfeits after his Observation Haki foresees a horrible outcome, then Im (spelled Imu on the wiki) takes control of Gunko. Chapter_1149, which the episode adapts (pages 3 to 19), adds the single slash that brings Sommers down (the Gaban and Sommers pages say it takes his head off at the shoulders, the chapter page says in half, so the story says only a single slash), the arrows and the fall off the branch with his apology. The presumed-dead status entry is pinned at the same episode and chapter. Chopper’s rescue is chapter 1151, which no episode adapts yet, so the story stops at the fall.',
     },
     1178: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1178',
@@ -3624,7 +3624,7 @@ export const CHRONICLE_SOURCES = {
     },
     1170: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1170',
-      note: 'Episode_1170 short summary: Shamrock and Gunko summon two other Knights of God, who tell Shamrock he is to head back to Mary Geoise, and he assigns the three to kidnap the giants’ children. Chapter_1140 (pages 2 to 17) adds the magic circle that brings two instead of one, neither expecting it, the recall because things have been falling apart since the Levely, and Shamrock’s suggestion to make a game of it. The story gives no destination for the children: it is first stated in chapter 1143. The two knights are left unnamed: their records open at chapter 1143.',
+      note: 'Episode_1170 short summary: Shamrock and Gunko summon two other Knights of God, who tell Shamrock he is to head back to Mary Geoise, and he assigns the three to kidnap the giants’ children. Chapter_1140 (pages 2 to 17) adds the arrow-made bird the two land on, which some children notice, the magic circle that brings two instead of one, neither expecting it, the recall because things have been falling apart since the Levely, and Shamrock’s suggestion to make a game of it. The story gives no destination for the children: it is first stated in chapter 1143. The two knights are left unnamed: their records open at chapter 1143.',
     },
     1176: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1176',
@@ -3632,7 +3632,7 @@ export const CHRONICLE_SOURCES = {
     },
     1179: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1179',
-      note: 'Episode_1179 short summary ends on Gunko recognising Brook just as Imu takes control of her to end the operation quickly. Chapter_1149 (pages 3 to 19): she holds an arrow to Colon’s neck until Gaban gives up and fills Gaban with arrows as he falls off the branch, Colon’s cry stirs a memory of Brook, she works out that the Soul King is Brook, Imu speaks to all three knights to ask what is taking so long, then takes control of her body and says they will show a god’s power. The Holy Land burning is in the chapter only and is left out.',
+      note: 'Episode_1179 short summary ends on Gunko recognising Brook just as Im takes control of her to end the operation quickly. Chapter_1149 (pages 3 to 19): she holds an arrow to Colon’s neck until Gaban gives up and fills Gaban with arrows as he falls off the branch, Colon’s cry stirs a memory of Brook, she works out that the Soul King is Brook, Im speaks to all three knights to ask what is taking so long, then takes control of her body and says they will show a god’s power. The Holy Land burning is in the chapter only and is left out.',
     },
     1177: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1177',
@@ -3654,7 +3654,7 @@ export const CHRONICLE_SOURCES = {
     },
     1179: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1179',
-      note: 'Episode_1179 short summary: Gaban easily defeats Sommers, and Chopper follows him to learn how he stopped Sommers from regenerating. Chapter_1149 (pages 3 to 19): Sommers blocks Gaban with a barrier of thorns and backs away, fills the ground with thorns, and Gaban cuts him in half and runs on to the children, leaving him impaled on his own thorns; his immortality keeps him alive. Gaban’s own story at 1179 tells the same fight from his side.',
+      note: 'Episode_1179 short summary: Gaban easily defeats Sommers, and Chopper follows him to learn how he stopped Sommers from regenerating. Chapter_1149 (pages 3 to 19): Sommers blocks Gaban with a barrier of thorns and backs away, fills the ground with thorns, and Gaban cuts him down with a single slash and runs on to the children, leaving him impaled on his own thorns (the Gaban and Sommers pages say decapitated at the shoulders, the chapter page says in half); his immortality keeps him alive. Gaban’s own story at 1179 tells the same fight from his side.',
     },
   },
   'brogy': {
@@ -3664,7 +3664,7 @@ export const CHRONICLE_SOURCES = {
     },
     1180: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1180',
-      note: 'Episode_1180 short summary: Imu, noting that Elbaph has had no king since Harald died, decides to turn Dorry and Brogy into demons, the nearby members of the Giant Warrior Pirates are transformed too and all are ordered to kill Jarul, who refuses to flee. Chapter_1150 (pages 2 to 15): the magic circle, Brogy grabbing Gunko’s body, Imu shooting off his hand, the magic circle binding him to a pact that trades lifespan for immortality and strength, and Imu speaking through Gunko’s body. The Brogy page says his left hand; the chapter says hand, and the story follows the chapter. Dorry has no chronicle of his own: his transformation is told in this story.',
+      note: 'Episode_1180 short summary: Im (spelled Imu on the wiki), noting that Elbaph has had no king since Harald died, decides to turn Dorry and Brogy into demons, the nearby members of the Giant Warrior Pirates are transformed too and all are ordered to kill Jarul, who refuses to flee. Chapter_1150 (pages 2 to 15): the magic circle, Brogy grabbing Gunko’s body, Im shooting off his hand, the magic circle binding him to a pact that trades lifespan for immortality and strength, and Im speaking through Gunko’s body. The Brogy page says his left hand; the chapter says hand, and the story follows the chapter. Dorry has no chronicle of his own: his transformation is told in this story.',
     },
   },
 }
