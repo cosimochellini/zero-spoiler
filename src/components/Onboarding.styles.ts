@@ -176,6 +176,15 @@ export const styles = stylex.create({
   },
   units: { gap: space.xs, display: 'flex', flexWrap: 'wrap' },
   unitOn: { borderColor: color.accent, color: color.accent },
+  // Room for the pinned dial, so a control or a card below it reached with
+  // the keyboard scrolls into view below the dial rather than under it, on
+  // top of the room the document's scroll padding keeps under the bar for a
+  // sticky head. On one line the pinned dial is at most 2.25rem taller than
+  // that room; wrapped, with the range on a line of its own and the button
+  // on another, about 7rem.
+  clearsDial: {
+    scrollMarginBlockStart: { [ONE_ROW]: space.xl, default: '8rem' },
+  },
   actions: { gap: space.sm, display: 'flex', flexWrap: 'wrap' },
   primary: {
     borderColor: {
@@ -263,19 +272,12 @@ export const styles = stylex.create({
     height: '100%',
     minWidth: 0,
   },
-  // Room for the pinned dial, so a card reached with the keyboard scrolls
-  // into view below it rather than under it, on top of the room the
-  // document's scroll padding keeps under the bar for a sticky head. On one
-  // line the pinned dial is at most 2.25rem taller than that room; wrapped,
-  // with the range on a line of its own and the button on another, about
-  // 7rem.
   cardLink: {
     borderColor: { 'default': color.rule2, ':hover': color.accent },
     outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
     outlineOffset: space.xs3,
     outlineStyle: 'solid',
     outlineWidth: rule.fine,
-    scrollMarginBlockStart: { [ONE_ROW]: space.xl, default: '8rem' },
     transform: { 'default': 'none', ':active': 'translateY(1px)' },
     transitionDuration: dur.micro,
     transitionProperty: 'border-color, transform',

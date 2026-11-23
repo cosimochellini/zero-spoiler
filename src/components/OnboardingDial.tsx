@@ -220,6 +220,7 @@ export function OnboardingControls({
           onClick={() => {
             setFurther(!further)
           }}
+          sx={styles.clearsDial}
         >
           {t('onboarding.further')}
         </Button>
@@ -227,6 +228,7 @@ export function OnboardingControls({
           onClick={() => {
             save({ mode: 'episode', episode: 1 })
           }}
+          sx={styles.clearsDial}
         >
           {t('onboarding.start')}
         </Button>
@@ -267,7 +269,7 @@ function UnitSwitch({
                 onPoint(switchUnit(point, chapterAt))
               }
             }}
-            sx={point.mode === mode && styles.unitOn}
+            sx={[styles.clearsDial, point.mode === mode && styles.unitOn]}
           >
             {t(modeKey(mode, series))}
           </Button>
@@ -316,7 +318,7 @@ function FurtherForm({
       />
       <Button
         disabled={!canSave}
-        sx={styles.primary}
+        sx={[styles.primary, styles.clearsDial]}
         type="submit"
       >
         {t('dialog.save')}
