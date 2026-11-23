@@ -1,13 +1,16 @@
 import { describe, expect, it } from 'vitest'
 
+import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import { season2 } from '~/data/series/game-of-thrones/records/season-2'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
+import { recordIn, sidesOf } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage } from './pages.server'
+import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
@@ -122,6 +125,52 @@ const CHANGES: {
     value: 'alive',
   },
   { id: 'osha', episode: 16, chapter: 124, value: 'alive' },
+  // Later deaths filed with their drawings' stages (#1473, #1238).
+  { id: 'balon-greyjoy', episode: 52, chapter: 189, value: 'deceased' },
+  {
+    id: 'little-walder-frey',
+    episode: 50,
+    chapter: 323,
+    source: 'chapter',
+    value: 'deceased',
+  },
+  // The show alone; the books' last chapter only orders them.
+  ...(
+    [
+      ['dagmer', 30],
+      ['jojen-reed', 40],
+      ['ramsay-snow', 59],
+    ] as const
+  ).map(([id, episode]) => ({
+    id,
+    episode,
+    chapter: 344,
+    source: 'episode' as const,
+    value: 'deceased' as const,
+  })),
+]
+
+/**
+ * Every stage the Winterfell and Iron Islands cast's drawings take after
+ * their first, pinned in both media (#1473): the deaths. Theon's banner is
+ * a season-1 record's stage, in `thronesSeason1.test.ts`. `source` for a
+ * stage one medium alone tells; `stage` counts a record's stages from 0.
+ */
+const STAGES: {
+  chapter: number
+  episode: number
+  id: keyof typeof DRAWINGS
+  source?: Unit
+  stage?: number
+}[] = [
+  { id: 'balon-greyjoy', episode: 52, chapter: 189 },
+  { id: 'dagmer', episode: 30, chapter: 344, source: 'episode' },
+  { id: 'black-lorren', episode: 20, chapter: 143, source: 'chapter' },
+  { id: 'farlen', episode: 18, chapter: 130, source: 'chapter' },
+  { id: 'jojen-reed', episode: 40, chapter: 344, source: 'episode' },
+  { id: 'ramsay-snow', episode: 59, chapter: 344, source: 'episode' },
+  { id: 'little-walder-frey', episode: 50, chapter: 323, source: 'chapter' },
+  { id: 'donella-hornwood', episode: 15, chapter: 109, source: 'chapter' },
 ]
 
 /**
@@ -329,4 +378,64 @@ describe.each(
     expect(shown(pin - 1)).toBe(false)
     expect(shown(pin)).toBe(true)
   })
+})
+
+describe.each(
+  STAGES.flatMap((stage) =>
+    sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
+  ),
+)(
+  '$id is redrawn by $unit at $episode/$chapter',
+  ({ id, episode, chapter, source, unit, stage: index = 0, ...side }) => {
+    const stages = REDRAWINGS[id] ?? []
+    const stage = stages[index]
+    // The drawing just before is the last earlier stage this unit reads:
+    // a stage the other medium alone tells is never shown here.
+    const previous =
+      stages
+        .slice(0, index)
+        .findLast(
+          (earlier) =>
+            (recordIn(archive, id).source ?? earlier.source ?? unit) === unit,
+        )?.value ?? DRAWINGS[id]
+
+    it('at its pin, not one before', () => {
+      const owner = recordIn(archive, id)
+
+      expect(stage?.episode).toBe(episode)
+      expect(stage?.chapter).toBe(chapter)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? stage?.source).toBe(source)
+      expect(
+        drawingOf(owner, readerFor(archive, side.before, 'en')).strokes,
+      ).toStrictEqual(previous)
+      expect(
+        drawingOf(owner, readerFor(archive, side.reached, 'en')).strokes,
+      ).toStrictEqual(stage?.value)
+    })
+  },
+)
+
+describe('the Winterfell stages one medium alone tells', () => {
+  // A reader of the other medium who has reached its end still sees the
+  // first drawing. The books-only records never open to that reader at
+  // all, which the record tests above hold.
+  it.each(
+    STAGES.filter(
+      ({ id, source }) =>
+        source !== undefined && recordIn(archive, id).source === undefined,
+    ),
+  )(
+    'never redraws $id for a reader of the other medium',
+    ({ id, stage: index = 0, source = 'episode' }) => {
+      const drawn = drawingOf(
+        recordIn(archive, id),
+        otherAtTheEnd(source),
+      ).strokes
+
+      expect(REDRAWINGS[id]?.[index]?.source).toBe(source)
+      expect(drawn).not.toStrictEqual(REDRAWINGS[id]?.[index]?.value)
+      expect(drawn).toStrictEqual(DRAWINGS[id])
+    },
+  )
 })

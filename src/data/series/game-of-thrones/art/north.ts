@@ -5,7 +5,7 @@ import {
   softened,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, ellipse, SEA, shadow } from '~/lib/svg/primitives'
+import { circle, dots, ellipse, SEA, shadow } from '~/lib/svg/primitives'
 
 /**
  * A riding saddle in 3/4, its seat, pommel and flap, the stirrup hanging
@@ -401,7 +401,184 @@ const TRIDENT: Stroke[] = [
   ...SEA,
 ]
 
-/** The first season's northern household and bannermen (#1054), keyed by record id. */
+/**
+ * Farlen: a hound sitting side on with no face, its ears hanging, its
+ * collar in the accent and the leash trailing from it, for the
+ * kennelmaster whose red bitch begs for bones at the harvest feast in Bran
+ * III (chapter 95); he opens in Theon IV (chapter 124). The book's alone.
+ * The far side of its haunch is hatched.
+ */
+const HOUND: Stroke[] = [
+  {
+    d: 'M28 74 L48 64 Q56 60 62 62 Q70 66 70 76 Q76 92 88 100 Q110 100 118 116 Q124 132 118 150 H106',
+  },
+  {
+    d: 'M28 74 Q28 80 36 80 L56 82 Q60 94 66 102 Q66 122 62 150 H72 Q74 128 78 110',
+  },
+  { d: 'M58 64 Q66 70 64 86 Q58 80 54 66', role: 'soft' },
+  { d: 'M90 112 Q92 132 88 150 H98 Q100 130 102 116', role: 'soft' },
+  { d: 'M118 140 Q134 136 142 118', role: 'soft' },
+  { d: 'M62 88 Q72 94 78 88 L76 98 Q70 102 64 98 Z', role: 'accent' },
+  { d: 'M78 92 Q100 98 122 92 L130 90', role: 'soft' },
+  { d: 'M102 108 l6 -4 M108 120 l6 -4 M110 132 l6 -4', role: 'ambient' },
+  shadow(88, 154, 40),
+]
+
+/**
+ * Meera Reed: a strung longbow stood on its tip, the string in the accent,
+ * with a quiver of arrows leaning on it. The show arms her with a bow from
+ * "Dark Wings, Dark Words" (episode 22); the book's frog spear and net, in
+ * Bran III (chapter 95), are the book's alone, so the show's bow is drawn.
+ */
+const BOW: Stroke[] = [
+  { d: 'M60 24 Q92 40 92 88 Q92 136 60 152' },
+  { d: 'M60 24 L58 152', role: 'accent' },
+  { d: 'M90 82 h6 M90 92 h6', role: 'soft' },
+  { d: 'M96 120 L110 152 H128 L122 116 Z' },
+  { d: 'M100 116 L94 72 M106 116 L104 70 M114 116 L116 72' },
+  {
+    d: 'M90 68 l4 6 l4 -6 M100 66 l4 6 l4 -6 M112 68 l4 6 l4 -6',
+    role: 'soft',
+  },
+  { d: 'M114 130 l5 -3 M116 142 l5 -3', role: 'ambient' },
+  shadow(88, 156, 40),
+]
+
+/**
+ * Jojen Reed: the lizard-lion of House Reed curled in a ring to bite its
+ * own tail, as its sigil has it, with no eye; it is black, so its flanks
+ * are hatched, and the crest of spines down its back is the accent. Jojen
+ * carries nothing of his own: in Bran III (chapter 95) he comes unarmed,
+ * dressed in green, and the show's Jojen of "Dark Wings, Dark Words"
+ * (episode 22) brings only his dreams.
+ */
+const LIZARD_LION: Stroke[] = [
+  {
+    d: 'M80 40 Q122 42 124 86 Q124 128 82 132 Q40 130 38 92 Q38 70 52 56 L42 48 L58 50 Q66 44 72 50 L76 58 Q60 64 56 82 Q52 112 82 116 Q108 114 108 86 Q106 58 80 56',
+  },
+  { d: 'M56 60 Q62 52 70 56', role: 'soft' },
+  {
+    d: 'M86 38 l4 -6 l4 7 M100 42 l6 -5 l2 8 M112 50 l7 -3 l-1 8 M120 64 l7 -1 l-3 8 M124 80 l7 1 l-4 7',
+    role: 'accent',
+  },
+  { d: 'M108 104 l6 6 M96 114 l2 8 M58 108 l-6 6 M50 90 l-8 2', role: 'soft' },
+  {
+    d: 'M88 46 l5 -2 M104 54 l5 -3 M112 70 l5 -2 M114 88 l5 0 M108 108 l5 2 M70 124 l2 5 M48 106 l-4 3',
+    role: 'ambient',
+  },
+  shadow(80, 154, 40),
+]
+
+/** The chopping block the knife stands in, its top in 3/4 with a ring. */
+const KNIFE_BLOCK: Stroke[] = [
+  { d: ellipse(80, 124, 38, 10) },
+  { d: 'M42 124 V144 Q80 160 118 144 V124' },
+  { d: ellipse(80, 124, 24, 6), role: 'soft' },
+  { d: 'M104 138 l6 -3 M106 148 l6 -3 M96 146 l5 -3', role: 'ambient' },
+]
+
+/**
+ * A flaying knife, its short blade curved in the belly, the edge in the
+ * accent, a plain guard and a riveted grip hatched on its far side.
+ */
+const FLAYING_KNIFE: Stroke[] = [
+  { d: 'M72 126 L70 76 Q92 84 92 126' },
+  { d: 'M70 76 Q86 92 86 126', role: 'accent' },
+  { d: 'M64 72 H88 V77 H64 Z' },
+  { d: 'M70 72 V42 Q76 36 82 42 V72' },
+  {
+    d: dots([
+      [76, 50],
+      [76, 62],
+    ]),
+    role: 'soft',
+  },
+  { d: 'M78 46 l3 -2 M78 56 l3 -2 M78 66 l3 -2', role: 'ambient' },
+]
+
+/**
+ * Big and Little Walder Frey's helm, the same silver plate for the two
+ * cousins: a closed helm with its eye slit, a rib down the crown, the
+ * breaths at the face and the far side hatched. Each takes his own crest
+ * on top, as Bran sees them ride at the harvest feast in Bran II (chapter
+ * 90).
+ */
+const WALDER_HELM: Stroke[] = [
+  { d: 'M50 142 L46 92 Q46 58 80 54 Q114 58 114 92 L110 142 Z' },
+  { d: 'M50 96 H74 M86 96 H110', role: 'soft' },
+  { d: 'M48 100 H76 M84 100 H112' },
+  { d: 'M80 56 V100 M48 118 Q80 126 112 118', role: 'soft' },
+  {
+    d: dots([
+      [62, 128],
+      [70, 130],
+      [90, 130],
+      [98, 128],
+    ]),
+    role: 'soft',
+  },
+  {
+    d: 'M98 66 l8 -5 M104 80 l8 -5 M104 112 l8 -5 M104 126 l8 -5',
+    role: 'ambient',
+  },
+]
+
+/** Big Walder's crest, shaped like a castle (Bran II, chapter 90). */
+const CASTLE_CREST: Stroke = {
+  d: 'M66 54 V30 H72 V36 H78 V30 H84 V36 H90 V30 H96 V54 M76 54 V46 Q80 42 84 46 V54',
+  role: 'accent',
+}
+
+/** Little Walder's crest of silk streamers (Bran II, chapter 90). */
+const STREAMERS: Stroke = {
+  d: 'M80 54 Q84 34 96 28 M80 54 Q98 40 118 44 Q126 48 130 60 M80 54 Q100 50 112 64 Q118 74 116 86',
+  role: 'accent',
+}
+
+/**
+ * Wyman Manderly: the litter he is carried in, too fat to sit a horse, as
+ * he comes to Winterfell for the harvest feast in Bran II (chapter 90): its
+ * roof, the window with its curtains drawn back in the accent, its feet
+ * and the two long poles. The show brings him in "The Winds of Winter"
+ * (episode 60) with nothing of his own, so the book's litter is drawn.
+ */
+const LITTER: Stroke[] = [
+  { d: 'M44 64 L80 50 L116 64 M40 66 H120' },
+  { d: 'M46 66 V128 H114 V66' },
+  { d: 'M60 76 Q58 98 62 116 H98 Q102 98 100 76 Z' },
+  { d: 'M60 76 Q70 92 66 116 M100 76 Q90 92 94 116', role: 'accent' },
+  { d: 'M14 112 H146 M14 120 H146' },
+  { d: 'M54 128 L50 150 M106 128 L110 150', role: 'soft' },
+  { d: 'M104 72 l6 -4 M106 92 l6 -4 M106 108 l6 -4', role: 'ambient' },
+  shadow(80, 154, 46),
+]
+
+/**
+ * Donella Hornwood: a shield with the moose's head of House Hornwood, seen
+ * from the front as the arms have it, hatched because it is black, its
+ * broad antlers in the accent. She comes to Winterfell a widow for the
+ * harvest feast in Bran II (chapter 90) and carries nothing of her own, so
+ * the arms of her house stand in. The book's alone. The shield and its
+ * arms, without the shadow, are its first six strokes, which her death
+ * lays down.
+ */
+const MOOSE_SHIELD: Stroke[] = [
+  { d: 'M36 36 H124 V80 Q124 126 80 150 Q36 126 36 80 Z' },
+  { d: 'M42 42 H118 V80 Q118 120 80 142', role: 'soft' },
+  { d: 'M74 76 Q80 72 86 76 L88 102 Q86 116 80 120 Q74 116 72 102 Z' },
+  {
+    d: 'M74 78 Q60 80 54 70 L48 72 L50 62 L44 60 L52 52 L58 58 L62 50 L66 60 Q70 70 76 72 M86 78 Q100 80 106 70 L112 72 L110 62 L116 60 L108 52 L102 58 L98 50 L94 60 Q90 70 84 72',
+    role: 'accent',
+  },
+  { d: 'M76 92 l6 -3 M76 102 l6 -3 M77 110 l5 -3', role: 'ambient' },
+  { d: 'M112 96 l6 -4 M106 116 l6 -4', role: 'ambient' },
+  shadow(80, 156, 30),
+]
+
+/**
+ * The first season's northern household and bannermen (#1054), and the
+ * second stage's Winterfell and northern cast (#1473), keyed by record id.
+ */
 export const NORTH_DRAWINGS = {
   'hullen': HULLEN,
   'jeyne-poole': SHEARS,
@@ -420,6 +597,18 @@ export const NORTH_DRAWINGS = {
   'maege-mormont': BEAR_WALKING,
   'dacey-mormont': MORNINGSTAR,
   'wendel-manderly': TRIDENT,
+  'farlen': HOUND,
+  'meera-reed': BOW,
+  'jojen-reed': LIZARD_LION,
+  // Ramsay Snow: the flaying knife stood point down in a chopping block,
+  // for the Bastard of Bolton of "The Lion and the Rose" (episode 32) and
+  // of Theon VI (chapter 140), whose house flays its enemies. The blade's
+  // edge is the accent.
+  'ramsay-snow': [...KNIFE_BLOCK, ...FLAYING_KNIFE, shadow(80, 156, 40)],
+  'big-walder-frey': [...WALDER_HELM, CASTLE_CREST, shadow(80, 146, 40)],
+  'little-walder-frey': [...WALDER_HELM, STREAMERS, shadow(80, 146, 40)],
+  'wyman-manderly': LITTER,
+  'donella-hornwood': MOOSE_SHIELD,
 } satisfies Drawings
 
 /** The northern household drawn again later in the story. */
@@ -725,6 +914,125 @@ export const northRedrawn: Redrawings = {
       value: [
         ...moved(TRIDENT.slice(0, 5), 'translate(0 52) rotate(-80 80 90)'),
         ...SEA,
+      ],
+    },
+  ],
+  'farlen': [
+    // The hound gone and its collar lying empty on the ground, the leash
+    // still tied to the kennel post: Theon beheads him in Theon V (chapter
+    // 130). The book's alone; episode 18 only orders it. How he dies is not
+    // drawn.
+    {
+      episode: 18,
+      chapter: 130,
+      value: [
+        { d: 'M118 150 V70 M124 150 V72' },
+        { d: circle(121, 80, 4), role: 'soft' },
+        { d: 'M121 84 Q112 120 96 134 Q86 140 78 138' },
+        {
+          d: `${ellipse(56, 140, 22, 7)} ${ellipse(56, 136, 22, 7)}`,
+          role: 'accent',
+        },
+        {
+          d: dots([
+            [42, 136],
+            [56, 133],
+            [70, 136],
+          ]),
+          role: 'soft',
+        },
+        { d: 'M120 100 l4 -3 M120 116 l4 -3 M120 132 l4 -3', role: 'ambient' },
+        { d: 'M10 154 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'jojen-reed': [
+    // The lizard-lion uncurled and lying long on the ground: he dies at the
+    // mouth of the Three-Eyed Raven's cave in "The Children" (episode 40).
+    // The books leave him alive, so the stage is the show's alone and
+    // chapter 344 only orders it. How he dies is not drawn.
+    {
+      episode: 40,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        {
+          d: 'M16 140 L28 132 Q36 128 44 132 L54 132 Q90 124 120 132 Q138 138 150 150',
+        },
+        { d: 'M16 140 Q22 146 40 144 Q80 150 124 146 Q138 146 150 150' },
+        {
+          d: 'M60 132 l4 -6 l4 6 M76 129 l5 -6 l3 7 M92 128 l5 -6 l3 7 M108 129 l5 -6 l2 7',
+          role: 'accent',
+        },
+        {
+          d: 'M48 146 l-4 8 M70 148 l-2 8 M98 148 l2 8 M118 146 l4 8',
+          role: 'soft',
+        },
+        { d: 'M66 138 l4 -2 M84 136 l4 -2 M102 137 l4 -2', role: 'ambient' },
+        { d: 'M8 158 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'ramsay-snow': [
+    // The knife out of its block and lying on the ground: he dies at
+    // Winterfell after the battle, in "Battle of the Bastards" (episode
+    // 59). The books leave him alive, so the stage is the show's alone and
+    // chapter 344 only orders it. How he dies is not drawn.
+    {
+      episode: 59,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(FLAYING_KNIFE, 'translate(0 66) rotate(90 80 80)'),
+        { d: 'M8 158 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'little-walder-frey': [
+    // The helm on its side in the snow: his frozen
+    // body is found in a snowbank at Winterfell in Theon I of A Dance with
+    // Dragons (chapter 323). The book's alone; episode 50, where the
+    // show's Winterfell reaches the same days, only orders it. How he dies
+    // is not drawn.
+    {
+      episode: 50,
+      chapter: 323,
+      value: [
+        ...moved(
+          [...WALDER_HELM, STREAMERS],
+          'translate(0 18) rotate(-90 80 98)',
+        ),
+        {
+          d: 'M8 150 Q40 142 80 148 Q120 154 152 146',
+          role: 'ambient',
+          dashed: true,
+        },
+        {
+          d: dots([
+            [24, 40],
+            [130, 30],
+            [140, 80],
+            [30, 96],
+            [100, 20],
+          ]),
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
+  'donella-hornwood': [
+    // The shield fallen flat on the ground: Ser Rodrik comes back with a
+    // prisoner held for her murder, in Bran V (chapter 109). The book's alone; episode 15 only orders it. How she
+    // dies is not drawn.
+    {
+      episode: 15,
+      chapter: 109,
+      value: [
+        ...moved(
+          MOOSE_SHIELD.slice(0, 6),
+          'translate(0 150) scale(1 0.34) translate(0 -150)',
+        ),
+        { d: 'M10 156 H150', role: 'ambient', dashed: true },
       ],
     },
   ],

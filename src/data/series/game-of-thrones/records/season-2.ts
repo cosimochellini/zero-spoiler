@@ -263,7 +263,8 @@ export const season2: ThronesSaga = {
         it: 'La moglie di Stannis Baratheon.',
         en: 'Stannis Baratheon’s wife.',
       },
-      visual: { art: 'selyse-baratheon', tint: 'wine' },
+      // Not wine: her drawing's accent, the jars, is not red (#1471).
+      visual: { art: 'selyse-baratheon', tint: 'azure' },
     },
     // Books: the prologue (site chapter 74), Pylos tells Cressen that
     // Princess Shireen wants to see the white raven. The show first has her
@@ -359,7 +360,7 @@ export const season2: ThronesSaga = {
         it: 'Un giovane cavaliere di Casa Lannister, prigioniero dell’esercito di Robb Stark.',
         en: 'A young knight of House Lannister, a prisoner of Robb Stark’s army.',
       },
-      visual: { art: 'alton-lannister', tint: 'red' },
+      visual: { art: 'alton-lannister', tint: 'ivory' },
     },
     // Books only: Catelyn I (site chapter 81), Robb sends him from Riverrun
     // to King's Landing with his peace terms. The show gives his part to
@@ -410,7 +411,7 @@ export const season2: ThronesSaga = {
         it: 'Un cavaliere al servizio dei Lannister che guida una banda di predoni nelle Terre dei Fiumi.',
         en: 'A knight in the Lannisters’ service who leads a band of raiders in the riverlands.',
       },
-      visual: { art: 'amory-lorch', tint: 'vermilion' },
+      visual: { art: 'amory-lorch', tint: 'violet' },
     },
     // Show: "Garden of Bones" (episode 14), Arya adds him to the names she
     // recites each night. Books: Arya VI (site chapter 100), a man called
@@ -457,7 +458,7 @@ export const season2: ThronesSaga = {
         it: 'Un vecchio uomo d’arme di Gregor Clegane, curvo nelle spalle.',
         en: 'An old, stoop-shouldered man-at-arms of Gregor Clegane’s.',
       },
-      visual: { art: 'chiswyck', tint: 'wine' },
+      visual: { art: 'chiswyck', tint: 'yellow' },
     },
     // Books only: Arya VII (site chapter 104), where he is the understeward
     // of the Wailing Tower who works Arya at Harrenhal. Arya VI (100) names
@@ -599,7 +600,8 @@ export const season2: ThronesSaga = {
         it: 'Uno degli uomini di ferro che prendono Grande Inverno con Theon Greyjoy.',
         en: 'One of the ironborn who take Winterfell with Theon Greyjoy.',
       },
-      visual: { art: 'black-lorren', tint: 'wine' },
+      // Not wine: his drawing's accent, the axe's grip, is not red (#1473).
+      visual: { art: 'black-lorren', tint: 'yellow' },
     },
     // Books: Theon II (site chapter 98), Theon takes him as his squire in a
     // bargain for a horse. The show has a Wex at the speech of episode 20,
@@ -680,7 +682,9 @@ export const season2: ThronesSaga = {
         it: 'Il figlio bastardo di Roose Bolton.',
         en: 'Roose Bolton’s bastard son.',
       },
-      visual: { art: 'ramsay-snow', tint: 'vermilion' },
+      // Not vermilion: his drawing's accent, the knife's edge, is not red;
+      // pink is House Bolton's colour (#1473).
+      visual: { art: 'ramsay-snow', tint: 'pink' },
     },
     // Books: Bran II (site chapter 90), he and Little Walder are at Bran's
     // audiences; Bran I (78) only tells of their coming. The show has no
@@ -1020,7 +1024,7 @@ export const season2: ThronesSaga = {
         it: 'Una donna dell’Ombra che raggiunge Daenerys da Qarth.',
         en: 'A woman of the Shadow who comes to Daenerys from Qarth.',
       },
-      visual: { art: 'quaithe', tint: 'wine' },
+      visual: { art: 'quaithe', tint: 'sand' },
     },
     // Show only: in "The Ghost of Harrenhal" (episode 15) Jorah tells
     // Daenerys what her riders say at Xaro's feast, "Malakho says the statue
@@ -1116,7 +1120,7 @@ export const season2: ThronesSaga = {
         it: 'Un vecchio dei Sette Regni, scudiero di Belwas il Forte.',
         en: 'An old man from the Seven Kingdoms, squire to Strong Belwas.',
       },
-      visual: { art: 'arstan-whitebeard', tint: 'ivory' },
+      visual: { art: 'arstan-whitebeard', tint: 'ocher' },
     },
     // The places a scene of the stage is set in (#1469), each at its first
     // scene in each medium, as `game-of-thrones-season-2-places.md` lists
@@ -1687,7 +1691,13 @@ export const season2: ThronesSaga = {
         it: 'Da Roccia del Drago rivendica il Trono di Spade come erede di Robert, ma pochi lord si schierano con lui. La sacerdotessa rossa Melisandre ha la sua fiducia.',
         en: 'From Dragonstone he claims the Iron Throne as Robert’s heir, but few lords stand with him. The red priestess Melisandre has his ear.',
       },
-      status: [{ episode: 11, chapter: 74, value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 74, value: 'alive' },
+        // The show alone: Brienne executes him after the battle at
+        // Winterfell in "Mother's Mercy" (episode 50); the books leave him
+        // alive, so chapter 344, the last, only orders it (#1471, #1238).
+        { episode: 50, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 11,
@@ -1702,7 +1712,13 @@ export const season2: ThronesSaga = {
         it: 'Viene dall’oriente e serve il Signore della Luce. A Roccia del Drago si è guadagnata un posto accanto a Stannis Baratheon.',
         en: 'She comes from the east and serves the Lord of Light. On Dragonstone she has won a place at Stannis Baratheon’s side.',
       },
-      status: [{ episode: 11, chapter: 74, value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 74, value: 'alive' },
+        // The show alone: she takes off her choker outside Winterfell and
+        // dies before dawn in "The Long Night" (episode 70); the books leave
+        // her alive, so chapter 344 only orders it (#1471).
+        { episode: 70, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 11,
@@ -1816,7 +1832,13 @@ export const season2: ThronesSaga = {
         it: 'È una fervente seguace del Signore della Luce.',
         en: 'She is a fervent follower of the Lord of Light.',
       },
-      status: [{ episode: 25, chapter: 74, value: 'alive' }],
+      status: [
+        { episode: 25, chapter: 74, value: 'alive' },
+        // The show alone: she hangs herself in "Mother's Mercy" (episode
+        // 50); the books leave her alive, so chapter 344 only orders it
+        // (#1471).
+        { episode: 50, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 25,
@@ -1834,7 +1856,13 @@ export const season2: ThronesSaga = {
         it: 'Il morbo grigio le ha segnato il viso quando era piccola. Vive a Roccia del Drago.',
         en: 'Greyscale scarred her face when she was small. She lives on Dragonstone.',
       },
-      status: [{ episode: 25, chapter: 74, value: 'alive' }],
+      status: [
+        { episode: 25, chapter: 74, value: 'alive' },
+        // The show alone: she is burned as an offering in "The Dance of
+        // Dragons" (episode 49); the books leave her alive, so chapter 344
+        // only orders it (#1471).
+        { episode: 49, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 25,
@@ -1920,7 +1948,13 @@ export const season2: ThronesSaga = {
         it: 'È la giovane moglie di re Renly, e il loro matrimonio lega Casa Tyrell alla sua causa. Renly la presenta a Catelyn Stark.',
         en: 'She is King Renly’s young wife, and their marriage binds House Tyrell to his cause. Renly introduces her to Catelyn Stark.',
       },
-      status: [{ episode: 13, chapter: 96, value: 'alive' }],
+      status: [
+        { episode: 13, chapter: 96, value: 'alive' },
+        // The show alone: she dies in the wildfire under the Great Sept in
+        // "The Winds of Winter" (episode 60); the books leave her alive, so
+        // chapter 344 only orders it (#1471).
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 13,
@@ -1935,7 +1969,13 @@ export const season2: ThronesSaga = {
         it: 'È il padre di Margaery e Loras Tyrell, e ha portato la sua casata dalla parte di re Joffrey.',
         en: 'He is the father of Margaery and Loras Tyrell, and has brought his house over to King Joffrey’s side.',
       },
-      status: [{ episode: 32, chapter: 139, value: 'alive' }],
+      status: [
+        { episode: 32, chapter: 139, value: 'alive' },
+        // The show alone: he dies in the wildfire under the Great Sept in
+        // "The Winds of Winter" (episode 60); the books leave him alive, so
+        // chapter 344 only orders it (#1471).
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 32,
@@ -1999,6 +2039,10 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 11, chapter: 81, source: 'chapter', value: 'captured' },
+        // Outlaws ambush him on the road to King's Landing and he dies, in
+        // Jaime III of A Storm of Swords (chapter 165); episode 22, where the
+        // show's Jaime and Brienne are taken on that road, only orders it.
+        { episode: 22, chapter: 165, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -2032,6 +2076,9 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 16, chapter: 100, source: 'episode', value: 'alive' },
+        // She is killed at the Red Wedding in "The Rains of Castamere"
+        // (episode 29); chapter 195, the books' wedding, only orders it.
+        { episode: 29, chapter: 195, source: 'episode', value: 'deceased' },
       ],
       // She tends Lannister and Stark wounded alike and tells Robb she takes
       // no side in his war ("Garden of Bones").
@@ -2096,7 +2143,13 @@ export const season2: ThronesSaga = {
         it: 'È tra i soldati che catturano Arya Stark e i suoi compagni, e tiene per sé Ago, la spada di lei. Arya aggiunge il suo nome a quelli che ripete ogni notte.',
         en: 'He is one of the soldiers who capture Arya Stark and her companions, and he keeps her sword, Needle, for himself. Arya adds his name to the ones she repeats each night.',
       },
-      status: [{ episode: 14, chapter: 100, value: 'alive' }],
+      status: [
+        { episode: 14, chapter: 100, value: 'alive' },
+        // He dies at the inn at the crossroads, where Arya takes Needle back,
+        // in "Two Swords" (episode 31) and in Arya XIII of A Storm of Swords
+        // (chapter 218).
+        { episode: 31, chapter: 218, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 14,
@@ -2121,6 +2174,9 @@ export const season2: ThronesSaga = {
         // opens dead. The books keep him alive past the stage; chapter 104
         // only orders it.
         { episode: 15, chapter: 104, source: 'episode', value: 'deceased' },
+        // Arya kills him at the inn at the crossroads, in Arya XIII of A Storm
+        // of Swords (chapter 218); episode 31, the show's inn, only orders it.
+        { episode: 31, chapter: 218, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -2189,6 +2245,10 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 15, chapter: 104, source: 'chapter', value: 'alive' },
+        // Gregor Clegane takes Harrenhal back and kills him, as Raff and
+        // Shitmouth tell Jaime in Jaime III of A Feast for Crows (chapter
+        // 253); episode 38 only orders it.
+        { episode: 38, chapter: 253, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -2241,7 +2301,13 @@ export const season2: ThronesSaga = {
         it: 'Theon torna a Pyke con l’offerta di alleanza di Robb Stark. Balon la rifiuta: vuole prendersi la corona con la forza.',
         en: 'Theon comes home to Pyke with Robb Stark’s offer of an alliance. Balon refuses it: he means to take his crown by force.',
       },
-      status: [{ episode: 12, chapter: 85, value: 'alive' }],
+      status: [
+        { episode: 12, chapter: 85, value: 'alive' },
+        // He falls from a bridge at Pyke in "Home" (episode 52); the books
+        // first tell it in Catelyn V of A Storm of Swords (chapter 189),
+        // filed now with his drawing's stage (#1473, #1238).
+        { episode: 52, chapter: 189, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 12,
@@ -2305,7 +2371,13 @@ export const season2: ThronesSaga = {
         it: 'Theon gli spiega il suo piano: colpire Piazza di Torrhen per attirare lontano dal castello i difensori di Grande Inverno.',
         en: 'Theon tells him his plan: to strike at Torrhen’s Square and draw the defenders of Winterfell away from the castle.',
       },
-      status: [{ episode: 15, chapter: 111, value: 'alive' }],
+      status: [
+        { episode: 15, chapter: 111, value: 'alive' },
+        // The show alone: Balon and Yara read that the Boltons flayed him
+        // and his men, in "Mhysa" (episode 30). The books leave him
+        // holding Torrhen's Square, so chapter 344 only orders it (#1473).
+        { episode: 30, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 15,
@@ -2398,7 +2470,13 @@ export const season2: ThronesSaga = {
         it: 'Con la sorella Meera raggiunge Bran Stark e resta al suo fianco.',
         en: 'With his sister Meera he comes to Bran Stark and stays at his side.',
       },
-      status: [{ episode: 22, chapter: 95, value: 'alive' }],
+      status: [
+        { episode: 22, chapter: 95, value: 'alive' },
+        // The show alone: he dies at the mouth of the Three-Eyed Raven's
+        // cave in "The Children" (episode 40). The books leave him alive,
+        // so chapter 344 only orders it (#1473).
+        { episode: 40, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 22,
@@ -2413,7 +2491,13 @@ export const season2: ThronesSaga = {
         it: 'I suoi uomini tolgono Grande Inverno agli uomini di ferro e la danno alle fiamme.',
         en: 'His men take Winterfell from the ironborn and set it on fire.',
       },
-      status: [{ episode: 32, chapter: 140, value: 'alive' }],
+      status: [
+        { episode: 32, chapter: 140, value: 'alive' },
+        // The show alone: he dies at Winterfell at the end of "Battle of
+        // the Bastards" (episode 59). The books leave him alive, so chapter
+        // 344 only orders it (#1473).
+        { episode: 59, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 32,
@@ -2444,7 +2528,14 @@ export const season2: ThronesSaga = {
         it: 'Lui e il cugino Big Walder sono pupilli a Grande Inverno, secondo il patto tra Robb Stark e lord Walder Frey.',
         en: 'He and his cousin Big Walder are wards at Winterfell, under the pact between Robb Stark and Lord Walder Frey.',
       },
-      status: [{ episode: 13, chapter: 90, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 13, chapter: 90, source: 'chapter', value: 'alive' },
+        // His frozen body is found in a snowbank at Winterfell, in Theon I
+        // of A Dance with Dragons (chapter 323), filed now with his
+        // drawing's stage (#1473). Episode 50, where the show's Winterfell
+        // reaches the same days, only orders it.
+        { episode: 50, chapter: 323, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 13,
@@ -2503,7 +2594,13 @@ export const season2: ThronesSaga = {
         it: 'Sostiene che il lord comandante dovrebbe restare a Castello Nero e lasciare a lui la spedizione oltre la Barriera. Jeor Mormont rifiuta.',
         en: 'He argues that the Lord Commander should stay at Castle Black and leave the ranging beyond the Wall to him. Jeor Mormont refuses.',
       },
-      status: [{ episode: 11, chapter: 80, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 80, source: 'chapter', value: 'alive' },
+        // He dies at the Fist of the First Men, told by Samwell II of A
+        // Storm of Swords (chapter 177), the safe later chapter, filed with
+        // his drawing's stage (#1474). Episode 21 only orders it.
+        { episode: 21, chapter: 177, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 11,
@@ -2522,7 +2619,13 @@ export const season2: ThronesSaga = {
         it: 'Cavalca con i Guardiani della notte oltre la Barriera, insieme a Jon Snow e ai suoi amici, e accoglie ogni disagio con una battuta cupa.',
         en: 'He rides beyond the Wall with the Night’s Watch, alongside Jon Snow and his friends, and meets every hardship with a gloomy joke.',
       },
-      status: [{ episode: 20, chapter: 87, value: 'alive' }],
+      status: [
+        { episode: 20, chapter: 87, value: 'alive' },
+        // The show's alone: he dies at Winterfell in "The Long Night"
+        // (episode 70), filed with his drawing's stage (#1474). The books
+        // keep him alive, so chapter 344, their last, orders it.
+        { episode: 70, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 20,
@@ -2578,7 +2681,13 @@ export const season2: ThronesSaga = {
         it: 'La spedizione del lord comandante si ferma al suo fortino. Ha sposato le sue stesse figlie, e dice ai Guardiani della notte che i bruti si radunano attorno a Mance Rayder.',
         en: 'The Lord Commander’s ranging stops at his keep. He has married his own daughters, and he tells the Night’s Watch that the wildlings are gathering around Mance Rayder.',
       },
-      status: [{ episode: 11, chapter: 97, value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 97, value: 'alive' },
+        // The mutineers kill him in his hall: "And Now His Watch Is Ended"
+        // (episode 24) and Samwell II of A Storm of Swords (chapter 177),
+        // filed with his drawing's stage (#1474).
+        { episode: 24, chapter: 177, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 11, chapter: 97, value: { it: 'Bruti', en: 'Wildlings' } },
       ],
@@ -2655,7 +2764,13 @@ export const season2: ThronesSaga = {
         it: 'È tra le vedette dei bruti sulle montagne. I ranger di Qhorin il Monco uccidono i suoi compagni, e Jon Snow resta solo con lei per giustiziarla, ma non ci riesce.',
         en: 'She is one of the wildling lookouts in the mountains. Qhorin Halfhand’s rangers kill her companions, and Jon Snow is left to put her to death, but he cannot do it.',
       },
-      status: [{ episode: 16, chapter: 125, value: 'alive' }],
+      status: [
+        { episode: 16, chapter: 125, value: 'alive' },
+        // She dies in the attack on Castle Black: "The Watchers on the
+        // Wall" (episode 39) and Jon VII of A Storm of Swords (chapter
+        // 199), filed with her drawing's stage (#1474).
+        { episode: 39, chapter: 199, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 16, chapter: 125, value: { it: 'Bruti', en: 'Wildlings' } },
       ],
@@ -2719,6 +2834,10 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 18, chapter: 142, source: 'chapter', value: 'alive' },
+        // Burned at Castle Black under a glamour as Mance Rayder, which
+        // Melisandre I of A Dance with Dragons (chapter 303) tells, filed
+        // with his drawing's stage (#1474). Episode 41 only orders it.
+        { episode: 41, chapter: 303, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -2874,7 +2993,14 @@ export const season2: ThronesSaga = {
         it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
         en: 'He is one of the three dragons hatched from Daenerys’s eggs in Drogo’s funeral pyre.',
       },
-      status: [{ episode: 41, chapter: 86, value: 'alive' }],
+      status: [
+        { episode: 41, chapter: 86, value: 'alive' },
+        // Shot down into the sea off Dragonstone in "The Last of the
+        // Starks" (episode 71), the show's alone, filed with his drawing's
+        // stage (#1475). The books leave him alive; chapter 344, their
+        // last, orders it.
+        { episode: 71, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 41,
@@ -2890,7 +3016,14 @@ export const season2: ThronesSaga = {
         it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
         en: 'He is one of the three dragons hatched from Daenerys’s eggs in Drogo’s funeral pyre.',
       },
-      status: [{ episode: 41, chapter: 86, value: 'alive' }],
+      status: [
+        { episode: 41, chapter: 86, value: 'alive' },
+        // Killed by the Night King beyond the Wall in "Beyond the Wall"
+        // (episode 66), the show's alone, and raised as a wight the same
+        // night, filed with his drawing's stages (#1475). The books leave
+        // him alive; chapter 344, their last, orders it.
+        { episode: 66, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 41,

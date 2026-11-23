@@ -164,11 +164,16 @@ const styles = stylex.create({
   },
   native: {
     inset: 0,
+    // Never seen (the frame draws the ring), yet the browser's grey border and
+    // black outline are colours outside the tokens: this border and the
+    // outline below take the frame's.
+    borderColor: color.rule2,
     appearance: 'none',
     cursor: 'pointer',
     // At least 16px, or iOS zooms the page in when the picker opens.
     fontSize: text.base,
     opacity: 0,
+    outlineColor: color.focus,
     position: 'absolute',
   },
 })

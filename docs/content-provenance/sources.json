@@ -37352,6 +37352,96 @@
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27382",
       "contentSha256": "06426de4e855f7a4dde9d1890a46a65e2a09070a8d27c9e9e07b0137b16ea0a6"
     },
+    "got-en-Lightbringer-668655.json": {
+      "locale": "en",
+      "title": "Lightbringer",
+      "revision": 668655,
+      "revisionDate": "2024-03-08T13:12:06Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lightbringer",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=668655",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=668655",
+      "contentSha256": "d14f2a1199bc19fdefa01d705e5731363bbafada93336979c62087a8822b70cd"
+    },
+    "got-en-Crown-685409.json": {
+      "locale": "en",
+      "title": "Crown",
+      "revision": 685409,
+      "revisionDate": "2024-06-13T11:46:16Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Crown",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=685409",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=685409",
+      "contentSha256": "c31843a2e286204b098abf940f62787cdc1acf4fed9cbe3aa229e979147062a3"
+    },
+    "got-en-Kingsguard-748510.json": {
+      "locale": "en",
+      "title": "Kingsguard",
+      "revision": 748510,
+      "revisionDate": "2026-08-29T17:54:22Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Kingsguard",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748510",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748510",
+      "contentSha256": "f510d2c08224f47259bca463e4c3f4c50a86dfc85e114600a87f45445806c0fd"
+    },
+    "got-en-Salt_Throne-722818.json": {
+      "locale": "en",
+      "title": "Salt Throne",
+      "revision": 722818,
+      "revisionDate": "2026-01-12T04:14:53Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Salt_Throne",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722818",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722818",
+      "contentSha256": "fb720a99433d03be91cc8c8000e0f1fd88998c956c17a7bbdd5de2e17d2aa37b"
+    },
+    "got-en-House_Hornwood-735786.json": {
+      "locale": "en",
+      "title": "House Hornwood",
+      "revision": 735786,
+      "revisionDate": "2026-05-14T14:31:52Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_Hornwood",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735786",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735786",
+      "contentSha256": "07b37eee18392e37102510e929dc9a70d60ac959fdd2b76549088db1bb1ae0ac"
+    },
+    "got-en-House_Manderly-743407.json": {
+      "locale": "en",
+      "title": "House Manderly",
+      "revision": 743407,
+      "revisionDate": "2026-07-13T05:41:15Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_Manderly",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=743407",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=743407",
+      "contentSha256": "356d6f76971803ad6cde4b9027efbf7082745bdc232410c727d621f9d01e97d7"
+    },
+    "got-en-House_Reed-735394.json": {
+      "locale": "en",
+      "title": "House Reed",
+      "revision": 735394,
+      "revisionDate": "2026-05-12T10:19:00Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_Reed",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735394",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735394",
+      "contentSha256": "46f41c9113b44017b1424e908605b6040d02770116c51dba24e90cc19f9d1166"
+    },
+    "got-en-Jon_Snow-749120.json": {
+      "locale": "en",
+      "title": "Jon Snow",
+      "revision": 749120,
+      "revisionDate": "2026-10-20T10:46:55Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Jon_Snow",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749120",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749120",
+      "contentSha256": "e55003c955b99358ee2661322961a3d5be9b59ccbafea1c61614b05f11b66876"
+    },
+    "iaf-en-A_Storm_of_Swords-26385.json": {
+      "locale": "en",
+      "title": "A Storm of Swords",
+      "revision": 26385,
+      "revisionDate": "2023-06-03T01:50:28Z",
+      "url": "https://iceandfire.fandom.com/wiki/A_Storm_of_Swords",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26385",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26385",
+      "contentSha256": "0ee7943be8b92216bf63ff450dcda4200b548fd9af5a94423cf7551848d4b6b6"
+    },
     "got-en-The_North_Remembers/Appearances-722994.json": {
       "locale": "en",
       "title": "The North Remembers/Appearances",

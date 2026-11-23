@@ -7,12 +7,16 @@ import { describe, expect, it } from 'vitest'
 import {
   bookmarkedPageProblem,
   bookmarkProblem,
+  CANARY,
+  clientBuilt,
   detectorProblem,
   judge,
   pageProblem,
   pagesOf,
   PERMANENT,
   refusedWaivers,
+  savedCopy,
+  tokenFindings,
 } from './design-gate.rules.mjs'
 
 const SAMPLES = {
@@ -449,5 +453,141 @@ describe('the waivers of the design gate', () => {
     ]) {
       expect(on(page).stale, page).toHaveLength(1)
     }
+  })
+})
+
+describe('the scan of saved copies against DESIGN.md', () => {
+  it('saves a page with no script and a base at its address', () => {
+    const html =
+      '<html lang="en"><head><meta charset="utf-8">'
+      + '<script type="module" src="/a.js"></script></head>'
+      + '<body><h1>Hi</h1><SCRIPT>go()</SCRIPT></body></html>'
+
+    expect(savedCopy(html, 'http://127.0.0.1:4000/saga/en?ep=40')).toBe(
+      '<html lang="en"><head><base href="http://127.0.0.1:4000/saga/en?ep=40">'
+        + '<meta charset="utf-8"></head><body><h1>Hi</h1></body></html>',
+    )
+  })
+
+  it('shows a streamed Suspense section and what a closed details holds', () => {
+    const html =
+      '<html><head></head><body><main><!--$?--><template id="B:0"></template>'
+      + '<!--/$--><div hidden>a closed drawer</div>'
+      + '<details class="x1"><p>folded</p></details>'
+      + '<DETAILS><summary>Also</summary></DETAILS></main>'
+      + '<div hidden id="S:0"><section><h2 id="relationships">Ties</h2></section></div>'
+      + '<div hidden id="S:a"><p>the eleventh</p></div>'
+      + '<script>$RC("B:0","S:0")</script></body></html>'
+
+    expect(savedCopy(html, 'http://127.0.0.1:4000/saga/en')).toBe(
+      '<html><head><base href="http://127.0.0.1:4000/saga/en"></head><body><main>'
+        + '<!--$?--><template id="B:0"></template><!--/$-->'
+        + '<div hidden>a closed drawer</div>'
+        + '<details open class="x1"><p>folded</p></details>'
+        + '<details open><summary>Also</summary></DETAILS></main>'
+        + '<div id="S:0"><section><h2 id="relationships">Ties</h2></section></div>'
+        + '<div id="S:a"><p>the eleventh</p></div></body></html>',
+    )
+  })
+
+  it('names the index pages whose main content the browser builds', () => {
+    const origin = 'http://127.0.0.1:4000'
+    const built = [
+      '/saga/en/characters?ep=40',
+      '/saga/en/places?ep=40',
+      '/saga/en/fruits?ep=40',
+      '/saga/en/abilities?ep=40',
+      '/saga/en/fruits',
+    ]
+    const served = [
+      '/saga/en?ep=40',
+      '/saga/en/characters/hero?ep=40',
+      '/saga/en/places/harbour?ep=40',
+      '/saga/en/fruits/gum-gum-fruit?ep=40',
+      '/saga/en/abilities/battle-waltz?ep=40',
+      '/saga/en/filler?ep=40',
+      '/saga/en/ranks?ep=40',
+      '/en/legal',
+    ]
+
+    expect(
+      clientBuilt([...served, ...built].map((page) => origin + page)),
+    ).toStrictEqual(built.map((page) => origin + page))
+  })
+
+  const address = 'http://127.0.0.1:4000/en/legal'
+  const copy = 'file:///tmp/design-gate-x/0.html'
+  const canaryFile = 'file:///tmp/design-gate-x/1.html'
+  const files = new Map([
+    [copy, address],
+    [canaryFile, CANARY],
+  ])
+  const canary = [
+    ['design-system-font', 'georgia'],
+    ['design-system-color', 'rgb(255, 106, 0)'],
+    ['design-system-color', 'rgb(255, 106, 0)'],
+  ].map(([antipattern, ignoreValue]) => ({
+    antipattern,
+    file: canaryFile,
+    ignoreValue,
+  }))
+
+  const raw = (antipattern, advisory) => ({
+    antipattern,
+    file: copy,
+    ...(advisory && { advisory }),
+  })
+
+  it('keeps the token rules under page addresses, font and colour blocking', () => {
+    expect(
+      tokenFindings(
+        [
+          raw('design-system-font'),
+          raw('design-system-color', true),
+          raw('design-system-radius', true),
+          raw('design-system-font-size', true),
+          raw('ai-color-palette'),
+          raw('line-length'),
+          ...canary,
+          { antipattern: 'low-contrast', file: canaryFile },
+        ],
+        files,
+      ),
+    ).toStrictEqual([
+      { antipattern: 'design-system-font', file: address, advisory: false },
+      { antipattern: 'design-system-color', file: address, advisory: false },
+      { antipattern: 'design-system-radius', file: address, advisory: true },
+      { antipattern: 'design-system-font-size', file: address, advisory: true },
+    ])
+  })
+
+  it('refuses a scan whose canary did not give exactly its font and colour', () => {
+    const stray = {
+      antipattern: 'design-system-radius',
+      file: canaryFile,
+      ignoreValue: '7px',
+    }
+    for (const findings of [
+      [],
+      canary.slice(1),
+      canary.slice(0, 1),
+      [...canary, stray],
+    ]) {
+      expect(() => tokenFindings(findings, files)).toThrow(
+        'the engine did not read DESIGN.md',
+      )
+    }
+  })
+
+  it('refuses a finding on a file it did not save', () => {
+    expect(() =>
+      tokenFindings(
+        [
+          ...canary,
+          { antipattern: 'design-system-font', file: 'file:///elsewhere.html' },
+        ],
+        files,
+      ),
+    ).toThrow('file:///elsewhere.html')
   })
 })

@@ -120,14 +120,57 @@ const NEEDLE_HILT: Stroke[] = [
   { d: 'M70 56 Q84 52 98 56 M70 56 Q84 60 98 56', role: 'soft' },
 ]
 
-/** Needle whole, hilt and blade, as it stands in her first drawing. */
-const NEEDLE_SWORD: Stroke[] = [
+/**
+ * Needle whole, hilt and blade, as it stands in her first drawing.
+ * Polliver's drawing in `riverlands.ts` thrusts it through his belt.
+ */
+export const NEEDLE_SWORD: Stroke[] = [
   ...NEEDLE_HILT,
   { d: 'M82 58 L84 148 L86 58', role: 'accent' },
   { d: 'M84 62 V140', role: 'soft' },
 ]
 
 const NEEDLE: Stroke[] = [...NEEDLE_SWORD, shadow(84, 153, 16)]
+
+/**
+ * Needle thrust through a man-at-arms' belt, no longer hers: the belt, its
+ * buckle and its holes, with the far side hatched.
+ */
+const NEEDLE_IN_BELT: Stroke[] = [
+  { d: 'M14 96 Q80 116 146 96 M14 110 Q80 130 146 110' },
+  { d: 'M38 100 H56 V122 H38 Z M44 111 H56', role: 'soft' },
+  {
+    d: dots([
+      [72, 112],
+      [92, 112],
+      [112, 110],
+      [130, 104],
+    ]),
+    role: 'soft',
+  },
+  { d: 'M24 108 l6 -4 M126 112 l6 -4', role: 'ambient' },
+  ...moved(NEEDLE_SWORD, 'rotate(34 84 100)'),
+]
+
+/**
+ * A cupbearer's flagon pouring into a cup, the wine in the accent, the
+ * flagon's far side hatched: Arya serving at Harrenhal under a name not
+ * her own.
+ */
+const FLAGON_CUP: Stroke[] = [
+  { d: 'M48 64 H80 L84 72 Q90 110 82 140 H46 Q38 110 44 72 Z' },
+  { d: 'M48 64 Q64 54 80 64 M84 72 L98 66', role: 'soft' },
+  { d: 'M44 82 Q20 90 26 110 Q30 124 44 124' },
+  { d: 'M98 66 Q112 80 112 118', role: 'accent' },
+  {
+    d: 'M72 84 l5 -3 M74 100 l5 -3 M74 116 l5 -3 M72 130 l5 -3',
+    role: 'ambient',
+  },
+  {
+    d: `${ellipse(112, 118, 12, 4)} M100 118 Q102 134 110 136 M124 118 Q122 134 114 136 M110 136 V146 M114 136 V146 M102 150 Q112 144 122 150 Z`,
+  },
+  shadow(80, 154, 50),
+]
 
 /**
  * Bran Stark: the broken tower he climbs, its corner seen in 3/4 with the
@@ -265,6 +308,27 @@ const KRAKEN_SEA: Stroke[] = [
 ]
 
 const KRAKEN: Stroke[] = [...KRAKEN_BODY, ...KRAKEN_SEA]
+
+/**
+ * The kraken on a banner, hung from its staff over a run of battlements,
+ * the wall's courses soft: Theon's stage as the prince of Winterfell. The
+ * kraken keeps its accent arm.
+ */
+const KRAKEN_BANNER: Stroke[] = [
+  { d: `${circle(40, 14, 4)} M40 18 V112` },
+  { d: 'M40 26 H134' },
+  { d: 'M48 26 V100 L91 88 L134 100 V26' },
+  ...moved(KRAKEN_BODY, 'translate(91 58) scale(0.56) translate(-80 -88)'),
+  { d: 'M54 32 Q52 64 56 94 M128 32 Q130 64 126 94', role: 'soft' },
+  {
+    d: 'M14 150 V118 H24 V112 H34 V118 H46 V112 H56 V118 H68 V112 H78 V118 H90 V112 H100 V118 H112 V112 H122 V118 H134 V112 H146 V150',
+  },
+  {
+    d: 'M14 132 H146 M30 132 V150 M62 132 V150 M94 132 V150 M126 132 V150 M46 118 V132 M78 118 V132 M110 118 V132',
+    role: 'soft',
+  },
+  { d: 'M10 152 H150', role: 'ambient', dashed: true },
+]
 
 /**
  * Luwin: a maester's chain laid on a table in a loop, its links of mixed
@@ -857,6 +921,15 @@ export const winterfellRedrawn: Redrawings = {
     },
   ],
   'theon-greyjoy': [
+    // The kraken on a banner flying over Winterfell's battlements, the arm
+    // still in the accent: Theon takes the castle and calls himself its
+    // prince in "The Old Gods and the New" (episode 16) and in Bran VI
+    // (chapter 120).
+    { episode: 16, chapter: 120, value: KRAKEN_BANNER },
+    // The kraken back in the sea, the castle lost: his own men hand him to
+    // the Boltons in "Valar Morghulis" (episode 20), and the Bastard of
+    // Bolton strikes him down in the sack in Theon VI (chapter 140).
+    { episode: 20, chapter: 140, value: KRAKEN },
     // The kraken dragged out of the sea and huddled on bare ground, an iron
     // ring round one arm chained to a stake: Ramsay breaks him into Reek,
     // naming him so in "Mhysa" (episode 30) and in Reek I of A Dance with
@@ -1019,25 +1092,17 @@ export const winterfellRedrawn: Redrawings = {
     // takes it from her when the Lannister men capture her, in "What Is
     // Dead May Never Die" (episode 13) and in Arya V of A Clash of Kings
     // (chapter 93).
-    {
-      episode: 13,
-      chapter: 93,
-      value: [
-        { d: 'M14 96 Q80 116 146 96 M14 110 Q80 130 146 110' },
-        { d: 'M38 100 H56 V122 H38 Z M44 111 H56', role: 'soft' },
-        {
-          d: dots([
-            [72, 112],
-            [92, 112],
-            [112, 110],
-            [130, 104],
-          ]),
-          role: 'soft',
-        },
-        { d: 'M24 108 l6 -4 M126 112 l6 -4', role: 'ambient' },
-        ...moved(NEEDLE_SWORD, 'rotate(34 84 100)'),
-      ],
-    },
+    { episode: 13, chapter: 93, value: NEEDLE_IN_BELT },
+    // The flagon and the cup, a temporary costume: she serves at Harrenhal
+    // under a name not her own, as Tywin's cupbearer from "Garden of Bones"
+    // (episode 14) and, as Weasel, running errands and filling the wine
+    // cups in the Barracks Hall for Weese in Arya VII of A Clash of Kings
+    // (chapter 104).
+    { episode: 14, chapter: 104, value: FLAGON_CUP },
+    // Needle in the belt again, the costume gone: she walks out of
+    // Harrenhal with Gendry and Hot Pie in "The Prince of Winterfell"
+    // (episode 18) and in Arya X of A Clash of Kings (chapter 138).
+    { episode: 18, chapter: 138, value: NEEDLE_IN_BELT },
     // Needle back on its point as in her first drawing: she kills Polliver
     // and takes it back at the inn at the crossroads, in "Two Swords"
     // (episode 31) and in Arya XIII of A Storm of Swords (chapter 218).

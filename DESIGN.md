@@ -79,62 +79,54 @@ colors:
   tint-flamingo: 'oklch(78% 0.14 6)'
   tint-sand: 'oklch(86% 0.08 82)'
   tint-wine: 'oklch(66% 0.17 14)'
+# The detector reads a fontFamily only when its value starts on the key's line,
+# so Prettier must not fold these stacks.
+# prettier-ignore
 typography:
   hero:
-    fontFamily:
-      "'Bricolage Grotesque', 'Bricolage Grotesque Fallback', Arial, sans-serif"
+    fontFamily: "'Bricolage Grotesque', 'Bricolage Grotesque Fallback', Arial, sans-serif"
     fontSize: '5.5rem'
     fontWeight: 800
     lineHeight: 1
   display:
-    fontFamily:
-      "'Bricolage Grotesque', 'Bricolage Grotesque Fallback', Arial, sans-serif"
+    fontFamily: "'Bricolage Grotesque', 'Bricolage Grotesque Fallback', Arial, sans-serif"
     fontSize: '4rem'
     fontWeight: 800
     lineHeight: 1
   headline:
-    fontFamily:
-      "'Bricolage Grotesque', 'Bricolage Grotesque Fallback', Arial, sans-serif"
+    fontFamily: "'Bricolage Grotesque', 'Bricolage Grotesque Fallback', Arial, sans-serif"
     fontSize: '1.5625rem'
     fontWeight: 800
     lineHeight: 1.15
     letterSpacing: '-0.02em'
   title:
-    fontFamily:
-      "'Bricolage Grotesque', 'Bricolage Grotesque Fallback', Arial, sans-serif"
+    fontFamily: "'Bricolage Grotesque', 'Bricolage Grotesque Fallback', Arial, sans-serif"
     fontSize: '1.25rem'
     fontWeight: 800
     lineHeight: 1.15
     letterSpacing: '-0.02em'
   body:
-    fontFamily:
-      "'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif"
+    fontFamily: "'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif"
     fontSize: '1rem'
     fontWeight: 400
     lineHeight: 1.6
   lede:
-    fontFamily:
-      "'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif"
+    fontFamily: "'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif"
     fontSize: '1.25rem'
     fontWeight: 400
     lineHeight: 1.6
   label:
-    fontFamily:
-      "'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif"
+    fontFamily: "'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif"
     fontSize: '0.75rem'
     fontWeight: 600
     letterSpacing: '0.08em'
   numeral:
-    fontFamily:
-      "'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace,
-      SFMono-Regular, Menlo, monospace"
+    fontFamily: "'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, SFMono-Regular, Menlo, monospace"
     fontSize: '0.75rem'
     fontWeight: 700
     letterSpacing: '0.1em'
   micro:
-    fontFamily:
-      "'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace,
-      SFMono-Regular, Menlo, monospace"
+    fontFamily: "'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, SFMono-Regular, Menlo, monospace"
     fontSize: '0.625rem'
 rounded:
   card: '4px'
