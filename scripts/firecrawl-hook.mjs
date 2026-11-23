@@ -138,7 +138,7 @@ function formatNames(formats) {
  * @param {string} key The page's key.
  * @returns {string | undefined} The date, `YYYY-MM-DD`, or undefined.
  */
-export function cachedOn(dir, key) {
+function cachedOn(dir, key) {
   const page = path.join(dir, `${key}.md`)
   if (!existsSync(page)) {
     return
