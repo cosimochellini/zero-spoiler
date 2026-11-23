@@ -33,15 +33,18 @@ const DESIGN_CONTEXT = ['DESIGN.md', path.join('.impeccable', 'design.json')]
  * @returns {Promise<object[]>} The token findings, under page addresses.
  */
 export async function scanTokens(root, served, detect) {
+  // fallow-ignore-next-line security-sink -- the system's temporary folder and a constant prefix
   const directory = mkdtempSync(path.join(os.tmpdir(), 'design-gate-'))
   process.on('exit', () => {
     rmSync(directory, { recursive: true, force: true })
   })
   for (const file of DESIGN_CONTEXT) {
+    // fallow-ignore-next-line security-sink -- the repository's root and the constant DESIGN_CONTEXT, into the folder made above
     cpSync(path.join(root, file), path.join(directory, file))
   }
   const addresses = new Map()
   const files = served.map(({ address, html }, index) => {
+    // fallow-ignore-next-line security-sink -- the folder made above and a number
     const file = path.join(directory, `${index}.html`)
     writeFileSync(file, savedCopy(html, address))
     const url = pathToFileURL(file).href
