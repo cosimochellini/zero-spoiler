@@ -169,7 +169,8 @@ const STEPS: {
  * Every stage the King's Landing cast's drawings take after their first,
  * pinned in both media (#1470): Jacelyn Bywater's death, Garlan Tyrell's
  * ride as Renly's ghost and the reveal of whom Osmund Kettleblack really
- * serves, all the books' alone, as their records are. `stage` counts a record's stages from 0.
+ * serves, all the books' alone, as their records are. `stage` counts a
+ * record's stages from 0.
  */
 const STAGES: {
   chapter: number

@@ -131,9 +131,10 @@ export const season2: ThronesSaga = {
       visual: { art: 'alayaya', tint: 'magenta' },
     },
     // Books: Sansa VIII (site chapter 139), at Joffrey's court after the
-    // battle he is the knight who wore Renly's armour, and asks the king to
-    // wed his sister. The show gives both to Loras and has no Garlan;
-    // episode 20 only orders him.
+    // battle he asks the king to wed his sister. That he wore Renly's armour
+    // is told only in Jaime VIII of A Storm of Swords (211), his drawing's
+    // stage. The show gives the request to Loras and has no Garlan; episode
+    // 20 only orders him.
     {
       id: 'garlan-tyrell',
       kind: 'character',
