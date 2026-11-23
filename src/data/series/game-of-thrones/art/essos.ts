@@ -545,26 +545,35 @@ const LOCKED_VAULT: Stroke[] = [
 ]
 
 /**
- * Pyat Pree: a cut gem in 3/4, its table in the accent and the far facets
- * hatched, the gem he gives Daenerys in "The Ghost of Harrenhal" (episode
- * 15) and tells her to look into until she sees herself in its facets. The
- * book has no gem; the show is the reference.
+ * Pyat Pree: a tall glass of shade of the evening, the thick blue drink of
+ * the warlocks, in the accent, with two leaves of the ink-blue trees it is
+ * brewed from on the ground. Daenerys drinks it at the door of the House of
+ * the Undying, where he leads her, in Daenerys IV (chapter 122). The bowl's
+ * far side is hatched; no face, so none of his blue lips.
  */
-const GEM: Stroke[] = [
-  { d: 'M44 74 L60 58 H100 L116 74 L80 132 Z' },
-  { d: 'M44 74 H116', role: 'soft' },
-  { d: 'M66 58 L60 74 L80 132 L100 74 L94 58', role: 'soft' },
-  { d: 'M60 74 L80 58 L100 74', role: 'accent' },
-  { d: 'M104 84 l6 -2 M98 96 l6 -2 M92 108 l6 -2', role: 'ambient' },
-  { d: 'M36 50 l-6 -6 M80 46 V36 M124 50 l6 -6', role: 'soft' },
-  shadow(80, 152, 22),
+const SHADE_GLASS: Stroke[] = [
+  { d: ellipse(80, 44, 16, 5) },
+  { d: 'M64 44 Q64 92 80 98 Q96 92 96 44' },
+  {
+    d: `${ellipse(80, 62, 15, 4)} M65.5 62 Q66 89 80 94 Q94 89 94.5 62`,
+    role: 'accent',
+  },
+  { d: `M80 98 V132 ${ellipse(80, 116, 4, 2)}`, role: 'soft' },
+  { d: ellipse(80, 136, 18, 5) },
+  { d: 'M90 72 l4 -2 M89 82 l4 -2 M86 91 l4 -2', role: 'ambient' },
+  {
+    d: 'M106 148 Q118 136 132 144 Q118 152 106 148 Z M30 148 Q42 138 54 146 Q42 152 30 148 Z',
+    role: 'soft',
+  },
+  { d: 'M112 147 L126 144 M36 147 L48 146', role: 'soft' },
+  shadow(80, 146, 26),
 ]
 
 /**
- * Quaithe: her mask, in 3/4 with its rim and its ties, the eyeholes cut in
- * it and hexagons worked over it, as the show makes it. The book's is dark
- * red lacquer, worn when she comes to Daenerys in Daenerys I (chapter 86).
- * The accent is the mask's edge; nothing is behind the eyeholes.
+ * Quaithe: her mask, in 3/4 with its rim and its ties, two narrow eye slits
+ * cut in it and hexagons worked over it, as the show makes it in metal. The
+ * book's is dark red lacquer, worn when she comes to Daenerys in Daenerys I
+ * (chapter 86). The accent is the mask's edge; nothing is behind the slits.
  */
 const MASK: Stroke[] = [
   {
@@ -572,7 +581,9 @@ const MASK: Stroke[] = [
     role: 'accent',
   },
   { d: 'M116 66 Q124 98 106 128 Q96 142 82 144', role: 'soft' },
-  { d: 'M56 80 L64 74 L74 80 L64 84 Z M86 80 L96 74 L104 80 L96 84 Z' },
+  {
+    d: 'M56 80 Q65 77 74 80 Q65 82 56 80 Z M86 80 Q95 77 104 80 Q95 82 86 80 Z',
+  },
   {
     d: `${polygon(68, 54, 8, 6)} ${polygon(92, 54, 8, 6)} ${polygon(80, 62, 6, 6)} ${polygon(58, 102, 8, 6)} ${polygon(102, 102, 8, 6)} ${polygon(70, 118, 8, 6)} ${polygon(90, 118, 8, 6)} ${polygon(80, 100, 6, 6)}`,
     role: 'soft',
@@ -757,7 +768,7 @@ export const ESSOS_DRAWINGS = {
   'eroeh': LAMB_AND_CROOK,
   'kovarro': HORSE,
   'xaro-xhoan-daxos': LOCKED_VAULT,
-  'pyat-pree': GEM,
+  'pyat-pree': SHADE_GLASS,
   'quaithe': MASK,
   'malakho': PEACOCK,
   'drogon': FLYING_DRAGON,
@@ -770,22 +781,15 @@ export const ESSOS_DRAWINGS = {
 /** The Essos cast drawn again later in the story. */
 export const essosRedrawn: Redrawings = {
   'xaro-xhoan-daxos': [
-    // The vault shut, its key fallen on the floor in front of it: Daenerys
-    // has him locked in his empty vault in "Valar Morghulis" (episode 20),
-    // the show's alone. The books keep him alive; Daenerys V (chapter 137),
-    // the chapter the episode adapts, orders it.
+    // The vault shut, its key gone from the lock, the empty lock in the
+    // accent: Daenerys has him locked in his empty vault in "Valar
+    // Morghulis" (episode 20), the show's alone. The books keep him alive;
+    // Daenerys V (chapter 137), the chapter the episode adapts, orders it.
     {
       episode: 20,
       chapter: 137,
       source: 'episode',
-      value: [
-        ...VAULT_DOOR,
-        { d: circle(76, 90, 6), role: 'soft' },
-        {
-          d: `${ellipse(100, 146, 10, 3.5)} ${ellipse(100, 146, 4, 1.5)} M90 146 Q74 150 60 144`,
-          role: 'accent',
-        },
-      ],
+      value: [...VAULT_DOOR, { d: circle(76, 90, 6), role: 'accent' }],
     },
   ],
   'viserion': [

@@ -1021,7 +1021,7 @@ export const season2: ThronesSaga = {
         it: 'Una donna dell’Ombra che raggiunge Daenerys da Qarth.',
         en: 'A woman of the Shadow who comes to Daenerys from Qarth.',
       },
-      visual: { art: 'quaithe', tint: 'wine' },
+      visual: { art: 'quaithe', tint: 'sand' },
     },
     // Show only: in "The Ghost of Harrenhal" (episode 15) Jorah tells
     // Daenerys what her riders say at Xaro's feast, "Malakho says the statue
