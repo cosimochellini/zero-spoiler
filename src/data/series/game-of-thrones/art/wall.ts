@@ -724,8 +724,7 @@ const SPADE: Stroke[] = [
 /**
  * Eddison Tollett: a spade stuck in the frozen ground at the Fist of the
  * First Men, where he digs latrines with Grenn and Sam in "The Prince of
- * Winterfell" (episode 18) and gathers frozen dung to burn in "Valar
- * Morghulis" (episode 20). The books give him nothing of his own to draw,
+ * Winterfell" (episode 18). The books give him nothing of his own to draw,
  * so the show's chore stands in. The accent is the blade's top edge, where
  * a boot drives it in.
  */
