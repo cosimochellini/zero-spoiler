@@ -537,9 +537,9 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Bodies of power           | 5, with 61 seats                                        |
 | Arcs, places              | 7 · 43                                                  |
 | Saga modules              | 7                                                       |
-| Line drawings             | 369, one per record, plus 165 redrawings of 115 records |
+| Line drawings             | 369, one per record, plus 166 redrawings of 116 records |
 | Chronicle stories         | 1001, for 289 characters                                |
-| Dated timelines           | 1372                                                    |
+| Dated timelines           | 1373                                                    |
 | Affiliation steps         | 466                                                     |
 | Status steps              | 395                                                     |
 | Origins that link a place | 10                                                      |

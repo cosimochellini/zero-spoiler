@@ -67,6 +67,7 @@ const STAGES = [
   { id: 'halkenburg-hui-guo-rou', chapter: 404, change: 'death' },
   { id: 'bonolenov', chapter: 405, change: 'Metamorphosen' },
   { id: 'lynch-fullbokko', chapter: 405, change: 'death' },
+  { id: 'quorolle', chapter: 405, change: 'trench coat' },
   { id: 'morena', chapter: 408, change: 'Carnival Orphan' },
   { id: 'borksen', chapter: 410, change: 'Heil-Ly' },
   { id: 'woble-hui-guo-rou', chapter: 412, change: 'missing' },
