@@ -438,11 +438,28 @@ const CANARY_FINDINGS = [
 ]
 
 /**
+ * The page types whose main content the browser builds after hydration, so a
+ * saved copy of the server's markup holds little of it: the fruits index
+ * renders only its marquee and control bar on the server, and its album
+ * plates in the browser (`fruits/-album.ts`, #778).
+ */
+const CLIENT_BUILT = /\/fruits(?:\?|$)/u
+
+/**
+ * @param {string[]} addresses The pages the token scan saved.
+ * @returns {string[]} Those whose main content is built in the browser, which
+ *   the token scan does not see.
+ */
+export function clientBuilt(addresses) {
+  return addresses.filter((address) => CLIENT_BUILT.test(address))
+}
+
+/**
  * A page as the detector reads it from a file: its scripts gone, so nothing
  * hydrates or navigates away from `file://`, and a `<base>` to its address,
  * so its stylesheets and fonts load from the server that rendered it. With no
  * script, React never moves a streamed Suspense section (`<div hidden
- * id="S:0">`) into its place, and the detector skips a hidden element, so the
+ * id="S:0">`, numbered in hex) into its place, and the detector skips a hidden element, so the
  * section is shown where it was streamed, at the end of the body.
  * @param {string} html The page as the server sent it.
  * @param {string} address Where it was served.
@@ -451,7 +468,7 @@ const CANARY_FINDINGS = [
 export function savedCopy(html, address) {
   return html
     .replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/giu, '')
-    .replaceAll(/<div hidden(?= id="S:\d+")/gu, '<div')
+    .replaceAll(/<div hidden(?= id="S:[\da-f]+")/gu, '<div')
     .replace(/<head\b[^>]*>/iu, (head) => `${head}<base href="${address}">`)
 }
 

@@ -25,7 +25,9 @@
  * and keeps only those rules, with a canary page set in a font and a colour
  * outside the tokens that proves the engine read `DESIGN.md`. A font or a
  * colour outside the tokens blocks; a radius or a type size off the scale
- * stays advisory, as the engine rates it (#1403).
+ * stays advisory, as the engine rates it (#1403). The copies are the server's
+ * markup with no script, so what the browser builds after hydration (the
+ * fruits index's album plates) is not checked; the gate prints those pages.
  *
  * The bookmark: `?ep=N` answers 302 and sets the series cookie. The detector's
  * browser follows it and keeps cookies for the rest of one run, on a profile

@@ -50,17 +50,19 @@ is kept for good: start its reason with `Permanent: ` and the gate lets it match
 nothing. The gate prints `no sample for …` for a series or page type it scans
 with no entry in `SAMPLES` (`scripts/design-gate.mjs`), and fails when a page
 type named there leaves the sitemap. The detector loads `DESIGN.md` only for a
-local file, never for a page address, so the gate also saves each page beside a
-copy of `DESIGN.md` and scans the copies at 1440 px for the `design-system-*`
-rules: a font or a colour outside the tokens fails it, a radius or a type size
-off the scale is advisory, and a canary page in an off-token font and colour
-must be flagged or the gate cannot vouch for the scan. Keep each `fontFamily` in
-`DESIGN.md` on one line, or the detector does not read it. A browser default
-counts: style a control's `color`, `borderColor` or `outlineColor` from the
-tokens even when it is invisible. The gate reads neither
-`.impeccable/config.local.json` nor ignore comments, and it refuses a page that
-carries `data-impeccable-ignore`. `.gate/design.json` lists every raw finding,
-waived or not.
+local file, never for a page address, so the gate also saves each page's server
+markup beside a copy of `DESIGN.md` and scans the copies at 1440 px for the
+`design-system-*` rules: a font or a colour outside the tokens in the
+server-rendered markup fails it, and a canary page in an off-token font and
+colour must be flagged or the gate cannot vouch for the scan. The radius rule is
+advisory, and the type-size rule never fires on a rendered page. What the
+browser builds after hydration, such as the fruits album plates, is outside this
+scan; the gate prints those pages. Keep each `fontFamily` in `DESIGN.md` on one
+line, or the detector does not read it. A browser default counts: style a
+control's `color`, `borderColor` or `outlineColor` from the tokens even when it
+is invisible. The gate reads neither `.impeccable/config.local.json` nor ignore
+comments, and it refuses a page that carries `data-impeccable-ignore`.
+`.gate/design.json` lists every raw finding, waived or not.
 
 ## Archive and drawing verification
 

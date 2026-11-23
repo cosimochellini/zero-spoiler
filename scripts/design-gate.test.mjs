@@ -8,6 +8,7 @@ import {
   bookmarkedPageProblem,
   bookmarkProblem,
   CANARY,
+  clientBuilt,
   detectorProblem,
   judge,
   pageProblem,
@@ -473,6 +474,7 @@ describe('the scan of saved copies against DESIGN.md', () => {
       '<html><head></head><body><main><!--$?--><template id="B:0"></template>'
       + '<!--/$--><div hidden>a closed drawer</div></main>'
       + '<div hidden id="S:0"><section><h2 id="relationships">Ties</h2></section></div>'
+      + '<div hidden id="S:a"><p>the eleventh</p></div>'
       + '<script>$RC("B:0","S:0")</script></body></html>'
 
     expect(savedCopy(html, 'http://127.0.0.1:4000/saga/en')).toBe(
@@ -480,8 +482,27 @@ describe('the scan of saved copies against DESIGN.md', () => {
         + '<!--$?--><template id="B:0"></template><!--/$-->'
         + '<div hidden>a closed drawer</div></main>'
         + '<div id="S:0"><section><h2 id="relationships">Ties</h2></section></div>'
-        + '</body></html>',
+        + '<div id="S:a"><p>the eleventh</p></div></body></html>',
     )
+  })
+
+  it('names the pages whose main content the browser builds', () => {
+    const origin = 'http://127.0.0.1:4000'
+
+    expect(
+      clientBuilt(
+        [
+          '/saga/en?ep=40',
+          '/saga/en/fruits?ep=40',
+          '/saga/en/fruits/gum-gum-fruit?ep=40',
+          '/saga/en/fruits',
+          '/en/legal',
+        ].map((page) => origin + page),
+      ),
+    ).toStrictEqual([
+      `${origin}/saga/en/fruits?ep=40`,
+      `${origin}/saga/en/fruits`,
+    ])
   })
 
   const address = 'http://127.0.0.1:4000/en/legal'

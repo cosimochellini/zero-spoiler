@@ -9,6 +9,10 @@
  * findings, and checks on a canary page that the engine read `DESIGN.md` at
  * all. The address scan stays: the copies lose findings it has
  * (`ai-color-palette`).
+ *
+ * It checks the markup the server renders, at desktop width. What the browser
+ * builds after hydration is outside it, the fruits index's album plates above
+ * all, and the gate names those pages in its output.
  */
 import { cpSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import os from 'node:os'
@@ -19,6 +23,7 @@ import { pathToFileURL } from 'node:url'
 import {
   CANARY,
   CANARY_PAGE,
+  clientBuilt,
   savedCopy,
   tokenFindings,
 } from './design-gate.rules.mjs'
@@ -40,6 +45,13 @@ const DESIGN_CONTEXT = ['DESIGN.md', path.join('.impeccable', 'design.json')]
  * @returns {Promise<object[]>} The token findings, under page addresses.
  */
 async function saveAndScan(root, directory, served, detect) {
+  // As paths: the origin is the preview server's, a new port each run.
+  const unseen = clientBuilt(served.map(({ address }) => address)).map(
+    (address) => address.replace(/^https?:\/\/[^/]+/u, ''),
+  )
+  process.stdout.write(
+    `  token scan: server markup only; built in the browser and not checked: ${unseen.join(', ') || 'none'}\n`,
+  )
   for (const file of DESIGN_CONTEXT) {
     // fallow-ignore-next-line security-sink -- the repository's root and the constant DESIGN_CONTEXT, into the folder made above
     cpSync(path.join(root, file), path.join(directory, file))
