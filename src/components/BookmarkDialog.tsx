@@ -29,9 +29,11 @@ export interface BookmarkDialogProps {
  * that. A click on the backdrop closes it too, which is why the dialog
  * itself has no padding — a click on padding would count as a click inside.
  *
- * The dialog, its title and its close button are on the page; the form is
- * fetched on demand, and a skeleton of it holds its place until it arrives,
- * so the dialog opens on the press however slow the connection.
+ * The dialog, its close button and, until the QR view takes over, its title
+ * are on the page; the form is fetched on demand, and a skeleton of it holds
+ * its place until it arrives, so the dialog opens on the press however slow
+ * the connection. Once it has arrived, "More devices?" swaps it for a view of
+ * the QR code that draws its own title, from the same chunk.
  */
 export function BookmarkDialog({ onClose }: BookmarkDialogProps): ReactElement {
   const { dialogRef, close } = useModal()

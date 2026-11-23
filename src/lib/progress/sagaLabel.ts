@@ -1,7 +1,8 @@
-import { createContext, use, useEffect, useState } from 'react'
+import { createContext, use, useCallback } from 'react'
 
 import { useLocale } from '~/i18n/LocaleContext'
 import type { Locale } from '~/i18n/locales'
+import { useLoaded } from '~/lib/useLoaded'
 import type { SkipRange } from '~/lib/view/filler'
 
 import { type Draft, gradeDraft } from './episode'
@@ -106,22 +107,7 @@ async function tableOrNull(
 export function useSagaTable(): null | SagaTable {
   const load = use(SagaTableContext)
   const { locale } = useLocale()
-  const [table, setTable] = useState<null | SagaTable>(null)
+  const ask = useCallback(async () => tableOrNull(load, locale), [load, locale])
 
-  useEffect(() => {
-    let live = true
-    const fetchTable = async (): Promise<void> => {
-      const next = await tableOrNull(load, locale)
-      if (live) {
-        setTable(next)
-      }
-    }
-    void fetchTable()
-
-    return () => {
-      live = false
-    }
-  }, [load, locale])
-
-  return table
+  return useLoaded(ask)
 }
