@@ -1,9 +1,9 @@
 import * as stylex from '@stylexjs/stylex'
-import { type ReactElement, useEffect, useRef } from 'react'
+import { type ReactElement, type RefObject, useEffect, useRef } from 'react'
 
 import { styles } from '~/components/BookmarkDialog.styles'
 import { NumberField, UnitFields } from '~/components/BookmarkFields'
-import { SyncDevices } from '~/components/SyncDevices'
+import { DevicesLink, DevicesView } from '~/components/SyncDevices'
 import { Button } from '~/components/ui/Button'
 import { useT } from '~/i18n/LocaleContext'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
@@ -12,20 +12,75 @@ import { useBookmarkDraft } from '~/lib/progress/useBookmarkDraft'
 
 /** What the form needs from the dialog around it. */
 export interface BookmarkFormProps {
+  /** Whether the QR code view is on show, and the form is out of sight. */
+  devices: boolean
+  /** The ids the dialog names itself by, for the head the QR view draws. */
+  ledeId: string
+  /** Asks the dialog to show the QR code view, or the form again. */
+  onDevices: (open: boolean) => void
   /** Closes the dialog. Called on every way out, including a successful save. */
   onDone: () => void
+  titleId: string
+}
+
+/**
+ * The part of the dialog fetched on demand: the draft form, and the QR code
+ * view that "More devices?" swaps it for. The dialog around them, with its
+ * close button, is already on the page.
+ *
+ * The form stays mounted, out of sight, while the view is on show, so the
+ * draft is as the reader left it when they come back.
+ */
+export function BookmarkForm({
+  devices,
+  ledeId,
+  onDevices,
+  onDone,
+  titleId,
+}: BookmarkFormProps): ReactElement {
+  const linkRef = useRef<HTMLButtonElement>(null)
+
+  return (
+    <>
+      <DraftForm
+        devices={devices}
+        linkRef={linkRef}
+        onDevices={onDevices}
+        onDone={onDone}
+      />
+      {devices && (
+        <DevicesView
+          ledeId={ledeId}
+          onBack={() => {
+            onDevices(false)
+          }}
+          onDone={onDone}
+          returnFocusTo={linkRef}
+          titleId={titleId}
+        />
+      )}
+    </>
+  )
 }
 
 /**
  * The draft from the unit down to the number, and the two ways out of it that
- * live inside it: save and forget. It is the part of the dialog fetched on
- * demand; the dialog around it, with its title and its close button, is
- * already on the page.
+ * live inside it: save and forget.
  *
  * Nothing here reaches the cookie until Save, so a reader who opens the
  * dialog, tries a unit and leaves still has the bookmark they arrived with.
+ *
+ * Out of sight, it is `hidden` to the browser's own rules, and `styles.away`
+ * wins over the grid `styles.body` sets, which the attribute alone loses to.
  */
-export function BookmarkForm({ onDone }: BookmarkFormProps): ReactElement {
+function DraftForm({
+  devices,
+  linkRef,
+  onDevices,
+  onDone,
+}: Pick<BookmarkFormProps, 'devices' | 'onDevices' | 'onDone'> & {
+  linkRef: RefObject<HTMLButtonElement | null>
+}): ReactElement {
   const { bookmark, setBookmark } = useBookmark()
   const formRef = useArrivalFocus()
 
@@ -47,23 +102,22 @@ export function BookmarkForm({ onDone }: BookmarkFormProps): ReactElement {
 
   return (
     <form
+      hidden={devices}
       onSubmit={onSubmit}
       ref={formRef}
-      {...stylex.props(styles.body)}
+      {...stylex.props(styles.body, devices && styles.away)}
     >
       <UnitFields
         draft={draft}
         onGroup={onGroup}
         onMode={onMode}
       />
-
       <NumberField
         draft={draft}
         onBlur={onBlur}
         onChange={onChange}
         problem={problem}
       />
-
       <Actions
         canForget={bookmark !== null}
         canSave={canSave}
@@ -71,8 +125,12 @@ export function BookmarkForm({ onDone }: BookmarkFormProps): ReactElement {
           commit(null)
         }}
       />
-
-      <SyncDevices />
+      <DevicesLink
+        linkRef={linkRef}
+        onOpen={() => {
+          onDevices(true)
+        }}
+      />
     </form>
   )
 }

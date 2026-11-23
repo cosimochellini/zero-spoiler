@@ -7,6 +7,7 @@ import { describe, expect, it, vi } from 'vitest'
 
 import { BookmarkContext, useBookmark } from '~/lib/progress/BookmarkContext'
 import { type BookmarkSeries, ONE_PIECE_BOOKMARK } from '~/lib/progress/series'
+import { formProps } from '~/test/bookmarkForm'
 import { renderWithProviders } from '~/test/providers'
 
 import { BookmarkForm } from './BookmarkForm'
@@ -29,7 +30,7 @@ function SeriesForm({ series }: { series: BookmarkSeries }): ReactElement {
 
   return (
     <BookmarkContext value={value}>
-      <BookmarkForm onDone={done} />
+      <BookmarkForm {...formProps(done)} />
     </BookmarkContext>
   )
 }
@@ -96,7 +97,7 @@ describe('the bookmark form for a series', () => {
 
   it('asks a series with books for the book and the chapter in it', async () => {
     const user = userEvent.setup()
-    renderWithProviders(<BookmarkForm onDone={done} />, {
+    renderWithProviders(<BookmarkForm {...formProps(done)} />, {
       series: {
         ...SERIES,
         books: [

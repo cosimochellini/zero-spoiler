@@ -2,12 +2,14 @@ import * as stylex from '@stylexjs/stylex'
 import { type ReactElement, Suspense, useEffect, useId, useState } from 'react'
 
 import { styles } from '~/components/BookmarkDialog.styles'
+import type { BookmarkFormProps } from '~/components/BookmarkForm'
 import {
   formHasLanded,
   LazyBookmarkForm,
   preloadBookmarkForm,
 } from '~/components/bookmarkFormLoader'
 import { BookmarkSkeleton, LoadFailed } from '~/components/BookmarkSkeleton'
+import { DialogHead } from '~/components/DialogHead'
 import { Button } from '~/components/ui/Button'
 import { useModal } from '~/components/useModal'
 import { useT } from '~/i18n/LocaleContext'
@@ -35,6 +37,11 @@ export function BookmarkDialog({ onClose }: BookmarkDialogProps): ReactElement {
   const { dialogRef, close } = useModal()
   const titleId = useId()
   const ledeId = useId()
+  const t = useT()
+  // Whether "More devices?" has swapped the form for the QR code. The words
+  // of that view are in the form's chunk, so it draws its own head, under the
+  // same two ids.
+  const [devices, setDevices] = useState(false)
 
   return (
     <dialog
@@ -45,11 +52,21 @@ export function BookmarkDialog({ onClose }: BookmarkDialogProps): ReactElement {
       {...stylex.props(styles.dialog)}
     >
       <div {...stylex.props(styles.panel)}>
-        <DialogHead
+        {!devices && (
+          <DialogHead
+            lede={t('dialog.lede')}
+            ledeId={ledeId}
+            title={t('dialog.title')}
+            titleId={titleId}
+          />
+        )}
+        <FormSlot
+          devices={devices}
           ledeId={ledeId}
+          onDevices={setDevices}
+          onDone={close}
           titleId={titleId}
         />
-        <FormSlot onDone={close} />
         <CloseButton onClose={close} />
       </div>
     </dialog>
@@ -60,7 +77,13 @@ export function BookmarkDialog({ onClose }: BookmarkDialogProps): ReactElement {
  * The form, or its skeleton while its code is on the way, or a way to ask
  * again when the fetch failed.
  */
-function FormSlot({ onDone }: { onDone: () => void }): ReactElement {
+function FormSlot({
+  devices,
+  ledeId,
+  onDevices,
+  onDone,
+  titleId,
+}: BookmarkFormProps): ReactElement {
   type FormStatus = 'failed' | 'loading' | 'ready'
 
   const t = useT()
@@ -103,40 +126,14 @@ function FormSlot({ onDone }: { onDone: () => void }): ReactElement {
 
   return (
     <Suspense fallback={<BookmarkSkeleton />}>
-      <LazyBookmarkForm onDone={onDone} />
+      <LazyBookmarkForm
+        devices={devices}
+        ledeId={ledeId}
+        onDevices={onDevices}
+        onDone={onDone}
+        titleId={titleId}
+      />
     </Suspense>
-  )
-}
-
-/**
- * The title and the lede together. They carry the two ids the dialog points
- * its `aria-labelledby` and `aria-describedby` at, so neither can be moved
- * without the other losing what names it.
- */
-function DialogHead({
-  ledeId,
-  titleId,
-}: {
-  ledeId: string
-  titleId: string
-}): ReactElement {
-  const t = useT()
-
-  return (
-    <div {...stylex.props(styles.head)}>
-      <h2
-        id={titleId}
-        {...stylex.props(styles.title)}
-      >
-        {t('dialog.title')}
-      </h2>
-      <p
-        id={ledeId}
-        {...stylex.props(styles.lede)}
-      >
-        {t('dialog.lede')}
-      </p>
-    </div>
   )
 }
 

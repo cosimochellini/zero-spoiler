@@ -12,6 +12,8 @@ import type { TranslationParams } from '~/i18n/types'
  */
 const syncEn = {
   'dialog.devices': 'More devices?',
+  'dialog.devicesTitle': 'More devices',
+  'dialog.devicesBack': 'Back',
   'dialog.devicesHelp':
     'Scan this code with another device, or open the link there. Both then keep the same bookmarks.',
   'dialog.devicesWarning':
@@ -41,6 +43,8 @@ export type SyncKey = keyof typeof syncEn
 
 const syncIt: Record<SyncKey, string> = {
   'dialog.devices': 'Altri dispositivi?',
+  'dialog.devicesTitle': 'Altri dispositivi',
+  'dialog.devicesBack': 'Indietro',
   'dialog.devicesHelp':
     'Inquadra questo codice con un altro dispositivo, o apri lì il link. Da quel momento hanno gli stessi segnalibri.',
   'dialog.devicesWarning':
