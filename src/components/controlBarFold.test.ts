@@ -135,6 +135,31 @@ describe('the control bar’s folding', () => {
     watching.stop()
   })
 
+  it('decides where a jump ends, which the observer may not report', () => {
+    stubObservers()
+    const { bar } = mountBar()
+    const onPin = vi.fn<(pinned: boolean) => void>()
+    const watching = watch(bar, '--bar-tuck', onPin)
+
+    // The End key: the bar went from in sight to pinned, past the line.
+    globalThis.dispatchEvent(new Event('scrollend'))
+
+    expect(onPin).toHaveBeenLastCalledWith(true)
+    expect(watching.read().pinned).toBe(true)
+
+    vi.mocked(bar.getBoundingClientRect).mockReturnValue(
+      DOMRect.fromRect({ height: 360, y: 400 }),
+    )
+    globalThis.dispatchEvent(new Event('scrollend'))
+
+    expect(onPin).toHaveBeenLastCalledWith(false)
+
+    watching.stop()
+    globalThis.dispatchEvent(new Event('scrollend'))
+
+    expect(onPin).toHaveBeenCalledTimes(2)
+  })
+
   it('takes a tap pick back to the top of the results and focus to the toggle', () => {
     const { bar, radio, toggle } = mountBar()
     const setOpen = vi.fn<(open: boolean) => void>()
