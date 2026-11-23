@@ -179,7 +179,7 @@ const STAGES: {
   stage?: number
 }[] = [
   { id: 'jacelyn-bywater', episode: 20, chapter: 148, source: 'chapter' },
-  { id: 'garlan-tyrell', episode: 20, chapter: 141, source: 'chapter' },
+  { id: 'garlan-tyrell', episode: 36, chapter: 211, source: 'chapter' },
   { id: 'osmund-kettleblack', episode: 35, chapter: 212, source: 'chapter' },
 ]
 
@@ -374,6 +374,19 @@ describe.each(
     })
   },
 )
+
+describe('Garlan Tyrell’s armour', () => {
+  it('stays out of his page before the book that tells it', () => {
+    // Loras tells Jaime who wore Renly's armour at chapter 211 (#1470); the
+    // page names the armour nowhere before it.
+    const page = JSON.stringify(
+      characterPage('garlan-tyrell', reader('chapter', 210)) ?? null,
+    )
+
+    expect(page).toContain('Garlan')
+    expect(page).not.toMatch(/Renly.s armour/u)
+  })
+})
 
 describe('the stages one medium alone tells', () => {
   it.each(STAGES.filter(({ source }) => source !== undefined))(

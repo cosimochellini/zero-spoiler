@@ -510,8 +510,7 @@ const WILDFIRE_JAR: Stroke[] = [
 
 /**
  * Lollys Stokeworth: a jewelled necklace laid out in its curve, a stone set
- * here and there along the chain and a pendant at its foot, and a ring
- * beside it: the jewels her maid steals from her in Tyrion X (chapter 118),
+ * here and there along the chain and a pendant at its foot: the jewels her maid steals from her in Tyrion X (chapter 118),
  * which opens her household to Shae. The books' alone. The accent is the
  * pendant.
  */
@@ -529,9 +528,7 @@ const JEWELS: Stroke[] = [
   { d: 'M80 104 L68 120 L80 142 L92 120 Z', role: 'accent' },
   { d: 'M68 120 L80 126 L92 120 M80 104 V126 V142', role: 'soft' },
   { d: 'M84 130 l4 -2.4 M83 136 l3 -1.8', role: 'ambient' },
-  { d: `${ellipse(124, 144, 13, 5)} ${ellipse(124, 143.5, 9.5, 3.2)}` },
-  { d: 'M119 139 L124 132 L129 139', role: 'soft' },
-  shadow(96, 156, 44),
+  shadow(80, 154, 30),
 ]
 
 /**
@@ -995,14 +992,14 @@ export const courtRedrawn: Redrawings = {
     },
   ],
   'garlan-tyrell': [
-    // Renly's antlered helm with the rose shield set by it: Garlan rode into
-    // the battle in Renly's armour, the ghost that turned Renly's old
-    // bannermen from Stannis, as Tyrion XV of A Clash of Kings (chapter 141)
-    // tells. The books' alone;
-    // episode 20, his record's, orders it.
+    // Renly's antlered helm with the rose shield set by it: Loras tells Jaime
+    // that Garlan wore Renly's armour on the Blackwater, the ghost the
+    // smallfolk tell of, in Jaime VIII of A Storm of Swords (chapter 211). The
+    // books' alone; episode 36, Tyrion's trial, the nearest point the show
+    // reaches, orders it.
     {
-      episode: 20,
-      chapter: 141,
+      episode: 36,
+      chapter: 211,
       value: [
         ...moved(ANTLERED_HELM, 'translate(-22 0)'),
         ...moved(
@@ -1012,5 +1009,29 @@ export const courtRedrawn: Redrawings = {
         shadow(80, 156, 60),
       ],
     },
+  ],
+  'boros-blount': [
+    // His cloak brooch dropped on the ground by his sword, the white cloak
+    // gone: Joffrey strips him of it for yielding Tommen on the Rosby road,
+    // in Tyrion XI of A Clash of Kings (chapter 123). The books' alone; the
+    // show never strips him, so episode 19, his record's, orders it.
+    {
+      episode: 19,
+      chapter: 123,
+      source: 'chapter',
+      value: [
+        { d: ellipse(80, 112, 20, 8) },
+        { d: 'M60 112 V116 Q62 124 80 125 Q98 124 100 116 V112', role: 'soft' },
+        { d: ellipse(80, 112, 8, 3), role: 'accent' },
+        { d: 'M92 119 l4 -2 M84 121 l4 -2', role: 'ambient' },
+        ...LYING_SWORD,
+        shadow(80, 154, 62),
+      ],
+    },
+    // The white cloak on his shoulder again: Tywin gives him back his place
+    // in the Kingsguard, in the Hound's, in Tyrion II of A Storm of Swords
+    // (chapter 156). The books' alone; episode 21, the show's first after
+    // the battle, orders it.
+    { episode: 21, chapter: 156, source: 'chapter', value: SHOULDER_CLOAK },
   ],
 }
