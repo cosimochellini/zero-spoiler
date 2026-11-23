@@ -728,9 +728,10 @@ export const KAKIN_PHASE_4_DRAWINGS = {
 
   // A hand making a finger gun, the thumb raised and the index pointing,
   // the other fingers curled under, out of the black sleeve of his suit,
-  // hatched, seen end on at the cuff, the shirt cuff in tint: Madwig plays
-  // a hitman with amnesia who remembers only how to handle a gun, and holds
-  // up a finger gun, chapter 400. Which hand is a frame check.
+  // hatched, seen end on at the cuff, the shirt cuff in tint and the
+  // underside of the hand hatched: Madwig plays a hitman with amnesia who
+  // remembers only how to handle a gun, and holds up a finger gun, chapter
+  // 400. Which hand is a frame check.
   'madwig': [
     { d: 'M6 114 L50 100 M14 148 L60 132' },
     { d: 'M50 100 A8 16.5 -18 0 1 60 132', role: 'soft' },
@@ -817,10 +818,10 @@ export const KAKIN_PHASE_4_DRAWINGS = {
 
   // The church in Meteor City in 3/4, its gabled front with the arched door
   // in tint and the side wall turning away, hatched, and before it the
-  // small graves Chrollo points out as he arrives, chapter 395. The wiki
-  // only calls it a large church: the gable, the round window and the
-  // graves' stones are drawn by convention and are a frame check. Its faith
-  // is not named, so no symbol is drawn.
+  // small graves outside that Chrollo mentions to the priest, chapter 395.
+  // The wiki only calls it a large church: the gable, the round window and
+  // the graves' stones are drawn by convention and are a frame check. Its
+  // faith is not named, so no symbol is drawn.
   'all-faiths-church': [
     { d: 'M22 150 V96 L54 50 L86 96 V150' },
     { d: 'M86 96 L138 86 V146 L86 150 M54 50 L108 42 L138 86' },
@@ -841,10 +842,11 @@ export const KAKIN_PHASE_4_DRAWINGS = {
     shadow(80, 158, 62),
   ],
 
-  // Uga Forest's large trees, their trunks in 3/4 hatched on the side that
-  // turns away, over the very short layer of vegetation at their feet, and
-  // before them the corporate dump with its pile of videotapes, one tape in
-  // tint: Sarasa goes looking for tapes there, chapter 396.
+  // Uga Forest's large trees, their trunks marked with bark and hatched on
+  // the side that turns away, over the very short layer of vegetation at
+  // their feet, and before them the pile of videotapes at the corporate
+  // dump near the forest, one tape in tint: Sarasa sets off for it, chapter
+  // 396. Where the dump lies is a convention.
   'uga-forest': [
     { d: 'M18 150 C24 140 26 120 26 4 M52 150 C46 140 46 120 46 4' },
     { d: 'M76 150 V20 M96 150 V20' },
