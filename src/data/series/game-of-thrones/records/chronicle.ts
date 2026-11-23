@@ -1,7 +1,7 @@
 import type { Dated, LocalizedText, Story } from '~/data/types'
 
 /** Where a story sits: the episode, then the site chapter. */
-type At = [episode: number, chapter: number]
+export type At = [episode: number, chapter: number]
 
 /**
  * A story both media tell the same way: the episode and the chapter each
