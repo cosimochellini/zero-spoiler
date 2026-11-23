@@ -4,6 +4,7 @@ import { type ReactElement, useCallback } from 'react'
 import { isLocale } from '~/i18n/locales'
 import type { SeriesSlug } from '~/i18n/types'
 import { readPlain } from '~/lib/plain'
+import { readTrial } from '~/lib/progress/readBookmark'
 import { describeNamedPage } from '~/routes/$locale/-head'
 import { LandingPage } from '~/routes/$series/$locale/-landing'
 import { loadDemoDrawings, loadHome } from '~/server/api'
@@ -17,6 +18,13 @@ export const Route = createFileRoute('/$series/$locale/')({
   // the characters those stories name. Nothing past the bookmark is in it.
   loader: async ({ context }) =>
     loadHome({ data: { series: context.series.slug, locale: context.locale } }),
+  // A trial starts on a click that leaves this page, so the page kept from
+  // before it was read with no trial point: drawn from it after Back, the
+  // dial stood at 1 and "I'm here" saved episode 1 (#1399). On a trial the
+  // page is read again each time it is entered; otherwise the kept page
+  // stands as long as the router keeps it.
+  shouldReload: ({ cause, context }) =>
+    cause === 'enter' && readTrial(context.series) !== null ? true : undefined,
   head: (context) =>
     isLocale(context.params.locale) ?
       describeNamedPage<SeriesSlug>({

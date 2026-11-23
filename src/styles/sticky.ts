@@ -19,6 +19,10 @@ export const seriesBarPin = stylex.createTheme(pin, {
   bar: { default: BAR.twoRows, [BAR.seriesWide]: BAR.oneRow },
 })
 
+// The room the document keeps under the bar for one sticky head: its least
+// height and a little air.
+const HEAD_ROOM = `2.75rem + ${space.xs}`
+
 /** One compact group line, plus breathing room for anchors and focus. */
 export const stickyStyles = stylex.create({
   bar: {
@@ -38,6 +42,10 @@ export const stickyStyles = stylex.create({
   },
   whileOpen: { position: { 'default': 'static', ':is([open] > *)': 'sticky' } },
   document: {
-    scrollPaddingBlockStart: `calc(${pin.bar} + var(${STACK_PROPERTY}, 0px) + 2.75rem + ${space.xs})`,
+    scrollPaddingBlockStart: `calc(${pin.bar} + var(${STACK_PROPERTY}, 0px) + ${HEAD_ROOM})`,
   },
+  // A control pinned inside that room, as the landing's folded dial is:
+  // focusing it gives the room back, rather than scrolling the page until
+  // the control is below it and no longer pinned.
+  insideRoom: { scrollMarginBlockStart: `calc(-1 * (${HEAD_ROOM}))` },
 })

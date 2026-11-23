@@ -658,7 +658,254 @@ const BURNT_CLOAK: Stroke[] = [
   shadow(80, 156, 68),
 ]
 
-/** The first season's Night's Watch (#1052), keyed by record id. */
+/**
+ * Jaremy Rykker's heavy breastplate in 3/4, standing, the ridge down its
+ * front and the faulds at its waist, the far side hatched, with his
+ * sable-trimmed cloak hanging behind it.
+ */
+const SMALLWOOD_PLATE: Stroke[] = [
+  {
+    d: 'M64 60 Q80 68 96 60 L108 62 Q100 78 108 96 Q110 114 104 128 Q80 136 56 128 Q50 114 52 96 Q60 78 52 62 Z',
+  },
+  { d: 'M64 60 Q80 74 96 60', role: 'soft' },
+  { d: 'M80 70 Q83 100 80 132', role: 'soft' },
+  {
+    d: dots([
+      [58, 70],
+      [60, 84],
+      [102, 70],
+      [100, 84],
+      [62, 122],
+      [98, 122],
+    ]),
+    role: 'soft',
+  },
+  { d: 'M56 128 L54 138 Q80 146 106 138 L104 128', role: 'soft' },
+  {
+    d: 'M92 84 l6 -4 M94 98 l6 -4 M94 112 l6 -4 M92 124 l5 -3',
+    role: 'ambient',
+  },
+]
+
+/** The cloak behind the plate, falling wide to the ground, its folds. */
+const SMALLWOOD_CLOAK: Stroke[] = [
+  {
+    d: 'M52 64 Q36 62 30 82 Q22 116 16 150 H54 M108 64 Q124 62 130 82 Q138 116 144 150 H106',
+  },
+  { d: 'M54 150 Q80 156 106 150 M54 140 V150 M106 140 V150', role: 'soft' },
+  { d: 'M34 100 Q32 126 28 146 M126 100 Q128 126 132 146', role: 'soft' },
+]
+
+/** The cloak's sable trim, round the shoulders behind the plate. */
+const SABLE_TRIM =
+  'M40 66 q1 -6 8 -8 q2 -5 8 -6 q3 -4 8 -4 q3 -3 8 -2 q4 -3 8 0 q4 -3 8 0 q5 -1 8 2 q5 0 8 4 q6 1 8 6 q6 2 8 8'
+
+/**
+ * Thoren Smallwood: the heavy breastplate and the sable-trimmed cloak he
+ * takes for himself when Jaremy Rykker's command falls to him, in Jon I
+ * (chapter 80). The show never has him. The accent is the sable trim.
+ */
+const SMALLWOOD: Stroke[] = [
+  ...SMALLWOOD_CLOAK,
+  ...SMALLWOOD_PLATE,
+  { d: SABLE_TRIM, role: 'accent' },
+  shadow(80, 154, 62),
+]
+
+/** A spade's D-grip, shaft and iron blade in 3/4, its far face hatched. */
+const SPADE: Stroke[] = [
+  { d: 'M70 22 H90 M72 22 Q72 36 78 38 M88 22 Q88 36 82 38' },
+  { d: 'M78 38 V104 M82 38 V104' },
+  { d: 'M66 104 H94 L96 132 Q80 140 64 132 Z' },
+  { d: 'M66 104 Q80 110 94 104', role: 'accent' },
+  { d: 'M88 112 l5 -3 M89 122 l5 -3', role: 'ambient' },
+]
+
+/**
+ * Eddison Tollett: a spade stuck in the frozen ground at the Fist of the
+ * First Men, where he digs latrines with Grenn and Sam in "The Prince of
+ * Winterfell" (episode 18). The books give him nothing of his own to draw,
+ * so the show's chore stands in. The accent is the blade's top edge, where
+ * a boot drives it in.
+ */
+const EDD_SPADE: Stroke[] = [
+  ...SPADE,
+  { d: 'M24 150 Q40 124 64 124 M96 124 Q120 124 136 150' },
+  { d: 'M40 150 Q46 138 56 136 M104 136 Q114 138 120 150', role: 'soft' },
+  { d: 'M110 140 l5 -4 M120 146 l5 -4', role: 'ambient' },
+  { d: 'M16 150 H144', role: 'ambient', dashed: true },
+]
+
+/**
+ * A ranger's horn on its strap, the bell in 3/4 with its mouth open to the
+ * viewer, the rings round it and the far side hatched.
+ */
+const HORN: Stroke[] = [
+  { d: 'M30 55 Q60 60 82 76 Q100 90 114 88' },
+  { d: 'M30 63 Q56 74 76 94 Q94 116 114 120' },
+  { d: 'M26 54 H31 V64 H26 Z' },
+  { d: ellipse(114, 104, 7, 16) },
+  { d: ellipse(114, 104, 3.5, 11), role: 'soft' },
+  { d: 'M58 62 Q55 72 60 82 M84 77 Q80 90 86 103', role: 'accent' },
+  { d: 'M48 72 l3 4 M70 90 l3 4 M94 110 l3 4', role: 'ambient' },
+  { d: 'M34 64 Q28 130 80 136 Q116 140 116 120', role: 'soft' },
+]
+
+/**
+ * Jarman Buckwell: a ranger's horn, for the ranger whose scouts ride out
+ * ahead of the column in Jon II (chapter 87). One blast is rangers coming
+ * home. The show never has him and the books give him nothing of his own,
+ * so the scouts' horn stands in, a declared B. The accent is the two rings
+ * round the horn.
+ */
+const BUCKWELL_HORN: Stroke[] = [...HORN, shadow(80, 146, 48)]
+
+/**
+ * A pack frame on the ground, two bundles lashed across it in 3/4, their
+ * ends round and the far one hatched.
+ */
+const PACK: Stroke[] = [
+  { d: 'M34 150 L58 88 M126 150 L102 88 M58 88 L102 88' },
+  { d: 'M48 150 L66 98 M112 150 L94 98', role: 'soft' },
+  { d: 'M30 110 H130 V132 H30 Z' },
+  { d: `${ellipse(30, 121, 5, 11)} ${ellipse(130, 121, 5, 11)}`, role: 'soft' },
+  { d: 'M40 80 H120 V104 H40 Z' },
+  { d: ellipse(120, 92, 5, 12), role: 'soft' },
+  { d: 'M64 76 V136 M96 76 V136', role: 'accent' },
+  {
+    d: 'M104 84 l5 -3 M108 96 l5 -3 M110 114 l5 -3 M112 126 l5 -3',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Mallador Locke: a pack frame with its bundles lashed on, for the knight
+ * who leads the baggage train of the ranging in Jon II (chapter 87). The
+ * show never has him, and the books give him nothing of his own: the
+ * baggage he leads stands in, a declared B. The accent is the lashing.
+ */
+const LOCKE_PACK: Stroke[] = [...PACK, shadow(80, 154, 56)]
+
+/**
+ * A right hand held up with its palm out, the thumb and the forefinger
+ * whole and the three other fingers lost at the knuckle, over a fur cuff.
+ */
+const HALFHAND_PALM: Stroke[] = [
+  {
+    d: 'M64 150 V130 Q56 122 56 106 L42 86 Q38 78 46 76 Q52 76 56 84 L62 94 V80 M88 78 V36 Q94 30 100 36 V102 Q100 120 94 128 V150',
+  },
+  { d: 'M90 52 H98 M90 66 H98 M66 112 Q78 118 90 110', role: 'soft' },
+  { d: 'M50 84 L56 92 M96 84 l-4 3 M96 98 l-4 3', role: 'ambient' },
+  { d: 'M56 140 q4 -5 8 0 t8 0 t8 0 t8 0 t8 0 t8 0', role: 'soft' },
+]
+
+/** The three lost fingers, three stumps along the knuckles. */
+const STUMPS = {
+  d: 'M62 80 Q62 73 66.5 73 Q71 73 71 79 Q71 73 75.5 73 Q80 73 80 79 Q80 73 84 73 Q88 73 88 78',
+}
+
+/**
+ * Qhorin Halfhand: the right hand that names him, held up with only the
+ * thumb and forefinger left, a wildling axe having taken the rest. The
+ * show keeps his gloves on but names him for it from "The Ghost of
+ * Harrenhal" (episode 15), the books from Jon V (chapter 117).
+ * The accent is the three stumps.
+ */
+const HALFHAND: Stroke[] = [
+  ...HALFHAND_PALM,
+  { ...STUMPS, role: 'accent' },
+  shadow(80, 153, 30),
+]
+
+/**
+ * A crag at night, its face climbing to the left and a thin moon above
+ * it, the far face hatched.
+ */
+const CRAG: Stroke[] = [
+  {
+    d: 'M20 150 L44 112 L40 92 L62 60 L60 40 L78 22 L100 40 L112 74 L132 100 L144 150',
+  },
+  { d: 'M78 22 L84 54 L112 74 M84 54 L96 104 L132 100', role: 'soft' },
+  {
+    d: 'M104 54 l6 -3 M114 84 l6 -3 M120 104 l6 -3 M126 120 l6 -3',
+    role: 'ambient',
+  },
+  { d: 'M126 20 A12 12 0 1 0 138 36 A10 10 0 1 1 126 20', role: 'soft' },
+  { d: 'M12 150 H148', role: 'ambient', dashed: true },
+]
+
+/**
+ * Stonesnake: the cliff he climbs by moonlight to the wildling watchers,
+ * Jon behind him, in Jon VI (chapter 125); the Watch calls him Stonesnake
+ * for climbing. The show never names him. The accent is his way up the
+ * face, a declared B: a place stands in for a man the books give nothing
+ * else to.
+ */
+const STONESNAKE_CLIMB: Stroke[] = [
+  ...CRAG,
+  { d: 'M48 146 L56 128 L50 110 L60 96 L56 80 L68 64 L66 46', role: 'accent' },
+]
+
+/**
+ * A riding saddle seen from the side, its pommel and cantle, the flap and
+ * a stirrup hanging, with a saddlebag strapped behind.
+ */
+const SADDLE: Stroke[] = [
+  {
+    d: 'M30 92 Q34 76 46 80 Q64 90 96 88 Q114 86 118 70 Q128 72 128 86 Q124 104 100 106 H52 Q34 106 30 92 Z',
+  },
+  { d: 'M52 106 V128 Q70 136 92 128 V106', role: 'soft' },
+  { d: 'M72 106 V132 M64 132 H80 L82 142 H62 Z' },
+  {
+    d: 'M118 86 Q132 94 132 110 Q132 124 118 124 Q108 124 108 108',
+    role: 'accent',
+  },
+  { d: 'M40 96 l5 -4 M48 100 l5 -4 M88 116 l4 -3', role: 'ambient' },
+]
+
+/**
+ * Ebben: a ranger's saddle with its saddlebag, for the ranger who rides with
+ * Qhorin's party from Jon VII (chapter 127) and is sent back to warn the
+ * Lord Commander. The show never has him and the books give him nothing of
+ * his own: the ride stands in, a declared B. The accent is the saddlebag
+ * that carries the word.
+ */
+const EBBEN_SADDLE: Stroke[] = [...SADDLE, shadow(80, 148, 50)]
+
+/** A longbow strung, its belly toward the viewer, stood on its end. */
+const LONGBOW: Stroke[] = [
+  { d: 'M48 22 Q78 86 48 150' },
+  { d: 'M52 22 Q82 86 52 150', role: 'soft' },
+  { d: 'M48 22 V150', role: 'soft' },
+  { d: 'M58 80 H66 M58 92 H66', role: 'soft' },
+]
+
+/** A sheaf of arrows stuck in the snow, fanned, the fletchings up. */
+const ARROWS: Stroke[] = [
+  { d: 'M100 150 L92 46 M104 150 L106 42 M108 150 L120 48' },
+  {
+    d: 'M92 46 l-4 -12 M92 46 l4 -12 M106 42 l-4 -12 M106 42 l4 -12 M120 48 l-2 -12 M120 48 l6 -10',
+    role: 'accent',
+  },
+  { d: 'M88 150 Q104 140 120 150', role: 'ambient' },
+]
+
+/**
+ * Dalbridge: his longbow and a sheaf of arrows stuck in the snow, for the
+ * squire who stays behind in the pass with all the arrows to hold off the
+ * wildlings in Jon VII (chapter 127). The show never has him. The accent is
+ * the fletchings.
+ */
+const DALBRIDGE_BOW: Stroke[] = [
+  ...LONGBOW,
+  ...ARROWS,
+  { d: 'M20 150 H140', role: 'ambient', dashed: true },
+]
+
+/**
+ * The first season's Night's Watch (#1052) and the second season's rangers
+ * (#1474), keyed by record id.
+ */
 export const WALL_DRAWINGS = {
   'jeor-mormont': BEAR,
   'aemon': RAVEN,
@@ -681,6 +928,14 @@ export const WALL_DRAWINGS = {
   'bowen-marsh': LEDGER,
   'jaremy-rykker': SHEATHED_SWORD,
   'othor': BURNT_CLOAK,
+  'thoren-smallwood': SMALLWOOD,
+  'eddison-tollett': EDD_SPADE,
+  'jarman-buckwell': BUCKWELL_HORN,
+  'mallador-locke': LOCKE_PACK,
+  'qhorin-halfhand': HALFHAND,
+  'stonesnake': STONESNAKE_CLIMB,
+  'ebben': EBBEN_SADDLE,
+  'dalbridge': DALBRIDGE_BOW,
 } satisfies Drawings
 
 /** The Night's Watch drawn again later in the story. */
@@ -974,6 +1229,79 @@ export const wallRedrawn: Redrawings = {
         },
         { d: 'M118 144 Q132 136 140 146 Q130 152 118 148', role: 'soft' },
         { d: 'M14 152 H146', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'thoren-smallwood': [
+    // The breastplate fallen on its side, the cloak's trim lying by it: he
+    // dies at the Fist of the First Men, which A Storm of Swords has told
+    // by Samwell II (chapter 177). The record is the books', and "Valar
+    // Dohaeris" (episode 21), where the show reaches the aftermath of the
+    // Fist, orders it.
+    {
+      episode: 21,
+      chapter: 177,
+      value: [
+        { d: 'M14 150 Q20 140 40 142 H124 Q140 140 146 150' },
+        {
+          d: 'M14 150 q2 -6 8 -6 q2 -5 8 -4 q3 -4 8 -2 q4 -3 8 0 M146 150 q-2 -6 -8 -6 q-2 -5 -8 -4 q-3 -4 -8 -2 q-4 -3 -8 0',
+          role: 'accent',
+        },
+        ...moved(SMALLWOOD_PLATE, 'translate(0 24) rotate(-90 80 100)'),
+        { d: 'M8 152 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'eddison-tollett': [
+    // The spade fallen flat on the ground, the mound gone: he dies at
+    // Winterfell in "The Long Night" (episode 70), the show's alone. The
+    // books keep him alive, so chapter 344, their last, orders it.
+    {
+      episode: 70,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(SPADE, 'rotate(-90 80 80) translate(-60 0)'),
+        { d: 'M14 152 H146', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'qhorin-halfhand': [
+    // The hand laid down on its side in the snow: Jon kills him on his own
+    // orders, so that the wildlings will take Jon for a deserter, in
+    // "Valar Morghulis" (episode 20) and in Jon VIII (chapter 142).
+    {
+      episode: 20,
+      chapter: 142,
+      value: [
+        ...moved(
+          [...HALFHAND_PALM, { ...STUMPS, role: 'accent' }],
+          'rotate(-90 80 100) translate(-40 0)',
+        ),
+        {
+          d: dots([
+            [24, 60],
+            [60, 40],
+            [110, 52],
+            [136, 80],
+            [40, 96],
+          ]),
+          role: 'ambient',
+        },
+        { d: 'M10 152 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'ebben': [
+    // The saddle tipped over on the snow: the wildlings who overtake Qhorin
+    // carry his head, in Jon VIII (chapter 142). The record is the books',
+    // and episode 20 orders it.
+    {
+      episode: 20,
+      chapter: 142,
+      value: [
+        ...moved(SADDLE, 'rotate(180 80 110)'),
+        { d: 'M10 152 H150', role: 'ambient', dashed: true },
       ],
     },
   ],

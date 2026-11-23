@@ -37031,6 +37031,956 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425228",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425228",
       "contentSha256": "75f528ded37fd1f9a3149cf1f6e5f5c18132eb8bf65d7d9a767e4bc2e98ab464"
+    },
+    "hxh-en-Southernpiece_Catalog-425352.json": {
+      "locale": "en",
+      "title": "Southernpiece Catalog",
+      "revision": 425352,
+      "revisionDate": "2026-08-29T19:05:13Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Southernpiece_Catalog",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425352",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425352",
+      "contentSha256": "2c0e41a1dc5f88fa032c2d447377de79aacd750996f775716651442d3ca3da95"
+    },
+    "hxh-en-Blue_Planet-425306.json": {
+      "locale": "en",
+      "title": "Blue Planet",
+      "revision": 425306,
+      "revisionDate": "2026-08-29T19:02:09Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Blue_Planet",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425306",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425306",
+      "contentSha256": "c5acfdcc0ff98a8e5ee189a6ce9d78516da4d28a674b45127725b33c6dc8df23"
+    },
+    "hxh-en-Greed_Island-425927.json": {
+      "locale": "en",
+      "title": "Greed Island",
+      "revision": 425927,
+      "revisionDate": "2026-11-11T00:42:05Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Greed_Island",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425927",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425927",
+      "contentSha256": "a50be09722524f08da686bdd8655565bdf453adbd6ecf4f5b1b07f1cb7bf8325"
+    },
+    "hxh-en-Nickes'_Alliance-305464.json": {
+      "locale": "en",
+      "title": "Nickes' Alliance",
+      "revision": 305464,
+      "revisionDate": "2022-06-08T14:31:30Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Nickes'_Alliance",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=305464",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=305464",
+      "contentSha256": "833b12313ec36aec1bc42d06bfef313a424beb77beb63ec2a5c2cf475e3480ae"
+    },
+    "hxh-en-Nen-425749.json": {
+      "locale": "en",
+      "title": "Nen",
+      "revision": 425749,
+      "revisionDate": "2026-10-08T14:17:10Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Nen",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425749",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425749",
+      "contentSha256": "974bcbf72fa360c07734d0766d3eb2e397bf9a6163fb9d173d8e01d03b74f9d9"
+    },
+    "got-en-Garden_of_Bones-740167.json": {
+      "locale": "en",
+      "title": "Garden of Bones",
+      "revision": 740167,
+      "revisionDate": "2026-06-27T12:13:27Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Garden_of_Bones",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740167",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740167",
+      "contentSha256": "3725a5d85fb11127e57ee983716afacd321df6b95ca32d8bcda4169a117bddd7"
+    },
+    "got-en-Storm's_End-749060.json": {
+      "locale": "en",
+      "title": "Storm's End",
+      "revision": 749060,
+      "revisionDate": "2026-10-13T08:59:32Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Storm's_End",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749060",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749060",
+      "contentSha256": "93e07c5716155cd18af9d6dd3827a7462c66780818596b938d3ac7572ca1bb6b"
+    },
+    "got-en-Fist_of_the_First_Men-722566.json": {
+      "locale": "en",
+      "title": "Fist of the First Men",
+      "revision": 722566,
+      "revisionDate": "2026-01-10T23:15:23Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Fist_of_the_First_Men",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722566",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722566",
+      "contentSha256": "63ad57db9d693b2a89f17e055f847b4d73a3b41941f145464073b18cc0265688"
+    },
+    "got-en-Skirling_Pass-658806.json": {
+      "locale": "en",
+      "title": "Skirling Pass",
+      "revision": 658806,
+      "revisionDate": "2024-01-08T09:09:46Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Skirling_Pass",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=658806",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=658806",
+      "contentSha256": "d3aafc5abfc53588fc65ef771642d88341bc4215908775e4f62ca36a78808755"
+    },
+    "got-en-Red_Waste-716780.json": {
+      "locale": "en",
+      "title": "Red Waste",
+      "revision": 716780,
+      "revisionDate": "2026-01-01T15:08:41Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Red_Waste",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=716780",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=716780",
+      "contentSha256": "d9f803010cafd735484568e10e407a17c0061d60b004da4db8c3f2b789779aa7"
+    },
+    "got-en-Lordsport-724048.json": {
+      "locale": "en",
+      "title": "Lordsport",
+      "revision": 724048,
+      "revisionDate": "2026-01-17T11:53:48Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lordsport",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=724048",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=724048",
+      "contentSha256": "831b69e16fc26bcf6fe1ff559853441e68b3403cf8912f6054390a29541424ca"
+    },
+    "got-en-Blackwater_Bay-720401.json": {
+      "locale": "en",
+      "title": "Blackwater Bay",
+      "revision": 720401,
+      "revisionDate": "2026-01-06T12:39:35Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Blackwater_Bay",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=720401",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=720401",
+      "contentSha256": "788168dc7caab54a9c480b5b5d6ff73674a2ffc6efd0084a7f42651bd60dd69b"
+    },
+    "got-en-Craster's_Keep-683202.json": {
+      "locale": "en",
+      "title": "Craster's Keep",
+      "revision": 683202,
+      "revisionDate": "2024-06-01T19:15:25Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Craster's_Keep",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=683202",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=683202",
+      "contentSha256": "0596dac674bc1a31f8fa8cc398ebfbd086056fe157d994135a1f185bced36b4b"
+    },
+    "got-en-Oxcross-717212.json": {
+      "locale": "en",
+      "title": "Oxcross",
+      "revision": 717212,
+      "revisionDate": "2026-01-01T16:45:24Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Oxcross",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=717212",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=717212",
+      "contentSha256": "9c2fdd464ba80ed032c3e0b1999c06849dac29dd5cf1f7a95237484d06ab3644"
+    },
+    "got-en-Stony_Shore-720724.json": {
+      "locale": "en",
+      "title": "Stony Shore",
+      "revision": 720724,
+      "revisionDate": "2026-01-07T12:11:28Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Stony_Shore",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=720724",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=720724",
+      "contentSha256": "e6dff2f238412fbffc0f4e6f8e496fa5c1dbde21960463a6d6eafdb4ea2524aa"
+    },
+    "got-en-Frostfangs-671266.json": {
+      "locale": "en",
+      "title": "Frostfangs",
+      "revision": 671266,
+      "revisionDate": "2024-03-18T07:53:49Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Frostfangs",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=671266",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=671266",
+      "contentSha256": "4557df8fd88f2dd0b3508ba71cb603eecde256a1dd5fbe633b9e53ac55bc33e9"
+    },
+    "got-en-Alchemists'_Guild-705997.json": {
+      "locale": "en",
+      "title": "Alchemists' Guild",
+      "revision": 705997,
+      "revisionDate": "2024-09-14T06:34:11Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Alchemists'_Guild",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=705997",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=705997",
+      "contentSha256": "2626b9bbe74446c714ebd2a0e1d20213fb2ba924c272f6ba0f633a809d2b7c67"
+    },
+    "got-en-Bitterbridge-748019.json": {
+      "locale": "en",
+      "title": "Bitterbridge",
+      "revision": 748019,
+      "revisionDate": "2026-08-14T14:04:54Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Bitterbridge",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748019",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748019",
+      "contentSha256": "68743b600ed448645f924bdbc90ba829468fc1d549a71f9e7c5948bc428db698"
+    },
+    "got-en-Blackwater_Rush-658302.json": {
+      "locale": "en",
+      "title": "Blackwater Rush",
+      "revision": 658302,
+      "revisionDate": "2024-01-05T10:59:12Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Blackwater_Rush",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=658302",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=658302",
+      "contentSha256": "c308c2461a7d126450ebadbf89d95dc68c31fbd8045cf6c1e01fdca64552b2f5"
+    },
+    "iaf-en-A_Clash_of_Kings/Statistical_Analysis-27300.json": {
+      "locale": "en",
+      "title": "A Clash of Kings/Statistical Analysis",
+      "revision": 27300,
+      "revisionDate": "2025-03-06T03:29:22Z",
+      "url": "https://iceandfire.fandom.com/wiki/A_Clash_of_Kings/Statistical_Analysis",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27300",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27300",
+      "contentSha256": "059856faef22f2a42237a22389b7d058bf7f5260b1c97e56fb2ca4d17508c0cb"
+    },
+    "iaf-en-Vaes_Tolorro-25729.json": {
+      "locale": "en",
+      "title": "Vaes Tolorro",
+      "revision": 25729,
+      "revisionDate": "2022-09-09T12:25:33Z",
+      "url": "https://iceandfire.fandom.com/wiki/Vaes_Tolorro",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25729",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25729",
+      "contentSha256": "58251f0fb72f01c6f59b56ad743339637e6519c065969516c89f5e82e2c10642"
+    },
+    "iaf-en-Whitetree-15833.json": {
+      "locale": "en",
+      "title": "Whitetree",
+      "revision": 15833,
+      "revisionDate": "2016-04-30T19:50:00Z",
+      "url": "https://iceandfire.fandom.com/wiki/Whitetree",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15833",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15833",
+      "contentSha256": "932f0aa571afe0abbccab056653da09f8c6ae53c2a7e18ba84d89ceeebedd0b7"
+    },
+    "iaf-en-Gods_Eye-13485.json": {
+      "locale": "en",
+      "title": "Gods Eye",
+      "revision": 13485,
+      "revisionDate": "2015-05-22T20:43:27Z",
+      "url": "https://iceandfire.fandom.com/wiki/Gods_Eye",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=13485",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=13485",
+      "contentSha256": "7f82fd47ec5b1f6e2246a0d137f3724555d90e6d25b0382067ab40269e3553c7"
+    },
+    "iaf-en-Bitterbridge-20475.json": {
+      "locale": "en",
+      "title": "Bitterbridge",
+      "revision": 20475,
+      "revisionDate": "2018-01-25T12:25:28Z",
+      "url": "https://iceandfire.fandom.com/wiki/Bitterbridge",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=20475",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=20475",
+      "contentSha256": "c91c40186bae4a9c2be6c806c1fb76917883e369f5b4ad4f79165163671d3d8a"
+    },
+    "iaf-en-Blackwater_Bay-15309.json": {
+      "locale": "en",
+      "title": "Blackwater Bay",
+      "revision": 15309,
+      "revisionDate": "2016-04-06T19:48:40Z",
+      "url": "https://iceandfire.fandom.com/wiki/Blackwater_Bay",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15309",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15309",
+      "contentSha256": "84841330ee25c7ea57b27dab2e26c766976b1587dba0e8d7dd86a2124bb41ba1"
+    },
+    "iaf-en-Lordsport-18956.json": {
+      "locale": "en",
+      "title": "Lordsport",
+      "revision": 18956,
+      "revisionDate": "2017-05-19T09:29:54Z",
+      "url": "https://iceandfire.fandom.com/wiki/Lordsport",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=18956",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=18956",
+      "contentSha256": "4f0bb0e4b54b8247e708c156b606b26960c338a23f95dc41d46ed891bbec5d47"
+    },
+    "iaf-en-Fist_of_the_First_Men-21574.json": {
+      "locale": "en",
+      "title": "Fist of the First Men",
+      "revision": 21574,
+      "revisionDate": "2018-03-06T17:07:54Z",
+      "url": "https://iceandfire.fandom.com/wiki/Fist_of_the_First_Men",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21574",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21574",
+      "contentSha256": "10ae60806eb68f491428bc8a2d25100289b156c42f2fc98fb6e9b9257f394609"
+    },
+    "iaf-en-Craster's_Keep-23069.json": {
+      "locale": "en",
+      "title": "Craster's Keep",
+      "revision": 23069,
+      "revisionDate": "2019-05-05T01:35:48Z",
+      "url": "https://iceandfire.fandom.com/wiki/Craster's_Keep",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23069",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23069",
+      "contentSha256": "b7b09f311d790c04deac64a4f4137bad8df363f36837d69d760731d3c8c9ba78"
+    },
+    "iaf-en-House_of_the_Undying-21903.json": {
+      "locale": "en",
+      "title": "House of the Undying",
+      "revision": 21903,
+      "revisionDate": "2018-03-23T08:29:25Z",
+      "url": "https://iceandfire.fandom.com/wiki/House_of_the_Undying",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21903",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21903",
+      "contentSha256": "b8a9d76f78f579a553a08a873494f5620b6b0de292f326d72a8bce6b2bb5fb69"
+    },
+    "iaf-en-Red_Waste-26562.json": {
+      "locale": "en",
+      "title": "Red Waste",
+      "revision": 26562,
+      "revisionDate": "2023-10-26T16:26:29Z",
+      "url": "https://iceandfire.fandom.com/wiki/Red_Waste",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26562",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26562",
+      "contentSha256": "a49812507ffd038b826b45d696401a68275abdee31e1400128fadf498f61f29e"
+    },
+    "iaf-en-Stony_Shore-20499.json": {
+      "locale": "en",
+      "title": "Stony Shore",
+      "revision": 20499,
+      "revisionDate": "2018-01-25T12:52:13Z",
+      "url": "https://iceandfire.fandom.com/wiki/Stony_Shore",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=20499",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=20499",
+      "contentSha256": "695ef16a5898431bb45f6e47df34e4384ddb1a3922e604620b14949ac8f248d5"
+    },
+    "iaf-en-Storm's_End-27382.json": {
+      "locale": "en",
+      "title": "Storm's End",
+      "revision": 27382,
+      "revisionDate": "2025-05-13T23:24:11Z",
+      "url": "https://iceandfire.fandom.com/wiki/Storm's_End",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27382",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27382",
+      "contentSha256": "06426de4e855f7a4dde9d1890a46a65e2a09070a8d27c9e9e07b0137b16ea0a6"
+    },
+    "got-en-Lightbringer-668655.json": {
+      "locale": "en",
+      "title": "Lightbringer",
+      "revision": 668655,
+      "revisionDate": "2024-03-08T13:12:06Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lightbringer",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=668655",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=668655",
+      "contentSha256": "d14f2a1199bc19fdefa01d705e5731363bbafada93336979c62087a8822b70cd"
+    },
+    "got-en-Crown-685409.json": {
+      "locale": "en",
+      "title": "Crown",
+      "revision": 685409,
+      "revisionDate": "2024-06-13T11:46:16Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Crown",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=685409",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=685409",
+      "contentSha256": "c31843a2e286204b098abf940f62787cdc1acf4fed9cbe3aa229e979147062a3"
+    },
+    "got-en-Kingsguard-748510.json": {
+      "locale": "en",
+      "title": "Kingsguard",
+      "revision": 748510,
+      "revisionDate": "2026-08-29T17:54:22Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Kingsguard",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748510",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748510",
+      "contentSha256": "f510d2c08224f47259bca463e4c3f4c50a86dfc85e114600a87f45445806c0fd"
+    },
+    "got-en-Salt_Throne-722818.json": {
+      "locale": "en",
+      "title": "Salt Throne",
+      "revision": 722818,
+      "revisionDate": "2026-01-12T04:14:53Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Salt_Throne",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722818",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722818",
+      "contentSha256": "fb720a99433d03be91cc8c8000e0f1fd88998c956c17a7bbdd5de2e17d2aa37b"
+    },
+    "got-en-House_Hornwood-735786.json": {
+      "locale": "en",
+      "title": "House Hornwood",
+      "revision": 735786,
+      "revisionDate": "2026-05-14T14:31:52Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_Hornwood",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735786",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735786",
+      "contentSha256": "07b37eee18392e37102510e929dc9a70d60ac959fdd2b76549088db1bb1ae0ac"
+    },
+    "got-en-House_Manderly-743407.json": {
+      "locale": "en",
+      "title": "House Manderly",
+      "revision": 743407,
+      "revisionDate": "2026-07-13T05:41:15Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_Manderly",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=743407",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=743407",
+      "contentSha256": "356d6f76971803ad6cde4b9027efbf7082745bdc232410c727d621f9d01e97d7"
+    },
+    "got-en-House_Reed-735394.json": {
+      "locale": "en",
+      "title": "House Reed",
+      "revision": 735394,
+      "revisionDate": "2026-05-12T10:19:00Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_Reed",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735394",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735394",
+      "contentSha256": "46f41c9113b44017b1424e908605b6040d02770116c51dba24e90cc19f9d1166"
+    },
+    "got-en-Jon_Snow-749120.json": {
+      "locale": "en",
+      "title": "Jon Snow",
+      "revision": 749120,
+      "revisionDate": "2026-10-20T10:46:55Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Jon_Snow",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749120",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749120",
+      "contentSha256": "e55003c955b99358ee2661322961a3d5be9b59ccbafea1c61614b05f11b66876"
+    },
+    "iaf-en-A_Storm_of_Swords-26385.json": {
+      "locale": "en",
+      "title": "A Storm of Swords",
+      "revision": 26385,
+      "revisionDate": "2023-06-03T01:50:28Z",
+      "url": "https://iceandfire.fandom.com/wiki/A_Storm_of_Swords",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26385",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26385",
+      "contentSha256": "0ee7943be8b92216bf63ff450dcda4200b548fd9af5a94423cf7551848d4b6b6"
+    },
+    "got-en-The_North_Remembers/Appearances-722994.json": {
+      "locale": "en",
+      "title": "The North Remembers/Appearances",
+      "revision": 722994,
+      "revisionDate": "2026-01-12T06:18:14Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_North_Remembers/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722994",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722994",
+      "contentSha256": "7fe5a77cd462588e4431027c2f19cdfa3a6c67ae63861aea7c0aaaba249f0da6"
+    },
+    "got-en-The_Night_Lands/Appearances-722995.json": {
+      "locale": "en",
+      "title": "The Night Lands/Appearances",
+      "revision": 722995,
+      "revisionDate": "2026-01-12T06:18:18Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Night_Lands/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722995",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722995",
+      "contentSha256": "53dc6bc6d03b6b346ee1b262a2c3a13668384e02123dd2e9832285cb61d675a9"
+    },
+    "got-en-What_Is_Dead_May_Never_Die/Appearances-722996.json": {
+      "locale": "en",
+      "title": "What Is Dead May Never Die/Appearances",
+      "revision": 722996,
+      "revisionDate": "2026-01-12T06:18:22Z",
+      "url": "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722996",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722996",
+      "contentSha256": "afdfe5ced13ebfed7edb28642a5dc5dc8ae03295683d9d3ca536255a145224fc"
+    },
+    "got-en-The_Ghost_of_Harrenhal/Appearances-721544.json": {
+      "locale": "en",
+      "title": "The Ghost of Harrenhal/Appearances",
+      "revision": 721544,
+      "revisionDate": "2026-01-08T01:51:50Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=721544",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=721544",
+      "contentSha256": "90eab4999d63cfc6ab42e2ea0bf01932f057b91a8a3a95e8cc3a7f8f769bd405"
+    },
+    "got-en-The_Old_Gods_and_the_New/Appearances-722998.json": {
+      "locale": "en",
+      "title": "The Old Gods and the New/Appearances",
+      "revision": 722998,
+      "revisionDate": "2026-01-12T06:18:29Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722998",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722998",
+      "contentSha256": "367e1bb46dcd2f9af3017b0d4e281450e36ef080da93c6a72c7fffb36c95b2b9"
+    },
+    "got-en-A_Man_Without_Honor/Appearances-748537.json": {
+      "locale": "en",
+      "title": "A Man Without Honor/Appearances",
+      "revision": 748537,
+      "revisionDate": "2026-08-31T15:37:52Z",
+      "url": "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748537",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748537",
+      "contentSha256": "518c1d7ba1a3511da6ad3dace1d189915761a6715a63fce0695bcb81c6e834a7"
+    },
+    "got-en-The_Prince_of_Winterfell/Appearances-694238.json": {
+      "locale": "en",
+      "title": "The Prince of Winterfell/Appearances",
+      "revision": 694238,
+      "revisionDate": "2024-06-30T12:25:47Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=694238",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=694238",
+      "contentSha256": "5282c01fa8fa5ed1d8452d0e0eac3a11fb4eedebd39208dc06b56be03438c12b"
+    },
+    "got-en-Blackwater/Appearances-694239.json": {
+      "locale": "en",
+      "title": "Blackwater/Appearances",
+      "revision": 694239,
+      "revisionDate": "2024-06-30T12:26:03Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Blackwater/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=694239",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=694239",
+      "contentSha256": "63c408de7f2ccff2f4692831ce2ca7bba74d25fec53e1b10f8d73dad249395e5"
+    },
+    "got-en-Valar_Morghulis/Appearances-694240.json": {
+      "locale": "en",
+      "title": "Valar Morghulis/Appearances",
+      "revision": 694240,
+      "revisionDate": "2024-06-30T12:26:49Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Valar_Morghulis/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=694240",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=694240",
+      "contentSha256": "596c54d3c79d4d5d5d16cc8f9a1ce61704a00bce70226dbe1501aa106a367ead"
+    },
+    "got-en-Flea_Bottom-747744.json": {
+      "locale": "en",
+      "title": "Flea Bottom",
+      "revision": 747744,
+      "revisionDate": "2026-08-11T17:38:55Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Flea_Bottom",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=747744",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=747744",
+      "contentSha256": "1f4b75e1c6b3662bc62709a69e389bc4a46f46ab2487f99a0a89b3ae96e47357"
+    },
+    "got-en-Torrhen's_Square-683250.json": {
+      "locale": "en",
+      "title": "Torrhen's Square",
+      "revision": 683250,
+      "revisionDate": "2024-06-02T00:37:14Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Torrhen's_Square",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=683250",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=683250",
+      "contentSha256": "05a8c588619e17b445a0b3228260a9c207872ca7213b0a91e8dbe81d2edcc096"
+    },
+    "got-en-Lorath-723077.json": {
+      "locale": "en",
+      "title": "Lorath",
+      "revision": 723077,
+      "revisionDate": "2026-01-12T06:33:21Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lorath",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=723077",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=723077",
+      "contentSha256": "7384a2203c439f898670a011000ec54ea5fcca9f3188aef19719319672a4d622"
+    },
+    "got-en-Highgarden-727880.json": {
+      "locale": "en",
+      "title": "Highgarden",
+      "revision": 727880,
+      "revisionDate": "2026-02-05T03:35:51Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Highgarden",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=727880",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=727880",
+      "contentSha256": "4dcedf630fc7417572a840d0ca2d26ccf7021d801402fdc4113fe77bba5a6445"
+    },
+    "got-en-Deepwood_Motte-722975.json": {
+      "locale": "en",
+      "title": "Deepwood Motte",
+      "revision": 722975,
+      "revisionDate": "2026-01-12T05:57:14Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Deepwood_Motte",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722975",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722975",
+      "contentSha256": "2bcca31056521842ed334494eb292a03a0c9cc57bd0777a6a9aa84af11b18236"
+    },
+    "got-en-Summer_Isles-723081.json": {
+      "locale": "en",
+      "title": "Summer Isles",
+      "revision": 723081,
+      "revisionDate": "2026-01-12T06:33:44Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Summer_Isles",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=723081",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=723081",
+      "contentSha256": "d75175cebfc4d574e41272dc7941f89335522fa1e7176a6db5145f4752ac8028"
+    },
+    "got-en-Maidenpool-748832.json": {
+      "locale": "en",
+      "title": "Maidenpool",
+      "revision": 748832,
+      "revisionDate": "2026-09-21T17:32:42Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Maidenpool",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748832",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748832",
+      "contentSha256": "945df789ab3646af2e8ffd0cd6d27cd37d39a0d86a823c037dc9e4cf0ee9b18f"
+    },
+    "got-en-Barrowton-722972.json": {
+      "locale": "en",
+      "title": "Barrowton",
+      "revision": 722972,
+      "revisionDate": "2026-01-12T05:54:15Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Barrowton",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722972",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722972",
+      "contentSha256": "dc3e3735a9b41c285fa9cbf3ca074daf4a7dc08a1df5968b23ed9e0c52b19f98"
+    },
+    "got-en-Meereen-720784.json": {
+      "locale": "en",
+      "title": "Meereen",
+      "revision": 720784,
+      "revisionDate": "2026-01-07T12:56:39Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Meereen",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=720784",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=720784",
+      "contentSha256": "41805b008c509e5d4359ed70a29b82ac4e19ffca5f53be787fed0079ff50d5e1"
+    },
+    "got-en-Dreadfort-734389.json": {
+      "locale": "en",
+      "title": "Dreadfort",
+      "revision": 734389,
+      "revisionDate": "2026-05-08T11:07:51Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Dreadfort",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=734389",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=734389",
+      "contentSha256": "00b841fea49cc2aaa18c76345a89014095f50ede1bbd63d407334ccbe4a4e2fc"
+    },
+    "got-en-Crag-699018.json": {
+      "locale": "en",
+      "title": "Crag",
+      "revision": 699018,
+      "revisionDate": "2024-07-15T07:44:08Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Crag",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=699018",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=699018",
+      "contentSha256": "c0d3e1c277ef9cabce79b126d980491a8d1a1e23f8783b057a20b62b73043732"
+    },
+    "got-en-Tarth-732660.json": {
+      "locale": "en",
+      "title": "Tarth",
+      "revision": 732660,
+      "revisionDate": "2026-02-28T18:52:46Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Tarth",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732660",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732660",
+      "contentSha256": "8ba5d30b1001d3e330807ea4f9e83041f206654329cd3bd15d1717d25b6b6b4b"
+    },
+    "got-en-Seagard-708337.json": {
+      "locale": "en",
+      "title": "Seagard",
+      "revision": 708337,
+      "revisionDate": "2025-02-09T09:41:20Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Seagard",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=708337",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=708337",
+      "contentSha256": "a7acbd7f46e4a1c832352208487993975077f329fc98493a08e903d0682fc671"
+    },
+    "got-en-Faircastle-689353.json": {
+      "locale": "en",
+      "title": "Faircastle",
+      "revision": 689353,
+      "revisionDate": "2024-06-21T20:08:44Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Faircastle",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=689353",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=689353",
+      "contentSha256": "0f04a28b12ec2a6bf1f8606c86101140b08745c69801b76391921e1ff0e32db2"
+    },
+    "got-en-Ashemark-708335.json": {
+      "locale": "en",
+      "title": "Ashemark",
+      "revision": 708335,
+      "revisionDate": "2025-02-09T09:40:56Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Ashemark",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=708335",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=708335",
+      "contentSha256": "bf2630d98a865e327ad3bcb53b239258a9fabbfb7c44168d5d98b747fff5e3a9"
+    },
+    "got-en-Castamere-699209.json": {
+      "locale": "en",
+      "title": "Castamere",
+      "revision": 699209,
+      "revisionDate": "2024-07-15T11:00:07Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Castamere",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=699209",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=699209",
+      "contentSha256": "63c3595f0abd34f30e1c05727f121721dc4bb3d155127463e9f78734170a6e19"
+    },
+    "got-en-Rhoyne-658288.json": {
+      "locale": "en",
+      "title": "Rhoyne",
+      "revision": 658288,
+      "revisionDate": "2024-01-05T10:43:48Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Rhoyne",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=658288",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=658288",
+      "contentSha256": "933f0afc4a2a29eb88268584dfd34d7d1d94ca01bfb8cf71e5407bea89cdeda3"
+    },
+    "got-en-Astapor-721925.json": {
+      "locale": "en",
+      "title": "Astapor",
+      "revision": 721925,
+      "revisionDate": "2026-01-08T05:58:39Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Astapor",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=721925",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=721925",
+      "contentSha256": "9aa6777610c65c9210f20c9f5dd98b7b6fec3f5d3c19dba0736e716d7b10001d"
+    },
+    "got-en-Haystack_Hall-683252.json": {
+      "locale": "en",
+      "title": "Haystack Hall",
+      "revision": 683252,
+      "revisionDate": "2024-06-02T00:39:11Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Haystack_Hall",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=683252",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=683252",
+      "contentSha256": "d75be5e296b835dfaaf248d61294658945e2a113166375139f2d66f7665ea525"
+    },
+    "got-en-Red_Harbor-674958.json": {
+      "locale": "en",
+      "title": "Red Harbor",
+      "revision": 674958,
+      "revisionDate": "2024-03-30T01:55:52Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Red_Harbor",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=674958",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=674958",
+      "contentSha256": "64bbdd30508457593a7aaf74cee080c659625e086ee3ed2c5e60d4c970fa93ee"
+    },
+    "got-en-Salt_Rock-674957.json": {
+      "locale": "en",
+      "title": "Salt Rock",
+      "revision": 674957,
+      "revisionDate": "2024-03-30T01:55:34Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Salt_Rock",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=674957",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=674957",
+      "contentSha256": "69643344a0c95189da31695930cfeaff4052b304a19387683e49661682abe444"
+    },
+    "got-en-Yellow_Fork-708274.json": {
+      "locale": "en",
+      "title": "Yellow Fork",
+      "revision": 708274,
+      "revisionDate": "2025-02-09T05:57:08Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Yellow_Fork",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=708274",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=708274",
+      "contentSha256": "bdf5f426fc6ed741503982abbf68067dcc2ffd8c99fe1d5f05b696bb965a8f9a"
+    },
+    "got-en-Silverhill-683260.json": {
+      "locale": "en",
+      "title": "Silverhill",
+      "revision": 683260,
+      "revisionDate": "2024-06-02T00:45:10Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Silverhill",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=683260",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=683260",
+      "contentSha256": "306f2e440c6eea9d17781fc859e45725a7b85c88c4058d8e59714cca943419e2"
+    },
+    "got-en-Shipbreaker_Bay-711979.json": {
+      "locale": "en",
+      "title": "Shipbreaker Bay",
+      "revision": 711979,
+      "revisionDate": "2025-07-29T15:48:50Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Shipbreaker_Bay",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=711979",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=711979",
+      "contentSha256": "d41c58358e9a7790c709f0ad1a07c8886630b778e8607c678679de9eb2d3ef6b"
+    },
+    "got-en-Oldtown-722560.json": {
+      "locale": "en",
+      "title": "Oldtown",
+      "revision": 722560,
+      "revisionDate": "2026-01-10T20:38:54Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Oldtown",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722560",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722560",
+      "contentSha256": "6197bf8e3335d2b51d3743674f3d4c64dff7f3298dc68681edd1573bf47d8a83"
+    },
+    "got-en-Smoking_Sea-720396.json": {
+      "locale": "en",
+      "title": "Smoking Sea",
+      "revision": 720396,
+      "revisionDate": "2026-01-06T12:36:03Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Smoking_Sea",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=720396",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=720396",
+      "contentSha256": "61b964ccde6d08c23518ae80ba83b511cd4ddb984c19a4f20863e0b77cf932b7"
+    },
+    "got-en-Volantis-749219.json": {
+      "locale": "en",
+      "title": "Volantis",
+      "revision": 749219,
+      "revisionDate": "2026-10-31T09:56:30Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Volantis",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749219",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749219",
+      "contentSha256": "2bf9b4c0e478fc49abee3fa496c4469493b78ae045df6a14e287c86f73fe0f8d"
+    },
+    "got-en-Sunspear-720211.json": {
+      "locale": "en",
+      "title": "Sunspear",
+      "revision": 720211,
+      "revisionDate": "2026-01-05T23:58:33Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Sunspear",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=720211",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=720211",
+      "contentSha256": "d6afd55c122fac121c7ad139bb5dad6a624088716de01b50858034df3c085521"
+    },
+    "got-en-Dorne-745328.json": {
+      "locale": "en",
+      "title": "Dorne",
+      "revision": 745328,
+      "revisionDate": "2026-07-29T16:54:12Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Dorne",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=745328",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=745328",
+      "contentSha256": "b89e98214421f70a2739dcc9c4f298204913015a8a462912bb58dbf6cc1cbe61"
+    },
+    "got-en-Garden_of_Bones_(episode)/Appearances-722997.json": {
+      "locale": "en",
+      "title": "Garden of Bones (episode)/Appearances",
+      "revision": 722997,
+      "revisionDate": "2026-01-12T06:18:25Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_%28episode%29/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722997",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722997",
+      "contentSha256": "0c350c3aa6fff343bb5890dac6d2e917a6e3acbd0e80577ab6dcff1358172347"
+    },
+    "iaf-en-Astapor-15344.json": {
+      "locale": "en",
+      "title": "Astapor",
+      "revision": 15344,
+      "revisionDate": "2016-04-06T23:54:15Z",
+      "url": "https://iceandfire.fandom.com/wiki/Astapor",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15344",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15344",
+      "contentSha256": "62e633d69a8e0d9a168a6dd66c86f13a9d74a5d82d27b3ec42877b4d6461e2ad"
+    },
+    "iaf-en-Rhoyne-15307.json": {
+      "locale": "en",
+      "title": "Rhoyne",
+      "revision": 15307,
+      "revisionDate": "2016-04-06T19:47:20Z",
+      "url": "https://iceandfire.fandom.com/wiki/Rhoyne",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15307",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15307",
+      "contentSha256": "f604687628a2be1c9f900ff6ed078e68f6619003ebafdf67a84036813889f946"
+    },
+    "iaf-en-Castamere-27390.json": {
+      "locale": "en",
+      "title": "Castamere",
+      "revision": 27390,
+      "revisionDate": "2025-05-13T23:30:05Z",
+      "url": "https://iceandfire.fandom.com/wiki/Castamere",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27390",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27390",
+      "contentSha256": "d2c8c343df87f10446e865b752b169af5a6d17bb0bf7278e117155e904567592"
+    },
+    "iaf-en-Meereen-27478.json": {
+      "locale": "en",
+      "title": "Meereen",
+      "revision": 27478,
+      "revisionDate": "2025-09-09T14:58:11Z",
+      "url": "https://iceandfire.fandom.com/wiki/Meereen",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27478",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27478",
+      "contentSha256": "62eea0241189876753b17faa60ca8fc455cf30a78ff78e72383946e4f826bd5e"
+    },
+    "iaf-en-Faircastle-19180.json": {
+      "locale": "en",
+      "title": "Faircastle",
+      "revision": 19180,
+      "revisionDate": "2017-07-25T23:54:55Z",
+      "url": "https://iceandfire.fandom.com/wiki/Faircastle",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=19180",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=19180",
+      "contentSha256": "f16b2cd94475fdbaf9d2b2c0efe503480b4ac5c1ec8681197be011e177e41b29"
+    },
+    "iaf-en-Maidenpool-15518.json": {
+      "locale": "en",
+      "title": "Maidenpool",
+      "revision": 15518,
+      "revisionDate": "2016-04-13T18:19:09Z",
+      "url": "https://iceandfire.fandom.com/wiki/Maidenpool",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15518",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15518",
+      "contentSha256": "c0626c7e1560526a0ae212dfe8ed9db9a272c54c8f4646034ba31b1237560527"
+    },
+    "iaf-en-Jon_Umber_(Greatjon)-27148.json": {
+      "locale": "en",
+      "title": "Jon Umber (Greatjon)",
+      "revision": 27148,
+      "revisionDate": "2025-02-11T15:28:39Z",
+      "url": "https://iceandfire.fandom.com/wiki/Jon_Umber_%28Greatjon%29",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27148",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27148",
+      "contentSha256": "c6cdde4821da1c539921899ddb3f9747e237c04b42ca26cd1287ff2e08172089"
+    },
+    "iaf-en-House_Errol-25733.json": {
+      "locale": "en",
+      "title": "House Errol",
+      "revision": 25733,
+      "revisionDate": "2022-09-10T12:05:59Z",
+      "url": "https://iceandfire.fandom.com/wiki/House_Errol",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25733",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25733",
+      "contentSha256": "e76ec4f9b99f283d5518499ff2fc2a8da4337cc36170279ca887082dd7793e41"
+    },
+    "iaf-en-House_Mooton-18669.json": {
+      "locale": "en",
+      "title": "House Mooton",
+      "revision": 18669,
+      "revisionDate": "2017-04-16T21:30:39Z",
+      "url": "https://iceandfire.fandom.com/wiki/House_Mooton",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=18669",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=18669",
+      "contentSha256": "6b290fc6c6a10bb4e564ef27983201e48c5117479ada0c9474ec80fb2b104fc1"
+    },
+    "iaf-en-William_Mooton-15399.json": {
+      "locale": "en",
+      "title": "William Mooton",
+      "revision": 15399,
+      "revisionDate": "2016-04-10T13:13:33Z",
+      "url": "https://iceandfire.fandom.com/wiki/William_Mooton",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15399",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15399",
+      "contentSha256": "ee4332457b92ab3dc51798eea508f83bbf2aa3d449e41937ee3302a12ac7dbeb"
+    },
+    "iaf-en-House_Dustin-25468.json": {
+      "locale": "en",
+      "title": "House Dustin",
+      "revision": 25468,
+      "revisionDate": "2022-08-26T12:12:40Z",
+      "url": "https://iceandfire.fandom.com/wiki/House_Dustin",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25468",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25468",
+      "contentSha256": "512c751ab2d9b5d45ba069cbb95634be9e5820fa3e710fce48ede714d338eba7"
+    },
+    "got-en-The_Rains_of_Castamere-737710.json": {
+      "locale": "en",
+      "title": "The Rains of Castamere",
+      "revision": 737710,
+      "revisionDate": "2026-06-21T23:58:54Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=737710",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=737710",
+      "contentSha256": "470cc42681ca36189eb4ad83755502225e96640e138ba2ae6a319a0cbfea5fe4"
+    },
+    "iaf-en-Lorath-27334.json": {
+      "locale": "en",
+      "title": "Lorath",
+      "revision": 27334,
+      "revisionDate": "2025-05-13T03:42:28Z",
+      "url": "https://iceandfire.fandom.com/wiki/Lorath",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27334",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27334",
+      "contentSha256": "af5ddc745020cffa82079243ccce6b9f7a8aeb26196375df7a669a38f3b3917b"
+    },
+    "iaf-en-Daenerys_I_-_A_Game_of_Thrones-25456.json": {
+      "locale": "en",
+      "title": "Daenerys I - A Game of Thrones",
+      "revision": 25456,
+      "revisionDate": "2022-08-26T11:59:44Z",
+      "url": "https://iceandfire.fandom.com/wiki/Daenerys_I_-_A_Game_of_Thrones",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25456",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25456",
+      "contentSha256": "0c3b4c8c50acb4fd18091204a5ba94615493f051cdbfbf856bbe88b50781092e"
+    },
+    "iaf-en-Oldtown-20989.json": {
+      "locale": "en",
+      "title": "Oldtown",
+      "revision": 20989,
+      "revisionDate": "2018-02-02T14:15:05Z",
+      "url": "https://iceandfire.fandom.com/wiki/Oldtown",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=20989",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=20989",
+      "contentSha256": "dbd24146545cdc93f5c0e3023089302b6d89f979105116e6c39a3ca96510b3be"
     }
   }
 }

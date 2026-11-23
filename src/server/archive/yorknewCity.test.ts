@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { LOCALES } from '~/i18n/locales'
+import { type Locale, LOCALES } from '~/i18n/locales'
 import type { RecordView, Slot } from '~/lib/view/records'
 import {
   bookmarkAt as at,
@@ -597,10 +597,12 @@ const DRAWN_DEATHS = [
     episode: { opens: 43, death: 44 },
     chapter: { opens: 75, death: 76 },
   },
+  // Her drawing before the death is her Memory Bomb stage (56 / 112), so
+  // that is the one it is held to.
   {
     id: 'pakunoda',
-    episode: { opens: 49, death: 58 },
-    chapter: { opens: 90, death: 119 },
+    episode: { opens: 56, death: 58 },
+    chapter: { opens: 112, death: 119 },
   },
   // Captured again in chapter 82 alone, so a chapter reader meets the
   // grave from a capture. His drawing before the grave is his Big Bang
@@ -718,7 +720,7 @@ describe('the Eleven Black Children revealed', () => {
 })
 
 // Each Hatsu is a stage from the pair that first shows it, never one step
-// before, in both media (#1335).
+// before, in both media (#1335, #1337).
 describe('the Hatsu drawn for the Yorknew City records', () => {
   it.each([
     { id: 'uvogin', power: 'Big Bang Impact', episode: 44, chapter: 76 },
@@ -727,12 +729,63 @@ describe('the Hatsu drawn for the Yorknew City records', () => {
     { id: 'shalnark', power: 'Autopilot', episode: 96, chapter: 227 },
     { id: 'phinks', power: 'Ripper Cyclotron', episode: 96, chapter: 226 },
     { id: 'feitan', power: 'Pain Packer', episode: 97, chapter: 229 },
+    { id: 'shizuku', power: 'Blinky', episode: 43, chapter: 73 },
+    { id: 'pakunoda', power: 'memory reading', episode: 50, chapter: 92 },
+    { id: 'pakunoda', power: 'Memory Bomb', episode: 56, chapter: 112 },
+    { id: 'chrollo', power: 'Skill Hunter', episode: 55, chapter: 97 },
+    { id: 'bonolenov', power: 'Battle Cantabile', episode: 96, chapter: 225 },
   ])(
     'draws $id’s $power at episode $episode / chapter $chapter',
     ({ id, episode, chapter }) => {
       expect(stageMissedAt(archive, id, { episode, chapter })).toStrictEqual([])
     },
   )
+})
+
+// Porcupine dies in the scene his record opens with in the manga, and in
+// episode 45 in the anime: his drawing changes at 45 / 78, the first pair
+// both media hold (#1337).
+describe('Porcupine’s death drawn', () => {
+  it('lays the needles down at episode 45 / chapter 78', () => {
+    expect(
+      stageMissedAt(archive, 'porcupine', { episode: 45, chapter: 78 }),
+    ).toStrictEqual([])
+  })
+})
+
+/** Owl's drawing for a reader at a bookmark. */
+function owlAt(
+  unit: string,
+  count: number,
+  locale: Locale,
+): ReturnType<typeof drawingsFor> {
+  return drawingsFor(['owl'], readerFor(archive, at(unit, count), locale))
+}
+
+// Chapter 78 reports the Shadow Beasts all dead and chapter 84 shows Owl
+// held: two stages the manga alone tells, so an anime reader keeps the
+// bundle (#1337).
+describe('Owl’s manga-only stages', () => {
+  it.each(LOCALES)('opens the cloth at chapter 78 (%s)', (locale) => {
+    expect(owlAt('chapter', 78, locale)).not.toStrictEqual(
+      owlAt('chapter', 77, locale),
+    )
+  })
+
+  it.each(LOCALES)('knots it again at chapter 84 (%s)', (locale) => {
+    expect(owlAt('chapter', 83, locale)).toStrictEqual(
+      owlAt('chapter', 78, locale),
+    )
+    expect(owlAt('chapter', 84, locale)).toStrictEqual(
+      owlAt('chapter', 77, locale),
+    )
+  })
+
+  it.each(LOCALES)('keeps the bundle for an anime reader (%s)', (locale) => {
+    expect(owlAt('episode', 148, locale)).toStrictEqual(
+      owlAt('episode', 45, locale),
+    )
+  })
 })
 
 describe('the returning characters’ last steps', () => {

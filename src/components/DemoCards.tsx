@@ -77,7 +77,7 @@ export function OpenCard({
     <TrialLink
       entry={entry}
       point={point}
-      sx={[look, styles.cardLink]}
+      sx={[look, styles.cardLink, styles.clearsDial]}
     >
       {body}
     </TrialLink>

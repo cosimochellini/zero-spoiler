@@ -1,13 +1,16 @@
 import { describe, expect, it } from 'vitest'
 
+import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import { season2 } from '~/data/series/game-of-thrones/records/season-2'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
+import { recordIn, sidesOf } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage } from './pages.server'
+import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
@@ -32,7 +35,8 @@ const RECORDS: {
   // 2026-11-22).
   { id: 'xaro-xhoan-daxos', episode: 15, chapter: 114 },
   { id: 'pyat-pree', episode: 14, chapter: 114, source: 'chapter' },
-  { id: 'quaithe', episode: 15, chapter: 114, source: 'chapter' },
+  // Daenerys I (86): she introduces herself (owner, 2026-11-22; #1477).
+  { id: 'quaithe', episode: 15, chapter: 86, source: 'chapter' },
   { id: 'malakho', episode: 15, chapter: 101, source: 'episode' },
   { id: 'drogon', episode: 40, chapter: 86 },
   { id: 'rhaegal', episode: 41, chapter: 86 },
@@ -57,6 +61,41 @@ const CHANGES: {
     source: 'episode',
     value: 'deceased',
   },
+  // Later deaths the show alone tells, filed with their drawings' stages
+  // (#1475, #1238); the books' last chapter only orders them.
+  {
+    id: 'viserion',
+    episode: 66,
+    chapter: 344,
+    source: 'episode',
+    value: 'deceased',
+  },
+  {
+    id: 'rhaegal',
+    episode: 71,
+    chapter: 344,
+    source: 'episode',
+    value: 'deceased',
+  },
+]
+
+/**
+ * Every stage the Essos and Qarth cast's drawings take after their first,
+ * pinned in both media (#1475): the deaths the show alone tells, and
+ * Viserion's return as a wight. `source` for a stage one medium alone
+ * tells; `stage` counts a record's stages from 0.
+ */
+const STAGES: {
+  chapter: number
+  episode: number
+  id: keyof typeof DRAWINGS
+  source?: 'chapter' | 'episode'
+  stage?: number
+}[] = [
+  { id: 'xaro-xhoan-daxos', episode: 20, chapter: 137, source: 'episode' },
+  { id: 'viserion', episode: 66, chapter: 344, source: 'episode' },
+  { id: 'viserion', episode: 70, chapter: 344, source: 'episode', stage: 1 },
+  { id: 'rhaegal', episode: 71, chapter: 344, source: 'episode' },
 ]
 
 /**
@@ -223,6 +262,86 @@ describe('the Essos steps one medium alone tells', () => {
       )
 
       expect(page).not.toContain(JSON.stringify(en))
+    },
+  )
+})
+
+describe.each(
+  STAGES.flatMap((stage) =>
+    sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
+  ),
+)(
+  '$id is redrawn by $unit at $episode/$chapter',
+  ({ id, episode, chapter, source, unit, stage: index = 0, ...side }) => {
+    const stages = REDRAWINGS[id] ?? []
+    const stage = stages[index]
+    // The drawing just before is the last earlier stage this unit reads:
+    // a stage the other medium alone tells is never shown here.
+    const previous =
+      stages
+        .slice(0, index)
+        .findLast(
+          (earlier) =>
+            (recordIn(archive, id).source ?? earlier.source ?? unit) === unit,
+        )?.value ?? DRAWINGS[id]
+
+    it('at its pin, not one before', () => {
+      const owner = recordIn(archive, id)
+
+      expect(stage?.episode).toBe(episode)
+      expect(stage?.chapter).toBe(chapter)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? stage?.source).toBe(source)
+      expect(
+        drawingOf(owner, readerFor(archive, side.before, 'en')).strokes,
+      ).toStrictEqual(previous)
+      expect(
+        drawingOf(owner, readerFor(archive, side.reached, 'en')).strokes,
+      ).toStrictEqual(stage?.value)
+    })
+  },
+)
+
+/** The medium a stage is told in: its record's, else its own. */
+function mediumOf(
+  id: keyof typeof DRAWINGS,
+  index: number,
+): 'chapter' | 'episode' | undefined {
+  return recordIn(archive, id).source ?? REDRAWINGS[id]?.[index]?.source
+}
+
+/**
+ * The drawing a reader of this medium ends on: the last stage it tells, or
+ * the first drawing when it tells none.
+ */
+function endsOn(id: keyof typeof DRAWINGS, unit: Unit): unknown {
+  const told = (REDRAWINGS[id] ?? []).filter(
+    (stage) => (stage.source ?? unit) === unit,
+  )
+
+  return told.at(-1)?.value ?? DRAWINGS[id]
+}
+
+describe('the Essos stages one medium alone tells', () => {
+  // A reader of the other medium who has reached its end sees the last
+  // stage their medium tells, or the first drawing when it tells none.
+  it.each(
+    STAGES.filter(
+      ({ id, source }) =>
+        source !== undefined && recordIn(archive, id).source === undefined,
+    ),
+  )(
+    'never redraws $id for a reader of the other medium',
+    ({ id, source = 'episode', stage: index = 0 }) => {
+      const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
+      const drawn = drawingOf(
+        recordIn(archive, id),
+        otherAtTheEnd(source),
+      ).strokes
+
+      expect(mediumOf(id, index)).toBe(source)
+      expect(drawn).not.toStrictEqual(REDRAWINGS[id]?.[index]?.value)
+      expect(drawn).toStrictEqual(endsOn(id, other))
     },
   )
 })

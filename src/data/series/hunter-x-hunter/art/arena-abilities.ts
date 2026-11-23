@@ -21,6 +21,15 @@ const CARD: Stroke[] = [
   { d: 'M14 -16 L17 -13 V21 Q17 23 15 23 H-9 L-12 20', role: 'soft' },
 ]
 
+/**
+ * The needle of Nen Stitches with its eye, in tint, point up to the right.
+ * Machi's drawing draws it out of her pincushion.
+ */
+export const NEN_NEEDLE: Stroke = {
+  d: 'M106 58 Q110 52 116 50 L152 20 L120 56 Q114 60 106 58 Z M111 55 l5 -3',
+  role: 'accent',
+}
+
 /** The pip in the middle of a card, a diamond. */
 const PIP = 'M0 -7 L5 0 L0 7 L-5 0 Z'
 
@@ -133,10 +142,7 @@ export const ARENA_ABILITY_DRAWINGS = {
       d: 'M54 98 Q46 122 66 142 M47 100 l12 4 M45 110 l12 2 M46 121 l12 -1 M50 131 l11 -4 M56 139 l10 -6',
       role: 'soft',
     },
-    {
-      d: 'M106 58 Q110 52 116 50 L152 20 L120 56 Q114 60 106 58 Z M111 55 l5 -3',
-      role: 'accent',
-    },
+    NEN_NEEDLE,
     { d: 'M54 98 C56 70 84 50 108 56', role: 'soft' },
   ],
   // Three of Hisoka's playing cards flying up off the ring at angles, each

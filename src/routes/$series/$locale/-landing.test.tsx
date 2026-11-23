@@ -88,7 +88,29 @@ describe('LandingPage', () => {
       settleDelay(band),
     )
 
-    expect(bands).toStrictEqual([null, null, '0ms', '70ms', '140ms'])
+    // The intro, then the dial's head and its row, then the bands.
+    expect(bands).toStrictEqual([null, null, null, '0ms', '70ms', '140ms'])
+  })
+
+  // The row is what stays on screen when the dial pins (#1399).
+  it('folds the dial to one row that keeps the range’s name and value', () => {
+    renderWithProviders(
+      <LandingPage
+        landing={{
+          onboarding: onboarding({ start: { mode: 'episode', episode: 3 } }),
+        }}
+      />,
+    )
+
+    const dial = screen.getByRole('slider', { name: 'Point in the story' })
+    const row = dial.parentElement
+
+    expect(dial).toHaveAttribute('aria-valuetext', 'Episode 3')
+    expect(row).toContainElement(
+      screen.getByRole('button', { name: 'I’m here' }),
+    )
+    expect(row).toContainElement(screen.getByText('3', { selector: 'span' }))
+    expect(row).not.toHaveTextContent('Romance Dawn')
   })
 
   it('opens a card on a trial at the dial’s point, saving nothing', () => {

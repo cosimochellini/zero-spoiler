@@ -2,6 +2,7 @@ import type { PlaceDossier } from '~/data/types'
 
 import type { ThronesSaga, ThronesVocabulary } from './saga'
 import { season2Chronicles } from './season-2.chronicle'
+import { season2Relationships } from './season-2.relationships'
 
 /**
  * Season 2 of the show and *A Clash of Kings*: the second stage (#1455),
@@ -132,9 +133,10 @@ export const season2: ThronesSaga = {
       visual: { art: 'alayaya', tint: 'magenta' },
     },
     // Books: Sansa VIII (site chapter 139), at Joffrey's court after the
-    // battle he is the knight who wore Renly's armour, and asks the king to
-    // wed his sister. The show gives both to Loras and has no Garlan;
-    // episode 20 only orders him.
+    // battle he asks the king to wed his sister. That he wore Renly's armour
+    // is told only in Jaime VIII of A Storm of Swords (211), his drawing's
+    // stage. The show gives the request to Loras and has no Garlan; episode
+    // 20 only orders him.
     {
       id: 'garlan-tyrell',
       kind: 'character',
@@ -262,7 +264,8 @@ export const season2: ThronesSaga = {
         it: 'La moglie di Stannis Baratheon.',
         en: 'Stannis Baratheon’s wife.',
       },
-      visual: { art: 'selyse-baratheon', tint: 'wine' },
+      // Not wine: her drawing's accent, the jars, is not red (#1471).
+      visual: { art: 'selyse-baratheon', tint: 'azure' },
     },
     // Books: the prologue (site chapter 74), Pylos tells Cressen that
     // Princess Shireen wants to see the white raven. The show first has her
@@ -358,7 +361,7 @@ export const season2: ThronesSaga = {
         it: 'Un giovane cavaliere di Casa Lannister, prigioniero dell’esercito di Robb Stark.',
         en: 'A young knight of House Lannister, a prisoner of Robb Stark’s army.',
       },
-      visual: { art: 'alton-lannister', tint: 'red' },
+      visual: { art: 'alton-lannister', tint: 'ivory' },
     },
     // Books only: Catelyn I (site chapter 81), Robb sends him from Riverrun
     // to King's Landing with his peace terms. The show gives his part to
@@ -409,7 +412,7 @@ export const season2: ThronesSaga = {
         it: 'Un cavaliere al servizio dei Lannister che guida una banda di predoni nelle Terre dei Fiumi.',
         en: 'A knight in the Lannisters’ service who leads a band of raiders in the riverlands.',
       },
-      visual: { art: 'amory-lorch', tint: 'vermilion' },
+      visual: { art: 'amory-lorch', tint: 'violet' },
     },
     // Show: "Garden of Bones" (episode 14), Arya adds him to the names she
     // recites each night. Books: Arya VI (site chapter 100), a man called
@@ -456,7 +459,7 @@ export const season2: ThronesSaga = {
         it: 'Un vecchio uomo d’arme di Gregor Clegane, curvo nelle spalle.',
         en: 'An old, stoop-shouldered man-at-arms of Gregor Clegane’s.',
       },
-      visual: { art: 'chiswyck', tint: 'wine' },
+      visual: { art: 'chiswyck', tint: 'yellow' },
     },
     // Books only: Arya VII (site chapter 104), where he is the understeward
     // of the Wailing Tower who works Arya at Harrenhal. Arya VI (100) names
@@ -598,7 +601,8 @@ export const season2: ThronesSaga = {
         it: 'Uno degli uomini di ferro che prendono Grande Inverno con Theon Greyjoy.',
         en: 'One of the ironborn who take Winterfell with Theon Greyjoy.',
       },
-      visual: { art: 'black-lorren', tint: 'wine' },
+      // Not wine: his drawing's accent, the axe's grip, is not red (#1473).
+      visual: { art: 'black-lorren', tint: 'yellow' },
     },
     // Books: Theon II (site chapter 98), Theon takes him as his squire in a
     // bargain for a horse. The show has a Wex at the speech of episode 20,
@@ -679,7 +683,9 @@ export const season2: ThronesSaga = {
         it: 'Il figlio bastardo di Roose Bolton.',
         en: 'Roose Bolton’s bastard son.',
       },
-      visual: { art: 'ramsay-snow', tint: 'vermilion' },
+      // Not vermilion: his drawing's accent, the knife's edge, is not red;
+      // pink is House Bolton's colour (#1473).
+      visual: { art: 'ramsay-snow', tint: 'pink' },
     },
     // Books: Bran II (site chapter 90), he and Little Walder are at Bran's
     // audiences; Bran I (78) only tells of their coming. The show has no
@@ -1001,28 +1007,25 @@ export const season2: ThronesSaga = {
       summary: { it: 'Uno stregone di Qarth.', en: 'A warlock of Qarth.' },
       visual: { art: 'pyat-pree', tint: 'blue' },
     },
-    // Books: Daenerys III (chapter 114), the safe later pin: she finds
-    // Daenerys at the firemage in the bazaar and tells her to leave Qarth.
-    // No synopsis read has her name said: Jhogo's line bringing "Quaithe of
-    // the Shadow" in Daenerys I (chapter 86) counts as narration (owner,
-    // 2026-11-22), and Daenerys II (chapter 101) has only "a shadowbinder
-    // named Quaithe". Chapter 114 is the last chapter of the stage where
-    // she speaks with Daenerys (an open point). The show has her in "The
-    // Ghost of Harrenhal" (episode 15) and "A Man Without Honor", where she
-    // tells Jorah "I am no one"; no synopsis or quote has her name said, so
-    // she is the books' alone (an owner check). Episode 15 only orders her.
+    // Books: Daenerys I (chapter 86), she introduces herself to Daenerys at
+    // Vaes Tolorro (A Wiki of Ice and Fire's Quaithe page, citing Chapter
+    // 12), an explicit signal of her own beside Jhogo's narration-level line
+    // (owner, 2026-11-22). The show has her in "The Ghost of Harrenhal"
+    // (episode 15) and "A Man Without Honor", where she tells Jorah "I am no
+    // one"; no synopsis or quote has her name said, so she is the books'
+    // alone (an owner check). Episode 15 only orders her.
     {
       id: 'quaithe',
       kind: 'character',
       source: 'chapter',
       revealedAtEpisode: 15,
-      revealedAtChapter: 114,
+      revealedAtChapter: 86,
       name: { it: 'Quaithe', en: 'Quaithe' },
       summary: {
         it: 'Una donna dell’Ombra che raggiunge Daenerys da Qarth.',
         en: 'A woman of the Shadow who comes to Daenerys from Qarth.',
       },
-      visual: { art: 'quaithe', tint: 'wine' },
+      visual: { art: 'quaithe', tint: 'sand' },
     },
     // Show only: in "The Ghost of Harrenhal" (episode 15) Jorah tells
     // Daenerys what her riders say at Xaro's feast, "Malakho says the statue
@@ -1118,7 +1121,422 @@ export const season2: ThronesSaga = {
         it: 'Un vecchio dei Sette Regni, scudiero di Belwas il Forte.',
         en: 'An old man from the Seven Kingdoms, squire to Strong Belwas.',
       },
-      visual: { art: 'arstan-whitebeard', tint: 'ivory' },
+      visual: { art: 'arstan-whitebeard', tint: 'ocher' },
+    },
+    // The places a scene of the stage is set in (#1469), each at its first
+    // scene in each medium, as `game-of-thrones-season-2-places.md` lists
+    // them. Show: "The North Remembers", the ranging arrives at the keep.
+    // Books: Jon III (site chapter 97), the same arrival.
+    {
+      id: 'crasters-keep',
+      kind: 'place',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 97,
+      name: { it: 'Fortezza di Craster', en: 'Craster’s Keep' },
+      summary: {
+        it: 'La dimora di un bruto oltre la Barriera, dove i Guardiani della Notte fanno sosta.',
+        en: 'A wildling’s hall beyond the Wall, where the Night’s Watch stops on its way.',
+      },
+      visual: { art: 'crasters-keep', tint: 'ocher' },
+    },
+    // Show: "The North Remembers", Daenerys leads her people into the desert
+    // and Jorah names it. Books: Daenerys I (site chapter 86), the crossing.
+    {
+      id: 'red-waste',
+      kind: 'place',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 86,
+      name: { it: 'Desolazione Rossa', en: 'the Red Waste' },
+      summary: {
+        it: 'Un vasto deserto rosso nell’est di Essos.',
+        en: 'A vast red desert in the east of Essos.',
+      },
+      visual: { art: 'red-waste', tint: 'orange' },
+    },
+    // Book only. Jon II (site chapter 87), the ranging finds the village
+    // empty. The show's ranging passes empty villages in episode 11 and names
+    // none; episode 11 orders it.
+    {
+      id: 'whitetree',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 87,
+      name: { it: 'Albero Bianco', en: 'Whitetree' },
+      summary: {
+        it: 'Un villaggio di bruti abbandonato oltre la Barriera, sotto un grande albero del cuore.',
+        en: 'An empty wildling village beyond the Wall, under a great heart tree.',
+      },
+      visual: { art: 'whitetree', tint: 'ivory' },
+    },
+    // Book only. Daenerys I (site chapter 86), her people find the ruined
+    // city and call it the City of Bones. The show has no ruined city;
+    // episode 11 orders it.
+    {
+      id: 'vaes-tolorro',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 86,
+      name: { it: 'Vaes Tolorro', en: 'Vaes Tolorro' },
+      summary: {
+        it: 'Una città in rovina nella Desolazione Rossa.',
+        en: 'A ruined city in the Red Waste.',
+      },
+      visual: { art: 'vaes-tolorro', tint: 'sand' },
+    },
+    // Show: "The Night Lands", Theon disembarks at Lordsport. Books: Theon I
+    // (site chapter 85), the same landing.
+    {
+      id: 'lordsport',
+      kind: 'place',
+      revealedAtEpisode: 12,
+      revealedAtChapter: 85,
+      name: { it: 'Lordsport', en: 'Lordsport' },
+      summary: {
+        it: 'Un porto sull’isola di Pyke, nelle Isole di Ferro.',
+        en: 'A harbour town on the island of Pyke, in the Iron Islands.',
+      },
+      visual: { art: 'lordsport', tint: 'teal' },
+    },
+    // Show: "What Is Dead May Never Die", Balon gives Theon a ship to raid its
+    // fishing villages; the show sets no scene there (#1252). Books: Theon III
+    // (site chapter 111), Theon's raid.
+    {
+      id: 'stony-shore',
+      kind: 'place',
+      revealedAtEpisode: 13,
+      revealedAtChapter: 111,
+      name: { it: 'Costa Pietrosa', en: 'the Stony Shore' },
+      summary: {
+        it: 'Una costa del Nord sul mare occidentale, con villaggi di pescatori.',
+        en: 'A coast of the North on the western sea, with fishing villages.',
+      },
+      visual: { art: 'stony-shore', tint: 'blue' },
+    },
+    // Book only. Catelyn II (site chapter 96), Renly's host and tourney at
+    // Bitterbridge. The show's camp in episode 13 is never named; episode 13
+    // orders it.
+    {
+      id: 'bitterbridge',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 13,
+      revealedAtChapter: 96,
+      name: { it: 'Ponte Amaro', en: 'Bitterbridge' },
+      summary: {
+        it: 'Un castello presso un ponte, nell’Altopiano.',
+        en: 'A castle by a bridge, in the Reach.',
+      },
+      visual: { art: 'bitterbridge', tint: 'green' },
+    },
+    // Show: "Garden of Bones" opens on the field after Robb's night attack.
+    // Books: never visited; Sansa III (site chapter 106) names the battle
+    // when Joffrey learns of it (#1252).
+    {
+      id: 'oxcross',
+      kind: 'place',
+      revealedAtEpisode: 14,
+      revealedAtChapter: 106,
+      name: { it: 'Oxcross', en: 'Oxcross' },
+      summary: {
+        it: 'Un villaggio nelle Terre dell’Ovest.',
+        en: 'A village in the Westerlands.',
+      },
+      visual: { art: 'oxcross', tint: 'ocher' },
+    },
+    // Show only. "Garden of Bones", Jorah names the desert before Qarth's
+    // walls, where the khalasar waits. The books have no such place; chapter
+    // 101, where Daenerys II lets her into the city, orders it.
+    {
+      id: 'garden-of-bones',
+      kind: 'place',
+      source: 'episode',
+      revealedAtEpisode: 14,
+      revealedAtChapter: 101,
+      name: { it: 'Giardino delle Ossa', en: 'the Garden of Bones' },
+      summary: {
+        it: 'Il deserto fuori dalle mura di Qarth.',
+        en: 'The desert outside the walls of Qarth.',
+      },
+      visual: { art: 'garden-of-bones', tint: 'sand' },
+    },
+    // Show: "The Ghost of Harrenhal", Tyrion visits Hallyne at the
+    // Guildhall. Books: Tyrion V (site chapter 94), the same visit.
+    {
+      id: 'guildhall-of-the-alchemists',
+      kind: 'place',
+      revealedAtEpisode: 15,
+      revealedAtChapter: 94,
+      name: {
+        it: 'Palazzo dell’Ordine degli Alchimisti',
+        en: 'the Guildhall of the Alchemists',
+      },
+      summary: {
+        it: 'La sede della Gilda degli Alchimisti ad Approdo del Re.',
+        en: 'The hall of the Alchemists’ Guild in King’s Landing.',
+      },
+      visual: { art: 'guildhall-of-the-alchemists', tint: 'acid' },
+    },
+    // Show: "The Ghost of Harrenhal", the ranging arrives at the Fist. Books:
+    // Jon IV (site chapter 108), the same arrival.
+    {
+      id: 'fist-of-the-first-men',
+      kind: 'place',
+      revealedAtEpisode: 15,
+      revealedAtChapter: 108,
+      name: { it: 'Pugno dei Primi Uomini', en: 'the Fist of the First Men' },
+      summary: {
+        it: 'Un’antica collina oltre la Barriera, dove un tempo i Primi Uomini avevano un forte.',
+        en: 'An old hill beyond the Wall, where the First Men once had a fort.',
+      },
+      visual: { art: 'fist-of-the-first-men', tint: 'ice' },
+    },
+    // Show: "The Old Gods and the New", Qhorin's party rides through the pass
+    // Jeor names in episode 15. Books: Jon VI (site chapter 125), Jon and
+    // Stonesnake climb to the watchers in the pass.
+    {
+      id: 'skirling-pass',
+      kind: 'place',
+      revealedAtEpisode: 16,
+      revealedAtChapter: 125,
+      name: { it: 'Passo Skirling', en: 'the Skirling Pass' },
+      summary: {
+        it: 'Un alto passo di montagna oltre la Barriera.',
+        en: 'A high mountain pass beyond the Wall.',
+      },
+      visual: { art: 'skirling-pass', tint: 'cyan' },
+    },
+    // Show: "The Prince of Winterfell", Stannis tells Davos of his siege
+    // in the castle; the show sets no scene there (#1252). Books: Catelyn III
+    // (site chapter 105), Renly's camp below the castle Stannis besieges.
+    {
+      id: 'storms-end',
+      kind: 'place',
+      revealedAtEpisode: 18,
+      revealedAtChapter: 105,
+      name: { it: 'Capo Tempesta', en: 'Storm’s End' },
+      summary: {
+        it: 'Il grande castello di Casa Baratheon, sulla costa delle Terre della Tempesta.',
+        en: 'The great castle of House Baratheon, on the coast of the Stormlands.',
+      },
+      visual: { art: 'storms-end', tint: 'yellow' },
+    },
+    // Show: "The Prince of Winterfell", Stannis's fleet in the bay Salladhor
+    // names in episode 12. Books: Davos III (site chapter 132), the fleet
+    // sails in.
+    {
+      id: 'blackwater-bay',
+      kind: 'place',
+      revealedAtEpisode: 18,
+      revealedAtChapter: 132,
+      name: { it: 'Baia delle Acque Nere', en: 'Blackwater Bay' },
+      summary: {
+        it: 'La baia sotto Approdo del Re, dove le Rapide Nere sfociano in mare.',
+        en: 'The bay below King’s Landing, where the Blackwater Rush meets the sea.',
+      },
+      visual: { art: 'blackwater-bay', tint: 'azure' },
+    },
+    // Show: "Valar Morghulis", Daenerys enters the house Pyat Pree names in
+    // episode 15. Books: Daenerys IV (site chapter 122), the same visit,
+    // named in Daenerys II (101), where Pyat Pree invites her.
+    {
+      id: 'house-of-the-undying',
+      kind: 'place',
+      revealedAtEpisode: 20,
+      revealedAtChapter: 122,
+      // Named before its first scene in both media: Pyat Pree invites
+      // Daenerys in Daenerys II (chapter 101), which orders at episode 14 as
+      // Qarth's visit does, and in "The Ghost of Harrenhal" (episode 15). The
+      // leak scan reads one episode axis, so it takes the earlier naming.
+      nameSaidAt: 14,
+      name: { it: 'Casa degli Eterni', en: 'the House of the Undying' },
+      summary: {
+        it: 'La dimora degli stregoni di Qarth.',
+        en: 'The house of the warlocks of Qarth.',
+      },
+      visual: { art: 'house-of-the-undying', tint: 'violet' },
+    },
+    // The places the stage names in both media and never visits (#1476),
+    // each at its first naming in each medium, as
+    // `game-of-thrones-season-2-places.md` lists them. Show: "The North
+    // Remembers", a northern lord at Winterfell speaks of a new tower at
+    // Torrhen's Square. Books: Bran II (site chapter 90), Leobald Tallhart
+    // brings a party from Torrhen's Square to the harvest feast.
+    {
+      id: 'torrhens-square',
+      kind: 'place',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 90,
+      name: { it: 'Piazza di Torrhen', en: 'Torrhen’s Square' },
+      summary: { it: 'Un castello del Nord.', en: 'A castle in the North.' },
+      visual: { art: 'torrhens-square', tint: 'green' },
+    },
+    // Show: "What Is Dead May Never Die", Balon sends Yara to seize it.
+    // Books: Theon II (site chapter 98), Balon's plan sends Asha to take it;
+    // Bran II (90) may name it first (owner check).
+    {
+      id: 'deepwood-motte',
+      kind: 'place',
+      revealedAtEpisode: 13,
+      revealedAtChapter: 98,
+      name: { it: 'Deepwood Motte', en: 'Deepwood Motte' },
+      summary: { it: 'Un castello del Nord.', en: 'A castle in the North.' },
+      visual: { art: 'deepwood-motte', tint: 'ocher' },
+    },
+    // Show: "The Old Gods and the New", word of Winterfell reaches the
+    // Dreadfort (the place page's first citation; the line is not quoted).
+    // Books: Bran II (site chapter 90), Lady Hornwood hears that men are
+    // massing at the Dreadfort.
+    {
+      id: 'dreadfort',
+      kind: 'place',
+      revealedAtEpisode: 16,
+      revealedAtChapter: 90,
+      // The book names it at chapter 54 (Bran VI of A Game of Thrones, A Wiki
+      // of Ice and Fire's Dreadfort page); the leak scan reads one episode
+      // axis, and this books-only text, a story of Roose Bolton at chapter
+      // 54, orders at episode 14.
+      nameSaidAt: 14,
+      name: { it: 'Forte Terrore', en: 'the Dreadfort' },
+      summary: {
+        it: 'Il castello di Casa Bolton, nel Nord.',
+        en: 'The castle of House Bolton, in the North.',
+      },
+      visual: { art: 'dreadfort', tint: 'pink' },
+    },
+    // Show: "Valar Morghulis", Theon's speech names the shores of Seagard
+    // and Faircastle. Books: Catelyn I (site chapter 81), the war has not
+    // touched Seagard.
+    {
+      id: 'seagard',
+      kind: 'place',
+      revealedAtEpisode: 20,
+      revealedAtChapter: 81,
+      name: { it: 'Seagard', en: 'Seagard' },
+      summary: { it: 'Un castello sulla costa.', en: 'A castle on the coast.' },
+      visual: { art: 'seagard', tint: 'lavender' },
+    },
+    // Show: "Valar Morghulis", Jaime asks the Stark patrol whether they have
+    // been to Ashemark. Books: Bran V (site chapter 109), Robb takes it.
+    {
+      id: 'ashemark',
+      kind: 'place',
+      revealedAtEpisode: 20,
+      revealedAtChapter: 109,
+      name: { it: 'Ashemark', en: 'Ashemark' },
+      summary: {
+        it: 'Un castello delle Terre dell’Ovest.',
+        en: 'A castle in the Westerlands.',
+      },
+      visual: { art: 'ashemark', tint: 'orange' },
+    },
+    // The show visits it and the book only names it (#1252). Show: Talisa
+    // names it in "A Man Without Honor" (episode 17), and "The Prince of
+    // Winterfell" (18) sets a scene there, its first. Books: Catelyn VII
+    // (site chapter 129), word at Riverrun that Robb has taken it.
+    {
+      id: 'the-crag',
+      kind: 'place',
+      revealedAtEpisode: 18,
+      revealedAtChapter: 129,
+      name: { it: 'Crag', en: 'the Crag' },
+      summary: {
+        it: 'Un castello delle Terre dell’Ovest.',
+        en: 'A castle in the Westerlands.',
+      },
+      visual: { art: 'the-crag', tint: 'azure' },
+    },
+    // Show: "The North Remembers", Ros tells Daisy that Armeca is from Flea
+    // Bottom. Books: Arya I (site chapter 75), whose Ice and Fire Wiki page
+    // lists Flea Bottom among the places mentioned.
+    {
+      id: 'flea-bottom',
+      kind: 'place',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 75,
+      name: { it: 'Fondo delle Pulci', en: 'Flea Bottom' },
+      summary: {
+        it: 'Un quartiere povero di Approdo del Re.',
+        en: 'A poor district of King’s Landing.',
+      },
+      visual: { art: 'flea-bottom', tint: 'sand' },
+    },
+    // Show: "What Is Dead May Never Die", Margaery shouts "Highgarden!" at
+    // Renly's tourney. Books: Davos I (site chapter 84), Renly marches from
+    // Highgarden.
+    {
+      id: 'highgarden',
+      kind: 'place',
+      revealedAtEpisode: 13,
+      revealedAtChapter: 84,
+      // The book names it at chapter 4 (Daenerys I); the leak scan reads one
+      // episode axis, and this books-only text, a story of Loras Tyrell at
+      // chapter 30, orders at episode 5.
+      nameSaidAt: 5,
+      name: { it: 'Alto Giardino', en: 'Highgarden' },
+      summary: {
+        it: 'Un castello dell’Altopiano.',
+        en: 'A castle in the Reach.',
+      },
+      visual: { art: 'highgarden', tint: 'yellow' },
+    },
+    // Show: "What Is Dead May Never Die", Colen calls her Brienne of Tarth
+    // (the episode's Appearances page lists Tarth). Books: Catelyn II (site
+    // chapter 96), where Brienne of Tarth is introduced, the safe later
+    // chapter; the prologue only lists House Tarth.
+    {
+      id: 'tarth',
+      kind: 'place',
+      revealedAtEpisode: 13,
+      revealedAtChapter: 96,
+      name: { it: 'Tarth', en: 'Tarth' },
+      summary: {
+        it: 'Un’isola al largo delle Terre della Tempesta.',
+        en: 'An island off the coast of the Stormlands.',
+      },
+      visual: { art: 'tarth', tint: 'blue' },
+    },
+    // Show: "The Night Lands", Jaqen says he is from Lorath. Books: Jaqen's
+    // claim to come from Lorath (Ice and Fire Wiki), at the latest in Arya IX
+    // (site chapter 121), his last chapter in the book; Arya II (79) may
+    // name it first.
+    {
+      id: 'lorath',
+      kind: 'place',
+      revealedAtEpisode: 12,
+      revealedAtChapter: 121,
+      name: { it: 'Lorath', en: 'Lorath' },
+      summary: { it: 'Una delle Città Libere.', en: 'One of the Free Cities.' },
+      visual: { art: 'lorath', tint: 'ice' },
+    },
+    // Show: "The Prince of Winterfell", Varys: "In the Summer Isles they
+    // worship…". Books: the prologue (site chapter 74), whose Ice and Fire
+    // Wiki page lists the Summer Isles among the places mentioned.
+    {
+      id: 'summer-isles',
+      kind: 'place',
+      revealedAtEpisode: 18,
+      revealedAtChapter: 74,
+      name: { it: 'Isole dell’Estate', en: 'the Summer Isles' },
+      summary: {
+        it: 'Un gruppo di isole lontane, oltre il mare.',
+        en: 'A group of distant islands across the sea.',
+      },
+      visual: { art: 'summer-isles', tint: 'teal' },
+    },
+    // Show: "The North Remembers", the episode's Appearances page lists
+    // Oldtown among the places mentioned. Books: the prologue (site chapter
+    // 74), whose Ice and Fire Wiki page lists Oldtown among the places
+    // mentioned.
+    {
+      id: 'oldtown',
+      kind: 'place',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 74,
+      name: { it: 'Vecchia Città', en: 'Oldtown' },
+      summary: { it: 'Una città dell’Altopiano.', en: 'A city in the Reach.' },
+      visual: { art: 'oldtown', tint: 'orange' },
     },
   ],
   dossiers: {
@@ -1147,7 +1565,14 @@ export const season2: ThronesSaga = {
         it: 'Tyrion Lannister lo mette a capo della Guardia cittadina al posto di Janos Slynt.',
         en: 'Tyrion Lannister gives him command of the City Watch in Janos Slynt’s place.',
       },
-      status: [{ episode: 12, chapter: 82, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 12, chapter: 82, source: 'chapter', value: 'alive' },
+        // Bronn tells Tyrion that the gold cloaks killed him on the walls
+        // when the king left them, in Tyrion I of A Storm of Swords (site
+        // chapter 148). The books' alone; episode 20, where Tyrion wakes
+        // after the battle, orders it.
+        { episode: 20, chapter: 148, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 12,
@@ -1224,9 +1649,9 @@ export const season2: ThronesSaga = {
         it: 'Tyrion Lannister va da lei al bordello per coprire le sue visite a Shae. La regina la fa prendere, credendola la sua amante.',
         en: 'Tyrion Lannister visits her at the brothel to cover his visits to Shae. The queen has her seized, taking her for his lover.',
       },
-      // Tywin has her flogged and sent away while Tyrion recovers from the
-      // battle; whether A Clash of Kings tells it is unconfirmed, so her
-      // release waits for the next stage.
+      // Tywin has her whipped and thrown out of the Red Keep, as Bronn tells
+      // Tyrion in Tyrion I of A Storm of Swords (site chapter 148); her
+      // release is left to a status issue of a later stage.
       status: [
         { episode: 18, chapter: 128, source: 'chapter', value: 'captured' },
       ],
@@ -1242,8 +1667,8 @@ export const season2: ThronesSaga = {
     'garlan-tyrell': {
       role: { it: 'Cavaliere di Casa Tyrell', en: 'Knight of House Tyrell' },
       log: {
-        it: 'Entra nella battaglia delle Acque Nere con l’armatura di Renly Baratheon. A corte, dopo la vittoria, chiede al re di sposare sua sorella Margaery.',
-        en: 'He rides into the battle on the Blackwater wearing Renly Baratheon’s armour. At court, after the victory, he asks the king to marry his sister Margaery.',
+        it: 'A corte, dopo la vittoria sulle Acque Nere, chiede al re di sposare sua sorella Margaery.',
+        en: 'At court, after the victory on the Blackwater, he asks the king to marry his sister Margaery.',
       },
       status: [
         { episode: 20, chapter: 139, source: 'chapter', value: 'alive' },
@@ -1267,7 +1692,13 @@ export const season2: ThronesSaga = {
         it: 'Da Roccia del Drago rivendica il Trono di Spade come erede di Robert, ma pochi lord si schierano con lui. La sacerdotessa rossa Melisandre ha la sua fiducia.',
         en: 'From Dragonstone he claims the Iron Throne as Robert’s heir, but few lords stand with him. The red priestess Melisandre has his ear.',
       },
-      status: [{ episode: 11, chapter: 74, value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 74, value: 'alive' },
+        // The show alone: Brienne executes him after the battle at
+        // Winterfell in "Mother's Mercy" (episode 50); the books leave him
+        // alive, so chapter 344, the last, only orders it (#1471, #1238).
+        { episode: 50, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 11,
@@ -1282,7 +1713,13 @@ export const season2: ThronesSaga = {
         it: 'Viene dall’oriente e serve il Signore della Luce. A Roccia del Drago si è guadagnata un posto accanto a Stannis Baratheon.',
         en: 'She comes from the east and serves the Lord of Light. On Dragonstone she has won a place at Stannis Baratheon’s side.',
       },
-      status: [{ episode: 11, chapter: 74, value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 74, value: 'alive' },
+        // The show alone: she takes off her choker outside Winterfell and
+        // dies before dawn in "The Long Night" (episode 70); the books leave
+        // her alive, so chapter 344 only orders it (#1471).
+        { episode: 70, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 11,
@@ -1396,7 +1833,13 @@ export const season2: ThronesSaga = {
         it: 'È una fervente seguace del Signore della Luce.',
         en: 'She is a fervent follower of the Lord of Light.',
       },
-      status: [{ episode: 25, chapter: 74, value: 'alive' }],
+      status: [
+        { episode: 25, chapter: 74, value: 'alive' },
+        // The show alone: she hangs herself in "Mother's Mercy" (episode
+        // 50); the books leave her alive, so chapter 344 only orders it
+        // (#1471).
+        { episode: 50, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 25,
@@ -1414,7 +1857,13 @@ export const season2: ThronesSaga = {
         it: 'Il morbo grigio le ha segnato il viso quando era piccola. Vive a Roccia del Drago.',
         en: 'Greyscale scarred her face when she was small. She lives on Dragonstone.',
       },
-      status: [{ episode: 25, chapter: 74, value: 'alive' }],
+      status: [
+        { episode: 25, chapter: 74, value: 'alive' },
+        // The show alone: she is burned as an offering in "The Dance of
+        // Dragons" (episode 49); the books leave her alive, so chapter 344
+        // only orders it (#1471).
+        { episode: 49, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 25,
@@ -1500,7 +1949,13 @@ export const season2: ThronesSaga = {
         it: 'È la giovane moglie di re Renly, e il loro matrimonio lega Casa Tyrell alla sua causa. Renly la presenta a Catelyn Stark.',
         en: 'She is King Renly’s young wife, and their marriage binds House Tyrell to his cause. Renly introduces her to Catelyn Stark.',
       },
-      status: [{ episode: 13, chapter: 96, value: 'alive' }],
+      status: [
+        { episode: 13, chapter: 96, value: 'alive' },
+        // The show alone: she dies in the wildfire under the Great Sept in
+        // "The Winds of Winter" (episode 60); the books leave her alive, so
+        // chapter 344 only orders it (#1471).
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 13,
@@ -1515,7 +1970,13 @@ export const season2: ThronesSaga = {
         it: 'È il padre di Margaery e Loras Tyrell, e ha portato la sua casata dalla parte di re Joffrey.',
         en: 'He is the father of Margaery and Loras Tyrell, and has brought his house over to King Joffrey’s side.',
       },
-      status: [{ episode: 32, chapter: 139, value: 'alive' }],
+      status: [
+        { episode: 32, chapter: 139, value: 'alive' },
+        // The show alone: he dies in the wildfire under the Great Sept in
+        // "The Winds of Winter" (episode 60); the books leave him alive, so
+        // chapter 344 only orders it (#1471).
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 32,
@@ -1579,6 +2040,10 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 11, chapter: 81, source: 'chapter', value: 'captured' },
+        // Outlaws ambush him on the road to King's Landing and he dies, in
+        // Jaime III of A Storm of Swords (chapter 165); episode 22, where the
+        // show's Jaime and Brienne are taken on that road, only orders it.
+        { episode: 22, chapter: 165, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -1612,6 +2077,9 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 16, chapter: 100, source: 'episode', value: 'alive' },
+        // She is killed at the Red Wedding in "The Rains of Castamere"
+        // (episode 29); chapter 195, the books' wedding, only orders it.
+        { episode: 29, chapter: 195, source: 'episode', value: 'deceased' },
       ],
       // She tends Lannister and Stark wounded alike and tells Robb she takes
       // no side in his war ("Garden of Bones").
@@ -1676,7 +2144,13 @@ export const season2: ThronesSaga = {
         it: 'È tra i soldati che catturano Arya Stark e i suoi compagni, e tiene per sé Ago, la spada di lei. Arya aggiunge il suo nome a quelli che ripete ogni notte.',
         en: 'He is one of the soldiers who capture Arya Stark and her companions, and he keeps her sword, Needle, for himself. Arya adds his name to the ones she repeats each night.',
       },
-      status: [{ episode: 14, chapter: 100, value: 'alive' }],
+      status: [
+        { episode: 14, chapter: 100, value: 'alive' },
+        // He dies at the inn at the crossroads, where Arya takes Needle back,
+        // in "Two Swords" (episode 31) and in Arya XIII of A Storm of Swords
+        // (chapter 218).
+        { episode: 31, chapter: 218, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 14,
@@ -1701,6 +2175,9 @@ export const season2: ThronesSaga = {
         // opens dead. The books keep him alive past the stage; chapter 104
         // only orders it.
         { episode: 15, chapter: 104, source: 'episode', value: 'deceased' },
+        // Arya kills him at the inn at the crossroads, in Arya XIII of A Storm
+        // of Swords (chapter 218); episode 31, the show's inn, only orders it.
+        { episode: 31, chapter: 218, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -1769,6 +2246,10 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 15, chapter: 104, source: 'chapter', value: 'alive' },
+        // Gregor Clegane takes Harrenhal back and kills him, as Raff and
+        // Shitmouth tell Jaime in Jaime III of A Feast for Crows (chapter
+        // 253); episode 38 only orders it.
+        { episode: 38, chapter: 253, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -1821,7 +2302,13 @@ export const season2: ThronesSaga = {
         it: 'Theon torna a Pyke con l’offerta di alleanza di Robb Stark. Balon la rifiuta: vuole prendersi la corona con la forza.',
         en: 'Theon comes home to Pyke with Robb Stark’s offer of an alliance. Balon refuses it: he means to take his crown by force.',
       },
-      status: [{ episode: 12, chapter: 85, value: 'alive' }],
+      status: [
+        { episode: 12, chapter: 85, value: 'alive' },
+        // He falls from a bridge at Pyke in "Home" (episode 52); the books
+        // first tell it in Catelyn V of A Storm of Swords (chapter 189),
+        // filed now with his drawing's stage (#1473, #1238).
+        { episode: 52, chapter: 189, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 12,
@@ -1885,7 +2372,13 @@ export const season2: ThronesSaga = {
         it: 'Theon gli spiega il suo piano: colpire Piazza di Torrhen per attirare lontano dal castello i difensori di Grande Inverno.',
         en: 'Theon tells him his plan: to strike at Torrhen’s Square and draw the defenders of Winterfell away from the castle.',
       },
-      status: [{ episode: 15, chapter: 111, value: 'alive' }],
+      status: [
+        { episode: 15, chapter: 111, value: 'alive' },
+        // The show alone: Balon and Yara read that the Boltons flayed him
+        // and his men, in "Mhysa" (episode 30). The books leave him
+        // holding Torrhen's Square, so chapter 344 only orders it (#1473).
+        { episode: 30, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 15,
@@ -1978,7 +2471,13 @@ export const season2: ThronesSaga = {
         it: 'Con la sorella Meera raggiunge Bran Stark e resta al suo fianco.',
         en: 'With his sister Meera he comes to Bran Stark and stays at his side.',
       },
-      status: [{ episode: 22, chapter: 95, value: 'alive' }],
+      status: [
+        { episode: 22, chapter: 95, value: 'alive' },
+        // The show alone: he dies at the mouth of the Three-Eyed Raven's
+        // cave in "The Children" (episode 40). The books leave him alive,
+        // so chapter 344 only orders it (#1473).
+        { episode: 40, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 22,
@@ -1993,7 +2492,13 @@ export const season2: ThronesSaga = {
         it: 'I suoi uomini tolgono Grande Inverno agli uomini di ferro e la danno alle fiamme.',
         en: 'His men take Winterfell from the ironborn and set it on fire.',
       },
-      status: [{ episode: 32, chapter: 140, value: 'alive' }],
+      status: [
+        { episode: 32, chapter: 140, value: 'alive' },
+        // The show alone: he dies at Winterfell at the end of "Battle of
+        // the Bastards" (episode 59). The books leave him alive, so chapter
+        // 344 only orders it (#1473).
+        { episode: 59, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 32,
@@ -2024,7 +2529,14 @@ export const season2: ThronesSaga = {
         it: 'Lui e il cugino Big Walder sono pupilli a Grande Inverno, secondo il patto tra Robb Stark e lord Walder Frey.',
         en: 'He and his cousin Big Walder are wards at Winterfell, under the pact between Robb Stark and Lord Walder Frey.',
       },
-      status: [{ episode: 13, chapter: 90, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 13, chapter: 90, source: 'chapter', value: 'alive' },
+        // His frozen body is found in a snowbank at Winterfell, in Theon I
+        // of A Dance with Dragons (chapter 323), filed now with his
+        // drawing's stage (#1473). Episode 50, where the show's Winterfell
+        // reaches the same days, only orders it.
+        { episode: 50, chapter: 323, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 13,
@@ -2083,7 +2595,13 @@ export const season2: ThronesSaga = {
         it: 'Sostiene che il lord comandante dovrebbe restare a Castello Nero e lasciare a lui la spedizione oltre la Barriera. Jeor Mormont rifiuta.',
         en: 'He argues that the Lord Commander should stay at Castle Black and leave the ranging beyond the Wall to him. Jeor Mormont refuses.',
       },
-      status: [{ episode: 11, chapter: 80, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 80, source: 'chapter', value: 'alive' },
+        // He dies at the Fist of the First Men, told by Samwell II of A
+        // Storm of Swords (chapter 177), the safe later chapter, filed with
+        // his drawing's stage (#1474). Episode 21 only orders it.
+        { episode: 21, chapter: 177, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 11,
@@ -2102,7 +2620,13 @@ export const season2: ThronesSaga = {
         it: 'Cavalca con i Guardiani della notte oltre la Barriera, insieme a Jon Snow e ai suoi amici, e accoglie ogni disagio con una battuta cupa.',
         en: 'He rides beyond the Wall with the Night’s Watch, alongside Jon Snow and his friends, and meets every hardship with a gloomy joke.',
       },
-      status: [{ episode: 20, chapter: 87, value: 'alive' }],
+      status: [
+        { episode: 20, chapter: 87, value: 'alive' },
+        // The show's alone: he dies at Winterfell in "The Long Night"
+        // (episode 70), filed with his drawing's stage (#1474). The books
+        // keep him alive, so chapter 344, their last, orders it.
+        { episode: 70, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 20,
@@ -2158,7 +2682,13 @@ export const season2: ThronesSaga = {
         it: 'La spedizione del lord comandante si ferma al suo fortino. Ha sposato le sue stesse figlie, e dice ai Guardiani della notte che i bruti si radunano attorno a Mance Rayder.',
         en: 'The Lord Commander’s ranging stops at his keep. He has married his own daughters, and he tells the Night’s Watch that the wildlings are gathering around Mance Rayder.',
       },
-      status: [{ episode: 11, chapter: 97, value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 97, value: 'alive' },
+        // The mutineers kill him in his hall: "And Now His Watch Is Ended"
+        // (episode 24) and Samwell II of A Storm of Swords (chapter 177),
+        // filed with his drawing's stage (#1474).
+        { episode: 24, chapter: 177, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 11, chapter: 97, value: { it: 'Bruti', en: 'Wildlings' } },
       ],
@@ -2235,7 +2765,13 @@ export const season2: ThronesSaga = {
         it: 'È tra le vedette dei bruti sulle montagne. I ranger di Qhorin il Monco uccidono i suoi compagni, e Jon Snow resta solo con lei per giustiziarla, ma non ci riesce.',
         en: 'She is one of the wildling lookouts in the mountains. Qhorin Halfhand’s rangers kill her companions, and Jon Snow is left to put her to death, but he cannot do it.',
       },
-      status: [{ episode: 16, chapter: 125, value: 'alive' }],
+      status: [
+        { episode: 16, chapter: 125, value: 'alive' },
+        // She dies in the attack on Castle Black: "The Watchers on the
+        // Wall" (episode 39) and Jon VII of A Storm of Swords (chapter
+        // 199), filed with her drawing's stage (#1474).
+        { episode: 39, chapter: 199, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 16, chapter: 125, value: { it: 'Bruti', en: 'Wildlings' } },
       ],
@@ -2299,6 +2835,10 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 18, chapter: 142, source: 'chapter', value: 'alive' },
+        // Burned at Castle Black under a glamour as Mance Rayder, which
+        // Melisandre I of A Dance with Dragons (chapter 303) tells, filed
+        // with his drawing's stage (#1474). Episode 41 only orders it.
+        { episode: 41, chapter: 303, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -2311,6 +2851,7 @@ export const season2: ThronesSaga = {
     },
     // #1468: Essos and Qarth.
     'kovarro': {
+      relationships: season2Relationships.kovarro,
       chronicle: season2Chronicles.kovarro,
       role: {
         it: 'Cavaliere di sangue di Daenerys',
@@ -2331,6 +2872,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'xaro-xhoan-daxos': {
+      relationships: season2Relationships['xaro-xhoan-daxos'],
       chronicle: season2Chronicles['xaro-xhoan-daxos'],
       role: [
         {
@@ -2377,6 +2919,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'pyat-pree': {
+      relationships: season2Relationships['pyat-pree'],
       chronicle: season2Chronicles['pyat-pree'],
       role: { it: 'Stregone di Qarth', en: 'Warlock of Qarth' },
       log: {
@@ -2396,25 +2939,25 @@ export const season2: ThronesSaga = {
       ],
     },
     'quaithe': {
+      relationships: season2Relationships.quaithe,
       chronicle: season2Chronicles.quaithe,
       role: { it: 'Donna dell’Ombra', en: 'Woman of the Shadow' },
       log: {
-        it: 'È venuta da Qarth con Pyat Pree e Xaro Xhoan Daxos per vedere i draghi di Daenerys. Le dice che tutti vorranno i draghi, e che deve lasciare presto la città e andare ad Asshai.',
-        en: 'She came from Qarth with Pyat Pree and Xaro Xhoan Daxos to see Daenerys’s dragons. She tells her that everyone will covet them, and that she must leave the city soon and go to Asshai.',
+        it: 'Arriva da Qarth insieme ad altri due stranieri, attraverso il Deserto Rosso, in cerca di draghi. Jhogo li porta da Daenerys nella città in rovina dove il khalasar si è fermato.',
+        en: 'She comes from Qarth with two other strangers, across the Red Waste, looking for dragons. Jhogo brings them to Daenerys in the ruined city where her khalasar has stopped.',
       },
-      status: [
-        { episode: 15, chapter: 114, source: 'chapter', value: 'alive' },
-      ],
+      status: [{ episode: 15, chapter: 86, source: 'chapter', value: 'alive' }],
       affiliation: [
         {
           episode: 15,
-          chapter: 114,
+          chapter: 86,
           source: 'chapter',
           value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
         },
       ],
     },
     'malakho': {
+      relationships: season2Relationships.malakho,
       chronicle: season2Chronicles.malakho,
       role: { it: 'Guerriero dothraki', en: 'Dothraki warrior' },
       log: {
@@ -2434,6 +2977,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'drogon': {
+      relationships: season2Relationships.drogon,
       chronicle: season2Chronicles.drogon,
       role: { it: 'Drago di Daenerys', en: 'Daenerys’s dragon' },
       log: {
@@ -2450,13 +2994,21 @@ export const season2: ThronesSaga = {
       ],
     },
     'rhaegal': {
+      relationships: season2Relationships.rhaegal,
       chronicle: season2Chronicles.rhaegal,
       role: { it: 'Drago di Daenerys', en: 'Daenerys’s dragon' },
       log: {
         it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
         en: 'He is one of the three dragons hatched from Daenerys’s eggs in Drogo’s funeral pyre.',
       },
-      status: [{ episode: 41, chapter: 86, value: 'alive' }],
+      status: [
+        { episode: 41, chapter: 86, value: 'alive' },
+        // Shot down into the sea off Dragonstone in "The Last of the
+        // Starks" (episode 71), the show's alone, filed with his drawing's
+        // stage (#1475). The books leave him alive; chapter 344, their
+        // last, orders it.
+        { episode: 71, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 41,
@@ -2466,13 +3018,21 @@ export const season2: ThronesSaga = {
       ],
     },
     'viserion': {
+      relationships: season2Relationships.viserion,
       chronicle: season2Chronicles.viserion,
       role: { it: 'Drago di Daenerys', en: 'Daenerys’s dragon' },
       log: {
         it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
         en: 'He is one of the three dragons hatched from Daenerys’s eggs in Drogo’s funeral pyre.',
       },
-      status: [{ episode: 41, chapter: 86, value: 'alive' }],
+      status: [
+        { episode: 41, chapter: 86, value: 'alive' },
+        // Killed by the Night King beyond the Wall in "Beyond the Wall"
+        // (episode 66), the show's alone, and raised as a wight the same
+        // night, filed with his drawing's stages (#1475). The books leave
+        // him alive; chapter 344, their last, orders it.
+        { episode: 66, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 41,
@@ -2482,6 +3042,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'strong-belwas': {
+      relationships: season2Relationships['strong-belwas'],
       chronicle: season2Chronicles['strong-belwas'],
       role: { it: 'Ex combattente delle arene', en: 'Former pit fighter' },
       log: {
@@ -2501,6 +3062,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'arstan-whitebeard': {
+      relationships: season2Relationships['arstan-whitebeard'],
       chronicle: season2Chronicles['arstan-whitebeard'],
       role: { it: 'Scudiero di Belwas il Forte', en: 'Strong Belwas’s squire' },
       log: {
@@ -2524,10 +3086,361 @@ export const season2: ThronesSaga = {
 
 /**
  * The log entry of every season-2 place, by the place's id, in its own words
- * (`../placeWords`), as `SEASON_1_PLACES` has season 1's. Empty until the
- * stage's places are filed.
+ * (`../placeWords`), as `SEASON_1_PLACES` has season 1's (#1469).
+ * `filedHere` names the characters first met there; where the two media
+ * meet one at different places, the show's place has them, and the book's
+ * when the show's is not filed (an unnamed camp).
  */
 export const SEASON_2_PLACES: Record<
   string,
   PlaceDossier<ThronesVocabulary>
-> = {}
+> = {
+  'crasters-keep': {
+    form: 'fortress',
+    region: 'beyond-the-wall',
+    landmark: {
+      it: 'Una bassa sala di tronchi dentro un muro di terra',
+      en: 'A low hall of logs inside an earthen wall',
+    },
+    log: {
+      it: 'Craster vive qui oltre la Barriera con le sue molte mogli, che sono anche sue figlie. I Guardiani della Notte vi fanno sosta durante la spedizione, e lui racconta che i bruti si stanno radunando.',
+      en: 'Craster lives here beyond the Wall with his many wives, who are also his daughters. The Night’s Watch stops here on its ranging, and he tells them the wildlings are gathering.',
+    },
+    filedHere: ['craster', 'gilly', 'eddison-tollett'],
+  },
+  'red-waste': {
+    form: 'desert',
+    region: 'essos',
+    landmark: {
+      it: 'Terra rossa e screpolata sotto un cielo vuoto',
+      en: 'Cracked red earth under an empty sky',
+    },
+    log: {
+      it: 'Daenerys guida ciò che resta del suo khalasar in questo deserto, dove l’acqua scarseggia. Manda dei cavalieri in direzioni diverse a cercare una via per attraversarlo.',
+      en: 'Daenerys leads what is left of her khalasar into this desert, where water is scarce. She sends riders out in different directions to find a way across.',
+    },
+    filedHere: ['kovarro'],
+  },
+  'whitetree': {
+    form: 'town',
+    region: 'beyond-the-wall',
+    landmark: {
+      it: 'Un enorme albero del cuore sopra poche capanne di pietra',
+      en: 'A huge heart tree over a few stone huts',
+    },
+    log: {
+      it: 'I Guardiani della Notte trovano il villaggio vuoto durante la spedizione oltre la Barriera. La gente se n’è andata, e nulla fa pensare a un attacco.',
+      en: 'The Night’s Watch finds the village empty on its ranging beyond the Wall. Its people have gone, and nothing shows that they were attacked.',
+    },
+    filedHere: ['jarman-buckwell', 'mallador-locke'],
+  },
+  'vaes-tolorro': {
+    form: 'ruin',
+    region: 'essos',
+    landmark: {
+      it: 'Mura bianche e crepate attorno a una città vuota',
+      en: 'Cracked white walls around an empty city',
+    },
+    log: {
+      it: 'La gente di Daenerys trova questa città abbandonata nel deserto, con un pozzo d’acqua pulita e alberi da frutto tra le rovine. La chiamano la Città delle Ossa, e lei vi si ferma mentre i suoi cavalieri esplorano le terre intorno.',
+      en: 'Daenerys’s people find this empty city in the desert, with a well of clean water and fruit trees among the ruins. They call it the City of Bones, and she rests there while her riders search the land around it.',
+    },
+    filedHere: ['quaithe'],
+  },
+  'lordsport': {
+    form: 'town',
+    region: 'the-iron-islands',
+    landmark: {
+      it: 'Navi lunghe ormeggiate in un piccolo porto di pietra',
+      en: 'Longships moored in a small stone harbour',
+    },
+    log: {
+      it: 'Theon Greyjoy sbarca qui dopo anni lontano dalle isole, aspettandosi un’accoglienza che non riceve. Dal porto prosegue verso il castello di suo padre.',
+      en: 'Theon Greyjoy lands here after years away from the islands, expecting a welcome he does not get. From the harbour he rides on to his father’s castle.',
+    },
+    filedHere: ['aeron-greyjoy', 'dagmer'],
+  },
+  'stony-shore': {
+    form: 'coast',
+    region: 'the-north',
+    landmark: {
+      it: 'Capanne di pescatori su una spiaggia di sassi',
+      en: 'Fishing huts on a beach of stones',
+    },
+    log: {
+      it: 'Balon Greyjoy manda suo figlio Theon a razziare i villaggi di pescatori lungo questa costa.',
+      en: 'Balon Greyjoy sends his son Theon to raid the fishing villages along this coast.',
+    },
+    filedHere: [],
+  },
+  'bitterbridge': {
+    form: 'castle',
+    region: 'the-reach',
+    landmark: {
+      it: 'Un ponte di pietra su un fiume, sotto un castello',
+      en: 'A stone bridge over a river, below a castle',
+    },
+    log: {
+      it: 'Il grande esercito di Renly Baratheon è accampato qui, e lui tiene un torneo nei campi. Catelyn Stark viene a cercare un’alleanza con lui per suo figlio.',
+      en: 'Renly Baratheon’s great host camps here, and he holds a tourney in its fields. Catelyn Stark comes to seek an alliance with him for her son.',
+    },
+    filedHere: ['brienne-of-tarth', 'margaery-tyrell'],
+  },
+  'storms-end': {
+    form: 'castle',
+    region: 'the-stormlands',
+    landmark: {
+      it: 'Un unico enorme torrione rotondo dietro un’alta cinta di mura',
+      en: 'One huge round tower behind a high curtain wall',
+    },
+    log: {
+      it: 'È la sede di Casa Baratheon. Durante la ribellione di Robert, Stannis Baratheon lo tenne per un lungo assedio, finché un contrabbandiere non portò dentro cipolle e pesce salato.',
+      en: 'It is the seat of House Baratheon. In Robert’s Rebellion, Stannis Baratheon held it through a long siege, until a smuggler brought in onions and salt fish.',
+    },
+    filedHere: ['cortnay-penrose'],
+  },
+  'oxcross': {
+    form: 'town',
+    region: 'the-westerlands',
+    landmark: {
+      it: 'Un guado sul fiume accanto a un villaggio',
+      en: 'A river ford beside a village',
+    },
+    log: {
+      it: 'L’esercito di Robb Stark distrugge qui un esercito dei Lannister.',
+      en: 'Robb Stark’s army destroys a Lannister army here.',
+    },
+    filedHere: ['talisa-maegyr'],
+  },
+  'garden-of-bones': {
+    form: 'desert',
+    region: 'essos',
+    landmark: {
+      it: 'Ossa sbiancate nella sabbia davanti alle mura di una città',
+      en: 'Bleached bones in the sand before a city’s walls',
+    },
+    log: {
+      it: 'I viaggiatori che Qarth respinge muoiono di sete in questo deserto davanti alle sue mura, e le loro ossa restano nella sabbia. Daenerys e la sua gente aspettano qui la risposta della città.',
+      en: 'The travellers Qarth turns away die of thirst in this desert before its walls, and their bones stay in the sand. Daenerys and her people wait here for the city’s answer.',
+    },
+    filedHere: [],
+  },
+  'guildhall-of-the-alchemists': {
+    form: 'order',
+    region: 'the-crownlands',
+    landmark: {
+      it: 'Giare di altofuoco verde nei sotterranei',
+      en: 'Jars of green wildfire in its vaults',
+    },
+    log: {
+      it: 'I piromanti della gilda producono qui l’altofuoco, un fuoco verde che l’acqua non spegne. Tyrion Lannister viene a sapere quanto ne sta producendo la gilda.',
+      en: 'The guild’s pyromancers make wildfire here, a green fire that water cannot put out. Tyrion Lannister comes to learn how much of it the guild is making.',
+    },
+    filedHere: ['hallyne'],
+  },
+  'fist-of-the-first-men': {
+    form: 'hill',
+    region: 'beyond-the-wall',
+    landmark: {
+      it: 'Una ripida collina rocciosa con antiche pietre sulla cima',
+      en: 'A steep rocky hill with old stones on its crown',
+    },
+    log: {
+      it: 'I Guardiani della Notte si accampano su questa collina durante la spedizione oltre la Barriera, in attesa di altri ranger.',
+      en: 'The Night’s Watch makes camp on this hill on its ranging beyond the Wall, to wait for more rangers.',
+    },
+    filedHere: ['qhorin-halfhand', 'stonesnake'],
+  },
+  'skirling-pass': {
+    form: 'pass',
+    region: 'beyond-the-wall',
+    landmark: {
+      it: 'Uno stretto passaggio tra picchi innevati',
+      en: 'A narrow way between snowy peaks',
+    },
+    log: {
+      it: 'Un piccolo gruppo dei Guardiani della Notte incontra delle vedette dei bruti nel passo. Jon Snow prende viva l’ultima di loro, una giovane donna di nome Ygritte.',
+      en: 'A small party of the Night’s Watch meets wildling scouts in the pass. Jon Snow takes the last of them alive, a young woman named Ygritte.',
+    },
+    filedHere: ['ygritte', 'ebben', 'dalbridge', 'lord-of-bones'],
+  },
+  'blackwater-bay': {
+    form: 'bay',
+    region: 'the-crownlands',
+    landmark: {
+      it: 'La foce del fiume sotto la collina della città',
+      en: 'The river’s mouth below the city’s hill',
+    },
+    log: {
+      it: 'La flotta di Stannis Baratheon entra nella baia per attaccare Approdo del Re.',
+      en: 'Stannis Baratheon’s fleet sails into the bay to attack King’s Landing.',
+    },
+    filedHere: [],
+  },
+  'house-of-the-undying': {
+    form: 'order',
+    region: 'essos',
+    landmark: {
+      it: 'Un’alta torre di pietra senza porte',
+      en: 'A tall stone tower with no door',
+    },
+    log: {
+      it: 'Gli stregoni di Qarth vivono in questa dimora. Daenerys vi entra, e loro le mostrano visioni e cercano di trattenerla. Il fuoco di drago la libera.',
+      en: 'The warlocks of Qarth live in this house. Daenerys goes in, and they show her visions and try to keep her. Dragon fire sets her free.',
+    },
+    filedHere: [],
+  },
+  'torrhens-square': {
+    form: 'castle',
+    region: 'the-north',
+    landmark: {
+      it: 'Un mastio di pietra tra quattro torri, sulla riva di un lago',
+      en: 'A stone keep between four towers, on the shore of a lake',
+    },
+    log: { it: 'È un castello del Nord.', en: 'It is a castle in the North.' },
+    filedHere: [],
+  },
+  'deepwood-motte': {
+    form: 'castle',
+    region: 'the-north',
+    landmark: {
+      it: 'Una palizzata di legno in cima a una collinetta',
+      en: 'A wooden palisade on top of a mound',
+    },
+    log: {
+      it: 'Balon Greyjoy manda sua figlia a prendere questo castello.',
+      en: 'Balon Greyjoy sends his daughter to take this castle.',
+    },
+    filedHere: [],
+  },
+  'dreadfort': {
+    form: 'castle',
+    region: 'the-north',
+    landmark: {
+      it: 'Torri scure e uno stendardo sopra il portone',
+      en: 'Dark towers and a banner over the gate',
+    },
+    log: {
+      it: 'È il castello di Casa Bolton.',
+      en: 'It is the castle of House Bolton.',
+    },
+    filedHere: [],
+  },
+  'seagard': {
+    form: 'castle',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un’alta torre con una campana, sul mare',
+      en: 'A tall tower with a bell, over the sea',
+    },
+    log: {
+      it: 'È un castello sulla costa.',
+      en: 'It is a castle on the coast.',
+    },
+    filedHere: [],
+  },
+  'ashemark': {
+    form: 'castle',
+    region: 'the-westerlands',
+    landmark: {
+      it: 'Due torri su una collina, sotto uno stendardo',
+      en: 'Two towers on a hill, under a banner',
+    },
+    log: {
+      it: 'È un castello delle Terre dell’Ovest.',
+      en: 'It is a castle in the Westerlands.',
+    },
+    filedHere: [],
+  },
+  'the-crag': {
+    form: 'castle',
+    region: 'the-westerlands',
+    landmark: {
+      it: 'Torri su una rupe sopra il mare',
+      en: 'Towers on a rock over the sea',
+    },
+    log: {
+      it: 'L’esercito di Robb Stark prende questo castello.',
+      en: 'Robb Stark’s army takes this castle.',
+    },
+    filedHere: [],
+  },
+  'flea-bottom': {
+    form: 'district',
+    region: 'the-crownlands',
+    landmark: {
+      it: 'Catapecchie storte attorno a un pentolone fumante',
+      en: 'Crooked hovels around a steaming pot',
+    },
+    log: {
+      it: 'È il quartiere più povero di Approdo del Re.',
+      en: 'It is the poorest district of King’s Landing.',
+    },
+    filedHere: [],
+  },
+  'highgarden': {
+    form: 'castle',
+    region: 'the-reach',
+    landmark: {
+      it: 'Mura e torri sotto lo stendardo della rosa',
+      en: 'Walls and towers under the banner of the rose',
+    },
+    log: {
+      it: 'È un castello dell’Altopiano.',
+      en: 'It is a castle in the Reach.',
+    },
+    filedHere: [],
+  },
+  'tarth': {
+    form: 'island',
+    region: 'the-stormlands',
+    landmark: {
+      it: 'Monti e una cascata su un’isola',
+      en: 'Mountains and a waterfall on an island',
+    },
+    log: {
+      it: 'È un’isola nel mare, retta da un lord.',
+      en: 'It is an island in the sea, held by a lord.',
+    },
+    filedHere: [],
+  },
+  'lorath': {
+    form: 'city',
+    region: 'essos',
+    landmark: {
+      it: 'Torri appuntite su un’isola',
+      en: 'Pointed towers on an island',
+    },
+    log: {
+      it: 'È una delle Città Libere, a Essos.',
+      en: 'It is one of the Free Cities, in Essos.',
+    },
+    filedHere: [],
+  },
+  'summer-isles': {
+    form: 'island',
+    region: 'the-seas',
+    landmark: {
+      it: 'Palme su due isole e una nave tra di esse',
+      en: 'Palm trees on two islands and a ship between them',
+    },
+    log: {
+      it: 'Sono isole lontane, oltre il mare.',
+      en: 'They are distant islands across the sea.',
+    },
+    filedHere: [],
+  },
+  'oldtown': {
+    form: 'city',
+    region: 'the-reach',
+    landmark: {
+      it: 'Un’alta torre a gradoni con un faro in cima',
+      en: 'A tall stepped tower with a beacon on top',
+    },
+    log: {
+      it: 'È una città dell’Altopiano.',
+      en: 'It is a city in the Reach.',
+    },
+    filedHere: [],
+  },
+}

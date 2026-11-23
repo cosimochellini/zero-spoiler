@@ -397,7 +397,49 @@ describe('the powers first shown in Greed Island', () => {
     { id: 'gon-freecss', episode: 65, chapter: 145 },
     // Razor summons his 14 Devils for the dodgeball match (#1338).
     { id: 'razor', episode: 69, chapter: 161 },
+    // Biscuit shows Killua Cookie, then her true form against Bara, then
+    // is small again in her next scene (#1340).
+    { id: 'biscuit-krueger', episode: 72, chapter: 171 },
+    { id: 'biscuit-krueger', episode: 73, chapter: 177 },
+    { id: 'biscuit-krueger', episode: 74, chapter: 181 },
   ])('changes $id’s drawing at $episode / $chapter', (stage) => {
     expect(stageMissedAt(archive, stage.id, stage)).toStrictEqual([])
+  })
+
+  it.each(CASES)(
+    'brings back Biscuit’s Cookie drawing after her true form in $locale by $unit',
+    ({ locale, unit }) => {
+      const draw = (episode: number, chapter: number): unknown =>
+        drawingsFor(
+          ['biscuit-krueger'],
+          readerFor(
+            archive,
+            at(unit, unit === 'chapter' ? chapter : episode),
+            locale,
+          ),
+        )
+
+      expect(draw(74, 181)).toStrictEqual(draw(72, 171))
+    },
+  )
+})
+
+describe.each(LOCALES)('Kosofftro’s manga-only death in %s', (locale) => {
+  // Absent from the 2011 anime: the stage and the status change are told in
+  // chapter 144 only, so only a chapter reader has a step to cross.
+  const read = (chapter: number): Reader =>
+    readerFor(archive, at('chapter', chapter), locale)
+
+  it('changes his status and drawing at chapter 144, never before', () => {
+    const kosofftro = recordIn(archive, 'kosofftro')
+    const before = drawingsFor(['kosofftro'], read(143))
+
+    expect(archive.latestOf(read(143), kosofftro, 'status')).toBe('alive')
+    expect(archive.latestOf(read(144), kosofftro, 'status')).toBe(
+      'presumed-dead',
+    )
+    expect(before['kosofftro']).toBeDefined()
+    expect(before).toStrictEqual(drawingsFor(['kosofftro'], read(132)))
+    expect(drawingsFor(['kosofftro'], read(144))).not.toStrictEqual(before)
   })
 })

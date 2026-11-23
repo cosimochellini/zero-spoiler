@@ -282,46 +282,45 @@ medium meets in a later season or book keep that later gate. #1007 adds 16 of
 the Night's Watch and #1008 nine of Daenerys's storyline, by the same rules.
 Season 2 and _A Clash of Kings_ (#1455) file by cast group: King's Landing and
 the Blackwater (#1463) adds seven characters, one the show's alone and six the
-books', each showing a placeholder bust until its drawing child, and the stage's
-dated steps of eleven season-1 characters, kept in `season-1.ts`. Stannis, Renly
-and the stormlands (#1464) add twelve, one the books' alone, three with the
-show's later gate, and Loras Tyrell's stage-2 role steps. Robb's war, the
-Riverlands and Harrenhal (#1465) adds nine, two the show's alone, four the
-books' and three both media's, with the stage's steps of eight season-1
-characters. Winterfell and the Iron Islands (#1466) adds fifteen, seven the
-books' alone, Asha Greyjoy filed under the books' name with the show's Yara as
-her `episodeName`, and the stage's steps of Theon, Bran, Rickon and Osha. The
-Wall and beyond (#1467) adds twelve, seven of them the books' alone, with
-placeholder busts too, and stage-2 steps on Jon Snow and Samwell Tarly. Essos
-and Qarth (#1468) adds ten: two the show's alone, four the books', and Xaro and
-the three dragons in both, the dragons' show gates past the stage (#852). The
-owner's rulings of 2026-11-22 add Arstan Whitebeard, books only, and move the
-book gates of Xaro, Pyat Pree and Quaithe from chapter 86 to 114. The series
-opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their own,
-with seven stages: Eddard's death and Ice melted, Jon's death, return and true
-name, and Daenerys's fire and death from the drawing audit (#1292), the
-Winterfell household's are in `art/winterfell.ts` (#854), with 25 stages after
-the drawing audit (#1285), the southern cast's are in `art/south.ts` (#1051),
-with thirty-seven, sixteen of them the later looks and deaths of #1286 and
-eighteen from the drawing audit (#1287), and the Night's Watch's and Essos
-cast's are in `art/wall.ts` and `art/essos.ts` (#1052), with twenty, four of
-them the deaths of Jeor, Aemon, Alliser and Yoren from the drawing audit
-(#1290), six from the drawing audit (#1296) and four those of Jorah, Irri,
-Doreah and Rakharo (#1292), and thirteen more of the Watch's in `art/wall.ts`
-(#1295), with ten, the places' are in `art/places.ts` (#1053), with fourteen
-stages for the damage and rebuilding later seasons and books give (#1236), the
-northern household's are in `art/north.ts` (#1054), with fifteen, twelve of them
-the deaths, Roose Bolton's allegiance and Jeyne Poole's false identity from the
-drawing audit (#1288), the Vale cast's are in `art/vale.ts` (#1055), with two,
-the King's Landing cast's are in `art/court.ts` (#1056), with thirteen, twelve
-of them from the drawing audit (#1289), and the Riverlands cast's are in
-`art/riverlands.ts` (#1057), with ten: six of them the deaths later seasons and
-books give (#1242), and the Blackfish's death, Jaqen's coin and Pod's axe from
-the drawing audit (#1290). Every stage-1 character has its own drawing; the
-stage-2 characters show the shared `PERSON` placeholder until their drawing
-children (#1460), and the drawing tests hold the series like any other. Its
-places are the 23 a scene of the season or the book is set in (#853) and those
-both name without visiting it (#1035: the North's five in #1248, nine of the
+books', drawn in #1470, and the stage's dated steps of eleven season-1
+characters, kept in `season-1.ts`. Stannis, Renly and the stormlands (#1464) add
+twelve, one the books' alone, three with the show's later gate, and Loras
+Tyrell's stage-2 role steps. Robb's war, the Riverlands and Harrenhal (#1465)
+adds nine, two the show's alone, four the books' and three both media's, with
+the stage's steps of eight season-1 characters. Winterfell and the Iron Islands
+(#1466) adds fifteen, seven the books' alone, Asha Greyjoy filed under the
+books' name with the show's Yara as her `episodeName`, and the stage's steps of
+Theon, Bran, Rickon and Osha. The Wall and beyond (#1467) adds twelve, seven of
+them the books' alone, with drawn in #1474, and stage-2 steps on Jon Snow and
+Samwell Tarly. Essos and Qarth (#1468) adds ten: two the show's alone, four the
+books', and Xaro and the three dragons in both, the dragons' show gates past the
+stage (#852). The owner's rulings of 2026-11-22 add Arstan Whitebeard, books
+only, and move the book gates of Xaro and Pyat Pree from chapter 86 to 114;
+Quaithe opens at 86, where she introduces herself (#1477). The series opened
+before its drawings: Eddard, Jon, Daenerys and Tyrion have their own, with seven
+stages: Eddard's death and Ice melted, Jon's death, return and true name, and
+Daenerys's fire and death from the drawing audit (#1292), the Winterfell
+household's are in `art/winterfell.ts` (#854), with 25 stages after the drawing
+audit (#1285), the southern cast's are in `art/south.ts` (#1051), with
+thirty-seven, sixteen of them the later looks and deaths of #1286 and eighteen
+from the drawing audit (#1287), and the Night's Watch's and Essos cast's are in
+`art/wall.ts` and `art/essos.ts` (#1052), with twenty, four of them the deaths
+of Jeor, Aemon, Alliser and Yoren from the drawing audit (#1290), six from the
+drawing audit (#1296) and four those of Jorah, Irri, Doreah and Rakharo (#1292),
+and thirteen more of the Watch's in `art/wall.ts` (#1295), with ten, the places'
+are in `art/places.ts` (#1053), with fourteen stages for the damage and
+rebuilding later seasons and books give (#1236), the northern household's are in
+`art/north.ts` (#1054), with fifteen, twelve of them the deaths, Roose Bolton's
+allegiance and Jeyne Poole's false identity from the drawing audit (#1288), the
+Vale cast's are in `art/vale.ts` (#1055), with two, the King's Landing cast's
+are in `art/court.ts` (#1056), with thirteen, twelve of them from the drawing
+audit (#1289), and the Riverlands cast's are in `art/riverlands.ts` (#1057),
+with ten: six of them the deaths later seasons and books give (#1242), and the
+Blackfish's death, Jaqen's coin and Pod's axe from the drawing audit (#1290).
+Every stage-1 and stage-2 character has its own drawing (the stage-2 casts in
+#1470–#1475), and the drawing tests hold the series like any other. Its places
+are the 23 a scene of the season or the book is set in (#853) and those both
+name without visiting it (#1035: the North's five in #1248, nine of the
 Riverlands, the Westerlands and the Vale in #1249, five of the south and the
 seas in #1250, Essos's ten in #1251), and eight visited places #853 left out
 (#1252), each filed in one of the realms, the Iron Islands, the Reach and the
@@ -340,9 +339,15 @@ notes are in `scripts/chronicle-sources-got.mjs`, and the chronicle lede is the
 series' own copy, since a story starts at an episode or a chapter. The second
 stage, season 2 and _A Clash of Kings_ (episodes 11–20, site chapters 74–143),
 is being filed under #1455. So far `records/season-2.ts` holds its heading, the
-characters filed by cast group above and an empty `SEASON_2_PLACES`; a character
-season 1 filed takes its new dated steps in `records/season-1.ts`, and the demo
-stays at stage 1.
+characters filed by cast group above and, in `SEASON_2_PLACES`, the 15 places a
+scene of the stage is set in (#1469), three of them the book's alone and the
+Garden of Bones the show's, and the 11 places both media name in the stage and
+neither visits, plus the Crag, which the show visits and the book only names
+(#1252), all filed by #1476 with no one at them; the five places season 1 filed
+as named only and the stage visits (Dragonstone, Pyke, the Gods Eye, Harrenhal,
+Qarth) keep their records and take the visit as a dated `visits` entry. A
+character season 1 filed takes its new dated steps in `records/season-1.ts`, and
+the demo stays at stage 1.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -536,25 +541,26 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Bodies of power           | 5, with 61 seats                                        |
 | Arcs, places              | 7 · 43                                                  |
 | Saga modules              | 7                                                       |
-| Line drawings             | 369, one per record, plus 153 redrawings of 110 records |
+| Line drawings             | 369, one per record, plus 168 redrawings of 118 records |
 | Chronicle stories         | 1001, for 289 characters                                |
-| Dated timelines           | 1367                                                    |
+| Dated timelines           | 1375                                                    |
 | Affiliation steps         | 466                                                     |
-| Status steps              | 394                                                     |
+| Status steps              | 395                                                     |
 | Origins that link a place | 10                                                      |
 
 ### `game-of-thrones`
 
-| Thing             | Count                                                   |
-| ----------------- | ------------------------------------------------------- |
-| Records           | 273                                                     |
-| Characters        | 213                                                     |
-| Places            | 60                                                      |
-| Saga modules      | 2                                                       |
-| Line drawings     | 273, one per record, plus 153 redrawings of 113 records |
-| Chronicle stories | 565, for 144 characters                                 |
-| Dated timelines   | 876                                                     |
-| Affiliation steps | 243                                                     |
-| Status steps      | 358                                                     |
+| Thing                  | Count                                                   |
+| ---------------------- | ------------------------------------------------------- |
+| Records                | 300                                                     |
+| Characters             | 213                                                     |
+| Places                 | 87                                                      |
+| Saga modules           | 2                                                       |
+| Line drawings          | 300, one per record, plus 208 redrawings of 153 records |
+| Chronicle stories      | 618, for 154 characters                                 |
+| Dated timelines        | 936                                                     |
+| Affiliation steps      | 243                                                     |
+| Status steps           | 382                                                     |
+| Later visits to places | 5                                                       |
 
 <!-- End of the generated counts. -->

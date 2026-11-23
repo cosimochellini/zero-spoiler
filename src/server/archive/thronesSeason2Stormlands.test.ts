@@ -1,13 +1,16 @@
 import { describe, expect, it } from 'vitest'
 
+import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import { season2 } from '~/data/series/game-of-thrones/records/season-2'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
+import { recordIn, sidesOf } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage } from './pages.server'
+import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
@@ -61,6 +64,72 @@ const CHANGES: {
     source: 'chapter',
     value: 'deceased',
   },
+  // Later deaths the show alone tells, filed with their drawings' stages
+  // (#1471, #1238); the books' last chapter only orders them.
+  ...(
+    [
+      ['stannis-baratheon', 50],
+      ['melisandre', 70],
+      ['selyse-baratheon', 50],
+      ['shireen-baratheon', 49],
+      ['margaery-tyrell', 60],
+      ['mace-tyrell', 60],
+    ] as const
+  ).map(([id, episode]) => ({
+    id,
+    episode,
+    chapter: 344,
+    source: 'episode' as const,
+    value: 'deceased' as const,
+  })),
+]
+
+/**
+ * Every stage the stormlands cast's drawings take after their first,
+ * pinned in both media (#1471): crowns, Melisandre's shadow and true age,
+ * Brienne's lost plate and Oathkeeper, and the deaths. `source` for a
+ * stage one medium alone tells; `stage` counts a record's stages from 0.
+ */
+const STAGES: {
+  chapter: number
+  episode: number
+  id: keyof typeof DRAWINGS
+  source?: 'chapter' | 'episode'
+  stage?: number
+}[] = [
+  { id: 'stannis-baratheon', episode: 14, chapter: 105, source: 'chapter' },
+  {
+    id: 'stannis-baratheon',
+    episode: 50,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'melisandre', episode: 14, chapter: 116 },
+  { id: 'melisandre', episode: 51, chapter: 344, source: 'episode', stage: 1 },
+  { id: 'melisandre', episode: 70, chapter: 344, source: 'episode', stage: 2 },
+  { id: 'matthos-seaworth', episode: 19, chapter: 132 },
+  { id: 'selyse-baratheon', episode: 41, chapter: 316, source: 'chapter' },
+  {
+    id: 'selyse-baratheon',
+    episode: 50,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'shireen-baratheon', episode: 49, chapter: 344, source: 'episode' },
+  { id: 'brienne-of-tarth', episode: 15, chapter: 113, source: 'chapter' },
+  { id: 'brienne-of-tarth', episode: 34, chapter: 216, stage: 1 },
+  { id: 'margaery-tyrell', episode: 32, chapter: 204, source: 'episode' },
+  {
+    id: 'margaery-tyrell',
+    episode: 60,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'mace-tyrell', episode: 60, chapter: 344, source: 'episode' },
+  { id: 'cortnay-penrose', episode: 16, chapter: 118, source: 'chapter' },
 ]
 
 /**
@@ -274,6 +343,88 @@ describe('the stormlands steps one medium alone tells', () => {
       )
 
       expect(page).not.toContain(JSON.stringify(en))
+    },
+  )
+})
+
+describe.each(
+  STAGES.flatMap((stage) =>
+    sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
+  ),
+)(
+  '$id is redrawn by $unit at $episode/$chapter',
+  ({ id, episode, chapter, source, unit, stage: index = 0, ...side }) => {
+    const stages = REDRAWINGS[id] ?? []
+    const stage = stages[index]
+    // The drawing just before is the last earlier stage this unit reads:
+    // a stage the other medium alone tells is never shown here.
+    const previous =
+      stages
+        .slice(0, index)
+        .findLast(
+          (earlier) =>
+            (recordIn(archive, id).source ?? earlier.source ?? unit) === unit,
+        )?.value ?? DRAWINGS[id]
+
+    it('at its pin, not one before', () => {
+      const owner = recordIn(archive, id)
+
+      expect(stage?.episode).toBe(episode)
+      expect(stage?.chapter).toBe(chapter)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? stage?.source).toBe(source)
+      expect(
+        drawingOf(owner, readerFor(archive, side.before, 'en')).strokes,
+      ).toStrictEqual(previous)
+      expect(
+        drawingOf(owner, readerFor(archive, side.reached, 'en')).strokes,
+      ).toStrictEqual(stage?.value)
+    })
+  },
+)
+
+/** The medium a stage is told in: its record's, else its own. */
+function mediumOf(
+  id: keyof typeof DRAWINGS,
+  index: number,
+): 'chapter' | 'episode' | undefined {
+  return recordIn(archive, id).source ?? REDRAWINGS[id]?.[index]?.source
+}
+
+/**
+ * The drawing a reader of this medium ends on: the last stage it tells, or
+ * the first drawing when it tells none.
+ */
+function endsOn(id: keyof typeof DRAWINGS, unit: Unit): unknown {
+  const told = (REDRAWINGS[id] ?? []).filter(
+    (stage) => (stage.source ?? unit) === unit,
+  )
+
+  return told.at(-1)?.value ?? DRAWINGS[id]
+}
+
+describe('the stormlands stages one medium alone tells', () => {
+  // A reader of the other medium who has reached its end sees the last
+  // stage their medium tells, or the first drawing when it tells none.
+  // Cortnay's record is the books' alone, so it never opens to that reader
+  // at all, which the record tests above hold.
+  it.each(
+    STAGES.filter(
+      ({ id, source }) =>
+        source !== undefined && recordIn(archive, id).source === undefined,
+    ),
+  )(
+    'never redraws $id for a reader of the other medium',
+    ({ id, source = 'episode', stage: index = 0 }) => {
+      const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
+      const drawn = drawingOf(
+        recordIn(archive, id),
+        otherAtTheEnd(source),
+      ).strokes
+
+      expect(mediumOf(id, index)).toBe(source)
+      expect(drawn).not.toStrictEqual(REDRAWINGS[id]?.[index]?.value)
+      expect(drawn).toStrictEqual(endsOn(id, other))
     },
   )
 })

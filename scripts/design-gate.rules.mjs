@@ -402,3 +402,128 @@ export function judge(findings, config) {
   )
   return { blocking, stale }
 }
+
+/**
+ * The rules that hold a page to the tokens in `DESIGN.md`. The detector loads
+ * that file only for a local file target, so they run on saved copies.
+ */
+const DESIGN_SYSTEM = 'design-system-'
+
+/**
+ * Of those, the ones the gate blocks on. The engine calls a colour outside the
+ * palette advisory; the gate does not. Radius and type size keep the engine's
+ * severity, advisory: they are in the report and never fail the gate.
+ */
+const BLOCKING_TOKEN_RULES = new Set([
+  'design-system-font',
+  'design-system-color',
+])
+
+/**
+ * Where the canary page is filed among the copies: a page set in a font and a
+ * colour outside the tokens, which the scan has to report, or it did not read
+ * `DESIGN.md` (a folded `fontFamily`, a frontmatter that does not close, a
+ * file that moved) and every page would pass unread.
+ */
+export const CANARY = 'canary'
+
+export const CANARY_PAGE =
+  '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Canary</title></head>'
+  + '<body><h1 style="font-family: Georgia, serif; color: #ff6a00">Canary</h1></body></html>\n'
+
+/** What the canary gives, each rule with its value, and nothing else. */
+const CANARY_FINDINGS = [
+  'design-system-color rgb(255, 106, 0)',
+  'design-system-font georgia',
+]
+
+/**
+ * The index pages whose main content the browser builds after hydration, so
+ * a saved copy of the server's markup holds little of it. A record's own page
+ * is served in full.
+ * - characters: the shelves are asked for once the page has hydrated
+ *   (`CharacterShelves.tsx`, #776);
+ * - places: the index under the map is drawn only in the browser
+ *   (`places/-page.tsx`, #781);
+ * - fruits: the server renders the marquee and the control bar, the browser
+ *   the album plates (`fruits/-album.ts`, #778);
+ * - abilities: the album gains about a third of its markup in the browser
+ *   (measured on Hunter x Hunter at episode 75, 545 elements served, 861
+ *   hydrated; #1545).
+ */
+const CLIENT_BUILT = /\/(?:characters|places|fruits|abilities)(?:\?|$)/u
+
+/**
+ * @param {string[]} addresses The pages the token scan saved.
+ * @returns {string[]} Those whose main content is built in the browser, which
+ *   the token scan does not see.
+ */
+export function clientBuilt(addresses) {
+  return addresses.filter((address) => CLIENT_BUILT.test(address))
+}
+
+/**
+ * A page as the detector reads it from a file: its scripts gone, so nothing
+ * hydrates or navigates away from `file://`, and a `<base>` to its address,
+ * so its stylesheets load from the server that rendered it. Its web fonts do
+ * not (CORS blocks them for a `file://` page), so the copy renders in the
+ * fallback faces; the font rule reads the declared `font-family`, which the
+ * stylesheet still sets. Only a `div` streamed segment and an unnamed
+ * `<details>` are handled: React's table and SVG segments and a named
+ * (exclusive) `<details>` group are not, and none is served today. With no
+ * script, React never moves a streamed Suspense section (`<div hidden
+ * id="S:0">`, numbered in hex) into its place, and the detector skips a
+ * hidden element, so the section is shown where it was streamed, at the end
+ * of the body. What a closed `<details>` holds has no box either, so every
+ * `<details>` is saved open.
+ * @param {string} html The page as the server sent it.
+ * @param {string} address Where it was served.
+ * @returns {string} The copy to save.
+ */
+export function savedCopy(html, address) {
+  return html
+    .replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/giu, '')
+    .replaceAll(/<div hidden(?= id="S:[\da-f]+")/gu, '<div')
+    .replaceAll(/<details\b/giu, '<details open')
+    .replace(/<head\b[^>]*>/iu, (head) => `${head}<base href="${address}">`)
+}
+
+/**
+ * The token findings of a scan of saved copies, each under the address its
+ * copy was saved from, so the report names the page and a waiver's glob reads
+ * the same address as on the address scan. The canary's are checked and
+ * dropped.
+ * @param {object[]} findings The raw findings of the saved copies.
+ * @param {Map<string, string>} addresses Each copy's file, as the detector
+ *   names it, to its page's address, or to `CANARY`.
+ * @returns {object[]} The `design-system-*` findings, the blocking ones no
+ *   longer advisory.
+ * @throws {Error} When a finding names a file the gate did not save, or the
+ *   canary did not give exactly its findings.
+ */
+export function tokenFindings(findings, addresses) {
+  const tokens = findings
+    .filter((finding) => finding.antipattern.startsWith(DESIGN_SYSTEM))
+    .map((finding) => {
+      const file = addresses.get(finding.file)
+      if (file === undefined) {
+        throw new Error(`a token finding names ${finding.file}, no saved page`)
+      }
+      return BLOCKING_TOKEN_RULES.has(finding.antipattern) ?
+          { ...finding, file, advisory: false }
+        : { ...finding, file }
+    })
+  const canary = [
+    ...new Set(
+      tokens
+        .filter(({ file }) => file === CANARY)
+        .map((finding) => `${finding.antipattern} ${finding.ignoreValue}`),
+    ),
+  ].toSorted((a, b) => a.localeCompare(b))
+  if (canary.join('\n') !== CANARY_FINDINGS.join('\n')) {
+    throw new Error(
+      `the token scan cannot vouch for its pages: the engine did not read DESIGN.md. The canary page gave ${canary.join(', ') || 'no token finding'}; expected ${CANARY_FINDINGS.join(', ')}`,
+    )
+  }
+  return tokens.filter(({ file }) => file !== CANARY)
+}

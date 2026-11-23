@@ -9,12 +9,15 @@ import type { Stroke } from '~/lib/view/records'
 
 import { COURT_DRAWINGS, courtRedrawn } from './court'
 import { DRAGON_SIGIL, ESSOS_DRAWINGS, essosRedrawn } from './essos'
+import { IRONBORN_DRAWINGS, ironbornRedrawn } from './ironborn'
 import { NORTH_DRAWINGS, northRedrawn } from './north'
 import { PLACE_DRAWINGS, placesRedrawn } from './places'
 import { RIVERLANDS_DRAWINGS, riverlandsRedrawn } from './riverlands'
 import { SOUTH_DRAWINGS, southRedrawn } from './south'
+import { REFORGED, STORMLANDS_DRAWINGS, stormlandsRedrawn } from './stormlands'
 import { VALE_DRAWINGS, valeRedrawn } from './vale'
 import { WALL_DRAWINGS, wallRedrawn } from './wall'
+import { WILDLING_DRAWINGS, wildlingsRedrawn } from './wildlings'
 import { WINTERFELL_DRAWINGS, winterfellRedrawn } from './winterfell'
 
 /**
@@ -43,26 +46,6 @@ const ICE: Stroke[] = [
  * with in episode 1 and in Bran I (chapter 2).
  */
 const ICE_STANDING: Stroke[] = [...ICE, shadow(80, 153, 24)]
-
-/**
- * One of the two shorter swords Ice is forged into, lying flat: the
- * pommel, the wrapped grip, the crossguard and the blade, the ripple down
- * its near face in the accent and its far face hatched. Eddard's stage
- * after Ice is melted lays two of them side by side.
- */
-const REFORGED: Stroke[] = [
-  { d: circle(30, 0, 4) },
-  { d: 'M34 -3 H50 V3 H34 Z' },
-  { d: 'M38 -3 L41 3 M43 -3 L46 3', role: 'soft' },
-  { d: 'M50 -11 H55 V11 H50 Z' },
-  { d: 'M55 -5 H118 L130 0 L118 5 H55' },
-  { d: 'M57 0 H126', role: 'soft' },
-  { d: 'M60 -3 q4 2 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0', role: 'accent' },
-  {
-    d: 'M64 2 l3 3 M76 2 l3 3 M88 2 l3 3 M100 2 l3 3 M112 2 l3 3',
-    role: 'ambient',
-  },
-]
 
 /**
  * Jon Snow: the albino runt of the direwolf litter, sitting, side on and
@@ -173,21 +156,6 @@ const GOBLET: Stroke[] = [
 ]
 
 /**
- * What a second-stage person shows until its drawing child draws it (#1460):
- * a bust with a blank head and no face, the collar in the record's tint. It
- * stands for nobody, so it tells a reader nothing.
- */
-const PERSON: Stroke[] = [
-  { d: circle(80, 58, 19) },
-  { d: 'M72 76 V88 M88 76 V88', role: 'soft' },
-  { d: 'M72 88 Q44 92 38 118 L36 150 M88 88 Q116 92 122 118 L124 150' },
-  { d: 'M64 90 Q80 104 96 90', role: 'accent' },
-  { d: 'M56 112 Q60 130 58 148 M104 112 Q100 130 102 148', role: 'soft' },
-  { d: 'M30 150 H130', role: 'ambient' },
-  shadow(80, 154, 46),
-]
-
-/**
  * Game of Thrones' drawings, keyed by the id of the record each was drawn
  * for. The Winterfell household's are in `winterfell.ts` (#854), the
  * southern cast's in `south.ts` (#1051), the Night's Watch's in `wall.ts`
@@ -196,11 +164,13 @@ const PERSON: Stroke[] = [
  * in `vale.ts` (#1055), the King's Landing cast's in `court.ts` (#1056) and
  * the Riverlands cast's in `riverlands.ts` (#1057), with the four leads
  * drawn for the launch here (owner, #856). Every season-1 character has its
- * own drawing; the season-2 King's Landing cast (#1463), stormlands
- * cast (#1464), Riverlands and Harrenhal cast (#1465), Winterfell and
- * Iron Islands cast (#1466), Wall cast (#1467) and Essos cast (#1468) show
- * `PERSON` until their drawing children draw them. `satisfies`
- * rather than an annotation, so `ArtId` below stays the literal keys.
+ * own drawing, and so have the season-2 King's Landing cast, in `court.ts`
+ * (#1470), stormlands cast, in `stormlands.ts` (#1471), Riverlands and
+ * Harrenhal cast, in `riverlands.ts` (#1472), Winterfell and Iron Islands
+ * cast, in `north.ts` and `ironborn.ts` (#1473), Wall cast, the rangers in
+ * `wall.ts` and the wildlings in `wildlings.ts` (#1474), and Essos and Qarth
+ * cast, in `essos.ts` (#1475). `satisfies` rather than an annotation, so
+ * `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
   ...WINTERFELL_DRAWINGS,
@@ -212,79 +182,13 @@ export const DRAWINGS = {
   ...VALE_DRAWINGS,
   ...COURT_DRAWINGS,
   ...RIVERLANDS_DRAWINGS,
+  ...STORMLANDS_DRAWINGS,
+  ...IRONBORN_DRAWINGS,
+  ...WILDLING_DRAWINGS,
   'eddard-stark': ICE_STANDING,
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': DRAGON_EGG,
-  'daisy': PERSON,
-  'jacelyn-bywater': PERSON,
-  'hallyne': PERSON,
-  'lollys-stokeworth': PERSON,
-  'osmund-kettleblack': PERSON,
-  'alayaya': PERSON,
-  'garlan-tyrell': PERSON,
-  // #1464, Stannis, Renly and the stormlands.
-  'stannis-baratheon': PERSON,
-  'melisandre': PERSON,
-  'davos-seaworth': PERSON,
-  'cressen': PERSON,
-  'matthos-seaworth': PERSON,
-  'salladhor-saan': PERSON,
-  'selyse-baratheon': PERSON,
-  'shireen-baratheon': PERSON,
-  'brienne-of-tarth': PERSON,
-  'margaery-tyrell': PERSON,
-  'mace-tyrell': PERSON,
-  'cortnay-penrose': PERSON,
-  // #1465, Robb's war, the Riverlands and Harrenhal.
-  'alton-lannister': PERSON,
-  'cleos-frey': PERSON,
-  'talisa-maegyr': PERSON,
-  'amory-lorch': PERSON,
-  'polliver': PERSON,
-  'tickler': PERSON,
-  'chiswyck': PERSON,
-  'weese': PERSON,
-  'vargo-hoat': PERSON,
-  // #1466: Winterfell and the Iron Islands.
-  'balon-greyjoy': PERSON,
-  'asha-greyjoy': PERSON,
-  'aeron-greyjoy': PERSON,
-  'victarion-greyjoy': PERSON,
-  'dagmer': PERSON,
-  'black-lorren': PERSON,
-  'wex-pyke': PERSON,
-  'farlen': PERSON,
-  'meera-reed': PERSON,
-  'jojen-reed': PERSON,
-  'ramsay-snow': PERSON,
-  'big-walder-frey': PERSON,
-  'little-walder-frey': PERSON,
-  'wyman-manderly': PERSON,
-  'donella-hornwood': PERSON,
-  // #1467: the Wall and beyond, until its drawing child draws it.
-  'thoren-smallwood': PERSON,
-  'eddison-tollett': PERSON,
-  'jarman-buckwell': PERSON,
-  'mallador-locke': PERSON,
-  'craster': PERSON,
-  'gilly': PERSON,
-  'qhorin-halfhand': PERSON,
-  'stonesnake': PERSON,
-  'ygritte': PERSON,
-  'ebben': PERSON,
-  'dalbridge': PERSON,
-  'lord-of-bones': PERSON,
-  'kovarro': PERSON,
-  'xaro-xhoan-daxos': PERSON,
-  'pyat-pree': PERSON,
-  'quaithe': PERSON,
-  'malakho': PERSON,
-  'drogon': PERSON,
-  'rhaegal': PERSON,
-  'viserion': PERSON,
-  'strong-belwas': PERSON,
-  'arstan-whitebeard': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */
@@ -293,12 +197,14 @@ export type ArtId = keyof typeof DRAWINGS
 /**
  * The records drawn again later in the story, the Winterfell household's
  * from `winterfell.ts`, the southern cast's from `south.ts`, the Night's
- * Watch's from `wall.ts`, the Essos cast's from `essos.ts`, the northern
- * household's from `north.ts`, the Vale cast's from `vale.ts`, the King's
- * Landing cast's from `court.ts` and the Riverlands cast's from
- * `riverlands.ts`. Eddard Stark is beheaded with Ice in "Baelor" (episode 9)
- * and in Arya V (chapter 66): from there the blade lies flat on the ground,
- * with nobody to hold it.
+ * Watch's from `wall.ts`, the Essos cast's of both seasons from `essos.ts`
+ * (#1052, #1475), the northern household's from `north.ts`, the Vale cast's
+ * from `vale.ts`, the King's Landing cast's from `court.ts`, the Riverlands
+ * cast's from `riverlands.ts`, the stormlands cast's from `stormlands.ts`,
+ * the second stage's Iron Islands cast's from `ironborn.ts` and the
+ * wildlings' from `wildlings.ts`. Eddard Stark is beheaded with Ice in
+ * "Baelor" (episode 9) and in Arya V (chapter 66): from there the blade lies
+ * flat on the ground, with nobody to hold it.
  */
 export const REDRAWINGS: Redrawings = {
   ...winterfellRedrawn,
@@ -309,6 +215,9 @@ export const REDRAWINGS: Redrawings = {
   ...valeRedrawn,
   ...courtRedrawn,
   ...riverlandsRedrawn,
+  ...stormlandsRedrawn,
+  ...ironbornRedrawn,
+  ...wildlingsRedrawn,
   ...placesRedrawn,
   'eddard-stark': [
     {
@@ -335,6 +244,32 @@ export const REDRAWINGS: Redrawings = {
     },
   ],
   'jon-snow': [
+    // The runt beside a spear with a black cloak hung from a crossbar on
+    // it, the cloak hatched: on Qhorin Halfhand's orders Jon kills him so
+    // that the wildlings will take him for a deserter, and rides with them
+    // still sworn to the Watch, in "Valar Morghulis" (episode 20) and in
+    // Jon VIII (chapter 142).
+    {
+      episode: 20,
+      chapter: 142,
+      value: [
+        ...moved(RUNT, 'translate(-26 0)'),
+        { d: 'M134 150 V28 M130 28 L134 12 L138 28 Z M116 42 H152' },
+        {
+          d: 'M118 42 Q114 84 116 124 Q126 118 134 126 Q142 118 152 124 Q154 84 150 42',
+        },
+        { d: 'M126 46 Q124 84 126 120 M142 46 Q144 84 142 120', role: 'soft' },
+        {
+          d: 'M118 62 l5 -3 M118 78 l5 -3 M118 94 l5 -3 M118 110 l5 -3 M144 66 l5 -3 M145 82 l5 -3 M145 98 l5 -3',
+          role: 'ambient',
+        },
+      ],
+    },
+    // The runt alone again: Jon turns on the wildlings and escapes them
+    // back to the Wall in "The Rains of Castamere" (episode 29). A Storm of
+    // Swords has him back at Castle Black by Jon VII (chapter 199), the
+    // safe later chapter.
+    { episode: 29, chapter: 199, value: RUNT },
     // The runt howling in the snow: Jon is killed at Castle Black in
     // "Mother's Mercy" (episode 50) and left for dead in Jon XIII of A
     // Dance with Dragons (chapter 341). Ghost howls for him in the show.

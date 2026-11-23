@@ -96,6 +96,7 @@ const EXPECTED: Record<string, Expected> = {
       'relationships[].type',
       'role',
       'summary',
+      'visit',
     ],
     namesSaidEarly: true,
   },

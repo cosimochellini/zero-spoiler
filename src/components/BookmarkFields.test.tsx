@@ -1,5 +1,7 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { readFileSync } from 'node:fs'
+import path from 'node:path'
 import { type ReactElement, useMemo } from 'react'
 import { describe, expect, it, vi } from 'vitest'
 
@@ -127,5 +129,28 @@ describe('the bookmark form for a series', () => {
     expect(document.cookie).toContain('zs_test-series=c23')
 
     document.cookie = 'zs_test-series=; Max-Age=0; Path=/'
+  })
+
+  it('draws the chosen unit and the keyboard focus off the radio inside each segment', () => {
+    renderWithProviders(<SeriesForm series={SERIES} />)
+
+    // `:has()` on the label finds the radio only while it sits inside it.
+    for (const name of ['Episode', 'Season', 'Chapter']) {
+      expect(
+        screen.getByRole('radio', { name }).closest('label'),
+      ).toHaveTextContent(name)
+    }
+
+    // StyleX compiles `&` in a selector to `:scope`, which matches only the
+    // root, so `:is(input:focus-visible + &)` once drew no ring (#1398).
+    const styles = readFileSync(
+      path.join(import.meta.dirname, 'BookmarkDialog.styles.ts'),
+      'utf8',
+    )
+
+    expect(styles).toContain("':has(:focus-visible)': color.focus")
+    expect(styles).toContain("':has(:checked)': color.ink")
+    // No selector key (a quoted string followed by a colon) holds an `&`.
+    expect(styles).not.toMatch(/'[^'&\n]*&[^'\n]*':/u)
   })
 })
