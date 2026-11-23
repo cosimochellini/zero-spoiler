@@ -401,7 +401,7 @@ before Start sees it, sets the same cookies on the response, and writes any
 bookmark cookie the response sets (a shared link's) to the record. Server
 functions and assets pass untouched. A synced device's save is pushed before the
 pages are re-read (`BookmarkProvider`). Every page carries only the cookie check
-(`src/lib/progress/synced.ts`); the endpoint client, the panel, the QR encoder
+(`src/lib/progress/synced.ts`); the endpoint client, the QR view, the QR encoder
 and the copy (`src/i18n/dictionaries/sync.ts`) load in lazy chunks. A series
 cleared on one device is kept as an empty value, so the others drop that cookie
 on their next load; a joining device fills it with its own. A save is listed in
