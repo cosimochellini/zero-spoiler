@@ -1486,7 +1486,10 @@ export const KAKIN_PHASE_4_PLACES: Record<
     arc: 'kakin-arc',
     form: 'building',
     region: 'mainland',
-    landmark: { it: 'La sala video', en: 'The video room' },
+    landmark: {
+      it: 'Le piccole tombe fuori dalla chiesa',
+      en: 'The small graves outside the church',
+    },
     log: {
       it: 'La chiesa della Città delle Stelle Cadenti ha una sala video e un auditorium per i bambini.',
       en: 'Meteor City’s church has a video room and an auditorium for the children.',

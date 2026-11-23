@@ -13,7 +13,6 @@ import {
   SEA,
   shadow,
   star,
-  wave,
 } from '~/lib/svg/primitives'
 import type { Stroke } from '~/lib/view/records'
 
@@ -65,7 +64,11 @@ import {
   kakinPhaseOneBeasts,
   kakinPhaseOneRedrawn,
 } from './kakin-phase-1'
-import { KAKIN_PHASE_TWO_DRAWINGS, kakinPhaseTwoRedrawn } from './kakin-phase-2'
+import {
+  BLACK_WHALE,
+  KAKIN_PHASE_TWO_DRAWINGS,
+  kakinPhaseTwoRedrawn,
+} from './kakin-phase-2'
 import {
   KAKIN_PHASE_THREE_DRAWINGS,
   kakinPhaseThreeRedrawn,
@@ -566,35 +569,12 @@ export const DRAWINGS = {
     shadow(80, 156, 52),
   ],
 
-  // A sheet of the world map, its coasts in plain ink, and past its torn
-  // edge a far larger land in violet, hatched in shadow: the Dark Continent,
-  // the place no world map shows, where the King of Kakin announces a voyage
-  // in chapter 340.
-  'kakin-arc': [
-    { d: 'M14 60 L84 52 L80 84 L88 112 L84 150 L18 156 Z' },
-    {
-      d: 'M24 76 C30 70 44 72 46 80 C50 88 40 94 32 90 C24 88 20 82 24 76 Z',
-      role: 'soft',
-    },
-    {
-      d: 'M52 112 C58 104 72 106 72 116 C72 126 62 132 54 128 C48 124 48 116 52 112 Z',
-      role: 'soft',
-    },
-    {
-      d: 'M58 70 q8 -2 8 6 q-6 4 -8 -6 M28 122 q6 -4 8 2 q-4 6 -8 -2',
-      role: 'soft',
-    },
-    {
-      d: 'M100 40 C120 30 150 38 152 62 C156 86 140 96 146 118 C150 136 130 150 110 144 C98 140 104 124 98 110 C92 96 104 86 98 70 C94 56 92 46 100 40 Z',
-      role: 'accent',
-    },
-    {
-      d: 'M112 56 l20 -10 M108 72 l34 -16 M106 88 l38 -18 M110 102 l32 -15 M108 118 l36 -17 M114 132 l28 -13',
-      role: 'ambient',
-    },
-    { d: wave(170), role: 'ambient' },
-    { d: 'M18 156 L84 150', role: 'ambient', dashed: true },
-  ],
+  // The Black Whale 1 at sea, the same drawing as the ship's own
+  // (`BLACK_WHALE`): the hull hatched below its deck, the five tiers
+  // stepped up it with their rows of windows, and the top dome in tint.
+  // The arc opens with the king's announcement in chapter 340; Kakin
+  // presents the ship that carries the whole arc in chapter 342.
+  'kakin-arc': BLACK_WHALE,
 
   // Gon's fishing rod, held at the cork grip, the reel under it a drum in
   // three-quarter view, its face in the record's tint and its side
