@@ -206,7 +206,7 @@ const styles = stylex.create({
       default: '34% minmax(0, 1fr)',
     },
     position: 'relative',
-    minHeight: { [TALL]: '28rem', [WIDE]: '36rem', default: '11rem' },
+    minHeight: { [TALL]: '28rem', [WIDE]: '36rem', default: '10rem' },
   },
   lit: {
     outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
@@ -221,7 +221,7 @@ const styles = stylex.create({
     insetInline: { [TALL]: '12%', default: 'auto' },
     insetBlockStart: { [TALL]: '4%', default: 'auto' },
     position: { [TALL]: 'absolute', default: 'relative' },
-    height: { [TALL]: '60%', default: '9rem' },
+    height: { [TALL]: '60%', default: '8.5rem' },
   },
   // A dark stage holds only the fog drifting in it.
   fog: {
