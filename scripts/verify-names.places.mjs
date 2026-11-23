@@ -72,6 +72,11 @@ export const PLACE_ITALIAN_TITLES = {
     'dragonstone': `${PLACES}#Roccia del Drago`,
     'the-arbor': `${PLACES}#Arbor`,
     'mountains-of-the-moon': `${PLACES}#Montagne della Luna`,
+    'red-waste': `${PLACES}#Desolazione Rossa`,
+    'storms-end': `${PLACES}#Capo Tempesta`,
+    'guildhall-of-the-alchemists': `${PLACES}#Il Palazzo dell'Ordine degli Alchimisti`,
+    'fist-of-the-first-men': `${PLACES}#Pugno dei Primi Uomini`,
+    'blackwater-bay': `${PLACES}#Baia delle Acque Nere`,
   },
 }
 
@@ -176,4 +181,22 @@ export const PLACE_NAMES_KEPT = {
   // No Italian Wikipedia mention: the Italian Game of Thrones Wiki's page
   // "Città dell'Inverno" (revision 56441).
   'winter-town': 'Città dell’Inverno',
+  // The second stage's visited places (#1469) with no section of their own:
+  // Craster's Keep is "la fortezza di Craster" in Italian Wikipedia's season
+  // 3 and 4 episode lists; the Skirling Pass is "Passo Skirling" in its Lo
+  // scontro dei re page; Vaes Tolorro and the House of the Undying ("Casa
+  // degli Eterni") are in its Jorah Mormont and Daenerys Targaryen pages;
+  // Lordsport, the Stony Shore, Bitterbridge and Oxcross are the Italian Game
+  // of Thrones Wiki's pages. Whitetree and the Garden of Bones are
+  // assumed, the dub's or the books' form unconfirmed.
+  'crasters-keep': 'Fortezza di Craster',
+  'skirling-pass': 'Passo Skirling',
+  'vaes-tolorro': 'Vaes Tolorro',
+  'house-of-the-undying': 'Casa degli Eterni',
+  'lordsport': 'Lordsport',
+  'stony-shore': 'Costa Pietrosa',
+  'bitterbridge': 'Ponte Amaro',
+  'oxcross': 'Oxcross',
+  'whitetree': 'Albero Bianco',
+  'garden-of-bones': 'Giardino delle Ossa',
 }

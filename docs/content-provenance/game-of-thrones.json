@@ -1468,12 +1468,14 @@
       "https://gameofthrones.fandom.com/wiki/Pyke",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Pyke"
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Pyke",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands"
     ],
     "unverified": [
       "Show gate: Jory's line on the siege of Pyke in episode 4, from a fan transcript matched to the Fandom ref GOT104.",
       "Book gate: Bran IV, the first chapter that names the castle (Jon III names the person Cotter Pyke); checked against the text.",
-      "Region: the Iron Islands are a region, not a record, so Pyke's region label does not name a record before it opens (owner, #1248)."
+      "Region: the Iron Islands are a region, not a record, so Pyke's region label does not name a record before it opens (owner, #1248).",
+      "Visit 12 / 85 (#1469): Theon comes home (\"The Night Lands\", Theon I); not viewed."
     ]
   },
   "white-harbor": {
@@ -1527,10 +1529,12 @@
       "https://gameofthrones.fandom.com/wiki/Harrenhal",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Harrenhal"
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)"
     ],
     "unverified": [
-      "Show gate: Catelyn's line in episode 4 (Fandom ref GOT104); not viewed."
+      "Show gate: Catelyn's line in episode 4 (Fandom ref GOT104); not viewed.",
+      "Visit 14 / 100 (#1469): the captives brought to the castle (\"Garden of Bones\", Arya VI per its In the books list); not viewed."
     ]
   },
   "the-fingers": {
@@ -1596,12 +1600,15 @@
       "https://gameofthrones.fandom.com/wiki/Gods_Eye",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://awoiaf.westeros.org/index.php/Gods_Eye",
+      "https://iceandfire.fandom.com/wiki/Gods_Eye"
     ],
     "unverified": [
       "Show gate: Tywin's line in episode 10 (Fandom ref GOT110); not viewed.",
       "Book gate: Bran VII, in the narration of Luwin's lesson (close-third narration counts, owner, #1035).",
-      "Italian: \"Occhio degli Dei\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249)."
+      "Italian: \"Occhio degli Dei\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249).",
+      "Visit 13 / 88, books only (#1469): Yoren's band in an abandoned town on the southern shore (A Wiki of Ice and Fire, Gods Eye, citing Arya IV, through Firecrawl); the show's holdfast is not tied to the lake."
     ]
   },
   "asshai": {
@@ -1633,11 +1640,13 @@
       "https://gameofthrones.fandom.com/wiki/Qarth",
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)"
     ],
     "unverified": [
       "Show gate: Doreah's line on a trader from Qarth in episode 2 (Fandom ref GOT102); not viewed.",
-      "Book gate: Daenerys III, Doreah's trader from Qarth; checked against the text."
+      "Book gate: Daenerys III, Doreah's trader from Qarth; checked against the text.",
+      "Visit 14 / 101 (#1469): Daenerys let into the city (\"Garden of Bones\", Daenerys II per the In the books lists); not viewed."
     ]
   },
   "braavos": {
@@ -1766,10 +1775,12 @@
       "https://gameofthrones.fandom.com/wiki/Dragonstone",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Roccia_del_Drago"
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Roccia_del_Drago",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers"
     ],
     "unverified": [
-      "Show gate: Ned's order to Tomard in episode 7 (Fandom ref GOT107); not viewed."
+      "Show gate: Ned's order to Tomard in episode 7 (Fandom ref GOT107); not viewed.",
+      "Visit 11 / 74 (#1469): Stannis's court in \"The North Remembers\" and the prologue of A Clash of Kings; not viewed."
     ]
   },
   "the-arbor": {
@@ -4115,6 +4126,196 @@
       "Books only, gate 137 (Daenerys V, Chapter 63): A Wiki of Ice and Fire's synopsis has Daenerys learn that the old man with the staff, who knocked the manticore out of her hands, is Strong Belwas's squire Arstan Whitebeard, and its Belwas page says Arstan introduces himself and Belwas to her. No earlier chapter of the stage names him. The book was not viewed. The show has no such character; episode 20 only orders him.",
       "Owner ruling (2026-11-22): filed as a record of his own, under the name and id he has inside the stage, with nothing in his texts that hints at who he is. Plan: when the books reveal that he is Barristan Selmy (A Storm of Swords, a later stage), the stage that reaches the reveal folds this record into Barristan's.",
       "Italian: \"Arstan Barbabianca\", from Italian Wikipedia's prose (Barristan Selmy's section of Personaggi); the Mondadori form is assumed to match."
+    ]
+  },
+  "crasters-keep": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Craster's_Keep",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://iceandfire.fandom.com/wiki/Craster's_Keep",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(terza_stagione)"
+    ],
+    "unverified": [
+      "Show gate 11: the ranging arrives at the keep in \"The North Remembers\"; whether the keep's own name is said in the episode is not checked. Neither the episodes nor the books were viewed.",
+      "Book gate 97 (Jon III): the arrival, per \"The North Remembers\"' In the books list.",
+      "Italian: \"Fortezza di Craster\" from Italian Wikipedia's season 3 and 4 episode lists (\"la fortezza di Craster\"); dub form unconfirmed."
+    ]
+  },
+  "red-waste": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Red_Waste",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://iceandfire.fandom.com/wiki/Red_Waste",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Desolazione_Rossa"
+    ],
+    "unverified": [
+      "Show gate 11: Jorah tells Daenerys he has not been as far east as the Red Waste (reported on the Red Waste page, GOT201). Neither the episodes nor the books were viewed.",
+      "Book gate 86 (Daenerys I). The Ice and Fire Wiki puts the end of A Game of Thrones at the waste's margins; the first book was not checked for the name.",
+      "A Wiki of Ice and Fire says A Game of Thrones chapter 72 (site 73) already names the Red Waste; the gate stays 86, the first scene set there."
+    ]
+  },
+  "whitetree": {
+    "sources": [
+      "https://iceandfire.fandom.com/wiki/Whitetree",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers"
+    ],
+    "unverified": [
+      "Book only: Jon II (87) is set in the empty village (Ice and Fire Wiki; the character inventory's Jon II pins). The show names no village; episode 11 orders it. Neither the episodes nor the books were viewed.",
+      "Italian: \"Albero Bianco\" assumed, not checked against the Mondadori edition."
+    ]
+  },
+  "vaes-tolorro": {
+    "sources": [
+      "https://iceandfire.fandom.com/wiki/Vaes_Tolorro",
+      "https://iceandfire.fandom.com/wiki/Red_Waste",
+      "https://gameofthrones.fandom.com/wiki/Red_Waste",
+      "https://it.wikipedia.org/wiki/Jorah_Mormont"
+    ],
+    "unverified": [
+      "Book only: Daenerys I (86) finds and names the city. The show has none; episode 11 orders it. Neither the episodes nor the books were viewed.",
+      "Italian: \"Vaes Tolorro\" as Italian Wikipedia's Jorah Mormont page writes it."
+    ]
+  },
+  "lordsport": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Lordsport",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://iceandfire.fandom.com/wiki/Lordsport"
+    ],
+    "unverified": [
+      "Show gate 12: Theon disembarks at Lordsport (\"The Night Lands\" synopsis); the line naming the town is not quoted. Neither the episodes nor the books were viewed.",
+      "Book gate 85 (Theon I): Theon lands at Lordsport and rides to Pyke.",
+      "Italian: \"Lordsport\", the Italian Game of Thrones Wiki's page (interwiki of the Lordsport page)."
+    ]
+  },
+  "stony-shore": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Stony_Shore",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
+      "https://iceandfire.fandom.com/wiki/Stony_Shore",
+      "https://awoiaf.westeros.org/index.php/Stony_Shore"
+    ],
+    "unverified": [
+      "Show gate 13: Balon gives Theon one ship to raid the fishing villages of the Stony Shore (synopsis, reported speech); the show sets no scene there (#1252). Neither the episodes nor the books were viewed.",
+      "Book gate 111 (Theon III), the raid; Theon II (98) names it (A Wiki of Ice and Fire, Stony Shore, read through Firecrawl).",
+      "Italian: \"Costa Pietrosa\", the Italian Game of Thrones Wiki's page."
+    ]
+  },
+  "bitterbridge": {
+    "sources": [
+      "https://iceandfire.fandom.com/wiki/Bitterbridge",
+      "https://gameofthrones.fandom.com/wiki/Bitterbridge",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die"
+    ],
+    "unverified": [
+      "Book only: Catelyn II (96), Renly's host and tourney. The show's camp in episode 13 is never named; episode 13 orders it. Neither the episodes nor the books were viewed.",
+      "Italian: \"Ponte Amaro\", the Italian Game of Thrones Wiki's page; Italian Wikipedia's Catelyn Tully page writes it too."
+    ]
+  },
+  "storms-end": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Storm's_End",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
+      "https://iceandfire.fandom.com/wiki/Storm's_End",
+      "https://awoiaf.westeros.org/index.php/Storm's_End",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Capo_Tempesta",
+      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell"
+    ],
+    "unverified": [
+      "Book gate 105 (Catelyn III), Renly's camp below the castle Stannis besieges; Davos II (116) at its walls (A Wiki of Ice and Fire, through Firecrawl). Neither the episodes nor the books were viewed.",
+      "Show gate 18: the Storm's End page cites \"The Prince of Winterfell\" (GOT208) for the castle's name, and the episode's notes say Stannis relates the siege of Storm's End; the show sets no scene there in season 2 (its episode 13 notes: Storm's End \"wasn't introduced\"), so the record opens at the naming (#1252). The line itself is not quoted.",
+      "Log: the old siege and the onion smuggler, which Davos I (84) and the prologue already tell in the books."
+    ]
+  },
+  "oxcross": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Oxcross",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
+      "https://awoiaf.westeros.org/index.php/Oxcross"
+    ],
+    "unverified": [
+      "Show gate 14: \"Garden of Bones\" opens on the field after the battle (\"At Oxcross\"); whether the name is said is not checked. Neither the episodes nor the books were viewed.",
+      "Book gate 106: never visited; Sansa III names the battle (A Wiki of Ice and Fire, Oxcross, through Firecrawl) (#1252).",
+      "Italian: \"Oxcross\", the Italian Game of Thrones Wiki's page."
+    ]
+  },
+  "garden-of-bones": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)"
+    ],
+    "unverified": [
+      "Show only: Jorah names the desert in episode 14 (quoted on the Garden of Bones page); A Wiki of Ice and Fire has no page for it. Chapter 101 orders it. Neither the episodes nor the books were viewed.",
+      "Italian: \"Giardino delle Ossa\" assumed; dub form unconfirmed."
+    ]
+  },
+  "guildhall-of-the-alchemists": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Alchemists'_Guild",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Il_Palazzo_dell'Ordine_degli_Alchimisti"
+    ],
+    "unverified": [
+      "Show gate 15: Tyrion visits Hallyne at the Guildhall (Alchemists' Guild page, GOT205). Neither the episodes nor the books were viewed.",
+      "Book gate 94 (Tyrion V): Tyrion inspects the guild's wildfire with Hallyne (\"The Ghost of Harrenhal\"' In the books list).",
+      "Italian: \"Palazzo dell'Ordine degli Alchimisti\", the heading of Italian Wikipedia's places page."
+    ]
+  },
+  "fist-of-the-first-men": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Fist_of_the_First_Men",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://iceandfire.fandom.com/wiki/Fist_of_the_First_Men",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Pugno_dei_Primi_Uomini"
+    ],
+    "unverified": [
+      "Show gate 15: the ranging arrives at the Fist (GOT205); the line naming it is not quoted. Neither the episodes nor the books were viewed.",
+      "Book gate 108 (Jon IV): the arrival, per \"The Ghost of Harrenhal\"' In the books list."
+    ]
+  },
+  "skirling-pass": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Skirling_Pass",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New",
+      "https://gameofthrones.fandom.com/wiki/Frostfangs",
+      "https://awoiaf.westeros.org/index.php/Skirling_Pass",
+      "https://it.wikipedia.org/wiki/Lo_scontro_dei_re"
+    ],
+    "unverified": [
+      "Show gate 16: Jeor names the pass in episode 15; Qhorin's party rides through it in episode 16 (the episode's gallery caption). Neither the episodes nor the books were viewed.",
+      "Book gate 125 (Jon VI): Jon and Stonesnake climb to the watchers in the pass (A Wiki of Ice and Fire, Skirling Pass, through Firecrawl).",
+      "Italian: \"Passo Skirling\", Italian Wikipedia's Lo scontro dei re page."
+    ]
+  },
+  "blackwater-bay": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Blackwater_Bay",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell",
+      "https://gameofthrones.fandom.com/wiki/Blackwater_Rush",
+      "https://iceandfire.fandom.com/wiki/Blackwater_Bay",
+      "https://awoiaf.westeros.org/index.php/Blackwater_Bay",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Baia_delle_Acque_Nere"
+    ],
+    "unverified": [
+      "Show gate 18: Stannis's fleet in the bay (\"The Prince of Winterfell\", \"In Blackwater Bay\"); Salladhor names it in episode 12 (quoted). Neither the episodes nor the books were viewed.",
+      "Book gate 132 (Davos III): the fleet sails in (A Wiki of Ice and Fire, Blackwater Bay, through Firecrawl).",
+      "Tyrion IX (site 115) was considered: it is a scene at the King's Landing harbour, not on the bay."
+    ]
+  },
+  "house-of-the-undying": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/House_of_the_Undying",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://iceandfire.fandom.com/wiki/House_of_the_Undying",
+      "https://it.wikipedia.org/wiki/Daenerys_Targaryen"
+    ],
+    "unverified": [
+      "Show gate 20: Daenerys enters the house; Pyat Pree names it in episode 15 (reported). Neither the episodes nor the books were viewed.",
+      "Book gate 122 (Daenerys IV), named in Daenerys II (101), where Pyat Pree invites Daenerys (A Wiki of Ice and Fire's Pyat Pree page, read through Firecrawl).",
+      "Italian: \"Casa degli Eterni\", Italian Wikipedia's Daenerys Targaryen and Jorah Mormont pages."
     ]
   }
 }
