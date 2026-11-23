@@ -17,11 +17,14 @@
  * in-file ignore comments are therefore never read, so a developer's machine
  * and CI agree. Advisory rules never fail the gate.
  *
- * The detector's `design-system-*` rules are not part of the gate. They need
- * `DESIGN.md`, and engine 0.1.24 loads it only for a local file target, found
- * upwards from that file: never for an HTTP address, whatever the working
- * directory, the config or the environment (probed in #1385). Scanning saved
- * copies of the pages would be a second scan of pages no reader gets.
+ * The detector's `design-system-*` rules need `DESIGN.md`, and engine 0.1.24
+ * loads it only for a local file target, found upwards from that file: never
+ * for an HTTP address, whatever the working directory, the config or the
+ * environment (probed in #1385). So a fifth run, in
+ * `design-gate.tokens.mjs`, scans saved copies of the same pages at 1440 px
+ * and keeps only those rules. A font or a colour outside the tokens blocks;
+ * a radius or a type size off the scale stays advisory, as the engine rates
+ * it (#1403).
  *
  * The bookmark: `?ep=N` answers 302 and sets the series cookie. The detector's
  * browser follows it and keeps cookies for the rest of one run, on a profile

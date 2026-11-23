@@ -13,6 +13,8 @@ import {
   pagesOf,
   PERMANENT,
   refusedWaivers,
+  savedCopy,
+  tokenFindings,
 } from './design-gate.rules.mjs'
 
 const SAMPLES = {
@@ -449,5 +451,57 @@ describe('the waivers of the design gate', () => {
     ]) {
       expect(on(page).stale, page).toHaveLength(1)
     }
+  })
+})
+
+describe('the scan of saved copies against DESIGN.md', () => {
+  it('saves a page with no script and a base at its address', () => {
+    const html =
+      '<html lang="en"><head><meta charset="utf-8">'
+      + '<script type="module" src="/a.js"></script></head>'
+      + '<body><h1>Hi</h1><SCRIPT>go()</SCRIPT></body></html>'
+
+    expect(savedCopy(html, 'http://127.0.0.1:4000/saga/en?ep=40')).toBe(
+      '<html lang="en"><head><base href="http://127.0.0.1:4000/saga/en?ep=40">'
+        + '<meta charset="utf-8"></head><body><h1>Hi</h1></body></html>',
+    )
+  })
+
+  it('keeps the token rules under page addresses, font and colour blocking', () => {
+    const address = 'http://127.0.0.1:4000/en/legal'
+    const copy = 'file:///tmp/design-gate-x/0.html'
+    const raw = (antipattern, advisory) => ({
+      antipattern,
+      file: copy,
+      ...(advisory && { advisory }),
+    })
+
+    expect(
+      tokenFindings(
+        [
+          raw('design-system-font'),
+          raw('design-system-color', true),
+          raw('design-system-radius', true),
+          raw('design-system-font-size', true),
+          raw('ai-color-palette'),
+          raw('line-length'),
+        ],
+        new Map([[copy, address]]),
+      ),
+    ).toStrictEqual([
+      { antipattern: 'design-system-font', file: address, advisory: false },
+      { antipattern: 'design-system-color', file: address, advisory: false },
+      { antipattern: 'design-system-radius', file: address, advisory: true },
+      { antipattern: 'design-system-font-size', file: address, advisory: true },
+    ])
+  })
+
+  it('refuses a finding on a file it did not save', () => {
+    expect(() =>
+      tokenFindings(
+        [{ antipattern: 'design-system-font', file: 'file:///elsewhere.html' }],
+        new Map(),
+      ),
+    ).toThrow('file:///elsewhere.html')
   })
 })
