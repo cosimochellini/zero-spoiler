@@ -17,11 +17,25 @@ import {
 // The height of each of the dial's two lines that fold away when it pins.
 const FOLD_LINE = '1rem'
 
+// Where the numeral, a range of at least 9rem and the button fit on one
+// line: about 3rem of numeral, 6.5rem of button and two gaps. The page is
+// the container, so the line scales with the reader's text size, and the
+// range takes what is left (a little under 9rem for One Piece's three-digit
+// chapters at 360px).
+const ONE_ROW = '@container (min-width: 20rem)'
+
 /**
  * The onboarding, a control and its playground: the dial is the hero, and the page under it is its live preview.
  */
 export const styles = stylex.create({
-  page: { paddingInline: space.md, display: 'grid' },
+  // The container the dial measures itself against. One column that never
+  // grows past the page, so a wide control below cannot widen the dial.
+  page: {
+    paddingInline: space.md,
+    containerType: 'inline-size',
+    display: 'grid',
+    gridTemplateColumns: 'minmax(0, 1fr)',
+  },
 
   // The promise, then the dial. No drawing above them: what moves under the
   // dial is the picture.
@@ -56,10 +70,13 @@ export const styles = stylex.create({
   // the arc its point is in.
   dialHead: { gap: space.xs2, display: 'grid', paddingBlockEnd: space.sm },
   // Pinned while the preview scrolls under it, so moving the dial and seeing
-  // what it opened happen on one screen. Three lines: the unit, the scale,
-  // then the numeral, the range and the button. The first two are a fixed
-  // height, so the offset that tucks them under the site bar is known here,
-  // and pinned the dial is its last line alone, about 64px on a phone.
+  // what it opened happen on one screen. The unit, the scale, then the
+  // numeral, the range and the button on one line. The first two lines are
+  // a fixed height, so the offset that tucks them under the site bar is
+  // known here, and pinned the dial is its last line alone, about 64px on a
+  // phone. Below `ONE_ROW` the dial is a wrapping row instead: the range has
+  // that line to itself, and the numeral and the button share the next, or
+  // take one each when the text is large.
   dial: {
     marginInline: `calc(-1 * ${space.md})`,
     paddingInline: space.md,
@@ -69,25 +86,37 @@ export const styles = stylex.create({
     borderBlockEndStyle: 'solid',
     borderBlockEndWidth: rule.fine,
     columnGap: space.sm,
-    display: 'grid',
+    display: { [ONE_ROW]: 'grid', default: 'flex' },
+    flexWrap: 'wrap',
     gridTemplateColumns: 'auto minmax(0, 1fr) auto',
-    gridTemplateRows: `${FOLD_LINE} ${FOLD_LINE} auto`,
+    gridTemplateRows: `${FOLD_LINE} ${FOLD_LINE}`,
     insetBlockStart: `calc(${pin.bar} - 2 * ${FOLD_LINE} - ${space.xs})`,
     paddingBlockEnd: space.sm,
     position: 'sticky',
     rowGap: space.xs,
     zIndex: z.sticky,
   },
-  unit: { gridColumnEnd: '-1', gridColumnStart: '1' },
-  // The last line, the one that stays on screen. Pinned, it sits inside the
-  // document's scroll padding, the room it keeps for a sticky head under the
-  // bar (`stickyStyles.document`); without the margin that gives that room
-  // back, focusing the range or the button scrolled the page back up until
-  // the dial unpinned.
-  fold: {
-    gridRow: '3',
-    scrollMarginBlockStart: `calc(-1 * (2.75rem + ${space.xs}))`,
+  unit: {
+    flexBasis: '100%',
+    gridColumnEnd: '-1',
+    gridColumnStart: '1',
+    height: FOLD_LINE,
   },
+  // The scale over the range, across the dial where the range is.
+  scale: {
+    gridColumn: '2',
+    gridRow: '2',
+    color: color.muted,
+    display: 'flex',
+    flexBasis: '100%',
+    fontFamily: font.mono,
+    fontSize: text.xs,
+    justifyContent: 'space-between',
+    height: FOLD_LINE,
+  },
+  // The numeral and the button: beside the range, or on the line under it.
+  beside: { gridRow: '3' },
+  hereCell: { gridColumn: '3', marginInlineStart: 'auto' },
   // The numeral as wide as the widest point, so the range does not shift
   // under the thumb as the numeral gains a digit.
   digits: (count: number) => ({ minWidth: `${String(count)}ch` }),
@@ -118,24 +147,18 @@ export const styles = stylex.create({
     overflowWrap: 'anywhere',
   },
   range: {
+    gridColumn: '2',
+    gridRow: '3',
     accentColor: color.accent,
     cursor: 'pointer',
+    flexBasis: '100%',
     outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
     outlineOffset: space.xs3,
     outlineStyle: 'solid',
     outlineWidth: rule.fine,
     height: '44px',
+    minWidth: 0,
     width: '100%',
-  },
-  // The ends of the range, over it.
-  scale: {
-    gridColumn: '2',
-    gridRow: '2',
-    color: color.muted,
-    display: 'flex',
-    fontFamily: font.mono,
-    fontSize: text.xs,
-    justifyContent: 'space-between',
   },
 
   // Under the pinned dial and scrolling with the page: the unit, and the

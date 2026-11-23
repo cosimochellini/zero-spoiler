@@ -12,7 +12,7 @@ vi.mock(import('~/lib/progress/readBookmark'), () => ({
 }))
 
 /** The landing's reload rule, for a match entered or kept. */
-function reloads(cause: 'enter' | 'stay'): unknown {
+function reloads(cause: 'enter' | 'preload' | 'stay'): unknown {
   const option: unknown = Route.options.shouldReload
   if (typeof option !== 'function') {
     throw new TypeError('the landing has no reload rule')
@@ -29,8 +29,10 @@ describe('the landing route', () => {
     vi.mocked(readTrial).mockReturnValue({ mode: 'episode', episode: 37 })
 
     expect(reloads('enter')).toBe(true)
-    // Left to the router's own rule: a re-read of the page on screen.
+    // Left to the router's own rules: a re-read of the page on screen, and
+    // a preload, which reads the trial cookie already set.
     expect(reloads('stay')).toBeUndefined()
+    expect(reloads('preload')).toBeUndefined()
   })
 
   it('keeps the page the router kept when there is no trial', () => {

@@ -19,6 +19,7 @@ import type { Bookmark } from '~/lib/progress/episode'
 import type { Book } from '~/lib/progress/series'
 import { useBookmarkDraft } from '~/lib/progress/useBookmarkDraft'
 import { markWelcome } from '~/lib/progress/welcome'
+import { stickyStyles } from '~/styles/sticky'
 
 /** The dial's point, how to move it, and what it is standing in. */
 export interface OnboardingDialProps {
@@ -63,12 +64,14 @@ function readingOf(
  * figures, a native range input over the series' demo span (East Blue for
  * One Piece) and the button that saves it.
  *
- * The row is pinned while the preview scrolls under it, folded to its last
- * line: the arc and the label scroll away above it, and the unit and the
- * scale, its first two lines, tuck under the site bar. Pinned, the whole dial
- * took a third of a phone's screen (#1399). The fold is the sticky offset
- * alone, so nothing moves, nothing is animated, and the range keeps its name,
- * its value text and its keys.
+ * The row is pinned while the preview scrolls under it, folded: the arc and
+ * the label scroll away above it, and the unit and the scale tuck under the
+ * site bar. Pinned, the whole dial took a third of a phone's screen (#1399).
+ * Where the row has no room for a usable range beside the numeral and the
+ * button, as on a 320px phone or with large text, the range takes a line of
+ * its own and the numeral and the button go under it.
+ * The fold is the sticky offset alone, so nothing moves, nothing is
+ * animated, and the range keeps its name, its value text and its keys.
  */
 export function OnboardingDial({
   arc,
@@ -104,15 +107,6 @@ export function OnboardingDial({
           <span>{edge(1)}</span>
           <span>{widest}</span>
         </div>
-        <span
-          {...stylex.props(
-            styles.numeral,
-            styles.fold,
-            styles.digits(widest.length),
-          )}
-        >
-          {reading.value}
-        </span>
         <input
           aria-valuetext={`${reading.unit} ${String(reading.value)}`}
           id={id}
@@ -123,8 +117,17 @@ export function OnboardingDial({
           }}
           type="range"
           value={point.value}
-          {...stylex.props(styles.range, styles.fold)}
+          {...stylex.props(styles.range, stickyStyles.insideRoom)}
         />
+        <span
+          {...stylex.props(
+            styles.numeral,
+            styles.beside,
+            styles.digits(widest.length),
+          )}
+        >
+          {reading.value}
+        </span>
         <HereButton point={point} />
       </div>
     </>
@@ -143,7 +146,12 @@ function HereButton({
       onClick={() => {
         save(dialBookmark(point))
       }}
-      sx={[styles.primary, styles.fold]}
+      sx={[
+        styles.primary,
+        styles.beside,
+        styles.hereCell,
+        stickyStyles.insideRoom,
+      ]}
     >
       {t('onboarding.here')}
     </Button>

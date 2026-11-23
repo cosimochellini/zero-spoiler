@@ -63,8 +63,9 @@ function faceOf(
       }
     }
     // A trial point is not saved, so it is not dressed as a bookmark: the
-    // word goes above the point, which keeps the mark as wide as the saved
-    // one and inside the bar at 320px. The name starts with what is shown.
+    // word goes above the point, which keeps the mark a few pixels wider than
+    // the saved one rather than twice as wide, inside the bar at 320px. The
+    // name starts with what is shown.
     if (trial) {
       return {
         hint: t('mark.trialHint', { threshold: mark }),
@@ -189,8 +190,14 @@ const styles = stylex.create({
     borderStyle: 'dashed',
     color: { 'default': color.ink2, ':hover:not(:disabled)': color.accent },
   },
-  // Two short lines in the mark's 44px: the word over the point.
-  markTrial: { gap: 0, flexDirection: 'column', lineHeight: leading.heading },
+  // Two short lines in the mark's 44px: the word over the point, on less
+  // padding so the mark is no taller than the saved one.
+  markTrial: {
+    gap: 0,
+    paddingBlock: space.xs2,
+    flexDirection: 'column',
+    lineHeight: leading.heading,
+  },
   trialWord: { color: color.muted },
   // In the fold it is the page's one first action, so it is given the accent
   // outright — as the border and as the word, and still never as a fill: a
