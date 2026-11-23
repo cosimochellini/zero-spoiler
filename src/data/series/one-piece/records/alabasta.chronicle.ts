@@ -585,6 +585,17 @@ export const alabastaChronicles = {
         },
       },
     },
+    {
+      episode: 1178,
+      chapter: 1148,
+      value: {
+        title: { it: 'Trenta secondi', en: 'Thirty seconds' },
+        body: {
+          it: 'I Cavalieri di Dio scelgono Ronja, una dei bambini rapiti, come prima vittima: se [[jarul|Jarl]] non ordina di distruggere la scuola e la biblioteca entro trenta secondi, verrà lasciata cadere nel Mondo Sotterraneo. Robin attacca [[shepherd-sommers|Sommers]] e gli spezza la schiena con le sue braccia, ma lui guarisce e il conto alla rovescia continua. Una copia di Robin lo getta giù dal ramo mentre la vera Robin prova a liberare i Cappello di Paglia. Sommers risale e la immobilizza, e sta per ucciderla quando [[scopper-gaban|Gabin]] gli taglia un braccio. A quel punto Jarl ha già detto ad [[ange|Ange]] di dare fuoco alla scuola.',
+          en: 'The Knights of God pick Ronja, one of the kidnapped children, as the first to die: unless [[jarul|Jarul]] orders the school and the library destroyed within thirty seconds, she will be dropped into the Underworld. Robin attacks [[shepherd-sommers|Sommers]] and breaks his back with her arms, but he heals and the countdown goes on. A copy of Robin tackles him off the branch while the real Robin tries to cut the Straw Hats free. Sommers climbs back and restrains her, and is about to kill her when [[scopper-gaban|Gaban]] cuts off his arm. By then Jarul has told [[ange|Ange]] to burn the school.',
+        },
+      },
+    },
   ],
   'nefertari-vivi': [
     {
@@ -736,6 +747,33 @@ export const alabastaChronicles = {
         body: {
           it: "A Karai Bari arriva la notizia che dei volantini per qualcosa chiamato Cross Guild circolano con [[buggy|Bagy]] al centro, più grande in ogni immagine dei due uomini che in realtà la dirigono. Crocodile e [[dracule-mihawk|Mihawk]] arrivano pronti a ucciderlo per l'umiliazione, finché non notano cosa hanno ottenuto davvero quei manifesti: dipingere un pagliaccio innocuo come il nuovo Imperatore del Mare, lasciando loro la libertà di agire nell'ombra come suoi Capi Ufficiali. Decidono insieme che una gilda di cacciatori di taglie costruita sulla faccia di qualcun altro gli va benissimo, e lasciano a Bagy la vita e il suo nuovo titolo.",
           en: 'Word reaches Karai Bari Island that flyers for something called Cross Guild have been circulating with [[buggy|Buggy]] front and centre, larger in every picture than either of the two men who actually run it. Crocodile and [[dracule-mihawk|Mihawk]] arrive ready to kill him for the humiliation, until they notice what the posters have actually done: painted an unthreatening clown as the newest Emperor of the Sea, and left themselves free to work from the shadows as its Chief Officers. Together they decide a bounty-hunting guild built on someone else’s face suits them just fine, and let Buggy keep his life and his new title.',
+        },
+      },
+    },
+  ],
+  'brogy': [
+    {
+      episode: 71,
+      chapter: 116,
+      value: {
+        title: {
+          it: 'Il guerriero più forte di Erbaf',
+          en: 'The strongest warrior of Elbaph',
+        },
+        body: {
+          it: 'A Little Garden un gigante chiede ad [[nami|Nami]] e [[usopp|Usop]] dell’alcol. Un dinosauro lo morde alle spalle, e lui gli stacca la testa e dice di chiamarsi Brogi, il guerriero più forte di Erbaf. Chiama i due suoi ospiti, e loro sono così spaventati che fanno i morti. A casa sua arrostisce carne di dinosauro per loro. È nel mezzo di un duello che dura da cent’anni contro un altro gigante, [[dorry|Dori]], e ogni volta che il vulcano dell’isola erutta i due si affrontano di nuovo.',
+          en: 'On Little Garden a giant asks [[nami|Nami]] and [[usopp|Usopp]] for alcohol. A dinosaur bites him from behind, and he cuts off its head and says his name is Brogy, the strongest warrior of Elbaph. He calls the two his guests, and they are so frightened that they play dead. At his home he roasts dinosaur meat for them. He is in the middle of a duel that has lasted a hundred years against another giant, [[dorry|Dorry]], and each time the island’s volcano erupts the two face each other again.',
+        },
+      },
+    },
+    {
+      episode: 1180,
+      chapter: 1150,
+      value: {
+        title: { it: 'Re demoni', en: 'Demon kings' },
+        body: {
+          it: 'Imu, che parla attraverso il corpo di [[manmayer-gunko|Gunko]], osserva che Erbaf non ha un re da quando [[harald|Harald]] è morto e decide che [[dorry|Dori]] e Brogi saranno i suoi nuovi re, come demoni. Imu apre un cerchio magico sotto i piedi di Brogi e gli offre immortalità e una forza immensa in cambio di parte della sua vita. Brogi affonda nel cerchio e ne esce trasformato in un demone, e anche Dori si trasforma, insieme ai membri dei Pirati Guerrieri Giganti che sono vicini. Ricevono l’ordine di uccidere [[jarul|Jarl]], che si rifiuta di scappare.',
+          en: 'Imu, speaking through the body of [[manmayer-gunko|Gunko]], notes that Elbaph has had no king since [[harald|Harald]] died and decides that [[dorry|Dorry]] and Brogy will be its new kings, as demons. Imu opens a magic circle beneath Brogy’s feet and offers him immortality and immense strength in exchange for part of his lifespan. Brogy sinks into the circle and comes out a demon, and Dorry is transformed too, together with the nearby members of the Giant Warrior Pirates. They are ordered to kill [[jarul|Jarul]], who refuses to run away.',
         },
       },
     },

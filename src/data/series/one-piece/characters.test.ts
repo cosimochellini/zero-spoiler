@@ -34,13 +34,6 @@ const BOUNTY_TIMELINES: { label: string; timeline: Timeline<number> }[] =
 /** The most canon episodes in a row an episode viewer may go without a story. */
 const MAX_UNTOLD = 5
 
-/**
- * The runs over `MAX_UNTOLD` the chronicle still has, as `last story→next
- * story`. Each is to be filled in #1163 (the last one in #1307); none may be
- * added.
- */
-const KNOWN_GAPS: string[] = ['1168→LAST_AIRED']
-
 /** The episodes the filler guide numbers; every other aired one is canon. */
 const NUMBERED = new Set(
   FILLER.flatMap((entry) => ('episode' in entry ? entry.episode : [])),
@@ -132,8 +125,7 @@ describe('the chronicles', () => {
         .map((filed) => filed.episode),
     )
 
-    // The list only shrinks: a gap filled must leave it too.
-    expect(untoldRuns(told)).toStrictEqual(KNOWN_GAPS)
+    expect(untoldRuns(told)).toStrictEqual([])
   })
 })
 

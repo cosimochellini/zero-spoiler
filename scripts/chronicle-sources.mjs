@@ -690,6 +690,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_1168',
       note: 'Episode 1168 and Chapter 1138 both contain the reading, Saul’s explanation of the third chapter, and the shared rhythm in the tales of Nika, added after review. https://onepiece.fandom.com/wiki/Chapter_1138',
     },
+    1178: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1178',
+      note: 'Episode_1178 short summary: Ronja is chosen as the first victim unless Jarul gives in, Robin fights Sommers and tries to force him into the Underworld, is captured, and Gaban saves her as Jarul reluctantly gives in. Chapter_1148 (pages 2 to 15): the thirty-second countdown, Cien Fleur Craspedia breaking Sommers’ back, his recovery, her copy tackling him off the branch, Jarul ordering Ange to burn the school, and Gaban cutting off Sommers’ arm. The story puts the order before the cut, as the chapter does.',
+    },
   },
   'franky': {
     235: {
@@ -875,6 +879,10 @@ export const CHRONICLE_SOURCES = {
     1094: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1094',
       note: 'Candidate was 1094–1096 (Qref ep=1094,1095,1096). The disguise and the whole conversation about Kuma are in 1094; the rusty robot in the scrapyard (1095) and Vegapunk stuck in it (1096) are not part of the story, so it is filed at 1094.',
+    },
+    1175: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1175',
+      note: 'Episode_1175 short summary: Jinbe helps put out the fire to save the children, then his group is attacked by Gunko, who intends to capture Colon; Umigumo Ipponzeoi is the episode’s technique debut. Chapter_1145 (pages 3 to 19): the firefighters fail, the children walk into the flames with Saul chasing them, Jinbe hurls sea clouds at the fire, the giants credit the firefighters, he returns aboard Colon’s ship unseen and Gunko appears on its bow. Goldberg’s hunt and Loki’s story of Rocks, in the same episode, belong to other characters.',
     },
   },
   'trafalgar-law': {
@@ -3557,6 +3565,82 @@ export const CHRONICLE_SOURCES = {
     958: {
       source: 'https://onepiece.fandom.com/wiki/Episode_958',
       note: 'Transcript 20x958: on news that Kaido and Big Mom will team up in Wano, Sengoku is asked about the Rocks Pirates, so violent they fought to the death on their own ship, with Captain Rocks, a young Whitebeard, Big Mom and Kaido; among the members who later became infamous he names Shiki the Golden Lion, once a contender for supremacy in the New World; a fateful incident at God Valley is recalled, where Navy HQ Vice Admiral Garp alone stopped them. Episode_958 Anime Notes: the silhouette of Shiki from chapter 957 is absent in the anime, so this episode names him without showing him. Shiki page Qref c957 chap=957 page=6 ep=958. Chapter (#169): the last event is chapter 957, at or below the record’s own chapter 962, so no pin.',
+    },
+  },
+  'scopper-gaban': {
+    1169: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1169',
+      note: 'Episode_1169 short and long summary: Mr. Ya meets Luffy’s group in the throne room, is Ripley’s husband and Colon’s father and calls himself a Preacher of Love, says only Shanks ever locked Loki up and has Road push the throne; the giants tell Usopp about the Roger Pirates’ Mountain-Eater, the Pirate King’s left arm, and that he is Scopper Gaban; he takes the key and challenges Luffy for it. Chapter_1139, which the episode adapts (pages 2 to 13 by the wiki pairing), says the same. The record opens here, so the chronicle opens here. The story says Left Hand to match the record; the episode page says left arm.',
+    },
+    1170: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1170',
+      note: 'Episode_1170 short summary: Gaban dodges Luffy’s and Zoro’s attacks, gives up the key after Luffy goes Gear 5 and leaves; Yasotakeru is the episode’s technique debut. Chapter_1140, which the episode adapts (pages 2 to 17), adds the Haki-coated key coming down on Luffy, Zoro blocking the axe flurry and the invitation to visit him if Elbaph is still standing. The chapter’s talk about the hat and Shanks is left out, because the episode page does not mention it.',
+    },
+    1179: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1179',
+      note: 'Episode_1179 short summary: Gaban easily defeats Sommers, Chopper follows to learn how he stopped Sommers from regenerating, Colon calls out and reveals the family tie, Gunko takes Colon hostage and Gaban forfeits after his Observation Haki foresees a horrible outcome, then Imu takes control of Gunko. Chapter_1149, which the episode adapts (pages 3 to 19), adds the cut that halves Sommers, the arrows and the fall off the branch with his apology. The presumed-dead status entry is pinned at the same episode and chapter. Chopper’s rescue is chapter 1151, which no episode adapts yet, so the story stops at the fall.',
+    },
+  },
+  'loki': {
+    1160: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1160',
+      note: 'Episode_1160 and Chapter_1130 (pages 2 to 15): Dorry and Brogy tell the crew about the Accursed Prince, chained for years, said to have killed the king his father for the royal family’s devil fruit, whose escape would end Elbaph; Luffy follows a presence he senses, finds Loki chained and blindfolded, and Loki senses him, has him introduce himself, calls Elbaph the land where wars come from and himself the Sun God who will bring the world’s end. The king is left unnamed: his record opens at 1167. The record opens here, so the chronicle opens here.',
+    },
+    1171: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1171',
+      note: 'Episode_1171 short summary: Luffy and Zoro find the injured Loki, Zoro leaves one Seastone cuff locked, and as the New Giant Warrior Pirates and Sanji arrive Zoro has finished and Loki regains consciousness. Chapter_1141 (pages 2 to 17): Luffy wants to unlock him to treat his wounds, Zoro agrees only with the one-cuff condition so Loki cannot use his devil fruit, and Loki takes up Ragnir on waking. Hajrudin’s plea and Luffy catching the falling giants are left out because the episode page does not state them.',
+    },
+    1172: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1172',
+      note: 'Episode_1172 short summary: Loki, demanding that the final shackle be removed, uses his hammer to cause a fire. Chapter_1142 (pages 2 to 17): he says one shackle does not leave him powerless, threatens to destroy Elbaph, strikes the tree with Ragnir so that lightning starts a fire on the south side of the island, and the giants at the feast move to put it out.',
+    },
+    1173: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1173',
+      note: 'Episode_1173 short summary: Luffy easily knocks down the wounded Loki while his crew helps treat him, and Hajrudin’s attempt to avenge their father has Loki revealing he never intended to kill him. Chapter_1143 (pages 3 to 19) ends on Loki asking whether Hajrudin truly believes he killed their father on purpose, which is as far as the story goes. Gerd’s treatment is in both pages. Loki telling Hajrudin to see the situation for what it is comes from the chapter.',
+    },
+  },
+  'kiba': {
+    1172: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1172',
+      note: 'Episode_1172 short summary: the Knights of God attack the school, monsters appear and the children sleepwalk toward their ship, Ange realises the monsters are the children’s nightmares and Principal Kiba orders the whole country alerted. Chapter_1142, which the episode adapts (pages 2 to 17), opens on the giant snake from the Underworld, Ange’s question about protecting the children, Kiba’s hammer, Saul’s final blow and the rumour that Kiba was once a warrior; the horn is blown after Kiba shows Saul the monsters in the forest. The episode page does not mention the snake: the pairing covers it. The record opens here, so the chronicle opens here.',
+    },
+  },
+  'manmayer-gunko': {
+    1166: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1166',
+      note: 'Episode_1166 short and long summary: the two intruders reach Loki and want him to join the Knights of God, he refuses, Gunko wants to kill him for his insolence, her companion tells her not to jump the gun, Loki sends a wolf and she kills it; she has already taken out both castle guards. Chapter_1136 is the page the episode adapts (pages 2 to 17). The record’s chapter is 1137, where her name is given, so the story holds what chapter 1136 shows. Her companion and her fruit are left unnamed because those records open at 1167. The record opens here, so the chronicle opens here.',
+    },
+    1170: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1170',
+      note: 'Episode_1170 short summary: Shamrock and Gunko summon two other Knights of God, who tell Shamrock he is to head back to Mary Geoise, and he assigns the three to kidnap the giants’ children. Chapter_1140 (pages 2 to 17) adds the magic circle that brings two instead of one, neither expecting it, the recall because things have been falling apart since the Levely, and Shamrock’s suggestion to make a game of it. The two knights are left unnamed: their records open at chapter 1143.',
+    },
+    1176: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1176',
+      note: 'Episode_1176 short summary: Gunko overpowers Nami’s group and captures Colon. Chapter_1146 (pages 2 to 17): she calls herself a god, says the children are going to Mary Geoise, Brook guesses she is a Knight of God, the Straw Hats’ attacks are turned back on them, and she wraps an arrow around Colon’s neck and carries him off. Her regeneration after Usopp’s blast is left out: the episode page does not mention it, and the knights’ immortality is only told in chapter 1147.',
+    },
+    1179: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1179',
+      note: 'Episode_1179 short summary ends on Gunko recognising Brook just as Imu takes control of her to end the operation quickly. Chapter_1149 (pages 3 to 19): Colon’s cry stirs a memory of Brook, she works out that the Soul King is Brook, Imu speaks to all three knights to ask what is taking so long, then takes control of her body and says they will show a god’s power. The Holy Land burning is in the chapter only and is left out.',
+    },
+  },
+  'shepherd-sommers': {
+    1170: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1170',
+      note: 'Episode_1170 short summary: Shamrock and Gunko summon Sommers and Killingham, who tell Shamrock he is to head back to Mary Geoise, and Shamrock assigns the three to kidnap the children. Chapter_1140 (pages 2 to 17) has Sommers summoned in his underwear, talking about the food shortage, asking whether Shamrock came to visit Harald’s grave and objecting that the children will not fit in a bag. The record’s chapter is 1143, the chapter that names his fruit, so the story is filed at chapter 1143, three chapters later than the scene, on purpose: a chronicle opens at the record’s own episode, and he is named in no earlier chapter story.',
+    },
+    1177: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1177',
+      note: 'Episode_1177 short summary: Sommers makes his presence and intentions known, the children are woken and Killingham has Ange reveal their identities, and Sommers orders Jarul to have the school and library destroyed. Chapter_1147 (pages 2 to 17): he broadcasts over Elbaph’s Den Den Mushi that he is a Knight of God from Mary Geoise and holds ten children while Saul is badly hurt, Ange reads out the names, he addresses Jarul as the head of the giants now they have no king and gives his demands, and Ange answers that school and library are sacred. The knights’ immortality, told in the same chapter, is left out.',
+    },
+  },
+  'brogy': {
+    71: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_71',
+      note: 'Episode_71 short summary: Nami and Usopp meet Brogy, who asks for alcohol, beheads the T. rex that bit him, introduces himself as Elbaph’s strongest warrior, treats them as guests and roasts dinosaur meat while they play dead; elsewhere Dorry tells Luffy about the duel that has lasted a hundred years and resumes whenever the volcano erupts. Chapter_116, which the episode adapts, gives the same scenes. The record opens here, so the chronicle opens here.',
+    },
+    1180: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1180',
+      note: 'Episode_1180 short summary: Imu, noting that Elbaph has had no king since Harald died, decides to turn Dorry and Brogy into demons, the nearby members of the Giant Warrior Pirates are transformed too and all are ordered to kill Jarul, who refuses to flee. Chapter_1150 (pages 2 to 15): the magic circle, the trade of lifespan for immortality and strength, and Imu speaking through Gunko’s body. Brogy’s severed hand is left out. Dorry has no chronicle of his own: his transformation is told in this story.',
     },
   },
 }
