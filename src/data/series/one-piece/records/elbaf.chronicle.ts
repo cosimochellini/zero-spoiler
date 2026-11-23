@@ -40,7 +40,7 @@ export const elbafChronicles = {
         },
         body: {
           it: 'Gabin ha saputo dalla trasmissione di [[shepherd-sommers|Sommers]] che Collon è tra gli ostaggi, e parte per salvarlo. Raggiunge il ramo proprio mentre Sommers, che tiene [[nico-robin|Robin]] immobilizzata con le sue spine, sta per ucciderla. Gli taglia un braccio, che non ricresce, e mentre il cavaliere lo riconosce terrorizzato Gabin lo colpisce con un fendente al petto.',
-          en: 'Gaban learned from [[shepherd-sommers|Sommers]]’s broadcast that Colon is among the hostages, and he sets off to save him. He reaches the branch just as Sommers, who has [[nico-robin|Robin]] pinned down with his thorns, is about to kill her. He cuts off Sommers’s arm, which does not grow back, and as the knight recognises him in terror, Gaban slashes him across the chest.',
+          en: 'Gaban has learned from [[shepherd-sommers|Sommers]]’s broadcast that Colon is among the hostages, and he sets off to save him. He reaches the branch just as Sommers, who has [[nico-robin|Robin]] pinned down with his thorns, is about to kill her. He cuts off Sommers’s arm, which does not grow back, and as the knight recognises him in terror, Gaban slashes him across the chest.',
         },
       },
     },
@@ -150,7 +150,7 @@ export const elbafChronicles = {
       value: {
         title: { it: 'Unisciti ai Cavalieri', en: 'Join the Knights' },
         body: {
-          it: 'Due intrusi raggiungono [[loki|Loki]] e gli chiedono di unirsi ai Cavalieri di Dio. Lui ride loro in faccia e risponde che è ancora no: non sprecherà l’unica vita che ha facendo la spazzatura. Gunko, che si dichiara una Cavaliera di Dio, vuole ucciderlo per l’insolenza, ma il suo compagno le dice di non precipitarsi. Loki le scaglia contro un lupo gigante, e lei lo uccide senza fatica. Aveva già messo fuori combattimento le due guardie del castello.',
+          it: 'Due intrusi raggiungono [[loki|Loki]] e gli chiedono di unirsi ai Cavalieri di Dio. Lui ride loro in faccia e risponde che è ancora no: non intende sprecare l’unica vita che ha riducendosi a spazzatura. Gunko, che si dichiara una Cavaliera di Dio, vuole ucciderlo per l’insolenza, ma il suo compagno le dice di non precipitarsi. Loki le scaglia contro un lupo gigante, e lei lo uccide senza fatica. Aveva già messo fuori combattimento le due guardie del castello.',
           en: 'Two intruders reach [[loki|Loki]] and ask him to join the Knights of God. He laughs in their faces and tells them his answer is still no: he will not waste his one life as trash. Gunko, who says she is a Knight of God, wants to kill him for his insolence, but her companion tells her not to jump the gun. Loki sets a giant wolf on her, and she kills it with ease. She has already put the castle’s two guards out of action.',
         },
       },

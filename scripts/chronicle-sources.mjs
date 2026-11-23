@@ -692,7 +692,7 @@ export const CHRONICLE_SOURCES = {
     },
     1178: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1178',
-      note: 'Episode_1178 short summary: Ronja is chosen as the first victim unless Jarul gives in, Robin fights Sommers and tries to force him into the Underworld, is captured, and Gaban saves her as Jarul reluctantly gives in. Chapter_1148 (pages 2 to 15): the thirty-second countdown, Cien Fleur Craspedia breaking Sommers’ back, his recovery, her copy tackling him off the branch while the real Robin tries to cut Gunko’s arrows, Jarul ordering Ange to burn the school, Sommers pinning her down with his thorns, and Gaban cutting off Sommers’ arm. The story puts the order before the cut, as the chapter does. It says pinned down, not captured: no captured status is filed for Robin (see the pull request).',
+      note: 'Episode_1178 short summary: Ronja is chosen as the first victim unless Jarul gives in, Robin fights Sommers and tries to force him into the Underworld, is captured, and Gaban saves her as Jarul reluctantly gives in. Chapter_1148 (pages 2 to 15): the thirty-second countdown, Cien Fleur Craspedia breaking Sommers’ back, his recovery, her copy tackling him off the branch while the real Robin tries to cut Gunko’s arrows, Jarul ordering Ange to burn the school, Sommers pinning her down with his thorns, and Gaban cutting off Sommers’ arm. The story puts the order before the cut, as the chapter does. It says pinned down, not captured: no captured status is filed for Robin (see #1554).',
     },
   },
   'franky': {
