@@ -66,6 +66,7 @@ const styles = stylex.create({
     color: color.ink2,
     fontSize: text.base,
     lineHeight: leading.body,
-    maxWidth: '58ch',
+    // About 75 characters a line in the body face, the footer's measure.
+    maxWidth: '52ch',
   },
 })

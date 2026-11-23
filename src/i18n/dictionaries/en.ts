@@ -155,6 +155,7 @@ export const enDictionary = {
   'veil.revealing': 'Loading…',
   'veil.peekFailed': 'Could not load it. Try again.',
   'veil.placeholder': 'Spoiler',
+  'veil.entry': 'Entry under fog',
 
   'chart.opensAt.episode': 'Episode {threshold}',
   'chart.opensAt.season': '{threshold}',

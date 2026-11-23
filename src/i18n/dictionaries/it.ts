@@ -146,6 +146,7 @@ export const itDictionary: Dictionary = {
   'veil.revealing': 'Caricamento…',
   'veil.peekFailed': 'Caricamento non riuscito. Riprova.',
   'veil.placeholder': 'Spoiler',
+  'veil.entry': 'Voce nella nebbia',
 
   'chart.opensAt.episode': 'Episodio {threshold}',
   'chart.opensAt.season': '{threshold}',
