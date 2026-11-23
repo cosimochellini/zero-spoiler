@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
-import { type ReactElement, useState } from 'react'
+import { type ReactElement, type ReactNode, useState } from 'react'
 
 import { BookmarkDialog } from '~/components/BookmarkDialog'
 import { preloadBookmarkForm } from '~/components/bookmarkFormLoader'
@@ -8,7 +8,7 @@ import { useT } from '~/i18n/LocaleContext'
 import type { Translate } from '~/i18n/types'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { describeBookmark } from '~/lib/progress/threshold'
-import { color, font, space, text } from '~/styles/tokens.stylex'
+import { color, font, leading, space, text } from '~/styles/tokens.stylex'
 
 /**
  * Which of the mark's two homes it is standing in. In the bar it is the
@@ -30,32 +30,61 @@ interface MarkFace {
   hint: string | undefined
   /** The bar's mark carries `MARK_ID`; the fold's invitation has none. */
   id: string | undefined
-  label: string
+  label: ReactNode
+  look: stylex.StyleXStyles
 }
 
 /**
  * Turns the bookmark, as the mark says it (`null` when there is none), into
- * the two strings the control needs.
+ * what the control shows and its name.
  *
  * In the bar the label is the numeral alone, so the sentence that explains
  * what pressing it does has to be the accessible name. In the fold the label
  * is already that sentence, and repeating it in an `aria-label` would only
  * make the button announce itself twice.
  */
-function faceOf(t: Translate, said: null | string, inFold: boolean): MarkFace {
+function faceOf(
+  t: Translate,
+  said: null | string,
+  { inFold, trial }: { inFold: boolean; trial: boolean },
+): MarkFace {
   const mark = said ?? t('mark.unset')
 
   // Unset, the bar paints the empty slot (`EP ?`), which fits beside the
   // wordmark on the narrowest phone, and keeps the words as the accessible
   // name.
   if (!inFold) {
-    return said === null ?
-        { hint: mark, id: MARK_ID, label: t('mark.unsetShort') }
-      : {
-          hint: t('mark.change', { threshold: mark }),
-          id: MARK_ID,
-          label: mark,
-        }
+    if (said === null) {
+      return {
+        hint: mark,
+        id: MARK_ID,
+        label: t('mark.unsetShort'),
+        look: [styles.mark, styles.markUnset],
+      }
+    }
+    // A trial point is not saved, so it is not dressed as a bookmark: the
+    // word goes above the point, which keeps the mark a few pixels wider than
+    // the saved one rather than twice as wide, inside the bar at 320px. The
+    // name starts with what is shown.
+    if (trial) {
+      return {
+        hint: t('mark.trialHint', { threshold: mark }),
+        id: MARK_ID,
+        label: (
+          <>
+            <span {...stylex.props(styles.trialWord)}>{t('mark.trial')}</span>
+            <span>{mark}</span>
+          </>
+        ),
+        look: [styles.mark, styles.markUnset, styles.markTrial],
+      }
+    }
+    return {
+      hint: t('mark.change', { threshold: mark }),
+      id: MARK_ID,
+      label: mark,
+      look: styles.mark,
+    }
   }
 
   return {
@@ -65,6 +94,7 @@ function faceOf(t: Translate, said: null | string, inFold: boolean): MarkFace {
       said === null ?
         t('hero.setBookmark')
       : t('hero.changeBookmark', { threshold: mark }),
+    look: styles.invite,
   }
 }
 
@@ -91,7 +121,7 @@ export function EpisodeMark({
   placement = 'bar',
 }: EpisodeMarkProps): ReactElement {
   const t = useT()
-  const { bookmark, pending, series } = useBookmark()
+  const { bookmark, pending, series, trial } = useBookmark()
   const [open, setOpen] = useState(false)
 
   const inFold = placement === 'fold'
@@ -100,7 +130,7 @@ export function EpisodeMark({
     bookmark === null ? null : (
       describeBookmark(t, 'mark', { bookmark, books: series?.books })
     ),
-    inFold,
+    { inFold, trial },
   )
 
   return (
@@ -119,10 +149,7 @@ export function EpisodeMark({
         }}
         onFocus={handlePreload}
         onPointerEnter={handlePreload}
-        sx={[
-          inFold ? styles.invite : styles.mark,
-          !inFold && bookmark === null && styles.markUnset,
-        ]}
+        sx={face.look}
       >
         {face.label}
       </Button>
@@ -157,11 +184,21 @@ const styles = stylex.create({
     textTransform: 'uppercase',
   },
   // No bookmark yet: the dashed rule of the fogged stretch of route, in the
-  // ambient ink, so the unset state reads as "still under fog".
+  // ambient ink, so the unset state reads as "still under fog". A trial
+  // point wears it too: nothing is saved.
   markUnset: {
     borderStyle: 'dashed',
     color: { 'default': color.ink2, ':hover:not(:disabled)': color.accent },
   },
+  // Two short lines in the mark's 44px: the word over the point, on less
+  // padding so the mark is no taller than the saved one.
+  markTrial: {
+    gap: 0,
+    paddingBlock: space.xs2,
+    flexDirection: 'column',
+    lineHeight: leading.heading,
+  },
+  trialWord: { color: color.muted },
   // In the fold it is the page's one first action, so it is given the accent
   // outright — as the border and as the word, and still never as a fill: a
   // gold surface that size would stop being a signal.

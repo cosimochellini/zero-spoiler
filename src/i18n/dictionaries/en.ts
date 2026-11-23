@@ -108,6 +108,8 @@ export const enDictionary = {
   'mark.chapter': 'CH {threshold}',
   'mark.book': 'B{book} · CH {chapter}',
   'mark.change': 'Change bookmark ({threshold})',
+  'mark.trial': 'Trying',
+  'mark.trialHint': 'Trying {threshold}, not saved',
 
   'dialog.title': 'Where are you up to?',
   'dialog.lede': 'Everything after that point stays under fog.',

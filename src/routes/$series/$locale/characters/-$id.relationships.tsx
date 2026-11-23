@@ -159,6 +159,9 @@ const relations = stylex.create({
     overflow: 'hidden',
     aspectRatio: '1',
     backgroundColor: color.paper,
+    // The drawing sets its own colours; this keeps the link, and the drawing's
+    // rings, from the browser's link blue.
+    color: color.ink,
     display: 'block',
   },
   body: { gap: space.xs, display: 'grid', minWidth: 0 },

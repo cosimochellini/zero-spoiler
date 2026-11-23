@@ -600,7 +600,8 @@ export const season2: ThronesSaga = {
         it: 'Uno degli uomini di ferro che prendono Grande Inverno con Theon Greyjoy.',
         en: 'One of the ironborn who take Winterfell with Theon Greyjoy.',
       },
-      visual: { art: 'black-lorren', tint: 'wine' },
+      // Not wine: his drawing's accent, the axe's grip, is not red (#1473).
+      visual: { art: 'black-lorren', tint: 'yellow' },
     },
     // Books: Theon II (site chapter 98), Theon takes him as his squire in a
     // bargain for a horse. The show has a Wex at the speech of episode 20,
@@ -681,7 +682,9 @@ export const season2: ThronesSaga = {
         it: 'Il figlio bastardo di Roose Bolton.',
         en: 'Roose Bolton’s bastard son.',
       },
-      visual: { art: 'ramsay-snow', tint: 'vermilion' },
+      // Not vermilion: his drawing's accent, the knife's edge, is not red;
+      // pink is House Bolton's colour (#1473).
+      visual: { art: 'ramsay-snow', tint: 'pink' },
     },
     // Books: Bran II (site chapter 90), he and Little Walder are at Bran's
     // audiences; Bran I (78) only tells of their coming. The show has no
@@ -2117,7 +2120,13 @@ export const season2: ThronesSaga = {
         it: 'Theon torna a Pyke con l’offerta di alleanza di Robb Stark. Balon la rifiuta: vuole prendersi la corona con la forza.',
         en: 'Theon comes home to Pyke with Robb Stark’s offer of an alliance. Balon refuses it: he means to take his crown by force.',
       },
-      status: [{ episode: 12, chapter: 85, value: 'alive' }],
+      status: [
+        { episode: 12, chapter: 85, value: 'alive' },
+        // He falls from a bridge at Pyke in "Home" (episode 52); the books
+        // first tell it in Catelyn V of A Storm of Swords (chapter 189),
+        // filed now with his drawing's stage (#1473, #1238).
+        { episode: 52, chapter: 189, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 12,
@@ -2181,7 +2190,13 @@ export const season2: ThronesSaga = {
         it: 'Theon gli spiega il suo piano: colpire Piazza di Torrhen per attirare lontano dal castello i difensori di Grande Inverno.',
         en: 'Theon tells him his plan: to strike at Torrhen’s Square and draw the defenders of Winterfell away from the castle.',
       },
-      status: [{ episode: 15, chapter: 111, value: 'alive' }],
+      status: [
+        { episode: 15, chapter: 111, value: 'alive' },
+        // The show alone: Balon and Yara read that the Boltons flayed him
+        // and his men, in "Mhysa" (episode 30). The books leave him
+        // holding Torrhen's Square, so chapter 344 only orders it (#1473).
+        { episode: 30, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 15,
@@ -2274,7 +2289,13 @@ export const season2: ThronesSaga = {
         it: 'Con la sorella Meera raggiunge Bran Stark e resta al suo fianco.',
         en: 'With his sister Meera he comes to Bran Stark and stays at his side.',
       },
-      status: [{ episode: 22, chapter: 95, value: 'alive' }],
+      status: [
+        { episode: 22, chapter: 95, value: 'alive' },
+        // The show alone: he dies at the mouth of the Three-Eyed Raven's
+        // cave in "The Children" (episode 40). The books leave him alive,
+        // so chapter 344 only orders it (#1473).
+        { episode: 40, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 22,
@@ -2289,7 +2310,13 @@ export const season2: ThronesSaga = {
         it: 'I suoi uomini tolgono Grande Inverno agli uomini di ferro e la danno alle fiamme.',
         en: 'His men take Winterfell from the ironborn and set it on fire.',
       },
-      status: [{ episode: 32, chapter: 140, value: 'alive' }],
+      status: [
+        { episode: 32, chapter: 140, value: 'alive' },
+        // The show alone: he dies at Winterfell at the end of "Battle of
+        // the Bastards" (episode 59). The books leave him alive, so chapter
+        // 344 only orders it (#1473).
+        { episode: 59, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 32,
@@ -2320,7 +2347,14 @@ export const season2: ThronesSaga = {
         it: 'Lui e il cugino Big Walder sono pupilli a Grande Inverno, secondo il patto tra Robb Stark e lord Walder Frey.',
         en: 'He and his cousin Big Walder are wards at Winterfell, under the pact between Robb Stark and Lord Walder Frey.',
       },
-      status: [{ episode: 13, chapter: 90, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 13, chapter: 90, source: 'chapter', value: 'alive' },
+        // His frozen body is found in a snowbank at Winterfell, in Theon I
+        // of A Dance with Dragons (chapter 323), filed now with his
+        // drawing's stage (#1473). Episode 50, where the show's Winterfell
+        // reaches the same days, only orders it.
+        { episode: 50, chapter: 323, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 13,
@@ -2379,7 +2413,13 @@ export const season2: ThronesSaga = {
         it: 'Sostiene che il lord comandante dovrebbe restare a Castello Nero e lasciare a lui la spedizione oltre la Barriera. Jeor Mormont rifiuta.',
         en: 'He argues that the Lord Commander should stay at Castle Black and leave the ranging beyond the Wall to him. Jeor Mormont refuses.',
       },
-      status: [{ episode: 11, chapter: 80, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 80, source: 'chapter', value: 'alive' },
+        // He dies at the Fist of the First Men, told by Samwell II of A
+        // Storm of Swords (chapter 177), the safe later chapter, filed with
+        // his drawing's stage (#1474). Episode 21 only orders it.
+        { episode: 21, chapter: 177, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 11,
@@ -2398,7 +2438,13 @@ export const season2: ThronesSaga = {
         it: 'Cavalca con i Guardiani della notte oltre la Barriera, insieme a Jon Snow e ai suoi amici, e accoglie ogni disagio con una battuta cupa.',
         en: 'He rides beyond the Wall with the Night’s Watch, alongside Jon Snow and his friends, and meets every hardship with a gloomy joke.',
       },
-      status: [{ episode: 20, chapter: 87, value: 'alive' }],
+      status: [
+        { episode: 20, chapter: 87, value: 'alive' },
+        // The show's alone: he dies at Winterfell in "The Long Night"
+        // (episode 70), filed with his drawing's stage (#1474). The books
+        // keep him alive, so chapter 344, their last, orders it.
+        { episode: 70, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 20,
@@ -2454,7 +2500,13 @@ export const season2: ThronesSaga = {
         it: 'La spedizione del lord comandante si ferma al suo fortino. Ha sposato le sue stesse figlie, e dice ai Guardiani della notte che i bruti si radunano attorno a Mance Rayder.',
         en: 'The Lord Commander’s ranging stops at his keep. He has married his own daughters, and he tells the Night’s Watch that the wildlings are gathering around Mance Rayder.',
       },
-      status: [{ episode: 11, chapter: 97, value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 97, value: 'alive' },
+        // The mutineers kill him in his hall: "And Now His Watch Is Ended"
+        // (episode 24) and Samwell II of A Storm of Swords (chapter 177),
+        // filed with his drawing's stage (#1474).
+        { episode: 24, chapter: 177, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 11, chapter: 97, value: { it: 'Bruti', en: 'Wildlings' } },
       ],
@@ -2531,7 +2583,13 @@ export const season2: ThronesSaga = {
         it: 'È tra le vedette dei bruti sulle montagne. I ranger di Qhorin il Monco uccidono i suoi compagni, e Jon Snow resta solo con lei per giustiziarla, ma non ci riesce.',
         en: 'She is one of the wildling lookouts in the mountains. Qhorin Halfhand’s rangers kill her companions, and Jon Snow is left to put her to death, but he cannot do it.',
       },
-      status: [{ episode: 16, chapter: 125, value: 'alive' }],
+      status: [
+        { episode: 16, chapter: 125, value: 'alive' },
+        // She dies in the attack on Castle Black: "The Watchers on the
+        // Wall" (episode 39) and Jon VII of A Storm of Swords (chapter
+        // 199), filed with her drawing's stage (#1474).
+        { episode: 39, chapter: 199, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 16, chapter: 125, value: { it: 'Bruti', en: 'Wildlings' } },
       ],
@@ -2595,6 +2653,10 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 18, chapter: 142, source: 'chapter', value: 'alive' },
+        // Burned at Castle Black under a glamour as Mance Rayder, which
+        // Melisandre I of A Dance with Dragons (chapter 303) tells, filed
+        // with his drawing's stage (#1474). Episode 41 only orders it.
+        { episode: 41, chapter: 303, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {

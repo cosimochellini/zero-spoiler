@@ -1514,13 +1514,17 @@ const STAGES: {
   { id: 'grey-wind', episode: 29, chapter: 198 },
   { id: 'summer-direwolf', episode: 55, chapter: 344, source: 'episode' },
   { id: 'shaggydog', episode: 53, chapter: 344, source: 'episode' },
-  { id: 'theon-greyjoy', episode: 30, chapter: 284 },
+  // Theon's kraken banner over Winterfell and its return to the sea
+  // (#1473), before his stages as Reek and his death.
+  { id: 'theon-greyjoy', episode: 16, chapter: 120 },
+  { id: 'theon-greyjoy', episode: 20, chapter: 140, stage: 1 },
+  { id: 'theon-greyjoy', episode: 30, chapter: 284, stage: 2 },
   {
     id: 'theon-greyjoy',
     episode: 70,
     chapter: 344,
     source: 'episode',
-    stage: 1,
+    stage: 3,
   },
   { id: 'luwin', episode: 20, chapter: 143 },
   { id: 'rodrik-cassel', episode: 16, chapter: 140 },
@@ -1686,9 +1690,13 @@ const STAGES: {
   { id: 'jaremy-rykker', episode: 8, chapter: 61, source: 'chapter' },
   // The leads and the Essos cast redrawn from the drawing audit (#1292).
   { id: 'eddard-stark', episode: 31, chapter: 204, stage: 1 },
-  { id: 'jon-snow', episode: 50, chapter: 341 },
-  { id: 'jon-snow', episode: 52, chapter: 344, source: 'episode', stage: 1 },
-  { id: 'jon-snow', episode: 67, chapter: 344, source: 'episode', stage: 2 },
+  // Jon's feigned desertion to the wildlings and his escape back to the
+  // Wall (#1474).
+  { id: 'jon-snow', episode: 20, chapter: 142 },
+  { id: 'jon-snow', episode: 29, chapter: 199, stage: 1 },
+  { id: 'jon-snow', episode: 50, chapter: 341, stage: 2 },
+  { id: 'jon-snow', episode: 52, chapter: 344, source: 'episode', stage: 3 },
+  { id: 'jon-snow', episode: 67, chapter: 344, source: 'episode', stage: 4 },
   { id: 'daenerys-targaryen', episode: 10, chapter: 73 },
   {
     id: 'daenerys-targaryen',

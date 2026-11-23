@@ -318,26 +318,25 @@ are in `art/court.ts` (#1056), with thirteen, twelve of them from the drawing
 audit (#1289), and the Riverlands cast's are in `art/riverlands.ts` (#1057),
 with ten: six of them the deaths later seasons and books give (#1242), and the
 Blackfish's death, Jaqen's coin and Pod's axe from the drawing audit (#1290).
-Every stage-1 character has its own drawing; the stage-2 characters show the
-shared `PERSON` placeholder until their drawing children (#1460), and the
-drawing tests hold the series like any other. Its places are the 23 a scene of
-the season or the book is set in (#853) and those both name without visiting it
-(#1035: the North's five in #1248, nine of the Riverlands, the Westerlands and
-the Vale in #1249, five of the south and the seas in #1250, Essos's ten in
-#1251), and eight visited places #853 left out (#1252), each filed in one of the
-realms, the Iron Islands, the Reach and the seas among them, beyond the Wall or
-Essos, with no arc: `PlaceDossier.arc` is optional, and an arcless series prints
-no arc row. Darry and six of #1252's places are the book's alone, and the
-Kingswood the show's. The demo shows the places the first ten episodes reach,
-and covers in its tail the four the show first visits in later seasons. Its
-chronicles cover the Essos cast of the first stage (#1360), 89 stories for 18
-characters, the Night's Watch cast (#1363), 88 stories for 22, the King's
-Landing, riverlands and Vale cast (#1362), 228 stories for 65, and the
-Winterfell and northern cast (#1361), 160 stories for 39, in
-`records/season-1.chronicle.ts`: a story both media tell the same way holds at
-an episode and a chapter, and one only a single medium tells, or tells its own
-way, carries `source`, so it never reaches a reader of the other. Their notes
-are in `scripts/chronicle-sources-got.mjs`, and the chronicle lede is the
+Every stage-1 and stage-2 character has its own drawing (the stage-2 casts in
+#1470–#1475), and the drawing tests hold the series like any other. Its places
+are the 23 a scene of the season or the book is set in (#853) and those both
+name without visiting it (#1035: the North's five in #1248, nine of the
+Riverlands, the Westerlands and the Vale in #1249, five of the south and the
+seas in #1250, Essos's ten in #1251), and eight visited places #853 left out
+(#1252), each filed in one of the realms, the Iron Islands, the Reach and the
+seas among them, beyond the Wall or Essos, with no arc: `PlaceDossier.arc` is
+optional, and an arcless series prints no arc row. Darry and six of #1252's
+places are the book's alone, and the Kingswood the show's. The demo shows the
+places the first ten episodes reach, and covers in its tail the four the show
+first visits in later seasons. Its chronicles cover the Essos cast of the first
+stage (#1360), 89 stories for 18 characters, the Night's Watch cast (#1363), 88
+stories for 22, the King's Landing, riverlands and Vale cast (#1362), 228
+stories for 65, and the Winterfell and northern cast (#1361), 160 stories for
+39, in `records/season-1.chronicle.ts`: a story both media tell the same way
+holds at an episode and a chapter, and one only a single medium tells, or tells
+its own way, carries `source`, so it never reaches a reader of the other. Their
+notes are in `scripts/chronicle-sources-got.mjs`, and the chronicle lede is the
 series' own copy, since a story starts at an episode or a chapter. The second
 stage, season 2 and _A Clash of Kings_ (episodes 11–20, site chapters 74–143),
 is being filed under #1455. So far `records/season-2.ts` holds its heading, the
@@ -556,11 +555,11 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Characters             | 213                                                     |
 | Places                 | 75                                                      |
 | Saga modules           | 2                                                       |
-| Line drawings          | 288, one per record, plus 189 redrawings of 138 records |
+| Line drawings          | 288, one per record, plus 208 redrawings of 153 records |
 | Chronicle stories      | 565, for 144 characters                                 |
-| Dated timelines        | 911                                                     |
+| Dated timelines        | 926                                                     |
 | Affiliation steps      | 243                                                     |
-| Status steps           | 372                                                     |
+| Status steps           | 382                                                     |
 | Later visits to places | 5                                                       |
 
 <!-- End of the generated counts. -->

@@ -71,7 +71,7 @@ function entryOf(
 /**
  * The frontmatter of DESIGN.md as one flat map, `colors.blackout-paper` to
  * its value. A line with no key continues the scalar above it, which is how
- * Prettier folds a long string.
+ * Prettier folds a long string; a comment line is skipped.
  */
 function frontmatter(): Record<string, string> {
   const [, yaml = ''] = read('../../DESIGN.md').split('---\n', 2)
@@ -79,7 +79,12 @@ function frontmatter(): Record<string, string> {
   const open: { indent: number; key: string }[] = []
   let last = ''
 
-  for (const line of yaml.split('\n')) {
+  // A comment, such as the `# prettier-ignore` over `typography`, is no entry.
+  const lines = yaml
+    .split('\n')
+    .filter((line) => !line.trimStart().startsWith('#'))
+
+  for (const line of lines) {
     const entry = entryOf(line)
     if (entry === null) {
       flat[last] = `${flat[last] ?? ''} ${line.trim()}`.trim()
@@ -196,6 +201,28 @@ describe('the tokens in DESIGN.md', () => {
     expect(new Set(Object.values(ROLES).map(([, size]) => size))).toStrictEqual(
       new Set(Object.keys(text)),
     )
+  })
+
+  // The detector reads a `fontFamily` only when its whole value is on the
+  // key's line, and the frontmatter only when it closes; otherwise the
+  // design gate's font rule passes every page unread (#1403).
+  it('are in a frontmatter that closes, each font stack on its own line', () => {
+    const text = read('../../DESIGN.md')
+    const close = text.indexOf('\n---\n', 3)
+
+    expect(text.startsWith('---\n')).toBe(true)
+    expect(close).toBeGreaterThan(0)
+
+    const stacks = text
+      .slice(4, close)
+      .split('\n')
+      .filter((line) => line.trimStart().startsWith('fontFamily:'))
+
+    expect(stacks).toHaveLength(Object.keys(ROLES).length)
+
+    for (const line of stacks) {
+      expect(line).toMatch(/^ {4}fontFamily: "[^"]+"$/u)
+    }
   })
 
   it('have their motion, layers and fluid sizes in the sidecar, and no other', () => {
