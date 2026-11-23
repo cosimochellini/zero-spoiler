@@ -277,53 +277,42 @@ in, under the owner's rulings of 2026-11-13, restated for the stage:
   chapters 74–143). A name only one medium gives there is omitted, with its
   reason. Places season 1 and #1469 filed are not filed again. Roads are not
   filed, and a region or a land stays a region, as in season 1 (#1248, #1250,
-  #1251). No one is filed at a named-only place (`filedHere: []`), and each gets
-  a drawing of its own.
+  #1251). No one is filed at a named-only place (`filedHere: []`), and each has
+  a drawing of its own in `art/places.ts`.
 - **Sources.** Show namings come from the Game of Thrones Wiki: each season 2
   episode's Appearances page, the place pages that cite a season 2 episode, and
   the lines those pages quote. Book namings come from A Wiki of Ice and Fire's
-  footnotes (read through the Firecrawl tool), which cite claims, not first
-  namings: each book gate below is the earliest _A Clash of Kings_ chapter they
-  cite, unverified until checked against the text. Neither the episodes nor the
-  books were viewed.
-- **Split.** Eleven candidates are found in both media and eight more are open,
-  nineteen in all, past the issue's split point of about 15. This section is the
-  inventory only; the filing goes to sub-issues by realm, as #1248–#1251 did:
-  the North; the Riverlands and the Westerlands; the south (the Crownlands, the
-  Reach, the Stormlands); Essos and the seas.
+  footnotes, read through the Firecrawl tool until its credits ran out, and from
+  the Ice and Fire Wiki after that (owner, 2026-11-23). The footnotes cite
+  claims, not first namings: each book gate is the earliest _A Clash of Kings_
+  chapter they cite, and where an earlier chapter may name the place first, the
+  safe later chapter is kept. Neither the episodes nor the books were viewed.
+- **Split.** Eleven places survive the book check, under the issue's split point
+  of about 15, so they are filed together (owner, 2026-11-23).
+- **New words.** Form `district` (Flea Bottom, filed as the Street of Steel is),
+  Italian "Quartiere", a plain word not checked against the dub. The Summer
+  Isles take the form `island` in the region the Seas (owner, 2026-11-23).
 
-### Found in both media
+### Filed (#1476)
 
-| Place             | Episode | Chapter | Realm       | Naming (show; book)                                     |
-| ----------------- | ------- | ------- | ----------- | ------------------------------------------------------- |
-| `torrhens-square` | 11      | 90      | North       | a northern lord at Winterfell; Bran II                  |
-| `deepwood-motte`  | 13      | 90      | North       | Balon sends Yara to take it; Bran II                    |
-| `dreadfort`       | 16      | 90      | North       | word of Winterfell reaches its garrison; Bran II        |
-| `seagard`         | 20      | 81      | Riverlands  | Theon's speech to his men; Catelyn I                    |
-| `ashemark`        | 20      | 109     | Westerlands | "You've been to Ashemark?" (Jaime); Bran V              |
-| `the-crag`        | 18      | 129     | Westerlands | Robb rides there in 17, scenes there in 18; Catelyn VII |
-| `flea-bottom`     | 11      | 84      | Crownlands  | Ros: Armeca is from Flea Bottom; Davos I                |
-| `highgarden`      | 13      | 84      | Reach       | Margaery shouts "Highgarden!"; Davos I                  |
-| `tarth`           | 18      | 74      | Stormlands  | Brienne's house and island; the prologue                |
-| `lorath`          | 12      | 79      | Essos       | Jaqen says he is from Lorath; Arya II                   |
-| `summer-isles`    | 14      | 85      | Seas        | Xaro was born there; Theon I                            |
+| Place             | Episode | Chapter | Region          | Naming (show; book)                                     |
+| ----------------- | ------- | ------- | --------------- | ------------------------------------------------------- |
+| `torrhens-square` | 11      | 90      | the North       | a northern lord at Winterfell; Bran II                  |
+| `flea-bottom`     | 11      | 84      | the Crownlands  | Ros: Armeca is from Flea Bottom; Davos I                |
+| `lorath`          | 12      | 79      | Essos           | Jaqen says he is from Lorath; Arya II                   |
+| `deepwood-motte`  | 13      | 98      | the North       | Balon sends Yara to take it; Theon II                   |
+| `highgarden`      | 13      | 84      | the Reach       | Margaery shouts "Highgarden!"; Davos I                  |
+| `summer-isles`    | 14      | 85      | the Seas        | Xaro was born there; Theon I                            |
+| `dreadfort`       | 16      | 90      | the North       | word of Winterfell reaches it; Bran II                  |
+| `the-crag`        | 18      | 129     | the Westerlands | Robb rides there in 17, scenes there in 18; Catelyn VII |
+| `tarth`           | 18      | 74      | the Stormlands  | Brienne's house and island; the prologue                |
+| `seagard`         | 20      | 81      | the Riverlands  | Theon's speech to his men; Catelyn I                    |
+| `ashemark`        | 20      | 109     | the Westerlands | "You've been to Ashemark?" (Jaime); Bran V              |
 
-### Still open
-
-Each is named in season 2; whether _A Clash of Kings_ names it in the stage is
-not yet checked (the Firecrawl tool's daily credits ran out). A place the book
-does not name by chapter 143 is omitted under the both-media rule.
-
-| Place           | Episode | Show naming                                                  | Book                                                                   |
-| --------------- | ------- | ------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| `maidenpool`    | 15      | Arya tells Tywin she is from Maidenpool                      | A Wiki of Ice and Fire cites only the book's map                       |
-| `barrowton`     | 15      | Arya then says she is a stonemason's daughter from Barrowton | A Wiki of Ice and Fire cites only Bran VI (120), for "the barrowlands" |
-| `meereen`       | 15      | a guest at Xaro's feast compares Qarth's market to Meereen's | not checked; "Meereenese" in episode 12 is a demonym, not a naming     |
-| `faircastle`    | 20      | Theon's speech, with Seagard                                 | not checked                                                            |
-| `rhoyne`        | 18      | Talisa's brother nearly drowned in it                        | not checked                                                            |
-| `astapor`       | 18      | Jorah has found a ship bound for it                          | not checked; it may be first named in the third book                   |
-| `castamere`     | 19      | only if a verse Bronn sings names it; the title is not said  | the Greatjon takes its gold mines (Ice and Fire Wiki); chapter unknown |
-| `haystack-hall` | 11      | Daisy says she is from Haystack Hall                         | not checked                                                            |
+`nameSaidAt`, for text that names a place before its show gate: Galbart Glover's
+record (episode 8) names Deepwood Motte, Roose Bolton's (14) the Dreadfort,
+Jason Mallister's (4) Seagard, a story of Loras Tyrell's (5) Highgarden, and
+Brienne's name (13) Tarth.
 
 ### Open points
 
@@ -332,51 +321,68 @@ does not name by chapter 143 is omitted under the both-media rule.
   `GOT201` ref); "The Ghost of Harrenhal" (15) names it again. Book: Bran II
   (90), Leobald Tallhart brings a party from Torrhen's Square to the harvest
   feast. #1469 left it to this issue: its scenes are off screen and off the
-  page.
+  page. Italian "Piazza di Torrhen", Italian Wikipedia's places page.
+- `flea-bottom`: show 11: Ros tells Daisy that Armeca is from Flea Bottom. Book:
+  Davos I (84), Davos begged in Flea Bottom as a boy. Italian "Fondo delle
+  Pulci", Italian Wikipedia's places page.
+- `lorath`: show 12, "The Night Lands": Jaqen claims to be from Lorath. Book:
+  Arya II (79); A Wiki of Ice and Fire says he "claims to be Lorathi", and the
+  Ice and Fire Wiki that he is "allegedly from Lorath", so whether the city's
+  own name is in the chapter, not only the demonym, needs the text (owner
+  check). Italian "Lorath", Italian Wikipedia.
 - `deepwood-motte`: show 13, "What Is Dead May Never Die": Balon sends Yara with
-  thirty ships to seize it. Book: Bran II (90) has its steward at the harvest
-  feast; Theon II (98) names it in Balon's plan. Gate 90 if Bran II names the
-  castle, else 98 (owner check).
+  thirty ships to seize it. Book: Theon II (98) names it in Balon's plan. Bran
+  II (90) is cited for its steward at the harvest feast and may name it first;
+  the safe later chapter is kept (owner check). Italian "Deepwood Motte", the
+  Italian Game of Thrones Wiki's page.
+- `highgarden`: show 13: Margaery shouts "Highgarden!" at Renly's tourney. Book:
+  Davos I (84), Renly marches from Highgarden. The prologue (74) may name it
+  first (not checked). Italian "Alto Giardino", Italian Wikipedia.
+- `summer-isles`: show 14, "Garden of Bones": Xaro was born there. Book: Theon I
+  (85), the Myraham's cargo has feathers from the Summer Isles; Tyrion II (82)
+  gives Shae a bird from the islands and may name them first. Italian "Isole
+  dell’Estate", Italian Wikipedia.
 - `dreadfort`: show 16, "The Old Gods and the New", per the place page's lead
   ref; the line is not quoted (owner check). Book: Bran II (90), Lady Hornwood
-  learns that Roose's bastard is massing men at the Dreadfort.
-- `seagard`: show 20, "Valar Morghulis": Theon's speech names "the shores of
-  Seagard and Faircastle" (quoted on the Faircastle page). Book: Catelyn I (81).
-- `ashemark`: show 20: Jaime asks the Stark patrol "You've been to Ashemark?".
-  Book: Bran V (109), Robb takes Ashemark.
+  learns that men are massing at the Dreadfort. Italian "Forte Terrore", Italian
+  Wikipedia.
 - `the-crag`: the Game of Thrones Wiki lists the Crag among the locations of
   "The Prince of Winterfell" (18), and "A Man Without Honor" (17) has Robb ride
   there to settle its surrender. If the show sets a scene there, it is a place
-  one medium visits and the other only names (#1252), not a named-only place;
-  the gate is 18 / 129 either way (owner check). Book: Catelyn VII (129), word
-  at Riverrun that Robb has taken it; Catelyn VI (119) is cited for his raids
-  and may name it first.
-- `flea-bottom`: a district inside King's Landing, filed like the Street of
-  Steel and the Street of the Sisters rather than folded in like Chataya's
-  (owner check). Show 11: Ros tells Daisy that Armeca is from Flea Bottom. Book:
-  Davos I (84), Davos begged in Flea Bottom as a boy. A district form would be
-  new.
-- `highgarden`: show 13: Margaery shouts "Highgarden!" at Renly's tourney. Book:
-  Davos I (84), Renly marches from Highgarden. The prologue (74) may name it
-  first (not checked).
-- `tarth`: an island in the Stormlands. Show 18, "The Prince of Winterfell":
-  Brienne's house is cited to the episode, and Tyrion hears that Stannis's fleet
-  is past Tarth (the Shipbreaker Bay page); neither line is quoted (owner
-  check). "Brienne of Tarth" in episode 13 is the wiki's name for her; whether
-  the episode says it is not checked, and Tumblestone shows that an epithet
-  counts (#1249). Book: the prologue (74), Davos's report of his meeting with
-  Lord Tarth.
-- `lorath`: show 12, "The Night Lands": Jaqen claims to be from Lorath. Book:
-  Arya II (79); A Wiki of Ice and Fire says he "claims to be Lorathi", so
-  whether the city's own name is in the chapter, not only the demonym, needs the
-  text (owner check).
-- `summer-isles`: an archipelago; an island or a region of its own (owner
-  check). Show 14, "Garden of Bones": Xaro was born there. Book: Theon I (85),
-  the Myraham's cargo has feathers from the Summer Isles; Tyrion II (82) gives
-  Shae a bird from the islands, possibly the first naming.
+  one medium visits and the other only names (#1252); the gate is 18 / 129
+  either way (owner check). Book: Catelyn VII (129), word at Riverrun that Robb
+  has taken it; Catelyn VI (119) is cited for his raids and may name it first.
+  Italian "Crag", as the Italian Game of Thrones Wiki's Casa Westerling page
+  writes it.
+- `tarth`: show 18, "The Prince of Winterfell": Brienne's house is cited to the
+  episode, and Tyrion hears that Stannis's fleet is past Tarth (the Shipbreaker
+  Bay page); neither line is quoted (owner check). Whether episode 13 says
+  "Brienne of Tarth" is not checked. Book: the prologue (74), Davos's report of
+  his meeting with Lord Tarth; the Ice and Fire Wiki's prologue page lists House
+  Tarth. Italian "Tarth", Italian Wikipedia.
+- `seagard`: show 20, "Valar Morghulis": Theon's speech names "the shores of
+  Seagard and Faircastle" (quoted on the Faircastle page). Book: Catelyn I (81).
+  Italian "Seagard", the Italian Game of Thrones Wiki's page.
+- `ashemark`: show 20: Jaime asks the Stark patrol "You've been to Ashemark?".
+  Book: Bran V (109), Robb takes Ashemark. Italian "Ashemark", the Italian Game
+  of Thrones Wiki's page.
 
 ### Omitted (#1476)
 
+- Maidenpool (episode 15, Arya's lie to Tywin), Barrowton (episode 15, her
+  second answer), Meereen (episode 15, a guest at Xaro's feast), the Rhoyne
+  (episode 18, Talisa), Astapor (episode 18, Jorah's ship), Faircastle (episode
+  20, Theon's speech) and Haystack Hall (episode 11, Daisy): the book's naming
+  in the stage is not confirmed (Ice and Fire Wiki; AWOIAF not read: Firecrawl
+  credits exhausted). The Ice and Fire Wiki's sections on Maidenpool's Lord
+  Mooton tell later books' events, its House Errol page names Haystack Hall only
+  in the appendix's list of houses, and A Wiki of Ice and Fire cites Maidenpool
+  only on the book's map and the barrowlands, not Barrowton, in Bran VI (120).
+- Castamere: the book names it in the stage (the Greatjon takes its gold mines,
+  chapter 39, site 113, the Ice and Fire Wiki's Jon Umber page), but the show's
+  naming is not confirmed. The song's title is not said in episode 19, and
+  whether a verse Bronn sings there names it is not checked; the episode's end
+  credits do not count.
 - The Acorn Water: the show never names it (#1469).
 - Red Harbor (episode 15, Yara), Salt Rock (episode 20, the Stark patrol) and
   the Yellow Fork (episode 17, Robb's battle): the show only; the Game of

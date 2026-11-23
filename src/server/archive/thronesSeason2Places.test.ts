@@ -42,6 +42,24 @@ const PLACES: {
 ]
 
 /**
+ * Each place the stage names in both media and never visits (#1476), at its
+ * first naming in each medium, with no one filed there.
+ */
+const NAMED: { chapter: number; episode: number; id: string }[] = [
+  { id: 'torrhens-square', episode: 11, chapter: 90 },
+  { id: 'flea-bottom', episode: 11, chapter: 84 },
+  { id: 'lorath', episode: 12, chapter: 79 },
+  { id: 'deepwood-motte', episode: 13, chapter: 98 },
+  { id: 'highgarden', episode: 13, chapter: 84 },
+  { id: 'summer-isles', episode: 14, chapter: 85 },
+  { id: 'dreadfort', episode: 16, chapter: 90 },
+  { id: 'the-crag', episode: 18, chapter: 129 },
+  { id: 'tarth', episode: 18, chapter: 74 },
+  { id: 'seagard', episode: 20, chapter: 81 },
+  { id: 'ashemark', episode: 20, chapter: 109 },
+]
+
+/**
  * Each visit the stage pays to a place season 1 filed as named only, at the
  * episode and chapter that show it; `source` for one medium.
  */
@@ -82,6 +100,7 @@ function visitsAt(id: string, bookmark: Bookmark): number[] {
 }
 
 const GATES = gateCases(PLACES, archive.series)
+const NAMED_GATES = gateCases(NAMED, archive.series)
 
 describe('the second stage’s visited places', () => {
   it('files these places in season 2, each with a dossier', () => {
@@ -116,6 +135,36 @@ describe('the second stage’s visited places', () => {
     'never opens the one-medium $id to a reader of the other',
     ({ id, source = 'episode' }) => {
       expect(opened(id, otherAtTheEnd(source))).toBe(false)
+    },
+  )
+})
+
+describe('the second stage’s named-only places', () => {
+  it('files these places in season 2, with no one filed there', () => {
+    const places = season2.entries
+      .filter(({ kind }) => kind === 'place')
+      .map(({ id }) => id)
+
+    expect(places).toStrictEqual(
+      expect.arrayContaining(NAMED.map(({ id }) => id)),
+    )
+
+    for (const { id } of NAMED) {
+      expect(SEASON_2_PLACES[id]?.filedHere, id).toStrictEqual([])
+    }
+  })
+
+  it.each(NAMED_GATES)(
+    'opens $id at its first naming by $unit in $locale',
+    ({ id, locale, reached }) => {
+      expect(opened(id, readerFor(archive, reached, locale))).toBe(true)
+    },
+  )
+
+  it.each(NAMED_GATES)(
+    'keeps $id closed one $unit before it in $locale',
+    ({ before, id, locale }) => {
+      expect(opened(id, readerFor(archive, before, locale))).toBe(false)
     },
   )
 })

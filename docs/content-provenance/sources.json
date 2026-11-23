@@ -37801,6 +37801,66 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15518",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15518",
       "contentSha256": "c0626c7e1560526a0ae212dfe8ed9db9a272c54c8f4646034ba31b1237560527"
+    },
+    "iaf-en-Jon_Umber_(Greatjon)-27148.json": {
+      "locale": "en",
+      "title": "Jon Umber (Greatjon)",
+      "revision": 27148,
+      "revisionDate": "2025-02-11T15:28:39Z",
+      "url": "https://iceandfire.fandom.com/wiki/Jon_Umber_%28Greatjon%29",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27148",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27148",
+      "contentSha256": "c6cdde4821da1c539921899ddb3f9747e237c04b42ca26cd1287ff2e08172089"
+    },
+    "iaf-en-House_Errol-25733.json": {
+      "locale": "en",
+      "title": "House Errol",
+      "revision": 25733,
+      "revisionDate": "2022-09-10T12:05:59Z",
+      "url": "https://iceandfire.fandom.com/wiki/House_Errol",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25733",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25733",
+      "contentSha256": "e76ec4f9b99f283d5518499ff2fc2a8da4337cc36170279ca887082dd7793e41"
+    },
+    "iaf-en-House_Mooton-18669.json": {
+      "locale": "en",
+      "title": "House Mooton",
+      "revision": 18669,
+      "revisionDate": "2017-04-16T21:30:39Z",
+      "url": "https://iceandfire.fandom.com/wiki/House_Mooton",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=18669",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=18669",
+      "contentSha256": "6b290fc6c6a10bb4e564ef27983201e48c5117479ada0c9474ec80fb2b104fc1"
+    },
+    "iaf-en-William_Mooton-15399.json": {
+      "locale": "en",
+      "title": "William Mooton",
+      "revision": 15399,
+      "revisionDate": "2016-04-10T13:13:33Z",
+      "url": "https://iceandfire.fandom.com/wiki/William_Mooton",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15399",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15399",
+      "contentSha256": "ee4332457b92ab3dc51798eea508f83bbf2aa3d449e41937ee3302a12ac7dbeb"
+    },
+    "iaf-en-House_Dustin-25468.json": {
+      "locale": "en",
+      "title": "House Dustin",
+      "revision": 25468,
+      "revisionDate": "2022-08-26T12:12:40Z",
+      "url": "https://iceandfire.fandom.com/wiki/House_Dustin",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25468",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25468",
+      "contentSha256": "512c751ab2d9b5d45ba069cbb95634be9e5820fa3e710fce48ede714d338eba7"
+    },
+    "got-en-The_Rains_of_Castamere-737710.json": {
+      "locale": "en",
+      "title": "The Rains of Castamere",
+      "revision": 737710,
+      "revisionDate": "2026-06-21T23:58:54Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=737710",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=737710",
+      "contentSha256": "470cc42681ca36189eb4ad83755502225e96640e138ba2ae6a319a0cbfea5fe4"
     }
   }
 }

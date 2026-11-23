@@ -24,6 +24,7 @@ export interface ThronesVocabulary extends Vocabulary {
     | 'city'
     | 'coast'
     | 'desert'
+    | 'district'
     | 'forest'
     | 'fortress'
     | 'hill'

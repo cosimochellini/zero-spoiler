@@ -1352,6 +1352,176 @@ export const season2: ThronesSaga = {
       },
       visual: { art: 'house-of-the-undying', tint: 'violet' },
     },
+    // The places the stage names in both media and never visits (#1476),
+    // each at its first naming in each medium, as
+    // `game-of-thrones-season-2-places.md` lists them. Show: "The North
+    // Remembers", a northern lord at Winterfell speaks of a new tower at
+    // Torrhen's Square. Books: Bran II (site chapter 90), Leobald Tallhart
+    // brings a party from Torrhen's Square to the harvest feast.
+    {
+      id: 'torrhens-square',
+      kind: 'place',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 90,
+      name: { it: 'Piazza di Torrhen', en: 'Torrhen’s Square' },
+      summary: { it: 'Un castello del Nord.', en: 'A castle in the North.' },
+      visual: { art: 'torrhens-square', tint: 'green' },
+    },
+    // Show: "What Is Dead May Never Die", Balon sends Yara to seize it.
+    // Books: Theon II (site chapter 98), Balon's plan sends Asha to take it;
+    // Bran II (90) may name it first (owner check).
+    {
+      id: 'deepwood-motte',
+      kind: 'place',
+      revealedAtEpisode: 13,
+      revealedAtChapter: 98,
+      // Named before its show gate in the text of Galbart Glover (episode 8) as his seat.
+      nameSaidAt: 8,
+      name: { it: 'Deepwood Motte', en: 'Deepwood Motte' },
+      summary: { it: 'Un castello del Nord.', en: 'A castle in the North.' },
+      visual: { art: 'deepwood-motte', tint: 'ocher' },
+    },
+    // Show: "The Old Gods and the New", word of Winterfell reaches the
+    // Dreadfort (the place page's first citation; the line is not quoted).
+    // Books: Bran II (site chapter 90), Lady Hornwood hears that men are
+    // massing at the Dreadfort.
+    {
+      id: 'dreadfort',
+      kind: 'place',
+      revealedAtEpisode: 16,
+      revealedAtChapter: 90,
+      // Named before its show gate in the text of Roose Bolton (episode 14) as his seat.
+      nameSaidAt: 14,
+      name: { it: 'Forte Terrore', en: 'the Dreadfort' },
+      summary: {
+        it: 'Il castello di Casa Bolton, nel Nord.',
+        en: 'The castle of House Bolton, in the North.',
+      },
+      visual: { art: 'dreadfort', tint: 'pink' },
+    },
+    // Show: "Valar Morghulis", Theon's speech names the shores of Seagard
+    // and Faircastle. Books: Catelyn I (site chapter 81), the war has not
+    // touched Seagard.
+    {
+      id: 'seagard',
+      kind: 'place',
+      revealedAtEpisode: 20,
+      revealedAtChapter: 81,
+      // Named before its show gate in the text of Jason Mallister (episode 4) as his seat.
+      nameSaidAt: 4,
+      name: { it: 'Seagard', en: 'Seagard' },
+      summary: {
+        it: 'Un castello sulla costa delle Terre dei Fiumi.',
+        en: 'A castle on the coast of the Riverlands.',
+      },
+      visual: { art: 'seagard', tint: 'lavender' },
+    },
+    // Show: "Valar Morghulis", Jaime asks the Stark patrol whether they have
+    // been to Ashemark. Books: Bran V (site chapter 109), Robb takes it.
+    {
+      id: 'ashemark',
+      kind: 'place',
+      revealedAtEpisode: 20,
+      revealedAtChapter: 109,
+      name: { it: 'Ashemark', en: 'Ashemark' },
+      summary: {
+        it: 'Un castello delle Terre dell’Ovest.',
+        en: 'A castle in the Westerlands.',
+      },
+      visual: { art: 'ashemark', tint: 'orange' },
+    },
+    // Show: "A Man Without Honor" sends Robb to settle its surrender, and the
+    // Game of Thrones Wiki lists it among the locations of "The Prince of
+    // Winterfell" (owner check). Books: Catelyn VII (site chapter 129), word
+    // at Riverrun that Robb has taken it.
+    {
+      id: 'the-crag',
+      kind: 'place',
+      revealedAtEpisode: 18,
+      revealedAtChapter: 129,
+      name: { it: 'Crag', en: 'the Crag' },
+      summary: {
+        it: 'Un castello delle Terre dell’Ovest.',
+        en: 'A castle in the Westerlands.',
+      },
+      visual: { art: 'the-crag', tint: 'azure' },
+    },
+    // Show: "The North Remembers", Ros tells Daisy that Armeca is from Flea
+    // Bottom. Books: Davos I (site chapter 84), Davos begged there as a boy.
+    {
+      id: 'flea-bottom',
+      kind: 'place',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 84,
+      name: { it: 'Fondo delle Pulci', en: 'Flea Bottom' },
+      summary: {
+        it: 'Un quartiere povero di Approdo del Re.',
+        en: 'A poor district of King’s Landing.',
+      },
+      visual: { art: 'flea-bottom', tint: 'sand' },
+    },
+    // Show: "What Is Dead May Never Die", Margaery shouts "Highgarden!" at
+    // Renly's tourney. Books: Davos I (site chapter 84), Renly marches from
+    // Highgarden.
+    {
+      id: 'highgarden',
+      kind: 'place',
+      revealedAtEpisode: 13,
+      revealedAtChapter: 84,
+      // Named before its show gate in the text of a story of Loras Tyrell (episode 5).
+      nameSaidAt: 5,
+      name: { it: 'Alto Giardino', en: 'Highgarden' },
+      summary: {
+        it: 'Il castello di Casa Tyrell, nell’Altopiano.',
+        en: 'The castle of House Tyrell, in the Reach.',
+      },
+      visual: { art: 'highgarden', tint: 'yellow' },
+    },
+    // Show: "The Prince of Winterfell", Brienne's house and Stannis's fleet
+    // past Tarth (neither line quoted; owner check). Books: the prologue
+    // (site chapter 74), Davos's report of his meeting with Lord Tarth.
+    {
+      id: 'tarth',
+      kind: 'place',
+      revealedAtEpisode: 18,
+      revealedAtChapter: 74,
+      // Brienne's name says it before its show gate: she opens in "What Is
+      // Dead May Never Die" (episode 13).
+      nameSaidAt: 13,
+      name: { it: 'Tarth', en: 'Tarth' },
+      summary: {
+        it: 'Un’isola al largo delle Terre della Tempesta.',
+        en: 'An island off the coast of the Stormlands.',
+      },
+      visual: { art: 'tarth', tint: 'blue' },
+    },
+    // Show: "The Night Lands", Jaqen says he is from Lorath. Books: Arya II
+    // (site chapter 79), the same claim (owner check: the city or only the
+    // demonym).
+    {
+      id: 'lorath',
+      kind: 'place',
+      revealedAtEpisode: 12,
+      revealedAtChapter: 79,
+      name: { it: 'Lorath', en: 'Lorath' },
+      summary: { it: 'Una delle Città Libere.', en: 'One of the Free Cities.' },
+      visual: { art: 'lorath', tint: 'ice' },
+    },
+    // Show: "Garden of Bones", Xaro was born in the Summer Isles. Books:
+    // Theon I (site chapter 85), the Myraham carries feathers from the
+    // Summer Isles.
+    {
+      id: 'summer-isles',
+      kind: 'place',
+      revealedAtEpisode: 14,
+      revealedAtChapter: 85,
+      name: { it: 'Isole dell’Estate', en: 'the Summer Isles' },
+      summary: {
+        it: 'Un gruppo di isole lontane, oltre il mare.',
+        en: 'A group of distant islands across the sea.',
+      },
+      visual: { art: 'summer-isles', tint: 'teal' },
+    },
   ],
   dossiers: {
     'daisy': {
@@ -2962,6 +3132,146 @@ export const SEASON_2_PLACES: Record<
     log: {
       it: 'Gli stregoni di Qarth vivono in questa dimora. Daenerys vi entra, e loro le mostrano visioni e cercano di trattenerla. Il fuoco di drago la libera.',
       en: 'The warlocks of Qarth live in this house. Daenerys goes in, and they show her visions and try to keep her. Dragon fire sets her free.',
+    },
+    filedHere: [],
+  },
+  'torrhens-square': {
+    form: 'castle',
+    region: 'the-north',
+    landmark: {
+      it: 'Un mastio di pietra tra quattro torri, sulla riva di un lago',
+      en: 'A stone keep between four towers, on the shore of a lake',
+    },
+    log: { it: 'È un castello del Nord.', en: 'It is a castle in the North.' },
+    filedHere: [],
+  },
+  'deepwood-motte': {
+    form: 'castle',
+    region: 'the-north',
+    landmark: {
+      it: 'Una palizzata di legno in cima a una collinetta',
+      en: 'A wooden palisade on top of a mound',
+    },
+    log: {
+      it: 'Balon Greyjoy manda sua figlia con trenta navi a prendere questo castello.',
+      en: 'Balon Greyjoy sends his daughter with thirty ships to take this castle.',
+    },
+    filedHere: [],
+  },
+  'dreadfort': {
+    form: 'castle',
+    region: 'the-north',
+    landmark: {
+      it: 'Torri scure e uno stendardo sopra il portone',
+      en: 'Dark towers and a banner over the gate',
+    },
+    log: {
+      it: 'È il castello di Casa Bolton.',
+      en: 'It is the castle of House Bolton.',
+    },
+    filedHere: [],
+  },
+  'seagard': {
+    form: 'castle',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un’alta torre con una campana, sul mare',
+      en: 'A tall tower with a bell, over the sea',
+    },
+    log: {
+      it: 'È un castello sulla costa delle Terre dei Fiumi.',
+      en: 'It is a castle on the coast of the Riverlands.',
+    },
+    filedHere: [],
+  },
+  'ashemark': {
+    form: 'castle',
+    region: 'the-westerlands',
+    landmark: {
+      it: 'Due torri su una collina, sotto uno stendardo',
+      en: 'Two towers on a hill, under a banner',
+    },
+    log: {
+      it: 'È un castello delle Terre dell’Ovest.',
+      en: 'It is a castle in the Westerlands.',
+    },
+    filedHere: [],
+  },
+  'the-crag': {
+    form: 'castle',
+    region: 'the-westerlands',
+    landmark: {
+      it: 'Torri su una rupe sopra il mare',
+      en: 'Towers on a rock over the sea',
+    },
+    log: {
+      it: 'L’esercito di Robb Stark prende questo castello.',
+      en: 'Robb Stark’s army takes this castle.',
+    },
+    filedHere: [],
+  },
+  'flea-bottom': {
+    form: 'district',
+    region: 'the-crownlands',
+    landmark: {
+      it: 'Catapecchie storte attorno a un pentolone fumante',
+      en: 'Crooked hovels around a steaming pot',
+    },
+    log: {
+      it: 'È il quartiere più povero di Approdo del Re.',
+      en: 'It is the poorest district of King’s Landing.',
+    },
+    filedHere: [],
+  },
+  'highgarden': {
+    form: 'castle',
+    region: 'the-reach',
+    landmark: {
+      it: 'Mura e torri sotto lo stendardo della rosa',
+      en: 'Walls and towers under the banner of the rose',
+    },
+    log: {
+      it: 'È la sede di Casa Tyrell.',
+      en: 'It is the seat of House Tyrell.',
+    },
+    filedHere: [],
+  },
+  'tarth': {
+    form: 'island',
+    region: 'the-stormlands',
+    landmark: {
+      it: 'Monti e una cascata su un’isola',
+      en: 'Mountains and a waterfall on an island',
+    },
+    log: {
+      it: 'È un’isola nel mare, retta da un lord.',
+      en: 'It is an island in the sea, held by a lord.',
+    },
+    filedHere: [],
+  },
+  'lorath': {
+    form: 'city',
+    region: 'essos',
+    landmark: {
+      it: 'Torri appuntite su un’isola',
+      en: 'Pointed towers on an island',
+    },
+    log: {
+      it: 'È una delle Città Libere, a Essos.',
+      en: 'It is one of the Free Cities, in Essos.',
+    },
+    filedHere: [],
+  },
+  'summer-isles': {
+    form: 'island',
+    region: 'the-seas',
+    landmark: {
+      it: 'Palme su due isole e una nave tra di esse',
+      en: 'Palm trees on two islands and a ship between them',
+    },
+    log: {
+      it: 'Sono isole lontane, oltre il mare.',
+      en: 'They are distant islands across the sea.',
     },
     filedHere: [],
   },

@@ -77,6 +77,13 @@ export const PLACE_ITALIAN_TITLES = {
     'guildhall-of-the-alchemists': `${PLACES}#Il Palazzo dell'Ordine degli Alchimisti`,
     'fist-of-the-first-men': `${PLACES}#Pugno dei Primi Uomini`,
     'blackwater-bay': `${PLACES}#Baia delle Acque Nere`,
+    'torrhens-square': `${PLACES}#Piazza di Torrhen`,
+    'dreadfort': `${PLACES}#Forte Terrore`,
+    'flea-bottom': `${PLACES}#Il Fondo delle Pulci`,
+    'highgarden': `${PLACES}#Alto Giardino`,
+    'tarth': `${PLACES}#Tarth`,
+    'lorath': `${PLACES}#Lorath`,
+    'summer-isles': `${PLACES}#Isole dell'Estate`,
   },
 }
 
@@ -199,4 +206,11 @@ export const PLACE_NAMES_KEPT = {
   'oxcross': 'Oxcross',
   'whitetree': 'Albero Bianco',
   'garden-of-bones': 'Giardino delle Ossa',
+  // The second stage's named-only places (#1476) with no section of their
+  // own: Deepwood Motte, Seagard and Ashemark are the Italian Game of Thrones
+  // Wiki's pages, and the Crag is "Crag" in its Casa Westerling page.
+  'deepwood-motte': 'Deepwood Motte',
+  'seagard': 'Seagard',
+  'ashemark': 'Ashemark',
+  'the-crag': 'Crag',
 }
