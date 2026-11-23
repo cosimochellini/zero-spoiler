@@ -35,7 +35,7 @@ export const syncStyles = stylex.create({
 
   // What replaces the form: the way back, the head, then the code and what
   // goes with it.
-  view: { gap: space.md, display: 'grid' },
+  view: { gap: space.sm, display: 'grid' },
   back: {
     borderColor: 'transparent',
     color: { 'default': color.muted, ':hover:not(:disabled)': color.ink },
@@ -45,7 +45,7 @@ export const syncStyles = stylex.create({
     // with the head under it.
     paddingInlineStart: space.xs3,
   },
-  panel: { gap: space.md, display: 'grid', justifyItems: 'center' },
+  panel: { gap: space.sm, display: 'grid', justifyItems: 'center' },
   text: {
     color: color.ink2,
     fontFamily: font.body,
@@ -63,7 +63,7 @@ export const syncStyles = stylex.create({
     borderRadius: radius.card,
     aspectRatio: '1',
     display: 'block',
-    width: 'min(14rem, 70vw, 34dvh)',
+    width: 'min(14rem, 70vw, 30dvh)',
   },
   // Dark on light, as scanners expect: the inks of the set, inverted.
   ground: { fill: color.ink },
