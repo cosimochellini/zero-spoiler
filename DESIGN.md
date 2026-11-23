@@ -352,12 +352,13 @@ Under `prefers-reduced-motion` spatial motion becomes a crossfade.
 - **Do** mark a link inside text with an underline. The accent sits within 3:1
   of the inks in every set, so colour alone cannot.
 - **Do** space siblings with `gap` in new work; see Layout for today's state.
-- **Do** keep controls at least 44px tall. Under it today, for the surface
-  passes (#1375 to #1383) to fix: relationship rows.
+- **Do** keep controls at least 44px tall; a link in a list or a ledger is one
+  too (#1379). A link inside running text is the exception.
 - **Do** keep running text to a measure of 52 to 66ch. In Instrument Sans a line
   holds about 1.4 characters per `ch`, so the 60 to 75 characters a line the
   impeccable skill asks for is about 44 to 54ch. The legal page sets 48ch, about
-  67 characters (#1383), and the footer 52ch (#1377).
+  67 characters (#1383), and the footer, a record's entry and its chronicle 52ch
+  (#1377, #1379).
 - **Do** check every pass at a width of 390px. Mobile is the owner's second
   priority, after the bookmark and progress and before fog.
 

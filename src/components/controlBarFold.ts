@@ -135,7 +135,7 @@ function watchPin(
 
 /**
  * Opens the bar when focus moves into a control, folds it
- * when focus leaves the bar, and settles it after a pick.
+ * when focus leaves the bar, and settles it after a pick or a query.
  */
 export function listen(
   bar: HTMLElement,
@@ -170,8 +170,7 @@ export function listen(
   const onRelease = (): void => {
     pressed = false
   }
-  const onChange = (event: Event): void => {
-    const { target } = event
+  const onChange = ({ target }: Event): void => {
     if (!(target instanceof HTMLInputElement) || target.type !== 'radio') {
       return
     }
@@ -186,6 +185,7 @@ export function listen(
   }
   const listeners: [EventTarget, string, (event: Event) => void][] = [
     [bar, 'focusin', onFocusIn],
+    [bar, 'input', backOnQuery(bar, read)],
     [bar, 'focusout', onFocusOut],
     [bar, 'keydown', onInput],
     [bar, 'pointerdown', onInput],
@@ -215,17 +215,47 @@ function settle(
   { offset, tuck }: Fold,
   folds: boolean,
 ): void {
-  const container = bar.parentElement
-  if (container !== null) {
-    const top =
-      container.getBoundingClientRect().top + window.scrollY + tuck - offset
-    if (window.scrollY > top) {
-      window.scrollTo({ top, behavior: 'instant' })
-    }
-  }
+  backToResults(bar, offset - tuck)
   if (folds && tuck > 0) {
     bar
       .querySelector<HTMLElement>('[aria-expanded]')
       ?.focus({ preventScroll: true })
+  }
+}
+
+/**
+ * A query typed deep in the listing filters what is above the window too,
+ * and the page can shrink to a few screens with the matches far above it
+ * (#1379). Each keystroke in a pinned bar's search goes back to the top of
+ * the results, the whole bar showing and focus left in the field.
+ */
+function backOnQuery(
+  bar: HTMLElement,
+  read: () => Fold,
+): (event: Event) => void {
+  return ({ target }) => {
+    const fold = read()
+    if (
+      target instanceof HTMLInputElement
+      && target.type === 'search'
+      && fold.pinned
+    ) {
+      backToResults(bar, fold.offset)
+    }
+  }
+}
+
+/**
+ * Scrolls up to where the bar's container starts `below` pixels down the
+ * window, if the reader is further down; never down.
+ */
+function backToResults(bar: HTMLElement, below: number): void {
+  const container = bar.parentElement
+  if (container === null) {
+    return
+  }
+  const top = container.getBoundingClientRect().top + window.scrollY - below
+  if (window.scrollY > top) {
+    window.scrollTo({ top, behavior: 'instant' })
   }
 }

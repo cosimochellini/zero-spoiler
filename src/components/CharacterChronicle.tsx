@@ -276,12 +276,13 @@ const styles = stylex.create({
     overflowWrap: 'anywhere',
     minWidth: 0,
   },
+  // About 75 characters a line, the measure of the dossier's entry (#1379).
   body: {
     margin: 0,
     color: color.ink2,
     fontSize: text.base,
     lineHeight: leading.body,
-    maxWidth: '60ch',
+    maxWidth: '52ch',
   },
   // The same link voice as the facts ledger: colour on hover, the rule under
   // it reserved at rest so nothing shifts when the pointer arrives.

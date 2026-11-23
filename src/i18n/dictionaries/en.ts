@@ -247,6 +247,7 @@ export const enDictionary = {
   'characters.title': 'Characters',
   'characters.searchLabel': 'Search characters',
   'characters.searchClear': 'Clear search',
+  'characters.searchOpen': 'Search',
   'characters.shown': 'Showing {count} of {total} open characters',
   'characters.noMatch': 'No open character matches “{query}”.',
   'characters.foggedTitle': '{count} under fog',

@@ -241,6 +241,7 @@ export const itDictionary: Dictionary = {
   'characters.title': 'Personaggi',
   'characters.searchLabel': 'Cerca un personaggio',
   'characters.searchClear': 'Cancella la ricerca',
+  'characters.searchOpen': 'Cerca',
   'characters.shown': 'Risultati: {count} su {total} personaggi visibili',
   'characters.noMatch': 'Nessun personaggio visibile corrisponde a “{query}”.',
   'characters.foggedTitle': '{count} nella nebbia',

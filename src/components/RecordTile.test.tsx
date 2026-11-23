@@ -28,10 +28,11 @@ describe('RecordTile', () => {
       />,
     )
 
-    expect(screen.getByRole('link', { name: 'Sanji' })).toHaveAttribute(
-      'href',
-      '/one-piece/en/characters/sanji',
-    )
+    const link = screen.getByRole('link', { name: 'Sanji' })
+
+    expect(link).toHaveAttribute('href', '/one-piece/en/characters/sanji')
+    // The whole card is the target, drawing and all, not the name alone.
+    expect(link.querySelector('svg')).not.toBeNull()
     expect(screen.getByText('Episode 20')).toBeVisible()
   })
 

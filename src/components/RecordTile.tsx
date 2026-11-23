@@ -12,6 +12,8 @@ import { useDrawing } from '~/lib/view/drawings'
 import type { EntityKind, RecordView, Slot } from '~/lib/view/records'
 import {
   color,
+  dur,
+  ease,
   font,
   leading,
   radius,
@@ -62,12 +64,7 @@ export function RecordTile({ slot, peek }: RecordTileProps): ReactElement {
         slot={slot}
       >
         {(record) => {
-          return (
-            <span {...stylex.props(styles.card)}>
-              <Plate record={record} />
-              <Name entry={record} />
-            </span>
-          )
+          return <Card record={record} />
         }}
       </SpoilerVeil>
     </span>
@@ -101,10 +98,11 @@ const RECORD_PAGE = {
 } as const satisfies Record<Exclude<EntityKind, 'arc'>, string>
 
 /**
- * The name, and where it leads. A character, a place, a ship, a devil fruit
- * and a Nen ability each have a page to point at; an arc does not, so its
- * name is plain text rather than a link that would go nowhere. A ship's page
- * is served from a place's address.
+ * The plate and the name, and where they lead. A character, a place, a ship,
+ * a devil fruit and a Nen ability each have a page to point at, and the whole
+ * card is the link, so its target is the plate's height rather than a line of
+ * text (#1379); an arc has no page, so its card is no link at all. A ship's
+ * page is served from a place's address.
  *
  * No tile is handed a fruit or an ability today: the two callers are a
  * port's `filedHere` and the two records beside one on the landing chart,
@@ -113,20 +111,28 @@ const RECORD_PAGE = {
  * the data that decides, not another edit here, and a tile that met one
  * would otherwise print a name it had a page for and no way to reach it.
  */
-function Name({ entry }: { entry: RecordView }): ReactElement {
+function Card({ record }: { record: RecordView }): ReactElement {
   const { series, locale } = useSeriesParams()
+  const body = (
+    <>
+      <Plate record={record} />
+      <span {...stylex.props(styles.name, styles.linkedName)}>
+        {record.name}
+      </span>
+    </>
+  )
 
-  if (entry.kind === 'arc') {
-    return <span {...stylex.props(styles.name)}>{entry.name}</span>
+  if (record.kind === 'arc') {
+    return <span {...stylex.props(styles.card)}>{body}</span>
   }
 
   return (
     <Link
-      params={{ series, locale, id: entry.id }}
-      to={RECORD_PAGE[entry.kind]}
-      {...stylex.props(styles.name, bandStyles.link)}
+      params={{ series, locale, id: record.id }}
+      to={RECORD_PAGE[record.kind]}
+      {...stylex.props(styles.card, styles.link)}
     >
-      {entry.name}
+      {body}
     </Link>
   )
 }
@@ -170,5 +176,37 @@ const styles = stylex.create({
     lineHeight: leading.heading,
     overflowWrap: 'anywhere',
     minWidth: 0,
+  },
+  // The card as a link: the focus ring goes round the plate and the name.
+  link: {
+    borderRadius: radius.card,
+    color: color.ink,
+    outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
+    outlineOffset: space.xs2,
+    outlineStyle: 'solid',
+    outlineWidth: rule.fine,
+    textDecorationLine: 'none',
+  },
+  // The name answers the pointer on the card as it did on its own: the
+  // accent, and the rule under it, reserved at rest.
+  linkedName: {
+    // Exclusive, so the pressed colour holds whatever order the rules land
+    // in: StyleX does not order two `:is()` keys as it orders `:hover` and
+    // `:active`.
+    color: {
+      'default': color.ink,
+      ':is(a:active *)': color.ink2,
+      ':is(a:hover:not(:active) *)': color.accent,
+    },
+    textDecorationColor: {
+      'default': 'transparent',
+      ':is(a:hover *)': color.accent,
+    },
+    textDecorationLine: 'underline',
+    textDecorationThickness: rule.fine,
+    textUnderlineOffset: '4px',
+    transitionDuration: dur.micro,
+    transitionProperty: 'color, text-decoration-color',
+    transitionTimingFunction: ease.out,
   },
 })

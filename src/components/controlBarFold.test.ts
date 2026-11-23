@@ -184,6 +184,38 @@ describe('the control bar’s folding', () => {
     stop()
   })
 
+  it('takes a query typed deep in the list back to the top of the results', () => {
+    const { bar } = mountBar()
+    const field = document.createElement('input')
+    field.type = 'search'
+    bar.firstElementChild?.append(field)
+    field.focus()
+    const scrollTo = vi.fn<(options: ScrollToOptions) => void>()
+    vi.stubGlobal('scrollTo', scrollTo)
+    vi.stubGlobal('scrollY', 2500)
+    let pinned = true
+    const stop = listen(
+      bar,
+      () => ({ offset: 96, pinned, tuck: 300 }),
+      vi.fn<(open: boolean) => void>(),
+    )
+
+    field.dispatchEvent(new Event('input', { bubbles: true }))
+
+    // The container's top in the page (-2000 + 2500), less the site bar: the
+    // whole bar shows, open, with the results right under it.
+    expect(scrollTo).toHaveBeenCalledWith({ top: 404, behavior: 'instant' })
+    expect(field).toHaveFocus()
+
+    // A bar in its own place, at the top of the listing, never moves the page.
+    pinned = false
+    field.dispatchEvent(new Event('input', { bubbles: true }))
+
+    expect(scrollTo).toHaveBeenCalledTimes(1)
+
+    stop()
+  })
+
   it('leaves the bar open and focus alone after a keyboard pick', () => {
     const { bar, radio, toggle } = mountBar()
     const setOpen = vi.fn<(open: boolean) => void>()

@@ -272,13 +272,16 @@ const styles = stylex.create({
   },
   seats: { margin: 0, padding: 0, listStyle: 'none' },
   // The same link voice as a record tile: colour on hover, the rule under it
-  // reserved at rest so nothing shifts when the pointer arrives.
+  // reserved at rest so nothing shifts when the pointer arrives. At least a
+  // finger tall, the line centred in it (#1379).
   link: {
+    alignItems: 'center',
     color: {
       'default': color.ink2,
       ':hover': color.accent,
       ':active': color.ink2,
     },
+    display: 'inline-flex',
     outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
     outlineOffset: space.xs3,
     outlineStyle: 'solid',
@@ -290,5 +293,6 @@ const styles = stylex.create({
     transitionDuration: dur.micro,
     transitionProperty: 'color, text-decoration-color',
     transitionTimingFunction: ease.out,
+    minHeight: '44px',
   },
 })

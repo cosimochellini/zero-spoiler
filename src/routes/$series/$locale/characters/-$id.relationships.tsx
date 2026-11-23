@@ -193,8 +193,11 @@ const relations = stylex.create({
     fontSize: text.xs,
     lineHeight: leading.body,
   },
+  // The name's whole line is the link, at least a finger tall (#1379).
   name: {
+    alignItems: 'center',
     color: { 'default': color.ink, ':hover': color.accent },
+    display: 'flex',
     fontFamily: font.display,
     fontSize: text.lg,
     fontWeight: 800,
@@ -204,6 +207,7 @@ const relations = stylex.create({
     overflowWrap: 'anywhere',
     textDecorationLine: 'underline',
     textUnderlineOffset: '3px',
+    minHeight: '44px',
   },
   stageTitle: {
     margin: 0,
