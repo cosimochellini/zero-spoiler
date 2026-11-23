@@ -156,21 +156,6 @@ const GOBLET: Stroke[] = [
 ]
 
 /**
- * What a second-stage person shows until its drawing child draws it (#1460):
- * a bust with a blank head and no face, the collar in the record's tint. It
- * stands for nobody, so it tells a reader nothing.
- */
-const PERSON: Stroke[] = [
-  { d: circle(80, 58, 19) },
-  { d: 'M72 76 V88 M88 76 V88', role: 'soft' },
-  { d: 'M72 88 Q44 92 38 118 L36 150 M88 88 Q116 92 122 118 L124 150' },
-  { d: 'M64 90 Q80 104 96 90', role: 'accent' },
-  { d: 'M56 112 Q60 130 58 148 M104 112 Q100 130 102 148', role: 'soft' },
-  { d: 'M30 150 H130', role: 'ambient' },
-  shadow(80, 154, 46),
-]
-
-/**
  * Game of Thrones' drawings, keyed by the id of the record each was drawn
  * for. The Winterfell household's are in `winterfell.ts` (#854), the
  * southern cast's in `south.ts` (#1051), the Night's Watch's in `wall.ts`
@@ -182,11 +167,10 @@ const PERSON: Stroke[] = [
  * own drawing, and so have the season-2 King's Landing cast, in `court.ts`
  * (#1470), stormlands cast, in `stormlands.ts` (#1471), Riverlands and
  * Harrenhal cast, in `riverlands.ts` (#1472), Winterfell and Iron Islands
- * cast, in `north.ts` and `ironborn.ts` (#1473), and Wall cast, the rangers
- * in `wall.ts` and the wildlings in `wildlings.ts` (#1474); the season-2
- * Essos cast (#1468) shows `PERSON` until its drawing child draws it.
- * `satisfies` rather than an annotation, so `ArtId` below stays the literal
- * keys.
+ * cast, in `north.ts` and `ironborn.ts` (#1473), Wall cast, the rangers in
+ * `wall.ts` and the wildlings in `wildlings.ts` (#1474), and Essos and Qarth
+ * cast, in `essos.ts` (#1475). `satisfies` rather than an annotation, so
+ * `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
   ...WINTERFELL_DRAWINGS,
@@ -205,17 +189,6 @@ export const DRAWINGS = {
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': DRAGON_EGG,
-  // #1468: Essos and Qarth.
-  'kovarro': PERSON,
-  'xaro-xhoan-daxos': PERSON,
-  'pyat-pree': PERSON,
-  'quaithe': PERSON,
-  'malakho': PERSON,
-  'drogon': PERSON,
-  'rhaegal': PERSON,
-  'viserion': PERSON,
-  'strong-belwas': PERSON,
-  'arstan-whitebeard': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */
@@ -224,14 +197,14 @@ export type ArtId = keyof typeof DRAWINGS
 /**
  * The records drawn again later in the story, the Winterfell household's
  * from `winterfell.ts`, the southern cast's from `south.ts`, the Night's
- * Watch's from `wall.ts`, the Essos cast's from `essos.ts`, the northern
- * household's from `north.ts`, the Vale cast's from `vale.ts`, the King's
- * Landing cast's from `court.ts`, the Riverlands cast's from
- * `riverlands.ts`, the stormlands cast's from `stormlands.ts`, the second
- * stage's Iron Islands cast's from `ironborn.ts` and the wildlings' from
- * `wildlings.ts`. Eddard Stark is
- * beheaded with Ice in "Baelor" (episode 9) and in Arya V (chapter 66): from
- * there the blade lies flat on the ground, with nobody to hold it.
+ * Watch's from `wall.ts`, the Essos cast's of both seasons from `essos.ts`
+ * (#1052, #1475), the northern household's from `north.ts`, the Vale cast's
+ * from `vale.ts`, the King's Landing cast's from `court.ts`, the Riverlands
+ * cast's from `riverlands.ts`, the stormlands cast's from `stormlands.ts`,
+ * the second stage's Iron Islands cast's from `ironborn.ts` and the
+ * wildlings' from `wildlings.ts`. Eddard Stark is beheaded with Ice in
+ * "Baelor" (episode 9) and in Arya V (chapter 66): from there the blade lies
+ * flat on the ground, with nobody to hold it.
  */
 export const REDRAWINGS: Redrawings = {
   ...winterfellRedrawn,

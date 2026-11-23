@@ -1024,7 +1024,7 @@ export const season2: ThronesSaga = {
         it: 'Una donna dell’Ombra che raggiunge Daenerys da Qarth.',
         en: 'A woman of the Shadow who comes to Daenerys from Qarth.',
       },
-      visual: { art: 'quaithe', tint: 'wine' },
+      visual: { art: 'quaithe', tint: 'sand' },
     },
     // Show only: in "The Ghost of Harrenhal" (episode 15) Jorah tells
     // Daenerys what her riders say at Xaro's feast, "Malakho says the statue
@@ -1120,7 +1120,7 @@ export const season2: ThronesSaga = {
         it: 'Un vecchio dei Sette Regni, scudiero di Belwas il Forte.',
         en: 'An old man from the Seven Kingdoms, squire to Strong Belwas.',
       },
-      visual: { art: 'arstan-whitebeard', tint: 'ivory' },
+      visual: { art: 'arstan-whitebeard', tint: 'ocher' },
     },
     // The places a scene of the stage is set in (#1469), each at its first
     // scene in each medium, as `game-of-thrones-season-2-places.md` lists
@@ -2812,7 +2812,14 @@ export const season2: ThronesSaga = {
         it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
         en: 'He is one of the three dragons hatched from Daenerys’s eggs in Drogo’s funeral pyre.',
       },
-      status: [{ episode: 41, chapter: 86, value: 'alive' }],
+      status: [
+        { episode: 41, chapter: 86, value: 'alive' },
+        // Shot down into the sea off Dragonstone in "The Last of the
+        // Starks" (episode 71), the show's alone, filed with his drawing's
+        // stage (#1475). The books leave him alive; chapter 344, their
+        // last, orders it.
+        { episode: 71, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 41,
@@ -2828,7 +2835,14 @@ export const season2: ThronesSaga = {
         it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
         en: 'He is one of the three dragons hatched from Daenerys’s eggs in Drogo’s funeral pyre.',
       },
-      status: [{ episode: 41, chapter: 86, value: 'alive' }],
+      status: [
+        { episode: 41, chapter: 86, value: 'alive' },
+        // Killed by the Night King beyond the Wall in "Beyond the Wall"
+        // (episode 66), the show's alone, and raised as a wight the same
+        // night, filed with his drawing's stages (#1475). The books leave
+        // him alive; chapter 344, their last, orders it.
+        { episode: 66, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 41,
