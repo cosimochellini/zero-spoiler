@@ -54,8 +54,8 @@ const syncIt: Record<SyncKey, string> = {
   'sync.title': 'Gli stessi segnalibri su questo dispositivo',
   'sync.lede':
     'Questo dispositivo e quello da cui arriva il link avranno gli stessi segnalibri. Un segnalibro che sposti su uno si ritrova sull’altro al caricamento successivo di una pagina.',
-  'sync.change': 'Il segnalibro di {series} diventa {point}.',
-  'sync.add': 'Il segnalibro di {series} viene impostato a {point}.',
+  'sync.change': '{series}: il segnalibro diventa {point}.',
+  'sync.add': '{series}: il segnalibro viene impostato su {point}.',
   'sync.connect': 'Collega questo dispositivo',
   'sync.incomplete':
     'Questo link è incompleto. Copialo di nuovo sull’altro dispositivo, da “Altri dispositivi?” nella finestra del segnalibro.',

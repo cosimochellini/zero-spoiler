@@ -20,7 +20,7 @@ const privacyEn = {
   'privacy.cookiesIntro':
     'These first-party cookies support features you request. They are not used for advertising or tracking across sites. They do not require a consent banner under the Italian rules for necessary technical cookies.',
   'privacy.bookmark':
-    'zs_one-piece, zs_hunter-x-hunter and zs_game-of-thrones: your bookmark for each series, by episode, season, chapter, book or live action where supported; kept for 365 days after saving it, or until you clear it. Opening a shared bookmark link also sets this cookie. The value is sent to the server to hide later events.',
+    'zs_one-piece, zs_hunter-x-hunter and zs_game-of-thrones: your bookmark for each series, by episode, season, chapter, book or live action where supported; kept for 365 days after saving it, or until you clear it; on a synced device, 365 days after its last page load. Opening a shared bookmark link also sets this cookie. The value is sent to the server to hide later events.',
   'privacy.language':
     'opzs_lang: your selected language (it or en); kept for 365 days after choosing it. Sent to the server to remember the language on later visits.',
   'privacy.trial':
@@ -74,7 +74,7 @@ const privacyIt: Record<PrivacyKey, string> = {
   'privacy.cookiesIntro':
     'Questi cookie di prima parte servono alle funzioni che richiedi. Non sono usati per pubblicità o tracciamento tra siti. Le regole italiane sui cookie tecnici necessari non richiedono un banner di consenso per questi usi.',
   'privacy.bookmark':
-    'zs_one-piece, zs_hunter-x-hunter e zs_game-of-thrones: il tuo segnalibro per ciascuna serie, per episodio, stagione, capitolo, libro o live action dove disponibile; dura 365 giorni dal salvataggio, oppure fino alla cancellazione. Anche aprire un link con un segnalibro imposta questo cookie. Il valore viene inviato al server per nascondere gli eventi successivi.',
+    'zs_one-piece, zs_hunter-x-hunter e zs_game-of-thrones: il tuo segnalibro per ciascuna serie, per episodio, stagione, capitolo, libro o live action dove disponibile; dura 365 giorni dal salvataggio, oppure fino alla cancellazione; su un dispositivo sincronizzato, 365 giorni dall’ultimo caricamento di una pagina. Anche aprire un link con un segnalibro imposta questo cookie. Il valore viene inviato al server per nascondere gli eventi successivi.',
   'privacy.language':
     'opzs_lang: la lingua scelta (it o en); dura 365 giorni dalla scelta. Viene inviato al server per ricordare la lingua nelle visite successive.',
   'privacy.trial':

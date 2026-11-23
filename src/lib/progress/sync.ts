@@ -1,6 +1,6 @@
-import { expireCookie, parseCookieHeader, writeCookie } from '~/lib/cookies'
+import { expireCookie, parseCookieHeader } from '~/lib/cookies'
 
-import { SYNC_COOKIE, SYNC_PENDING_COOKIE } from './syncCookie'
+import { markPending, SYNC_COOKIE, SYNC_PENDING_COOKIE } from './syncCookie'
 
 export { SYNC_COOKIE, SYNC_PENDING_COOKIE } from './syncCookie'
 
@@ -92,9 +92,10 @@ export function asSyncRecord(raw: unknown): null | SyncRecord {
 
 /**
  * Sends one series' bookmark, as its cookie now holds it, to the synced
- * record, when this device is synced. A failure is not shown: the series goes
- * on the pending list, and the next full page load writes this device's
- * bookmark to the record instead of reading the record's over it.
+ * record, when this device is synced, and takes the series off the pending
+ * list once the record has it (`pushIfSynced` put it there). A failure is not
+ * shown: the series stays on the list, and the next full page load writes this
+ * device's bookmark to the record instead of reading the record's over it.
  */
 export async function pushBookmark(series: string): Promise<void> {
   if (readSyncId() === null) {
@@ -105,25 +106,6 @@ export async function pushBookmark(series: string): Promise<void> {
     markPending(series, false)
   } catch {
     markPending(series, true)
-  }
-}
-
-/** Adds a series to the pending list, or takes it off. */
-function markPending(series: string, pending: boolean): void {
-  const listed = new Set(
-    (parseCookieHeader(document.cookie).get(SYNC_PENDING_COOKIE) ?? '')
-      .split(',')
-      .filter((slug) => slug !== ''),
-  )
-  if (pending) {
-    listed.add(series)
-  } else {
-    listed.delete(series)
-  }
-  if (listed.size === 0) {
-    expireCookie(SYNC_PENDING_COOKIE)
-  } else {
-    writeCookie(SYNC_PENDING_COOKIE, [...listed].join(','))
   }
 }
 

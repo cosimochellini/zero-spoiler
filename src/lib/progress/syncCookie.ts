@@ -1,3 +1,5 @@
+import { expireCookie, parseCookieHeader, writeCookie } from '~/lib/cookies'
+
 /**
  * The cookie that ties a device to a synced record (#1560). It holds the
  * record's id, a random UUID that works as a bearer secret: whoever has it can
@@ -14,3 +16,22 @@ export const SYNC_COOKIE = 'zs_sync'
  * Lasts the browser session.
  */
 export const SYNC_PENDING_COOKIE = 'zs_sync_pending'
+
+/** Adds a series to the pending list, or takes it off. */
+export function markPending(series: string, pending: boolean): void {
+  const listed = new Set(
+    (parseCookieHeader(document.cookie).get(SYNC_PENDING_COOKIE) ?? '')
+      .split(',')
+      .filter((slug) => slug !== ''),
+  )
+  if (pending) {
+    listed.add(series)
+  } else {
+    listed.delete(series)
+  }
+  if (listed.size === 0) {
+    expireCookie(SYNC_PENDING_COOKIE)
+  } else {
+    writeCookie(SYNC_PENDING_COOKIE, [...listed].join(','))
+  }
+}

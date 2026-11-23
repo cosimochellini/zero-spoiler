@@ -402,10 +402,15 @@ bookmark cookie the response sets (a shared link's) to the record. Server
 functions and assets pass untouched. A synced device's save is pushed before the
 pages are re-read (`BookmarkProvider`). Every page carries only the cookie check
 (`src/lib/progress/synced.ts`); the endpoint client, the panel, the QR encoder
-and the copy (`src/i18n/dictionaries/sync.ts`) load in lazy chunks. Every value
-is checked with `parseBookmark` on the way in and out, and a store that fails is
-skipped. All of it talks to `SyncStore` (`src/server/sync/store.ts`); `kv.ts` is
-the only module that knows the store is KV.
+and the copy (`src/i18n/dictionaries/sync.ts`) load in lazy chunks. A series
+cleared on one device is kept as an empty value, so the others drop that cookie
+on their next load; a joining device fills it with its own. A save is listed in
+the session cookie `zs_sync_pending` before its push and comes off only once the
+record has it: a full load that finds a listed series writes this device's value
+to the record instead of reading the record's over it. Every value is checked
+with `parseBookmark` on the way in and out, and a store that fails is skipped.
+All of it talks to `SyncStore` (`src/server/sync/store.ts`); `kv.ts` is the only
+module that knows the store is KV.
 
 ## Social pictures
 
