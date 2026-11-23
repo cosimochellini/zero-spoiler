@@ -6,16 +6,17 @@ import { LoadFailed } from '~/components/BookmarkSkeleton'
 import { syncStyles as styles } from '~/components/SyncDevices.styles'
 import { Button } from '~/components/ui/Button'
 import { useLocale, useT } from '~/i18n/LocaleContext'
+import type { Locale } from '~/i18n/locales'
 import { askSync, disconnectSync, isSyncId } from '~/lib/progress/sync'
 
 /** The quiet zone a scanner needs around the code, in modules. */
 const QUIET_ZONE = 4
 
-type Panel =
-  | { kind: 'closed' }
-  | { kind: 'failed' }
-  | { kind: 'loading' }
-  | { code: QrCodeGenerateResult; kind: 'ready'; url: string }
+/** The link that ties another device to this one's record, and its code. */
+interface SyncLink {
+  code: QrCodeGenerateResult
+  url: string
+}
 
 /**
  * "More devices?" under the bookmark form (#1560). Opening it ties this
@@ -27,43 +28,22 @@ export function SyncDevices(): ReactElement {
   const t = useT()
   const { locale } = useLocale()
   const detailsRef = useRef<HTMLDetailsElement>(null)
-  const [panel, setPanel] = useState<Panel>({ kind: 'closed' })
-  const [copied, setCopied] = useState<'copied' | 'failed' | null>(null)
+  const [panel, setPanel] = useState<
+    'closed' | 'failed' | 'loading' | SyncLink
+  >('closed')
 
   const load = async (): Promise<void> => {
-    setPanel({ kind: 'loading' })
+    setPanel('loading')
     try {
-      const [answer, qr] = await Promise.all([
-        askSync({ op: 'create' }),
-        import('uqr'),
-      ])
-      const id: unknown =
-        typeof answer === 'object' && answer !== null ?
-          Reflect.get(answer, 'id')
-        : null
-      if (!isSyncId(id)) {
-        throw new TypeError('the sync endpoint gave no id')
-      }
-      const url = `${window.location.origin}/${locale}/sync#${id}`
-      setPanel({ code: qr.encode(url, { border: 0 }), kind: 'ready', url })
+      setPanel(await linkFor(locale))
     } catch {
-      setPanel({ kind: 'failed' })
-    }
-  }
-
-  const copy = async (url: string): Promise<void> => {
-    try {
-      await navigator.clipboard.writeText(url)
-      setCopied('copied')
-    } catch {
-      setCopied('failed')
+      setPanel('failed')
     }
   }
 
   const disconnect = (): void => {
     disconnectSync()
-    setPanel({ kind: 'closed' })
-    setCopied(null)
+    setPanel('closed')
     if (detailsRef.current !== null) {
       detailsRef.current.open = false
     }
@@ -72,7 +52,7 @@ export function SyncDevices(): ReactElement {
   return (
     <details
       onToggle={(event) => {
-        if (event.currentTarget.open && panel.kind === 'closed') {
+        if (panel === 'closed' && event.currentTarget.open) {
           void load()
         }
       }}
@@ -81,7 +61,7 @@ export function SyncDevices(): ReactElement {
     >
       <summary {...stylex.props(styles.summary)}>{t('dialog.devices')}</summary>
       <div {...stylex.props(styles.panel)}>
-        {panel.kind === 'loading' && (
+        {panel === 'loading' && (
           <p
             role="status"
             {...stylex.props(styles.text)}
@@ -89,7 +69,7 @@ export function SyncDevices(): ReactElement {
             {t('dialog.loading')}
           </p>
         )}
-        {panel.kind === 'failed' && (
+        {panel === 'failed' && (
           <LoadFailed
             onRetry={() => {
               void load()
@@ -97,42 +77,87 @@ export function SyncDevices(): ReactElement {
             t={t}
           />
         )}
-        {panel.kind === 'ready' && (
-          <>
-            <p {...stylex.props(styles.text)}>{t('dialog.devicesHelp')}</p>
-            <QrCode
-              code={panel.code}
-              label={t('dialog.devicesCode')}
-            />
-            <p {...stylex.props(styles.text, styles.warning)}>
-              {t('dialog.devicesWarning')}
-            </p>
-            <div {...stylex.props(styles.actions)}>
-              <Button
-                onClick={() => {
-                  void copy(panel.url)
-                }}
-              >
-                {t('dialog.devicesCopy')}
-              </Button>
-              <Button
-                onClick={disconnect}
-                sx={styles.disconnect}
-              >
-                {t('dialog.devicesDisconnect')}
-              </Button>
-            </div>
-            <p
-              aria-live="polite"
-              {...stylex.props(styles.text)}
-            >
-              {copied === 'copied' && t('dialog.devicesCopied')}
-              {copied === 'failed' && t('dialog.devicesCopyFailed')}
-            </p>
-          </>
+        {typeof panel === 'object' && (
+          <SyncLinkPanel
+            link={panel}
+            onDisconnect={disconnect}
+          />
         )}
       </div>
     </details>
+  )
+}
+
+/** Asks for this device's record and encodes the link to it. */
+async function linkFor(locale: Locale): Promise<SyncLink> {
+  const [answer, qr] = await Promise.all([
+    askSync({ op: 'create' }),
+    import('uqr'),
+  ])
+  const id: unknown =
+    typeof answer === 'object' && answer !== null ?
+      Reflect.get(answer, 'id')
+    : null
+  if (!isSyncId(id)) {
+    throw new TypeError('the sync endpoint gave no id')
+  }
+  const url = `${globalThis.location.origin}/${locale}/sync#${id}`
+  return { code: qr.encode(url, { border: 0 }), url }
+}
+
+/** The code, the warning that comes with it, and the two actions. */
+function SyncLinkPanel({
+  link,
+  onDisconnect,
+}: {
+  link: SyncLink
+  onDisconnect: () => void
+}): ReactElement {
+  const t = useT()
+  const [copied, setCopied] = useState<'copied' | 'failed' | null>(null)
+
+  const copy = async (): Promise<void> => {
+    try {
+      await navigator.clipboard.writeText(link.url)
+      setCopied('copied')
+    } catch {
+      setCopied('failed')
+    }
+  }
+
+  return (
+    <>
+      <p {...stylex.props(styles.text)}>{t('dialog.devicesHelp')}</p>
+      <QrCode
+        code={link.code}
+        label={t('dialog.devicesCode')}
+      />
+      <p {...stylex.props(styles.text, styles.warning)}>
+        {t('dialog.devicesWarning')}
+      </p>
+      <div {...stylex.props(styles.actions)}>
+        <Button
+          onClick={() => {
+            void copy()
+          }}
+        >
+          {t('dialog.devicesCopy')}
+        </Button>
+        <Button
+          onClick={onDisconnect}
+          sx={styles.disconnect}
+        >
+          {t('dialog.devicesDisconnect')}
+        </Button>
+      </div>
+      <p
+        aria-live="polite"
+        {...stylex.props(styles.text)}
+      >
+        {copied === 'copied' && t('dialog.devicesCopied')}
+        {copied === 'failed' && t('dialog.devicesCopyFailed')}
+      </p>
+    </>
   )
 }
 
@@ -147,7 +172,7 @@ function QrCode({
   code: QrCodeGenerateResult
   label: string
 }): ReactElement {
-  const side = code.size + 2 * QUIET_ZONE
+  const side = code.size + QUIET_ZONE + QUIET_ZONE
   const modules = code.data
     .flatMap((row, y) =>
       row.map((dark, x) => (dark ? `M${String(x)} ${String(y)}h1v1h-1z` : '')),

@@ -55,11 +55,11 @@ export const syncStyles = stylex.create({
   // Big enough for a camera across a desk, small enough to leave the
   // actions on a phone's screen.
   code: {
-    borderRadius: radius.card,
-    display: 'block',
     shapeRendering: 'crispEdges',
-    width: 'min(14rem, 70vw)',
+    borderRadius: radius.card,
     aspectRatio: '1',
+    display: 'block',
+    width: 'min(14rem, 70vw)',
   },
   // Dark on light, as scanners expect: the inks of the set, inverted.
   ground: { fill: color.ink },

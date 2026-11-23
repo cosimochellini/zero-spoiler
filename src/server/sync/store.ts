@@ -15,10 +15,13 @@ export interface SyncStore {
 export function memorySyncStore(): SyncStore {
   const records = new Map<string, SyncRecord>()
   return {
-    get: async (id) => Promise.resolve(records.get(id) ?? null),
+    get: async (id) => {
+      await Promise.resolve()
+      return records.get(id) ?? null
+    },
     set: async (id, record) => {
+      await Promise.resolve()
       records.set(id, { ...record })
-      return Promise.resolve()
     },
   }
 }

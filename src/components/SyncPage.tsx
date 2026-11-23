@@ -7,7 +7,7 @@ import { LoadFailed } from '~/components/BookmarkSkeleton'
 import { Button } from '~/components/ui/Button'
 import { useLocale, useT } from '~/i18n/LocaleContext'
 import type { Locale } from '~/i18n/locales'
-import type { Translate } from '~/i18n/translate'
+import type { Translate } from '~/i18n/types'
 import { parseCookieHeader } from '~/lib/cookies'
 import { parseBookmark, serialiseBookmark } from '~/lib/progress/episode'
 import type { Series } from '~/lib/progress/series'
@@ -22,14 +22,11 @@ import { bookmarkPoint } from '~/lib/progress/threshold'
 import { recordStyles } from '~/routes/$series/$locale/-record.styles'
 import { color, font, leading, space, text } from '~/styles/tokens.stylex'
 
+/** Where the page stands: a notice, a wait, or the link's record. */
 type Step =
-  | { changes: string[]; id: string; kind: 'ready' }
   | { id: string; kind: 'failed' }
-  | { id: string; kind: 'joining' }
-  | { kind: 'already' }
-  | { kind: 'checking' }
-  | { kind: 'incomplete' }
-  | { kind: 'unknown' }
+  | { id: string; kind: 'ready'; record: SyncRecord }
+  | { kind: 'already' | 'checking' | 'incomplete' | 'unknown' }
 
 /**
  * The page a link from "More devices?" opens (#1560). The record's id is in
@@ -46,43 +43,24 @@ export function SyncPage({ series }: { series: Series[] }): ReactElement {
   const check = async (id: string): Promise<void> => {
     setStep({ kind: 'checking' })
     try {
-      const record = answeredRecord(await askSync({ id, op: 'read' }))
-      setStep(
-        record === null ?
-          { kind: 'unknown' }
-        : { changes: changesOf(record, series, t, locale), id, kind: 'ready' },
-      )
+      setStep(readStep(id, await askSync({ id, op: 'read' })))
     } catch {
       setStep({ id, kind: 'failed' })
     }
   }
 
   const join = async (id: string): Promise<void> => {
-    setStep({ id, kind: 'joining' })
+    setStep({ kind: 'checking' })
     try {
-      const record = answeredRecord(await askSync({ id, op: 'join' }))
-      if (record === null) {
-        setStep({ kind: 'unknown' })
-        return
-      }
-      // A full load: the hub reads the cookies the answer has just set.
-      window.location.assign(`/${locale}`)
+      setStep(joinedStep(await askSync({ id, op: 'join' }), locale))
     } catch {
       setStep({ id, kind: 'failed' })
     }
   }
 
   useEffect(() => {
-    const id = window.location.hash.slice(1)
-    if (!isSyncId(id)) {
-      setStep({ kind: 'incomplete' })
-    } else if (readSyncId() === id) {
-      setStep({ kind: 'already' })
-    } else {
-      void check(id)
-    }
+    void arrive(setStep, check)
     // Once, on arrival: the fragment is read when the page opens.
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- check reads only this render's copy and series.
   }, [])
 
   return (
@@ -91,98 +69,122 @@ export function SyncPage({ series }: { series: Series[] }): ReactElement {
       title={t('sync.title')}
     >
       <div {...stylex.props(styles.body)}>
-        <SyncStep
-          onConnect={(id) => {
-            void join(id)
-          }}
-          onRetry={(id) => {
-            void check(id)
-          }}
-          step={step}
-        />
+        {step.kind === 'ready' && (
+          <Connect
+            changes={changesOf(step.record, series, { locale, t })}
+            onConnect={() => {
+              void join(step.id)
+            }}
+          />
+        )}
+        {step.kind === 'failed' && (
+          <LoadFailed
+            onRetry={() => {
+              void check(step.id)
+            }}
+            t={t}
+          />
+        )}
+        {step.kind === 'checking' && (
+          <p
+            role="status"
+            {...stylex.props(styles.text)}
+          >
+            {t('dialog.loading')}
+          </p>
+        )}
+        {(step.kind === 'already'
+          || step.kind === 'incomplete'
+          || step.kind === 'unknown') && <Notice kind={step.kind} />}
       </div>
     </ArchivePage>
   )
 }
 
-function SyncStep({
+/** Reads the fragment once the page is in the browser. */
+async function arrive(
+  setStep: (step: Step) => void,
+  check: (id: string) => Promise<void>,
+): Promise<void> {
+  const id = globalThis.location.hash.slice(1)
+  if (!isSyncId(id)) {
+    setStep({ kind: 'incomplete' })
+  } else if (readSyncId() === id) {
+    setStep({ kind: 'already' })
+  } else {
+    await check(id)
+  }
+}
+
+function readStep(id: string, answer: unknown): Step {
+  const record = answeredRecord(answer)
+  return record === null ? { kind: 'unknown' } : { id, kind: 'ready', record }
+}
+
+/**
+ * After joining, a full load of the hub, which reads the cookies the answer
+ * has just set; the page waits on it.
+ */
+function joinedStep(answer: unknown, locale: Locale): Step {
+  if (answeredRecord(answer) === null) {
+    return { kind: 'unknown' }
+  }
+  globalThis.location.assign(`/${locale}`)
+  return { kind: 'checking' }
+}
+
+/** What connecting changes, and the button that does it. */
+function Connect({
+  changes,
   onConnect,
-  onRetry,
-  step,
 }: {
-  onConnect: (id: string) => void
-  onRetry: (id: string) => void
-  step: Step
+  changes: string[]
+  onConnect: () => void
+}): ReactElement {
+  const t = useT()
+
+  return (
+    <>
+      {changes.length > 0 && (
+        <ul {...stylex.props(styles.changes)}>
+          {changes.map((change) => (
+            <li key={change}>{change}</li>
+          ))}
+        </ul>
+      )}
+      <Button onClick={onConnect}>{t('sync.connect')}</Button>
+    </>
+  )
+}
+
+/** A link that cannot connect this device, and the way out. */
+function Notice({
+  kind,
+}: {
+  kind: 'already' | 'incomplete' | 'unknown'
 }): ReactElement {
   const t = useT()
   const { locale } = useLocale()
 
-  switch (step.kind) {
-    case 'checking':
-    case 'joining': {
-      return (
-        <p
-          role="status"
-          {...stylex.props(styles.text)}
+  return (
+    <>
+      <p
+        role={kind === 'already' ? 'status' : 'alert'}
+        {...stylex.props(styles.text)}
+      >
+        {t(`sync.${kind}`)}
+      </p>
+      <p>
+        <Link
+          params={{ locale }}
+          to="/$locale"
+          {...stylex.props(recordStyles.backLink)}
         >
-          {t('dialog.loading')}
-        </p>
-      )
-    }
-    case 'failed': {
-      return (
-        <LoadFailed
-          onRetry={() => {
-            onRetry(step.id)
-          }}
-          t={t}
-        />
-      )
-    }
-    case 'ready': {
-      return (
-        <>
-          {step.changes.length > 0 && (
-            <ul {...stylex.props(styles.changes)}>
-              {step.changes.map((change) => (
-                <li key={change}>{change}</li>
-              ))}
-            </ul>
-          )}
-          <Button
-            onClick={() => {
-              onConnect(step.id)
-            }}
-          >
-            {t('sync.connect')}
-          </Button>
-        </>
-      )
-    }
-    case 'already':
-    case 'incomplete':
-    case 'unknown': {
-      return (
-        <>
-          <p
-            role={step.kind === 'already' ? 'status' : 'alert'}
-            {...stylex.props(styles.text)}
-          >
-            {t(`sync.${step.kind}`)}
-          </p>
-          <p>
-            <Link
-              params={{ locale }}
-              to="/$locale"
-              {...stylex.props(recordStyles.backLink)}
-            >
-              ← {t('sync.toHub')}
-            </Link>
-          </p>
-        </>
-      )
-    }
-  }
+          ← {t('sync.toHub')}
+        </Link>
+      </p>
+    </>
+  )
 }
 
 /**
@@ -193,24 +195,22 @@ function SyncStep({
 function changesOf(
   record: SyncRecord,
   series: Series[],
-  t: Translate,
-  locale: Locale,
+  { locale, t }: { locale: Locale; t: Translate },
 ): string[] {
   const jar = parseCookieHeader(document.cookie)
   return series.flatMap((one) => {
     const stored = parseBookmark(record[one.slug], one)
-    if (stored === null) {
-      return []
-    }
     const own = parseBookmark(jar.get(one.cookie), one)
-    if (own !== null && serialiseBookmark(own) === serialiseBookmark(stored)) {
+    if (
+      stored === null
+      || (own !== null && serialiseBookmark(own) === serialiseBookmark(stored))
+    ) {
       return []
     }
-    const words = {
+    return t(own === null ? 'sync.add' : 'sync.change', {
       point: bookmarkPoint(t, stored, one.books),
       series: one.name[locale],
-    }
-    return [t(own === null ? 'sync.add' : 'sync.change', words)]
+    })
   })
 }
 
@@ -224,14 +224,14 @@ const styles = stylex.create({
     maxWidth: '52ch',
   },
   changes: {
-    gap: space.xs,
     margin: 0,
-    paddingInlineStart: space.lg,
+    gap: space.xs,
     color: color.ink,
     display: 'grid',
     fontFamily: font.body,
     fontSize: text.base,
     lineHeight: leading.body,
+    paddingInlineStart: space.lg,
     maxWidth: '52ch',
   },
 })

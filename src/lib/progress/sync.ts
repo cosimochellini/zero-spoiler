@@ -8,7 +8,11 @@ import { SYNC_ENDPOINT } from '~/lib/endpoints'
  */
 export const SYNC_COOKIE = 'zs_sync'
 
-const SYNC_ID = /^[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ab][\da-f]{3}-[\da-f]{12}$/u
+/** The one failing status that is an answer: the record is gone. */
+const NOT_FOUND = 404
+
+const SYNC_ID =
+  /^[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ab][\da-f]{3}-[\da-f]{12}$/u
 
 /** Whether a value is a sync id as `crypto.randomUUID()` makes them. */
 export function isSyncId(value: unknown): value is string {
@@ -30,7 +34,7 @@ export function disconnectSync(): void {
 }
 
 /** One bookmark per series slug, each in its cookie's own grammar. */
-export type SyncRecord = Readonly<Partial<Record<string, string>>>
+export type SyncRecord = Partial<Record<string, string>>
 
 /** What the sync endpoint is asked to do; see `src/server/sync/request.ts`. */
 export type SyncRequest =
@@ -47,16 +51,18 @@ export type SyncRequest =
 export async function askSync(body: SyncRequest): Promise<unknown> {
   const response = await fetch(SYNC_ENDPOINT, {
     body: JSON.stringify(body),
-    credentials: 'same-origin',
     headers: { 'Content-Type': 'application/json' },
     // A push may still be in flight when the reader reloads.
     keepalive: body.op === 'push',
     method: 'POST',
   })
-  if (!response.ok && response.status !== 404) {
+  // A 404 is an answer: the record is gone. The body says so.
+  if (!response.ok && response.status !== NOT_FOUND) {
     throw new Error(`sync ${body.op}: ${String(response.status)}`)
   }
-  return response.status === 204 ? null : response.json()
+  const text = await response.text()
+  const json: unknown = text === '' ? null : JSON.parse(text)
+  return json
 }
 
 /**

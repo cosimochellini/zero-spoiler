@@ -96,9 +96,6 @@ function SeriesBookmarkProvider({
       // answer for the bookmark the reader has just left.
       // A saved bookmark, or none, ends a trial either way.
       saveCookie(series, next)
-      // A synced device sends the new cookie to the store (#1560). Awaited
-      // before the pages are re-read, so a full load right after reads it.
-      const pushed = pushBookmark(series.slug)
       // Read before the pages change: the listing on screen still counts
       // what was open at the bookmark the reader is leaving.
       const seen = {
@@ -114,7 +111,8 @@ function SeriesBookmarkProvider({
       startTransition(async () => {
         // Before the await, so it lands in this transition with the records.
         setStored((was) => savedOver(was, next, seen))
-        await pushed
+        // A synced device's record first (#1560): a reload then reads it.
+        await pushBookmark(series.slug)
         await router.invalidate()
       })
     },

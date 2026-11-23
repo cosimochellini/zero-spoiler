@@ -1,7 +1,9 @@
 import { parseBookmark, serialiseBookmark } from '~/lib/progress/episode'
 import type { BookmarkSeries } from '~/lib/progress/series'
-import type { SyncRecord } from '~/lib/progress/sync'
+import { isSyncId, SYNC_COOKIE, type SyncRecord } from '~/lib/progress/sync'
 import { openDescriptions } from '~/server/archive/hub.server'
+
+import type { SyncStore } from './store'
 
 /** A series' bookmark value, `null` when it does not parse (fail closed). */
 function bookmarkValue(
@@ -48,8 +50,7 @@ export function withSeries(
   slug: string,
   value: null | string,
 ): SyncRecord {
-  const { [slug]: _dropped, ...rest } = record
-  return validRecord(value === null ? rest : { ...rest, [slug]: value })
+  return validRecord({ ...record, [slug]: value ?? undefined })
 }
 
 /** Whether two records hold the same bookmarks. */
@@ -64,11 +65,24 @@ export function sameRecord(a: SyncRecord, b: SyncRecord): boolean {
 /** The cookie each stored series' bookmark lives in, with its value. */
 export function cookiesOf(
   record: SyncRecord,
-): { name: string; slug: string; value: string }[] {
+): { name: string; value: string }[] {
   return openDescriptions().flatMap((series) => {
     const value = record[series.slug]
-    return value === undefined ? [] : [
-        { name: series.cookie, slug: series.slug, value },
-      ]
+    return value === undefined ? [] : { name: series.cookie, value }
   })
+}
+
+/** The stored record with its invalid values dropped, or `null`. */
+export async function storedRecord(
+  store: SyncStore,
+  id: string,
+): Promise<null | SyncRecord> {
+  const record = await store.get(id)
+  return record === null ? null : validRecord(record)
+}
+
+/** The sync id a request's cookies hold, or `null`. */
+export function syncIdOf(jar: Map<string, string>): null | string {
+  const id = jar.get(SYNC_COOKIE)
+  return isSyncId(id) ? id : null
 }

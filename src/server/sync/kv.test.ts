@@ -1,8 +1,7 @@
 // @vitest-environment node
 import { readdirSync, readFileSync } from 'node:fs'
 import path from 'node:path'
-
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, type Mock, vi } from 'vitest'
 
 import { COOKIE_MAX_AGE_SECONDS } from '~/lib/cookies'
 
@@ -10,13 +9,18 @@ import { syncStoreFromEnv } from './kv'
 
 const ID = '0f8fad5b-d9cb-469f-a165-70867728950e'
 
+/** A KV namespace that holds `stored` under every key. */
 function namespace(stored: unknown): {
-  get: ReturnType<typeof vi.fn>
-  put: ReturnType<typeof vi.fn>
+  get: Mock<(key: string, type: 'json') => Promise<unknown>>
+  put: Mock<(key: string, value: string, options: object) => Promise<undefined>>
 } {
   return {
-    get: vi.fn(async () => Promise.resolve(stored)),
-    put: vi.fn(async () => Promise.resolve()),
+    get: vi
+      .fn<(key: string, type: 'json') => Promise<unknown>>()
+      .mockResolvedValue(stored),
+    put: vi
+      .fn<(key: string, value: string, options: object) => Promise<undefined>>()
+      .mockResolvedValue(undefined),
   }
 }
 
@@ -27,11 +31,9 @@ describe('the KV store', () => {
 
     await store?.set(ID, { 'one-piece': '1120' })
 
-    expect(kv.put).toHaveBeenCalledWith(
-      `sync:${ID}`,
-      '{"one-piece":"1120"}',
-      { expirationTtl: COOKIE_MAX_AGE_SECONDS },
-    )
+    expect(kv.put).toHaveBeenCalledWith(`sync:${ID}`, '{"one-piece":"1120"}', {
+      expirationTtl: COOKIE_MAX_AGE_SECONDS,
+    })
   })
 
   it('reads a record, keeping only its string values', async () => {
@@ -51,12 +53,13 @@ describe('the KV store', () => {
   )
 
   it('is the only module that knows the store is KV', () => {
-    const src = path.resolve(import.meta.dirname, '../..')
-    const naming = readdirSync(src, { recursive: true, encoding: 'utf8' })
+    const source = path.resolve(import.meta.dirname, '../..')
+    const naming = readdirSync(source, { recursive: true, encoding: 'utf8' })
       .filter((file) => /\.tsx?$/u.test(file) && !/\.test\.tsx?$/u.test(file))
       .filter((file) =>
         /KVNamespace|expirationTtl/u.test(
-          readFileSync(path.join(src, file), 'utf8'),
+          // eslint-disable-next-line security/detect-non-literal-fs-filename -- a file listed in src above.
+          readFileSync(path.join(source, file), 'utf8'),
         ),
       )
 
