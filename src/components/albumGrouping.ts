@@ -1,5 +1,5 @@
 import type { FogTitles } from '~/components/FogBand'
-import type { FoldKeys } from '~/components/fogWords'
+import type { FoldWords } from '~/components/FoldedFog'
 import type { Translate } from '~/i18n/types'
 import { type AlbumView, sagaAnchor } from '~/lib/search/fruitParams'
 import type {
@@ -14,10 +14,12 @@ import type {
  */
 
 /** What a folded grid of fruit fog tiles says under its first row. */
-export const FRUIT_FOLD: FoldKeys<'one-piece'> = {
-  more: 'fruits.foldMore',
-  moreOne: 'fruits.foldMoreOne',
-  open: 'fruits.unfold',
+export function fruitFoldWords(t: Translate<'one-piece'>): FoldWords {
+  return {
+    more: (count) =>
+      count === 1 ? t('fruits.foldMoreOne') : t('fruits.foldMore', { count }),
+    open: t('fruits.unfold'),
+  }
 }
 
 /** What a plate's fog band calls itself at each count. */

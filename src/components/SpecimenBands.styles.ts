@@ -26,7 +26,7 @@ const ONE_COLUMN = 'minmax(0, 1fr)'
 
 /**
  * How many tiles the grid's first row holds on a phone: two across, then
- * three from 37.5rem. A folded fog grid (`FogFold`, `AlbumTile`) keeps that
+ * three from 37.5rem. A folded fog grid (`FoldedFog`, `AlbumTile`) keeps that
  * row, so it reads the same numbers the grid is drawn with.
  */
 export const FIRST_ROW = { narrow: 2, wide: 3 } as const

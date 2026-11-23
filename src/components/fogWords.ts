@@ -1,6 +1,5 @@
 import type { FogTitles } from '~/components/FogBand'
-import type { FoldWords } from '~/components/FogFold'
-import type { SeriesSlug, Translate, TranslationKey } from '~/i18n/types'
+import type { SeriesSlug, Translate } from '~/i18n/types'
 import type { Bookmark } from '~/lib/progress/episode'
 
 /**
@@ -24,24 +23,6 @@ export function fogTitle<S extends SeriesSlug>(
   }
 
   return t(words.many, { count })
-}
-
-/** What a folded grid says under its first row: how many more, the button. */
-export interface FoldKeys<S extends SeriesSlug = never> {
-  more: TranslationKey<S>
-  moreOne: TranslationKey<S>
-  open: TranslationKey<S>
-}
-
-/** What a fold says, in the page's words: how many more, and its button. */
-export function foldWords<S extends SeriesSlug>(
-  t: Translate<S>,
-  keys: FoldKeys<S>,
-): FoldWords {
-  return {
-    more: (count) => (count === 1 ? t(keys.moreOne) : t(keys.more, { count })),
-    open: t(keys.open),
-  }
 }
 
 /**

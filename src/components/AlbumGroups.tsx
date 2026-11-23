@@ -3,12 +3,11 @@ import type { ComponentProps, ReactElement } from 'react'
 import {
   type AlbumGroup,
   type AlbumGrouping,
-  FRUIT_FOLD,
+  fruitFoldWords,
 } from '~/components/albumGrouping'
 import { CatalogueSection } from '~/components/CatalogueSection'
 import { FogBand } from '~/components/FogBand'
-import { FogFold } from '~/components/FogFold'
-import { foldWords } from '~/components/fogWords'
+import { FoldedFog } from '~/components/FoldedFog'
 import { FruitTile, OpenTiles } from '~/components/FruitTile'
 import {
   type EaterMatch,
@@ -125,16 +124,16 @@ export function AlbumGroups({
         t={t}
         words={words}
       >
-        <FogFold
+        <FoldedFog
           count={laterTiles.length}
           id="fold-later"
-          words={foldWords(t, FRUIT_FOLD)}
+          words={fruitFoldWords(t)}
         >
           <CoveredTiles
             peek={peek}
             tiles={laterTiles}
           />
-        </FogFold>
+        </FoldedFog>
       </FogBand>
     </>
   )
@@ -201,10 +200,10 @@ function Group({
       sticky
       title={group.title}
     >
-      <FogFold
+      <FoldedFog
         count={fog.length}
         id={`fold-${group.anchor}`}
-        words={foldWords(t, FRUIT_FOLD)}
+        words={fruitFoldWords(t)}
       >
         <OpenTiles
           matches={matches}
@@ -215,7 +214,7 @@ function Group({
           peek={peek}
           tiles={fog}
         />
-      </FogFold>
+      </FoldedFog>
     </CatalogueSection>
   )
 }

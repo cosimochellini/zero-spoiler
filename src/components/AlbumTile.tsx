@@ -213,7 +213,7 @@ const META_TRACKING = '0.08em'
 
 const styles = stylex.create({
   tile: { gap: space.xs2, alignContent: 'start', display: 'grid', minWidth: 0 },
-  // A covered tile a folded grid (`FogFold`) hides on a phone: the one past
+  // A covered tile a folded grid (`FoldedFog`) hides on a phone: the one past
   // two across, drawn again from 37.5rem where the row holds three, and every
   // one past three, drawn again from 40rem where the wall is whole.
   foldedPastTwo: {

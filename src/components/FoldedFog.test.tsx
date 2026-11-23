@@ -89,7 +89,7 @@ function drawFirstRow(list: HTMLElement): void {
   }
 }
 
-describe('FogFold', () => {
+describe('FoldedFog', () => {
   it('folds a wall of fog to its first row, saying how many are left for two and for three across', () => {
     openAlbum(fog(5))
 
@@ -278,7 +278,7 @@ function expandButton(): HTMLElement | null {
   return within(region('5 under fog')).queryByRole('button', { name: 'Expand' })
 }
 
-describe('FogFold under the router', () => {
+describe('FoldedFog under the router', () => {
   it('stays open through a replacing navigation and on Back, and starts folded on a new visit', async () => {
     const { go } = await onRouter('/fruits')
     await userEvent.click(
@@ -313,9 +313,12 @@ describe('FogFold under the router', () => {
     expect(expandButton()).toBeInTheDocument()
   })
 
-  it('unfolds on an address with a hash without a navigation or a load', async () => {
+  it('unfolds on an address with a hash without a navigation, a load or a history write', async () => {
     const { history, loads, navigations } = await onRouter('/fruits#saga-1')
     const before = { loads: loads(), navigations: navigations() }
+    // The page's own history, which the router in the browser watches.
+    const pushed = vi.spyOn(globalThis.history, 'pushState')
+    const replaced = vi.spyOn(globalThis.history, 'replaceState')
 
     await userEvent.click(
       within(region('5 under fog')).getByRole('button', { name: 'Expand' }),
@@ -324,5 +327,36 @@ describe('FogFold under the router', () => {
     expect(expandButton()).not.toBeInTheDocument()
     expect({ loads: loads(), navigations: navigations() }).toStrictEqual(before)
     expect(history.location.hash).toBe('#saga-1')
+    expect(pushed).not.toHaveBeenCalled()
+    expect(replaced).not.toHaveBeenCalled()
+
+    pushed.mockRestore()
+    replaced.mockRestore()
+  })
+
+  it('is as the reader left it on Back and Forward within the page', async () => {
+    const { go } = await onRouter('/fruits')
+
+    // A pick pushes an entry on the same page, the fold still mounted.
+    await go((history) => {
+      history.push('/fruits?form=paramecia')
+    })
+    await userEvent.click(
+      within(region('5 under fog')).getByRole('button', { name: 'Expand' }),
+    )
+
+    // Back to the entry it was left folded in.
+    await go((history) => {
+      history.back()
+    })
+
+    expect(expandButton()).toBeInTheDocument()
+
+    // Forward to the entry it was opened in.
+    await go((history) => {
+      history.forward()
+    })
+
+    expect(expandButton()).not.toBeInTheDocument()
   })
 })

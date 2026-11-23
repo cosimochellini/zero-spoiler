@@ -1,9 +1,8 @@
 import type { ReactElement } from 'react'
 
-import { FRUIT_FOLD } from '~/components/albumGrouping'
+import { fruitFoldWords } from '~/components/albumGrouping'
 import { CoveredTile, UsedTile } from '~/components/AlbumTile'
-import { FogFold } from '~/components/FogFold'
-import { foldWords } from '~/components/fogWords'
+import { FoldedFog } from '~/components/FoldedFog'
 import {
   type EaterMatch,
   eaterMatch,
@@ -176,10 +175,10 @@ export function PlateFog({
 }): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   return (
-    <FogFold
+    <FoldedFog
       count={band.covered.length}
       id={`fold-${band.form}`}
-      words={foldWords(t, FRUIT_FOLD)}
+      words={fruitFoldWords(t)}
     >
       {band.covered.map((entry, at) => {
         return (
@@ -193,6 +192,6 @@ export function PlateFog({
           />
         )
       })}
-    </FogFold>
+    </FoldedFog>
   )
 }
