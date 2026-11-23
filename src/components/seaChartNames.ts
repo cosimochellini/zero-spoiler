@@ -10,6 +10,7 @@ import {
   sideOf,
 } from '~/components/chartGeometry'
 import { type NameSpot, scalesOf } from '~/components/chartLabels'
+import { tailLine } from '~/components/chartRoute'
 import { openingView } from '~/components/chartView'
 import type { ChartPoint } from '~/lib/view/chart'
 import type { SagaPick, StopView } from '~/lib/view/places'
@@ -296,33 +297,37 @@ function sagaSpotOf(points: Point[], saga: number): Point {
 /** Room left past the sagas' names at the window's top and bottom. */
 const PAST_NAMES = 14
 /**
- * How many dots of the fog tail the chart opens on past the reader's stop:
- * enough to show where the route turns next, and nothing the tail does not
- * already draw, since its dots are spaced by their count alone.
+ * How many dots of the fog tail the chart opens on past the reader's stop.
+ * Nothing the tail does not already draw: its dots are spaced by their count
+ * alone, and its turns are the same for everyone from the same stop.
  */
 const FOG_AHEAD = 3
 /** Half of something: the middle of a length. */
 const HALF = 0.5
 
 /**
- * The window the chart opens on: every open stop of the reader's saga and
- * the first few dots of the fog tail (`tail`, nearest first). In a Blue it
- * centres on them, so the reader's sea fills the window rather than a corner
- * of it (#1380). In the Grand Line it takes in the band, both Calm Belts and
- * the sagas' names past them, the reader's own stop at its middle across and
- * the band's middle at the window's.
+ * The window the chart opens on: every open stop of the reader's saga, the
+ * first few dots of the fog tail and the turn the dashed route takes next,
+ * from `fog.from` (#1380). In a Blue it centres on them, so the reader's sea
+ * fills the window rather than a corner of it. In the Grand Line it takes in
+ * the band, both Calm Belts and the sagas' names past them, the reader's own
+ * stop at its middle across and the band's middle at the window's.
  */
 export function openingOf(
   open: StopView[],
   here: null | StopView,
-  tail: Point[],
+  fog: { from: Point; tail: Point[] },
 ): Rect {
   if (here === null) {
     return openingView([], null)
   }
 
   const at = pointOf(here)
-  const points = [...pointsIn(open, here.saga), ...tail.slice(0, FOG_AHEAD)]
+  const ahead =
+    fog.tail.length === 0 ?
+      []
+    : [...fog.tail.slice(0, FOG_AHEAD), ...tailLine(fog.from).slice(1, -1)]
+  const points = [...pointsIn(open, here.saga), ...ahead]
   if (at.y < BELT_TOP) {
     return openingView(points, middleOf(points))
   }
