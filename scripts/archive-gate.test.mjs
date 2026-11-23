@@ -269,6 +269,22 @@ describe('the prose the gate looks for', { timeout: 30_000 }, () => {
     }
   })
 
+  it('passes over the helpers of the chronicles, which hold no prose', () => {
+    const root = mkdtempSync(path.join(tmpdir(), 'archive-gate-'))
+    const dir = path.join(root, 'src/data/series/helpers/records')
+    mkdirSync(dir, { recursive: true })
+    writeFileSync(
+      path.join(dir, 'chronicle.ts'),
+      'export function inBoth(at, title, body) {\n  return { episode: at[0], chapter: at[1], value: { title, body } }\n}\n',
+    )
+
+    try {
+      expect(proseCanaries(root, 'helpers')).toStrictEqual([])
+    } finally {
+      rmSync(root, { recursive: true })
+    }
+  })
+
   it('reads a canary from every module of One Piece it names', () => {
     const canaries = [
       ...proseCanaries(repositoryRoot, 'one-piece'),

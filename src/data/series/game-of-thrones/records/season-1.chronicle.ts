@@ -536,7 +536,7 @@ export const season1Chronicles = {
       [11, 86],
       { it: 'Lynesse', en: 'Lynesse' },
       {
-        it: 'Jorah dice a [[daenerys-targaryen|Daenerys]] che non vivrà a lungo se non andrà dove nessun altro va, e la segue nel deserto rosso anche se la ferita che gli ha inferto Qotho non è guarita. Nella città morta le porta una pesca e le parla della sua seconda moglie, Lynesse Hightower: l’ha conquistata a un torneo, si è rovinato per accontentarla ed è fuggito con lei a Lys, dove lei lo ha lasciato per un principe mercante. Le dice che Lynesse le somigliava un po’. Daenerys gli cura la ferita finché non comincia a guarire.',
+        it: 'Jorah dice a [[daenerys-targaryen|Daenerys]] che lei non vivrà a lungo se non andrà dove nessun altro va, e la segue nel deserto rosso anche se la ferita che gli ha inferto Qotho non è guarita. Nella città morta le porta una pesca e le parla della sua seconda moglie, Lynesse Hightower: l’ha conquistata a un torneo, si è rovinato per accontentarla ed è fuggito con lei a Lys, dove lei lo ha lasciato per un principe mercante. Le dice che Lynesse le somigliava un po’. Daenerys gli cura la ferita finché non comincia a guarire.',
         en: 'Jorah tells [[daenerys-targaryen|Daenerys]] that she will not live long unless she goes where no one else does, and follows her into the red waste, though the wound Qotho gave him has not healed. In the dead city he brings her a peach and tells her of his second wife, Lynesse Hightower: he won her at a tourney, ruined himself to please her and fled with her to Lys, where she left him for a merchant prince. He tells Daenerys that Lynesse looked a little like her. Daenerys tends his wound until it starts to heal.',
       },
     ),
@@ -954,8 +954,8 @@ export const season1Chronicles = {
       [11, 86],
       { it: 'Uno dei tre cavalieri', en: 'One of three riders' },
       {
-        it: 'Aggo è uno dei dothraki rimasti fedeli a [[daenerys-targaryen|Daenerys]] quando il khalasar di Drogo si disperde, e lei lo nomina suo cavaliere di sangue insieme a [[rakharo|Rakharo]] e [[kovarro|Kovarro]]. Nel Deserto Rosso, con la sua gente alla fame, Daenerys manda i tre in esplorazione con gli ultimi cavalli, Aggo verso sud-est.',
-        en: 'Aggo is one of the Dothraki who stay loyal to [[daenerys-targaryen|Daenerys]] when Drogo’s khalasar breaks apart, and she names him one of her bloodriders, with [[rakharo|Rakharo]] and [[kovarro|Kovarro]]. In the Red Waste, with her people starving, she sends the three of them to scout on the last horses, Aggo to the southeast.',
+        it: 'Aggo è uno dei dothraki rimasti fedeli a [[daenerys-targaryen|Daenerys]] quando il khalasar di Drogo si disperde. Nel Deserto Rosso, con la sua gente alla fame, Daenerys manda lui, [[rakharo|Rakharo]] e [[kovarro|Kovarro]] a esplorare in tre direzioni con gli ultimi cavalli, Aggo verso sud-est.',
+        en: 'Aggo is one of the Dothraki who stay loyal to [[daenerys-targaryen|Daenerys]] when Drogo’s khalasar breaks apart. In the Red Waste, with her people starving, she sends him, [[rakharo|Rakharo]] and [[kovarro|Kovarro]] to scout in three directions on the last horses, Aggo to the southeast.',
       },
     ),
     inBooks(

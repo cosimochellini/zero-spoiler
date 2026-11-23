@@ -166,7 +166,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '11:chapter': {
       source: ACOK_12,
-      note: 'Daenerys I (site 86): the red comet, Jorah’s warning about the other khalasars, the seared meat after Viserys’s words, the dragons named for Rhaegar, Viserys and Drogo, the deaths on the march and Doreah’s death holding her hand, the dead city, Jorah’s story of Lynesse Hightower, her realizing that he loves her, and Jhogo’s return with three strangers from Qarth seeking dragons. The three are left unnamed: none of them opens before chapter 114 in the books.',
+      note: 'Daenerys I (site 86): the red comet, Jorah’s warning about the other khalasars, the seared meat after Viserys’s words, the dragons named for Rhaegar, Viserys and Drogo, the deaths on the march and Doreah’s death holding her hand, the dead city, Jorah’s story of Lynesse Hightower, her realizing that he loves her, and Jhogo’s return with three strangers from Qarth seeking dragons. The three are left unnamed: Xaro and Pyat Pree open in the books at 114 and Quaithe at 86, where she gives her own name.',
     },
     '12:86': {
       source: EPISODE_12,
@@ -180,9 +180,13 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_15,
       note: 'The Qarth synopsis: the dragons breathing fire on command, Xaro’s hospitality and feast, the warlock’s tricks and his invitation, Xaro’s proposal, Jorah’s advice about a single ship and his feelings unanswered; the Daenerys Targaryen page has “dracarys”, Doreah sent to learn about Xaro, the vault and the news of Robert’s death (GOT205). Pyat Pree is the books’ record, so the warlock stays unnamed. Chapter 114, Xaro’s book gate, orders it.',
     },
-    '16:114': {
+    '16:episode': {
       source: EPISODE_16,
       note: 'The Qarth synopsis: the Spice King refusing ships to a queen with no army and no open supporters, the return to Xaro’s mansion with him, the guards dead, Irri strangled and the dragons gone; Doreah missing is on the Daenerys Targaryen page (GOT206).',
+    },
+    '16:chapter': {
+      source: ACOK_40,
+      note: 'Daenerys III (site 114): the Pureborn refuse her, Xaro has no warships and asks her again to marry him, she refuses, the Qartheen wedding gift that cannot be refused, Quaithe’s warning at the bazaar and the firemage’s ladder of fire, Jorah urging her toward Pyat Pree, and Xaro’s warning against the warlocks.',
     },
     '17:114': {
       source: EPISODE_17,
@@ -568,7 +572,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '11:episode': {
       source: EPISODE_11,
-      note: 'Aggo (The North Remembers) page: loyal when Drogo’s khalasar fractures, named a bloodrider with Rakharo and Kovarro, and sent southeast on the last horses (GOT201).',
+      note: 'Aggo (The North Remembers) page: loyal when Drogo’s khalasar fractures, named a bloodrider with Rakharo and Kovarro, and sent southeast on the last horses (GOT201). The story leaves the bloodrider title out: his role stays the guard until 12, the pin of the Essos test.',
     },
     '11:chapter': {
       source: ACOK_12,
@@ -594,7 +598,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '11:86': {
       source: ACOK_12,
-      note: 'Daenerys I (site 86): the scouting of the dead city, the ride out with three horses, his return last and long after, with three strangers from Qarth seeking dragons. The three are left unnamed: they open in the books at 114.',
+      note: 'Daenerys I (site 86): the scouting of the dead city, the ride out with three horses, his return last and long after, with three strangers from Qarth seeking dragons. The three are left unnamed: Xaro and Pyat Pree open in the books at 114 and Quaithe at 86.',
     },
     '20:122': {
       source: ACOK_48,
