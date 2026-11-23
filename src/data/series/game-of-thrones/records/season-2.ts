@@ -261,7 +261,8 @@ export const season2: ThronesSaga = {
         it: 'La moglie di Stannis Baratheon.',
         en: 'Stannis Baratheon’s wife.',
       },
-      visual: { art: 'selyse-baratheon', tint: 'wine' },
+      // Not wine: her drawing's accent, the jars, is not red (#1471).
+      visual: { art: 'selyse-baratheon', tint: 'azure' },
     },
     // Books: the prologue (site chapter 74), Pylos tells Cressen that
     // Princess Shireen wants to see the white raven. The show first has her
@@ -1266,7 +1267,13 @@ export const season2: ThronesSaga = {
         it: 'Da Roccia del Drago rivendica il Trono di Spade come erede di Robert, ma pochi lord si schierano con lui. La sacerdotessa rossa Melisandre ha la sua fiducia.',
         en: 'From Dragonstone he claims the Iron Throne as Robert’s heir, but few lords stand with him. The red priestess Melisandre has his ear.',
       },
-      status: [{ episode: 11, chapter: 74, value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 74, value: 'alive' },
+        // The show alone: Brienne executes him after the battle at
+        // Winterfell in "Mother's Mercy" (episode 50); the books leave him
+        // alive, so chapter 344, the last, only orders it (#1471, #1238).
+        { episode: 50, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 11,
@@ -1281,7 +1288,13 @@ export const season2: ThronesSaga = {
         it: 'Viene dall’oriente e serve il Signore della Luce. A Roccia del Drago si è guadagnata un posto accanto a Stannis Baratheon.',
         en: 'She comes from the east and serves the Lord of Light. On Dragonstone she has won a place at Stannis Baratheon’s side.',
       },
-      status: [{ episode: 11, chapter: 74, value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 74, value: 'alive' },
+        // The show alone: she takes off her choker outside Winterfell and
+        // dies before dawn in "The Long Night" (episode 71); the books leave
+        // her alive, so chapter 344 only orders it (#1471).
+        { episode: 71, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 11,
@@ -1395,7 +1408,12 @@ export const season2: ThronesSaga = {
         it: 'È una fervente seguace del Signore della Luce.',
         en: 'She is a fervent follower of the Lord of Light.',
       },
-      status: [{ episode: 25, chapter: 74, value: 'alive' }],
+      status: [
+        { episode: 25, chapter: 74, value: 'alive' },
+        // The show alone: she hangs herself in "Mother's Mercy" (episode 50); the books leave her alive, so chapter
+        // 344 only orders it (#1471).
+        { episode: 50, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 25,
@@ -1413,7 +1431,13 @@ export const season2: ThronesSaga = {
         it: 'Il morbo grigio le ha segnato il viso quando era piccola. Vive a Roccia del Drago.',
         en: 'Greyscale scarred her face when she was small. She lives on Dragonstone.',
       },
-      status: [{ episode: 25, chapter: 74, value: 'alive' }],
+      status: [
+        { episode: 25, chapter: 74, value: 'alive' },
+        // The show alone: she is burned as an offering in "The Dance of Dragons"
+        // (episode 49); the books leave her alive, so chapter
+        // 344 only orders it (#1471).
+        { episode: 49, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 25,
@@ -1499,7 +1523,13 @@ export const season2: ThronesSaga = {
         it: 'È la giovane moglie di re Renly, e il loro matrimonio lega Casa Tyrell alla sua causa. Renly la presenta a Catelyn Stark.',
         en: 'She is King Renly’s young wife, and their marriage binds House Tyrell to his cause. Renly introduces her to Catelyn Stark.',
       },
-      status: [{ episode: 13, chapter: 96, value: 'alive' }],
+      status: [
+        { episode: 13, chapter: 96, value: 'alive' },
+        // The show alone: she dies in the wildfire under the Great Sept in
+        // "The Winds of Winter" (episode 60); the books leave her alive, so
+        // chapter 344 only orders it (#1471).
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 13,
@@ -1514,7 +1544,13 @@ export const season2: ThronesSaga = {
         it: 'È il padre di Margaery e Loras Tyrell, e ha portato la sua casata dalla parte di re Joffrey.',
         en: 'He is the father of Margaery and Loras Tyrell, and has brought his house over to King Joffrey’s side.',
       },
-      status: [{ episode: 32, chapter: 139, value: 'alive' }],
+      status: [
+        { episode: 32, chapter: 139, value: 'alive' },
+        // The show alone: he dies in the wildfire under the Great Sept in
+        // "The Winds of Winter" (episode 60); the books leave him alive, so
+        // chapter 344 only orders it (#1471).
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 32,

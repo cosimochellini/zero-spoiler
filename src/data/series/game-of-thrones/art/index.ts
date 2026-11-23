@@ -13,6 +13,7 @@ import { NORTH_DRAWINGS, northRedrawn } from './north'
 import { PLACE_DRAWINGS, placesRedrawn } from './places'
 import { RIVERLANDS_DRAWINGS, riverlandsRedrawn } from './riverlands'
 import { SOUTH_DRAWINGS, southRedrawn } from './south'
+import { REFORGED, STORMLANDS_DRAWINGS, stormlandsRedrawn } from './stormlands'
 import { VALE_DRAWINGS, valeRedrawn } from './vale'
 import { WALL_DRAWINGS, wallRedrawn } from './wall'
 import { WINTERFELL_DRAWINGS, winterfellRedrawn } from './winterfell'
@@ -43,26 +44,6 @@ const ICE: Stroke[] = [
  * with in episode 1 and in Bran I (chapter 2).
  */
 const ICE_STANDING: Stroke[] = [...ICE, shadow(80, 153, 24)]
-
-/**
- * One of the two shorter swords Ice is forged into, lying flat: the
- * pommel, the wrapped grip, the crossguard and the blade, the ripple down
- * its near face in the accent and its far face hatched. Eddard's stage
- * after Ice is melted lays two of them side by side.
- */
-const REFORGED: Stroke[] = [
-  { d: circle(30, 0, 4) },
-  { d: 'M34 -3 H50 V3 H34 Z' },
-  { d: 'M38 -3 L41 3 M43 -3 L46 3', role: 'soft' },
-  { d: 'M50 -11 H55 V11 H50 Z' },
-  { d: 'M55 -5 H118 L130 0 L118 5 H55' },
-  { d: 'M57 0 H126', role: 'soft' },
-  { d: 'M60 -3 q4 2 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0', role: 'accent' },
-  {
-    d: 'M64 2 l3 3 M76 2 l3 3 M88 2 l3 3 M100 2 l3 3 M112 2 l3 3',
-    role: 'ambient',
-  },
-]
 
 /**
  * Jon Snow: the albino runt of the direwolf litter, sitting, side on and
@@ -196,10 +177,11 @@ const PERSON: Stroke[] = [
  * in `vale.ts` (#1055), the King's Landing cast's in `court.ts` (#1056) and
  * the Riverlands cast's in `riverlands.ts` (#1057), with the four leads
  * drawn for the launch here (owner, #856). Every season-1 character has its
- * own drawing; the season-2 King's Landing cast (#1463), stormlands
- * cast (#1464), Riverlands and Harrenhal cast (#1465), Winterfell and
- * Iron Islands cast (#1466), Wall cast (#1467) and Essos cast (#1468) show
- * `PERSON` until their drawing children draw them. `satisfies`
+ * own drawing, and so has the season-2 stormlands cast, in `stormlands.ts`
+ * (#1471); the season-2 King's Landing cast (#1463), Riverlands and
+ * Harrenhal cast (#1465), Winterfell and Iron Islands cast (#1466), Wall
+ * cast (#1467) and Essos cast (#1468) show `PERSON` until their drawing
+ * children draw them. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -212,6 +194,7 @@ export const DRAWINGS = {
   ...VALE_DRAWINGS,
   ...COURT_DRAWINGS,
   ...RIVERLANDS_DRAWINGS,
+  ...STORMLANDS_DRAWINGS,
   'eddard-stark': ICE_STANDING,
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
@@ -223,19 +206,6 @@ export const DRAWINGS = {
   'osmund-kettleblack': PERSON,
   'alayaya': PERSON,
   'garlan-tyrell': PERSON,
-  // #1464, Stannis, Renly and the stormlands.
-  'stannis-baratheon': PERSON,
-  'melisandre': PERSON,
-  'davos-seaworth': PERSON,
-  'cressen': PERSON,
-  'matthos-seaworth': PERSON,
-  'salladhor-saan': PERSON,
-  'selyse-baratheon': PERSON,
-  'shireen-baratheon': PERSON,
-  'brienne-of-tarth': PERSON,
-  'margaery-tyrell': PERSON,
-  'mace-tyrell': PERSON,
-  'cortnay-penrose': PERSON,
   // #1465, Robb's war, the Riverlands and Harrenhal.
   'alton-lannister': PERSON,
   'cleos-frey': PERSON,
@@ -295,10 +265,11 @@ export type ArtId = keyof typeof DRAWINGS
  * from `winterfell.ts`, the southern cast's from `south.ts`, the Night's
  * Watch's from `wall.ts`, the Essos cast's from `essos.ts`, the northern
  * household's from `north.ts`, the Vale cast's from `vale.ts`, the King's
- * Landing cast's from `court.ts` and the Riverlands cast's from
- * `riverlands.ts`. Eddard Stark is beheaded with Ice in "Baelor" (episode 9)
- * and in Arya V (chapter 66): from there the blade lies flat on the ground,
- * with nobody to hold it.
+ * Landing cast's from `court.ts`, the Riverlands cast's from
+ * `riverlands.ts` and the stormlands cast's from `stormlands.ts`. Eddard
+ * Stark is beheaded with Ice in "Baelor" (episode 9) and in Arya V
+ * (chapter 66): from there the blade lies flat on the ground, with nobody
+ * to hold it.
  */
 export const REDRAWINGS: Redrawings = {
   ...winterfellRedrawn,
@@ -309,6 +280,7 @@ export const REDRAWINGS: Redrawings = {
   ...valeRedrawn,
   ...courtRedrawn,
   ...riverlandsRedrawn,
+  ...stormlandsRedrawn,
   ...placesRedrawn,
   'eddard-stark': [
     {

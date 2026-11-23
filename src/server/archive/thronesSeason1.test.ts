@@ -1638,7 +1638,9 @@ const STAGES: {
     stage: 1,
   },
   { id: 'tommen-baratheon', episode: 60, chapter: 344, source: 'episode' },
-  { id: 'renly-baratheon', episode: 15, chapter: 107 },
+  // Renly's crown, stage 2 (#1471).
+  { id: 'renly-baratheon', episode: 13, chapter: 96 },
+  { id: 'renly-baratheon', episode: 15, chapter: 107, stage: 1 },
   { id: 'lysa-arryn', episode: 37, chapter: 224 },
   { id: 'bronn', episode: 41, chapter: 242, source: 'chapter' },
   { id: 'bronn', episode: 73, chapter: 344, source: 'episode', stage: 1 },

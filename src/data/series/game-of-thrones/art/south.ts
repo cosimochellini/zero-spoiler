@@ -294,6 +294,19 @@ const FOLDED_CLOAK: Stroke[] = [
 ]
 
 /**
+ * Renly's crown at the origin, a gold band in 3/4 with its far rim
+ * lighter and golden antlers rising from it, as both media give it.
+ */
+const ANTLER_CROWN: Stroke[] = [
+  { d: 'M-18 -4 Q0 2 18 -4 V2 Q0 8 -18 2 Z' },
+  { d: 'M-18 -4 Q0 -10 18 -4', role: 'soft' },
+  {
+    d: 'M-10 -6 Q-14 -14 -12 -24 M-12 -16 L-18 -20 M-13 -21 L-8 -26 M10 -6 Q14 -14 12 -24 M12 -16 L18 -20 M13 -21 L8 -26',
+  },
+  { d: 'M0 -7 V-14', role: 'soft' },
+]
+
+/**
  * Lysa Arryn: a falcon, the animal of her house, perched side on with its
  * wings folded and no eye. Nothing of her own reads at her threshold in
  * both media, so the animal stands in. The accent is one wing feather.
@@ -1057,6 +1070,20 @@ export const southRedrawn: Redrawings = {
     },
   ],
   'renly-baratheon': [
+    // The crown of golden antlers set on the rail above the cloak: Renly is
+    // a crowned king when Catelyn finds his camp, in "What Is Dead May Never
+    // Die" (episode 13) and in Catelyn II of A Clash of Kings (chapter 96),
+    // where the book's crown is a ring of gold roses with a jade stag's
+    // head and golden antlers at its front (a crown is a costume, owner,
+    // 2026-11-15).
+    {
+      episode: 13,
+      chapter: 96,
+      value: [
+        ...FOLDED_CLOAK,
+        ...moved(ANTLER_CROWN, 'translate(79 24) scale(0.8)'),
+      ],
+    },
     // The cloak in a heap on the floor and the clasp come away, lying far
     // from it: he dies in his tent, in "The Ghost of Harrenhal" (episode 15)
     // and in Catelyn IV of A Clash of Kings (chapter 107).
