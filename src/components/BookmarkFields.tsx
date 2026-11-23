@@ -34,16 +34,18 @@ const ERROR_KEY: Record<DraftProblem, TranslationKey> = {
   season: 'dialog.errorSeason',
 }
 
-/** The draft, and the one way the two unit controls are allowed to change it. */
+/** The draft, and the two ways the unit controls change it. */
 export interface UnitFieldsProps {
   draft: Draft
+  /** A season or book within the unit: the number in it starts empty. */
+  onGroup: (group: string) => void
   /**
-   * Called with the draft to begin again from. Choosing a unit, or a season
-   * within it, starts the draft over rather than converting what is in it: an
-   * episode is not a chapter, and a number carried across would be a guess
+   * Another unit. Each unit keeps its own draft (`useBookmarkDraft`), so the
+   * reader finds what it held; only episode and season are converted, because
+   * an episode is not a chapter and a number carried across would be a guess
    * dressed as a fact.
    */
-  onRestart: (next: Draft) => void
+  onMode: (mode: BookmarkMode) => void
 }
 
 /**
@@ -54,27 +56,23 @@ export interface UnitFieldsProps {
  */
 export function UnitFields({
   draft,
-  onRestart,
+  onGroup,
+  onMode,
 }: UnitFieldsProps): ReactElement {
   const t = useT()
   const series = useBookmarkSeries()
-  const onChoose = (group: string): void => {
-    onRestart({ ...draft, group, number: '' })
-  }
 
   return (
     <>
       <ModeChooser
         mode={draft.mode}
-        onChoose={(mode) => {
-          onRestart({ mode, group: '', number: '' })
-        }}
+        onChoose={onMode}
       />
 
       {draft.mode === 'season' && (
         <GroupPicker
           label="dialog.seasonLabel"
-          onChoose={onChoose}
+          onChoose={onGroup}
           options={series.seasons.map((season) => ({
             number: season.number,
             words: seasonOption(t, season),
@@ -86,7 +84,7 @@ export function UnitFields({
       {draft.mode === 'chapter' && series.books !== undefined && (
         <GroupPicker
           label="dialog.bookLabel"
-          onChoose={onChoose}
+          onChoose={onGroup}
           options={series.books.map((book) => ({
             number: book.number,
             words: bookOption(t, book),

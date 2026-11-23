@@ -6,6 +6,7 @@ import {
   locateEpisode,
   resolveEpisode,
   seasonLength,
+  type SeasonPosition,
 } from './seasons'
 import type { BookmarkSeries } from './series'
 import { type Gated, thresholdIn } from './spoiler'
@@ -293,6 +294,35 @@ function chapterDraft(chapter: number, series: BookmarkSeries): Draft {
   return at === null ?
       { mode: 'chapter', group: '', number: '' }
     : { mode: 'chapter', group: String(at.book), number: String(at.chapter) }
+}
+
+/**
+ * The same point in the other anime unit, the one conversion that is exact:
+ * an episode draft as its season and the episode in it, a season draft as the
+ * absolute episode, both through the season table. An episode the table does
+ * not reach gives an empty season draft rather than a guess. A chapter, or a
+ * draft that is not a bookmark yet, has no twin: `null`, and the other unit
+ * keeps what it held.
+ */
+export function twinDraft(draft: Draft, series: BookmarkSeries): Draft | null {
+  const { bookmark } = gradeDraft(draft, series)
+  switch (bookmark?.mode) {
+    case 'episode': {
+      return seasonTwin(locateEpisode(bookmark.episode, series))
+    }
+    case 'season': {
+      const episode = absoluteEpisodeOf(bookmark, series)
+      return { mode: 'episode', group: '', number: String(episode ?? '') }
+    }
+    default: {
+      return null
+    }
+  }
+}
+
+function seasonTwin(at: null | SeasonPosition): Draft {
+  const [group, number] = at === null ? ['', ''] : [at.season, at.episode]
+  return { mode: 'season', group: String(group), number: String(number) }
 }
 
 /**

@@ -33,8 +33,16 @@ export function BookmarkForm({ onDone }: BookmarkFormProps): ReactElement {
     setBookmark(next)
     onDone()
   }
-  const { canSave, draft, onBlur, onChange, onRestart, onSubmit, problem } =
-    useBookmarkDraft(bookmark, commit)
+  const {
+    canSave,
+    draft,
+    onBlur,
+    onChange,
+    onGroup,
+    onMode,
+    onSubmit,
+    problem,
+  } = useBookmarkDraft(bookmark, commit)
 
   return (
     <form
@@ -44,7 +52,8 @@ export function BookmarkForm({ onDone }: BookmarkFormProps): ReactElement {
     >
       <UnitFields
         draft={draft}
-        onRestart={onRestart}
+        onGroup={onGroup}
+        onMode={onMode}
       />
 
       <NumberField

@@ -256,8 +256,16 @@ function FurtherForm({
   save: (next: NonNullable<Bookmark>) => void
 }): ReactElement {
   const t = useT()
-  const { canSave, draft, onBlur, onChange, onRestart, onSubmit, problem } =
-    useBookmarkDraft(null, save)
+  const {
+    canSave,
+    draft,
+    onBlur,
+    onChange,
+    onGroup,
+    onMode,
+    onSubmit,
+    problem,
+  } = useBookmarkDraft(null, save)
 
   return (
     <form
@@ -267,7 +275,8 @@ function FurtherForm({
     >
       <UnitFields
         draft={draft}
-        onRestart={onRestart}
+        onGroup={onGroup}
+        onMode={onMode}
       />
       <NumberField
         draft={draft}

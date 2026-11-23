@@ -4,7 +4,9 @@ import {
   type Redrawings,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, ellipse, shadow } from '~/lib/svg/primitives'
+import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
+
+import { NEEDLE_SWORD } from './winterfell'
 
 /** One eagle's wing, the crest of the Mallister helm; the helm wears two. */
 const EAGLE_WING: Stroke[] = [
@@ -394,6 +396,268 @@ const TORN_CLOAK: Stroke[] = [
   { d: 'M10 158 H150', role: 'ambient', dashed: true },
 ]
 
+/**
+ * Robb's terms, rolled and tied with a cord, lying on the ground: the near
+ * end shows the roll, the underside is hatched, and the accent is the seal
+ * hanging from the cord.
+ */
+const TERMS: Stroke[] = [
+  { d: `${ellipse(36, 130, 5, 13)} M36 117 H122 M36 143 H122` },
+  { d: 'M122 117 A5 13 0 0 1 122 143' },
+  { d: 'M36 125 Q33 130 36 135 Q38 130 36 127', role: 'soft' },
+  { d: 'M76 117 Q73 130 76 143 M83 117 Q80 130 83 143', role: 'soft' },
+  { d: 'M77 143 L70 154 M82 143 L90 153', role: 'soft' },
+  { d: circle(79.5, 148, 5.5), role: 'accent' },
+  {
+    d: 'M50 137 l4 4 M62 137 l4 4 M98 137 l4 4 M110 137 l4 4',
+    role: 'ambient',
+  },
+]
+/** A pair of iron cuffs standing on their rims, the chain between them. */
+const MANACLES: Stroke[] = [
+  { d: `${ellipse(38, 96, 11, 14)} ${ellipse(122, 92, 11, 14)}` },
+  { d: `${ellipse(38, 96, 6, 9)} ${ellipse(122, 92, 6, 9)}`, role: 'soft' },
+  {
+    d: `${ellipse(55, 98, 5, 2.5)} ${ellipse(64, 99, 2.5, 4.5)} ${ellipse(73, 100, 5, 2.5)} ${ellipse(82, 100, 2.5, 4.5)} ${ellipse(91, 99, 5, 2.5)} ${ellipse(100, 97, 2.5, 4.5)} ${ellipse(108, 95, 5, 2.5)}`,
+    role: 'soft',
+  },
+  {
+    d: 'M45 86 l4 -3 M47 96 l4 -3 M129 82 l4 -3 M131 92 l4 -3',
+    role: 'ambient',
+  },
+]
+/**
+ * Alton Lannister: Robb's peace terms, which Robb sends him to King's
+ * Landing with in "The North Remembers" (episode 11), lying before the
+ * manacles of Robb's prisoner. The show's alone; its Robb has no crown, so
+ * the seal is drawn plain.
+ */
+const TERMS_MANACLES: Stroke[] = [...MANACLES, ...TERMS, shadow(80, 160, 56)]
+
+/**
+ * Cleos Frey: the peace banner on its staff, which Robb's envoy rides under
+ * to King's Landing and back, told in Tyrion V of A Clash of Kings
+ * (chapter 94). The book's alone. The banner is the accent; its far folds
+ * are hatched.
+ */
+const PEACE_BANNER: Stroke[] = [
+  { d: 'M54 34 L57 20 L60 34 Z' },
+  { d: 'M54 34 V150 M60 34 V150' },
+  {
+    d: 'M60 40 Q90 32 124 42 Q118 58 126 72 Q120 86 128 100 Q94 90 60 100',
+    role: 'accent',
+  },
+  { d: 'M84 38 Q80 66 86 94 M104 38 Q98 64 106 96', role: 'soft' },
+  {
+    d: 'M110 48 l5 -3 M110 62 l5 -3 M112 76 l5 -3 M112 90 l5 -3',
+    role: 'ambient',
+  },
+  { d: 'M60 44 l4 -3 M60 58 l4 -3', role: 'ambient' },
+  shadow(58, 154, 22),
+]
+
+/**
+ * A surgeon's saw, the blade narrowing from the grip to the tip, its teeth
+ * in the accent, and the grip with its hand hole and two rivets, the grip's
+ * far side hatched.
+ */
+const BONE_SAW: Stroke[] = [
+  { d: 'M54 66 L136 82 V96 L54 104' },
+  {
+    d: 'M54 104 L56.9 107.7 L59.9 103.4 L62.8 107.1 L65.7 102.9 L68.6 106.6 L71.6 102.3 L74.5 106 L77.4 101.7 L80.4 105.4 L83.3 101.1 L86.2 104.9 L89.1 100.6 L92.1 104.3 L95 100 L97.9 103.7 L100.9 99.4 L103.8 103.1 L106.7 98.9 L109.6 102.6 L112.6 98.3 L115.5 102 L118.4 97.7 L121.4 101.4 L124.3 97.1 L127.2 100.9 L130.1 96.6 L133.1 100.3 L136 96',
+    role: 'accent',
+  },
+  { d: 'M54 62 Q34 58 28 76 Q22 98 36 108 L54 108 Z' },
+  { d: 'M38 74 Q34 88 42 96 Q48 86 46 76 Z', role: 'soft' },
+  {
+    d: `M58 70 V100 ${dots([
+      [50, 72],
+      [50, 98],
+    ])}`,
+    role: 'soft',
+  },
+  { d: 'M32 96 l4 -3 M30 86 l4 -3', role: 'ambient' },
+]
+/** A roll of linen bandage on its side, a loose end run out. */
+const BANDAGE: Stroke[] = [
+  {
+    d: `${ellipse(98, 138, 7, 12)} M98 126 H122 M98 150 H122 A7 12 0 0 0 122 126`,
+  },
+  { d: ellipse(98, 138, 2.5, 4.5), role: 'soft' },
+  { d: 'M112 144 l4 4 M117 140 l4 4', role: 'ambient' },
+]
+/**
+ * Talisa Maegyr: the saw she takes a wounded Lannister soldier's leg off
+ * with after Oxcross, in "Garden of Bones" (episode 14), lying with a roll
+ * of bandage. The show's alone.
+ */
+const SAW_BANDAGE: Stroke[] = [
+  ...moved(BONE_SAW, 'translate(0 22)'),
+  ...BANDAGE,
+  { d: 'M122 150 Q134 153 144 148', role: 'soft' },
+  shadow(82, 156, 58),
+]
+
+/** A heater shield in 3/4, its edge seen on the right and hatched. */
+const HEATER_SHIELD: Stroke[] = [
+  { d: 'M42 42 H110 V86 Q110 126 76 146 Q42 126 42 86 Z' },
+  { d: 'M110 42 L118 46 V88 Q118 130 82 150 L76 146' },
+  {
+    d: 'M113 56 l3 -2 M113 72 l3 -2 M113 88 l3 -2 M111 104 l3 -2 M106 120 l3 -2',
+    role: 'ambient',
+  },
+]
+/**
+ * The manticore of House Lorch walking on a shield, no face: a lion's body
+ * and mane, a bat's wing folded on its back and the scorpion's tail curled
+ * over it, which is the accent.
+ */
+const MANTICORE: Stroke[] = [
+  {
+    d: 'M60 96 Q76 90 92 96 Q100 99 100 108 Q100 116 92 116 H66 Q58 114 56 106',
+  },
+  {
+    d: 'M56 106 Q48 104 48 96 Q48 84 58 82 Q66 82 68 92 Q66 98 60 96 M48 90 q-6 2 -6 8 M52 83 q-2 -7 4 -9 M62 82 q4 -6 10 -3 M48 100 q-4 6 0 10',
+    role: 'soft',
+  },
+  { d: 'M66 116 V132 M73 116 V132 M88 116 V132 M95 114 V130', role: 'soft' },
+  { d: 'M72 94 Q76 80 88 78 Q86 86 90 92', role: 'soft' },
+  {
+    d: 'M100 106 Q116 98 112 74 Q108 56 92 56 Q84 58 86 66 L80 62 M86 66 L84 72',
+    role: 'accent',
+  },
+]
+/**
+ * Amory Lorch: his shield with the manticore on it, which he rides behind
+ * to the holdfast in Arya IV of A Clash of Kings (chapter 88). The show
+ * gives him no arms of his own; the shield is the book's.
+ */
+const MANTICORE_SHIELD: Stroke[] = [
+  ...HEATER_SHIELD,
+  ...MANTICORE,
+  shadow(80, 156, 38),
+]
+
+/** A man-at-arms' sword belt, the buckle in front and the holes along it. */
+const SWORD_BELT: Stroke[] = [
+  { d: 'M10 70 Q80 92 150 70 M10 84 Q80 106 150 84' },
+  { d: 'M62 82 H80 V102 H62 Z M68 92 H80', role: 'soft' },
+  {
+    d: dots([
+      [94, 94],
+      [108, 92],
+      [122, 89],
+    ]),
+    role: 'soft',
+  },
+  { d: 'M20 76 l5 -4 M136 84 l5 -4', role: 'ambient' },
+]
+/** His own sword's scabbard, hanging from a frog on the belt's left. */
+const SCABBARD: Stroke[] = [
+  { d: 'M30 82 L26 100 M40 86 L36 102 M24 100 H40 L34 150 Q32 156 28 150 Z' },
+  { d: 'M30 106 L30 144', role: 'soft' },
+]
+/**
+ * Polliver: his sword belt with Needle thrust through it beside his own
+ * scabbard. He takes it from Arya in "What Is Dead May Never Die" (episode
+ * 13) and in Arya V of A Clash of Kings (chapter 93), and wears it there in
+ * "Garden of Bones" (episode 14). Needle's blade is the accent.
+ */
+const BELT_NEEDLE: Stroke[] = [
+  ...SWORD_BELT,
+  ...SCABBARD,
+  ...moved(NEEDLE_SWORD, 'translate(28 10) rotate(28 84 100)'),
+]
+
+/** A wooden bucket with two iron bands, its far side hatched. */
+const BUCKET: Stroke[] = [
+  { d: `${ellipse(84, 70, 22, 6)} M62 70 L50 140 M106 70 L118 140` },
+  { d: 'M50 140 Q84 152 118 140' },
+  { d: 'M58 94 Q84 102 110 94 M54 120 Q84 130 114 120', role: 'soft' },
+  { d: 'M74 76 L70 146 M94 76 L98 146', role: 'soft' },
+  {
+    d: 'M106 84 l4 -2 M110 104 l4 -2 M112 124 l4 -2 M115 136 l3 -2',
+    role: 'ambient',
+  },
+  { d: 'M50 112 Q36 108 40 96', role: 'soft' },
+]
+/**
+ * The Tickler: the bucket turned over a prisoner's chest with a rat under
+ * it, its tail showing under the rim in the accent, and the torch held to
+ * the wood, as he questions the prisoners at Harrenhal in "Garden of
+ * Bones" (episode 14). The book gives him no bucket; the show is the
+ * reference.
+ */
+const BUCKET_RAT: Stroke[] = [
+  ...BUCKET,
+  { d: 'M110 146 Q120 154 128 148 Q136 142 142 150', role: 'accent' },
+  { d: 'M18 150 L40 104 M22 152 L44 106' },
+  { d: 'M42 104 q-8 -10 0 -24 q2 8 6 4 q6 10 -2 20', role: 'soft' },
+  shadow(84, 156, 48),
+]
+
+/**
+ * Chiswyck: a shield with the three dogs of House Clegane, whose men he
+ * rides with, passant and with no face, as the Mountain's men take Arya in
+ * Arya V of A Clash of Kings (chapter 93). The book's alone. The dogs are
+ * the accent.
+ */
+const DOGS_SHIELD: Stroke[] = [
+  ...HEATER_SHIELD,
+  {
+    d: 'M88 62 Q88 70 84 72 H68 L64 66 H58 L56 69 L62 71 L66 77 H82 M63 66 L65 62 M68 72 L67 81 M72 77 L73 81 M80 77 L79 81 M84 72 L85 81 M88 90 Q88 98 84 100 H68 L64 94 H58 L56 97 L62 99 L66 105 H82 M63 94 L65 90 M68 100 L67 109 M72 105 L73 109 M80 105 L79 109 M84 100 L85 109 M86 116 Q86 124 82 126 H70 L66 120 H60 L58 123 L64 125 L68 131 H80 M65 120 L67 116 M70 126 L69 134 M74 131 L75 134 M78 131 L77 134 M82 126 L83 134',
+    role: 'accent',
+  },
+  { d: 'M46 46 H106 V86 Q106 122 76 140 Q46 122 46 86 Z', role: 'soft' },
+  shadow(80, 156, 38),
+]
+
+/**
+ * Weese: his spotted bitch sitting side on, no face, a collar round her
+ * neck, the bitch he threatens to feed Arya's tongue to in Arya VII of A
+ * Clash of Kings (chapter 104). The book's alone. The spots are the accent.
+ */
+const SPOTTED_BITCH: Stroke[] = [
+  {
+    d: 'M34 74 Q34 66 44 64 Q52 56 62 56 Q72 56 76 66 Q82 80 84 94 Q106 102 112 124 Q116 142 106 150 H66',
+  },
+  { d: 'M34 74 Q38 80 48 80 Q60 82 64 94 L64 146 Q64 150 70 150' },
+  { d: 'M60 58 Q72 60 70 76 Q62 78 60 68', role: 'soft' },
+  { d: 'M76 100 V146 M106 150 Q100 128 88 126', role: 'soft' },
+  { d: 'M110 142 Q126 144 134 150', role: 'soft' },
+  { d: 'M58 86 Q70 92 80 84', role: 'soft' },
+  {
+    d: `${circle(94, 114, 4)} ${circle(100, 132, 3)} ${circle(86, 136, 3)} ${circle(72, 112, 3)}`,
+    role: 'accent',
+  },
+  { d: 'M102 106 l5 -3 M106 118 l5 -3 M108 130 l5 -3', role: 'ambient' },
+  shadow(88, 154, 40),
+]
+
+/** A helm shaped like a goat's head, side on, its back hatched. */
+const GOAT_HELM: Stroke[] = [
+  {
+    d: 'M56 106 V78 Q56 52 80 50 Q100 52 104 74 L118 96 Q120 104 112 106 L104 108 V118 H56 Z',
+  },
+  { d: 'M64 78 Q50 52 26 50 Q40 58 44 72 Q46 80 56 84', role: 'accent' },
+  { d: 'M90 54 Q104 40 122 40 Q110 48 104 62', role: 'soft' },
+  { d: 'M84 76 H102 M112 106 Q112 118 104 124', role: 'soft' },
+  { d: 'M60 112 l5 -3 M70 112 l5 -3 M60 100 l5 -3', role: 'ambient' },
+]
+/** The chain of linked coins from every land he has fought in. */
+const COIN_CHAIN: Stroke[] = [
+  {
+    d: `M44 124 Q80 150 116 124 ${circle(52, 132, 4)} ${circle(64, 138, 4)} ${circle(80, 140, 4)} ${circle(96, 138, 4)} ${circle(108, 132, 4)}`,
+    role: 'soft',
+  },
+]
+/**
+ * Vargo Hoat: his goat's-head helm, the horns in the accent, over the
+ * chain of coins he wears, as Arya sees him come to Harrenhal in Arya VII
+ * of A Clash of Kings (chapter 104). The book's alone.
+ */
+const GOAT_COINS: Stroke[] = [...GOAT_HELM, ...COIN_CHAIN, shadow(80, 154, 44)]
+
 /** The first season's Riverlands and kingsroad cast (#1057), keyed by record id. */
 export const RIVERLANDS_DRAWINGS = {
   'jason-mallister': EAGLE_HELM,
@@ -412,6 +676,16 @@ export const RIVERLANDS_DRAWINGS = {
   'biter': CAGE_CORNER,
   'stiv': DAGGER_LEAVES,
   'wallen': TORN_CLOAK,
+  // The second season's Riverlands, Harrenhal and Robb's war cast (#1472).
+  'alton-lannister': TERMS_MANACLES,
+  'cleos-frey': PEACE_BANNER,
+  'talisa-maegyr': SAW_BANDAGE,
+  'amory-lorch': MANTICORE_SHIELD,
+  'polliver': BELT_NEEDLE,
+  'tickler': BUCKET_RAT,
+  'chiswyck': DOGS_SHIELD,
+  'weese': SPOTTED_BITCH,
+  'vargo-hoat': GOAT_COINS,
 } satisfies Drawings
 
 /** The Riverlands cast drawn again later in the story. */
@@ -602,6 +876,217 @@ export const riverlandsRedrawn: Redrawings = {
           role: 'accent',
         },
         { d: 'M10 158 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'alton-lannister': [
+    // The terms knocked askew and the cuffs fallen flat, empty, the chain
+    // slack between them: Jaime kills him in their cell in "A Man Without
+    // Honor" (episode 17). The show's alone; chapter 113, where the books'
+    // Jaime tries to escape, only orders it.
+    {
+      episode: 17,
+      chapter: 113,
+      source: 'episode',
+      value: [
+        ...moved(TERMS, 'translate(0 -22) rotate(-6 80 130)'),
+        { d: `${ellipse(28, 150, 14, 5)} ${ellipse(132, 150, 14, 5)}` },
+        {
+          d: `${ellipse(28, 150, 8, 2.5)} ${ellipse(132, 150, 8, 2.5)} M42 151 Q62 157 80 154 Q100 151 118 152`,
+          role: 'soft',
+        },
+        { d: 'M8 158 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'cleos-frey': [
+    // The staff down on the ground and the banner fallen across it: outlaws
+    // ambush him on the road to King's Landing and he dies, in Jaime III of
+    // A Storm of Swords (chapter 165). The record is the book's alone;
+    // episode 22, where the show's Jaime and Brienne are taken on the same
+    // road, only orders it.
+    {
+      episode: 22,
+      chapter: 165,
+      source: 'chapter',
+      value: [
+        { d: 'M12 146 L134 128 M13 152 L135 134' },
+        { d: 'M134 128 L148 128 L135 134 Z' },
+        {
+          d: 'M66 139 Q80 150 64 158 Q100 164 140 156 Q124 146 128 130',
+          role: 'accent',
+        },
+        { d: 'M84 136 Q92 148 84 159 M104 133 Q112 146 106 161', role: 'soft' },
+        { d: 'M118 142 l5 -3 M122 152 l5 -3', role: 'ambient' },
+        { d: 'M8 158 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'talisa-maegyr': [
+    // The saw dropped flat and the bandage run out across the ground: she
+    // is killed at the Red Wedding in "The Rains of Castamere" (episode 29).
+    // The show's alone; Catelyn VII of A Storm of Swords (chapter 195), the
+    // books' wedding, only orders it.
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [
+        ...moved(BONE_SAW, 'translate(0 36) rotate(-8 80 90)'),
+        {
+          d: `${ellipse(130, 148, 5, 8)} M130 140 H140 M130 156 H140 A5 8 0 0 0 140 140`,
+        },
+        {
+          d: 'M126 152 Q96 158 66 152 Q42 147 16 152 M16 152 V157 M126 157 Q96 163 66 157 Q42 152 16 157',
+          role: 'soft',
+        },
+        { d: 'M8 162 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'amory-lorch': [
+    // The shield fallen flat on its back, the manticore still on it: he is
+    // thrown to the bear in Harrenhal's pit after the castle falls, in Arya
+    // IX of A Clash of Kings (chapter 121). The show kills him in the
+    // episode that names him, so his show record opens dead and this stage
+    // is the book's; episode 16 only orders it (as Lommy's, #1457).
+    {
+      episode: 16,
+      chapter: 121,
+      source: 'chapter',
+      value: [
+        ...moved(
+          [...HEATER_SHIELD.slice(0, 1), ...MANTICORE],
+          'translate(0 150) scale(1 0.4) translate(0 -140)',
+        ),
+        { d: 'M42 128 V132 Q50 146 76 156 Q102 146 110 132 V128' },
+        { d: 'M100 146 l5 -3 M90 152 l5 -3', role: 'ambient' },
+        { d: 'M8 160 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'polliver': [
+    // The belt fallen on the ground with his own scabbard still on it, and
+    // Needle gone from it: he dies at the inn at the crossroads, where Arya
+    // takes Needle back, in "Two Swords" (episode 31) and in Arya XIII of A
+    // Storm of Swords (chapter 218). The buckle takes the accent.
+    {
+      episode: 31,
+      chapter: 218,
+      value: [
+        {
+          d: 'M10 140 Q50 130 90 136 Q130 142 150 134 M10 148 Q50 138 90 144 Q130 150 150 142',
+        },
+        { d: 'M40 131 H58 V147 H40 Z M46 139 H58', role: 'accent' },
+        {
+          d: dots([
+            [76, 140],
+            [96, 142],
+            [116, 144],
+          ]),
+          role: 'soft',
+        },
+        ...moved(SCABBARD, 'translate(50 4) rotate(-84 32 119)'),
+        { d: 'M24 142 l5 -3 M132 144 l5 -3', role: 'ambient' },
+        { d: 'M6 158 H154', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'tickler': [
+    // The bucket on its side, empty, its mouth to the viewer in the accent,
+    // and the torch out on the ground: Arya kills him at the inn at the
+    // crossroads, in Arya XIII of A Storm of Swords (chapter 218). The show
+    // kills him in the episode that names him, so his show record opens
+    // dead and this stage is the book's; episode 31, the show's inn, only
+    // orders it.
+    {
+      episode: 31,
+      chapter: 218,
+      source: 'chapter',
+      value: [
+        ...moved(
+          [
+            ...BUCKET.slice(0, 1),
+            ...BUCKET.slice(2, 5),
+            { d: ellipse(84, 140, 34, 8), role: 'accent' },
+          ],
+          'translate(8 10) rotate(-90 84 105)',
+        ),
+        {
+          d: 'M10 152 L52 146 M10 157 L52 151 M52 146 Q58 148 52 151',
+          role: 'soft',
+        },
+        { d: 'M6 160 H154', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'chiswyck': [
+    // The shield fallen flat on its back, the dogs still on it: Arya gives
+    // Jaqen his name, and three days later he falls from the wallwalk, in
+    // Arya VII of A Clash of Kings (chapter 104). The record is the book's
+    // alone; episode 15 only orders it.
+    {
+      episode: 15,
+      chapter: 104,
+      source: 'chapter',
+      value: [
+        ...moved(
+          [...HEATER_SHIELD.slice(0, 1), ...DOGS_SHIELD.slice(3, 5)],
+          'translate(0 150) scale(1 0.4) translate(0 -140)',
+        ),
+        { d: 'M42 128 V132 Q50 146 76 156 Q102 146 110 132 V128' },
+        { d: 'M100 146 l5 -3 M90 152 l5 -3', role: 'ambient' },
+        { d: 'M8 160 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'weese': [
+    // The spotted bitch lying on her side, still, the spots still the
+    // accent: Arya gives Jaqen his name, and Weese is found dead with his
+    // own dog on him, in Arya VIII of A Clash of Kings (chapter 112). The
+    // record is the book's alone; episode 16 only orders it. How he dies is
+    // not drawn.
+    {
+      episode: 16,
+      chapter: 112,
+      source: 'chapter',
+      value: [
+        {
+          d: 'M14 146 Q14 138 24 136 L36 134 Q42 126 52 128 Q66 120 92 120 Q120 122 128 138 Q132 150 120 152 H22 Q14 152 14 146',
+        },
+        { d: 'M44 128 Q56 130 54 144 Q46 146 44 136', role: 'soft' },
+        {
+          d: 'M60 152 L52 158 M74 152 L70 159 M112 152 L118 159 M124 148 L134 154',
+          role: 'soft',
+        },
+        { d: 'M128 136 Q140 132 150 140', role: 'soft' },
+        {
+          d: `${circle(80, 134, 4)} ${circle(98, 140, 3)} ${circle(110, 132, 3)} ${circle(66, 142, 3)}`,
+          role: 'accent',
+        },
+        { d: 'M92 146 l5 -3 M104 148 l5 -3 M116 146 l5 -3', role: 'ambient' },
+        { d: 'M8 160 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'vargo-hoat': [
+    // The goat's-head helm down on its side and the chain of coins slack
+    // beside it: Gregor Clegane takes Harrenhal back and kills him slowly,
+    // as Raff and Shitmouth tell Jaime in Jaime III of A Feast for Crows
+    // (chapter 253). The record is the book's alone; episode 38, the
+    // show's duel Gregor leaves Harrenhal for, only orders it. How he dies
+    // is not drawn.
+    {
+      episode: 38,
+      chapter: 253,
+      source: 'chapter',
+      value: [
+        ...moved(GOAT_HELM, 'translate(-12 8) rotate(90 80 100)'),
+        {
+          d: `M10 154 Q30 148 52 154 ${circle(18, 152, 3.5)} ${circle(31, 150, 3.5)} ${circle(44, 151, 3.5)}`,
+          role: 'soft',
+        },
+        { d: 'M8 160 H152', role: 'ambient', dashed: true },
       ],
     },
   ],

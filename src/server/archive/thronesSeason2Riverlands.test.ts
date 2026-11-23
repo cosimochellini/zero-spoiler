@@ -1,13 +1,16 @@
 import { describe, expect, it } from 'vitest'
 
+import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import { season2 } from '~/data/series/game-of-thrones/records/season-2'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
+import { recordIn, sidesOf } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage } from './pages.server'
+import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
@@ -86,6 +89,62 @@ const CHANGES: {
     source: 'episode',
     value: 'deceased',
   },
+  // Later deaths, filed with their drawings' stages (#1472, #1238).
+  {
+    id: 'tickler',
+    episode: 31,
+    chapter: 218,
+    source: 'chapter',
+    value: 'deceased',
+  },
+  {
+    id: 'cleos-frey',
+    episode: 22,
+    chapter: 165,
+    source: 'chapter',
+    value: 'deceased',
+  },
+  {
+    id: 'talisa-maegyr',
+    episode: 29,
+    chapter: 195,
+    source: 'episode',
+    value: 'deceased',
+  },
+  { id: 'polliver', episode: 31, chapter: 218, value: 'deceased' },
+  {
+    id: 'vargo-hoat',
+    episode: 38,
+    chapter: 253,
+    source: 'chapter',
+    value: 'deceased',
+  },
+]
+
+/**
+ * Every stage the group's drawings take after their first, pinned in both
+ * media (#1472): the deaths, each drawn as its object fallen. `source` for
+ * a stage one medium alone tells; `stage` counts a record's stages from 0.
+ * The Tickler's and Amory Lorch's show records open dead, so their stages
+ * are the books'. Arya's costume at Harrenhal is a season-1 record's, in
+ * `thronesSeason1.test.ts`.
+ */
+const STAGES: {
+  chapter: number
+  episode: number
+  id: keyof typeof DRAWINGS
+  source?: 'chapter' | 'episode'
+  stage?: number
+}[] = [
+  { id: 'alton-lannister', episode: 17, chapter: 113, source: 'episode' },
+  { id: 'cleos-frey', episode: 22, chapter: 165, source: 'chapter' },
+  { id: 'talisa-maegyr', episode: 29, chapter: 195, source: 'episode' },
+  { id: 'amory-lorch', episode: 16, chapter: 121, source: 'chapter' },
+  { id: 'polliver', episode: 31, chapter: 218 },
+  { id: 'tickler', episode: 31, chapter: 218, source: 'chapter' },
+  { id: 'chiswyck', episode: 15, chapter: 104, source: 'chapter' },
+  { id: 'weese', episode: 16, chapter: 112, source: 'chapter' },
+  { id: 'vargo-hoat', episode: 38, chapter: 253, source: 'chapter' },
 ]
 
 /**
@@ -279,7 +338,17 @@ describe('the status changes one medium alone tells', () => {
   it.each(CHANGES.filter(({ source }) => source !== undefined))(
     'never makes $id $value for a reader of the other medium',
     ({ id, source = 'episode', value }) => {
-      const last = otherAtTheEnd(source)
+      const other: Unit = source === 'episode' ? 'chapter' : 'episode'
+      // The same change told later by the other medium itself (the
+      // Tickler's death, the show's at his gate and the books' at the inn)
+      // bounds the check to the count before it.
+      const own = CHANGES.find(
+        (change) =>
+          change.id === id && change.value === value && change.source === other,
+      )
+      const bound = other === 'chapter' ? own?.chapter : own?.episode
+      const last =
+        bound === undefined ? otherAtTheEnd(source) : reader(other, bound - 1)
 
       expect(archive.latestOf(last, character(id), 'status')).not.toBe(value)
     },
@@ -317,6 +386,69 @@ describe('the steps one medium alone tells', () => {
       )
 
       expect(page).not.toContain(JSON.stringify(en))
+    },
+  )
+})
+
+describe.each(
+  STAGES.flatMap((stage) =>
+    sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
+  ),
+)(
+  '$id is redrawn by $unit at $episode/$chapter',
+  ({ id, episode, chapter, source, unit, stage: index = 0, ...side }) => {
+    const stages = REDRAWINGS[id] ?? []
+    const stage = stages[index]
+    // The drawing just before is the last earlier stage this unit reads:
+    // a stage the other medium alone tells is never shown here.
+    const previous =
+      stages
+        .slice(0, index)
+        .findLast(
+          (earlier) =>
+            (recordIn(archive, id).source ?? earlier.source ?? unit) === unit,
+        )?.value ?? DRAWINGS[id]
+
+    it('at its pin, not one before', () => {
+      const owner = recordIn(archive, id)
+
+      expect(stage?.episode).toBe(episode)
+      expect(stage?.chapter).toBe(chapter)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? stage?.source).toBe(source)
+      expect(
+        drawingOf(owner, readerFor(archive, side.before, 'en')).strokes,
+      ).toStrictEqual(previous)
+      expect(
+        drawingOf(owner, readerFor(archive, side.reached, 'en')).strokes,
+      ).toStrictEqual(stage?.value)
+    })
+  },
+)
+
+describe('the Riverlands stages one medium alone tells', () => {
+  // A reader of the other medium who has reached its end still sees the
+  // first drawing: no record of the group has a stage that medium tells.
+  // The one-medium records never open to that reader at all, which the
+  // record tests above hold.
+  it.each(
+    STAGES.filter(
+      ({ id, source }) =>
+        source !== undefined && recordIn(archive, id).source === undefined,
+    ),
+  )(
+    'never redraws $id for a reader of the other medium',
+    ({ id, source = 'episode', stage: index = 0 }) => {
+      const drawn = drawingOf(
+        recordIn(archive, id),
+        otherAtTheEnd(source),
+      ).strokes
+
+      expect(
+        recordIn(archive, id).source ?? REDRAWINGS[id]?.[index]?.source,
+      ).toBe(source)
+      expect(drawn).not.toStrictEqual(REDRAWINGS[id]?.[index]?.value)
+      expect(drawn).toStrictEqual(DRAWINGS[id])
     },
   )
 })

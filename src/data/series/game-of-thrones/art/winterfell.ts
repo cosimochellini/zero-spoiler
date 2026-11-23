@@ -120,14 +120,57 @@ const NEEDLE_HILT: Stroke[] = [
   { d: 'M70 56 Q84 52 98 56 M70 56 Q84 60 98 56', role: 'soft' },
 ]
 
-/** Needle whole, hilt and blade, as it stands in her first drawing. */
-const NEEDLE_SWORD: Stroke[] = [
+/**
+ * Needle whole, hilt and blade, as it stands in her first drawing.
+ * Polliver's drawing in `riverlands.ts` thrusts it through his belt.
+ */
+export const NEEDLE_SWORD: Stroke[] = [
   ...NEEDLE_HILT,
   { d: 'M82 58 L84 148 L86 58', role: 'accent' },
   { d: 'M84 62 V140', role: 'soft' },
 ]
 
 const NEEDLE: Stroke[] = [...NEEDLE_SWORD, shadow(84, 153, 16)]
+
+/**
+ * Needle thrust through a man-at-arms' belt, no longer hers: the belt, its
+ * buckle and its holes, with the far side hatched.
+ */
+const NEEDLE_IN_BELT: Stroke[] = [
+  { d: 'M14 96 Q80 116 146 96 M14 110 Q80 130 146 110' },
+  { d: 'M38 100 H56 V122 H38 Z M44 111 H56', role: 'soft' },
+  {
+    d: dots([
+      [72, 112],
+      [92, 112],
+      [112, 110],
+      [130, 104],
+    ]),
+    role: 'soft',
+  },
+  { d: 'M24 108 l6 -4 M126 112 l6 -4', role: 'ambient' },
+  ...moved(NEEDLE_SWORD, 'rotate(34 84 100)'),
+]
+
+/**
+ * A cupbearer's flagon pouring into a cup, the wine in the accent, the
+ * flagon's far side hatched: Arya serving at Harrenhal under a name not
+ * her own.
+ */
+const FLAGON_CUP: Stroke[] = [
+  { d: 'M48 64 H80 L84 72 Q90 110 82 140 H46 Q38 110 44 72 Z' },
+  { d: 'M48 64 Q64 54 80 64 M84 72 L98 66', role: 'soft' },
+  { d: 'M44 82 Q20 90 26 110 Q30 124 44 124' },
+  { d: 'M98 66 Q112 80 112 118', role: 'accent' },
+  {
+    d: 'M72 84 l5 -3 M74 100 l5 -3 M74 116 l5 -3 M72 130 l5 -3',
+    role: 'ambient',
+  },
+  {
+    d: `${ellipse(112, 118, 12, 4)} M100 118 Q102 134 110 136 M124 118 Q122 134 114 136 M110 136 V146 M114 136 V146 M102 150 Q112 144 122 150 Z`,
+  },
+  shadow(80, 154, 50),
+]
 
 /**
  * Bran Stark: the broken tower he climbs, its corner seen in 3/4 with the
@@ -1049,25 +1092,17 @@ export const winterfellRedrawn: Redrawings = {
     // takes it from her when the Lannister men capture her, in "What Is
     // Dead May Never Die" (episode 13) and in Arya V of A Clash of Kings
     // (chapter 93).
-    {
-      episode: 13,
-      chapter: 93,
-      value: [
-        { d: 'M14 96 Q80 116 146 96 M14 110 Q80 130 146 110' },
-        { d: 'M38 100 H56 V122 H38 Z M44 111 H56', role: 'soft' },
-        {
-          d: dots([
-            [72, 112],
-            [92, 112],
-            [112, 110],
-            [130, 104],
-          ]),
-          role: 'soft',
-        },
-        { d: 'M24 108 l6 -4 M126 112 l6 -4', role: 'ambient' },
-        ...moved(NEEDLE_SWORD, 'rotate(34 84 100)'),
-      ],
-    },
+    { episode: 13, chapter: 93, value: NEEDLE_IN_BELT },
+    // The flagon and the cup, a temporary costume: she serves at Harrenhal
+    // under a name not her own, as Tywin's cupbearer from "Garden of Bones"
+    // (episode 14) and, as Weasel, running errands and filling the wine
+    // cups in the Barracks Hall for Weese in Arya VII of A Clash of Kings
+    // (chapter 104).
+    { episode: 14, chapter: 104, value: FLAGON_CUP },
+    // Needle in the belt again, the costume gone: she walks out of
+    // Harrenhal with Gendry and Hot Pie in "The Prince of Winterfell"
+    // (episode 18) and in Arya X of A Clash of Kings (chapter 138).
+    { episode: 18, chapter: 138, value: NEEDLE_IN_BELT },
     // Needle back on its point as in her first drawing: she kills Polliver
     // and takes it back at the inn at the crossroads, in "Two Swords"
     // (episode 31) and in Arya XIII of A Storm of Swords (chapter 218).

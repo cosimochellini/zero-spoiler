@@ -1531,9 +1531,12 @@ const STAGES: {
   { id: 'hodor', episode: 55, chapter: 344, source: 'episode' },
   { id: 'osha', episode: 54, chapter: 344, source: 'episode' },
   { id: 'arya-stark', episode: 13, chapter: 93 },
-  { id: 'arya-stark', episode: 31, chapter: 218, stage: 1 },
-  { id: 'arya-stark', episode: 43, chapter: 248, stage: 2 },
-  { id: 'arya-stark', episode: 56, chapter: 344, source: 'episode', stage: 3 },
+  // Her costume at Harrenhal and its end, stage 2 (#1472).
+  { id: 'arya-stark', episode: 14, chapter: 104, stage: 1 },
+  { id: 'arya-stark', episode: 18, chapter: 138, stage: 2 },
+  { id: 'arya-stark', episode: 31, chapter: 218, stage: 3 },
+  { id: 'arya-stark', episode: 43, chapter: 248, stage: 4 },
+  { id: 'arya-stark', episode: 56, chapter: 344, source: 'episode', stage: 5 },
   // The King's Landing court redrawn from the drawing audit (#1289).
   { id: 'meryn-trant', episode: 50, chapter: 344, source: 'episode' },
   { id: 'mandon-moore', episode: 19, chapter: 141, source: 'chapter' },
@@ -1559,6 +1562,16 @@ const STAGES: {
     stage: 1,
   },
   { id: 'robar-royce', episode: 15, chapter: 110, source: 'chapter' },
+  // Boros Blount's white cloak taken and given back, the books' alone
+  // (#1470).
+  { id: 'boros-blount', episode: 19, chapter: 123, source: 'chapter' },
+  {
+    id: 'boros-blount',
+    episode: 21,
+    chapter: 156,
+    source: 'chapter',
+    stage: 1,
+  },
   // The southern characters redrawn from the drawing audit (#1287).
   { id: 'ros', episode: 20, chapter: 143, source: 'episode' },
   { id: 'ros', episode: 26, chapter: 175, source: 'episode', stage: 1 },
@@ -1642,7 +1655,9 @@ const STAGES: {
     stage: 1,
   },
   { id: 'tommen-baratheon', episode: 60, chapter: 344, source: 'episode' },
-  { id: 'renly-baratheon', episode: 15, chapter: 107 },
+  // Renly's crown, stage 2 (#1471).
+  { id: 'renly-baratheon', episode: 13, chapter: 96 },
+  { id: 'renly-baratheon', episode: 15, chapter: 107, stage: 1 },
   { id: 'lysa-arryn', episode: 37, chapter: 224 },
   { id: 'bronn', episode: 41, chapter: 242, source: 'chapter' },
   { id: 'bronn', episode: 73, chapter: 344, source: 'episode', stage: 1 },
