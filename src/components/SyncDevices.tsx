@@ -2,6 +2,7 @@ import * as stylex from '@stylexjs/stylex'
 import {
   type ReactElement,
   type RefObject,
+  useCallback,
   useEffect,
   useRef,
   useState,
@@ -16,6 +17,7 @@ import { syncTranslator } from '~/i18n/dictionaries/sync'
 import { useLocale, useT } from '~/i18n/LocaleContext'
 import type { Locale } from '~/i18n/locales'
 import { askSync, disconnectSync, isSyncId } from '~/lib/progress/sync'
+import { useLoaded } from '~/lib/useLoaded'
 
 /** The quiet zone a scanner needs around the code, in modules. */
 const QUIET_ZONE = 4
@@ -26,8 +28,8 @@ interface SyncLink {
   url: string
 }
 
-/** Where the asking for the link stands: under way, failed, or answered. */
-type LinkState = 'failed' | 'loading' | SyncLink
+/** What asking for the link came to: the link, or that it could not be had. */
+type LinkAnswer = 'failed' | SyncLink
 
 /**
  * "More devices?" under the bookmark form (#1560). It only asks the dialog to
@@ -78,9 +80,9 @@ export function DevicesView({
   returnFocusTo: RefObject<HTMLButtonElement | null>
   titleId: string
 }): ReactElement {
-  const t = useT()
   const words = syncTranslator(useLocale().locale)
-  const { retry, state } = useSyncLink()
+  // Each press of Retry is a new `LinkLoaded`, which asks for the link again.
+  const [attempt, setAttempt] = useState(0)
   useReturnFocus(returnFocusTo)
 
   return (
@@ -96,29 +98,16 @@ export function DevicesView({
         titleId={titleId}
       />
       <div {...stylex.props(styles.panel)}>
-        {state === 'loading' && (
-          <p
-            role="status"
-            {...stylex.props(styles.text)}
-          >
-            {t('dialog.loading')}
-          </p>
-        )}
-        {state === 'failed' && (
-          <LoadFailed
-            onRetry={retry}
-            t={t}
-          />
-        )}
-        {typeof state === 'object' && (
-          <SyncLinkPanel
-            link={state}
-            onDisconnect={() => {
-              disconnectSync()
-              onDone()
-            }}
-          />
-        )}
+        <LinkLoaded
+          key={attempt}
+          onDisconnect={() => {
+            disconnectSync()
+            onDone()
+          }}
+          onRetry={() => {
+            setAttempt((count) => count + 1)
+          }}
+        />
       </div>
     </div>
   )
@@ -182,40 +171,45 @@ function BackButton({
 }
 
 /**
- * Asks for the link as soon as it is mounted, and again on `retry`. An answer
- * that arrives after the view has gone is dropped.
+ * Asks for the link as soon as it is mounted, and shows a loading line, then
+ * the code, or a way to ask again.
  */
-function useSyncLink(): { retry: () => void; state: LinkState } {
+function LinkLoaded({
+  onDisconnect,
+  onRetry,
+}: {
+  onDisconnect: () => void
+  onRetry: () => void
+}): ReactElement {
+  const t = useT()
   const { locale } = useLocale()
-  const [attempt, setAttempt] = useState(0)
-  const [state, setState] = useState<LinkState>('loading')
+  const ask = useCallback(async () => answerFor(locale), [locale])
+  const answer = useLoaded(ask)
 
-  useEffect(() => {
-    let live = true
-    const load = async (): Promise<void> => {
-      const answer = await answerFor(locale)
-      if (live) {
-        setState(answer)
-      }
-    }
-    void load()
-
-    return () => {
-      live = false
-    }
-  }, [attempt, locale])
-
-  return {
-    retry: () => {
-      setState('loading')
-      setAttempt((count) => count + 1)
-    },
-    state,
+  if (answer === null) {
+    return (
+      <p
+        role="status"
+        {...stylex.props(styles.text)}
+      >
+        {t('dialog.loading')}
+      </p>
+    )
   }
+
+  return answer === 'failed' ?
+      <LoadFailed
+        onRetry={onRetry}
+        t={t}
+      />
+    : <SyncLinkPanel
+        link={answer}
+        onDisconnect={onDisconnect}
+      />
 }
 
 /** The link, or `'failed'` when it could not be made. */
-async function answerFor(locale: Locale): Promise<LinkState> {
+async function answerFor(locale: Locale): Promise<LinkAnswer> {
   try {
     return await linkFor(locale)
   } catch {
