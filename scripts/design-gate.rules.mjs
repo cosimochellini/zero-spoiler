@@ -438,12 +438,20 @@ const CANARY_FINDINGS = [
 ]
 
 /**
- * The page types whose main content the browser builds after hydration, so a
- * saved copy of the server's markup holds little of it: the fruits index
- * renders only its marquee and control bar on the server, and its album
- * plates in the browser (`fruits/-album.ts`, #778).
+ * The index pages whose main content the browser builds after hydration, so
+ * a saved copy of the server's markup holds little of it. A record's own page
+ * is served in full.
+ * - characters: the shelves are asked for once the page has hydrated
+ *   (`CharacterShelves.tsx`, #776);
+ * - places: the index under the map is drawn only in the browser
+ *   (`places/-page.tsx`, #781);
+ * - fruits: the server renders the marquee and the control bar, the browser
+ *   the album plates (`fruits/-album.ts`, #778);
+ * - abilities: the album gains about a third of its markup in the browser
+ *   (measured on Hunter x Hunter at episode 75, 545 elements served, 861
+ *   hydrated; #1545).
  */
-const CLIENT_BUILT = /\/fruits(?:\?|$)/u
+const CLIENT_BUILT = /\/(?:characters|places|fruits|abilities)(?:\?|$)/u
 
 /**
  * @param {string[]} addresses The pages the token scan saved.
@@ -459,8 +467,10 @@ export function clientBuilt(addresses) {
  * hydrates or navigates away from `file://`, and a `<base>` to its address,
  * so its stylesheets and fonts load from the server that rendered it. With no
  * script, React never moves a streamed Suspense section (`<div hidden
- * id="S:0">`, numbered in hex) into its place, and the detector skips a hidden element, so the
- * section is shown where it was streamed, at the end of the body.
+ * id="S:0">`, numbered in hex) into its place, and the detector skips a
+ * hidden element, so the section is shown where it was streamed, at the end
+ * of the body. What a closed `<details>` holds has no box either, so every
+ * `<details>` is saved open.
  * @param {string} html The page as the server sent it.
  * @param {string} address Where it was served.
  * @returns {string} The copy to save.
@@ -469,6 +479,7 @@ export function savedCopy(html, address) {
   return html
     .replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/giu, '')
     .replaceAll(/<div hidden(?= id="S:[\da-f]+")/gu, '<div')
+    .replaceAll(/<details\b/giu, '<details open')
     .replace(/<head\b[^>]*>/iu, (head) => `${head}<base href="${address}">`)
 }
 

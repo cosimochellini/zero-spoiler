@@ -469,10 +469,12 @@ describe('the scan of saved copies against DESIGN.md', () => {
     )
   })
 
-  it('shows a streamed Suspense section that no script will move into place', () => {
+  it('shows a streamed Suspense section and what a closed details holds', () => {
     const html =
       '<html><head></head><body><main><!--$?--><template id="B:0"></template>'
-      + '<!--/$--><div hidden>a closed drawer</div></main>'
+      + '<!--/$--><div hidden>a closed drawer</div>'
+      + '<details class="x1"><p>folded</p></details>'
+      + '<DETAILS><summary>Also</summary></DETAILS></main>'
       + '<div hidden id="S:0"><section><h2 id="relationships">Ties</h2></section></div>'
       + '<div hidden id="S:a"><p>the eleventh</p></div>'
       + '<script>$RC("B:0","S:0")</script></body></html>'
@@ -480,29 +482,37 @@ describe('the scan of saved copies against DESIGN.md', () => {
     expect(savedCopy(html, 'http://127.0.0.1:4000/saga/en')).toBe(
       '<html><head><base href="http://127.0.0.1:4000/saga/en"></head><body><main>'
         + '<!--$?--><template id="B:0"></template><!--/$-->'
-        + '<div hidden>a closed drawer</div></main>'
+        + '<div hidden>a closed drawer</div>'
+        + '<details open class="x1"><p>folded</p></details>'
+        + '<details open><summary>Also</summary></DETAILS></main>'
         + '<div id="S:0"><section><h2 id="relationships">Ties</h2></section></div>'
         + '<div id="S:a"><p>the eleventh</p></div></body></html>',
     )
   })
 
-  it('names the pages whose main content the browser builds', () => {
+  it('names the index pages whose main content the browser builds', () => {
     const origin = 'http://127.0.0.1:4000'
+    const built = [
+      '/saga/en/characters?ep=40',
+      '/saga/en/places?ep=40',
+      '/saga/en/fruits?ep=40',
+      '/saga/en/abilities?ep=40',
+      '/saga/en/fruits',
+    ]
+    const served = [
+      '/saga/en?ep=40',
+      '/saga/en/characters/hero?ep=40',
+      '/saga/en/places/harbour?ep=40',
+      '/saga/en/fruits/gum-gum-fruit?ep=40',
+      '/saga/en/abilities/battle-waltz?ep=40',
+      '/saga/en/filler?ep=40',
+      '/saga/en/ranks?ep=40',
+      '/en/legal',
+    ]
 
     expect(
-      clientBuilt(
-        [
-          '/saga/en?ep=40',
-          '/saga/en/fruits?ep=40',
-          '/saga/en/fruits/gum-gum-fruit?ep=40',
-          '/saga/en/fruits',
-          '/en/legal',
-        ].map((page) => origin + page),
-      ),
-    ).toStrictEqual([
-      `${origin}/saga/en/fruits?ep=40`,
-      `${origin}/saga/en/fruits`,
-    ])
+      clientBuilt([...served, ...built].map((page) => origin + page)),
+    ).toStrictEqual(built.map((page) => origin + page))
   })
 
   const address = 'http://127.0.0.1:4000/en/legal'

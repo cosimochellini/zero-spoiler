@@ -11,8 +11,9 @@
  * (`ai-color-palette`).
  *
  * It checks the markup the server renders, at desktop width. What the browser
- * builds after hydration is outside it, the fruits index's album plates above
- * all, and the gate names those pages in its output.
+ * builds after hydration is outside it, most of the characters, places, fruits
+ * and abilities indexes (`clientBuilt` in `design-gate.rules.mjs`), and the
+ * gate names those pages in its output.
  */
 import { cpSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import os from 'node:os'
