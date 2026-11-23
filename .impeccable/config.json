@@ -56,16 +56,6 @@
         "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: the fruits index draws a card inside a card."
       },
       {
-        "rule": "radial-spotlight-glow",
-        "value": "*",
-        "files": [
-          "http://127.0.0.1:*/*/en?ep=*",
-          "http://127.0.0.1:*/en"
-        ],
-        "createdAt": "2026-11-17T12:52:42.381Z",
-        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: the series cards of the hub and the hero drawing of a bookmarked series home sit under an accent-coloured radial glow."
-      },
-      {
         "rule": "line-length",
         "value": "*",
         "files": [

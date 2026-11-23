@@ -10,8 +10,6 @@ import { settleStyles } from '~/styles/settle'
 import { THEMES } from '~/styles/themes'
 import {
   color,
-  dur,
-  ease,
   font,
   leading,
   radius,
@@ -22,10 +20,10 @@ import {
 
 /**
  * The hub (the "Stage" direction, owner 2026-10-24): the house lights
- * are down, as on every page with no series, and each series is a stage lit
- * by a beam of its own accent. The card wears the series' whole theme, so
- * One Piece's stage is its night blue and gold inside the black page. A
- * series still to come is a dark stage: fog and its name, nothing else.
+ * are down, as on every page with no series, and each series is a stage in
+ * its own colours. The card wears the series' whole theme, so One Piece's
+ * stage is its night blue and gold inside the black page. A series still to
+ * come is a dark stage: fog and its name, nothing else.
  *
  * A card says the series' name, how many entries it holds and where the
  * reader's saved bookmark on it stands, and with a bookmark how many of the
@@ -96,10 +94,6 @@ function Stage({ entry }: { entry: HubSeries }): ReactElement {
       to="/$series/$locale"
       {...stylex.props(THEMES[entry.theme], styles.stage, styles.lit)}
     >
-      <span
-        aria-hidden="true"
-        {...stylex.props(styles.beam)}
-      />
       <span
         aria-hidden="true"
         {...stylex.props(styles.art)}
@@ -191,8 +185,8 @@ const styles = stylex.create({
   },
   item: { display: 'grid', minWidth: 0 },
 
-  // One box for a lit stage and a dark one: the words sit at the foot, over
-  // whatever lights the stage above them, or on a phone beside the drawing.
+  // One box for a lit stage and a dark one: the words sit at the foot, under
+  // the drawing, or on a phone beside it.
   stage: {
     padding: { [TALL]: space.lg, default: space.md },
     borderColor: color.rule,
@@ -223,29 +217,13 @@ const styles = stylex.create({
   },
   dark: { backgroundColor: color.paper2 },
 
-  // The spotlight: a pool of the accent falling from above the stage, and a
-  // fainter shaft inside it. It brightens under the pointer.
-  beam: {
-    inset: 0,
-    backgroundImage: `radial-gradient(42% 62% at 50% -8%, color-mix(in oklch, ${color.accent} 34%, transparent), transparent 72%), conic-gradient(from 166deg at 50% -12%, transparent 0deg, color-mix(in oklch, ${color.accent} 10%, transparent) 14deg, transparent 28deg)`,
-    insetInlineEnd: { [TALL]: 0, default: '60%' },
-    opacity: {
-      'default': 0.8,
-      ':is(a:focus-visible) > &': 1,
-      ':is(a:hover) > &': 1,
-    },
-    position: 'absolute',
-    transitionDuration: dur.short,
-    transitionProperty: 'opacity',
-    transitionTimingFunction: ease.out,
-  },
   art: {
     insetInline: { [TALL]: '12%', default: 'auto' },
     insetBlockStart: { [TALL]: '4%', default: 'auto' },
     position: { [TALL]: 'absolute', default: 'relative' },
     height: { [TALL]: '60%', default: '9rem' },
   },
-  // No light reaches a dark stage, only the fog drifting in it.
+  // A dark stage holds only the fog drifting in it.
   fog: {
     inset: 0,
     backgroundImage: `radial-gradient(60% 40% at 30% 40%, ${color.paper3}, transparent 70%), radial-gradient(50% 45% at 75% 60%, ${color.paper3}, transparent 70%)`,
