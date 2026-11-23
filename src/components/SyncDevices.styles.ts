@@ -21,33 +21,31 @@ export const syncStyles = stylex.create({
     paddingBlockStart: space.md,
   },
   // A quiet line, like the forget line above it: syncing is occasional.
-  summary: {
-    borderRadius: radius.input,
-    alignItems: 'center',
-    color: { 'default': color.muted, ':hover': color.ink },
-    cursor: 'pointer',
-    display: 'flex',
-    fontFamily: font.body,
+  // Underlined like it, so it reads as a control.
+  link: {
+    borderColor: 'transparent',
+    color: { 'default': color.muted, ':hover:not(:disabled)': color.ink },
     fontSize: text.base,
-    fontWeight: 600,
-    justifyContent: 'center',
-    outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
-    outlineOffset: space.xs3,
-    outlineStyle: 'solid',
-    outlineWidth: rule.fine,
-    // Underlined like the forget line, so it reads as a control.
     textDecorationColor: { 'default': color.rule2, ':hover': color.ink },
     textDecorationLine: 'underline',
     textDecorationThickness: rule.hair,
     textUnderlineOffset: '0.25em',
-    minHeight: '44px',
+    width: '100%',
   },
-  panel: {
-    gap: space.md,
-    display: 'grid',
-    justifyItems: 'center',
-    paddingBlockStart: space.md,
+
+  // What replaces the form: the way back, the head, then the code and what
+  // goes with it.
+  view: { gap: space.sm, display: 'grid' },
+  back: {
+    borderColor: 'transparent',
+    color: { 'default': color.muted, ':hover:not(:disabled)': color.ink },
+    fontWeight: 500,
+    justifySelf: 'start',
+    // The chevron's own side padding, so the arrow, not the box, lines up
+    // with the head under it.
+    paddingInlineStart: space.xs3,
   },
+  panel: { gap: space.sm, display: 'grid', justifyItems: 'center' },
   text: {
     color: color.ink2,
     fontFamily: font.body,
@@ -58,13 +56,14 @@ export const syncStyles = stylex.create({
   },
   warning: { color: color.muted },
   // Big enough for a camera across a desk, small enough to leave the
-  // actions on a phone's screen.
+  // actions on a phone's screen: the height caps it, so a low phone keeps
+  // them in view.
   code: {
     shapeRendering: 'crispEdges',
     borderRadius: radius.card,
     aspectRatio: '1',
     display: 'block',
-    width: 'min(14rem, 70vw)',
+    width: 'min(14rem, 70vw, 30dvh)',
   },
   // Dark on light, as scanners expect: the inks of the set, inverted.
   ground: { fill: color.ink },

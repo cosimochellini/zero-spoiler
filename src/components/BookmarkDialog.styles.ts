@@ -83,6 +83,9 @@ export const styles = stylex.create({
   },
 
   body: { gap: space.lg, display: 'grid' },
+  // The form while the QR code view is on show: out of the layout, the
+  // keyboard and the accessibility tree, but still mounted, so its draft stays.
+  away: { display: 'none' },
 
   // The title clears the close button in the corner.
   head: { gap: space.xs2, display: 'grid', paddingInlineEnd: space.xl },

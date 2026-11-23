@@ -499,3 +499,76 @@ describe('EpisodeMark', () => {
     expect(chapter).toBeInTheDocument()
   })
 })
+
+const SYNC_ID = '0f8fad5b-d9cb-469f-a165-70867728950e'
+const devicesDialog = (): HTMLElement =>
+  screen.getByRole('dialog', { name: 'More devices' })
+
+describe('EpisodeMark with more devices', () => {
+  beforeAll(async () => {
+    await preloadBookmarkForm()
+  })
+
+  beforeEach(() => {
+    document.cookie = 'zs_one-piece=; Max-Age=0; Path=/'
+    vi.spyOn(globalThis, 'fetch').mockImplementation(async () => {
+      await Promise.resolve()
+      return Response.json({ id: SYNC_ID })
+    })
+  })
+
+  it('swaps the form for the code, under a head of its own', async () => {
+    const user = userEvent.setup()
+    renderMark(ep(650))
+
+    await open(user)
+    await user.click(button('More devices?'))
+    await screen.findByRole('img', { name: 'QR code of the link' })
+
+    expect(devicesDialog()).toBeVisible()
+    expect(
+      screen.queryByRole('dialog', { name: 'Where are you up to?' }),
+    ).not.toBeInTheDocument()
+    expect(
+      within(devicesDialog()).queryByRole('button', { name: 'Save' }),
+    ).not.toBeInTheDocument()
+    // The cross is still the way out, beside the way back.
+    expect(
+      within(devicesDialog()).getByRole('button', { name: 'Cancel' }),
+    ).toBeVisible()
+  })
+
+  it('comes back to the form with the draft as it was, and the focus on the link', async () => {
+    const user = userEvent.setup()
+    renderMark(ep(650))
+
+    await open(user)
+    await user.clear(field('Last episode you watched'))
+    await user.type(field('Last episode you watched'), '700')
+    await user.click(button('More devices?'))
+    await screen.findByRole('img', { name: 'QR code of the link' })
+    await user.click(
+      within(devicesDialog()).getByRole('button', { name: 'Back' }),
+    )
+
+    expect(dialog()).toBeVisible()
+    expect(field('Last episode you watched')).toHaveValue('700')
+    expect(button('More devices?')).toHaveFocus()
+    expect(stored()).toBe('650')
+  })
+
+  it('closes the dialog on Disconnect, with the bookmark as it was', async () => {
+    const user = userEvent.setup()
+    renderMark(ep(650))
+
+    await open(user)
+    await user.click(button('More devices?'))
+    await user.click(
+      await screen.findByRole('button', { name: 'Disconnect this device' }),
+    )
+    await settle()
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    expect(stored()).toBe('650')
+  })
+})

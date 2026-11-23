@@ -5,6 +5,7 @@ import { describe, expect, it, vi } from 'vitest'
 
 import { HUNTER_X_HUNTER_SERIES } from '~/lib/progress/series'
 import type { CharacterView } from '~/lib/view/records'
+import { formProps } from '~/test/bookmarkForm'
 import { at, coveredSlot, peekPending } from '~/test/fixtures'
 import { renderWithProviders } from '~/test/providers'
 
@@ -45,7 +46,10 @@ describe('the bookmark controls of Hunter x Hunter', () => {
 
   it('offers its own six seasons', async () => {
     const user = userEvent.setup()
-    renderWithProviders(<BookmarkForm onDone={vi.fn<() => void>()} />, HXH)
+    renderWithProviders(
+      <BookmarkForm {...formProps(vi.fn<() => void>())} />,
+      HXH,
+    )
 
     await user.click(screen.getByRole('radio', { name: 'Season' }))
 
