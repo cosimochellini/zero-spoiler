@@ -7,8 +7,9 @@
 // The cache is the folder `.gate/firecrawl` of the main checkout, which
 // CLAUDE_PROJECT_DIR names even inside a worktree, so every worktree shares
 // it. Pages never expire; delete a page's `.md` and `.json` to fetch it again.
-// Anything the hook does not recognise passes through untouched, and a failed
-// scrape is never saved.
+// Only a JSON body with a `markdown` string and no failure is saved; anything
+// else, plain text included, passes through untouched, so an error is never
+// kept as a page.
 import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import {
@@ -32,10 +33,6 @@ const PAID_OPTIONS = new Set(['queryOptions', 'jsonOptions'])
 
 /** The longest key kept as written; a longer one ends in a hash. */
 const MAX_KEY = 150
-
-/** A body that reports a failure rather than a page. */
-const FAILURE =
-  /insufficient credits|rate limit exceeded|payment required|^\s*(?:error|failed)\b/iu
 
 /**
  * @typedef {{ url?: unknown, formats?: unknown, [key: string]: unknown }}
@@ -68,46 +65,51 @@ export function cacheDir(env, cwd) {
 }
 
 /**
- * The page a URL names: lowercase host and decoded path without a trailing
- * slash; the scheme, query and hash are dropped, except a MediaWiki
- * `index.php?title=X`, which reads as `index.php/X`. Spaces read as `_`, as
- * MediaWiki reads them.
+ * The page a URL names: lowercase host (with its port) and decoded path
+ * without a trailing slash, then the query sorted; the scheme and hash are
+ * dropped. A MediaWiki `index.php?title=X` reads as `index.php/X`, and spaces
+ * read as `_`, as MediaWiki reads them.
  * @param {string} url The URL, with or without its scheme.
- * @returns {string} Host and path, as `host/path`.
+ * @returns {string} Host, path and query, as `host/path?query`.
  */
 export function normalise(url) {
   const parsed = new URL(url.includes('://') ? url : `https://${url}`)
   const title = parsed.searchParams.get('title')
   const base = parsed.pathname.replace(/\/$/u, '')
-  const page =
-    title && base.endsWith('/index.php') ?
-      `${base}/${encodeURIComponent(title)}`
-    : base
+  const folded = title !== null && base.endsWith('/index.php')
+  const page = folded ? `${base}/${encodeURIComponent(title)}` : base
+  if (folded) {
+    parsed.searchParams.delete('title')
+  }
+  const sorted = new URLSearchParams(
+    [...parsed.searchParams].toSorted(([a], [b]) => a.localeCompare(b)),
+  )
+  const query = sorted.toString()
   let decoded = page
   try {
     decoded = decodeURIComponent(page)
   } catch {
     // A stray `%` stays as written.
   }
+  const location = `${parsed.host.toLowerCase()}${decoded.replaceAll(' ', '_')}`
 
-  return `${parsed.hostname.toLowerCase()}${decoded.replaceAll(' ', '_')}`
+  return query === '' ? location : `${location}?${query}`
 }
 
 /**
  * The file name a page is kept under: the normalised URL with every run of
- * other characters as `_`, and a hash past `MAX_KEY` characters.
+ * other characters as `_`, cut at `MAX_KEY` characters, then a hash of the
+ * whole normalised URL, so two pages whose names read alike never share a
+ * file.
  * @param {string} url The URL.
  * @returns {string} The key, without an extension.
  */
 export function pageKey(url) {
   const page = normalise(url)
-  const key = page.replaceAll(/[^\w.-]+/gu, '_')
-  if (key.length <= MAX_KEY) {
-    return key
-  }
+  const key = page.replaceAll(/[^\w.-]+/gu, '_').slice(0, MAX_KEY)
   const hash = createHash('sha256').update(page).digest('hex').slice(0, 12)
 
-  return `${key.slice(0, MAX_KEY)}_${hash}`
+  return `${key}_${hash}`
 }
 
 /**
@@ -153,17 +155,24 @@ function cachedOn(dir, key) {
 }
 
 /**
- * The input with markdown in place of a paid format, and without the paid
- * formats' options.
+ * The input with markdown in place of the paid formats, every other format
+ * kept, and without the paid formats' options.
  * @param {ScrapeInput} input The tool input.
  * @returns {ScrapeInput} The whole new input.
  */
 function asMarkdown(input) {
   const kept = Object.entries(input).filter(([key]) => !PAID_OPTIONS.has(key))
+  const formats = Array.isArray(input.formats) ? input.formats : []
+  const others = formats.filter(
+    (format) => !PAID.has(String(field(format, 'type') ?? format)),
+  )
+  const hasMarkdown = others.some(
+    (format) => String(field(format, 'type') ?? format) === 'markdown',
+  )
 
   return {
     ...Object.fromEntries(kept),
-    formats: ['markdown'],
+    formats: hasMarkdown ? others : [...others, 'markdown'],
     onlyMainContent: true,
   }
 }
@@ -232,8 +241,8 @@ function fromBody(body) {
 }
 
 /**
- * The markdown in a text: a JSON body, or the page itself when it is no
- * JSON and reports no failure.
+ * The markdown in a text that holds a JSON body. Plain text is never taken
+ * for a page: an error message would read the same.
  * @param {string} text The text.
  * @returns {string | undefined} The markdown, or undefined.
  */
@@ -241,7 +250,7 @@ function fromText(text) {
   try {
     return fromBody(JSON.parse(text))
   } catch {
-    return FAILURE.test(text) ? undefined : text
+    return
   }
 }
 
@@ -260,8 +269,9 @@ function blocksOf(response) {
 }
 
 /**
- * The page's markdown in a scrape response: a string, MCP content (alone or
- * as `{ content }`), or a body with `markdown` or `data.markdown`.
+ * The page's markdown in a scrape response: a JSON body with `markdown` or
+ * `data.markdown`, given as an object, as a JSON string, or as the one text
+ * block of MCP content (alone or as `{ content }`).
  * @param {unknown} response The tool response.
  * @returns {string | undefined} The markdown, or undefined when the response
  *   is a failure or a shape the hook does not know.

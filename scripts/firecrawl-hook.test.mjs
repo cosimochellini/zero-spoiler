@@ -61,10 +61,10 @@ const after = (response, dir, formats = ['markdown']) =>
   )
 
 describe('the page key', () => {
-  it('drops the scheme, query and hash and lowercases the host', () => {
+  it('drops the scheme and hash, lowercases the host and sorts the query', () => {
     expect(
-      normalise(`https://AWOIAF.Westeros.org/index.php/Arya?x=1#Bio`),
-    ).toBe(`${HOST}/index.php/Arya`)
+      normalise(`https://AWOIAF.Westeros.org/index.php/Arya?y=2&x=1#Bio`),
+    ).toBe(`${HOST}/index.php/Arya?x=1&y=2`)
     expect(normalise(`${HOST}/index.php/Arya/`)).toBe(`${HOST}/index.php/Arya`)
   })
 
@@ -77,7 +77,27 @@ describe('the page key', () => {
     expect(pageKey(`https://${HOST}/index.php/${spaced}`)).toBe(
       pageKey(CHAPTER),
     )
-    expect(pageKey(CHAPTER)).toBe(`${HOST}_index.php_${TITLE}`)
+    const key = pageKey(CHAPTER)
+    const stem = `${HOST}_index.php_${TITLE}_`
+
+    expect(key.startsWith(stem)).toBe(true)
+    expect(key.slice(stem.length)).toMatch(/^[0-9a-f]{12}$/u)
+  })
+
+  it('never gives two pages one key', () => {
+    const keys = [
+      'https://example.com/A/B',
+      'https://example.com/A_B',
+      'https://example.com/watch?v=1',
+      'https://example.com/watch?v=2',
+      `https://${HOST}/index.php?title=${TITLE}&oldid=1`,
+      `https://${HOST}/index.php?title=${TITLE}&oldid=2`,
+      'https://example.com:8080/page',
+      'https://example.com/page',
+    ].map((url) => pageKey(url))
+    const distinct = new Set(keys)
+
+    expect(distinct.size).toBe(keys.length)
   })
 
   it('ends a long key in a hash', () => {
@@ -129,6 +149,12 @@ describe('before a scrape', () => {
     }
   })
 
+  it('keeps the other formats a paid one came with', () => {
+    expect(
+      beforeScrape({ url: CHAPTER, formats: ['query', 'links'] }, fresh()),
+    ).toHaveProperty('updatedInput.formats', ['links', 'markdown'])
+  })
+
   it('lets markdown and alexandria calls through', () => {
     const alexandria = { alexandria: { provider: 'p', capability: 'c' } }
 
@@ -146,7 +172,10 @@ describe('before a scrape', () => {
 
     for (const formats of [['markdown'], ['query']]) {
       expect(
-        beforeScrape({ url: `${CHAPTER}?action=view`, formats }, dir),
+        beforeScrape(
+          { url: `https://${HOST}/index.php?title=${TITLE}`, formats },
+          dir,
+        ),
       ).toStrictEqual({
         hookEventName: 'PreToolUse',
         permissionDecision: 'deny',
@@ -164,19 +193,26 @@ describe('the markdown in a response', () => {
     })
     const nested = JSON.stringify({ success: true, data: { markdown: PAGE } })
 
-    expect(extractMarkdown(PAGE)).toBe(PAGE)
     expect(extractMarkdown(body)).toBe(PAGE)
     expect(extractMarkdown(nested)).toBe(PAGE)
     expect(extractMarkdown(content(body))).toBe(PAGE)
-    expect(extractMarkdown([{ type: 'text', text: PAGE }])).toBe(PAGE)
+    expect(extractMarkdown([{ type: 'text', text: body }])).toBe(PAGE)
     expect(extractMarkdown({ data: { markdown: PAGE } })).toBe(PAGE)
   })
 
   it('finds none in a failure or an unknown shape', () => {
     const missing = { markdown: 'Not found', metadata: { statusCode: 404 } }
 
-    expect(extractMarkdown(CREDITS)).toBeUndefined()
-    expect(extractMarkdown(content(CREDITS))).toBeUndefined()
+    for (const text of [
+      PAGE,
+      CREDITS,
+      'Request failed with status code 500',
+      'Unauthorized',
+      'Website not supported',
+    ]) {
+      expect(extractMarkdown(text)).toBeUndefined()
+      expect(extractMarkdown(content(text))).toBeUndefined()
+    }
     expect(extractMarkdown(ERROR)).toBeUndefined()
     expect(
       extractMarkdown(JSON.stringify({ success: false, error: 'x' })),
@@ -214,13 +250,16 @@ describe('after a scrape', () => {
   })
 
   it('answers a string with a string', () => {
-    expect(typeof after(PAGE, fresh())?.updatedMCPToolOutput).toBe('string')
+    const body = JSON.stringify({ markdown: PAGE })
+
+    expect(typeof after(body, fresh())?.updatedMCPToolOutput).toBe('string')
   })
 
   it('saves nothing for an error or a credits failure', () => {
     const dir = fresh()
 
     expect(after(CREDITS, dir)).toBeUndefined()
+    expect(after('Request failed with status code 500', dir)).toBeUndefined()
     expect(after(ERROR, dir)).toBeUndefined()
     expect(readdirSync(dir)).toStrictEqual([])
   })
