@@ -1,4 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
+import { useRouterState } from '@tanstack/react-router'
 import {
   type ReactElement,
   type ReactNode,
@@ -37,10 +38,14 @@ export interface FoldWords {
  * Folding hides tiles already on the page and adds only how many, which the
  * group's count or the band's heading already gives: nothing new about what
  * is covered. The tiles stay in the DOM and a covered tile hides itself by
- * CSS (`useFolded`), so no width is read in script. The album, and every
- * fold with it, is drawn in the browser only (`fruits/-album.ts`), so the
- * opened folds can be read from the history entry as it mounts: Back draws
- * the page as tall as it was left.
+ * CSS (`useFolded`), so no width is read in script.
+ *
+ * An opened fold is remembered by the router's key of each history entry it
+ * is open in (`foldContext.ts`), so Back draws the page as tall as it was
+ * left and the router's scroll restoration lands on the same tile (#621). A
+ * new entry, a fresh visit, starts folded. The album, and every fold with
+ * it, is drawn in the browser only (`fruits/-album.ts`), so this never
+ * disagrees with the server's page.
  */
 export function FogFold({
   children,
@@ -56,7 +61,21 @@ export function FogFold({
   id: string
   words: FoldWords
 }): ReactElement {
-  const [open, setOpen] = useState(() => wasUnfolded(id))
+  // The router's key for this history entry. A navigation, even one that
+  // replaces the entry (typing in the search), brings a new key; Back brings
+  // the old one back.
+  const entry = useRouterState({
+    select: ({ location }) => location.state.__TSR_key ?? location.href,
+  })
+  const [open, setOpen] = useState(() => wasUnfolded(entry, id))
+  // Open, the fold is noted under every entry it is open in, so Back to any
+  // of them draws it open again.
+  useEffect(() => {
+    // eslint-disable-next-line react-you-might-not-need-an-effect/no-event-handler -- not an event: it follows the router's entry, which a search or a pick changes while the fold stays open.
+    if (open) {
+      rememberUnfolded(entry, id)
+    }
+  }, [entry, id, open])
   // The first tile the fold hid: it takes focus once it is drawn, so a
   // keyboard carries on down the wall from where the button was.
   const nextRef = useRef<HTMLElement | null>(null)
@@ -88,7 +107,6 @@ export function FogFold({
             )
             const next = hidden?.querySelector('button') ?? null
             nextRef.current = next
-            rememberUnfolded(id)
             setOpen(true)
           }}
           words={words}

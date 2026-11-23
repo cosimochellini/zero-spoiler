@@ -1,9 +1,22 @@
-import { screen, within } from '@testing-library/react'
+import {
+  createMemoryHistory,
+  createRootRoute,
+  createRoute,
+  createRouter,
+  Outlet,
+  type RouterHistory,
+  RouterProvider,
+} from '@tanstack/react-router'
+import { act, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
+import { LocaleProvider } from '~/i18n/LocaleProvider'
+import { BookmarkProvider } from '~/lib/progress/BookmarkProvider'
+import { ONE_PIECE_BOOKMARK, ONE_PIECE_SERIES } from '~/lib/progress/series'
 import type { FruitParams } from '~/lib/search/fruitParams'
 import type { CoveredRecord } from '~/lib/view/records'
+import { copyOf } from '~/server/copy.server'
 import {
   coveredRecord,
   fruitBand,
@@ -77,11 +90,6 @@ function drawFirstRow(list: HTMLElement): void {
 }
 
 describe('FogFold', () => {
-  beforeEach(() => {
-    // Each test is a fresh visit: a history entry with nothing unfolded.
-    history.replaceState(null, '')
-  })
-
   it('folds a wall of fog to its first row, saying how many are left for two and for three across', () => {
     openAlbum(fog(5))
 
@@ -134,29 +142,6 @@ describe('FogFold', () => {
     ).toHaveFocus()
   })
 
-  it('stays unfolded on Back to the same history entry, and starts folded on a new one', async () => {
-    const leave = openAlbum(fog(5))
-    await userEvent.click(
-      within(region('5 under fog')).getByRole('button', { name: 'Expand' }),
-    )
-    leave()
-
-    // Back: the same entry, so the page is as tall as it was left.
-    const leaveAgain = openAlbum(fog(5))
-
-    expect(
-      within(region('5 under fog')).queryByRole('button', { name: 'Expand' }),
-    ).not.toBeInTheDocument()
-
-    leaveAgain()
-    history.pushState(null, '')
-    openAlbum(fog(5))
-
-    expect(
-      within(region('5 under fog')).getByRole('button', { name: 'Expand' }),
-    ).toBeInTheDocument()
-  })
-
   it('folds the later sagas’ band of the saga view', () => {
     const later = fog(6)
     openAlbum(later, {
@@ -199,5 +184,145 @@ describe('FogFold', () => {
     expect(
       within(east).getByRole('button', { name: /^Fruit 04 · Paramecia/u }),
     ).toHaveFocus()
+  })
+})
+
+/** One album the router pages below all draw, so its handles stay put. */
+const ROUTED = [
+  fruitBand({ form: 'paramecia', open: [GUM], covered: fog(5) }),
+  fruitBand({ form: 'zoan', open: [], covered: [] }),
+  fruitBand({ form: 'logia', open: [], covered: [] }),
+]
+
+/**
+ * The album on a real route, `/fruits`, beside another page, `/away`. Hands
+ * back the history, a way to move it and wait for the router to settle, and
+ * counts of the album route's loads and of the router's navigations.
+ */
+async function onRouter(
+  start: string,
+): Promise<{
+  go: (move: (history: RouterHistory) => void) => Promise<void>
+  history: RouterHistory
+  loads: () => number
+  navigations: () => number
+}> {
+  let loads = 0
+  let navigations = 0
+  let resolved = 0
+  const root = createRootRoute({
+    component: () => (
+      <LocaleProvider
+        copy={copyOf(ONE_PIECE_SERIES, 'en')}
+        locale="en"
+      >
+        <BookmarkProvider
+          initialBookmark={ep(20)}
+          series={ONE_PIECE_BOOKMARK}
+        >
+          <Outlet />
+        </BookmarkProvider>
+      </LocaleProvider>
+    ),
+  })
+  const fruits = createRoute({
+    getParentRoute: () => root,
+    path: '/fruits',
+    loader: () => {
+      loads += 1
+    },
+    component: () => (
+      <SpecimenBands
+        album={{ bands: ROUTED, factions: [], later: [], sagas: [] }}
+        onParams={vi.fn<SpecimenBandsProps['onParams']>()}
+        params={{}}
+        peek={peekPending()}
+        plates={platesOf(ROUTED)}
+      />
+    ),
+  })
+  const away = createRoute({ getParentRoute: () => root, path: '/away' })
+  const history = createMemoryHistory({ initialEntries: [start] })
+  const router = createRouter({
+    routeTree: root.addChildren([fruits, away]),
+    history,
+  })
+  router.subscribe('onBeforeNavigate', () => {
+    navigations += 1
+  })
+  router.subscribe('onResolved', () => {
+    resolved += 1
+  })
+  await router.load()
+  render(<RouterProvider router={router} />)
+  await screen.findByRole('region', { name: '5 under fog' })
+
+  return {
+    go: async (move) => {
+      const from = resolved
+      act(() => {
+        move(history)
+      })
+      await waitFor(() => {
+        expect(resolved).toBeGreaterThan(from)
+      })
+    },
+    history,
+    loads: () => loads,
+    navigations: () => navigations,
+  }
+}
+
+/** The Paramecia band's Expand, if it is on the page. */
+function expandButton(): HTMLElement | null {
+  return within(region('5 under fog')).queryByRole('button', { name: 'Expand' })
+}
+
+describe('FogFold under the router', () => {
+  it('stays open through a replacing navigation and on Back, and starts folded on a new visit', async () => {
+    const { go } = await onRouter('/fruits')
+    await userEvent.click(
+      within(region('5 under fog')).getByRole('button', { name: 'Expand' }),
+    )
+
+    // Typing in the search replaces the entry, with a new key.
+    await go((history) => {
+      history.replace('/fruits?q=o')
+    })
+
+    expect(expandButton()).not.toBeInTheDocument()
+
+    await go((history) => {
+      history.push('/away')
+    })
+    await go((history) => {
+      history.back()
+    })
+
+    // Back: the entry it was open in, so the page is as tall as it was left.
+    expect(expandButton()).not.toBeInTheDocument()
+
+    // A new visit from another page: a new entry.
+    await go((history) => {
+      history.push('/away')
+    })
+    await go((history) => {
+      history.push('/fruits')
+    })
+
+    expect(expandButton()).toBeInTheDocument()
+  })
+
+  it('unfolds on an address with a hash without a navigation or a load', async () => {
+    const { history, loads, navigations } = await onRouter('/fruits#saga-1')
+    const before = { loads: loads(), navigations: navigations() }
+
+    await userEvent.click(
+      within(region('5 under fog')).getByRole('button', { name: 'Expand' }),
+    )
+
+    expect(expandButton()).not.toBeInTheDocument()
+    expect({ loads: loads(), navigations: navigations() }).toStrictEqual(before)
+    expect(history.location.hash).toBe('#saga-1')
   })
 })

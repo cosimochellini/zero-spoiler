@@ -120,16 +120,21 @@ export function AlbumGroups({
 
       <FogBand
         count={laterTiles.length}
-        fold={{ id: 'fold-later', keys: FRUIT_FOLD }}
         headingId={`${fieldId}-later`}
         level="h2"
         t={t}
         words={words}
       >
-        <CoveredTiles
-          peek={peek}
-          tiles={laterTiles}
-        />
+        <FogFold
+          count={laterTiles.length}
+          id="fold-later"
+          words={foldWords(t, FRUIT_FOLD)}
+        >
+          <CoveredTiles
+            peek={peek}
+            tiles={laterTiles}
+          />
+        </FogFold>
       </FogBand>
     </>
   )

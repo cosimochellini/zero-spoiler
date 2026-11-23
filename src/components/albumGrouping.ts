@@ -1,4 +1,5 @@
-import type { FogTitles, FoldKeys } from '~/components/FogBand'
+import type { FogTitles } from '~/components/FogBand'
+import type { FoldKeys } from '~/components/fogWords'
 import type { Translate } from '~/i18n/types'
 import { type AlbumView, sagaAnchor } from '~/lib/search/fruitParams'
 import type {

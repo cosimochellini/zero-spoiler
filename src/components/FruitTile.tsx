@@ -1,6 +1,9 @@
 import type { ReactElement } from 'react'
 
+import { FRUIT_FOLD } from '~/components/albumGrouping'
 import { CoveredTile, UsedTile } from '~/components/AlbumTile'
+import { FogFold } from '~/components/FogFold'
+import { foldWords } from '~/components/fogWords'
 import {
   type EaterMatch,
   eaterMatch,
@@ -11,6 +14,7 @@ import type { TranslationKey } from '~/i18n/types'
 import { useThreshold } from '~/lib/progress/BookmarkContext'
 import type {
   EaterView,
+  FruitBandView,
   FruitForm,
   FruitView,
   Slot,
@@ -151,5 +155,44 @@ export function OpenTiles({
         )
       })}
     </>
+  )
+}
+
+/**
+ * A plate's covered tiles, folded on a phone: a number, a kind and a
+ * threshold, and no more.
+ *
+ * The numbers carry on from the open tiles above rather than starting again.
+ * The server orders a plate by threshold and the open ones are a prefix of
+ * it, so the count is the plate's own order and a fruit keeps its number when
+ * the reader's bookmark passes it.
+ */
+export function PlateFog({
+  band,
+  peek,
+}: {
+  band: FruitBandView
+  peek: (handle: string) => Promise<FruitView>
+}): ReactElement {
+  const t = useSeriesOnlyT('one-piece')
+  return (
+    <FogFold
+      count={band.covered.length}
+      id={`fold-${band.form}`}
+      words={foldWords(t, FRUIT_FOLD)}
+    >
+      {band.covered.map((entry, at) => {
+        return (
+          <FruitTile
+            key={`fog-${entry.handle}`}
+            form={band.form}
+            index={band.open.length + at}
+            peek={peek}
+            rank={at}
+            slot={{ open: false, covered: entry }}
+          />
+        )
+      })}
+    </FogFold>
   )
 }

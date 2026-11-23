@@ -5,12 +5,12 @@ import {
   AlbumControls,
   type AlbumControlsProps,
 } from '~/components/AlbumControls'
-import { FRUIT_FOG, FRUIT_FOLD, groupingOf } from '~/components/albumGrouping'
+import { FRUIT_FOG, groupingOf } from '~/components/albumGrouping'
 import { AlbumGroups } from '~/components/AlbumGroups'
 import { AlbumNoMatch } from '~/components/AlbumNoMatch'
 import { LoadFailed } from '~/components/BookmarkSkeleton'
 import { FogBand } from '~/components/FogBand'
-import { FruitTile, OpenTiles } from '~/components/FruitTile'
+import { OpenTiles, PlateFog } from '~/components/FruitTile'
 import { matchesIn } from '~/components/recordMatches'
 import { SearchResults } from '~/components/SearchField'
 import { styles } from '~/components/SpecimenBands.styles'
@@ -290,50 +290,16 @@ function Plate({
 
       <FogBand
         count={band.covered.length}
-        fold={{ id: `fold-${band.form}`, keys: FRUIT_FOLD }}
         headingId={`${headingId}-fog`}
         t={t}
         words={FRUIT_FOG}
       >
-        <CoveredTiles
+        <PlateFog
           band={band}
           peek={peek}
         />
       </FogBand>
     </section>
-  )
-}
-
-/**
- * A plate's covered tiles: a number, a kind and a threshold, and no more.
- *
- * The numbers carry on from the open tiles above rather than starting again.
- * The server orders a plate by threshold and the open ones are a prefix of
- * it, so the count is the plate's own order and a fruit keeps its number when
- * the reader's bookmark passes it.
- */
-function CoveredTiles({
-  band,
-  peek,
-}: {
-  band: FruitBandView
-  peek: (handle: string) => Promise<FruitView>
-}): ReactElement {
-  return (
-    <>
-      {band.covered.map((entry, at) => {
-        return (
-          <FruitTile
-            key={`fog-${entry.handle}`}
-            form={band.form}
-            index={band.open.length + at}
-            peek={peek}
-            rank={at}
-            slot={{ open: false, covered: entry }}
-          />
-        )
-      })}
-    </>
   )
 }
 
