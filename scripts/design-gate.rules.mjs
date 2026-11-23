@@ -414,7 +414,7 @@ const DESIGN_SYSTEM = 'design-system-'
  * palette advisory; the gate does not. Radius and type size keep the engine's
  * severity, advisory: they are in the report and never fail the gate.
  */
-export const BLOCKING_TOKEN_RULES = new Set([
+const BLOCKING_TOKEN_RULES = new Set([
   'design-system-font',
   'design-system-color',
 ])
