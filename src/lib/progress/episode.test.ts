@@ -6,6 +6,7 @@ import {
   bookmarkValue,
   ceilingOf,
   clampIndex,
+  type Draft,
   draftOf,
   FIRST_EPISODE,
   gradeDraft,
@@ -15,6 +16,7 @@ import {
   type Stepper,
   stepperOf,
   thresholdValue,
+  twinDraft,
 } from './episode'
 import { ONE_PIECE_BOOKMARK } from './series'
 
@@ -218,6 +220,48 @@ describe('draftOf', () => {
     expect(
       draftOf({ mode: 'chapter', chapter: 1044 }, ONE_PIECE_BOOKMARK),
     ).toStrictEqual({ mode: 'chapter', group: '', number: '1044' })
+  })
+})
+
+function draft(mode: Draft['mode'], group: string, number: string): Draft {
+  return { mode, group, number }
+}
+
+describe('twinDraft', () => {
+  it('says an episode as its season and the episode in it, and back', () => {
+    expect(
+      twinDraft(draft('episode', '', '20'), ONE_PIECE_BOOKMARK),
+    ).toStrictEqual(draft('season', '1', '20'))
+    expect(
+      twinDraft(draft('episode', '', '64'), ONE_PIECE_BOOKMARK),
+    ).toStrictEqual(draft('season', '2', '3'))
+    expect(
+      twinDraft(draft('season', '2', '3'), ONE_PIECE_BOOKMARK),
+    ).toStrictEqual(draft('episode', '', '64'))
+  })
+
+  it('gives a draft that is not a bookmark yet no twin', () => {
+    // Empty, out of range, no season chosen.
+    expect(twinDraft(draft('episode', '', ''), ONE_PIECE_BOOKMARK)).toBeNull()
+    expect(twinDraft(draft('episode', '', '0'), ONE_PIECE_BOOKMARK)).toBeNull()
+    expect(twinDraft(draft('season', '', '3'), ONE_PIECE_BOOKMARK)).toBeNull()
+  })
+
+  it('leaves the season empty for an episode the table does not reach', () => {
+    const late = {
+      ...ONE_PIECE_BOOKMARK,
+      seasons: [{ number: 7, first: 11, last: 26 }],
+    }
+
+    expect(twinDraft(draft('episode', '', '5'), late)).toStrictEqual(
+      draft('season', '', ''),
+    )
+  })
+
+  it('gives a chapter no twin', () => {
+    expect(
+      twinDraft(draft('chapter', '', '1044'), ONE_PIECE_BOOKMARK),
+    ).toBeNull()
   })
 })
 

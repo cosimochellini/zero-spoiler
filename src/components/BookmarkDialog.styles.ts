@@ -152,9 +152,33 @@ export const styles = stylex.create({
   markerAt0: { transform: 'none' },
   markerAt1: { transform: 'translateX(100%)' },
   markerAt2: { transform: 'translateX(200%)' },
-  mode: { display: 'grid', position: 'relative' },
+  // The segment's states are read off the radio inside it with `:has()`. A
+  // sibling selector written `:is(input:checked + &)` compiles to a `:scope`
+  // that only ever matches the root, so the chosen unit and the keyboard
+  // focus once drew nothing (#1398).
+  mode: {
+    borderRadius: radius.input,
+    color: {
+      'default': color.muted,
+      ':has(:checked)': color.ink,
+      ':hover': color.ink,
+    },
+    display: 'grid',
+    outlineColor: {
+      'default': 'transparent',
+      ':has(:focus-visible)': color.focus,
+    },
+    outlineOffset: 0,
+    outlineStyle: 'solid',
+    // Reserved at rest, so the ring costs no layout: `ui/Button`'s width.
+    outlineWidth: rule.fine,
+    position: 'relative',
+    transitionDuration: dur.micro,
+    transitionProperty: 'color',
+    transitionTimingFunction: ease.out,
+  },
   // The input is present for the keyboard and the screen reader and drawn
-  // by its sibling: the checked and focused states are read off it there.
+  // by the label around it.
   radio: {
     inset: 0,
     margin: 0,
@@ -164,32 +188,16 @@ export const styles = stylex.create({
     width: '1px',
   },
   modeLabel: {
-    borderRadius: radius.input,
     paddingInline: space.xs,
     alignItems: 'center',
-    color: {
-      'default': color.muted,
-      ':is(input:checked + &)': color.ink,
-      ':is(label:hover > &)': color.ink,
-    },
     cursor: 'pointer',
     display: 'flex',
     fontSize: text.base,
     fontWeight: 600,
     justifyContent: 'center',
     lineHeight: leading.heading,
-    outlineColor: {
-      'default': 'transparent',
-      ':is(input:focus-visible + &)': color.focus,
-    },
-    outlineOffset: 0,
-    outlineStyle: 'solid',
-    outlineWidth: rule.fine,
     position: 'relative',
     textAlign: 'center',
-    transitionDuration: dur.micro,
-    transitionProperty: 'color',
-    transitionTimingFunction: ease.out,
     whiteSpace: 'nowrap',
     minHeight: '44px',
   },
