@@ -212,10 +212,11 @@ Fifteen places, under the issue's split point of about 25.
 #### `house-of-the-undying`
 
 - Show: Pyat Pree invites Daenerys to it in episode 15 (reported speech); she
-  enters it in episode 20. Book: named in Daenerys III (114), entered in
-  Daenerys IV (122). Gate 20 / 122.
-- `nameSaidAt` 14: the Essos relationship cards of chapter 114 (#1477) name it,
-  and order at episode 14.
+  enters it in episode 20. Book: named in Daenerys II (101), Pyat Pree's
+  invitation, entered in Daenerys IV (122). Gate 20 / 122.
+- `nameSaidAt` 14: the book's naming in Daenerys II (101) orders at episode 14,
+  as Qarth's visit does; the Essos relationship cards of chapter 114 (#1477)
+  need it.
 - Its burning: the book's Drogon sets it alight in the chapter that opens it,
   and the show's in the episode that opens it, so the first drawing shows the
   house as she enters it and no stage follows in this stage.

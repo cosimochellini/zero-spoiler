@@ -1164,8 +1164,8 @@ export const season2: ThronesSaga = {
       visual: { art: 'whitetree', tint: 'ivory' },
     },
     // Book only. Daenerys I (site chapter 86), her people find the ruined
-    // city and she names it. The show has no ruined city; episode 11 orders
-    // it.
+    // city and call it the City of Bones. The show has no ruined city;
+    // episode 11 orders it.
     {
       id: 'vaes-tolorro',
       kind: 'place',
@@ -1333,16 +1333,16 @@ export const season2: ThronesSaga = {
     },
     // Show: "Valar Morghulis", Daenerys enters the house Pyat Pree names in
     // episode 15. Books: Daenerys IV (site chapter 122), the same visit,
-    // named in Daenerys III (114).
+    // named in Daenerys II (101), where Pyat Pree invites her.
     {
       id: 'house-of-the-undying',
       kind: 'place',
       revealedAtEpisode: 20,
       revealedAtChapter: 122,
       // Named before its first scene in both media: Pyat Pree invites
-      // Daenerys in "The Ghost of Harrenhal" (episode 15) and in Daenerys III
-      // (chapter 114). The leak scan reads one episode axis, and the book
-      // cards of chapter 114 order at episode 14, so the name opens there.
+      // Daenerys in Daenerys II (chapter 101), which orders at episode 14 as
+      // Qarth's visit does, and in "The Ghost of Harrenhal" (episode 15). The
+      // leak scan reads one episode axis, so it takes the earlier naming.
       nameSaidAt: 14,
       name: { it: 'Casa degli Eterni', en: 'the House of the Undying' },
       summary: {
