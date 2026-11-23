@@ -228,7 +228,7 @@ const PRACTICE_SWORD: Stroke[] = [
  * Baelish's, for the name he goes by in both media. His every drawing
  * keeps it.
  */
-const GLOVE: Stroke[] = [
+export const GLOVE: Stroke[] = [
   { d: 'M50 98 Q46 80 45 70 Q45 61 51 61 Q57 61 58 69 L61 92', role: 'accent' },
   { d: 'M61 92 L61 52 Q62 44 68 44 Q74 44 75 52 L77 88' },
   { d: 'M77 88 V40 Q78 32 84 32 Q90 32 91 40 L92 88' },

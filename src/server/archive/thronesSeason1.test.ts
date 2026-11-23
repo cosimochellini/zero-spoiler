@@ -1555,6 +1555,16 @@ const STAGES: {
     stage: 1,
   },
   { id: 'robar-royce', episode: 15, chapter: 110, source: 'chapter' },
+  // Boros Blount's white cloak taken and given back, the books' alone
+  // (#1470).
+  { id: 'boros-blount', episode: 19, chapter: 123, source: 'chapter' },
+  {
+    id: 'boros-blount',
+    episode: 21,
+    chapter: 156,
+    source: 'chapter',
+    stage: 1,
+  },
   // The southern characters redrawn from the drawing audit (#1287).
   { id: 'ros', episode: 20, chapter: 143, source: 'episode' },
   { id: 'ros', episode: 26, chapter: 175, source: 'episode', stage: 1 },

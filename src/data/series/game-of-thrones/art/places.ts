@@ -1413,8 +1413,326 @@ const WHISPERING_WOOD: Stroke[] = [
 ]
 
 /**
- * The first season's places (#1053), and the ones it only names (#1035),
- * keyed by record id.
+ * Craster's Keep: a low hall of logs with smoke from its roof, between the
+ * banks of its earthen wall, as the ranging finds it in episode 11 and in
+ * Jon III (chapter 97). The hall's far end is hatched; the accent is its
+ * door.
+ */
+const CRASTERS_KEEP: Stroke[] = [
+  { d: 'M40 150 V114 H120 V150' },
+  { d: 'M34 116 L56 94 H104 L126 116' },
+  { d: 'M40 124 H72 M88 124 H120 M40 134 H72 M88 134 H120', role: 'soft' },
+  { d: 'M72 150 V128 H88 V150', role: 'accent' },
+  { d: 'M10 150 Q16 136 30 138 L34 150 M126 150 L130 138 Q144 136 150 150' },
+  { d: 'M88 92 q-6 -8 2 -16 q-6 -8 2 -16', role: 'soft' },
+  { d: 'M110 122 l6 -3 M110 134 l6 -3 M110 146 l6 -3', role: 'ambient' },
+  shadow(80, 156, 64),
+]
+
+/**
+ * The Red Waste: low red ridges over a cracked plain under the sun, for the
+ * desert Daenerys leads her people into in episode 11 and in Daenerys I
+ * (chapter 86). The ridges' far sides are hatched; the accent is the
+ * cracked earth.
+ */
+const RED_WASTE: Stroke[] = [
+  { d: 'M10 112 Q30 96 50 104 Q70 88 96 100 Q120 90 150 106' },
+  { d: 'M10 128 Q40 118 70 124 Q100 116 150 126', role: 'soft' },
+  {
+    d: 'M24 142 l10 -4 l6 3 l10 -5 M80 140 l8 4 l10 -3 l6 4 M112 146 l10 -4 l8 2',
+    role: 'accent',
+  },
+  { d: circle(116, 52, 12), role: 'soft' },
+  { d: 'M44 150 q4 -8 10 -6 q4 0 6 6 M120 150 q3 -6 8 -5 q4 1 4 5' },
+  { d: 'M60 100 l5 -3 M104 98 l5 -3 M134 102 l5 -3', role: 'ambient' },
+  { d: 'M10 150 Q80 144 150 150', role: 'ambient', dashed: true },
+]
+
+/**
+ * Whitetree: the great heart tree spreading over two empty stone huts, for
+ * the wildling village the ranging finds empty in Jon II (chapter 87); the
+ * show names no village. The trunk's far side is hatched; the accent is the
+ * tree's red leaves.
+ */
+const WHITETREE: Stroke[] = [
+  { d: 'M72 150 Q74 120 70 96 M88 150 Q86 120 90 96' },
+  {
+    d: 'M70 96 Q56 84 40 82 M72 100 Q60 92 52 96 M90 96 Q104 84 120 82 M88 100 Q100 92 110 96 M80 98 V80',
+    role: 'soft',
+  },
+  {
+    d: 'M34 86 Q24 72 40 66 Q46 50 66 54 Q78 40 96 52 Q116 48 120 64 Q138 70 126 86 Z',
+    role: 'accent',
+  },
+  {
+    d: 'M14 150 V132 L24 124 L34 132 V150 M126 150 V134 L136 126 L146 134 V150',
+  },
+  { d: 'M14 141 H34 M126 142 H146 M78 140 V126 M82 116 V104', role: 'soft' },
+  { d: 'M86 132 l4 -2 M86 120 l4 -2', role: 'ambient' },
+  GROUND,
+]
+
+/**
+ * Vaes Tolorro: cracked white walls and a broken gate before the ruins of
+ * a palace, for the empty city Daenerys names in Daenerys I (chapter 86);
+ * the show has none. The towers' faces are hatched; the accent is the
+ * broken gate.
+ */
+const VAES_TOLORRO: Stroke[] = [
+  {
+    d: 'M14 150 V100 H40 L46 108 L50 102 V150 M110 150 V104 L114 98 L120 106 H146 V150',
+  },
+  {
+    d: 'M50 150 V112 Q56 96 64 104 M96 104 Q104 96 110 112 V150',
+    role: 'accent',
+  },
+  { d: 'M58 104 V82 H72 V104 M86 104 V72 Q93 58 100 72 V104', role: 'soft' },
+  { d: 'M24 118 l4 5 l-4 5 l4 5 M130 118 l-4 5 l4 5 l-4 5', role: 'soft' },
+  { d: 'M40 116 l6 -3 M40 130 l6 -3 M140 118 l5 -3', role: 'ambient' },
+  GROUND,
+]
+
+/** A longship's hull and mast, at the origin, for a harbour or a fleet. */
+const SHIP_HULL: Stroke[] = [
+  { d: 'M-16 0 Q0 7 16 0 L19 -6 M-16 0 L-19 -6' },
+  { d: 'M0 3 V-30', role: 'soft' },
+]
+
+/** A ship's square sail, at the origin, above `SHIP_HULL`. */
+const SAIL = 'M-10 -28 H10 Q12 -18 10 -8 H-10 Q-12 -18 -10 -28 Z'
+
+/**
+ * Lordsport: a longship moored by the stone quay below the harbour town's
+ * houses, where Theon lands in episode 12 and in Theon I (chapter 85). The
+ * houses' sides are hatched; the accent is the longship's sail.
+ */
+const LORDSPORT: Stroke[] = [
+  { d: 'M14 132 V108 L26 98 L38 108 V132 M40 132 V112 L50 104 L60 112 V132' },
+  { d: 'M10 132 H70 V146' },
+  { d: 'M18 140 h10 M38 138 h10 M54 142 h8', role: 'soft' },
+  ...moved(SHIP_HULL, 'translate(110 142) scale(1.6)'),
+  { d: SAIL, role: 'accent', transform: 'translate(110 142) scale(1.6)' },
+  { d: 'M30 116 l5 -3 M54 118 l5 -3', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * The Stony Shore: fishing huts on a beach of stones under a rocky
+ * headland, with a boat drawn up and a longship on the sea, for the
+ * villages Balon sends Theon to raid in episode 13 and that Theon raids in
+ * Theon III (chapter 111). The huts' sides are hatched; the accent is the
+ * raider's sail.
+ */
+const STONY_SHORE: Stroke[] = [
+  { d: 'M10 120 L28 110 L40 118 L56 106 L64 136' },
+  {
+    d: 'M74 136 V118 L86 108 L98 118 V136 M104 136 V122 L114 114 L124 122 V136',
+  },
+  { d: 'M10 138 Q80 132 150 140' },
+  { d: 'M24 146 q4 -4 8 0 M46 148 q4 -4 8 0 M118 148 q4 -4 8 0', role: 'soft' },
+  { d: 'M26 134 Q40 140 56 132', role: 'soft' },
+  { d: 'M116 64 H144 Q146 78 144 92 H116 Q114 78 116 64 Z', role: 'accent' },
+  { d: 'M108 98 Q130 106 152 98 L154 92 M108 98 L106 92 M130 100 V60' },
+  { d: 'M84 100 H150', role: 'ambient' },
+  { d: 'M92 122 l4 -2 M118 126 l4 -2', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * Bitterbridge: the long stone bridge over the river below the castle, with
+ * the tents of Renly's host at either end, for the camp Catelyn reaches in
+ * Catelyn II (chapter 96); the show's camp is unnamed. The towers' sides
+ * are hatched; the accent is the bridge.
+ */
+const BITTERBRIDGE: Stroke[] = [
+  { d: 'M56 96 V64 H72 V96 M88 96 V58 H104 V96 M72 80 H88' },
+  {
+    d: 'M56 64 V58 H62 V64 M66 64 V58 H72 V64 M88 58 V52 H94 V58 M98 58 V52 H104 V58',
+    role: 'soft',
+  },
+  {
+    d: 'M10 104 H150 M10 128 Q24 108 38 128 Q52 108 66 128 Q80 108 94 128 Q108 108 122 128 Q136 108 150 128',
+    role: 'accent',
+  },
+  { d: 'M38 128 V104 M66 128 V104 M94 128 V104 M122 128 V104', role: 'soft' },
+  {
+    d: 'M10 140 q10 -4 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0',
+    role: 'ambient',
+    dashed: true,
+  },
+  { d: 'M14 96 L22 84 L30 96 M124 96 L132 84 L140 96', role: 'soft' },
+  { d: 'M98 66 l5 -3 M98 80 l5 -3', role: 'ambient' },
+]
+
+/**
+ * Storm's End: the one great drum tower behind its high curtain wall on the
+ * cliff over the sea, for the castle Stannis besieges in Catelyn III
+ * (chapter 105). The tower's far side is hatched; the accent is the tower.
+ */
+const STORMS_END: Stroke[] = [
+  { d: 'M14 132 V104 H52 M108 104 H146 V132' },
+  {
+    d: 'M14 104 V98 H20 V104 M26 104 V98 H32 V104 M128 104 V98 H134 V104 M140 104 V98 H146 V104',
+    role: 'soft',
+  },
+  { d: 'M52 104 V48 Q80 40 108 48 V104 M52 48 Q80 56 108 48', role: 'accent' },
+  {
+    d: 'M56 46 V40 H64 V45 M76 44 V38 H84 V44 M96 45 V40 H104 V46',
+    role: 'soft',
+  },
+  { d: 'M72 132 V118 Q80 110 88 118 V132' },
+  { d: 'M10 150 L14 132 H146 L150 150' },
+  { d: 'M100 62 l5 -3 M100 78 l5 -3 M100 94 l5 -3', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * Oxcross: a river ford beside a village's houses, with a torn tent and
+ * the winner's banner over the field, for the camp Robb destroys in
+ * episode 14, named in Sansa III (chapter 106). The houses' sides are
+ * hatched; the accent is the banner.
+ */
+const OXCROSS: Stroke[] = [
+  { d: 'M18 128 V108 L30 98 L42 108 V128 M46 128 V112 L56 104 L66 112 V128' },
+  { d: 'M10 136 Q80 130 150 138 M10 148 Q80 142 150 150', role: 'ambient' },
+  { d: 'M70 140 h6 M84 141 h6 M98 142 h6', role: 'soft' },
+  { d: 'M84 128 L94 112 L104 128 M94 112 L98 122', role: 'soft' },
+  { d: 'M118 134 V70' },
+  { d: 'M118 72 H144 L136 80 L144 88 H118', role: 'accent' },
+  { d: 'M36 112 l5 -3 M60 116 l5 -3', role: 'ambient' },
+]
+
+/**
+ * The Garden of Bones: a traveller's ribs and bones in the sand before the
+ * far walls of Qarth, for the desert the khalasar waits in, which Jorah
+ * names in episode 14; the books have no such place. The towers are
+ * hatched; the accent is the ribcage.
+ */
+const GARDEN_OF_BONES: Stroke[] = [
+  { d: 'M10 96 H30 V72 H44 V96 H116 V72 H130 V96 H150' },
+  { d: 'M70 96 V82 Q80 72 90 82 V96', role: 'soft' },
+  { d: 'M10 124 Q40 112 70 120 Q110 108 150 122' },
+  {
+    d: 'M48 146 Q70 138 92 146 M56 143 q-2 -10 4 -14 M66 141 q-2 -12 4 -16 M76 141 q0 -12 6 -15 M86 143 q2 -10 6 -12',
+    role: 'accent',
+  },
+  {
+    d: 'M104 148 l22 -6 M102 146 l-1 4 M126 142 l2 -4 M22 146 l16 4',
+    role: 'soft',
+  },
+  {
+    d: 'M38 80 l4 -2 M38 90 l4 -2 M124 80 l4 -2 M124 90 l4 -2',
+    role: 'ambient',
+  },
+  GROUND,
+]
+
+/** A clay jar, at the origin's left, for the alchemists' vaults. */
+const JAR = 'M34 112 H46 M36 112 V118 Q24 128 30 146 H50 Q56 128 44 118 V112'
+
+/**
+ * The Guildhall of the Alchemists: jars of wildfire under the vaults'
+ * arches, as Hallyne shows them to Tyrion in episode 15 and in Tyrion V
+ * (chapter 94). The vault's inner curves are hatched; the accent is the
+ * green fire in the middle jar.
+ */
+const GUILDHALL_OF_THE_ALCHEMISTS: Stroke[] = [
+  { d: 'M10 150 V70 Q45 40 80 70 Q115 40 150 70 V150 M80 70 V100' },
+  { d: JAR },
+  { d: JAR, transform: 'translate(40 0)' },
+  { d: JAR, transform: 'translate(80 0)' },
+  { d: 'M68 132 q6 -4 12 0 t10 0', role: 'accent' },
+  {
+    d: 'M20 76 l5 -3 M20 90 l5 -3 M130 76 l5 -3 M130 90 l5 -3',
+    role: 'ambient',
+  },
+  { d: 'M10 150 H150', role: 'ambient', dashed: true },
+]
+
+/**
+ * The Fist of the First Men: a steep bare hill with the stones of the old
+ * ring wall on its crown, for the hill the ranging camps on in episode 15
+ * and in Jon IV (chapter 108). The far flank is hatched; the accent is the
+ * ring of stones.
+ */
+const FIST_OF_THE_FIRST_MEN: Stroke[] = [
+  { d: 'M10 150 Q30 146 44 110 L60 76 H100 L116 110 Q130 146 150 150' },
+  {
+    d: 'M58 76 V68 h8 V76 M72 76 V64 h8 V76 M86 76 V66 h8 V76 M98 76 V70 h4',
+    role: 'accent',
+  },
+  { d: 'M44 120 l8 -4 M108 116 l6 4 M36 136 l8 -2', role: 'soft' },
+  { d: 'M110 96 l6 -3 M116 112 l6 -3 M122 128 l6 -3', role: 'ambient' },
+  shadow(80, 156, 66),
+]
+
+/**
+ * The Skirling Pass: a narrow way climbing between two snowy peaks, with
+ * the wind through it and the wildling watchers' fire at its head, for the
+ * pass Qhorin's party climbs in episode 16 and in Jon VI (chapter 125). The
+ * peaks' far faces are hatched; the accent is the watchers' fire.
+ */
+const SKIRLING_PASS: Stroke[] = [
+  { d: 'M10 150 L44 60 L66 114 M94 114 L118 50 L150 150' },
+  { d: 'M36 82 L44 74 L52 82 M110 70 L118 62 L126 72', role: 'soft' },
+  { d: 'M66 114 Q80 126 94 114' },
+  { d: 'M80 150 Q70 138 80 128 Q88 122 80 118', role: 'soft' },
+  { d: 'M80 110 q-5 -6 -1 -12 q2 4 4 2 q4 6 -3 10', role: 'accent' },
+  {
+    d: 'M54 96 l5 -3 M58 108 l5 -3 M128 84 l5 -3 M134 102 l5 -3',
+    role: 'ambient',
+  },
+  { d: 'M68 70 q8 -3 14 0 M72 80 q6 -2 10 0', role: 'soft' },
+]
+
+/**
+ * Blackwater Bay: the city's walled hill over the river's mouth, with
+ * Stannis's fleet on the bay, as it sails in in episode 18 and in Davos
+ * III (chapter 132). The hill is hatched; the accent is the lead ship's
+ * sail.
+ */
+const BLACKWATER_BAY: Stroke[] = [
+  { d: 'M10 104 Q24 70 54 70 Q76 76 86 104 Q118 100 150 106' },
+  {
+    d: 'M24 86 V76 H32 V82 M42 74 V62 H50 V72 M60 76 V68 H68 V80',
+    role: 'soft',
+  },
+  ...moved(SHIP_HULL, 'translate(50 140)'),
+  { d: SAIL, role: 'accent', transform: 'translate(50 140)' },
+  ...moved(SHIP_HULL, 'translate(96 136)'),
+  { d: SAIL, role: 'soft', transform: 'translate(96 136)' },
+  ...moved(SHIP_HULL, 'translate(134 144) scale(0.8)'),
+  { d: 'M20 98 l5 -3 M70 90 l5 -3', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * The House of the Undying: the warlocks' tall round tower with no door,
+ * as Daenerys finds it in episode 20, named in episode 15 and entered in
+ * Daenerys IV (chapter 122). Its far side is hatched; the accent is its
+ * crown.
+ */
+const HOUSE_OF_THE_UNDYING: Stroke[] = [
+  { d: 'M60 150 V60 M100 60 V150' },
+  {
+    d: 'M60 60 Q80 70 100 60 M60 60 Q64 40 80 34 Q96 40 100 60',
+    role: 'accent',
+  },
+  {
+    d: 'M60 84 Q80 92 100 84 M60 108 Q80 116 100 108 M60 132 Q80 140 100 132',
+    role: 'soft',
+  },
+  {
+    d: 'M92 74 l5 -3 M92 98 l5 -3 M92 122 l5 -3 M92 144 l5 -3',
+    role: 'ambient',
+  },
+  { d: 'M14 150 V136 H44 M116 136 H146 V150', role: 'soft' },
+  shadow(80, 156, 50),
+]
+
+/**
+ * The first season's places (#1053), the ones it only names (#1035), and
+ * the second stage's visited places (#1469), keyed by record id.
  */
 export const PLACE_DRAWINGS = {
   'haunted-forest': HAUNTED_FOREST,
@@ -1477,6 +1795,21 @@ export const PLACE_DRAWINGS = {
   'western-market': WESTERN_MARKET,
   'womb-of-the-world': WOMB_OF_THE_WORLD,
   'whispering-wood': WHISPERING_WOOD,
+  'crasters-keep': CRASTERS_KEEP,
+  'red-waste': RED_WASTE,
+  'whitetree': WHITETREE,
+  'vaes-tolorro': VAES_TOLORRO,
+  'lordsport': LORDSPORT,
+  'stony-shore': STONY_SHORE,
+  'bitterbridge': BITTERBRIDGE,
+  'storms-end': STORMS_END,
+  'oxcross': OXCROSS,
+  'garden-of-bones': GARDEN_OF_BONES,
+  'guildhall-of-the-alchemists': GUILDHALL_OF_THE_ALCHEMISTS,
+  'fist-of-the-first-men': FIST_OF_THE_FIRST_MEN,
+  'skirling-pass': SKIRLING_PASS,
+  'blackwater-bay': BLACKWATER_BAY,
+  'house-of-the-undying': HOUSE_OF_THE_UNDYING,
 } satisfies Drawings
 
 /** Smoke rising from a ruin: two curls. */

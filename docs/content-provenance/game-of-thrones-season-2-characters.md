@@ -40,22 +40,23 @@ records stepped.
 Gates as episode / site chapter. `source` records give the other number only to
 order them.
 
-| Record               | Show                                                                                                                    | Books                                                                                                                                                                             |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `daisy` (show only)  | 11, "The North Remembers": Ros shows her the brothel, "We do things differently here, Daisy" (quoted on the Daisy page) | none: "no character of this name"; 77 orders her                                                                                                                                  |
-| `jacelyn-bywater`    | none: the show gives the City Watch to Bronn (Bronn page); 12 orders him                                                | 82, Tyrion II: Tyrion names him commander of the City Watch when he sends Janos Slynt to the Wall (Ice and Fire Wiki; "The Night Lands" puts the dismissal in Tyrion II)          |
-| `hallyne`            | none: "The Ghost of Harrenhal" and "Blackwater" name him only in narration and the credits; 15 orders him               | 94, Tyrion V: Tyrion inspects the guild's wildfire with him ("The Ghost of Harrenhal", "In the books"; Hallyne page, ACOK 20)                                                     |
-| `lollys-stokeworth`  | none in the stage; 13 orders her                                                                                        | 118, Tyrion X: Varys proposes Shae for her household, after her maid is caught stealing ("What Is Dead May Never Die", "In the books"; Ice and Fire Wiki, Tanda Stokeworth)       |
-| `osmund-kettleblack` | none: an unnamed Kingsguard of seasons 5 and 8; 18 orders him                                                           | 123, Tyrion XI: the queen names him and Balon Swann to the Kingsguard (Balon Swann page, ACOK 49; Ice and Fire Wiki, Tanda Stokeworth); safe later pin                            |
-| `alayaya`            | none: the show gives her scenes to Ros; 18 orders her                                                                   | 128, Tyrion XII: the queen holds her captive, taking her for Tyrion's lover ("The Prince of Winterfell", "In the books"; Ice and Fire Wiki); safe later pin                       |
-| `garlan-tyrell`      | none: no appearance; 20 orders him                                                                                      | 139, Sansa VIII: at the court of rewards he is the knight in Renly's armour and asks the king to wed Margaery ("Valar Morghulis", "In the books"; Garlan page; Ice and Fire Wiki) |
+| Record               | Show                                                                                                                    | Books                                                                                                                                                                                                                        |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `daisy` (show only)  | 11, "The North Remembers": Ros shows her the brothel, "We do things differently here, Daisy" (quoted on the Daisy page) | none: "no character of this name"; 77 orders her                                                                                                                                                                             |
+| `jacelyn-bywater`    | none: the show gives the City Watch to Bronn (Bronn page); 12 orders him                                                | 82, Tyrion II: Tyrion names him commander of the City Watch when he sends Janos Slynt to the Wall (Ice and Fire Wiki; "The Night Lands" puts the dismissal in Tyrion II)                                                     |
+| `hallyne`            | none: "The Ghost of Harrenhal" and "Blackwater" name him only in narration and the credits; 15 orders him               | 94, Tyrion V: Tyrion inspects the guild's wildfire with him ("The Ghost of Harrenhal", "In the books"; Hallyne page, ACOK 20)                                                                                                |
+| `lollys-stokeworth`  | none in the stage; 13 orders her                                                                                        | 118, Tyrion X: Varys proposes Shae for her household, after her maid is caught stealing ("What Is Dead May Never Die", "In the books"; Ice and Fire Wiki, Tanda Stokeworth)                                                  |
+| `osmund-kettleblack` | none: an unnamed Kingsguard of seasons 5 and 8; 18 orders him                                                           | 123, Tyrion XI: the queen names him and Balon Swann to the Kingsguard (Balon Swann page, ACOK 49; Ice and Fire Wiki, Tanda Stokeworth); safe later pin                                                                       |
+| `alayaya`            | none: the show gives her scenes to Ros; 18 orders her                                                                   | 128, Tyrion XII: the queen holds her captive, taking her for Tyrion's lover ("The Prince of Winterfell", "In the books"; Ice and Fire Wiki); safe later pin                                                                  |
+| `garlan-tyrell`      | none: no appearance; 20 orders him                                                                                      | 139, Sansa VIII: at the court of rewards he asks the king to wed Margaery; that he wore Renly's armour is told only at 211, A Storm of Swords Jaime VIII ("Valar Morghulis", "In the books"; Garlan page; Ice and Fire Wiki) |
 
 - Daisy: role prostitute, Littlefinger's brothel, alive. Italian "Daisy"
   (Italian Wikipedia's TV cast list).
 - Jacelyn Bywater: role commander of the City Watch, alive. His death on the
-  Blackwater is told only in _A Storm of Swords_ (Tyrion I, A Wiki of Ice and
-  Fire), past the stage, so it is not filed here. Italian kept as "Jacelyn
-  Bywater"; no Italian page.
+  Blackwater is told only in _A Storm of Swords_ (Tyrion I, site chapter 148, A
+  Wiki of Ice and Fire): #1470 files it there, `deceased` with his drawing's
+  stage, as later deaths go in at the chapter that tells them (#1238). Italian
+  kept as "Jacelyn Bywater"; no Italian page.
 - Hallyne: role pyromancer of the Alchemists' Guild, alive. Owner check: the
   show's episode 15 is narration only. Books: Tyrion IV (91), where he walks the
   walls in the queen's retinue, is the lower candidate to check. Italian
@@ -66,11 +67,15 @@ order them.
 - Osmund Kettleblack: role knight of the Kingsguard, alive. Earlier chapters
   where the Kettleblacks enter the queen's service are to check. Italian "Osmund
   Kettleblack".
-- Alayaya: role prostitute, Chataya's brothel, `captured` from her gate. Her
-  flogging and release (told while Tyrion recovers) are not filed: the chapter
-  is unconfirmed. Earlier Tyrion chapters at Chataya's are to check. Italian
-  "Alayaya" (Italian Wikipedia, Chataya).
-- Garlan Tyrell: role knight of House Tyrell, alive. Italian "Garlan Tyrell"
+- Alayaya: role prostitute, Chataya's brothel, `captured` from her gate. Tywin
+  has her whipped and thrown out, told by Bronn in Tyrion I of _A Storm of
+  Swords_ (148, A Wiki of Ice and Fire); her release is left to a status issue.
+  Earlier Tyrion chapters at Chataya's are to check. Italian "Alayaya" (Italian
+  Wikipedia, Chataya).
+- Garlan Tyrell: role knight of House Tyrell, alive. That he rode as Renly's
+  ghost in Renly's armour is told only when Loras tells Jaime, in Jaime VIII of
+  _A Storm of Swords_ (211, A Wiki of Ice and Fire, Renly's ghost page); #1470
+  cuts it from his log and draws it as a stage there. Italian "Garlan Tyrell"
   (Italian Wikipedia, Casa Tyrell).
 
 ### Stage-1 records stepped
@@ -108,8 +113,10 @@ Steps in `season-1.ts`, as episode / site chapter.
 Not stepped: Podrick Payne (show gate 19 since #1457; saving Tyrion changes no
 field), Cersei, Joffrey, Tommen, Varys, Tywin (already Hand), Meryn Trant, Ilyn
 Payne, Mandon Moore (death filed by #1457), Dontos Hollard (fool step by #1457).
-Boros Blount's dismissal from the Kingsguard and his return, in the books, wait
-for a check of their chapters.
+Boros Blount's dismissal from the Kingsguard (Tyrion XI, 123) and his return
+(Tyrion II of _A Storm of Swords_, 156), in the books, are drawn as stages of
+his drawing by #1470 (A Wiki of Ice and Fire, Boros Blount page); his role and
+affiliation steps still wait.
 
 ### Omitted
 
@@ -631,7 +638,8 @@ synopses name Xaro, Pyat Pree, Quaithe and the dragons in narration.
 
 Counts: 10 filed, 0 pending, 31 omitted; 1 stage-1 record stepped. The owner's
 rulings of 2026-11-22 file Arstan Whitebeard, omit Rhaego and move the book
-gates of Xaro, Pyat Pree and Quaithe off chapter 86.
+gates of Xaro and Pyat Pree off chapter 86; a later ruling the same day keeps
+Quaithe at 86, where she introduces herself (#1477).
 
 ### Filed
 
@@ -643,7 +651,7 @@ order them.
 | `kovarro` (show only)            | 11, "The North Remembers": Daenerys sends out her bloodriders, "Zhey Rakharo, zhey Aggo, zhey Kovarro" (quoted on the Aggo (The North Remembers) page) | none: no book has the name, its rider is Jhogo; 86 orders him                                                                                                |
 | `xaro-xhoan-daxos`               | 15, "The Ghost of Harrenhal": Pyat Pree, "Should you grow weary of Xaro's baubles" (quoted on the House of the Undying page)                           | 114, Daenerys III: "Come with me to the Arbor, Xaro", and his "Xaro Xhoan Daxos is a man of peace" (quoted on A Wiki of Ice and Fire's Xaro page)            |
 | `pyat-pree` (books only)         | none: episodes 14–20 name him in narration and the credits only; 14 orders him                                                                         | 114, Daenerys III: Jorah urges Daenerys to go to Pyat Pree for help (reported speech)                                                                        |
-| `quaithe` (books only)           | none: episodes 15 and 17 name her in narration only ("I am no one"); 15 orders her                                                                     | 114, Daenerys III, the safe later pin (unverified): she warns Daenerys at the firemage to leave Qarth; no synopsis read has her name said                    |
+| `quaithe` (books only)           | none: episodes 15 and 17 name her in narration only ("I am no one"); 15 orders her                                                                     | 86, Daenerys I: she introduces herself to Daenerys (A Wiki of Ice and Fire's Quaithe page, citing Chapter 12)                                                |
 | `malakho` (show only)            | 15, "The Ghost of Harrenhal": Jorah, "Malakho says the statue is too heavy to carry" (quoted on the Malakho and Kovarro pages)                         | none: "there is no character named Malakho"; 101 orders him                                                                                                  |
 | `drogon`                         | 40, "The Children": the name's first on-screen use (Drogon page), past the stage (#852)                                                                | 86, Daenerys I: she names the black-and-scarlet one Drogon                                                                                                   |
 | `rhaegal`                        | 41, "The Wars to Come": first said on screen with Viserion's (Rhaegal page), past the stage                                                            | 86, Daenerys I: she names the green-and-bronze one Rhaegal                                                                                                   |
@@ -661,8 +669,8 @@ order them.
 - Pyat Pree: role warlock of Qarth, alive. Owner check: if the show says his
   name, the record becomes both media's and his show death at 20 follows.
   Italian "Pyat Pree" (TV cast list).
-- Quaithe: role woman of the Shadow, no allegiance, alive. Owner check: episodes
-  15 and 17. Italian "Quaithe" (TV cast list).
+- Quaithe: role woman of the Shadow, no allegiance, alive, from 86. Owner check:
+  episodes 15 and 17. Italian "Quaithe" (TV cast list).
 - Malakho: role Dothraki warrior, Daenerys's khalasar, alive. His unnamed
   background scenes in episodes 11 and 14 are floors. Italian kept as "Malakho";
   no Italian page.
@@ -681,13 +689,14 @@ order them.
   "Arstan Barbabianca" (Italian Wikipedia, Barristan Selmy's section).
 - The book gates of Xaro, Pyat Pree and Quaithe: Jhogo's line bringing the three
   strangers from Qarth in Daenerys I (86) counts as narration (owner,
-  2026-11-22), and Daenerys II (101) names them in narration only, Quaithe as "a
-  shadowbinder named Quaithe". Xaro's and Pyat Pree's gates are Daenerys III
-  (114), with the quotes and the reported speech above; Xaro's show gate stays
-  at 15. Quaithe's 114 is the safe later pin, the last chapter of the stage
-  where she speaks with Daenerys, under `unverified`. A Wiki of Ice and Fire's
-  Quaithe page says she introduces herself in Daenerys I; that would be a signal
-  at 86, below the pin, so 114 is late, never early.
+  2026-11-22), and Daenerys II (101) names them in narration only. Xaro's and
+  Pyat Pree's gates are Daenerys III (114), with the quotes and the reported
+  speech above; Xaro's show gate stays at 15. Quaithe's gate is 86: A Wiki of
+  Ice and Fire's Quaithe page says she introduces herself in Daenerys I (Chapter
+  12), an explicit signal of her own, and the owner moved her there from the
+  safe later pin of 114 (2026-11-22, applied in #1477 after reading the page
+  again through the Firecrawl tool). Her log holds at 86; her warnings at 101
+  and 114 are her relationship cards.
 
 ### Stage-1 records stepped
 

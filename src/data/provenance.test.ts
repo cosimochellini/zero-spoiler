@@ -2,8 +2,10 @@ import { readdirSync, readFileSync } from 'node:fs'
 import path from 'node:path'
 import { describe, expect, it } from 'vitest'
 
+import { toldIn } from '~/data/reveal'
 import { eggheadRelationshipOmissions } from '~/data/series/one-piece/records/egghead.relationships'
 import { thrillerBarkRelationshipOmissions } from '~/data/series/one-piece/records/thriller-bark.relationships'
+import type { Source } from '~/lib/progress/spoiler'
 import { loadedSeries } from '~/test/series'
 
 // eslint-disable-next-line no-restricted-imports -- The evidence lives in docs, beside the audit manifest.
@@ -54,6 +56,11 @@ interface Provenance {
   unpinnable?: string
   /** How the series' wiki titles an episode's page; chapters are `Chapter N`. */
   episodePage?: (episode: number) => string
+  /**
+   * The hosts that tell each medium, for a series whose two media differ:
+   * an owner whose cards one medium tells cites a page from one of them.
+   */
+  media?: Record<Source, string[]>
   /** The per-record research ledger and the hosts it may cite. */
   records?: { hosts: string[]; ledger: Record<string, Research> }
 }
@@ -216,6 +223,12 @@ const PROVENANCE: Provenance[] = [
     // A Wiki of Ice and Fire refuses scripted requests, so its pages cannot
     // be pinned by revision until #1009 unblocks: they stay URLs, with why.
     unpinnable: 'awoiaf.westeros.org',
+    // The show's wiki for the show's cards, the two book wikis for the
+    // books' (#1477).
+    media: {
+      episode: ['gameofthrones.fandom.com'],
+      chapter: ['awoiaf.westeros.org', 'iceandfire.fandom.com'],
+    },
     // No episode pages: the wiki titles them by name ("Winter Is Coming"),
     // and the book chapters live on A Wiki of Ice and Fire.
     records: {
@@ -232,6 +245,33 @@ const PROVENANCE: Provenance[] = [
     },
   },
 ]
+
+/** Every host an authored character cites, pinned or not. */
+function citedHosts(entry: Authored | undefined): Set<string> {
+  const pinned = (entry?.sources ?? []).map((key) =>
+    hostOf(sources[key]?.url ?? 'missing:'),
+  )
+  const unpinned = (entry?.unpinned?.urls ?? []).map((url) => hostOf(url))
+
+  const hosts = new Set(pinned)
+  for (const host of unpinned) {
+    hosts.add(host)
+  }
+
+  return hosts
+}
+
+/** Whether none of the wanted hosts is among those cited. */
+function citesNone(hosts: Set<string>, wanted: string[]): boolean {
+  return wanted.every((host) => !hosts.has(host))
+}
+
+/** The units in which some snapshot of a timeline is told. */
+function toldUnits(timeline: { source?: Source }[]): Source[] {
+  const units: Source[] = ['episode', 'chapter']
+
+  return units.filter((unit) => timeline.some((entry) => toldIn(entry, unit)))
+}
 
 describe('the wiki revisions the provenance files cite', () => {
   // A broken folder path or pattern would let every series pass on nothing.
@@ -256,7 +296,7 @@ describe('the wiki revisions the provenance files cite', () => {
 
 describe.each(PROVENANCE)(
   '$name relationship provenance',
-  ({ slug, relationships, wikis, uncited, unpinnable, episodePage }) => {
+  ({ slug, relationships, wikis, uncited, unpinnable, episodePage, media }) => {
     const { authored, omitted, pending } = relationships
     const archive = loadedSeries(slug).archive
     const characters = archive.entities.filter(
@@ -348,6 +388,25 @@ describe.each(PROVENANCE)(
             .map((url) => hostOf(url))
             .filter((host) => host !== unpinnable),
         ).toStrictEqual([])
+      },
+    )
+
+    it.each(
+      media === undefined ? [] : owners.map((owner) => ({ ...owner, media })),
+    )(
+      'cites a page of each medium that tells a card of $id',
+      ({ id, relationships: timeline, media: hostsOf }) => {
+        const hosts = citedHosts(authored[id])
+        const entity = archive.getCharacter(id)
+        const told = toldUnits(timeline)
+        const uncitedUnits = told.filter(
+          (unit) =>
+            entity !== undefined
+            && toldIn(entity, unit)
+            && citesNone(hosts, hostsOf[unit]),
+        )
+
+        expect(uncitedUnits).toStrictEqual([])
       },
     )
 

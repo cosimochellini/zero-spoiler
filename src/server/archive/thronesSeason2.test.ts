@@ -1,13 +1,16 @@
 import { describe, expect, it } from 'vitest'
 
+import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import { season2 } from '~/data/series/game-of-thrones/records/season-2'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
+import { recordIn, sidesOf } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage } from './pages.server'
+import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
@@ -63,6 +66,15 @@ const CHANGES: {
     value: 'captured',
   },
   { id: 'ros', episode: 20, chapter: 141, source: 'episode', value: 'alive' },
+  // Told past the stage, in A Storm of Swords, with his drawing's stage
+  // (#1470).
+  {
+    id: 'jacelyn-bywater',
+    episode: 20,
+    chapter: 148,
+    source: 'chapter',
+    value: 'deceased',
+  },
 ]
 
 /**
@@ -151,6 +163,25 @@ const STEPS: {
     chapter: 123,
     source: 'chapter',
   },
+]
+
+/**
+ * Every stage the King's Landing cast's drawings take after their first,
+ * pinned in both media (#1470): Jacelyn Bywater's death, Garlan Tyrell's
+ * ride as Renly's ghost and the reveal of whom Osmund Kettleblack really
+ * serves, all the books' alone, as their records are. `stage` counts a
+ * record's stages from 0.
+ */
+const STAGES: {
+  chapter: number
+  episode: number
+  id: keyof typeof DRAWINGS
+  source?: 'chapter' | 'episode'
+  stage?: number
+}[] = [
+  { id: 'jacelyn-bywater', episode: 20, chapter: 148, source: 'chapter' },
+  { id: 'garlan-tyrell', episode: 36, chapter: 211, source: 'chapter' },
+  { id: 'osmund-kettleblack', episode: 35, chapter: 212, source: 'chapter' },
 ]
 
 type Unit = 'chapter' | 'episode'
@@ -296,6 +327,76 @@ describe('the steps one medium alone tells', () => {
       )
 
       expect(page).not.toContain(JSON.stringify(en))
+    },
+  )
+})
+
+/** A record's stage by its index, and the drawing just before it. */
+function stageOf(
+  id: keyof typeof DRAWINGS,
+  index: number,
+): {
+  previous: unknown
+  stage: (typeof REDRAWINGS)[string][number] | undefined
+} {
+  const stages = REDRAWINGS[id] ?? []
+
+  return {
+    previous: stages[index - 1]?.value ?? DRAWINGS[id],
+    stage: stages[index],
+  }
+}
+
+describe.each(
+  STAGES.flatMap((stage) =>
+    sidesOf(stage, archive.series).map((side) => ({
+      ...stage,
+      ...side,
+      index: stage.stage ?? 0,
+    })),
+  ),
+)(
+  '$id is redrawn by $unit at $episode/$chapter',
+  ({ id, episode, chapter, source, index, before, reached }) => {
+    it('at its pin, not one before', () => {
+      const owner = recordIn(archive, id)
+      const { previous, stage } = stageOf(id, index)
+
+      expect(stage?.episode).toBe(episode)
+      expect(stage?.chapter).toBe(chapter)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? stage?.source).toBe(source)
+      expect(
+        drawingOf(owner, readerFor(archive, before, 'en')).strokes,
+      ).toStrictEqual(previous)
+      expect(
+        drawingOf(owner, readerFor(archive, reached, 'en')).strokes,
+      ).toStrictEqual(stage?.value)
+    })
+  },
+)
+
+describe('Garlan Tyrell’s armour', () => {
+  it('stays out of his page before the book that tells it', () => {
+    // Loras tells Jaime who wore Renly's armour at chapter 211 (#1470); the
+    // page names the armour nowhere before it.
+    const page = JSON.stringify(
+      characterPage('garlan-tyrell', reader('chapter', 210)) ?? null,
+    )
+
+    expect(page).toContain('Garlan')
+    expect(page).not.toMatch(/Renly.s armour/u)
+  })
+})
+
+describe('the stages one medium alone tells', () => {
+  it.each(STAGES.filter(({ source }) => source !== undefined))(
+    'never redraws $id for a reader of the other medium',
+    ({ id, source = 'episode' }) => {
+      const drawn = drawingOf(recordIn(archive, id), otherAtTheEnd(source))
+
+      // The record never opens to that reader, so nothing of it is drawn.
+      expect(drawn.strokes).not.toStrictEqual(REDRAWINGS[id]?.[0]?.value)
     },
   )
 })
