@@ -35,11 +35,12 @@ export interface RenderedEvents {
  * reaches. After a move it waits for the router's `onRendered`: by then the
  * new page's links (a language switch renames them) are drawn, and the
  * router's scroll restoration, which subscribed first, has put back the
- * row's old `scrollLeft`, so the reveal comes last. A browser scrolls a focused link in only when it is nearly all
- * out of sight, so a page half shown at the window's edge kept its ring cut,
- * and the current page could load half hidden (#1377). A press focuses a
- * link before it lets go, so focus from a pointer moves nothing: the row
- * sliding under a tap on the edge would make the tap miss.
+ * row's old `scrollLeft`, so the reveal comes last. A browser scrolls a
+ * focused link in only when it is nearly all out of sight, so a page half
+ * shown at the window's edge kept its ring cut, and the current page could
+ * load half hidden (#1377). A press focuses a link before it lets go, so
+ * focus from a pointer moves nothing: the row sliding under a tap on the
+ * edge would make the tap miss.
  */
 export function useRevealedPage(
   boxRef: RefObject<HTMLElement | null>,

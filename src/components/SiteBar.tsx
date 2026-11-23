@@ -248,6 +248,8 @@ const styles = stylex.create({
     scrollbarWidth: 'none',
     minWidth: 0,
     overflowX: { [ROOMY]: 'visible', default: 'auto' },
+    // A swipe that reaches either end stops there, not in the history.
+    overscrollBehaviorX: 'contain',
   },
   // A phone's second row: the series' name, a hairline, then its pages,
   // flush with the wordmark above. The row spans the bar rather than the

@@ -82,6 +82,14 @@ describe('a page link in a row that scrolls', () => {
   it('scrolls the current page wholly in, on load, on a resize and after the router restores the row', () => {
     stubResizeObserver()
     const { first, scrollBy } = row()
+    // The router's scroll restoration subscribes first, when the router is
+    // made: once the new page is drawn it puts the row's old scroll back,
+    // which takes "Personaggi" out at the start again.
+    const restoration = vi.spyOn(first, 'getBoundingClientRect')
+    rendered.add(() => {
+      restoration.mockReturnValue(span([10, 93]))
+    })
+    restoration.mockReturnValue(span([56, 93]))
     mount()
 
     expect(scrollBy).toHaveBeenLastCalledWith({ left: 46 })
@@ -90,8 +98,7 @@ describe('a page link in a row that scrolls', () => {
 
     expect(scrollBy).toHaveBeenCalledTimes(2)
 
-    // A move to "Personaggi": the router put the old scroll back, so the
-    // new current page is out at the start when the page is drawn.
+    // A move to "Personaggi", in view until the restoration runs.
     document.querySelector('[aria-current]')?.removeAttribute('aria-current')
     first.setAttribute('aria-current', 'page')
     for (const listener of rendered) {

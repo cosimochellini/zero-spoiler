@@ -1,6 +1,6 @@
 import { screen, within } from '@testing-library/react'
 import { type ReactElement, useMemo } from 'react'
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { BookmarkContext, useBookmark } from '~/lib/progress/BookmarkContext'
 import {
@@ -41,6 +41,15 @@ function OtherSeriesBar(): ReactElement {
 const NAMED_APART: Series = {
   ...ONE_PIECE_SERIES,
   name: { en: 'One Piece', it: 'One Piece (it)' },
+}
+
+/** The bar's row at 320px: from x 52 to the edge, the current page cut by it. */
+function laidOutAt320(this: HTMLElement): DOMRect {
+  return DOMRect.fromRect(
+    this.matches('[aria-current="page"]') ?
+      { width: 84, x: 250 }
+    : { width: 268, x: 52 },
+  )
 }
 
 describe('SiteBar', () => {
@@ -119,6 +128,32 @@ describe('SiteBar', () => {
       'aria-current',
       'page',
     )
+  })
+
+  describe('where its pages do not all fit', () => {
+    afterEach(() => {
+      vi.restoreAllMocks()
+      // Defined here, so delete rather than restore.
+      Reflect.deleteProperty(HTMLElement.prototype, 'scrollBy')
+    })
+
+    it('scrolls its pages until the current one is whole', () => {
+      // jsdom lays nothing out and has no `scrollBy`.
+      const scrollBy = vi.fn<(options: ScrollToOptions) => void>()
+      Object.defineProperty(HTMLElement.prototype, 'scrollBy', {
+        configurable: true,
+        value: scrollBy,
+      })
+      vi.spyOn(
+        HTMLElement.prototype,
+        'getBoundingClientRect',
+      ).mockImplementation(laidOutAt320)
+
+      renderWithProviders(<SiteBar />, { path: '/one-piece/en/places' })
+
+      expect(scrollBy).toHaveBeenCalledWith({ left: 14 })
+      expect(scrollBy.mock.contexts).toContain(screen.getByRole('navigation'))
+    })
   })
 
   it('marks the places link as the current page when the reader is on it', () => {
