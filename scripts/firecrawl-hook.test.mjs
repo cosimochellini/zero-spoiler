@@ -168,7 +168,7 @@ describe('before a scrape', () => {
   it('denies a cached page with its path, whatever the format', () => {
     const dir = fresh()
     const file = savePage(dir, { url: CHAPTER, markdown: PAGE, fetched: NOW })
-    const reason = `Already fetched on 2026-11-23: read \`${file}\` (grep it); no credit spent.`
+    const reason = `Already fetched on 2026-11-23: read \`${file}\` (grep it); no credit spent. If that copy is wrong, delete it and its .json to fetch it again.`
 
     for (const formats of [['markdown'], ['query']]) {
       expect(

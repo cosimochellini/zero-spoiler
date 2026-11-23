@@ -196,7 +196,7 @@ export function beforeScrape(input, dir) {
     return {
       hookEventName: 'PreToolUse',
       permissionDecision: 'deny',
-      permissionDecisionReason: `Already fetched on ${date}: read \`${file}\` (grep it); no credit spent.`,
+      permissionDecisionReason: `Already fetched on ${date}: read \`${file}\` (grep it); no credit spent. If that copy is wrong, delete it and its .json to fetch it again.`,
     }
   }
   if (formatNames(input.formats).every((name) => !PAID.has(name))) {
