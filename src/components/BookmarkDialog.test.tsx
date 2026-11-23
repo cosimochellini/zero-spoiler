@@ -113,6 +113,23 @@ describe('EpisodeMark', () => {
     ).not.toBeInTheDocument()
   })
 
+  it('leaves the focus where the reader put it when the form draws again', async () => {
+    const user = userEvent.setup()
+    renderMark(ep(650))
+
+    await open(user)
+    act(() => {
+      button('Cancel').focus()
+    })
+    // The draft changes, the form draws again; only its arrival moves focus.
+    fireEvent.change(field('Last episode you watched'), {
+      target: { value: '700' },
+    })
+
+    expect(field('Last episode you watched')).toHaveValue('700')
+    expect(button('Cancel')).toHaveFocus()
+  })
+
   it('opens on the bookmark as it stands', async () => {
     const user = userEvent.setup()
     renderMark({ mode: 'season', season: 2, episode: 3 })

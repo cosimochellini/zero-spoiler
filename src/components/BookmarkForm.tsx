@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
-import { type ReactElement, type RefObject, useEffect, useRef } from 'react'
+import { type ReactElement, type RefObject, useRef } from 'react'
 
 import { styles } from '~/components/BookmarkDialog.styles'
 import { NumberField, UnitFields } from '~/components/BookmarkFields'
@@ -82,7 +82,6 @@ function DraftForm({
   linkRef: RefObject<HTMLButtonElement | null>
 }): ReactElement {
   const { bookmark, setBookmark } = useBookmark()
-  const formRef = useArrivalFocus()
 
   const commit = (next: Bookmark): void => {
     // `setBookmark` writes the cookie and re-reads the pages, in that order.
@@ -104,7 +103,7 @@ function DraftForm({
     <form
       hidden={devices}
       onSubmit={onSubmit}
-      ref={formRef}
+      ref={focusOnArrival}
       {...stylex.props(styles.body, devices && styles.away)}
     >
       <UnitFields
@@ -139,23 +138,21 @@ function DraftForm({
  * When the form arrives after the dialog has opened, the browser has already
  * given the focus to the close button, the only control there was. It moves
  * to the chosen unit, where it would have started had the form been here.
- * Arriving with the dialog, the form leaves the focus to the dialog.
+ * Arriving with the dialog, the form leaves the focus to the dialog: its ref
+ * attaches in the commit, and the dialog opens in `useModal`'s effect, which
+ * runs after every ref of that commit, so the dialog is not open yet.
+ *
+ * A ref callback with one identity, so it runs when the form attaches and not
+ * on every render, which would pull the focus back from the close button
+ * whenever the reader typed.
  */
-function useArrivalFocus(): React.RefObject<HTMLFormElement | null> {
-  const formRef = useRef<HTMLFormElement>(null)
-
-  useEffect(() => {
-    const form = formRef.current
-    const dialog = form?.closest('dialog')
-    if (
-      dialog?.open === true
-      && form?.contains(document.activeElement) === false
-    ) {
-      form.querySelector<HTMLInputElement>('input:checked')?.focus()
-    }
-  }, [])
-
-  return formRef
+function focusOnArrival(form: HTMLFormElement | null): void {
+  if (
+    form?.closest('dialog')?.open === true
+    && !form.contains(document.activeElement)
+  ) {
+    form.querySelector<HTMLInputElement>('input:checked')?.focus()
+  }
 }
 
 /**
