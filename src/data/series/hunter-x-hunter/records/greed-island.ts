@@ -814,6 +814,15 @@ export const greedIsland: HunterSaga = {
       },
       status: [
         { episode: 62, chapter: 132, source: 'chapter', value: 'alive' },
+        // Chapter 144: the Bombers detonate every bomb planted on the
+        // alliance. The wiki only assumes he dies with it, so presumed dead;
+        // the manga alone tells it (filed at episode 148).
+        {
+          episode: 148,
+          chapter: 144,
+          source: 'chapter',
+          value: 'presumed-dead',
+        },
       ],
       affiliation: [
         {
@@ -1061,8 +1070,8 @@ export const GREED_ISLAND_PLACES: Record<
     region: 'islands',
     arc: 'greed-island-arc',
     landmark: {
-      it: 'La piazza dove si annuncia il torneo mensile',
-      en: 'The square advertising the monthly tournament',
+      it: 'I manifesti dei premi e l’elenco delle gare mensili',
+      en: 'The reward posters and the monthly contest list',
     },
     log: {
       it: 'Gon e Killua raggiungono la città dopo essere entrati nel gioco. Scoprono che il torneo del mese è una gara di morra cinese.',
@@ -1089,8 +1098,8 @@ export const GREED_ISLAND_PLACES: Record<
     region: 'islands',
     arc: 'greed-island-arc',
     landmark: {
-      it: 'La struttura tra le radici dell’albero',
-      en: 'The structure among the tree’s roots',
+      it: 'La torre con la scala attorno al pilastro centrale',
+      en: 'The tower with its stair round the central pillar',
     },
     log: {
       it: 'Gon arriva qui entrando a Greed Island e attende Killua. Una donna gli spiega le regole del gioco prima che esca sull’isola. La mappa indica il luogo come Albero Shiso.',
