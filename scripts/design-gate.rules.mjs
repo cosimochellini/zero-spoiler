@@ -420,9 +420,30 @@ const BLOCKING_TOKEN_RULES = new Set([
 ])
 
 /**
+ * Where the canary page is filed among the copies: a page set in a font and a
+ * colour outside the tokens, which the scan has to report, or it did not read
+ * `DESIGN.md` (a folded `fontFamily`, a frontmatter that does not close, a
+ * file that moved) and every page would pass unread.
+ */
+export const CANARY = 'canary'
+
+export const CANARY_PAGE =
+  '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Canary</title></head>'
+  + '<body><h1 style="font-family: Georgia, serif; color: #ff6a00">Canary</h1></body></html>\n'
+
+/** What the canary gives, each rule with its value, and nothing else. */
+const CANARY_FINDINGS = [
+  'design-system-color rgb(255, 106, 0)',
+  'design-system-font georgia',
+]
+
+/**
  * A page as the detector reads it from a file: its scripts gone, so nothing
  * hydrates or navigates away from `file://`, and a `<base>` to its address,
- * so its stylesheets and fonts load from the server that rendered it.
+ * so its stylesheets and fonts load from the server that rendered it. With no
+ * script, React never moves a streamed Suspense section (`<div hidden
+ * id="S:0">`) into its place, and the detector skips a hidden element, so the
+ * section is shown where it was streamed, at the end of the body.
  * @param {string} html The page as the server sent it.
  * @param {string} address Where it was served.
  * @returns {string} The copy to save.
@@ -430,22 +451,25 @@ const BLOCKING_TOKEN_RULES = new Set([
 export function savedCopy(html, address) {
   return html
     .replaceAll(/<script\b[^>]*>[\s\S]*?<\/script>/giu, '')
+    .replaceAll(/<div hidden(?= id="S:\d+")/gu, '<div')
     .replace(/<head\b[^>]*>/iu, (head) => `${head}<base href="${address}">`)
 }
 
 /**
  * The token findings of a scan of saved copies, each under the address its
  * copy was saved from, so the report names the page and a waiver's glob reads
- * the same address as on the address scan.
+ * the same address as on the address scan. The canary's are checked and
+ * dropped.
  * @param {object[]} findings The raw findings of the saved copies.
  * @param {Map<string, string>} addresses Each copy's file, as the detector
- *   names it, to its page's address.
+ *   names it, to its page's address, or to `CANARY`.
  * @returns {object[]} The `design-system-*` findings, the blocking ones no
  *   longer advisory.
- * @throws {Error} When a finding names a file the gate did not save.
+ * @throws {Error} When a finding names a file the gate did not save, or the
+ *   canary did not give exactly its findings.
  */
 export function tokenFindings(findings, addresses) {
-  return findings
+  const tokens = findings
     .filter((finding) => finding.antipattern.startsWith(DESIGN_SYSTEM))
     .map((finding) => {
       const file = addresses.get(finding.file)
@@ -456,4 +480,17 @@ export function tokenFindings(findings, addresses) {
           { ...finding, file, advisory: false }
         : { ...finding, file }
     })
+  const canary = [
+    ...new Set(
+      tokens
+        .filter(({ file }) => file === CANARY)
+        .map((finding) => `${finding.antipattern} ${finding.ignoreValue}`),
+    ),
+  ].toSorted((a, b) => a.localeCompare(b))
+  if (canary.join('\n') !== CANARY_FINDINGS.join('\n')) {
+    throw new Error(
+      `the token scan cannot vouch for its pages: the engine did not read DESIGN.md. The canary page gave ${canary.join(', ') || 'no token finding'}; expected ${CANARY_FINDINGS.join(', ')}`,
+    )
+  }
+  return tokens.filter(({ file }) => file !== CANARY)
 }

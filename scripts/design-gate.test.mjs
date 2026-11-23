@@ -7,6 +7,7 @@ import { describe, expect, it } from 'vitest'
 import {
   bookmarkedPageProblem,
   bookmarkProblem,
+  CANARY,
   detectorProblem,
   judge,
   pageProblem,
@@ -467,15 +468,46 @@ describe('the scan of saved copies against DESIGN.md', () => {
     )
   })
 
-  it('keeps the token rules under page addresses, font and colour blocking', () => {
-    const address = 'http://127.0.0.1:4000/en/legal'
-    const copy = 'file:///tmp/design-gate-x/0.html'
-    const raw = (antipattern, advisory) => ({
-      antipattern,
-      file: copy,
-      ...(advisory && { advisory }),
-    })
+  it('shows a streamed Suspense section that no script will move into place', () => {
+    const html =
+      '<html><head></head><body><main><!--$?--><template id="B:0"></template>'
+      + '<!--/$--><div hidden>a closed drawer</div></main>'
+      + '<div hidden id="S:0"><section><h2 id="relationships">Ties</h2></section></div>'
+      + '<script>$RC("B:0","S:0")</script></body></html>'
 
+    expect(savedCopy(html, 'http://127.0.0.1:4000/saga/en')).toBe(
+      '<html><head><base href="http://127.0.0.1:4000/saga/en"></head><body><main>'
+        + '<!--$?--><template id="B:0"></template><!--/$-->'
+        + '<div hidden>a closed drawer</div></main>'
+        + '<div id="S:0"><section><h2 id="relationships">Ties</h2></section></div>'
+        + '</body></html>',
+    )
+  })
+
+  const address = 'http://127.0.0.1:4000/en/legal'
+  const copy = 'file:///tmp/design-gate-x/0.html'
+  const canaryFile = 'file:///tmp/design-gate-x/1.html'
+  const files = new Map([
+    [copy, address],
+    [canaryFile, CANARY],
+  ])
+  const canary = [
+    ['design-system-font', 'georgia'],
+    ['design-system-color', 'rgb(255, 106, 0)'],
+    ['design-system-color', 'rgb(255, 106, 0)'],
+  ].map(([antipattern, ignoreValue]) => ({
+    antipattern,
+    file: canaryFile,
+    ignoreValue,
+  }))
+
+  const raw = (antipattern, advisory) => ({
+    antipattern,
+    file: copy,
+    ...(advisory && { advisory }),
+  })
+
+  it('keeps the token rules under page addresses, font and colour blocking', () => {
     expect(
       tokenFindings(
         [
@@ -485,8 +517,10 @@ describe('the scan of saved copies against DESIGN.md', () => {
           raw('design-system-font-size', true),
           raw('ai-color-palette'),
           raw('line-length'),
+          ...canary,
+          { antipattern: 'low-contrast', file: canaryFile },
         ],
-        new Map([[copy, address]]),
+        files,
       ),
     ).toStrictEqual([
       { antipattern: 'design-system-font', file: address, advisory: false },
@@ -496,11 +530,32 @@ describe('the scan of saved copies against DESIGN.md', () => {
     ])
   })
 
+  it('refuses a scan whose canary did not give exactly its font and colour', () => {
+    const stray = {
+      antipattern: 'design-system-radius',
+      file: canaryFile,
+      ignoreValue: '7px',
+    }
+    for (const findings of [
+      [],
+      canary.slice(1),
+      canary.slice(0, 1),
+      [...canary, stray],
+    ]) {
+      expect(() => tokenFindings(findings, files)).toThrow(
+        'the engine did not read DESIGN.md',
+      )
+    }
+  })
+
   it('refuses a finding on a file it did not save', () => {
     expect(() =>
       tokenFindings(
-        [{ antipattern: 'design-system-font', file: 'file:///elsewhere.html' }],
-        new Map(),
+        [
+          ...canary,
+          { antipattern: 'design-system-font', file: 'file:///elsewhere.html' },
+        ],
+        files,
       ),
     ).toThrow('file:///elsewhere.html')
   })

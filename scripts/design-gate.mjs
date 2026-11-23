@@ -22,9 +22,10 @@
  * for an HTTP address, whatever the working directory, the config or the
  * environment (probed in #1385). So a fifth run, in
  * `design-gate.tokens.mjs`, scans saved copies of the same pages at 1440 px
- * and keeps only those rules. A font or a colour outside the tokens blocks;
- * a radius or a type size off the scale stays advisory, as the engine rates
- * it (#1403).
+ * and keeps only those rules, with a canary page set in a font and a colour
+ * outside the tokens that proves the engine read `DESIGN.md`. A font or a
+ * colour outside the tokens blocks; a radius or a type size off the scale
+ * stays advisory, as the engine rates it (#1403).
  *
  * The bookmark: `?ep=N` answers 302 and sets the series cookie. The detector's
  * browser follows it and keeps cookies for the rest of one run, on a profile
@@ -38,7 +39,8 @@
  *   1  findings that no waiver covers
  *   2  the gate cannot vouch for the scan: no build, the server did not
  *      start, the page list is short, a page was not served as asked, the
- *      detector could not scan a target or ran out of time, or a waiver gives
+ *      detector could not scan a target or ran out of time, the token scan's
+ *      canary page was not flagged as expected, or a waiver gives
  *      no reason, is one the detector would not apply, or is temporary and
  *      matches nothing
  */
@@ -82,8 +84,6 @@ const READY_POLL_MS = 250
 const FETCH_TIMEOUT_MS = 15_000
 const DETECT_TIMEOUT_MS = 300_000
 const MAX_PRINTED = 60
-// The npm shim: it runs the engine of this platform's optional package.
-const DETECTOR = fileURLToPath(import.meta.resolve('impeccable/cli/bin/cli.js'))
 
 /**
  * Per series: a bookmark in the middle of the story, so a page shows revealed
@@ -337,8 +337,11 @@ async function detect(viewport, urls, cwd = repositoryRoot) {
   // `--no-config` would drop DESIGN.md too. The saved copies sit in a
   // directory that holds no config, so none is read there either.
   const flag = cwd === repositoryRoot ? '--no-config' : '--no-inline-ignores'
+  // The npm shim: it runs the engine of this platform's optional package.
+  // Resolved here, inside `main`, so a missing package is a tool failure.
+  const cli = fileURLToPath(import.meta.resolve('impeccable/cli/bin/cli.js'))
   const { child, output } = start(
-    [DETECTOR, 'detect', '--json', flag, '--viewport', viewport, ...urls],
+    [cli, 'detect', '--json', flag, '--viewport', viewport, ...urls],
     cwd,
   )
   const timer = setTimeout(() => {

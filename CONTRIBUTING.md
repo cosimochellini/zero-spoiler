@@ -53,12 +53,14 @@ type named there leaves the sitemap. The detector loads `DESIGN.md` only for a
 local file, never for a page address, so the gate also saves each page beside a
 copy of `DESIGN.md` and scans the copies at 1440 px for the `design-system-*`
 rules: a font or a colour outside the tokens fails it, a radius or a type size
-off the scale is advisory. Keep each `fontFamily` in `DESIGN.md` on one line, or
-the detector does not read it. A browser default counts: style a control's
-`color`, `borderColor` or `outlineColor` from the tokens even when it is
-invisible. The gate reads neither `.impeccable/config.local.json` nor ignore
-comments, and it refuses a page that carries `data-impeccable-ignore`.
-`.gate/design.json` lists every raw finding, waived or not.
+off the scale is advisory, and a canary page in an off-token font and colour
+must be flagged or the gate cannot vouch for the scan. Keep each `fontFamily` in
+`DESIGN.md` on one line, or the detector does not read it. A browser default
+counts: style a control's `color`, `borderColor` or `outlineColor` from the
+tokens even when it is invisible. The gate reads neither
+`.impeccable/config.local.json` nor ignore comments, and it refuses a page that
+carries `data-impeccable-ignore`. `.gate/design.json` lists every raw finding,
+waived or not.
 
 ## Archive and drawing verification
 
