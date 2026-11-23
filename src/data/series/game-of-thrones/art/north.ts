@@ -989,7 +989,7 @@ export const northRedrawn: Redrawings = {
     },
   ],
   'little-walder-frey': [
-    // The helm on its side in the snow, its streamers slack: his frozen
+    // The helm on its side in the snow: his frozen
     // body is found in a snowbank at Winterfell in Theon I of A Dance with
     // Dragons (chapter 323). The book's alone; episode 50, where the
     // show's Winterfell reaches the same days, only orders it. How he dies
@@ -1021,9 +1021,8 @@ export const northRedrawn: Redrawings = {
     },
   ],
   'donella-hornwood': [
-    // The shield fallen flat on the ground: Ser Rodrik comes back with the
-    // news that she has died a prisoner of the Bastard of Bolton, in Bran V
-    // (chapter 109). The book's alone; episode 15 only orders it. How she
+    // The shield fallen flat on the ground: Ser Rodrik comes back with a
+    // prisoner held for her murder, in Bran V (chapter 109). The book's alone; episode 15 only orders it. How she
     // dies is not drawn.
     {
       episode: 15,
