@@ -110,10 +110,10 @@ export function useFruitAlbum(): {
   )
 
   useEffect(() => {
-    if (album === null && !stuck) {
+    if (!albums.has(key) && !failed.has(key)) {
       void fetchAlbum({ series, locale }, key)
     }
-  }, [album, key, locale, series, stuck])
+  }, [key, locale, series])
 
   useRestoredScroll(album)
 
@@ -124,6 +124,7 @@ export function useFruitAlbum(): {
         () => {
           failed.delete(key)
           notify()
+          void fetchAlbum({ series, locale }, key)
         }
       : undefined,
   }
