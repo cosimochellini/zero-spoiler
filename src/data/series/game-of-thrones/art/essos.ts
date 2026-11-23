@@ -570,10 +570,11 @@ const SHADE_GLASS: Stroke[] = [
 ]
 
 /**
- * Quaithe: her mask, in 3/4 with its rim and its ties, two narrow eye slits
- * cut in it and hexagons worked over it, as the show makes it in metal. The
- * book's is dark red lacquer, worn when she comes to Daenerys in Daenerys I
- * (chapter 86). The accent is the mask's edge; nothing is behind the slits.
+ * Quaithe: her mask, front on with its rim on one side and its ties, two
+ * eye slits cut in it and hexagons worked over it, as the show makes it in
+ * metal. The book's is dark red lacquer, worn when she comes to Daenerys
+ * in Daenerys I (chapter 86). The accent is the mask's edge; nothing is
+ * behind the slits.
  */
 const MASK: Stroke[] = [
   {
@@ -581,11 +582,9 @@ const MASK: Stroke[] = [
     role: 'accent',
   },
   { d: 'M116 66 Q124 98 106 128 Q96 142 82 144', role: 'soft' },
+  { d: 'M56 80 H74 M86 80 H104' },
   {
-    d: 'M56 80 Q65 77 74 80 Q65 82 56 80 Z M86 80 Q95 77 104 80 Q95 82 86 80 Z',
-  },
-  {
-    d: `${polygon(68, 54, 8, 6)} ${polygon(92, 54, 8, 6)} ${polygon(80, 62, 6, 6)} ${polygon(58, 102, 8, 6)} ${polygon(102, 102, 8, 6)} ${polygon(70, 118, 8, 6)} ${polygon(90, 118, 8, 6)} ${polygon(80, 100, 6, 6)}`,
+    d: `${polygon(68, 54, 8, 6)} ${polygon(92, 54, 8, 6)} ${polygon(80, 62, 6, 6)} ${polygon(58, 102, 8, 6)} ${polygon(102, 102, 8, 6)} ${polygon(70, 118, 8, 6)} ${polygon(90, 118, 8, 6)}`,
     role: 'soft',
   },
   { d: 'M44 66 Q30 70 24 84 M116 66 Q130 70 136 84', role: 'soft' },
@@ -718,8 +717,8 @@ const SCARRED_CHEST: Stroke[] = [
 
 /**
  * Arstan Whitebeard: his tall hardwood staff, the accent, with its knots,
- * beside the box it knocks from Daenerys's hands at the port of Qarth in
- * Daenerys V (chapter 137), fallen open, and the manticore on its back.
+ * beside the manticore it knocks from Daenerys's hands at the port of Qarth
+ * in Daenerys V (chapter 137), on its back by its open box.
  * The staff's far side and the box's are hatched. The show has no Arstan.
  */
 const STAFF_AND_BOX: Stroke[] = [

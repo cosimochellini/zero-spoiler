@@ -1117,7 +1117,7 @@ export const season2: ThronesSaga = {
         it: 'Un vecchio dei Sette Regni, scudiero di Belwas il Forte.',
         en: 'An old man from the Seven Kingdoms, squire to Strong Belwas.',
       },
-      visual: { art: 'arstan-whitebeard', tint: 'ivory' },
+      visual: { art: 'arstan-whitebeard', tint: 'ocher' },
     },
     // The places a scene of the stage is set in (#1469), each at its first
     // scene in each medium, as `game-of-thrones-season-2-places.md` lists
