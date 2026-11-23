@@ -295,30 +295,55 @@ function sagaSpotOf(points: Point[], saga: number): Point {
 
 /** Room left past the sagas' names at the window's top and bottom. */
 const PAST_NAMES = 14
+/**
+ * How many dots of the fog tail the chart opens on past the reader's stop:
+ * enough to show where the route turns next, and nothing the tail does not
+ * already draw, since its dots are spaced by their count alone.
+ */
+const FOG_AHEAD = 3
+/** Half of something: the middle of a length. */
+const HALF = 0.5
 
 /**
- * The window the chart opens on: every open stop of the reader's saga, the
- * reader's own stop at its middle across. In the Grand Line it takes in the
- * band, both Calm Belts and the sagas' names past them, the band's middle at
- * the window's.
+ * The window the chart opens on: every open stop of the reader's saga and
+ * the first few dots of the fog tail (`tail`, nearest first). In a Blue it
+ * centres on them, so the reader's sea fills the window rather than a corner
+ * of it (#1380). In the Grand Line it takes in the band, both Calm Belts and
+ * the sagas' names past them, the reader's own stop at its middle across and
+ * the band's middle at the window's.
  */
-export function openingOf(open: StopView[], here: null | StopView): Rect {
+export function openingOf(
+  open: StopView[],
+  here: null | StopView,
+  tail: Point[],
+): Rect {
   if (here === null) {
     return openingView([], null)
   }
 
   const at = pointOf(here)
-  const points = pointsIn(open, here.saga)
-  const band =
-    at.y < BELT_TOP ?
-      []
-    : [
-        { x: at.x, y: NORTH_OF_BELT - PAST_NAMES },
-        { x: at.x, y: SOUTH_OF_BELT + PAST_NAMES },
-      ]
+  const points = [...pointsIn(open, here.saga), ...tail.slice(0, FOG_AHEAD)]
+  if (at.y < BELT_TOP) {
+    return openingView(points, middleOf(points))
+  }
 
   return openingView(
-    [...points, ...band],
-    band.length === 0 ? at : { x: at.x, y: BAND_MIDDLE },
+    [
+      ...points,
+      { x: at.x, y: NORTH_OF_BELT - PAST_NAMES },
+      { x: at.x, y: SOUTH_OF_BELT + PAST_NAMES },
+    ],
+    { x: at.x, y: BAND_MIDDLE },
   )
+}
+
+/** The middle of the box round some points. */
+function middleOf(points: Point[]): Point {
+  const xs = points.map((point) => point.x)
+  const ys = points.map((point) => point.y)
+
+  return {
+    x: (Math.min(...xs) + Math.max(...xs)) * HALF,
+    y: (Math.min(...ys) + Math.max(...ys)) * HALF,
+  }
 }

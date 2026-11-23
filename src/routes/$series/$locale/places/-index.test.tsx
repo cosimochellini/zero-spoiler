@@ -1,7 +1,7 @@
-import { screen, within } from '@testing-library/react'
+import { fireEvent, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import type { ReactElement } from 'react'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import type { SagaPick, StopView } from '~/lib/view/places'
 import type { CoveredRecord } from '~/lib/view/records'
@@ -81,6 +81,24 @@ function seas(): string[] {
   return screen
     .getAllByRole('heading', { level: 2 })
     .map((heading) => heading.textContent)
+}
+
+/** The folded row's toggle, which carries the bar's summary in its name. */
+function foldedToggle(): HTMLElement {
+  return screen.getByRole('button', { expanded: false })
+}
+
+/** Where the bar's foot is, scrolled: everything but a group starts at 0. */
+const BAR_FOOT = 156
+/** East Blue's group has scrolled above the bar's foot, the next has not. */
+const TOPS: Record<string, number> = { 'east-blue': -500, 'grand-line': 400 }
+
+/** A group's top, by the sea its heading id ends in; 0 for the rest. */
+function topOf(element: Element): number {
+  const label = element.getAttribute('aria-labelledby') ?? ''
+  const sea = Object.keys(TOPS).find((key) => label.endsWith(`-${key}`))
+
+  return sea === undefined ? 0 : (TOPS[sea] ?? 0)
 }
 
 describe('the places index', () => {
@@ -205,6 +223,25 @@ describe('the places index', () => {
     expect(
       screen.queryByRole('button', { name: 'Show all' }),
     ).not.toBeInTheDocument()
+  })
+
+  // On a phone the group heads scroll away, so the folded row says which
+  // sea is under the bar (#1380).
+  it('names the sea in view in the folded row', async () => {
+    await draw()
+
+    expect(foldedToggle()).toHaveAccessibleName(/All seas$/u)
+
+    vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(
+      function (this: Element) {
+        return DOMRect.fromRect({ y: topOf(this), height: BAR_FOOT })
+      },
+    )
+    fireEvent.scroll(globalThis.window)
+
+    expect(foldedToggle()).toHaveAccessibleName(/East Blue · 2 places$/u)
+
+    vi.restoreAllMocks()
   })
 
   it('is not there with nothing open', async () => {

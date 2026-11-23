@@ -41,6 +41,16 @@ export const stickyStyles = stylex.create({
     insetBlockStart: `calc(${pin.bar} + var(${STACK_PROPERTY}, 0px))`,
   },
   whileOpen: { position: { 'default': 'static', ':is([open] > *)': 'sticky' } },
+  // A head that pins only where the whole control bar does. On a phone the
+  // bar keeps its folded row pinned, which names the group in view, so the
+  // head scrolls away with its group (#1380). The query is the one that
+  // hides `ControlBar`'s folded row.
+  wideOnly: {
+    position: {
+      'default': 'static',
+      '@media (min-width: 40rem) and (min-height: 32rem)': 'sticky',
+    },
+  },
   document: {
     scrollPaddingBlockStart: `calc(${pin.bar} + var(${STACK_PROPERTY}, 0px) + ${HEAD_ROOM})`,
   },

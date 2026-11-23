@@ -72,16 +72,18 @@ export const styles = stylex.create({
   // At the limit a button stays focusable (`aria-disabled`): it does
   // nothing, and the focus does not fall to the page.
   zoomLimit: { cursor: 'not-allowed', opacity: 0.55 },
+  // In the body face, the button's own: "See all" is words, and the body
+  // face draws a true minus (U+2212) where the mono's reads as a hyphen.
   zoomButton: {
     backgroundColor: color.paper,
-    fontFamily: font.mono,
     fontSize: text.base,
     minWidth: '2.75rem',
   },
+  // A sentence, so the body face: mono is for numerals and short labels.
   hint: {
     color: color.muted,
-    fontFamily: font.mono,
-    fontSize: text.xs,
+    fontSize: text.base,
+    lineHeight: leading.body,
     marginBlockStart: space.xs,
   },
   // The overlay the words and the stops sit in, the size of the drawing.

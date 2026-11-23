@@ -70,7 +70,7 @@ export interface ChartModel {
   lit: null | Set<string>
   marks: ShipMark[]
   open: StopView[]
-  /** The window the chart opens on across: the reader's saga. */
+  /** The window the chart opens on across: the reader's saga and the fog next. */
   opening: Rect
   regions: Region[]
   sagaNames: SagaName[]
@@ -113,6 +113,7 @@ export function modelOf(
       []
     : [t('places.stage', { index: open.length, total }), here.name]
   const main = open.findLast((port) => isOnRoute(pointOf(port))) ?? null
+  const tail = tailOf(main === null ? ORIGIN : pointOf(main), covered.length)
 
   return {
     covered,
@@ -125,7 +126,7 @@ export function modelOf(
     marks: marksOf(props.ships, reached),
     ...namesOf(open, here, props.sagas),
     open,
-    opening: openingOf(open, here),
+    opening: openingOf(open, here, tail),
     regions: [...regionsFor(open.flatMap((port) => port.sea))],
     seas: props.seas,
     summary: [
@@ -133,7 +134,7 @@ export function modelOf(
       ...where,
       ...(covered.length === 0 ? [] : [fog]),
     ].join('. '),
-    tail: tailOf(main === null ? ORIGIN : pointOf(main), covered.length),
+    tail,
     total,
   }
 }
