@@ -296,6 +296,39 @@ function chapterDraft(chapter: number, series: BookmarkSeries): Draft {
 }
 
 /**
+ * The same point in the other anime unit, the one conversion that is exact:
+ * an episode draft as its season and the episode in it, a season draft as the
+ * absolute episode, both through the season table. A draft that is not a
+ * bookmark yet, or an episode the table does not reach, gives the other unit
+ * an empty draft rather than a guess. A chapter has no twin: `null`.
+ */
+export function twinDraft(draft: Draft, series: BookmarkSeries): Draft | null {
+  if (draft.mode === 'chapter') {
+    return null
+  }
+
+  const { bookmark } = gradeDraft(draft, series)
+  return draft.mode === 'episode' ?
+      seasonTwin(bookmark, series)
+    : episodeTwin(bookmark, series)
+}
+
+function seasonTwin(bookmark: Bookmark, series: BookmarkSeries): Draft {
+  const at =
+    bookmark?.mode === 'episode' ?
+      locateEpisode(bookmark.episode, series)
+    : null
+  const [group, number] = at === null ? ['', ''] : [at.season, at.episode]
+  return { mode: 'season', group: String(group), number: String(number) }
+}
+
+function episodeTwin(bookmark: Bookmark, series: BookmarkSeries): Draft {
+  const episode =
+    bookmark?.mode === 'season' ? absoluteEpisodeOf(bookmark, series) : null
+  return { mode: 'episode', group: '', number: String(episode ?? '') }
+}
+
+/**
  * The largest number the draft's field accepts, given its mode and group, or
  * `null` while the group it needs has not been chosen.
  */

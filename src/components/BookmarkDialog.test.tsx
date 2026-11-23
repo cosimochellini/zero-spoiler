@@ -179,20 +179,44 @@ describe('EpisodeMark', () => {
     expect(screen.getByRole('button', { name: /CH 1044/u })).toBeInTheDocument()
   })
 
-  it('empties the field when the unit changes rather than converting', async () => {
+  it('keeps a draft per unit, converting only between episode and season', async () => {
     const user = userEvent.setup()
-    renderMark(ep(650))
+    renderMark(ep(20))
 
     await open(user)
+    await user.click(screen.getByRole('radio', { name: 'Season' }))
 
-    expect(field('Last episode you watched')).toHaveValue('650')
+    // Episode 20 is the twentieth of season 1, exactly.
+    expect(seasonSelect()).toHaveValue('1')
+    expect(field('Episode in that season')).toHaveValue('20')
 
     await user.click(screen.getByRole('radio', { name: 'Chapter' }))
 
+    // An episode is not a chapter: nothing is carried across.
     expect(field('Last chapter you read')).toHaveValue('')
     expect(button('Save')).toBeDisabled()
+
+    await user.type(field('Last chapter you read'), '300')
+    await user.click(screen.getByRole('radio', { name: 'Episode' }))
+
+    expect(field('Last episode you watched')).toHaveValue('20')
+
+    await user.click(screen.getByRole('radio', { name: 'Chapter' }))
+
+    expect(field('Last chapter you read')).toHaveValue('300')
+
+    // A new season empties the number, and the episode with it.
+    await user.click(screen.getByRole('radio', { name: 'Season' }))
+    await user.selectOptions(seasonSelect(), '2')
+
+    expect(field('Episode in that season')).toHaveValue('')
+
+    await user.type(field('Episode in that season'), '3')
+    await user.click(screen.getByRole('radio', { name: 'Episode' }))
+
+    expect(field('Last episode you watched')).toHaveValue('64')
     // Nothing has been saved yet.
-    expect(stored()).toBe('650')
+    expect(stored()).toBe('20')
   })
 
   it('steps the number with the two controls', async () => {
