@@ -95,20 +95,29 @@ export function FogBand<S extends SeriesSlug = never>({
               <EpisodeMark placement="fold" />
             </div>
           : null}
-          {fold === undefined ?
-            children
-          : <FogFold
-              count={count}
-              id={fold.id}
-              words={foldWords(t, fold.keys)}
-            >
-              {children}
-            </FogFold>
-          }
+          {foldedTiles({ children, count, fold, t })}
         </>
       )}
     </section>
   )
+}
+
+/** The band's tiles, in a folded grid where the band has a `fold`. */
+function foldedTiles<S extends SeriesSlug>({
+  children,
+  count,
+  fold,
+  t,
+}: Pick<FogBandProps<S>, 'children' | 'count' | 'fold' | 't'>): ReactNode {
+  return fold === undefined ? children : (
+      <FogFold
+        count={count}
+        id={fold.id}
+        words={foldWords(t, fold.keys)}
+      >
+        {children}
+      </FogFold>
+    )
 }
 
 const styles = stylex.create({
