@@ -1,5 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react'
-import { afterEach, describe, expect, it } from 'vitest'
+import { afterEach, beforeAll, describe, expect, it } from 'vitest'
 
 import { expireCookie, parseCookieHeader } from '~/lib/cookies'
 import { ONE_PIECE_BOOKMARK } from '~/lib/progress/series'
@@ -13,7 +13,7 @@ import { coveredRecord, waypoint } from '~/test/fixtures'
 import { renderWithProviders } from '~/test/providers'
 import { settleDelay } from '~/test/settle'
 
-import { LandingPage } from './-landing'
+import { LandingPage, preloadLanding } from './-landing'
 
 const saga = waypoint({ name: 'Dressrosa', summary: 'The toy kingdom.' })
 
@@ -75,6 +75,13 @@ const home: HomeView = {
 }
 
 describe('LandingPage', () => {
+  // The loader fetches the branch it chose, so a render finds it in hand and
+  // never suspends: the renders below are read at once.
+  beforeAll(async () => {
+    await preloadLanding({ onboarding: onboarding() })
+    await preloadLanding({ home })
+  })
+
   afterEach(() => {
     expireCookie(ONE_PIECE_BOOKMARK.cookie)
     expireCookie(ONE_PIECE_BOOKMARK.trialCookie)

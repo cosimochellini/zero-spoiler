@@ -7,24 +7,35 @@
  * generated route tree, and taking the loader data as a prop is what lets a
  * test render either branch.
  */
-import * as stylex from '@stylexjs/stylex'
+import { lazyRouteComponent } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
-import { HomeCast } from '~/components/HomeCast'
-import { HomeFillerAhead } from '~/components/HomeFillerAhead'
-import { HomeFold } from '~/components/HomeFold'
-import { HomeMoreStories, HomeStories } from '~/components/HomeStories'
-import { HomeWelcome } from '~/components/HomeWelcome'
-import { OnboardingLanding } from '~/components/OnboardingLanding'
-import { modeOf } from '~/lib/progress/episode'
-import type { DemoDrawings, HomeView, LandingView } from '~/lib/view/records'
-import { settleStyles } from '~/styles/settle'
-import { color, rule, space } from '~/styles/tokens.stylex'
+import type { DemoDrawings, LandingView } from '~/lib/view/records'
 
-// The bands in DOM order. The fold is there from the first frame but for its
-// control, which takes the first step. The filler warning, when there is one,
-// takes the stories' step and moves the rest on.
-const BAND = { fold: 0, stories: 1, cast: 2, more: 3 } as const
+// A chunk each, because the loader sends one branch and the other would ride
+// in every visitor's first load (#1573). Router's `lazyRouteComponent` rather
+// than React's `lazy`, for its `preload`: see `preloadLanding`. A file's name
+// is its chunk's, which the route's `head` preloads.
+const OnboardingLanding = lazyRouteComponent(
+  async () => import('~/components/OnboardingLanding'),
+  'OnboardingLanding',
+)
+const HomeLanding = lazyRouteComponent(
+  async () => import('~/components/HomeLanding'),
+  'HomeLanding',
+)
+
+/**
+ * The loader's last step: fetch the branch it chose. The page is rendered
+ * with the branch in hand and never suspends on it. A render that suspended
+ * would send the page's empty fallback first and the branch after it, in a
+ * later part of the document, where the document is meant to carry the one
+ * page whole, for everyone. Hydration, which has no loader, waits on the
+ * chunk the head preloaded.
+ */
+export async function preloadLanding(landing: LandingView): Promise<void> {
+  await ('onboarding' in landing ? OnboardingLanding : HomeLanding).preload?.()
+}
 
 /** What the loader sent. */
 export interface LandingPageProps {
@@ -47,92 +58,5 @@ export function LandingPage({
         {...landing.onboarding}
         loadDrawings={loadDrawings}
       />
-    : <Home {...landing.home} />
+    : <HomeLanding {...landing.home} />
 }
-
-/**
- * The home page, a marquee hero.
- *
- * Three questions, in order, for a reader picking the series back up: where
- * am I, what just happened, who matters now. The fold answers the first with
- * the arc's own drawing and nothing else; a thick rule ends it, and under it
- * the page becomes a ledger of the latest stories, a row of crests, and the
- * rest of the stories closed under their titles. Filler close ahead of an
- * episode reader is warned of first. A new
- * bookmark re-runs the loader, so saving one from the fold or the bar moves
- * the whole page to the new point.
- */
-function Home({
-  before,
-  cast,
-  filler,
-  point,
-  saga,
-  stories,
-}: HomeView): ReactElement {
-  const shift = filler === null ? 0 : 1
-  const at = (band: number): number => band + shift
-
-  return (
-    <main
-      id="content"
-      {...stylex.props(styles.page)}
-    >
-      <HomeFold
-        band={BAND.fold}
-        point={point}
-        saga={saga}
-      />
-
-      <div {...stylex.props(styles.below)}>
-        <HomeWelcome />
-        {filler !== null && (
-          <div
-            {...stylex.props(settleStyles.band, settleStyles.at(BAND.stories))}
-          >
-            <HomeFillerAhead
-              ahead={filler}
-              mode={modeOf(point)}
-            />
-          </div>
-        )}
-        <div
-          {...stylex.props(
-            settleStyles.band,
-            settleStyles.at(at(BAND.stories)),
-          )}
-        >
-          <HomeStories
-            before={before}
-            stories={stories}
-          />
-        </div>
-        <div
-          {...stylex.props(settleStyles.band, settleStyles.at(at(BAND.cast)))}
-        >
-          <HomeCast cast={cast} />
-        </div>
-        <div
-          {...stylex.props(settleStyles.band, settleStyles.at(at(BAND.more)))}
-        >
-          <HomeMoreStories stories={stories} />
-        </div>
-      </div>
-    </main>
-  )
-}
-
-const styles = stylex.create({
-  page: { paddingInline: space.md, display: 'grid', rowGap: space.xl2 },
-  // The thick rule that ends the fold, as the macrostructure asks: below it
-  // the page is something else.
-  below: {
-    borderBlockStartColor: color.rule2,
-    borderBlockStartStyle: 'solid',
-    borderBlockStartWidth: rule.fine,
-    display: 'grid',
-    paddingBlockEnd: space.xl2,
-    paddingBlockStart: space.xl,
-    rowGap: space.xl3,
-  },
-})

@@ -1,9 +1,17 @@
 import { describe, expect, it, vi } from 'vitest'
 
 import { readTrial } from '~/lib/progress/readBookmark'
-import { ONE_PIECE_BOOKMARK } from '~/lib/progress/series'
+import { ONE_PIECE_BOOKMARK, ONE_PIECE_SERIES } from '~/lib/progress/series'
+import { copyOf } from '~/server/copy.server'
 
 import { Route } from '.'
+
+// The build names the chunks; here each is named after itself.
+vi.mock(import('~/lib/chunks'), () => ({
+  preloadChunk: (name: string) => [
+    { rel: 'modulepreload' as const, href: name },
+  ],
+}))
 
 // The cookie readers ask the request for its headers, and there is none here.
 vi.mock(import('~/lib/progress/readBookmark'), () => ({
@@ -40,5 +48,45 @@ describe('the landing route', () => {
     vi.mocked(readTrial).mockReturnValue(null)
 
     expect(reloads('enter')).toBeUndefined()
+  })
+})
+
+type Head = (input: {
+  loaderData: unknown
+  match: { context: { copy: unknown }; pathname: string }
+  params: { locale: string }
+}) => { links: { href: string; rel: string }[] }
+
+function isHead(value: unknown): value is Head {
+  return typeof value === 'function'
+}
+
+/** The chunks the landing's head preloads, for what the loader sent. */
+function preloadedFor(loaderData: unknown): unknown {
+  const head: unknown = Route.options.head
+  if (!isHead(head)) {
+    throw new TypeError('the landing has no head')
+  }
+  const { links } = head({
+    loaderData,
+    match: {
+      context: { copy: copyOf(ONE_PIECE_SERIES, 'en') },
+      pathname: '/one-piece/en',
+    },
+    params: { locale: 'en' },
+  })
+  return links.filter(({ href }) => href.endsWith('Landing'))
+}
+
+describe('the landing head', () => {
+  // One branch is sent, so one is fetched beside the entry (#1573).
+  it('preloads the branch the loader chose, and only that one', () => {
+    expect(preloadedFor({ onboarding: {} })).toStrictEqual([
+      { rel: 'modulepreload', href: 'OnboardingLanding' },
+    ])
+    expect(preloadedFor({ home: {} })).toStrictEqual([
+      { rel: 'modulepreload', href: 'HomeLanding' },
+    ])
+    expect(preloadedFor(undefined)).toStrictEqual([])
   })
 })

@@ -3,10 +3,11 @@ import { type ReactElement, useCallback } from 'react'
 
 import { isLocale } from '~/i18n/locales'
 import type { SeriesSlug } from '~/i18n/types'
+import { preloadChunk } from '~/lib/chunks'
 import { readPlain } from '~/lib/plain'
 import { readTrial } from '~/lib/progress/readBookmark'
 import { describeNamedPage } from '~/routes/$locale/-head'
-import { LandingPage } from '~/routes/$series/$locale/-landing'
+import { LandingPage, preloadLanding } from '~/routes/$series/$locale/-landing'
 import { loadDemoDrawings, loadHome } from '~/server/api'
 
 export const Route = createFileRoute('/$series/$locale/')({
@@ -16,8 +17,13 @@ export const Route = createFileRoute('/$series/$locale/')({
   // the reader has reached: with no bookmark, the onboarding with East Blue
   // and nothing past it; with one, the arc they are in, the stories concluded in it,
   // the characters those stories name. Nothing past the bookmark is in it.
-  loader: async ({ context }) =>
-    loadHome({ data: { series: context.series.slug, locale: context.locale } }),
+  loader: async ({ context }) => {
+    const landing = await loadHome({
+      data: { series: context.series.slug, locale: context.locale },
+    })
+    await preloadLanding(landing)
+    return landing
+  },
   // A trial starts on a click that leaves this page, so the page kept from
   // before it was read with no trial point: drawn from it after Back, the
   // dial stood at 1 and "I'm here" saved episode 1 (#1399). On a trial the
@@ -25,17 +31,30 @@ export const Route = createFileRoute('/$series/$locale/')({
   // stands as long as the router keeps it.
   shouldReload: ({ cause, context }) =>
     cause === 'enter' && readTrial(context.series) !== null ? true : undefined,
-  head: (context) =>
-    isLocale(context.params.locale) ?
-      describeNamedPage<SeriesSlug>({
-        copy: context.match.context.copy,
-        descriptionKey: 'site.description',
-        kind: 'landing',
-        locale: context.params.locale,
-        pathname: context.match.pathname,
-        titleKey: 'site.title',
-      })
-    : {},
+  head: ({ loaderData, match, params }) => {
+    if (!isLocale(params.locale)) {
+      return {}
+    }
+    const page = describeNamedPage<SeriesSlug>({
+      copy: match.context.copy,
+      descriptionKey: 'site.description',
+      kind: 'landing',
+      locale: params.locale,
+      pathname: match.pathname,
+      titleKey: 'site.title',
+    })
+    const links = [...page.links]
+    // The branch the loader chose is a chunk of its own (-landing.tsx):
+    // fetched beside the entry, not once hydration has met it (#1573).
+    if (loaderData !== undefined) {
+      links.push(
+        ...preloadChunk(
+          'onboarding' in loaderData ? 'OnboardingLanding' : 'HomeLanding',
+        ),
+      )
+    }
+    return { ...page, links }
+  },
 })
 
 /** The landing page, with the loader's data. */
