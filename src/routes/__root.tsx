@@ -18,6 +18,7 @@ import {
   translate,
 } from '~/i18n/translate'
 import { appHead } from '~/lib/appIcons'
+import { preloadChunk } from '~/lib/chunks'
 import { isMissing } from '~/lib/missing'
 import { BookmarkProvider } from '~/lib/progress/BookmarkProvider'
 import { readBookmark, readTrial } from '~/lib/progress/readBookmark'
@@ -70,7 +71,6 @@ export const Route = createRootRoute({
   },
   head: ({ match, matches }) => {
     const app = appHead(match.context.series, match.context.locale)
-    const chunk = import.meta.env.DICTIONARY_CHUNKS?.[match.context.locale]
     return {
       meta: [
         // A 404: on any other page a deeper route's title wins.
@@ -135,7 +135,7 @@ export const Route = createRootRoute({
         // The language's shared copy, fetched in parallel with the entry
         // rather than after it: the router waits for it before it hydrates
         // (#1575). Start preloads only what the route chunks import statically.
-        ...(chunk === undefined ? [] : [{ rel: 'modulepreload', href: chunk }]),
+        ...preloadChunk(match.context.locale),
         // Dev only. In a production build the compiled StyleX CSS lives inside
         // the hashed asset imported above and needs no link of its own, and
         // `import.meta.env.DEV` is replaced with `false` so this entry is dead

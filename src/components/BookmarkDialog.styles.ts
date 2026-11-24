@@ -135,10 +135,11 @@ export const styles = stylex.create({
     gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
     position: 'relative',
   },
+  // No fill, as ChoiceGroup's segments: the underline and the ink mark the
+  // chosen unit (#1591).
   marker: {
     borderRadius: radius.input,
     insetBlock: space.xs3,
-    backgroundColor: color.paper3,
     borderBlockEndColor: color.accent,
     borderBlockEndStyle: 'solid',
     borderBlockEndWidth: rule.fine,

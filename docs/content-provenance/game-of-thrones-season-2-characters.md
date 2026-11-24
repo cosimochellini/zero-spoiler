@@ -256,6 +256,28 @@ of "The Ghost of Harrenhal" is named only in the credits, so the record stays
 the books'), Petyr Baelish (his visit to Renly's camp is stepped by #1463),
 Hallis Mollen and Wendel Manderly (in Catelyn's party; no field changes).
 
+### Relationships (#1480)
+
+All twelve records are authored in `records/season-2.relationships.ts`, and
+Renly and Loras Tyrell get their stage-2 snapshots in
+`season-1.relationships.ts`. The pages read are in
+`game-of-thrones-relationships.json`.
+
+- The show's cards run from "The North Remembers" (11) to "Valar Morghulis"
+  (20), and the books' from the prologue (74) to Sansa VIII (139). Where the
+  media differ in wording, actor or order, the entry is split by medium: Renly's
+  death (15 and 107), Brienne's sworn sword (the books' 113), Margaery's
+  betrothal (20 and 139), Davos and Matthos on the Blackwater (19 and 132).
+- Selyse, Shireen and Mace Tyrell are the books' alone in this stage: the show
+  names them at episodes 25 and 32, past the stage (#852), so no show card names
+  them and their own cards are chapter-only entries ordered at those episodes.
+- Cortnay Penrose's cards are the books' alone, at 116 and at 118, where Tyrion
+  X tells that Storm's End fell and that he died.
+- Not stepped: Catelyn (her cards for Renly, Brienne and Stannis belong to the
+  Riverlands group), Petyr Baelish and Jaime Lannister (named in Renly's,
+  Loras's and Brienne's cards only), Gendry and Tywin Lannister (no card of
+  their own in this group).
+
 ### Drawings (#1471)
 
 Each record has its own drawing in `art/stormlands.ts`; the objects, stages and
@@ -394,6 +416,34 @@ field changes), Rickard Karstark (his son's death changes no field of his),
 Edmure, Hoster and Brynden Tully, Yoren (death filed by #1290) and Lommy (his
 book-side cards are #1481's and his chronicle #1486's). Brienne's escort of
 Jaime belongs to her record, filed by #1464.
+
+### Relationships (#1481)
+
+The group's cards, 24 owners: the nine new records, Jaqen H'ghar, Rorge, Biter
+and Lommy (who leave `omitted`), and eleven stage-1 records with stage-2
+snapshots (Arya, Gendry, Hot Pie, Yoren, Robb, Catelyn, Jaime, Tywin, Gregor
+Clegane, Roose Bolton, Edmure). New characters' cards are in
+`season-2.relationships.ts`, the others in `season-1.relationships.ts`. Book
+facts come from A Wiki of Ice and Fire's chapter pages for Arya I, II, IV to X
+(site chapters 75, 79, 88, 93, 100, 104, 112, 121, 138), Catelyn I, V and VII
+(81, 113, 129) and Tyrion VI (99), read through the Firecrawl tool; show facts
+from the Game of Thrones Wiki's episode and character pages.
+
+- Show and book cards are separate wherever the media differ: the show's Tickler
+  and Amory Lorch die at Jaqen's hand at Arya's asking (15, 16), the books'
+  Chiswyck and Weese do (104, 112); the show's Alton Lannister and the books'
+  Cleos Frey carry Robb's terms; Talisa is the show's alone.
+- Lommy's cards are the books' alone (75, 93): his show record opens at episode
+  31, so his show-side cards wait for stage 4.
+- Rorge and Biter are named in the books alone, so Jaqen's show cards never name
+  them.
+- Catelyn Stark and Jaime Lannister have stage-2 snapshots too (review round 1):
+  her embassy to Renly with Brienne, the quarrel over Jaime, his release and her
+  view of Robb's match; his cell, the escape and Brienne's escort. Not given
+  any: Rickard Karstark, Brynden and Hoster Tully, the Greatjon and Grey Wind
+  (they appear as people in others' cards). Stannis and Renly's own cards are
+  #1480's; the Renly chapters (Catelyn II to IV) were not read, so Catelyn's
+  book cards start at 81.
 
 ### Drawings (#1472)
 
@@ -681,6 +731,77 @@ I), Alliser Thorne (his errand to King's Landing changes no field).
 - **Collectives and descriptors:** Craster's wives and daughters, Craster's
   sons, the White Walker who leads the wights at the Fist (episode 20), the
   Night's Watch officer, Mormont's raven.
+
+### Relationships (#1483)
+
+The twelve filed records carry their first cards, and five season-1 characters
+get stage-2 snapshots: Jon Snow, Jeor Mormont, Samwell Tarly, Grenn and Ghost.
+The new characters' cards are in `season-2.relationships.ts`, the season-1
+characters' in `season-1.relationships.ts`. All seventeen owners are `authored`
+in `game-of-thrones-relationships.json`; none is omitted. Aemon, Alliser, Pypar
+and the other Castle Black cast keep their stage-1 selection. A card points only
+at a person reached in that medium by the card's pin: the show's cards for Edd
+open at 20, Gilly and Qhorin at 15, Ygritte at 16, and no show card names
+Thoren, Jarman, Locke, Stonesnake, Ebben, Dalbridge or the Lord of Bones.
+
+Owner checks: the cards inherit the open checks of #1467 above (Edd's, Gilly's,
+Stonesnake's, Ebben's, Dalbridge's and the Lord of Bones' naming signals).
+Jon's, Jeor's, Samwell's, Grenn's and Ghost's show cards at 11 rest on the "The
+North Remembers" synopsis and the character pages (Craster, Jon Snow, Jeor
+Mormont, Samwell Tarly, Grenn), which name Grenn, Sam and Edd at Craster's Keep;
+the cards leave Edd out of those snapshots until his own gate.
+
+Book check: every book-side card and the chapter that tells it (site chapter,
+with A Clash of Kings' chapter in the title: Jon I is 80, II 87, III 97, IV 108,
+V 117, VI 125, VII 127, VIII 142). A card's summary says nothing a later chapter
+tells.
+
+| Owner (snapshot)       | Cards                                                                                                                   | Chapter that tells them                                                                             |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `thoren-smallwood` 80  | Jeor (argues for Castle Black), Benjen (keeps the post)                                                                 | 80, Jon I                                                                                           |
+| `thoren-smallwood` 117 | Jeor (agrees to scouts), Qhorin, Jarman, Benjen                                                                         | 117, Jon V: Qhorin sends Jarman up the mountains, Thoren along the Milkwater, himself into the pass |
+| `jarman-buckwell` 87   | Jeor (scouts ride first), Thoren ("much can change in a year")                                                          | 87, Jon II                                                                                          |
+| `jarman-buckwell` 97   | Craster (asks about Mance), Jon (keep a good edge), Jeor, Thoren                                                        | 97, Jon III                                                                                         |
+| `mallador-locke` 87    | Jeor (baggage train), Thoren, Jarman ("fewer wildlings, fewer worries")                                                 | 87, Jon II                                                                                          |
+| `eddison-tollett` 87   | Jon (paired to search), Jeor (the dead talking)                                                                         | 87, Jon II                                                                                          |
+| `eddison-tollett` 97   | Jon (the axe), Jeor, Craster (secret graves), Sam (Craster marries his daughters)                                       | 97, Jon III                                                                                         |
+| `craster` 97           | Jeor (wine, no escort, a hand for a hand), Jon (Snow), Gilly (daughter, now wife), Benjen (three years), Jarman (Mance) | 97, Jon III                                                                                         |
+| `gilly` 97             | Craster (drinks, gives sons to the gods), Jon (the Wall, for Jeor to decide), Sam (his cloak), Ghost (the rabbit hutch) | 97, Jon III                                                                                         |
+| `qhorin-halfhand` 117  | Jon (knew Eddard and Rickard, picks him), Jeor, Thoren, Jarman                                                          | 117, Jon V                                                                                          |
+| `qhorin-halfhand` 125  | Jon (alone with the prisoner), Stonesnake (no horn), Ygritte (recognizes him)                                           | 125, Jon VI                                                                                         |
+| `qhorin-halfhand` 142  | Jon (yield, then Longclaw), Lord of Bones, Ebben (east on the last garron), Stonesnake (on foot)                        | 142, Jon VIII                                                                                       |
+| `stonesnake` 125       | Jon (the climb, "she should be killed"), Qhorin, Ygritte                                                                | 125, Jon VI                                                                                         |
+| `stonesnake` 142       | Qhorin (mare breaks a leg), Jeor (word to bring), Jon (what he saw)                                                     | 142, Jon VIII                                                                                       |
+| `ygritte` 125          | Jon (spares her), Stonesnake, Qhorin                                                                                    | 125, Jon VI                                                                                         |
+| `ygritte` 142          | Jon (the eagle, Mance marching), Lord of Bones, Qhorin                                                                  | 142, Jon VIII                                                                                       |
+| `ebben` 127            | Qhorin ("would have had Ebben do it"), Jon ("skinchanger")                                                              | 127, Jon VII                                                                                        |
+| `ebben` 142            | Qhorin (sent east), Lord of Bones (the hunters have his head)                                                           | 142, Jon VIII                                                                                       |
+| `dalbridge` 127        | Qhorin (stays behind with the arrows)                                                                                   | 127, Jon VII                                                                                        |
+| `lord-of-bones` 142    | Jon, Qhorin, Ygritte, Ebben                                                                                             | 142, Jon VIII                                                                                       |
+| `jon-snow` 80          | Jeor (Aemon could have been king), Sam (the vaults), Robb (a king), Aemon (his hand)                                    | 80, Jon I                                                                                           |
+| `jon-snow` 97          | Craster, Gilly, Jeor (the sons), Sam, Ghost (the rabbits)                                                               | 97, Jon III                                                                                         |
+| `jon-snow` 117         | Qhorin, Jeor (the tent), Sam (horn and arrowheads), Grenn (dagger), Ghost (the dragonglass, Jon IV 108)                 | 117, Jon V; 108, Jon IV                                                                             |
+| `jon-snow` 125         | Ygritte, Stonesnake, Qhorin, Jeor, Ghost                                                                                | 125, Jon VI                                                                                         |
+| `jon-snow` 142         | Qhorin (kills him), Lord of Bones, Ygritte, Ghost (found wounded), Ebben ("skinchanger")                                | 142, Jon VIII; 127, Jon VII                                                                         |
+| `jeor-mormont` 80      | Jon (Aemon), Thoren, Sam (First Ranger), Aemon                                                                          | 80, Jon I                                                                                           |
+| `jeor-mormont` 97      | Craster, Jon (the sons), Jarman (the horn), Thoren (a friend of the Watch)                                              | 97, Jon III                                                                                         |
+| `jeor-mormont` 117     | Qhorin, Jon, Thoren, Jarman                                                                                             | 117, Jon V                                                                                          |
+| `samwell-tarly` 80     | Jon (the vaults), Jeor (the ravens), Aemon (the maps)                                                                   | 80, Jon I                                                                                           |
+| `samwell-tarly` 97     | Gilly (his cloak), Jon, Edd (Craster's daughters), Craster                                                              | 97, Jon III                                                                                         |
+| `ghost-direwolf` 97    | Jon (the rabbit), Gilly                                                                                                 | 97, Jon III                                                                                         |
+| `ghost-direwolf` 127   | Jon (the dream), Qhorin (the wounds)                                                                                    | 127, Jon VII                                                                                        |
+
+Show-side cards (no table: the show wiki pages are pinned): Jon at 11, 15, 16
+and 20; Jeor at 11 and 15; Samwell at 11, 15 and 20; Grenn at 11 and 20; Ghost
+at 15; Edd at 20; Craster at 11 and 15; Gilly, Qhorin, and Ygritte at their
+gates and at 20; each on the pages of "The North Remembers", "The Night Lands",
+"What Is Dead May Never Die", "The Ghost of Harrenhal", "The Old Gods and the
+New", "A Man Without Honor", "The Prince of Winterfell" and "Valar Morghulis"
+and the character pages.
+
+Unverified: the show-side cards read the episode synopses and character pages,
+which paraphrase the scenes; no episode was watched. Gilly's "daughter and wife"
+cards follow the Craster page's account of "The North Remembers".
 
 ## Essos and Qarth (#1468)
 

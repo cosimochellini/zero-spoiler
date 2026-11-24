@@ -4,8 +4,8 @@ import { type ReactElement, Suspense, use, useId, useState } from 'react'
 import { styles } from '~/components/BookmarkDialog.styles'
 import type { BookmarkFormProps } from '~/components/BookmarkForm'
 import {
+  bookmarkFormElement,
   formHasLanded,
-  LazyBookmarkForm,
   preloadBookmarkForm,
 } from '~/components/bookmarkFormLoader'
 import { BookmarkSkeleton, LoadFailed } from '~/components/BookmarkSkeleton'
@@ -115,7 +115,7 @@ function Settled({
   const t = useT()
 
   return attempt === null || use(attempt) ?
-      <LazyBookmarkForm {...form} />
+      bookmarkFormElement(form)
     : <LoadFailed
         onRetry={onRetry}
         t={t}

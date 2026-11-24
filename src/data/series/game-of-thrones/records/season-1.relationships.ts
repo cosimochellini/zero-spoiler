@@ -4820,6 +4820,1398 @@ const north = {
 } satisfies Record<string, Relationship>
 
 /**
+ * Stage 2's Winterfell and Iron Islands cards for the season-1 cast (#1482):
+ * season 2 and A Clash of Kings, episodes 11 to 20 and chapters 74 to 143. The
+ * new characters' own cards are in `season-2.relationships.ts`.
+ */
+const winterfell2 = {
+  brShowLuwin: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester of Winterfell, who guides him through a lord’s duties as he hears his vassals’ complaints.',
+      it: 'Il maestro di Grande Inverno, che lo guida nei doveri di un lord mentre ascolta le lamentele dei suoi vassalli.',
+    },
+  },
+  brShowRickon: {
+    character: 'rickon-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His little brother, who sits beside him at the hearings and shells nuts with a rock.',
+      it: 'Il suo fratellino, che siede accanto a lui alle udienze e schiaccia noci con un sasso.',
+    },
+  },
+  brShowOsha: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant who takes him to the pool in the godswood and tells him the red comet means dragons.',
+      it: 'La serva dei bruti che lo porta alla pozza nel parco degli dèi e gli dice che la cometa rossa significa draghi.',
+    },
+  },
+  brShowHodor: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Chi lo porta' },
+    summary: {
+      en: 'Hodor, who carries him to the pool in the godswood.',
+      it: 'Hodor, che lo porta fino alla pozza nel parco degli dèi.',
+    },
+  },
+  brShowSummer: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf. In his dreams he walks the godswood as Summer, and he wakes at the sight of the wolf’s reflection in the pool.',
+      it: 'Il suo metalupo. Nei sogni cammina nel parco degli dèi come Estate, e si sveglia vedendo nella pozza il riflesso del lupo.',
+    },
+  },
+  brShowTheon: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward turned enemy', it: 'Pupillo diventato nemico' },
+    summary: {
+      en: 'The ward Winterfell raised, who seizes the castle and makes Bran yield it in front of his people.',
+      it: 'Il pupillo cresciuto a Grande Inverno, che si impadronisce del castello e costringe Bran a cederlo davanti alla sua gente.',
+    },
+  },
+  brShowRodrik: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The knight Theon beheads before the castle. Bran and Rickon beg for his life.',
+      it: 'Il cavaliere che Theon decapita davanti al castello. Bran e Rickon ne implorano la vita.',
+    },
+  },
+  brShowOshaFree: {
+    character: 'osha',
+    type: { en: 'Rescuer', it: 'Chi lo salva' },
+    summary: {
+      en: 'The wildling servant who frees him and Rickon by night and leads them out of the castle.',
+      it: 'La serva dei bruti che libera lui e Rickon di notte e li porta fuori dal castello.',
+    },
+  },
+  brShowRickonFlight: {
+    character: 'rickon-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His little brother, who is led out of Winterfell with him.',
+      it: 'Il suo fratellino, portato fuori da Grande Inverno insieme a lui.',
+    },
+  },
+  brShowLuwinDying: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who dies in the godswood after the sack. He tells the boys to go north to the Wall, where Jon can keep them safe.',
+      it: 'Il maestro che muore nel parco degli dèi dopo il saccheggio. Dice ai ragazzi di andare a nord, alla Barriera, dove Jon potrà proteggerli.',
+    },
+  },
+  brShowOshaCrypt: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant who hid him in the crypts and stays with him when they come out to a burning castle.',
+      it: 'La serva dei bruti che lo ha nascosto nelle cripte e resta con lui quando escono in un castello in fiamme.',
+    },
+  },
+  brShowRickonCrypt: {
+    character: 'rickon-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His little brother, who hid with him in the crypts and comes out beside him.',
+      it: 'Il suo fratellino, che si è nascosto con lui nelle cripte e ne esce al suo fianco.',
+    },
+  },
+  brShowHodorCrypt: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Chi lo porta' },
+    summary: {
+      en: 'Hodor, who carries him out of the crypts.',
+      it: 'Hodor, che lo porta fuori dalle cripte.',
+    },
+  },
+  brBSummer78: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf, whose howls he answers from his window. In his wolf dreams he runs as Summer.',
+      it: 'Il suo metalupo, i cui ululati lui accompagna dalla finestra. Nei sogni di lupo corre come Estate.',
+    },
+  },
+  brBLuwin78: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who tells him to sleep, and brings a draught. He says that even princes must sleep.',
+      it: 'Il maestro che gli dice di dormire e porta un sonnifero. Dice che anche i principi devono dormire.',
+    },
+  },
+  brBOsha78: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant who carries him to bed and says the old gods may be answering him.',
+      it: 'La serva dei bruti che lo porta a letto e dice che forse gli antichi dèi gli stanno rispondendo.',
+    },
+  },
+  brBRickon78: {
+    character: 'rickon-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His little brother, whom he soothed when his mother’s wards came from the Twins. Rickon has taken to them since.',
+      it: 'Il suo fratellino, che ha calmato quando i pupilli di sua madre sono arrivati dai Gemelli. Da allora Rickon si è affezionato a loro.',
+    },
+  },
+  brBOldNan78: {
+    character: 'old-nan',
+    type: { en: 'Teller of tales', it: 'Narratrice di storie' },
+    summary: {
+      en: 'Old Nan, who tells him the Starks have wolf blood.',
+      it: 'Vecchia Nan, che gli dice che gli Stark hanno sangue di lupo.',
+    },
+  },
+  brBJojen102: {
+    character: 'jojen-reed',
+    type: { en: 'Greenseer', it: 'Veggente verde' },
+    summary: {
+      en: 'The Reed boy who says Bran is a winged wolf bound to the earth, and that a three-eyed crow is trying to free him.',
+      it: 'Il ragazzo dei Reed che dice che Bran è un lupo alato legato alla terra, e che un corvo con tre occhi cerca di liberarlo.',
+    },
+  },
+  brBMeera102: {
+    character: 'meera-reed',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The Reed girl who faces Summer with a net and a frog spear, and steps between him and her brother when the wolf growls. Bran thinks she is like Arya.',
+      it: 'La ragazza dei Reed che affronta Estate con una rete e una fiocina per rane, e si mette tra lui e suo fratello quando il lupo ringhia. Bran la trova simile ad Arya.',
+    },
+  },
+  brBSummer102: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf, caught in Meera’s net, who growls when Jojen asks if Bran falls every night.',
+      it: 'Il suo metalupo, finito nella rete di Meera, che ringhia quando Jojen chiede se Bran cada ogni notte.',
+    },
+  },
+  brBHodor102: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Chi lo porta' },
+    summary: {
+      en: 'Hodor, whom he calls to chase the wolves away when he cannot calm them himself.',
+      it: 'Hodor, che chiama per scacciare i lupi quando non riesce a calmarli da solo.',
+    },
+  },
+  brBLuwin102: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who tells him that no living man has the greensight, and that magic is dead.',
+      it: 'Il maestro che gli dice che nessun uomo vivo ha la visione verde, e che la magia è morta.',
+    },
+  },
+  brBTheon120: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward turned enemy', it: 'Pupillo diventato nemico' },
+    summary: {
+      en: 'His father’s former ward, who comes into his room, says the castle is his now, and tells Bran to make the people yield.',
+      it: 'L’ex pupillo di suo padre, che entra nella sua stanza, dice che il castello ora è suo, e dice a Bran di far arrendere la gente.',
+    },
+  },
+  brBMikken120: {
+    character: 'mikken',
+    type: { en: 'Smith', it: 'Fabbro' },
+    summary: {
+      en: 'The smith who refuses to kneel to Theon and drowns in his own blood.',
+      it: 'Il fabbro che si rifiuta di inginocchiarsi davanti a Theon e annega nel proprio sangue.',
+    },
+  },
+  brBOsha120: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant who joins Theon’s service, to Bran’s disappointment.',
+      it: 'La serva dei bruti che passa al servizio di Theon, con grande delusione di Bran.',
+    },
+  },
+  brBJojen120: {
+    character: 'jojen-reed',
+    type: { en: 'Greenseer', it: 'Veggente verde' },
+    summary: {
+      en: 'The Reed boy whose dream has come true: the sea has come to Winterfell.',
+      it: 'Il ragazzo dei Reed il cui sogno si è avverato: il mare è arrivato a Grande Inverno.',
+    },
+  },
+  brBLuwin143: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who lies dying in the godswood. He tells Bran to be strong, as his father’s son.',
+      it: 'Il maestro che giace morente nel parco degli dèi. Dice a Bran di essere forte, come figlio di suo padre.',
+    },
+  },
+  brBOsha143: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant who will take Rickon along the kingsroad while Bran goes north.',
+      it: 'La serva dei bruti che porterà Rickon lungo la strada del re mentre Bran va a nord.',
+    },
+  },
+  brBJojen143: {
+    character: 'jojen-reed',
+    type: { en: 'Greenseer', it: 'Veggente verde' },
+    summary: {
+      en: 'The Reed boy who wakes him from three days as Summer, and goes north with him.',
+      it: 'Il ragazzo dei Reed che lo sveglia dopo tre giorni passati come Estate, e va a nord con lui.',
+    },
+  },
+  brBMeera143: {
+    character: 'meera-reed',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The Reed girl who goes north with him.',
+      it: 'La ragazza dei Reed che va a nord con lui.',
+    },
+  },
+  brBHodor143: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Chi lo porta' },
+    summary: {
+      en: 'Hodor, who moves the stone from the crypt door and goes north with him.',
+      it: 'Hodor, che sposta la pietra dalla porta della cripta e va a nord con lui.',
+    },
+  },
+  riShowBran16: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who yields Winterfell to Theon and pleads with him for Rodrik’s life.',
+      it: 'Suo fratello, che cede Grande Inverno a Theon e lo supplica di risparmiare Rodrik.',
+    },
+  },
+  riShowRodrik: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The knight he and Bran beg Theon to spare. He is beheaded in front of them.',
+      it: 'Il cavaliere che lui e Bran pregano Theon di risparmiare. Viene decapitato davanti a loro.',
+    },
+  },
+  riShowOsha16: {
+    character: 'osha',
+    type: { en: 'Rescuer', it: 'Chi lo salva' },
+    summary: {
+      en: 'The wildling servant who leads him out of Winterfell with Bran.',
+      it: 'La serva dei bruti che lo porta fuori da Grande Inverno insieme a Bran.',
+    },
+  },
+  riShowBran20: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who hides with him in the crypts. They come out to find Winterfell burning.',
+      it: 'Suo fratello, che si nasconde con lui nelle cripte. Escono e trovano Grande Inverno in fiamme.',
+    },
+  },
+  riShowOsha20: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant who hid them in the crypts and stays with them.',
+      it: 'La serva dei bruti che li ha nascosti nelle cripte e resta con loro.',
+    },
+  },
+  riShowLuwin20: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester they find dying in the godswood.',
+      it: 'Il maestro che trovano morente nel parco degli dèi.',
+    },
+  },
+  riBBran95: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who sits beside him on the dais at the harvest feast.',
+      it: 'Suo fratello, che siede accanto a lui sul palco al banchetto del raccolto.',
+    },
+  },
+  riBLittle95: {
+    character: 'little-walder-frey',
+    type: { en: 'Playmate', it: 'Compagno di giochi' },
+    summary: {
+      en: 'The ward Shaggydog bit. At the feast Rickon screams happily with him and his cousin.',
+      it: 'Il pupillo che Cagnaccio ha morso. Al banchetto Rickon strilla felice con lui e con suo cugino.',
+    },
+  },
+  riBBig95: {
+    character: 'big-walder-frey',
+    type: { en: 'Playmate', it: 'Compagno di giochi' },
+    summary: {
+      en: 'The other Frey ward, who plays with him and Little Walder.',
+      it: 'L’altro pupillo dei Frey, che gioca con lui e con Little Walder.',
+    },
+  },
+  riBShaggydog95: {
+    character: 'shaggydog',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His black direwolf, kept in the godswood because he was bad.',
+      it: 'Il suo metalupo nero, tenuto nel parco degli dèi perché è stato cattivo.',
+    },
+  },
+  riBJojen95: {
+    character: 'jojen-reed',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Reed boy who asks where the wolves are. Rickon tells him they are in the godswood.',
+      it: 'Il ragazzo dei Reed che chiede dove siano i lupi. Rickon gli risponde che sono nel parco degli dèi.',
+    },
+  },
+  riBBran124: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, missing from his bed the same night.',
+      it: 'Suo fratello, sparito dal letto la stessa notte.',
+    },
+  },
+  riBOsha124: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant missing with him. Theon reasons she has to carry him.',
+      it: 'La serva dei bruti scomparsa con lui. Theon ragiona che debba portarlo in braccio.',
+    },
+  },
+  riBShaggydog124: {
+    character: 'shaggydog',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf, gone from the godswood the same night.',
+      it: 'Il suo metalupo, sparito dal parco degli dèi la stessa notte.',
+    },
+  },
+  riBOsha143: {
+    character: 'osha',
+    type: { en: 'Guardian', it: 'Custode' },
+    summary: {
+      en: 'The wildling servant who will take him and Shaggydog along the kingsroad, apart from Bran.',
+      it: 'La serva dei bruti che porterà lui e Cagnaccio lungo la strada del re, separati da Bran.',
+    },
+  },
+  riBShaggydog143: {
+    character: 'shaggydog',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf, who goes with him and Osha.',
+      it: 'Il suo metalupo, che va con lui e con Osha.',
+    },
+  },
+  riBBran143: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who goes north without him: Luwin said the two must be kept apart.',
+      it: 'Suo fratello, che va a nord senza di lui: Luwin ha detto che i due devono essere separati.',
+    },
+  },
+  thShowRobb11: {
+    character: 'robb-stark',
+    type: { en: 'King he serves', it: 'Re che serve' },
+    summary: {
+      en: 'The king he asks to send him to Pyke, to win his father’s fleet.',
+      it: 'Il re a cui chiede di mandarlo a Pyke, per ottenere la flotta di suo padre.',
+    },
+  },
+  thShowCatelyn11: {
+    character: 'catelyn-stark',
+    type: { en: 'Doubter', it: 'Chi dubita' },
+    summary: {
+      en: 'Robb’s mother, who warns that Balon cannot be trusted after his rebellion.',
+      it: 'La madre di Robb, che avverte che di Balon non ci si può fidare dopo la sua ribellione.',
+    },
+  },
+  thShowBalon12: {
+    character: 'balon-greyjoy',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who doubts his loyalty, refuses Robb’s offer and says no one will give him a crown.',
+      it: 'Suo padre, che dubita della sua lealtà, rifiuta l’offerta di Robb e dice che nessuno gli darà una corona.',
+    },
+  },
+  thShowAsha12: {
+    character: 'asha-greyjoy',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, whom he took for a stranger on the ride to Pyke. Balon holds her up against him.',
+      it: 'Sua sorella, che ha scambiato per un’estranea durante il viaggio fino a Pyke. Balon la mette sopra di lui.',
+    },
+  },
+  thShowBran16: {
+    character: 'bran-stark',
+    type: { en: 'Boy he forces to yield', it: 'Ragazzo costretto a cedere' },
+    summary: {
+      en: 'The Stark boy he forces to give up Winterfell by threatening his people.',
+      it: 'Il ragazzo Stark che costringe a cedere Grande Inverno minacciando la sua gente.',
+    },
+  },
+  thShowRodrik16: {
+    character: 'rodrik-cassel',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The knight his men capture. Theon has him executed, and needs four blows to do it.',
+      it: 'Il cavaliere catturato dai suoi uomini. Theon lo fa giustiziare, e gli servono quattro colpi.',
+    },
+  },
+  thShowDagmer16: {
+    character: 'dagmer',
+    type: { en: 'First mate', it: 'Secondo di bordo' },
+    summary: {
+      en: 'His first mate, who tells him he must kill Rodrik or lose his men’s respect.',
+      it: 'Il suo secondo di bordo, che gli dice di dover uccidere Rodrik o perdere il rispetto dei suoi uomini.',
+    },
+  },
+  thShowOsha16: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant he sleeps with. She slips out while he sleeps and frees Bran and Rickon.',
+      it: 'La serva dei bruti con cui passa la notte. Lei esce di nascosto mentre dorme e libera Bran e Rickon.',
+    },
+  },
+  thShowLuwin20: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who tells him to take the black, and who is stabbed trying to stop Theon’s own men.',
+      it: 'Il maestro che gli dice di vestire il nero, e che viene trafitto mentre cerca di fermare gli uomini di Theon.',
+    },
+  },
+  thShowDagmer20: {
+    character: 'dagmer',
+    type: { en: 'First mate', it: 'Secondo di bordo' },
+    summary: {
+      en: 'His first mate, who knocks him out when the ironmen turn on him.',
+      it: 'Il suo secondo di bordo, che lo stordisce quando gli uomini di ferro si rivoltano contro di lui.',
+    },
+  },
+  thBBalon85: {
+    character: 'balon-greyjoy',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who burns Robb’s letter and strikes him. Balon means to take a crown by conquest, not as a gift.',
+      it: 'Suo padre, che brucia la lettera di Robb e lo colpisce. Balon vuole prendere una corona con la conquista, non riceverla in dono.',
+    },
+  },
+  thBAeron85: {
+    character: 'aeron-greyjoy',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, the priest of the Drowned God, who meets him at Lordsport and takes him to Pyke.',
+      it: 'Suo zio, il sacerdote del Dio Abissale, che lo accoglie a Lordsport e lo porta a Pyke.',
+    },
+  },
+  thBAsha98: {
+    character: 'asha-greyjoy',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, whom he took for a stranger named Esgred and flirted with all the way to Pyke. She shows him up at the feast.',
+      it: 'Sua sorella, che ha scambiato per una certa Esgred e con cui ha flirtato fino a Pyke. Lei lo umilia al banchetto.',
+    },
+  },
+  thBBalon98: {
+    character: 'balon-greyjoy',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who will not hear his plans and sends him to raid the coast.',
+      it: 'Suo padre, che non vuole ascoltare i suoi piani e lo manda a razziare la costa.',
+    },
+  },
+  thBVictarion98: {
+    character: 'victarion-greyjoy',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who lent him a steersman for his new ship.',
+      it: 'Suo zio, che gli ha prestato un timoniere per la sua nuova nave.',
+    },
+  },
+  thBWex98: {
+    character: 'wex-pyke',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'His squire, who smirks when Asha makes a fool of him.',
+      it: 'Il suo scudiero, che ghigna quando Asha lo mette in ridicolo.',
+    },
+  },
+  thBAeron98: {
+    character: 'aeron-greyjoy',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who is to bless his new ship and sail on the raid with him.',
+      it: 'Suo zio, che dovrà benedire la sua nuova nave e salpare con lui per l’incursione.',
+    },
+  },
+  thBBran120: {
+    character: 'bran-stark',
+    type: { en: 'Boy he overpowers', it: 'Ragazzo sopraffatto' },
+    summary: {
+      en: 'The Stark boy whose castle he takes. He tells Bran to make the people yield.',
+      it: 'Il ragazzo Stark di cui prende il castello. Gli dice di far arrendere la sua gente.',
+    },
+  },
+  thBMikken120: {
+    character: 'mikken',
+    type: { en: 'Smith', it: 'Fabbro' },
+    summary: {
+      en: 'The Winterfell smith who refuses to kneel and bleeds to death.',
+      it: 'Il fabbro di Grande Inverno che si rifiuta di inginocchiarsi e muore dissanguato.',
+    },
+  },
+  thBOsha120: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling woman who joins his service.',
+      it: 'La donna dei bruti che passa al suo servizio.',
+    },
+  },
+  thBOsha124: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling woman he blames for killing a guard and freeing the boys and the wolves. He will not spare her.',
+      it: 'La donna dei bruti che ritiene colpevole di aver ucciso una guardia e liberato i ragazzi e i lupi. Non la risparmierà.',
+    },
+  },
+  thBLuwin124: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester he takes on the hunt for the boys, because he dares not leave him behind. Luwin asks him for mercy.',
+      it: 'Il maestro che porta con sé nella caccia ai ragazzi, perché non osa lasciarlo al castello. Luwin gli chiede di essere clemente.',
+    },
+  },
+  thBFarlen124: {
+    character: 'farlen',
+    type: { en: 'Kennelmaster', it: 'Maestro dei canili' },
+    summary: {
+      en: 'His kennelmaster, who says the dogs cannot be tracking the wrong wolves.',
+      it: 'Il suo maestro dei canili, che dice che i cani non possono seguire i lupi sbagliati.',
+    },
+  },
+  thBWex124: {
+    character: 'wex-pyke',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'His squire, who finds the Stark boys’ beds empty.',
+      it: 'Il suo scudiero, che trova vuoti i letti dei ragazzi Stark.',
+    },
+  },
+  thBLorren124: {
+    character: 'black-lorren',
+    type: { en: 'Raider', it: 'Predone' },
+    summary: {
+      en: 'The ironman who shows him the guards killed at the Hunter’s Gate.',
+      it: 'L’uomo di ferro che gli mostra le guardie uccise alla Porta del Cacciatore.',
+    },
+  },
+  thBAsha130: {
+    character: 'asha-greyjoy',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who reaches Winterfell with twenty men. She says he should have razed it, and offers to take him home. He refuses.',
+      it: 'Sua sorella, che arriva a Grande Inverno con venti uomini. Gli dice che avrebbe dovuto raderlo al suolo, e si offre di portarlo a casa. Lui rifiuta.',
+    },
+  },
+  thBFarlen130: {
+    character: 'farlen',
+    type: { en: 'Kennelmaster', it: 'Maestro dei canili' },
+    summary: {
+      en: 'The kennelmaster he beheaded to blame someone for three deaths, in four blows.',
+      it: 'Il maestro dei canili che ha decapitato per avere un colpevole di tre morti, in quattro colpi.',
+    },
+  },
+  thBDagmer130: {
+    character: 'dagmer',
+    type: { en: 'Raider', it: 'Predone' },
+    summary: {
+      en: 'The captain he sent against Torrhen’s Square, who has lost the fight there.',
+      it: 'Il capitano che ha mandato contro Piazza di Torrhen, e che ha perso lo scontro.',
+    },
+  },
+  thBLuwin130: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who brings him a sleeping draught after his nightmare. Theon dares not drink it.',
+      it: 'Il maestro che gli porta un sonnifero dopo un incubo. Theon non osa berlo.',
+    },
+  },
+  thBWex130: {
+    character: 'wex-pyke',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'His squire, who wakes him when Asha arrives.',
+      it: 'Il suo scudiero, che lo sveglia quando arriva Asha.',
+    },
+  },
+  thBLuwin140: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who tells him to yield, and then to take the black. He is cut down in the sack.',
+      it: 'Il maestro che gli dice di arrendersi, e poi di vestire il nero. Viene abbattuto nel saccheggio.',
+    },
+  },
+  thBRodrik140: {
+    character: 'rodrik-cassel',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The northern knight he meets at the parley. He answers Rodrik’s terms by threatening to hang his daughter at sunset.',
+      it: 'Il cavaliere del Nord che incontra al parlamento. Risponde alle condizioni di Rodrik minacciando di impiccare sua figlia al tramonto.',
+    },
+  },
+  thBRamsay140: {
+    character: 'ramsay-snow',
+    type: { en: 'Man he trusted', it: 'Uomo di cui si fidava' },
+    summary: {
+      en: 'The Dreadfort leader who lifts his helm: the man Theon knew as Reek is dead, and he is Ramsay Snow.',
+      it: 'Il capo degli uomini del Dreadfort che si toglie l’elmo: l’uomo che Theon conosceva come Reek è morto, e lui è Ramsay Snow.',
+    },
+  },
+  thBLorren140: {
+    character: 'black-lorren',
+    type: { en: 'Loyal raider', it: 'Predone fedele' },
+    summary: {
+      en: 'The ironman who stays and tells him to put the castle folk to the sword, then brings Rodrik’s daughter to the wall.',
+      it: 'L’uomo di ferro che resta e gli dice di passare a fil di spada la gente del castello, poi porta la figlia di Rodrik sulle mura.',
+    },
+  },
+  thBWex140: {
+    character: 'wex-pyke',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'His squire, the first to step over to his side when he offers the men a choice.',
+      it: 'Il suo scudiero, il primo a schierarsi dalla sua parte quando offre agli uomini una scelta.',
+    },
+  },
+  luShowTheon16: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward turned enemy', it: 'Pupillo diventato nemico' },
+    summary: {
+      en: 'The ward Winterfell raised, who takes the castle while Luwin frantically sends off a raven.',
+      it: 'Il pupillo cresciuto a Grande Inverno, che prende il castello mentre Luwin spedisce in fretta un corvo.',
+    },
+  },
+  luShowBran16: {
+    character: 'bran-stark',
+    type: { en: 'Lord he serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The boy lord, who yields the castle to spare his people.',
+      it: 'Il giovane signore, che cede il castello per risparmiare la sua gente.',
+    },
+  },
+  luShowRodrik16: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The knight Theon beheads in front of the castle.',
+      it: 'Il cavaliere che Theon decapita davanti al castello.',
+    },
+  },
+  luShowOsha18: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant he follows into the crypts. She tells him how she hid the boys there, and he knows the burned bodies are not theirs.',
+      it: 'La serva dei bruti che segue nelle cripte. Lei gli racconta come ha nascosto i ragazzi lì, e lui sa che i corpi bruciati non sono i loro.',
+    },
+  },
+  luShowBran18: {
+    character: 'bran-stark',
+    type: { en: 'Lord he serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The boy lord, who overhears them from behind a corner.',
+      it: 'Il giovane signore, che li ascolta da dietro un angolo.',
+    },
+  },
+  luShowTheon18: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward turned enemy', it: 'Pupillo diventato nemico' },
+    summary: {
+      en: 'The ward who hung two burned bodies on the walls and let the castle think they were the boys.',
+      it: 'Il pupillo che ha appeso due corpi bruciati alle mura e ha lasciato credere al castello che fossero i ragazzi.',
+    },
+  },
+  luShowTheon20: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward turned enemy', it: 'Pupillo diventato nemico' },
+    summary: {
+      en: 'The prince he advises to take the black. Dagmer stabs Luwin when he tries to stop the ironmen from taking Theon.',
+      it: 'Il principe a cui consiglia di vestire il nero. Dagmer trafigge Luwin quando cerca di impedire agli uomini di ferro di portare via Theon.',
+    },
+  },
+  luShowBran20: {
+    character: 'bran-stark',
+    type: { en: 'Lord he serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The boy lord, whom he tells to go north to the Wall as he dies.',
+      it: 'Il giovane signore, a cui dice di andare a nord, alla Barriera, mentre muore.',
+    },
+  },
+  luShowOsha20: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant he asks for a quick death.',
+      it: 'La serva dei bruti a cui chiede una morte rapida.',
+    },
+  },
+  luBBran90: {
+    character: 'bran-stark',
+    type: { en: 'Lord he serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The boy lord, whom he reminds to speak only when spoken to. Luwin sits beside him at the audiences.',
+      it: 'Il giovane signore, a cui ricorda di parlare solo quando gli viene rivolta la parola. Luwin siede accanto a lui alle udienze.',
+    },
+  },
+  luBRodrik90: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The castellan who sits with him at Bran’s side and answers for the castle.',
+      it: 'Il castellano che siede con lui accanto a Bran e risponde per il castello.',
+    },
+  },
+  luBWyman90: {
+    character: 'wyman-manderly',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Lord of White Harbor, who comes for the harvest feast with business for Bran.',
+      it: 'Il lord di Porto Bianco, venuto per il banchetto del raccolto con affari da discutere con Bran.',
+    },
+  },
+  luBDonella90: {
+    character: 'donella-hornwood',
+    type: { en: 'Widow', it: 'Vedova' },
+    summary: {
+      en: 'The grieving lady whose lands need an heir, or many will claim them.',
+      it: 'La vedova in lutto le cui terre hanno bisogno di un erede, o in molti le reclameranno.',
+    },
+  },
+  luBLittle90: {
+    character: 'little-walder-frey',
+    type: { en: 'Ward', it: 'Pupillo' },
+    summary: {
+      en: 'The ward he scolds for mocking Hodor. Little Walder stays haughty.',
+      it: 'Il pupillo che rimprovera per aver preso in giro Hodor. Little Walder resta altezzoso.',
+    },
+  },
+  luBTheon124: {
+    character: 'theon-greyjoy',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The prince who takes him on the hunt for Bran and Rickon. Luwin asks him to be merciful, to the boys and to the Reeds.',
+      it: 'Il principe che lo porta con sé nella caccia a Bran e Rickon. Luwin gli chiede clemenza, per i ragazzi e per i Reed.',
+    },
+  },
+  luBBran143: {
+    character: 'bran-stark',
+    type: { en: 'Boy he is glad to find', it: 'Ragazzo felice di ritrovare' },
+    summary: {
+      en: 'The boy lord he is glad to find alive. He tells Bran to be strong, as his father’s son.',
+      it: 'Il giovane signore che è felice di ritrovare vivo. Dice a Bran di essere forte, come figlio di suo padre.',
+    },
+  },
+  luBOsha143: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling woman he tells not to send the boys off together.',
+      it: 'La donna dei bruti a cui dice di non mandare via i ragazzi insieme.',
+    },
+  },
+  luBTheon143: {
+    character: 'theon-greyjoy',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The prince he never told that the bodies Theon showed were not Bran and Rickon.',
+      it: 'Il principe a cui non ha mai detto che i corpi mostrati da Theon non erano quelli di Bran e Rickon.',
+    },
+  },
+  osShowTheon16: {
+    character: 'theon-greyjoy',
+    type: { en: 'Man she deceives', it: 'Uomo che inganna' },
+    summary: {
+      en: 'The prince she sleeps with, then leaves in his bed to free Bran and Rickon, killing a guard on the way.',
+      it: 'Il principe con cui passa la notte, e che lascia nel letto per liberare Bran e Rickon, uccidendo una guardia lungo la strada.',
+    },
+  },
+  osShowBran16: {
+    character: 'bran-stark',
+    type: { en: 'Boy she frees', it: 'Ragazzo che libera' },
+    summary: {
+      en: 'The boy lord she frees from Theon’s men and leads out of the castle.',
+      it: 'Il giovane signore che libera dagli uomini di Theon e porta fuori dal castello.',
+    },
+  },
+  osShowRickon16: {
+    character: 'rickon-stark',
+    type: { en: 'Boy she frees', it: 'Ragazzo che libera' },
+    summary: {
+      en: 'The youngest Stark, whom she leads out with Bran.',
+      it: 'Il più giovane degli Stark, che porta fuori insieme a Bran.',
+    },
+  },
+  osShowHodor16: {
+    character: 'hodor',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'Hodor, who carries Bran out of the castle with her.',
+      it: 'Hodor, che porta Bran fuori dal castello insieme a lei.',
+    },
+  },
+  osShowLuwin18: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who follows her into the crypts. She tells him how she doubled back through a stream to hide the boys.',
+      it: 'Il maestro che la segue nelle cripte. Lei gli racconta come è tornata indietro lungo un ruscello per nascondere i ragazzi.',
+    },
+  },
+  osShowBran18: {
+    character: 'bran-stark',
+    type: { en: 'Boy she hides', it: 'Ragazzo che nasconde' },
+    summary: {
+      en: 'The boy lord she hides in the crypts. He overhears what happened to the orphans from the farm.',
+      it: 'Il giovane signore che nasconde nelle cripte. Lui sente cos’è successo agli orfani della fattoria.',
+    },
+  },
+  osShowRickon18: {
+    character: 'rickon-stark',
+    type: { en: 'Boy she hides', it: 'Ragazzo che nasconde' },
+    summary: {
+      en: 'The youngest Stark, hidden in the crypts with Bran.',
+      it: 'Il più giovane degli Stark, nascosto nelle cripte con Bran.',
+    },
+  },
+  osShowHodor18: {
+    character: 'hodor',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'Hodor, who hides in the crypts with the boys.',
+      it: 'Hodor, che si nasconde nelle cripte con i ragazzi.',
+    },
+  },
+  osShowLuwin20: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The dying maester, who asks her for a quick death.',
+      it: 'Il maestro morente, che le chiede una morte rapida.',
+    },
+  },
+  osBBran78: {
+    character: 'bran-stark',
+    type: { en: 'Boy she carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy lord she carries to bed. She tells him not to fight the wolf dreams.',
+      it: 'Il giovane signore che porta a letto. Gli dice di non combattere i sogni di lupo.',
+    },
+  },
+  osBLuwin78: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester she says knows less than the direwolves.',
+      it: 'Il maestro che, a suo dire, sa meno dei metalupi.',
+    },
+  },
+  osBTheon120: {
+    character: 'theon-greyjoy',
+    type: { en: 'Lord she serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The prince whose service she joins when he takes Winterfell.',
+      it: 'Il principe al cui servizio passa quando prende Grande Inverno.',
+    },
+  },
+  osBBran120: {
+    character: 'bran-stark',
+    type: { en: 'Boy she betrays', it: 'Ragazzo che tradisce' },
+    summary: {
+      en: 'The boy lord, disappointed that she joins Theon.',
+      it: 'Il giovane signore, deluso dal fatto che lei passi con Theon.',
+    },
+  },
+  osBTheon124: {
+    character: 'theon-greyjoy',
+    type: { en: 'Man she hunts', it: 'Uomo che la caccia' },
+    summary: {
+      en: 'The prince who blames her for freeing the boys and the wolves, and swears he will not spare her.',
+      it: 'Il principe che la ritiene colpevole di aver liberato i ragazzi e i lupi, e giura di non risparmiarla.',
+    },
+  },
+  osBBran124: {
+    character: 'bran-stark',
+    type: { en: 'Boy she saves', it: 'Ragazzo che salva' },
+    summary: {
+      en: 'The boy lord who vanishes from his bed with her, Rickon and the Reeds.',
+      it: 'Il giovane signore che sparisce dal letto con lei, con Rickon e con i Reed.',
+    },
+  },
+  osBRickon124: {
+    character: 'rickon-stark',
+    type: { en: 'Boy she saves', it: 'Ragazzo che salva' },
+    summary: {
+      en: 'The youngest Stark, who vanishes the same night.',
+      it: 'Il più giovane degli Stark, sparito la stessa notte.',
+    },
+  },
+  osBBran143: {
+    character: 'bran-stark',
+    type: { en: 'Boy she guards', it: 'Ragazzo che custodisce' },
+    summary: {
+      en: 'The boy lord she brings out of the crypts. He goes north without her.',
+      it: 'Il giovane signore che porta fuori dalle cripte. Lui va a nord senza di lei.',
+    },
+  },
+  osBRickon143: {
+    character: 'rickon-stark',
+    type: { en: 'Boy she guards', it: 'Ragazzo che custodisce' },
+    summary: {
+      en: 'The youngest Stark, whom she will take along the kingsroad with Shaggydog.',
+      it: 'Il più giovane degli Stark, che porterà lungo la strada del re con Cagnaccio.',
+    },
+  },
+  osBLuwin143: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The dying maester, who asks her not to send the boys off together, and then asks her for a boon.',
+      it: 'Il maestro morente, che le chiede di non mandare via i ragazzi insieme, e poi di fargli un favore.',
+    },
+  },
+  hoShowBran16: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy he carries out of Winterfell when Osha frees them.',
+      it: 'Il ragazzo che porta fuori da Grande Inverno quando Osha li libera.',
+    },
+  },
+  hoShowOsha16: {
+    character: 'osha',
+    type: { en: 'Companion', it: 'Compagna di viaggio' },
+    summary: {
+      en: 'The wildling who leads them out of the castle.',
+      it: 'La donna dei bruti che li porta fuori dal castello.',
+    },
+  },
+  hoShowRickon16: {
+    character: 'rickon-stark',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The youngest Stark, led out with them.',
+      it: 'Il più giovane degli Stark, portato fuori con loro.',
+    },
+  },
+  hoShowBran20: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy he carries out of the crypts into a burning castle.',
+      it: 'Il ragazzo che porta fuori dalle cripte in un castello in fiamme.',
+    },
+  },
+  hoBBran90: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy lord he dresses and carries downstairs in his basket.',
+      it: 'Il giovane signore che veste e porta giù per le scale nel suo cesto.',
+    },
+  },
+  hoBLittle90: {
+    character: 'little-walder-frey',
+    type: { en: 'Ward who mocks him', it: 'Pupillo che lo deride' },
+    summary: {
+      en: 'The ward who calls him an ugly horse and bumps him with his own mount.',
+      it: 'Il pupillo che lo chiama brutto cavallo e lo urta con il proprio destriero.',
+    },
+  },
+  hoBLuwin90: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who tells the wards off for mocking him.',
+      it: 'Il maestro che sgrida i pupilli per averlo deriso.',
+    },
+  },
+  hoBBran102: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy lord who calls him to chase the wolves away. Hodor does it gleefully.',
+      it: 'Il giovane signore che lo chiama per scacciare i lupi. Hodor lo fa con gioia.',
+    },
+  },
+  hoBJojen102: {
+    character: 'jojen-reed',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Reed boy, who climbs a tree when the wolves attack. Hodor drives them off.',
+      it: 'Il ragazzo dei Reed, che si arrampica su un albero quando i lupi attaccano. Hodor li scaccia.',
+    },
+  },
+  hoBMeera102: {
+    character: 'meera-reed',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Reed girl, who climbs a tree after her brother when the wolves attack.',
+      it: 'La ragazza dei Reed, che si arrampica su un albero dietro al fratello quando i lupi attaccano.',
+    },
+  },
+  hoBBran143: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy lord he carries north, after moving the stone from the crypt door.',
+      it: 'Il giovane signore che porta a nord, dopo aver spostato la pietra dalla porta della cripta.',
+    },
+  },
+  hoBJojen143: {
+    character: 'jojen-reed',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The Reed boy who goes north with them.',
+      it: 'Il ragazzo dei Reed che va a nord con loro.',
+    },
+  },
+  hoBMeera143: {
+    character: 'meera-reed',
+    type: { en: 'Companion', it: 'Compagna di viaggio' },
+    summary: {
+      en: 'The Reed girl who goes north with them.',
+      it: 'La ragazza dei Reed che va a nord con loro.',
+    },
+  },
+  hoBOsha143: {
+    character: 'osha',
+    type: { en: 'Companion', it: 'Compagna di viaggio' },
+    summary: {
+      en: 'The wildling woman who hid with them in the crypts.',
+      it: 'La donna dei bruti che si è nascosta con loro nelle cripte.',
+    },
+  },
+  nanBran95: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord, who sends her sweets from the feast because he loves her.',
+      it: 'Il giovane signore, che le manda dei dolci dal banchetto perché le vuole bene.',
+    },
+  },
+  nanHodor95: {
+    character: 'hodor',
+    type: { en: 'Fellow favourite', it: 'Altro prediletto' },
+    summary: {
+      en: 'Hodor, who gets sweets from Bran too.',
+      it: 'Hodor, che riceve dolci da Bran anche lui.',
+    },
+  },
+  suShowBran13: {
+    character: 'bran-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to. Bran dreams through his eyes and sees himself asleep.',
+      it: 'Il ragazzo a cui appartiene. Bran sogna attraverso i suoi occhi e vede se stesso addormentato.',
+    },
+  },
+  suShowHodor13: {
+    character: 'hodor',
+    type: { en: 'Companion', it: 'Compagno' },
+    summary: {
+      en: 'Hodor, whom he follows into Bran’s room to wake him.',
+      it: 'Hodor, che segue nella stanza di Bran per svegliarlo.',
+    },
+  },
+  suBBran78: {
+    character: 'bran-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to. Summer howls with grief, and Bran howls back from the window.',
+      it: 'Il ragazzo a cui appartiene. Estate ulula di dolore, e Bran gli risponde dalla finestra.',
+    },
+  },
+  suBShaggydog78: {
+    character: 'shaggydog',
+    type: { en: 'Fellow direwolf', it: 'Altro metalupo' },
+    summary: {
+      en: 'Rickon’s direwolf, whose howls are savage where his are sad.',
+      it: 'Il metalupo di Rickon, i cui ululati sono selvaggi dove i suoi sono tristi.',
+    },
+  },
+  suBBran102: {
+    character: 'bran-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to. Meera says that Bran and Summer are part of each other.',
+      it: 'Il ragazzo a cui appartiene. Meera dice che Bran ed Estate sono parte l’uno dell’altro.',
+    },
+  },
+  suBJojen102: {
+    character: 'jojen-reed',
+    type: { en: 'Boy he growls at', it: 'Ragazzo a cui ringhia' },
+    summary: {
+      en: 'The Reed boy who touches him at the feast, and whom he growls at when he asks if Bran falls every night.',
+      it: 'Il ragazzo dei Reed che lo tocca al banchetto, e a cui ringhia quando chiede se Bran cada ogni notte.',
+    },
+  },
+  suBMeera102: {
+    character: 'meera-reed',
+    type: { en: 'Girl he tangles', it: 'Ragazza che lo cattura' },
+    summary: {
+      en: 'The Reed girl whose net tangles him in the godswood. He does not bite her.',
+      it: 'La ragazza dei Reed la cui rete lo imprigiona nel parco degli dèi. Lui non la morde.',
+    },
+  },
+  shShowRickon16: {
+    character: 'rickon-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to, freed with Bran and led out of Winterfell.',
+      it: 'Il ragazzo a cui appartiene, liberato con Bran e portato fuori da Grande Inverno.',
+    },
+  },
+  shShowOsha16: {
+    character: 'osha',
+    type: { en: 'Rescuer', it: 'Chi lo salva' },
+    summary: {
+      en: 'The wildling who frees him and Summer.',
+      it: 'La donna dei bruti che libera lui ed Estate.',
+    },
+  },
+  shBRickon95: {
+    character: 'rickon-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to. Shaggydog obeyed him until Little Walder hit Rickon with a stick, and since the bite he is kept in the godswood.',
+      it: 'Il ragazzo a cui appartiene. Cagnaccio gli obbediva finché Little Walder non ha colpito Rickon con un bastone, e dal morso è tenuto nel parco degli dèi.',
+    },
+  },
+  shBLittle95: {
+    character: 'little-walder-frey',
+    type: { en: 'Boy he bit', it: 'Ragazzo che ha morso' },
+    summary: {
+      en: 'The ward he bit after Little Walder hit Rickon.',
+      it: 'Il pupillo che ha morso dopo che ha colpito Rickon.',
+    },
+  },
+  shBSummer95: {
+    character: 'summer-direwolf',
+    type: { en: 'Fellow direwolf', it: 'Altro metalupo' },
+    summary: {
+      en: 'Bran’s direwolf, penned in the godswood with him.',
+      it: 'Il metalupo di Bran, chiuso con lui nel parco degli dèi.',
+    },
+  },
+  shBJojen95: {
+    character: 'jojen-reed',
+    type: { en: 'Reed boy', it: 'Ragazzo dei Reed' },
+    summary: {
+      en: 'The Reed boy who says Shaggydog is full of fear and rage.',
+      it: 'Il ragazzo dei Reed che dice che Cagnaccio è pieno di paura e di rabbia.',
+    },
+  },
+  shBRickon143: {
+    character: 'rickon-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he goes with along the kingsroad, apart from Bran.',
+      it: 'Il ragazzo con cui va lungo la strada del re, lontano da Bran.',
+    },
+  },
+  shBOsha143: {
+    character: 'osha',
+    type: { en: 'Guardian', it: 'Custode' },
+    summary: {
+      en: 'The wildling woman who takes him and Rickon along the kingsroad.',
+      it: 'La donna dei bruti che porta lui e Rickon lungo la strada del re.',
+    },
+  },
+  rdShowRobb11: {
+    character: 'robb-stark',
+    type: { en: 'King he serves', it: 'Re che serve' },
+    summary: {
+      en: 'The King in the North, who sends him to Winterfell in Catelyn’s place.',
+      it: 'Il Re del Nord, che lo manda a Grande Inverno al posto di Catelyn.',
+    },
+  },
+  rdShowBran11: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord he serves at Winterfell.',
+      it: 'Il giovane signore che serve a Grande Inverno.',
+    },
+  },
+  rdShowCatelyn11: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady', it: 'Signora' },
+    summary: {
+      en: 'The lady who asked to go home to her younger sons. Robb sends Rodrik instead.',
+      it: 'La signora che chiedeva di tornare dai figli più piccoli. Robb manda Rodrik al suo posto.',
+    },
+  },
+  rdShowTheon16: {
+    character: 'theon-greyjoy',
+    type: { en: 'Former pupil', it: 'Ex allievo' },
+    summary: {
+      en: 'The ward he once trained, who took Winterfell while he was away and beheaded him in four blows.',
+      it: 'Il pupillo che aveva addestrato, che ha preso Grande Inverno mentre lui era via e lo ha decapitato in quattro colpi.',
+    },
+  },
+  rdShowBran16: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord, who pleads for his life.',
+      it: 'Il giovane signore, che implora per la sua vita.',
+    },
+  },
+  rdShowRickon16: {
+    character: 'rickon-stark',
+    type: { en: 'Young lord', it: 'Giovane lord' },
+    summary: {
+      en: 'The youngest Stark, who pleads with Bran for his life.',
+      it: 'Il più giovane degli Stark, che implora insieme a Bran per la sua vita.',
+    },
+  },
+  rdShowDagmer16: {
+    character: 'dagmer',
+    type: { en: 'Enemy raider', it: 'Predone nemico' },
+    summary: {
+      en: 'The ironborn captain who insisted Theon execute him.',
+      it: 'Il capitano degli uomini di ferro che ha preteso la sua esecuzione da Theon.',
+    },
+  },
+  rdBBran90: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord whose audiences he sits through at his side. He tells Bran he did well.',
+      it: 'Il giovane signore alle cui udienze siede al suo fianco. Dice a Bran che se l’è cavata bene.',
+    },
+  },
+  rdBLuwin90: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester beside Bran at the audiences.',
+      it: 'Il maestro accanto a Bran alle udienze.',
+    },
+  },
+  rdBWyman90: {
+    character: 'wyman-manderly',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Lord of White Harbor, who pitches a mint and a fleet for Robb’s kingdom.',
+      it: 'Il lord di Porto Bianco, che propone una zecca e una flotta per il regno di Robb.',
+    },
+  },
+  rdBDonella90: {
+    character: 'donella-hornwood',
+    type: { en: 'Widow', it: 'Vedova' },
+    summary: {
+      en: 'The widowed lady whose lands he promises to protect. She hints that she would take him as a husband.',
+      it: 'La vedova di cui promette di proteggere le terre. Lei lascia capire che lo prenderebbe come marito.',
+    },
+  },
+  rdBDonella109: {
+    character: 'donella-hornwood',
+    type: { en: 'Widow', it: 'Vedova' },
+    summary: {
+      en: 'The lady he meant to protect. She was forced to wed Roose Bolton’s bastard, and he returns with a prisoner held for her murder.',
+      it: 'La signora che voleva proteggere. È stata costretta a sposare il bastardo di Roose Bolton, e lui torna con un prigioniero accusato di averla uccisa.',
+    },
+  },
+  rdBBran109: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord who tells him about Jojen’s dream. Rodrik promises not to take Alebelly on the ride against the raiders.',
+      it: 'Il giovane signore che gli racconta il sogno di Jojen. Rodrik promette di non portare Alebelly nella cavalcata contro i razziatori.',
+    },
+  },
+  rdBLuwin109: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who reports the raiders plundering the coast.',
+      it: 'Il maestro che riferisce dei razziatori che saccheggiano la costa.',
+    },
+  },
+  rdBTheon140: {
+    character: 'theon-greyjoy',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The prince of Winterfell, who answers his terms by showing his daughter on the wall with a noose around her neck.',
+      it: 'Il principe di Grande Inverno, che risponde alle sue condizioni mostrando sulle mura sua figlia con un cappio al collo.',
+    },
+  },
+  rdBRamsay140: {
+    character: 'ramsay-snow',
+    type: { en: 'Man he trusted', it: 'Uomo di cui si fidava' },
+    summary: {
+      en: 'The Dreadfort leader whose men he took for allies. They turned on his army, and Ramsay gave Theon his body.',
+      it: 'Il capo degli uomini del Dreadfort che aveva scambiato per alleati. Si sono rivoltati contro il suo esercito, e Ramsay ha consegnato il suo corpo a Theon.',
+    },
+  },
+  miBBran109: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord who comes to the forge to work the bellows for him.',
+      it: 'Il giovane signore che viene alla fucina per azionare il mantice al posto suo.',
+    },
+  },
+  miBJojen109: {
+    character: 'jojen-reed',
+    type: { en: 'Dreamer', it: 'Sognatore' },
+    summary: {
+      en: 'The Reed boy who dreamed of him drowned. Mikken laughs and says he always wanted to see the sea.',
+      it: 'Il ragazzo dei Reed che lo ha sognato annegato. Mikken ride e dice che ha sempre voluto vedere il mare.',
+    },
+  },
+  miBTheon120: {
+    character: 'theon-greyjoy',
+    type: { en: 'Conqueror', it: 'Conquistatore' },
+    summary: {
+      en: 'The prince who took the castle. Mikken refused to kneel and drowned in his own blood.',
+      it: 'Il principe che ha preso il castello. Mikken si è rifiutato di inginocchiarsi ed è annegato nel proprio sangue.',
+    },
+  },
+  miBBran120: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord who watched him die.',
+      it: 'Il giovane signore che lo ha visto morire.',
+    },
+  },
+  miBJojen120: {
+    character: 'jojen-reed',
+    type: { en: 'Dreamer', it: 'Sognatore' },
+    summary: {
+      en: 'The Reed boy whose dream of him drowned came true.',
+      it: 'Il ragazzo dei Reed il cui sogno di lui annegato si è avverato.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
+/**
  * King's Landing, the riverlands and the Vale (#1346). The same rules as
  * `links`. Show pins follow the Game of Thrones Wiki's `{{Ref|GOTxxx}}`
  * citations and episode synopses; chapter pins follow the Ice and Fire Wiki's
@@ -9000,6 +10392,3004 @@ const kingsLanding2 = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 2's Wall and beyond cards for the season-1 cast (#1483): season 2
+ * and A Clash of Kings, episodes 11 to 20 and chapters 74 to 143. The new
+ * characters' own cards are in `season-2.relationships.ts`.
+ */
+const wall2 = {
+  // Jon Snow, the show
+  jonJeorReprimand: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, whom Jon follows on the ranging. He reprimands Jon for losing his temper with Craster, and tells him to learn how to follow.',
+      it: 'Il lord comandante, che Jon segue nella spedizione. Rimprovera Jon per aver perso la pazienza con Craster, e gli dice di imparare a seguire.',
+    },
+  },
+  jonCrasterShow: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep. Jon argues with him when Craster calls the Watch southerners, and dislikes him at once.',
+      it: 'Il padrone del fortino. Jon discute con lui quando Craster chiama i Guardiani gente del sud, e lo prende subito in antipatia.',
+    },
+  },
+  jonSamRanging: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who rides the ranging with him. Like Jon, Sam is repulsed by Craster.',
+      it: 'Il suo amico, che cavalca con lui nella spedizione. Come Jon, Sam prova repulsione per Craster.',
+    },
+  },
+  jonGrennRanging: {
+    character: 'grenn',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who is on the ranging too. Grenn is as repulsed by Craster as Jon is.',
+      it: 'Il suo amico, anche lui nella spedizione. Grenn prova per Craster la stessa repulsione di Jon.',
+    },
+  },
+  jonQhorinShow: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who comes to the Fist from the Shadow Tower. Jon asks to join his scouting party, and Qhorin takes his side when Jeor objects.',
+      it: 'Il ranger che arriva al Pugno dalla Torre delle Ombre. Jon chiede di unirsi al suo gruppo di esploratori, e Qhorin lo difende quando Jeor si oppone.',
+    },
+  },
+  jonJeorLets: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who says Jon is no ranger and reminds him that he let Craster beat him. Jeor lets him go with Qhorin in the end.',
+      it: 'Il lord comandante, che dice che Jon non è un ranger e gli ricorda di essersi fatto picchiare da Craster. Alla fine Jeor lo lascia partire con Qhorin.',
+    },
+  },
+  jonSamSteward: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who offers to take on Jon’s duties as the Lord Commander’s steward so that Jon can go with Qhorin.',
+      it: 'Il suo amico, che si offre di occupare il posto di Jon come attendente del lord comandante perché Jon possa andare con Qhorin.',
+    },
+  },
+  jonGillyShow: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'Craster’s pregnant daughter and wife. Sam brings her to Jon, but he will not disobey the Lord Commander and take her away.',
+      it: 'La figlia e moglie incinta di Craster. Sam la porta da Jon, ma lui non vuole disobbedire al lord comandante e portarla via.',
+    },
+  },
+  jonCrasterBeat: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep. Jon follows him into the woods and sees him leave a newborn boy there. Craster knocks him out and orders the Watch to leave.',
+      it: 'Il padrone del fortino. Jon lo segue nel bosco e lo vede lasciarvi un neonato maschio. Craster lo stende e ordina ai Guardiani di andarsene.',
+    },
+  },
+  jonYgritteShow: {
+    character: 'ygritte',
+    type: { en: 'Prisoner', it: 'Prigioniera' },
+    summary: {
+      en: 'The wildling lookout he captures. He cannot bring himself to kill her, and she runs, and he chases her down.',
+      it: 'La vedetta dei bruti che cattura. Non riesce a ucciderla, lei scappa e lui la rincorre.',
+    },
+  },
+  jonQhorinOrder: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who leads the party. Qhorin leaves Jon alone to execute the prisoner, and the two lose him.',
+      it: 'Il ranger che guida il gruppo. Qhorin lascia Jon solo a giustiziare la prigioniera, e i due lo perdono di vista.',
+    },
+  },
+  jonGhostLost: {
+    character: 'ghost-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His white direwolf. Ghost follows him into the mountains, then wanders off and is gone.',
+      it: 'Il suo meta-lupo bianco. Spettro lo segue sulle montagne, poi si allontana e scompare.',
+    },
+  },
+  jonQhorinKilled: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who attacks Jon in front of the wildlings, so that Jon can pass for a deserter. Jon kills him, as Qhorin has told him to.',
+      it: 'Il ranger che attacca Jon davanti ai bruti, perché Jon passi per un disertore. Jon lo uccide, come Qhorin gli ha detto di fare.',
+    },
+  },
+  jonYgritteCompany: {
+    character: 'ygritte',
+    type: { en: 'Captor', it: 'Chi lo ha catturato' },
+    summary: {
+      en: 'The wildling who brings him to her band as a present and taps him with his own sword. When he kills Qhorin she is stunned, and she shows him the wildling army.',
+      it: 'La bruta che lo porta alla sua banda come regalo e lo colpisce con la sua stessa spada. Quando uccide Qhorin resta senza parole, e gli mostra l’esercito dei bruti.',
+    },
+  },
+  jonSamMissing: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who stays at the Fist. When the scouting party does not come back, Sam refuses to believe Jon is dead.',
+      it: 'Il suo amico, rimasto al Pugno. Quando il gruppo di esploratori non torna, Sam si rifiuta di credere che Jon sia morto.',
+    },
+  },
+
+  // Jon Snow, the books
+  jonJeorAemon: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, whose steward he is. Jeor tells him that Aemon could have been king, and that he and Jon both have a king for a brother.',
+      it: 'Il lord comandante, di cui è attendente. Jeor gli dice che Aemon avrebbe potuto essere re, e che entrambi hanno un re per fratello.',
+    },
+  },
+  jonSamVault: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who is to tend the ravens in Aemon’s place. Jon finds him among the maps and scrolls in the vaults of Castle Black.',
+      it: 'Il suo amico, che al posto di Aemon si occuperà dei corvi. Jon lo trova tra mappe e pergamene nei sotterranei di Castello Nero.',
+    },
+  },
+  jonRobbKing: {
+    character: 'robb-stark',
+    type: { en: 'Half-brother', it: 'Fratellastro' },
+    summary: {
+      en: 'His half-brother, now a king. Jon is unsure how he feels, but tells Donal Noye that Robb will make a good king.',
+      it: 'Il suo fratellastro, ora re. Jon non sa bene cosa provare, ma dice a Donal Noye che Robb sarà un buon re.',
+    },
+  },
+  jonAemonHand: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who treats his burned hand. Jeor tells Jon that Aemon was a king’s son who could have been king.',
+      it: 'Il maestro che cura la sua mano ustionata. Jeor dice a Jon che Aemon era figlio di un re e avrebbe potuto essere re.',
+    },
+  },
+  jonCrasterBook: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the holdfast. At the name Snow, Craster guesses Jon is a bastard. Jon will not take his hospitality.',
+      it: 'Il padrone del fortino. Sentendo il nome Snow, Craster capisce che Jon è un bastardo. Jon non vuole accettare la sua ospitalità.',
+    },
+  },
+  jonGillyBook: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'The girl whose rabbits Ghost raided. She asks Jon to take her to the Wall, and he says it is for the Lord Commander to decide.',
+      it: 'La ragazza di cui Spettro ha assalito i conigli. Chiede a Jon di portarla alla Barriera, e lui risponde che deve decidere il lord comandante.',
+    },
+  },
+  jonJeorCraster: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who tells Jon that Craster gives his sons to the wood and that the Watch needs him all the same.',
+      it: 'Il lord comandante, che dice a Jon che Craster dà i figli maschi al bosco e che i Guardiani hanno comunque bisogno di lui.',
+    },
+  },
+  jonSamCraster: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who hopes to do something for Gilly. Jon says the Lord Commander will never let them take one of Craster’s wives.',
+      it: 'Il suo amico, che vorrebbe fare qualcosa per Gilly. Jon dice che il lord comandante non permetterà mai di portare via una delle mogli di Craster.',
+    },
+  },
+  jonGhostRabbits: {
+    character: 'ghost-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His white direwolf. Ghost raids Gilly’s rabbit hutch, then brings Jon a rabbit and leads him to Sam.',
+      it: 'Il suo meta-lupo bianco. Spettro assalta la conigliera di Gilly, poi porta a Jon un coniglio e lo conduce da Sam.',
+    },
+  },
+  jonQhorinBook: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who comes to the Fist from the Shadow Tower. He tells Jon he knew Lord Eddard and Lord Rickard, and picks him for his party.',
+      it: 'Il ranger che arriva al Pugno dalla Torre delle Ombre. Dice a Jon di aver conosciuto lord Eddard e lord Rickard, e lo sceglie per il suo gruppo.',
+    },
+  },
+  jonJeorFist: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander at the Fist. In his tent Jon overhears Qhorin warn that the wildlings mean to breach the Wall.',
+      it: 'Il lord comandante al Pugno. Nella sua tenda Jon sente Qhorin avvertire che i bruti vogliono sfondare la Barriera.',
+    },
+  },
+  jonSamHorn: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend. Jon gives Sam the old warhorn he found at the Fist, and a dragonglass spearhead and arrowheads.',
+      it: 'Il suo amico. Jon dà a Sam il vecchio corno trovato al Pugno, una punta di lancia e delle punte di freccia di vetro di drago.',
+    },
+  },
+  jonGrennDagger: {
+    character: 'grenn',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend. Jon makes a dragonglass dagger for Grenn, as for himself and Jeor.',
+      it: 'Il suo amico. Jon fa un pugnale di vetro di drago per Grenn, come per sé e per Jeor.',
+    },
+  },
+  jonGhostFist: {
+    character: 'ghost-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His white direwolf. At the Fist Ghost leads Jon out of the ringfort to the dragonglass buried there.',
+      it: 'Il suo meta-lupo bianco. Al Pugno Spettro porta Jon fuori dal recinto fino al vetro di drago sepolto lì.',
+    },
+  },
+  jonYgritteBook: {
+    character: 'ygritte',
+    type: { en: 'Prisoner', it: 'Prigioniera' },
+    summary: {
+      en: 'The spearwife he takes prisoner. She says Mance Rayder would take him in if he ran off with her. Jon stops himself from beheading her and tells her to run.',
+      it: 'La lancera che prende prigioniera. Gli dice che Mance Rayder lo accoglierebbe se scappasse con lei. Jon si ferma prima di decapitarla e le dice di fuggire.',
+    },
+  },
+  jonStonesnake: {
+    character: 'stonesnake',
+    type: { en: 'Fellow ranger', it: 'Ranger compagno' },
+    summary: {
+      en: 'The ranger who teaches Jon to climb a sheer cliff to the watchers. He warns Jon that the spearwife should be killed.',
+      it: 'Il ranger che insegna a Jon ad arrampicarsi su una parete a picco fino alle vedette. Avverte Jon che la lancera andrebbe uccisa.',
+    },
+  },
+  jonQhorinPass: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who leads the party through the pass. He leaves Jon alone with the prisoner to kill her.',
+      it: 'Il ranger che guida il gruppo nel passo. Lascia Jon solo con la prigioniera, perché la uccida.',
+    },
+  },
+  jonQhorinDead: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who told him to yield and go among the wildlings. When the hunters overtake them, Jon kills him with Longclaw.',
+      it: 'Il ranger che gli aveva detto di arrendersi e di unirsi ai bruti. Quando i cacciatori li raggiungono, Jon lo uccide con Lungo Artiglio.',
+    },
+  },
+  jonLord: {
+    character: 'lord-of-bones',
+    type: { en: 'Captor', it: 'Chi lo ha catturato' },
+    summary: {
+      en: 'The leader of the hunters. He orders Jon to kill Qhorin to prove himself, and accepts him despite his misgivings.',
+      it: 'Il capo dei cacciatori. Gli ordina di uccidere Qhorin per mettersi alla prova, e lo accetta nonostante i suoi dubbi.',
+    },
+  },
+  jonYgritteHunt: {
+    character: 'ygritte',
+    type: { en: 'Girl he let go', it: 'Ragazza che ha lasciato andare' },
+    summary: {
+      en: 'The spearwife he spared, now among the hunters. She tells him the eagle was the man he killed in the pass when they captured her.',
+      it: 'La lancera che ha risparmiato, ora tra i cacciatori. Gli dice che l’aquila era l’uomo che ha ucciso nel passo quando l’hanno catturata.',
+    },
+  },
+  jonGhostWounded: {
+    character: 'ghost-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His white direwolf. Jon dreams through Ghost’s eyes, and the party finds Ghost wounded.',
+      it: 'Il suo meta-lupo bianco. Jon sogna attraverso gli occhi di Spettro, e il gruppo trova Spettro ferito.',
+    },
+  },
+  jonEbben: {
+    character: 'ebben',
+    type: { en: 'Fellow ranger', it: 'Ranger compagno' },
+    summary: {
+      en: 'The ranger who calls him a skinchanger after his dream. The hunters later carry Ebben’s head.',
+      it: 'Il ranger che lo chiama mutaforma dopo il suo sogno. I cacciatori portano poi la testa di Ebben.',
+    },
+  },
+
+  // Jeor Mormont, the show
+  jeoJonShow: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, whom he reprimands for losing his temper with Craster. Jeor tells him to learn to follow before he leads.',
+      it: 'Il suo attendente, che rimprovera per aver perso la pazienza con Craster. Jeor gli dice di imparare a seguire prima di comandare.',
+    },
+  },
+  jeoCrasterShow: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, who mocks his vow of celibacy. Jeor puts up with him, because the Watch needs his shelter.',
+      it: 'Il padrone del fortino, che lo prende in giro per il voto di castità. Jeor lo sopporta, perché i Guardiani hanno bisogno del suo riparo.',
+    },
+  },
+  jeoBenjen: {
+    character: 'benjen-stark',
+    type: { en: 'Missing ranger', it: 'Ranger scomparso' },
+    summary: {
+      en: 'The First Ranger the ranging is looking for. Craster tells Jeor he has not seen him.',
+      it: 'Il Primo Ranger che la spedizione cerca. Craster dice a Jeor di non averlo visto.',
+    },
+  },
+  jeoQhorinShow: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who reaches the Fist from the Shadow Tower. He suggests small parties to push out the wildling lookouts in the mountains.',
+      it: 'Il ranger che raggiunge il Pugno dalla Torre delle Ombre. Propone piccoli gruppi per scacciare le vedette dei bruti sulle montagne.',
+    },
+  },
+  jeoJonGo: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, who asks to join Qhorin’s party. Jeor argues against it, then lets him go.',
+      it: 'Il suo attendente, che chiede di unirsi al gruppo di Qhorin. Jeor è contrario, ma poi lo lascia partire.',
+    },
+  },
+  jeoSamSteward: {
+    character: 'samwell-tarly',
+    type: { en: 'New steward', it: 'Nuovo attendente' },
+    summary: {
+      en: 'The brother who offers to take over Jon’s duties as steward. Jeor agrees.',
+      it: 'Il confratello che si offre di prendere il posto di Jon come attendente. Jeor accetta.',
+    },
+  },
+  jeoCrasterOut: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, who throws Jon at his feet and orders the Watch out. Jeor has always known what Craster does with his sons.',
+      it: 'Il padrone del fortino, che getta Jon ai suoi piedi e caccia via i Guardiani. Jeor ha sempre saputo che fine fanno i figli maschi di Craster.',
+    },
+  },
+
+  // Jeor Mormont, the books
+  jeoJonAemon: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward. Jeor tells him that Aemon could have been king, and that they both have a king for a brother.',
+      it: 'Il suo attendente. Jeor gli dice che Aemon avrebbe potuto essere re, e che entrambi hanno un re per fratello.',
+    },
+  },
+  jeoThoren: {
+    character: 'thoren-smallwood',
+    type: { en: 'Acting commander of rangers', it: 'Comandante dei ranger' },
+    summary: {
+      en: 'The ranger who argues that the Lord Commander’s place is at Castle Black. Jeor dismisses him.',
+      it: 'Il ranger che sostiene che il posto del lord comandante sia a Castello Nero. Jeor lo congeda.',
+    },
+  },
+  jeoSamBook: {
+    character: 'samwell-tarly',
+    type: { en: 'Keeper of the ravens', it: 'Custode dei corvi' },
+    summary: {
+      en: 'The recruit who is to keep the ravens. Jeor says he would sooner name Sam First Ranger than Thoren, then dismisses him.',
+      it: 'La recluta che si occuperà dei corvi. Jeor dice che nominerebbe Sam Primo Ranger piuttosto che Thoren, poi lo congeda.',
+    },
+  },
+  jeoAemon: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The old maester of Castle Black, whom Jeor hopes to keep another twenty years.',
+      it: 'Il vecchio maestro di Castello Nero, che Jeor spera di tenere con sé per altri vent’anni.',
+    },
+  },
+  jeoCrasterBook: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the holdfast. Jeor shares his wine with him, and Craster refuses an escort back to the Wall.',
+      it: 'Il padrone del fortino. Jeor divide con lui il suo vino, e Craster rifiuta una scorta fino alla Barriera.',
+    },
+  },
+  jeoJonCraster: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, whom he tells that Craster gives his sons to the wood, and that the Watch needs him all the same.',
+      it: 'Il suo attendente, a cui dice che Craster dà i figli maschi al bosco, e che i Guardiani hanno comunque bisogno di lui.',
+    },
+  },
+  jeoJarman: {
+    character: 'jarman-buckwell',
+    type: { en: 'Ranger', it: 'Ranger' },
+    summary: {
+      en: 'The ranger whose horn tells Jeor there is still someone at Craster’s Keep.',
+      it: 'Il ranger il cui corno dice a Jeor che a Forte Craster c’è ancora qualcuno.',
+    },
+  },
+  jeoThorenCraster: {
+    character: 'thoren-smallwood',
+    type: { en: 'Acting commander of rangers', it: 'Comandante dei ranger' },
+    summary: {
+      en: 'The ranger who swears that Craster is a friend of the Watch.',
+      it: 'Il ranger che giura che Craster è un amico dei Guardiani.',
+    },
+  },
+  jeoQhorinBook: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who reaches the Fist with a hundred men. At his advice Jeor sends three parties into the mountains, and Qhorin leads one.',
+      it: 'Il ranger che raggiunge il Pugno con cento uomini. Su suo consiglio Jeor manda tre gruppi sulle montagne, e Qhorin ne guida uno.',
+    },
+  },
+  jeoJonQhorin: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, whom Qhorin picks for his own party.',
+      it: 'Il suo attendente, che Qhorin sceglie per il suo gruppo.',
+    },
+  },
+  jeoThorenParty: {
+    character: 'thoren-smallwood',
+    type: { en: 'Acting commander of rangers', it: 'Comandante dei ranger' },
+    summary: {
+      en: 'The ranger Jeor sends to probe the Milkwater.',
+      it: 'Il ranger che Jeor manda a esplorare il Milkwater.',
+    },
+  },
+  jeoJarmanParty: {
+    character: 'jarman-buckwell',
+    type: { en: 'Ranger', it: 'Ranger' },
+    summary: {
+      en: 'The ranger Jeor sends up into the mountains with four men.',
+      it: 'Il ranger che Jeor manda sulle montagne con quattro uomini.',
+    },
+  },
+
+  // Samwell Tarly, the show
+  samJonRanging: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, on the ranging with him. Both are repulsed by Craster.',
+      it: 'Il suo amico, nella spedizione con lui. Entrambi provano repulsione per Craster.',
+    },
+  },
+  samGrennSledge: {
+    character: 'grenn',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Another friend on the ranging. They bicker over Sam’s weight on the sledge.',
+      it: 'Un altro amico nella spedizione. Battibeccano per il peso di Sam sulla slitta.',
+    },
+  },
+  samCrasterShow: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, who marries his own daughters. Sam is disgusted by him.',
+      it: 'Il padrone del fortino, che sposa le proprie figlie. Sam ne è disgustato.',
+    },
+  },
+  samGillyShow: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'Craster’s pregnant daughter and wife. Sam drives Ghost away from her, gives her his mother’s thimble and promises to come back for her.',
+      it: 'La figlia e moglie incinta di Craster. Sam allontana Spettro da lei, le dà il ditale di sua madre e promette di tornare a prenderla.',
+    },
+  },
+  samJonSteward: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who leaves with the Halfhand’s party. Sam takes over Jon’s duties as the Lord Commander’s steward.',
+      it: 'Il suo amico, che parte con il gruppo del Monco. Sam prende il posto di Jon come attendente del lord comandante.',
+    },
+  },
+  samGrennFist: {
+    character: 'grenn',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Another friend on the ranging, who trudges beside him to the Fist while Sam talks of Gilly.',
+      it: 'Un altro amico nella spedizione, che arranca accanto a lui fino al Pugno mentre Sam parla di Gilly.',
+    },
+  },
+  samJeorSteward: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who lets Sam take over Jon’s duties as his steward.',
+      it: 'Il lord comandante, che lascia a Sam i compiti di Jon come suo attendente.',
+    },
+  },
+  samGrennCache: {
+    character: 'grenn',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A brother who finds the dragonglass cache at the Fist with him. At the horns Grenn runs back without noticing Sam is left behind.',
+      it: 'Un confratello che trova con lui il nascondiglio di vetro di drago al Pugno. Al suono dei corni Grenn corre indietro senza accorgersi che Sam è rimasto indietro.',
+    },
+  },
+  samJonMissing: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who went with the Halfhand’s party. When it does not come back, Sam refuses to give up hope.',
+      it: 'Il suo amico, partito con il gruppo del Monco. Quando non torna, Sam si rifiuta di perdere la speranza.',
+    },
+  },
+  samEdd: {
+    character: 'eddison-tollett',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A brother who finds Sam’s talk of Gilly sickening. Sam tells him that what interests him about Edd is nothing at all.',
+      it: 'Un confratello a cui i discorsi di Sam su Gilly danno la nausea. Sam gli dice che di Edd non gli interessa assolutamente niente.',
+    },
+  },
+
+  // Samwell Tarly, the books
+  samJonVault: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who finds him in the vaults among the maps. Jon tells him he will be as safe on the ranging as at Horn Hill.',
+      it: 'Il suo amico, che lo trova nei sotterranei tra le mappe. Jon gli dice che nella spedizione sarà al sicuro come a Collina del Corno.',
+    },
+  },
+  samJeorRavens: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who asks him about the ravens. Jeor says he would sooner name Sam First Ranger than Thoren, then dismisses him.',
+      it: 'Il lord comandante, che gli chiede dei corvi. Jeor dice che nominerebbe Sam Primo Ranger piuttosto che Thoren, poi lo congeda.',
+    },
+  },
+  samAemonMaps: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who sent him to find maps for Jeor. Sam goes on the ranging in Aemon’s place, to tend the ravens.',
+      it: 'Il maestro che lo ha mandato a cercare mappe per Jeor. Sam va nella spedizione al posto di Aemon, per occuparsi dei corvi.',
+    },
+  },
+  samGillyBook: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'Craster’s wife, who wears Sam’s cloak. He wishes he could do something for her, and hopes they can take her when they come back.',
+      it: 'La moglie di Craster, che indossa il mantello di Sam. Vorrebbe fare qualcosa per lei, e spera di poterla portare via al ritorno.',
+    },
+  },
+  samJonCraster: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who brings him the Lord Commander’s order to draw a map. Jon says Jeor will never let them take one of Craster’s wives.',
+      it: 'Il suo amico, che gli porta l’ordine del lord comandante di disegnare una mappa. Jon dice che Jeor non permetterà mai di portare via una delle mogli di Craster.',
+    },
+  },
+  samEddBook: {
+    character: 'eddison-tollett',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A brother who told him Craster marries his own daughters. Sam passes it on to Jon.',
+      it: 'Un confratello che gli ha detto che Craster sposa le proprie figlie. Sam lo riferisce a Jon.',
+    },
+  },
+  samCrasterBook: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the holdfast. Sam asks Jon whether he is the savage they say, then goes to draw a map for the Lord Commander.',
+      it: 'Il padrone del fortino. Sam chiede a Jon se sia il selvaggio che dicono, poi va a disegnare una mappa per il lord comandante.',
+    },
+  },
+
+  // Grenn, the show
+  greSamSledge: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A friend on the ranging. They bicker over Sam’s weight on the sledge.',
+      it: 'Un amico nella spedizione. Battibeccano per il peso di Sam sulla slitta.',
+    },
+  },
+  greJonRanging: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A friend on the ranging. Like Jon, Grenn is repulsed by Craster.',
+      it: 'Un amico nella spedizione. Come Jon, Grenn prova repulsione per Craster.',
+    },
+  },
+  greCraster: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep. Grenn wonders if Craster does not like men speaking to his daughters, and learns that they are also his wives.',
+      it: 'Il padrone del fortino. Grenn si chiede se Craster non voglia che si parli con le sue figlie, e scopre che sono anche le sue mogli.',
+    },
+  },
+  greSamFist: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A friend who digs with him at the Fist and finds a dragonglass cache. At the horns Grenn runs back to the Fist and leaves Sam behind.',
+      it: 'Un amico che scava con lui al Pugno e trova un nascondiglio di vetro di drago. Al suono dei corni Grenn corre al Pugno e lascia Sam indietro.',
+    },
+  },
+  greEdd: {
+    character: 'eddison-tollett',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A brother who runs back to the Fist with him at the horns.',
+      it: 'Un confratello che corre con lui al Pugno al suono dei corni.',
+    },
+  },
+  greJonMissing: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A friend who went with the Halfhand’s party. At the Fist they fear he is dead.',
+      it: 'Un amico partito con il gruppo del Monco. Al Pugno temono che sia morto.',
+    },
+  },
+
+  // Ghost
+  ghoJonNorth: {
+    character: 'jon-snow',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The man he follows beyond the Wall, up to the Fist.',
+      it: 'L’uomo che segue oltre la Barriera, fino al Pugno.',
+    },
+  },
+  ghoSam: {
+    character: 'samwell-tarly',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'The steward who tells Ghost to get away from Gilly. Ghost gives him a look, but obeys.',
+      it: 'L’attendente che dice a Spettro di allontanarsi da Gilly. Spettro gli lancia un’occhiataccia, ma obbedisce.',
+    },
+  },
+  ghoGilly: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'Craster’s wife. Ghost approaches her, drawn by the dead rabbit she carries, until Sam calls him off.',
+      it: 'La moglie di Craster. Spettro si avvicina a lei, attirato dal coniglio morto che porta, finché Sam non lo richiama.',
+    },
+  },
+  ghoJonBook: {
+    character: 'jon-snow',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy who promises Gilly that Ghost will not hurt her. Ghost brings him a rabbit.',
+      it: 'Il ragazzo che promette a Gilly che Spettro non le farà del male. Spettro gli porta un coniglio.',
+    },
+  },
+  ghoGillyBook: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'The girl whose rabbit hutch he raids. She cries out when she sees him.',
+      it: 'La ragazza di cui assalta la conigliera. Lei grida quando lo vede.',
+    },
+  },
+  ghoJonDream: {
+    character: 'jon-snow',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy who dreams through his eyes and wakes shouting his name. Jon finds him wounded.',
+      it: 'Il ragazzo che sogna attraverso i suoi occhi e si sveglia gridando il suo nome. Jon lo trova ferito.',
+    },
+  },
+  ghoQhorin: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who has his wounds dressed, then turns the party back to the Fist.',
+      it: 'Il ranger che fa medicare le sue ferite, poi riporta il gruppo al Pugno.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
+/**
+ * Stage 2’s Riverlands and Harrenhal cards for the season-1 cast (#1481):
+ * Arya’s road with Yoren and her months at Harrenhal, Robb’s war, and the
+ * prisoners of the wagon. The new characters’ own cards are in
+ * `season-2.relationships.ts`.
+ */
+const riverlands2 = {
+  // Arya Stark, the show
+  aryJaqenWater: {
+    character: 'jaqen-hghar',
+    type: { en: 'Prisoner in the wagon', it: 'Prigioniero sul carro' },
+    summary: {
+      en: 'A prisoner chained in Yoren’s wagon. He asks her for water and gives his name, calling himself “a man” and her “a boy”.',
+      it: 'Un prigioniero incatenato sul carro di Yoren. Le chiede dell’acqua e le dice il suo nome, chiamando se stesso “un uomo” e lei “un ragazzo”.',
+    },
+  },
+  aryGendrySecret: {
+    character: 'gendry',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'The older recruit who tells her he has seen through her disguise. She tells him who she is and swears him to secrecy.',
+      it: 'La recluta più grande che le dice di aver capito il suo travestimento. Lei gli dice chi è e gli fa giurare di tacere.',
+    },
+  },
+  aryYorenShow: {
+    character: 'yoren',
+    type: { en: 'Protector', it: 'Protettore' },
+    summary: {
+      en: 'The Night’s Watch recruiter who still passes her off as a boy, and sends the gold cloaks away empty-handed.',
+      it: 'Il reclutatore dei Guardiani della notte che la fa ancora passare per un ragazzo, e manda via i mantelli d’oro a mani vuote.',
+    },
+  },
+  aryTywinCupbearer: {
+    character: 'tywin-lannister',
+    type: { en: 'Lord she serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The Hand of the King, who sees through her disguise at Harrenhal and makes her his cupbearer.',
+      it: 'Il Primo Cavaliere del re, che a Harrenhal vede oltre il suo travestimento e la nomina sua coppiera.',
+    },
+  },
+  aryGregorShow: {
+    character: 'gregor-clegane',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The knight in command of the prisoners at Harrenhal, who has one of them tortured to death each day.',
+      it: 'Il cavaliere che comanda i prigionieri di Harrenhal, e ogni giorno ne fa torturare a morte uno.',
+    },
+  },
+  aryPolliverShow: {
+    character: 'polliver',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The man-at-arms who knocked her down and took Needle. She adds his name to her list after watching him beat an old woman.',
+      it: 'L’uomo d’arme che l’ha buttata a terra e le ha preso Ago. Aggiunge il suo nome alla sua lista dopo averlo visto picchiare una vecchia.',
+    },
+  },
+  aryGendryCaptive: {
+    character: 'gendry',
+    type: { en: 'Fellow prisoner', it: 'Compagno di prigionia' },
+    summary: {
+      en: 'A fellow prisoner at Harrenhal, chosen for torture and spared when Tywin puts the prisoners to work.',
+      it: 'Un compagno di prigionia a Harrenhal, scelto per la tortura e risparmiato quando Tywin mette i prigionieri al lavoro.',
+    },
+  },
+  aryHotPieCaptive: {
+    character: 'hot-pie',
+    type: { en: 'Fellow prisoner', it: 'Compagno di prigionia' },
+    summary: {
+      en: 'The baker’s boy, taken to Harrenhal with her.',
+      it: 'Il garzone di fornaio, portato a Harrenhal insieme a lei.',
+    },
+  },
+  aryTywinWar: {
+    character: 'tywin-lannister',
+    type: { en: 'Lord she serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The Hand of the King, whose war council she serves as cupbearer. She takes a letter about her brother off his table.',
+      it: 'Il Primo Cavaliere del re, di cui serve il consiglio di guerra come coppiera. Prende dal suo tavolo una lettera che parla di suo fratello.',
+    },
+  },
+  aryJaqenDeaths: {
+    character: 'jaqen-hghar',
+    type: { en: 'Debtor', it: 'Debitore' },
+    summary: {
+      en: 'The man who owes her three deaths. She names the Tickler first, then Ser Amory, whom she needs gone at once.',
+      it: 'L’uomo che le deve tre morti. Nomina per prima il Tickler, poi ser Amory, che le serve fuori gioco subito.',
+    },
+  },
+  aryTickler: {
+    character: 'tickler',
+    type: { en: 'Torturer', it: 'Torturatore' },
+    summary: {
+      en: 'The man who questioned the prisoners with a rat in a bucket. She names him first, and he is found dead with a broken neck.',
+      it: 'L’uomo che interrogava i prigionieri con un ratto in un secchio. Lo nomina per primo, e lo trovano morto con il collo spezzato.',
+    },
+  },
+  aryAmory: {
+    character: 'amory-lorch',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The knight who catches her with Tywin’s letter. He dies of a poisoned dart before he can tell Tywin.',
+      it: 'Il cavaliere che la sorprende con la lettera di Tywin. Muore per un dardo avvelenato prima di poterlo dire a Tywin.',
+    },
+  },
+  aryJaqenCoin: {
+    character: 'jaqen-hghar',
+    type: { en: 'Helper', it: 'Alleato' },
+    summary: {
+      en: 'The assassin who let her out of Harrenhal. He offers to take her to Braavos; she says no, and he leaves her a coin and the words to find him.',
+      it: 'L’assassino che l’ha fatta uscire da Harrenhal. Le offre di portarla a Braavos; lei rifiuta, e lui le lascia una moneta e le parole per ritrovarlo.',
+    },
+  },
+  aryGendryEscape: {
+    character: 'gendry',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The smith who walked out of Harrenhal with her at midnight.',
+      it: 'Il fabbro che è uscito da Harrenhal con lei a mezzanotte.',
+    },
+  },
+  aryHotPieEscape: {
+    character: 'hot-pie',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The baker’s boy who walked out of Harrenhal with her at midnight.',
+      it: 'Il garzone di fornaio che è uscito da Harrenhal con lei a mezzanotte.',
+    },
+  },
+
+  // Arya Stark, the books
+  aryYorenBook: {
+    character: 'yoren',
+    type: { en: 'Protector', it: 'Protettore' },
+    summary: {
+      en: 'The Night’s Watch man who passes her off as a boy. After she beats Hot Pie bloody, he whacks her with her own stick sword.',
+      it: 'L’uomo dei Guardiani della notte che la fa passare per un ragazzo. Dopo che ha pestato Frittella, la colpisce con la sua spada di legno.',
+    },
+  },
+  aryHotPieBook: {
+    character: 'hot-pie',
+    type: { en: 'Fellow recruit', it: 'Recluta come lei' },
+    summary: {
+      en: 'An orphan boy who tries to steal her sword. She breaks his nose with her practice sword.',
+      it: 'Un orfano che prova a rubarle la spada. Lei gli rompe il naso con la spada di legno.',
+    },
+  },
+  aryLommyBook: {
+    character: 'lommy',
+    type: { en: 'Fellow recruit', it: 'Recluta come lei' },
+    summary: {
+      en: 'The boy who mocks her haircut and eggs Hot Pie on. After the fight he stays as far from her as he can.',
+      it: 'Il ragazzo che prende in giro i suoi capelli e incita Frittella. Dopo la rissa sta il più lontano possibile da lei.',
+    },
+  },
+  aryGendryBook: {
+    character: 'gendry',
+    type: { en: 'Fellow recruit', it: 'Recluta come lei' },
+    summary: {
+      en: 'The older boy with the bull helm, who tells the others to let her be.',
+      it: 'Il ragazzo più grande con l’elmo a testa di toro, che dice agli altri di lasciarla stare.',
+    },
+  },
+  aryJaqenBook: {
+    character: 'jaqen-hghar',
+    type: { en: 'Prisoner in the wagon', it: 'Prigioniero sul carro' },
+    summary: {
+      en: 'The slender prisoner who calls to her from the wagon and says he is Jaqen H’ghar. He tells her she has more courage than sense.',
+      it: 'Il prigioniero snello che la chiama dal carro e dice di essere Jaqen H’ghar. Le dice che ha più coraggio che buon senso.',
+    },
+  },
+  aryRorgeBook: {
+    character: 'rorge',
+    type: { en: 'Prisoner in the wagon', it: 'Prigioniero sul carro' },
+    summary: {
+      en: 'The noseless prisoner who throws a tankard at her and threatens her through the bars.',
+      it: 'Il prigioniero senza naso che le tira un boccale e la minaccia attraverso le sbarre.',
+    },
+  },
+  aryBiterBook: {
+    character: 'biter',
+    type: { en: 'Prisoner in the wagon', it: 'Prigioniero sul carro' },
+    summary: {
+      en: 'The mute prisoner who lunges at her. She hits him hard between the eyes.',
+      it: 'Il prigioniero muto che si lancia contro di lei. Lei lo colpisce forte in mezzo agli occhi.',
+    },
+  },
+  aryGendryWagon: {
+    character: 'gendry',
+    type: { en: 'Fellow recruit', it: 'Recluta come lei' },
+    summary: {
+      en: 'The Bull, who tells her the three in the wagon scare him, and reminds her Yoren warned them away.',
+      it: 'Il Toro, che le dice che i tre sul carro gli fanno paura, e le ricorda che Yoren ha vietato di avvicinarsi.',
+    },
+  },
+  aryGregorBook: {
+    character: 'gregor-clegane',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The Mountain, who marches her and the other prisoners to Harrenhal and picks one of them each morning to be questioned.',
+      it: 'La Montagna, che la porta a Harrenhal con gli altri prigionieri e ogni mattina ne sceglie uno da interrogare.',
+    },
+  },
+  aryPolliverBook: {
+    character: 'polliver',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The balding man-at-arms who wears Needle at his hip. She hates him for taking it.',
+      it: 'L’uomo d’arme stempiato che porta Ago al fianco. Lei lo odia per averlo preso.',
+    },
+  },
+  aryTicklerBook: {
+    character: 'tickler',
+    type: { en: 'Torturer', it: 'Torturatore' },
+    summary: {
+      en: 'The ordinary-looking man who does the questioning. He is almost too frightening to hate.',
+      it: 'L’uomo dall’aspetto comune che fa gli interrogatori. È quasi troppo spaventoso per odiarlo.',
+    },
+  },
+  aryChiswyckBook: {
+    character: 'chiswyck',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The old man-at-arms who smashed her head when they caught her. She hates him for thinking he is funny.',
+      it: 'Il vecchio uomo d’arme che le ha colpito la testa quando l’hanno presa. Lo odia perché si crede divertente.',
+    },
+  },
+  aryGendrySpared: {
+    character: 'gendry',
+    type: { en: 'Fellow prisoner', it: 'Compagno di prigionia' },
+    summary: {
+      en: 'The older boy, spared because he admits forging his helmet himself: smiths are too valuable to kill.',
+      it: 'Il ragazzo più grande, risparmiato perché ammette di aver forgiato da solo il suo elmo: i fabbri valgono troppo per essere uccisi.',
+    },
+  },
+  aryWeeseBook: {
+    character: 'weese',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The understeward of the Wailing Tower, who beats her. She gives Jaqen his name, and he is found dead with his dog on his chest.',
+      it: 'Il sottointendente di una torre di Harrenhal, che la picchia. Dice il suo nome a Jaqen, e lo trovano morto con il suo cane sul petto.',
+    },
+  },
+  aryJaqenDebt: {
+    character: 'jaqen-hghar',
+    type: { en: 'Debtor', it: 'Debitore' },
+    summary: {
+      en: 'The man who owes her three lives. She has given him Chiswyck, then Weese, and has one name left to give.',
+      it: 'L’uomo che le deve tre vite. Gli ha dato Chiswyck, poi Weese, e le resta ancora un nome da dare.',
+    },
+  },
+  aryAmoryBook: {
+    character: 'amory-lorch',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The knight who killed Yoren, now castellan of Harrenhal as the host marches out.',
+      it: 'Il cavaliere che ha ucciso Yoren, ora castellano di Harrenhal mentre l’esercito parte.',
+    },
+  },
+  aryRorgeHarrenhal: {
+    character: 'rorge',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The noseless man from the wagon, one of Amory’s men. He tells her she is not so brave now that he is out of chains.',
+      it: 'L’uomo senza naso del carro, uno degli uomini di Amory. Le dice che non è più così coraggiosa ora che lui è senza catene.',
+    },
+  },
+  aryGendryForge: {
+    character: 'gendry',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The Bull, now at the forge. He tells her to say she yelled “Go to hell” on the wall, not “Winterfell”, so Hot Pie never learns who she is.',
+      it: 'Il Toro, ora alla fucina. Le dice di raccontare che sulle mura ha gridato “Vai all’inferno” e non “Grande Inverno”, così Frittella non scopre chi è.',
+    },
+  },
+  aryRooseBook: {
+    character: 'roose-bolton',
+    type: { en: 'Lord she serves', it: 'Signore che serve' },
+    summary: {
+      en: 'Her brother’s bannerman, who takes Harrenhal and makes her his cupbearer. She does not tell him who she is.',
+      it: 'Il vassallo di suo fratello, che prende Harrenhal e la nomina sua coppiera. Lei non gli dice chi è.',
+    },
+  },
+  aryJaqenCoinBook: {
+    character: 'jaqen-hghar',
+    type: { en: 'Helper', it: 'Alleato' },
+    summary: {
+      en: 'The man who paid his debt by breaking the northmen out of Harrenhal. He left her a coin and the words to find him.',
+      it: 'L’uomo che ha saldato il suo debito facendo evadere i nordici da Harrenhal. Le ha lasciato una moneta e le parole per ritrovarlo.',
+    },
+  },
+  aryGendryRide: {
+    character: 'gendry',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The smith she tells to find swords. He rides out of Harrenhal with her through a sally port.',
+      it: 'Il fabbro a cui dice di trovare delle spade. Esce da Harrenhal con lei da una porticina.',
+    },
+  },
+  aryHotPieRide: {
+    character: 'hot-pie',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The baker’s boy she tells Gendry to bring. He rides out of Harrenhal with her through a sally port.',
+      it: 'Il garzone di fornaio che dice a Gendry di portare con sé. Esce da Harrenhal con lei da una porticina.',
+    },
+  },
+
+  // Gendry, the show
+  genAryaHarrenhal: {
+    character: 'arya-stark',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The girl who told him who she is. At Harrenhal Tywin sees through her disguise and takes her as his cupbearer.',
+      it: 'La ragazza che gli ha detto chi è. A Harrenhal Tywin vede oltre il suo travestimento e la prende come coppiera.',
+    },
+  },
+  genGregor: {
+    character: 'gregor-clegane',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The knight who has prisoners tortured each day. He picks Gendry for it.',
+      it: 'Il cavaliere che ogni giorno fa torturare dei prigionieri. Sceglie Gendry.',
+    },
+  },
+  genTywin: {
+    character: 'tywin-lannister',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The Hand of the King, who stops the torture and puts the prisoners to work. A smith’s skills are worth more to him than a dead prisoner.',
+      it: 'Il Primo Cavaliere del re, che ferma la tortura e mette i prigionieri al lavoro. Le abilità di un fabbro valgono più di un prigioniero morto.',
+    },
+  },
+  genPolliver: {
+    character: 'polliver',
+    type: { en: 'Guard', it: 'Guardia' },
+    summary: {
+      en: 'The man-at-arms who stands guard over him while he waits to be tortured.',
+      it: 'L’uomo d’arme che lo sorveglia mentre aspetta di essere torturato.',
+    },
+  },
+  genHotPieCaptive: {
+    character: 'hot-pie',
+    type: { en: 'Fellow prisoner', it: 'Compagno di prigionia' },
+    summary: {
+      en: 'The baker’s boy, taken to Harrenhal with him.',
+      it: 'Il garzone di fornaio, portato a Harrenhal insieme a lui.',
+    },
+  },
+  genJaqenCliff: {
+    character: 'jaqen-hghar',
+    type: { en: 'Stranger', it: 'Sconosciuto' },
+    summary: {
+      en: 'The man who waits for them on a cliff beyond Harrenhal and speaks with Arya alone.',
+      it: 'L’uomo che li aspetta su una scogliera oltre Harrenhal e parla da solo con Arya.',
+    },
+  },
+
+  // Gendry, the books
+  genAryaBook75: {
+    character: 'arya-stark',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'A small recruit, passing as a boy called Arry, whom he tells the others to leave alone.',
+      it: 'Una piccola recluta, che si fa passare per un ragazzo di nome Arry, e che dice agli altri di lasciare in pace.',
+    },
+  },
+  genHotPieBook: {
+    character: 'hot-pie',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'An orphan boy who tries to steal Arry’s sword.',
+      it: 'Un orfano che prova a rubare la spada di Arry.',
+    },
+  },
+  genLommyBook: {
+    character: 'lommy',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'An orphan boy who eggs Hot Pie on.',
+      it: 'Un orfano che incita Frittella.',
+    },
+  },
+  genYorenBook: {
+    character: 'yoren',
+    type: { en: 'Recruiter', it: 'Reclutatore' },
+    summary: {
+      en: 'The man of the Night’s Watch who takes him north with the recruits.',
+      it: 'L’uomo dei Guardiani della notte che lo porta a nord con le reclute.',
+    },
+  },
+  genAryaBook93: {
+    character: 'arya-stark',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The recruit who tells him she is Arya of House Stark. He starts calling her “m’lady”, and she knocks him down.',
+      it: 'La recluta che gli dice di essere Arya di Casa Stark. Lui comincia a chiamarla “mia signora”, e lei lo butta a terra.',
+    },
+  },
+  genHotPieBook93: {
+    character: 'hot-pie',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'The baker’s boy, who yields as soon as the soldiers surround him.',
+      it: 'Il garzone di fornaio, che si arrende appena i soldati lo circondano.',
+    },
+  },
+  genLommyBook93: {
+    character: 'lommy',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'The recruit with the festering leg, who he thinks will die. He says they should leave him behind.',
+      it: 'La recluta con la gamba infetta, che secondo lui morirà. Dice che dovrebbero lasciarlo indietro.',
+    },
+  },
+  genGregorBook: {
+    character: 'gregor-clegane',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The Mountain, whose men take him prisoner. They spare him when he admits he forged his helmet himself.',
+      it: 'La Montagna, i cui uomini lo fanno prigioniero. Lo risparmiano quando ammette di aver forgiato da solo il suo elmo.',
+    },
+  },
+  genYorenBuried: {
+    character: 'yoren',
+    type: { en: 'Recruiter', it: 'Reclutatore' },
+    summary: {
+      en: 'The man who took him north, found dead among four Lannister men. He helps dig his grave.',
+      it: 'L’uomo che lo ha portato a nord, trovato morto tra quattro uomini Lannister. Lo aiuta a scavargli la tomba.',
+    },
+  },
+  genAryaBook138: {
+    character: 'arya-stark',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The girl who tells him to find swords. He rides out of Harrenhal with her.',
+      it: 'La ragazza che gli dice di trovare delle spade. Esce da Harrenhal con lei.',
+    },
+  },
+  genHotPieBook138: {
+    character: 'hot-pie',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'The baker’s boy he finds for Arya. He rides out of Harrenhal with them.',
+      it: 'Il garzone di fornaio che va a cercare per Arya. Esce da Harrenhal con loro.',
+    },
+  },
+
+  // Hot Pie, the show
+  hotAryaHarrenhal: {
+    character: 'arya-stark',
+    type: { en: 'Fellow prisoner', it: 'Compagna di prigionia' },
+    summary: {
+      en: 'A fellow prisoner at Harrenhal, passing as a boy. Tywin sees through it and makes her his cupbearer.',
+      it: 'Una compagna di prigionia a Harrenhal, che si fa passare per un ragazzo. Tywin se ne accorge e la fa sua coppiera.',
+    },
+  },
+  hotGendryCaptive: {
+    character: 'gendry',
+    type: { en: 'Fellow prisoner', it: 'Compagno di prigionia' },
+    summary: {
+      en: 'A fellow prisoner, chosen for torture and spared when Tywin puts the prisoners to work.',
+      it: 'Un compagno di prigionia, scelto per la tortura e risparmiato quando Tywin mette i prigionieri al lavoro.',
+    },
+  },
+  hotAryaEscape: {
+    character: 'arya-stark',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The girl who gets him out of Harrenhal at midnight, with Gendry.',
+      it: 'La ragazza che lo porta fuori da Harrenhal a mezzanotte, con Gendry.',
+    },
+  },
+  hotGendryEscape: {
+    character: 'gendry',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The smith who walks out of Harrenhal with him and Arya.',
+      it: 'Il fabbro che esce da Harrenhal con lui e Arya.',
+    },
+  },
+  hotJaqenGate: {
+    character: 'jaqen-hghar',
+    type: { en: 'Stranger', it: 'Sconosciuto' },
+    summary: {
+      en: 'The man who left the guards at the gate dead, so that they could walk out.',
+      it: 'L’uomo che ha lasciato morte le guardie al cancello, così che potessero uscire.',
+    },
+  },
+
+  // Hot Pie, the books
+  hotAryaBook75: {
+    character: 'arya-stark',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'A small recruit with a stick sword. He tries to take her sword, and she beats him bloody.',
+      it: 'Una piccola recluta con una spada di legno. Prova a prenderle la spada, e lei lo pesta.',
+    },
+  },
+  hotLommyBook: {
+    character: 'lommy',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'Another orphan boy, who eggs him on to steal Arry’s sword.',
+      it: 'Un altro orfano, che lo spinge a rubare la spada di Arry.',
+    },
+  },
+  hotGendryBook: {
+    character: 'gendry',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'The older boy who tells him to leave Arry be.',
+      it: 'Il ragazzo più grande che gli dice di lasciare in pace Arry.',
+    },
+  },
+  hotYorenBook: {
+    character: 'yoren',
+    type: { en: 'Recruiter', it: 'Reclutatore' },
+    summary: {
+      en: 'The man of the Night’s Watch who pulls Arya off him.',
+      it: 'L’uomo dei Guardiani della notte che stacca Arya da lui.',
+    },
+  },
+  hotGregorBook: {
+    character: 'gregor-clegane',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The Mountain, to whom he yields. He promises to make pies for the soldiers if they do not hurt him.',
+      it: 'La Montagna, a cui si arrende. Promette ai soldati di fare torte per loro se non gli fanno del male.',
+    },
+  },
+  hotLommyBook93: {
+    character: 'lommy',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'The wounded recruit he leads the soldiers to. Lommy yields at once, and a spearman kills him.',
+      it: 'La recluta ferita da cui guida i soldati. Lommy si arrende subito, e un lanciere lo uccide.',
+    },
+  },
+  hotGendryBook93: {
+    character: 'gendry',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'The older boy the soldiers drag into the storehouse. Hot Pie is caught crawling to free him.',
+      it: 'Il ragazzo più grande che i soldati trascinano nel magazzino. Frittella viene preso mentre striscia per liberarlo.',
+    },
+  },
+  hotAryaBook93: {
+    character: 'arya-stark',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'The small recruit who talks him into crawling under the gibbet to free Gendry, and is taken with him.',
+      it: 'La piccola recluta che lo convince a strisciare sotto la forca per liberare Gendry, e viene presa con lui.',
+    },
+  },
+  hotAryaBook138: {
+    character: 'arya-stark',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The girl he now knows as Arry. Gendry fetches him, and they ride out of Harrenhal together.',
+      it: 'La ragazza che conosce come Arry. Gendry va a chiamarlo, ed escono insieme da Harrenhal.',
+    },
+  },
+  hotGendryBook138: {
+    character: 'gendry',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The smith who fetches him from the kitchens. They ride out of Harrenhal together.',
+      it: 'Il fabbro che lo va a prendere nelle cucine. Escono insieme da Harrenhal.',
+    },
+  },
+
+  // Yoren
+  yorJaqenCage: {
+    character: 'jaqen-hghar',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'A prisoner he keeps in a cage on his wagon, bound for the Wall.',
+      it: 'Un prigioniero che tiene in gabbia sul suo carro, diretto alla Barriera.',
+    },
+  },
+  yorAryaShow: {
+    character: 'arya-stark',
+    type: { en: 'Girl he saves', it: 'Ragazza salvata da lui' },
+    summary: {
+      en: 'The girl he is taking north as a boy called Arry. She hides when the gold cloaks come.',
+      it: 'La ragazza che porta a nord come un ragazzo di nome Arry. Si nasconde quando arrivano i mantelli d’oro.',
+    },
+  },
+  yorGendryShow: {
+    character: 'gendry',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'The recruit the gold cloaks have a warrant for. He sends them away empty-handed.',
+      it: 'La recluta per cui i mantelli d’oro hanno un mandato. Li manda via a mani vuote.',
+    },
+  },
+  yorAryaBook75: {
+    character: 'arya-stark',
+    type: { en: 'Girl he saves', it: 'Ragazza salvata da lui' },
+    summary: {
+      en: 'The girl he passes off as a boy. He whacks her for beating Hot Pie, then tells her her father was meant to be allowed to take the black.',
+      it: 'La ragazza che fa passare per un ragazzo. La colpisce per aver pestato Frittella, poi le dice che suo padre avrebbe dovuto poter prendere il nero.',
+    },
+  },
+  yorHotPieBook: {
+    character: 'hot-pie',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'The boy Arya beat bloody. Yoren tells her he is hurting much worse than she is.',
+      it: 'Il ragazzo che Arya ha pestato. Yoren le dice che sta molto peggio di lei.',
+    },
+  },
+  yorGendryBook: {
+    character: 'gendry',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'The older boy with the bull helm. Yoren gives him a dead man’s longsword, and tells him to ride hard for the Wall at the first sight of a gold cloak.',
+      it: 'Il ragazzo più grande con l’elmo a testa di toro. Yoren gli dà la spada lunga di un morto, e gli dice di correre alla Barriera appena vede un mantello d’oro.',
+    },
+  },
+  yorJaqenWagon: {
+    character: 'jaqen-hghar',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'One of three prisoners from the black cells whom he keeps chained in the back of a wagon, bound for the Wall.',
+      it: 'Uno dei tre prigionieri delle celle nere che tiene incatenati sul fondo di un carro, diretti alla Barriera.',
+    },
+  },
+  yorAmory: {
+    character: 'amory-lorch',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The knight who demands he open the holdfast. Yoren refuses him again and again, and fights him on the walls.',
+      it: 'Il cavaliere che gli intima di aprire la fortezza. Yoren rifiuta ancora e ancora, e lo combatte sulle mura.',
+    },
+  },
+  yorAryaTunnel: {
+    character: 'arya-stark',
+    type: { en: 'Girl he saves', it: 'Ragazza salvata da lui' },
+    summary: {
+      en: 'The girl he orders to gather the survivors and escape through the tunnel under the barn.',
+      it: 'La ragazza a cui ordina di radunare i sopravvissuti e fuggire dal tunnel sotto il fienile.',
+    },
+  },
+  yorAryaDead: {
+    character: 'arya-stark',
+    type: { en: 'Girl he saved', it: 'Ragazza che ha salvato' },
+    summary: {
+      en: 'The girl he saved at the holdfast. She finds his body next to four Lannister men and buries him.',
+      it: 'La ragazza che ha salvato alla fortezza. Trova il suo corpo accanto a quattro uomini Lannister e lo seppellisce.',
+    },
+  },
+  yorGendryDead: {
+    character: 'gendry',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'The recruit who survives him, and digs his grave with Arya.',
+      it: 'La recluta che gli sopravvive, e scava la sua tomba insieme ad Arya.',
+    },
+  },
+
+  // Robb Stark, the show
+  robAlton: {
+    character: 'alton-lannister',
+    type: { en: 'Envoy', it: 'Messaggero' },
+    summary: {
+      en: 'A Lannister knight he holds prisoner, whom he sends to King’s Landing with his peace terms.',
+      it: 'Un cavaliere Lannister che tiene prigioniero, e che manda ad Approdo del Re con le sue condizioni di pace.',
+    },
+  },
+  robJaimeCaptive: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The prisoner who asks why he keeps him in his camp. Grey Wind menaces him during the questioning.',
+      it: 'Il prigioniero che gli chiede perché lo tenga nel suo accampamento. Vento Grigio lo minaccia durante l’interrogatorio.',
+    },
+  },
+  robCatelynRenly: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who counsels against trusting Balon Greyjoy and asks him to trade Jaime for her daughters. He sends her to seek Renly’s help.',
+      it: 'Sua madre, che sconsiglia di fidarsi di Balon Greyjoy e gli chiede di scambiare Jaime con le sue figlie. La manda a cercare l’aiuto di Renly.',
+    },
+  },
+  robTheonPyke: {
+    character: 'theon-greyjoy',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who asks to be sent to Pyke to win his father’s fleet.',
+      it: 'Il suo amico, che chiede di essere mandato a Pyke per ottenere la flotta del padre.',
+    },
+  },
+  robGreyWindShow: {
+    character: 'grey-wind',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf, almost fully grown.',
+      it: 'Il suo metalupo, ormai quasi adulto.',
+    },
+  },
+  robTalisa: {
+    character: 'talisa-maegyr',
+    type: { en: 'Healer', it: 'Guaritrice' },
+    summary: {
+      en: 'A healer who follows his army. She criticizes him for his war, and he introduces her to his mother.',
+      it: 'Una guaritrice che segue il suo esercito. Lo critica per la sua guerra, e lui la presenta a sua madre.',
+    },
+  },
+  robCatelynTalisa: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, back from the stormlands with Brienne. He introduces Talisa to her.',
+      it: 'Sua madre, tornata dalle terre della tempesta con Brienne. Le presenta Talisa.',
+    },
+  },
+  robRoose: {
+    character: 'roose-bolton',
+    type: { en: 'Bannerman', it: 'Vassallo' },
+    summary: {
+      en: 'The lord of the Dreadfort, who brings him word of Theon’s betrayal in the North and advises against marching the whole army back.',
+      it: 'Il lord di Forte Terrore, che gli porta la notizia del tradimento di Theon nel Nord e sconsiglia di far tornare indietro tutto l’esercito.',
+    },
+  },
+  robTheonTraitor: {
+    character: 'theon-greyjoy',
+    type: { en: 'Traitor', it: 'Traditore' },
+    summary: {
+      en: 'The friend who betrayed him. He wants him taken alive, so he can ask him why before he kills him.',
+      it: 'L’amico che lo ha tradito. Lo vuole vivo, per chiedergli perché prima di ucciderlo.',
+    },
+  },
+  robAltonReply: {
+    character: 'alton-lannister',
+    type: { en: 'Envoy', it: 'Messaggero' },
+    summary: {
+      en: 'The Lannister knight who returns with the queen’s answer. He locks him in a cell with Jaime, and Jaime kills him.',
+      it: 'Il cavaliere Lannister che torna con la risposta della regina. Lo rinchiude in una cella con Jaime, e Jaime lo uccide.',
+    },
+  },
+  robJaimeEscape: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The prisoner who kills his cousin and a guard to break out of his cell.',
+      it: 'Il prigioniero che uccide suo cugino e una guardia per evadere dalla cella.',
+    },
+  },
+  robRickard: {
+    character: 'rickard-karstark',
+    type: { en: 'Bannerman', it: 'Vassallo' },
+    summary: {
+      en: 'The Karstark lord who demands Jaime’s execution for the death of his son.',
+      it: 'Il lord Karstark che chiede l’esecuzione di Jaime per la morte di suo figlio.',
+    },
+  },
+  robTalisaCrag: {
+    character: 'talisa-maegyr',
+    type: { en: 'Healer', it: 'Guaritrice' },
+    summary: {
+      en: 'The healer who asks him for supplies. He suggests she come with him to get them herself.',
+      it: 'La guaritrice che gli chiede delle provviste. Lui le propone di venire con lui a prenderle di persona.',
+    },
+  },
+  robCatelynJaime: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who has to argue for Jaime’s life against Lord Karstark.',
+      it: 'Sua madre, che deve difendere la vita di Jaime contro lord Karstark.',
+    },
+  },
+  robTalisaWed: {
+    character: 'talisa-maegyr',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'The healer he marries in private that night, before a septon.',
+      it: 'La guaritrice che sposa in privato quella notte, davanti a un septon.',
+    },
+  },
+  robCatelynFrey: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who urges him to remember his vow to wed a daughter of House Frey. He ignores her advice.',
+      it: 'Sua madre, che lo esorta a ricordare la promessa di sposare una figlia di Casa Frey. Lui ignora il suo consiglio.',
+    },
+  },
+
+  // Robb Stark, the books
+  robCleos: {
+    character: 'cleos-frey',
+    type: { en: 'Envoy', it: 'Messaggero' },
+    summary: {
+      en: 'The captured knight he sends to King’s Landing with his peace terms, on his word to come back.',
+      it: 'Il cavaliere catturato che manda ad Approdo del Re con le sue condizioni di pace, sulla parola di tornare.',
+    },
+  },
+  robCatelynTerms: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who tells him the lords made him king and can unmake him, and that the girls matter more than the crown.',
+      it: 'Sua madre, che gli dice che i lord l’hanno fatto re e possono disfarlo, e che le sorelle contano più della corona.',
+    },
+  },
+  robEdmure: {
+    character: 'edmure-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who urges him to march on Tywin at Harrenhal. Robb says he does not have the strength, and snaps when Edmure calls him “the boy”.',
+      it: 'Suo zio, che lo esorta a marciare su Tywin a Harrenhal. Robb dice di non averne la forza, e si arrabbia quando Edmure lo chiama “il ragazzo”.',
+    },
+  },
+  robRickardBook: {
+    character: 'rickard-karstark',
+    type: { en: 'Bannerman', it: 'Vassallo' },
+    summary: {
+      en: 'The lord who storms out of the hall at his peace terms. Robb cannot blame him for loathing peace with his sons’ killers.',
+      it: 'Il lord che esce di corsa dalla sala davanti alle sue condizioni di pace. Robb non può biasimarlo per detestare la pace con gli assassini dei suoi figli.',
+    },
+  },
+  robGreatjonBook: {
+    character: 'greatjon-umber',
+    type: { en: 'Bannerman', it: 'Vassallo' },
+    summary: {
+      en: 'The lord who cheers his terms, and tells Cleos that a king is styled “Your Grace”.',
+      it: 'Il lord che acclama le sue condizioni, e dice a Cleos che a un re si dice “Vostra Grazia”.',
+    },
+  },
+
+  // Tywin Lannister, the show
+  tywAryaHarrenhal: {
+    character: 'arya-stark',
+    type: { en: 'Cupbearer', it: 'Coppiera' },
+    summary: {
+      en: 'A prisoner he sees is a girl dressed as a boy. He makes her his cupbearer.',
+      it: 'Una prigioniera che capisce essere una ragazza vestita da ragazzo. La nomina sua coppiera.',
+    },
+  },
+  tywGregor: {
+    character: 'gregor-clegane',
+    type: { en: 'Commander', it: 'Comandante' },
+    summary: {
+      en: 'The knight holding Harrenhal. He stops his torture of the prisoners, and asks why they are not in their cells.',
+      it: 'Il cavaliere che tiene Harrenhal. Ferma le sue torture sui prigionieri e chiede perché non siano nelle celle.',
+    },
+  },
+  tywPolliver: {
+    character: 'polliver',
+    type: { en: 'Man-at-arms', it: 'Uomo d’arme' },
+    summary: {
+      en: 'A man-at-arms who calls the girl “boy” and kneels her down. Tywin calls him an idiot.',
+      it: 'Un uomo d’arme che chiama la ragazza “ragazzo” e la fa inginocchiare. Tywin gli dà dell’idiota.',
+    },
+  },
+  tywGendry: {
+    character: 'gendry',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'A blacksmith’s apprentice about to be tortured. He puts him to work instead.',
+      it: 'Un apprendista fabbro che sta per essere torturato. Lo mette invece al lavoro.',
+    },
+  },
+  tywAryaWar: {
+    character: 'arya-stark',
+    type: { en: 'Cupbearer', it: 'Coppiera' },
+    summary: {
+      en: 'The cupbearer he questions about where she comes from. He finds she can read.',
+      it: 'La coppiera a cui chiede di dove viene. Scopre che sa leggere.',
+    },
+  },
+  tywAmory: {
+    character: 'amory-lorch',
+    type: { en: 'Knight', it: 'Cavaliere' },
+    summary: {
+      en: 'The knight he scolds for sending a letter to the enemy. Amory falls dead on his way to tell him about the cupbearer.',
+      it: 'Il cavaliere che rimprovera per aver mandato una lettera al nemico. Amory cade morto mentre va a parlargli della coppiera.',
+    },
+  },
+  tywPetyr: {
+    character: 'petyr-baelish',
+    type: { en: 'Visitor', it: 'Visitatore' },
+    summary: {
+      en: 'The master of coin who rides to Harrenhal to talk of an alliance with House Tyrell.',
+      it: 'Il consigliere del tesoro che arriva a Harrenhal per parlare di un’alleanza con Casa Tyrell.',
+    },
+  },
+  tywAryaLeft: {
+    character: 'arya-stark',
+    type: { en: 'Cupbearer', it: 'Coppiera' },
+    summary: {
+      en: 'The cupbearer he leaves at Harrenhal when he marches west, to serve his castellan.',
+      it: 'La coppiera che lascia a Harrenhal quando marcia a ovest, al servizio del suo castellano.',
+    },
+  },
+  tywGregorCastellan: {
+    character: 'gregor-clegane',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The knight he leaves as castellan of Harrenhal, and whom he orders to burn villages after Amory’s killing.',
+      it: 'Il cavaliere che lascia come castellano di Harrenhal, e a cui ordina di bruciare dei villaggi dopo l’uccisione di Amory.',
+    },
+  },
+  tywKevan: {
+    character: 'kevan-lannister',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who warns him that Stannis will execute Cersei and Joffrey if he takes the capital.',
+      it: 'Suo fratello, che lo avverte che Stannis giustizierà Cersei e Joffrey se prende la capitale.',
+    },
+  },
+
+  // Tywin Lannister, the books
+  tywVargo: {
+    character: 'vargo-hoat',
+    type: { en: 'Hired captain', it: 'Capitano assoldato' },
+    summary: {
+      en: 'The leader of the Brave Companions in his pay. He hangs two of them after their first night’s brawl at Harrenhal.',
+      it: 'Il capo dei Bravi Camerati al suo soldo. Dopo la rissa della loro prima notte a Harrenhal ne fa impiccare due.',
+    },
+  },
+  tywAmoryBook: {
+    character: 'amory-lorch',
+    type: { en: 'Bannerman', it: 'Vassallo' },
+    summary: {
+      en: 'His bannerman, who comes back to Harrenhal with fewer men and many wounded after chasing Beric Dondarrion.',
+      it: 'Il suo vassallo, che torna a Harrenhal con meno uomini e molti feriti dopo aver inseguito Beric Dondarrion.',
+    },
+  },
+  tywAmoryCastellan: {
+    character: 'amory-lorch',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The bannerman he leaves as castellan of Harrenhal when the host marches out.',
+      it: 'Il vassallo che lascia come castellano di Harrenhal quando l’esercito parte.',
+    },
+  },
+  tywGregorVan: {
+    character: 'gregor-clegane',
+    type: { en: 'Bannerman', it: 'Vassallo' },
+    summary: {
+      en: 'His bannerman, who leaves Harrenhal to command the van of the host.',
+      it: 'Il suo vassallo, che lascia Harrenhal per comandare l’avanguardia dell’esercito.',
+    },
+  },
+  tywKevanBook: {
+    character: 'kevan-lannister',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who rides out with him at the head of the host.',
+      it: 'Suo fratello, che parte con lui alla testa dell’esercito.',
+    },
+  },
+
+  // Gregor Clegane
+  gregPolliver: {
+    character: 'polliver',
+    type: { en: 'Man-at-arms', it: 'Uomo d’arme' },
+    summary: {
+      en: 'A man-at-arms who stands guard over the prisoners for him.',
+      it: 'Un uomo d’arme che fa la guardia ai prigionieri per lui.',
+    },
+  },
+  gregTywin: {
+    character: 'tywin-lannister',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord who arrives a day early and stops his torture of the prisoners.',
+      it: 'Il lord che arriva con un giorno d’anticipo e ferma le sue torture sui prigionieri.',
+    },
+  },
+  gregGendry: {
+    character: 'gendry',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'A prisoner he picks for torture, saved by Tywin’s arrival.',
+      it: 'Un prigioniero che sceglie per la tortura, salvato dall’arrivo di Tywin.',
+    },
+  },
+  gregArya: {
+    character: 'arya-stark',
+    type: { en: 'Prisoner', it: 'Prigioniera' },
+    summary: {
+      en: 'A prisoner passing as a boy. Tywin takes her off his hands as his cupbearer.',
+      it: 'Una prigioniera che si fa passare per un ragazzo. Tywin se la prende come coppiera.',
+    },
+  },
+  gregTywinCastellan: {
+    character: 'tywin-lannister',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord who leaves him in command of Harrenhal, and orders him to burn villages and farms after Amory’s killing.',
+      it: 'Il lord che lo lascia al comando di Harrenhal, e gli ordina di bruciare villaggi e fattorie dopo l’uccisione di Amory.',
+    },
+  },
+  gregAryaLeft: {
+    character: 'arya-stark',
+    type: { en: 'Servant', it: 'Serva' },
+    summary: {
+      en: 'The cupbearer Tywin leaves at Harrenhal to serve him.',
+      it: 'La coppiera che Tywin lascia a Harrenhal al suo servizio.',
+    },
+  },
+  gregAmory: {
+    character: 'amory-lorch',
+    type: { en: 'Knight', it: 'Cavaliere' },
+    summary: {
+      en: 'The knight whose killing he guesses was the work of the Brotherhood Without Banners.',
+      it: 'Il cavaliere la cui uccisione, ipotizza, è opera della Fratellanza senza Vessilli.',
+    },
+  },
+  gregHotPieBook: {
+    character: 'hot-pie',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'A boy who yields and tells him about the others. He orders his men led to them.',
+      it: 'Un ragazzo che si arrende e gli parla degli altri. Ordina ai suoi uomini di farsi portare da loro.',
+    },
+  },
+  gregGendryBook: {
+    character: 'gendry',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'A prisoner he spares when the boy admits he forged his helmet himself.',
+      it: 'Un prigioniero che risparmia quando il ragazzo ammette di aver forgiato da solo il suo elmo.',
+    },
+  },
+  gregAryaBook: {
+    character: 'arya-stark',
+    type: { en: 'Prisoner', it: 'Prigioniera' },
+    summary: {
+      en: 'A prisoner passing as a boy, whom he marches to Harrenhal with the rest.',
+      it: 'Una prigioniera che si fa passare per un ragazzo, e che porta a Harrenhal con gli altri.',
+    },
+  },
+  gregLommy: {
+    character: 'lommy',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'A wounded recruit his men find in the brush. One of them drives a spear through his throat.',
+      it: 'Una recluta ferita che i suoi uomini trovano tra i cespugli. Uno di loro gli pianta una lancia nella gola.',
+    },
+  },
+  gregTickler: {
+    character: 'tickler',
+    type: { en: 'Torturer', it: 'Torturatore' },
+    summary: {
+      en: 'The ordinary-looking man who questions the prisoners while he watches.',
+      it: 'L’uomo dall’aspetto comune che interroga i prigionieri mentre lui guarda.',
+    },
+  },
+  gregChiswyck: {
+    character: 'chiswyck',
+    type: { en: 'Man-at-arms', it: 'Uomo d’arme' },
+    summary: {
+      en: 'An old man-at-arms who sometimes helps with the questioning.',
+      it: 'Un vecchio uomo d’arme che a volte aiuta negli interrogatori.',
+    },
+  },
+  gregPolliverBook: {
+    character: 'polliver',
+    type: { en: 'Man-at-arms', it: 'Uomo d’arme' },
+    summary: {
+      en: 'A man-at-arms who wears the girl’s sword at his hip.',
+      it: 'Un uomo d’arme che porta al fianco la spada della ragazza.',
+    },
+  },
+
+  // Roose Bolton
+  rooRobbShow: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'The king he serves, who refuses to kill the Lannister prisoners or let them be tortured.',
+      it: 'Il re che serve, che si rifiuta di uccidere i prigionieri Lannister o di lasciarli torturare.',
+    },
+  },
+  rooRobbNews: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'The king he brings word of Theon’s betrayal to. He advises him not to march the whole army back north.',
+      it: 'Il re a cui porta la notizia del tradimento di Theon. Gli consiglia di non far tornare a nord tutto l’esercito.',
+    },
+  },
+  rooVargo: {
+    character: 'vargo-hoat',
+    type: { en: 'Hired captain', it: 'Capitano assoldato' },
+    summary: {
+      en: 'The sellsword captain he had bought. Vargo turns Harrenhal over to him.',
+      it: 'Il capitano mercenario che aveva comprato. Vargo gli consegna Harrenhal.',
+    },
+  },
+  rooAryaBook: {
+    character: 'arya-stark',
+    type: { en: 'Cupbearer', it: 'Coppiera' },
+    summary: {
+      en: 'A girl called Nan, the weasel who made the soup. He makes her his cupbearer.',
+      it: 'Una ragazza che si fa chiamare Nan, la donnola che ha fatto il brodo. La nomina sua coppiera.',
+    },
+  },
+  rooRobett: {
+    character: 'robett-glover',
+    type: { en: 'Fellow bannerman', it: 'Altro vassallo' },
+    summary: {
+      en: 'A fellow northern lord, brought into Harrenhal as a false captive. The ruse takes the castle for Roose.',
+      it: 'Un altro lord del Nord, portato a Harrenhal come falso prigioniero. Lo stratagemma prende il castello per Roose.',
+    },
+  },
+  rooAryaNan: {
+    character: 'arya-stark',
+    type: { en: 'Cupbearer', it: 'Coppiera' },
+    summary: {
+      en: 'The cupbearer called Nan, who brings him water and his supper.',
+      it: 'La coppiera di nome Nan, che gli porta l’acqua e la cena.',
+    },
+  },
+  rooVargoCastle: {
+    character: 'vargo-hoat',
+    type: { en: 'Hired captain', it: 'Capitano assoldato' },
+    summary: {
+      en: 'The sellsword captain he means to give Harrenhal to when he goes back north.',
+      it: 'Il capitano mercenario a cui intende dare Harrenhal quando tornerà a nord.',
+    },
+  },
+  rooWalder: {
+    character: 'walder-frey',
+    type: { en: 'Father-in-law', it: 'Suocero' },
+    summary: {
+      en: 'The lord of the Twins, whose daughter Walda he has newly wed.',
+      it: 'Il lord dei Gemelli, di cui ha da poco sposato la figlia Walda.',
+    },
+  },
+
+  // Edmure Tully
+  edmRobb: {
+    character: 'robb-stark',
+    type: { en: 'Nephew and king', it: 'Nipote e re' },
+    summary: {
+      en: 'His nephew, whom he urges to march on Tywin at Harrenhal. He calls him “the boy” by accident, and Robb roars at him.',
+      it: 'Suo nipote, che esorta a marciare su Tywin a Harrenhal. Lo chiama “il ragazzo” per sbaglio, e Robb gli urla contro.',
+    },
+  },
+  edmCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who snaps that letting the river lords go home was his idea.',
+      it: 'Sua sorella, che gli rinfaccia che è stata sua l’idea di lasciar tornare a casa i lord dei fiumi.',
+    },
+  },
+  edmRickard: {
+    character: 'rickard-karstark',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The northern lord who storms out. Edmure says others may agree with him.',
+      it: 'Il lord del Nord che esce di corsa. Edmure dice che altri potrebbero pensarla come lui.',
+    },
+  },
+  edmCatelynRiverrun: {
+    character: 'catelyn-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who disapproves of the smallfolk in the castle and of giving Tywin battle.',
+      it: 'Sua sorella, che disapprova i popolani nel castello e l’idea di dare battaglia a Tywin.',
+    },
+  },
+  edmJaime: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The prisoner he has chained in the deep dungeons after Cleos Frey’s men tried to free him.',
+      it: 'Il prigioniero che ha fatto incatenare nelle segrete profonde dopo il tentativo degli uomini di Cleos Frey di liberarlo.',
+    },
+  },
+  edmRoose: {
+    character: 'roose-bolton',
+    type: { en: 'Bannerman', it: 'Vassallo' },
+    summary: {
+      en: 'The northern lord he commands to take Harrenhal.',
+      it: 'Il lord del Nord a cui ordina di prendere Harrenhal.',
+    },
+  },
+  edmTywin: {
+    character: 'tywin-lannister',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The lord marching on Riverrun, whom he means to trap between Riverrun and Harrenhal.',
+      it: 'Il lord che marcia su Delta delle Acque, che vuole intrappolare tra Delta delle Acque e Harrenhal.',
+    },
+  },
+  // Jaqen H'ghar
+  jaqArya: {
+    character: 'arya-stark',
+    type: { en: 'Boy at the cage', it: 'Ragazzo alla gabbia' },
+    summary: {
+      en: 'The boy he calls over for water, who stands up to his cellmates. He tells him he has more courage than sense.',
+      it: 'Il ragazzo che chiama per avere dell’acqua e che tiene testa ai suoi compagni di gabbia. Gli dice che ha più coraggio che buon senso.',
+    },
+  },
+  jaqYoren: {
+    character: 'yoren',
+    type: { en: 'Gaoler', it: 'Carceriere' },
+    summary: {
+      en: 'The Night’s Watch recruiter who keeps him in chains in a wagon bound for the Wall.',
+      it: 'Il reclutatore dei Guardiani della notte che lo tiene in catene su un carro diretto alla Barriera.',
+    },
+  },
+  jaqAryaDebt: {
+    character: 'arya-stark',
+    type: { en: 'Creditor', it: 'Creditrice' },
+    summary: {
+      en: 'The girl who saved his life and those of his two companions. He owes her three deaths.',
+      it: 'La ragazza che ha salvato la sua vita e quella dei suoi due compagni. Le deve tre morti.',
+    },
+  },
+  jaqTickler: {
+    character: 'tickler',
+    type: { en: 'First death', it: 'Prima morte' },
+    summary: {
+      en: 'The torturer Arya names first. He breaks his neck and shows her with a finger to his cheek.',
+      it: 'Il torturatore che Arya nomina per primo. Gli spezza il collo e glielo fa sapere con un dito sulla guancia.',
+    },
+  },
+  jaqAmory: {
+    character: 'amory-lorch',
+    type: { en: 'Second death', it: 'Seconda morte' },
+    summary: {
+      en: 'The knight Arya names second, in a panic. He kills him with a dart before he reaches Tywin.',
+      it: 'Il cavaliere che Arya nomina per secondo, in preda al panico. Lo uccide con un dardo prima che arrivi da Tywin.',
+    },
+  },
+  jaqAryaName: {
+    character: 'arya-stark',
+    type: { en: 'Creditor', it: 'Creditrice' },
+    summary: {
+      en: 'The girl who names him as her third death. She takes his name back only if he gets her and her friends out of Harrenhal.',
+      it: 'La ragazza che lo nomina come la sua terza morte. Ritira il suo nome solo se la porta fuori da Harrenhal insieme ai suoi amici.',
+    },
+  },
+  jaqGendry: {
+    character: 'gendry',
+    type: { en: 'Friend of Arya', it: 'Amico di Arya' },
+    summary: {
+      en: 'One of the friends he lets out through the gate. The guards are already dead.',
+      it: 'Uno degli amici che fa uscire dal cancello. Le guardie sono già morte.',
+    },
+  },
+  jaqHotPie: {
+    character: 'hot-pie',
+    type: { en: 'Friend of Arya', it: 'Amico di Arya' },
+    summary: {
+      en: 'One of the friends he lets out through the gate. The guards are already dead.',
+      it: 'Uno degli amici che fa uscire dal cancello. Le guardie sono già morte.',
+    },
+  },
+  jaqAryaBook: {
+    character: 'arya-stark',
+    type: { en: 'Boy at the cage', it: 'Ragazzo alla gabbia' },
+    summary: {
+      en: 'The boy he calls over for beer, who goes up to the wagon with a stick sword. He says he has more courage than sense.',
+      it: 'Il ragazzo che chiama per avere della birra e che si avvicina al carro con una spada di legno. Dice che ha più coraggio che buon senso.',
+    },
+  },
+  jaqRorge: {
+    character: 'rorge',
+    type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
+    summary: {
+      en: 'The noseless man chained in the wagon with him, whom he names to Arya.',
+      it: 'L’uomo senza naso incatenato con lui sul carro, di cui dice il nome ad Arya.',
+    },
+  },
+  jaqBiter: {
+    character: 'biter',
+    type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
+    summary: {
+      en: 'The mute prisoner chained in the wagon with him, whom he named for his filed teeth.',
+      it: 'Il prigioniero muto incatenato con lui sul carro, a cui ha dato il nome per i suoi denti limati.',
+    },
+  },
+  jaqAryaChiswyck: {
+    character: 'arya-stark',
+    type: { en: 'Creditor', it: 'Creditrice' },
+    summary: {
+      en: 'The girl who saved him and his companions from the burning wagon. He owes her three lives, and she gives him the first name.',
+      it: 'La ragazza che ha salvato lui e i suoi compagni dal carro in fiamme. Le deve tre vite, e lei gli dà il primo nome.',
+    },
+  },
+  jaqChiswyck: {
+    character: 'chiswyck',
+    type: { en: 'First death', it: 'Prima morte' },
+    summary: {
+      en: 'The man-at-arms Arya names first. Within days he falls from the wallwalk.',
+      it: 'L’uomo d’arme che Arya nomina per primo. Pochi giorni dopo cade dal cammino di ronda.',
+    },
+  },
+  jaqAmoryHarrenhal: {
+    character: 'amory-lorch',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The knight whose men he rides in with. Arya knows him as the man who killed Yoren.',
+      it: 'Il cavaliere con i cui uomini arriva a Harrenhal. Arya lo conosce come l’uomo che ha ucciso Yoren.',
+    },
+  },
+  jaqAryaWeese: {
+    character: 'arya-stark',
+    type: { en: 'Creditor', it: 'Creditrice' },
+    summary: {
+      en: 'The girl who gives him a second name, then wants it back for Lord Tywin. It is too late.',
+      it: 'La ragazza che gli dà un secondo nome, e poi vorrebbe riprenderselo per lord Tywin. È troppo tardi.',
+    },
+  },
+  jaqWeese: {
+    character: 'weese',
+    type: { en: 'Second death', it: 'Seconda morte' },
+    summary: {
+      en: 'The understeward Arya names second. He is found dead with his dog on his chest.',
+      it: 'Il sottointendente che Arya nomina per secondo. Lo trovano morto con il suo cane sul petto.',
+    },
+  },
+  jaqAmoryCastellan: {
+    character: 'amory-lorch',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The knight left as castellan of Harrenhal, so he will not be leaving with the host.',
+      it: 'Il cavaliere lasciato come castellano di Harrenhal, quindi non partirà con l’esercito.',
+    },
+  },
+  jaqAryaFarewell: {
+    character: 'arya-stark',
+    type: { en: 'Creditor', it: 'Creditrice' },
+    summary: {
+      en: 'The girl who names him as her last death. He repays the debt in the night Harrenhal falls, then leaves her a coin and vanishes.',
+      it: 'La ragazza che lo nomina come ultima morte. Salda il debito la notte in cui Harrenhal cade, poi le lascia una moneta e svanisce.',
+    },
+  },
+  jaqRobett: {
+    character: 'robett-glover',
+    type: { en: 'Prisoner he frees', it: 'Prigioniero che libera' },
+    summary: {
+      en: 'The northern lord in the cells beneath the Widow’s Tower. He brings him the kettles and frees him.',
+      it: 'Il lord del Nord nelle celle sotto una delle torri. Gli porta i paioli e lo libera.',
+    },
+  },
+
+  // Rorge (books only)
+  rorArya: {
+    character: 'arya-stark',
+    type: { en: 'Boy at the cage', it: 'Ragazzo alla gabbia' },
+    summary: {
+      en: 'The small recruit he throws a tankard at and threatens through the bars, and who comes up to the wagon anyway.',
+      it: 'La piccola recluta a cui tira un boccale e che minaccia attraverso le sbarre, e che si avvicina comunque al carro.',
+    },
+  },
+  rorYoren: {
+    character: 'yoren',
+    type: { en: 'Gaoler', it: 'Carceriere' },
+    summary: {
+      en: 'The Night’s Watch recruiter who keeps him in chains in a wagon bound for the Wall.',
+      it: 'Il reclutatore dei Guardiani della notte che lo tiene in catene su un carro diretto alla Barriera.',
+    },
+  },
+  rorJaqen: {
+    character: 'jaqen-hghar',
+    type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
+    summary: {
+      en: 'The man chained in the wagon with him, who gives his name to the boy at the cage.',
+      it: 'L’uomo incatenato con lui sul carro, che dice il suo nome al ragazzo alla gabbia.',
+    },
+  },
+  rorBiter: {
+    character: 'biter',
+    type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
+    summary: {
+      en: 'The mute prisoner chained beside him, who hisses behind him.',
+      it: 'Il prigioniero muto incatenato accanto a lui, che sibila dietro di lui.',
+    },
+  },
+  rorAryaHarrenhal: {
+    character: 'arya-stark',
+    type: { en: 'Girl from the cage', it: 'Ragazza della gabbia' },
+    summary: {
+      en: 'The girl from the wagon, now a servant in the castle. He tells her she is not so brave now that he is out of chains.',
+      it: 'La ragazza del carro, ora serva nel castello. Le dice che non è più così coraggiosa ora che lui è senza catene.',
+    },
+  },
+  rorAmory: {
+    character: 'amory-lorch',
+    type: { en: 'Commander', it: 'Comandante' },
+    summary: {
+      en: 'The knight whose man he is at Harrenhal, castellan when the host marches out.',
+      it: 'Il cavaliere di cui è uomo a Harrenhal, castellano quando l’esercito parte.',
+    },
+  },
+  rorRobett: {
+    character: 'robett-glover',
+    type: { en: 'Prisoner he frees', it: 'Prigioniero che libera' },
+    summary: {
+      en: 'The northern lord in the cell below the Widow’s Tower. He unlocks the door and the lord thanks him.',
+      it: 'Il lord del Nord nella cella sotto una delle torri. Apre la porta e il lord lo ringrazia.',
+    },
+  },
+
+  // Biter (books only)
+  bitArya: {
+    character: 'arya-stark',
+    type: { en: 'Boy at the cage', it: 'Ragazzo alla gabbia' },
+    summary: {
+      en: 'The small recruit who comes up to the wagon and hits him hard between the eyes.',
+      it: 'La piccola recluta che si avvicina al carro e lo colpisce forte in mezzo agli occhi.',
+    },
+  },
+  bitJaqen: {
+    character: 'jaqen-hghar',
+    type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
+    summary: {
+      en: 'The man chained in the wagon with him, who gave him his name for his filed teeth.',
+      it: 'L’uomo incatenato con lui sul carro, che gli ha dato il nome per i suoi denti limati.',
+    },
+  },
+  bitRorge: {
+    character: 'rorge',
+    type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
+    summary: {
+      en: 'The noseless prisoner chained beside him.',
+      it: 'Il prigioniero senza naso incatenato accanto a lui.',
+    },
+  },
+  bitYoren: {
+    character: 'yoren',
+    type: { en: 'Gaoler', it: 'Carceriere' },
+    summary: {
+      en: 'The Night’s Watch recruiter who keeps him in chains in a wagon bound for the Wall.',
+      it: 'Il reclutatore dei Guardiani della notte che lo tiene in catene su un carro diretto alla Barriera.',
+    },
+  },
+  bitRobett: {
+    character: 'robett-glover',
+    type: { en: 'Prisoner he frees', it: 'Prigioniero che libera' },
+    summary: {
+      en: 'The northern lord in the cell below the Widow’s Tower. He carries the kettles of hot soup that start the breakout.',
+      it: 'Il lord del Nord nella cella sotto una delle torri. Porta i paioli di brodo bollente che avviano l’evasione.',
+    },
+  },
+
+  // Lommy Greenhands (books until the show names him at 31)
+  lomArya: {
+    character: 'arya-stark',
+    type: { en: 'Boy he mocks', it: 'Ragazzo che prende in giro' },
+    summary: {
+      en: 'The boy he calls Lumpyhead. After she beats Hot Pie bloody, he keeps as far from her as he can.',
+      it: 'Il ragazzo a cui ha dato un soprannome per i capelli tagliati male. Dopo che lei ha pestato Frittella, sta il più lontano possibile da lei.',
+    },
+  },
+  lomHotPie: {
+    character: 'hot-pie',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'Another orphan boy, whom he eggs on to steal the new boy’s sword.',
+      it: 'Un altro orfano, che spinge a rubare la spada del ragazzo nuovo.',
+    },
+  },
+  lomGendry: {
+    character: 'gendry',
+    type: { en: 'Older recruit', it: 'Recluta più grande' },
+    summary: {
+      en: 'The older boy with the bull helm, who tells them to leave the new boy alone.',
+      it: 'Il ragazzo più grande con l’elmo a testa di toro, che dice loro di lasciare in pace il ragazzo nuovo.',
+    },
+  },
+  lomYoren: {
+    character: 'yoren',
+    type: { en: 'Recruiter', it: 'Reclutatore' },
+    summary: {
+      en: 'The Night’s Watch man who takes the recruits north, and sends him with tankards to the prisoners in the wagon.',
+      it: 'L’uomo dei Guardiani della notte che porta le reclute a nord, e lo manda con i boccali ai prigionieri sul carro.',
+    },
+  },
+  lomArya93: {
+    character: 'arya-stark',
+    type: { en: 'Fellow fugitive', it: 'Compagna di fuga' },
+    summary: {
+      en: 'The girl who passes as a boy. She hid with him after the holdfast, and they took turns carrying him.',
+      it: 'La ragazza che si fa passare per un ragazzo. Si è nascosta con lui dopo la fortezza, e si sono dati il cambio a portarlo.',
+    },
+  },
+  lomHotPie93: {
+    character: 'hot-pie',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'The recruit who yields to the Mountain’s men, and leads them to where he is lying.',
+      it: 'La recluta che si arrende agli uomini della Montagna e li porta dove lui è nascosto.',
+    },
+  },
+  lomGendry93: {
+    character: 'gendry',
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
+    summary: {
+      en: 'The older recruit who thinks he is going to die, and says they should leave him behind.',
+      it: 'La recluta più grande che pensa che stia per morire, e dice che dovrebbero lasciarlo indietro.',
+    },
+  },
+  lomGregor: {
+    character: 'gregor-clegane',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The Mountain, whose men find his hiding place. One of them drives a spear through his throat.',
+      it: 'La Montagna, i cui uomini trovano il suo nascondiglio. Uno di loro gli pianta una lancia nella gola.',
+    },
+  },
+
+  // Jaqen, Rorge and Biter at Harrenhal and after
+  jaqRorgeMen: {
+    character: 'rorge',
+    type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
+    summary: {
+      en: 'The noseless man who rides in beside him among Amory’s men.',
+      it: 'L’uomo senza naso che arriva accanto a lui tra gli uomini di Amory.',
+    },
+  },
+  jaqBiterMen: {
+    character: 'biter',
+    type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
+    summary: {
+      en: 'The mute man with filed teeth who rides in beside him among Amory’s men.',
+      it: 'L’uomo muto dai denti limati che arriva accanto a lui tra gli uomini di Amory.',
+    },
+  },
+  jaqRorgeFree: {
+    character: 'rorge',
+    type: { en: 'Companion', it: 'Compagno' },
+    summary: {
+      en: 'The noseless man who carries a kettle of soup and unlocks the cell door.',
+      it: 'L’uomo senza naso che porta un paiolo di brodo e apre la porta della cella.',
+    },
+  },
+  jaqBiterFree: {
+    character: 'biter',
+    type: { en: 'Companion', it: 'Compagno' },
+    summary: {
+      en: 'The mute man who carries two kettles of soup at once.',
+      it: 'L’uomo muto che porta due paioli di brodo alla volta.',
+    },
+  },
+  rorJaqenMen: {
+    character: 'jaqen-hghar',
+    type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
+    summary: {
+      en: 'The man who rode in with him among Amory’s men.',
+      it: 'L’uomo che è arrivato con lui tra gli uomini di Amory.',
+    },
+  },
+  rorBiterMen: {
+    character: 'biter',
+    type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
+    summary: {
+      en: 'The mute prisoner who rode in beside him among Amory’s men.',
+      it: 'Il prigioniero muto che è arrivato accanto a lui tra gli uomini di Amory.',
+    },
+  },
+  rorJaqenFree: {
+    character: 'jaqen-hghar',
+    type: { en: 'Companion', it: 'Compagno' },
+    summary: {
+      en: 'The man who leads the three of them in with the kettles, and fights the guards with him.',
+      it: 'L’uomo che li guida tutti e tre dentro con i paioli, e combatte le guardie insieme a lui.',
+    },
+  },
+  rorBiterFree: {
+    character: 'biter',
+    type: { en: 'Companion', it: 'Compagno' },
+    summary: {
+      en: 'The mute man who carries two kettles of soup at once.',
+      it: 'L’uomo muto che porta due paioli di brodo alla volta.',
+    },
+  },
+  bitJaqenFree: {
+    character: 'jaqen-hghar',
+    type: { en: 'Companion', it: 'Compagno' },
+    summary: {
+      en: 'The man who leads the three of them in with the kettles.',
+      it: 'L’uomo che li guida tutti e tre dentro con i paioli.',
+    },
+  },
+  bitRorgeFree: {
+    character: 'rorge',
+    type: { en: 'Companion', it: 'Compagno' },
+    summary: {
+      en: 'The noseless man who carries a kettle and unlocks the cell door.',
+      it: 'L’uomo senza naso che porta un paiolo e apre la porta della cella.',
+    },
+  },
+  genAryaEscape: {
+    character: 'arya-stark',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The girl who gets him out of Harrenhal at midnight, with Hot Pie.',
+      it: 'La ragazza che lo porta fuori da Harrenhal a mezzanotte, con Frittella.',
+    },
+  },
+  genHotPieEscape: {
+    character: 'hot-pie',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The baker’s boy who walks out of Harrenhal with him and Arya.',
+      it: 'Il garzone di fornaio che esce da Harrenhal con lui e Arya.',
+    },
+  },
+
+  // Catelyn Stark and Jaime Lannister (#1481)
+  catRobb11: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, who sends her to seek Renly’s help and turns down her plea to trade Jaime for her daughters.',
+      it: 'Suo figlio, che la manda a cercare l’aiuto di Renly e respinge la sua richiesta di scambiare Jaime con le sue figlie.',
+    },
+  },
+  catRenly11: {
+    character: 'renly-baratheon',
+    type: { en: 'King to win over', it: 'Re da conquistare' },
+    summary: {
+      en: 'The Baratheon who also calls himself king, whose help Robb sends her to ask for.',
+      it: 'Il Baratheon che si proclama re a sua volta, di cui Robb la manda a chiedere l’aiuto.',
+    },
+  },
+  catTheon11: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward of her house', it: 'Pupillo della sua casa' },
+    summary: {
+      en: 'The Greyjoy ward who asks to go to his father as envoy. She counsels Robb against trusting Balon.',
+      it: 'Il pupillo Greyjoy che chiede di andare dal padre come messaggero. Lei consiglia a Robb di non fidarsi di Balon.',
+    },
+  },
+  catTalisa16: {
+    character: 'talisa-maegyr',
+    type: { en: 'Healer', it: 'Guaritrice' },
+    summary: {
+      en: 'The healer from Volantis whom Robb introduces to her. She reminds him he is not free to love where he will.',
+      it: 'La guaritrice di Volantis che Robb le presenta. Gli ricorda che non è libero di amare chi vuole.',
+    },
+  },
+  catBrienne16: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Escort', it: 'Scorta' },
+    summary: {
+      en: 'The knight of Tarth who has come back with her from the stormlands.',
+      it: 'La cavaliera di Tarth che è tornata con lei dalle terre della tempesta.',
+    },
+  },
+  catJaimeTalk: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The captive she confronts. He tells her honor is naive and mocks Eddard, until she asks for Brienne’s sword.',
+      it: 'Il prigioniero che affronta. Le dice che l’onore è ingenuo e deride Eddard, finché lei non chiede la spada di Brienne.',
+    },
+  },
+  catRickard: {
+    character: 'rickard-karstark',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The lord who demands Jaime’s execution for the death of his son. She has to argue for Jaime’s life.',
+      it: 'Il lord che chiede l’esecuzione di Jaime per la morte di suo figlio. Lei deve difendere la vita di Jaime.',
+    },
+  },
+  catBrienne17: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Sworn sword', it: 'Spada giurata' },
+    summary: {
+      en: 'The knight whose sword she asks for when Jaime goes too far.',
+      it: 'La cavaliera di cui chiede la spada quando Jaime esagera.',
+    },
+  },
+  catJaimeFree: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner she frees', it: 'Prigioniero che libera' },
+    summary: {
+      en: 'The captive she frees, to be taken to King’s Landing and traded for her daughters.',
+      it: 'Il prigioniero che libera, perché sia portato ad Approdo del Re e scambiato con le sue figlie.',
+    },
+  },
+  catRobbGuard: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, who is furious that she freed Jaime and has her kept under guard.',
+      it: 'Suo figlio, furioso perché ha liberato Jaime, che la fa tenere sotto sorveglianza.',
+    },
+  },
+  catBrienne18: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Escort', it: 'Scorta' },
+    summary: {
+      en: 'The knight she sends to take Jaime south.',
+      it: 'La cavaliera che manda a portare Jaime verso sud.',
+    },
+  },
+  catRobb20: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, whom she urges to keep his vow to wed a Frey daughter. He ignores her advice.',
+      it: 'Suo figlio, che esorta a mantenere la promessa di sposare una figlia dei Frey. Lui ignora il suo consiglio.',
+    },
+  },
+  catTalisa20: {
+    character: 'talisa-maegyr',
+    type: { en: 'Son’s beloved', it: 'Amata di suo figlio' },
+    summary: {
+      en: 'The healer Robb loves, in spite of his vow to the Freys.',
+      it: 'La guaritrice che Robb ama, nonostante la promessa fatta ai Frey.',
+    },
+  },
+  catRobb81: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, who sends the captive knight to King’s Landing. She tells him sweeter terms might bring her daughters back.',
+      it: 'Suo figlio, che manda il cavaliere prigioniero ad Approdo del Re. Lei gli dice che condizioni più dolci potrebbero riportare le sue figlie.',
+    },
+  },
+  catEdmure81: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, whom she blames for letting the river lords go home.',
+      it: 'Suo fratello, a cui rinfaccia di aver lasciato tornare a casa i lord dei fiumi.',
+    },
+  },
+  catBrynden81: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her uncle, back at Riverrun. With him she decides to ask Renly for help, as a king.',
+      it: 'Suo zio, tornato a Delta delle Acque. Con lui decide di chiedere aiuto a Renly, come re.',
+    },
+  },
+  catHoster81: {
+    character: 'hoster-tully',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, frail and asleep in his solar.',
+      it: 'Suo padre, debole e addormentato nel suo solario.',
+    },
+  },
+  catCleos81: {
+    character: 'cleos-frey',
+    type: { en: 'Envoy', it: 'Messaggero' },
+    summary: {
+      en: 'The captive knight Robb sends to King’s Landing with his terms.',
+      it: 'Il cavaliere prigioniero che Robb manda ad Approdo del Re con le sue condizioni.',
+    },
+  },
+  catEdmure113: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who holds Riverrun. She disapproves of the smallfolk in the castle and of giving Tywin battle.',
+      it: 'Suo fratello, che tiene Delta delle Acque. Lei disapprova i popolani nel castello e la battaglia con Tywin.',
+    },
+  },
+  catBrienne113: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Sworn sword', it: 'Spada giurata' },
+    summary: {
+      en: 'The knight she takes as her sworn sword.',
+      it: 'La cavaliera che prende come spada giurata.',
+    },
+  },
+  catJaime113: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The captive Edmure has chained in the deep dungeons after the escape attempt.',
+      it: 'Il prigioniero che Edmure ha fatto incatenare nelle segrete profonde dopo il tentativo di fuga.',
+    },
+  },
+  catHoster113: {
+    character: 'hoster-tully',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her feverish father, who mistakes her for her sister.',
+      it: 'Suo padre, febbricitante, che la scambia per sua sorella.',
+    },
+  },
+  catJaime129: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The captive she questions at midnight. He agrees to answer if she answers him, and she ends it when he mocks Eddard.',
+      it: 'Il prigioniero che interroga a mezzanotte. Accetta di rispondere se lei risponde a lui, e lei chiude quando deride Eddard.',
+    },
+  },
+  catBrienne129: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Sworn sword', it: 'Spada giurata' },
+    summary: {
+      en: 'The knight who waits outside the cell, and whose sword she calls for.',
+      it: 'La cavaliera che aspetta fuori dalla cella, e di cui chiama la spada.',
+    },
+  },
+  catRickard129: {
+    character: 'rickard-karstark',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The lord who wants Jaime dead for his sons. She tells Jaime so.',
+      it: 'Il lord che vuole Jaime morto per i suoi figli. Lei lo dice a Jaime.',
+    },
+  },
+  catRobb129: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, whose latest victory Riverrun celebrates while she mourns.',
+      it: 'Suo figlio, la cui ultima vittoria Delta delle Acque festeggia mentre lei è in lutto.',
+    },
+  },
+  catEdmure129: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, whose victory in battle Riverrun celebrates.',
+      it: 'Suo fratello, la cui vittoria in battaglia Delta delle Acque festeggia.',
+    },
+  },
+  jaiRobb11: {
+    character: 'robb-stark',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The king who questions him about Bran. Jaime says keeping him in the camp shows a lack of trust in his own men.',
+      it: 'Il re che lo interroga su Bran. Jaime dice che tenerlo nell’accampamento mostra poca fiducia nei suoi uomini.',
+    },
+  },
+  jaiGreyWind11: {
+    character: 'grey-wind',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'The king’s direwolf, which menaces him during the questioning.',
+      it: 'Il metalupo del re, che lo minaccia durante l’interrogatorio.',
+    },
+  },
+  jaiAlton: {
+    character: 'alton-lannister',
+    type: { en: 'Cousin', it: 'Cugino' },
+    summary: {
+      en: 'His cousin, put in his cell. He kills him to lure in the guard.',
+      it: 'Suo cugino, messo nella sua cella. Lo uccide per attirare la guardia.',
+    },
+  },
+  jaiRickard: {
+    character: 'rickard-karstark',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The Karstark lord whose son he strangles in the escape. He demands Jaime’s execution.',
+      it: 'Il lord Karstark di cui strangola il figlio durante la fuga. Chiede l’esecuzione di Jaime.',
+    },
+  },
+  jaiCatelyn17: {
+    character: 'catelyn-stark',
+    type: { en: 'Captor', it: 'Carceriera' },
+    summary: {
+      en: 'The lady who argues for his life, then tells him he has no honor.',
+      it: 'La lady che difende la sua vita, poi gli dice che non ha onore.',
+    },
+  },
+  jaiCatelyn18: {
+    character: 'catelyn-stark',
+    type: { en: 'Liberator', it: 'Liberatrice' },
+    summary: {
+      en: 'The lady who frees him, to trade him for her daughters.',
+      it: 'La lady che lo libera, per scambiarlo con le sue figlie.',
+    },
+  },
+  jaiBrienne18: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Escort', it: 'Scorta' },
+    summary: {
+      en: 'The knight who takes him south toward King’s Landing.',
+      it: 'La cavaliera che lo porta verso sud, verso Approdo del Re.',
+    },
+  },
+  jaiRobb18: {
+    character: 'robb-stark',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The king whose most important captive he was, furious that his mother has freed him.',
+      it: 'Il re di cui era il prigioniero più importante, furioso che sua madre lo abbia liberato.',
+    },
+  },
+  jaiBrienne20: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Escort', it: 'Scorta' },
+    summary: {
+      en: 'The knight who kills the soldiers that recognize him. She says she serves Catelyn Stark, not Robb.',
+      it: 'La cavaliera che uccide i soldati che lo riconoscono. Dice di servire Catelyn Stark, non Robb.',
+    },
+  },
+  jaiEdmure113: {
+    character: 'edmure-tully',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The lord of Riverrun in his father’s place, who has him chained in the deep dungeons.',
+      it: 'Il signore di Delta delle Acque al posto del padre, che lo fa incatenare nelle segrete profonde.',
+    },
+  },
+  jaiCleos113: {
+    character: 'cleos-frey',
+    type: { en: 'Cousin', it: 'Cugino' },
+    summary: {
+      en: 'His cousin, whose escort’s men tried to free Jaime and were hanged.',
+      it: 'Suo cugino, i cui uomini di scorta hanno tentato di liberare Jaime e sono stati impiccati.',
+    },
+  },
+  jaiCatelyn129: {
+    character: 'catelyn-stark',
+    type: { en: 'Captor', it: 'Carceriera' },
+    summary: {
+      en: 'The lady who questions him at midnight. He answers her if she answers him.',
+      it: 'La lady che lo interroga a mezzanotte. Lui risponde se lei risponde a lui.',
+    },
+  },
+  jaiBrienne129: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Guard', it: 'Guardia' },
+    summary: {
+      en: 'The knight who waits outside his cell.',
+      it: 'La cavaliera che aspetta fuori dalla sua cella.',
+    },
+  },
+  jaiRickard129: {
+    character: 'rickard-karstark',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The lord who wants him dead for his sons. Jaime says they died in a fair fight.',
+      it: 'Il lord che lo vuole morto per i suoi figli. Jaime dice che sono morti in un combattimento leale.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
+/**
+ * Stage 2's stormlands cards for Renly and Loras (#1480): season 2 and A Clash
+ * of Kings, episodes 11 to 20 and chapters 74 to 143. The new characters' own
+ * cards are in `season-2.relationships.ts`.
+ */
+const stormlands2 = {
+  // Renly, the show
+  renLorasHeir: {
+    character: 'loras-tyrell',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The Knight of Flowers, his lover. Loras turns him away and reminds him that he needs an heir.',
+      it: 'Il Cavaliere dei Fiori, suo amante. Loras lo respinge e gli ricorda che ha bisogno di un erede.',
+    },
+  },
+  renMargaeryBed: {
+    character: 'margaery-tyrell',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'His new queen, who tries to seduce him. They talk about the need for an heir.',
+      it: 'La sua nuova regina, che cerca di sedurlo. Parlano della necessità di un erede.',
+    },
+  },
+  renBrienneChampion: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Champion', it: 'Campionessa' },
+    summary: {
+      en: 'The woman who wins his tourney. He makes her one of his Kingsguard.',
+      it: 'La donna che vince il suo torneo. La nomina nella sua guardia reale.',
+    },
+  },
+  renCatelynArmy: {
+    character: 'catelyn-stark',
+    type: { en: 'Envoy', it: 'Inviata' },
+    summary: {
+      en: 'Robb Stark’s envoy. He shows her his army of a hundred thousand, and she warns him to take the war seriously.',
+      it: 'L’inviata di Robb Stark. Le mostra il suo esercito di centomila uomini, e lei lo avverte di prendere la guerra sul serio.',
+    },
+  },
+  renStannisDemand: {
+    character: 'stannis-baratheon',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His elder brother, who comes to his camp to demand he yield. Renly answers that no one wants Stannis for their king.',
+      it: 'Il fratello maggiore, che arriva al suo accampamento per chiedergli di cedere. Renly risponde che nessuno vuole Stannis come re.',
+    },
+  },
+  renPetyrEnvoy: {
+    character: 'petyr-baelish',
+    type: { en: 'Envoy', it: 'Inviato' },
+    summary: {
+      en: 'The envoy from King’s Landing. Renly dislikes him, but is tempted by his offer of help from within the city.',
+      it: 'L’inviato di Approdo del Re. Renly non lo ama, ma è tentato dalla sua offerta di aiuto dall’interno della città.',
+    },
+  },
+  renStannisShadow: {
+    character: 'stannis-baratheon',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His elder brother, whose shadow kills him in his tent.',
+      it: 'Il fratello maggiore, la cui ombra lo uccide nella tenda.',
+    },
+  },
+  renCatelynAlliance: {
+    character: 'catelyn-stark',
+    type: { en: 'Envoy', it: 'Inviata' },
+    summary: {
+      en: 'Robb Stark’s envoy. He agrees to an alliance with her son just before he dies in front of her.',
+      it: 'L’inviata di Robb Stark. Accetta un’alleanza con suo figlio poco prima di morire davanti a lei.',
+    },
+  },
+  renBrienneBlamed: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Kingsguard', it: 'Guardia reale' },
+    summary: {
+      en: 'The guard who is with him when he dies, and who is blamed for it.',
+      it: 'La guardia che è con lui quando muore, e a cui viene data la colpa.',
+    },
+  },
+  renLorasRevenge: {
+    character: 'loras-tyrell',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The Knight of Flowers, his lover. After Renly’s death Loras wants revenge.',
+      it: 'Il Cavaliere dei Fiori, suo amante. Dopo la morte di Renly, Loras vuole vendetta.',
+    },
+  },
+  renMargaeryWidow: {
+    character: 'margaery-tyrell',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'His queen, now his widow.',
+      it: 'La sua regina, ora vedova.',
+    },
+  },
+  // Renly, the books
+  renCatelynTerms: {
+    character: 'catelyn-stark',
+    type: { en: 'Envoy', it: 'Inviata' },
+    summary: {
+      en: 'Robb Stark’s envoy. He tells her Robb may keep the title of King in the North, but must bend the knee to him.',
+      it: 'L’inviata di Robb Stark. Le dice che Robb può tenere il titolo di Re del Nord, ma deve piegare il ginocchio davanti a lui.',
+    },
+  },
+  renMargaeryFeast: {
+    character: 'margaery-tyrell',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'His young queen, whom he feeds morsels of food and kisses at the feast.',
+      it: 'La sua giovane regina, che al banchetto imbocca con dei bocconi e bacia.',
+    },
+  },
+  renBrienneRainbow: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Champion', it: 'Campionessa' },
+    summary: {
+      en: 'The champion of his tourney. She asks to join his Rainbow Guard, and he grants it.',
+      it: 'La campionessa del suo torneo. Chiede di entrare nella sua guardia arcobaleno, e lui acconsente.',
+    },
+  },
+  renLorasJests: {
+    character: 'loras-tyrell',
+    type: { en: 'Favorite', it: 'Favorito' },
+    summary: {
+      en: 'The Knight of Flowers, with whom he shares most of his jests and confidences at the feast.',
+      it: 'Il Cavaliere dei Fiori, con cui al banchetto condivide più battute e confidenze che con chiunque altro.',
+    },
+  },
+  renStannisAppalling: {
+    character: 'stannis-baratheon',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His elder brother on Dragonstone, whom he calls respected and feared but not loved, and an appalling king.',
+      it: 'Il fratello maggiore a Roccia del Drago, che definisce rispettato e temuto ma non amato, e un re pessimo.',
+    },
+  },
+  renStannisParley: {
+    character: 'stannis-baratheon',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His elder brother, who demands he yield outside Storm’s End. Renly offers him a peach, then mocks him, and decides to fight.',
+      it: 'Il fratello maggiore, che gli intima di cedere davanti a Capo Tempesta. Renly gli offre una pesca, poi lo deride, e decide di combattere.',
+    },
+  },
+  renCatelynWatch: {
+    character: 'catelyn-stark',
+    type: { en: 'Envoy', it: 'Inviata' },
+    summary: {
+      en: 'Robb Stark’s envoy, whom he will not let leave. She must watch the battle to tell her son what happens to rebels.',
+      it: 'L’inviata di Robb Stark, che non lascia partire. Deve assistere alla battaglia per raccontare a suo figlio che fine fanno i ribelli.',
+    },
+  },
+  renBrienneBanner: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Banner-bearer', it: 'Alfiere' },
+    summary: {
+      en: 'The Rainbow Guard who carries his banner to the parley and steps between the brothers.',
+      it: 'La guardia arcobaleno che porta il suo stendardo al colloquio e si mette tra i fratelli.',
+    },
+  },
+  renLorasVan: {
+    character: 'loras-tyrell',
+    type: { en: 'Favorite', it: 'Favorito' },
+    summary: {
+      en: 'The Knight of Flowers, to whom he gives the van of his army.',
+      it: 'Il Cavaliere dei Fiori, a cui affida l’avanguardia del suo esercito.',
+    },
+  },
+  renCatelynNoTalk: {
+    character: 'catelyn-stark',
+    type: { en: 'Envoy', it: 'Inviata' },
+    summary: {
+      en: 'Robb Stark’s envoy, who asked him to set aside the crown and call a Great Council. He told her the time for talk was done.',
+      it: 'L’inviata di Robb Stark, che gli aveva chiesto di deporre la corona e convocare un Gran Consiglio. Lui le ha detto che il tempo delle parole era finito.',
+    },
+  },
+  renBrienneArming: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Kingsguard', it: 'Guardia reale' },
+    summary: {
+      en: 'The guard who was arming him when a shadow cut his throat, and who caught him as he fell.',
+      it: 'La guardia che lo stava armando quando un’ombra gli ha tagliato la gola, e che lo ha sorretto mentre cadeva.',
+    },
+  },
+  renLorasPray: {
+    character: 'loras-tyrell',
+    type: { en: 'Companion', it: 'Compagno' },
+    summary: {
+      en: 'The Knight of Flowers, whom he asked to stay and pray with him before the battle.',
+      it: 'Il Cavaliere dei Fiori, a cui ha chiesto di restare a pregare con lui prima della battaglia.',
+    },
+  },
+
+  // Loras, the show
+  lorRenlyHeir: {
+    character: 'renly-baratheon',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The king, his lover. Loras turns him away and reminds him that he needs an heir.',
+      it: 'Il re, suo amante. Loras lo respinge e gli ricorda che ha bisogno di un erede.',
+    },
+  },
+  lorBrienneMelee: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Conqueror', it: 'Vincitrice' },
+    summary: {
+      en: 'The woman who defeats him in the melee and joins the king’s guard.',
+      it: 'La donna che lo sconfigge nella mischia ed entra nella guardia del re.',
+    },
+  },
+  lorMargaeryFetch: {
+    character: 'margaery-tyrell',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, the queen, whom he goes to fetch for Renly.',
+      it: 'Sua sorella, la regina, che va a chiamare per Renly.',
+    },
+  },
+  lorRenlyDeadShow: {
+    character: 'renly-baratheon',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The king, his lover, killed in his tent.',
+      it: 'Il re, suo amante, ucciso nella sua tenda.',
+    },
+  },
+  lorPetyr: {
+    character: 'petyr-baelish',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'Lord Baelish, who travels with the Tyrells. Asked what he wants most, Loras answers revenge, and Petyr tells him to be smart about it.',
+      it: 'Lord Baelish, che viaggia con i Tyrell. Alla domanda su cosa voglia di più, Loras risponde vendetta, e Petyr gli dice di essere astuto.',
+    },
+  },
+  lorMargaeryWidow: {
+    character: 'margaery-tyrell',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, now a widow. The Tyrell host rides for Highgarden with her.',
+      it: 'Sua sorella, ora vedova. L’esercito dei Tyrell cavalca con lei verso Alto Giardino.',
+    },
+  },
+  lorRenlyArmor: {
+    character: 'renly-baratheon',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The king, his lover, whose armor he wears to lead the charge at the Blackwater.',
+      it: 'Il re, suo amante, di cui indossa l’armatura per guidare la carica alle Acque Nere.',
+    },
+  },
+  lorTywin: {
+    character: 'tywin-lannister',
+    type: { en: 'Ally', it: 'Alleato' },
+    summary: {
+      en: 'The lord of Casterly Rock, whose host he joins in the charge that breaks Stannis’s army.',
+      it: 'Il signore di Castel Granito, il cui esercito affianca nella carica che spezza quello di Stannis.',
+    },
+  },
+  lorMargaeryHand: {
+    character: 'margaery-tyrell',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, whose hand he asks of the king.',
+      it: 'Sua sorella, di cui chiede la mano al re.',
+    },
+  },
+  lorJoffrey: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king he asks to wed his sister, to unite their houses.',
+      it: 'Il re a cui chiede di sposare sua sorella, per unire le loro casate.',
+    },
+  },
+  // Loras, the books
+  lorRenlyKing: {
+    character: 'renly-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king he serves, who favors him and shares most of his jests and confidences at the feast.',
+      it: 'Il re che serve, che lo predilige e al banchetto condivide con lui gran parte delle sue battute e confidenze.',
+    },
+  },
+  lorBrienneYield: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Conqueror', it: 'Vincitrice' },
+    summary: {
+      en: 'The champion who beats him in the final duel, opening his visor with a dirk to make him yield.',
+      it: 'La campionessa che lo batte nel duello finale, aprendogli la visiera con un pugnale per costringerlo ad arrendersi.',
+    },
+  },
+  lorRenlyDeadBook: {
+    character: 'renly-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king he served, killed in his tent the night before the battle.',
+      it: 'Il re che serviva, ucciso nella sua tenda la notte prima della battaglia.',
+    },
+  },
+  lorMace: {
+    character: 'mace-tyrell',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the lord of Highgarden, who stands beside him before the king and takes a seat on the small council.',
+      it: 'Suo padre, il signore di Alto Giardino, che gli sta accanto davanti al re e ottiene un seggio nel concilio ristretto.',
+    },
+  },
+  lorJoffreyBook: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who names him to the Kingsguard.',
+      it: 'Il re che lo nomina nella Guardia reale.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season1Relationships = {
   // The show weds her in episode 1; its wedding entry waits for episode 2,
   // the book's pair, which is later and so safe.
@@ -10297,6 +14687,84 @@ export const season1Relationships = {
         north.catLysaRefusal,
       ],
     },
+    // Stage 2 (#1481).
+    {
+      episode: 11,
+      chapter: 81,
+      source: 'episode',
+      value: [
+        riverlands2.catRobb11,
+        riverlands2.catRenly11,
+        riverlands2.catTheon11,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 100,
+      source: 'episode',
+      value: [riverlands2.catTalisa16, riverlands2.catBrienne16],
+    },
+    {
+      episode: 17,
+      chapter: 112,
+      source: 'episode',
+      value: [
+        riverlands2.catJaimeTalk,
+        riverlands2.catRickard,
+        riverlands2.catBrienne17,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 129,
+      source: 'episode',
+      value: [
+        riverlands2.catJaimeFree,
+        riverlands2.catRobbGuard,
+        riverlands2.catBrienne18,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 137,
+      source: 'episode',
+      value: [riverlands2.catRobb20, riverlands2.catTalisa20],
+    },
+    {
+      episode: 11,
+      chapter: 81,
+      source: 'chapter',
+      value: [
+        riverlands2.catRobb81,
+        riverlands2.catEdmure81,
+        riverlands2.catBrynden81,
+        riverlands2.catHoster81,
+        riverlands2.catCleos81,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 113,
+      source: 'chapter',
+      value: [
+        riverlands2.catEdmure113,
+        riverlands2.catBrienne113,
+        riverlands2.catJaime113,
+        riverlands2.catHoster113,
+      ],
+    },
+    {
+      episode: 14,
+      chapter: 129,
+      source: 'chapter',
+      value: [
+        riverlands2.catJaime129,
+        riverlands2.catBrienne129,
+        riverlands2.catRickard129,
+        riverlands2.catRobb129,
+        riverlands2.catEdmure129,
+      ],
+    },
   ],
   'robb-stark': [
     {
@@ -10371,6 +14839,60 @@ export const season1Relationships = {
         north.robbEddardDead,
         north.robbJaime,
         north.robbWalder,
+      ],
+    },
+    // Stage 2 (#1481): the war in the riverlands and the west.
+    {
+      episode: 11,
+      chapter: 81,
+      source: 'episode',
+      value: [
+        riverlands2.robAlton,
+        riverlands2.robJaimeCaptive,
+        riverlands2.robCatelynRenly,
+        riverlands2.robTheonPyke,
+        riverlands2.robGreyWindShow,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 100,
+      source: 'episode',
+      value: [
+        riverlands2.robTalisa,
+        riverlands2.robCatelynTalisa,
+        riverlands2.robRoose,
+        riverlands2.robTheonTraitor,
+      ],
+    },
+    {
+      episode: 17,
+      chapter: 112,
+      source: 'episode',
+      value: [
+        riverlands2.robAltonReply,
+        riverlands2.robJaimeEscape,
+        riverlands2.robRickard,
+        riverlands2.robTalisaCrag,
+        riverlands2.robCatelynJaime,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 137,
+      source: 'episode',
+      value: [riverlands2.robTalisaWed, riverlands2.robCatelynFrey],
+    },
+    {
+      episode: 11,
+      chapter: 81,
+      source: 'chapter',
+      value: [
+        riverlands2.robCleos,
+        riverlands2.robCatelynTerms,
+        riverlands2.robEdmure,
+        riverlands2.robRickardBook,
+        riverlands2.robGreatjonBook,
       ],
     },
   ],
@@ -10453,6 +14975,59 @@ export const season1Relationships = {
         north.ricEddardDead,
         north.ricLuwin,
         north.ricOsha,
+      ],
+    },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.riShowBran16,
+        winterfell2.riShowRodrik,
+        winterfell2.riShowOsha16,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [
+        winterfell2.riShowBran20,
+        winterfell2.riShowOsha20,
+        winterfell2.riShowLuwin20,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 95,
+      source: 'chapter',
+      value: [
+        winterfell2.riBBran95,
+        winterfell2.riBLittle95,
+        winterfell2.riBBig95,
+        winterfell2.riBShaggydog95,
+        winterfell2.riBJojen95,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 124,
+      source: 'chapter',
+      value: [
+        winterfell2.riBBran124,
+        winterfell2.riBOsha124,
+        winterfell2.riBShaggydog124,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'chapter',
+      value: [
+        winterfell2.riBOsha143,
+        winterfell2.riBShaggydog143,
+        winterfell2.riBBran143,
       ],
     },
   ],
@@ -10715,6 +15290,108 @@ export const season1Relationships = {
         north.aryaSansaHeld,
       ],
     },
+    // Stage 2 (#1481): Yoren’s road, Harrenhal and the escape.
+    {
+      episode: 12,
+      chapter: 79,
+      source: 'episode',
+      value: [
+        riverlands2.aryJaqenWater,
+        riverlands2.aryGendrySecret,
+        riverlands2.aryYorenShow,
+      ],
+    },
+    {
+      episode: 14,
+      chapter: 100,
+      source: 'episode',
+      value: [
+        riverlands2.aryTywinCupbearer,
+        riverlands2.aryGregorShow,
+        riverlands2.aryPolliverShow,
+        riverlands2.aryGendryCaptive,
+        riverlands2.aryHotPieCaptive,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 104,
+      source: 'episode',
+      value: [
+        riverlands2.aryTywinWar,
+        riverlands2.aryJaqenDeaths,
+        riverlands2.aryTickler,
+        riverlands2.aryAmory,
+        riverlands2.aryGendryCaptive,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 138,
+      source: 'episode',
+      value: [
+        riverlands2.aryJaqenCoin,
+        riverlands2.aryGendryEscape,
+        riverlands2.aryHotPieEscape,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 75,
+      source: 'chapter',
+      value: [
+        riverlands2.aryYorenBook,
+        riverlands2.aryHotPieBook,
+        riverlands2.aryLommyBook,
+        riverlands2.aryGendryBook,
+      ],
+    },
+    {
+      episode: 12,
+      chapter: 79,
+      source: 'chapter',
+      value: [
+        riverlands2.aryJaqenBook,
+        riverlands2.aryRorgeBook,
+        riverlands2.aryBiterBook,
+        riverlands2.aryGendryWagon,
+      ],
+    },
+    {
+      episode: 14,
+      chapter: 100,
+      source: 'chapter',
+      value: [
+        riverlands2.aryGregorBook,
+        riverlands2.aryPolliverBook,
+        riverlands2.aryTicklerBook,
+        riverlands2.aryChiswyckBook,
+        riverlands2.aryGendrySpared,
+      ],
+    },
+    {
+      episode: 15,
+      chapter: 112,
+      source: 'chapter',
+      value: [
+        riverlands2.aryWeeseBook,
+        riverlands2.aryJaqenDebt,
+        riverlands2.aryAmoryBook,
+        riverlands2.aryRorgeHarrenhal,
+        riverlands2.aryGendryForge,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 138,
+      source: 'chapter',
+      value: [
+        riverlands2.aryRooseBook,
+        riverlands2.aryJaqenCoinBook,
+        riverlands2.aryGendryRide,
+        riverlands2.aryHotPieRide,
+      ],
+    },
   ],
   // The show has Jaime push him at the end of episode 1, his gate; the
   // book does it in Bran II (chapter 9).
@@ -10796,6 +15473,88 @@ export const season1Relationships = {
         north.branSummer,
       ],
     },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 11,
+      chapter: 78,
+      source: 'episode',
+      value: [
+        winterfell2.brShowLuwin,
+        winterfell2.brShowRickon,
+        winterfell2.brShowOsha,
+        winterfell2.brShowHodor,
+        winterfell2.brShowSummer,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.brShowTheon,
+        winterfell2.brShowRodrik,
+        winterfell2.brShowOshaFree,
+        winterfell2.brShowRickonFlight,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [
+        winterfell2.brShowLuwinDying,
+        winterfell2.brShowOshaCrypt,
+        winterfell2.brShowRickonCrypt,
+        winterfell2.brShowHodorCrypt,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 78,
+      source: 'chapter',
+      value: [
+        winterfell2.brBSummer78,
+        winterfell2.brBLuwin78,
+        winterfell2.brBOsha78,
+        winterfell2.brBRickon78,
+        winterfell2.brBOldNan78,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 102,
+      source: 'chapter',
+      value: [
+        winterfell2.brBJojen102,
+        winterfell2.brBMeera102,
+        winterfell2.brBSummer102,
+        winterfell2.brBHodor102,
+        winterfell2.brBLuwin102,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'chapter',
+      value: [
+        winterfell2.brBTheon120,
+        winterfell2.brBMikken120,
+        winterfell2.brBOsha120,
+        winterfell2.brBJojen120,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'chapter',
+      value: [
+        winterfell2.brBLuwin143,
+        winterfell2.brBOsha143,
+        winterfell2.brBJojen143,
+        winterfell2.brBMeera143,
+        winterfell2.brBHodor143,
+      ],
+    },
   ],
   'benjen-stark': [
     { episode: 1, chapter: 6, value: [north.benJon, north.benEddard] },
@@ -10855,6 +15614,29 @@ export const season1Relationships = {
   ],
   'summer-direwolf': [
     { episode: 4, chapter: 18, value: [north.sumBran, north.sumCatelyn] },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 13,
+      chapter: 102,
+      source: 'episode',
+      value: [winterfell2.suShowBran13, winterfell2.suShowHodor13],
+    },
+    {
+      episode: 11,
+      chapter: 78,
+      source: 'chapter',
+      value: [winterfell2.suBBran78, winterfell2.suBShaggydog78],
+    },
+    {
+      episode: 13,
+      chapter: 102,
+      source: 'chapter',
+      value: [
+        winterfell2.suBBran102,
+        winterfell2.suBJojen102,
+        winterfell2.suBMeera102,
+      ],
+    },
   ],
   'shaggydog': [
     { episode: 10, chapter: 25, source: 'chapter', value: [north.shaRickon] },
@@ -10872,10 +15654,52 @@ export const season1Relationships = {
       source: 'chapter',
       value: [north.shaRickonCrypt, north.shaLuwin],
     },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [winterfell2.shShowRickon16, winterfell2.shShowOsha16],
+    },
+    {
+      episode: 13,
+      chapter: 95,
+      source: 'chapter',
+      value: [
+        winterfell2.shBRickon95,
+        winterfell2.shBLittle95,
+        winterfell2.shBSummer95,
+        winterfell2.shBJojen95,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'chapter',
+      value: [winterfell2.shBRickon143, winterfell2.shBOsha143],
+    },
   ],
   'ghost-direwolf': [
     { episode: 4, chapter: 6, value: [north.ghoJon] },
     { episode: 8, chapter: 53, value: [north.ghoJon, north.ghoJeor] },
+    {
+      episode: 15,
+      chapter: 117,
+      source: 'episode',
+      value: [wall2.ghoJonNorth, wall2.ghoSam, wall2.ghoGilly],
+    },
+    {
+      episode: 11,
+      chapter: 97,
+      source: 'chapter',
+      value: [wall2.ghoJonBook, wall2.ghoGillyBook],
+    },
+    {
+      episode: 17,
+      chapter: 127,
+      source: 'chapter',
+      value: [wall2.ghoJonDream, wall2.ghoQhorin],
+    },
   ],
   'theon-greyjoy': [
     { episode: 1, chapter: 2, value: [north.theEddard, north.theRobb] },
@@ -10896,6 +15720,100 @@ export const season1Relationships = {
       chapter: 38,
       source: 'episode',
       value: [north.theRobbKing, north.theBran, north.theOshaLord],
+    },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 11,
+      chapter: 81,
+      source: 'episode',
+      value: [winterfell2.thShowRobb11, winterfell2.thShowCatelyn11],
+    },
+    {
+      episode: 12,
+      chapter: 85,
+      source: 'episode',
+      value: [winterfell2.thShowBalon12, winterfell2.thShowAsha12],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.thShowBran16,
+        winterfell2.thShowRodrik16,
+        winterfell2.thShowDagmer16,
+        winterfell2.thShowOsha16,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [winterfell2.thShowLuwin20, winterfell2.thShowDagmer20],
+    },
+    {
+      episode: 12,
+      chapter: 85,
+      source: 'chapter',
+      value: [winterfell2.thBBalon85, winterfell2.thBAeron85],
+    },
+    {
+      episode: 13,
+      chapter: 98,
+      source: 'chapter',
+      value: [
+        winterfell2.thBAsha98,
+        winterfell2.thBBalon98,
+        winterfell2.thBVictarion98,
+        winterfell2.thBWex98,
+        winterfell2.thBAeron98,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'chapter',
+      value: [
+        winterfell2.thBBran120,
+        winterfell2.thBMikken120,
+        winterfell2.thBOsha120,
+      ],
+    },
+    {
+      episode: 17,
+      chapter: 124,
+      source: 'chapter',
+      value: [
+        winterfell2.thBOsha124,
+        winterfell2.thBLuwin124,
+        winterfell2.thBFarlen124,
+        winterfell2.thBWex124,
+        winterfell2.thBLorren124,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 130,
+      source: 'chapter',
+      value: [
+        winterfell2.thBAsha130,
+        winterfell2.thBFarlen130,
+        winterfell2.thBDagmer130,
+        winterfell2.thBLuwin130,
+        winterfell2.thBWex130,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 140,
+      source: 'chapter',
+      value: [
+        winterfell2.thBLuwin140,
+        winterfell2.thBRodrik140,
+        winterfell2.thBRamsay140,
+        winterfell2.thBLorren140,
+        winterfell2.thBWex140,
+      ],
     },
   ],
   'luwin': [
@@ -10935,6 +15853,65 @@ export const season1Relationships = {
         north.luwRobbWar,
       ],
     },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.luShowTheon16,
+        winterfell2.luShowBran16,
+        winterfell2.luShowRodrik16,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 130,
+      source: 'episode',
+      value: [
+        winterfell2.luShowOsha18,
+        winterfell2.luShowBran18,
+        winterfell2.luShowTheon18,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [
+        winterfell2.luShowTheon20,
+        winterfell2.luShowBran20,
+        winterfell2.luShowOsha20,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 90,
+      source: 'chapter',
+      value: [
+        winterfell2.luBBran90,
+        winterfell2.luBRodrik90,
+        winterfell2.luBWyman90,
+        winterfell2.luBDonella90,
+        winterfell2.luBLittle90,
+      ],
+    },
+    {
+      episode: 17,
+      chapter: 124,
+      source: 'chapter',
+      value: [winterfell2.luBTheon124],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'chapter',
+      value: [
+        winterfell2.luBBran143,
+        winterfell2.luBOsha143,
+        winterfell2.luBTheon143,
+      ],
+    },
   ],
   'rodrik-cassel': [
     { episode: 1, chapter: 8, value: [north.rodEddard] },
@@ -10964,6 +15941,55 @@ export const season1Relationships = {
         north.rodTyrion,
       ],
     },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 11,
+      chapter: 81,
+      source: 'episode',
+      value: [
+        winterfell2.rdShowRobb11,
+        winterfell2.rdShowBran11,
+        winterfell2.rdShowCatelyn11,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.rdShowTheon16,
+        winterfell2.rdShowBran16,
+        winterfell2.rdShowRickon16,
+        winterfell2.rdShowDagmer16,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 90,
+      source: 'chapter',
+      value: [
+        winterfell2.rdBBran90,
+        winterfell2.rdBLuwin90,
+        winterfell2.rdBWyman90,
+        winterfell2.rdBDonella90,
+      ],
+    },
+    {
+      episode: 15,
+      chapter: 109,
+      source: 'chapter',
+      value: [
+        winterfell2.rdBDonella109,
+        winterfell2.rdBBran109,
+        winterfell2.rdBLuwin109,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 140,
+      source: 'chapter',
+      value: [winterfell2.rdBTheon140, winterfell2.rdBRamsay140],
+    },
   ],
   // Show: "Lord Snow", her story at Bran's bed. Books: Catelyn III, she
   // bathes Catelyn; her stories for Bran wait for Bran IV.
@@ -10976,8 +16002,69 @@ export const season1Relationships = {
       source: 'chapter',
       value: [north.nanBranBook, north.nanCatelyn],
     },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 13,
+      chapter: 95,
+      source: 'chapter',
+      value: [winterfell2.nanBran95, winterfell2.nanHodor95],
+    },
   ],
-  'hodor': [{ episode: 4, chapter: 25, value: [north.hodBran] }],
+  'hodor': [
+    { episode: 4, chapter: 25, value: [north.hodBran] },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.hoShowBran16,
+        winterfell2.hoShowOsha16,
+        winterfell2.hoShowRickon16,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [
+        winterfell2.hoShowBran20,
+        winterfell2.hoShowOsha16,
+        winterfell2.hoShowRickon16,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 90,
+      source: 'chapter',
+      value: [
+        winterfell2.hoBBran90,
+        winterfell2.hoBLittle90,
+        winterfell2.hoBLuwin90,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 102,
+      source: 'chapter',
+      value: [
+        winterfell2.hoBBran102,
+        winterfell2.hoBJojen102,
+        winterfell2.hoBMeera102,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'chapter',
+      value: [
+        winterfell2.hoBBran143,
+        winterfell2.hoBJojen143,
+        winterfell2.hoBMeera143,
+        winterfell2.hoBOsha143,
+      ],
+    },
+  ],
   'osha': [
     {
       episode: 6,
@@ -11005,6 +16092,72 @@ export const season1Relationships = {
         north.oshRickon,
         north.oshShaggydog,
         north.oshRobbWar,
+      ],
+    },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.osShowTheon16,
+        winterfell2.osShowBran16,
+        winterfell2.osShowRickon16,
+        winterfell2.osShowHodor16,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 130,
+      source: 'episode',
+      value: [
+        winterfell2.osShowLuwin18,
+        winterfell2.osShowBran18,
+        winterfell2.osShowRickon18,
+        winterfell2.osShowHodor18,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [
+        winterfell2.osShowLuwin20,
+        winterfell2.osShowBran18,
+        winterfell2.osShowRickon18,
+        winterfell2.osShowHodor18,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 78,
+      source: 'chapter',
+      value: [winterfell2.osBBran78, winterfell2.osBLuwin78],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'chapter',
+      value: [winterfell2.osBTheon120, winterfell2.osBBran120],
+    },
+    {
+      episode: 17,
+      chapter: 124,
+      source: 'chapter',
+      value: [
+        winterfell2.osBTheon124,
+        winterfell2.osBBran124,
+        winterfell2.osBRickon124,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'chapter',
+      value: [
+        winterfell2.osBBran143,
+        winterfell2.osBRickon143,
+        winterfell2.osBLuwin143,
       ],
     },
   ],
@@ -11086,6 +16239,23 @@ export const season1Relationships = {
       source: 'chapter',
       value: [north.mikArya, north.mikJon],
     },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 15,
+      chapter: 109,
+      source: 'chapter',
+      value: [winterfell2.miBBran109, winterfell2.miBJojen109],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'chapter',
+      value: [
+        winterfell2.miBTheon120,
+        winterfell2.miBBran120,
+        winterfell2.miBJojen120,
+      ],
+    },
   ],
   'hallis-mollen': [
     {
@@ -11146,6 +16316,40 @@ export const season1Relationships = {
       chapter: 63,
       source: 'chapter',
       value: [north.rooRobbFoot, north.rooTywin],
+    },
+    // Stage 2 (#1481): the show’s Oxcross and news from the North; the
+    // books’ Harrenhal.
+    {
+      episode: 14,
+      chapter: 100,
+      source: 'episode',
+      value: [riverlands2.rooRobbShow],
+    },
+    {
+      episode: 16,
+      chapter: 110,
+      source: 'episode',
+      value: [riverlands2.rooRobbNews],
+    },
+    {
+      episode: 20,
+      chapter: 121,
+      source: 'chapter',
+      value: [
+        riverlands2.rooVargo,
+        riverlands2.rooAryaBook,
+        riverlands2.rooRobett,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 138,
+      source: 'chapter',
+      value: [
+        riverlands2.rooAryaNan,
+        riverlands2.rooVargoCastle,
+        riverlands2.rooWalder,
+      ],
     },
   ],
   // Show: "The Pointy End" gives him the vanguard, and "Fire and Blood" has
@@ -11413,6 +16617,110 @@ export const season1Relationships = {
         links.jonPyp,
       ],
     },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'episode',
+      value: [
+        wall2.jonJeorReprimand,
+        wall2.jonCrasterShow,
+        wall2.jonSamRanging,
+        wall2.jonGrennRanging,
+      ],
+    },
+    {
+      episode: 15,
+      chapter: 117,
+      source: 'episode',
+      value: [
+        wall2.jonQhorinShow,
+        wall2.jonJeorLets,
+        wall2.jonSamSteward,
+        wall2.jonGillyShow,
+        wall2.jonCrasterBeat,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 125,
+      source: 'episode',
+      value: [
+        wall2.jonYgritteShow,
+        wall2.jonQhorinOrder,
+        wall2.jonGhostLost,
+        wall2.jonJeorLets,
+        wall2.jonSamSteward,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 142,
+      source: 'episode',
+      value: [
+        wall2.jonQhorinKilled,
+        wall2.jonYgritteCompany,
+        wall2.jonSamMissing,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'chapter',
+      value: [
+        wall2.jonJeorAemon,
+        wall2.jonSamVault,
+        wall2.jonRobbKing,
+        wall2.jonAemonHand,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 97,
+      source: 'chapter',
+      value: [
+        wall2.jonCrasterBook,
+        wall2.jonGillyBook,
+        wall2.jonJeorCraster,
+        wall2.jonSamCraster,
+        wall2.jonGhostRabbits,
+      ],
+    },
+    {
+      episode: 15,
+      chapter: 117,
+      source: 'chapter',
+      value: [
+        wall2.jonQhorinBook,
+        wall2.jonJeorFist,
+        wall2.jonSamHorn,
+        wall2.jonGrennDagger,
+        wall2.jonGhostFist,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 125,
+      source: 'chapter',
+      value: [
+        wall2.jonYgritteBook,
+        wall2.jonStonesnake,
+        wall2.jonQhorinPass,
+        wall2.jonJeorFist,
+        wall2.jonGhostFist,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 142,
+      source: 'chapter',
+      value: [
+        wall2.jonQhorinDead,
+        wall2.jonLord,
+        wall2.jonYgritteHunt,
+        wall2.jonGhostWounded,
+        wall2.jonEbben,
+      ],
+    },
   ],
   // Books: Jon III (chapter 20) has him give Jon word of Bran; the show has
   // no such scene, and its Jeor first deals with Jon at the oath.
@@ -11504,6 +16812,56 @@ export const season1Relationships = {
         links.jeorOthorDead,
       ],
     },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'episode',
+      value: [wall2.jeoJonShow, wall2.jeoCrasterShow, wall2.jeoBenjen],
+    },
+    {
+      episode: 15,
+      chapter: 117,
+      source: 'episode',
+      value: [
+        wall2.jeoQhorinShow,
+        wall2.jeoJonGo,
+        wall2.jeoSamSteward,
+        wall2.jeoCrasterOut,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'chapter',
+      value: [
+        wall2.jeoJonAemon,
+        wall2.jeoThoren,
+        wall2.jeoSamBook,
+        wall2.jeoAemon,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 97,
+      source: 'chapter',
+      value: [
+        wall2.jeoCrasterBook,
+        wall2.jeoJonCraster,
+        wall2.jeoJarman,
+        wall2.jeoThorenCraster,
+      ],
+    },
+    {
+      episode: 15,
+      chapter: 117,
+      source: 'chapter',
+      value: [
+        wall2.jeoQhorinBook,
+        wall2.jeoJonQhorin,
+        wall2.jeoThorenParty,
+        wall2.jeoJarmanParty,
+      ],
+    },
   ],
   // The two media give his talk with Tyrion different words.
   'aemon': [
@@ -11557,6 +16915,51 @@ export const season1Relationships = {
       episode: 10,
       chapter: 71,
       value: [links.samJonDesert, links.samAemon, links.samGrenn, links.samPyp],
+    },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'episode',
+      value: [wall2.samJonRanging, wall2.samGrennSledge, wall2.samCrasterShow],
+    },
+    {
+      episode: 15,
+      chapter: 117,
+      source: 'episode',
+      value: [
+        wall2.samGillyShow,
+        wall2.samJonSteward,
+        wall2.samGrennFist,
+        wall2.samJeorSteward,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 142,
+      source: 'episode',
+      value: [
+        wall2.samGrennCache,
+        wall2.samEdd,
+        wall2.samGillyShow,
+        wall2.samJonMissing,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'chapter',
+      value: [wall2.samJonVault, wall2.samJeorRavens, wall2.samAemonMaps],
+    },
+    {
+      episode: 11,
+      chapter: 97,
+      source: 'chapter',
+      value: [
+        wall2.samGillyBook,
+        wall2.samJonCraster,
+        wall2.samEddBook,
+        wall2.samCrasterBook,
+      ],
     },
   ],
   // Tyrion mocks him at the officers' table in the book alone.
@@ -11623,6 +17026,41 @@ export const season1Relationships = {
         links.yorTyrion,
       ],
     },
+    // Stage 2 (#1481): the recruits’ road, until the holdfast.
+    {
+      episode: 12,
+      chapter: 79,
+      source: 'episode',
+      value: [
+        riverlands2.yorAryaShow,
+        riverlands2.yorGendryShow,
+        riverlands2.yorJaqenCage,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 75,
+      source: 'chapter',
+      value: [riverlands2.yorAryaBook75, riverlands2.yorHotPieBook],
+    },
+    {
+      episode: 11,
+      chapter: 79,
+      source: 'chapter',
+      value: [riverlands2.yorGendryBook, riverlands2.yorJaqenWagon],
+    },
+    {
+      episode: 13,
+      chapter: 88,
+      source: 'chapter',
+      value: [riverlands2.yorAmory, riverlands2.yorAryaTunnel],
+    },
+    {
+      episode: 13,
+      chapter: 93,
+      source: 'chapter',
+      value: [riverlands2.yorAryaDead, riverlands2.yorGendryDead],
+    },
   ],
   // The show's Ned beheads Will; the book's beheads Gared (Bran I).
   'will': [
@@ -11662,6 +17100,18 @@ export const season1Relationships = {
       episode: 10,
       chapter: 71,
       value: [links.greJonDesert, links.grePyp, links.greSamwell10],
+    },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'episode',
+      value: [wall2.greSamSledge, wall2.greJonRanging, wall2.greCraster],
+    },
+    {
+      episode: 20,
+      chapter: 142,
+      source: 'episode',
+      value: [wall2.greSamFist, wall2.greEdd, wall2.greJonMissing],
     },
   ],
   'pypar': [
@@ -12116,6 +17566,55 @@ export const season1Relationships = {
         crown.jaiBran,
       ],
     },
+    // Stage 2 (#1481).
+    {
+      episode: 11,
+      chapter: 81,
+      source: 'episode',
+      value: [riverlands2.jaiRobb11, riverlands2.jaiGreyWind11],
+    },
+    {
+      episode: 17,
+      chapter: 112,
+      source: 'episode',
+      value: [
+        riverlands2.jaiAlton,
+        riverlands2.jaiRickard,
+        riverlands2.jaiCatelyn17,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 129,
+      source: 'episode',
+      value: [
+        riverlands2.jaiCatelyn18,
+        riverlands2.jaiBrienne18,
+        riverlands2.jaiRobb18,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 137,
+      source: 'episode',
+      value: [riverlands2.jaiBrienne20],
+    },
+    {
+      episode: 13,
+      chapter: 113,
+      source: 'chapter',
+      value: [riverlands2.jaiEdmure113, riverlands2.jaiCleos113],
+    },
+    {
+      episode: 14,
+      chapter: 129,
+      source: 'chapter',
+      value: [
+        riverlands2.jaiCatelyn129,
+        riverlands2.jaiBrienne129,
+        riverlands2.jaiRickard129,
+      ],
+    },
   ],
   'tywin-lannister': [
     {
@@ -12154,6 +17653,54 @@ export const season1Relationships = {
         crown.tywJaimeCaptive,
         crown.tywKevan,
         crown.tywCersei,
+      ],
+    },
+    // Stage 2 (#1481): Harrenhal.
+    {
+      episode: 14,
+      chapter: 100,
+      source: 'episode',
+      value: [
+        riverlands2.tywAryaHarrenhal,
+        riverlands2.tywGregor,
+        riverlands2.tywPolliver,
+        riverlands2.tywGendry,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 104,
+      source: 'episode',
+      value: [
+        riverlands2.tywAryaWar,
+        riverlands2.tywAmory,
+        riverlands2.tywPetyr,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 138,
+      source: 'episode',
+      value: [
+        riverlands2.tywAryaLeft,
+        riverlands2.tywGregorCastellan,
+        riverlands2.tywKevan,
+      ],
+    },
+    {
+      episode: 14,
+      chapter: 104,
+      source: 'chapter',
+      value: [riverlands2.tywVargo, riverlands2.tywAmoryBook],
+    },
+    {
+      episode: 14,
+      chapter: 112,
+      source: 'chapter',
+      value: [
+        riverlands2.tywAmoryCastellan,
+        riverlands2.tywGregorVan,
+        riverlands2.tywKevanBook,
       ],
     },
   ],
@@ -12377,6 +17924,78 @@ export const season1Relationships = {
       chapter: 66,
       source: 'chapter',
       value: [crown.renRobertDead, crown.renNedDead, crown.renLorasFledChapter],
+    },
+    // Stage 2 (#1480): the stormlands. The show: Renly's camp at Bitterbridge.
+    {
+      episode: 13,
+      chapter: 96,
+      source: 'episode',
+      value: [
+        stormlands2.renLorasHeir,
+        stormlands2.renMargaeryBed,
+        stormlands2.renBrienneChampion,
+        stormlands2.renCatelynArmy,
+      ],
+    },
+    // Stannis comes to the camp in "Garden of Bones".
+    {
+      episode: 14,
+      chapter: 105,
+      source: 'episode',
+      value: [
+        stormlands2.renStannisDemand,
+        stormlands2.renPetyrEnvoy,
+        stormlands2.renCatelynArmy,
+      ],
+    },
+    // The shadow kills him in "The Ghost of Harrenhal".
+    {
+      episode: 15,
+      chapter: 107,
+      source: 'episode',
+      value: [
+        stormlands2.renStannisShadow,
+        stormlands2.renCatelynAlliance,
+        stormlands2.renBrienneBlamed,
+        stormlands2.renLorasRevenge,
+        stormlands2.renMargaeryWidow,
+      ],
+    },
+    // The books: Catelyn II, the tourney and the feast at Bitterbridge.
+    {
+      episode: 13,
+      chapter: 96,
+      source: 'chapter',
+      value: [
+        stormlands2.renCatelynTerms,
+        stormlands2.renMargaeryFeast,
+        stormlands2.renBrienneRainbow,
+        stormlands2.renLorasJests,
+        stormlands2.renStannisAppalling,
+      ],
+    },
+    // Catelyn III: the parley outside Storm's End.
+    {
+      episode: 14,
+      chapter: 105,
+      source: 'chapter',
+      value: [
+        stormlands2.renStannisParley,
+        stormlands2.renCatelynWatch,
+        stormlands2.renBrienneBanner,
+        stormlands2.renLorasVan,
+      ],
+    },
+    // Catelyn IV: he dies the night before the battle.
+    {
+      episode: 15,
+      chapter: 107,
+      source: 'chapter',
+      value: [
+        stormlands2.renCatelynNoTalk,
+        stormlands2.renBrienneArming,
+        stormlands2.renLorasPray,
+      ],
     },
   ],
   'lysa-arryn': [
@@ -12905,6 +18524,58 @@ export const season1Relationships = {
         crown.genRobertDead,
       ],
     },
+    // Stage 2 (#1481): Harrenhal and the escape.
+    {
+      episode: 14,
+      chapter: 100,
+      source: 'episode',
+      value: [
+        riverlands2.genAryaHarrenhal,
+        riverlands2.genGregor,
+        riverlands2.genTywin,
+        riverlands2.genPolliver,
+        riverlands2.genHotPieCaptive,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 138,
+      source: 'episode',
+      value: [
+        riverlands2.genAryaEscape,
+        riverlands2.genHotPieEscape,
+        riverlands2.genJaqenCliff,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 75,
+      source: 'chapter',
+      value: [
+        riverlands2.genAryaBook75,
+        riverlands2.genHotPieBook,
+        riverlands2.genLommyBook,
+        riverlands2.genYorenBook,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 93,
+      source: 'chapter',
+      value: [
+        riverlands2.genAryaBook93,
+        riverlands2.genHotPieBook93,
+        riverlands2.genLommyBook93,
+        riverlands2.genGregorBook,
+        riverlands2.genYorenBuried,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 138,
+      source: 'chapter',
+      value: [riverlands2.genAryaBook138, riverlands2.genHotPieBook138],
+    },
   ],
   'gregor-clegane': [
     { episode: 4, chapter: 30, value: [crown.greHugh, crown.greSandor] },
@@ -12923,6 +18594,50 @@ export const season1Relationships = {
         crown.greLoras,
         crown.greSandorFight,
         crown.greHugh,
+      ],
+    },
+    // Stage 2 (#1481): Harrenhal.
+    {
+      episode: 14,
+      chapter: 100,
+      source: 'episode',
+      value: [
+        riverlands2.gregPolliver,
+        riverlands2.gregTywin,
+        riverlands2.gregGendry,
+        riverlands2.gregArya,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 138,
+      source: 'episode',
+      value: [
+        riverlands2.gregTywinCastellan,
+        riverlands2.gregAryaLeft,
+        riverlands2.gregAmory,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 93,
+      source: 'chapter',
+      value: [
+        riverlands2.gregHotPieBook,
+        riverlands2.gregGendryBook,
+        riverlands2.gregAryaBook,
+        riverlands2.gregLommy,
+      ],
+    },
+    {
+      episode: 14,
+      chapter: 100,
+      source: 'chapter',
+      value: [
+        riverlands2.gregTickler,
+        riverlands2.gregChiswyck,
+        riverlands2.gregPolliverBook,
+        riverlands2.gregAryaBook,
       ],
     },
   ],
@@ -12964,6 +18679,70 @@ export const season1Relationships = {
         crown.lorGregor,
         crown.lorSandor,
       ],
+    },
+    // Stage 2 (#1480): the stormlands. The show: Renly's camp at Bitterbridge.
+    {
+      episode: 13,
+      chapter: 96,
+      source: 'episode',
+      value: [
+        stormlands2.lorRenlyHeir,
+        stormlands2.lorBrienneMelee,
+        stormlands2.lorMargaeryFetch,
+      ],
+    },
+    // Renly dies in "The Ghost of Harrenhal".
+    {
+      episode: 15,
+      chapter: 107,
+      source: 'episode',
+      value: [
+        stormlands2.lorRenlyDeadShow,
+        stormlands2.lorPetyr,
+        stormlands2.lorMargaeryWidow,
+      ],
+    },
+    // He wears Renly's armor in "Blackwater".
+    {
+      episode: 19,
+      chapter: 132,
+      source: 'episode',
+      value: [
+        stormlands2.lorRenlyArmor,
+        stormlands2.lorTywin,
+        stormlands2.lorMargaeryWidow,
+      ],
+    },
+    // "Valar Morghulis": he asks Joffrey for his sister's hand.
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'episode',
+      value: [
+        stormlands2.lorMargaeryHand,
+        stormlands2.lorJoffrey,
+        stormlands2.lorRenlyArmor,
+      ],
+    },
+    // The books: Catelyn II, the tourney at Bitterbridge.
+    {
+      episode: 13,
+      chapter: 96,
+      source: 'chapter',
+      value: [stormlands2.lorRenlyKing, stormlands2.lorBrienneYield],
+    },
+    {
+      episode: 15,
+      chapter: 107,
+      source: 'chapter',
+      value: [stormlands2.lorRenlyDeadBook],
+    },
+    // Sansa VIII: he joins the Kingsguard.
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'chapter',
+      value: [stormlands2.lorMace, stormlands2.lorJoffreyBook],
     },
   ],
   // The Hound is named in the show only in episode 4.
@@ -13198,6 +18977,28 @@ export const season1Relationships = {
         crown.edmBrynden,
       ],
     },
+    // Stage 2 (#1481): Catelyn I and Catelyn V.
+    {
+      episode: 23,
+      chapter: 81,
+      source: 'chapter',
+      value: [
+        riverlands2.edmRobb,
+        riverlands2.edmCatelyn,
+        riverlands2.edmRickard,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 113,
+      source: 'chapter',
+      value: [
+        riverlands2.edmCatelynRiverrun,
+        riverlands2.edmJaime,
+        riverlands2.edmRoose,
+        riverlands2.edmTywin,
+      ],
+    },
   ],
   'hoster-tully': [
     {
@@ -13240,6 +19041,51 @@ export const season1Relationships = {
       chapter: 75,
       source: 'episode',
       value: [crown.hotArya, crown.hotGendry, crown.hotYoren],
+    },
+    // Stage 2 (#1481): Harrenhal and the escape.
+    {
+      episode: 14,
+      chapter: 100,
+      source: 'episode',
+      value: [riverlands2.hotAryaHarrenhal, riverlands2.hotGendryCaptive],
+    },
+    {
+      episode: 20,
+      chapter: 138,
+      source: 'episode',
+      value: [
+        riverlands2.hotAryaEscape,
+        riverlands2.hotGendryEscape,
+        riverlands2.hotJaqenGate,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 75,
+      source: 'chapter',
+      value: [
+        riverlands2.hotAryaBook75,
+        riverlands2.hotLommyBook,
+        riverlands2.hotGendryBook,
+        riverlands2.hotYorenBook,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 93,
+      source: 'chapter',
+      value: [
+        riverlands2.hotGregorBook,
+        riverlands2.hotLommyBook93,
+        riverlands2.hotGendryBook93,
+        riverlands2.hotAryaBook93,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 138,
+      source: 'chapter',
+      value: [riverlands2.hotAryaBook138, riverlands2.hotGendryBook138],
     },
   ],
   'marillion': [
@@ -13352,6 +19198,168 @@ export const season1Relationships = {
         crown.clanShagga,
         crown.clanTywin,
         crown.shgTimett,
+      ],
+    },
+  ],
+  // Show and books both have him ask Arya for water at 12 / 79; Rorge and
+  // Biter are named only in the books, and Chiswyck and Weese, where the
+  // show has the Tickler and Amory Lorch.
+  'jaqen-hghar': [
+    {
+      episode: 12,
+      chapter: 79,
+      source: 'episode',
+      value: [riverlands2.jaqArya, riverlands2.jaqYoren],
+    },
+    {
+      episode: 12,
+      chapter: 79,
+      source: 'chapter',
+      value: [
+        riverlands2.jaqAryaBook,
+        riverlands2.jaqRorge,
+        riverlands2.jaqBiter,
+        riverlands2.jaqYoren,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 104,
+      source: 'episode',
+      value: [
+        riverlands2.jaqAryaDebt,
+        riverlands2.jaqTickler,
+        riverlands2.jaqAmory,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 104,
+      source: 'chapter',
+      value: [
+        riverlands2.jaqAryaChiswyck,
+        riverlands2.jaqChiswyck,
+        riverlands2.jaqAmoryHarrenhal,
+        riverlands2.jaqRorgeMen,
+        riverlands2.jaqBiterMen,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 112,
+      source: 'chapter',
+      value: [
+        riverlands2.jaqAryaWeese,
+        riverlands2.jaqWeese,
+        riverlands2.jaqAmoryCastellan,
+        riverlands2.jaqRorgeMen,
+        riverlands2.jaqBiterMen,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 138,
+      source: 'episode',
+      value: [
+        riverlands2.jaqAryaName,
+        riverlands2.jaqGendry,
+        riverlands2.jaqHotPie,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 121,
+      source: 'chapter',
+      value: [
+        riverlands2.jaqAryaFarewell,
+        riverlands2.jaqRobett,
+        riverlands2.jaqRorgeFree,
+        riverlands2.jaqBiterFree,
+      ],
+    },
+  ],
+  // Books only (#1457).
+  'rorge': [
+    {
+      episode: 12,
+      chapter: 79,
+      source: 'chapter',
+      value: [
+        riverlands2.rorArya,
+        riverlands2.rorYoren,
+        riverlands2.rorJaqen,
+        riverlands2.rorBiter,
+      ],
+    },
+    {
+      episode: 12,
+      chapter: 112,
+      source: 'chapter',
+      value: [
+        riverlands2.rorAryaHarrenhal,
+        riverlands2.rorAmory,
+        riverlands2.rorJaqenMen,
+        riverlands2.rorBiterMen,
+      ],
+    },
+    {
+      episode: 12,
+      chapter: 121,
+      source: 'chapter',
+      value: [
+        riverlands2.rorRobett,
+        riverlands2.rorJaqenFree,
+        riverlands2.rorBiterFree,
+      ],
+    },
+  ],
+  // Books only (#1457).
+  'biter': [
+    {
+      episode: 12,
+      chapter: 79,
+      source: 'chapter',
+      value: [
+        riverlands2.bitArya,
+        riverlands2.bitJaqen,
+        riverlands2.bitRorge,
+        riverlands2.bitYoren,
+      ],
+    },
+    {
+      episode: 12,
+      chapter: 121,
+      source: 'chapter',
+      value: [
+        riverlands2.bitRobett,
+        riverlands2.bitJaqenFree,
+        riverlands2.bitRorgeFree,
+      ],
+    },
+  ],
+  // The show names him at episode 31, past the stage and dead; his
+  // book-side cards are the stage's, until Raff kills him in Arya V.
+  'lommy': [
+    {
+      episode: 31,
+      chapter: 75,
+      source: 'chapter',
+      value: [
+        riverlands2.lomArya,
+        riverlands2.lomHotPie,
+        riverlands2.lomGendry,
+        riverlands2.lomYoren,
+      ],
+    },
+    {
+      episode: 31,
+      chapter: 93,
+      source: 'chapter',
+      value: [
+        riverlands2.lomArya93,
+        riverlands2.lomHotPie93,
+        riverlands2.lomGendry93,
+        riverlands2.lomGregor,
       ],
     },
   ],

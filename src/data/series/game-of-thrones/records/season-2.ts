@@ -1691,6 +1691,7 @@ export const season2: ThronesSaga = {
     },
     // #1464: Stannis, Renly and the stormlands.
     'stannis-baratheon': {
+      relationships: season2Relationships['stannis-baratheon'],
       role: {
         it: 'Pretendente al Trono di Spade',
         en: 'Claimant to the Iron Throne',
@@ -1715,6 +1716,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'melisandre': {
+      relationships: season2Relationships.melisandre,
       role: { it: 'Sacerdotessa rossa', en: 'Red priestess' },
       log: {
         it: 'Viene dall’oriente e serve il Signore della Luce. A Roccia del Drago si è guadagnata un posto accanto a Stannis Baratheon.',
@@ -1736,6 +1738,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'davos-seaworth': {
+      relationships: season2Relationships['davos-seaworth'],
       role: [
         {
           episode: 11,
@@ -1778,6 +1781,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'cressen': {
+      relationships: season2Relationships.cressen,
       role: { it: 'Maestro di Roccia del Drago', en: 'Maester of Dragonstone' },
       log: {
         it: 'Teme l’influenza della sacerdotessa rossa su Stannis Baratheon. Cerca di avvelenarla, ma muore lui del veleno.',
@@ -1793,6 +1797,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'matthos-seaworth': {
+      relationships: season2Relationships['matthos-seaworth'],
       role: { it: 'Figlio di Davos Seaworth', en: 'Son of Davos Seaworth' },
       log: {
         it: 'Figlio di Davos Seaworth, al servizio di re Stannis.',
@@ -1814,6 +1819,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'salladhor-saan': {
+      relationships: season2Relationships['salladhor-saan'],
       role: { it: 'Pirata di Lys', en: 'Pirate from Lys' },
       log: {
         it: 'Vecchio amico di Davos Seaworth, presta le sue navi a re Stannis in cambio della promessa di oro.',
@@ -1832,6 +1838,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'selyse-baratheon': {
+      relationships: season2Relationships['selyse-baratheon'],
       role: {
         it: 'Regina, moglie di Stannis Baratheon',
         en: 'Queen, wife of Stannis Baratheon',
@@ -1856,6 +1863,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'shireen-baratheon': {
+      relationships: season2Relationships['shireen-baratheon'],
       role: {
         it: 'Principessa, figlia di Stannis Baratheon',
         en: 'Princess, daughter of Stannis Baratheon',
@@ -1880,6 +1888,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'brienne-of-tarth': {
+      relationships: season2Relationships['brienne-of-tarth'],
       role: [
         {
           episode: 13,
@@ -1924,6 +1933,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'margaery-tyrell': {
+      relationships: season2Relationships['margaery-tyrell'],
       role: [
         {
           episode: 13,
@@ -1972,6 +1982,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'mace-tyrell': {
+      relationships: season2Relationships['mace-tyrell'],
       role: { it: 'Lord di Alto Giardino', en: 'Lord of Highgarden' },
       log: {
         it: 'È il padre di Margaery e Loras Tyrell, e ha portato la sua casata dalla parte di re Joffrey.',
@@ -1993,6 +2004,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'cortnay-penrose': {
+      relationships: season2Relationships['cortnay-penrose'],
       role: {
         it: 'Castellano di Capo Tempesta',
         en: 'Castellan of Storm’s End',
@@ -2018,6 +2030,7 @@ export const season2: ThronesSaga = {
     },
     // #1465: Robb's war, the Riverlands and Harrenhal.
     'alton-lannister': {
+      relationships: season2Relationships['alton-lannister'],
       role: { it: 'Prigioniero di Robb Stark', en: 'Robb Stark’s prisoner' },
       log: {
         it: 'È un giovane cavaliere di Casa Lannister, prigioniero nel campo di Robb Stark. Robb lo manda ad Approdo del Re a portare le sue condizioni di pace.',
@@ -2040,6 +2053,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'cleos-frey': {
+      relationships: season2Relationships['cleos-frey'],
       role: { it: 'Prigioniero di Robb Stark', en: 'Robb Stark’s prisoner' },
       log: {
         it: 'È stato preso prigioniero insieme al cugino Jaime Lannister al Bosco dei Sussurri. Robb Stark lo manda ad Approdo del Re con le sue condizioni di pace, e lui promette di tornare a Delta delle Acque.',
@@ -2062,6 +2076,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'talisa-maegyr': {
+      relationships: season2Relationships['talisa-maegyr'],
       role: [
         {
           episode: 16,
@@ -2100,6 +2115,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'amory-lorch': {
+      relationships: season2Relationships['amory-lorch'],
       role: [
         {
           episode: 16,
@@ -2143,6 +2159,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'polliver': {
+      relationships: season2Relationships.polliver,
       role: {
         it: 'Uomo d’arme dell’esercito Lannister',
         en: 'Man-at-arms of the Lannister army',
@@ -2167,6 +2184,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'tickler': {
+      relationships: season2Relationships.tickler,
       role: {
         it: 'Torturatore di Gregor Clegane',
         en: 'Gregor Clegane’s torturer',
@@ -2195,6 +2213,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'chiswyck': {
+      relationships: season2Relationships.chiswyck,
       role: {
         it: 'Uomo d’arme di Gregor Clegane',
         en: 'Man-at-arms of Gregor Clegane',
@@ -2219,6 +2238,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'weese': {
+      relationships: season2Relationships.weese,
       role: {
         it: 'Sottointendente di Harrenhal',
         en: 'Understeward at Harrenhal',
@@ -2243,6 +2263,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'vargo-hoat': {
+      relationships: season2Relationships['vargo-hoat'],
       role: {
         it: 'Capo dei Bravi Camerati',
         en: 'Leader of the Brave Companions',
@@ -2283,6 +2304,7 @@ export const season2: ThronesSaga = {
     },
     // #1466: Winterfell and the Iron Islands.
     'balon-greyjoy': {
+      relationships: season2Relationships['balon-greyjoy'],
       role: [
         {
           episode: 12,
@@ -2325,6 +2347,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'asha-greyjoy': {
+      relationships: season2Relationships['asha-greyjoy'],
       role: { it: 'Capitana degli uomini di ferro', en: 'Ironborn captain' },
       log: {
         it: 'Incontra Theon al suo ritorno senza dirgli chi è, e cavalca con lui fino a Pyke. Lì il padre mostra di fidarsi più di lei che del figlio.',
@@ -2340,6 +2363,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'aeron-greyjoy': {
+      relationships: season2Relationships['aeron-greyjoy'],
       role: {
         it: 'Sacerdote del Dio Abissale',
         en: 'Priest of the Drowned God',
@@ -2358,6 +2382,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'victarion-greyjoy': {
+      relationships: season2Relationships['victarion-greyjoy'],
       role: { it: 'Capitano degli uomini di ferro', en: 'Ironborn captain' },
       log: {
         it: 'È a Pyke quando Balon espone a Theon e ad Asha il suo piano per attaccare il Nord.',
@@ -2374,6 +2399,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'dagmer': {
+      relationships: season2Relationships.dagmer,
       role: { it: 'Predone degli uomini di ferro', en: 'Ironborn raider' },
       log: {
         it: 'Theon gli spiega il suo piano: colpire Piazza di Torrhen per attirare lontano dal castello i difensori di Grande Inverno.',
@@ -2395,6 +2421,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'black-lorren': {
+      relationships: season2Relationships['black-lorren'],
       role: { it: 'Predone degli uomini di ferro', en: 'Ironborn raider' },
       log: {
         it: 'È tra gli uomini di Theon a Grande Inverno. Quando Bran e Rickon fuggono, trova i corpi delle guardie uccise.',
@@ -2417,6 +2444,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'wex-pyke': {
+      relationships: season2Relationships['wex-pyke'],
       role: { it: 'Scudiero di Theon Greyjoy', en: 'Squire of Theon Greyjoy' },
       log: {
         it: 'Theon lo prende come scudiero a Pyke, come parte del prezzo di un cavallo.',
@@ -2433,6 +2461,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'farlen': {
+      relationships: season2Relationships.farlen,
       role: {
         it: 'Maestro dei canili di Grande Inverno',
         en: 'Kennelmaster of Winterfell',
@@ -2458,6 +2487,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'meera-reed': {
+      relationships: season2Relationships['meera-reed'],
       role: { it: 'Figlia di Howland Reed', en: 'Daughter of Howland Reed' },
       log: {
         it: 'Con il fratello Jojen raggiunge Bran Stark e resta al suo fianco.',
@@ -2473,6 +2503,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'jojen-reed': {
+      relationships: season2Relationships['jojen-reed'],
       role: { it: 'Figlio di Howland Reed', en: 'Son of Howland Reed' },
       log: {
         it: 'Con la sorella Meera raggiunge Bran Stark e resta al suo fianco.',
@@ -2494,6 +2525,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'ramsay-snow': {
+      relationships: season2Relationships['ramsay-snow'],
       role: { it: 'Bastardo di Roose Bolton', en: 'Bastard of Roose Bolton' },
       log: {
         it: 'I suoi uomini tolgono Grande Inverno agli uomini di ferro e la danno alle fiamme.',
@@ -2515,6 +2547,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'big-walder-frey': {
+      relationships: season2Relationships['big-walder-frey'],
       role: { it: 'Pupillo a Grande Inverno', en: 'Ward at Winterfell' },
       log: {
         it: 'Lui e il cugino Little Walder sono pupilli a Grande Inverno, secondo il patto tra Robb Stark e lord Walder Frey.',
@@ -2531,6 +2564,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'little-walder-frey': {
+      relationships: season2Relationships['little-walder-frey'],
       role: { it: 'Pupillo a Grande Inverno', en: 'Ward at Winterfell' },
       log: {
         it: 'Lui e il cugino Big Walder sono pupilli a Grande Inverno, secondo il patto tra Robb Stark e lord Walder Frey.',
@@ -2554,6 +2588,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'wyman-manderly': {
+      relationships: season2Relationships['wyman-manderly'],
       role: { it: 'Lord di Porto Bianco', en: 'Lord of White Harbor' },
       log: {
         it: 'Va a Grande Inverno per incontrare lo Stark che la tiene, e gli offre il suo sostegno.',
@@ -2569,6 +2604,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'donella-hornwood': {
+      relationships: season2Relationships['donella-hornwood'],
       role: { it: 'Signora di Hornwood', en: 'Lady of the Hornwood' },
       log: {
         it: 'Alla festa del raccolto di Grande Inverno dice a Bran che teme che il bastardo di Roose Bolton voglia prendersi le sue terre.',
@@ -2594,6 +2630,7 @@ export const season2: ThronesSaga = {
     },
     // #1467: the Wall and beyond.
     'thoren-smallwood': {
+      relationships: season2Relationships['thoren-smallwood'],
       role: {
         it: 'Comandante dei ranger in assenza del Primo Ranger',
         en: 'Acting commander of the rangers',
@@ -2619,6 +2656,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'eddison-tollett': {
+      relationships: season2Relationships['eddison-tollett'],
       role: {
         it: 'Confratello dei Guardiani della notte',
         en: 'Brother of the Night’s Watch',
@@ -2643,6 +2681,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'jarman-buckwell': {
+      relationships: season2Relationships['jarman-buckwell'],
       role: {
         it: 'Ranger a capo degli esploratori',
         en: 'Ranger in command of the scouts',
@@ -2662,6 +2701,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'mallador-locke': {
+      relationships: season2Relationships['mallador-locke'],
       role: {
         it: 'Cavaliere dei Guardiani della notte',
         en: 'Knight of the Night’s Watch',
@@ -2681,6 +2721,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'craster': {
+      relationships: season2Relationships.craster,
       role: {
         it: 'Padrone di un fortino oltre la Barriera',
         en: 'Master of a holdfast beyond the Wall',
@@ -2701,6 +2742,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'gilly': {
+      relationships: season2Relationships.gilly,
       role: {
         it: 'Figlia e moglie di Craster',
         en: 'Craster’s daughter and wife',
@@ -2715,6 +2757,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'qhorin-halfhand': {
+      relationships: season2Relationships['qhorin-halfhand'],
       role: {
         it: 'Ranger della Torre delle Ombre',
         en: 'Ranger of the Shadow Tower',
@@ -2743,6 +2786,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'stonesnake': {
+      relationships: season2Relationships.stonesnake,
       role: {
         it: 'Ranger dei Guardiani della notte',
         en: 'Ranger of the Night’s Watch',
@@ -2767,6 +2811,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'ygritte': {
+      relationships: season2Relationships.ygritte,
       role: { it: 'Vedetta dei Bruti', en: 'Wildling lookout' },
       log: {
         it: 'È tra le vedette dei bruti sulle montagne. I ranger di Qhorin il Monco uccidono i suoi compagni, e Jon Snow resta solo con lei per giustiziarla, ma non ci riesce.',
@@ -2784,6 +2829,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'ebben': {
+      relationships: season2Relationships.ebben,
       role: {
         it: 'Ranger dei Guardiani della notte',
         en: 'Ranger of the Night’s Watch',
@@ -2809,6 +2855,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'dalbridge': {
+      relationships: season2Relationships.dalbridge,
       role: {
         it: 'Ranger dei Guardiani della notte',
         en: 'Ranger of the Night’s Watch',
@@ -2832,6 +2879,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'lord-of-bones': {
+      relationships: season2Relationships['lord-of-bones'],
       role: {
         it: 'Capo di una banda di Bruti',
         en: 'Leader of a wildling war band',

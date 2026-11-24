@@ -44,7 +44,7 @@
           "http://127.0.0.1:*/*/*/fruits?ep=*"
         ],
         "createdAt": "2026-11-17T12:52:42.298Z",
-        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: the fruits index draws a card inside a card."
+        "reason": "Permanent: house style, owner 2026-11-24 (#1591): a false positive. The outer \"card\" is the sticky ControlBar, not a card: its paper background and the two paper gutter shadows that hide tiles scrolling past beside it. The inner one is ChoiceGroup's segment track (the fruits album's Type / Saga / Faction switch)."
       }
     ]
   },

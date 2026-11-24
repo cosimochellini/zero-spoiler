@@ -154,6 +154,111 @@ const STAGE_2_GROUPS: { group: string; issue: string; owners: string[] }[] = [
       'lancel-lannister',
     ],
   },
+  {
+    group: 'The Wall and beyond',
+    issue: '#1483',
+    owners: [
+      'thoren-smallwood',
+      'eddison-tollett',
+      'jarman-buckwell',
+      'mallador-locke',
+      'craster',
+      'gilly',
+      'qhorin-halfhand',
+      'stonesnake',
+      'ygritte',
+      'ebben',
+      'dalbridge',
+      'lord-of-bones',
+      'jon-snow',
+      'jeor-mormont',
+      'samwell-tarly',
+      'grenn',
+      'ghost-direwolf',
+    ],
+  },
+  {
+    group: 'Winterfell and the Iron Islands',
+    issue: '#1482',
+    owners: [
+      'balon-greyjoy',
+      'asha-greyjoy',
+      'aeron-greyjoy',
+      'victarion-greyjoy',
+      'dagmer',
+      'black-lorren',
+      'wex-pyke',
+      'farlen',
+      'meera-reed',
+      'jojen-reed',
+      'ramsay-snow',
+      'big-walder-frey',
+      'little-walder-frey',
+      'wyman-manderly',
+      'donella-hornwood',
+      'bran-stark',
+      'rickon-stark',
+      'theon-greyjoy',
+      'luwin',
+      'osha',
+      'hodor',
+      'old-nan',
+      'summer-direwolf',
+      'shaggydog',
+      'rodrik-cassel',
+      'mikken',
+    ],
+  },
+  {
+    group: 'Robb’s war, the Riverlands and Harrenhal',
+    issue: '#1481',
+    owners: [
+      'alton-lannister',
+      'cleos-frey',
+      'talisa-maegyr',
+      'amory-lorch',
+      'polliver',
+      'tickler',
+      'chiswyck',
+      'weese',
+      'vargo-hoat',
+      'jaqen-hghar',
+      'rorge',
+      'biter',
+      'lommy',
+      'arya-stark',
+      'gendry',
+      'hot-pie',
+      'yoren',
+      'robb-stark',
+      'tywin-lannister',
+      'gregor-clegane',
+      'roose-bolton',
+      'edmure-tully',
+      'catelyn-stark',
+      'jaime-lannister',
+    ],
+  },
+  {
+    group: 'Stannis, Renly and the stormlands',
+    issue: '#1480',
+    owners: [
+      'stannis-baratheon',
+      'melisandre',
+      'davos-seaworth',
+      'cressen',
+      'matthos-seaworth',
+      'salladhor-saan',
+      'selyse-baratheon',
+      'shireen-baratheon',
+      'brienne-of-tarth',
+      'margaery-tyrell',
+      'mace-tyrell',
+      'cortnay-penrose',
+      'renly-baratheon',
+      'loras-tyrell',
+    ],
+  },
 ]
 
 /**
@@ -595,12 +700,10 @@ describe.each(LOCALES)(
       const king = ['theon-greyjoy', 'robb-stark'] as const
 
       expect(typed(...king, ep(10))).not.toBe(typed(...king, ep(9)))
-      expect(typed(...king, ch(archive.series.chapterCeiling))).toBe(
-        typed(...king, ep(9)),
-      )
+      expect(typed(...king, ch(73))).toBe(typed(...king, ep(9)))
 
       for (const id of ['benjen-stark', 'osha', 'galbart-glover']) {
-        const last = people(id, ch(archive.series.chapterCeiling))
+        const last = people(id, ch(73))
 
         expect(last, id).not.toContain('yoren')
         expect(last, id).not.toContain('luwin')
@@ -673,7 +776,6 @@ describe.each(LOCALES)(
         'alyn',
         'smalljon-umber',
         'rickard-karstark',
-        'roose-bolton',
         'robett-glover',
         'wendel-manderly',
       ]) {
@@ -683,6 +785,10 @@ describe.each(LOCALES)(
         ).toStrictEqual([])
         expect(projected(id, ch(73), locale), id).not.toStrictEqual([])
       }
+
+      // Roose's show cards open with episode 14 (#1481): stage 1 has none.
+      expect(projected('roose-bolton', ep(10), locale)).toStrictEqual([])
+      expect(projected('roose-bolton', ch(73), locale)).not.toStrictEqual([])
     })
   },
 )
@@ -780,9 +886,7 @@ describe.each(LOCALES)(
       expect(people('yoren', ch(66))).toContain('arya-stark')
       expect(people('yoren', ep(9))).not.toContain('gendry')
       expect(people('yoren', ep(10))).toContain('gendry')
-      expect(people('yoren', ch(archive.series.chapterCeiling))).not.toContain(
-        'gendry',
-      )
+      expect(people('yoren', ch(73))).not.toContain('gendry')
     })
 
     it('kills Jaremy by Jafer’s corpse in the books alone', () => {
@@ -1095,9 +1199,7 @@ describe.each(LOCALES)(
     it('keeps the show-only recruits out of book pages', () => {
       expect(projected('hot-pie', ep(9), locale)).toStrictEqual([])
       expect(projected('hot-pie', ep(10), locale)).not.toStrictEqual([])
-      expect(
-        projected('hot-pie', ch(archive.series.chapterCeiling), locale),
-      ).toStrictEqual([])
+      expect(projected('hot-pie', ch(73), locale)).toStrictEqual([])
       // Lommy's show record opens at episode 31, past stage 2 (#1457).
       expect(
         projected('lommy', ep(archive.series.episodeCeiling), locale),
@@ -1386,6 +1488,289 @@ describe.each(LOCALES)(
         'margaery-tyrell',
       )
       expect(people('joffrey-baratheon', ep(20))).toContain('margaery-tyrell')
+    })
+  },
+)
+
+// Winterfell and the Iron Islands (#1482): the show and the books tell the
+// castle's fall in their own words, and the books alone have the Reeds, the
+// Walders and the Hornwood.
+describe.each(LOCALES)(
+  'Game of Thrones Winterfell and Iron Islands revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    const said = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.summary
+
+    it('opens Balon with Theon and his daughter in the show and Aeron in the books', () => {
+      expect(projected('balon-greyjoy', ep(11), locale)).toStrictEqual([])
+      expect(people('balon-greyjoy', ep(12))).toStrictEqual([
+        'theon-greyjoy',
+        'asha-greyjoy',
+      ])
+      expect(projected('balon-greyjoy', ch(84), locale)).toStrictEqual([])
+      expect(people('balon-greyjoy', ch(85))).toStrictEqual([
+        'theon-greyjoy',
+        'aeron-greyjoy',
+      ])
+      expect(people('balon-greyjoy', ch(98))).toContain('victarion-greyjoy')
+      expect(people('balon-greyjoy', ep(20))).not.toContain('victarion-greyjoy')
+    })
+
+    it('keeps the books’ Winterfell cast off show pages', () => {
+      for (const id of [
+        'aeron-greyjoy',
+        'victarion-greyjoy',
+        'black-lorren',
+        'wex-pyke',
+        'farlen',
+        'meera-reed',
+        'jojen-reed',
+        'ramsay-snow',
+        'big-walder-frey',
+        'little-walder-frey',
+        'wyman-manderly',
+        'donella-hornwood',
+      ]) {
+        expect(projected(id, ep(20), locale), id).toStrictEqual([])
+        expect(projected(id, ch(143), locale), id).not.toStrictEqual([])
+      }
+
+      for (const owner of ['bran-stark', 'theon-greyjoy', 'rickon-stark']) {
+        const shown = people(owner, ep(20))
+        for (const id of ['meera-reed', 'jojen-reed', 'ramsay-snow']) {
+          expect(shown, `${owner} ${id}`).not.toContain(id)
+        }
+      }
+    })
+
+    it('gives the Reeds their cards at the harvest feast and not before', () => {
+      for (const id of ['meera-reed', 'jojen-reed']) {
+        expect(projected(id, ch(94), locale), id).toStrictEqual([])
+        expect(people(id, ch(95)), id).toContain('bran-stark')
+      }
+
+      expect(people('bran-stark', ch(101))).not.toContain('jojen-reed')
+      expect(people('bran-stark', ch(102))).toContain('jojen-reed')
+    })
+
+    it('tells the fall of Winterfell at episode 16 and chapter 120', () => {
+      expect(people('bran-stark', ep(15))).not.toContain('theon-greyjoy')
+      expect(people('bran-stark', ep(16))).toContain('theon-greyjoy')
+      expect(people('bran-stark', ch(119))).not.toContain('theon-greyjoy')
+      expect(people('bran-stark', ch(120))).toContain('theon-greyjoy')
+      expect(said('bran-stark', 'theon-greyjoy', ep(16))).not.toBe(
+        said('bran-stark', 'theon-greyjoy', ch(120)),
+      )
+    })
+
+    it('has Ramsay name himself to Theon at chapter 140 in the books alone', () => {
+      expect(projected('ramsay-snow', ch(139), locale)).toStrictEqual([])
+      expect(people('ramsay-snow', ch(140))).toContain('theon-greyjoy')
+      expect(people('theon-greyjoy', ch(139))).not.toContain('ramsay-snow')
+      expect(people('theon-greyjoy', ch(140))).toContain('ramsay-snow')
+      expect(people('theon-greyjoy', ep(20))).not.toContain('ramsay-snow')
+    })
+
+    it('ends the Hornwood widow in the past tense at chapter 109', () => {
+      expect(people('donella-hornwood', ch(101))).toStrictEqual([
+        'bran-stark',
+        'rodrik-cassel',
+        'wyman-manderly',
+      ])
+      expect(said('wyman-manderly', 'donella-hornwood', ch(108))).not.toBe(
+        said('wyman-manderly', 'donella-hornwood', ch(109)),
+      )
+      expect(people('donella-hornwood', ch(109))).toStrictEqual([
+        'wyman-manderly',
+        'rodrik-cassel',
+      ])
+    })
+
+    it('lays Farlen, Black Lorren and Mikken to rest at their deaths', () => {
+      expect(said('farlen', 'theon-greyjoy', ch(129))).not.toBe(
+        said('farlen', 'theon-greyjoy', ch(130)),
+      )
+      expect(said('black-lorren', 'theon-greyjoy', ch(142))).not.toBe(
+        said('black-lorren', 'theon-greyjoy', ch(143)),
+      )
+      expect(people('mikken', ch(119))).not.toContain('theon-greyjoy')
+      expect(people('mikken', ch(120))).toContain('theon-greyjoy')
+    })
+
+    it('splits Dagmer’s show and book cards', () => {
+      expect(projected('dagmer', ep(14), locale)).toStrictEqual([])
+      expect(people('dagmer', ep(15))).toStrictEqual(['theon-greyjoy'])
+      expect(people('dagmer', ep(20))).toContain('luwin')
+      expect(projected('dagmer', ch(110), locale)).toStrictEqual([])
+      expect(people('dagmer', ch(111))).toContain('aeron-greyjoy')
+      expect(people('dagmer', ch(143))).not.toContain('luwin')
+    })
+  },
+)
+
+// Stannis, Renly and the stormlands in stage 2 (#1480): each link the two
+// media time or tell apart, checked just before its pin and at it.
+describe.each(LOCALES)(
+  'Game of Thrones stage-2 stormlands revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    // What an owner's card says of a person at a bookmark.
+    const said = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.summary
+    const lastEpisode = ep(archive.series.episodeCeiling)
+
+    it('opens the Dragonstone cast at episode 11 and chapter 74, not before', () => {
+      for (const id of ['stannis-baratheon', 'melisandre', 'davos-seaworth']) {
+        expect(projected(id, ep(10), locale), id).toStrictEqual([])
+        expect(projected(id, ep(11), locale), id).not.toStrictEqual([])
+        expect(projected(id, ch(73), locale), id).toStrictEqual([])
+        expect(projected(id, ch(74), locale), id).not.toStrictEqual([])
+      }
+    })
+
+    it('keeps Selyse, Shireen and Mace on book pages in this stage', () => {
+      for (const id of ['selyse-baratheon', 'shireen-baratheon']) {
+        expect(projected(id, ep(20), locale), id).toStrictEqual([])
+        expect(projected(id, ch(73), locale), id).toStrictEqual([])
+        expect(projected(id, ch(74), locale), id).not.toStrictEqual([])
+      }
+
+      expect(projected('mace-tyrell', ep(20), locale)).toStrictEqual([])
+      expect(projected('mace-tyrell', ch(138), locale)).toStrictEqual([])
+      expect(people('mace-tyrell', ch(139))).toStrictEqual([
+        'joffrey-baratheon',
+        'loras-tyrell',
+      ])
+    })
+
+    it('names the queen and princess on book pages alone', () => {
+      expect(people('stannis-baratheon', ch(74))).toContain('selyse-baratheon')
+      expect(people('stannis-baratheon', ep(11))).not.toContain(
+        'selyse-baratheon',
+      )
+      expect(people('stannis-baratheon', ep(20))).not.toContain(
+        'selyse-baratheon',
+      )
+      expect(people('cressen', ch(74))).toContain('shireen-baratheon')
+      expect(people('cressen', ep(20))).not.toContain('shireen-baratheon')
+    })
+
+    it('opens Matthos on the show at episode 11 and on the books at chapter 132', () => {
+      expect(projected('matthos-seaworth', ep(10), locale)).toStrictEqual([])
+      expect(people('matthos-seaworth', ep(11))).toStrictEqual([
+        'stannis-baratheon',
+        'davos-seaworth',
+      ])
+      expect(projected('matthos-seaworth', ch(131), locale)).toStrictEqual([])
+      expect(people('matthos-seaworth', ch(132))).toStrictEqual([
+        'davos-seaworth',
+      ])
+      expect(people('davos-seaworth', ch(131))).not.toContain(
+        'matthos-seaworth',
+      )
+      expect(people('davos-seaworth', ch(132))).toContain('matthos-seaworth')
+    })
+
+    it('turns Davos’s card for Matthos to the past where he dies', () => {
+      expect(said('davos-seaworth', 'matthos-seaworth', ep(19))).not.toBe(
+        said('davos-seaworth', 'matthos-seaworth', ep(18)),
+      )
+    })
+
+    it('opens Salladhor at episode 12 and chapter 84', () => {
+      expect(projected('salladhor-saan', ep(11), locale)).toStrictEqual([])
+      expect(people('salladhor-saan', ep(12))).toContain('davos-seaworth')
+      expect(projected('salladhor-saan', ch(83), locale)).toStrictEqual([])
+      expect(people('salladhor-saan', ch(84))).toStrictEqual([
+        'davos-seaworth',
+        'stannis-baratheon',
+      ])
+      expect(people('davos-seaworth', ch(83))).not.toContain('salladhor-saan')
+      expect(people('davos-seaworth', ch(84))).toContain('salladhor-saan')
+    })
+
+    it('keeps Cortnay off show pages and turns his card at chapter 118', () => {
+      expect(projected('cortnay-penrose', lastEpisode, locale)).toStrictEqual(
+        [],
+      )
+      expect(projected('cortnay-penrose', ch(115), locale)).toStrictEqual([])
+      expect(people('cortnay-penrose', ch(116))).toStrictEqual([
+        'stannis-baratheon',
+      ])
+      expect(people('stannis-baratheon', ch(115))).not.toContain(
+        'cortnay-penrose',
+      )
+      expect(people('stannis-baratheon', ch(116))).toContain('cortnay-penrose')
+      expect(said('cortnay-penrose', 'stannis-baratheon', ch(118))).not.toBe(
+        said('cortnay-penrose', 'stannis-baratheon', ch(117)),
+      )
+      expect(people('stannis-baratheon', ep(20))).not.toContain(
+        'cortnay-penrose',
+      )
+    })
+
+    it('opens Brienne and Margaery at episode 13 and chapter 96', () => {
+      for (const id of ['brienne-of-tarth', 'margaery-tyrell']) {
+        expect(projected(id, ep(12), locale), id).toStrictEqual([])
+        expect(projected(id, ep(13), locale), id).not.toStrictEqual([])
+        expect(projected(id, ch(95), locale), id).toStrictEqual([])
+        expect(projected(id, ch(96), locale), id).not.toStrictEqual([])
+      }
+    })
+
+    it('sends Brienne with Jaime in the show and to Catelyn’s side in the books', () => {
+      expect(people('brienne-of-tarth', ep(17))).not.toContain(
+        'jaime-lannister',
+      )
+      expect(people('brienne-of-tarth', ep(18))).toContain('jaime-lannister')
+      expect(people('brienne-of-tarth', ch(143))).not.toContain(
+        'jaime-lannister',
+      )
+      expect(said('brienne-of-tarth', 'catelyn-stark', ch(113))).not.toBe(
+        said('brienne-of-tarth', 'catelyn-stark', ch(112)),
+      )
+    })
+
+    it('has Renly die in the show at episode 15 and in the books at chapter 107', () => {
+      expect(people('renly-baratheon', ep(14))).toContain('petyr-baelish')
+      expect(people('renly-baratheon', ep(14))).not.toContain('margaery-tyrell')
+      expect(people('renly-baratheon', ep(15))).toContain('margaery-tyrell')
+      expect(said('renly-baratheon', 'stannis-baratheon', ep(15))).not.toBe(
+        said('renly-baratheon', 'stannis-baratheon', ep(14)),
+      )
+      expect(people('renly-baratheon', ch(106))).toContain('stannis-baratheon')
+      expect(people('renly-baratheon', ch(107))).not.toContain(
+        'stannis-baratheon',
+      )
+    })
+
+    it('has Margaery’s hand asked for at episode 20 and chapter 139', () => {
+      expect(people('margaery-tyrell', ep(19))).not.toContain(
+        'joffrey-baratheon',
+      )
+      expect(people('margaery-tyrell', ep(20))).toContain('joffrey-baratheon')
+      expect(people('margaery-tyrell', ch(138))).not.toContain(
+        'joffrey-baratheon',
+      )
+      expect(people('margaery-tyrell', ch(139))).toContain('joffrey-baratheon')
+      expect(people('loras-tyrell', ch(138))).not.toContain('mace-tyrell')
+      expect(people('loras-tyrell', ch(139))).toContain('mace-tyrell')
+      expect(people('loras-tyrell', ep(20))).not.toContain('mace-tyrell')
+    })
+
+    it('tells Renly’s killing by Melisandre’s shadow in the show alone', () => {
+      expect(people('melisandre', ep(14))).not.toContain('renly-baratheon')
+      expect(people('melisandre', ep(15))).toContain('renly-baratheon')
+      expect(people('melisandre', ch(143))).not.toContain('renly-baratheon')
     })
   },
 )
