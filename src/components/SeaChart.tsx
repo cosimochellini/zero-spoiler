@@ -55,7 +55,8 @@ import { useT } from '~/i18n/LocaleContext'
  * pages; the stops under fog are buttons that say their number and episode
  * and nothing else. Every stop and every ship opens a peek. A stop under
  * fog's peek is veiled, and its place comes from the server only when the
- * reader asks.
+ * reader asks. The peeks' code is fetched apart from the page, as soon as a
+ * stop or a ship is pointed at or focused (`useChartPeek`).
  */
 export function SeaChart(props: SeaChartProps): ReactElement {
   const t = useT()
