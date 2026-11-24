@@ -596,8 +596,8 @@ const winterfell = {
     character: 'aeron-greyjoy',
     type: { en: 'Brother', it: 'Fratello' },
     summary: {
-      en: 'His brother, the priest of the Drowned God. Balon sends only him to meet Theon at Lordsport.',
-      it: 'Suo fratello, sacerdote del Dio Abissale. Balon manda soltanto lui a incontrare Theon a Lordsport.',
+      en: 'His brother, the priest of the Drowned God. He meets Theon at Lordsport, on Balon’s orders to keep it quiet.',
+      it: 'Suo fratello, sacerdote del Dio Abissale. Accoglie Theon a Lordsport in segreto, per ordine di Balon.',
     },
   },
   balTheonPlan: {
