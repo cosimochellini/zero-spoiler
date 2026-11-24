@@ -9597,7 +9597,7 @@ const kingsLanding2 = {
     type: { en: 'Father', it: 'Padre' },
     summary: {
       en: 'His father, now Hand of the King, who has taken the Tower of the Hand. Tyrion lies hurt in Maegor’s Holdfast.',
-      it: 'Suo padre, ora Primo Cavaliere del re, che ha preso la Torre del Primo Cavaliere. Tyrion giace ferito nella fortezza di Maegor.',
+      it: 'Suo padre, ora Primo Cavaliere del re, che ha preso la Torre del Primo Cavaliere. Tyrion giace ferito nella Fortezza di Maegor.',
     },
   },
   tyrPodSilent: {

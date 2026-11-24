@@ -669,10 +669,10 @@ const kingsLanding = {
   },
   halTyrionWounded: {
     character: 'tyrion-lannister',
-    type: { en: 'Hand of the King', it: 'Primo Cavaliere' },
+    type: { en: 'Former Hand', it: 'Ex Primo Cavaliere' },
     summary: {
-      en: 'The Hand, whose plan burned Stannis’s fleet with the guild’s wildfire. Tyrion lies wounded and misses the court of rewards.',
-      it: 'Il Primo Cavaliere, il cui piano ha bruciato la flotta di Stannis con l’altofuoco della gilda. Tyrion è ferito e non va alla cerimonia delle ricompense.',
+      en: 'The former Hand, whose plan burned Stannis’s fleet with the guild’s wildfire. Tyrion lies wounded and misses the court of rewards.',
+      it: 'L’ex Primo Cavaliere, il cui piano ha bruciato la flotta di Stannis con l’altofuoco della gilda. Tyrion è ferito e non va alla cerimonia delle ricompense.',
     },
   },
   halJoffreyLord: {
