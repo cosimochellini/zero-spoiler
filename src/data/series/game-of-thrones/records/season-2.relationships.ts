@@ -1534,8 +1534,9 @@ export const season2Relationships = {
       ],
     },
   ],
-  // The show's Craster beats Jon and sends the Watch away (episode 13); the
-  // book's has no such scene.
+  // The show's Craster beats Jon and sends the Watch away in episodes 12–13;
+  // those cards wait for Gilly's gate at 15, which they name her in. The
+  // book's Craster has no such scene.
   'craster': [
     {
       episode: 11,
