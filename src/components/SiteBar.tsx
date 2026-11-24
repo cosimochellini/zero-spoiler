@@ -20,8 +20,11 @@ import { useBookmark, useSeriesParams } from '~/lib/progress/BookmarkContext'
  * follows, read and not shown, so the link is "HxH Hunter x Hunter". Past
  * them the row is empty. It stays pinned at every width, so the pages and
  * the bookmark are one tap away from anywhere down a long listing. Below
- * `ROOMY` a series bar folds the name and the pages onto a second row, where
- * the name keeps its width and the pages scroll sideways.
+ * `BAR.seriesWide` a series bar folds the name and the pages onto a second
+ * row, where the name keeps its width and the pages scroll sideways. Where
+ * large text leaves no room for the wordmark beside the bookmark and the
+ * language, it takes a row of its own and the two follow on the next, in one
+ * box that is no box at all where they fit (`styles.controls`).
  * The right edge carries the series' pages, the reader's bookmark and the
  * language select, and no more. The bookmark is the one control the whole
  * site turns on, so it lives here, on every page, as a single mark that opens

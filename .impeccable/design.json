@@ -787,17 +787,17 @@
       {
         "name": "seriesCramped",
         "value": "12rem",
-        "purpose": "Below it (max-width: 11.99rem, large text on a phone) a series page's site bar sets the bookmark and the language one over the other, under the wordmark's own row, and pins at 11.5rem (BAR.seriesCramped)."
+        "purpose": "Below it (max-width: 11.99rem, large text on a phone) a series page's site bar sets the bookmark and the language one over the other, under the wordmark's own row, and pins at 11.5rem (BAR.fourRows; the query is BAR.seriesCramped)."
       },
       {
         "name": "siteCrowded",
         "value": "13rem",
-        "purpose": "Below it (max-width: 12.99rem) the site's own bar (the hub and the legal page) sets the wordmark on a row of its own, the language under it, and pins at 6rem (BAR.siteCrowded)."
+        "purpose": "Below it (max-width: 12.99rem) the site's own bar (the hub and the legal page) sets the wordmark on a row of its own, the language under it, and pins at 6rem (BAR.twoRows; the query is BAR.siteCrowded)."
       },
       {
         "name": "seriesCrowded",
         "value": "20rem",
-        "purpose": "Below it (max-width: 19.99rem, from 12rem) a series page's site bar sets the wordmark on a row of its own, then the bookmark and the language, then the series' row, and pins at 8.75rem (BAR.seriesCrowded). At the default text size it is below every phone; at 125% and up it is where a phone's bar no longer fits the wordmark beside the widest bookmark."
+        "purpose": "Below it (max-width: 19.99rem, from 12rem) a series page's site bar sets the wordmark on a row of its own, then the bookmark and the language, then the series' row, and pins at 8.75rem (BAR.threeRows; the query is BAR.seriesCrowded). At the default text size it is below every phone; at 125% and up it is where a phone's bar no longer fits the wordmark beside the widest bookmark."
       },
       {
         "name": "22rem",

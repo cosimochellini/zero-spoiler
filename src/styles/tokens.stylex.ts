@@ -241,9 +241,12 @@ export const z = stylex.defineVars({
  * language, and below `siteCrowded` on the site's own pages, where only the
  * language does. Below `seriesCramped` the bookmark and the language no
  * longer fit side by side either, and each takes its row. The widths are in
- * rem, so they follow the reader's text size, and hold the widest bookmark
- * (a trial point in Italian, "PROVA / EP 37"). `SiteBar` lays out from these,
- * and `pin` and `seriesBarPin` in src/styles/sticky.ts set `pin.bar` to match.
+ * rem, so they follow the reader's text size, and hold the widest bookmark at
+ * the default text size but Game of Thrones' book chapter ("IN PROVA / EP
+ * 37" in Italian; "B1 · CH 72" is wider, #1558). Each height is its rows of
+ * `TAP` (src/components/SiteBar.styles.ts) and the padding, which
+ * src/styles/bar.test.ts checks. `SiteBar` lays out from these, and `pin` and
+ * `seriesBarPin` in src/styles/sticky.ts set `pin.bar` to match.
  */
 export const BAR = stylex.defineConsts({
   seriesWide: '@media (min-width: 56rem)',

@@ -39,7 +39,9 @@ export const styles = stylex.create({
   // language on one row, and the free space is the name's column, so a name
   // too long for the row ends in an ellipsis rather than under the pages.
   // Below it the first row has the wordmark, bookmark and language, and the
-  // series' row folds under.
+  // series' row folds under. With large text on a phone the wordmark takes
+  // the first row alone and the controls the next (`CROWDED`, `CRAMPED`,
+  // `SITE_CROWDED`).
   bar: {
     'paddingBlock': space.xs2,
     'paddingInline': space.md,
