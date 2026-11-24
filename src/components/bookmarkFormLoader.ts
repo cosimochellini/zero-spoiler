@@ -1,4 +1,4 @@
-import { createElement, lazy, type ReactElement } from 'react'
+import { createElement, type ReactElement } from 'react'
 
 import type {
   BookmarkFormProps,
@@ -55,20 +55,16 @@ export async function preloadBookmarkForm(): Promise<boolean> {
   }
 }
 
-// Rendered only once the form's code has landed, so the lazy loader never
-// sees a failed fetch: React would cache that rejection and throw it into
-// the page.
-const LazyBookmarkForm = lazy(async () => {
-  const module = await loadForm()
-  return { default: module.BookmarkForm }
-})
-
 /**
- * The form, drawn. Once its code has landed it is the form itself: a `lazy()`
- * learns its module is ready only through a promise, so it suspends on its
- * first render even then, and the skeleton would show for a reader who pointed
- * at the mark before pressing it.
+ * The form, drawn: called only once its code has landed (the dialog waits on
+ * `preloadBookmarkForm` first), so it is the form itself and never suspends.
+ * A `lazy()` here would learn its module is ready only through a promise and
+ * show the skeleton for a frame even then.
  */
 export function bookmarkFormElement(props: BookmarkFormProps): ReactElement {
-  return createElement(formLanded.get('form') ?? LazyBookmarkForm, props)
+  const landed = formLanded.get('form')
+  if (landed === undefined) {
+    throw new Error('the bookmark form is drawn before its code has landed')
+  }
+  return createElement(landed, props)
 }
