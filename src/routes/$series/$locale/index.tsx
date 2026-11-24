@@ -7,7 +7,8 @@ import { preloadChunk } from '~/lib/chunks'
 import { readPlain } from '~/lib/plain'
 import { readTrial } from '~/lib/progress/readBookmark'
 import { describeNamedPage } from '~/routes/$locale/-head'
-import { LandingPage, preloadLanding } from '~/routes/$series/$locale/-landing'
+import { LandingPage } from '~/routes/$series/$locale/-landing'
+import { preloadLanding } from '~/routes/$series/$locale/-landing.branches'
 import { loadDemoDrawings, loadHome } from '~/server/api'
 
 export const Route = createFileRoute('/$series/$locale/')({
@@ -44,7 +45,7 @@ export const Route = createFileRoute('/$series/$locale/')({
       titleKey: 'site.title',
     })
     const links = [...page.links]
-    // The branch the loader chose is a chunk of its own (-landing.tsx):
+    // The branch the loader chose is a chunk of its own (-landing.branches.ts):
     // fetched beside the entry, not once hydration has met it (#1573).
     if (loaderData !== undefined) {
       links.push(

@@ -13,7 +13,8 @@ import { coveredRecord, waypoint } from '~/test/fixtures'
 import { renderWithProviders } from '~/test/providers'
 import { settleDelay } from '~/test/settle'
 
-import { LandingPage, preloadLanding } from './-landing'
+import { LandingPage } from './-landing'
+import { preloadLanding } from './-landing.branches'
 
 const saga = waypoint({ name: 'Dressrosa', summary: 'The toy kingdom.' })
 

@@ -32,7 +32,8 @@ import {
   settle,
 } from '~/test/providers'
 
-import { LandingPage, preloadLanding } from './-landing'
+import { LandingPage } from './-landing'
+import { preloadLanding } from './-landing.branches'
 import { Route as CharacterRoute } from './characters/$id'
 import { ChronicleBand } from './characters/-$id.chronicle'
 import { DossierDiptych } from './characters/-$id.dossier'
