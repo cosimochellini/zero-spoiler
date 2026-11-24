@@ -10,7 +10,7 @@ import {
   useState,
 } from 'react'
 
-import { usePeekCode } from '~/components/useChartPeekCode'
+import { usePeekCode, type Waiting } from '~/components/useChartPeekCode'
 
 /** What a peek is about: a stop by its place in the route, or a ship. */
 export interface PeekTarget {
@@ -19,11 +19,7 @@ export interface PeekTarget {
 }
 
 /** The peek open on the chart, and what opened it. */
-interface Open {
-  /** A Tab from its stop waits for the peek to be drawn (`usePeekCode`). */
-  entering: boolean
-  /** The stop or ship it belongs to, which gets the focus back on Esc. */
-  from: HTMLElement
+interface Open extends Waiting {
   /** Opened by a focus, a click or a tap: only Esc, ✕ or elsewhere close it. */
   held: boolean
   target: PeekTarget

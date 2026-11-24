@@ -15,14 +15,12 @@ import {
 } from '~/components/seaChartPeekLoader'
 
 /** What of an open peek its code's arrival needs. */
-interface Waiting {
+export interface Waiting {
   /** A Tab from its stop waits for the peek to be drawn. */
   entering: boolean
-  /** The stop or ship it belongs to. */
+  /** The stop or ship it belongs to: the Tab is pressed on it, and Esc gives it the focus back. */
   from: HTMLElement
 }
-
-type SetOpen<Open> = Dispatch<SetStateAction<null | Open>>
 
 /** What a peek's first control is: where a Tab from its stop leads. */
 const FIRST_CONTROL = 'a[href], button'
@@ -46,7 +44,7 @@ async function fetchInto(
 function useTabWait<Open extends Waiting>(
   open: null | Open,
   peekRef: RefObject<HTMLElement | null>,
-  setOpen: SetOpen<Open>,
+  setOpen: Dispatch<SetStateAction<null | Open>>,
 ): void {
   useEffect(() => {
     if (open === null) {
@@ -85,7 +83,7 @@ function useTabWait<Open extends Waiting>(
  */
 export function usePeekCode<Open extends Waiting>(
   open: null | Open,
-  setOpen: SetOpen<Open>,
+  setOpen: Dispatch<SetStateAction<null | Open>>,
 ): {
   /** Hands the peek's element to the hook, and the focus to its first control. */
   attach: RefCallback<HTMLElement>
