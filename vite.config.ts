@@ -11,6 +11,59 @@ import { defineConfig, type Plugin } from 'vite'
 // here keeps the rest of the file, and the array, checked.
 const stylexVite: (options?: Partial<UserOptions>) => Plugin = stylex.vite
 
+// Each locale's copy is a chunk that nothing imports statically, so Start's
+// route manifest leaves it out of the document's module preloads and the page
+// asks for it only once the entry has run (#1575). The client build, which
+// runs first, names the chunks; the Worker build then reads them back as
+// `import.meta.env.DICTIONARY_CHUNKS` for the root route's head. Dev and
+// tests leave it undefined, and the head adds no link; a build whose client
+// half named no chunk fails rather than ship pages without the preload.
+const dictionaryChunks = (): Plugin[] => {
+  const urls = new Map<string, string>()
+  const token = 'import.meta.env.DICTIONARY_CHUNKS'
+  return [
+    {
+      name: 'dictionary-chunks:name',
+      applyToEnvironment: (environment) => environment.name === 'client',
+      generateBundle: (_options, bundle) => {
+        const chunks = Object.values(bundle).flatMap((output) =>
+          output.type === 'chunk' ? [output] : [],
+        )
+        for (const chunk of chunks) {
+          // Only the shared copy: a series' own `en.ts` sits a folder deeper.
+          if (
+            chunk.facadeModuleId !== null
+            && path.dirname(chunk.facadeModuleId).endsWith('/i18n/dictionaries')
+          ) {
+            urls.set(chunk.name, `/${chunk.fileName}`)
+          }
+        }
+      },
+    },
+    {
+      name: 'dictionary-chunks:inline',
+      apply: 'build',
+      applyToEnvironment: (environment) => environment.name === 'ssr',
+      transform: (code) => {
+        if (!code.includes(token)) {
+          return null
+        }
+        // The client build runs first and names the chunks; without them
+        // every page would lose the preload with nothing failing.
+        if (urls.size === 0) {
+          throw new Error('the client build named no dictionary chunks')
+        }
+        return {
+          code: code.replaceAll(token, () =>
+            JSON.stringify(Object.fromEntries(urls)),
+          ),
+          map: null,
+        }
+      },
+    },
+  ]
+}
+
 const config = defineConfig(({ command }) => ({
   server: { port: 3000 },
   build: { manifest: true },
@@ -57,6 +110,7 @@ const config = defineConfig(({ command }) => ({
       // "Could not resolve the path to the imported file".
       aliases: { '~/*': [path.join(import.meta.dirname, 'src', '*')] },
     }),
+    dictionaryChunks(),
     tanstackStart(),
     // React's Vite plugin MUST come after Start's Vite plugin. Start no longer
     // auto-configures the React plugin, and the old `customViteReactPlugin`
