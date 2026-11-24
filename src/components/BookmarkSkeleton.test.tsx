@@ -2,7 +2,7 @@ import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 
-import { ep, renderWithProviders } from '~/test/providers'
+import { awaited, ep, renderWithProviders } from '~/test/providers'
 
 import { EpisodeMark } from './EpisodeMark'
 
@@ -27,7 +27,9 @@ describe('BookmarkSkeleton', () => {
     const user = userEvent.setup()
     renderWithProviders(<EpisodeMark />, { bookmark: ep(650) })
 
-    await user.click(screen.getByRole('button', { name: /EP 650/u }))
+    await awaited(async () =>
+      user.click(screen.getByRole('button', { name: /EP 650/u })),
+    )
     const dialog = screen.getByRole('dialog', { name: 'Where are you up to?' })
 
     expect(within(dialog).getByRole('status')).toHaveTextContent('Loading…')

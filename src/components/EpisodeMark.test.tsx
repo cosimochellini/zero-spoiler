@@ -2,7 +2,7 @@ import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 
-import { ep, renderWithProviders } from '~/test/providers'
+import { awaited, ep, renderWithProviders } from '~/test/providers'
 
 import { EpisodeMark } from './EpisodeMark'
 
@@ -35,7 +35,7 @@ describe('EpisodeMark', () => {
     renderWithProviders(<EpisodeMark />, { bookmark: ep(650) })
     const mark = screen.getByRole('button', { name: /EP 650/u })
 
-    await user.click(mark)
+    await awaited(async () => user.click(mark))
     const dialog = screen.getByRole('dialog', { name: 'Where are you up to?' })
     const alert = await within(dialog).findByRole('alert')
 
@@ -43,7 +43,9 @@ describe('EpisodeMark', () => {
       'Loading failed. Check your connection and try again.',
     )
 
-    await user.click(within(dialog).getByRole('button', { name: 'Try again' }))
+    await awaited(async () =>
+      user.click(within(dialog).getByRole('button', { name: 'Try again' })),
+    )
 
     const again = await within(dialog).findByRole('alert')
 
