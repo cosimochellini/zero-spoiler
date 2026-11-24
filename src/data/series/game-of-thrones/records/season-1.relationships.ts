@@ -8146,8 +8146,8 @@ const riverlands2 = {
     character: 'jaqen-hghar',
     type: { en: 'Prisoner in the wagon', it: 'Prigioniero sul carro' },
     summary: {
-      en: 'A man from Lorath, chained in Yoren’s wagon. He asks her for water and gives his name, calling himself “a man” and her “a boy”.',
-      it: 'Un uomo di Lorath, incatenato sul carro di Yoren. Le chiede dell’acqua e le dice il suo nome, chiamando se stesso “un uomo” e lei “un ragazzo”.',
+      en: 'A prisoner chained in Yoren’s wagon. He asks her for water and gives his name, calling himself “a man” and her “a boy”.',
+      it: 'Un prigioniero incatenato sul carro di Yoren. Le chiede dell’acqua e le dice il suo nome, chiamando se stesso “un uomo” e lei “un ragazzo”.',
     },
   },
   aryGendrySecret: {
@@ -8300,8 +8300,8 @@ const riverlands2 = {
     character: 'jaqen-hghar',
     type: { en: 'Prisoner in the wagon', it: 'Prigioniero sul carro' },
     summary: {
-      en: 'The slender prisoner who calls to her from the wagon and says he is Jaqen H’ghar of Lorath. He tells her she has more courage than sense.',
-      it: 'Il prigioniero snello che la chiama dal carro e dice di essere Jaqen H’ghar di Lorath. Le dice che ha più coraggio che buon senso.',
+      en: 'The slender prisoner who calls to her from the wagon and says he is Jaqen H’ghar. He tells her she has more courage than sense.',
+      it: 'Il prigioniero snello che la chiama dal carro e dice di essere Jaqen H’ghar. Le dice che ha più coraggio che buon senso.',
     },
   },
   aryRorgeBook: {
@@ -8896,8 +8896,8 @@ const riverlands2 = {
     character: 'talisa-maegyr',
     type: { en: 'Healer', it: 'Guaritrice' },
     summary: {
-      en: 'The healer who asks him for supplies. He suggests she ride with him to the Crag to get them.',
-      it: 'La guaritrice che gli chiede delle provviste. Lui le propone di venire con lui al Crag per prenderle.',
+      en: 'The healer who asks him for supplies. He suggests she come with him to get them herself.',
+      it: 'La guaritrice che gli chiede delle provviste. Lui le propone di venire con lui a prenderle di persona.',
     },
   },
   robCatelynJaime: {
@@ -9503,8 +9503,8 @@ const riverlands2 = {
     character: 'jaqen-hghar',
     type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
     summary: {
-      en: 'The Lorathi chained in the wagon with him, who gives his name to the boy at the cage.',
-      it: 'Il lorathi incatenato con lui sul carro, che dice il suo nome al ragazzo alla gabbia.',
+      en: 'The man chained in the wagon with him, who gives his name to the boy at the cage.',
+      it: 'L’uomo incatenato con lui sul carro, che dice il suo nome al ragazzo alla gabbia.',
     },
   },
   rorBiter: {
@@ -9553,8 +9553,8 @@ const riverlands2 = {
     character: 'jaqen-hghar',
     type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
     summary: {
-      en: 'The Lorathi chained in the wagon with him, who gave him his name for his filed teeth.',
-      it: 'Il lorathi incatenato con lui sul carro, che gli ha dato il nome per i suoi denti limati.',
+      en: 'The man chained in the wagon with him, who gave him his name for his filed teeth.',
+      it: 'L’uomo incatenato con lui sul carro, che gli ha dato il nome per i suoi denti limati.',
     },
   },
   bitRorge: {
@@ -9685,8 +9685,8 @@ const riverlands2 = {
     character: 'jaqen-hghar',
     type: { en: 'Fellow prisoner', it: 'Compagno di catene' },
     summary: {
-      en: 'The Lorathi who rode in with him among Amory’s men.',
-      it: 'Il lorathi che è arrivato con lui tra gli uomini di Amory.',
+      en: 'The man who rode in with him among Amory’s men.',
+      it: 'L’uomo che è arrivato con lui tra gli uomini di Amory.',
     },
   },
   rorBiterMen: {
@@ -9701,8 +9701,8 @@ const riverlands2 = {
     character: 'jaqen-hghar',
     type: { en: 'Companion', it: 'Compagno' },
     summary: {
-      en: 'The Lorathi who leads the three of them in with the kettles, and fights the guards with him.',
-      it: 'Il lorathi che li guida tutti e tre dentro con i paioli, e combatte le guardie insieme a lui.',
+      en: 'The man who leads the three of them in with the kettles, and fights the guards with him.',
+      it: 'L’uomo che li guida tutti e tre dentro con i paioli, e combatte le guardie insieme a lui.',
     },
   },
   rorBiterFree: {
@@ -9717,8 +9717,8 @@ const riverlands2 = {
     character: 'jaqen-hghar',
     type: { en: 'Companion', it: 'Compagno' },
     summary: {
-      en: 'The Lorathi who leads the three of them in with the kettles.',
-      it: 'Il lorathi che li guida tutti e tre dentro con i paioli.',
+      en: 'The man who leads the three of them in with the kettles.',
+      it: 'L’uomo che li guida tutti e tre dentro con i paioli.',
     },
   },
   bitRorgeFree: {

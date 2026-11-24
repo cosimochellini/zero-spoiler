@@ -723,8 +723,8 @@ const riverlands = {
     character: 'jaqen-hghar',
     type: { en: 'One of his men', it: 'Uno dei suoi uomini' },
     summary: {
-      en: 'The Lorathi prisoner who rides in with his column, and stays at Harrenhal among his men.',
-      it: 'Il prigioniero di Lorath che arriva con la sua colonna e resta a Harrenhal tra i suoi uomini.',
+      en: 'The prisoner who rides in with his column, and stays at Harrenhal among his men.',
+      it: 'Il prigioniero che arriva con la sua colonna e resta a Harrenhal tra i suoi uomini.',
     },
   },
   lorRorgeHarrenhal: {
