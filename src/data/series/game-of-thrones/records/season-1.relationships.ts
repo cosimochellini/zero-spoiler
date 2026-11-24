@@ -4820,6 +4820,1398 @@ const north = {
 } satisfies Record<string, Relationship>
 
 /**
+ * Stage 2's Winterfell and Iron Islands cards for the season-1 cast (#1482):
+ * season 2 and A Clash of Kings, episodes 11 to 20 and chapters 74 to 143. The
+ * new characters' own cards are in `season-2.relationships.ts`.
+ */
+const winterfell2 = {
+  brShowLuwin: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester of Winterfell, who guides him through a lord’s duties as he hears his vassals’ complaints.',
+      it: 'Il maestro di Grande Inverno, che lo guida nei doveri di un lord mentre ascolta le lamentele dei suoi vassalli.',
+    },
+  },
+  brShowRickon: {
+    character: 'rickon-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His little brother, who sits beside him at the hearings and shells nuts with a rock.',
+      it: 'Il suo fratellino, che siede accanto a lui alle udienze e schiaccia noci con un sasso.',
+    },
+  },
+  brShowOsha: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant who takes him to the pool in the godswood and tells him the red comet means dragons.',
+      it: 'La serva dei bruti che lo porta alla pozza nel parco degli dèi e gli dice che la cometa rossa significa draghi.',
+    },
+  },
+  brShowHodor: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Chi lo porta' },
+    summary: {
+      en: 'Hodor, who carries him to the pool in the godswood.',
+      it: 'Hodor, che lo porta fino alla pozza nel parco degli dèi.',
+    },
+  },
+  brShowSummer: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf. In his dreams he walks the godswood as Summer, and he wakes at the sight of the wolf’s reflection in the pool.',
+      it: 'Il suo metalupo. Nei sogni cammina nel parco degli dèi come Estate, e si sveglia vedendo nella pozza il riflesso del lupo.',
+    },
+  },
+  brShowTheon: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward turned enemy', it: 'Pupillo diventato nemico' },
+    summary: {
+      en: 'The ward Winterfell raised, who seizes the castle and makes Bran yield it in front of his people.',
+      it: 'Il pupillo cresciuto a Grande Inverno, che si impadronisce del castello e costringe Bran a cederlo davanti alla sua gente.',
+    },
+  },
+  brShowRodrik: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The knight Theon beheads before the castle. Bran and Rickon beg for his life.',
+      it: 'Il cavaliere che Theon decapita davanti al castello. Bran e Rickon ne implorano la vita.',
+    },
+  },
+  brShowOshaFree: {
+    character: 'osha',
+    type: { en: 'Rescuer', it: 'Chi lo salva' },
+    summary: {
+      en: 'The wildling servant who frees him and Rickon by night and leads them out of the castle.',
+      it: 'La serva dei bruti che libera lui e Rickon di notte e li porta fuori dal castello.',
+    },
+  },
+  brShowRickonFlight: {
+    character: 'rickon-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His little brother, who is led out of Winterfell with him.',
+      it: 'Il suo fratellino, portato fuori da Grande Inverno insieme a lui.',
+    },
+  },
+  brShowLuwinDying: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who dies in the godswood after the sack. He tells the boys to go north to the Wall, where Jon can keep them safe.',
+      it: 'Il maestro che muore nel parco degli dèi dopo il saccheggio. Dice ai ragazzi di andare a nord, alla Barriera, dove Jon potrà proteggerli.',
+    },
+  },
+  brShowOshaCrypt: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant who hid him in the crypts and stays with him when they come out to a burning castle.',
+      it: 'La serva dei bruti che lo ha nascosto nelle cripte e resta con lui quando escono in un castello in fiamme.',
+    },
+  },
+  brShowRickonCrypt: {
+    character: 'rickon-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His little brother, who hid with him in the crypts and comes out beside him.',
+      it: 'Il suo fratellino, che si è nascosto con lui nelle cripte e ne esce al suo fianco.',
+    },
+  },
+  brShowHodorCrypt: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Chi lo porta' },
+    summary: {
+      en: 'Hodor, who carries him out of the crypts.',
+      it: 'Hodor, che lo porta fuori dalle cripte.',
+    },
+  },
+  brBSummer78: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf, whose howls he answers from his window. In his wolf dreams he runs as Summer.',
+      it: 'Il suo metalupo, i cui ululati lui accompagna dalla finestra. Nei sogni di lupo corre come Estate.',
+    },
+  },
+  brBLuwin78: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who tells him to sleep, and brings a draught. He says that even princes must sleep.',
+      it: 'Il maestro che gli dice di dormire e porta un sonnifero. Dice che anche i principi devono dormire.',
+    },
+  },
+  brBOsha78: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant who carries him to bed and says the old gods may be answering him.',
+      it: 'La serva dei bruti che lo porta a letto e dice che forse gli antichi dèi gli stanno rispondendo.',
+    },
+  },
+  brBRickon78: {
+    character: 'rickon-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His little brother, whom he soothed when his mother’s wards came from the Twins. Rickon has taken to them since.',
+      it: 'Il suo fratellino, che ha calmato quando i pupilli di sua madre sono arrivati dai Gemelli. Da allora Rickon si è affezionato a loro.',
+    },
+  },
+  brBOldNan78: {
+    character: 'old-nan',
+    type: { en: 'Teller of tales', it: 'Narratrice di storie' },
+    summary: {
+      en: 'Old Nan, who tells him the Starks have wolf blood.',
+      it: 'Vecchia Nan, che gli dice che gli Stark hanno sangue di lupo.',
+    },
+  },
+  brBJojen102: {
+    character: 'jojen-reed',
+    type: { en: 'Greenseer', it: 'Veggente verde' },
+    summary: {
+      en: 'The Reed boy who says Bran is a winged wolf bound to the earth, and that a three-eyed crow is trying to free him.',
+      it: 'Il ragazzo dei Reed che dice che Bran è un lupo alato legato alla terra, e che un corvo con tre occhi cerca di liberarlo.',
+    },
+  },
+  brBMeera102: {
+    character: 'meera-reed',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The Reed girl who faces Summer with a net and a frog spear, and steps between him and her brother when the wolf growls. Bran thinks she is like Arya.',
+      it: 'La ragazza dei Reed che affronta Estate con una rete e una fiocina per rane, e si mette tra lui e suo fratello quando il lupo ringhia. Bran la trova simile ad Arya.',
+    },
+  },
+  brBSummer102: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf, caught in Meera’s net, who growls when Jojen asks if Bran falls every night.',
+      it: 'Il suo metalupo, finito nella rete di Meera, che ringhia quando Jojen chiede se Bran cada ogni notte.',
+    },
+  },
+  brBHodor102: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Chi lo porta' },
+    summary: {
+      en: 'Hodor, whom he calls to chase the wolves away when he cannot calm them himself.',
+      it: 'Hodor, che chiama per scacciare i lupi quando non riesce a calmarli da solo.',
+    },
+  },
+  brBLuwin102: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who tells him that no living man has the greensight, and that magic is dead.',
+      it: 'Il maestro che gli dice che nessun uomo vivo ha la visione verde, e che la magia è morta.',
+    },
+  },
+  brBTheon120: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward turned enemy', it: 'Pupillo diventato nemico' },
+    summary: {
+      en: 'His father’s former ward, who comes into his room, says the castle is his now, and tells Bran to make the people yield.',
+      it: 'L’ex pupillo di suo padre, che entra nella sua stanza, dice che il castello ora è suo, e dice a Bran di far arrendere la gente.',
+    },
+  },
+  brBMikken120: {
+    character: 'mikken',
+    type: { en: 'Smith', it: 'Fabbro' },
+    summary: {
+      en: 'The smith who refuses to kneel to Theon and drowns in his own blood.',
+      it: 'Il fabbro che si rifiuta di inginocchiarsi davanti a Theon e annega nel proprio sangue.',
+    },
+  },
+  brBOsha120: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant who joins Theon’s service, to Bran’s disappointment.',
+      it: 'La serva dei bruti che passa al servizio di Theon, con grande delusione di Bran.',
+    },
+  },
+  brBJojen120: {
+    character: 'jojen-reed',
+    type: { en: 'Greenseer', it: 'Veggente verde' },
+    summary: {
+      en: 'The Reed boy whose dream has come true: the sea has come to Winterfell.',
+      it: 'Il ragazzo dei Reed il cui sogno si è avverato: il mare è arrivato a Grande Inverno.',
+    },
+  },
+  brBLuwin143: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who lies dying in the godswood. He tells Bran to be strong, as his father’s son.',
+      it: 'Il maestro che giace morente nel parco degli dèi. Dice a Bran di essere forte, come figlio di suo padre.',
+    },
+  },
+  brBOsha143: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant who will take Rickon along the kingsroad while Bran goes north.',
+      it: 'La serva dei bruti che porterà Rickon lungo la strada del re mentre Bran va a nord.',
+    },
+  },
+  brBJojen143: {
+    character: 'jojen-reed',
+    type: { en: 'Greenseer', it: 'Veggente verde' },
+    summary: {
+      en: 'The Reed boy who wakes him from three days as Summer, and goes north with him.',
+      it: 'Il ragazzo dei Reed che lo sveglia dopo tre giorni passati come Estate, e va a nord con lui.',
+    },
+  },
+  brBMeera143: {
+    character: 'meera-reed',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The Reed girl who goes north with him.',
+      it: 'La ragazza dei Reed che va a nord con lui.',
+    },
+  },
+  brBHodor143: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Chi lo porta' },
+    summary: {
+      en: 'Hodor, who moves the stone from the crypt door and goes north with him.',
+      it: 'Hodor, che sposta la pietra dalla porta della cripta e va a nord con lui.',
+    },
+  },
+  riShowBran16: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who yields Winterfell to Theon and pleads with him for Rodrik’s life.',
+      it: 'Suo fratello, che cede Grande Inverno a Theon e lo supplica di risparmiare Rodrik.',
+    },
+  },
+  riShowRodrik: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The knight he and Bran beg Theon to spare. He is beheaded in front of them.',
+      it: 'Il cavaliere che lui e Bran pregano Theon di risparmiare. Viene decapitato davanti a loro.',
+    },
+  },
+  riShowOsha16: {
+    character: 'osha',
+    type: { en: 'Rescuer', it: 'Chi lo salva' },
+    summary: {
+      en: 'The wildling servant who leads him out of Winterfell with Bran.',
+      it: 'La serva dei bruti che lo porta fuori da Grande Inverno insieme a Bran.',
+    },
+  },
+  riShowBran20: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who hides with him in the crypts. They come out to find Winterfell burning.',
+      it: 'Suo fratello, che si nasconde con lui nelle cripte. Escono e trovano Grande Inverno in fiamme.',
+    },
+  },
+  riShowOsha20: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant who hid them in the crypts and stays with them.',
+      it: 'La serva dei bruti che li ha nascosti nelle cripte e resta con loro.',
+    },
+  },
+  riShowLuwin20: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester they find dying in the godswood.',
+      it: 'Il maestro che trovano morente nel parco degli dèi.',
+    },
+  },
+  riBBran95: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who sits beside him on the dais at the harvest feast.',
+      it: 'Suo fratello, che siede accanto a lui sul palco al banchetto del raccolto.',
+    },
+  },
+  riBLittle95: {
+    character: 'little-walder-frey',
+    type: { en: 'Playmate', it: 'Compagno di giochi' },
+    summary: {
+      en: 'The ward Shaggydog bit. At the feast Rickon screams happily with him and his cousin.',
+      it: 'Il pupillo che Cagnaccio ha morso. Al banchetto Rickon strilla felice con lui e con suo cugino.',
+    },
+  },
+  riBBig95: {
+    character: 'big-walder-frey',
+    type: { en: 'Playmate', it: 'Compagno di giochi' },
+    summary: {
+      en: 'The other Frey ward, who plays with him and Little Walder.',
+      it: 'L’altro pupillo dei Frey, che gioca con lui e con Little Walder.',
+    },
+  },
+  riBShaggydog95: {
+    character: 'shaggydog',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His black direwolf, kept in the godswood because he was bad.',
+      it: 'Il suo metalupo nero, tenuto nel parco degli dèi perché è stato cattivo.',
+    },
+  },
+  riBJojen95: {
+    character: 'jojen-reed',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Reed boy who asks where the wolves are. Rickon tells him they are in the godswood.',
+      it: 'Il ragazzo dei Reed che chiede dove siano i lupi. Rickon gli risponde che sono nel parco degli dèi.',
+    },
+  },
+  riBBran124: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, missing from his bed the same night.',
+      it: 'Suo fratello, sparito dal letto la stessa notte.',
+    },
+  },
+  riBOsha124: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant missing with him. Theon reasons she has to carry him.',
+      it: 'La serva dei bruti scomparsa con lui. Theon ragiona che debba portarlo in braccio.',
+    },
+  },
+  riBShaggydog124: {
+    character: 'shaggydog',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf, gone from the godswood the same night.',
+      it: 'Il suo metalupo, sparito dal parco degli dèi la stessa notte.',
+    },
+  },
+  riBOsha143: {
+    character: 'osha',
+    type: { en: 'Guardian', it: 'Custode' },
+    summary: {
+      en: 'The wildling servant who will take him and Shaggydog along the kingsroad, apart from Bran.',
+      it: 'La serva dei bruti che porterà lui e Cagnaccio lungo la strada del re, separati da Bran.',
+    },
+  },
+  riBShaggydog143: {
+    character: 'shaggydog',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf, who goes with him and Osha.',
+      it: 'Il suo metalupo, che va con lui e con Osha.',
+    },
+  },
+  riBBran143: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who goes north without him: Luwin said the two must be kept apart.',
+      it: 'Suo fratello, che va a nord senza di lui: Luwin ha detto che i due devono essere separati.',
+    },
+  },
+  thShowRobb11: {
+    character: 'robb-stark',
+    type: { en: 'King he serves', it: 'Re che serve' },
+    summary: {
+      en: 'The king he asks to send him to Pyke, to win his father’s fleet.',
+      it: 'Il re a cui chiede di mandarlo a Pyke, per ottenere la flotta di suo padre.',
+    },
+  },
+  thShowCatelyn11: {
+    character: 'catelyn-stark',
+    type: { en: 'Doubter', it: 'Chi dubita' },
+    summary: {
+      en: 'Robb’s mother, who warns that Balon cannot be trusted after his rebellion.',
+      it: 'La madre di Robb, che avverte che di Balon non ci si può fidare dopo la sua ribellione.',
+    },
+  },
+  thShowBalon12: {
+    character: 'balon-greyjoy',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who doubts his loyalty, refuses Robb’s offer and says no one will give him a crown.',
+      it: 'Suo padre, che dubita della sua lealtà, rifiuta l’offerta di Robb e dice che nessuno gli darà una corona.',
+    },
+  },
+  thShowAsha12: {
+    character: 'asha-greyjoy',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, whom he took for a stranger on the ride to Pyke. Balon holds her up against him.',
+      it: 'Sua sorella, che ha scambiato per un’estranea durante il viaggio fino a Pyke. Balon la mette sopra di lui.',
+    },
+  },
+  thShowBran16: {
+    character: 'bran-stark',
+    type: { en: 'Boy he forces to yield', it: 'Ragazzo costretto a cedere' },
+    summary: {
+      en: 'The Stark boy he forces to give up Winterfell by threatening his people.',
+      it: 'Il ragazzo Stark che costringe a cedere Grande Inverno minacciando la sua gente.',
+    },
+  },
+  thShowRodrik16: {
+    character: 'rodrik-cassel',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The knight his men capture. Theon has him executed, and needs four blows to do it.',
+      it: 'Il cavaliere catturato dai suoi uomini. Theon lo fa giustiziare, e gli servono quattro colpi.',
+    },
+  },
+  thShowDagmer16: {
+    character: 'dagmer',
+    type: { en: 'First mate', it: 'Secondo di bordo' },
+    summary: {
+      en: 'His first mate, who tells him he must kill Rodrik or lose his men’s respect.',
+      it: 'Il suo secondo di bordo, che gli dice di dover uccidere Rodrik o perdere il rispetto dei suoi uomini.',
+    },
+  },
+  thShowOsha16: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant he sleeps with. She slips out while he sleeps and frees Bran and Rickon.',
+      it: 'La serva dei bruti con cui passa la notte. Lei esce di nascosto mentre dorme e libera Bran e Rickon.',
+    },
+  },
+  thShowLuwin20: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who tells him to take the black, and who is stabbed trying to stop Theon’s own men.',
+      it: 'Il maestro che gli dice di vestire il nero, e che viene trafitto mentre cerca di fermare gli uomini di Theon.',
+    },
+  },
+  thShowDagmer20: {
+    character: 'dagmer',
+    type: { en: 'First mate', it: 'Secondo di bordo' },
+    summary: {
+      en: 'His first mate, who knocks him out when the ironmen turn on him.',
+      it: 'Il suo secondo di bordo, che lo stordisce quando gli uomini di ferro si rivoltano contro di lui.',
+    },
+  },
+  thBBalon85: {
+    character: 'balon-greyjoy',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who burns Robb’s letter and strikes him. Balon means to take a crown by conquest, not as a gift.',
+      it: 'Suo padre, che brucia la lettera di Robb e lo colpisce. Balon vuole prendere una corona con la conquista, non riceverla in dono.',
+    },
+  },
+  thBAeron85: {
+    character: 'aeron-greyjoy',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, the priest of the Drowned God, who meets him at Lordsport and takes him to Pyke.',
+      it: 'Suo zio, il sacerdote del Dio Abissale, che lo accoglie a Lordsport e lo porta a Pyke.',
+    },
+  },
+  thBAsha98: {
+    character: 'asha-greyjoy',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, whom he took for a stranger named Esgred and flirted with all the way to Pyke. She shows him up at the feast.',
+      it: 'Sua sorella, che ha scambiato per una certa Esgred e con cui ha flirtato fino a Pyke. Lei lo umilia al banchetto.',
+    },
+  },
+  thBBalon98: {
+    character: 'balon-greyjoy',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who will not hear his plans and sends him to raid the coast.',
+      it: 'Suo padre, che non vuole ascoltare i suoi piani e lo manda a razziare la costa.',
+    },
+  },
+  thBVictarion98: {
+    character: 'victarion-greyjoy',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who lent him a steersman for his new ship.',
+      it: 'Suo zio, che gli ha prestato un timoniere per la sua nuova nave.',
+    },
+  },
+  thBWex98: {
+    character: 'wex-pyke',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'His squire, who smirks when Asha makes a fool of him.',
+      it: 'Il suo scudiero, che ghigna quando Asha lo mette in ridicolo.',
+    },
+  },
+  thBAeron98: {
+    character: 'aeron-greyjoy',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who is to bless his new ship and sail on the raid with him.',
+      it: 'Suo zio, che dovrà benedire la sua nuova nave e salpare con lui per l’incursione.',
+    },
+  },
+  thBBran120: {
+    character: 'bran-stark',
+    type: { en: 'Boy he overpowers', it: 'Ragazzo sopraffatto' },
+    summary: {
+      en: 'The Stark boy whose castle he takes. He tells Bran to make the people yield.',
+      it: 'Il ragazzo Stark di cui prende il castello. Gli dice di far arrendere la sua gente.',
+    },
+  },
+  thBMikken120: {
+    character: 'mikken',
+    type: { en: 'Smith', it: 'Fabbro' },
+    summary: {
+      en: 'The Winterfell smith who refuses to kneel and bleeds to death.',
+      it: 'Il fabbro di Grande Inverno che si rifiuta di inginocchiarsi e muore dissanguato.',
+    },
+  },
+  thBOsha120: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling woman who joins his service.',
+      it: 'La donna dei bruti che passa al suo servizio.',
+    },
+  },
+  thBOsha124: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling woman he blames for killing a guard and freeing the boys and the wolves. He will not spare her.',
+      it: 'La donna dei bruti che ritiene colpevole di aver ucciso una guardia e liberato i ragazzi e i lupi. Non la risparmierà.',
+    },
+  },
+  thBLuwin124: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester he takes on the hunt for the boys, because he dares not leave him behind. Luwin asks him for mercy.',
+      it: 'Il maestro che porta con sé nella caccia ai ragazzi, perché non osa lasciarlo al castello. Luwin gli chiede di essere clemente.',
+    },
+  },
+  thBFarlen124: {
+    character: 'farlen',
+    type: { en: 'Kennelmaster', it: 'Maestro dei canili' },
+    summary: {
+      en: 'His kennelmaster, who says the dogs cannot be tracking the wrong wolves.',
+      it: 'Il suo maestro dei canili, che dice che i cani non possono seguire i lupi sbagliati.',
+    },
+  },
+  thBWex124: {
+    character: 'wex-pyke',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'His squire, who finds the Stark boys’ beds empty.',
+      it: 'Il suo scudiero, che trova vuoti i letti dei ragazzi Stark.',
+    },
+  },
+  thBLorren124: {
+    character: 'black-lorren',
+    type: { en: 'Raider', it: 'Predone' },
+    summary: {
+      en: 'The ironman who shows him the guards killed at the Hunter’s Gate.',
+      it: 'L’uomo di ferro che gli mostra le guardie uccise alla Porta del Cacciatore.',
+    },
+  },
+  thBAsha130: {
+    character: 'asha-greyjoy',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who reaches Winterfell with twenty men. She says he should have razed it, and offers to take him home. He refuses.',
+      it: 'Sua sorella, che arriva a Grande Inverno con venti uomini. Gli dice che avrebbe dovuto raderlo al suolo, e si offre di portarlo a casa. Lui rifiuta.',
+    },
+  },
+  thBFarlen130: {
+    character: 'farlen',
+    type: { en: 'Kennelmaster', it: 'Maestro dei canili' },
+    summary: {
+      en: 'The kennelmaster he beheaded to blame someone for three deaths, in four blows.',
+      it: 'Il maestro dei canili che ha decapitato per avere un colpevole di tre morti, in quattro colpi.',
+    },
+  },
+  thBDagmer130: {
+    character: 'dagmer',
+    type: { en: 'Raider', it: 'Predone' },
+    summary: {
+      en: 'The captain he sent against Torrhen’s Square, who has lost the fight there.',
+      it: 'Il capitano che ha mandato contro Piazza di Torrhen, e che ha perso lo scontro.',
+    },
+  },
+  thBLuwin130: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who brings him a sleeping draught after his nightmare. Theon dares not drink it.',
+      it: 'Il maestro che gli porta un sonnifero dopo un incubo. Theon non osa berlo.',
+    },
+  },
+  thBWex130: {
+    character: 'wex-pyke',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'His squire, who wakes him when Asha arrives.',
+      it: 'Il suo scudiero, che lo sveglia quando arriva Asha.',
+    },
+  },
+  thBLuwin140: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who tells him to yield, and then to take the black. He is cut down in the sack.',
+      it: 'Il maestro che gli dice di arrendersi, e poi di vestire il nero. Viene abbattuto nel saccheggio.',
+    },
+  },
+  thBRodrik140: {
+    character: 'rodrik-cassel',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The northern knight he meets at the parley. He answers Rodrik’s terms by threatening to hang his daughter at sunset.',
+      it: 'Il cavaliere del Nord che incontra al parlamento. Risponde alle condizioni di Rodrik minacciando di impiccare sua figlia al tramonto.',
+    },
+  },
+  thBRamsay140: {
+    character: 'ramsay-snow',
+    type: { en: 'Man he trusted', it: 'Uomo di cui si fidava' },
+    summary: {
+      en: 'The Dreadfort leader who lifts his helm: the man Theon knew as Reek is dead, and he is Ramsay Snow.',
+      it: 'Il capo degli uomini del Dreadfort che si toglie l’elmo: l’uomo che Theon conosceva come Reek è morto, e lui è Ramsay Snow.',
+    },
+  },
+  thBLorren140: {
+    character: 'black-lorren',
+    type: { en: 'Loyal raider', it: 'Predone fedele' },
+    summary: {
+      en: 'The ironman who stays and tells him to put the castle folk to the sword, then brings Rodrik’s daughter to the wall.',
+      it: 'L’uomo di ferro che resta e gli dice di passare a fil di spada la gente del castello, poi porta la figlia di Rodrik sulle mura.',
+    },
+  },
+  thBWex140: {
+    character: 'wex-pyke',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'His squire, the first to step over to his side when he offers the men a choice.',
+      it: 'Il suo scudiero, il primo a schierarsi dalla sua parte quando offre agli uomini una scelta.',
+    },
+  },
+  luShowTheon16: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward turned enemy', it: 'Pupillo diventato nemico' },
+    summary: {
+      en: 'The ward Winterfell raised, who takes the castle while Luwin frantically sends off a raven.',
+      it: 'Il pupillo cresciuto a Grande Inverno, che prende il castello mentre Luwin spedisce in fretta un corvo.',
+    },
+  },
+  luShowBran16: {
+    character: 'bran-stark',
+    type: { en: 'Lord he serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The boy lord, who yields the castle to spare his people.',
+      it: 'Il giovane signore, che cede il castello per risparmiare la sua gente.',
+    },
+  },
+  luShowRodrik16: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The knight Theon beheads in front of the castle.',
+      it: 'Il cavaliere che Theon decapita davanti al castello.',
+    },
+  },
+  luShowOsha18: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant he follows into the crypts. She tells him how she hid the boys there, and he knows the burned bodies are not theirs.',
+      it: 'La serva dei bruti che segue nelle cripte. Lei gli racconta come ha nascosto i ragazzi lì, e lui sa che i corpi bruciati non sono i loro.',
+    },
+  },
+  luShowBran18: {
+    character: 'bran-stark',
+    type: { en: 'Lord he serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The boy lord, who overhears them from behind a corner.',
+      it: 'Il giovane signore, che li ascolta da dietro un angolo.',
+    },
+  },
+  luShowTheon18: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward turned enemy', it: 'Pupillo diventato nemico' },
+    summary: {
+      en: 'The ward who hung two burned bodies on the walls and let the castle think they were the boys.',
+      it: 'Il pupillo che ha appeso due corpi bruciati alle mura e ha lasciato credere al castello che fossero i ragazzi.',
+    },
+  },
+  luShowTheon20: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward turned enemy', it: 'Pupillo diventato nemico' },
+    summary: {
+      en: 'The prince he advises to take the black. Dagmer stabs Luwin when he tries to stop the ironmen from taking Theon.',
+      it: 'Il principe a cui consiglia di vestire il nero. Dagmer trafigge Luwin quando cerca di impedire agli uomini di ferro di portare via Theon.',
+    },
+  },
+  luShowBran20: {
+    character: 'bran-stark',
+    type: { en: 'Lord he serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The boy lord, whom he tells to go north to the Wall as he dies.',
+      it: 'Il giovane signore, a cui dice di andare a nord, alla Barriera, mentre muore.',
+    },
+  },
+  luShowOsha20: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling servant he asks for a quick death.',
+      it: 'La serva dei bruti a cui chiede una morte rapida.',
+    },
+  },
+  luBBran90: {
+    character: 'bran-stark',
+    type: { en: 'Lord he serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The boy lord, whom he reminds to speak only when spoken to. Luwin sits beside him at the audiences.',
+      it: 'Il giovane signore, a cui ricorda di parlare solo quando gli viene rivolta la parola. Luwin siede accanto a lui alle udienze.',
+    },
+  },
+  luBRodrik90: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The castellan who sits with him at Bran’s side and answers for the castle.',
+      it: 'Il castellano che siede con lui accanto a Bran e risponde per il castello.',
+    },
+  },
+  luBWyman90: {
+    character: 'wyman-manderly',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Lord of White Harbor, who comes for the harvest feast with business for Bran.',
+      it: 'Il lord di Porto Bianco, venuto per il banchetto del raccolto con affari da discutere con Bran.',
+    },
+  },
+  luBDonella90: {
+    character: 'donella-hornwood',
+    type: { en: 'Widow', it: 'Vedova' },
+    summary: {
+      en: 'The grieving lady whose lands need an heir, or many will claim them.',
+      it: 'La vedova in lutto le cui terre hanno bisogno di un erede, o in molti le reclameranno.',
+    },
+  },
+  luBLittle90: {
+    character: 'little-walder-frey',
+    type: { en: 'Ward', it: 'Pupillo' },
+    summary: {
+      en: 'The ward he scolds for mocking Hodor. Little Walder stays haughty.',
+      it: 'Il pupillo che rimprovera per aver preso in giro Hodor. Little Walder resta altezzoso.',
+    },
+  },
+  luBTheon124: {
+    character: 'theon-greyjoy',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The prince who takes him on the hunt for Bran and Rickon. Luwin asks him to be merciful, to the boys and to the Reeds.',
+      it: 'Il principe che lo porta con sé nella caccia a Bran e Rickon. Luwin gli chiede clemenza, per i ragazzi e per i Reed.',
+    },
+  },
+  luBBran143: {
+    character: 'bran-stark',
+    type: { en: 'Boy he is glad to find', it: 'Ragazzo felice di ritrovare' },
+    summary: {
+      en: 'The boy lord he is glad to find alive. He tells Bran to be strong, as his father’s son.',
+      it: 'Il giovane signore che è felice di ritrovare vivo. Dice a Bran di essere forte, come figlio di suo padre.',
+    },
+  },
+  luBOsha143: {
+    character: 'osha',
+    type: { en: 'Wildling servant', it: 'Serva dei bruti' },
+    summary: {
+      en: 'The wildling woman he tells not to send the boys off together.',
+      it: 'La donna dei bruti a cui dice di non mandare via i ragazzi insieme.',
+    },
+  },
+  luBTheon143: {
+    character: 'theon-greyjoy',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The prince he never told that the bodies Theon showed were not Bran and Rickon.',
+      it: 'Il principe a cui non ha mai detto che i corpi mostrati da Theon non erano quelli di Bran e Rickon.',
+    },
+  },
+  osShowTheon16: {
+    character: 'theon-greyjoy',
+    type: { en: 'Man she deceives', it: 'Uomo che inganna' },
+    summary: {
+      en: 'The prince she sleeps with, then leaves in his bed to free Bran and Rickon, killing a guard on the way.',
+      it: 'Il principe con cui passa la notte, e che lascia nel letto per liberare Bran e Rickon, uccidendo una guardia lungo la strada.',
+    },
+  },
+  osShowBran16: {
+    character: 'bran-stark',
+    type: { en: 'Boy she frees', it: 'Ragazzo che libera' },
+    summary: {
+      en: 'The boy lord she frees from Theon’s men and leads out of the castle.',
+      it: 'Il giovane signore che libera dagli uomini di Theon e porta fuori dal castello.',
+    },
+  },
+  osShowRickon16: {
+    character: 'rickon-stark',
+    type: { en: 'Boy she frees', it: 'Ragazzo che libera' },
+    summary: {
+      en: 'The youngest Stark, whom she leads out with Bran.',
+      it: 'Il più giovane degli Stark, che porta fuori insieme a Bran.',
+    },
+  },
+  osShowHodor16: {
+    character: 'hodor',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'Hodor, who carries Bran out of the castle with her.',
+      it: 'Hodor, che porta Bran fuori dal castello insieme a lei.',
+    },
+  },
+  osShowLuwin18: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who follows her into the crypts. She tells him how she doubled back through a stream to hide the boys.',
+      it: 'Il maestro che la segue nelle cripte. Lei gli racconta come è tornata indietro lungo un ruscello per nascondere i ragazzi.',
+    },
+  },
+  osShowBran18: {
+    character: 'bran-stark',
+    type: { en: 'Boy she hides', it: 'Ragazzo che nasconde' },
+    summary: {
+      en: 'The boy lord she hides in the crypts. He overhears what happened to the orphans from the farm.',
+      it: 'Il giovane signore che nasconde nelle cripte. Lui sente cos’è successo agli orfani della fattoria.',
+    },
+  },
+  osShowRickon18: {
+    character: 'rickon-stark',
+    type: { en: 'Boy she hides', it: 'Ragazzo che nasconde' },
+    summary: {
+      en: 'The youngest Stark, hidden in the crypts with Bran.',
+      it: 'Il più giovane degli Stark, nascosto nelle cripte con Bran.',
+    },
+  },
+  osShowHodor18: {
+    character: 'hodor',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'Hodor, who hides in the crypts with the boys.',
+      it: 'Hodor, che si nasconde nelle cripte con i ragazzi.',
+    },
+  },
+  osShowLuwin20: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The dying maester, who asks her for a quick death.',
+      it: 'Il maestro morente, che le chiede una morte rapida.',
+    },
+  },
+  osBBran78: {
+    character: 'bran-stark',
+    type: { en: 'Boy she carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy lord she carries to bed. She tells him not to fight the wolf dreams.',
+      it: 'Il giovane signore che porta a letto. Gli dice di non combattere i sogni di lupo.',
+    },
+  },
+  osBLuwin78: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester she says knows less than the direwolves.',
+      it: 'Il maestro che, a suo dire, sa meno dei metalupi.',
+    },
+  },
+  osBTheon120: {
+    character: 'theon-greyjoy',
+    type: { en: 'Lord she serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The prince whose service she joins when he takes Winterfell.',
+      it: 'Il principe al cui servizio passa quando prende Grande Inverno.',
+    },
+  },
+  osBBran120: {
+    character: 'bran-stark',
+    type: { en: 'Boy she betrays', it: 'Ragazzo che tradisce' },
+    summary: {
+      en: 'The boy lord, disappointed that she joins Theon.',
+      it: 'Il giovane signore, deluso dal fatto che lei passi con Theon.',
+    },
+  },
+  osBTheon124: {
+    character: 'theon-greyjoy',
+    type: { en: 'Man she hunts', it: 'Uomo che la caccia' },
+    summary: {
+      en: 'The prince who blames her for freeing the boys and the wolves, and swears he will not spare her.',
+      it: 'Il principe che la ritiene colpevole di aver liberato i ragazzi e i lupi, e giura di non risparmiarla.',
+    },
+  },
+  osBBran124: {
+    character: 'bran-stark',
+    type: { en: 'Boy she saves', it: 'Ragazzo che salva' },
+    summary: {
+      en: 'The boy lord who vanishes from his bed with her, Rickon and the Reeds.',
+      it: 'Il giovane signore che sparisce dal letto con lei, con Rickon e con i Reed.',
+    },
+  },
+  osBRickon124: {
+    character: 'rickon-stark',
+    type: { en: 'Boy she saves', it: 'Ragazzo che salva' },
+    summary: {
+      en: 'The youngest Stark, who vanishes the same night.',
+      it: 'Il più giovane degli Stark, sparito la stessa notte.',
+    },
+  },
+  osBBran143: {
+    character: 'bran-stark',
+    type: { en: 'Boy she guards', it: 'Ragazzo che custodisce' },
+    summary: {
+      en: 'The boy lord she brings out of the crypts. He goes north without her.',
+      it: 'Il giovane signore che porta fuori dalle cripte. Lui va a nord senza di lei.',
+    },
+  },
+  osBRickon143: {
+    character: 'rickon-stark',
+    type: { en: 'Boy she guards', it: 'Ragazzo che custodisce' },
+    summary: {
+      en: 'The youngest Stark, whom she will take along the kingsroad with Shaggydog.',
+      it: 'Il più giovane degli Stark, che porterà lungo la strada del re con Cagnaccio.',
+    },
+  },
+  osBLuwin143: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The dying maester, who asks her not to send the boys off together, and then asks her for a boon.',
+      it: 'Il maestro morente, che le chiede di non mandare via i ragazzi insieme, e poi di fargli un favore.',
+    },
+  },
+  hoShowBran16: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy he carries out of Winterfell when Osha frees them.',
+      it: 'Il ragazzo che porta fuori da Grande Inverno quando Osha li libera.',
+    },
+  },
+  hoShowOsha16: {
+    character: 'osha',
+    type: { en: 'Companion', it: 'Compagna di viaggio' },
+    summary: {
+      en: 'The wildling who leads them out of the castle.',
+      it: 'La donna dei bruti che li porta fuori dal castello.',
+    },
+  },
+  hoShowRickon16: {
+    character: 'rickon-stark',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The youngest Stark, led out with them.',
+      it: 'Il più giovane degli Stark, portato fuori con loro.',
+    },
+  },
+  hoShowBran20: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy he carries out of the crypts into a burning castle.',
+      it: 'Il ragazzo che porta fuori dalle cripte in un castello in fiamme.',
+    },
+  },
+  hoBBran90: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy lord he dresses and carries downstairs in his basket.',
+      it: 'Il giovane signore che veste e porta giù per le scale nel suo cesto.',
+    },
+  },
+  hoBLittle90: {
+    character: 'little-walder-frey',
+    type: { en: 'Ward who mocks him', it: 'Pupillo che lo deride' },
+    summary: {
+      en: 'The ward who calls him an ugly horse and bumps him with his own mount.',
+      it: 'Il pupillo che lo chiama brutto cavallo e lo urta con il proprio destriero.',
+    },
+  },
+  hoBLuwin90: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who tells the wards off for mocking him.',
+      it: 'Il maestro che sgrida i pupilli per averlo deriso.',
+    },
+  },
+  hoBBran102: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy lord who calls him to chase the wolves away. Hodor does it gleefully.',
+      it: 'Il giovane signore che lo chiama per scacciare i lupi. Hodor lo fa con gioia.',
+    },
+  },
+  hoBJojen102: {
+    character: 'jojen-reed',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Reed boy, who climbs a tree when the wolves attack. Hodor drives them off.',
+      it: 'Il ragazzo dei Reed, che si arrampica su un albero quando i lupi attaccano. Hodor li scaccia.',
+    },
+  },
+  hoBMeera102: {
+    character: 'meera-reed',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Reed girl, who climbs a tree after her brother when the wolves attack.',
+      it: 'La ragazza dei Reed, che si arrampica su un albero dietro al fratello quando i lupi attaccano.',
+    },
+  },
+  hoBBran143: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy lord he carries north, after moving the stone from the crypt door.',
+      it: 'Il giovane signore che porta a nord, dopo aver spostato la pietra dalla porta della cripta.',
+    },
+  },
+  hoBJojen143: {
+    character: 'jojen-reed',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The Reed boy who goes north with them.',
+      it: 'Il ragazzo dei Reed che va a nord con loro.',
+    },
+  },
+  hoBMeera143: {
+    character: 'meera-reed',
+    type: { en: 'Companion', it: 'Compagna di viaggio' },
+    summary: {
+      en: 'The Reed girl who goes north with them.',
+      it: 'La ragazza dei Reed che va a nord con loro.',
+    },
+  },
+  hoBOsha143: {
+    character: 'osha',
+    type: { en: 'Companion', it: 'Compagna di viaggio' },
+    summary: {
+      en: 'The wildling woman who hid with them in the crypts.',
+      it: 'La donna dei bruti che si è nascosta con loro nelle cripte.',
+    },
+  },
+  nanBran95: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord, who sends her sweets from the feast because he loves her.',
+      it: 'Il giovane signore, che le manda dei dolci dal banchetto perché le vuole bene.',
+    },
+  },
+  nanHodor95: {
+    character: 'hodor',
+    type: { en: 'Fellow favourite', it: 'Altro prediletto' },
+    summary: {
+      en: 'Hodor, who gets sweets from Bran too.',
+      it: 'Hodor, che riceve dolci da Bran anche lui.',
+    },
+  },
+  suShowBran13: {
+    character: 'bran-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to. Bran dreams through his eyes and sees himself asleep.',
+      it: 'Il ragazzo a cui appartiene. Bran sogna attraverso i suoi occhi e vede se stesso addormentato.',
+    },
+  },
+  suShowHodor13: {
+    character: 'hodor',
+    type: { en: 'Companion', it: 'Compagno' },
+    summary: {
+      en: 'Hodor, whom he follows into Bran’s room to wake him.',
+      it: 'Hodor, che segue nella stanza di Bran per svegliarlo.',
+    },
+  },
+  suBBran78: {
+    character: 'bran-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to. Summer howls with grief, and Bran howls back from the window.',
+      it: 'Il ragazzo a cui appartiene. Estate ulula di dolore, e Bran gli risponde dalla finestra.',
+    },
+  },
+  suBShaggydog78: {
+    character: 'shaggydog',
+    type: { en: 'Fellow direwolf', it: 'Altro metalupo' },
+    summary: {
+      en: 'Rickon’s direwolf, whose howls are savage where his are sad.',
+      it: 'Il metalupo di Rickon, i cui ululati sono selvaggi dove i suoi sono tristi.',
+    },
+  },
+  suBBran102: {
+    character: 'bran-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to. Meera says that Bran and Summer are part of each other.',
+      it: 'Il ragazzo a cui appartiene. Meera dice che Bran ed Estate sono parte l’uno dell’altro.',
+    },
+  },
+  suBJojen102: {
+    character: 'jojen-reed',
+    type: { en: 'Boy he growls at', it: 'Ragazzo a cui ringhia' },
+    summary: {
+      en: 'The Reed boy who touches him at the feast, and whom he growls at when he asks if Bran falls every night.',
+      it: 'Il ragazzo dei Reed che lo tocca al banchetto, e a cui ringhia quando chiede se Bran cada ogni notte.',
+    },
+  },
+  suBMeera102: {
+    character: 'meera-reed',
+    type: { en: 'Girl he tangles', it: 'Ragazza che lo cattura' },
+    summary: {
+      en: 'The Reed girl whose net tangles him in the godswood. He does not bite her.',
+      it: 'La ragazza dei Reed la cui rete lo imprigiona nel parco degli dèi. Lui non la morde.',
+    },
+  },
+  shShowRickon16: {
+    character: 'rickon-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to, freed with Bran and led out of Winterfell.',
+      it: 'Il ragazzo a cui appartiene, liberato con Bran e portato fuori da Grande Inverno.',
+    },
+  },
+  shShowOsha16: {
+    character: 'osha',
+    type: { en: 'Rescuer', it: 'Chi lo salva' },
+    summary: {
+      en: 'The wildling who frees him and Summer.',
+      it: 'La donna dei bruti che libera lui ed Estate.',
+    },
+  },
+  shBRickon95: {
+    character: 'rickon-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to. Shaggydog obeyed him until Little Walder hit Rickon with a stick, and since the bite he is kept in the godswood.',
+      it: 'Il ragazzo a cui appartiene. Cagnaccio gli obbediva finché Little Walder non ha colpito Rickon con un bastone, e dal morso è tenuto nel parco degli dèi.',
+    },
+  },
+  shBLittle95: {
+    character: 'little-walder-frey',
+    type: { en: 'Boy he bit', it: 'Ragazzo che ha morso' },
+    summary: {
+      en: 'The ward he bit after Little Walder hit Rickon.',
+      it: 'Il pupillo che ha morso dopo che ha colpito Rickon.',
+    },
+  },
+  shBSummer95: {
+    character: 'summer-direwolf',
+    type: { en: 'Fellow direwolf', it: 'Altro metalupo' },
+    summary: {
+      en: 'Bran’s direwolf, penned in the godswood with him.',
+      it: 'Il metalupo di Bran, chiuso con lui nel parco degli dèi.',
+    },
+  },
+  shBJojen95: {
+    character: 'jojen-reed',
+    type: { en: 'Reed boy', it: 'Ragazzo dei Reed' },
+    summary: {
+      en: 'The Reed boy who says Shaggydog is full of fear and rage.',
+      it: 'Il ragazzo dei Reed che dice che Cagnaccio è pieno di paura e di rabbia.',
+    },
+  },
+  shBRickon143: {
+    character: 'rickon-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he goes with along the kingsroad, apart from Bran.',
+      it: 'Il ragazzo con cui va lungo la strada del re, lontano da Bran.',
+    },
+  },
+  shBOsha143: {
+    character: 'osha',
+    type: { en: 'Guardian', it: 'Custode' },
+    summary: {
+      en: 'The wildling woman who takes him and Rickon along the kingsroad.',
+      it: 'La donna dei bruti che porta lui e Rickon lungo la strada del re.',
+    },
+  },
+  rdShowRobb11: {
+    character: 'robb-stark',
+    type: { en: 'King he serves', it: 'Re che serve' },
+    summary: {
+      en: 'The King in the North, who sends him to Winterfell in Catelyn’s place.',
+      it: 'Il Re del Nord, che lo manda a Grande Inverno al posto di Catelyn.',
+    },
+  },
+  rdShowBran11: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord he serves at Winterfell.',
+      it: 'Il giovane signore che serve a Grande Inverno.',
+    },
+  },
+  rdShowCatelyn11: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady', it: 'Signora' },
+    summary: {
+      en: 'The lady who asked to go home to her younger sons. Robb sends Rodrik instead.',
+      it: 'La signora che chiedeva di tornare dai figli più piccoli. Robb manda Rodrik al suo posto.',
+    },
+  },
+  rdShowTheon16: {
+    character: 'theon-greyjoy',
+    type: { en: 'Former pupil', it: 'Ex allievo' },
+    summary: {
+      en: 'The ward he once trained, who took Winterfell while he was away and beheaded him in four blows.',
+      it: 'Il pupillo che aveva addestrato, che ha preso Grande Inverno mentre lui era via e lo ha decapitato in quattro colpi.',
+    },
+  },
+  rdShowBran16: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord, who pleads for his life.',
+      it: 'Il giovane signore, che implora per la sua vita.',
+    },
+  },
+  rdShowRickon16: {
+    character: 'rickon-stark',
+    type: { en: 'Young lord', it: 'Giovane lord' },
+    summary: {
+      en: 'The youngest Stark, who pleads with Bran for his life.',
+      it: 'Il più giovane degli Stark, che implora insieme a Bran per la sua vita.',
+    },
+  },
+  rdShowDagmer16: {
+    character: 'dagmer',
+    type: { en: 'Enemy raider', it: 'Predone nemico' },
+    summary: {
+      en: 'The ironborn captain who insisted Theon execute him.',
+      it: 'Il capitano degli uomini di ferro che ha preteso la sua esecuzione da Theon.',
+    },
+  },
+  rdBBran90: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord whose audiences he sits through at his side. He tells Bran he did well.',
+      it: 'Il giovane signore alle cui udienze siede al suo fianco. Dice a Bran che se l’è cavata bene.',
+    },
+  },
+  rdBLuwin90: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester beside Bran at the audiences.',
+      it: 'Il maestro accanto a Bran alle udienze.',
+    },
+  },
+  rdBWyman90: {
+    character: 'wyman-manderly',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Lord of White Harbor, who pitches a mint and a fleet for Robb’s kingdom.',
+      it: 'Il lord di Porto Bianco, che propone una zecca e una flotta per il regno di Robb.',
+    },
+  },
+  rdBDonella90: {
+    character: 'donella-hornwood',
+    type: { en: 'Widow', it: 'Vedova' },
+    summary: {
+      en: 'The widowed lady whose lands he promises to protect. She hints that she would take him as a husband.',
+      it: 'La vedova di cui promette di proteggere le terre. Lei lascia capire che lo prenderebbe come marito.',
+    },
+  },
+  rdBDonella109: {
+    character: 'donella-hornwood',
+    type: { en: 'Widow', it: 'Vedova' },
+    summary: {
+      en: 'The lady he meant to protect. She was forced to wed Roose Bolton’s bastard, and he returns with a prisoner held for her murder.',
+      it: 'La signora che voleva proteggere. È stata costretta a sposare il bastardo di Roose Bolton, e lui torna con un prigioniero accusato di averla uccisa.',
+    },
+  },
+  rdBBran109: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord who tells him about Jojen’s dream. Rodrik promises not to take Alebelly on the ride against the raiders.',
+      it: 'Il giovane signore che gli racconta il sogno di Jojen. Rodrik promette di non portare Alebelly nella cavalcata contro i razziatori.',
+    },
+  },
+  rdBLuwin109: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who reports the raiders plundering the coast.',
+      it: 'Il maestro che riferisce dei razziatori che saccheggiano la costa.',
+    },
+  },
+  rdBTheon140: {
+    character: 'theon-greyjoy',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The prince of Winterfell, who answers his terms by showing his daughter on the wall with a noose around her neck.',
+      it: 'Il principe di Grande Inverno, che risponde alle sue condizioni mostrando sulle mura sua figlia con un cappio al collo.',
+    },
+  },
+  rdBRamsay140: {
+    character: 'ramsay-snow',
+    type: { en: 'Man he trusted', it: 'Uomo di cui si fidava' },
+    summary: {
+      en: 'The Dreadfort leader whose men he took for allies. They turned on his army, and Ramsay gave Theon his body.',
+      it: 'Il capo degli uomini del Dreadfort che aveva scambiato per alleati. Si sono rivoltati contro il suo esercito, e Ramsay ha consegnato il suo corpo a Theon.',
+    },
+  },
+  miBBran109: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord who comes to the forge to work the bellows for him.',
+      it: 'Il giovane signore che viene alla fucina per azionare il mantice al posto suo.',
+    },
+  },
+  miBJojen109: {
+    character: 'jojen-reed',
+    type: { en: 'Dreamer', it: 'Sognatore' },
+    summary: {
+      en: 'The Reed boy who dreamed of him drowned. Mikken laughs and says he always wanted to see the sea.',
+      it: 'Il ragazzo dei Reed che lo ha sognato annegato. Mikken ride e dice che ha sempre voluto vedere il mare.',
+    },
+  },
+  miBTheon120: {
+    character: 'theon-greyjoy',
+    type: { en: 'Conqueror', it: 'Conquistatore' },
+    summary: {
+      en: 'The prince who took the castle. Mikken refused to kneel and drowned in his own blood.',
+      it: 'Il principe che ha preso il castello. Mikken si è rifiutato di inginocchiarsi ed è annegato nel proprio sangue.',
+    },
+  },
+  miBBran120: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord who watched him die.',
+      it: 'Il giovane signore che lo ha visto morire.',
+    },
+  },
+  miBJojen120: {
+    character: 'jojen-reed',
+    type: { en: 'Dreamer', it: 'Sognatore' },
+    summary: {
+      en: 'The Reed boy whose dream of him drowned came true.',
+      it: 'Il ragazzo dei Reed il cui sogno di lui annegato si è avverato.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
+/**
  * King's Landing, the riverlands and the Vale (#1346). The same rules as
  * `links`. Show pins follow the Game of Thrones Wiki's `{{Ref|GOTxxx}}`
  * citations and episode synopses; chapter pins follow the Ice and Fire Wiki's
@@ -9589,6 +10981,59 @@ export const season1Relationships = {
         north.ricOsha,
       ],
     },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.riShowBran16,
+        winterfell2.riShowRodrik,
+        winterfell2.riShowOsha16,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [
+        winterfell2.riShowBran20,
+        winterfell2.riShowOsha20,
+        winterfell2.riShowLuwin20,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 95,
+      source: 'chapter',
+      value: [
+        winterfell2.riBBran95,
+        winterfell2.riBLittle95,
+        winterfell2.riBBig95,
+        winterfell2.riBShaggydog95,
+        winterfell2.riBJojen95,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 124,
+      source: 'chapter',
+      value: [
+        winterfell2.riBBran124,
+        winterfell2.riBOsha124,
+        winterfell2.riBShaggydog124,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'chapter',
+      value: [
+        winterfell2.riBOsha143,
+        winterfell2.riBShaggydog143,
+        winterfell2.riBBran143,
+      ],
+    },
   ],
   'jory-cassel': [
     { episode: 1, chapter: 2, value: [north.joryEddard] },
@@ -9833,6 +11278,88 @@ export const season1Relationships = {
         north.branSummer,
       ],
     },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 11,
+      chapter: 78,
+      source: 'episode',
+      value: [
+        winterfell2.brShowLuwin,
+        winterfell2.brShowRickon,
+        winterfell2.brShowOsha,
+        winterfell2.brShowHodor,
+        winterfell2.brShowSummer,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.brShowTheon,
+        winterfell2.brShowRodrik,
+        winterfell2.brShowOshaFree,
+        winterfell2.brShowRickonFlight,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [
+        winterfell2.brShowLuwinDying,
+        winterfell2.brShowOshaCrypt,
+        winterfell2.brShowRickonCrypt,
+        winterfell2.brShowHodorCrypt,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 78,
+      source: 'chapter',
+      value: [
+        winterfell2.brBSummer78,
+        winterfell2.brBLuwin78,
+        winterfell2.brBOsha78,
+        winterfell2.brBRickon78,
+        winterfell2.brBOldNan78,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 102,
+      source: 'chapter',
+      value: [
+        winterfell2.brBJojen102,
+        winterfell2.brBMeera102,
+        winterfell2.brBSummer102,
+        winterfell2.brBHodor102,
+        winterfell2.brBLuwin102,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'chapter',
+      value: [
+        winterfell2.brBTheon120,
+        winterfell2.brBMikken120,
+        winterfell2.brBOsha120,
+        winterfell2.brBJojen120,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'chapter',
+      value: [
+        winterfell2.brBLuwin143,
+        winterfell2.brBOsha143,
+        winterfell2.brBJojen143,
+        winterfell2.brBMeera143,
+        winterfell2.brBHodor143,
+      ],
+    },
   ],
   'benjen-stark': [
     { episode: 1, chapter: 6, value: [north.benJon, north.benEddard] },
@@ -9892,6 +11419,29 @@ export const season1Relationships = {
   ],
   'summer-direwolf': [
     { episode: 4, chapter: 18, value: [north.sumBran, north.sumCatelyn] },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 13,
+      chapter: 102,
+      source: 'episode',
+      value: [winterfell2.suShowBran13, winterfell2.suShowHodor13],
+    },
+    {
+      episode: 11,
+      chapter: 78,
+      source: 'chapter',
+      value: [winterfell2.suBBran78, winterfell2.suBShaggydog78],
+    },
+    {
+      episode: 13,
+      chapter: 102,
+      source: 'chapter',
+      value: [
+        winterfell2.suBBran102,
+        winterfell2.suBJojen102,
+        winterfell2.suBMeera102,
+      ],
+    },
   ],
   'shaggydog': [
     { episode: 10, chapter: 25, source: 'chapter', value: [north.shaRickon] },
@@ -9908,6 +11458,30 @@ export const season1Relationships = {
       chapter: 67,
       source: 'chapter',
       value: [north.shaRickonCrypt, north.shaLuwin],
+    },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [winterfell2.shShowRickon16, winterfell2.shShowOsha16],
+    },
+    {
+      episode: 13,
+      chapter: 95,
+      source: 'chapter',
+      value: [
+        winterfell2.shBRickon95,
+        winterfell2.shBLittle95,
+        winterfell2.shBSummer95,
+        winterfell2.shBJojen95,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'chapter',
+      value: [winterfell2.shBRickon143, winterfell2.shBOsha143],
     },
   ],
   'ghost-direwolf': [
@@ -9933,6 +11507,100 @@ export const season1Relationships = {
       chapter: 38,
       source: 'episode',
       value: [north.theRobbKing, north.theBran, north.theOshaLord],
+    },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 11,
+      chapter: 81,
+      source: 'episode',
+      value: [winterfell2.thShowRobb11, winterfell2.thShowCatelyn11],
+    },
+    {
+      episode: 12,
+      chapter: 85,
+      source: 'episode',
+      value: [winterfell2.thShowBalon12, winterfell2.thShowAsha12],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.thShowBran16,
+        winterfell2.thShowRodrik16,
+        winterfell2.thShowDagmer16,
+        winterfell2.thShowOsha16,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [winterfell2.thShowLuwin20, winterfell2.thShowDagmer20],
+    },
+    {
+      episode: 12,
+      chapter: 85,
+      source: 'chapter',
+      value: [winterfell2.thBBalon85, winterfell2.thBAeron85],
+    },
+    {
+      episode: 13,
+      chapter: 98,
+      source: 'chapter',
+      value: [
+        winterfell2.thBAsha98,
+        winterfell2.thBBalon98,
+        winterfell2.thBVictarion98,
+        winterfell2.thBWex98,
+        winterfell2.thBAeron98,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'chapter',
+      value: [
+        winterfell2.thBBran120,
+        winterfell2.thBMikken120,
+        winterfell2.thBOsha120,
+      ],
+    },
+    {
+      episode: 17,
+      chapter: 124,
+      source: 'chapter',
+      value: [
+        winterfell2.thBOsha124,
+        winterfell2.thBLuwin124,
+        winterfell2.thBFarlen124,
+        winterfell2.thBWex124,
+        winterfell2.thBLorren124,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 130,
+      source: 'chapter',
+      value: [
+        winterfell2.thBAsha130,
+        winterfell2.thBFarlen130,
+        winterfell2.thBDagmer130,
+        winterfell2.thBLuwin130,
+        winterfell2.thBWex130,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 140,
+      source: 'chapter',
+      value: [
+        winterfell2.thBLuwin140,
+        winterfell2.thBRodrik140,
+        winterfell2.thBRamsay140,
+        winterfell2.thBLorren140,
+        winterfell2.thBWex140,
+      ],
     },
   ],
   'luwin': [
@@ -9972,6 +11640,65 @@ export const season1Relationships = {
         north.luwRobbWar,
       ],
     },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.luShowTheon16,
+        winterfell2.luShowBran16,
+        winterfell2.luShowRodrik16,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 130,
+      source: 'episode',
+      value: [
+        winterfell2.luShowOsha18,
+        winterfell2.luShowBran18,
+        winterfell2.luShowTheon18,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [
+        winterfell2.luShowTheon20,
+        winterfell2.luShowBran20,
+        winterfell2.luShowOsha20,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 90,
+      source: 'chapter',
+      value: [
+        winterfell2.luBBran90,
+        winterfell2.luBRodrik90,
+        winterfell2.luBWyman90,
+        winterfell2.luBDonella90,
+        winterfell2.luBLittle90,
+      ],
+    },
+    {
+      episode: 17,
+      chapter: 124,
+      source: 'chapter',
+      value: [winterfell2.luBTheon124],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'chapter',
+      value: [
+        winterfell2.luBBran143,
+        winterfell2.luBOsha143,
+        winterfell2.luBTheon143,
+      ],
+    },
   ],
   'rodrik-cassel': [
     { episode: 1, chapter: 8, value: [north.rodEddard] },
@@ -10001,6 +11728,55 @@ export const season1Relationships = {
         north.rodTyrion,
       ],
     },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 11,
+      chapter: 81,
+      source: 'episode',
+      value: [
+        winterfell2.rdShowRobb11,
+        winterfell2.rdShowBran11,
+        winterfell2.rdShowCatelyn11,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.rdShowTheon16,
+        winterfell2.rdShowBran16,
+        winterfell2.rdShowRickon16,
+        winterfell2.rdShowDagmer16,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 90,
+      source: 'chapter',
+      value: [
+        winterfell2.rdBBran90,
+        winterfell2.rdBLuwin90,
+        winterfell2.rdBWyman90,
+        winterfell2.rdBDonella90,
+      ],
+    },
+    {
+      episode: 15,
+      chapter: 109,
+      source: 'chapter',
+      value: [
+        winterfell2.rdBDonella109,
+        winterfell2.rdBBran109,
+        winterfell2.rdBLuwin109,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 140,
+      source: 'chapter',
+      value: [winterfell2.rdBTheon140, winterfell2.rdBRamsay140],
+    },
   ],
   // Show: "Lord Snow", her story at Bran's bed. Books: Catelyn III, she
   // bathes Catelyn; her stories for Bran wait for Bran IV.
@@ -10013,8 +11789,69 @@ export const season1Relationships = {
       source: 'chapter',
       value: [north.nanBranBook, north.nanCatelyn],
     },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 13,
+      chapter: 95,
+      source: 'chapter',
+      value: [winterfell2.nanBran95, winterfell2.nanHodor95],
+    },
   ],
-  'hodor': [{ episode: 4, chapter: 25, value: [north.hodBran] }],
+  'hodor': [
+    { episode: 4, chapter: 25, value: [north.hodBran] },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.hoShowBran16,
+        winterfell2.hoShowOsha16,
+        winterfell2.hoShowRickon16,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [
+        winterfell2.hoShowBran20,
+        winterfell2.hoShowOsha16,
+        winterfell2.hoShowRickon16,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 90,
+      source: 'chapter',
+      value: [
+        winterfell2.hoBBran90,
+        winterfell2.hoBLittle90,
+        winterfell2.hoBLuwin90,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 102,
+      source: 'chapter',
+      value: [
+        winterfell2.hoBBran102,
+        winterfell2.hoBJojen102,
+        winterfell2.hoBMeera102,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'chapter',
+      value: [
+        winterfell2.hoBBran143,
+        winterfell2.hoBJojen143,
+        winterfell2.hoBMeera143,
+        winterfell2.hoBOsha143,
+      ],
+    },
+  ],
   'osha': [
     {
       episode: 6,
@@ -10042,6 +11879,72 @@ export const season1Relationships = {
         north.oshRickon,
         north.oshShaggydog,
         north.oshRobbWar,
+      ],
+    },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [
+        winterfell2.osShowTheon16,
+        winterfell2.osShowBran16,
+        winterfell2.osShowRickon16,
+        winterfell2.osShowHodor16,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 130,
+      source: 'episode',
+      value: [
+        winterfell2.osShowLuwin18,
+        winterfell2.osShowBran18,
+        winterfell2.osShowRickon18,
+        winterfell2.osShowHodor18,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [
+        winterfell2.osShowLuwin20,
+        winterfell2.osShowBran18,
+        winterfell2.osShowRickon18,
+        winterfell2.osShowHodor18,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 78,
+      source: 'chapter',
+      value: [winterfell2.osBBran78, winterfell2.osBLuwin78],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'chapter',
+      value: [winterfell2.osBTheon120, winterfell2.osBBran120],
+    },
+    {
+      episode: 17,
+      chapter: 124,
+      source: 'chapter',
+      value: [
+        winterfell2.osBTheon124,
+        winterfell2.osBBran124,
+        winterfell2.osBRickon124,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'chapter',
+      value: [
+        winterfell2.osBBran143,
+        winterfell2.osBRickon143,
+        winterfell2.osBLuwin143,
       ],
     },
   ],
@@ -10122,6 +12025,23 @@ export const season1Relationships = {
       chapter: 54,
       source: 'chapter',
       value: [north.mikArya, north.mikJon],
+    },
+    // Stage 2 (#1482): season 2 and A Clash of Kings.
+    {
+      episode: 15,
+      chapter: 109,
+      source: 'chapter',
+      value: [winterfell2.miBBran109, winterfell2.miBJojen109],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'chapter',
+      value: [
+        winterfell2.miBTheon120,
+        winterfell2.miBBran120,
+        winterfell2.miBJojen120,
+      ],
     },
   ],
   'hallis-mollen': [

@@ -546,6 +546,774 @@ const essos = {
 } satisfies Record<string, Relationship>
 
 /** Episode numbers on a `source: 'chapter'` entry only order it, as on the records. */
+/**
+ * The Winterfell and Iron Islands cast of stage 2 (#1482): the new characters'
+ * own cards. Season 1's characters who return to Winterfell or Pyke have their
+ * stage-2 cards in `season-1.relationships.ts`.
+ */
+const winterfell = {
+  balTheonShow: {
+    character: 'theon-greyjoy',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His youngest son, back after nine years as a ward of the Starks. Balon doubts his loyalty and refuses Robb’s offer of a crown.',
+      it: 'Il figlio minore, tornato dopo nove anni da pupillo degli Stark. Balon dubita della sua lealtà e rifiuta l’offerta di una corona fatta da Robb.',
+    },
+  },
+  balAshaShow: {
+    character: 'asha-greyjoy',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, whom he greets warmly in front of Theon. He sets her above his son.',
+      it: 'Sua figlia, che saluta con calore davanti a Theon. La mette al di sopra del figlio.',
+    },
+  },
+  balTheonWar: {
+    character: 'theon-greyjoy',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son, who asks him to rethink the attack on the North. Balon hits him and gives him a single ship to raid the fishing villages of the coast.',
+      it: 'Suo figlio, che gli chiede di ripensare all’attacco al Nord. Balon lo colpisce e gli affida una sola nave per razziare i villaggi di pescatori della costa.',
+    },
+  },
+  balAshaWar: {
+    character: 'asha-greyjoy',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, whom he puts in command of thirty ships and sends to take Deepwood Motte.',
+      it: 'Sua figlia, a cui dà il comando di trenta navi e che manda a prendere Deepwood Motte.',
+    },
+  },
+  balTheonBook: {
+    character: 'theon-greyjoy',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son, back after ten years as the Starks’ ward. Balon burns Robb’s letter and strikes Theon when he protests: a crown that is given can be taken away, so he will win his by conquest.',
+      it: 'Suo figlio, tornato dopo dieci anni da pupillo degli Stark. Balon brucia la lettera di Robb e colpisce Theon quando protesta: una corona regalata può essere ripresa, e lui conquisterà la sua con la forza.',
+    },
+  },
+  balAeronBook: {
+    character: 'aeron-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, the priest of the Drowned God. Balon sends only him to meet Theon at Lordsport.',
+      it: 'Suo fratello, sacerdote del Dio Abissale. Balon manda soltanto lui a incontrare Theon a Lordsport.',
+    },
+  },
+  balTheonPlan: {
+    character: 'theon-greyjoy',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son, whom he will not hear out. He gives Theon eight ships to raid the coast, with his uncle Aeron beside him.',
+      it: 'Suo figlio, che non vuole ascoltare. Gli affida otto navi per razziare la costa, con lo zio Aeron al suo fianco.',
+    },
+  },
+  balAshaBook: {
+    character: 'asha-greyjoy',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, seated at his right hand at the feast. He gives her thirty ships and picked men to take Deepwood Motte.',
+      it: 'Sua figlia, seduta alla sua destra al banchetto. Le dà trenta navi e uomini scelti per prendere Deepwood Motte.',
+    },
+  },
+  balVictarion: {
+    character: 'victarion-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His younger brother, who leads the main attack. Victarion is to take Moat Cailin and shut Robb out of the North.',
+      it: 'Suo fratello minore, che guida l’attacco principale. Victarion deve prendere Moat Cailin e chiudere il Nord a Robb.',
+    },
+  },
+  balAeronPlan: {
+    character: 'aeron-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother the priest, who sits with them in the solar and goes with Theon on the raid.',
+      it: 'Suo fratello, il sacerdote, che siede con loro nel solario e accompagna Theon nell’incursione.',
+    },
+  },
+  ashBalonShow: {
+    character: 'balon-greyjoy',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, who greets her warmly in front of Theon and rates her above him.',
+      it: 'Suo padre, che la saluta con calore davanti a Theon e la stima più di lui.',
+    },
+  },
+  ashTheonShow: {
+    character: 'theon-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, back from the Starks. She guides him to Pyke without saying who she is while he tries to seduce her.',
+      it: 'Suo fratello, tornato dagli Stark. Lo guida a Pyke senza dirgli chi è, mentre lui cerca di sedurla.',
+    },
+  },
+  ashTheonWinterfellShow: {
+    character: 'theon-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who holds Winterfell. She tells him it is too far from the sea to keep and asks him to come home with her. He refuses.',
+      it: 'Suo fratello, che tiene Grande Inverno. Gli dice che è troppo lontano dal mare per difenderlo e gli chiede di tornare a casa con lei. Lui rifiuta.',
+    },
+  },
+  ashTheonBook: {
+    character: 'theon-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who takes her for a stranger named Esgred and flirts with her on the ride to Pyke. She lets him, then shows him up at the feast.',
+      it: 'Suo fratello, che la scambia per una certa Esgred e flirta con lei durante il viaggio fino a Pyke. Lei lo lascia fare, poi lo umilia al banchetto.',
+    },
+  },
+  ashBalonBook: {
+    character: 'balon-greyjoy',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, who seats her at his right hand and gives her thirty ships to take Deepwood Motte.',
+      it: 'Suo padre, che la fa sedere alla sua destra e le dà trenta navi per prendere Deepwood Motte.',
+    },
+  },
+  ashVictarion: {
+    character: 'victarion-greyjoy',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her uncle, who is to lead the main attack at Moat Cailin while she takes Deepwood Motte.',
+      it: 'Suo zio, che deve guidare l’attacco principale a Moat Cailin mentre lei prende Deepwood Motte.',
+    },
+  },
+  ashAeron: {
+    character: 'aeron-greyjoy',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her uncle, the priest of the Drowned God, who is to go on the raid with Theon.',
+      it: 'Suo zio, il sacerdote del Dio Abissale, che andrà in incursione con Theon.',
+    },
+  },
+  ashTheonWinterfellBook: {
+    character: 'theon-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who calls himself Prince of Winterfell. She tells him the wise course was to raze the castle and take the Stark boys to Pyke, and asks him to leave with her. He will not.',
+      it: 'Suo fratello, che si fa chiamare principe di Grande Inverno. Gli dice che la scelta saggia era radere al suolo il castello e portare a Pyke i ragazzi Stark, e gli chiede di andarsene con lei. Lui non vuole.',
+    },
+  },
+  ashDagmerBook: {
+    character: 'dagmer',
+    type: { en: 'Raider', it: 'Predone' },
+    summary: {
+      en: 'The ironborn captain who lost the fight at Torrhen’s Square. She knows before Theon does that he is leading the survivors back to the coast.',
+      it: 'Il capitano degli uomini di ferro che ha perso lo scontro a Piazza di Torrhen. Lei sa prima di Theon che sta riportando i superstiti verso la costa.',
+    },
+  },
+  aerTheon85: {
+    character: 'theon-greyjoy',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His nephew, whom he meets at Lordsport and escorts to Pyke. He tells Theon that Balon will never hand the isles to a man the Starks raised.',
+      it: 'Suo nipote, che incontra a Lordsport e accompagna a Pyke. Gli dice che Balon non consegnerà mai le isole a un uomo cresciuto dagli Stark.',
+    },
+  },
+  aerBalon85: {
+    character: 'balon-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, the lord of the Iron Islands. Aeron brings Theon to his castle at sunset and leaves at once.',
+      it: 'Suo fratello, il lord delle Isole di Ferro. Al tramonto porta Theon al suo castello e se ne va subito.',
+    },
+  },
+  aerBalon98: {
+    character: 'balon-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who calls him to the solar to hear the plan for the war.',
+      it: 'Suo fratello, che lo convoca nel solario per ascoltare il piano di guerra.',
+    },
+  },
+  aerVictarion: {
+    character: 'victarion-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who sits with them in the solar and is to lead the main attack.',
+      it: 'Suo fratello, che siede con loro nel solario e deve guidare l’attacco principale.',
+    },
+  },
+  aerTheon98: {
+    character: 'theon-greyjoy',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His nephew, whose new ship he is to bless. Aeron sails with Theon on the raid on the coast.',
+      it: 'Suo nipote, la cui nuova nave dovrà benedire. Aeron salpa con Theon per l’incursione sulla costa.',
+    },
+  },
+  aerAsha: {
+    character: 'asha-greyjoy',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His niece, who is to take thirty ships to Deepwood Motte.',
+      it: 'Sua nipote, che deve prendere Deepwood Motte con trenta navi.',
+    },
+  },
+  aerTheon111: {
+    character: 'theon-greyjoy',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His nephew and commander. Aeron insists that the northern captive be given to the Drowned God by drowning, and Theon gives in.',
+      it: 'Suo nipote e comandante. Aeron vuole che il prigioniero del Nord sia offerto al Dio Abissale per annegamento, e Theon cede.',
+    },
+  },
+  vicBalon: {
+    character: 'balon-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His older brother, who lays out the war in the solar. Victarion is to lead the main attack toward Moat Cailin.',
+      it: 'Suo fratello maggiore, che nel solario espone il piano di guerra. Victarion guiderà l’attacco principale verso Moat Cailin.',
+    },
+  },
+  vicAeron: {
+    character: 'aeron-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, the priest of the Drowned God, who sits with them in the solar.',
+      it: 'Suo fratello, sacerdote del Dio Abissale, che siede con loro nel solario.',
+    },
+  },
+  vicTheon: {
+    character: 'theon-greyjoy',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His nephew, who has borrowed Victarion’s steersman for his new ship.',
+      it: 'Suo nipote, che ha preso in prestito il suo timoniere per la sua nuova nave.',
+    },
+  },
+  vicAsha: {
+    character: 'asha-greyjoy',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His niece, who takes thirty ships to Deepwood Motte while he goes for Moat Cailin.',
+      it: 'Sua nipote, che prende Deepwood Motte con trenta navi mentre lui va a Moat Cailin.',
+    },
+  },
+  dagTheonShow15: {
+    character: 'theon-greyjoy',
+    type: { en: 'Young captain', it: 'Giovane capitano' },
+    summary: {
+      en: 'Balon’s son, put in command of the ship. Dagmer tells him the crew will not respect him until he proves himself, and they settle on a raid on Torrhen’s Square.',
+      it: 'Il figlio di Balon, messo al comando della nave. Dagmer gli dice che la ciurma non lo rispetterà finché non si sarà messo alla prova, e scelgono un attacco a Piazza di Torrhen.',
+    },
+  },
+  dagTheonShow16: {
+    character: 'theon-greyjoy',
+    type: { en: 'Young commander', it: 'Giovane comandante' },
+    summary: {
+      en: 'The young lord who takes Winterfell. Dagmer tells him he must put Rodrik to death or lose his crew’s respect.',
+      it: 'Il giovane lord che prende Grande Inverno. Dagmer gli dice che deve far giustiziare Rodrik o perdere il rispetto dei suoi uomini.',
+    },
+  },
+  dagRodrikShow: {
+    character: 'rodrik-cassel',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The Winterfell knight taken on his way back from Torrhen’s Square. Dagmer insisted Theon execute him, and Theon needed four blows to do it.',
+      it: 'Il cavaliere di Grande Inverno catturato mentre tornava da Piazza di Torrhen. Dagmer ha preteso che Theon lo giustiziasse, e a Theon sono serviti quattro colpi.',
+    },
+  },
+  dagTheonShow20: {
+    character: 'theon-greyjoy',
+    type: { en: 'Young commander', it: 'Giovane comandante' },
+    summary: {
+      en: 'The prince whose men turn on him. Dagmer knocks him out so that the ironmen can deliver him to the Bolton army.',
+      it: 'Il principe tradito dai suoi uomini. Dagmer lo stordisce perché gli uomini di ferro possano consegnarlo all’esercito dei Bolton.',
+    },
+  },
+  dagLuwinShow: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who tries to stop the ironmen from taking Theon. Dagmer stabs him with a spear.',
+      it: 'Il maestro che cerca di impedire agli uomini di ferro di portare via Theon. Dagmer lo trafigge con una lancia.',
+    },
+  },
+  dagTheonBook: {
+    character: 'theon-greyjoy',
+    type: { en: 'Young commander', it: 'Giovane comandante' },
+    summary: {
+      en: 'Balon’s son, who takes him below deck aboard Foamdrinker and tells him to march on Torrhen’s Square and build siege engines, to draw Ser Rodrik out of Winterfell.',
+      it: 'Il figlio di Balon, che lo porta sottocoperta sulla Foamdrinker e gli ordina di marciare su Piazza di Torrhen e costruire macchine d’assedio, per far uscire ser Rodrik da Grande Inverno.',
+    },
+  },
+  dagBalonBook: {
+    character: 'balon-greyjoy',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord whose best man he says he has always been. He tells Theon that Balon has come to rely on Asha, who has never failed him.',
+      it: 'Il lord di cui dice di essere sempre stato l’uomo migliore. Dice a Theon che Balon si è abituato a contare su Asha, che non l’ha mai deluso.',
+    },
+  },
+  dagAeronBook: {
+    character: 'aeron-greyjoy',
+    type: { en: 'Priest', it: 'Sacerdote' },
+    summary: {
+      en: 'Balon’s brother, who raids the coast under Theon. Theon means to give him six ships while Dagmer goes on to Torrhen’s Square.',
+      it: 'Il fratello di Balon, che razzia la costa agli ordini di Theon. Theon vuole dargli sei navi mentre Dagmer prosegue verso Piazza di Torrhen.',
+    },
+  },
+  dagTheonBook130: {
+    character: 'theon-greyjoy',
+    type: { en: 'Young commander', it: 'Giovane comandante' },
+    summary: {
+      en: 'The prince who sent him against Torrhen’s Square. Dagmer lost the fight there and is leading the survivors back to the coast.',
+      it: 'Il principe che lo ha mandato contro Piazza di Torrhen. Dagmer ha perso lo scontro e sta riportando i superstiti verso la costa.',
+    },
+  },
+  dagAshaBook130: {
+    character: 'asha-greyjoy',
+    type: { en: 'Balon’s daughter', it: 'Figlia di Balon' },
+    summary: {
+      en: 'Balon’s daughter, who already knows he is leading the survivors back to the coast, before Theon does.',
+      it: 'La figlia di Balon, che sa già, prima di Theon, che sta riportando i superstiti verso la costa.',
+    },
+  },
+  dagRodrikBook130: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The castellan of Winterfell, whom the siege at Torrhen’s Square drew out of the castle. Dagmer lost the fight there.',
+      it: 'Il castellano di Grande Inverno, che l’assedio di Piazza di Torrhen ha attirato fuori dal castello. Dagmer ha perso lo scontro.',
+    },
+  },
+  lorTheon124: {
+    character: 'theon-greyjoy',
+    type: { en: 'Commander', it: 'Comandante' },
+    summary: {
+      en: 'The prince who holds Winterfell. With Urzen, Lorren shows him the guards killed at the Hunter’s Gate on the night Bran and Rickon vanish.',
+      it: 'Il principe che tiene Grande Inverno. Insieme a Urzen, Lorren gli mostra le guardie uccise alla Porta del Cacciatore la notte in cui Bran e Rickon spariscono.',
+    },
+  },
+  lorTheon140: {
+    character: 'theon-greyjoy',
+    type: { en: 'Commander', it: 'Comandante' },
+    summary: {
+      en: 'The prince he stays beside when the others leave. He tells Theon to put the castle folk to the sword before they turn on the ironborn.',
+      it: 'Il principe a cui resta accanto quando gli altri se ne vanno. Dice a Theon di passare a fil di spada la gente del castello prima che si rivolti contro gli uomini di ferro.',
+    },
+  },
+  lorWex140: {
+    character: 'wex-pyke',
+    type: { en: 'Fellow loyalist', it: 'Altro fedele' },
+    summary: {
+      en: 'Theon’s squire, who steps to Theon’s side first when he offers the men a choice. Lorren follows him.',
+      it: 'Lo scudiero di Theon, che per primo passa dalla parte di Theon quando lui offre una scelta agli uomini. Lorren lo segue.',
+    },
+  },
+  lorRodrik140: {
+    character: 'rodrik-cassel',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The northern knight whose daughter Lorren shows on the wall, a noose round her neck, when Theon gives the signal.',
+      it: 'Il cavaliere del Nord la cui figlia Lorren mostra sulle mura, con un cappio al collo, quando Theon dà il segnale.',
+    },
+  },
+  lorTheon143: {
+    character: 'theon-greyjoy',
+    type: { en: 'Commander', it: 'Comandante' },
+    summary: {
+      en: 'The prince he stood by when the others left. After the sack, his body is among the dead at Winterfell.',
+      it: 'Il principe a cui è rimasto accanto quando gli altri se ne sono andati. Dopo il saccheggio, il suo corpo è tra i morti di Grande Inverno.',
+    },
+  },
+  wexTheon98: {
+    character: 'theon-greyjoy',
+    type: { en: 'Lord he serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The lord whose squire he is. When Theon learns that Esgred is his sister, Wex smirks, and Theon turns on him.',
+      it: 'Il lord di cui è scudiero. Quando Theon scopre che Esgred è sua sorella, Wex ghigna, e Theon se la prende con lui.',
+    },
+  },
+  wexTheon140: {
+    character: 'theon-greyjoy',
+    type: { en: 'Lord he serves', it: 'Signore che serve' },
+    summary: {
+      en: 'The lord he stands by. When Theon offers the ironborn the choice of leaving or dying beside him, Wex steps over to his side first.',
+      it: 'Il lord al cui fianco resta. Quando Theon offre agli uomini di ferro la scelta tra andarsene e morire con lui, Wex è il primo a schierarsi dalla sua parte.',
+    },
+  },
+  wexLorren140: {
+    character: 'black-lorren',
+    type: { en: 'Fellow loyalist', it: 'Altro fedele' },
+    summary: {
+      en: 'Another ironman who stays: Lorren follows him over to Theon’s side.',
+      it: 'Un altro uomo di ferro che resta: Lorren lo segue dalla parte di Theon.',
+    },
+  },
+  farTheon124: {
+    character: 'theon-greyjoy',
+    type: { en: 'Prince he serves', it: 'Principe che serve' },
+    summary: {
+      en: 'The prince who holds Winterfell. Theon asks whether the dogs could be on the wrong wolves, and Farlen says they could not.',
+      it: 'Il principe che tiene Grande Inverno. Theon chiede se i cani possano seguire i lupi sbagliati, e Farlen risponde di no.',
+    },
+  },
+  farBran: {
+    character: 'bran-stark',
+    type: { en: 'Young lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord of Winterfell, who once asked why the direwolves howl. Farlen told him they long for freedom.',
+      it: 'Il giovane signore di Grande Inverno, che una volta gli ha chiesto perché i metalupi ululino. Farlen gli ha risposto che desiderano la libertà.',
+    },
+  },
+  farTheon130: {
+    character: 'theon-greyjoy',
+    type: { en: 'Executioner', it: 'Boia' },
+    summary: {
+      en: 'The prince who beheaded him to blame someone for the deaths of three ironmen. It took Theon four blows.',
+      it: 'Il principe che lo ha decapitato per avere un colpevole per la morte di tre uomini di ferro. A Theon sono serviti quattro colpi.',
+    },
+  },
+  meeJojen95: {
+    character: 'jojen-reed',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her younger brother. They kneel together to swear their father’s oath to the Starks, and he asks to see the direwolves.',
+      it: 'Suo fratello minore. S’inginocchiano insieme per giurare agli Stark il giuramento del padre, e lui chiede di vedere i metalupi.',
+    },
+  },
+  meeBran95: {
+    character: 'bran-stark',
+    type: { en: 'Lord she swears to', it: 'Signore a cui giura' },
+    summary: {
+      en: 'The boy who holds Winterfell for the King in the North. She brings him gifts of fish, frog and fowl, and he blushes when she catches him staring.',
+      it: 'Il ragazzo che regge Grande Inverno per il Re del Nord. Gli porta in dono pesce, rana e volatili, e lui arrossisce quando lei lo sorprende a fissarla.',
+    },
+  },
+  meeBran124: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord who vanishes from Winterfell the same night as she and Jojen. Theon’s trackers find their prints together.',
+      it: 'Il giovane signore che sparisce da Grande Inverno la stessa notte di lei e di Jojen. Gli inseguitori di Theon trovano le loro tracce insieme.',
+    },
+  },
+  meeJojen124: {
+    character: 'jojen-reed',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, missing with her. Theon’s trackers find the prints of the two Reeds beside Hodor’s.',
+      it: 'Suo fratello, scomparso con lei. Gli inseguitori di Theon trovano le impronte dei due Reed accanto a quelle di Hodor.',
+    },
+  },
+  meeOsha124: {
+    character: 'osha',
+    type: { en: 'Fellow runaway', it: 'Altra fuggiasca' },
+    summary: {
+      en: 'The wildling woman who is missing with them, and whom Theon blames for freeing the wolves.',
+      it: 'La donna dei bruti scomparsa con loro, che Theon ritiene responsabile della liberazione dei lupi.',
+    },
+  },
+  meeBran143: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord she hides with in the crypts. They decide to go north together with her brother, Hodor and Summer.',
+      it: 'Il giovane signore con cui si nasconde nelle cripte. Decidono di andare a nord insieme a suo fratello, a Hodor e a Estate.',
+    },
+  },
+  meeJojen143: {
+    character: 'jojen-reed',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who wakes Bran from three days of wolf dreams. He goes north with her.',
+      it: 'Suo fratello, che sveglia Bran da tre giorni di sogni di lupo. Va a nord con lei.',
+    },
+  },
+  meeHodor143: {
+    character: 'hodor',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The giant who carries Bran and shifts the stone from the crypt door. He goes north with them.',
+      it: 'Il gigante che porta Bran e sposta la pietra dalla porta della cripta. Va a nord con loro.',
+    },
+  },
+  jojMeera95: {
+    character: 'meera-reed',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His elder sister, who speaks for them both. They swear their father’s oath to the Starks together.',
+      it: 'Sua sorella maggiore, che parla per tutti e due. Insieme giurano agli Stark il giuramento del padre.',
+    },
+  },
+  jojBran95: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord of Winterfell. Jojen asks him at once where the direwolves are.',
+      it: 'Il giovane signore di Grande Inverno. Jojen gli chiede subito dove siano i metalupi.',
+    },
+  },
+  jojSummer95: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'Bran’s direwolf, which he touches in the godswood on the night of the feast. Jojen says Summer is stronger than he knows.',
+      it: 'Il metalupo di Bran, che tocca nel parco degli dèi la notte del banchetto. Jojen dice che Estate è più forte di quanto creda.',
+    },
+  },
+  jojBran102: {
+    character: 'bran-stark',
+    type: { en: 'Winged wolf', it: 'Lupo alato' },
+    summary: {
+      en: 'The boy he calls a winged wolf chained to the earth. He tells Bran a three-eyed crow is trying to free him, and that he must open his third eye.',
+      it: 'Il ragazzo che chiama lupo alato incatenato alla terra. Dice a Bran che un corvo con tre occhi cerca di liberarlo, e che deve aprire il terzo occhio.',
+    },
+  },
+  jojMeera102: {
+    character: 'meera-reed',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who steps between him and Summer when the wolf growls and then follows him up a tree.',
+      it: 'Sua sorella, che si mette tra lui ed Estate quando il lupo ringhia e poi lo segue su un albero.',
+    },
+  },
+  jojSummer102: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'Bran’s direwolf, which growls when Jojen asks whether Bran falls every night.',
+      it: 'Il metalupo di Bran, che ringhia quando Jojen chiede se Bran cada ogni notte.',
+    },
+  },
+  jojBran143: {
+    character: 'bran-stark',
+    type: { en: 'Boy he warns', it: 'Ragazzo che avverte' },
+    summary: {
+      en: 'The boy he wakes from three days spent as Summer. He warns Bran that the wolf eats in the dreams while Bran does not, and goes north with him.',
+      it: 'Il ragazzo che sveglia dopo tre giorni passati come Estate. Avverte Bran che il lupo mangia nei sogni mentre lui no, e va a nord con lui.',
+    },
+  },
+  jojMeera143: {
+    character: 'meera-reed',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who goes north with him and Bran.',
+      it: 'Sua sorella, che va a nord con lui e con Bran.',
+    },
+  },
+  jojHodor143: {
+    character: 'hodor',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The giant who moves the stone from the crypt door and goes north with them.',
+      it: 'Il gigante che sposta la pietra dalla porta della cripta e va a nord con loro.',
+    },
+  },
+  ramTheon: {
+    character: 'theon-greyjoy',
+    type: { en: 'Prince of Winterfell', it: 'Principe di Grande Inverno' },
+    summary: {
+      en: 'The prince of Winterfell. Ramsay lifts his helm and tells Theon the man he knew as Reek is dead and that he is Ramsay Snow, then punches him to the ground.',
+      it: 'Il principe di Grande Inverno. Ramsay si toglie l’elmo e dice a Theon che l’uomo che conosceva come Reek è morto e che lui è Ramsay Snow, poi lo stende con un pugno.',
+    },
+  },
+  ramRoose: {
+    character: 'roose-bolton',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, whose Dreadfort garrison supplies the six hundred men he brings to Winterfell.',
+      it: 'Suo padre, la cui guarnigione del Dreadfort fornisce i seicento uomini che porta a Grande Inverno.',
+    },
+  },
+  ramRodrik: {
+    character: 'rodrik-cassel',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The northern knight who took the Dreadfort men for allies, until they turned on his army. Ramsay hands Theon his corpse.',
+      it: 'Il cavaliere del Nord che ha scambiato gli uomini del Dreadfort per alleati, finché non si sono voltati contro il suo esercito. Ramsay consegna a Theon il suo cadavere.',
+    },
+  },
+  bigLittle: {
+    character: 'little-walder-frey',
+    type: { en: 'Cousin', it: 'Cugino' },
+    summary: {
+      en: 'His cousin and fellow ward at Winterfell. They joust at the quintains together.',
+      it: 'Suo cugino e compagno di pupillato a Grande Inverno. Si esercitano insieme alla giostra contro i bersagli.',
+    },
+  },
+  bigBran: {
+    character: 'bran-stark',
+    type: { en: 'Lord of the castle', it: 'Signore del castello' },
+    summary: {
+      en: 'The boy who holds Winterfell for Robb. When Little Walder mocks Bran’s carrier, Big Walder looks ashamed.',
+      it: 'Il ragazzo che regge Grande Inverno per Robb. Quando Little Walder prende in giro chi porta Bran, Big Walder sembra vergognarsi.',
+    },
+  },
+  bigLuwin: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who scolds the wards for mocking Hodor and tells them to keep out of the godswood.',
+      it: 'Il maestro che rimprovera i pupilli per aver preso in giro Hodor e dice loro di stare lontani dal parco degli dèi.',
+    },
+  },
+  bigRickon: {
+    character: 'rickon-stark',
+    type: { en: 'Playmate', it: 'Compagno di giochi' },
+    summary: {
+      en: 'The youngest Stark, who took to the wards after Shaggydog bit Little Walder. They play monsters and maidens together.',
+      it: 'Il più giovane degli Stark, che si è affezionato ai pupilli dopo che Cagnaccio ha morso Little Walder. Giocano insieme ai mostri e alle fanciulle.',
+    },
+  },
+  bigWalder: {
+    character: 'walder-frey',
+    type: { en: 'Grandfather', it: 'Nonno' },
+    summary: {
+      en: 'Lord Walder Frey of the Twins, whose name he shares with a crowd of cousins.',
+      it: 'Lord Walder Frey dei Gemelli, di cui porta il nome insieme a una folla di cugini.',
+    },
+  },
+  litBig: {
+    character: 'big-walder-frey',
+    type: { en: 'Cousin', it: 'Cugino' },
+    summary: {
+      en: 'His cousin, fifty-two days older and half a foot shorter. They joust at the quintains together.',
+      it: 'Suo cugino, più vecchio di cinquantadue giorni e più basso di mezzo piede. Si esercitano insieme alla giostra contro i bersagli.',
+    },
+  },
+  litBran: {
+    character: 'bran-stark',
+    type: { en: 'Lord of the castle', it: 'Signore del castello' },
+    summary: {
+      en: 'The boy who holds Winterfell. When Bran threatens to set Summer on him, Little Walder says he wants a wolfskin cloak.',
+      it: 'Il ragazzo che regge Grande Inverno. Quando Bran minaccia di sguinzagliargli contro Estate, Little Walder dice che vorrebbe un mantello di pelle di lupo.',
+    },
+  },
+  litHodor: {
+    character: 'hodor',
+    type: { en: 'Servant he mocks', it: 'Servo che deride' },
+    summary: {
+      en: 'Bran’s carrier, whom he calls an ugly horse and bumps with his own mount.',
+      it: 'Chi porta Bran, che chiama brutto cavallo e urta con il proprio destriero.',
+    },
+  },
+  litShaggydog: {
+    character: 'shaggydog',
+    type: { en: 'Wolf that bit him', it: 'Lupo che l’ha morso' },
+    summary: {
+      en: 'Rickon’s black direwolf, which bit him after he hit Rickon with a stick. The wolves are now kept in the godswood.',
+      it: 'Il metalupo nero di Rickon, che lo ha morso dopo che lui ha colpito Rickon con un bastone. Ora i lupi sono tenuti nel parco degli dèi.',
+    },
+  },
+  litLuwin: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who scolds him for mocking Hodor. Little Walder stays haughty.',
+      it: 'Il maestro che lo rimprovera per aver preso in giro Hodor. Little Walder resta altezzoso.',
+    },
+  },
+  wymBran: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy who welcomes him from his father’s high seat. Wyman tells him no prince is ever late.',
+      it: 'Il ragazzo che lo accoglie dal seggio alto di suo padre. Wyman gli dice che nessun principe è mai in ritardo.',
+    },
+  },
+  wymRodrik: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The castellan beside Bran at the audience. Wyman argues for White Harbor as the place to mint coin and build a fleet for Robb’s kingdom.',
+      it: 'Il castellano accanto a Bran all’udienza. Wyman propone Porto Bianco come luogo dove coniare moneta e costruire una flotta per il regno di Robb.',
+    },
+  },
+  wymDonella: {
+    character: 'donella-hornwood',
+    type: { en: 'Cousin', it: 'Cugina' },
+    summary: {
+      en: 'His widowed cousin. He asks after her and says he would marry her himself, or give her his son.',
+      it: 'Sua cugina rimasta vedova. Chiede di lei e dice che la sposerebbe lui stesso, oppure le darebbe suo figlio.',
+    },
+  },
+  wymWendel: {
+    character: 'wendel-manderly',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son Ser Wendel, whom he offers as a husband for Lady Hornwood.',
+      it: 'Suo figlio ser Wendel, che offre come marito a lady Hornwood.',
+    },
+  },
+  wymDonellaDead: {
+    character: 'donella-hornwood',
+    type: { en: 'Cousin', it: 'Cugina' },
+    summary: {
+      en: 'His widowed cousin, whose castle he took to keep it safe. She was forced to wed Roose Bolton’s bastard, and then murdered.',
+      it: 'Sua cugina rimasta vedova, di cui ha preso il castello per proteggerlo. È stata costretta a sposare il bastardo di Roose Bolton, e poi uccisa.',
+    },
+  },
+  wymRodrik109: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The castellan who has come back from the east with a prisoner. Manderly and Bolton men are fighting in the Hornwood, and Rodrik lacks the strength to stop them.',
+      it: 'Il castellano tornato da est con un prigioniero. Uomini dei Manderly e dei Bolton combattono nelle terre degli Hornwood, e Rodrik non ha la forza di fermarli.',
+    },
+  },
+  donBran90: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord who offers her his condolences. He would give her a hundred men to guard her lands.',
+      it: 'Il giovane signore che le porge le condoglianze. Le darebbe cento uomini a difesa delle sue terre.',
+    },
+  },
+  donRodrik90: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The castellan who promises to protect her lands and look for a husband she likes. She hints that she would take him.',
+      it: 'Il castellano che promette di proteggere le sue terre e di cercarle un marito di suo gusto. Lei lascia capire che prenderebbe lui.',
+    },
+  },
+  donWyman90: {
+    character: 'wyman-manderly',
+    type: { en: 'Cousin', it: 'Cugino' },
+    summary: {
+      en: 'Her cousin, who offers himself or his son as her husband. She turns him down.',
+      it: 'Suo cugino, che si offre come marito, lui o suo figlio. Lei lo rifiuta.',
+    },
+  },
+  donWyman102: {
+    character: 'wyman-manderly',
+    type: { en: 'Cousin', it: 'Cugino' },
+    summary: {
+      en: 'Her cousin, who took her castle to keep it safe after she was forced to marry Roose Bolton’s bastard.',
+      it: 'Suo cugino, che ha preso il suo castello per proteggerlo dopo che è stata costretta a sposare il bastardo di Roose Bolton.',
+    },
+  },
+  donRodrik102: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The castellan who rode east to put down the uprising and see justice done after the forced marriage.',
+      it: 'Il castellano che è andato a est a sedare la rivolta e a fare giustizia dopo il matrimonio forzato.',
+    },
+  },
+  donWymanPast: {
+    character: 'wyman-manderly',
+    type: { en: 'Cousin', it: 'Cugino' },
+    summary: {
+      en: 'Her cousin, who held her castle to keep it safe. His men and the Boltons fight over the Hornwood after her death.',
+      it: 'Suo cugino, che teneva il suo castello per proteggerlo. Dopo la sua morte i suoi uomini e quelli dei Bolton si battono per le terre degli Hornwood.',
+    },
+  },
+  donRodrikPast: {
+    character: 'rodrik-cassel',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The castellan who came back from the east with a prisoner held for her murder.',
+      it: 'Il castellano tornato da est con un prigioniero accusato di averla uccisa.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season2Relationships = {
   // Show only: out to scout at his gate, back with Qarth's welcome at 14,
   // at Xaro's feast at 15 and at the House of the Undying at 20.
@@ -773,6 +1541,337 @@ export const season2Relationships = {
         essos.arsIllyrio,
         essos.arsJorah,
       ],
+    },
+  ],
+  'balon-greyjoy': [
+    {
+      episode: 12,
+      chapter: 85,
+      source: 'episode',
+      value: [winterfell.balTheonShow, winterfell.balAshaShow],
+    },
+    {
+      episode: 13,
+      chapter: 98,
+      source: 'episode',
+      value: [winterfell.balTheonWar, winterfell.balAshaWar],
+    },
+    {
+      episode: 12,
+      chapter: 85,
+      source: 'chapter',
+      value: [winterfell.balTheonBook, winterfell.balAeronBook],
+    },
+    {
+      episode: 13,
+      chapter: 98,
+      source: 'chapter',
+      value: [
+        winterfell.balTheonPlan,
+        winterfell.balAshaBook,
+        winterfell.balVictarion,
+        winterfell.balAeronPlan,
+      ],
+    },
+  ],
+  'asha-greyjoy': [
+    {
+      episode: 12,
+      chapter: 98,
+      source: 'episode',
+      value: [winterfell.ashBalonShow, winterfell.ashTheonShow],
+    },
+    {
+      episode: 18,
+      chapter: 130,
+      source: 'episode',
+      value: [winterfell.ashTheonWinterfellShow],
+    },
+    {
+      episode: 12,
+      chapter: 98,
+      source: 'chapter',
+      value: [
+        winterfell.ashTheonBook,
+        winterfell.ashBalonBook,
+        winterfell.ashVictarion,
+        winterfell.ashAeron,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 130,
+      source: 'chapter',
+      value: [winterfell.ashTheonWinterfellBook, winterfell.ashDagmerBook],
+    },
+  ],
+  'aeron-greyjoy': [
+    {
+      episode: 55,
+      chapter: 85,
+      source: 'chapter',
+      value: [winterfell.aerTheon85, winterfell.aerBalon85],
+    },
+    {
+      episode: 55,
+      chapter: 98,
+      source: 'chapter',
+      value: [
+        winterfell.aerBalon98,
+        winterfell.aerVictarion,
+        winterfell.aerTheon98,
+        winterfell.aerAsha,
+      ],
+    },
+    {
+      episode: 55,
+      chapter: 111,
+      source: 'chapter',
+      value: [winterfell.aerTheon111, winterfell.aerBalon98],
+    },
+  ],
+  'victarion-greyjoy': [
+    {
+      episode: 13,
+      chapter: 98,
+      source: 'chapter',
+      value: [
+        winterfell.vicBalon,
+        winterfell.vicAeron,
+        winterfell.vicTheon,
+        winterfell.vicAsha,
+      ],
+    },
+  ],
+  'dagmer': [
+    {
+      episode: 15,
+      chapter: 111,
+      source: 'episode',
+      value: [winterfell.dagTheonShow15],
+    },
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'episode',
+      value: [winterfell.dagTheonShow16, winterfell.dagRodrikShow],
+    },
+    {
+      episode: 20,
+      chapter: 143,
+      source: 'episode',
+      value: [winterfell.dagTheonShow20, winterfell.dagLuwinShow],
+    },
+    {
+      episode: 15,
+      chapter: 111,
+      source: 'chapter',
+      value: [
+        winterfell.dagTheonBook,
+        winterfell.dagBalonBook,
+        winterfell.dagAeronBook,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 130,
+      source: 'chapter',
+      value: [
+        winterfell.dagTheonBook130,
+        winterfell.dagAshaBook130,
+        winterfell.dagRodrikBook130,
+      ],
+    },
+  ],
+  'black-lorren': [
+    {
+      episode: 17,
+      chapter: 124,
+      source: 'chapter',
+      value: [winterfell.lorTheon124],
+    },
+    {
+      episode: 17,
+      chapter: 140,
+      source: 'chapter',
+      value: [
+        winterfell.lorTheon140,
+        winterfell.lorWex140,
+        winterfell.lorRodrik140,
+      ],
+    },
+    {
+      episode: 17,
+      chapter: 143,
+      source: 'chapter',
+      value: [winterfell.lorTheon143],
+    },
+  ],
+  'wex-pyke': [
+    {
+      episode: 13,
+      chapter: 98,
+      source: 'chapter',
+      value: [winterfell.wexTheon98],
+    },
+    {
+      episode: 13,
+      chapter: 140,
+      source: 'chapter',
+      value: [winterfell.wexTheon140, winterfell.wexLorren140],
+    },
+  ],
+  'farlen': [
+    {
+      episode: 16,
+      chapter: 124,
+      source: 'chapter',
+      value: [winterfell.farTheon124, winterfell.farBran],
+    },
+    {
+      episode: 16,
+      chapter: 130,
+      source: 'chapter',
+      value: [winterfell.farTheon130, winterfell.farBran],
+    },
+  ],
+  'meera-reed': [
+    {
+      episode: 22,
+      chapter: 95,
+      source: 'chapter',
+      value: [winterfell.meeJojen95, winterfell.meeBran95],
+    },
+    {
+      episode: 22,
+      chapter: 124,
+      source: 'chapter',
+      value: [
+        winterfell.meeBran124,
+        winterfell.meeJojen124,
+        winterfell.meeOsha124,
+      ],
+    },
+    {
+      episode: 22,
+      chapter: 143,
+      source: 'chapter',
+      value: [
+        winterfell.meeBran143,
+        winterfell.meeJojen143,
+        winterfell.meeHodor143,
+      ],
+    },
+  ],
+  'jojen-reed': [
+    {
+      episode: 22,
+      chapter: 95,
+      source: 'chapter',
+      value: [
+        winterfell.jojMeera95,
+        winterfell.jojBran95,
+        winterfell.jojSummer95,
+      ],
+    },
+    {
+      episode: 22,
+      chapter: 102,
+      source: 'chapter',
+      value: [
+        winterfell.jojBran102,
+        winterfell.jojMeera102,
+        winterfell.jojSummer102,
+      ],
+    },
+    {
+      episode: 22,
+      chapter: 143,
+      source: 'chapter',
+      value: [
+        winterfell.jojBran143,
+        winterfell.jojMeera143,
+        winterfell.jojHodor143,
+      ],
+    },
+  ],
+  'ramsay-snow': [
+    {
+      episode: 32,
+      chapter: 140,
+      source: 'chapter',
+      value: [winterfell.ramTheon, winterfell.ramRoose, winterfell.ramRodrik],
+    },
+  ],
+  'big-walder-frey': [
+    {
+      episode: 13,
+      chapter: 90,
+      source: 'chapter',
+      value: [
+        winterfell.bigLittle,
+        winterfell.bigBran,
+        winterfell.bigLuwin,
+        winterfell.bigRickon,
+        winterfell.bigWalder,
+      ],
+    },
+  ],
+  'little-walder-frey': [
+    {
+      episode: 13,
+      chapter: 90,
+      source: 'chapter',
+      value: [
+        winterfell.litBig,
+        winterfell.litBran,
+        winterfell.litHodor,
+        winterfell.litShaggydog,
+        winterfell.litLuwin,
+      ],
+    },
+  ],
+  'wyman-manderly': [
+    {
+      episode: 60,
+      chapter: 90,
+      source: 'chapter',
+      value: [
+        winterfell.wymBran,
+        winterfell.wymRodrik,
+        winterfell.wymDonella,
+        winterfell.wymWendel,
+      ],
+    },
+    {
+      episode: 60,
+      chapter: 109,
+      source: 'chapter',
+      value: [winterfell.wymDonellaDead, winterfell.wymRodrik109],
+    },
+  ],
+  'donella-hornwood': [
+    {
+      episode: 13,
+      chapter: 90,
+      source: 'chapter',
+      value: [
+        winterfell.donBran90,
+        winterfell.donRodrik90,
+        winterfell.donWyman90,
+      ],
+    },
+    {
+      episode: 14,
+      chapter: 102,
+      source: 'chapter',
+      value: [winterfell.donWyman102, winterfell.donRodrik102],
+    },
+    {
+      episode: 15,
+      chapter: 109,
+      source: 'chapter',
+      value: [winterfell.donWymanPast, winterfell.donRodrikPast],
     },
   ],
 } satisfies Record<string, Timeline<Relationship[]>>
