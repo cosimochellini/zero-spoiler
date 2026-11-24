@@ -1,14 +1,15 @@
 /**
  * The entry diptych of a place's or a ship's page: the plate, and
- * everything the fog decides beside it. Laid out as a character's dossier
- * is, in the same sheet, because the pages are one macrostructure.
+ * everything the fog decides beside it, then the records it names in a band
+ * of their own under both. Laid out as a character's dossier is, in the same
+ * sheet, because the pages are one macrostructure.
  *
  * A sibling of the route module rather than a shared component because it is
  * only ever this page's first band; the leading `-` keeps the file out of the
  * generated route tree.
  */
 import * as stylex from '@stylexjs/stylex'
-import type { ComponentType, ReactElement, ReactNode } from 'react'
+import type { ComponentType, ReactElement } from 'react'
 
 import { FiledHere } from '~/components/FiledHere'
 import { PortFacts, ShipFacts } from '~/components/PortFacts'
@@ -72,59 +73,74 @@ export type Entry = RecordView & { summary: string }
 /** How to lift the fog on a record the entry names. */
 export type PeekRecord = (handle: string) => Promise<RecordView>
 
-/** What the entry's body is given once the record is open. */
-export interface BodyProps<T> {
-  peekRecord: PeekRecord
-  record: T
+/** One titled list of records in the band under the entry. */
+export interface FiledList {
+  filed: Slot<RecordView>[]
+  title: string
 }
 
 /** What the band is given: the record, how to lift its fog, and its body. */
 export interface EntryProps<T extends Entry> {
-  /**
-   * What the page adds under the body once the record is open: a place's
-   * natives. Never drawn under fog, so it adds nothing to a covered page.
-   */
-  after?: ReactNode
-  /** Its facts, its log entry and the records it names, once open. */
-  Body: ComponentType<BodyProps<T>>
+  /** Its facts and its log entry, beside the plate once open. */
+  Body: ComponentType<{ record: T }>
   kind: 'place' | 'ship'
+  /**
+   * The records it names, under the plate and the entry once open: never
+   * drawn under fog, so they add nothing to a covered page.
+   */
+  lists: (record: T) => FiledList[]
   peek: (handle: string) => Promise<T>
   peekRecord: PeekRecord
   slot: Slot<T>
 }
 
 /**
- * The plate beside the entry. The two halves sit under one curtain on the
- * same slot, because a covered page must carry neither the drawing nor the
- * words in its HTML: blurring either one would leave the answer in the page
- * source.
+ * The plate beside the entry, then the records it names. The two halves sit
+ * under one curtain on the same slot, because a covered page must carry
+ * neither the drawing nor the words in its HTML: blurring either one would
+ * leave the answer in the page source. The lists under them open with the
+ * same lift and are left out until then: page bands, each with its own h2,
+ * rather than a tail of the entry's column, which ran several screens past
+ * the plate on a busy place (#1576).
  */
-export function EntryDiptych<T extends Entry>(
-  props: EntryProps<T>,
-): ReactElement {
+function EntryDiptych<T extends Entry>(props: EntryProps<T>): ReactElement {
   const veil = useStageVeil(props.slot, props.peek)
 
   return (
-    <section {...stylex.props(styles.diptych, veil.stage)}>
-      {veil.drawing(
-        // A bare plate under fog: the drawing and its colour stay out of the
-        // served HTML along with the name.
-        <div {...stylex.props(styles.plate)}>
-          <PortPlate />
-        </div>,
-        (record) => {
+    <>
+      <section {...stylex.props(styles.diptych, veil.stage)}>
+        {veil.drawing(
+          // A bare plate under fog: the drawing and its colour stay out of the
+          // served HTML along with the name.
+          <div {...stylex.props(styles.plate)}>
+            <PortPlate />
+          </div>,
+          (record) => {
+            return (
+              <div {...stylex.props(styles.plate)}>
+                <OpenPortPlate port={record} />
+              </div>
+            )
+          },
+        )}
+        <EntryColumn
+          {...props}
+          veil={veil}
+        />
+      </section>
+      {veil.below((record) => {
+        return props.lists(record).map((list) => {
           return (
-            <div {...stylex.props(styles.plate)}>
-              <OpenPortPlate port={record} />
-            </div>
+            <FiledHere
+              key={list.title}
+              filed={list.filed}
+              peekRecord={props.peekRecord}
+              title={list.title}
+            />
           )
-        },
-      )}
-      <EntryColumn
-        {...props}
-        veil={veil}
-      />
-    </section>
+        })
+      })}
+    </>
   )
 }
 
@@ -134,10 +150,8 @@ export function EntryDiptych<T extends Entry>(
  * 336" is the promise the page makes to a reader who has not got there yet.
  */
 function EntryColumn<T extends Entry>({
-  after,
   Body,
   kind,
-  peekRecord,
   slot,
   veil,
 }: EntryProps<T> & { veil: StageVeil<T> }): ReactElement {
@@ -161,11 +175,7 @@ function EntryColumn<T extends Entry>({
             <div {...stylex.props(styles.words)}>
               <h1 {...stylex.props(styles.name)}>{record.name}</h1>
               <p {...stylex.props(styles.summary)}>{record.summary}</p>
-              <Body
-                peekRecord={peekRecord}
-                record={record}
-              />
-              {after}
+              <Body record={record} />
             </div>
           )
         },
@@ -174,29 +184,25 @@ function EntryColumn<T extends Entry>({
   )
 }
 
-/** A port's facts, its log entry and the records found there. */
-function PortBody({
-  peekRecord,
-  record: port,
-}: BodyProps<PortView>): null | ReactElement {
-  const t = useT()
-
+/** A port's facts and its log entry. */
+function PortBody({ record: port }: { record: PortView }): null | ReactElement {
   return port.dossier === null ?
       null
     : <>
         <PortFacts dossier={port.dossier} />
         <p {...stylex.props(styles.entry)}>{port.dossier.log}</p>
-        <FiledHere
-          filed={port.dossier.filedHere}
-          peekRecord={peekRecord}
-          title={t('places.filedHere')}
-        />
       </>
 }
 
+/** Every record of a list open: the server sends only those reached. */
+function allOpen(records: RecordView[]): Slot<RecordView>[] {
+  return records.map((record) => ({ open: true, record }))
+}
+
 /**
- * A place's entry: the diptych with its facts, its log entry and the records
- * found there, then the characters who come from it.
+ * A place's entry: the diptych with its facts and its log entry, then the
+ * records found there and the characters who come from it. Only the natives
+ * the reader has reached are sent, so each is open and none is counted.
  */
 export function PlaceEntry({
   detail,
@@ -207,16 +213,21 @@ export function PlaceEntry({
   peek: (handle: string) => Promise<PortView>
   peekRecord: PeekRecord
 }): ReactElement {
+  const t = useT()
+
   return (
     <EntryDiptych
-      after={
-        <Natives
-          natives={detail.natives}
-          peekRecord={peekRecord}
-        />
-      }
       Body={PortBody}
       kind="place"
+      lists={(port) => {
+        return [
+          {
+            title: t('places.filedHere'),
+            filed: port.dossier?.filedHere ?? [],
+          },
+          { title: t('place.nativesTitle'), filed: allOpen(detail.natives) },
+        ]
+      }}
       peek={peek}
       peekRecord={peekRecord}
       slot={detail.slot}
@@ -224,49 +235,43 @@ export function PlaceEntry({
   )
 }
 
-/**
- * The characters who come from a place, under the records found there. Only
- * those the reader has reached are sent, so each is open and none is
- * counted; nothing is drawn while there are none.
- */
-function Natives({
-  natives,
-  peekRecord,
-}: {
-  natives: RecordView[]
-  peekRecord: PeekRecord
-}): null | ReactElement {
-  const t = useT()
-
-  return (
-    <FiledHere
-      filed={natives.map((record) => ({ open: true, record }))}
-      peekRecord={peekRecord}
-      title={t('place.nativesTitle')}
-    />
-  )
-}
-
-/**
- * A ship's facts, her log entry and the places she reaches. Only the places
- * the reader has reached are sent, so each is open and none is counted.
- */
-export function ShipBody({
-  peekRecord,
-  record: ship,
-}: BodyProps<ShipView>): ReactElement {
-  // A ship is One Piece's: only its pages draw one.
-  const t = useSeriesOnlyT('one-piece')
-
+/** A ship's facts and her log entry. */
+function ShipBody({ record: ship }: { record: ShipView }): ReactElement {
   return (
     <>
       <ShipFacts entry={ship.dossier} />
       <p {...stylex.props(styles.entry)}>{ship.dossier.log}</p>
-      <FiledHere
-        filed={ship.dossier.ports.map((record) => ({ open: true, record }))}
-        peekRecord={peekRecord}
-        title={t('ships.ports')}
-      />
     </>
+  )
+}
+
+/**
+ * A ship's entry: the diptych with her facts and her log entry, then the
+ * places she reaches. Only the places the reader has reached are sent, so
+ * each is open and none is counted.
+ */
+export function ShipEntry({
+  peek,
+  peekRecord,
+  slot,
+}: {
+  peek: (handle: string) => Promise<ShipView>
+  peekRecord: PeekRecord
+  slot: Slot<ShipView>
+}): ReactElement {
+  // A ship is One Piece's: only its pages draw one.
+  const t = useSeriesOnlyT('one-piece')
+
+  return (
+    <EntryDiptych
+      Body={ShipBody}
+      kind="ship"
+      lists={(ship) => {
+        return [{ title: t('ships.ports'), filed: allOpen(ship.dossier.ports) }]
+      }}
+      peek={peek}
+      peekRecord={peekRecord}
+      slot={slot}
+    />
   )
 }

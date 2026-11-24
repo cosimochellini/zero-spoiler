@@ -18,7 +18,7 @@ import { liftPort, liftRecord, liftShip, loadPlace } from '~/server/api'
 import { settleStyles } from '~/styles/settle'
 
 import { DrawingsBand, MapBand } from './-$id.bands'
-import { EntryDiptych, PlaceEntry, ShipBody } from './-$id.entry'
+import { PlaceEntry, ShipEntry } from './-$id.entry'
 
 // The bands under the first in DOM order. The back link and the first band
 // are the page's header, there from the first frame. Named rather than
@@ -43,19 +43,17 @@ export const Route = createFileRoute('/$series/$locale/places/$id')({
 /**
  * A place's page, and a ship's, which is served from the same address.
  *
- * Three bands down a place's page. The first is the plate beside the entry:
- * kind and episode in mono, the name as the only display line, the
- * sentence, the facts, the log entry, the records found there and the
- * characters who come from it. The
- * second is the place on the map: its stop number and the later visits the
- * reader has reached, beside the stretch of the sea chart around it. The
- * third is every drawing the place has had up to the bookmark, when there
- * is more than one.
+ * Down a place's page: first the plate beside the entry, kind and episode
+ * in mono, the name as the only display line, the sentence, the facts and
+ * the log entry. Under both halves, full width, the records found there and
+ * the characters who come from it, so the two halves end together (#1576).
+ * Then the place on the map: its stop number and the later visits the reader
+ * has reached, beside the stretch of the sea chart around it. Last, every
+ * drawing the place has had up to the bookmark, when there is more than one.
  *
- * A ship's page has the first and the third: her plate beside her entry
- * (who designed her, where the crew receives her, her fate and the places
- * she reaches, each as far as the bookmark), then her drawings. No map: a
- * ship is not a stop.
+ * A ship's page has her plate beside her entry (who designed her, where the
+ * crew receives her, her fate, each as far as the bookmark), the places she
+ * reaches under both, then her drawings. No map: a ship is not a stop.
  *
  * Under fog the plate and the entry are covered together, the title is
  * generic, and nothing places or draws it: the stop number and the episode
@@ -82,22 +80,18 @@ function PlacePage(): ReactElement {
         slot={'ship' in page ? page.ship.slot : page.detail.slot}
       />
 
-      <div>
-        {'ship' in page ?
-          <EntryDiptych
-            Body={ShipBody}
-            kind="ship"
-            peek={peekShip}
-            peekRecord={peekRecord}
-            slot={page.ship.slot}
-          />
-        : <PlaceEntry
-            detail={page.detail}
-            peek={peekPort}
-            peekRecord={peekRecord}
-          />
-        }
-      </div>
+      {'ship' in page ?
+        <ShipEntry
+          peek={peekShip}
+          peekRecord={peekRecord}
+          slot={page.ship.slot}
+        />
+      : <PlaceEntry
+          detail={page.detail}
+          peek={peekPort}
+          peekRecord={peekRecord}
+        />
+      }
 
       {place === null ? null : (
         <Band at={BAND.map}>
