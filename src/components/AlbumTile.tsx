@@ -4,9 +4,11 @@ import type { ReactElement } from 'react'
 
 import { Marked } from '~/components/CharacterCard'
 import { FogTile } from '~/components/FogTile'
+import { useFolded } from '~/components/foldContext'
 import { OpenArt } from '~/components/FruitArt'
 import { FruitEater } from '~/components/FruitEater'
 import type { EaterMatch } from '~/components/recordMatches'
+import { FIRST_ROW } from '~/components/SpecimenBands.styles'
 import { useSeriesParams } from '~/lib/progress/BookmarkContext'
 import type { CoveredRecord, EaterView, RecordView } from '~/lib/view/records'
 import { morphPart, travelWith, useTravels } from '~/styles/morph'
@@ -49,15 +51,25 @@ export function CoveredTile<T extends RecordView>({
   lines,
   peek,
   phase,
+  rank,
 }: {
   covered: CoveredRecord
   kind: TileKind
   lines: string[]
   peek: (handle: string) => Promise<T>
   phase: number
+  /** Its place among the covered tiles of a folded grid, from 0. */
+  rank?: number | undefined
 }): ReactElement {
+  const folded = useFolded()
+
   return (
-    <li {...stylex.props(styles.tile)}>
+    <li
+      {...stylex.props(
+        styles.tile,
+        folded && rank !== undefined && foldedStyle(rank),
+      )}
+    >
       <FogTile
         covered={covered}
         lines={lines}
@@ -77,6 +89,15 @@ export function CoveredTile<T extends RecordView>({
       </FogTile>
     </li>
   )
+}
+
+/** How a folded grid hides the covered tile at `rank`: past its first row. */
+function foldedStyle(rank: number): stylex.StyleXStyles {
+  if (rank >= FIRST_ROW.wide) {
+    return styles.foldedPastThree
+  }
+
+  return rank >= FIRST_ROW.narrow ? styles.foldedPastTwo : null
 }
 
 /** What an open album tile shows: its record, who uses it, and its foot. */
@@ -192,6 +213,15 @@ const META_TRACKING = '0.08em'
 
 const styles = stylex.create({
   tile: { gap: space.xs2, alignContent: 'start', display: 'grid', minWidth: 0 },
+  // A covered tile a folded grid (`FoldedFog`) hides on a phone: the one past
+  // two across, drawn again from 37.5rem where the row holds three, and every
+  // one past three, drawn again from 40rem where the wall is whole.
+  foldedPastTwo: {
+    display: { 'default': 'none', '@media (min-width: 37.5rem)': 'grid' },
+  },
+  foldedPastThree: {
+    display: { 'default': 'none', '@media (min-width: 40rem)': 'grid' },
+  },
   // The kind sits at the foot of the row, so it lines up across a row whose
   // names and eaters wrap to different heights.
   openTile: { gridTemplateRows: 'auto auto 1fr' },

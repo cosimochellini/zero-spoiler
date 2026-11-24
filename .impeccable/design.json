@@ -785,6 +785,11 @@
     ],
     "breakpoints": [
       {
+        "name": "22rem",
+        "value": "22rem",
+        "purpose": "A fruit or ability plate sets its name beside its label; below it, under the label."
+      },
+      {
         "name": "30rem",
         "value": "30rem",
         "purpose": "A character's facts set label and value side by side."
@@ -797,12 +802,12 @@
       {
         "name": "37.5rem",
         "value": "37.5rem",
-        "purpose": "Up to it the places map is drawn upright; from it the fruit album has three columns."
+        "purpose": "Up to it the places map is drawn upright; from it the fruit album has three columns, and a folded group of fog tiles keeps three instead of two."
       },
       {
         "name": "40rem",
         "value": "40rem",
-        "purpose": "The line between phone and wider. Below it (max-width: 39.99rem) dialogs and peeks are bottom sheets. From it grids, type sizes and spacing across the site take their wider steps, and the site bar's gaps widen. No bar height depends on it: the bar's height changes at 56rem (seriesWide)."
+        "purpose": "The line between phone and wider. Below it (max-width: 39.99rem) dialogs and peeks are bottom sheets, and the fruits page folds each group of fog tiles to its first row. From it grids, type sizes and spacing across the site take their wider steps, and the site bar's gaps widen. No bar height depends on it: the bar's height changes at 56rem (seriesWide)."
       },
       {
         "name": "48rem",

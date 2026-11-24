@@ -16,12 +16,20 @@ import {
  *
  * Three plates, each a pinned head over a grid of tiles: two across on a
  * phone, where the drawing is what you browse by, and up to six on a wide
- * page. The head is one line on a phone so the tiles start high.
+ * page. The head is one line on a phone so the tiles start high, and two
+ * below 22rem, where a long name would not fit beside its label.
  */
 // The floor every grid column here takes. `1fr` on its own has `min-content`
 // for a floor, and one `white-space: nowrap` child is then enough to push a
 // column, and the page with it, wider than a phone.
 const ONE_COLUMN = 'minmax(0, 1fr)'
+
+/**
+ * How many tiles the grid's first row holds on a phone: two across, then
+ * three from 37.5rem. A folded fog grid (`FoldedFog`, `AlbumTile`) keeps that
+ * row, so it reads the same numbers the grid is drawn with.
+ */
+export const FIRST_ROW = { narrow: 2, wide: 3 } as const
 
 // The small-caps tracking every label on the sheet is set in.
 const LABEL_TRACKING = '0.12em'
@@ -65,7 +73,12 @@ export const styles = stylex.create({
     alignItems: 'baseline',
     columnGap: { 'default': space.sm, '@media (min-width: 60rem)': space.lg },
     display: 'grid',
-    gridTemplateColumns: `auto ${ONE_COLUMN}`,
+    // Below 22rem a long name goes under its label rather than losing its
+    // last letters beside it.
+    gridTemplateColumns: {
+      'default': ONE_COLUMN,
+      '@media (min-width: 22rem)': `auto ${ONE_COLUMN}`,
+    },
     rowGap: space.xs,
   },
   plateNumber: {
@@ -88,7 +101,7 @@ export const styles = stylex.create({
     letterSpacing: NAME_TRACKING,
     lineHeight: leading.heading,
     textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
+    whiteSpace: { 'default': 'normal', '@media (min-width: 22rem)': 'nowrap' },
     minWidth: 0,
   },
   plateLede: {
@@ -103,8 +116,8 @@ export const styles = stylex.create({
     columnGap: { 'default': space.md, '@media (min-width: 40rem)': space.lg },
     display: 'grid',
     gridTemplateColumns: {
-      'default': `repeat(2, ${ONE_COLUMN})`,
-      '@media (min-width: 37.5rem)': `repeat(3, ${ONE_COLUMN})`,
+      'default': `repeat(${String(FIRST_ROW.narrow)}, ${ONE_COLUMN})`,
+      '@media (min-width: 37.5rem)': `repeat(${String(FIRST_ROW.wide)}, ${ONE_COLUMN})`,
       '@media (min-width: 50rem)': `repeat(4, ${ONE_COLUMN})`,
       '@media (min-width: 64rem)': `repeat(5, ${ONE_COLUMN})`,
       '@media (min-width: 80rem)': `repeat(6, ${ONE_COLUMN})`,

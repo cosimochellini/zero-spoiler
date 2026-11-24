@@ -1,9 +1,13 @@
-import * as stylex from '@stylexjs/stylex'
 import type { ComponentProps, ReactElement } from 'react'
 
-import type { AlbumGroup, AlbumGrouping } from '~/components/albumGrouping'
+import {
+  type AlbumGroup,
+  type AlbumGrouping,
+  fruitFoldWords,
+} from '~/components/albumGrouping'
 import { CatalogueSection } from '~/components/CatalogueSection'
 import { FogBand } from '~/components/FogBand'
+import { FoldedFog } from '~/components/FoldedFog'
 import { FruitTile, OpenTiles } from '~/components/FruitTile'
 import {
   type EaterMatch,
@@ -11,7 +15,6 @@ import {
   type Match,
   matchesIn,
 } from '~/components/recordMatches'
-import { styles } from '~/components/SpecimenBands.styles'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import type {
   CoveredRecord,
@@ -121,12 +124,16 @@ export function AlbumGroups({
         t={t}
         words={words}
       >
-        <ul {...stylex.props(styles.grid)}>
+        <FoldedFog
+          count={laterTiles.length}
+          id="fold-later"
+          words={fruitFoldWords(t)}
+        >
           <CoveredTiles
             peek={peek}
             tiles={laterTiles}
           />
-        </ul>
+        </FoldedFog>
       </FogBand>
     </>
   )
@@ -193,7 +200,11 @@ function Group({
       sticky
       title={group.title}
     >
-      <ul {...stylex.props(styles.grid)}>
+      <FoldedFog
+        count={fog.length}
+        id={`fold-${group.anchor}`}
+        words={fruitFoldWords(t)}
+      >
         <OpenTiles
           matches={matches}
           needle={needle}
@@ -203,7 +214,7 @@ function Group({
           peek={peek}
           tiles={fog}
         />
-      </ul>
+      </FoldedFog>
     </CatalogueSection>
   )
 }
@@ -218,13 +229,14 @@ function CoveredTiles({
 }): ReactElement {
   return (
     <>
-      {tiles.map((tile) => {
+      {tiles.map((tile, rank) => {
         return (
           <FruitTile
             key={`fog-${tile.covered.handle}`}
             form={tile.form}
             index={tile.index}
             peek={peek}
+            rank={rank}
             slot={{ open: false, covered: tile.covered }}
           />
         )
