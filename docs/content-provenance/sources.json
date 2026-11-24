@@ -37982,6 +37982,16 @@
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=20989",
       "contentSha256": "dbd24146545cdc93f5c0e3023089302b6d89f979105116e6c39a3ca96510b3be"
     },
+    "iaf-en-Wex_Pyke-27069.json": {
+      "locale": "en",
+      "title": "Wex Pyke",
+      "revision": 27069,
+      "revisionDate": "2025-01-28T15:22:41Z",
+      "url": "https://iceandfire.fandom.com/wiki/Wex_Pyke",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27069",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27069",
+      "contentSha256": "d9b40651ef1bddbb294fc4edbcabf8135de03a1fae72df44392d2d5cd464e3a7"
+    },
     "got-en-Samwell_Tarly-736846.json": {
       "locale": "en",
       "title": "Samwell Tarly",
