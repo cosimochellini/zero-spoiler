@@ -365,6 +365,31 @@ Edmure, Hoster and Brynden Tully, Yoren (death filed by #1290) and Lommy (his
 book-side cards are #1481's and his chronicle #1486's). Brienne's escort of
 Jaime belongs to her record, filed by #1464.
 
+### Relationships (#1481)
+
+The group's cards, 22 owners: the nine new records, Jaqen H'ghar, Rorge, Biter
+and Lommy (who leave `omitted`), and nine stage-1 records with stage-2 snapshots
+(Arya, Gendry, Hot Pie, Yoren, Robb, Tywin, Gregor Clegane, Roose Bolton,
+Edmure). New characters' cards are in `season-2.relationships.ts`, the others in
+`season-1.relationships.ts`. Book facts come from A Wiki of Ice and Fire's
+chapter pages for Arya I, II, IV to X (site chapters 75, 79, 88, 93, 100, 104,
+112, 121, 138), Catelyn I and V (81, 113) and Tyrion VI (99), read through the
+Firecrawl tool; show facts from the Game of Thrones Wiki's episode and character
+pages.
+
+- Show and book cards are separate wherever the media differ: the show's Tickler
+  and Amory Lorch die at Jaqen's hand at Arya's asking (15, 16), the books'
+  Chiswyck and Weese do (104, 112); the show's Alton Lannister and the books'
+  Cleos Frey carry Robb's terms; Talisa is the show's alone.
+- Lommy's cards are the books' alone (75, 93): his show record opens at episode
+  31, so his show-side cards wait for stage 4.
+- Rorge and Biter are named in the books alone, so Jaqen's show cards never name
+  them.
+- Left out, with the reason: Catelyn Stark (her Riverrun cards and her mission
+  to Renly share a timeline with #1480), Jaime Lannister (Brienne's escort is
+  #1480's), Rickard Karstark, Brynden and Hoster Tully, the Greatjon and Grey
+  Wind (named as people in others' cards only).
+
 ### Drawings (#1472)
 
 Each record has its own drawing in `art/riverlands.ts`; the objects, stages and

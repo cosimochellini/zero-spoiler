@@ -6511,6 +6511,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'lommy': {
+      relationships: season1Relationships.lommy,
       role: {
         it: 'Apprendista tintore, recluta dei Guardiani della notte',
         en: 'Dyer’s apprentice, Night’s Watch recruit',
@@ -6536,6 +6537,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'jaqen-hghar': {
+      relationships: season1Relationships['jaqen-hghar'],
       role: {
         it: 'Prigioniero, recluta dei Guardiani della notte',
         en: 'Prisoner, Night’s Watch recruit',
@@ -6562,6 +6564,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'rorge': {
+      relationships: season1Relationships.rorge,
       role: {
         it: 'Prigioniero, recluta dei Guardiani della notte',
         en: 'Prisoner, Night’s Watch recruit',
@@ -6597,6 +6600,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'biter': {
+      relationships: season1Relationships.biter,
       role: {
         it: 'Prigioniero, recluta dei Guardiani della notte',
         en: 'Prisoner, Night’s Watch recruit',
