@@ -127,6 +127,29 @@ const STAGE_2_GROUPS: { group: string; issue: string; owners: string[] }[] = [
       'aggo',
     ],
   },
+  {
+    group: 'The Wall and beyond',
+    issue: '#1483',
+    owners: [
+      'thoren-smallwood',
+      'eddison-tollett',
+      'jarman-buckwell',
+      'mallador-locke',
+      'craster',
+      'gilly',
+      'qhorin-halfhand',
+      'stonesnake',
+      'ygritte',
+      'ebben',
+      'dalbridge',
+      'lord-of-bones',
+      'jon-snow',
+      'jeor-mormont',
+      'samwell-tarly',
+      'grenn',
+      'ghost-direwolf',
+    ],
+  },
 ]
 
 /**

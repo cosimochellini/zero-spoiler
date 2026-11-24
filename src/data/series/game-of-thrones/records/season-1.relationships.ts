@@ -8134,6 +8134,744 @@ const essos2 = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 2's Wall and beyond cards for the season-1 cast (#1483): season 2
+ * and A Clash of Kings, episodes 11 to 20 and chapters 74 to 143. The new
+ * characters' own cards are in `season-2.relationships.ts`.
+ */
+const wall2 = {
+  // Jon Snow, the show
+  jonJeorReprimand: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, whom Jon follows on the ranging. He reprimands Jon for losing his temper with Craster, and tells him to learn how to follow.',
+      it: 'Il lord comandante, che Jon segue nella spedizione. Rimprovera Jon per aver perso la pazienza con Craster, e gli dice di imparare a seguire.',
+    },
+  },
+  jonCrasterShow: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep. Jon argues with him when Craster calls the Watch southerners, and dislikes him at once.',
+      it: 'Il padrone del fortino. Jon discute con lui quando Craster chiama i Guardiani gente del sud, e lo prende subito in antipatia.',
+    },
+  },
+  jonSamRanging: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who rides the ranging with him. Like Jon, Sam is repulsed by Craster.',
+      it: 'Il suo amico, che cavalca con lui nella spedizione. Come Jon, Sam prova repulsione per Craster.',
+    },
+  },
+  jonGrennRanging: {
+    character: 'grenn',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who is on the ranging too. Grenn is as repulsed by Craster as Jon is.',
+      it: 'Il suo amico, anche lui nella spedizione. Grenn prova per Craster la stessa repulsione di Jon.',
+    },
+  },
+  jonQhorinShow: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who comes to the Fist from the Shadow Tower. Jon asks to join his scouting party, and Qhorin takes his side when Jeor objects.',
+      it: 'Il ranger che arriva al Pugno dalla Torre delle Ombre. Jon chiede di unirsi al suo gruppo di esploratori, e Qhorin lo difende quando Jeor si oppone.',
+    },
+  },
+  jonJeorLets: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who says Jon is no ranger and reminds him that he let Craster beat him. Jeor lets him go with Qhorin in the end.',
+      it: 'Il lord comandante, che dice che Jon non è un ranger e gli ricorda di essersi fatto picchiare da Craster. Alla fine Jeor lo lascia partire con Qhorin.',
+    },
+  },
+  jonSamSteward: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who offers to take on Jon’s duties as the Lord Commander’s steward so that Jon can go with Qhorin.',
+      it: 'Il suo amico, che si offre di occupare il posto di Jon come attendente del lord comandante perché Jon possa andare con Qhorin.',
+    },
+  },
+  jonGillyShow: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'Craster’s pregnant daughter and wife. Sam brings her to Jon, but he will not disobey the Lord Commander and take her away.',
+      it: 'La figlia e moglie incinta di Craster. Sam la porta da Jon, ma lui non vuole disobbedire al lord comandante e portarla via.',
+    },
+  },
+  jonCrasterBeat: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep. Jon follows him into the woods and sees him leave a newborn boy there. Craster knocks him out and orders the Watch to leave.',
+      it: 'Il padrone del fortino. Jon lo segue nel bosco e lo vede lasciarvi un neonato maschio. Craster lo stende e ordina ai Guardiani di andarsene.',
+    },
+  },
+  jonYgritteShow: {
+    character: 'ygritte',
+    type: { en: 'Prisoner', it: 'Prigioniera' },
+    summary: {
+      en: 'The wildling lookout he captures. He cannot bring himself to kill her, and she runs, and he chases her down.',
+      it: 'La vedetta dei bruti che cattura. Non riesce a ucciderla, lei scappa e lui la rincorre.',
+    },
+  },
+  jonQhorinOrder: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who leads the party. Qhorin leaves Jon alone to execute the prisoner, and the two lose him.',
+      it: 'Il ranger che guida il gruppo. Qhorin lascia Jon solo a giustiziare la prigioniera, e i due lo perdono di vista.',
+    },
+  },
+  jonGhostLost: {
+    character: 'ghost-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His white direwolf. Ghost follows him into the mountains, then wanders off and is gone.',
+      it: 'Il suo meta-lupo bianco. Spettro lo segue sulle montagne, poi si allontana e scompare.',
+    },
+  },
+  jonQhorinKilled: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who attacks Jon in front of the wildlings, so that Jon can pass for a deserter. Jon kills him, as Qhorin has told him to.',
+      it: 'Il ranger che attacca Jon davanti ai bruti, perché Jon passi per un disertore. Jon lo uccide, come Qhorin gli ha detto di fare.',
+    },
+  },
+  jonYgritteCompany: {
+    character: 'ygritte',
+    type: { en: 'Captor', it: 'Chi lo ha catturato' },
+    summary: {
+      en: 'The wildling who brings him to her band as a present and taps him with his own sword. When he kills Qhorin she is stunned, and she shows him the wildling army.',
+      it: 'La bruta che lo porta alla sua banda come regalo e lo colpisce con la sua stessa spada. Quando uccide Qhorin resta senza parole, e gli mostra l’esercito dei bruti.',
+    },
+  },
+  jonSamMissing: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who stays at the Fist. When the scouting party does not come back, Sam refuses to believe Jon is dead.',
+      it: 'Il suo amico, rimasto al Pugno. Quando il gruppo di esploratori non torna, Sam si rifiuta di credere che Jon sia morto.',
+    },
+  },
+
+  // Jon Snow, the books
+  jonJeorAemon: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, whose steward he is. Jeor tells him that Aemon could have been king, and that he and Jon both have a king for a brother.',
+      it: 'Il lord comandante, di cui è attendente. Jeor gli dice che Aemon avrebbe potuto essere re, e che entrambi hanno un re per fratello.',
+    },
+  },
+  jonSamVault: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who is to tend the ravens in Aemon’s place. Jon finds him among the maps and scrolls in the vaults of Castle Black.',
+      it: 'Il suo amico, che al posto di Aemon si occuperà dei corvi. Jon lo trova tra mappe e pergamene nei sotterranei di Castello Nero.',
+    },
+  },
+  jonRobbKing: {
+    character: 'robb-stark',
+    type: { en: 'Half-brother', it: 'Fratellastro' },
+    summary: {
+      en: 'His half-brother, now a king. Jon is unsure how he feels, but tells Donal Noye that Robb will make a good king.',
+      it: 'Il suo fratellastro, ora re. Jon non sa bene cosa provare, ma dice a Donal Noye che Robb sarà un buon re.',
+    },
+  },
+  jonAemonHand: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who treats his burned hand. Jeor tells Jon that Aemon was a king’s son who could have been king.',
+      it: 'Il maestro che cura la sua mano ustionata. Jeor dice a Jon che Aemon era figlio di un re e avrebbe potuto essere re.',
+    },
+  },
+  jonCrasterBook: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the holdfast. At the name Snow, Craster guesses Jon is a bastard. Jon will not take his hospitality.',
+      it: 'Il padrone del fortino. Sentendo il nome Snow, Craster capisce che Jon è un bastardo. Jon non vuole accettare la sua ospitalità.',
+    },
+  },
+  jonGillyBook: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'The girl whose rabbits Ghost raided. She asks Jon to take her to the Wall, and he says it is for the Lord Commander to decide.',
+      it: 'La ragazza di cui Spettro ha assalito i conigli. Chiede a Jon di portarla alla Barriera, e lui risponde che deve decidere il lord comandante.',
+    },
+  },
+  jonJeorCraster: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who tells Jon that Craster gives his sons to the wood and that the Watch needs him all the same.',
+      it: 'Il lord comandante, che dice a Jon che Craster dà i figli maschi al bosco e che i Guardiani hanno comunque bisogno di lui.',
+    },
+  },
+  jonSamCraster: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who hopes to do something for Gilly. Jon says the Lord Commander will never let them take one of Craster’s wives.',
+      it: 'Il suo amico, che vorrebbe fare qualcosa per Gilly. Jon dice che il lord comandante non permetterà mai di portare via una delle mogli di Craster.',
+    },
+  },
+  jonGhostRabbits: {
+    character: 'ghost-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His white direwolf. Ghost raids Gilly’s rabbit hutch, then brings Jon a rabbit and leads him to Sam.',
+      it: 'Il suo meta-lupo bianco. Spettro assalta la conigliera di Gilly, poi porta a Jon un coniglio e lo conduce da Sam.',
+    },
+  },
+  jonQhorinBook: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who comes to the Fist from the Shadow Tower. He tells Jon he knew Lord Eddard and Lord Rickard, and picks him for his party.',
+      it: 'Il ranger che arriva al Pugno dalla Torre delle Ombre. Dice a Jon di aver conosciuto lord Eddard e lord Rickard, e lo sceglie per il suo gruppo.',
+    },
+  },
+  jonJeorFist: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander at the Fist. In his tent Jon overhears Qhorin warn that the wildlings mean to breach the Wall.',
+      it: 'Il lord comandante al Pugno. Nella sua tenda Jon sente Qhorin avvertire che i bruti vogliono sfondare la Barriera.',
+    },
+  },
+  jonSamHorn: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend. Jon gives Sam the old warhorn he found at the Fist, and a dragonglass spearhead and arrowheads.',
+      it: 'Il suo amico. Jon dà a Sam il vecchio corno trovato al Pugno, una punta di lancia e delle punte di freccia di vetro di drago.',
+    },
+  },
+  jonGrennDagger: {
+    character: 'grenn',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend. Jon makes a dragonglass dagger for Grenn, as for himself and Jeor.',
+      it: 'Il suo amico. Jon fa un pugnale di vetro di drago per Grenn, come per sé e per Jeor.',
+    },
+  },
+  jonGhostFist: {
+    character: 'ghost-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His white direwolf. At the Fist Ghost leads Jon out of the ringfort to the dragonglass buried there.',
+      it: 'Il suo meta-lupo bianco. Al Pugno Spettro porta Jon fuori dal recinto fino al vetro di drago sepolto lì.',
+    },
+  },
+  jonYgritteBook: {
+    character: 'ygritte',
+    type: { en: 'Prisoner', it: 'Prigioniera' },
+    summary: {
+      en: 'The spearwife he takes prisoner. She says Mance Rayder would take him in if he ran off with her. Jon stops himself from beheading her and tells her to run.',
+      it: 'La lancera che prende prigioniera. Gli dice che Mance Rayder lo accoglierebbe se scappasse con lei. Jon si ferma prima di decapitarla e le dice di fuggire.',
+    },
+  },
+  jonStonesnake: {
+    character: 'stonesnake',
+    type: { en: 'Fellow ranger', it: 'Ranger compagno' },
+    summary: {
+      en: 'The ranger who teaches Jon to climb a sheer cliff to the watchers. He warns Jon that the spearwife should be killed.',
+      it: 'Il ranger che insegna a Jon ad arrampicarsi su una parete a picco fino alle vedette. Avverte Jon che la lancera andrebbe uccisa.',
+    },
+  },
+  jonQhorinPass: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who leads the party through the pass. He leaves Jon alone with the prisoner to kill her.',
+      it: 'Il ranger che guida il gruppo nel passo. Lascia Jon solo con la prigioniera, perché la uccida.',
+    },
+  },
+  jonQhorinDead: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who told him to yield and go among the wildlings. When the hunters overtake them, Jon kills him with Longclaw.',
+      it: 'Il ranger che gli aveva detto di arrendersi e di unirsi ai bruti. Quando i cacciatori li raggiungono, Jon lo uccide con Lungo Artiglio.',
+    },
+  },
+  jonLord: {
+    character: 'lord-of-bones',
+    type: { en: 'Captor', it: 'Chi lo ha catturato' },
+    summary: {
+      en: 'The leader of the hunters. He orders Jon to kill Qhorin to prove himself, and accepts him despite his misgivings.',
+      it: 'Il capo dei cacciatori. Gli ordina di uccidere Qhorin per mettersi alla prova, e lo accetta nonostante i suoi dubbi.',
+    },
+  },
+  jonYgritteHunt: {
+    character: 'ygritte',
+    type: { en: 'Girl he let go', it: 'Ragazza che ha lasciato andare' },
+    summary: {
+      en: 'The spearwife he spared, now among the hunters. She tells him the eagle was the man he killed in the pass when they captured her.',
+      it: 'La lancera che ha risparmiato, ora tra i cacciatori. Gli dice che l’aquila era l’uomo che ha ucciso nel passo quando l’hanno catturata.',
+    },
+  },
+  jonGhostWounded: {
+    character: 'ghost-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His white direwolf. Jon dreams through Ghost’s eyes, and the party finds Ghost wounded.',
+      it: 'Il suo meta-lupo bianco. Jon sogna attraverso gli occhi di Spettro, e il gruppo trova Spettro ferito.',
+    },
+  },
+  jonEbben: {
+    character: 'ebben',
+    type: { en: 'Fellow ranger', it: 'Ranger compagno' },
+    summary: {
+      en: 'The ranger who calls him a skinchanger after his dream. The hunters later carry Ebben’s head.',
+      it: 'Il ranger che lo chiama mutaforma dopo il suo sogno. I cacciatori portano poi la testa di Ebben.',
+    },
+  },
+
+  // Jeor Mormont, the show
+  jeoJonShow: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, whom he reprimands for losing his temper with Craster. Jeor tells him to learn to follow before he leads.',
+      it: 'Il suo attendente, che rimprovera per aver perso la pazienza con Craster. Jeor gli dice di imparare a seguire prima di comandare.',
+    },
+  },
+  jeoCrasterShow: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, who mocks his vow of celibacy. Jeor puts up with him, because the Watch needs his shelter.',
+      it: 'Il padrone del fortino, che lo prende in giro per il voto di castità. Jeor lo sopporta, perché i Guardiani hanno bisogno del suo riparo.',
+    },
+  },
+  jeoBenjen: {
+    character: 'benjen-stark',
+    type: { en: 'Missing ranger', it: 'Ranger scomparso' },
+    summary: {
+      en: 'The First Ranger the ranging is looking for. Craster tells Jeor he has not seen him.',
+      it: 'Il Primo Ranger che la spedizione cerca. Craster dice a Jeor di non averlo visto.',
+    },
+  },
+  jeoQhorinShow: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who reaches the Fist from the Shadow Tower. He suggests small parties to push out the wildling lookouts in the mountains.',
+      it: 'Il ranger che raggiunge il Pugno dalla Torre delle Ombre. Propone piccoli gruppi per scacciare le vedette dei bruti sulle montagne.',
+    },
+  },
+  jeoJonGo: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, who asks to join Qhorin’s party. Jeor argues against it, then lets him go.',
+      it: 'Il suo attendente, che chiede di unirsi al gruppo di Qhorin. Jeor è contrario, ma poi lo lascia partire.',
+    },
+  },
+  jeoSamSteward: {
+    character: 'samwell-tarly',
+    type: { en: 'New steward', it: 'Nuovo attendente' },
+    summary: {
+      en: 'The brother who offers to take over Jon’s duties as steward. Jeor agrees.',
+      it: 'Il confratello che si offre di prendere il posto di Jon come attendente. Jeor accetta.',
+    },
+  },
+  jeoCrasterOut: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, who throws Jon at his feet and orders the Watch out. Jeor has always known what Craster does with his sons.',
+      it: 'Il padrone del fortino, che getta Jon ai suoi piedi e caccia via i Guardiani. Jeor ha sempre saputo che fine fanno i figli maschi di Craster.',
+    },
+  },
+
+  // Jeor Mormont, the books
+  jeoJonAemon: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward. Jeor tells him that Aemon could have been king, and that they both have a king for a brother.',
+      it: 'Il suo attendente. Jeor gli dice che Aemon avrebbe potuto essere re, e che entrambi hanno un re per fratello.',
+    },
+  },
+  jeoThoren: {
+    character: 'thoren-smallwood',
+    type: { en: 'Acting commander of rangers', it: 'Comandante dei ranger' },
+    summary: {
+      en: 'The ranger who argues that the Lord Commander’s place is at Castle Black. Jeor dismisses him.',
+      it: 'Il ranger che sostiene che il posto del lord comandante sia a Castello Nero. Jeor lo congeda.',
+    },
+  },
+  jeoSamBook: {
+    character: 'samwell-tarly',
+    type: { en: 'Keeper of the ravens', it: 'Custode dei corvi' },
+    summary: {
+      en: 'The recruit who is to keep the ravens. Jeor says he would sooner name Sam First Ranger than Thoren, then dismisses him.',
+      it: 'La recluta che si occuperà dei corvi. Jeor dice che nominerebbe Sam Primo Ranger piuttosto che Thoren, poi lo congeda.',
+    },
+  },
+  jeoAemon: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The old maester of Castle Black, whom Jeor hopes to keep another twenty years.',
+      it: 'Il vecchio maestro di Castello Nero, che Jeor spera di tenere con sé per altri vent’anni.',
+    },
+  },
+  jeoCrasterBook: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the holdfast. Jeor shares his wine with him, and Craster refuses an escort back to the Wall.',
+      it: 'Il padrone del fortino. Jeor divide con lui il suo vino, e Craster rifiuta una scorta fino alla Barriera.',
+    },
+  },
+  jeoJonCraster: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, whom he tells that Craster gives his sons to the wood, and that the Watch needs him all the same.',
+      it: 'Il suo attendente, a cui dice che Craster dà i figli maschi al bosco, e che i Guardiani hanno comunque bisogno di lui.',
+    },
+  },
+  jeoJarman: {
+    character: 'jarman-buckwell',
+    type: { en: 'Ranger', it: 'Ranger' },
+    summary: {
+      en: 'The ranger whose horn tells Jeor there is still someone at Craster’s Keep.',
+      it: 'Il ranger il cui corno dice a Jeor che a Forte Craster c’è ancora qualcuno.',
+    },
+  },
+  jeoThorenCraster: {
+    character: 'thoren-smallwood',
+    type: { en: 'Acting commander of rangers', it: 'Comandante dei ranger' },
+    summary: {
+      en: 'The ranger who swears that Craster is a friend of the Watch.',
+      it: 'Il ranger che giura che Craster è un amico dei Guardiani.',
+    },
+  },
+  jeoQhorinBook: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who reaches the Fist with a hundred men. At his advice Jeor sends three parties into the mountains, and Qhorin leads one.',
+      it: 'Il ranger che raggiunge il Pugno con cento uomini. Su suo consiglio Jeor manda tre gruppi sulle montagne, e Qhorin ne guida uno.',
+    },
+  },
+  jeoJonQhorin: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, whom Qhorin picks for his own party.',
+      it: 'Il suo attendente, che Qhorin sceglie per il suo gruppo.',
+    },
+  },
+  jeoThorenParty: {
+    character: 'thoren-smallwood',
+    type: { en: 'Acting commander of rangers', it: 'Comandante dei ranger' },
+    summary: {
+      en: 'The ranger Jeor sends to probe the Milkwater.',
+      it: 'Il ranger che Jeor manda a esplorare il Milkwater.',
+    },
+  },
+  jeoJarmanParty: {
+    character: 'jarman-buckwell',
+    type: { en: 'Ranger', it: 'Ranger' },
+    summary: {
+      en: 'The ranger Jeor sends up into the mountains with four men.',
+      it: 'Il ranger che Jeor manda sulle montagne con quattro uomini.',
+    },
+  },
+
+  // Samwell Tarly, the show
+  samJonRanging: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, on the ranging with him. Both are repulsed by Craster.',
+      it: 'Il suo amico, nella spedizione con lui. Entrambi provano repulsione per Craster.',
+    },
+  },
+  samGrennSledge: {
+    character: 'grenn',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Another friend on the ranging. They bicker over Sam’s weight on the sledge.',
+      it: 'Un altro amico nella spedizione. Battibeccano per il peso di Sam sulla slitta.',
+    },
+  },
+  samCrasterShow: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, who marries his own daughters. Sam is disgusted by him.',
+      it: 'Il padrone del fortino, che sposa le proprie figlie. Sam ne è disgustato.',
+    },
+  },
+  samGillyShow: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'Craster’s pregnant daughter and wife. Sam drives Ghost away from her, gives her his mother’s thimble and promises to come back for her.',
+      it: 'La figlia e moglie incinta di Craster. Sam allontana Spettro da lei, le dà il ditale di sua madre e promette di tornare a prenderla.',
+    },
+  },
+  samJonSteward: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who leaves with the Halfhand’s party. Sam takes over Jon’s duties as the Lord Commander’s steward.',
+      it: 'Il suo amico, che parte con il gruppo del Monco. Sam prende il posto di Jon come attendente del lord comandante.',
+    },
+  },
+  samGrennFist: {
+    character: 'grenn',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Another friend on the ranging, who trudges beside him to the Fist while Sam talks of Gilly.',
+      it: 'Un altro amico nella spedizione, che arranca accanto a lui fino al Pugno mentre Sam parla di Gilly.',
+    },
+  },
+  samJeorSteward: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who lets Sam take over Jon’s duties as his steward.',
+      it: 'Il lord comandante, che lascia a Sam i compiti di Jon come suo attendente.',
+    },
+  },
+  samGrennCache: {
+    character: 'grenn',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A brother who finds the dragonglass cache at the Fist with him. At the horns Grenn runs back without noticing Sam is left behind.',
+      it: 'Un confratello che trova con lui il nascondiglio di vetro di drago al Pugno. Al suono dei corni Grenn corre indietro senza accorgersi che Sam è rimasto indietro.',
+    },
+  },
+  samJonMissing: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who went with the Halfhand’s party. When it does not come back, Sam refuses to give up hope.',
+      it: 'Il suo amico, partito con il gruppo del Monco. Quando non torna, Sam si rifiuta di perdere la speranza.',
+    },
+  },
+  samEdd: {
+    character: 'eddison-tollett',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A brother who finds Sam’s talk of Gilly sickening. Sam tells him that what interests him about Edd is nothing at all.',
+      it: 'Un confratello a cui i discorsi di Sam su Gilly danno la nausea. Sam gli dice che di Edd non gli interessa assolutamente niente.',
+    },
+  },
+
+  // Samwell Tarly, the books
+  samJonVault: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who finds him in the vaults among the maps. Jon tells him he will be as safe on the ranging as at Horn Hill.',
+      it: 'Il suo amico, che lo trova nei sotterranei tra le mappe. Jon gli dice che nella spedizione sarà al sicuro come a Collina del Corno.',
+    },
+  },
+  samJeorRavens: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who asks him about the ravens. Jeor says he would sooner name Sam First Ranger than Thoren, then dismisses him.',
+      it: 'Il lord comandante, che gli chiede dei corvi. Jeor dice che nominerebbe Sam Primo Ranger piuttosto che Thoren, poi lo congeda.',
+    },
+  },
+  samAemonMaps: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who sent him to find maps for Jeor. Sam goes on the ranging in Aemon’s place, to tend the ravens.',
+      it: 'Il maestro che lo ha mandato a cercare mappe per Jeor. Sam va nella spedizione al posto di Aemon, per occuparsi dei corvi.',
+    },
+  },
+  samGillyBook: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'Craster’s wife, who wears Sam’s cloak. He wishes he could do something for her, and hopes they can take her when they come back.',
+      it: 'La moglie di Craster, che indossa il mantello di Sam. Vorrebbe fare qualcosa per lei, e spera di poterla portare via al ritorno.',
+    },
+  },
+  samJonCraster: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who brings him the Lord Commander’s order to draw a map. Jon says Jeor will never let them take one of Craster’s wives.',
+      it: 'Il suo amico, che gli porta l’ordine del lord comandante di disegnare una mappa. Jon dice che Jeor non permetterà mai di portare via una delle mogli di Craster.',
+    },
+  },
+  samEddBook: {
+    character: 'eddison-tollett',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A brother who told him Craster marries his own daughters. Sam passes it on to Jon.',
+      it: 'Un confratello che gli ha detto che Craster sposa le proprie figlie. Sam lo riferisce a Jon.',
+    },
+  },
+  samCrasterBook: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the holdfast. Sam asks Jon whether he is the savage they say, then goes to draw a map for the Lord Commander.',
+      it: 'Il padrone del fortino. Sam chiede a Jon se sia il selvaggio che dicono, poi va a disegnare una mappa per il lord comandante.',
+    },
+  },
+
+  // Grenn, the show
+  greSamSledge: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A friend on the ranging. They bicker over Sam’s weight on the sledge.',
+      it: 'Un amico nella spedizione. Battibeccano per il peso di Sam sulla slitta.',
+    },
+  },
+  greJonRanging: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A friend on the ranging. Like Jon, Grenn is repulsed by Craster.',
+      it: 'Un amico nella spedizione. Come Jon, Grenn prova repulsione per Craster.',
+    },
+  },
+  greCraster: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep. Grenn wonders if Craster does not like men speaking to his daughters, and learns that they are also his wives.',
+      it: 'Il padrone del fortino. Grenn si chiede se Craster non voglia che si parli con le sue figlie, e scopre che sono anche le sue mogli.',
+    },
+  },
+  greSamFist: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A friend who digs with him at the Fist and finds a dragonglass cache. At the horns Grenn runs back to the Fist and leaves Sam behind.',
+      it: 'Un amico che scava con lui al Pugno e trova un nascondiglio di vetro di drago. Al suono dei corni Grenn corre al Pugno e lascia Sam indietro.',
+    },
+  },
+  greEdd: {
+    character: 'eddison-tollett',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A brother who runs back to the Fist with him at the horns.',
+      it: 'Un confratello che corre con lui al Pugno al suono dei corni.',
+    },
+  },
+  greJonMissing: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A friend who went with the Halfhand’s party. At the Fist they fear he is dead.',
+      it: 'Un amico partito con il gruppo del Monco. Al Pugno temono che sia morto.',
+    },
+  },
+
+  // Ghost
+  ghoJonNorth: {
+    character: 'jon-snow',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The man he follows beyond the Wall, up to the Fist.',
+      it: 'L’uomo che segue oltre la Barriera, fino al Pugno.',
+    },
+  },
+  ghoSam: {
+    character: 'samwell-tarly',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'The steward who tells Ghost to get away from Gilly. Ghost gives him a look, but obeys.',
+      it: 'L’attendente che dice a Spettro di allontanarsi da Gilly. Spettro gli lancia un’occhiataccia, ma obbedisce.',
+    },
+  },
+  ghoGilly: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'Craster’s wife. Ghost approaches her, drawn by the dead rabbit she carries, until Sam calls him off.',
+      it: 'La moglie di Craster. Spettro si avvicina a lei, attirato dal coniglio morto che porta, finché Sam non lo richiama.',
+    },
+  },
+  ghoJonBook: {
+    character: 'jon-snow',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy who promises Gilly that Ghost will not hurt her. Ghost brings him a rabbit.',
+      it: 'Il ragazzo che promette a Gilly che Spettro non le farà del male. Spettro gli porta un coniglio.',
+    },
+  },
+  ghoGillyBook: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'The girl whose rabbit hutch he raids. She cries out when she sees him.',
+      it: 'La ragazza di cui assalta la conigliera. Lei grida quando lo vede.',
+    },
+  },
+  ghoJonDream: {
+    character: 'jon-snow',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy who dreams through his eyes and wakes shouting his name. Jon finds him wounded.',
+      it: 'Il ragazzo che sogna attraverso i suoi occhi e si sveglia gridando il suo nome. Jon lo trova ferito.',
+    },
+  },
+  ghoQhorin: {
+    character: 'qhorin-halfhand',
+    type: {
+      en: 'Ranger of the Shadow Tower',
+      it: 'Ranger della Torre delle Ombre',
+    },
+    summary: {
+      en: 'The ranger who has his wounds dressed, then turns the party back to the Fist.',
+      it: 'Il ranger che fa medicare le sue ferite, poi riporta il gruppo al Pugno.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season1Relationships = {
   // The show weds her in episode 1; its wedding entry waits for episode 2,
   // the book's pair, which is later and so safe.
@@ -9913,6 +10651,24 @@ export const season1Relationships = {
   'ghost-direwolf': [
     { episode: 4, chapter: 6, value: [north.ghoJon] },
     { episode: 8, chapter: 53, value: [north.ghoJon, north.ghoJeor] },
+    {
+      episode: 15,
+      chapter: 117,
+      source: 'episode',
+      value: [wall2.ghoJonNorth, wall2.ghoSam, wall2.ghoGilly],
+    },
+    {
+      episode: 11,
+      chapter: 97,
+      source: 'chapter',
+      value: [wall2.ghoJonBook, wall2.ghoGillyBook],
+    },
+    {
+      episode: 17,
+      chapter: 127,
+      source: 'chapter',
+      value: [wall2.ghoJonDream, wall2.ghoQhorin],
+    },
   ],
   'theon-greyjoy': [
     { episode: 1, chapter: 2, value: [north.theEddard, north.theRobb] },
@@ -10450,6 +11206,110 @@ export const season1Relationships = {
         links.jonPyp,
       ],
     },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'episode',
+      value: [
+        wall2.jonJeorReprimand,
+        wall2.jonCrasterShow,
+        wall2.jonSamRanging,
+        wall2.jonGrennRanging,
+      ],
+    },
+    {
+      episode: 15,
+      chapter: 117,
+      source: 'episode',
+      value: [
+        wall2.jonQhorinShow,
+        wall2.jonJeorLets,
+        wall2.jonSamSteward,
+        wall2.jonGillyShow,
+        wall2.jonCrasterBeat,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 125,
+      source: 'episode',
+      value: [
+        wall2.jonYgritteShow,
+        wall2.jonQhorinOrder,
+        wall2.jonGhostLost,
+        wall2.jonJeorLets,
+        wall2.jonSamSteward,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 142,
+      source: 'episode',
+      value: [
+        wall2.jonQhorinKilled,
+        wall2.jonYgritteCompany,
+        wall2.jonSamMissing,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'chapter',
+      value: [
+        wall2.jonJeorAemon,
+        wall2.jonSamVault,
+        wall2.jonRobbKing,
+        wall2.jonAemonHand,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 97,
+      source: 'chapter',
+      value: [
+        wall2.jonCrasterBook,
+        wall2.jonGillyBook,
+        wall2.jonJeorCraster,
+        wall2.jonSamCraster,
+        wall2.jonGhostRabbits,
+      ],
+    },
+    {
+      episode: 15,
+      chapter: 117,
+      source: 'chapter',
+      value: [
+        wall2.jonQhorinBook,
+        wall2.jonJeorFist,
+        wall2.jonSamHorn,
+        wall2.jonGrennDagger,
+        wall2.jonGhostFist,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 125,
+      source: 'chapter',
+      value: [
+        wall2.jonYgritteBook,
+        wall2.jonStonesnake,
+        wall2.jonQhorinPass,
+        wall2.jonJeorFist,
+        wall2.jonGhostFist,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 142,
+      source: 'chapter',
+      value: [
+        wall2.jonQhorinDead,
+        wall2.jonLord,
+        wall2.jonYgritteHunt,
+        wall2.jonGhostWounded,
+        wall2.jonEbben,
+      ],
+    },
   ],
   // Books: Jon III (chapter 20) has him give Jon word of Bran; the show has
   // no such scene, and its Jeor first deals with Jon at the oath.
@@ -10541,6 +11401,56 @@ export const season1Relationships = {
         links.jeorOthorDead,
       ],
     },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'episode',
+      value: [wall2.jeoJonShow, wall2.jeoCrasterShow, wall2.jeoBenjen],
+    },
+    {
+      episode: 15,
+      chapter: 117,
+      source: 'episode',
+      value: [
+        wall2.jeoQhorinShow,
+        wall2.jeoJonGo,
+        wall2.jeoSamSteward,
+        wall2.jeoCrasterOut,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'chapter',
+      value: [
+        wall2.jeoJonAemon,
+        wall2.jeoThoren,
+        wall2.jeoSamBook,
+        wall2.jeoAemon,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 97,
+      source: 'chapter',
+      value: [
+        wall2.jeoCrasterBook,
+        wall2.jeoJonCraster,
+        wall2.jeoJarman,
+        wall2.jeoThorenCraster,
+      ],
+    },
+    {
+      episode: 15,
+      chapter: 117,
+      source: 'chapter',
+      value: [
+        wall2.jeoQhorinBook,
+        wall2.jeoJonQhorin,
+        wall2.jeoThorenParty,
+        wall2.jeoJarmanParty,
+      ],
+    },
   ],
   // The two media give his talk with Tyrion different words.
   'aemon': [
@@ -10594,6 +11504,51 @@ export const season1Relationships = {
       episode: 10,
       chapter: 71,
       value: [links.samJonDesert, links.samAemon, links.samGrenn, links.samPyp],
+    },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'episode',
+      value: [wall2.samJonRanging, wall2.samGrennSledge, wall2.samCrasterShow],
+    },
+    {
+      episode: 15,
+      chapter: 117,
+      source: 'episode',
+      value: [
+        wall2.samGillyShow,
+        wall2.samJonSteward,
+        wall2.samGrennFist,
+        wall2.samJeorSteward,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 142,
+      source: 'episode',
+      value: [
+        wall2.samGrennCache,
+        wall2.samEdd,
+        wall2.samGillyShow,
+        wall2.samJonMissing,
+      ],
+    },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'chapter',
+      value: [wall2.samJonVault, wall2.samJeorRavens, wall2.samAemonMaps],
+    },
+    {
+      episode: 11,
+      chapter: 97,
+      source: 'chapter',
+      value: [
+        wall2.samGillyBook,
+        wall2.samJonCraster,
+        wall2.samEddBook,
+        wall2.samCrasterBook,
+      ],
     },
   ],
   // Tyrion mocks him at the officers' table in the book alone.
@@ -10699,6 +11654,18 @@ export const season1Relationships = {
       episode: 10,
       chapter: 71,
       value: [links.greJonDesert, links.grePyp, links.greSamwell10],
+    },
+    {
+      episode: 11,
+      chapter: 80,
+      source: 'episode',
+      value: [wall2.greSamSledge, wall2.greJonRanging, wall2.greCraster],
+    },
+    {
+      episode: 20,
+      chapter: 142,
+      source: 'episode',
+      value: [wall2.greSamFist, wall2.greEdd, wall2.greJonMissing],
     },
   ],
   'pypar': [

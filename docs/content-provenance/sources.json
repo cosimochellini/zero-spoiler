@@ -37981,6 +37981,26 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=20989",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=20989",
       "contentSha256": "dbd24146545cdc93f5c0e3023089302b6d89f979105116e6c39a3ca96510b3be"
+    },
+    "got-en-Samwell_Tarly-736846.json": {
+      "locale": "en",
+      "title": "Samwell Tarly",
+      "revision": 736846,
+      "revisionDate": "2026-06-10T23:36:23Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Samwell_Tarly",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=736846",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=736846",
+      "contentSha256": "230b52f283df0496f402445ee3d6206c100976a8fc156915db87be71947074a3"
+    },
+    "got-en-Jeor_Mormont-748990.json": {
+      "locale": "en",
+      "title": "Jeor Mormont",
+      "revision": 748990,
+      "revisionDate": "2026-10-08T08:50:11Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Jeor_Mormont",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748990",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748990",
+      "contentSha256": "d03b23c68a7b1ae4e539def6b9e5a252744eb5c35e264a10512c411e91731010"
     }
   }
 }
