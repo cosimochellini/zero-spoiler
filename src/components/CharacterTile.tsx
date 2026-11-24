@@ -179,8 +179,8 @@ const styles = stylex.create({
     padding: space.xs2,
     borderColor: {
       'default': color.rule,
-      ':is(a:focus-visible) > &': color.rule2,
-      ':is(a:hover) > &': color.rule2,
+      ':is(a:focus-visible *)': color.rule2,
+      ':is(a:hover *)': color.rule2,
     },
     borderRadius: radius.card,
     borderStyle: 'solid',
@@ -195,11 +195,13 @@ const styles = stylex.create({
   },
   words: { gap: space.xs3, display: 'grid', minWidth: 0 },
   name: {
+    // Hover and focus skip a pressed link: StyleX orders `:is()` keys by
+    // value, not as written, so the pressed colour would lose (#1547).
     color: {
       'default': color.ink,
-      ':is(a:active) > * > &': color.ink2,
-      ':is(a:focus-visible) > * > &': color.accent,
-      ':is(a:hover) > * > &': color.accent,
+      ':is(a:active *)': color.ink2,
+      ':is(a:focus-visible:not(:active) *)': color.accent,
+      ':is(a:hover:not(:active) *)': color.accent,
     },
     display: 'block',
     fontFamily: font.display,

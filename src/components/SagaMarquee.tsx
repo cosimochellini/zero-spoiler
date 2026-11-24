@@ -293,8 +293,8 @@ const styles = stylex.create({
   name: {
     color: {
       'default': color.ink,
-      ':is(a:focus-visible) > &': color.accent,
-      ':is(a:hover) > &': color.accent,
+      ':is(a:focus-visible *)': color.accent,
+      ':is(a:hover *)': color.accent,
     },
     fontFamily: font.display,
     fontSize: text.base,
