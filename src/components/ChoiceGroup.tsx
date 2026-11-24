@@ -214,8 +214,7 @@ const styles = stylex.create({
     outlineOffset: `calc(-1 * ${rule.fine})`,
     minWidth: '44px',
   },
-  // No fill: a filled segment inside the bordered track reads as a card in a
-  // card (#1591). The underline and the ink mark the pick.
+  // No fill: the underline and the ink mark the pick (#1591).
   segmentPicked: {
     boxShadow: `inset 0 calc(-1 * ${rule.fine}) 0 ${color.accent}`,
     color: color.ink,

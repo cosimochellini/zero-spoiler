@@ -36,6 +36,15 @@
         ],
         "createdAt": "2026-11-17T12:52:42.215Z",
         "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: at 1440px a place page opens on two columns, one several viewports tall beside one that ends above the fold."
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "http://127.0.0.1:*/*/*/fruits?ep=*"
+        ],
+        "createdAt": "2026-11-17T12:52:42.298Z",
+        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: the fruits index draws a card inside a card."
       }
     ]
   },
