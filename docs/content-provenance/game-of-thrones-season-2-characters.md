@@ -373,9 +373,9 @@ snapshots (Arya, Gendry, Hot Pie, Yoren, Robb, Catelyn, Jaime, Tywin, Gregor
 Clegane, Roose Bolton, Edmure). New characters' cards are in
 `season-2.relationships.ts`, the others in `season-1.relationships.ts`. Book
 facts come from A Wiki of Ice and Fire's chapter pages for Arya I, II, IV to X
-(site chapters 75, 79, 88, 93, 100, 104, 112, 121, 138), Catelyn I and V
-(81, 113) and Tyrion VI (99), read through the Firecrawl tool; show facts from
-the Game of Thrones Wiki's episode and character pages.
+(site chapters 75, 79, 88, 93, 100, 104, 112, 121, 138), Catelyn I, V and VII
+(81, 113, 129) and Tyrion VI (99), read through the Firecrawl tool; show facts
+from the Game of Thrones Wiki's episode and character pages.
 
 - Show and book cards are separate wherever the media differ: the show's Tickler
   and Amory Lorch die at Jaqen's hand at Arya's asking (15, 16), the books'

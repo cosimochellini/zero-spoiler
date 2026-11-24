@@ -9845,10 +9845,10 @@ const riverlands2 = {
   },
   catTalisa20: {
     character: 'talisa-maegyr',
-    type: { en: 'Son’s bride', it: 'Sposa di suo figlio' },
+    type: { en: 'Son’s beloved', it: 'Amata di suo figlio' },
     summary: {
-      en: 'The healer Robb marries in private that night.',
-      it: 'La guaritrice che Robb sposa in privato quella notte.',
+      en: 'The healer Robb loves, in spite of his vow to the Freys.',
+      it: 'La guaritrice che Robb ama, nonostante la promessa fatta ai Frey.',
     },
   },
   catRobb81: {
@@ -9992,7 +9992,7 @@ const riverlands2 = {
     type: { en: 'Enemy', it: 'Nemico' },
     summary: {
       en: 'The Karstark lord whose son he strangles in the escape. He demands Jaime’s execution.',
-      it: 'Il lord Karstark di cui strangola il figlio durante la fuga. Chiede la sua esecuzione.',
+      it: 'Il lord Karstark di cui strangola il figlio durante la fuga. Chiede l’esecuzione di Jaime.',
     },
   },
   jaiCatelyn17: {
@@ -10047,8 +10047,8 @@ const riverlands2 = {
     character: 'cleos-frey',
     type: { en: 'Cousin', it: 'Cugino' },
     summary: {
-      en: 'His cousin, whose escort’s men tried to free him and were hanged.',
-      it: 'Suo cugino, i cui uomini di scorta hanno tentato di liberarlo e sono stati impiccati.',
+      en: 'His cousin, whose escort’s men tried to free Jaime and were hanged.',
+      it: 'Suo cugino, i cui uomini di scorta hanno tentato di liberare Jaime e sono stati impiccati.',
     },
   },
   jaiCatelyn129: {
