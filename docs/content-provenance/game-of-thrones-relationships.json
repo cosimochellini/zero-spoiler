@@ -673,14 +673,23 @@
         "iaf-en-Eddard_IV_-_A_Game_of_Thrones-24717.json",
         "iaf-en-Catelyn_V_-_A_Game_of_Thrones-24850.json",
         "iaf-en-Catelyn_Stark-26349.json",
-        "iaf-en-Lysa_Arryn-27348.json"
+        "iaf-en-Lysa_Arryn-27348.json",
+        "got-en-The_North_Remembers-740163.json",
+        "got-en-The_Old_Gods_and_the_New-740283.json",
+        "got-en-A_Man_Without_Honor-740171.json",
+        "got-en-The_Prince_of_Winterfell-740172.json",
+        "got-en-Valar_Morghulis-740176.json",
+        "got-en-Talisa_Stark-728450.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
-          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_7",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_39",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_55"
         ]
       }
     },
@@ -1285,8 +1294,20 @@
         "got-en-Winter_Is_Coming-740149.json",
         "iaf-en-Bran_II_-_A_Game_of_Thrones-24324.json",
         "iaf-en-Eddard_I_-_A_Game_of_Thrones-24676.json",
-        "iaf-en-Jaime_Lannister-27361.json"
-      ]
+        "iaf-en-Jaime_Lannister-27361.json",
+        "got-en-The_North_Remembers-740163.json",
+        "got-en-A_Man_Without_Honor-740171.json",
+        "got-en-The_Prince_of_Winterfell-740172.json",
+        "got-en-Valar_Morghulis-740176.json",
+        "got-en-Alton_Lannister-748547.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_39",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_55"
+        ]
+      }
     },
     "tyrion-lannister": {
       "sources": [

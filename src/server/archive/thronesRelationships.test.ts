@@ -153,6 +153,8 @@ const STAGE_2_GROUPS: { group: string; issue: string; owners: string[] }[] = [
       'gregor-clegane',
       'roose-bolton',
       'edmure-tully',
+      'catelyn-stark',
+      'jaime-lannister',
     ],
   },
 ]

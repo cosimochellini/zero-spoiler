@@ -755,16 +755,16 @@ const riverlands = {
     character: 'vargo-hoat',
     type: { en: 'Betrayer', it: 'Traditore' },
     summary: {
-      en: 'The sellsword captain whose Brave Companions turn on the westermen. They parade him naked and feed him to a caged bear.',
-      it: 'Il capitano mercenario i cui Bravi Camerati si rivoltano contro gli uomini dell’ovest. Lo fanno sfilare nudo e lo danno in pasto a un orso in gabbia.',
+      en: 'The sellsword captain whose Brave Companions turn on the westermen. His men parade Amory naked and feed him to a caged bear.',
+      it: 'Il capitano mercenario i cui Bravi Camerati si rivoltano contro gli uomini dell’ovest. I suoi uomini fanno sfilare Amory nudo e lo danno in pasto a un orso in gabbia.',
     },
   },
   lorRobett: {
     character: 'robett-glover',
     type: { en: 'Prisoner', it: 'Prigioniero' },
     summary: {
-      en: 'The northern lord the Brave Companions bring in as a captive. He has him and his men locked in a cell beneath the Widow’s Tower.',
-      it: 'Il lord del Nord che i Bravi Camerati portano come prigioniero. Fa rinchiudere lui e i suoi uomini in una cella sotto una delle torri.',
+      en: 'The northern lord the Brave Companions bring in as a captive. Amory has him and his men locked in a cell beneath a tower.',
+      it: 'Il lord del Nord che i Bravi Camerati portano come prigioniero. Amory fa rinchiudere lui e i suoi uomini in una cella sotto una torre.',
     },
   },
   lorJaqenFree: {

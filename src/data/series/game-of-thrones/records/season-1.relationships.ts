@@ -9745,6 +9745,336 @@ const riverlands2 = {
       it: 'Il garzone di fornaio che esce da Harrenhal con lui e Arya.',
     },
   },
+
+  // Catelyn Stark and Jaime Lannister (#1481)
+  catRobb11: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, who sends her to seek Renly’s help and turns down her plea to trade Jaime for her daughters.',
+      it: 'Suo figlio, che la manda a cercare l’aiuto di Renly e respinge la sua richiesta di scambiare Jaime con le sue figlie.',
+    },
+  },
+  catRenly11: {
+    character: 'renly-baratheon',
+    type: { en: 'King to win over', it: 'Re da conquistare' },
+    summary: {
+      en: 'The Baratheon who also calls himself king, whose help Robb sends her to ask for.',
+      it: 'Il Baratheon che si proclama re a sua volta, di cui Robb la manda a chiedere l’aiuto.',
+    },
+  },
+  catTheon11: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward of her house', it: 'Pupillo della sua casa' },
+    summary: {
+      en: 'The Greyjoy ward who asks to go to his father as envoy. She counsels Robb against trusting Balon.',
+      it: 'Il pupillo Greyjoy che chiede di andare dal padre come messaggero. Lei consiglia a Robb di non fidarsi di Balon.',
+    },
+  },
+  catTalisa16: {
+    character: 'talisa-maegyr',
+    type: { en: 'Healer', it: 'Guaritrice' },
+    summary: {
+      en: 'The healer from Volantis whom Robb introduces to her. She reminds him he is not free to love where he will.',
+      it: 'La guaritrice di Volantis che Robb le presenta. Gli ricorda che non è libero di amare chi vuole.',
+    },
+  },
+  catBrienne16: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Escort', it: 'Scorta' },
+    summary: {
+      en: 'The knight of Tarth who has come back with her from the stormlands.',
+      it: 'La cavaliera di Tarth che è tornata con lei dalle terre della tempesta.',
+    },
+  },
+  catJaimeTalk: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The captive she confronts. He tells her honor is naive and mocks Eddard, until she asks for Brienne’s sword.',
+      it: 'Il prigioniero che affronta. Le dice che l’onore è ingenuo e deride Eddard, finché lei non chiede la spada di Brienne.',
+    },
+  },
+  catRickard: {
+    character: 'rickard-karstark',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The lord who demands Jaime’s execution for the death of his son. She has to argue for Jaime’s life.',
+      it: 'Il lord che chiede l’esecuzione di Jaime per la morte di suo figlio. Lei deve difendere la vita di Jaime.',
+    },
+  },
+  catBrienne17: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Sworn sword', it: 'Spada giurata' },
+    summary: {
+      en: 'The knight whose sword she asks for when Jaime goes too far.',
+      it: 'La cavaliera di cui chiede la spada quando Jaime esagera.',
+    },
+  },
+  catJaimeFree: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner she frees', it: 'Prigioniero che libera' },
+    summary: {
+      en: 'The captive she frees, to be taken to King’s Landing and traded for her daughters.',
+      it: 'Il prigioniero che libera, perché sia portato ad Approdo del Re e scambiato con le sue figlie.',
+    },
+  },
+  catRobbGuard: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, who is furious that she freed Jaime and has her kept under guard.',
+      it: 'Suo figlio, furioso perché ha liberato Jaime, che la fa tenere sotto sorveglianza.',
+    },
+  },
+  catBrienne18: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Escort', it: 'Scorta' },
+    summary: {
+      en: 'The knight she sends to take Jaime south.',
+      it: 'La cavaliera che manda a portare Jaime verso sud.',
+    },
+  },
+  catRobb20: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, whom she urges to keep his vow to wed a Frey daughter. He ignores her advice.',
+      it: 'Suo figlio, che esorta a mantenere la promessa di sposare una figlia dei Frey. Lui ignora il suo consiglio.',
+    },
+  },
+  catTalisa20: {
+    character: 'talisa-maegyr',
+    type: { en: 'Son’s bride', it: 'Sposa di suo figlio' },
+    summary: {
+      en: 'The healer Robb marries in private that night.',
+      it: 'La guaritrice che Robb sposa in privato quella notte.',
+    },
+  },
+  catRobb81: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, who sends the captive knight to King’s Landing. She tells him sweeter terms might bring her daughters back.',
+      it: 'Suo figlio, che manda il cavaliere prigioniero ad Approdo del Re. Lei gli dice che condizioni più dolci potrebbero riportare le sue figlie.',
+    },
+  },
+  catEdmure81: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, whom she blames for letting the river lords go home.',
+      it: 'Suo fratello, a cui rinfaccia di aver lasciato tornare a casa i lord dei fiumi.',
+    },
+  },
+  catBrynden81: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her uncle, back at Riverrun. With him she decides to ask Renly for help, as a king.',
+      it: 'Suo zio, tornato a Delta delle Acque. Con lui decide di chiedere aiuto a Renly, come re.',
+    },
+  },
+  catHoster81: {
+    character: 'hoster-tully',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, frail and asleep in his solar.',
+      it: 'Suo padre, debole e addormentato nel suo solario.',
+    },
+  },
+  catCleos81: {
+    character: 'cleos-frey',
+    type: { en: 'Envoy', it: 'Messaggero' },
+    summary: {
+      en: 'The captive knight Robb sends to King’s Landing with his terms.',
+      it: 'Il cavaliere prigioniero che Robb manda ad Approdo del Re con le sue condizioni.',
+    },
+  },
+  catEdmure113: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who holds Riverrun. She disapproves of the smallfolk in the castle and of giving Tywin battle.',
+      it: 'Suo fratello, che tiene Delta delle Acque. Lei disapprova i popolani nel castello e la battaglia con Tywin.',
+    },
+  },
+  catBrienne113: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Sworn sword', it: 'Spada giurata' },
+    summary: {
+      en: 'The knight she takes as her sworn sword.',
+      it: 'La cavaliera che prende come spada giurata.',
+    },
+  },
+  catJaime113: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The captive Edmure has chained in the deep dungeons after the escape attempt.',
+      it: 'Il prigioniero che Edmure ha fatto incatenare nelle segrete profonde dopo il tentativo di fuga.',
+    },
+  },
+  catHoster113: {
+    character: 'hoster-tully',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her feverish father, who mistakes her for her sister.',
+      it: 'Suo padre, febbricitante, che la scambia per sua sorella.',
+    },
+  },
+  catJaime129: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The captive she questions at midnight. He agrees to answer if she answers him, and she ends it when he mocks Eddard.',
+      it: 'Il prigioniero che interroga a mezzanotte. Accetta di rispondere se lei risponde a lui, e lei chiude quando deride Eddard.',
+    },
+  },
+  catBrienne129: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Sworn sword', it: 'Spada giurata' },
+    summary: {
+      en: 'The knight who waits outside the cell, and whose sword she calls for.',
+      it: 'La cavaliera che aspetta fuori dalla cella, e di cui chiama la spada.',
+    },
+  },
+  catRickard129: {
+    character: 'rickard-karstark',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The lord who wants Jaime dead for his sons. She tells Jaime so.',
+      it: 'Il lord che vuole Jaime morto per i suoi figli. Lei lo dice a Jaime.',
+    },
+  },
+  catRobb129: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, whose latest victory Riverrun celebrates while she mourns.',
+      it: 'Suo figlio, la cui ultima vittoria Delta delle Acque festeggia mentre lei è in lutto.',
+    },
+  },
+  catEdmure129: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, whose victory in battle Riverrun celebrates.',
+      it: 'Suo fratello, la cui vittoria in battaglia Delta delle Acque festeggia.',
+    },
+  },
+  jaiRobb11: {
+    character: 'robb-stark',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The king who questions him about Bran. Jaime says keeping him in the camp shows a lack of trust in his own men.',
+      it: 'Il re che lo interroga su Bran. Jaime dice che tenerlo nell’accampamento mostra poca fiducia nei suoi uomini.',
+    },
+  },
+  jaiGreyWind11: {
+    character: 'grey-wind',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'The king’s direwolf, which menaces him during the questioning.',
+      it: 'Il metalupo del re, che lo minaccia durante l’interrogatorio.',
+    },
+  },
+  jaiAlton: {
+    character: 'alton-lannister',
+    type: { en: 'Cousin', it: 'Cugino' },
+    summary: {
+      en: 'His cousin, put in his cell. He kills him to lure in the guard.',
+      it: 'Suo cugino, messo nella sua cella. Lo uccide per attirare la guardia.',
+    },
+  },
+  jaiRickard: {
+    character: 'rickard-karstark',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The Karstark lord whose son he strangles in the escape. He demands Jaime’s execution.',
+      it: 'Il lord Karstark di cui strangola il figlio durante la fuga. Chiede la sua esecuzione.',
+    },
+  },
+  jaiCatelyn17: {
+    character: 'catelyn-stark',
+    type: { en: 'Captor', it: 'Carceriera' },
+    summary: {
+      en: 'The lady who argues for his life, then tells him he has no honor.',
+      it: 'La lady che difende la sua vita, poi gli dice che non ha onore.',
+    },
+  },
+  jaiCatelyn18: {
+    character: 'catelyn-stark',
+    type: { en: 'Liberator', it: 'Liberatrice' },
+    summary: {
+      en: 'The lady who frees him, to trade him for her daughters.',
+      it: 'La lady che lo libera, per scambiarlo con le sue figlie.',
+    },
+  },
+  jaiBrienne18: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Escort', it: 'Scorta' },
+    summary: {
+      en: 'The knight who takes him south toward King’s Landing.',
+      it: 'La cavaliera che lo porta verso sud, verso Approdo del Re.',
+    },
+  },
+  jaiRobb18: {
+    character: 'robb-stark',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The king whose most important captive he was, furious that his mother has freed him.',
+      it: 'Il re di cui era il prigioniero più importante, furioso che sua madre lo abbia liberato.',
+    },
+  },
+  jaiBrienne20: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Escort', it: 'Scorta' },
+    summary: {
+      en: 'The knight who kills the soldiers that recognize him. She says she serves Catelyn Stark, not Robb.',
+      it: 'La cavaliera che uccide i soldati che lo riconoscono. Dice di servire Catelyn Stark, non Robb.',
+    },
+  },
+  jaiEdmure113: {
+    character: 'edmure-tully',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The lord of Riverrun in his father’s place, who has him chained in the deep dungeons.',
+      it: 'Il signore di Delta delle Acque al posto del padre, che lo fa incatenare nelle segrete profonde.',
+    },
+  },
+  jaiCleos113: {
+    character: 'cleos-frey',
+    type: { en: 'Cousin', it: 'Cugino' },
+    summary: {
+      en: 'His cousin, whose escort’s men tried to free him and were hanged.',
+      it: 'Suo cugino, i cui uomini di scorta hanno tentato di liberarlo e sono stati impiccati.',
+    },
+  },
+  jaiCatelyn129: {
+    character: 'catelyn-stark',
+    type: { en: 'Captor', it: 'Carceriera' },
+    summary: {
+      en: 'The lady who questions him at midnight. He answers her if she answers him.',
+      it: 'La lady che lo interroga a mezzanotte. Lui risponde se lei risponde a lui.',
+    },
+  },
+  jaiBrienne129: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Guard', it: 'Guardia' },
+    summary: {
+      en: 'The knight who waits outside his cell.',
+      it: 'La cavaliera che aspetta fuori dalla sua cella.',
+    },
+  },
+  jaiRickard129: {
+    character: 'rickard-karstark',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The lord who wants him dead for his sons. Jaime says they died in a fair fight.',
+      it: 'Il lord che lo vuole morto per i suoi figli. Jaime dice che sono morti in un combattimento leale.',
+    },
+  },
 } satisfies Record<string, Relationship>
 
 export const season1Relationships = {
@@ -11042,6 +11372,84 @@ export const season1Relationships = {
         north.catJaime,
         north.catWalder,
         north.catLysaRefusal,
+      ],
+    },
+    // Stage 2 (#1481).
+    {
+      episode: 11,
+      chapter: 81,
+      source: 'episode',
+      value: [
+        riverlands2.catRobb11,
+        riverlands2.catRenly11,
+        riverlands2.catTheon11,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 100,
+      source: 'episode',
+      value: [riverlands2.catTalisa16, riverlands2.catBrienne16],
+    },
+    {
+      episode: 17,
+      chapter: 112,
+      source: 'episode',
+      value: [
+        riverlands2.catJaimeTalk,
+        riverlands2.catRickard,
+        riverlands2.catBrienne17,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 129,
+      source: 'episode',
+      value: [
+        riverlands2.catJaimeFree,
+        riverlands2.catRobbGuard,
+        riverlands2.catBrienne18,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 137,
+      source: 'episode',
+      value: [riverlands2.catRobb20, riverlands2.catTalisa20],
+    },
+    {
+      episode: 11,
+      chapter: 81,
+      source: 'chapter',
+      value: [
+        riverlands2.catRobb81,
+        riverlands2.catEdmure81,
+        riverlands2.catBrynden81,
+        riverlands2.catHoster81,
+        riverlands2.catCleos81,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 113,
+      source: 'chapter',
+      value: [
+        riverlands2.catEdmure113,
+        riverlands2.catBrienne113,
+        riverlands2.catJaime113,
+        riverlands2.catHoster113,
+      ],
+    },
+    {
+      episode: 14,
+      chapter: 129,
+      source: 'chapter',
+      value: [
+        riverlands2.catJaime129,
+        riverlands2.catBrienne129,
+        riverlands2.catRickard129,
+        riverlands2.catRobb129,
+        riverlands2.catEdmure129,
       ],
     },
   ],
@@ -12908,6 +13316,55 @@ export const season1Relationships = {
         crown.jaiCerseiLover,
         crown.jaiTyrionPrisoner,
         crown.jaiBran,
+      ],
+    },
+    // Stage 2 (#1481).
+    {
+      episode: 11,
+      chapter: 81,
+      source: 'episode',
+      value: [riverlands2.jaiRobb11, riverlands2.jaiGreyWind11],
+    },
+    {
+      episode: 17,
+      chapter: 112,
+      source: 'episode',
+      value: [
+        riverlands2.jaiAlton,
+        riverlands2.jaiRickard,
+        riverlands2.jaiCatelyn17,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 129,
+      source: 'episode',
+      value: [
+        riverlands2.jaiCatelyn18,
+        riverlands2.jaiBrienne18,
+        riverlands2.jaiRobb18,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 137,
+      source: 'episode',
+      value: [riverlands2.jaiBrienne20],
+    },
+    {
+      episode: 13,
+      chapter: 113,
+      source: 'chapter',
+      value: [riverlands2.jaiEdmure113, riverlands2.jaiCleos113],
+    },
+    {
+      episode: 14,
+      chapter: 129,
+      source: 'chapter',
+      value: [
+        riverlands2.jaiCatelyn129,
+        riverlands2.jaiBrienne129,
+        riverlands2.jaiRickard129,
       ],
     },
   ],
