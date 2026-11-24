@@ -146,6 +146,27 @@ affiliation steps still wait.
   and Cleos Frey (first seen at Robb's camp, #1465), Kevan Lannister (with Tywin
   at Harrenhal, #1465).
 
+### Relationships (#1479)
+
+The seven filed characters have cards from their own gates, and fourteen stage-1
+characters step: Tyrion, Cersei, Joffrey, Myrcella, Sansa, Bronn, Shae, Ros,
+Petyr Baelish, Varys, Pycelle, Sandor Clegane, Janos Slynt and Lancel Lannister.
+The book side was read on A Wiki of Ice and Fire's chapter pages through
+Firecrawl (chapters 2, 3, 8, 17, 18, 20, 25, 29, 41, 44, 49, 54, 59, 62, 65 and
+67 of _A Clash of Kings_, site chapter 74 + N); the show side on the Game of
+Thrones Wiki's character and episode pages. Podrick, Meryn Trant, Boros Blount,
+Balon Swann and Dontos Hollard keep their last selection.
+
+- Daisy, Ros and Joffrey's show cards rest on the Game of Thrones Wiki's Daisy
+  page (episodes 11, 13 and 14); the books have no Daisy.
+- Cersei's and Lancel's books cards leave out the affair: the books confirm it
+  later, and the archive's test keeps it to the show.
+- Not read, so the card is left out or kept to what the chapters above tell:
+  Tyrion III (89, Tyrion's first council as Hand), Sansa II (92), Tyrion VIII
+  (110), Sansa III–VI (106, 126, 131, 134), Tyrion XIV (135). Lollys's riot
+  (115) and Lollys's place at the holdfast (131) are not cards.
+- Hallyne's, Osmund's and Garlan's book pins are unchanged (94, 123, 139).
+
 ## Stannis, Renly and the stormlands (#1464)
 
 Dragonstone, Renly's camp at Bitterbridge and Storm's End, Catelyn's embassy and

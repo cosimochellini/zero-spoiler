@@ -127,6 +127,33 @@ const STAGE_2_GROUPS: { group: string; issue: string; owners: string[] }[] = [
       'aggo',
     ],
   },
+  {
+    group: 'King’s Landing and the Blackwater',
+    issue: '#1479',
+    owners: [
+      'daisy',
+      'jacelyn-bywater',
+      'hallyne',
+      'lollys-stokeworth',
+      'osmund-kettleblack',
+      'alayaya',
+      'garlan-tyrell',
+      'tyrion-lannister',
+      'cersei-lannister',
+      'joffrey-baratheon',
+      'myrcella-baratheon',
+      'sansa-stark',
+      'bronn',
+      'shae',
+      'ros',
+      'petyr-baelish',
+      'varys',
+      'pycelle',
+      'sandor-clegane',
+      'janos-slynt',
+      'lancel-lannister',
+    ],
+  },
 ]
 
 /**
@@ -1268,6 +1295,81 @@ describe.each(LOCALES)(
         ).toStrictEqual([])
         expect(people('daenerys-targaryen', ch(143))).not.toContain(id)
       }
+    })
+  },
+)
+
+// The King's Landing and Blackwater cast in stage 2 (#1479): each new
+// character's cards open at its gate, and each medium keeps its own.
+describe.each(LOCALES)(
+  'Game of Thrones stage-2 King’s Landing revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+
+    it('opens each new book character’s cards at the chapter that names them', () => {
+      for (const [id, gate] of [
+        ['jacelyn-bywater', 82],
+        ['hallyne', 94],
+        ['lollys-stokeworth', 118],
+        ['osmund-kettleblack', 123],
+        ['alayaya', 128],
+        ['garlan-tyrell', 139],
+      ] as const) {
+        expect(projected(id, ch(gate - 1), locale), id).toStrictEqual([])
+        expect(projected(id, ch(gate), locale), id).not.toStrictEqual([])
+        expect(
+          projected(id, ep(archive.series.episodeCeiling), locale),
+          id,
+        ).toStrictEqual([])
+      }
+    })
+
+    it('keeps Daisy to the show and gives her three steps', () => {
+      expect(projected('daisy', ep(10), locale)).toStrictEqual([])
+      expect(people('daisy', ep(11))).toStrictEqual(['ros'])
+      expect(people('daisy', ep(12))).not.toContain('pycelle')
+      expect(people('daisy', ep(13))).toContain('pycelle')
+      expect(people('daisy', ep(13))).not.toContain('joffrey-baratheon')
+      expect(people('daisy', ep(14))).toContain('joffrey-baratheon')
+      expect(
+        projected('daisy', ch(archive.series.chapterCeiling), locale),
+      ).toStrictEqual([])
+    })
+
+    it('turns the City Watch over in Tyrion’s cards at 12 in the show and 82 in the books', () => {
+      expect(people('tyrion-lannister', ep(11))).not.toContain('janos-slynt')
+      expect(people('tyrion-lannister', ep(12))).toContain('janos-slynt')
+      expect(people('tyrion-lannister', ep(12))).not.toContain(
+        'jacelyn-bywater',
+      )
+      expect(people('tyrion-lannister', ch(81))).not.toContain(
+        'jacelyn-bywater',
+      )
+      expect(people('tyrion-lannister', ch(82))).toContain('jacelyn-bywater')
+    })
+
+    it('keeps the books’ King’s Landing cast off show pages and the show’s off book pages', () => {
+      for (const id of ['jacelyn-bywater', 'osmund-kettleblack']) {
+        expect(people('tyrion-lannister', ep(20))).not.toContain(id)
+      }
+
+      expect(people('cersei-lannister', ep(18))).toContain('ros')
+      expect(people('cersei-lannister', ep(18))).not.toContain('alayaya')
+      expect(people('cersei-lannister', ch(127))).not.toContain('alayaya')
+      expect(people('cersei-lannister', ch(128))).toContain('alayaya')
+      expect(people('cersei-lannister', ch(128))).not.toContain('ros')
+    })
+
+    it('has the show’s Pycelle arrested at 13 and Sansa freed of Joffrey at 20', () => {
+      expect(people('pycelle', ep(12))).not.toContain('daisy')
+      expect(people('pycelle', ep(13))).toContain('daisy')
+      expect(people('pycelle', ch(99))).toContain('shagga')
+      expect(people('pycelle', ep(13))).not.toContain('shagga')
+      expect(people('sansa-stark', ep(19))).not.toContain('petyr-baelish')
+      expect(people('sansa-stark', ep(20))).toContain('petyr-baelish')
+      expect(people('sansa-stark', ch(139))).toContain('dontos-hollard')
+      expect(people('sansa-stark', ch(139))).not.toContain('petyr-baelish')
     })
   },
 )
