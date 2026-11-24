@@ -1,10 +1,10 @@
+import {
+  LEGAL,
+  type LegalKey,
+  legalTranslator,
+} from '~/i18n/dictionaries/legal'
 import type { Locale } from '~/i18n/locales'
-import type {
-  CommonKey,
-  SeriesSlug,
-  SharedKey,
-  TranslationKey,
-} from '~/i18n/types'
+import type { CommonKey, SeriesSlug, TranslationKey } from '~/i18n/types'
 import type { Series } from '~/lib/progress/series'
 import type { SeriesLegal, SeriesSources } from '~/lib/view/credits'
 import { copyOf, translatorOf } from '~/server/copy.server'
@@ -18,8 +18,8 @@ const BY_SA_4: [string, string] = [
   'https://creativecommons.org/licenses/by-sa/4.0/',
 ]
 
-/** A source link every series may label: a common key or a shared one. */
-type Link = [CommonKey | SharedKey, string]
+/** A source link every series may label: a common key or one of the legal page's. */
+type Link = [CommonKey | LegalKey, string]
 
 const wikiEn = (url: string): Link => ['credits.wikiEn', url]
 const FANDOM_TERMS: Link = [
@@ -40,7 +40,7 @@ const WIKIPEDIA_TERMS: Link = [
  */
 const SOURCES: {
   [S in SeriesSlug]: Omit<SeriesSources, 'links'> & {
-    links: [TranslationKey<S>, string][]
+    links: [LegalKey | TranslationKey<S>, string][]
   }
 } = {
   'one-piece': {
@@ -79,13 +79,16 @@ const SOURCES: {
   },
 }
 
+const isLegalKey = (key: string): key is LegalKey =>
+  Object.hasOwn(LEGAL.en, key)
+
 /** An open series' sources. */
 function sourcesOf(series: Series, locale: Locale): SeriesSources {
   const bySlug: Partial<
     Record<
       string,
       Omit<SeriesSources, 'links'> & {
-        links: [TranslationKey<SeriesSlug>, string][]
+        links: [LegalKey | TranslationKey<SeriesSlug>, string][]
       }
     >
   > = SOURCES
@@ -96,9 +99,13 @@ function sourcesOf(series: Series, locale: Locale): SeriesSources {
   // Labelled here, in the series' own words, so the client is sent words
   // rather than keys of any series' copy.
   const t = translatorOf(series, locale)
+  const legal = legalTranslator(locale)
   return {
     ...found,
-    links: found.links.map(([key, url]): [string, string] => [t(key), url]),
+    links: found.links.map(([key, url]): [string, string] => [
+      isLegalKey(key) ? legal(key) : t(key),
+      url,
+    ]),
   }
 }
 

@@ -4,6 +4,7 @@ import type { ReactElement } from 'react'
 import { styles } from '~/components/LegalNotice.styles'
 import { PrivacyNotice } from '~/components/PrivacyNotice'
 import { InSeries, SourceCredits } from '~/components/SourceCredits'
+import { type LegalKey, legalTranslator } from '~/i18n/dictionaries/legal'
 import { PRIVACY, type PrivacyKey } from '~/i18n/dictionaries/privacy'
 import { useLocale, useSeriesT, useT } from '~/i18n/LocaleContext'
 import { translate } from '~/i18n/translate'
@@ -51,6 +52,7 @@ export function LegalPage({
   series: SeriesCredits[]
 }): ReactElement {
   const t = useT()
+  const legal = legalTranslator(useLocale().locale)
 
   return (
     <main
@@ -60,14 +62,17 @@ export function LegalPage({
       <h1 {...stylex.props(styles.title)}>{t('legal.title')}</h1>
       <Contents />
       <section id="project">
-        <h2 {...stylex.props(styles.heading)}>{t('legal.projectTitle')}</h2>
-        <p {...stylex.props(styles.paragraph)}>{t('legal.unofficial')}</p>
+        <h2 {...stylex.props(styles.heading)}>{legal('legal.projectTitle')}</h2>
+        <p {...stylex.props(styles.paragraph)}>{legal('legal.unofficial')}</p>
         {series.map(({ copy, sources }) => (
           <InSeries
             key={copy.slug}
             copy={copy}
           >
-            <Rights url={sources.rights} />
+            <Rights
+              name={copy.name}
+              url={sources.rights}
+            />
           </InSeries>
         ))}
         <p {...stylex.props(styles.paragraph)}>
@@ -75,9 +80,9 @@ export function LegalPage({
             href="https://github.com/cosimochellini/zero-spoiler/issues/new?template=blank.md"
             {...stylex.props(styles.link)}
           >
-            {t('legal.contact')}
+            {legal('legal.contact')}
           </a>{' '}
-          {t('legal.contactHelp')}
+          {legal('legal.contactHelp')}
         </p>
       </section>
       <PrivacyNotice />
@@ -88,13 +93,14 @@ export function LegalPage({
 
 /** Links to the sections, and from a wide window to their parts. */
 function Contents(): ReactElement {
-  const t = useT()
-  const notice = PRIVACY[useLocale().locale]
-  const title = (key: Parameters<typeof t>[0] | PrivacyKey): string =>
-    isPrivacyKey(key) ? translate(notice, key) : t(key)
+  const { locale } = useLocale()
+  const legal = legalTranslator(locale)
+  const notice = PRIVACY[locale]
+  const title = (key: LegalKey | PrivacyKey): string =>
+    isPrivacyKey(key) ? translate(notice, key) : legal(key)
 
   return (
-    <nav aria-label={t('legal.contents')}>
+    <nav aria-label={legal('legal.contents')}>
       <ul {...stylex.props(styles.contents)}>
         {SECTIONS.map(({ id, title: key, parts }) => (
           <li key={id}>
@@ -130,8 +136,9 @@ function Contents(): ReactElement {
 }
 
 /** A series' rights holders, in its own words, and where they say so. */
-function Rights({ url }: { url: string }): ReactElement {
+function Rights({ name, url }: { name: string; url: string }): ReactElement {
   const t = useSeriesT()
+  const legal = legalTranslator(useLocale().locale)
 
   return (
     <p {...stylex.props(styles.paragraph)}>
@@ -140,7 +147,7 @@ function Rights({ url }: { url: string }): ReactElement {
         href={url}
         {...stylex.props(styles.link)}
       >
-        {t('legal.creditSource')}
+        {legal('legal.creditSource', { series: name })}
       </a>
     </p>
   )

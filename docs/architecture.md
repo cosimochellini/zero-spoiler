@@ -465,8 +465,9 @@ that fails to load reloads the page once per tab and address (a `sessionStorage`
 flag; without storage, no reload); a hovered link's preload never reloads. If it
 fails again, a page that is hydrating deliberately stays as the server rendered
 it, while a client-side navigation shows the root's own error page, which needs
-no dictionary. The privacy notice (`src/i18n/dictionaries/privacy.ts`) ships
-with the legal page alone. Copy rules live in the
+no dictionary. The privacy notice (`src/i18n/dictionaries/privacy.ts`) and the
+legal page's own copy (`legal.ts`, beside it) ship with the legal page alone.
+Copy rules live in the
 [tone-of-voice skill](../.claude/skills/tone-of-voice/SKILL.md).
 
 ## Extending the archive boundary

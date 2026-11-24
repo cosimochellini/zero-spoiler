@@ -188,45 +188,6 @@ export const enDictionary = {
   'legal.pageTitle': 'Legal notice | Zero Spoiler',
   'legal.description':
     'The unofficial project notice, rights contact, privacy and cookies, sources and licenses.',
-  'legal.projectTitle': 'An unofficial project',
-  'legal.unofficial':
-    'Zero Spoiler is an unofficial, nonprofit fan project. It is not affiliated with or endorsed by the rights holders of the series in the wiki.',
-  'legal.contents': 'On this page',
-  'legal.creditSource': 'Official credit source for {series}',
-  'legal.contact': 'Rights inquiries and corrections on GitHub',
-  'legal.contactHelp':
-    'Include the page URL, the material concerned and the rights inquiry or correction requested. Keep spoilers out of the title. GitHub issues are public and require an account. Do not post confidential information.',
-
-  'credits.title': 'Sources and licenses',
-  'credits.intro':
-    'Sources used for documented checks and the licenses that apply to the project and its sources.',
-  'credits.licensesTitle': 'Project licenses',
-  'credits.software':
-    'The MIT license covers the software and original technical documentation, within the rights held by contributors. Existing notices remain valid.',
-  'credits.scopeNotice': 'License scope and content notices',
-  'credits.content':
-    'Archive text, drawings and branding are outside the general MIT grant. No new blanket content license is assigned. Third-party rights and existing permissions remain in force.',
-  'credits.sourcesTitle': 'Source terms',
-  'credits.external':
-    'External pages may contain later story information, including in their titles. Opening a source leaves this wiki’s spoiler protection.',
-  'credits.fandomTerms': 'Fandom licensing and attribution',
-  'credits.fandomTermsIt': 'Fandom licensing in Italian',
-  'credits.wikipediaTerms': 'Wikipedia terms of use',
-  'credits.referencesTitle': 'Documented references',
-  'credits.bookmark':
-    'Only references to material open at your bookmark are listed. The license beside a source refers to its text, not to the whole archive.',
-  'credits.empty':
-    'No entry references are open at your bookmark. You can still read the general source and license notices above.',
-  'credits.episode': 'Episode {episode}',
-  'credits.scope.dossier': 'Character fields in the reviewed sample',
-  'credits.scope.chronicle': 'Story entry in the reviewed sample',
-  'credits.scope.title': 'Release title only',
-  'credits.scope.summary': 'Replacement summary',
-  'credits.factCheck':
-    'Reference for the documented comparison or fact check. The historical writing process is not established; no claim of independent authorship or new content license is made.',
-  'credits.replacement':
-    'Both summaries were replaced with brief accounts of facts checked against the official synopsis. The synopsis was not translated in full. No new content license is assigned.',
-  'credits.noOpenLicense': 'No open-content permission established.',
 
   'footer.lead': 'A {series} wiki that hides what comes after your bookmark.',
   'footer.colophon':
