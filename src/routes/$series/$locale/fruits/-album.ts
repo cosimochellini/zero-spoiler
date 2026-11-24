@@ -146,6 +146,7 @@ function useRestoredScroll(album: Album | null): void {
   const waitedRef = useRef(album === null)
 
   useEffect(() => {
+    // eslint-disable-next-line react-you-might-not-need-an-effect/no-event-handler -- the album arrives from the network, not from an event, and the scroll has to follow the plates it waits for.
     if (album === null || !waitedRef.current) {
       return
     }

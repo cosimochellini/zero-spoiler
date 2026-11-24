@@ -542,7 +542,12 @@ const config = defineConfig(
     },
   },
   { files: TSX, extends: [jsxA11y.configs.strict] },
-  { files: TSX, extends: [noNeedlessEffect.configs.recommended] },
+  // Most hooks live in `.ts` files (`useChartZoom.ts`, `useModal.ts`); the rule
+  // finds them by their `use*` name, with no JSX needed.
+  {
+    files: [...TSX, 'src/**/*.ts'],
+    extends: [noNeedlessEffect.configs.recommended],
+  },
   // Vite refreshes a module in place only when every export is a component; a
   // hook exported beside a provider throws the whole tree away on each edit.
   {
