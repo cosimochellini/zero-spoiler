@@ -449,7 +449,9 @@ describe('the peek', () => {
       baratie.focus()
     })
 
-    const dialog = screen.getByRole('dialog', { name: 'Stop 3 of 5. Baratie' })
+    const dialog = await screen.findByRole('dialog', {
+      name: 'Stop 3 of 5. Baratie',
+    })
 
     expect(dialog).toHaveTextContent('East Blue · Floating restaurant')
     expect(dialog).toHaveTextContent('Episode 20')
@@ -482,8 +484,11 @@ describe('the peek', () => {
     expect(baratie).toHaveFocus()
 
     await user.tab()
+    const entry = await screen.findByRole('link', { name: 'Open the entry' })
 
-    expect(screen.getByRole('link', { name: 'Open the entry' })).toHaveFocus()
+    await vi.waitFor(() => {
+      expect(entry).toHaveFocus()
+    })
 
     await user.keyboard('{Escape}')
 
@@ -533,8 +538,7 @@ describe('the peek', () => {
         .focus()
     })
 
-    expect(peek()).not.toBeNull()
-
+    await screen.findByRole('dialog')
     fireEvent.pointerDown(document.body)
 
     expect(peek()).toBeNull()
@@ -551,7 +555,7 @@ describe('the peek', () => {
     expect(baratie).toHaveFocus()
   })
 
-  it('peeks on a tap, where a click follows the link', () => {
+  it('peeks on a tap, where a click follows the link', async () => {
     const { router } = draw({ bookmark: ep(30), open: eastBlue })
     const navigate = vi.spyOn(router, 'navigate')
     const baratie = within(stops()).getByRole('link', { name: /Baratie/u })
@@ -559,8 +563,10 @@ describe('the peek', () => {
     fireEvent.pointerDown(baratie, { pointerType: 'touch' })
     fireEvent.click(baratie, { detail: 1 })
 
+    const dialog = await screen.findByRole('dialog', { name: /Baratie/u })
+
     expect(navigate).not.toHaveBeenCalled()
-    expect(screen.getByRole('dialog', { name: /Baratie/u })).toBeInTheDocument()
+    expect(dialog).toBeInTheDocument()
 
     fireEvent.pointerDown(baratie, { pointerType: 'mouse' })
     fireEvent.click(baratie, { detail: 1 })
@@ -652,9 +658,11 @@ describe('the peek', () => {
     })
     await user.unhover(shells)
 
-    expect(
-      screen.getByRole('dialog', { name: 'Stop 3 of 3. Baratie' }),
-    ).toBeInTheDocument()
+    const dialog = await screen.findByRole('dialog', {
+      name: 'Stop 3 of 3. Baratie',
+    })
+
+    expect(dialog).toBeInTheDocument()
   })
 
   it('veils a fogged stop and asks the server only on “Show anyway”', async () => {
