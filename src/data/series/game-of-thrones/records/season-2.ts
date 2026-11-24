@@ -2623,6 +2623,7 @@ export const season2: ThronesSaga = {
     },
     // #1467: the Wall and beyond.
     'thoren-smallwood': {
+      relationships: season2Relationships['thoren-smallwood'],
       role: {
         it: 'Comandante dei ranger in assenza del Primo Ranger',
         en: 'Acting commander of the rangers',
@@ -2648,6 +2649,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'eddison-tollett': {
+      relationships: season2Relationships['eddison-tollett'],
       role: {
         it: 'Confratello dei Guardiani della notte',
         en: 'Brother of the Night’s Watch',
@@ -2672,6 +2674,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'jarman-buckwell': {
+      relationships: season2Relationships['jarman-buckwell'],
       role: {
         it: 'Ranger a capo degli esploratori',
         en: 'Ranger in command of the scouts',
@@ -2691,6 +2694,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'mallador-locke': {
+      relationships: season2Relationships['mallador-locke'],
       role: {
         it: 'Cavaliere dei Guardiani della notte',
         en: 'Knight of the Night’s Watch',
@@ -2710,6 +2714,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'craster': {
+      relationships: season2Relationships.craster,
       role: {
         it: 'Padrone di un fortino oltre la Barriera',
         en: 'Master of a holdfast beyond the Wall',
@@ -2730,6 +2735,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'gilly': {
+      relationships: season2Relationships.gilly,
       role: {
         it: 'Figlia e moglie di Craster',
         en: 'Craster’s daughter and wife',
@@ -2744,6 +2750,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'qhorin-halfhand': {
+      relationships: season2Relationships['qhorin-halfhand'],
       role: {
         it: 'Ranger della Torre delle Ombre',
         en: 'Ranger of the Shadow Tower',
@@ -2772,6 +2779,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'stonesnake': {
+      relationships: season2Relationships.stonesnake,
       role: {
         it: 'Ranger dei Guardiani della notte',
         en: 'Ranger of the Night’s Watch',
@@ -2796,6 +2804,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'ygritte': {
+      relationships: season2Relationships.ygritte,
       role: { it: 'Vedetta dei Bruti', en: 'Wildling lookout' },
       log: {
         it: 'È tra le vedette dei bruti sulle montagne. I ranger di Qhorin il Monco uccidono i suoi compagni, e Jon Snow resta solo con lei per giustiziarla, ma non ci riesce.',
@@ -2813,6 +2822,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'ebben': {
+      relationships: season2Relationships.ebben,
       role: {
         it: 'Ranger dei Guardiani della notte',
         en: 'Ranger of the Night’s Watch',
@@ -2838,6 +2848,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'dalbridge': {
+      relationships: season2Relationships.dalbridge,
       role: {
         it: 'Ranger dei Guardiani della notte',
         en: 'Ranger of the Night’s Watch',
@@ -2861,6 +2872,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'lord-of-bones': {
+      relationships: season2Relationships['lord-of-bones'],
       role: {
         it: 'Capo di una banda di Bruti',
         en: 'Leader of a wildling war band',
