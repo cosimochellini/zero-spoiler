@@ -1331,8 +1331,20 @@
         "got-en-The_Wolf_and_the_Lion-740156.json",
         "got-en-You_Win_or_You_Die-748332.json",
         "iaf-en-Eddard_IV_-_A_Game_of_Thrones-24717.json",
-        "iaf-en-Renly_Baratheon-27340.json"
-      ]
+        "iaf-en-Renly_Baratheon-27340.json",
+        "got-en-Renly_Baratheon-745074.json",
+        "got-en-What_Is_Dead_May_Never_Die-740166.json",
+        "got-en-Garden_of_Bones_(episode)-729784.json",
+        "got-en-The_Ghost_of_Harrenhal-748633.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_22",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_31",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_33"
+        ]
+      }
     },
     "lysa-arryn": {
       "sources": [
@@ -1509,8 +1521,20 @@
         "iaf-en-Eddard_VII_-_A_Game_of_Thrones-24944.json",
         "iaf-en-Loras_Tyrell-27158.json",
         "iaf-en-Renly_Baratheon-27340.json",
-        "iaf-en-Sansa_II_-_A_Game_of_Thrones-24945.json"
-      ]
+        "iaf-en-Sansa_II_-_A_Game_of_Thrones-24945.json",
+        "got-en-What_Is_Dead_May_Never_Die-740166.json",
+        "got-en-The_Ghost_of_Harrenhal-748633.json",
+        "got-en-Blackwater-729787.json",
+        "got-en-Valar_Morghulis-740176.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_22",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_33",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65"
+        ]
+      }
     },
     "mycah": {
       "sources": [
@@ -1911,6 +1935,169 @@
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63"
         ]
       }
+    },
+    "stannis-baratheon": {
+      "sources": [
+        "got-en-Stannis_Baratheon-745076.json",
+        "got-en-The_North_Remembers-740163.json",
+        "got-en-The_Ghost_of_Harrenhal-748633.json",
+        "got-en-The_Prince_of_Winterfell-740172.json",
+        "got-en-Blackwater-729787.json",
+        "got-en-Valar_Morghulis-740176.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_31",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_42"
+        ]
+      }
+    },
+    "melisandre": {
+      "sources": [
+        "got-en-Melisandre-728276.json",
+        "got-en-The_North_Remembers-740163.json",
+        "got-en-Garden_of_Bones_(episode)-729784.json",
+        "got-en-The_Ghost_of_Harrenhal-748633.json",
+        "got-en-Valar_Morghulis-740176.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_10",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_42"
+        ]
+      }
+    },
+    "davos-seaworth": {
+      "sources": [
+        "got-en-Davos_Seaworth-736903.json",
+        "got-en-The_North_Remembers-740163.json",
+        "got-en-The_Night_Lands-740164.json",
+        "got-en-Garden_of_Bones_(episode)-729784.json",
+        "got-en-The_Ghost_of_Harrenhal-748633.json",
+        "got-en-The_Prince_of_Winterfell-740172.json",
+        "got-en-Blackwater-729787.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_10",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_42",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_58"
+        ]
+      }
+    },
+    "cressen": {
+      "sources": [
+        "got-en-Cressen-736923.json",
+        "got-en-The_North_Remembers-740163.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue"
+        ]
+      }
+    },
+    "matthos-seaworth": {
+      "sources": [
+        "got-en-Matthos_Seaworth-728423.json",
+        "got-en-The_North_Remembers-740163.json",
+        "got-en-The_Night_Lands-740164.json",
+        "got-en-Blackwater-729787.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_58",
+          "https://awoiaf.westeros.org/index.php/Matthos_Seaworth"
+        ]
+      }
+    },
+    "salladhor-saan": {
+      "sources": [
+        "got-en-Salladhor_Saan-728409.json",
+        "got-en-The_Night_Lands-740164.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_10"
+        ]
+      }
+    },
+    "selyse-baratheon": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue"
+        ]
+      }
+    },
+    "shireen-baratheon": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue"
+        ]
+      }
+    },
+    "brienne-of-tarth": {
+      "sources": [
+        "got-en-Brienne_of_Tarth-748929.json",
+        "got-en-What_Is_Dead_May_Never_Die-740166.json",
+        "got-en-The_Ghost_of_Harrenhal-748633.json",
+        "got-en-The_Prince_of_Winterfell-740172.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_22",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_33",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_39"
+        ]
+      }
+    },
+    "margaery-tyrell": {
+      "sources": [
+        "got-en-Margaery_Tyrell-749409.json",
+        "got-en-What_Is_Dead_May_Never_Die-740166.json",
+        "got-en-The_Ghost_of_Harrenhal-748633.json",
+        "got-en-Valar_Morghulis-740176.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_22",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_33",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65"
+        ]
+      }
+    },
+    "mace-tyrell": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65"
+        ]
+      }
+    },
+    "cortnay-penrose": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_42",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_44"
+        ]
+      }
     }
   },
   "omitted": {
@@ -1936,18 +2123,6 @@
     "chiswyck": "#1481",
     "weese": "#1481",
     "vargo-hoat": "#1481",
-    "stannis-baratheon": "#1480",
-    "melisandre": "#1480",
-    "davos-seaworth": "#1480",
-    "cressen": "#1480",
-    "matthos-seaworth": "#1480",
-    "salladhor-saan": "#1480",
-    "selyse-baratheon": "#1480",
-    "shireen-baratheon": "#1480",
-    "brienne-of-tarth": "#1480",
-    "margaery-tyrell": "#1480",
-    "mace-tyrell": "#1480",
-    "cortnay-penrose": "#1480",
     "balon-greyjoy": "#1482",
     "asha-greyjoy": "#1482",
     "aeron-greyjoy": "#1482",
