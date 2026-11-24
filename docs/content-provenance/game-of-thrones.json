@@ -64,7 +64,21 @@
       "https://gameofthrones.fandom.com/wiki/Sansa_Stark",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://it.wikipedia.org/wiki/Sansa_Stark#Prima_stagione"
+      "https://it.wikipedia.org/wiki/Sansa_Stark#Prima_stagione",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
+      "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New",
+      "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor",
+      "https://gameofthrones.fandom.com/wiki/Blackwater",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_2",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_18",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_32",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_52",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_60",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_62",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65"
     ],
     "unverified": [
       "Status 'captured' at episode 8 / chapter 52 (held by the queen after her father's arrest): owner to confirm 'captured' fits a hostage kept at court."
@@ -506,7 +520,23 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_49",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New",
+      "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor",
+      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell",
+      "https://gameofthrones.fandom.com/wiki/Blackwater",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_3",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_20",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_36",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_52",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_54",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_60",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_62",
+      "https://gameofthrones.fandom.com/wiki/Ros",
+      "https://gameofthrones.fandom.com/wiki/Pycelle"
     ],
     "unverified": [
       "The exact line that names Cersei aloud in episode 1 was not checked; the episode synopsis calls her the queen at the arrival.",
@@ -545,7 +575,29 @@
       "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
       "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
-      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New",
+      "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor",
+      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell",
+      "https://gameofthrones.fandom.com/wiki/Blackwater",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_3",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_8",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_20",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_25",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_29",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_36",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_41",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_44",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_54",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_61",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_67",
+      "https://gameofthrones.fandom.com/wiki/Ros"
     ],
     "unverified": [
       "Stage-2 step (#1463): former acting Hand at 20 / 141, from the Game of Thrones Wiki's \"Valar Morghulis\" (Tyrion XV). Chapter numbering from the Ice and Fire Wiki's chapter navigation."
@@ -577,7 +629,17 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_49",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
+      "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New",
+      "https://gameofthrones.fandom.com/wiki/Blackwater",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_2",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_32",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_41",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_59",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65"
     ],
     "unverified": [
       "Crown (#1286): he takes the throne at Robert’s death, “You Win or You Die” (episode 7, Fandom ref GOT107) and Eddard XIV (chapter 50); the owner rules crowns a costume stage; episode not viewed.",
@@ -596,7 +658,8 @@
       "https://gameofthrones.fandom.com/wiki/The_Wars_to_Come",
       "https://gameofthrones.fandom.com/wiki/The_House_of_Black_and_White",
       "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New",
-      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_41"
     ],
     "unverified": [
       "Episode gate 1 is Fandom’s first appearance; no source quotes her name said aloud in season 1 episode 1 (or 2). Check when the show first names her.",
@@ -700,7 +763,13 @@
       "https://gameofthrones.fandom.com/wiki/Lollys_Stokeworth",
       "https://gameofthrones.fandom.com/wiki/House_Stokeworth",
       "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
-      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis"
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Blackwater",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_8",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_59",
+      "https://gameofthrones.fandom.com/wiki/Pycelle"
     ],
     "unverified": [
       "Episode gate 4 is Fandom’s first appearance (he offers Tyrion his room). No source quotes his name said aloud in episodes 4–6; if it is first said later, the gate moves.",
@@ -723,7 +792,14 @@
       "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
       "https://gameofthrones.fandom.com/wiki/Lollys_Stokeworth",
       "https://gameofthrones.fandom.com/wiki/Blackwater",
-      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New",
+      "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_3",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_29",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_44",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_54"
     ],
     "unverified": [
       "Death (#1286): Tyrion strangles her in “The Children” (episode 40, Fandom DeathEp, ref GOT410) and in Tyrion XI of A Storm of Swords (site chapter 221); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed.",
@@ -755,7 +831,9 @@
       "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
       "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
-      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell"
+      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)"
     ],
     "unverified": [
       "Unnamed in episode 1 (Fandom: George R. R. Martin suggested she be given a name once the role grew); episode 4 is where Theon recommends her to Tyrion and Jon speaks of her by name, per Fandom’s summary, not a quoted line.",
@@ -818,7 +896,15 @@
       "https://gameofthrones.fandom.com/wiki/The_Mountain_and_the_Viper",
       "https://gameofthrones.fandom.com/wiki/The_Dragon_and_the_Wolf",
       "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
-      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
+      "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_36",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65",
+      "https://gameofthrones.fandom.com/wiki/Ros"
     ],
     "unverified": [
       "Episode 3: that the nickname Littlefinger is said aloud (the log says he is called Littlefinger).",
@@ -837,7 +923,15 @@
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
       "https://it.wikipedia.org/wiki/Varys",
       "https://gameofthrones.fandom.com/wiki/The_Wars_to_Come",
-      "https://gameofthrones.fandom.com/wiki/The_Bells"
+      "https://gameofthrones.fandom.com/wiki/The_Bells",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://gameofthrones.fandom.com/wiki/Blackwater",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_3",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_8",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_44",
+      "https://gameofthrones.fandom.com/wiki/Pycelle"
     ],
     "unverified": [
       "Italian title 'Maestro dei sussurri' is it.wikipedia's form; the Mondadori books may say otherwise, but the dub governs.",
@@ -854,7 +948,9 @@
       "https://gameofthrones.fandom.com/wiki/The_Winds_of_Winter",
       "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
       "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
-      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_25"
     ],
     "unverified": [
       "Death (#1287): \"The Winds of Winter\" (episode 60, GOT610), show only; episode not viewed.",
@@ -875,7 +971,17 @@
       "https://gameofthrones.fandom.com/wiki/The_Children",
       "https://gameofthrones.fandom.com/wiki/The_Broken_Man",
       "https://gameofthrones.fandom.com/wiki/Blackwater",
-      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
+      "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New",
+      "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_2",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_18",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_32",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_41",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_59",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_62"
     ],
     "unverified": [
       "Episode gate: on screen from episode 1; gate set at 4, where Littlefinger names him to Sansa. If 'Sandor' or 'the Hound' is said aloud in episode 1 or 2, lower the gate.",
@@ -898,7 +1004,10 @@
       "https://gameofthrones.fandom.com/wiki/Two_Swords",
       "https://gameofthrones.fandom.com/wiki/High_Sparrow",
       "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
-      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_8",
+      "https://gameofthrones.fandom.com/wiki/Ros"
     ],
     "unverified": [
       "Black cloak (#1287): \"Two Swords\" (episode 31, GOT401) and Jon IX of A Storm of Swords (site chapter 213, AWOIAF not read: unverified).",
@@ -2296,7 +2405,12 @@
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
       "https://gameofthrones.fandom.com/wiki/Lancel_Lannister",
       "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
-      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://gameofthrones.fandom.com/wiki/Blackwater",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_29",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_44",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_62",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65"
     ],
     "unverified": [
       "Stage-2 step (#1463): knight in the queen's service at 14 / 103, from the Game of Thrones Wiki's \"Garden of Bones\" and Lancel page (Tyrion VII). That Tyrion VII calls him a knight is not confirmed; the books were not viewed."
@@ -3161,7 +3275,9 @@
       "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
       "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
       "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://gameofthrones.fandom.com/wiki/Ros",
+      "https://gameofthrones.fandom.com/wiki/Pycelle"
     ],
     "unverified": [
       "Show gate 11: the Game of Thrones Wiki's Daisy page quotes Ros, \"We do things differently here, Daisy\", in \"The North Remembers\". Episode not viewed.",
@@ -3176,7 +3292,10 @@
       "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
       "https://gameofthrones.fandom.com/wiki/Barra",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://awoiaf.westeros.org/index.php/Jacelyn_Bywater"
+      "https://awoiaf.westeros.org/index.php/Jacelyn_Bywater",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_8",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_20",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_49"
     ],
     "unverified": [
       "Book gate 82 (Tyrion II): the Ice and Fire Wiki says Tyrion names him to the City Watch when he sends Janos Slynt to the Wall, which the Game of Thrones Wiki puts in Tyrion II (ACOK 8). Review round 1 confirmed the chapter on A Wiki of Ice and Fire (read through Firecrawl, https://awoiaf.westeros.org/index.php/Jacelyn_Bywater, which cites ACOK Chapter 8), and its Janos Slynt quote names him there; the books themselves were not viewed.",
@@ -3195,7 +3314,10 @@
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
       "https://awoiaf.westeros.org/index.php/Hallyne",
-      "https://awoiaf.westeros.org/index.php/Wildfire"
+      "https://awoiaf.westeros.org/index.php/Wildfire",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_20",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_49",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65"
     ],
     "unverified": [
       "Book gate 94 (Tyrion V): the Game of Thrones Wiki's \"The Ghost of Harrenhal\" and its Hallyne page (ACOK 20) put Tyrion's visit to the guild there; the naming line is not confirmed. A Wiki of Ice and Fire (read through Firecrawl, https://awoiaf.westeros.org/index.php/Hallyne) cites ACOK Chapter 20 for the visit and has him first in Cersei's retinue on the walls in Chapter 17 (Tyrion IV, site 91): the lower candidate to check for a naming line. The books were not viewed.",
@@ -3213,7 +3335,9 @@
       "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Clash_of_Kings",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
-      "https://awoiaf.westeros.org/index.php/Lollys_Stokeworth"
+      "https://awoiaf.westeros.org/index.php/Lollys_Stokeworth",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_44",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_57"
     ],
     "unverified": [
       "Book gate 118 (Tyrion X): the Game of Thrones Wiki puts Tyrion and Varys looking for a place for Shae there, and the Ice and Fire Wiki has Varys propose Lollys's household. Neither the episodes nor the books were viewed; A Wiki of Ice and Fire was not read (no Firecrawl tool in this session), and the Ice and Fire Wiki has no chapter page for the A Clash of Kings chapters cited here.",
@@ -3231,7 +3355,10 @@
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
       "https://awoiaf.westeros.org/index.php/Osmund_Kettleblack",
-      "https://awoiaf.westeros.org/index.php/House_Kettleblack"
+      "https://awoiaf.westeros.org/index.php/House_Kettleblack",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_49",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_59",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65"
     ],
     "unverified": [
       "Book gate 123 (Tyrion XI): the Game of Thrones Wiki's Balon Swann page puts Balon's naming to the Kingsguard there (ACOK 49), and the Ice and Fire Wiki's Tanda Stokeworth page has Osmund installed at the same ceremony. A Wiki of Ice and Fire (read through Firecrawl, https://awoiaf.westeros.org/index.php/Osmund_Kettleblack) confirms Cersei names him to the Kingsguard in Tyrion XI. Earlier chapters where the Kettleblacks enter the queen's service are the candidates to check for a lower naming. The books were not viewed.",
@@ -3248,7 +3375,8 @@
       "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
-      "https://awoiaf.westeros.org/index.php/Alayaya"
+      "https://awoiaf.westeros.org/index.php/Alayaya",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_54"
     ],
     "unverified": [
       "Book gate 128 (Tyrion XII), the safe later pin: the Game of Thrones Wiki puts the queen's captive there and the Ice and Fire Wiki names her. A Wiki of Ice and Fire (read through Firecrawl, https://awoiaf.westeros.org/index.php/Alayaya) cites her abduction to ACOK Chapter 54 (Tyrion XII) and has her first at Chataya's in Chapter 15 (Tyrion III, site 89): the lower candidate to check for a naming line. The books were not viewed.",

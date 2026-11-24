@@ -20,6 +20,12 @@ import { inBooks, onScreen } from './chronicle'
  * episodes 40 and 41. A show story sits at the chapter its episode adapts,
  * or at the record's or a linked record's book gate when that is later:
  * every story that links Xaro is at chapter 114 or after.
+ *
+ * The King’s Landing and Blackwater cast (#1484) follows. Daisy is the
+ * show’s alone; Jacelyn Bywater, Hallyne, Lollys Stokeworth, Osmund
+ * Kettleblack, Alayaya and Garlan Tyrell are the books’, each opening at its
+ * record’s own pair, and a story told from a later chapter tells what came
+ * before it there.
  */
 export const season2Chronicles = {
   'kovarro': [
@@ -199,6 +205,149 @@ export const season2Chronicles = {
       {
         it: 'Al porto di Qarth un vecchio con un bastone segue [[daenerys-targaryen|Daenerys]]. Quando un mercante le porge uno scrigno con dentro una manticora, il vecchio glielo fa cadere dalle mani. Si presenta come Arstan Barbabianca, scudiero di [[strong-belwas|Belwas il Forte]], e dice di venire dai Sette Regni. Dice che il magistro [[illyrio-mopatis|Illyrio]] li ha mandati a riportarla a Pentos.',
         en: 'At the port of Qarth an old man with a staff follows [[daenerys-targaryen|Daenerys]]. When a merchant hands her a box with a manticore inside, the old man knocks it out of her hands. He introduces himself as Arstan Whitebeard, squire to [[strong-belwas|Strong Belwas]], and says he comes from the Seven Kingdoms. He says Magister [[illyrio-mopatis|Illyrio]] has sent them to bring her back to Pentos.',
+      },
+    ),
+  ],
+  // King’s Landing and the Blackwater (#1484).
+  'daisy': [
+    onScreen(
+      [11, 77],
+      { it: 'La nuova arrivata', en: 'The new girl' },
+      {
+        it: 'Daisy è appena arrivata nel bordello di [[petyr-baelish|Ditocorto]], e [[ros|Ros]] le mostra il posto, spiegandole che lì servono clienti di un livello più alto di quelli che conosceva a Haystack Hall. Daisy resta colpita dal posto. Poi irrompono i mantelli d’oro di [[janos-slynt|Janos Slynt]], e Daisy è presente quando Janos uccide la bambina di [[mhaegen|Mhaegen]], una dei bastardi di Robert, davanti alla madre.',
+        en: 'Daisy is new to [[petyr-baelish|Littlefinger]]’s brothel, and [[ros|Ros]] shows her round, telling her they cater to a better class of client than she knew at Haystack Hall. Daisy is impressed by the place. Then the gold cloaks of [[janos-slynt|Janos Slynt]] burst in, and Daisy is there when Janos kills the baby of [[mhaegen|Mhaegen]], one of Robert’s bastards, in front of her mother.',
+      },
+    ),
+    onScreen(
+      [13, 99],
+      { it: 'Nel letto di Pycelle', en: 'In Pycelle’s bed' },
+      {
+        it: 'Daisy è a letto con [[pycelle|Pycelle]] quando [[tyrion-lannister|Tyrion]], [[bronn|Bronn]] e [[timett|Timmet]] irrompono per arrestare il gran maestro, che fa la spia per la regina. Tyrion le dà una moneta per il disturbo, e poi un’altra dopo aver visto quanto si dimena quel vecchio che sembrava tanto fragile.',
+        en: 'Daisy is in bed with [[pycelle|Pycelle]] when [[tyrion-lannister|Tyrion]], [[bronn|Bronn]] and [[timett|Timett]] burst in to arrest the Grand Maester for spying for the queen. Tyrion gives her a coin for her trouble, and then another after seeing how hard the supposedly frail old man struggles.',
+      },
+    ),
+    onScreen(
+      [14, 103],
+      { it: 'Mandata dal re', en: 'Sent to the king' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] ingaggia Daisy e [[ros|Ros]] come dono tardivo per il giorno del nome di [[joffrey-baratheon|Joffrey]]. Il re non le tocca. Costringe Ros a colpire Daisy, prima con la sua cintura e poi con uno scettro a testa di cervo, tanto forte da farla urlare, puntando una balestra contro Ros, e le ordina di portare Daisy da Tyrion per mostrargli che cosa ha fatto.',
+        en: '[[tyrion-lannister|Tyrion]] hires Daisy and [[ros|Ros]] as a late name-day gift for [[joffrey-baratheon|Joffrey]]. The king does not touch them. He makes Ros hit Daisy, first with his belt and then with a stag’s-head sceptre, hard enough to make her scream, a crossbow aimed at Ros, and orders Ros to take her to Tyrion to show him what he has done.',
+      },
+    ),
+  ],
+  'jacelyn-bywater': [
+    inBooks(
+      [12, 82],
+      { it: 'Il nuovo comandante', en: 'The new commander' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] nomina ser Jacelyn Bywater comandante della Guardia cittadina: un cavaliere stimato che [[janos-slynt|Janos Slynt]] definisce rigido e troppo fiero del suo onore. Jacelyn incontra Janos sulla porta mentre i mantelli d’oro lo portano via verso la Barriera, e Tyrion gli consegna la lista dei candidati di Janos, perché partano con lui. [[varys|Varys]] ha garantito per Jacelyn come per un uomo che la Guardia cittadina seguirà.',
+        en: '[[tyrion-lannister|Tyrion]] names Ser Jacelyn Bywater commander of the City Watch: a distinguished knight whom [[janos-slynt|Janos Slynt]] calls rigid and too proud of his honour. Jacelyn meets Janos at the door as the gold cloaks lead him away to the Wall, and Tyrion hands him the list of Janos’s candidates, to go with him. [[varys|Varys]] has spoken for Jacelyn as a man the City Watch will follow.',
+      },
+    ),
+    inBooks(
+      [15, 94],
+      { it: 'Condizioni di pace alla porta', en: 'Peace terms at the gate' },
+      {
+        it: 'Jacelyn manda a chiamare [[tyrion-lannister|Tyrion]] quando [[cleos-frey|ser Cleos Frey]] arriva alla Porta degli Dèi con le condizioni di pace di Robb Stark. Tyrion gli dice di offrire a Cleos ogni ospitalità ma di tenerlo fuori dalla città, perché non veda come stanno le cose. Jacelyn dovrà anche addestrare delle squadre a maneggiare l’altofuoco che gli alchimisti consegneranno, usando vernice e olio bollente, anche se quella roba non gli piace affatto.',
+        en: 'Jacelyn sends for [[tyrion-lannister|Tyrion]] when [[cleos-frey|Ser Cleos Frey]] arrives at the Gate of the Gods with peace terms from Robb Stark. Tyrion tells him to give Cleos every hospitality but keep him outside the city, so that he does not see how things stand there. Jacelyn is also to train crews to handle the wildfire the alchemists will deliver, using paint and burning oil, though he has no love for the stuff.',
+      },
+    ),
+    inBooks(
+      [18, 123],
+      { it: 'Tommen a Rosby', en: 'Tommen at Rosby' },
+      {
+        it: 'Per ordine di [[tyrion-lannister|Tyrion]] gli uomini di Jacelyn raggiungono il gruppo che porta [[tommen-baratheon|Tommen]] a nascondersi a Rosby. Ser Boros Blount consegna subito il principe e per questo perde il mantello bianco. Jacelyn torna con dei lancieri delle terre di Rosby: Tommen è al sicuro e ha adottato un cerbiatto. Jacelyn ha preparato dei piani per lui nel caso la battaglia sia perduta, ma non li rivela nemmeno a Tyrion, per il caso che venga catturato.',
+        en: 'On [[tyrion-lannister|Tyrion]]’s orders Jacelyn’s men overtake the party taking [[tommen-baratheon|Tommen]] to hide at Rosby. Ser Boros Blount gives the prince up at once and loses his white cloak for it. Jacelyn returns with spearmen from the Rosby lands: Tommen is safe and has adopted a fawn. Jacelyn has made plans for him in case the battle is lost, but will not tell even Tyrion, in case he is captured.',
+      },
+    ),
+  ],
+  'hallyne': [
+    inBooks(
+      [15, 94],
+      { it: 'Altofuoco nelle cantine', en: 'Wildfire in the vaults' },
+      {
+        it: 'Il saggio Hallyne della Gilda degli alchimisti mostra a [[tyrion-lannister|Tyrion]] l’altofuoco custodito nelle cantine della gilda. Una volta acceso non si può spegnere, e le vecchie giare dei tempi di re Aerys diventano più pericolose con gli anni. La gilda ha quasi ottomila giare e arriverà alle diecimila promesse. Hallyne spera di ospitare [[joffrey-baratheon|Joffrey]] a un banchetto; Tyrion lo rimanda, ma concede una dimostrazione dei segreti della gilda alla Fortezza Rossa.',
+        en: 'Wisdom Hallyne of the Alchemists’ Guild shows [[tyrion-lannister|Tyrion]] the wildfire stored in the guild’s vaults. Once lit, it cannot be quenched, and the old jars from King Aerys’s day grow more dangerous with age. The guild has nearly eight thousand jars and will reach the ten thousand it promised. Hallyne hopes to host a feast for [[joffrey-baratheon|Joffrey]]; Tyrion puts it off, but allows a show of the guild’s secrets at the Red Keep.',
+      },
+    ),
+    inBooks(
+      [18, 123],
+      { it: 'Tredicimila giare', en: 'Thirteen thousand jars' },
+      {
+        it: 'Hallyne dice a [[tyrion-lannister|Tyrion]] che la gilda ha tredicimila giare di altofuoco, molto prima del previsto. I loro incantesimi sono diventati più potenti di recente, dice, e non sa spiegarsi perché. Chiede se ci siano dei draghi in giro, ricordando una cosa sentita tanto tempo fa: che la magia cominciò a sparire dal mondo quando morì l’ultimo drago.',
+        en: 'Hallyne tells [[tyrion-lannister|Tyrion]] that the guild has thirteen thousand jars of wildfire, far ahead of schedule. Their spells have grown more potent of late, he says, and he cannot explain why. He asks whether there are any dragons about, recalling something he heard long ago: that magic began to leave the world when the last dragon died.',
+      },
+    ),
+    inBooks(
+      [20, 139],
+      { it: 'Un lord senza terre', en: 'A lord without lands' },
+      {
+        it: 'Dopo la battaglia in cui l’altofuoco della gilda ha bruciato la flotta di [[stannis-baratheon|Stannis]] sulle Acque Nere, [[joffrey-baratheon|Joffrey]] ricompensa i vincitori nella sala del trono. Vengono onorati i capitani sopravvissuti, e Hallyne il Piromante è nominato lord, anche se non riceve terre. [[tyrion-lannister|Tyrion]], il cui piano ha usato l’altofuoco, è gravemente ferito e non è presente.',
+        en: 'After the battle in which the guild’s wildfire burned [[stannis-baratheon|Stannis]]’s fleet on the Blackwater, [[joffrey-baratheon|Joffrey]] rewards the victors in the throne room. The surviving ship captains are honoured, and Hallyne the Pyromancer is named a lord, though he is given no lands. [[tyrion-lannister|Tyrion]], whose plan used the wildfire, lies gravely wounded and is not there.',
+      },
+    ),
+  ],
+  'lollys-stokeworth': [
+    inBooks(
+      [13, 118],
+      { it: 'Una cameriera per Lollys', en: 'A maid for Lollys' },
+      {
+        it: 'Lollys Stokeworth, la figlia minore di lady Tanda, molle e tarda di mente, è stata stuprata da uomini della folla durante la rivolta e trovata viva davanti alla bottega di un conciatore. Sua madre vorrebbe [[tyrion-lannister|Tyrion]] come marito per lei e continua a invitarlo a cena; lui si scusa e declina. Ora [[varys|Varys]] propone [[shae|Shae]], il segreto di Tyrion, come cameriera della casa di Lollys, da dove un passaggio segreto porta alla Torre del Primo Cavaliere.',
+        en: 'Lollys Stokeworth, Lady Tanda’s soft, dim-witted younger daughter, was raped by men of the mob in the riot and found alive outside a tanner’s shop. Her mother wants [[tyrion-lannister|Tyrion]] as a husband for her and keeps inviting him to supper; he sends his regrets. Now [[varys|Varys]] proposes [[shae|Shae]], Tyrion’s secret, as a maid in Lollys’s household, where a secret passage leads to the Tower of the Hand.',
+      },
+    ),
+    inBooks(
+      [19, 131],
+      { it: 'Nella fortezza', en: 'Into the holdfast' },
+      {
+        it: 'Mentre comincia la battaglia, [[sansa-stark|Sansa]] aiuta lady Tanda e [[shae|Shae]] a portare Lollys nella Fortezza di Maegor, dove quasi tutte le nobildonne della città si riuniscono con [[cersei-lannister|Cersei]] nella sala da ballo della regina. C’è anche [[ilyn-payne|ser Ilyn Payne]], per occuparsi dei traditori e, dice la regina, per difenderle se la città cadrà.',
+        en: 'As the battle begins, [[sansa-stark|Sansa]] helps Lady Tanda and [[shae|Shae]] guide Lollys into Maegor’s Holdfast, where almost every highborn woman in the city gathers with [[cersei-lannister|Cersei]] in the Queen’s Ballroom. [[ilyn-payne|Ser Ilyn Payne]] is there too, to deal with traitors and, the queen says, to defend them if the city falls.',
+      },
+    ),
+  ],
+  'osmund-kettleblack': [
+    inBooks(
+      [18, 123],
+      { it: 'Il mantello bianco', en: 'The white cloak' },
+      {
+        it: '[[cersei-lannister|Cersei]] nomina nella Guardia reale ser Osmund Kettleblack, un cavaliere errante, al posto di ser Boros Blount, e [[joffrey-baratheon|Joffrey]] gli consegna il mantello bianco nel tempio reale, insieme a [[balon-swann|ser Balon Swann]]. [[tyrion-lannister|Tyrion]] non approva. Ha saputo da [[lancel-lannister|Lancel]] che la regina paga Osmund e i suoi fratelli per formarsi un esercito di mercenari, e [[bronn|Bronn]] ha pareggiato ogni moneta che lei dà loro.',
+        en: '[[cersei-lannister|Cersei]] names Ser Osmund Kettleblack, a hedge knight, to the Kingsguard in place of Ser Boros Blount, and [[joffrey-baratheon|Joffrey]] gives him his white cloak in the royal sept, alongside [[balon-swann|Ser Balon Swann]]. [[tyrion-lannister|Tyrion]] does not approve. He has learned from [[lancel-lannister|Lancel]] that the queen pays Osmund and his brothers to raise her own sellswords, and [[bronn|Bronn]] has been matching every copper she gives them.',
+      },
+    ),
+    inBooks(
+      [19, 133],
+      { it: 'Di guardia al re', en: 'Guarding the king' },
+      {
+        it: 'Durante la battaglia, mentre [[joffrey-baratheon|Joffrey]] va a far lanciare i traditori oltre le mura con le catapulte, [[tyrion-lannister|Tyrion]] ordina a ser Osmund di tenere il re al sicuro a ogni costo, ma di tenerlo tra i difensori. Tyrion si chiede se [[cersei-lannister|Cersei]] proteggerà [[alayaya|Alayaya]] come lui protegge il figlio di lei.',
+        en: 'During the battle, as [[joffrey-baratheon|Joffrey]] goes off to have the traitors catapulted over the walls, [[tyrion-lannister|Tyrion]] orders Ser Osmund to keep the king safe at all costs, but to keep him among the defenders. Tyrion wonders whether [[cersei-lannister|Cersei]] will protect [[alayaya|Alayaya]] as well as he protects her son.',
+      },
+    ),
+    inBooks(
+      [20, 139],
+      { it: 'Nuovi cavalieri', en: 'Knighting the victors' },
+      {
+        it: 'Alla cerimonia che premia i vincitori delle Acque Nere, ser Osmund è uno dei tre cavalieri della Guardia reale che, con [[balon-swann|ser Balon Swann]] e [[meryn-trant|ser Meryn Trant]], creano più di seicento nuovi cavalieri. Lo stesso giorno [[loras-tyrell|ser Loras Tyrell]] entra nella Guardia reale, e [[joffrey-baratheon|Joffrey]] sposerà [[margaery-tyrell|Margaery Tyrell]] invece di Sansa.',
+        en: 'At the court that rewards the victors of the Blackwater, Ser Osmund is one of the three knights of the Kingsguard, with [[balon-swann|Ser Balon Swann]] and [[meryn-trant|Ser Meryn Trant]], who make more than six hundred new knights. The same day [[loras-tyrell|Ser Loras Tyrell]] is named to the Kingsguard, and [[joffrey-baratheon|Joffrey]] is to wed [[margaery-tyrell|Margaery Tyrell]] instead of Sansa.',
+      },
+    ),
+  ],
+  'alayaya': [
+    inBooks(
+      [18, 128],
+      { it: 'La figlia di Chataya', en: 'Chataya’s daughter' },
+      {
+        it: 'Alayaya, la figlia di Chataya, accompagna [[tyrion-lannister|Tyrion]] nella stanza della torretta del bordello della madre, dove un cunicolo nascosto gli permette di sgattaiolare da [[shae|Shae]] mentre lei dorme. Credendola l’amante di Tyrion, [[cersei-lannister|Cersei]] la fa prendere e picchiare dai fratelli di [[osmund-kettleblack|ser Osmund]] e la porta davanti a lui. Alayaya non lo tradisce. La regina dice che alla ragazza non sarà fatto del male finché [[joffrey-baratheon|Joffrey]] e [[tommen-baratheon|Tommen]] saranno al sicuro.',
+        en: 'Alayaya, Chataya’s daughter, leads [[tyrion-lannister|Tyrion]] to the turret room of her mother’s brothel, where a hidden shaft lets him slip away to [[shae|Shae]] while she sleeps. Taking her for Tyrion’s lover, [[cersei-lannister|Cersei]] has her seized and beaten by [[osmund-kettleblack|Ser Osmund]]’s brothers and brings her before him. Alayaya does not give him away. The queen says the girl will be unharmed as long as [[joffrey-baratheon|Joffrey]] and [[tommen-baratheon|Tommen]] are safe.',
+      },
+    ),
+  ],
+  'garlan-tyrell': [
+    inBooks(
+      [20, 139],
+      { it: 'Le nozze di Margaery', en: 'A match for Margaery' },
+      {
+        it: 'Ser Garlan Tyrell, uno degli eroi delle Acque Nere, viene presentato a [[joffrey-baratheon|Joffrey]] nella sala del trono con il padre, lord Mace Tyrell, e il fratello [[loras-tyrell|ser Loras]]. Loras entra nella Guardia reale e il padre nel Concilio ristretto. Garlan chiede al re di sposare la sorella [[margaery-tyrell|Margaery]]. L’Alto Septon dichiara nullo il fidanzamento del re con [[sansa-stark|Sansa Stark]], per la ribellione di Casa Stark.',
+        en: 'Ser Garlan Tyrell, one of the heroes of the Blackwater, is presented to [[joffrey-baratheon|Joffrey]] in the throne room with his father, Lord Mace Tyrell, and his brother [[loras-tyrell|Ser Loras]]. Loras is named to the Kingsguard and their father joins the small council. Garlan asks the king to wed his sister [[margaery-tyrell|Margaery]]. The High Septon declares the king’s betrothal to [[sansa-stark|Sansa Stark]] void, because of House Stark’s rebellion.',
       },
     ),
   ],

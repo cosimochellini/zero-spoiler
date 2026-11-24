@@ -1542,6 +1542,7 @@ export const season2: ThronesSaga = {
   dossiers: {
     'daisy': {
       relationships: season2Relationships.daisy,
+      chronicle: season2Chronicles.daisy,
       role: { it: 'Prostituta', en: 'Prostitute' },
       log: {
         it: 'È appena arrivata nel bordello di Ditocorto, e Ros le mostra la casa.',
@@ -1559,6 +1560,7 @@ export const season2: ThronesSaga = {
     },
     'jacelyn-bywater': {
       relationships: season2Relationships['jacelyn-bywater'],
+      chronicle: season2Chronicles['jacelyn-bywater'],
       role: {
         it: 'Comandante della Guardia cittadina',
         en: 'Commander of the City Watch',
@@ -1586,6 +1588,7 @@ export const season2: ThronesSaga = {
     },
     'hallyne': {
       relationships: season2Relationships.hallyne,
+      chronicle: season2Chronicles.hallyne,
       role: {
         it: 'Piromante della Gilda degli alchimisti',
         en: 'Pyromancer of the Alchemists’ Guild',
@@ -1606,6 +1609,7 @@ export const season2: ThronesSaga = {
     },
     'lollys-stokeworth': {
       relationships: season2Relationships['lollys-stokeworth'],
+      chronicle: season2Chronicles['lollys-stokeworth'],
       role: {
         it: 'Figlia di lady Tanda Stokeworth',
         en: 'Daughter of Lady Tanda Stokeworth',
@@ -1628,6 +1632,7 @@ export const season2: ThronesSaga = {
     },
     'osmund-kettleblack': {
       relationships: season2Relationships['osmund-kettleblack'],
+      chronicle: season2Chronicles['osmund-kettleblack'],
       role: {
         it: 'Cavaliere della Guardia reale',
         en: 'Knight of the Kingsguard',
@@ -1650,6 +1655,7 @@ export const season2: ThronesSaga = {
     },
     'alayaya': {
       relationships: season2Relationships.alayaya,
+      chronicle: season2Chronicles.alayaya,
       role: { it: 'Prostituta', en: 'Prostitute' },
       log: {
         it: 'Tyrion Lannister va da lei al bordello per coprire le sue visite a Shae. La regina la fa prendere, credendola la sua amante.',
@@ -1672,6 +1678,7 @@ export const season2: ThronesSaga = {
     },
     'garlan-tyrell': {
       relationships: season2Relationships['garlan-tyrell'],
+      chronicle: season2Chronicles['garlan-tyrell'],
       role: { it: 'Cavaliere di Casa Tyrell', en: 'Knight of House Tyrell' },
       log: {
         it: 'A corte, dopo la vittoria sulle Acque Nere, chiede al re di sposare sua sorella Margaery.',
