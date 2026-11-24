@@ -128,6 +128,38 @@ const STAGE_2_GROUPS: { group: string; issue: string; owners: string[] }[] = [
     ],
   },
   {
+    group: 'Winterfell and the Iron Islands',
+    issue: '#1482',
+    owners: [
+      'balon-greyjoy',
+      'asha-greyjoy',
+      'aeron-greyjoy',
+      'victarion-greyjoy',
+      'dagmer',
+      'black-lorren',
+      'wex-pyke',
+      'farlen',
+      'meera-reed',
+      'jojen-reed',
+      'ramsay-snow',
+      'big-walder-frey',
+      'little-walder-frey',
+      'wyman-manderly',
+      'donella-hornwood',
+      'bran-stark',
+      'rickon-stark',
+      'theon-greyjoy',
+      'luwin',
+      'osha',
+      'hodor',
+      'old-nan',
+      'summer-direwolf',
+      'shaggydog',
+      'rodrik-cassel',
+      'mikken',
+    ],
+  },
+  {
     group: 'Robb’s war, the Riverlands and Harrenhal',
     issue: '#1481',
     owners: [
@@ -618,12 +650,10 @@ describe.each(LOCALES)(
       const king = ['theon-greyjoy', 'robb-stark'] as const
 
       expect(typed(...king, ep(10))).not.toBe(typed(...king, ep(9)))
-      expect(typed(...king, ch(archive.series.chapterCeiling))).toBe(
-        typed(...king, ep(9)),
-      )
+      expect(typed(...king, ch(73))).toBe(typed(...king, ep(9)))
 
       for (const id of ['benjen-stark', 'osha', 'galbart-glover']) {
-        const last = people(id, ch(archive.series.chapterCeiling))
+        const last = people(id, ch(73))
 
         expect(last, id).not.toContain('yoren')
         expect(last, id).not.toContain('luwin')
@@ -1317,6 +1347,127 @@ describe.each(LOCALES)(
         ).toStrictEqual([])
         expect(people('daenerys-targaryen', ch(143))).not.toContain(id)
       }
+    })
+  },
+)
+
+// Winterfell and the Iron Islands (#1482): the show and the books tell the
+// castle's fall in their own words, and the books alone have the Reeds, the
+// Walders and the Hornwood.
+describe.each(LOCALES)(
+  'Game of Thrones Winterfell and Iron Islands revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    const said = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.summary
+
+    it('opens Balon with Theon and his daughter in the show and Aeron in the books', () => {
+      expect(projected('balon-greyjoy', ep(11), locale)).toStrictEqual([])
+      expect(people('balon-greyjoy', ep(12))).toStrictEqual([
+        'theon-greyjoy',
+        'asha-greyjoy',
+      ])
+      expect(projected('balon-greyjoy', ch(84), locale)).toStrictEqual([])
+      expect(people('balon-greyjoy', ch(85))).toStrictEqual([
+        'theon-greyjoy',
+        'aeron-greyjoy',
+      ])
+      expect(people('balon-greyjoy', ch(98))).toContain('victarion-greyjoy')
+      expect(people('balon-greyjoy', ep(20))).not.toContain('victarion-greyjoy')
+    })
+
+    it('keeps the books’ Winterfell cast off show pages', () => {
+      for (const id of [
+        'aeron-greyjoy',
+        'victarion-greyjoy',
+        'black-lorren',
+        'wex-pyke',
+        'farlen',
+        'meera-reed',
+        'jojen-reed',
+        'ramsay-snow',
+        'big-walder-frey',
+        'little-walder-frey',
+        'wyman-manderly',
+        'donella-hornwood',
+      ]) {
+        expect(projected(id, ep(20), locale), id).toStrictEqual([])
+        expect(projected(id, ch(143), locale), id).not.toStrictEqual([])
+      }
+
+      for (const owner of ['bran-stark', 'theon-greyjoy', 'rickon-stark']) {
+        const shown = people(owner, ep(20))
+        for (const id of ['meera-reed', 'jojen-reed', 'ramsay-snow']) {
+          expect(shown, `${owner} ${id}`).not.toContain(id)
+        }
+      }
+    })
+
+    it('gives the Reeds their cards at the harvest feast and not before', () => {
+      for (const id of ['meera-reed', 'jojen-reed']) {
+        expect(projected(id, ch(94), locale), id).toStrictEqual([])
+        expect(people(id, ch(95)), id).toContain('bran-stark')
+      }
+
+      expect(people('bran-stark', ch(101))).not.toContain('jojen-reed')
+      expect(people('bran-stark', ch(102))).toContain('jojen-reed')
+    })
+
+    it('tells the fall of Winterfell at episode 16 and chapter 120', () => {
+      expect(people('bran-stark', ep(15))).not.toContain('theon-greyjoy')
+      expect(people('bran-stark', ep(16))).toContain('theon-greyjoy')
+      expect(people('bran-stark', ch(119))).not.toContain('theon-greyjoy')
+      expect(people('bran-stark', ch(120))).toContain('theon-greyjoy')
+      expect(said('bran-stark', 'theon-greyjoy', ep(16))).not.toBe(
+        said('bran-stark', 'theon-greyjoy', ch(120)),
+      )
+    })
+
+    it('has Ramsay name himself to Theon at chapter 140 in the books alone', () => {
+      expect(projected('ramsay-snow', ch(139), locale)).toStrictEqual([])
+      expect(people('ramsay-snow', ch(140))).toContain('theon-greyjoy')
+      expect(people('theon-greyjoy', ch(139))).not.toContain('ramsay-snow')
+      expect(people('theon-greyjoy', ch(140))).toContain('ramsay-snow')
+      expect(people('theon-greyjoy', ep(20))).not.toContain('ramsay-snow')
+    })
+
+    it('ends the Hornwood widow in the past tense at chapter 109', () => {
+      expect(people('donella-hornwood', ch(101))).toStrictEqual([
+        'bran-stark',
+        'rodrik-cassel',
+        'wyman-manderly',
+      ])
+      expect(said('wyman-manderly', 'donella-hornwood', ch(108))).not.toBe(
+        said('wyman-manderly', 'donella-hornwood', ch(109)),
+      )
+      expect(people('donella-hornwood', ch(109))).toStrictEqual([
+        'wyman-manderly',
+        'rodrik-cassel',
+      ])
+    })
+
+    it('lays Farlen, Black Lorren and Mikken to rest at their deaths', () => {
+      expect(said('farlen', 'theon-greyjoy', ch(129))).not.toBe(
+        said('farlen', 'theon-greyjoy', ch(130)),
+      )
+      expect(said('black-lorren', 'theon-greyjoy', ch(142))).not.toBe(
+        said('black-lorren', 'theon-greyjoy', ch(143)),
+      )
+      expect(people('mikken', ch(119))).not.toContain('theon-greyjoy')
+      expect(people('mikken', ch(120))).toContain('theon-greyjoy')
+    })
+
+    it('splits Dagmer’s show and book cards', () => {
+      expect(projected('dagmer', ep(14), locale)).toStrictEqual([])
+      expect(people('dagmer', ep(15))).toStrictEqual(['theon-greyjoy'])
+      expect(people('dagmer', ep(20))).toContain('luwin')
+      expect(projected('dagmer', ch(110), locale)).toStrictEqual([])
+      expect(people('dagmer', ch(111))).toContain('aeron-greyjoy')
+      expect(people('dagmer', ch(143))).not.toContain('luwin')
     })
   },
 )
