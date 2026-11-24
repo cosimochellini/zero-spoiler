@@ -6,6 +6,7 @@ import path from 'node:path'
 import { defineConfig, type Plugin, type Rollup } from 'vite'
 
 import { LOCALES } from './src/i18n/locales'
+import { LANDING_CHUNKS } from './src/lib/chunks'
 
 // @stylexjs/unplugin declares every bundler factory as `(options?) => any`, so
 // an unannotated call turns the whole `plugins` array into `any[]`. This is the
@@ -26,8 +27,7 @@ const PRELOADED = new Map(
   [
     // Only the shared copy: a series' own `en.ts` sits a folder deeper.
     ...LOCALES.map((locale) => `i18n/dictionaries/${locale}.ts`),
-    'components/OnboardingLanding.tsx',
-    'components/HomeLanding.tsx',
+    ...Object.values(LANDING_CHUNKS).map((name) => `components/${name}.tsx`),
   ].map((file) => [
     path.join(import.meta.dirname, 'src', file),
     // A chunk is named after its file: `en`, `HomeLanding`.

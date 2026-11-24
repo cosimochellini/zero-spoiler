@@ -3,7 +3,7 @@ import { type ReactElement, useCallback } from 'react'
 
 import { isLocale } from '~/i18n/locales'
 import type { SeriesSlug } from '~/i18n/types'
-import { preloadChunk } from '~/lib/chunks'
+import { LANDING_CHUNKS, preloadChunk } from '~/lib/chunks'
 import { readPlain } from '~/lib/plain'
 import { readTrial } from '~/lib/progress/readBookmark'
 import { describeNamedPage } from '~/routes/$locale/-head'
@@ -50,7 +50,7 @@ export const Route = createFileRoute('/$series/$locale/')({
     if (loaderData !== undefined) {
       links.push(
         ...preloadChunk(
-          'onboarding' in loaderData ? 'OnboardingLanding' : 'HomeLanding',
+          LANDING_CHUNKS['onboarding' in loaderData ? 'onboarding' : 'home'],
         ),
       )
     }
