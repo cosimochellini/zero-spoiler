@@ -387,6 +387,34 @@ Edmure, Hoster and Brynden Tully, Yoren (death filed by #1290) and Lommy (his
 book-side cards are #1481's and his chronicle #1486's). Brienne's escort of
 Jaime belongs to her record, filed by #1464.
 
+### Relationships (#1481)
+
+The group's cards, 24 owners: the nine new records, Jaqen H'ghar, Rorge, Biter
+and Lommy (who leave `omitted`), and eleven stage-1 records with stage-2
+snapshots (Arya, Gendry, Hot Pie, Yoren, Robb, Catelyn, Jaime, Tywin, Gregor
+Clegane, Roose Bolton, Edmure). New characters' cards are in
+`season-2.relationships.ts`, the others in `season-1.relationships.ts`. Book
+facts come from A Wiki of Ice and Fire's chapter pages for Arya I, II, IV to X
+(site chapters 75, 79, 88, 93, 100, 104, 112, 121, 138), Catelyn I, V and VII
+(81, 113, 129) and Tyrion VI (99), read through the Firecrawl tool; show facts
+from the Game of Thrones Wiki's episode and character pages.
+
+- Show and book cards are separate wherever the media differ: the show's Tickler
+  and Amory Lorch die at Jaqen's hand at Arya's asking (15, 16), the books'
+  Chiswyck and Weese do (104, 112); the show's Alton Lannister and the books'
+  Cleos Frey carry Robb's terms; Talisa is the show's alone.
+- Lommy's cards are the books' alone (75, 93): his show record opens at episode
+  31, so his show-side cards wait for stage 4.
+- Rorge and Biter are named in the books alone, so Jaqen's show cards never name
+  them.
+- Catelyn Stark and Jaime Lannister have stage-2 snapshots too (review round 1):
+  her embassy to Renly with Brienne, the quarrel over Jaime, his release and her
+  view of Robb's match; his cell, the escape and Brienne's escort. Not given
+  any: Rickard Karstark, Brynden and Hoster Tully, the Greatjon and Grey Wind
+  (they appear as people in others' cards). Stannis and Renly's own cards are
+  #1480's; the Renly chapters (Catelyn II to IV) were not read, so Catelyn's
+  book cards start at 81.
+
 ### Drawings (#1472)
 
 Each record has its own drawing in `art/riverlands.ts`; the objects, stages and

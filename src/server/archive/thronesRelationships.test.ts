@@ -128,6 +128,36 @@ const STAGE_2_GROUPS: { group: string; issue: string; owners: string[] }[] = [
     ],
   },
   {
+    group: 'Robb’s war, the Riverlands and Harrenhal',
+    issue: '#1481',
+    owners: [
+      'alton-lannister',
+      'cleos-frey',
+      'talisa-maegyr',
+      'amory-lorch',
+      'polliver',
+      'tickler',
+      'chiswyck',
+      'weese',
+      'vargo-hoat',
+      'jaqen-hghar',
+      'rorge',
+      'biter',
+      'lommy',
+      'arya-stark',
+      'gendry',
+      'hot-pie',
+      'yoren',
+      'robb-stark',
+      'tywin-lannister',
+      'gregor-clegane',
+      'roose-bolton',
+      'edmure-tully',
+      'catelyn-stark',
+      'jaime-lannister',
+    ],
+  },
+  {
     group: 'Stannis, Renly and the stormlands',
     issue: '#1480',
     owners: [
@@ -666,7 +696,6 @@ describe.each(LOCALES)(
         'alyn',
         'smalljon-umber',
         'rickard-karstark',
-        'roose-bolton',
         'robett-glover',
         'wendel-manderly',
       ]) {
@@ -676,6 +705,10 @@ describe.each(LOCALES)(
         ).toStrictEqual([])
         expect(projected(id, ch(73), locale), id).not.toStrictEqual([])
       }
+
+      // Roose's show cards open with episode 14 (#1481): stage 1 has none.
+      expect(projected('roose-bolton', ep(10), locale)).toStrictEqual([])
+      expect(projected('roose-bolton', ch(73), locale)).not.toStrictEqual([])
     })
   },
 )
@@ -773,9 +806,7 @@ describe.each(LOCALES)(
       expect(people('yoren', ch(66))).toContain('arya-stark')
       expect(people('yoren', ep(9))).not.toContain('gendry')
       expect(people('yoren', ep(10))).toContain('gendry')
-      expect(people('yoren', ch(archive.series.chapterCeiling))).not.toContain(
-        'gendry',
-      )
+      expect(people('yoren', ch(73))).not.toContain('gendry')
     })
 
     it('kills Jaremy by Jafer’s corpse in the books alone', () => {
@@ -1088,9 +1119,7 @@ describe.each(LOCALES)(
     it('keeps the show-only recruits out of book pages', () => {
       expect(projected('hot-pie', ep(9), locale)).toStrictEqual([])
       expect(projected('hot-pie', ep(10), locale)).not.toStrictEqual([])
-      expect(
-        projected('hot-pie', ch(archive.series.chapterCeiling), locale),
-      ).toStrictEqual([])
+      expect(projected('hot-pie', ch(73), locale)).toStrictEqual([])
       // Lommy's show record opens at episode 31, past stage 2 (#1457).
       expect(
         projected('lommy', ep(archive.series.episodeCeiling), locale),
