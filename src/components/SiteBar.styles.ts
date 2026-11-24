@@ -190,6 +190,8 @@ export const styles = stylex.create({
   },
   seriesControls: {
     alignItems: { [CRAMPED]: 'flex-end', default: 'center' },
+    // Both rows' height, so each control is centred on its own row.
+    alignSelf: { [CRAMPED]: 'stretch', default: 'auto' },
     display: { [CRAMPED]: 'flex', [CROWDED]: 'flex', default: 'contents' },
     flexDirection: { [CRAMPED]: 'column', default: 'row' },
     gridRowEnd: { [CRAMPED]: 'span 2', default: 'auto' },
