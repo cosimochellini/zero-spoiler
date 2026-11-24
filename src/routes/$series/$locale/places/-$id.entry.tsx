@@ -9,7 +9,7 @@
  * generated route tree.
  */
 import * as stylex from '@stylexjs/stylex'
-import type { ComponentType, ReactElement } from 'react'
+import type { ComponentType, ReactElement, ReactNode } from 'react'
 
 import { FiledHere } from '~/components/FiledHere'
 import { PortFacts, ShipFacts } from '~/components/PortFacts'
@@ -68,19 +68,19 @@ function useEntryWords(kind: 'place' | 'ship', gate: Gated): EntryWords {
 }
 
 /** A place's or a ship's record, as the entry draws it. */
-export type Entry = RecordView & { summary: string }
+type Entry = RecordView & { summary: string }
 
 /** How to lift the fog on a record the entry names. */
 export type PeekRecord = (handle: string) => Promise<RecordView>
 
 /** One titled list of records in the band under the entry. */
-export interface FiledList {
+interface FiledList {
   filed: Slot<RecordView>[]
   title: string
 }
 
 /** What the band is given: the record, how to lift its fog, and its body. */
-export interface EntryProps<T extends Entry> {
+interface EntryProps<T extends Entry> {
   /** Its facts and its log entry, beside the plate once open. */
   Body: ComponentType<{ record: T }>
   kind: 'place' | 'ship'
@@ -166,20 +166,40 @@ function EntryColumn<T extends Entry>({
       </p>
 
       {veil.words(
-        <div {...stylex.props(styles.words)}>
-          <h1 {...stylex.props(styles.name)}>{words.name}</h1>
-          <p {...stylex.props(styles.summary)}>{words.description}</p>
-        </div>,
+        <Words
+          name={words.name}
+          summary={words.description}
+        />,
         (record) => {
           return (
-            <div {...stylex.props(styles.words)}>
-              <h1 {...stylex.props(styles.name)}>{record.name}</h1>
-              <p {...stylex.props(styles.summary)}>{record.summary}</p>
+            <Words
+              name={record.name}
+              summary={record.summary}
+            >
               <Body record={record} />
-            </div>
+            </Words>
           )
         },
       )}
+    </div>
+  )
+}
+
+/** The name, the only display line, and the sentence: generic under fog. */
+function Words({
+  children,
+  name,
+  summary,
+}: {
+  children?: ReactNode
+  name: string
+  summary: string
+}): ReactElement {
+  return (
+    <div {...stylex.props(styles.words)}>
+      <h1 {...stylex.props(styles.name)}>{name}</h1>
+      <p {...stylex.props(styles.summary)}>{summary}</p>
+      {children}
     </div>
   )
 }
