@@ -42,10 +42,10 @@ export interface ChoiceGroupProps<V extends string> {
  * the arrow keys move between them, all from the browser.
  *
  * The radio itself is invisible and laid over its label, which carries every
- * state: hover, focus-visible (the ring is the label's), pressed, picked (a
- * fill and, on a chip, a filled dot, so colour is never the only signal) and
- * disabled. A pick changes nothing until the page reacts to it, so there is
- * no loading, error or success state to show.
+ * state: hover, focus-visible (the ring is the label's), pressed, picked (on
+ * a chip a fill and a filled dot, on a segment an underline, so colour is
+ * never the only signal) and disabled. A pick changes nothing until the page
+ * reacts to it, so there is no loading, error or success state to show.
  */
 export function ChoiceGroup<V extends string>({
   choices,
@@ -214,8 +214,9 @@ const styles = stylex.create({
     outlineOffset: `calc(-1 * ${rule.fine})`,
     minWidth: '44px',
   },
+  // No fill: a filled segment inside the bordered track reads as a card in a
+  // card (#1591). The underline and the ink mark the pick.
   segmentPicked: {
-    backgroundColor: color.paper3,
     boxShadow: `inset 0 calc(-1 * ${rule.fine}) 0 ${color.accent}`,
     color: color.ink,
   },
@@ -250,7 +251,7 @@ const styles = stylex.create({
   },
 })
 
-/** How a picked option looks: a chip lights its border, a segment fills. */
+/** How a picked option looks: a chip lights its border, a segment underlines. */
 function pickedStyle(chips: boolean): stylex.StyleXStyles {
   return chips ? styles.chipPicked : styles.segmentPicked
 }
