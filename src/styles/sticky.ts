@@ -20,11 +20,18 @@ export const STACK_PROPERTY = '--sticky-stack'
 
 /**
  * A series page's bar keeps two rows up to `BAR.seriesWide`, where the site's
- * own bar is one row at every width. Set on `<html>` on a series page, so
- * everything that pins under the bar reads the same height.
+ * own bar is one row, and three or four where the wordmark, then the
+ * language, take a row of their own (`BAR.seriesCrowded`,
+ * `BAR.seriesCramped`). Set on `<html>` on a series page, so everything that
+ * pins under the bar reads the same height.
  */
 export const seriesBarPin = stylex.createTheme(pin, {
-  bar: { default: BAR.twoRows, [BAR.seriesWide]: BAR.oneRow },
+  bar: {
+    default: BAR.twoRows,
+    [BAR.seriesWide]: BAR.oneRow,
+    [BAR.seriesCrowded]: BAR.threeRows,
+    [BAR.seriesCramped]: BAR.fourRows,
+  },
 })
 
 // The room the document keeps under the bar for one sticky head: its least

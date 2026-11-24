@@ -601,7 +601,7 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Saga modules           | 2                                                       |
 | Line drawings          | 300, one per record, plus 208 redrawings of 153 records |
 | Chronicle stories      | 620, for 154 characters                                 |
-| Dated timelines        | 951                                                     |
+| Dated timelines        | 976                                                     |
 | Affiliation steps      | 243                                                     |
 | Status steps           | 382                                                     |
 | Later visits to places | 5                                                       |

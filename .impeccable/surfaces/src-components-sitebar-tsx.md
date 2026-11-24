@@ -27,8 +27,6 @@ and changing language.
   `SiteFooter.tsx`).
 - On a phone the series' name keeps its width and the pages scroll sideways
   beside it; the bar's glass runs to both edges of the window.
-
-**Open points:**
-
-- At 200% text on a phone the wordmark runs under the bookmark mark and the
-  language select: the first row has no room for the three (#1377).
+- Where large text leaves no room for the wordmark beside the bookmark and the
+  language, it takes a row of its own above them (owner, #1558); at the
+  default text size the bar is as it was.

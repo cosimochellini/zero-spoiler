@@ -159,6 +159,56 @@ const STAGE_2_GROUPS: { group: string; issue: string; owners: string[] }[] = [
       'mikken',
     ],
   },
+  {
+    group: 'Robb’s war, the Riverlands and Harrenhal',
+    issue: '#1481',
+    owners: [
+      'alton-lannister',
+      'cleos-frey',
+      'talisa-maegyr',
+      'amory-lorch',
+      'polliver',
+      'tickler',
+      'chiswyck',
+      'weese',
+      'vargo-hoat',
+      'jaqen-hghar',
+      'rorge',
+      'biter',
+      'lommy',
+      'arya-stark',
+      'gendry',
+      'hot-pie',
+      'yoren',
+      'robb-stark',
+      'tywin-lannister',
+      'gregor-clegane',
+      'roose-bolton',
+      'edmure-tully',
+      'catelyn-stark',
+      'jaime-lannister',
+    ],
+  },
+  {
+    group: 'Stannis, Renly and the stormlands',
+    issue: '#1480',
+    owners: [
+      'stannis-baratheon',
+      'melisandre',
+      'davos-seaworth',
+      'cressen',
+      'matthos-seaworth',
+      'salladhor-saan',
+      'selyse-baratheon',
+      'shireen-baratheon',
+      'brienne-of-tarth',
+      'margaery-tyrell',
+      'mace-tyrell',
+      'cortnay-penrose',
+      'renly-baratheon',
+      'loras-tyrell',
+    ],
+  },
 ]
 
 /**
@@ -676,7 +726,6 @@ describe.each(LOCALES)(
         'alyn',
         'smalljon-umber',
         'rickard-karstark',
-        'roose-bolton',
         'robett-glover',
         'wendel-manderly',
       ]) {
@@ -686,6 +735,10 @@ describe.each(LOCALES)(
         ).toStrictEqual([])
         expect(projected(id, ch(73), locale), id).not.toStrictEqual([])
       }
+
+      // Roose's show cards open with episode 14 (#1481): stage 1 has none.
+      expect(projected('roose-bolton', ep(10), locale)).toStrictEqual([])
+      expect(projected('roose-bolton', ch(73), locale)).not.toStrictEqual([])
     })
   },
 )
@@ -783,9 +836,7 @@ describe.each(LOCALES)(
       expect(people('yoren', ch(66))).toContain('arya-stark')
       expect(people('yoren', ep(9))).not.toContain('gendry')
       expect(people('yoren', ep(10))).toContain('gendry')
-      expect(people('yoren', ch(archive.series.chapterCeiling))).not.toContain(
-        'gendry',
-      )
+      expect(people('yoren', ch(73))).not.toContain('gendry')
     })
 
     it('kills Jaremy by Jafer’s corpse in the books alone', () => {
@@ -1098,9 +1149,7 @@ describe.each(LOCALES)(
     it('keeps the show-only recruits out of book pages', () => {
       expect(projected('hot-pie', ep(9), locale)).toStrictEqual([])
       expect(projected('hot-pie', ep(10), locale)).not.toStrictEqual([])
-      expect(
-        projected('hot-pie', ch(archive.series.chapterCeiling), locale),
-      ).toStrictEqual([])
+      expect(projected('hot-pie', ch(73), locale)).toStrictEqual([])
       // Lommy's show record opens at episode 31, past stage 2 (#1457).
       expect(
         projected('lommy', ep(archive.series.episodeCeiling), locale),
@@ -1419,6 +1468,168 @@ describe.each(LOCALES)(
       expect(projected('dagmer', ch(110), locale)).toStrictEqual([])
       expect(people('dagmer', ch(111))).toContain('aeron-greyjoy')
       expect(people('dagmer', ch(143))).not.toContain('luwin')
+    })
+  },
+)
+
+// Stannis, Renly and the stormlands in stage 2 (#1480): each link the two
+// media time or tell apart, checked just before its pin and at it.
+describe.each(LOCALES)(
+  'Game of Thrones stage-2 stormlands revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    // What an owner's card says of a person at a bookmark.
+    const said = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.summary
+    const lastEpisode = ep(archive.series.episodeCeiling)
+
+    it('opens the Dragonstone cast at episode 11 and chapter 74, not before', () => {
+      for (const id of ['stannis-baratheon', 'melisandre', 'davos-seaworth']) {
+        expect(projected(id, ep(10), locale), id).toStrictEqual([])
+        expect(projected(id, ep(11), locale), id).not.toStrictEqual([])
+        expect(projected(id, ch(73), locale), id).toStrictEqual([])
+        expect(projected(id, ch(74), locale), id).not.toStrictEqual([])
+      }
+    })
+
+    it('keeps Selyse, Shireen and Mace on book pages in this stage', () => {
+      for (const id of ['selyse-baratheon', 'shireen-baratheon']) {
+        expect(projected(id, ep(20), locale), id).toStrictEqual([])
+        expect(projected(id, ch(73), locale), id).toStrictEqual([])
+        expect(projected(id, ch(74), locale), id).not.toStrictEqual([])
+      }
+
+      expect(projected('mace-tyrell', ep(20), locale)).toStrictEqual([])
+      expect(projected('mace-tyrell', ch(138), locale)).toStrictEqual([])
+      expect(people('mace-tyrell', ch(139))).toStrictEqual([
+        'joffrey-baratheon',
+        'loras-tyrell',
+      ])
+    })
+
+    it('names the queen and princess on book pages alone', () => {
+      expect(people('stannis-baratheon', ch(74))).toContain('selyse-baratheon')
+      expect(people('stannis-baratheon', ep(11))).not.toContain(
+        'selyse-baratheon',
+      )
+      expect(people('stannis-baratheon', ep(20))).not.toContain(
+        'selyse-baratheon',
+      )
+      expect(people('cressen', ch(74))).toContain('shireen-baratheon')
+      expect(people('cressen', ep(20))).not.toContain('shireen-baratheon')
+    })
+
+    it('opens Matthos on the show at episode 11 and on the books at chapter 132', () => {
+      expect(projected('matthos-seaworth', ep(10), locale)).toStrictEqual([])
+      expect(people('matthos-seaworth', ep(11))).toStrictEqual([
+        'stannis-baratheon',
+        'davos-seaworth',
+      ])
+      expect(projected('matthos-seaworth', ch(131), locale)).toStrictEqual([])
+      expect(people('matthos-seaworth', ch(132))).toStrictEqual([
+        'davos-seaworth',
+      ])
+      expect(people('davos-seaworth', ch(131))).not.toContain(
+        'matthos-seaworth',
+      )
+      expect(people('davos-seaworth', ch(132))).toContain('matthos-seaworth')
+    })
+
+    it('turns Davos’s card for Matthos to the past where he dies', () => {
+      expect(said('davos-seaworth', 'matthos-seaworth', ep(19))).not.toBe(
+        said('davos-seaworth', 'matthos-seaworth', ep(18)),
+      )
+    })
+
+    it('opens Salladhor at episode 12 and chapter 84', () => {
+      expect(projected('salladhor-saan', ep(11), locale)).toStrictEqual([])
+      expect(people('salladhor-saan', ep(12))).toContain('davos-seaworth')
+      expect(projected('salladhor-saan', ch(83), locale)).toStrictEqual([])
+      expect(people('salladhor-saan', ch(84))).toStrictEqual([
+        'davos-seaworth',
+        'stannis-baratheon',
+      ])
+      expect(people('davos-seaworth', ch(83))).not.toContain('salladhor-saan')
+      expect(people('davos-seaworth', ch(84))).toContain('salladhor-saan')
+    })
+
+    it('keeps Cortnay off show pages and turns his card at chapter 118', () => {
+      expect(projected('cortnay-penrose', lastEpisode, locale)).toStrictEqual(
+        [],
+      )
+      expect(projected('cortnay-penrose', ch(115), locale)).toStrictEqual([])
+      expect(people('cortnay-penrose', ch(116))).toStrictEqual([
+        'stannis-baratheon',
+      ])
+      expect(people('stannis-baratheon', ch(115))).not.toContain(
+        'cortnay-penrose',
+      )
+      expect(people('stannis-baratheon', ch(116))).toContain('cortnay-penrose')
+      expect(said('cortnay-penrose', 'stannis-baratheon', ch(118))).not.toBe(
+        said('cortnay-penrose', 'stannis-baratheon', ch(117)),
+      )
+      expect(people('stannis-baratheon', ep(20))).not.toContain(
+        'cortnay-penrose',
+      )
+    })
+
+    it('opens Brienne and Margaery at episode 13 and chapter 96', () => {
+      for (const id of ['brienne-of-tarth', 'margaery-tyrell']) {
+        expect(projected(id, ep(12), locale), id).toStrictEqual([])
+        expect(projected(id, ep(13), locale), id).not.toStrictEqual([])
+        expect(projected(id, ch(95), locale), id).toStrictEqual([])
+        expect(projected(id, ch(96), locale), id).not.toStrictEqual([])
+      }
+    })
+
+    it('sends Brienne with Jaime in the show and to Catelyn’s side in the books', () => {
+      expect(people('brienne-of-tarth', ep(17))).not.toContain(
+        'jaime-lannister',
+      )
+      expect(people('brienne-of-tarth', ep(18))).toContain('jaime-lannister')
+      expect(people('brienne-of-tarth', ch(143))).not.toContain(
+        'jaime-lannister',
+      )
+      expect(said('brienne-of-tarth', 'catelyn-stark', ch(113))).not.toBe(
+        said('brienne-of-tarth', 'catelyn-stark', ch(112)),
+      )
+    })
+
+    it('has Renly die in the show at episode 15 and in the books at chapter 107', () => {
+      expect(people('renly-baratheon', ep(14))).toContain('petyr-baelish')
+      expect(people('renly-baratheon', ep(14))).not.toContain('margaery-tyrell')
+      expect(people('renly-baratheon', ep(15))).toContain('margaery-tyrell')
+      expect(said('renly-baratheon', 'stannis-baratheon', ep(15))).not.toBe(
+        said('renly-baratheon', 'stannis-baratheon', ep(14)),
+      )
+      expect(people('renly-baratheon', ch(106))).toContain('stannis-baratheon')
+      expect(people('renly-baratheon', ch(107))).not.toContain(
+        'stannis-baratheon',
+      )
+    })
+
+    it('has Margaery’s hand asked for at episode 20 and chapter 139', () => {
+      expect(people('margaery-tyrell', ep(19))).not.toContain(
+        'joffrey-baratheon',
+      )
+      expect(people('margaery-tyrell', ep(20))).toContain('joffrey-baratheon')
+      expect(people('margaery-tyrell', ch(138))).not.toContain(
+        'joffrey-baratheon',
+      )
+      expect(people('margaery-tyrell', ch(139))).toContain('joffrey-baratheon')
+      expect(people('loras-tyrell', ch(138))).not.toContain('mace-tyrell')
+      expect(people('loras-tyrell', ch(139))).toContain('mace-tyrell')
+      expect(people('loras-tyrell', ep(20))).not.toContain('mace-tyrell')
+    })
+
+    it('tells Renly’s killing by Melisandre’s shadow in the show alone', () => {
+      expect(people('melisandre', ep(14))).not.toContain('renly-baratheon')
+      expect(people('melisandre', ep(15))).toContain('renly-baratheon')
+      expect(people('melisandre', ch(143))).not.toContain('renly-baratheon')
     })
   },
 )
