@@ -546,6 +546,274 @@ const essos = {
 } satisfies Record<string, Relationship>
 
 /**
+ * The King's Landing and Blackwater cast (#1479). The returning season-1
+ * characters' stage-2 cards are in `season-1.relationships.ts`.
+ */
+const kingsLanding = {
+  // Daisy (show only)
+  daiRos: {
+    character: 'ros',
+    type: { en: 'Guide', it: 'Guida' },
+    summary: {
+      en: 'The girl who shows her round Littlefinger’s brothel on her first day and tells her how things are done there.',
+      it: 'La ragazza che il primo giorno le mostra il bordello di Ditocorto e le spiega come si lavora lì.',
+    },
+  },
+  daiPycelle: {
+    character: 'pycelle',
+    type: { en: 'Client', it: 'Cliente' },
+    summary: {
+      en: 'The Grand Maester, in her bed when Tyrion’s men burst in and arrest him.',
+      it: 'Il gran maestro, nel suo letto quando gli uomini di Tyrion irrompono e lo arrestano.',
+    },
+  },
+  daiTyrionPays: {
+    character: 'tyrion-lannister',
+    type: { en: 'Her payer', it: 'Chi la paga' },
+    summary: {
+      en: 'The Hand of the King, who has Pycelle arrested in her room and pays her for the trouble.',
+      it: 'Il Primo Cavaliere del re, che fa arrestare Pycelle nella sua stanza e la ripaga del disturbo.',
+    },
+  },
+  daiJoffrey: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King she is sent to', it: 'Re da cui è mandata' },
+    summary: {
+      en: 'The king she and Ros are hired out to as a gift. He makes Ros beat her, hard enough to make her scream.',
+      it: 'Il re da cui lei e Ros vengono mandate in dono. Costringe Ros a picchiarla, tanto forte da farla urlare.',
+    },
+  },
+  daiRosBeats: {
+    character: 'ros',
+    type: { en: 'Fellow prostitute', it: 'Collega' },
+    summary: {
+      en: 'The woman Joffrey forces to hit her, and who then has to take her to Tyrion to show him what the king has done.',
+      it: 'La donna che Joffrey costringe a colpirla, e che poi deve portarla da Tyrion a mostrargli che cosa ha fatto il re.',
+    },
+  },
+  daiTyrionSent: {
+    character: 'tyrion-lannister',
+    type: { en: 'Her payer', it: 'Chi la paga' },
+    summary: {
+      en: 'The Hand of the King, who hired her and Ros out to the king. Joffrey wants him to see what was done to her.',
+      it: 'Il Primo Cavaliere del re, che l’ha mandata con Ros dal re. Joffrey vuole che veda che cosa le ha fatto.',
+    },
+  },
+
+  // Jacelyn Bywater (books only)
+  jacTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Hand of the King', it: 'Primo Cavaliere' },
+    summary: {
+      en: 'The Hand, who names him commander of the City Watch the moment Janos Slynt is led away.',
+      it: 'Il Primo Cavaliere, che lo nomina comandante della Guardia cittadina nel momento in cui Janos Slynt viene portato via.',
+    },
+  },
+  jacJanos: {
+    character: 'janos-slynt',
+    type: { en: 'Predecessor', it: 'Predecessore' },
+    summary: {
+      en: 'The commander he replaces. They meet at the door as Janos is taken off to the Wall.',
+      it: 'Il comandante che sostituisce. Si incontrano sulla porta mentre Janos viene portato verso la Barriera.',
+    },
+  },
+  jacVarys: {
+    character: 'varys',
+    type: { en: 'Backer', it: 'Garante' },
+    summary: {
+      en: 'The master of whispers, who speaks well of him to Tyrion as a man the City Watch will follow.',
+      it: 'Il maestro dei sussurri, che parla bene di lui a Tyrion come di un uomo che la Guardia cittadina seguirà.',
+    },
+  },
+  jacTyrionTrust: {
+    character: 'tyrion-lannister',
+    type: { en: 'Hand of the King', it: 'Primo Cavaliere' },
+    summary: {
+      en: 'The Hand he serves. Jacelyn sends for him when Cleos Frey arrives with peace terms, and his men overtake the party taking Tommen out of the city.',
+      it: 'Il Primo Cavaliere che serve. Jacelyn lo manda a chiamare quando arriva Cleos Frey con le condizioni di pace, e i suoi uomini raggiungono il gruppo che porta Tommen fuori città.',
+    },
+  },
+  jacBoros: {
+    character: 'boros-blount',
+    type: { en: 'Kingsguard knight', it: 'Cavaliere della Guardia reale' },
+    summary: {
+      en: 'The knight escorting Tommen out of the city. He gives the boy up at once when Jacelyn’s men catch up, and loses his white cloak for it.',
+      it: 'Il cavaliere che scorta Tommen fuori città. Lo consegna subito quando gli uomini di Jacelyn lo raggiungono, e per questo perde il mantello bianco.',
+    },
+  },
+  jacTommen: {
+    character: 'tommen-baratheon',
+    type: { en: 'Prince', it: 'Principe' },
+    summary: {
+      en: 'The younger prince, whom the queen sent to Rosby to hide. On Tyrion’s orders Jacelyn’s men seize the party and keep him safe there.',
+      it: 'Il principe più giovane, che la regina aveva mandato a nascondere a Rosby. Per ordine di Tyrion gli uomini di Jacelyn prendono il gruppo e lo tengono al sicuro lì.',
+    },
+  },
+
+  // Hallyne (books only)
+  halTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Hand of the King', it: 'Primo Cavaliere' },
+    summary: {
+      en: 'The Hand, who comes down to the guild’s vaults to see the wildfire. Hallyne counts the jars for him and promises ten thousand.',
+      it: 'Il Primo Cavaliere, che scende nelle cantine della gilda a vedere l’altofuoco. Hallyne gli conta le giare e gliene promette diecimila.',
+    },
+  },
+  halJoffrey: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King he hopes to feast', it: 'Re che spera di ospitare' },
+    summary: {
+      en: 'The king the guild would like to receive. Tyrion puts the feast off, and Hallyne offers a show of the guild’s secrets at the Red Keep instead.',
+      it: 'Il re che la gilda vorrebbe ospitare. Tyrion rimanda il banchetto, e Hallyne propone allora una dimostrazione dei segreti della gilda alla Fortezza Rossa.',
+    },
+  },
+  halTyrionWounded: {
+    character: 'tyrion-lannister',
+    type: { en: 'Former Hand', it: 'Ex Primo Cavaliere' },
+    summary: {
+      en: 'The former Hand, whose plan burned Stannis’s fleet with the guild’s wildfire. Tyrion lies wounded and misses the court of rewards.',
+      it: 'L’ex Primo Cavaliere, il cui piano ha bruciato la flotta di Stannis con l’altofuoco della gilda. Tyrion è ferito e non va alla cerimonia delle ricompense.',
+    },
+  },
+  halJoffreyLord: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King who ennobles him', it: 'Re che lo nomina lord' },
+    summary: {
+      en: 'The king, who names him a lord for the wildfire at the court of rewards, though he gets no lands.',
+      it: 'Il re, che alla cerimonia delle ricompense lo nomina lord per l’altofuoco, anche se non riceve terre.',
+    },
+  },
+
+  // Lollys Stokeworth (books only)
+  lolShae: {
+    character: 'shae',
+    type: { en: 'Maidservant to be', it: 'Futura cameriera' },
+    summary: {
+      en: 'The girl Varys proposes as her maidservant. She is Tyrion’s secret, and the post gives her a way into the Tower of the Hand.',
+      it: 'La ragazza che Varys propone come sua cameriera. È la segreta di Tyrion, e il posto le apre una via verso la Torre del Primo Cavaliere.',
+    },
+  },
+  lolTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Match her mother wants', it: 'Marito voluto dalla madre' },
+    summary: {
+      en: 'The Hand of the King. Her mother, Lady Tanda, wants him for a husband for her and keeps inviting him to supper.',
+      it: 'Il Primo Cavaliere del re. Sua madre, lady Tanda, lo vorrebbe come marito per lei e continua a invitarlo a cena.',
+    },
+  },
+
+  // Osmund Kettleblack (books only)
+  osmCersei: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen who raises him', it: 'Regina che lo promuove' },
+    summary: {
+      en: 'The queen regent, who picks him for the Kingsguard in Boros Blount’s place.',
+      it: 'La regina reggente, che lo sceglie per la Guardia reale al posto di Boros Blount.',
+    },
+  },
+  osmJoffrey: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King he serves', it: 'Re che serve' },
+    summary: {
+      en: 'The king, who gives him his white cloak in the royal sept.',
+      it: 'Il re, che gli consegna il mantello bianco nel tempio reale.',
+    },
+  },
+  osmBalon: {
+    character: 'balon-swann',
+    type: { en: 'New Kingsguard', it: 'Nuovo compagno della Guardia reale' },
+    summary: {
+      en: 'Named to the Kingsguard on the same day, in Preston Greenfield’s place.',
+      it: 'Nominato nella Guardia reale lo stesso giorno, al posto di Preston Greenfield.',
+    },
+  },
+  osmBoros: {
+    character: 'boros-blount',
+    type: { en: 'Knight he replaces', it: 'Cavaliere che sostituisce' },
+    summary: {
+      en: 'The Kingsguard knight stripped of his white cloak for giving up Tommen, whose place he takes.',
+      it: 'Il cavaliere della Guardia reale spogliato del mantello bianco per aver consegnato Tommen, di cui prende il posto.',
+    },
+  },
+  osmTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Hand who distrusts him', it: 'Primo Cavaliere che diffida' },
+    summary: {
+      en: 'The Hand, who does not approve of the queen’s choice of him.',
+      it: 'Il Primo Cavaliere, che non approva la scelta della regina.',
+    },
+  },
+  osmTyrionOrder: {
+    character: 'tyrion-lannister',
+    type: { en: 'Hand who gives orders', it: 'Primo Cavaliere che dà ordini' },
+    summary: {
+      en: 'The Hand, who tells the Kingsguard to keep Joffrey safe at all costs, but also among the defenders on the walls.',
+      it: 'Il Primo Cavaliere, che ordina alla Guardia reale di tenere Joffrey al sicuro a ogni costo, ma anche tra i difensori sulle mura.',
+    },
+  },
+  osmJoffreyGuard: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King he guards', it: 'Re che protegge' },
+    summary: {
+      en: 'The king he is to keep alive while the fleet attacks, and to keep fighting at the walls.',
+      it: 'Il re che deve tenere in vita mentre la flotta attacca, e che deve restare a combattere sulle mura.',
+    },
+  },
+
+  // Alayaya (books only)
+  alaCersei: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen who seizes her', it: 'Regina che la fa prendere' },
+    summary: {
+      en: 'The queen, who has her beaten and brought before Tyrion, taking her for his lover.',
+      it: 'La regina, che la fa picchiare e portare davanti a Tyrion, credendola la sua amante.',
+    },
+  },
+  alaTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Client', it: 'Cliente' },
+    summary: {
+      en: 'The Hand of the King, who comes to her at Chataya’s brothel and then slips away down a hidden shaft. She keeps his secret when the queen has her seized.',
+      it: 'Il Primo Cavaliere del re, che viene da lei al bordello di Chataya e poi sparisce lungo un cunicolo nascosto. Lei non lo tradisce quando la regina la fa prendere.',
+    },
+  },
+
+  // Garlan Tyrell (books only)
+  garJoffrey: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King he petitions', it: 'Re a cui si rivolge' },
+    summary: {
+      en: 'The king, at the court of rewards. Garlan asks him to wed his sister Margaery.',
+      it: 'Il re, alla cerimonia delle ricompense. Garlan gli chiede di sposare sua sorella Margaery.',
+    },
+  },
+  garMargaery: {
+    character: 'margaery-tyrell',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, whom he asks the king to marry.',
+      it: 'Sua sorella, che chiede al re di sposare.',
+    },
+  },
+  garLoras: {
+    character: 'loras-tyrell',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, named to the Kingsguard the same day.',
+      it: 'Suo fratello, nominato quello stesso giorno nella Guardia reale.',
+    },
+  },
+  garMace: {
+    character: 'mace-tyrell',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who joins the small council the same day.',
+      it: 'Suo padre, che quello stesso giorno entra nel Concilio ristretto.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
+/**
  * The Wall and beyond (#1483): the great ranging, Craster's Keep, the Fist of
  * the First Men and Qhorin Halfhand's party. The season-1 cast's own stage-2
  * cards are in `season-1.relationships.ts`.
@@ -3412,6 +3680,132 @@ const winterfell = {
 } satisfies Record<string, Relationship>
 
 export const season2Relationships = {
+  // Daisy, show only: shown round at her gate, in Pycelle’s bed at 13 and
+  // sent to the king at 14. Her chapters only order her.
+  'daisy': [
+    {
+      episode: 11,
+      chapter: 77,
+      source: 'episode',
+      value: [kingsLanding.daiRos],
+    },
+    {
+      episode: 13,
+      chapter: 99,
+      source: 'episode',
+      value: [kingsLanding.daiPycelle, kingsLanding.daiTyrionPays],
+    },
+    {
+      episode: 14,
+      chapter: 103,
+      source: 'episode',
+      value: [
+        kingsLanding.daiJoffrey,
+        kingsLanding.daiRosBeats,
+        kingsLanding.daiTyrionSent,
+      ],
+    },
+  ],
+  // Books only: Tyrion II (chapter 82) and Tyrion XI (123), where his men
+  // overtake Tommen's escort. His death is told past the stage.
+  'jacelyn-bywater': [
+    {
+      episode: 12,
+      chapter: 82,
+      source: 'chapter',
+      value: [
+        kingsLanding.jacTyrion,
+        kingsLanding.jacJanos,
+        kingsLanding.jacVarys,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 123,
+      source: 'chapter',
+      value: [
+        kingsLanding.jacTyrionTrust,
+        kingsLanding.jacBoros,
+        kingsLanding.jacTommen,
+      ],
+    },
+  ],
+  // Books only: Tyrion V (chapter 94) and the court of rewards in Sansa VIII
+  // (139).
+  'hallyne': [
+    {
+      episode: 15,
+      chapter: 94,
+      source: 'chapter',
+      value: [kingsLanding.halTyrion, kingsLanding.halJoffrey],
+    },
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'chapter',
+      value: [kingsLanding.halJoffreyLord, kingsLanding.halTyrionWounded],
+    },
+  ],
+  // Books only: Tyrion X (chapter 118), where Varys offers Shae a place in
+  // her household.
+  'lollys-stokeworth': [
+    {
+      episode: 13,
+      chapter: 118,
+      source: 'chapter',
+      value: [kingsLanding.lolShae, kingsLanding.lolTyrion],
+    },
+  ],
+  // Books only: Tyrion XI (chapter 123), then Tyrion XIII (133), where
+  // Tyrion sets the Kingsguard to guard the king on the walls.
+  'osmund-kettleblack': [
+    {
+      episode: 18,
+      chapter: 123,
+      source: 'chapter',
+      value: [
+        kingsLanding.osmCersei,
+        kingsLanding.osmJoffrey,
+        kingsLanding.osmBalon,
+        kingsLanding.osmBoros,
+        kingsLanding.osmTyrion,
+      ],
+    },
+    {
+      episode: 19,
+      chapter: 133,
+      source: 'chapter',
+      value: [
+        kingsLanding.osmTyrionOrder,
+        kingsLanding.osmJoffreyGuard,
+        kingsLanding.osmCersei,
+      ],
+    },
+  ],
+  // Books only: Tyrion XII (chapter 128).
+  'alayaya': [
+    {
+      episode: 18,
+      chapter: 128,
+      source: 'chapter',
+      value: [kingsLanding.alaCersei, kingsLanding.alaTyrion],
+    },
+  ],
+  // Books only: Sansa VIII (chapter 139), the court of rewards. The show
+  // has no Garlan.
+  'garlan-tyrell': [
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'chapter',
+      value: [
+        kingsLanding.garJoffrey,
+        kingsLanding.garMargaery,
+        kingsLanding.garLoras,
+        kingsLanding.garMace,
+      ],
+    },
+  ],
   // Show only: out to scout at his gate, back with Qarth's welcome at 14,
   // at Xaro's feast at 15 and at the House of the Undying at 20.
   'kovarro': [

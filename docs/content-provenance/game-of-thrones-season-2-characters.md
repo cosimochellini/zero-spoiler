@@ -146,6 +146,36 @@ affiliation steps still wait.
   and Cleos Frey (first seen at Robb's camp, #1465), Kevan Lannister (with Tywin
   at Harrenhal, #1465).
 
+### Relationships (#1479)
+
+The seven filed characters have cards from their own gates, and fourteen stage-1
+characters step: Tyrion, Cersei, Joffrey, Myrcella, Sansa, Bronn, Shae, Ros,
+Petyr Baelish, Varys, Pycelle, Sandor Clegane, Janos Slynt and Lancel Lannister.
+The book side was read on A Wiki of Ice and Fire's chapter pages through
+Firecrawl (chapters 2, 3, 8, 15, 17, 18, 20, 25, 29, 32, 36, 41, 44, 49, 52, 54,
+57, 59, 60, 61, 62, 65 and 67 of _A Clash of Kings_, site chapter 74 + N); the
+show side on the Game of Thrones Wiki's character and episode pages. Podrick,
+Meryn Trant, Boros Blount, Balon Swann and Dontos Hollard keep their last
+selection.
+
+- Daisy, Ros and Joffrey's show cards rest on the Game of Thrones Wiki's Daisy
+  page (episodes 11, 13 and 14); the books have no Daisy.
+- Cersei's and Lancel's books cards leave out the affair: the books confirm it
+  later, and the archive's test keeps it to the show.
+- Read after review round 1, each holding a turning point or none: Tyrion III
+  (89), no turning point (the council on Stannis's letters); Sansa II (92),
+  Dontos pledges to send her home and Sandor walks her back (Sansa step); Tyrion
+  VIII (110), Tyrion proposes the Tyrell match and Petyr volunteers to carry it
+  (Joffrey and Petyr steps); Sansa III (106), Tyrion stops the beating (Sansa
+  step); Sansa IV (126), Cersei's talk after her flowering is left out, no
+  turning point for this group's selections; Sansa V (131), no turning point;
+  Sansa VI (134), Cersei's exchanges in the ballroom are left out (the show's
+  ballroom is a Sansa step at 19); Sansa VII (136), Sandor's offer and flight
+  (Sansa step, shared with Sandor's 19/136); Tyrion XIV (135), Podrick saves him
+  (Tyrion step, in both media). Lollys's riot (115) and her place at the
+  holdfast (131) are not cards.
+- Hallyne's, Osmund's and Garlan's book pins are unchanged (94, 123, 139).
+
 ## Stannis, Renly and the stormlands (#1464)
 
 Dragonstone, Renly's camp at Bitterbridge and Storm's End, Catelyn's embassy and

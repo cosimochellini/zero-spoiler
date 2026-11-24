@@ -9527,6 +9527,872 @@ const essos2 = {
 } satisfies Record<string, Relationship>
 
 /**
+ * Stage 2's King's Landing and Blackwater cards for the season-1 cast
+ * (#1479): season 2 and A Clash of Kings, episodes 11 to 20 and chapters 74
+ * to 143. The new characters' own cards are in `season-2.relationships.ts`.
+ */
+const kingsLanding2 = {
+  // Tyrion
+  tyrJanosBook: {
+    character: 'janos-slynt',
+    type: { en: 'Dismissed commander', it: 'Comandante destituito' },
+    summary: {
+      en: 'The commander of the City Watch. Tyrion dines him, asks about the murder of Robert’s baby daughter and Eddard’s death, then has him taken to the Wall.',
+      it: 'Il comandante della Guardia cittadina. Tyrion lo invita a cena, gli chiede della figlia neonata di Robert uccisa e della morte di Eddard, poi lo fa portare alla Barriera.',
+    },
+  },
+  tyrJacelynBook: {
+    character: 'jacelyn-bywater',
+    type: { en: 'New commander', it: 'Nuovo comandante' },
+    summary: {
+      en: 'The knight he names commander of the City Watch in Janos’s place.',
+      it: 'Il cavaliere che nomina comandante della Guardia cittadina al posto di Janos.',
+    },
+  },
+  tyrVarysHand: {
+    character: 'varys',
+    type: { en: 'Master of whispers', it: 'Maestro dei sussurri' },
+    summary: {
+      en: 'Serves him now that he is Hand, and tells him what he knows. Tyrion does not trust him, and cannot do without him.',
+      it: 'Ora che è Primo Cavaliere serve lui, e gli riferisce ciò che sa. Tyrion non si fida di lui, ma non può farne a meno.',
+    },
+  },
+  tyrBronnGuard: {
+    character: 'bronn',
+    type: { en: 'Captain of his guard', it: 'Capitano della sua guardia' },
+    summary: {
+      en: 'The sellsword who recruits his guard, hiring only those who impress him in a duel.',
+      it: 'Il mercenario che recluta la sua guardia, assumendo solo chi lo impressiona in duello.',
+    },
+  },
+  tyrBronnWatch: {
+    character: 'bronn',
+    type: {
+      en: 'Commander of the City Watch',
+      it: 'Comandante della Guardia cittadina',
+    },
+    summary: {
+      en: 'The sellsword he makes commander of the City Watch once Janos Slynt is gone, and whose loyalty he tests.',
+      it: 'Il mercenario che mette a capo della Guardia cittadina dopo la partenza di Janos Slynt, e di cui mette alla prova la lealtà.',
+    },
+  },
+  tyrJanosShow: {
+    character: 'janos-slynt',
+    type: { en: 'Dismissed commander', it: 'Comandante destituito' },
+    summary: {
+      en: 'The commander of the City Watch, whom Tyrion sends to the Wall to take the black and replaces with Bronn.',
+      it: 'Il comandante della Guardia cittadina, che Tyrion manda alla Barriera a vestire di nero e sostituisce con Bronn.',
+    },
+  },
+  tyrVarysShow: {
+    character: 'varys',
+    type: { en: 'Master of whispers', it: 'Maestro dei sussurri' },
+    summary: {
+      en: 'Finds Shae in the Tower of the Hand, and lets Tyrion know that he knows.',
+      it: 'Scopre Shae nella Torre del Primo Cavaliere, e fa capire a Tyrion di saperlo.',
+    },
+  },
+  tyrTywinHandBook: {
+    character: 'tywin-lannister',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, now Hand of the King, who has taken the Tower of the Hand. Tyrion lies hurt in Maegor’s Holdfast.',
+      it: 'Suo padre, ora Primo Cavaliere del re, che ha preso la Torre del Primo Cavaliere. Tyrion giace ferito nella Fortezza di Maegor.',
+    },
+  },
+  tyrPodSilent: {
+    character: 'podrick-payne',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'His squire, who watches over him after the battle. Tyrion swears him to silence about what happened at the docks.',
+      it: 'Il suo scudiero, che lo veglia dopo la battaglia. Tyrion gli fa giurare di tacere su ciò che è successo al molo.',
+    },
+  },
+  tyrBronnCalled: {
+    character: 'bronn',
+    type: { en: 'Sellsword', it: 'Mercenario' },
+    summary: {
+      en: 'The sellsword he asks his squire to bring to him.',
+      it: 'Il mercenario che chiede al suo scudiero di portargli.',
+    },
+  },
+  tyrTywinHandShow: {
+    character: 'tywin-lannister',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who has come back to the city and takes over as Hand while Tyrion lies wounded.',
+      it: 'Suo padre, tornato in città, che prende il suo posto di Primo Cavaliere mentre Tyrion giace ferito.',
+    },
+  },
+  tyrVarysAfter: {
+    character: 'varys',
+    type: { en: 'Master of whispers', it: 'Maestro dei sussurri' },
+    summary: {
+      en: 'Visits him to say that Bronn has lost his command and the clansmen have gone home. He thanks him for the city’s defence.',
+      it: 'Gli fa visita per dirgli che Bronn ha perso il comando e che i montanari sono tornati a casa. Lo ringrazia per la difesa della città.',
+    },
+  },
+  tyrShaeLeave: {
+    character: 'shae',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'Begs him to leave with her for Pentos. He refuses.',
+      it: 'Lo prega di partire con lei per Pentos. Lui rifiuta.',
+    },
+  },
+  tyrBronnRelieved: {
+    character: 'bronn',
+    type: { en: 'Sellsword', it: 'Mercenario' },
+    summary: {
+      en: 'The sellsword who commanded the City Watch for him, and has now been relieved of the post.',
+      it: 'Il mercenario che comandava la Guardia cittadina per lui, e che ora è stato sollevato dall’incarico.',
+    },
+  },
+
+  // Bronn
+  brnTyrionWatch: {
+    character: 'tyrion-lannister',
+    type: { en: 'Employer', it: 'Datore di lavoro' },
+    summary: {
+      en: 'The Hand, who rewards his loyalty with command of the City Watch, then asks him whether he would kill an infant if told to.',
+      it: 'Il Primo Cavaliere, che premia la sua lealtà con il comando della Guardia cittadina e poi gli chiede se ucciderebbe un neonato, se glielo ordinassero.',
+    },
+  },
+  brnJanosShow: {
+    character: 'janos-slynt',
+    type: { en: 'Predecessor', it: 'Predecessore' },
+    summary: {
+      en: 'The commander he replaces once Tyrion sends Janos to the Wall.',
+      it: 'Il comandante che sostituisce dopo che Tyrion manda Janos alla Barriera.',
+    },
+  },
+  brnPycelle: {
+    character: 'pycelle',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The Grand Maester he arrests for Tyrion. He cuts off most of his beard and locks him in the Black Cells.',
+      it: 'Il gran maestro che arresta per Tyrion. Gli taglia gran parte della barba e lo chiude nelle celle nere.',
+    },
+  },
+  brnTyrionGuard: {
+    character: 'tyrion-lannister',
+    type: { en: 'Employer', it: 'Datore di lavoro' },
+    summary: {
+      en: 'The Hand, whose guard he is recruiting. Asked whether he would kill a baby girl on command, he says he would first ask how much.',
+      it: 'Il Primo Cavaliere, di cui sta reclutando la guardia. Alla domanda se ucciderebbe una neonata a comando, risponde che prima chiederebbe quanto.',
+    },
+  },
+
+  // Shae
+  shaTyrionTower: {
+    character: 'tyrion-lannister',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The man who keeps her hidden in the Tower of the Hand, then finds her a place at court as Sansa’s handmaiden.',
+      it: 'L’uomo che la tiene nascosta nella Torre del Primo Cavaliere e poi le trova un posto a corte come ancella di Sansa.',
+    },
+  },
+  shaSansa: {
+    character: 'sansa-stark',
+    type: { en: 'Mistress', it: 'Padrona' },
+    summary: {
+      en: 'The captive Stark girl she serves as handmaiden, at Tyrion’s arrangement.',
+      it: 'La giovane Stark prigioniera di cui è ancella, per volere di Tyrion.',
+    },
+  },
+  shaVarysShow: {
+    character: 'varys',
+    type: { en: 'Spy who found her', it: 'La spia che l’ha scoperta' },
+    summary: {
+      en: 'The master of whispers, who learns she is in the Tower and hints to Tyrion that he knows.',
+      it: 'Il maestro dei sussurri, che scopre che è nella Torre e fa capire a Tyrion di saperlo.',
+    },
+  },
+  shaTyrionBook: {
+    character: 'tyrion-lannister',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The Hand, who keeps her in the city and sees her in secret. Varys offers a way to bring her into the keep.',
+      it: 'Il Primo Cavaliere, che la tiene in città e la vede di nascosto. Varys offre un modo per portarla dentro la fortezza.',
+    },
+  },
+  shaLollys: {
+    character: 'lollys-stokeworth',
+    type: { en: 'Mistress to be', it: 'Futura padrona' },
+    summary: {
+      en: 'Lady Tanda’s daughter, in whose household Varys suggests she serve as a maid.',
+      it: 'La figlia di lady Tanda, nella cui casa Varys suggerisce che lei serva come cameriera.',
+    },
+  },
+  shaVarysBook: {
+    character: 'varys',
+    type: { en: 'Go-between', it: 'Intermediario' },
+    summary: {
+      en: 'The eunuch who plans her place in Lollys’s household, and a secret passage to the Tower of the Hand.',
+      it: 'L’eunuco che organizza il suo posto in casa di Lollys, e un passaggio segreto verso la Torre del Primo Cavaliere.',
+    },
+  },
+
+  // Pycelle
+  pycTyrionShow: {
+    character: 'tyrion-lannister',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The Hand, who tests him with a false marriage plan, has him arrested when Cersei hears of it and locks him in the Black Cells.',
+      it: 'Il Primo Cavaliere, che lo mette alla prova con un falso piano di nozze, lo fa arrestare quando Cersei lo viene a sapere e lo chiude nelle celle nere.',
+    },
+  },
+  pycCersei: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen he told', it: 'Regina a cui ha riferito' },
+    summary: {
+      en: 'The queen regent, to whom he gives away Tyrion’s secret plan for Myrcella.',
+      it: 'La regina reggente, a cui rivela il piano segreto di Tyrion per Myrcella.',
+    },
+  },
+  pycBronn: {
+    character: 'bronn',
+    type: { en: 'Jailer', it: 'Carceriere' },
+    summary: {
+      en: 'The sellsword who arrests him, cuts off most of his beard and takes him to the Black Cells.',
+      it: 'Il mercenario che lo arresta, gli taglia gran parte della barba e lo porta alle celle nere.',
+    },
+  },
+  pycDaisy: {
+    character: 'daisy',
+    type: { en: 'Prostitute', it: 'Prostituta' },
+    summary: {
+      en: 'The girl in his bed when he is arrested.',
+      it: 'La ragazza nel suo letto quando viene arrestato.',
+    },
+  },
+  pycTyrionBook: {
+    character: 'tyrion-lannister',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The Hand, who gave him a secret to pass on, learned that it reached the queen, and has him dragged from his bed to a black cell.',
+      it: 'Il Primo Cavaliere, che gli ha affidato un segreto da riferire, ha scoperto che è arrivato alla regina, e lo fa trascinare dal letto in una cella nera.',
+    },
+  },
+  pycShagga: {
+    character: 'shagga',
+    type: { en: 'Tormentor', it: 'Aguzzino' },
+    summary: {
+      en: 'The clansman who hacks away most of his beard with an axe while Tyrion makes him confess.',
+      it: 'Il montanaro che gli taglia gran parte della barba con l’ascia mentre Tyrion lo costringe a confessare.',
+    },
+  },
+  pycVarys: {
+    character: 'varys',
+    type: { en: 'Rival he accuses', it: 'Rivale che accusa' },
+    summary: {
+      en: 'The master of whispers, whom he tries to blame when Tyrion confronts him.',
+      it: 'Il maestro dei sussurri, che cerca di incolpare quando Tyrion lo affronta.',
+    },
+  },
+
+  // Petyr Baelish
+  petTyrionHarrenhal: {
+    character: 'tyrion-lannister',
+    type: { en: 'Hand who enlists him', it: 'Primo Cavaliere che lo ingaggia' },
+    summary: {
+      en: 'The Hand, who offers him Harrenhal and the riverlands if he wins the Vale for Joffrey through Lysa.',
+      it: 'Il Primo Cavaliere, che gli offre Harrenhal e le Terre dei Fiumi se porta la Valle dalla parte di Joffrey tramite Lysa.',
+    },
+  },
+  petLysaScheme: {
+    character: 'lysa-arryn',
+    type: { en: 'Widow he is to win', it: 'Vedova da convincere' },
+    summary: {
+      en: 'The lady of the Vale, whom Tyrion wants on Joffrey’s side. Petyr is the one to persuade her.',
+      it: 'La signora della Valle, che Tyrion vuole dalla parte di Joffrey. Spetta a Petyr convincerla.',
+    },
+  },
+  petJoffreyHarrenhal: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King who rewards him', it: 'Re che lo premia' },
+    summary: {
+      en: 'The king, who gives him Harrenhal at the court of rewards for brokering the alliance with the Tyrells.',
+      it: 'Il re, che gli dà Harrenhal alla cerimonia delle ricompense per aver combinato l’alleanza con i Tyrell.',
+    },
+  },
+  petSansaHelp: {
+    character: 'sansa-stark',
+    type: { en: 'Girl he will help', it: 'Ragazza che aiuterà' },
+    summary: {
+      en: 'The Stark girl freed from her betrothal. He warns her that Joffrey will still torment her, and promises to get her out of the city for her mother’s sake.',
+      it: 'La giovane Stark liberata dal fidanzamento. La avverte che Joffrey continuerà a tormentarla, e le promette di portarla via dalla città per amore di sua madre.',
+    },
+  },
+  petRosFear: {
+    character: 'ros',
+    type: { en: 'Employee', it: 'Dipendente' },
+    summary: {
+      en: 'A prostitute in his brothel, who admits to Varys that she is afraid of him.',
+      it: 'Una prostituta del suo bordello, che ammette con Varys di avere paura di lui.',
+    },
+  },
+
+  // Varys
+  varTyrionHand: {
+    character: 'tyrion-lannister',
+    type: { en: 'Hand he serves', it: 'Primo Cavaliere che serve' },
+    summary: {
+      en: 'The new Hand. He says he serves the realm, the king and Tyrion, who does not trust him.',
+      it: 'Il nuovo Primo Cavaliere. Dice di servire il regno, il re e lui, che non si fida di lui.',
+    },
+  },
+  varJacelyn: {
+    character: 'jacelyn-bywater',
+    type: { en: 'Man he backs', it: 'Uomo che sostiene' },
+    summary: {
+      en: 'The knight he recommends to Tyrion as the one to lead the City Watch.',
+      it: 'Il cavaliere che raccomanda a Tyrion per guidare la Guardia cittadina.',
+    },
+  },
+  varGendry: {
+    character: 'gendry',
+    type: { en: 'Bastard he saved', it: 'Bastardo che ha salvato' },
+    summary: {
+      en: 'Robert’s older bastard son, whom he says he took steps to save before the queen’s men came for the others.',
+      it: 'Il figlio bastardo più grande di Robert, che dice di aver messo in salvo prima che gli uomini della regina venissero per gli altri.',
+    },
+  },
+  varCerseiBastards: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen he failed', it: 'Regina che non ha fermato' },
+    summary: {
+      en: 'The queen regent, who had Robert’s baby daughter killed. Varys says he never thought she would count a baby a threat.',
+      it: 'La regina reggente, che ha fatto uccidere la figlia neonata di Robert. Varys dice di non aver mai pensato che una neonata sembrasse una minaccia.',
+    },
+  },
+  varTyrionWounded: {
+    character: 'tyrion-lannister',
+    type: { en: 'Wounded Hand', it: 'Primo Cavaliere ferito' },
+    summary: {
+      en: 'The former Hand, whom he visits to say that Bronn has lost his command. He thanks him for defending the city.',
+      it: 'L’ex Primo Cavaliere, che visita per dirgli che Bronn ha perso il comando. Lo ringrazia per aver difeso la città.',
+    },
+  },
+  varRos: {
+    character: 'ros',
+    type: { en: 'Prostitute he visits', it: 'Prostituta che visita' },
+    summary: {
+      en: 'A prostitute in Littlefinger’s brothel. He gets her to admit she fears her employer, and says he protects those who work for him.',
+      it: 'Una prostituta del bordello di Ditocorto. Le fa ammettere di avere paura del suo padrone, e le dice che lui protegge chi lavora per lui.',
+    },
+  },
+
+  // Sandor Clegane
+  sdrSansa: {
+    character: 'sansa-stark',
+    type: {
+      en: 'Girl he could take away',
+      it: 'Ragazza che potrebbe portare via',
+    },
+    summary: {
+      en: 'The Stark girl he has guarded. After he leaves the battle he comes to her room and offers to take her away from King’s Landing.',
+      it: 'La giovane Stark che ha sorvegliato. Dopo aver lasciato la battaglia va nella sua stanza e le offre di portarla via da Approdo del Re.',
+    },
+  },
+  sdrJoffrey: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King he walks out on', it: 'Re che abbandona' },
+    summary: {
+      en: 'The king he has guarded. He quits the battle, and King’s Landing, rather than serve him any longer.',
+      it: 'Il re che ha protetto. Lascia la battaglia, e Approdo del Re, piuttosto che servirlo ancora.',
+    },
+  },
+
+  // Sansa
+  sanJoffreyBook: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Betrothed', it: 'Promesso sposo' },
+    summary: {
+      en: 'The king she is still to marry. Her sleeves hide the bruises from the blows he had Ser Boros give her when Robb was named king.',
+      it: 'Il re che dovrà ancora sposare. Le maniche nascondono i lividi dei colpi che ha fatto darle da ser Boros quando Robb è stato proclamato re.',
+    },
+  },
+  sanSandorBook: {
+    character: 'sandor-clegane',
+    type: { en: 'The Hound', it: 'Il Mastino' },
+    summary: {
+      en: 'Joffrey’s sworn shield, whom he never orders to strike her. He backs her up when she talks the king out of drowning Dontos.',
+      it: 'La guardia giurata di Joffrey, a cui il re non ordina mai di colpirla. La sostiene quando lei convince il re a non affogare Dontos.',
+    },
+  },
+  sanDontosSaved: {
+    character: 'dontos-hollard',
+    type: { en: 'Fool she saved', it: 'Buffone che ha salvato' },
+    summary: {
+      en: 'The drunken knight Joffrey wants drowned in wine. She suggests making him a fool instead, and he thanks her.',
+      it: 'Il cavaliere ubriaco che Joffrey vuole affogare nel vino. Lei propone di farne un buffone, e lui la ringrazia.',
+    },
+  },
+  sanArys: {
+    character: 'arys-oakheart',
+    type: { en: 'Escort', it: 'Scorta' },
+    summary: {
+      en: 'The Kingsguard knight who walks her to the tourney. He is courteous, and the only one of the Kingsguard who objects when she is struck.',
+      it: 'Il cavaliere della Guardia reale che l’accompagna al torneo. È cortese, ed è l’unico della Guardia reale a opporsi quando la picchiano.',
+    },
+  },
+  sanTyrionBook: {
+    character: 'tyrion-lannister',
+    type: { en: 'The king’s uncle', it: 'Zio del re' },
+    summary: {
+      en: 'The dwarf who rides in as Joffrey’s uncle. He is gentler with her than the king is, but she tells herself never to trust a Lannister again.',
+      it: 'Il nano che arriva come zio di Joffrey. È più gentile con lei del re, ma lei si ripete di non fidarsi mai più di un Lannister.',
+    },
+  },
+  sanShae: {
+    character: 'shae',
+    type: { en: 'Handmaiden', it: 'Ancella' },
+    summary: {
+      en: 'The girl Tyrion arranges to serve her.',
+      it: 'La ragazza che Tyrion le assegna come ancella.',
+    },
+  },
+  sanTyrionShow: {
+    character: 'tyrion-lannister',
+    type: { en: 'The king’s uncle', it: 'Zio del re' },
+    summary: {
+      en: 'The acting Hand, who steps in when Joffrey has her beaten in front of the court and offers to end her engagement. She keeps up her show of loyalty, and he is impressed.',
+      it: 'Il Primo Cavaliere in carica, che interviene quando Joffrey la fa picchiare davanti alla corte e le offre di sciogliere il fidanzamento. Lei mantiene la facciata di lealtà, e Tyrion ne è colpito.',
+    },
+  },
+  sanJoffreyShow: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Betrothed', it: 'Promesso sposo' },
+    summary: {
+      en: 'The king she is still to marry. When Robb wins a great victory he has her stripped and beaten in front of the court.',
+      it: 'Il re che dovrà ancora sposare. Quando Robb ottiene una grande vittoria la fa spogliare e picchiare davanti alla corte.',
+    },
+  },
+  sanJoffreyVoid: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Former betrothed', it: 'Ex promesso sposo' },
+    summary: {
+      en: 'The king whose betrothal to her is declared void because of House Stark’s rebellion. He is to marry Margaery Tyrell instead.',
+      it: 'Il re il cui fidanzamento con lei viene dichiarato nullo per la ribellione di Casa Stark. Sposerà invece Margaery Tyrell.',
+    },
+  },
+  sanMargaery: {
+    character: 'margaery-tyrell',
+    type: { en: 'Joffrey’s new bride', it: 'Nuova sposa di Joffrey' },
+    summary: {
+      en: 'The Tyrell girl the king will marry in her place. Sansa is glad of it.',
+      it: 'La ragazza Tyrell che il re sposerà al suo posto. Sansa ne è felice.',
+    },
+  },
+  sanDontosEscape: {
+    character: 'dontos-hollard',
+    type: { en: 'Would-be rescuer', it: 'Possibile salvatore' },
+    summary: {
+      en: 'The fool who meets her in the godswood and warns her that Cersei still means to keep her. He says they will escape during Joffrey’s wedding, in about a month.',
+      it: 'Il buffone che la incontra nel parco degli dei e la avverte che Cersei vuole ancora tenerla. Dice che fuggiranno durante le nozze di Joffrey, tra circa un mese.',
+    },
+  },
+  sanJoffreyFreed: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Former betrothed', it: 'Ex promesso sposo' },
+    summary: {
+      en: 'The king, who sets aside his betrothal to her at the court of rewards and agrees to wed Margaery Tyrell instead.',
+      it: 'Il re, che alla cerimonia delle ricompense scioglie il fidanzamento con lei e accetta di sposare Margaery Tyrell.',
+    },
+  },
+  sanPetyr: {
+    character: 'petyr-baelish',
+    type: { en: 'Lord who offers help', it: 'Lord che offre aiuto' },
+    summary: {
+      en: 'Littlefinger, who warns her that freedom from the betrothal will not stop Joffrey tormenting her, and promises to get her out for her mother’s sake.',
+      it: 'Ditocorto, che la avverte che essere libera dal fidanzamento non impedirà a Joffrey di tormentarla, e le promette di portarla via per amore di sua madre.',
+    },
+  },
+
+  // Janos Slynt
+  janTyrionShow: {
+    character: 'tyrion-lannister',
+    type: { en: 'Hand who exiles him', it: 'Primo Cavaliere che lo esilia' },
+    summary: {
+      en: 'The acting Hand, who sends him to the Wall to take the black.',
+      it: 'Il Primo Cavaliere in carica, che lo manda alla Barriera a vestire di nero.',
+    },
+  },
+  janBronn: {
+    character: 'bronn',
+    type: { en: 'Successor', it: 'Successore' },
+    summary: {
+      en: 'The sellsword who takes over the City Watch from him.',
+      it: 'Il mercenario che gli subentra al comando della Guardia cittadina.',
+    },
+  },
+  janTyrionBook: {
+    character: 'tyrion-lannister',
+    type: { en: 'Hand who exiles him', it: 'Primo Cavaliere che lo esilia' },
+    summary: {
+      en: 'The Hand, who dines him, questions him about Eddard’s death and the murder of Robert’s baby daughter, then sends him to the Wall.',
+      it: 'Il Primo Cavaliere, che lo invita a cena, lo interroga sulla morte di Eddard e sulla figlia neonata di Robert uccisa, poi lo manda alla Barriera.',
+    },
+  },
+  janJacelyn: {
+    character: 'jacelyn-bywater',
+    type: { en: 'Successor', it: 'Successore' },
+    summary: {
+      en: 'The knight who takes over the City Watch from him. They meet at the door as he is led away.',
+      it: 'Il cavaliere che gli subentra al comando della Guardia cittadina. Si incontrano sulla porta mentre lo portano via.',
+    },
+  },
+
+  // Lancel Lannister
+  lanTyrionSpy: {
+    character: 'tyrion-lannister',
+    type: { en: 'Hand who turns him', it: 'Primo Cavaliere che lo piega' },
+    summary: {
+      en: 'The Hand, who stands up to his threats and has him report on the queen in secret.',
+      it: 'Il Primo Cavaliere, che non si lascia intimidire dalle sue minacce e lo costringe a spiare la regina per lui.',
+    },
+  },
+
+  // Cersei
+  cerTyrionHand: {
+    character: 'tyrion-lannister',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, the acting Hand. He sends Myrcella to Dorne and puts Joffrey on the walls; she strikes back through the woman she takes for his lover.',
+      it: 'Suo fratello, il Primo Cavaliere in carica. Manda Myrcella a Dorne e mette Joffrey sulle mura; lei si vendica sulla donna che crede la sua amante.',
+    },
+  },
+  cerRosCaptive: {
+    character: 'ros',
+    type: { en: 'Prostitute she holds', it: 'Prostituta che trattiene' },
+    summary: {
+      en: 'The prostitute she has seized and threatened, mistaking her for Tyrion’s lover.',
+      it: 'La prostituta che ha fatto prendere e minacciato, scambiandola per l’amante di Tyrion.',
+    },
+  },
+  cerTyrionBook: {
+    character: 'tyrion-lannister',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, the acting Hand, who has plotted against her since he arrived. She shows him a beaten girl she takes for his lover.',
+      it: 'Suo fratello, il Primo Cavaliere in carica, che complotta contro di lei da quando è arrivato. Gli mostra una ragazza picchiata che crede la sua amante.',
+    },
+  },
+  cerAlayaya: {
+    character: 'alayaya',
+    type: { en: 'Girl she seized', it: 'Ragazza che ha preso' },
+    summary: {
+      en: 'The prostitute she has beaten and brings before Tyrion, taking her for his lover.',
+      it: 'La prostituta che ha fatto picchiare e porta davanti a Tyrion, credendola la sua amante.',
+    },
+  },
+  cerOsmund: {
+    character: 'osmund-kettleblack',
+    type: {
+      en: 'Her pick for the Kingsguard',
+      it: 'Sua scelta per la Guardia reale',
+    },
+    summary: {
+      en: 'The knight she names to the Kingsguard over Tyrion’s doubts. His brothers do her bidding, as in seizing Alayaya.',
+      it: 'Il cavaliere che nomina nella Guardia reale nonostante i dubbi di Tyrion. I suoi fratelli eseguono i suoi ordini, come quando prendono Alayaya.',
+    },
+  },
+
+  // Joffrey
+  jofRosShow: {
+    character: 'ros',
+    type: { en: 'Prostitute sent to him', it: 'Prostituta mandata a lui' },
+    summary: {
+      en: 'One of the two prostitutes his uncle sends him. He makes her hit the other, with a crossbow aimed at her.',
+      it: 'Una delle due prostitute che suo zio gli manda. La costringe a colpire l’altra, con una balestra puntata contro di lei.',
+    },
+  },
+  jofDaisyShow: {
+    character: 'daisy',
+    type: { en: 'Prostitute sent to him', it: 'Prostituta mandata a lui' },
+    summary: {
+      en: 'The other prostitute his uncle sends him. He has Ros beat her.',
+      it: 'L’altra prostituta che suo zio gli manda. Fa picchiare lei da Ros.',
+    },
+  },
+  jofTyrionShow: {
+    character: 'tyrion-lannister',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, the acting Hand, who sent the two prostitutes. Joffrey wants him to see what was done to them.',
+      it: 'Suo zio, il Primo Cavaliere in carica, che ha mandato le due prostitute. Joffrey vuole che veda che cosa è stato fatto loro.',
+    },
+  },
+  jofSansaVoid: {
+    character: 'sansa-stark',
+    type: { en: 'Betrothal set aside', it: 'Fidanzamento sciolto' },
+    summary: {
+      en: 'His betrothed, whose betrothal the High Septon declares void because of her house’s rebellion.',
+      it: 'La sua promessa sposa, il cui fidanzamento l’Alto Septon dichiara nullo per la ribellione della sua casa.',
+    },
+  },
+  jofMargaery: {
+    character: 'margaery-tyrell',
+    type: { en: 'Bride to be', it: 'Futura sposa' },
+    summary: {
+      en: 'Margaery Tyrell, whom Garlan asks him to wed. Her family’s help saved the city.',
+      it: 'Margaery Tyrell, che Garlan gli chiede di sposare. L’aiuto della sua famiglia ha salvato la città.',
+    },
+  },
+  jofGarlan: {
+    character: 'garlan-tyrell',
+    type: { en: 'Petitioner', it: 'Supplice' },
+    summary: {
+      en: 'The knight who asks him, at the court of rewards, to marry his sister.',
+      it: 'Il cavaliere che gli chiede, alla cerimonia delle ricompense, di sposare sua sorella.',
+    },
+  },
+  jofHallyne: {
+    character: 'hallyne',
+    type: { en: 'Pyromancer he ennobles', it: 'Piromante che nobilita' },
+    summary: {
+      en: 'The guild’s pyromancer, whom he names a lord for the wildfire, with no lands.',
+      it: 'Il piromante della gilda, che nomina lord per l’altofuoco, senza terre.',
+    },
+  },
+
+  // Ros (show only)
+  rosJoffrey: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King she is sent to', it: 'Re da cui è mandata' },
+    summary: {
+      en: 'The king who forces her to beat Daisy, a crossbow aimed at her, and has them show Tyrion the result.',
+      it: 'Il re che la costringe a picchiare Daisy, con una balestra puntata contro, e le manda a mostrare il risultato a Tyrion.',
+    },
+  },
+  rosDaisy: {
+    character: 'daisy',
+    type: { en: 'Fellow prostitute', it: 'Collega' },
+    summary: {
+      en: 'The new girl she showed round Littlefinger’s brothel, and is made to beat.',
+      it: 'La nuova ragazza a cui ha fatto da guida nel bordello di Ditocorto, e che è costretta a picchiare.',
+    },
+  },
+  rosTyrionSent: {
+    character: 'tyrion-lannister',
+    type: { en: 'Client', it: 'Cliente' },
+    summary: {
+      en: 'The acting Hand, who hires her and Daisy out as a gift to the king.',
+      it: 'Il Primo Cavaliere in carica, che la manda con Daisy in dono al re.',
+    },
+  },
+  rosCerseiCaptive: {
+    character: 'cersei-lannister',
+    type: { en: 'Captor', it: 'Carceriera' },
+    summary: {
+      en: 'The queen, who has her seized and threatens her, believing she is Tyrion’s lover.',
+      it: 'La regina, che la fa prendere e la minaccia, credendola l’amante di Tyrion.',
+    },
+  },
+  rosTyrionCaptive: {
+    character: 'tyrion-lannister',
+    type: { en: 'Man she is taken for', it: 'Uomo di cui è creduta l’amante' },
+    summary: {
+      en: 'The acting Hand, whose lover the queen takes her to be. She is held to get at him.',
+      it: 'Il Primo Cavaliere in carica, di cui la regina la crede l’amante. È trattenuta per colpire lui.',
+    },
+  },
+  rosVarys: {
+    character: 'varys',
+    type: { en: 'Visitor', it: 'Visitatore' },
+    summary: {
+      en: 'The eunuch who visits her and gets her to admit she fears her employer. He says he protects those who work for him.',
+      it: 'L’eunuco che le fa visita e le fa ammettere di temere il suo padrone. Le dice che lui protegge chi lavora per lui.',
+    },
+  },
+  rosPetyrFear: {
+    character: 'petyr-baelish',
+    type: { en: 'Employer', it: 'Padrone' },
+    summary: {
+      en: 'The owner of the brothel where she works, whom she admits to Varys she is afraid of.',
+      it: 'Il proprietario del bordello dove lavora, di cui ammette con Varys di avere paura.',
+    },
+  },
+
+  // Lancel, Myrcella (shared)
+  // Myrcella (shared)
+  myrTyrionDorne: {
+    character: 'tyrion-lannister',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her uncle, who arranges for her to go to Dorne to be betrothed to a prince.',
+      it: 'Suo zio, che organizza la sua partenza per Dorne, promessa a un principe.',
+    },
+  },
+  myrCerseiStays: {
+    character: 'cersei-lannister',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'Her mother, who did not want her sent away and stays behind in the city.',
+      it: 'Sua madre, che non voleva mandarla via e resta in città.',
+    },
+  },
+  // Sansa, books
+  sanDontosPledge: {
+    character: 'dontos-hollard',
+    type: { en: 'Would-be rescuer', it: 'Possibile salvatore' },
+    summary: {
+      en: 'The drunken fool who meets her in the godswood and swears to send her home. She calls him her Florian, though escape will take time and coin.',
+      it: 'Il buffone ubriaco che la incontra nel parco degli dei e giura di rimandarla a casa. Lei lo chiama il suo Florian, anche se la fuga richiederà tempo e denaro.',
+    },
+  },
+  sanSandorGodswood: {
+    character: 'sandor-clegane',
+    type: { en: 'The Hound', it: 'Il Mastino' },
+    summary: {
+      en: 'Catches her on the steps at night, drunk, and walks her back to her chambers. He mocks her songs of knights and says he will have a song from her one day.',
+      it: 'La afferra sui gradini di notte, ubriaco, e la riaccompagna nelle sue stanze. Si fa beffe delle sue canzoni di cavalieri e dice che prima o poi pretenderà una canzone da lei.',
+    },
+  },
+  sanTyrionProtect: {
+    character: 'tyrion-lannister',
+    type: { en: 'The king’s uncle', it: 'Zio del re' },
+    summary: {
+      en: 'Stops Boros’s blows, has her taken to the Tower of the Hand to be tended, and next morning offers her his protection. She refuses.',
+      it: 'Ferma i colpi di Boros, la fa portare nella Torre del Primo Cavaliere per farla curare e la mattina dopo le offre la sua protezione. Lei rifiuta.',
+    },
+  },
+  sanBorosBeat: {
+    character: 'boros-blount',
+    type: { en: 'Kingsguard knight', it: 'Cavaliere della Guardia reale' },
+    summary: {
+      en: 'The Kingsguard knight who beats her on Joffrey’s orders to pay for Robb’s latest victory.',
+      it: 'Il cavaliere della Guardia reale che la picchia per ordine di Joffrey, a pagare l’ultima vittoria di Robb.',
+    },
+  },
+  sanJoffreyBeat: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Betrothed', it: 'Promesso sposo' },
+    summary: {
+      en: 'The king she is still to marry. He calls her before him to answer for Robb’s latest victory.',
+      it: 'Il re che dovrà ancora sposare. La convoca davanti a sé perché risponda dell’ultima vittoria di Robb.',
+    },
+  },
+  // Sansa, show
+  sanSandorRescue: {
+    character: 'sandor-clegane',
+    type: { en: 'Her rescuer', it: 'Chi l’ha salvata' },
+    summary: {
+      en: 'The Hound, who pulls her out of the riot when men run her down.',
+      it: 'Il Mastino, che la tira fuori dalla rivolta quando degli uomini la inseguono.',
+    },
+  },
+  sanShaeConfides: {
+    character: 'shae',
+    type: { en: 'Handmaiden', it: 'Ancella' },
+    summary: {
+      en: 'Treats her injuries after the riot. Sansa says she hates Joffrey, and Shae warns her to trust no one.',
+      it: 'Le cura le ferite dopo la rivolta. Sansa dice di odiare Joffrey, e Shae la avverte di non fidarsi di nessuno.',
+    },
+  },
+  sanJoffreyRiot: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Betrothed', it: 'Promesso sposo' },
+    summary: {
+      en: 'The king she is still to marry. She stands up to him when he mocks Tommen, and the crowd’s anger at him leaves her alone in the riot.',
+      it: 'Il re che dovrà ancora sposare. Gli tiene testa quando prende in giro Tommen, e la rabbia della folla contro di lui la lascia sola nella rivolta.',
+    },
+  },
+  // Tyrion, Mandon
+  tyrPodSaves: {
+    character: 'podrick-payne',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'His squire, who saves his life in the battle.',
+      it: 'Il suo scudiero, che gli salva la vita nella battaglia.',
+    },
+  },
+  tyrMandonAttack: {
+    character: 'mandon-moore',
+    type: { en: 'Kingsguard knight', it: 'Cavaliere della Guardia reale' },
+    summary: {
+      en: 'The Kingsguard knight who tries to kill him in the middle of the battle.',
+      it: 'Il cavaliere della Guardia reale che tenta di ucciderlo nel mezzo della battaglia.',
+    },
+  },
+  // Joffrey
+  jofSansaShow: {
+    character: 'sansa-stark',
+    type: { en: 'Betrothal set aside', it: 'Fidanzamento sciolto' },
+    summary: {
+      en: 'His betrothed, whom he sets aside at Cersei’s suggestion because of her family’s treachery.',
+      it: 'La sua promessa sposa, che mette da parte su suggerimento di Cersei per il tradimento della sua famiglia.',
+    },
+  },
+  jofMargaeryShow: {
+    character: 'margaery-tyrell',
+    type: { en: 'Bride to be', it: 'Futura sposa' },
+    summary: {
+      en: 'Margaery Tyrell, whose hand her brother asks as his reward. Joffrey agrees to wed her.',
+      it: 'Margaery Tyrell, la cui mano suo fratello chiede come ricompensa. Joffrey accetta di sposarla.',
+    },
+  },
+  jofCerseiShow: {
+    character: 'cersei-lannister',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who suggests he set Sansa aside and take the Tyrell girl.',
+      it: 'Sua madre, che gli suggerisce di mettere da parte Sansa e prendere la ragazza Tyrell.',
+    },
+  },
+  jofMargaeryProposed: {
+    character: 'margaery-tyrell',
+    type: { en: 'Bride proposed', it: 'Sposa proposta' },
+    summary: {
+      en: 'The Tyrell girl Tyrion proposes he marry, to win her house over after Renly’s death.',
+      it: 'La ragazza Tyrell che Tyrion propone che sposi, per conquistare la sua casa dopo la morte di Renly.',
+    },
+  },
+  jofTyrionMatch: {
+    character: 'tyrion-lannister',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, the Hand, who proposes the Tyrell match in the small council. Cersei fears Joffrey will not like it, then agrees.',
+      it: 'Suo zio, il Primo Cavaliere, che propone nel Concilio ristretto le nozze con i Tyrell. Cersei teme che a Joffrey non piacerà, poi accetta.',
+    },
+  },
+  // Petyr
+  petTyrionTyrells: {
+    character: 'tyrion-lannister',
+    type: { en: 'Hand he serves', it: 'Primo Cavaliere che serve' },
+    summary: {
+      en: 'The Hand, who wants the Tyrells for Joffrey. Neither he nor Cersei will leave the city to treat with them, so Petyr volunteers, expecting a reward.',
+      it: 'Il Primo Cavaliere, che vuole i Tyrell dalla parte di Joffrey. Né lui né Cersei vogliono lasciare la città per trattare, così Petyr si offre, aspettandosi una ricompensa.',
+    },
+  },
+  sanSandorOffer: {
+    character: 'sandor-clegane',
+    type: { en: 'The Hound', it: 'Il Mastino' },
+    summary: {
+      en: 'Comes to her room after leaving the battle and offers to take her north, away from the city.',
+      it: 'Viene nella sua stanza dopo aver lasciato la battaglia e le offre di portarla a nord, lontano dalla città.',
+    },
+  },
+  sanSandorLeaves: {
+    character: 'sandor-clegane',
+    type: { en: 'The Hound', it: 'Il Mastino' },
+    summary: {
+      en: 'Drunk and battered, he tells her he is leaving the city and could protect her. He asks for a song, then leaves her room.',
+      it: 'Ubriaco e malconcio, le dice che lascia la città e che potrebbe proteggerla. Le chiede una canzone, poi esce dalla sua stanza.',
+    },
+  },
+  sanCerseiBallroom: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen regent, who hosts the court’s women in Maegor’s Holdfast during the battle. She mocks Sansa’s faith and advises her how to use her beauty.',
+      it: 'La regina reggente, che ospita le dame della corte nella Fortezza di Maegor durante la battaglia. Prende in giro la fede di Sansa e le insegna a usare la sua bellezza.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
+/**
  * Stage 2's Wall and beyond cards for the season-1 cast (#1483): season 2
  * and A Clash of Kings, episodes 11 to 20 and chapters 74 to 143. The new
  * characters' own cards are in `season-2.relationships.ts`.
@@ -14249,6 +15115,103 @@ export const season1Relationships = {
         north.sanCerseiHostage,
       ],
     },
+    // Stage 2 (#1479): season 2 and A Clash of Kings. Sansa I (chapter 76)
+    // is the books' name-day tourney; Shae is given to her in episode 13,
+    // and the beating and Tyrion's offer are "Garden of Bones" (14).
+    {
+      episode: 11,
+      chapter: 76,
+      source: 'chapter',
+      value: [
+        kingsLanding2.sanJoffreyBook,
+        kingsLanding2.sanSandorBook,
+        kingsLanding2.sanDontosSaved,
+        kingsLanding2.sanArys,
+        kingsLanding2.sanTyrionBook,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 99,
+      source: 'episode',
+      value: [kingsLanding2.sanShae],
+    },
+    {
+      episode: 14,
+      chapter: 103,
+      source: 'episode',
+      value: [
+        kingsLanding2.sanTyrionShow,
+        kingsLanding2.sanJoffreyShow,
+        kingsLanding2.sanShae,
+      ],
+    },
+    // Sansa II: Dontos pledges to send her home.
+    {
+      episode: 14,
+      chapter: 92,
+      source: 'chapter',
+      value: [kingsLanding2.sanDontosPledge, kingsLanding2.sanSandorGodswood],
+    },
+    // Sansa III: Tyrion stops the beating.
+    {
+      episode: 14,
+      chapter: 106,
+      source: 'chapter',
+      value: [
+        kingsLanding2.sanTyrionProtect,
+        kingsLanding2.sanBorosBeat,
+        kingsLanding2.sanJoffreyBeat,
+      ],
+    },
+    // The riot, "The Old Gods and the New".
+    {
+      episode: 16,
+      chapter: 115,
+      source: 'episode',
+      value: [
+        kingsLanding2.sanSandorRescue,
+        kingsLanding2.sanShaeConfides,
+        kingsLanding2.sanJoffreyRiot,
+      ],
+    },
+    {
+      episode: 19,
+      chapter: 136,
+      source: 'episode',
+      value: [
+        kingsLanding2.sanSandorOffer,
+        kingsLanding2.sanCerseiBallroom,
+        kingsLanding2.sanShae,
+      ],
+    },
+    {
+      episode: 19,
+      chapter: 136,
+      source: 'chapter',
+      value: [kingsLanding2.sanSandorLeaves, kingsLanding2.sanDontosPledge],
+    },
+    // The court of rewards: Sansa VIII, and "Valar Morghulis".
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'episode',
+      value: [
+        kingsLanding2.sanJoffreyFreed,
+        kingsLanding2.sanPetyr,
+        kingsLanding2.sanMargaery,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'chapter',
+      value: [
+        kingsLanding2.sanJoffreyVoid,
+        kingsLanding2.sanMargaery,
+        kingsLanding2.sanDontosEscape,
+      ],
+    },
   ],
   'arya-stark': [
     {
@@ -16413,6 +17376,61 @@ export const season1Relationships = {
         crown.tyrBronnSword,
       ],
     },
+    // Stage 2 (#1479): season 2 and A Clash of Kings.
+    // The show: Janos goes to the Wall and Bronn takes the City Watch,
+    // "The Night Lands".
+    {
+      episode: 12,
+      chapter: 82,
+      source: 'episode',
+      value: [
+        kingsLanding2.tyrBronnWatch,
+        kingsLanding2.tyrJanosShow,
+        kingsLanding2.tyrVarysShow,
+        crown.tyrShaeCourt,
+      ],
+    },
+    // The books: Tyrion II.
+    {
+      episode: 12,
+      chapter: 82,
+      source: 'chapter',
+      value: [
+        kingsLanding2.tyrJanosBook,
+        kingsLanding2.tyrJacelynBook,
+        kingsLanding2.tyrVarysHand,
+        kingsLanding2.tyrBronnGuard,
+      ],
+    },
+    // The Blackwater: his squire saves him (Tyrion XIV, chapter 135).
+    {
+      episode: 19,
+      chapter: 135,
+      value: [kingsLanding2.tyrPodSaves, kingsLanding2.tyrMandonAttack],
+    },
+    // "Valar Morghulis": his father takes the Hand's place.
+    {
+      episode: 20,
+      chapter: 141,
+      source: 'episode',
+      value: [
+        kingsLanding2.tyrTywinHandShow,
+        kingsLanding2.tyrVarysAfter,
+        kingsLanding2.tyrShaeLeave,
+        kingsLanding2.tyrBronnRelieved,
+      ],
+    },
+    // Tyrion XV.
+    {
+      episode: 20,
+      chapter: 141,
+      source: 'chapter',
+      value: [
+        kingsLanding2.tyrTywinHandBook,
+        kingsLanding2.tyrPodSilent,
+        kingsLanding2.tyrBronnCalled,
+      ],
+    },
   ],
   'cersei-lannister': [
     {
@@ -16480,6 +17498,32 @@ export const season1Relationships = {
         crown.cerJoffreyKing,
         crown.cerNedDead,
         crown.cerRobertDead,
+      ],
+    },
+    // Stage 2 (#1479): she has the woman she takes for Tyrion's lover
+    // seized.
+    {
+      episode: 18,
+      chapter: 128,
+      source: 'episode',
+      value: [
+        kingsLanding2.cerTyrionHand,
+        kingsLanding2.cerRosCaptive,
+        crown.cerJoffreyKing,
+        crown.cerJaimeCaptive,
+        crown.cerLancel,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 128,
+      source: 'chapter',
+      value: [
+        kingsLanding2.cerTyrionBook,
+        kingsLanding2.cerAlayaya,
+        kingsLanding2.cerOsmund,
+        crown.cerJoffreyKing,
+        crown.cerJaimeCaptive,
       ],
     },
   ],
@@ -16717,6 +17761,45 @@ export const season1Relationships = {
         crown.jofRobertDead,
       ],
     },
+    // Stage 2 (#1479): the show's name-day gift; the books' court of
+    // rewards (Sansa VIII, chapter 139).
+    {
+      episode: 14,
+      chapter: 103,
+      source: 'episode',
+      value: [
+        kingsLanding2.jofRosShow,
+        kingsLanding2.jofDaisyShow,
+        kingsLanding2.jofTyrionShow,
+      ],
+    },
+    {
+      episode: 14,
+      chapter: 110,
+      source: 'chapter',
+      value: [kingsLanding2.jofMargaeryProposed, kingsLanding2.jofTyrionMatch],
+    },
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'chapter',
+      value: [
+        kingsLanding2.jofSansaVoid,
+        kingsLanding2.jofMargaery,
+        kingsLanding2.jofGarlan,
+        kingsLanding2.jofHallyne,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'episode',
+      value: [
+        kingsLanding2.jofSansaShow,
+        kingsLanding2.jofMargaeryShow,
+        kingsLanding2.jofCerseiShow,
+      ],
+    },
   ],
   'myrcella-baratheon': [
     {
@@ -16739,6 +17822,12 @@ export const season1Relationships = {
         crown.myrJoffreyKing,
         crown.myrTommen,
       ],
+    },
+    // Stage 2 (#1479): sent to Dorne.
+    {
+      episode: 16,
+      chapter: 115,
+      value: [kingsLanding2.myrTyrionDorne, kingsLanding2.myrCerseiStays],
     },
   ],
   'tommen-baratheon': [
@@ -16985,6 +18074,25 @@ export const season1Relationships = {
       chapter: 63,
       value: [crown.brnTyrionChampion, crown.brnShae, crown.brnVardis],
     },
+    // Stage 2 (#1479): season 2 and A Clash of Kings.
+    {
+      episode: 12,
+      chapter: 82,
+      source: 'episode',
+      value: [kingsLanding2.brnTyrionWatch, kingsLanding2.brnJanosShow],
+    },
+    {
+      episode: 13,
+      chapter: 99,
+      source: 'episode',
+      value: [kingsLanding2.brnTyrionWatch, kingsLanding2.brnPycelle],
+    },
+    {
+      episode: 12,
+      chapter: 82,
+      source: 'chapter',
+      value: [kingsLanding2.brnTyrionGuard],
+    },
   ],
   'shae': [
     { episode: 9, chapter: 63, value: [crown.shaTyrion, crown.shaBronn] },
@@ -16992,6 +18100,29 @@ export const season1Relationships = {
       episode: 10,
       chapter: 70,
       value: [crown.shaTyrionCourt, crown.shaTywin, crown.shaBronn],
+    },
+    // Stage 2 (#1479): season 2 and A Clash of Kings. The show gives her to
+    // Sansa in "What Is Dead May Never Die"; the books offer her a place in
+    // Lollys Stokeworth's household in Tyrion X (chapter 118).
+    {
+      episode: 13,
+      chapter: 99,
+      source: 'episode',
+      value: [
+        kingsLanding2.shaTyrionTower,
+        kingsLanding2.shaSansa,
+        kingsLanding2.shaVarysShow,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 118,
+      source: 'chapter',
+      value: [
+        kingsLanding2.shaTyrionBook,
+        kingsLanding2.shaLollys,
+        kingsLanding2.shaVarysBook,
+      ],
     },
   ],
   'walder-frey': [
@@ -17025,6 +18156,30 @@ export const season1Relationships = {
         crown.rosTheonLeft,
         crown.rosTyrion,
       ],
+    },
+    // Stage 2 (#1479): season 2.
+    {
+      episode: 14,
+      chapter: 103,
+      source: 'episode',
+      value: [
+        kingsLanding2.rosJoffrey,
+        kingsLanding2.rosDaisy,
+        kingsLanding2.rosTyrionSent,
+        crown.rosPetyr,
+      ],
+    },
+    {
+      episode: 18,
+      chapter: 128,
+      source: 'episode',
+      value: [kingsLanding2.rosCerseiCaptive, kingsLanding2.rosTyrionCaptive],
+    },
+    {
+      episode: 20,
+      chapter: 141,
+      source: 'episode',
+      value: [kingsLanding2.rosVarys, kingsLanding2.rosPetyrFear],
     },
   ],
   'ilyn-payne': [
@@ -17108,6 +18263,35 @@ export const season1Relationships = {
         crown.petVarys,
       ],
     },
+    // Stage 2 (#1479): Tyrion IV (chapter 91), then the court of rewards.
+    {
+      episode: 13,
+      chapter: 91,
+      source: 'chapter',
+      value: [kingsLanding2.petTyrionHarrenhal, kingsLanding2.petLysaScheme],
+    },
+    {
+      episode: 14,
+      chapter: 110,
+      source: 'chapter',
+      value: [kingsLanding2.petTyrionTyrells],
+    },
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'episode',
+      value: [
+        kingsLanding2.petJoffreyHarrenhal,
+        kingsLanding2.petSansaHelp,
+        kingsLanding2.petRosFear,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'chapter',
+      value: [kingsLanding2.petJoffreyHarrenhal],
+    },
   ],
   // The show's Varys meets Illyrio and hears from Jorah; the books never
   // name the man Arya overhears and bring Jorah's reports to the council in
@@ -17166,6 +18350,24 @@ export const season1Relationships = {
       chapter: 66,
       value: [crown.varNedDead, crown.varJoffrey, crown.varPetyr],
     },
+    // Stage 2 (#1479): Tyrion II (chapter 82) and "Valar Morghulis".
+    {
+      episode: 12,
+      chapter: 82,
+      source: 'chapter',
+      value: [
+        kingsLanding2.varTyrionHand,
+        kingsLanding2.varJacelyn,
+        kingsLanding2.varGendry,
+        kingsLanding2.varCerseiBastards,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 141,
+      source: 'episode',
+      value: [kingsLanding2.varTyrionWounded, kingsLanding2.varRos],
+    },
   ],
   'pycelle': [
     {
@@ -17207,6 +18409,29 @@ export const season1Relationships = {
         crown.pycRobertDead,
       ],
     },
+    // Stage 2 (#1479): arrested for passing Tyrion's secret to the queen.
+    {
+      episode: 13,
+      chapter: 99,
+      source: 'episode',
+      value: [
+        kingsLanding2.pycTyrionShow,
+        kingsLanding2.pycCersei,
+        kingsLanding2.pycBronn,
+        kingsLanding2.pycDaisy,
+      ],
+    },
+    {
+      episode: 13,
+      chapter: 99,
+      source: 'chapter',
+      value: [
+        kingsLanding2.pycTyrionBook,
+        kingsLanding2.pycCersei,
+        kingsLanding2.pycShagga,
+        kingsLanding2.pycVarys,
+      ],
+    },
   ],
   // The show names him only in episode 4; the books at Eddard I (chapter 5).
   'sandor-clegane': [
@@ -17243,6 +18468,12 @@ export const season1Relationships = {
         crown.sanMycah,
       ],
     },
+    // Stage 2 (#1479): he leaves the battle for Sansa's room.
+    {
+      episode: 19,
+      chapter: 136,
+      value: [kingsLanding2.sdrSansa, kingsLanding2.sdrJoffrey],
+    },
   ],
   'janos-slynt': [
     { episode: 4, chapter: 28, value: [crown.janNed] },
@@ -17255,6 +18486,19 @@ export const season1Relationships = {
       episode: 8,
       chapter: 58,
       value: [crown.janJoffreyReward, crown.janNedBetrayed, crown.janPetyr],
+    },
+    // Stage 2 (#1479): sent to the Wall.
+    {
+      episode: 12,
+      chapter: 82,
+      source: 'episode',
+      value: [kingsLanding2.janTyrionShow, kingsLanding2.janBronn],
+    },
+    {
+      episode: 12,
+      chapter: 82,
+      source: 'chapter',
+      value: [kingsLanding2.janTyrionBook, kingsLanding2.janJacelyn],
     },
   ],
   'gendry': [
@@ -17563,6 +18807,13 @@ export const season1Relationships = {
       chapter: 73,
       source: 'episode',
       value: [crown.lanCersei, crown.lanRobertDead],
+    },
+    // Stage 2 (#1479): Tyrion VII (chapter 103).
+    {
+      episode: 14,
+      chapter: 103,
+      source: 'chapter',
+      value: [kingsLanding2.lanTyrionSpy],
     },
   ],
   // At his book gate, Sansa V (chapter 58), he is only drunk at court; Sansa
