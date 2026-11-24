@@ -21,4 +21,7 @@ declare module 'virtual:stylex:css-only' {}
 // signature, which is `any` and would fail every read as `no-unsafe-*`.
 interface ImportMetaEnv {
   VITE_SITE_ORIGIN?: string
+  // Each locale's copy chunk, by locale: filled into the Worker build only
+  // (`dictionaryChunks` in vite.config.ts), so undefined in dev and in tests.
+  DICTIONARY_CHUNKS?: Record<string, string>
 }

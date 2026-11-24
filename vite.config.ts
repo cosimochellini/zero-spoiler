@@ -11,6 +11,44 @@ import { defineConfig, type Plugin } from 'vite'
 // here keeps the rest of the file, and the array, checked.
 const stylexVite: (options?: Partial<UserOptions>) => Plugin = stylex.vite
 
+// Each locale's copy is a chunk that nothing imports statically, so Start's
+// route manifest leaves it out of the document's module preloads and the page
+// asks for it only once the entry has run (#1575). The client build, which
+// runs first, names the chunks; the Worker build then reads them back as
+// `import.meta.env.DICTIONARY_CHUNKS` for the root route's head. Dev and
+// tests leave it undefined, and the head adds no link.
+const dictionaryChunks = (): Plugin[] => {
+  const urls: Record<string, string> = {}
+  const token = 'import.meta.env.DICTIONARY_CHUNKS'
+  return [
+    {
+      name: 'dictionary-chunks:name',
+      applyToEnvironment: (environment) => environment.name === 'client',
+      generateBundle(_options, bundle) {
+        for (const chunk of Object.values(bundle)) {
+          if (
+            chunk.type === 'chunk'
+            && chunk.facadeModuleId?.includes('/i18n/dictionaries/') === true
+          ) {
+            urls[chunk.name] = `/${chunk.fileName}`
+          }
+        }
+      },
+    },
+    {
+      name: 'dictionary-chunks:inline',
+      applyToEnvironment: (environment) => environment.name === 'ssr',
+      transform: (code) =>
+        code.includes(token) ?
+          {
+            code: code.replaceAll(token, () => JSON.stringify(urls)),
+            map: null,
+          }
+        : undefined,
+    },
+  ]
+}
+
 const config = defineConfig(({ command }) => ({
   server: { port: 3000 },
   build: { manifest: true },
@@ -57,6 +95,7 @@ const config = defineConfig(({ command }) => ({
       // "Could not resolve the path to the imported file".
       aliases: { '~/*': [path.join(import.meta.dirname, 'src', '*')] },
     }),
+    dictionaryChunks(),
     tanstackStart(),
     // React's Vite plugin MUST come after Start's Vite plugin. Start no longer
     // auto-configures the React plugin, and the old `customViteReactPlugin`

@@ -457,17 +457,20 @@ regions its open stops open on the chart (`regionsFor`,
 dictionary is one chunk per locale: the root route awaits the copy of the
 address's language in `beforeLoad` (`localeOfPath`), for a locale route's page
 and for the not-found page of an address no locale route matches, and the router
-awaits it before hydrating, so a page downloads its own language only. What
-renders above a locale route (`<html lang>`, the shared shell of a not-found
-page) reads the language from the root's context, which lands with that copy,
-never from the router's location, which moves when a navigation starts. A chunk
-that fails to load reloads the page once per tab and address (a `sessionStorage`
-flag; without storage, no reload); a hovered link's preload never reloads. If it
-fails again, a page that is hydrating deliberately stays as the server rendered
-it, while a client-side navigation shows the root's own error page, which needs
-no dictionary. The privacy notice (`src/i18n/dictionaries/privacy.ts`) and the
-legal page's own copy (`legal.ts`, beside it) ship with the legal page alone.
-Copy rules live in the
+awaits it before hydrating, so a page downloads its own language only. The
+document's head preloads that chunk, so it downloads beside the entry and not
+after it (#1575): Start's manifest holds only static imports, so the build names
+the chunk (`dictionaryChunks`, `vite.config.ts`) and the root route's `head`
+reads it. What renders above a locale route (`<html lang>`, the shared shell of
+a not-found page) reads the language from the root's context, which lands with
+that copy, never from the router's location, which moves when a navigation
+starts. A chunk that fails to load reloads the page once per tab and address (a
+`sessionStorage` flag; without storage, no reload); a hovered link's preload
+never reloads. If it fails again, a page that is hydrating deliberately stays as
+the server rendered it, while a client-side navigation shows the root's own
+error page, which needs no dictionary. The privacy notice
+(`src/i18n/dictionaries/privacy.ts`) and the legal page's own copy (`legal.ts`,
+beside it) ship with the legal page alone. Copy rules live in the
 [tone-of-voice skill](../.claude/skills/tone-of-voice/SKILL.md).
 
 ## Extending the archive boundary
