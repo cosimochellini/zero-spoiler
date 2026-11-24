@@ -2,12 +2,15 @@ import {
   type FocusEvent,
   type MouseEvent,
   type PointerEvent,
+  type RefObject,
   useEffect,
   useEffectEvent,
   useId,
   useRef,
   useState,
 } from 'react'
+
+import { usePeekCode } from '~/components/useChartPeekCode'
 
 /** What a peek is about: a stop by its place in the route, or a ship. */
 export interface PeekTarget {
@@ -17,6 +20,8 @@ export interface PeekTarget {
 
 /** The peek open on the chart, and what opened it. */
 interface Open {
+  /** A Tab from its stop waits for the peek to be drawn (`usePeekCode`). */
+  entering: boolean
   /** The stop or ship it belongs to, which gets the focus back on Esc. */
   from: HTMLElement
   /** Opened by a focus, a click or a tap: only Esc, ✕ or elsewhere close it. */
@@ -51,7 +56,10 @@ export interface PeekProps {
 /** The peek's state, and the props for its triggers and for itself. */
 export interface ChartPeek {
   peek: PeekProps
-  /** What the peek is open on; `null` while it is closed. */
+  /**
+   * What the peek is open on; `null` while it is closed, and while its code
+   * is on the way.
+   */
   target: null | PeekTarget
   trigger: (target: PeekTarget, link: boolean) => TriggerProps
 }
@@ -150,9 +158,10 @@ function usePointer(): {
 
 /** What the dismissing listeners need. */
 interface Dismiss {
-  element: HTMLElement | null
   onEscape: () => void
   open: null | Open
+  /** The peek's element, for a press inside it to tell from one outside. */
+  peekRef: RefObject<HTMLElement | null>
   set: (update: (previous: null | Open) => null | Open) => void
 }
 
@@ -161,7 +170,7 @@ interface Dismiss {
  * it and its stop closes it. Only this peek: a stop that has opened another
  * one in the meantime keeps it. A press inside holds a hovered peek open.
  */
-function useDismiss({ element, onEscape, open, set }: Dismiss): void {
+function useDismiss({ onEscape, open, peekRef, set }: Dismiss): void {
   const escape = useEffectEvent(onEscape)
 
   useEffect(() => {
@@ -169,7 +178,7 @@ function useDismiss({ element, onEscape, open, set }: Dismiss): void {
       return
     }
     const drop = (event: Event): void => {
-      if (inside(event.target, element)) {
+      if (inside(event.target, peekRef.current)) {
         set((previous) =>
           previous === open ? { ...open, held: true } : previous,
         )
@@ -191,11 +200,12 @@ function useDismiss({ element, onEscape, open, set }: Dismiss): void {
       document.removeEventListener('pointerdown', drop)
       document.removeEventListener('focusin', drop)
     }
-  }, [open, element, set])
+  }, [open, peekRef, set])
 }
 
 /** What a target's handlers are built from. */
 interface Wiring {
+  fetchPeeks: () => void
   id: string
   letGo: (event: PointerEvent<HTMLElement>) => void
   open: null | Open
@@ -210,7 +220,7 @@ interface Wiring {
  * link; a mouse, a key or any other click follows it.
  */
 function triggerOf(
-  { id, letGo, open, pointer, quiet, show, timer }: Wiring,
+  { fetchPeeks, id, letGo, open, pointer, quiet, show, timer }: Wiring,
   target: PeekTarget,
   link: boolean,
 ): TriggerProps {
@@ -232,12 +242,15 @@ function triggerOf(
       show(target, true, event.currentTarget)
     },
     'onFocus': (event) => {
+      fetchPeeks()
       if (!quiet()) {
         show(target, true, event.currentTarget)
       }
     },
     'onPointerDown': pointer.press,
     'onPointerEnter': (event) => {
+      // Before the rest that opens it: the code is often in by then.
+      fetchPeeks()
       const from = event.currentTarget
       if (event.pointerType === 'mouse') {
         timer.wait(HOVER_MS, () => {
@@ -257,15 +270,16 @@ function triggerOf(
  * and the ✕ give the focus back to the
  * stop when it was inside the peek, and only then. A tap on an open stop's
  * link peeks instead of leaving the page: the peek's own link leads on.
+ * The peeks' code comes apart from the page (`usePeekCode`).
  */
 export function useChartPeek(): ChartPeek {
   const id = useId()
   const [open, setOpen] = useState<null | Open>(null)
-  const [element, setElement] = useState<HTMLElement | null>(null)
   const timer = useTimer()
   const pointer = usePointer()
   // Raised while the focus is handed back to the stop, so it does not reopen.
   const { hush, quiet } = useQuiet()
+  const { attach, drawn, fetchPeeks, peekRef } = usePeekCode(open, setOpen)
 
   const show = (target: PeekTarget, held: boolean, from: HTMLElement): void => {
     timer.stop()
@@ -273,7 +287,7 @@ export function useChartPeek(): ChartPeek {
     setOpen((previous) =>
       previous?.held === true && (!held || same(previous.target, target)) ?
         previous
-      : { from, held, target },
+      : { entering: false, from, held, target },
     )
   }
   const letGo = (event: PointerEvent<HTMLElement>): void => {
@@ -286,29 +300,24 @@ export function useChartPeek(): ChartPeek {
   const close = (refocus: boolean): void => {
     timer.stop()
     setOpen(null)
-    if (refocus && open !== null && hadFocus(open, element)) {
+    if (refocus && open !== null && hadFocus(open, peekRef.current)) {
       hush(() => {
         open.from.focus()
       })
     }
   }
 
-  useDismiss({
-    element,
-    onEscape: () => {
-      close(true)
-    },
-    open,
-    set: setOpen,
-  })
+  const onClose = (): void => {
+    close(true)
+  }
+
+  useDismiss({ onEscape: onClose, open, peekRef, set: setOpen })
 
   return {
     peek: {
-      attach: setElement,
+      attach,
       id,
-      onClose: () => {
-        close(true)
-      },
+      onClose,
       onDismiss: () => {
         close(false)
       },
@@ -316,8 +325,12 @@ export function useChartPeek(): ChartPeek {
       onPointerEnter: timer.stop,
       onPointerLeave: letGo,
     },
-    target: open?.target ?? null,
+    target: drawn?.target ?? null,
     trigger: (target, link) =>
-      triggerOf({ id, letGo, open, pointer, quiet, show, timer }, target, link),
+      triggerOf(
+        { fetchPeeks, id, letGo, open: drawn, pointer, quiet, show, timer },
+        target,
+        link,
+      ),
   }
 }

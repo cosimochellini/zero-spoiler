@@ -1,6 +1,6 @@
 import { act, fireEvent, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { describe, expect, it, vi } from 'vitest'
+import { beforeAll, describe, expect, it, vi } from 'vitest'
 
 import type { Bookmark } from '~/lib/progress/episode'
 import type { SagaPick, StopView } from '~/lib/view/places'
@@ -18,6 +18,7 @@ import {
 import { ep, renderWithProviders, settle } from '~/test/providers'
 
 import { SeaChart } from './SeaChart'
+import { preloadChartPeeks } from './seaChartPeekLoader'
 import { useChartOrientation } from './useChartOrientation'
 
 const eastBlue = [
@@ -433,6 +434,12 @@ function peek(): HTMLElement | null {
 }
 
 describe('the peek', () => {
+  // The peeks' code is fetched on demand. Fetched once here, so no test
+  // spends its wait on transforming the module.
+  beforeAll(async () => {
+    await preloadChartPeeks()
+  })
+
   it('opens at once on focus, and Esc closes it and keeps the focus', async () => {
     const user = userEvent.setup()
     draw({ bookmark: ep(30), open: eastBlue, covered: fogged })
@@ -484,6 +491,18 @@ describe('the peek', () => {
     expect(baratie).toHaveFocus()
     // Handed back quietly: the stop's focus does not reopen it.
     expect(baratie).toHaveAttribute('aria-expanded', 'false')
+  })
+
+  it('leaves a Tab to the browser once the peek is there', async () => {
+    draw({ bookmark: ep(30), open: eastBlue })
+
+    const baratie = within(stops()).getByRole('link', { name: /Baratie/u })
+    act(() => {
+      baratie.focus()
+    })
+    await screen.findByRole('dialog', { name: /Baratie/u })
+
+    expect(fireEvent.keyDown(baratie, { key: 'Tab' })).toBe(true)
   })
 
   it('opens after a short rest of the pointer, and closes when it leaves', async () => {
@@ -656,7 +675,7 @@ describe('the peek', () => {
     const [first] = within(stops()).getAllByRole('button')
     await user.click(first!)
 
-    const dialog = screen.getByRole('dialog', {
+    const dialog = await screen.findByRole('dialog', {
       name: 'Stop 4 of 5. A place under fog',
     })
 
@@ -692,7 +711,7 @@ describe('the peek', () => {
     const [mark] = screen.getAllByRole('button', { name: 'Going Merry' })
     await user.click(mark!)
 
-    const dialog = screen.getByRole('dialog', { name: 'Going Merry' })
+    const dialog = await screen.findByRole('dialog', { name: 'Going Merry' })
 
     expect(dialog).toHaveTextContent('Ship')
     expect(dialog).toHaveTextContent('Episode 18')

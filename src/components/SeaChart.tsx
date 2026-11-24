@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
-import { type ReactElement, type ReactNode, useMemo } from 'react'
+import { type ReactElement, type ReactNode, Suspense, useMemo } from 'react'
 
 import {
   boxOf,
@@ -17,7 +17,11 @@ import {
   type SeaChartProps,
   type ShipMark,
 } from '~/components/seaChartModel'
-import { FogPeek, ShipPeek, StopPeek } from '~/components/SeaChartPeek'
+import {
+  LazyFogPeek,
+  LazyShipPeek,
+  LazyStopPeek,
+} from '~/components/seaChartPeekLoader'
 import { ShipOnRoute } from '~/components/SeaChartPins'
 import { SeaChartStops } from '~/components/SeaChartStops'
 import { byKeys } from '~/components/useChartHands'
@@ -221,11 +225,13 @@ function ShipPeekAt({
   view: Rect
 }): null | ReactElement {
   return mark === undefined ? null : (
-      <ShipPeek
-        at={mark.at}
-        ship={mark.ship}
-        {...frame}
-      />
+      <Suspense fallback={null}>
+        <LazyShipPeek
+          at={mark.at}
+          ship={mark.ship}
+          {...frame}
+        />
+      </Suspense>
     )
 }
 
@@ -287,26 +293,30 @@ function Peek({
   const port = model.open[index]
   if (port !== undefined) {
     return (
-      <StopPeek
-        at={pointOf(port)}
-        port={port}
-        seas={model.seas}
-        stage={stage}
-        {...rest}
-      />
+      <Suspense fallback={null}>
+        <LazyStopPeek
+          at={pointOf(port)}
+          port={port}
+          seas={model.seas}
+          stage={stage}
+          {...rest}
+        />
+      </Suspense>
     )
   }
 
   const offset = index - model.open.length
   const entry = model.covered[offset]
   return entry === undefined ? null : (
-      <FogPeek
-        // A fresh veil for every stop: one lifted stays with its own stop.
-        key={entry.handle}
-        at={model.tail[offset] ?? FOG_END}
-        entry={entry}
-        stage={stage}
-        {...rest}
-      />
+      <Suspense fallback={null}>
+        <LazyFogPeek
+          // A fresh veil for every stop: one lifted stays with its own stop.
+          key={entry.handle}
+          at={model.tail[offset] ?? FOG_END}
+          entry={entry}
+          stage={stage}
+          {...rest}
+        />
+      </Suspense>
     )
 }
