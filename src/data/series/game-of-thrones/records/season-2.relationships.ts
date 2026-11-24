@@ -545,7 +545,6 @@ const essos = {
   },
 } satisfies Record<string, Relationship>
 
-/** Episode numbers on a `source: 'chapter'` entry only order it, as on the records. */
 /**
  * Stage 2's Stannis, Renly and stormlands cards (#1480): the cast of the
  * Dragonstone camp, Renly's camp at Bitterbridge and Storm's End, from
@@ -787,8 +786,8 @@ const stormlands = {
     character: 'selyse-baratheon',
     type: { en: 'Convert', it: 'Convertita' },
     summary: {
-      en: 'The queen she has converted to the worship of R’hllor. Selyse repeats her prayers and says the Lord of Light will give Stannis an army.',
-      it: 'La regina che ha convertito al culto di R’hllor. Selyse ripete le sue preghiere e dice che il Signore della Luce darà un esercito a Stannis.',
+      en: 'The queen she has converted to the worship of R’hllor. Selyse says the Lord of Light will give Stannis an army.',
+      it: 'La regina che ha convertito al culto di R’hllor. Selyse dice che il Signore della Luce darà un esercito a Stannis.',
     },
   },
   melStannisAzor: {
@@ -820,7 +819,7 @@ const stormlands = {
     type: { en: 'Accuser', it: 'Accusatore' },
     summary: {
       en: 'The knight who rows her under Storm’s End. He calls her a liar and says she killed Cressen and Renly, then watches her give birth to a shadow.',
-      it: 'Il cavaliere che la porta in barca sotto Capo Tempesta. La chiama bugiarda e dice che ha ucciso Cressen e Renly, poi la vede partorire un’ombra.',
+      it: 'Il cavaliere che la porta in barca sotto Capo Tempesta. La chiama bugiarda e dice che è stata lei a uccidere Cressen e Renly, poi la vede partorire un’ombra.',
     },
   },
 
@@ -992,24 +991,24 @@ const stormlands = {
     character: 'melisandre',
     type: { en: 'Rival', it: 'Rivale' },
     summary: {
-      en: 'The red priestess he fears is leading Stannis into a war he cannot win. He shares a cup of poisoned wine with her, and dies of it while she is unaffected.',
-      it: 'La sacerdotessa rossa che teme stia portando Stannis in una guerra che non può vincere. Divide con lei una coppa di vino avvelenato, e ne muore mentre lei non ne risente.',
+      en: 'The red priestess he feared was leading Stannis into a war he could not win. He shared a cup of poisoned wine with her, and died of it while she was unaffected.',
+      it: 'La sacerdotessa rossa che temeva stesse portando Stannis in una guerra che non poteva vincere. Ha diviso con lei una coppa di vino avvelenato, ed è morto mentre lei non ne ha risentito.',
     },
   },
   creStannisShow: {
     character: 'stannis-baratheon',
     type: { en: 'King', it: 'Re' },
     summary: {
-      en: 'The king he serves, whom he fears Melisandre is leading into a war he cannot win.',
-      it: 'Il re che serve, e che teme Melisandre stia portando in una guerra che non può vincere.',
+      en: 'The king he served, whom he feared Melisandre was leading into a war he could not win.',
+      it: 'Il re che ha servito, e che temeva Melisandre stesse portando in una guerra che non poteva vincere.',
     },
   },
   creDavosHelp: {
     character: 'davos-seaworth',
     type: { en: 'Ally', it: 'Alleato' },
     summary: {
-      en: 'The knight he asks to help him step in. Davos says it is not the right time, then sees him poison the cup.',
-      it: 'Il cavaliere a cui chiede di aiutarlo a intervenire. Davos dice che non è il momento, poi lo vede avvelenare la coppa.',
+      en: 'The knight he asked to help him step in. Davos said it was not the right time, then saw him poison the cup.',
+      it: 'Il cavaliere a cui ha chiesto di aiutarlo a intervenire. Davos ha detto che non era il momento, poi lo ha visto avvelenare la coppa.',
     },
   },
   // Cressen, the books
@@ -1017,40 +1016,40 @@ const stormlands = {
     character: 'stannis-baratheon',
     type: { en: 'King', it: 'Re' },
     summary: {
-      en: 'The lord he raised as a boy, now a king. Stannis refuses every alliance he proposes, and gives his duties to another maester.',
-      it: 'Il lord che ha cresciuto fin da ragazzo, ora re. Stannis rifiuta ogni alleanza che propone, e affida i suoi compiti a un altro maestro.',
+      en: 'The lord he raised as a boy, now a king. Stannis refused every alliance he proposed, and gave his duties to another maester.',
+      it: 'Il lord che ha cresciuto fin da ragazzo, ora re. Stannis ha rifiutato ogni alleanza da lui proposta e ha affidato i suoi compiti a un altro maestro.',
     },
   },
   creMelisandreBook: {
     character: 'melisandre',
     type: { en: 'Rival', it: 'Rivale' },
     summary: {
-      en: 'The red priestess he means to silence. He poisons a cup at the feast and drinks it with her, and dies while she is unaffected.',
-      it: 'La sacerdotessa rossa che vuole mettere a tacere. Avvelena una coppa al banchetto e la beve con lei, e muore mentre lei non ne risente.',
+      en: 'The red priestess he means to silence. He poisoned a cup at the feast and drank it with her, and died while she was unaffected.',
+      it: 'La sacerdotessa rossa che vuole mettere a tacere. Ha avvelenato una coppa al banchetto e l’ha bevuta con lei, ed è morto mentre lei non ne ha risentito.',
     },
   },
   creDavosBook: {
     character: 'davos-seaworth',
     type: { en: 'Ally', it: 'Alleato' },
     summary: {
-      en: 'The knight who alone offers him a seat at the feast. Cressen drops the poison into Davos’s cup, and Davos tries to stop him.',
-      it: 'Il cavaliere che solo gli offre un posto al banchetto. Cressen lascia cadere il veleno nella coppa di Davos, e Davos cerca di fermarlo.',
+      en: 'The knight who alone offered him a seat at the feast. Cressen dropped the poison into Davos’s cup, and Davos tried to stop him.',
+      it: 'L’unico cavaliere che gli ha offerto un posto al banchetto. Cressen ha lasciato cadere il veleno nella coppa di Davos, e Davos ha cercato di fermarlo.',
     },
   },
   creShireen: {
     character: 'shireen-baratheon',
     type: { en: 'Charge', it: 'Protetta' },
     summary: {
-      en: 'The princess he comforts, and to whom he shows the white raven. He thinks her the saddest child he has known.',
-      it: 'La principessa che consola, e a cui mostra il corvo bianco. La considera la bambina più triste che abbia mai conosciuto.',
+      en: 'The princess he comforted, and to whom he showed the white raven. He thought her the saddest child he had known.',
+      it: 'La principessa che ha consolato, e a cui ha mostrato il corvo bianco. La considerava la bambina più triste che avesse mai conosciuto.',
     },
   },
   creSelyse: {
     character: 'selyse-baratheon',
     type: { en: 'Queen', it: 'Regina' },
     summary: {
-      en: 'The queen who argues with Stannis in front of him, and who follows the red priestess’s god.',
-      it: 'La regina che discute con Stannis davanti a lui, e che segue il dio della sacerdotessa rossa.',
+      en: 'The queen who argued with Stannis in front of him, and who followed the red priestess’s god.',
+      it: 'La regina che ha discusso con Stannis davanti a lui, e che seguiva il dio della sacerdotessa rossa.',
     },
   },
 
@@ -1451,6 +1450,7 @@ const stormlands = {
   },
 } satisfies Record<string, Relationship>
 
+/** Episode numbers on a `source: 'chapter'` entry only order it, as on the records. */
 export const season2Relationships = {
   // Show only: out to scout at his gate, back with Qarth's welcome at 14,
   // at Xaro's feast at 15 and at the House of the Undying at 20.
