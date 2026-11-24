@@ -112,6 +112,14 @@ introduction, East Blue, the Hunter Exam or the first season of Game of Thrones,
 so its dial can open and cover those entries in the browser, and nothing past
 it.
 
+The two landings, the onboarding and the home page, are a chunk each, because
+the loader sends one of them (#1573). The loader fetches the one it chose
+(`preloadLanding`), so the server renders it whole: a render that suspended
+would send the page's empty fallback first and the page after it, where every
+reader and crawler is meant to get one document. The route's `head` preloads
+that chunk and what it imports, the way the root's does for the language's copy,
+and hydration, which has no loader, waits on that preload.
+
 The archive is never compiled into the client bundle, and `gate:archive` fails
 if any of it gets there. Search, drawings and links follow the same rule. The
 fog is an editorial promise, not access control: the social pictures above, a
@@ -460,17 +468,18 @@ and for the not-found page of an address no locale route matches, and the router
 awaits it before hydrating, so a page downloads its own language only. The
 document's head preloads that chunk, so it downloads beside the entry and not
 after it (#1575): Start's manifest holds only static imports, so the build names
-the chunk (`dictionaryChunks`, `vite.config.ts`) and the root route's `head`
-reads it. What renders above a locale route (`<html lang>`, the shared shell of
-a not-found page) reads the language from the root's context, which lands with
-that copy, never from the router's location, which moves when a navigation
-starts. A chunk that fails to load reloads the page once per tab and address (a
-`sessionStorage` flag; without storage, no reload); a hovered link's preload
-never reloads. If it fails again, a page that is hydrating deliberately stays as
-the server rendered it, while a client-side navigation shows the root's own
-error page, which needs no dictionary. The privacy notice
-(`src/i18n/dictionaries/privacy.ts`) and the legal page's own copy (`legal.ts`,
-beside it) ship with the legal page alone. Copy rules live in the
+the chunk (`preloadedChunks`, `vite.config.ts`) and the root route's `head`
+reads it (`preloadChunk`, `src/lib/chunks.ts`). What renders above a locale
+route (`<html lang>`, the shared shell of a not-found page) reads the language
+from the root's context, which lands with that copy, never from the router's
+location, which moves when a navigation starts. A chunk that fails to load
+reloads the page once per tab and address (a `sessionStorage` flag; without
+storage, no reload); a hovered link's preload never reloads. If it fails again,
+a page that is hydrating deliberately stays as the server rendered it, while a
+client-side navigation shows the root's own error page, which needs no
+dictionary. The privacy notice (`src/i18n/dictionaries/privacy.ts`) and the
+legal page's own copy (`legal.ts`, beside it) ship with the legal page alone.
+Copy rules live in the
 [tone-of-voice skill](../.claude/skills/tone-of-voice/SKILL.md).
 
 ## Extending the archive boundary
