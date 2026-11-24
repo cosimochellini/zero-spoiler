@@ -744,7 +744,8 @@
         "got-en-What_Is_Dead_May_Never_Die-740166.json",
         "got-en-Valar_Morghulis-740176.json",
         "got-en-Garden_of_Bones_(episode)-729784.json",
-        "got-en-The_Old_Gods_and_the_New-740283.json"
+        "got-en-The_Old_Gods_and_the_New-740283.json",
+        "got-en-Blackwater-729787.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -760,7 +761,8 @@
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_32",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_52",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_57",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_60"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_60",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_62"
         ]
       }
     },

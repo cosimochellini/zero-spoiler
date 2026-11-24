@@ -167,10 +167,13 @@ selection.
   Dontos pledges to send her home and Sandor walks her back (Sansa step); Tyrion
   VIII (110), Tyrion proposes the Tyrell match and Petyr volunteers to carry it
   (Joffrey and Petyr steps); Sansa III (106), Tyrion stops the beating (Sansa
-  step); Sansa IV (126), no turning point beyond 92 and 106; Sansa V and VI
-  (131, 134), no turning point (the sept and the queen's ballroom); Tyrion XIV
-  (135), Podrick saves him (Tyrion step, in both media). Lollys's riot (115) and
-  her place at the holdfast (131) are not cards.
+  step); Sansa IV (126), Cersei's talk after her flowering is left out, no
+  turning point for this group's selections; Sansa V (131), no turning point;
+  Sansa VI (134), Cersei's exchanges in the ballroom are left out (the show's
+  ballroom is a Sansa step at 19); Sansa VII (136), Sandor's offer and flight
+  (Sansa step, shared with Sandor's 19/136); Tyrion XIV (135), Podrick saves him
+  (Tyrion step, in both media). Lollys's riot (115) and her place at the
+  holdfast (131) are not cards.
 - Hallyne's, Osmund's and Garlan's book pins are unchanged (94, 123, 139).
 
 ## Stannis, Renly and the stormlands (#1464)

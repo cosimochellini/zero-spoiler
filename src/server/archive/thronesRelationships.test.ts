@@ -1380,6 +1380,8 @@ describe.each(LOCALES)(
       expect(people('sansa-stark', ch(106))).toContain('tyrion-lannister')
       expect(people('sansa-stark', ep(15))).not.toContain('sandor-clegane')
       expect(people('sansa-stark', ep(16))).toContain('sandor-clegane')
+      expect(people('sansa-stark', ep(18))).not.toContain('cersei-lannister')
+      expect(people('sansa-stark', ep(19))).toContain('cersei-lannister')
       expect(people('joffrey-baratheon', ep(19))).not.toContain(
         'margaery-tyrell',
       )

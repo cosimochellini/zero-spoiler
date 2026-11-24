@@ -8566,7 +8566,7 @@ const kingsLanding2 = {
     type: { en: 'The king’s uncle', it: 'Zio del re' },
     summary: {
       en: 'The acting Hand, who steps in when Joffrey has her beaten in front of the court and offers to end her engagement. She keeps up her show of loyalty, and he is impressed.',
-      it: 'Il Primo Cavaliere in carica, che interviene quando Joffrey la fa picchiare davanti alla corte e le offre di sciogliere il fidanzamento. Lei mantiene la facciata di lealtà, e lui ne è colpito.',
+      it: 'Il Primo Cavaliere in carica, che interviene quando Joffrey la fa picchiare davanti alla corte e le offre di sciogliere il fidanzamento. Lei mantiene la facciata di lealtà, e Tyrion ne è colpito.',
     },
   },
   sanJoffreyShow: {
@@ -8912,8 +8912,8 @@ const kingsLanding2 = {
     character: 'podrick-payne',
     type: { en: 'Squire', it: 'Scudiero' },
     summary: {
-      en: 'His squire, who saves his life in the fighting at the chain.',
-      it: 'Il suo scudiero, che gli salva la vita negli scontri alla catena.',
+      en: 'His squire, who saves his life in the battle.',
+      it: 'Il suo scudiero, che gli salva la vita nella battaglia.',
     },
   },
   tyrMandonAttack: {
@@ -8972,6 +8972,30 @@ const kingsLanding2 = {
     summary: {
       en: 'The Hand, who wants the Tyrells for Joffrey. Neither he nor Cersei will leave the city to treat with them, so Petyr volunteers, expecting a reward.',
       it: 'Il Primo Cavaliere, che vuole i Tyrell dalla parte di Joffrey. Né lui né Cersei vogliono lasciare la città per trattare, così Petyr si offre, aspettandosi una ricompensa.',
+    },
+  },
+  sanSandorOffer: {
+    character: 'sandor-clegane',
+    type: { en: 'The Hound', it: 'Il Mastino' },
+    summary: {
+      en: 'Comes to her room after leaving the battle and offers to take her north, away from the city.',
+      it: 'Viene nella sua stanza dopo aver lasciato la battaglia e le offre di portarla a nord, lontano dalla città.',
+    },
+  },
+  sanSandorLeaves: {
+    character: 'sandor-clegane',
+    type: { en: 'The Hound', it: 'Il Mastino' },
+    summary: {
+      en: 'Drunk and battered, he tells her he is leaving the city and could protect her. He asks for a song, then leaves her room.',
+      it: 'Ubriaco e malconcio, le dice che lascia la città e che potrebbe proteggerla. Le chiede una canzone, poi esce dalla sua stanza.',
+    },
+  },
+  sanCerseiBallroom: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen regent, who hosts the court’s women in Maegor’s Holdfast during the battle. She mocks Sansa’s faith and advises her how to use her beauty.',
+      it: 'La regina reggente, che ospita le dame della corte nella Fortezza di Maegor durante la battaglia. Prende in giro la fede di Sansa e le insegna a usare la sua bellezza.',
     },
   },
 } satisfies Record<string, Relationship>
@@ -10575,6 +10599,22 @@ export const season1Relationships = {
         kingsLanding2.sanShaeConfides,
         kingsLanding2.sanJoffreyRiot,
       ],
+    },
+    {
+      episode: 19,
+      chapter: 136,
+      source: 'episode',
+      value: [
+        kingsLanding2.sanSandorOffer,
+        kingsLanding2.sanCerseiBallroom,
+        kingsLanding2.sanShae,
+      ],
+    },
+    {
+      episode: 19,
+      chapter: 136,
+      source: 'chapter',
+      value: [kingsLanding2.sanSandorLeaves, kingsLanding2.sanDontosPledge],
     },
     // The court of rewards: Sansa VIII, and "Valar Morghulis".
     {
