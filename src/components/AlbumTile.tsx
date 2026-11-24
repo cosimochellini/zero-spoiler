@@ -242,11 +242,13 @@ const styles = stylex.create({
   // album keeps its height and Back lands on the same tile.
   art: { aspectRatio: '4 / 5', contentVisibility: 'auto' },
   name: {
+    // Hover and focus skip a pressed link: StyleX orders `:is()` keys by
+    // value, not as written, so the pressed colour would lose (#1547).
     color: {
       'default': color.ink,
-      ':is(a:active) > &': color.ink2,
-      ':is(a:focus-visible) > &': color.accent,
-      ':is(a:hover) > &': color.accent,
+      ':is(a:active *)': color.ink2,
+      ':is(a:focus-visible:not(:active) *)': color.accent,
+      ':is(a:hover:not(:active) *)': color.accent,
     },
     display: 'block',
     fontFamily: font.display,

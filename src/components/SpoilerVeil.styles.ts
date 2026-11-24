@@ -141,8 +141,8 @@ export const veilStyles = stylex.create({
     backgroundColor: color.paper,
     color: {
       'default': color.accent,
-      ':is(button:active) > &': color.ink,
-      ':is(button:hover) > &': color.ink,
+      ':is(button:active *)': color.ink,
+      ':is(button:hover *)': color.ink,
     },
     fontFamily: font.body,
     fontSize: text.base,

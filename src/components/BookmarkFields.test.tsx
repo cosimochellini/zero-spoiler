@@ -151,7 +151,6 @@ describe('the bookmark form for a series', () => {
 
     expect(styles).toContain("':has(:focus-visible)': color.focus")
     expect(styles).toContain("':has(:checked)': color.ink")
-    // No selector key (a quoted string followed by a colon) holds an `&`.
-    expect(styles).not.toMatch(/'[^'&\n]*&[^'\n]*':/u)
+    // `src/styles/selectors.test.ts` refuses an `&` key in every StyleX file.
   })
 })
