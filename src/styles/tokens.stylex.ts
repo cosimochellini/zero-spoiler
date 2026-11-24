@@ -231,29 +231,46 @@ export const z = stylex.defineVars({
 })
 
 /**
- * The site bar's two heights, rows of 2.75rem with `space.xs2` above and below
- * them, and the width from which a series page's bar fits on one row. A
- * series bar carries the series' name and pages besides the wordmark, so it
- * folds them under on a narrower window, where the site's own bar, the
- * wordmark and the language, is one row at every width: `SiteBar` lays out
- * from `seriesWide`, and `seriesBarPin` in src/styles/sticky.ts sets
- * `pin.bar` to match on series pages.
+ * The site bar's heights, rows of 2.75rem with `space.xs2` above and below
+ * them, and the widths its rows fold at. A series bar carries the series'
+ * name and pages besides the wordmark, so it folds them under below
+ * `seriesWide`, where the site's own bar, the wordmark and the language, is
+ * one row. On a window only a few rems wide (large text on a phone) the
+ * wordmark no longer fits beside the controls and takes a row of its own:
+ * below `seriesCrowded` on a series page, where the bookmark sits beside the
+ * language, and below `siteCrowded` on the site's own pages, where only the
+ * language does. Below `seriesCramped` the bookmark and the language no
+ * longer fit side by side either, and each takes its row. The widths are in
+ * rem, so they follow the reader's text size, and hold the widest bookmark at
+ * the default text size but Game of Thrones' book chapter ("IN PROVA / EP
+ * 37" in Italian; "B1 · CH 72" is wider, #1558). Each height is its rows of
+ * `TAP` (src/components/SiteBar.styles.ts) and the padding, which
+ * src/styles/bar.test.ts checks. `SiteBar` lays out from these, and `pin` and
+ * `seriesBarPin` in src/styles/sticky.ts set `pin.bar` to match.
  */
 export const BAR = stylex.defineConsts({
   seriesWide: '@media (min-width: 56rem)',
+  seriesCrowded: '@media (min-width: 12rem) and (max-width: 19.99rem)',
+  seriesCramped: '@media (max-width: 11.99rem)',
+  siteCrowded: '@media (max-width: 12.99rem)',
+  fourRows: '11.5rem',
+  threeRows: '8.75rem',
   twoRows: '6rem',
   oneRow: '3.25rem',
 })
 
 /**
  * How much of the window the site bar keeps, pinned at every width. The
- * site's own bar, on the hub and the legal page, is one row at every width:
- * the wordmark and the language. A series page overrides it with
- * `seriesBarPin` (src/styles/sticky.ts), which keeps two rows, where the
- * pages fold under, up to `BAR.seriesWide`. The bar takes this as its height,
- * and everything else that pins pins under it, so the two cannot drift apart.
+ * site's own bar, on the hub and the legal page, is one row, the wordmark
+ * and the language, until the wordmark needs a row of its own
+ * (`BAR.siteCrowded`). A series page overrides it with `seriesBarPin`
+ * (src/styles/sticky.ts), which keeps two rows, where the pages fold under,
+ * up to `BAR.seriesWide`. The bar takes this as its height, and everything
+ * else that pins pins under it, so the two cannot drift apart.
  */
-export const pin = stylex.defineVars({ bar: BAR.oneRow })
+export const pin = stylex.defineVars({
+  bar: { default: BAR.oneRow, [BAR.siteCrowded]: BAR.twoRows },
+})
 
 /**
  * The window in which a listing's control bar pins whole: wide and tall

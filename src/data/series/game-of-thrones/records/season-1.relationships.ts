@@ -10077,6 +10077,323 @@ const riverlands2 = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 2's stormlands cards for Renly and Loras (#1480): season 2 and A Clash
+ * of Kings, episodes 11 to 20 and chapters 74 to 143. The new characters' own
+ * cards are in `season-2.relationships.ts`.
+ */
+const stormlands2 = {
+  // Renly, the show
+  renLorasHeir: {
+    character: 'loras-tyrell',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The Knight of Flowers, his lover. Loras turns him away and reminds him that he needs an heir.',
+      it: 'Il Cavaliere dei Fiori, suo amante. Loras lo respinge e gli ricorda che ha bisogno di un erede.',
+    },
+  },
+  renMargaeryBed: {
+    character: 'margaery-tyrell',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'His new queen, who tries to seduce him. They talk about the need for an heir.',
+      it: 'La sua nuova regina, che cerca di sedurlo. Parlano della necessità di un erede.',
+    },
+  },
+  renBrienneChampion: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Champion', it: 'Campionessa' },
+    summary: {
+      en: 'The woman who wins his tourney. He makes her one of his Kingsguard.',
+      it: 'La donna che vince il suo torneo. La nomina nella sua guardia reale.',
+    },
+  },
+  renCatelynArmy: {
+    character: 'catelyn-stark',
+    type: { en: 'Envoy', it: 'Inviata' },
+    summary: {
+      en: 'Robb Stark’s envoy. He shows her his army of a hundred thousand, and she warns him to take the war seriously.',
+      it: 'L’inviata di Robb Stark. Le mostra il suo esercito di centomila uomini, e lei lo avverte di prendere la guerra sul serio.',
+    },
+  },
+  renStannisDemand: {
+    character: 'stannis-baratheon',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His elder brother, who comes to his camp to demand he yield. Renly answers that no one wants Stannis for their king.',
+      it: 'Il fratello maggiore, che arriva al suo accampamento per chiedergli di cedere. Renly risponde che nessuno vuole Stannis come re.',
+    },
+  },
+  renPetyrEnvoy: {
+    character: 'petyr-baelish',
+    type: { en: 'Envoy', it: 'Inviato' },
+    summary: {
+      en: 'The envoy from King’s Landing. Renly dislikes him, but is tempted by his offer of help from within the city.',
+      it: 'L’inviato di Approdo del Re. Renly non lo ama, ma è tentato dalla sua offerta di aiuto dall’interno della città.',
+    },
+  },
+  renStannisShadow: {
+    character: 'stannis-baratheon',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His elder brother, whose shadow kills him in his tent.',
+      it: 'Il fratello maggiore, la cui ombra lo uccide nella tenda.',
+    },
+  },
+  renCatelynAlliance: {
+    character: 'catelyn-stark',
+    type: { en: 'Envoy', it: 'Inviata' },
+    summary: {
+      en: 'Robb Stark’s envoy. He agrees to an alliance with her son just before he dies in front of her.',
+      it: 'L’inviata di Robb Stark. Accetta un’alleanza con suo figlio poco prima di morire davanti a lei.',
+    },
+  },
+  renBrienneBlamed: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Kingsguard', it: 'Guardia reale' },
+    summary: {
+      en: 'The guard who is with him when he dies, and who is blamed for it.',
+      it: 'La guardia che è con lui quando muore, e a cui viene data la colpa.',
+    },
+  },
+  renLorasRevenge: {
+    character: 'loras-tyrell',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The Knight of Flowers, his lover. After Renly’s death Loras wants revenge.',
+      it: 'Il Cavaliere dei Fiori, suo amante. Dopo la morte di Renly, Loras vuole vendetta.',
+    },
+  },
+  renMargaeryWidow: {
+    character: 'margaery-tyrell',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'His queen, now his widow.',
+      it: 'La sua regina, ora vedova.',
+    },
+  },
+  // Renly, the books
+  renCatelynTerms: {
+    character: 'catelyn-stark',
+    type: { en: 'Envoy', it: 'Inviata' },
+    summary: {
+      en: 'Robb Stark’s envoy. He tells her Robb may keep the title of King in the North, but must bend the knee to him.',
+      it: 'L’inviata di Robb Stark. Le dice che Robb può tenere il titolo di Re del Nord, ma deve piegare il ginocchio davanti a lui.',
+    },
+  },
+  renMargaeryFeast: {
+    character: 'margaery-tyrell',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'His young queen, whom he feeds morsels of food and kisses at the feast.',
+      it: 'La sua giovane regina, che al banchetto imbocca con dei bocconi e bacia.',
+    },
+  },
+  renBrienneRainbow: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Champion', it: 'Campionessa' },
+    summary: {
+      en: 'The champion of his tourney. She asks to join his Rainbow Guard, and he grants it.',
+      it: 'La campionessa del suo torneo. Chiede di entrare nella sua guardia arcobaleno, e lui acconsente.',
+    },
+  },
+  renLorasJests: {
+    character: 'loras-tyrell',
+    type: { en: 'Favorite', it: 'Favorito' },
+    summary: {
+      en: 'The Knight of Flowers, with whom he shares most of his jests and confidences at the feast.',
+      it: 'Il Cavaliere dei Fiori, con cui al banchetto condivide più battute e confidenze che con chiunque altro.',
+    },
+  },
+  renStannisAppalling: {
+    character: 'stannis-baratheon',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His elder brother on Dragonstone, whom he calls respected and feared but not loved, and an appalling king.',
+      it: 'Il fratello maggiore a Roccia del Drago, che definisce rispettato e temuto ma non amato, e un re pessimo.',
+    },
+  },
+  renStannisParley: {
+    character: 'stannis-baratheon',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His elder brother, who demands he yield outside Storm’s End. Renly offers him a peach, then mocks him, and decides to fight.',
+      it: 'Il fratello maggiore, che gli intima di cedere davanti a Capo Tempesta. Renly gli offre una pesca, poi lo deride, e decide di combattere.',
+    },
+  },
+  renCatelynWatch: {
+    character: 'catelyn-stark',
+    type: { en: 'Envoy', it: 'Inviata' },
+    summary: {
+      en: 'Robb Stark’s envoy, whom he will not let leave. She must watch the battle to tell her son what happens to rebels.',
+      it: 'L’inviata di Robb Stark, che non lascia partire. Deve assistere alla battaglia per raccontare a suo figlio che fine fanno i ribelli.',
+    },
+  },
+  renBrienneBanner: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Banner-bearer', it: 'Alfiere' },
+    summary: {
+      en: 'The Rainbow Guard who carries his banner to the parley and steps between the brothers.',
+      it: 'La guardia arcobaleno che porta il suo stendardo al colloquio e si mette tra i fratelli.',
+    },
+  },
+  renLorasVan: {
+    character: 'loras-tyrell',
+    type: { en: 'Favorite', it: 'Favorito' },
+    summary: {
+      en: 'The Knight of Flowers, to whom he gives the van of his army.',
+      it: 'Il Cavaliere dei Fiori, a cui affida l’avanguardia del suo esercito.',
+    },
+  },
+  renCatelynNoTalk: {
+    character: 'catelyn-stark',
+    type: { en: 'Envoy', it: 'Inviata' },
+    summary: {
+      en: 'Robb Stark’s envoy, who asked him to set aside the crown and call a Great Council. He told her the time for talk was done.',
+      it: 'L’inviata di Robb Stark, che gli aveva chiesto di deporre la corona e convocare un Gran Consiglio. Lui le ha detto che il tempo delle parole era finito.',
+    },
+  },
+  renBrienneArming: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Kingsguard', it: 'Guardia reale' },
+    summary: {
+      en: 'The guard who was arming him when a shadow cut his throat, and who caught him as he fell.',
+      it: 'La guardia che lo stava armando quando un’ombra gli ha tagliato la gola, e che lo ha sorretto mentre cadeva.',
+    },
+  },
+  renLorasPray: {
+    character: 'loras-tyrell',
+    type: { en: 'Companion', it: 'Compagno' },
+    summary: {
+      en: 'The Knight of Flowers, whom he asked to stay and pray with him before the battle.',
+      it: 'Il Cavaliere dei Fiori, a cui ha chiesto di restare a pregare con lui prima della battaglia.',
+    },
+  },
+
+  // Loras, the show
+  lorRenlyHeir: {
+    character: 'renly-baratheon',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The king, his lover. Loras turns him away and reminds him that he needs an heir.',
+      it: 'Il re, suo amante. Loras lo respinge e gli ricorda che ha bisogno di un erede.',
+    },
+  },
+  lorBrienneMelee: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Conqueror', it: 'Vincitrice' },
+    summary: {
+      en: 'The woman who defeats him in the melee and joins the king’s guard.',
+      it: 'La donna che lo sconfigge nella mischia ed entra nella guardia del re.',
+    },
+  },
+  lorMargaeryFetch: {
+    character: 'margaery-tyrell',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, the queen, whom he goes to fetch for Renly.',
+      it: 'Sua sorella, la regina, che va a chiamare per Renly.',
+    },
+  },
+  lorRenlyDeadShow: {
+    character: 'renly-baratheon',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The king, his lover, killed in his tent.',
+      it: 'Il re, suo amante, ucciso nella sua tenda.',
+    },
+  },
+  lorPetyr: {
+    character: 'petyr-baelish',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'Lord Baelish, who travels with the Tyrells. Asked what he wants most, Loras answers revenge, and Petyr tells him to be smart about it.',
+      it: 'Lord Baelish, che viaggia con i Tyrell. Alla domanda su cosa voglia di più, Loras risponde vendetta, e Petyr gli dice di essere astuto.',
+    },
+  },
+  lorMargaeryWidow: {
+    character: 'margaery-tyrell',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, now a widow. The Tyrell host rides for Highgarden with her.',
+      it: 'Sua sorella, ora vedova. L’esercito dei Tyrell cavalca con lei verso Alto Giardino.',
+    },
+  },
+  lorRenlyArmor: {
+    character: 'renly-baratheon',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The king, his lover, whose armor he wears to lead the charge at the Blackwater.',
+      it: 'Il re, suo amante, di cui indossa l’armatura per guidare la carica alle Acque Nere.',
+    },
+  },
+  lorTywin: {
+    character: 'tywin-lannister',
+    type: { en: 'Ally', it: 'Alleato' },
+    summary: {
+      en: 'The lord of Casterly Rock, whose host he joins in the charge that breaks Stannis’s army.',
+      it: 'Il signore di Castel Granito, il cui esercito affianca nella carica che spezza quello di Stannis.',
+    },
+  },
+  lorMargaeryHand: {
+    character: 'margaery-tyrell',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, whose hand he asks of the king.',
+      it: 'Sua sorella, di cui chiede la mano al re.',
+    },
+  },
+  lorJoffrey: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king he asks to wed his sister, to unite their houses.',
+      it: 'Il re a cui chiede di sposare sua sorella, per unire le loro casate.',
+    },
+  },
+  // Loras, the books
+  lorRenlyKing: {
+    character: 'renly-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king he serves, who favors him and shares most of his jests and confidences at the feast.',
+      it: 'Il re che serve, che lo predilige e al banchetto condivide con lui gran parte delle sue battute e confidenze.',
+    },
+  },
+  lorBrienneYield: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Conqueror', it: 'Vincitrice' },
+    summary: {
+      en: 'The champion who beats him in the final duel, opening his visor with a dirk to make him yield.',
+      it: 'La campionessa che lo batte nel duello finale, aprendogli la visiera con un pugnale per costringerlo ad arrendersi.',
+    },
+  },
+  lorRenlyDeadBook: {
+    character: 'renly-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king he served, killed in his tent the night before the battle.',
+      it: 'Il re che serviva, ucciso nella sua tenda la notte prima della battaglia.',
+    },
+  },
+  lorMace: {
+    character: 'mace-tyrell',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the lord of Highgarden, who stands beside him before the king and takes a seat on the small council.',
+      it: 'Suo padre, il signore di Alto Giardino, che gli sta accanto davanti al re e ottiene un seggio nel concilio ristretto.',
+    },
+  },
+  lorJoffreyBook: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who names him to the Kingsguard.',
+      it: 'Il re che lo nomina nella Guardia reale.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season1Relationships = {
   // The show weds her in episode 1; its wedding entry waits for episode 2,
   // the book's pair, which is later and so safe.
@@ -13632,6 +13949,78 @@ export const season1Relationships = {
       source: 'chapter',
       value: [crown.renRobertDead, crown.renNedDead, crown.renLorasFledChapter],
     },
+    // Stage 2 (#1480): the stormlands. The show: Renly's camp at Bitterbridge.
+    {
+      episode: 13,
+      chapter: 96,
+      source: 'episode',
+      value: [
+        stormlands2.renLorasHeir,
+        stormlands2.renMargaeryBed,
+        stormlands2.renBrienneChampion,
+        stormlands2.renCatelynArmy,
+      ],
+    },
+    // Stannis comes to the camp in "Garden of Bones".
+    {
+      episode: 14,
+      chapter: 105,
+      source: 'episode',
+      value: [
+        stormlands2.renStannisDemand,
+        stormlands2.renPetyrEnvoy,
+        stormlands2.renCatelynArmy,
+      ],
+    },
+    // The shadow kills him in "The Ghost of Harrenhal".
+    {
+      episode: 15,
+      chapter: 107,
+      source: 'episode',
+      value: [
+        stormlands2.renStannisShadow,
+        stormlands2.renCatelynAlliance,
+        stormlands2.renBrienneBlamed,
+        stormlands2.renLorasRevenge,
+        stormlands2.renMargaeryWidow,
+      ],
+    },
+    // The books: Catelyn II, the tourney and the feast at Bitterbridge.
+    {
+      episode: 13,
+      chapter: 96,
+      source: 'chapter',
+      value: [
+        stormlands2.renCatelynTerms,
+        stormlands2.renMargaeryFeast,
+        stormlands2.renBrienneRainbow,
+        stormlands2.renLorasJests,
+        stormlands2.renStannisAppalling,
+      ],
+    },
+    // Catelyn III: the parley outside Storm's End.
+    {
+      episode: 14,
+      chapter: 105,
+      source: 'chapter',
+      value: [
+        stormlands2.renStannisParley,
+        stormlands2.renCatelynWatch,
+        stormlands2.renBrienneBanner,
+        stormlands2.renLorasVan,
+      ],
+    },
+    // Catelyn IV: he dies the night before the battle.
+    {
+      episode: 15,
+      chapter: 107,
+      source: 'chapter',
+      value: [
+        stormlands2.renCatelynNoTalk,
+        stormlands2.renBrienneArming,
+        stormlands2.renLorasPray,
+      ],
+    },
   ],
   'lysa-arryn': [
     // Show: "The Wolf and the Lion" (GOT105) has her nurse him. The pages
@@ -14159,6 +14548,70 @@ export const season1Relationships = {
         crown.lorGregor,
         crown.lorSandor,
       ],
+    },
+    // Stage 2 (#1480): the stormlands. The show: Renly's camp at Bitterbridge.
+    {
+      episode: 13,
+      chapter: 96,
+      source: 'episode',
+      value: [
+        stormlands2.lorRenlyHeir,
+        stormlands2.lorBrienneMelee,
+        stormlands2.lorMargaeryFetch,
+      ],
+    },
+    // Renly dies in "The Ghost of Harrenhal".
+    {
+      episode: 15,
+      chapter: 107,
+      source: 'episode',
+      value: [
+        stormlands2.lorRenlyDeadShow,
+        stormlands2.lorPetyr,
+        stormlands2.lorMargaeryWidow,
+      ],
+    },
+    // He wears Renly's armor in "Blackwater".
+    {
+      episode: 19,
+      chapter: 132,
+      source: 'episode',
+      value: [
+        stormlands2.lorRenlyArmor,
+        stormlands2.lorTywin,
+        stormlands2.lorMargaeryWidow,
+      ],
+    },
+    // "Valar Morghulis": he asks Joffrey for his sister's hand.
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'episode',
+      value: [
+        stormlands2.lorMargaeryHand,
+        stormlands2.lorJoffrey,
+        stormlands2.lorRenlyArmor,
+      ],
+    },
+    // The books: Catelyn II, the tourney at Bitterbridge.
+    {
+      episode: 13,
+      chapter: 96,
+      source: 'chapter',
+      value: [stormlands2.lorRenlyKing, stormlands2.lorBrienneYield],
+    },
+    {
+      episode: 15,
+      chapter: 107,
+      source: 'chapter',
+      value: [stormlands2.lorRenlyDeadBook],
+    },
+    // Sansa VIII: he joins the Kingsguard.
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'chapter',
+      value: [stormlands2.lorMace, stormlands2.lorJoffreyBook],
     },
   ],
   // The Hound is named in the show only in episode 4.

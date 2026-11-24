@@ -7,14 +7,17 @@ import { awaited, renderWithProviders } from '~/test/providers'
 import { BookmarkDialog } from './BookmarkDialog'
 
 // The first fetch of the form's code fails, the next one lands.
-vi.mock(import('~/components/bookmarkFormLoader'), async (importOriginal) => ({
-  ...(await importOriginal()),
-  formHasLanded: () => false,
-  preloadBookmarkForm: vi
-    .fn<() => Promise<boolean>>()
-    .mockResolvedValueOnce(false)
-    .mockResolvedValue(true),
-}))
+vi.mock(import('~/components/bookmarkFormLoader'), async (importOriginal) => {
+  const loader = await importOriginal()
+  return {
+    ...loader,
+    formHasLanded: () => false,
+    preloadBookmarkForm: vi
+      .fn<() => Promise<boolean>>()
+      .mockResolvedValueOnce(false)
+      .mockImplementation(loader.preloadBookmarkForm),
+  }
+})
 
 describe('BookmarkDialog when the form fails to load', () => {
   it('says so, then loads the form when the reader tries again', async () => {

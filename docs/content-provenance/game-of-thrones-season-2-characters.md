@@ -226,6 +226,28 @@ of "The Ghost of Harrenhal" is named only in the credits, so the record stays
 the books'), Petyr Baelish (his visit to Renly's camp is stepped by #1463),
 Hallis Mollen and Wendel Manderly (in Catelyn's party; no field changes).
 
+### Relationships (#1480)
+
+All twelve records are authored in `records/season-2.relationships.ts`, and
+Renly and Loras Tyrell get their stage-2 snapshots in
+`season-1.relationships.ts`. The pages read are in
+`game-of-thrones-relationships.json`.
+
+- The show's cards run from "The North Remembers" (11) to "Valar Morghulis"
+  (20), and the books' from the prologue (74) to Sansa VIII (139). Where the
+  media differ in wording, actor or order, the entry is split by medium: Renly's
+  death (15 and 107), Brienne's sworn sword (the books' 113), Margaery's
+  betrothal (20 and 139), Davos and Matthos on the Blackwater (19 and 132).
+- Selyse, Shireen and Mace Tyrell are the books' alone in this stage: the show
+  names them at episodes 25 and 32, past the stage (#852), so no show card names
+  them and their own cards are chapter-only entries ordered at those episodes.
+- Cortnay Penrose's cards are the books' alone, at 116 and at 118, where Tyrion
+  X tells that Storm's End fell and that he died.
+- Not stepped: Catelyn (her cards for Renly, Brienne and Stannis belong to the
+  Riverlands group), Petyr Baelish and Jaime Lannister (named in Renly's,
+  Loras's and Brienne's cards only), Gendry and Tywin Lannister (no card of
+  their own in this group).
+
 ### Drawings (#1471)
 
 Each record has its own drawing in `art/stormlands.ts`; the objects, stages and

@@ -1684,6 +1684,7 @@ export const season2: ThronesSaga = {
     },
     // #1464: Stannis, Renly and the stormlands.
     'stannis-baratheon': {
+      relationships: season2Relationships['stannis-baratheon'],
       role: {
         it: 'Pretendente al Trono di Spade',
         en: 'Claimant to the Iron Throne',
@@ -1708,6 +1709,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'melisandre': {
+      relationships: season2Relationships.melisandre,
       role: { it: 'Sacerdotessa rossa', en: 'Red priestess' },
       log: {
         it: 'Viene dall’oriente e serve il Signore della Luce. A Roccia del Drago si è guadagnata un posto accanto a Stannis Baratheon.',
@@ -1729,6 +1731,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'davos-seaworth': {
+      relationships: season2Relationships['davos-seaworth'],
       role: [
         {
           episode: 11,
@@ -1771,6 +1774,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'cressen': {
+      relationships: season2Relationships.cressen,
       role: { it: 'Maestro di Roccia del Drago', en: 'Maester of Dragonstone' },
       log: {
         it: 'Teme l’influenza della sacerdotessa rossa su Stannis Baratheon. Cerca di avvelenarla, ma muore lui del veleno.',
@@ -1786,6 +1790,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'matthos-seaworth': {
+      relationships: season2Relationships['matthos-seaworth'],
       role: { it: 'Figlio di Davos Seaworth', en: 'Son of Davos Seaworth' },
       log: {
         it: 'Figlio di Davos Seaworth, al servizio di re Stannis.',
@@ -1807,6 +1812,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'salladhor-saan': {
+      relationships: season2Relationships['salladhor-saan'],
       role: { it: 'Pirata di Lys', en: 'Pirate from Lys' },
       log: {
         it: 'Vecchio amico di Davos Seaworth, presta le sue navi a re Stannis in cambio della promessa di oro.',
@@ -1825,6 +1831,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'selyse-baratheon': {
+      relationships: season2Relationships['selyse-baratheon'],
       role: {
         it: 'Regina, moglie di Stannis Baratheon',
         en: 'Queen, wife of Stannis Baratheon',
@@ -1849,6 +1856,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'shireen-baratheon': {
+      relationships: season2Relationships['shireen-baratheon'],
       role: {
         it: 'Principessa, figlia di Stannis Baratheon',
         en: 'Princess, daughter of Stannis Baratheon',
@@ -1873,6 +1881,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'brienne-of-tarth': {
+      relationships: season2Relationships['brienne-of-tarth'],
       role: [
         {
           episode: 13,
@@ -1917,6 +1926,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'margaery-tyrell': {
+      relationships: season2Relationships['margaery-tyrell'],
       role: [
         {
           episode: 13,
@@ -1965,6 +1975,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'mace-tyrell': {
+      relationships: season2Relationships['mace-tyrell'],
       role: { it: 'Lord di Alto Giardino', en: 'Lord of Highgarden' },
       log: {
         it: 'È il padre di Margaery e Loras Tyrell, e ha portato la sua casata dalla parte di re Joffrey.',
@@ -1986,6 +1997,7 @@ export const season2: ThronesSaga = {
       ],
     },
     'cortnay-penrose': {
+      relationships: season2Relationships['cortnay-penrose'],
       role: {
         it: 'Castellano di Capo Tempesta',
         en: 'Castellan of Storm’s End',

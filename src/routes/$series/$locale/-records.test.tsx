@@ -33,6 +33,7 @@ import {
 } from '~/test/providers'
 
 import { LandingPage } from './-landing'
+import { preloadLanding } from './-landing.branches'
 import { Route as CharacterRoute } from './characters/$id'
 import { ChronicleBand } from './characters/-$id.chronicle'
 import { DossierDiptych } from './characters/-$id.dossier'
@@ -255,8 +256,10 @@ describe.each(LOADED)('every record page of $series.slug', (archive) => {
       const bookmarks = [null, ...bookmarksOf(archive)]
       for (const bookmark of bookmarks) {
         const r = readerFor(archive, bookmark, locale)
+        const landing = landingPage(r, null)
+        await preloadLanding(landing)
         const { unmount } = renderWithProviders(
-          <LandingPage landing={landingPage(r, null)} />,
+          <LandingPage landing={landing} />,
           optionsFor(archive, locale, { path: '', bookmark }),
         )
         await settle()
