@@ -16,35 +16,53 @@ const stylexVite: (options?: Partial<UserOptions>) => Plugin = stylex.vite
 // asks for it only once the entry has run (#1575). The client build, which
 // runs first, names the chunks; the Worker build then reads them back as
 // `import.meta.env.DICTIONARY_CHUNKS` for the root route's head. Dev and
-// tests leave it undefined, and the head adds no link.
+// tests leave it undefined, and the head adds no link; a build whose client
+// half named no chunk fails rather than ship pages without the preload.
 const dictionaryChunks = (): Plugin[] => {
-  const urls: Record<string, string> = {}
+  const urls = new Map<string, string>()
   const token = 'import.meta.env.DICTIONARY_CHUNKS'
   return [
     {
       name: 'dictionary-chunks:name',
       applyToEnvironment: (environment) => environment.name === 'client',
-      generateBundle(_options, bundle) {
+      generateBundle: (_options, bundle) => {
         for (const chunk of Object.values(bundle)) {
           if (
-            chunk.type === 'chunk'
-            && chunk.facadeModuleId?.includes('/i18n/dictionaries/') === true
+            chunk.type !== 'chunk'
+            || chunk.facadeModuleId === null
+            || !path
+              .dirname(chunk.facadeModuleId)
+              .endsWith('/i18n/dictionaries')
           ) {
-            urls[chunk.name] = `/${chunk.fileName}`
+            continue
           }
+          if (urls.has(chunk.name)) {
+            throw new Error(`two dictionary chunks are named ${chunk.name}`)
+          }
+          urls.set(chunk.name, `/${chunk.fileName}`)
         }
       },
     },
     {
       name: 'dictionary-chunks:inline',
+      apply: 'build',
       applyToEnvironment: (environment) => environment.name === 'ssr',
-      transform: (code) =>
-        code.includes(token) ?
-          {
-            code: code.replaceAll(token, () => JSON.stringify(urls)),
-            map: null,
-          }
-        : undefined,
+      transform: (code) => {
+        if (!code.includes(token)) {
+          return null
+        }
+        // The client build runs first and names the chunks; without them
+        // every page would lose the preload with nothing failing.
+        if (urls.size === 0) {
+          throw new Error('the client build named no dictionary chunks')
+        }
+        return {
+          code: code.replaceAll(token, () =>
+            JSON.stringify(Object.fromEntries(urls)),
+          ),
+          map: null,
+        }
+      },
     },
   ]
 }
