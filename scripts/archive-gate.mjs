@@ -439,16 +439,23 @@ export function copyCanaries(copies, shared) {
 
 /**
  * The copy the client ships, in every locale: the shared dictionaries and the
- * privacy notice the legal page carries.
+ * privacy notice and legal copy the legal page carries.
  * @returns {Promise<Record<string, string>[]>} Each dictionary.
  */
 async function shippedCopy() {
-  const [{ enDictionary }, { itDictionary }, { PRIVACY }] = await Promise.all([
-    importArchive('i18n/dictionaries/en.ts'),
-    importArchive('i18n/dictionaries/it.ts'),
-    importArchive('i18n/dictionaries/privacy.ts'),
-  ])
-  return [enDictionary, itDictionary, ...Object.values(PRIVACY)]
+  const [{ enDictionary }, { itDictionary }, { LEGAL }, { PRIVACY }] =
+    await Promise.all([
+      importArchive('i18n/dictionaries/en.ts'),
+      importArchive('i18n/dictionaries/it.ts'),
+      importArchive('i18n/dictionaries/legal.ts'),
+      importArchive('i18n/dictionaries/privacy.ts'),
+    ])
+  return [
+    enDictionary,
+    itDictionary,
+    ...Object.values(LEGAL),
+    ...Object.values(PRIVACY),
+  ]
 }
 
 /**

@@ -180,45 +180,6 @@ export const itDictionary: Dictionary = {
   'legal.pageTitle': 'Note legali | Zero Spoiler',
   'legal.description':
     'Avviso sul progetto non ufficiale, contatti per i diritti, privacy e cookie, fonti e licenze.',
-  'legal.projectTitle': 'Un progetto non ufficiale',
-  'legal.unofficial':
-    'Zero Spoiler è un progetto amatoriale non ufficiale e senza scopo di lucro. Non è affiliato né approvato dai titolari dei diritti delle serie presenti nella wiki.',
-  'legal.contents': 'In questa pagina',
-  'legal.creditSource': 'Fonte ufficiale dei crediti: {series}',
-  'legal.contact': 'Richieste sui diritti e correzioni su GitHub',
-  'legal.contactHelp':
-    'Indica l’URL della pagina, il materiale interessato e la richiesta sui diritti o la correzione. Evita spoiler nel titolo. Le issue GitHub sono pubbliche e richiedono un account. Non inserire informazioni riservate.',
-
-  'credits.title': 'Fonti e licenze',
-  'credits.intro':
-    'Le fonti delle verifiche documentate e le licenze applicabili al progetto e alle fonti.',
-  'credits.licensesTitle': 'Licenze del progetto',
-  'credits.software':
-    'La licenza MIT copre il software e la documentazione tecnica originale, nei limiti dei diritti detenuti dai contributori. Gli avvisi esistenti restano validi.',
-  'credits.scopeNotice': 'Ambito della licenza e avvisi sui contenuti',
-  'credits.content':
-    'Testi delle voci, disegni e identità visiva sono esclusi dalla concessione MIT generale. Non viene assegnata una nuova licenza generale ai contenuti. Restano validi i diritti di terzi e le autorizzazioni esistenti.',
-  'credits.sourcesTitle': 'Condizioni delle fonti',
-  'credits.external':
-    'Le pagine esterne possono anticipare fatti successivi, anche nei titoli. Aprendo una fonte esci dalla protezione dagli spoiler di questa wiki.',
-  'credits.fandomTerms': 'Licenze e attribuzioni Fandom',
-  'credits.fandomTermsIt': 'Licenze Fandom in italiano',
-  'credits.wikipediaTerms': 'Condizioni d’uso di Wikipedia',
-  'credits.referencesTitle': 'Riferimenti documentati',
-  'credits.bookmark':
-    'Sono elencati solo i riferimenti a materiali visibili al tuo segnalibro. La licenza accanto a una fonte riguarda il suo testo, non l’intero archivio.',
-  'credits.empty':
-    'Al tuo segnalibro non sono ancora visibili riferimenti alle singole voci. Puoi leggere gli avvisi generali sulle fonti e sulle licenze qui sopra.',
-  'credits.episode': 'Episodio {episode}',
-  'credits.scope.dossier': 'Campi della scheda nel campione verificato',
-  'credits.scope.chronicle': 'Voce della storia nel campione verificato',
-  'credits.scope.title': 'Solo il titolo dell’opera',
-  'credits.scope.summary': 'Riassunto sostitutivo',
-  'credits.factCheck':
-    'Riferimento per il confronto o la verifica dei fatti documentati. Il processo di scrittura storico non è accertato: non si dichiarano testi indipendenti né nuove licenze sui contenuti.',
-  'credits.replacement':
-    'Entrambi i riassunti sono stati sostituiti con brevi testi basati su fatti verificati nella sinossi ufficiale. La sinossi non è stata tradotta per intero. Non viene assegnata una nuova licenza ai contenuti.',
-  'credits.noOpenLicense': 'Nessuna autorizzazione aperta accertata.',
 
   'footer.lead':
     'Una wiki di {series} che nasconde quello che viene dopo il tuo segnalibro.',

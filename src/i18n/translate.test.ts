@@ -5,6 +5,7 @@ import { COPIES } from '~/server/copy.server'
 
 import { enDictionary } from './dictionaries/en'
 import { itDictionary } from './dictionaries/it'
+import { LEGAL } from './dictionaries/legal'
 import { PRIVACY } from './dictionaries/privacy'
 import { SYNC_COPY } from './dictionaries/sync'
 import { type Locale, LOCALES } from './locales'
@@ -18,6 +19,7 @@ import type { CommonKey } from './types'
  */
 const ALL: [string, Record<Locale, Record<string, string>>][] = [
   ['shared', { en: enDictionary, it: itDictionary }],
+  ['legal', LEGAL],
   ['privacy', PRIVACY],
   ['sync', SYNC_COPY],
   ...Object.entries(COPIES),

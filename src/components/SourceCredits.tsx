@@ -2,7 +2,8 @@ import * as stylex from '@stylexjs/stylex'
 import type { ReactElement, ReactNode } from 'react'
 
 import { part, styles } from '~/components/LegalNotice.styles'
-import { onlyUnder, useLocale, useSeriesT, useT } from '~/i18n/LocaleContext'
+import { legalTranslator } from '~/i18n/dictionaries/legal'
+import { onlyUnder, useLocale, useSeriesT } from '~/i18n/LocaleContext'
 import { LocaleProvider } from '~/i18n/LocaleProvider'
 import type { SeriesCopy } from '~/i18n/types'
 import type {
@@ -37,7 +38,7 @@ export function SourceCredits({
 }: {
   series: SeriesCredits[]
 }): ReactElement {
-  const t = useT()
+  const t = legalTranslator(useLocale().locale)
   return (
     <section id="sources">
       <h2 {...stylex.props(styles.heading)}>{t('credits.title')}</h2>
@@ -91,6 +92,7 @@ function CreditEntry({
   licenses: SeriesSources['licenses']
 }): ReactElement {
   const t = useSeriesT()
+  const legal = legalTranslator(useLocale().locale)
   const onePiece = useSeriesT('one-piece')
   // A filler entry and the official synopsis are One Piece's: only its
   // sample files them, so their words are One Piece's.
@@ -103,17 +105,17 @@ function CreditEntry({
   const title =
     credit.episode === undefined ?
       credit.name
-    : `${credit.name} · ${t('credits.episode', { episode: credit.episode })}`
+    : `${credit.name} · ${legal('credits.episode', { episode: credit.episode })}`
   return (
     <li>
       <h4>{title}</h4>
       <p>
         {credit.scope === 'filler' ?
           filler()
-        : t(`credits.scope.${credit.scope}`)}
+        : legal(`credits.scope.${credit.scope}`)}
       </p>
       {credit.scope === 'summary' ?
-        <p>{t('credits.replacement')}</p>
+        <p>{legal('credits.replacement')}</p>
       : null}
       <ul {...stylex.props(styles.list)}>
         {credit.sources.map(({ kind, url }) => (
@@ -127,7 +129,7 @@ function CreditEntry({
               {label(kind)}
             </a>{' '}
             {kind === 'official' ?
-              t('credits.noOpenLicense')
+              legal('credits.noOpenLicense')
             : <a
                 href={licenses[kind][1]}
                 {...stylex.props(styles.link)}
@@ -143,7 +145,7 @@ function CreditEntry({
 }
 
 function LicenseNotices({ series }: { series: SeriesCredits[] }): ReactElement {
-  const t = useT()
+  const t = legalTranslator(useLocale().locale)
   return (
     <>
       <h3 {...part('credits-licenses')}>{t('credits.licensesTitle')}</h3>
