@@ -8220,8 +8220,8 @@ const kingsLanding2 = {
     character: 'bronn',
     type: { en: 'Sellsword', it: 'Mercenario' },
     summary: {
-      en: 'The sellsword he sends his squire to fetch, since he trusts no one the queen sends.',
-      it: 'Il mercenario che manda a chiamare dallo scudiero, perché non si fida di nessuno di quelli mandati dalla regina.',
+      en: 'The sellsword he asks his squire to bring to him.',
+      it: 'Il mercenario che chiede al suo scudiero di portargli.',
     },
   },
   tyrTywinHandShow: {
@@ -8565,16 +8565,16 @@ const kingsLanding2 = {
     character: 'tyrion-lannister',
     type: { en: 'The king’s uncle', it: 'Zio del re' },
     summary: {
-      en: 'The acting Hand, who clashes with Joffrey when the king has her beaten in front of the court.',
-      it: 'Il Primo Cavaliere in carica, che si scontra con Joffrey quando il re la fa picchiare davanti alla corte.',
+      en: 'The acting Hand, who steps in when Joffrey has her beaten in front of the court and offers to end her engagement. She keeps up her show of loyalty, and he is impressed.',
+      it: 'Il Primo Cavaliere in carica, che interviene quando Joffrey la fa picchiare davanti alla corte e le offre di sciogliere il fidanzamento. Lei mantiene la facciata di lealtà, e lui ne è colpito.',
     },
   },
   sanJoffreyShow: {
     character: 'joffrey-baratheon',
     type: { en: 'Betrothed', it: 'Promesso sposo' },
     summary: {
-      en: 'The king she is still to marry. After Robb’s victory he has her beaten in public.',
-      it: 'Il re che dovrà ancora sposare. Dopo la vittoria di Robb la fa picchiare in pubblico.',
+      en: 'The king she is still to marry. When Robb wins a great victory he has her stripped and beaten in front of the court.',
+      it: 'Il re che dovrà ancora sposare. Quando Robb ottiene una grande vittoria la fa spogliare e picchiare davanti alla corte.',
     },
   },
   sanJoffreyVoid: {
@@ -8597,8 +8597,8 @@ const kingsLanding2 = {
     character: 'dontos-hollard',
     type: { en: 'Would-be rescuer', it: 'Possibile salvatore' },
     summary: {
-      en: 'The fool who meets her in the godswood, tells her Cersei still means to keep her, and promises to get her out at Joffrey’s wedding.',
-      it: 'Il buffone che la incontra nel parco degli dei, le dice che Cersei vuole ancora tenerla e le promette di portarla via durante le nozze di Joffrey.',
+      en: 'The fool who meets her in the godswood and warns her that Cersei still means to keep her. He says they will escape during Joffrey’s wedding, in about a month.',
+      it: 'Il buffone che la incontra nel parco degli dei e la avverte che Cersei vuole ancora tenerla. Dice che fuggiranno durante le nozze di Joffrey, tra circa un mese.',
     },
   },
   sanJoffreyFreed: {
@@ -8839,6 +8839,139 @@ const kingsLanding2 = {
     summary: {
       en: 'Her mother, who did not want her sent away and stays behind in the city.',
       it: 'Sua madre, che non voleva mandarla via e resta in città.',
+    },
+  },
+  // Sansa, books
+  sanDontosPledge: {
+    character: 'dontos-hollard',
+    type: { en: 'Would-be rescuer', it: 'Possibile salvatore' },
+    summary: {
+      en: 'The drunken fool who meets her in the godswood and swears to send her home. She calls him her Florian, though escape will take time and coin.',
+      it: 'Il buffone ubriaco che la incontra nel parco degli dei e giura di rimandarla a casa. Lei lo chiama il suo Florian, anche se la fuga richiederà tempo e denaro.',
+    },
+  },
+  sanSandorGodswood: {
+    character: 'sandor-clegane',
+    type: { en: 'The Hound', it: 'Il Mastino' },
+    summary: {
+      en: 'Catches her on the steps at night, drunk, and walks her back to her chambers. He mocks her songs of knights and says he will have a song from her one day.',
+      it: 'La afferra sui gradini di notte, ubriaco, e la riaccompagna nelle sue stanze. Si fa beffe delle sue canzoni di cavalieri e dice che prima o poi pretenderà una canzone da lei.',
+    },
+  },
+  sanTyrionProtect: {
+    character: 'tyrion-lannister',
+    type: { en: 'The king’s uncle', it: 'Zio del re' },
+    summary: {
+      en: 'Stops Boros’s blows, has her taken to the Tower of the Hand to be tended, and next morning offers her his protection. She refuses.',
+      it: 'Ferma i colpi di Boros, la fa portare nella Torre del Primo Cavaliere per farla curare e la mattina dopo le offre la sua protezione. Lei rifiuta.',
+    },
+  },
+  sanBorosBeat: {
+    character: 'boros-blount',
+    type: { en: 'Kingsguard knight', it: 'Cavaliere della Guardia reale' },
+    summary: {
+      en: 'The Kingsguard knight who beats her on Joffrey’s orders to pay for Robb’s latest victory.',
+      it: 'Il cavaliere della Guardia reale che la picchia per ordine di Joffrey, a pagare l’ultima vittoria di Robb.',
+    },
+  },
+  sanJoffreyBeat: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Betrothed', it: 'Promesso sposo' },
+    summary: {
+      en: 'The king she is still to marry. He calls her before him to answer for Robb’s latest victory.',
+      it: 'Il re che dovrà ancora sposare. La convoca davanti a sé perché risponda dell’ultima vittoria di Robb.',
+    },
+  },
+  // Sansa, show
+  sanSandorRescue: {
+    character: 'sandor-clegane',
+    type: { en: 'Her rescuer', it: 'Chi l’ha salvata' },
+    summary: {
+      en: 'The Hound, who pulls her out of the riot when men run her down.',
+      it: 'Il Mastino, che la tira fuori dalla rivolta quando degli uomini la inseguono.',
+    },
+  },
+  sanShaeConfides: {
+    character: 'shae',
+    type: { en: 'Handmaiden', it: 'Ancella' },
+    summary: {
+      en: 'Treats her injuries after the riot. Sansa says she hates Joffrey, and Shae warns her to trust no one.',
+      it: 'Le cura le ferite dopo la rivolta. Sansa dice di odiare Joffrey, e Shae la avverte di non fidarsi di nessuno.',
+    },
+  },
+  sanJoffreyRiot: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Betrothed', it: 'Promesso sposo' },
+    summary: {
+      en: 'The king she is still to marry. She stands up to him when he mocks Tommen, and the crowd’s anger at him leaves her alone in the riot.',
+      it: 'Il re che dovrà ancora sposare. Gli tiene testa quando prende in giro Tommen, e la rabbia della folla contro di lui la lascia sola nella rivolta.',
+    },
+  },
+  // Tyrion, Mandon
+  tyrPodSaves: {
+    character: 'podrick-payne',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'His squire, who saves his life in the fighting at the chain.',
+      it: 'Il suo scudiero, che gli salva la vita negli scontri alla catena.',
+    },
+  },
+  tyrMandonAttack: {
+    character: 'mandon-moore',
+    type: { en: 'Kingsguard knight', it: 'Cavaliere della Guardia reale' },
+    summary: {
+      en: 'The Kingsguard knight who tries to kill him in the middle of the battle.',
+      it: 'Il cavaliere della Guardia reale che tenta di ucciderlo nel mezzo della battaglia.',
+    },
+  },
+  // Joffrey
+  jofSansaShow: {
+    character: 'sansa-stark',
+    type: { en: 'Betrothal set aside', it: 'Fidanzamento sciolto' },
+    summary: {
+      en: 'His betrothed, whom he sets aside at Cersei’s suggestion because of her family’s treachery.',
+      it: 'La sua promessa sposa, che mette da parte su suggerimento di Cersei per il tradimento della sua famiglia.',
+    },
+  },
+  jofMargaeryShow: {
+    character: 'margaery-tyrell',
+    type: { en: 'Bride to be', it: 'Futura sposa' },
+    summary: {
+      en: 'Margaery Tyrell, whose hand her brother asks as his reward. Joffrey agrees to wed her.',
+      it: 'Margaery Tyrell, la cui mano suo fratello chiede come ricompensa. Joffrey accetta di sposarla.',
+    },
+  },
+  jofCerseiShow: {
+    character: 'cersei-lannister',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who suggests he set Sansa aside and take the Tyrell girl.',
+      it: 'Sua madre, che gli suggerisce di mettere da parte Sansa e prendere la ragazza Tyrell.',
+    },
+  },
+  jofMargaeryProposed: {
+    character: 'margaery-tyrell',
+    type: { en: 'Bride proposed', it: 'Sposa proposta' },
+    summary: {
+      en: 'The Tyrell girl Tyrion proposes he marry, to win her house over after Renly’s death.',
+      it: 'La ragazza Tyrell che Tyrion propone che sposi, per conquistare la sua casa dopo la morte di Renly.',
+    },
+  },
+  jofTyrionMatch: {
+    character: 'tyrion-lannister',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, the Hand, who proposes the Tyrell match in the small council. Cersei fears Joffrey will not like it, then agrees.',
+      it: 'Suo zio, il Primo Cavaliere, che propone nel Concilio ristretto le nozze con i Tyrell. Cersei teme che a Joffrey non piacerà, poi accetta.',
+    },
+  },
+  // Petyr
+  petTyrionTyrells: {
+    character: 'tyrion-lannister',
+    type: { en: 'Hand he serves', it: 'Primo Cavaliere che serve' },
+    summary: {
+      en: 'The Hand, who wants the Tyrells for Joffrey. Neither he nor Cersei will leave the city to treat with them, so Petyr volunteers, expecting a reward.',
+      it: 'Il Primo Cavaliere, che vuole i Tyrell dalla parte di Joffrey. Né lui né Cersei vogliono lasciare la città per trattare, così Petyr si offre, aspettandosi una ricompensa.',
     },
   },
 } satisfies Record<string, Relationship>
@@ -10384,7 +10517,8 @@ export const season1Relationships = {
       ],
     },
     // Stage 2 (#1479): season 2 and A Clash of Kings. Sansa I (chapter 76)
-    // is the books' name-day tourney.
+    // is the books' name-day tourney; Shae is given to her in episode 13,
+    // and the beating and Tyrion's offer are "Garden of Bones" (14).
     {
       episode: 11,
       chapter: 76,
@@ -10401,10 +10535,45 @@ export const season1Relationships = {
       episode: 13,
       chapter: 99,
       source: 'episode',
+      value: [kingsLanding2.sanShae],
+    },
+    {
+      episode: 14,
+      chapter: 103,
+      source: 'episode',
       value: [
-        kingsLanding2.sanShae,
         kingsLanding2.sanTyrionShow,
         kingsLanding2.sanJoffreyShow,
+        kingsLanding2.sanShae,
+      ],
+    },
+    // Sansa II: Dontos pledges to send her home.
+    {
+      episode: 14,
+      chapter: 92,
+      source: 'chapter',
+      value: [kingsLanding2.sanDontosPledge, kingsLanding2.sanSandorGodswood],
+    },
+    // Sansa III: Tyrion stops the beating.
+    {
+      episode: 14,
+      chapter: 106,
+      source: 'chapter',
+      value: [
+        kingsLanding2.sanTyrionProtect,
+        kingsLanding2.sanBorosBeat,
+        kingsLanding2.sanJoffreyBeat,
+      ],
+    },
+    // The riot, "The Old Gods and the New".
+    {
+      episode: 16,
+      chapter: 115,
+      source: 'episode',
+      value: [
+        kingsLanding2.sanSandorRescue,
+        kingsLanding2.sanShaeConfides,
+        kingsLanding2.sanJoffreyRiot,
       ],
     },
     // The court of rewards: Sansa VIII, and "Valar Morghulis".
@@ -11743,6 +11912,12 @@ export const season1Relationships = {
         kingsLanding2.tyrBronnGuard,
       ],
     },
+    // The Blackwater: his squire saves him (Tyrion XIV, chapter 135).
+    {
+      episode: 19,
+      chapter: 135,
+      value: [kingsLanding2.tyrPodSaves, kingsLanding2.tyrMandonAttack],
+    },
     // "Valar Morghulis": his father takes the Hand's place.
     {
       episode: 20,
@@ -12012,6 +12187,12 @@ export const season1Relationships = {
       ],
     },
     {
+      episode: 14,
+      chapter: 110,
+      source: 'chapter',
+      value: [kingsLanding2.jofMargaeryProposed, kingsLanding2.jofTyrionMatch],
+    },
+    {
       episode: 20,
       chapter: 139,
       source: 'chapter',
@@ -12020,6 +12201,16 @@ export const season1Relationships = {
         kingsLanding2.jofMargaery,
         kingsLanding2.jofGarlan,
         kingsLanding2.jofHallyne,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 139,
+      source: 'episode',
+      value: [
+        kingsLanding2.jofSansaShow,
+        kingsLanding2.jofMargaeryShow,
+        kingsLanding2.jofCerseiShow,
       ],
     },
   ],
@@ -12419,6 +12610,12 @@ export const season1Relationships = {
       chapter: 91,
       source: 'chapter',
       value: [kingsLanding2.petTyrionHarrenhal, kingsLanding2.petLysaScheme],
+    },
+    {
+      episode: 14,
+      chapter: 110,
+      source: 'chapter',
+      value: [kingsLanding2.petTyrionTyrells],
     },
     {
       episode: 20,

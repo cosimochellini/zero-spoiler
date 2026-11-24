@@ -1371,5 +1371,19 @@ describe.each(LOCALES)(
       expect(people('sansa-stark', ch(139))).toContain('dontos-hollard')
       expect(people('sansa-stark', ch(139))).not.toContain('petyr-baelish')
     })
+
+    it('opens Sansa’s beating and rescue cards at episodes 14 and 16 and Joffrey’s match at 20', () => {
+      expect(people('sansa-stark', ep(13))).toContain('shae')
+      expect(people('sansa-stark', ep(13))).not.toContain('tyrion-lannister')
+      expect(people('sansa-stark', ep(14))).toContain('tyrion-lannister')
+      expect(people('sansa-stark', ch(105))).not.toContain('tyrion-lannister')
+      expect(people('sansa-stark', ch(106))).toContain('tyrion-lannister')
+      expect(people('sansa-stark', ep(15))).not.toContain('sandor-clegane')
+      expect(people('sansa-stark', ep(16))).toContain('sandor-clegane')
+      expect(people('joffrey-baratheon', ep(19))).not.toContain(
+        'margaery-tyrell',
+      )
+      expect(people('joffrey-baratheon', ep(20))).toContain('margaery-tyrell')
+    })
   },
 )

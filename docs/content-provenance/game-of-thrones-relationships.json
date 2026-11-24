@@ -742,7 +742,9 @@
         "iaf-en-Sansa_I_-_A_Game_of_Thrones-24668.json",
         "got-en-The_North_Remembers-740163.json",
         "got-en-What_Is_Dead_May_Never_Die-740166.json",
-        "got-en-Valar_Morghulis-740176.json"
+        "got-en-Valar_Morghulis-740176.json",
+        "got-en-Garden_of_Bones_(episode)-729784.json",
+        "got-en-The_Old_Gods_and_the_New-740283.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -753,7 +755,12 @@
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_67",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_2",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_18",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_32",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_52",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_57",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_60"
         ]
       }
     },
@@ -1282,13 +1289,16 @@
         "iaf-en-Tyrion_Lannister-27362.json",
         "iaf-en-Vardis_Egen-25295.json",
         "got-en-The_Night_Lands-740164.json",
-        "got-en-Valar_Morghulis-740176.json"
+        "got-en-Valar_Morghulis-740176.json",
+        "got-en-Blackwater-729787.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_8",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_67"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_67",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_15",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_61"
         ]
       }
     },
@@ -1314,12 +1324,14 @@
         "iaf-en-Eddard_Stark-26314.json",
         "iaf-en-Joffrey_I_Baratheon-27368.json",
         "iaf-en-Sandor_Clegane-27045.json",
-        "got-en-Garden_of_Bones-740167.json"
+        "got-en-Garden_of_Bones-740167.json",
+        "got-en-Valar_Morghulis-740176.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_36"
         ]
       }
     },
@@ -1493,7 +1505,8 @@
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_17",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65",
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_36"
         ]
       }
     },

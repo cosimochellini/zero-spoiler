@@ -645,8 +645,8 @@ const kingsLanding = {
     character: 'tommen-baratheon',
     type: { en: 'Prince', it: 'Principe' },
     summary: {
-      en: 'The younger prince, taken out of the city and brought back by his men.',
-      it: 'Il principe più giovane, portato fuori città e riportato indietro dai suoi uomini.',
+      en: 'The younger prince, whom the queen sent to Rosby to hide. On Tyrion’s orders Jacelyn’s men seize the party and keep him safe there.',
+      it: 'Il principe più giovane, che la regina aveva mandato a nascondere a Rosby. Per ordine di Tyrion gli uomini di Jacelyn prendono il gruppo e lo tengono al sicuro lì.',
     },
   },
 

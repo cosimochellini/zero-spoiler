@@ -152,19 +152,25 @@ The seven filed characters have cards from their own gates, and fourteen stage-1
 characters step: Tyrion, Cersei, Joffrey, Myrcella, Sansa, Bronn, Shae, Ros,
 Petyr Baelish, Varys, Pycelle, Sandor Clegane, Janos Slynt and Lancel Lannister.
 The book side was read on A Wiki of Ice and Fire's chapter pages through
-Firecrawl (chapters 2, 3, 8, 17, 18, 20, 25, 29, 41, 44, 49, 54, 59, 62, 65 and
-67 of _A Clash of Kings_, site chapter 74 + N); the show side on the Game of
-Thrones Wiki's character and episode pages. Podrick, Meryn Trant, Boros Blount,
-Balon Swann and Dontos Hollard keep their last selection.
+Firecrawl (chapters 2, 3, 8, 15, 17, 18, 20, 25, 29, 32, 36, 41, 44, 49, 52, 54,
+57, 59, 60, 61, 62, 65 and 67 of _A Clash of Kings_, site chapter 74 + N); the
+show side on the Game of Thrones Wiki's character and episode pages. Podrick,
+Meryn Trant, Boros Blount, Balon Swann and Dontos Hollard keep their last
+selection.
 
 - Daisy, Ros and Joffrey's show cards rest on the Game of Thrones Wiki's Daisy
   page (episodes 11, 13 and 14); the books have no Daisy.
 - Cersei's and Lancel's books cards leave out the affair: the books confirm it
   later, and the archive's test keeps it to the show.
-- Not read, so the card is left out or kept to what the chapters above tell:
-  Tyrion III (89, Tyrion's first council as Hand), Sansa II (92), Tyrion VIII
-  (110), Sansa III–VI (106, 126, 131, 134), Tyrion XIV (135). Lollys's riot
-  (115) and Lollys's place at the holdfast (131) are not cards.
+- Read after review round 1, each holding a turning point or none: Tyrion III
+  (89), no turning point (the council on Stannis's letters); Sansa II (92),
+  Dontos pledges to send her home and Sandor walks her back (Sansa step); Tyrion
+  VIII (110), Tyrion proposes the Tyrell match and Petyr volunteers to carry it
+  (Joffrey and Petyr steps); Sansa III (106), Tyrion stops the beating (Sansa
+  step); Sansa IV (126), no turning point beyond 92 and 106; Sansa V and VI
+  (131, 134), no turning point (the sept and the queen's ballroom); Tyrion XIV
+  (135), Podrick saves him (Tyrion step, in both media). Lollys's riot (115) and
+  her place at the holdfast (131) are not cards.
 - Hallyne's, Osmund's and Garlan's book pins are unchanged (94, 123, 139).
 
 ## Stannis, Renly and the stormlands (#1464)
