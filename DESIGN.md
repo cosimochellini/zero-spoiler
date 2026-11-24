@@ -278,10 +278,12 @@ the rest behind a count and an Expand button; from 40rem the wall is whole, and
 Back and Forward bring each fold back as it was left (#1381).
 
 Breakpoints are `min-width` queries in rem, written where they are used; there
-is no named scale. Two exceptions: `max-width: 39.99rem` for the bottom sheets,
-and one `min-height: 32rem` paired with 40rem for a listing's controls.
-`.impeccable/design.json` lists each with its use. 40rem is the line between a
-phone and a wider window.
+is no named scale. Three exceptions: `max-width: 39.99rem` for the bottom
+sheets, one `min-height: 32rem` paired with 40rem for a listing's controls, and
+the site bar's `max-width` queries (`BAR` in `tokens.stylex.ts`), where large
+text on a phone sets the wordmark on a row of its own and `pin.bar` grows with
+it (#1558). `.impeccable/design.json` lists each with its use. 40rem is the line
+between a phone and a wider window.
 
 ## Elevation & Depth
 
