@@ -161,6 +161,18 @@ export async function settle(): Promise<void> {
   }
 }
 
+/**
+ * Takes one step inside an awaited `act`. A `use()` that first suspends on a
+ * promise still pending, inside the synchronous `act` Testing Library wraps a
+ * render or a press in, never resumes under jsdom; a step that opens such a
+ * boundary (a fetch in flight, not a loader slot) goes through here.
+ */
+export async function awaited(step: () => unknown): Promise<void> {
+  await act(async () => {
+    await step()
+  })
+}
+
 export interface RouteRenderOptions extends RenderOptions {
   /** The route pattern `path` should match, e.g. `/$locale/characters/$id`. */
   pattern: string

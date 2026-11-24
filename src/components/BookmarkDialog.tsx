@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
-import { type ReactElement, Suspense, useEffect, useId, useState } from 'react'
+import { type ReactElement, Suspense, use, useId, useState } from 'react'
 
 import { styles } from '~/components/BookmarkDialog.styles'
 import type { BookmarkFormProps } from '~/components/BookmarkForm'
@@ -79,64 +79,47 @@ export function BookmarkDialog({ onClose }: BookmarkDialogProps): ReactElement {
  * The form, or its skeleton while its code is on the way, or a way to ask
  * again when the fetch failed.
  */
-function FormSlot({
-  devices,
-  ledeId,
-  onDevices,
-  onDone,
-  titleId,
-}: BookmarkFormProps): ReactElement {
-  type FormStatus = 'failed' | 'loading' | 'ready'
-
-  const t = useT()
-  const [status, setStatus] = useState<FormStatus>(() =>
-    formHasLanded() ? 'ready' : 'loading',
+function FormSlot(props: BookmarkFormProps): ReactElement {
+  // The fetch in flight, `null` once the code is here. Held above the
+  // boundary, so it survives the suspending below. It never rejects, so Retry
+  // only has to swap it for a fresh one.
+  const [attempt, setAttempt] = useState((): null | Promise<boolean> =>
+    formHasLanded() ? null : preloadBookmarkForm(),
   )
-
-  useEffect(() => {
-    if (status !== 'loading') {
-      return
-    }
-
-    let live = true
-    const settle = async (): Promise<void> => {
-      const landed = await preloadBookmarkForm()
-      if (live) {
-        setStatus(landed ? 'ready' : 'failed')
-      }
-    }
-    void settle()
-
-    return () => {
-      live = false
-    }
-  }, [status])
-
-  if (status === 'failed') {
-    return (
-      <LoadFailed
-        onRetry={() => {
-          setStatus('loading')
-        }}
-        t={t}
-      />
-    )
-  }
-  if (status === 'loading') {
-    return <BookmarkSkeleton />
-  }
 
   return (
     <Suspense fallback={<BookmarkSkeleton />}>
-      <LazyBookmarkForm
-        devices={devices}
-        ledeId={ledeId}
-        onDevices={onDevices}
-        onDone={onDone}
-        titleId={titleId}
+      <Settled
+        {...props}
+        attempt={attempt}
+        onRetry={() => {
+          setAttempt(preloadBookmarkForm())
+        }}
       />
     </Suspense>
   )
+}
+
+/**
+ * Suspends until the fetch has settled, then the form once its code is here,
+ * or the failure with its Retry.
+ */
+function Settled({
+  attempt,
+  onRetry,
+  ...form
+}: BookmarkFormProps & {
+  attempt: null | Promise<boolean>
+  onRetry: () => void
+}): ReactElement {
+  const t = useT()
+
+  return attempt === null || use(attempt) ?
+      <LazyBookmarkForm {...form} />
+    : <LoadFailed
+        onRetry={onRetry}
+        t={t}
+      />
 }
 
 /**
