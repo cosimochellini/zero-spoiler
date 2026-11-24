@@ -26,20 +26,17 @@ const dictionaryChunks = (): Plugin[] => {
       name: 'dictionary-chunks:name',
       applyToEnvironment: (environment) => environment.name === 'client',
       generateBundle: (_options, bundle) => {
-        for (const chunk of Object.values(bundle)) {
+        const chunks = Object.values(bundle).flatMap((output) =>
+          output.type === 'chunk' ? [output] : [],
+        )
+        for (const chunk of chunks) {
+          // Only the shared copy: a series' own `en.ts` sits a folder deeper.
           if (
-            chunk.type !== 'chunk'
-            || chunk.facadeModuleId === null
-            || !path
-              .dirname(chunk.facadeModuleId)
-              .endsWith('/i18n/dictionaries')
+            chunk.facadeModuleId !== null
+            && path.dirname(chunk.facadeModuleId).endsWith('/i18n/dictionaries')
           ) {
-            continue
+            urls.set(chunk.name, `/${chunk.fileName}`)
           }
-          if (urls.has(chunk.name)) {
-            throw new Error(`two dictionary chunks are named ${chunk.name}`)
-          }
-          urls.set(chunk.name, `/${chunk.fileName}`)
         }
       },
     },
