@@ -89,7 +89,7 @@ function FormSlot(props: BookmarkFormProps): ReactElement {
 
   return (
     <Suspense fallback={<BookmarkSkeleton />}>
-      <Landed
+      <Settled
         {...props}
         attempt={attempt}
         onRetry={() => {
@@ -100,8 +100,11 @@ function FormSlot(props: BookmarkFormProps): ReactElement {
   )
 }
 
-/** The form once its code is here; suspends until the fetch has settled. */
-function Landed({
+/**
+ * Suspends until the fetch has settled, then the form once its code is here,
+ * or the failure with its Retry.
+ */
+function Settled({
   attempt,
   onRetry,
   ...form
