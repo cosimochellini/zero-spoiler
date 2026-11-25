@@ -46,9 +46,25 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
     'daenerys-targaryen',
   ],
   // The third stage's cast row (#1626): its filing children (#1634–#1641)
-  // add each lead as they file it. Arya, the Brotherhood and the Hound
-  // (#1636): the outlaws' captive, their leader and the Hound.
-  'season-3': ['arya-stark', 'beric-dondarrion', 'sandor-clegane'],
+  // add each lead as they file it. Essos (#1639): Daenerys. King's Landing
+  // (#1634): the master of coin, his bride and the Tyrells' grandmother. Robb's
+  // war and the Riverlands (#1635): the King in the North and his mother. The
+  // Wall and beyond (#1638): Jon Snow and the King-Beyond-the-Wall. Arya, the
+  // Brotherhood and the Hound (#1636): the outlaws' captive, their leader and
+  // the Hound.
+  'season-3': [
+    'daenerys-targaryen',
+    'tyrion-lannister',
+    'sansa-stark',
+    'olenna-tyrell',
+    'robb-stark',
+    'catelyn-stark',
+    'jon-snow',
+    'mance-rayder',
+    'arya-stark',
+    'beric-dondarrion',
+    'sandor-clegane',
+  ],
 }
 
 const { core } = sagaArchive({

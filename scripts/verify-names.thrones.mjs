@@ -11,7 +11,7 @@ const CHARACTERS = 'Personaggi delle Cronache del ghiaccio e del fuoco'
  * @param {string} section The section's heading.
  * @returns {string} The page and the section, as `Page#Section`.
  */
-function characters(section) {
+export function characters(section) {
   return `${CHARACTERS}#${section}`
 }
 
@@ -23,7 +23,7 @@ const STARK_SERVANTS = 'Casa Stark#Servitori di Casa Stark'
  * @param {string} section The section's heading.
  * @returns {string} The page and the section, as `Page#Section`.
  */
-function watch(section) {
+export function watch(section) {
   return `Guardiani della notte#${section}`
 }
 
@@ -31,14 +31,10 @@ function watch(section) {
 const DAENERYS = 'Daenerys Targaryen'
 
 /** The list's TV cast table, which names its rows only in the table. */
-const OTHERS = characters('Altri personaggi')
+export const OTHERS = characters('Altri personaggi')
 
 /** Barristan Selmy's section, which also names Belwas and Arstan in its prose. */
 const SELMY = characters('Barristan Selmy')
-
-/** The Brotherhood Without Banners' section of the world page, members in its prose. */
-const BROTHERHOOD =
-  'Mondo delle Cronache del ghiaccio e del fuoco#Fratellanza Senza Vessilli'
 
 /**
  * Each character's Italian Wikipedia page, as `Page#Section` for a section.
@@ -245,11 +241,6 @@ export const THRONES_ITALIAN_TITLES = {
   'strong-belwas': SELMY,
   // The owner's rulings of 2026-11-22: Arstan Barbabianca, named in prose.
   'arstan-whitebeard': SELMY,
-  // #1636, the third stage's Brotherhood cast, named in the prose of the
-  // Brotherhood's section of the world page.
-  'anguy': BROTHERHOOD,
-  'lem': BROTHERHOOD,
-  'edric-dayne': BROTHERHOOD,
 }
 
 /**
@@ -370,17 +361,4 @@ export const THRONES_NAMES_KEPT = {
   'strong-belwas': 'Belwas il Forte',
   // Named in the same section's prose, with no heading of his own.
   'arstan-whitebeard': 'Arstan Barbabianca',
-  // #1636. Anguy, Lem and Edric Dayne are named in the prose of the
-  // Brotherhood's section, with no heading of their own. Italian Wikipedia
-  // gives Tom only as "Tom Settecorde" and names none of the others; these
-  // are the Italian Game of Thrones Wiki's forms, kept until the Mondadori
-  // ones are checked.
-  'anguy': 'Anguy',
-  'lem': 'Lem',
-  'edric-dayne': 'Edric Dayne',
-  'tom-of-sevenstreams': 'Tom di Settecorrenti',
-  'jack-be-lucky': 'Jack Fortunello',
-  'greenbeard': 'Barbaverde',
-  'mad-huntsman': 'Cacciatore Pazzo',
-  'ghost-of-high-heart': 'Fantasma di Cuore Alto',
 }

@@ -15,6 +15,94 @@ if (series === undefined) {
 }
 const { archive } = series
 
+/**
+ * Each season-3 King's Landing record's gate in each medium, as filed
+ * (#1634); `source` for one medium, whose other number only orders the
+ * record. Oberyn and Ellaria keep the show's later gates, in season 4
+ * (#852).
+ */
+const RECORDS: {
+  chapter: number
+  episode: number
+  id: string
+  source?: 'chapter' | 'episode'
+}[] = [
+  { id: 'olenna-tyrell', episode: 22, chapter: 150 },
+  { id: 'megga-tyrell', episode: 22, chapter: 150, source: 'chapter' },
+  { id: 'alla-tyrell', episode: 22, chapter: 150, source: 'chapter' },
+  { id: 'elinor-tyrell', episode: 22, chapter: 150, source: 'chapter' },
+  { id: 'oberyn-martell', episode: 31, chapter: 182 },
+  { id: 'ellaria-sand', episode: 32, chapter: 182 },
+]
+
+/**
+ * Every role and affiliation step the third stage's King's Landing group
+ * adds to a character an earlier stage filed, by its English text; `source`
+ * for a step one medium alone tells.
+ */
+const STEPS: {
+  chapter: number
+  en: string
+  episode: number
+  id: string
+  // A step back to a text the other medium shows all along, so only its
+  // timing is one medium's.
+  restores?: true
+  source?: 'chapter' | 'episode'
+}[] = [
+  { id: 'tyrion-lannister', en: 'Master of coin', episode: 23, chapter: 163 },
+  {
+    id: 'petyr-baelish',
+    en: 'Lord of Harrenhal and suitor to Lysa Arryn',
+    episode: 23,
+    chapter: 163,
+  },
+  { id: 'bronn', en: 'Knight in Tyrion’s pay', episode: 21, chapter: 148 },
+  {
+    id: 'sansa-stark',
+    en: 'Tyrion Lannister’s wife',
+    episode: 28,
+    chapter: 172,
+  },
+  {
+    id: 'boros-blount',
+    en: 'Dismissed from the Kingsguard',
+    episode: 19,
+    chapter: 123,
+    source: 'chapter',
+  },
+  {
+    id: 'boros-blount',
+    en: 'House Blount',
+    episode: 19,
+    chapter: 123,
+    source: 'chapter',
+  },
+  {
+    id: 'boros-blount',
+    en: 'Knight of the Kingsguard',
+    episode: 21,
+    chapter: 156,
+    restores: true,
+    source: 'chapter',
+  },
+  {
+    id: 'boros-blount',
+    en: 'Kingsguard',
+    episode: 21,
+    chapter: 156,
+    restores: true,
+    source: 'chapter',
+  },
+  {
+    id: 'addam-marbrand',
+    en: 'Commander of the City Watch',
+    episode: 21,
+    chapter: 148,
+    source: 'chapter',
+  },
+]
+
 type Unit = 'chapter' | 'episode'
 const UNITS: Unit[] = ['episode', 'chapter']
 
@@ -36,6 +124,18 @@ function otherAtTheEnd(source: Unit): Reader {
     : reader('episode', archive.series.episodeCeiling)
 }
 
+/** Each record in each locale and in each unit that tells it, at its gate. */
+const GATES = RECORDS.flatMap((record) =>
+  LOCALES.flatMap((locale) =>
+    UNITS.filter((unit) => (record.source ?? unit) === unit).map((unit) => ({
+      id: record.id,
+      gate: unit === 'chapter' ? record.chapter : record.episode,
+      locale,
+      unit,
+    })),
+  ),
+)
+
 const byText = (a: string, b: string): number => a.localeCompare(b)
 
 function opened(id: string, view: Reader): boolean {
@@ -51,228 +151,50 @@ function character(id: string): Entity {
   return record
 }
 
-/** Each unit an entry is told in: both, or its `source` alone. */
-function unitsOf(entry: { source?: Unit }): Unit[] {
-  return UNITS.filter((unit) => (entry.source ?? unit) === unit)
-}
-
-/**
- * Each season-3 record of Arya's group (#1636) at its gate in each medium,
- * as filed. Every one is the books' alone: its episode only orders it.
- */
-const BROTHERHOOD_RECORDS: {
-  chapter: number
-  episode: number
-  id: string
-  source?: Unit
-}[] = [
-  { id: 'anguy', episode: 22, chapter: 157, source: 'chapter' },
-  { id: 'tom-of-sevenstreams', episode: 22, chapter: 157, source: 'chapter' },
-  { id: 'lem', episode: 22, chapter: 157, source: 'chapter' },
-  { id: 'jack-be-lucky', episode: 22, chapter: 161, source: 'chapter' },
-  { id: 'greenbeard', episode: 22, chapter: 166, source: 'chapter' },
-  { id: 'mad-huntsman', episode: 24, chapter: 173, source: 'chapter' },
-  { id: 'edric-dayne', episode: 27, chapter: 187, source: 'chapter' },
-  { id: 'ghost-of-high-heart', episode: 27, chapter: 187, source: 'chapter' },
-]
-
-/**
- * Every role and affiliation step the group adds to a character an earlier
- * stage filed, by its English text; `source` for a step one medium alone
- * tells.
- */
-const BROTHERHOOD_STEPS: {
-  chapter: number
-  en: string
-  episode: number
-  id: string
-  source?: Unit
-}[] = [
-  {
-    id: 'gendry',
-    en: 'Smith of the Brotherhood Without Banners',
-    episode: 25,
-    chapter: 183,
-  },
-  {
-    id: 'gendry',
-    en: 'Brotherhood Without Banners',
-    episode: 25,
-    chapter: 183,
-  },
-  {
-    id: 'gendry',
-    en: 'No allegiance',
-    episode: 26,
-    chapter: 196,
-    source: 'episode',
-  },
-  { id: 'hot-pie', en: 'Baker at an inn', episode: 23, chapter: 161 },
-  { id: 'hot-pie', en: 'An inn in the riverlands', episode: 23, chapter: 161 },
-  {
-    id: 'beric-dondarrion',
-    en: 'Leader of the Brotherhood Without Banners',
-    episode: 24,
-    chapter: 161,
-  },
-  {
-    id: 'beric-dondarrion',
-    en: 'Brotherhood Without Banners',
-    episode: 24,
-    chapter: 161,
-  },
-  {
-    id: 'thoros-of-myr',
-    en: 'Brotherhood Without Banners',
-    episode: 23,
-    chapter: 166,
-  },
-  {
-    id: 'mad-huntsman',
-    en: 'Brotherhood Without Banners',
-    episode: 25,
-    chapter: 178,
-    source: 'chapter',
-  },
-  {
-    id: 'gendry',
-    en: 'Melisandre’s prisoner',
-    episode: 26,
-    chapter: 196,
-    source: 'episode',
-  },
-  {
-    id: 'gendry',
-    en: 'Escaped from Dragonstone',
-    episode: 30,
-    chapter: 196,
-    source: 'episode',
-  },
-  {
-    id: 'harwin',
-    en: 'Brotherhood Without Banners',
-    episode: 22,
-    chapter: 161,
-    source: 'chapter',
-  },
-]
-
-/**
- * Every status step the group adds to a character an earlier stage filed,
- * with the status just before it.
- */
-const BROTHERHOOD_STATUSES: {
-  before: string
-  chapter: number
-  episode: number
-  id: string
-  source?: Unit
-  value: string
-}[] = [
-  {
-    id: 'arya-stark',
-    value: 'captured',
-    before: 'alive',
-    episode: 22,
-    chapter: 157,
-    source: 'chapter',
-  },
-  {
-    id: 'arya-stark',
-    value: 'captured',
-    before: 'alive',
-    episode: 27,
-    chapter: 187,
-    source: 'episode',
-  },
-  {
-    id: 'sandor-clegane',
-    value: 'captured',
-    before: 'alive',
-    episode: 22,
-    chapter: 173,
-    source: 'episode',
-  },
-  {
-    id: 'sandor-clegane',
-    value: 'captured',
-    before: 'alive',
-    episode: 22,
-    chapter: 173,
-    source: 'chapter',
-  },
-  {
-    id: 'sandor-clegane',
-    value: 'alive',
-    before: 'captured',
-    episode: 25,
-    chapter: 183,
-  },
-  {
-    id: 'gendry',
-    value: 'captured',
-    before: 'alive',
-    episode: 26,
-    chapter: 196,
-    source: 'episode',
-  },
-  {
-    id: 'gendry',
-    value: 'alive',
-    before: 'captured',
-    episode: 30,
-    chapter: 196,
-    source: 'episode',
-  },
-]
-
-/** Each record in each locale and in each unit that tells it, at its gate. */
-const BROTHERHOOD_GATES = BROTHERHOOD_RECORDS.flatMap((record) =>
-  LOCALES.flatMap((locale) =>
-    unitsOf(record).map((unit) => ({
-      id: record.id,
-      gate: unit === 'chapter' ? record.chapter : record.episode,
-      locale,
-      unit,
-    })),
-  ),
-)
-
-describe('the third season’s Brotherhood cast', () => {
+describe('the third season’s King’s Landing cast', () => {
   it('files these records', () => {
     // Each cast group's test lists its own records; the season holds them
     // all.
     expect(season3.entries.map(({ id }) => id).toSorted(byText)).toStrictEqual(
-      expect.arrayContaining(
-        BROTHERHOOD_RECORDS.map(({ id }) => id).toSorted(byText),
-      ),
+      expect.arrayContaining(RECORDS.map(({ id }) => id).toSorted(byText)),
     )
   })
 
-  it.each(BROTHERHOOD_GATES)(
+  it.each(GATES)(
     'opens $id at its named scene by $unit in $locale',
     ({ id, gate, locale, unit }) => {
       expect(opened(id, reader(unit, gate, locale))).toBe(true)
     },
   )
 
-  it.each(BROTHERHOOD_GATES)(
+  it.each(GATES)(
     'keeps $id closed one $unit before it in $locale',
     ({ id, gate, locale, unit }) => {
       expect(opened(id, reader(unit, gate - 1, locale))).toBe(false)
     },
   )
 
-  it.each(BROTHERHOOD_RECORDS.filter(({ source }) => source !== undefined))(
+  it.each(RECORDS.filter(({ source }) => source !== undefined))(
     'never opens the one-medium $id to a reader of the other',
     ({ id, source = 'episode' }) => {
       expect(opened(id, otherAtTheEnd(source))).toBe(false)
     },
   )
 
+  it('keeps Oberyn and Ellaria from a viewer at the end of season 3', () => {
+    // The book reader meets them at chapter 182; the show only in season 4.
+    expect(opened('oberyn-martell', reader('episode', 30))).toBe(false)
+    expect(opened('ellaria-sand', reader('episode', 31))).toBe(false)
+  })
+})
+
+describe('the new records’ status', () => {
   it.each(
-    BROTHERHOOD_RECORDS.flatMap((record) =>
-      unitsOf(record).map((unit) => ({ ...record, unit })),
+    RECORDS.flatMap((record) =>
+      UNITS.filter((unit) => (record.source ?? unit) === unit).map((unit) => ({
+        ...record,
+        unit,
+      })),
     ),
   )('$id is alive at its $unit gate', ({ id, episode, chapter, unit }) => {
     const gate = unit === 'chapter' ? chapter : episode
@@ -284,8 +206,11 @@ describe('the third season’s Brotherhood cast', () => {
 })
 
 describe.each(
-  BROTHERHOOD_STEPS.flatMap((step) =>
-    unitsOf(step).map((unit) => ({ ...step, unit })),
+  STEPS.flatMap((step) =>
+    UNITS.filter((unit) => (step.source ?? unit) === unit).map((unit) => ({
+      ...step,
+      unit,
+    })),
   ),
 )('$id: “$en” by $unit', ({ id, en, episode, chapter, unit }) => {
   // A page names a role or an affiliation as a whole string of its own.
@@ -302,9 +227,13 @@ describe.each(
   })
 })
 
-describe('the Brotherhood steps one medium alone tells', () => {
-  it.each(BROTHERHOOD_STEPS.filter(({ source }) => source !== undefined))(
-    'never shows $id “$en” to a reader of the other medium',
+describe('the steps one medium alone tells', () => {
+  it.each(
+    STEPS.filter(
+      ({ restores, source }) => source !== undefined && restores !== true,
+    ),
+  )(
+    'never shows “$en” to a reader of the other medium',
     ({ id, en, source = 'episode' }) => {
       const page = JSON.stringify(
         characterPage(id, otherAtTheEnd(source)) ?? null,
@@ -315,55 +244,25 @@ describe('the Brotherhood steps one medium alone tells', () => {
   )
 })
 
-describe.each(
-  BROTHERHOOD_STATUSES.flatMap((step) =>
-    unitsOf(step).map((unit) => ({ ...step, unit })),
-  ),
-)('$id: $value by $unit', ({ id, value, before, episode, chapter, unit }) => {
-  it('at its pin, not one before', () => {
-    const pin = unit === 'chapter' ? chapter : episode
-    const status = (count: number): unknown =>
-      archive.latestOf(reader(unit, count), character(id), 'status')
+describe('Boros Blount’s white cloak', () => {
+  it('stays on him for a viewer, who never sees him dismissed', () => {
+    const owner = character('boros-blount')
+    const viewer = otherAtTheEnd('chapter')
 
-    expect(status(pin - 1)).toBe(before)
-    expect(status(pin)).toBe(value)
-  })
-})
-
-describe('the statuses one medium alone tells', () => {
-  it('keeps Gendry free for a reader at the end of the book', () => {
-    // The books keep him with the outlaws: Melisandre never takes him.
-    expect(
-      archive.latestOf(reader('chapter', 196), character('gendry'), 'status'),
-    ).toBe('alive')
-  })
-
-  it('keeps Arya with the outlaws for a reader of the book', () => {
-    // The book's capture is at 157; the show's at 27 tells it no earlier.
-    expect(
-      archive.latestOf(
-        reader('episode', 26),
-        character('arya-stark'),
-        'status',
-      ),
-    ).toBe('alive')
-    expect(
-      archive.latestOf(
-        reader('chapter', 186),
-        character('arya-stark'),
-        'status',
-      ),
-    ).toBe('captured')
+    expect(archive.latestOf(viewer, owner, 'affiliation')?.en).toBe(
+      'Kingsguard',
+    )
+    expect(archive.roleOf(viewer, owner)?.en).toBe('Knight of the Kingsguard')
   })
 })
 
 describe('the season’s leads', () => {
-  it('lists the Brotherhood group’s leads', () => {
+  it('lists the King’s Landing leads', () => {
     expect(archive.leads['season-3']).toStrictEqual(
       expect.arrayContaining([
-        'arya-stark',
-        'beric-dondarrion',
-        'sandor-clegane',
+        'tyrion-lannister',
+        'sansa-stark',
+        'olenna-tyrell',
       ]),
     )
   })

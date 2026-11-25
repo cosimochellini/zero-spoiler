@@ -6,7 +6,14 @@ import {
   SEASON_2_PLACES,
 } from '~/data/series/game-of-thrones/records/season-2'
 import type { Bookmark } from '~/lib/progress/episode'
-import { gateCases, opened, recordIn, sidesOf } from '~/test/gates'
+import {
+  drawnIn,
+  gateCases,
+  opened,
+  recordIn,
+  sidesOf,
+  unlisted,
+} from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { placePage } from './placePage.server'
@@ -90,6 +97,7 @@ const STAGES: {
   episode: number
   id: keyof typeof DRAWINGS
   source?: 'chapter' | 'episode'
+  stage?: number
 }[] = [
   { id: 'blackwater-bay', episode: 19, chapter: 132 },
   { id: 'house-of-the-undying', episode: 20, chapter: 123, source: 'chapter' },
@@ -199,23 +207,41 @@ describe.each(
   })
 })
 
+describe('the table of stages', () => {
+  it('lists every stage of each record it redraws', () => {
+    expect(unlisted(STAGES, REDRAWINGS)).toStrictEqual([])
+  })
+})
+
+/** The drawings the table's stages are read against. */
+const ART = { drawings: DRAWINGS, redrawings: REDRAWINGS }
+
 describe.each(
   STAGES.flatMap((stage) =>
     sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
   ),
 )(
   '$id is redrawn by $unit at $episode/$chapter',
-  ({ before, chapter, episode, id, reached, source }) => {
+  ({
+    before,
+    chapter,
+    episode,
+    id,
+    reached,
+    source,
+    stage: index = 0,
+    unit,
+  }) => {
     it('at its pin, not one before', () => {
       const place = recordIn(archive, id)
-      const stage = REDRAWINGS[id]?.[0]
+      const stage = REDRAWINGS[id]?.[index]
 
       expect(stage?.episode).toBe(episode)
       expect(stage?.chapter).toBe(chapter)
       expect(place.source ?? stage?.source).toBe(source)
       expect(
         drawingOf(place, readerFor(archive, before, 'en')).strokes,
-      ).toStrictEqual(DRAWINGS[id])
+      ).toStrictEqual(drawnIn(STAGES, ART, { id, unit, below: index }))
       expect(
         drawingOf(place, readerFor(archive, reached, 'en')).strokes,
       ).toStrictEqual(stage?.value)
@@ -228,9 +254,10 @@ describe('the place stages one medium alone tells', () => {
     'never redraws $id for a reader of the other medium',
     ({ id, source = 'episode' }) => {
       const place = recordIn(archive, id)
+      const other = source === 'chapter' ? 'episode' : 'chapter'
 
       expect(drawingOf(place, otherAtTheEnd(source)).strokes).toStrictEqual(
-        DRAWINGS[id],
+        drawnIn(STAGES, ART, { id, unit: other }),
       )
       expect(
         drawingOf(

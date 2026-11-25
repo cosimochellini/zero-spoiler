@@ -2795,10 +2795,29 @@ export const season2: ThronesSaga = {
     'gilly': {
       relationships: season2Relationships.gilly,
       chronicle: season2Chronicles.gilly,
-      role: {
-        it: 'Figlia e moglie di Craster',
-        en: 'Craster’s daughter and wife',
-      },
+      role: [
+        {
+          episode: 15,
+          chapter: 97,
+          value: {
+            it: 'Figlia e moglie di Craster',
+            en: 'Craster’s daughter and wife',
+          },
+        },
+        // After the mutiny at Craster's Keep she flees south with Samwell
+        // Tarly and her newborn son: "And Now His Watch Is Ended" (episode
+        // 24) and Samwell III of A Storm of Swords (chapter 190), where they
+        // are on the road together. Samwell II (177) has her ask him to take
+        // her (#1638).
+        {
+          episode: 24,
+          chapter: 190,
+          value: {
+            it: 'Figlia di Craster, in fuga verso sud con Samwell Tarly',
+            en: 'Craster’s daughter, fleeing south with Samwell Tarly',
+          },
+        },
+      ],
       log: {
         it: 'È incinta e ha paura di cosa farà Craster se nascerà un maschio. Chiede ai Guardiani della notte di portarla via, ma la spedizione riparte senza di lei.',
         en: 'She is pregnant and afraid of what Craster will do if the child is a boy. She asks the Night’s Watch to take her away, but the ranging leaves without her.',
@@ -2867,7 +2886,24 @@ export const season2: ThronesSaga = {
     'ygritte': {
       relationships: season2Relationships.ygritte,
       chronicle: season2Chronicles.ygritte,
-      role: { it: 'Vedetta dei Bruti', en: 'Wildling lookout' },
+      role: [
+        {
+          episode: 16,
+          chapter: 125,
+          value: { it: 'Vedetta dei Bruti', en: 'Wildling lookout' },
+        },
+        // She climbs the Wall with the raiders sent to take Castle Black
+        // from the south: Tormund's band in "The Climb" (episode 26), Styr
+        // and Jarl's in Jon IV of A Storm of Swords (chapter 174) (#1638).
+        {
+          episode: 26,
+          chapter: 174,
+          value: {
+            it: 'Razziatrice della banda che scala la Barriera',
+            en: 'Raider of the band that climbs the Wall',
+          },
+        },
+      ],
       log: {
         it: 'È tra le vedette dei bruti sulle montagne. I ranger di Qhorin il Monco uccidono i suoi compagni, e Jon Snow resta solo con lei per giustiziarla, ma non ci riesce.',
         en: 'She is one of the wildling lookouts in the mountains. Qhorin Halfhand’s rangers kill her companions, and Jon Snow is left to put her to death, but he cannot do it.',

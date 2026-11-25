@@ -362,11 +362,23 @@ season's module, and the demo stays at stage 1. The third stage, season 3 and _A
 Storm of Swords_ through chapter 52, Arya XI (episodes 21–30, site chapters
 144–196), is filed under #1626 in `records/season-3.ts` and its
 `SEASON_3_PLACES`; stage 4 is season 4 and the book's chapters 53–81 (episodes
-31–40, site chapters 197–225). Arya, the Brotherhood and the Hound (#1636) adds
-eight outlaws and their allies, all the books' alone (Anguy is in the show but
-never named in the pages read), with the stage's steps of seven earlier
+31–40, site chapters 197–225). Its Essos cast (#1639) adds seven, two of them
+the books' alone, Grazdan mo Eraz filed under the books' name with the show's
+Razdal mo Eraz as his `episodeName`, with placeholder busts, stage-3 steps on
+Daenerys and the show's on Barristan Selmy, and the season's drawing, the Fist
+of the First Men. King's Landing (#1634) adds six characters: Olenna Tyrell,
+Margaery's three cousins, the books' alone, and Oberyn Martell and Ellaria Sand,
+whose show gates are in season 4 (#852), with the stage's steps of six earlier
 characters. The stage-3 characters show the shared `PERSON` placeholder until
-their drawing children (#1631).
+their drawing children (#1631). Robb's war and the Riverlands (#1635) adds ten
+characters, five the books' alone, one the show's and four both media's, with
+the stage's steps of three season-1 characters. The Wall and beyond (#1638) adds
+eleven characters, eight of them the books' alone: Mance Rayder, Tormund and
+Orell, Styr, Dalla, Val and Jarl from Mance's host, and Small Paul and three
+mutineers of Craster's Keep, with the stage's steps of Jon Snow, Rast, Chett,
+Ygritte and Gilly. Arya, the Brotherhood and the Hound (#1636) adds eight
+outlaws and their allies, all the books' alone (Anguy is in the show but never
+named in the pages read), with the stage's steps of seven earlier characters.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -606,15 +618,15 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| Records                | 308                                                                                     |
-| Characters             | 221                                                                                     |
+| Records                | 342                                                                                     |
+| Characters             | 255                                                                                     |
 | Places                 | 87                                                                                      |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 310, one per record and 2 for the seasons' headings, plus 213 redrawings of 156 records |
+| Line drawings          | 345, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
 | Chronicle stories      | 1188, for 213 characters                                                                |
-| Dated timelines        | 1074                                                                                    |
-| Affiliation steps      | 258                                                                                     |
-| Status steps           | 397                                                                                     |
+| Dated timelines        | 1154                                                                                    |
+| Affiliation steps      | 299                                                                                     |
+| Status steps           | 440                                                                                     |
 | Later visits to places | 5                                                                                       |
 
 <!-- End of the generated counts. -->

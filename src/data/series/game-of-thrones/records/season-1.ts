@@ -3167,10 +3167,26 @@ export const season1: ThronesSaga = {
     'sansa-stark': {
       relationships: season1Relationships['sansa-stark'],
       chronicle: season1Chronicles['sansa-stark'],
-      role: {
-        it: 'Figlia di lord Eddard Stark',
-        en: 'Daughter of Lord Eddard Stark',
-      },
+      role: [
+        {
+          episode: 1,
+          chapter: 5,
+          value: {
+            it: 'Figlia di lord Eddard Stark',
+            en: 'Daughter of Lord Eddard Stark',
+          },
+        },
+        // Stage 3 (#1634): wed to Tyrion at his father's command, in
+        // "Second Sons" (episode 28) and Sansa III (chapter 172).
+        {
+          episode: 28,
+          chapter: 172,
+          value: {
+            it: 'Moglie di Tyrion Lannister',
+            en: 'Tyrion Lannister’s wife',
+          },
+        },
+      ],
       log: {
         it: 'Accoglie il re nel cortile di Grande Inverno con il resto della famiglia. Il re propone a suo padre di darla in sposa al principe ereditario.',
         en: 'She greets the king in the yard of Winterfell with the rest of her family. The king proposes to her father that she marry the crown prince.',
@@ -3346,6 +3362,18 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Confratello giurato dei Guardiani della notte, finto disertore tra i bruti',
             en: 'Sworn brother of the Night’s Watch, posing as a deserter among the wildlings',
+          },
+        },
+        // He breaks away from the wildling raiders south of the Wall and
+        // rides back to Castle Black: "Mhysa" (episode 30) and Jon VI of A
+        // Storm of Swords (chapter 192), where Maester Aemon tends his
+        // wound (#1638).
+        {
+          episode: 30,
+          chapter: 192,
+          value: {
+            it: 'Confratello giurato dei Guardiani della notte, tornato a Castello Nero',
+            en: 'Sworn brother of the Night’s Watch, back at Castle Black',
           },
         },
       ],
@@ -4057,6 +4085,14 @@ export const season1: ThronesSaga = {
             en: 'Former acting Hand of the King',
           },
         },
+        // Stage 3 (#1634): his father names him master of coin in
+        // Littlefinger's place, at the small council of "Walk of
+        // Punishment" (episode 23) and Tyrion III (chapter 163).
+        {
+          episode: 23,
+          chapter: 163,
+          value: { it: 'Maestro del conio', en: 'Master of coin' },
+        },
       ],
       status: [
         { episode: 1, chapter: 5, value: 'alive' },
@@ -4340,6 +4376,17 @@ export const season1: ThronesSaga = {
             en: 'Former commander of the City Watch',
           },
         },
+        // Stage 3 (#1634): knighted for the Blackwater, Ser Bronn of the
+        // Blackwater still guards Tyrion for pay: "Valar Dohaeris" (episode
+        // 21) and Tyrion I (chapter 148).
+        {
+          episode: 21,
+          chapter: 148,
+          value: {
+            it: 'Cavaliere al soldo di Tyrion',
+            en: 'Knight in Tyrion’s pay',
+          },
+        },
       ],
       status: [{ episode: 4, chapter: 32, value: 'alive' }],
     },
@@ -4405,12 +4452,42 @@ export const season1: ThronesSaga = {
           chapter: 60,
           value: { it: 'Casa Frey', en: 'House Frey' },
         },
+        // He betrays Robb Stark at the wedding he hosts, and Roose Bolton
+        // kills Robb with the Lannisters' regards, in "The Rains of
+        // Castamere" (episode 29) and Catelyn VII (chapter 195, #1635).
+        {
+          episode: 29,
+          chapter: 195,
+          value: {
+            it: 'Casa Frey, alleata di Casa Lannister',
+            en: 'House Frey, allied with House Lannister',
+          },
+        },
       ],
       log: {
         it: 'È un lord molto anziano, con una prole numerosissima, che tiene il ponte delle Torri Gemelle. Lascia passare l’esercito di Robb in cambio di matrimoni con la sua famiglia.',
         en: 'He is a very old lord with a great many children, and he holds the bridge at the Twins. He lets Robb’s army cross in exchange for marriages into his family.',
       },
-      role: { it: 'Signore del Guado', en: 'Lord of the Crossing' },
+      role: [
+        {
+          episode: 9,
+          chapter: 60,
+          value: { it: 'Signore del Guado', en: 'Lord of the Crossing' },
+        },
+        // Show only: "I'm lord of Riverrun!", he boasts after the Red
+        // Wedding in "Mhysa" (episode 30). The books give Riverrun to his
+        // son Emmon, in Tyrion VI (chapter 197), which only orders it
+        // (#1635).
+        {
+          episode: 30,
+          chapter: 197,
+          source: 'episode',
+          value: {
+            it: 'Signore del Guado e di Delta delle Acque',
+            en: 'Lord of the Crossing and of Riverrun',
+          },
+        },
+      ],
       status: [
         { episode: 9, chapter: 60, value: 'alive' },
         { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
@@ -4485,6 +4562,22 @@ export const season1: ThronesSaga = {
             en: 'Knight dismissed from the Kingsguard',
           },
         },
+        // #1639: in "Valar Dohaeris" (episode 21) he saves Daenerys in
+        // Astapor, gives his name and offers her his service; "Walk of
+        // Punishment" (episode 23) first shows him in it, advising her with
+        // Jorah, and she tells them both how to advise her. The show's
+        // alone: the books bring him to her as Arstan Whitebeard, a record
+        // of its own, and say who he is only in Daenerys V of A Storm of
+        // Swords (chapter 201), the scene episode 21 adapts, which orders it.
+        {
+          episode: 23,
+          chapter: 201,
+          source: 'episode',
+          value: {
+            it: 'Cavaliere al servizio di Daenerys',
+            en: 'Knight in Daenerys’s service',
+          },
+        },
       ],
       log: {
         it: 'Guida la Guardia Reale, i cavalieri che hanno giurato di proteggere il re. È anziano ma ancora forte, e veste di bianco come tutti i suoi confratelli.',
@@ -4504,6 +4597,16 @@ export const season1: ThronesSaga = {
           episode: 8,
           chapter: 58,
           value: { it: 'Ex Guardia Reale', en: 'Formerly of the Kingsguard' },
+        },
+        // #1639: the show's alone, as his role step above.
+        {
+          episode: 23,
+          chapter: 201,
+          source: 'episode',
+          value: {
+            it: 'Al servizio di Daenerys Targaryen',
+            en: 'Daenerys Targaryen’s service',
+          },
         },
       ],
     },
@@ -4551,6 +4654,17 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Maestro del conio e lord di Harrenhal',
             en: 'Master of coin and Lord of Harrenhal',
+          },
+        },
+        // Stage 3 (#1634): bound for the Vale to wed Lysa Arryn, he gives up
+        // the coin to Tyrion at the small council of "Walk of Punishment"
+        // (episode 23) and Tyrion III (chapter 163).
+        {
+          episode: 23,
+          chapter: 163,
+          value: {
+            it: 'Lord di Harrenhal e pretendente di Lysa Arryn',
+            en: 'Lord of Harrenhal and suitor to Lysa Arryn',
           },
         },
       ],
@@ -4975,6 +5089,17 @@ export const season1: ThronesSaga = {
             en: 'Khaleesi at the head of her own khalasar',
           },
         },
+        // #1639: she buys the Unsullied of Astapor and turns them on their
+        // masters, in "And Now His Watch Is Ended" (episode 24) and Daenerys
+        // III of A Storm of Swords (chapter 171).
+        {
+          episode: 24,
+          chapter: 171,
+          value: {
+            it: 'Khaleesi a capo del suo khalasar e degli Immacolati',
+            en: 'Khaleesi at the head of her khalasar and the Unsullied',
+          },
+        },
       ],
       log: {
         it: 'Vive a Pentos con il fratello Viserys, ospite del magistro Illyrio. Viserys vuole darla in sposa a khal Drogo per avere l’esercito con cui riprendersi il Trono di Spade. Lei gli dice che vuole tornare a casa, e lui non la ascolta.',
@@ -5005,6 +5130,15 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Casa Targaryen, il suo khalasar',
             en: 'House Targaryen, her own khalasar',
+          },
+        },
+        // #1639: the Unsullied, at the same pair as her role step.
+        {
+          episode: 24,
+          chapter: 171,
+          value: {
+            it: 'Casa Targaryen, il suo khalasar e gli Immacolati',
+            en: 'House Targaryen, her khalasar and the Unsullied',
           },
         },
       ],
@@ -5477,6 +5611,15 @@ export const season1: ThronesSaga = {
             en: 'Commander of the northmen at Harrenhal',
           },
         },
+        // The crown names him Warden of the North for his part at the Red
+        // Wedding: he says so to Lord Walder in "Mhysa" (episode 30), and
+        // Lord Tywin tells Tyrion in Tyrion VI of A Storm of Swords
+        // (chapter 197, #1635).
+        {
+          episode: 30,
+          chapter: 197,
+          value: { it: 'Protettore del Nord', en: 'Warden of the North' },
+        },
       ],
       log: {
         it: 'È a capo di Casa Bolton. Parla poco e a voce bassa, e ha portato i suoi uomini nell’esercito di Robb.',
@@ -5495,6 +5638,17 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Casa Bolton, vassalla di Casa Stark',
             en: 'House Bolton, sworn to House Stark',
+          },
+        },
+        // He kills Robb Stark at the Red Wedding with the Lannisters'
+        // regards, in "The Rains of Castamere" (episode 29) and Catelyn VII
+        // (chapter 195, #1635).
+        {
+          episode: 29,
+          chapter: 195,
+          value: {
+            it: 'Casa Bolton, alleata di Casa Lannister',
+            en: 'House Bolton, allied with House Lannister',
           },
         },
       ],
@@ -5911,10 +6065,39 @@ export const season1: ThronesSaga = {
     'boros-blount': {
       relationships: season1Relationships['boros-blount'],
       chronicle: season1Chronicles['boros-blount'],
-      role: {
-        it: 'Cavaliere della Guardia reale',
-        en: 'Knight of the Kingsguard',
-      },
+      role: [
+        {
+          episode: 19,
+          chapter: 34,
+          value: {
+            it: 'Cavaliere della Guardia reale',
+            en: 'Knight of the Kingsguard',
+          },
+        },
+        // The books' alone (#1634): the queen strips him of his white cloak
+        // for yielding Tommen, and gives it to Osmund Kettleblack, in Tyrion
+        // XI (chapter 123); Varys tells Tyrion he has been restored to the
+        // Kingsguard in Tyrion II of A Storm of Swords (chapter 156). The
+        // show never dismisses him, so episodes 19 and 21 only order them.
+        {
+          episode: 19,
+          chapter: 123,
+          source: 'chapter',
+          value: {
+            it: 'Espulso dalla Guardia reale',
+            en: 'Dismissed from the Kingsguard',
+          },
+        },
+        {
+          episode: 21,
+          chapter: 156,
+          source: 'chapter',
+          value: {
+            it: 'Cavaliere della Guardia reale',
+            en: 'Knight of the Kingsguard',
+          },
+        },
+      ],
       log: {
         it: 'Fa parte della Guardia reale e veste il mantello bianco dei suoi confratelli. Presta servizio nella Fortezza Rossa, accanto al re.',
         en: 'He belongs to the Kingsguard and wears the white cloak of his sworn brothers. He serves in the Red Keep, at the king’s side.',
@@ -5924,6 +6107,19 @@ export const season1: ThronesSaga = {
         {
           episode: 19,
           chapter: 34,
+          value: { it: 'Guardia reale', en: 'Kingsguard' },
+        },
+        // Out of the Kingsguard and back, the books' alone, as his role.
+        {
+          episode: 19,
+          chapter: 123,
+          source: 'chapter',
+          value: { it: 'Casa Blount', en: 'House Blount' },
+        },
+        {
+          episode: 21,
+          chapter: 156,
+          source: 'chapter',
           value: { it: 'Guardia reale', en: 'Kingsguard' },
         },
       ],
@@ -6490,10 +6686,29 @@ export const season1: ThronesSaga = {
     'addam-marbrand': {
       relationships: season1Relationships['addam-marbrand'],
       chronicle: season1Chronicles['addam-marbrand'],
-      role: {
-        it: 'Cavaliere, comandante degli esploratori',
-        en: 'Knight, commander of outriders',
-      },
+      role: [
+        {
+          episode: 10,
+          chapter: 63,
+          value: {
+            it: 'Cavaliere, comandante degli esploratori',
+            en: 'Knight, commander of outriders',
+          },
+        },
+        // The books' alone (#1634): Bronn tells Tyrion that Ser Addam has
+        // the City Watch in Jacelyn Bywater's place, in Tyrion I of A Storm
+        // of Swords (chapter 148). The show never gives him the Watch, so
+        // episode 21 only orders it.
+        {
+          episode: 21,
+          chapter: 148,
+          source: 'chapter',
+          value: {
+            it: 'Comandante della Guardia cittadina',
+            en: 'Commander of the City Watch',
+          },
+        },
+      ],
       log: {
         it: 'Serve nell’esercito di Tywin Lannister, dove guida gli esploratori a cavallo. È tra i comandanti che lord Tywin ascolta in consiglio.',
         en: 'He serves in Tywin Lannister’s army, where he leads the outriders. He is among the captains Lord Tywin hears in council.',
@@ -6553,15 +6768,40 @@ export const season1: ThronesSaga = {
     'edmure-tully': {
       relationships: season1Relationships['edmure-tully'],
       chronicle: season1Chronicles['edmure-tully'],
-      role: {
-        it: 'Figlio di lord Hoster Tully',
-        en: 'Son of Lord Hoster Tully',
-      },
+      role: [
+        {
+          episode: 23,
+          chapter: 72,
+          value: {
+            it: 'Figlio di lord Hoster Tully',
+            en: 'Son of Lord Hoster Tully',
+          },
+        },
+        // Lord after his father's death: the books' Hoster dies in Catelyn
+        // IV (chapter 179), and Edmure is lord at his funeral. The show's
+        // Hoster is dead when Edmure's record opens at episode 23, so a
+        // second step there cannot be told apart; the step takes "The
+        // Climb" (episode 26), where Edmure calls himself Lord Walder's
+        // liege lord (owner check: Robb calls him lord of Riverrun in
+        // episode 22, synopsis only) (#1635).
+        {
+          episode: 26,
+          chapter: 179,
+          value: { it: 'Lord di Delta delle Acque', en: 'Lord of Riverrun' },
+        },
+      ],
       log: {
         it: 'È il figlio di Hoster Tully e il fratello di Catelyn Stark e Lysa Arryn. Si trova a Delta delle Acque, il seggio della sua famiglia, insieme a Robb Stark e ai suoi alleati.',
         en: 'He is Hoster Tully’s son and the brother of Catelyn Stark and Lysa Arryn. He is at Riverrun, his family’s seat, together with Robb Stark and his allies.',
       },
-      status: [{ episode: 23, chapter: 72, value: 'alive' }],
+      status: [
+        { episode: 23, chapter: 72, value: 'alive' },
+        // The Freys hold him after his wedding: Lord Walder says he spent
+        // his wedding night in a dungeon, in "Mhysa" (episode 30), and Lord
+        // Tywin tells Tyrion that Lord Frey keeps him hostage, in Tyrion VI
+        // of A Storm of Swords (chapter 197, #1635).
+        { episode: 30, chapter: 197, value: 'captured' },
+      ],
       affiliation: [
         {
           episode: 23,
@@ -6961,6 +7201,19 @@ export const season1: ThronesSaga = {
             en: 'Sworn brother of the Night’s Watch, ranger',
           },
         },
+        // The show's alone: at Craster's Keep he stabs the Lord Commander in
+        // the back when Karl Tanner kills Craster, in "And Now His Watch Is
+        // Ended" (episode 24). The books' Rast is not at the keep; chapter
+        // 177, where their mutiny is, only orders it (#1638).
+        {
+          episode: 24,
+          chapter: 177,
+          source: 'episode',
+          value: {
+            it: 'Ammutinato alla Fortezza di Craster',
+            en: 'Mutineer at Craster’s Keep',
+          },
+        },
       ],
       log: {
         it: 'Si addestra a Castello Nero, dove combatte contro Jon Snow nel cortile.',
@@ -7233,6 +7486,19 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Addetto ai canili di Castello Nero',
             en: 'Kennel hand at Castle Black',
+          },
+        },
+        // The books' alone: on the ranging beyond the Wall he leads a plot
+        // to kill the Lord Commander and desert, in the prologue of A Storm
+        // of Swords (chapter 144). The show has no such plot; episode 21
+        // only orders it (#1638).
+        {
+          episode: 21,
+          chapter: 144,
+          source: 'chapter',
+          value: {
+            it: 'Addetto ai canili nella spedizione oltre la Barriera, a capo di un complotto per disertare',
+            en: 'Kennel hand on the ranging beyond the Wall, leading a plot to desert',
           },
         },
       ],
