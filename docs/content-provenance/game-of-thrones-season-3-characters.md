@@ -64,8 +64,8 @@ episode only orders it.
   the name the chapter gives; "Lemoncloak" is his nickname. Italian "Lem".
 - Jack-Be-Lucky: role outlaw of the Brotherhood Without Banners, alive. Italian
   "Jack Fortunello".
-- Greenbeard: role sellsword of the Brotherhood Without Banners, alive. Filed
-  under the name the chapters use; he calls himself Pello of Tyrosh. Italian
+- Greenbeard: role outlaw of the Brotherhood Without Banners, alive. Filed under
+  the name the chapters use; he calls himself Pello of Tyrosh. Italian
   "Barbaverde".
 - Mad Huntsman: role huntsman, no allegiance at 173, then Brotherhood Without
   Banners at 178 (Arya VI, where he has handed Sandor to the outlaws), alive.
@@ -138,6 +138,8 @@ filed before this stage.
   Peach (Arya V), Lymond Lychester and Maester Roone (Arya IV, 166), Donnel
   Haigh (Arya X, 194), Iggo (Arya I, 147, seen only in Arya's wolf dream), the
   boy at the Inn of the Kneeling Man (Arya II).
+- **Animals with no record:** Stranger, Sandor Clegane's horse (Arya VIII to XI,
+  187–196), never a character of his own.
 - **Background outlaws,** each listed as appearing with no scene of their own:
   Dennet, Kyle, Melly (Arya VI, 178), Notch, Merrit o' Moontown, Mudge, Watty
   the Miller and Beardless Dick (Arya VII and VIII, 183 and 187).

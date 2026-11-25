@@ -114,8 +114,8 @@ export const season3: ThronesSaga = {
       revealedAtChapter: 166,
       name: { it: 'Barbaverde', en: 'Greenbeard' },
       summary: {
-        it: 'Un mercenario di Tyrosh dalla barba verde, uno dei fuorilegge della Fratellanza senza vessilli.',
-        en: 'A sellsword from Tyrosh with a green beard, one of the outlaws of the Brotherhood Without Banners.',
+        it: 'Un uomo dalla barba verde, uno dei fuorilegge della Fratellanza senza vessilli.',
+        en: 'A man with a green beard, one of the outlaws of the Brotherhood Without Banners.',
       },
       visual: { art: 'greenbeard', tint: 'green' },
     },
@@ -178,8 +178,8 @@ export const season3: ThronesSaga = {
         en: 'Archer of the Brotherhood Without Banners',
       },
       log: {
-        it: 'Con Tom di Settecorrenti e Lem trova Arya Stark, Gendry e Frittella vicino al fiume. Un tiro con l’arco li convince a seguire i fuorilegge fino a una locanda.',
-        en: 'With Tom of Sevenstreams and Lem he comes upon Arya Stark, Gendry and Hot Pie by the river. One shot of his bow convinces them to go with the outlaws to an inn.',
+        it: 'Con Tom di Settecorrenti e Lem trova Arya Stark, Gendry e Frittella vicino al fiume, e i fuorilegge li portano a una locanda.',
+        en: 'With Tom of Sevenstreams and Lem he comes upon Arya Stark, Gendry and Hot Pie by the river, and the outlaws take them to an inn.',
       },
       status: [
         { episode: 22, chapter: 157, source: 'chapter', value: 'alive' },
@@ -270,8 +270,8 @@ export const season3: ThronesSaga = {
     },
     'greenbeard': {
       role: {
-        it: 'Mercenario della Fratellanza senza vessilli',
-        en: 'Sellsword of the Brotherhood Without Banners',
+        it: 'Fuorilegge della Fratellanza senza vessilli',
+        en: 'Outlaw of the Brotherhood Without Banners',
       },
       log: {
         it: 'Cavalca con i fuorilegge che portano Arya Stark da lord Beric. Con Tom e Lem ascolta in disparte i sogni di una vecchia nana.',
