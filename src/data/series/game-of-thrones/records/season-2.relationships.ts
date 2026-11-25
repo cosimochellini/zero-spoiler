@@ -841,7 +841,7 @@ const wall = {
     type: { en: 'Lord Commander', it: 'Lord comandante' },
     summary: {
       en: 'The Lord Commander, who agrees to send out scouts from the Fist. Thoren is to lead a party along the Milkwater.',
-      it: 'Il lord comandante, che accetta di mandare esploratori dal Pugno. Thoren guiderà un gruppo lungo il Milkwater.',
+      it: 'Il lord comandante, che accetta di mandare esploratori dal Pugno. Thoren guiderà un gruppo lungo il Fiumelatte.',
     },
   },
   thoQhorin: {
@@ -860,7 +860,7 @@ const wall = {
     type: { en: 'Fellow officer', it: 'Altro ufficiale' },
     summary: {
       en: 'The ranger who leads the scouts. He is to take four men up into the mountains while Thoren probes the Milkwater.',
-      it: 'Il ranger a capo degli esploratori. Salirà sulle montagne con quattro uomini mentre Thoren esplora il Milkwater.',
+      it: 'Il ranger a capo degli esploratori. Salirà sulle montagne con quattro uomini mentre Thoren esplora il Fiumelatte.',
     },
   },
 
@@ -1220,7 +1220,7 @@ const wall = {
     type: { en: 'Fellow officer', it: 'Altro ufficiale' },
     summary: {
       en: 'The ranger Jeor sends to probe the Milkwater, while Qhorin takes the pass.',
-      it: 'Il ranger che Jeor manda a esplorare il Milkwater, mentre Qhorin prende il passo.',
+      it: 'Il ranger che Jeor manda a esplorare il Fiumelatte, mentre Qhorin prende il passo.',
     },
   },
   qhoJarman: {

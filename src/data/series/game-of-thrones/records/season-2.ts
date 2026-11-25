@@ -3329,6 +3329,18 @@ export const SEASON_2_PLACES: Record<
       en: 'Craster lives here beyond the Wall with his many wives, who are also his daughters. The Night’s Watch stops here on its ranging, and he tells them the wildlings are gathering.',
     },
     filedHere: ['craster', 'gilly', 'eddison-tollett'],
+    // Taken by the mutineers (#1630): "And Now His Watch Is Ended" and
+    // Samwell II (site chapter 177).
+    visits: [
+      {
+        episode: 24,
+        chapter: 177,
+        value: {
+          it: 'I confratelli scampati al Pugno si riparano qui. Alcuni di loro si rivoltano e uccidono Craster, poi il Lord Comandante Mormont, e Gilly supplica Samwell Tarly di portare via lei e suo figlio.',
+          en: 'The brothers who escaped the Fist shelter here. Some of them turn on Craster and kill him, then Lord Commander Mormont, and Gilly begs Samwell Tarly to take her and her son away.',
+        },
+      },
+    ],
   },
   'red-waste': {
     form: 'desert',
@@ -3472,6 +3484,20 @@ export const SEASON_2_PLACES: Record<
       en: 'The Night’s Watch makes camp on this hill on its ranging beyond the Wall, to wait for more rangers.',
     },
     filedHere: ['qhorin-halfhand', 'stonesnake'],
+    // Overrun (#1630): "Valar Dohaeris" opens on the hill after the attack;
+    // Samwell I (site chapter 162) has Sam remember the fight and the
+    // flight south. The drawing's stage is pinned at Jon II (159), where Jon
+    // sees the dead horses on the slope.
+    visits: [
+      {
+        episode: 21,
+        chapter: 162,
+        value: {
+          it: 'Di notte i morti attaccano l’accampamento dei Guardiani della Notte sulla collina. I confratelli sopravvissuti fuggono verso sud nella neve.',
+          en: 'In the night the dead attack the Night’s Watch’s camp on the hill. The brothers who live through it flee south through the snow.',
+        },
+      },
+    ],
   },
   'skirling-pass': {
     form: 'pass',
@@ -3547,6 +3573,19 @@ export const SEASON_2_PLACES: Record<
       en: 'It is the castle of House Bolton.',
     },
     filedHere: [],
+    // Visited (#1630): "Mhysa" names the castle Theon is held in, where his
+    // captor names him Reek; the books tell the same in Reek I (A Dance with
+    // Dragons, site chapter 284), past the stage (#852).
+    visits: [
+      {
+        episode: 30,
+        chapter: 284,
+        value: {
+          it: 'Theon Greyjoy è prigioniero nelle sue segrete. Il figlio bastardo di Lord Bolton lo tortura e gli dà un nuovo nome: Reek.',
+          en: 'Theon Greyjoy is a prisoner in its dungeons. Lord Bolton’s bastard son tortures him and gives him a new name: Reek.',
+        },
+      },
+    ],
   },
   'seagard': {
     form: 'castle',
@@ -3599,6 +3638,21 @@ export const SEASON_2_PLACES: Record<
       en: 'It is the poorest district of King’s Landing.',
     },
     filedHere: [],
+    // Visited, the show alone (#1630): "Valar Dohaeris", Margaery stops
+    // Joffrey's litter in Flea Bottom. The books set no scene there; Sansa I
+    // (site chapter 150), where the book's Margaery is first met at court,
+    // orders it.
+    visits: [
+      {
+        episode: 21,
+        chapter: 150,
+        source: 'episode',
+        value: {
+          it: 'Margaery Tyrell ferma qui il corteo del re e visita un orfanotrofio, facendo distribuire pane e giocattoli.',
+          en: 'Margaery Tyrell stops the king’s procession here and visits an orphanage, while her servants hand out bread and toys.',
+        },
+      },
+    ],
   },
   'highgarden': {
     form: 'castle',

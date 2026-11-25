@@ -8147,8 +8147,8 @@ export const season1Chronicles = {
       [17, 54],
       { it: 'Gli ultimi ad arrivare', en: 'The last to arrive' },
       {
-        it: 'Rickard Karstark è il lord di Karhold. Quando [[robb-stark|Robb Stark]] chiama a raccolta i vessilli dopo la cattura del padre, i Karstark sono gli ultimi ad arrivare a Grande Inverno: trecento cavalieri e quasi duemila fanti, con lord Rickard e i figli Harrion, Eddard e Torrhen alla testa. Si dice che i Karstark abbiano sangue Stark, ma a [[bran-stark|Bran]] non sembrano degli Stark. È Bran a ospitarli nella sala grande.',
-        en: 'Rickard Karstark is the lord of Karhold. When [[robb-stark|Robb Stark]] calls his banners after his father’s capture, the Karstarks are the last to reach Winterfell: three hundred horsemen and nearly two thousand foot, with Lord Rickard and his sons Harrion, Eddard and Torrhen riding at their head. The Karstarks are said to have Stark blood, though to [[bran-stark|Bran]] they do not look like Starks. Bran hosts them in the great hall.',
+        it: 'Rickard Karstark è a capo di Casa Karstark. Quando [[robb-stark|Robb Stark]] chiama a raccolta i vessilli dopo la cattura del padre, i Karstark sono gli ultimi ad arrivare a Grande Inverno: trecento cavalieri e quasi duemila fanti, con lord Rickard e i figli Harrion, Eddard e Torrhen alla testa. Si dice che i Karstark abbiano sangue Stark, ma a [[bran-stark|Bran]] non sembrano degli Stark. È Bran a ospitarli nella sala grande.',
+        en: 'Rickard Karstark is the head of House Karstark. When [[robb-stark|Robb Stark]] calls his banners after his father’s capture, the Karstarks are the last to reach Winterfell: three hundred horsemen and nearly two thousand foot, with Lord Rickard and his sons Harrion, Eddard and Torrhen riding at their head. The Karstarks are said to have Stark blood, though to [[bran-stark|Bran]] they do not look like Starks. Bran hosts them in the great hall.',
       },
     ),
     inBooks(
