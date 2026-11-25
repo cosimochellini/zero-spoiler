@@ -433,16 +433,18 @@ function frameAt(unit: Unit, count: number): unknown {
 
 describe('the home page’s frame', () => {
   // Each season draws its own landmark (#1601): the reader sees the season
-  // they are in, never a later one. Seasons 3 to 8 file no record yet, so a
-  // reader past season 2 is still shown it.
+  // they are in, never a later one. Season 2's rows stop at its last episode
+  // and chapter, so a season-3 record leaves them standing (#1627); the
+  // later seasons' rows go in their own tests.
   it.each([
     { unit: 'episode', count: 1, id: 'season-1', tint: 'ice' },
     { unit: 'episode', count: 10, id: 'season-1', tint: 'ice' },
     { unit: 'episode', count: 11, id: 'season-2', tint: 'red' },
-    { unit: 'episode', count: 35, id: 'season-2', tint: 'red' },
+    { unit: 'episode', count: 20, id: 'season-2', tint: 'red' },
     { unit: 'chapter', count: 1, id: 'season-1', tint: 'ice' },
     { unit: 'chapter', count: 73, id: 'season-1', tint: 'ice' },
     { unit: 'chapter', count: 74, id: 'season-2', tint: 'red' },
+    { unit: 'chapter', count: 143, id: 'season-2', tint: 'red' },
   ] as const)('at $unit $count draws $id', ({ unit, count, id, tint }) => {
     expect(frameAt(unit, count)).toStrictEqual({ strokes: DRAWINGS[id], tint })
   })

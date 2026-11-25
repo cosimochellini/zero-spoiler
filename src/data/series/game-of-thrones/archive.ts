@@ -6,6 +6,7 @@ import { GAME_OF_THRONES_SERIES as SERIES } from '~/lib/progress/series'
 import { DRAWINGS, REDRAWINGS } from './art'
 import { SEASON_1_PLACES } from './records/season-1'
 import { SEASON_2_PLACES } from './records/season-2'
+import { SEASON_3_PLACES } from './records/season-3'
 import { sagas as seasons } from './sagas'
 
 /**
@@ -44,11 +45,14 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
     'jon-snow',
     'daenerys-targaryen',
   ],
+  // The third stage's cast row (#1626): its filing children (#1634–#1641)
+  // add each lead as they file it.
+  'season-3': [],
 }
 
 const { core } = sagaArchive({
   featured: LEADS,
-  placeDossiers: { ...SEASON_1_PLACES, ...SEASON_2_PLACES },
+  placeDossiers: { ...SEASON_1_PLACES, ...SEASON_2_PLACES, ...SEASON_3_PLACES },
   redrawings: REDRAWINGS,
   sagas,
   series: SERIES,

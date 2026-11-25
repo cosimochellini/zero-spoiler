@@ -10,6 +10,8 @@
  * `season-1.relationships.ts`; the note says so. Of *A Clash of Kings* it has
  * a few chapter pages (the prologue, Arya I and Sansa I among them, #1456);
  * the rest are A Wiki of Ice and Fire's, read only through the Firecrawl tool.
+ * Of *A Storm of Swords* it has none (#1627): every chapter page is A Wiki of
+ * Ice and Fire's, cached in the main checkout's `.gate/firecrawl/`.
  */
 
 const SHOW = 'https://gameofthrones.fandom.com/wiki/'
@@ -38,6 +40,20 @@ const EPISODE_17 = `${SHOW}A_Man_Without_Honor`
 const EPISODE_18 = `${SHOW}The_Prince_of_Winterfell`
 const EPISODE_19 = `${SHOW}Blackwater`
 const EPISODE_20 = `${SHOW}Valar_Morghulis`
+// Season 3 (#1627). Episodes 23, 27, 28 and 29 carry "(episode)": their bare
+// titles are a place, a song, a sellsword company and a song.
+/* eslint-disable @typescript-eslint/no-unused-vars -- cited by the season-3 chronicles of #1633 */
+const EPISODE_21 = `${SHOW}Valar_Dohaeris`
+const EPISODE_22 = `${SHOW}Dark_Wings,_Dark_Words`
+const EPISODE_23 = `${SHOW}Walk_of_Punishment_(episode)`
+const EPISODE_24 = `${SHOW}And_Now_His_Watch_Is_Ended`
+const EPISODE_25 = `${SHOW}Kissed_by_Fire`
+const EPISODE_26 = `${SHOW}The_Climb`
+const EPISODE_27 = `${SHOW}The_Bear_and_the_Maiden_Fair_(episode)`
+const EPISODE_28 = `${SHOW}Second_Sons_(episode)`
+const EPISODE_29 = `${SHOW}The_Rains_of_Castamere_(episode)`
+const EPISODE_30 = `${SHOW}Mhysa`
+/* eslint-enable @typescript-eslint/no-unused-vars -- back on after the season-3 episodes */
 const DANY_I = `${BOOKS}Daenerys_I_-_A_Game_of_Thrones`
 const DANY_II = `${BOOKS}Daenerys_II_-_A_Game_of_Thrones`
 const DANY_III = `${BOOKS}Daenerys_III_-_A_Game_of_Thrones`
@@ -88,6 +104,14 @@ const WALL_AGOT_70 = `${WALL_AWOIAF}70`
 const ACOK_PROLOGUE = `${BOOKS}Prologue_-_A_Clash_of_Kings`
 const ACOK_AWOIAF = `${AWOIAF}A_Clash_of_Kings-Chapter_`
 /* eslint-enable @typescript-eslint/no-unused-vars -- back on after the A Clash of Kings pattern */
+// A Storm of Swords (#1627). The Ice and Fire Wiki has no chapter page of
+// it. A Wiki of Ice and Fire's page is `${ASOS_AWOIAF}N`, N counting from the
+// chapter after the prologue, so the site chapter is 144 + N; the prologue
+// is site chapter 144. The third stage ends at chapter 52, Arya XI (site 196).
+/* eslint-disable @typescript-eslint/no-unused-vars -- cited by the season-3 chronicles of #1633 */
+const ASOS_PROLOGUE = `${AWOIAF}A_Storm_of_Swords-Prologue`
+const ASOS_AWOIAF = `${AWOIAF}A_Storm_of_Swords-Chapter_`
+/* eslint-enable @typescript-eslint/no-unused-vars -- back on after the A Storm of Swords pattern */
 // The Essos and Qarth cast of the second stage (#1478): Daenerys I to V of
 // A Clash of Kings, site chapters 86, 101, 114, 122 and 137.
 const ACOK_12 = `${ACOK_AWOIAF}12`
