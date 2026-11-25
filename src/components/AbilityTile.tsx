@@ -80,6 +80,8 @@ export function FoggedAbilityTile({
       ]}
       peek={peek}
       phase={index}
+      // The band holds only covered tiles, so its place is its rank.
+      rank={index}
     />
   )
 }

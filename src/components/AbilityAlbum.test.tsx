@@ -194,6 +194,82 @@ describe('AbilityAlbum', () => {
   })
 })
 
+/** The album with nothing open and `count` abilities under fog. */
+async function renderFog(count: number, locale: Locale = 'en'): Promise<void> {
+  const covered = Array.from({ length: count }, (_, at) =>
+    coveredRecord({ handle: `hxh-${String(at)}`, kind: 'ability' }),
+  )
+  await renderUnderSeries(
+    <AbilityAlbum
+      onParams={vi.fn<(next: AbilityParams, replace: boolean) => void>()}
+      params={{}}
+      peek={peekPending()}
+      sheet={{ bands: [], covered, filed: count }}
+    />,
+    {
+      locale,
+      path: `/hunter-x-hunter/${locale}/abilities`,
+      series: HUNTER_X_HUNTER_SERIES,
+    },
+  )
+}
+
+describe('AbilityAlbum on a phone', () => {
+  it('folds the fog band to its first row, saying how many are left for two and for three across', async () => {
+    await renderFog(28)
+
+    const band = screen.getByRole('region', { name: '28 under fog' })
+    const list = within(band).getByRole('list')
+    const expand = within(band).getByRole('button', { name: 'Expand' })
+
+    // Every tile stays on the page: the fold is CSS, and below 40rem only.
+    expect(within(list).getAllByRole('listitem')).toHaveLength(28)
+    expect(expand).toHaveAttribute('aria-controls', list.id)
+    expect(expand).toHaveAccessibleDescription(
+      /^And 26 more under fog\s*And 25 more under fog$/u,
+    )
+  })
+
+  it('says one more in the feminine in Italian', async () => {
+    await renderFog(3, 'it')
+
+    expect(screen.getByText('E un’altra nella nebbia')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Espandi' })).toBeInTheDocument()
+  })
+
+  it('says "E altre" for many in Italian', async () => {
+    await renderFog(5, 'it')
+
+    expect(screen.getByText('E altre 3 nella nebbia')).toBeInTheDocument()
+  })
+
+  it('leaves a band alone when its first row holds it all', async () => {
+    await renderFog(2)
+
+    expect(
+      screen.queryByRole('button', { name: 'Expand' }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('unfolds the band when Expand is pressed', async () => {
+    const user = userEvent.setup()
+    await renderFog(5)
+
+    const tiles = within(screen.getByRole('list')).getAllByRole('listitem')
+
+    // Folded, a tile past the first row hides itself by its rank.
+    expect(tiles[2]?.className).not.toBe(tiles[1]?.className)
+
+    await user.click(screen.getByRole('button', { name: 'Expand' }))
+
+    expect(tiles[2]?.className).toBe(tiles[1]?.className)
+    expect(
+      screen.queryByRole('button', { name: 'Expand' }),
+    ).not.toBeInTheDocument()
+    expect(screen.queryByText(/more under fog/u)).not.toBeInTheDocument()
+  })
+})
+
 describe('AbilityAlbum with nothing open', () => {
   const NONE_OPEN: AbilitySheetView = { ...SHEET, bands: [] }
 

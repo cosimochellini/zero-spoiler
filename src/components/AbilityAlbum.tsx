@@ -5,6 +5,7 @@ import { AbilityControls } from '~/components/AbilityControls'
 import { AbilityTile, FoggedAbilityTile } from '~/components/AbilityTile'
 import { FogBand, type FogTitles } from '~/components/FogBand'
 import { fogNote } from '~/components/fogWords'
+import { FoldedFog, type FoldWords } from '~/components/FoldedFog'
 import { PlateHead } from '~/components/PlateHead'
 import { matchesIn } from '~/components/recordMatches'
 import { SearchNoMatch, SearchResults } from '~/components/SearchField'
@@ -164,7 +165,10 @@ function AbilityResults({
   )
 }
 
-/** The plates and the fog band themselves. */
+/**
+ * The plates and the fog band themselves. On a phone the band folds to its
+ * first row (`FoldedFog`, #1592).
+ */
 function AbilityFolded({
   covered,
   fieldId,
@@ -201,7 +205,11 @@ function AbilityFolded({
         t={t}
         words={ABILITY_FOG}
       >
-        <ul {...stylex.props(styles.grid)}>
+        <FoldedFog
+          count={covered.length}
+          id="fold-abilities"
+          words={foldWords(t)}
+        >
           {covered.map((entry, at) => {
             return (
               <FoggedAbilityTile
@@ -212,7 +220,7 @@ function AbilityFolded({
               />
             )
           })}
-        </ul>
+        </FoldedFog>
       </FogBand>
     </SearchResults>
   )
@@ -259,6 +267,17 @@ function AbilityPlate({
       )}
     </section>
   )
+}
+
+/** What the fog band's fold says on a phone (#1592). */
+function foldWords(t: Translate<typeof SERIES>): FoldWords {
+  return {
+    more: (count) =>
+      count === 1 ?
+        t('abilities.foldMoreOne')
+      : t('abilities.foldMore', { count }),
+    open: t('abilities.unfold'),
+  }
 }
 
 /** How many abilities a plate holds. One and many are two sentences. */
