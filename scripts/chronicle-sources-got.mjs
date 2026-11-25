@@ -761,7 +761,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '17:chapter': {
       source: WL_JON_VII,
-      note: 'Jon VII (site 127): Jon telling Qhorin what Ygritte said, Qhorin knowing he let her go and saying he would have had Ebben do it, the night marches, the dream through Ghost’s eyes, the three-eyed weirwood with his brother’s face, the host and the giants on mammoths, the eagle, Qhorin taking the wolf dream seriously, Ghost found wounded, the turn back to the Fist, and Dalbridge staying behind with all the arrows. No season-2 episode adapts Jon VII; episode 17 orders it, as it orders Ebben’s and Dalbridge’s gates.',
+      note: 'Jon VII (site 127): Jon telling Qhorin what Ygritte said, Qhorin knowing he let her go and saying he would have had Ebben do it, the night marches, the dream through Ghost’s eyes, the three-eyed weirwood with his brother’s face, the host and the giants on mammoths, the eagle, Qhorin taking the wolf dream seriously, the eagle watching them at dusk, Ghost found wounded, the turn back to the Fist for fear they have been seen, and Dalbridge staying behind with all the arrows. No season-2 episode adapts Jon VII; episode 17 orders it, as it orders Ebben’s and Dalbridge’s gates.',
     },
     '17:episode': {
       source: `${SHOW}Jon_Snow`,
@@ -3643,7 +3643,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '15:117': {
       source: WL_JON_V,
-      note: 'Jon V (site 117): Qhorin’s report and advice, and the three parties: Buckwell with four men to the Giant’s Stair, Smallwood to probe the Milkwater, Qhorin to the Skirling Pass. The river and the pass stay unnamed (the pass opens at 125).',
+      note: 'Jon V (site 117): Qhorin’s report of wargs, mammoths and the power Mance seeks, his advice, and the three parties: Buckwell with four men to the Giant’s Stair, Smallwood to probe the Milkwater, Qhorin to the Skirling Pass. The river and the pass stay unnamed (the pass opens at 125).',
     },
   },
   'eddison-tollett': {
@@ -3749,7 +3749,7 @@ export const GAME_OF_THRONES_SOURCES = {
   'stonesnake': {
     '15:125': {
       source: WL_JON_VI,
-      note: 'Jon VI (site 125): Stonesnake and Jon volunteering, the lesson in climbing a sheer cliff, the watcher with the horn killed before he can sound it, Jon cutting down the man by the fire, Ygritte yielding, Stonesnake’s warning that she should be killed, and Bael called a murderer and robber. Episode 15, his show order, orders it.',
+      note: 'Jon VI (site 125): Stonesnake and Jon volunteering, the lesson in climbing a sheer cliff, the watcher with the horn killed before he can sound it, Jon cutting down the man by the fire, Ygritte yielding, Stonesnake’s warning that she should be killed, and Bael called a murderer and robber. Ordered at episode 15, his show gate, rather than 16, which adapts Jon VI: a new record’s first story opens at its gate episode (the FIRST test of thronesSeason2Chronicle.test.ts).',
     },
     '20:142': {
       source: WL_JON_VIII,
@@ -3801,7 +3801,7 @@ export const GAME_OF_THRONES_SOURCES = {
   'lord-of-bones': {
     '18:142': {
       source: WL_JON_VIII,
-      note: 'Jon VIII (site 142): fourteen hunters and eight dogs, the Lord of Bones their leader, Ygritte among them, Ebben’s head, the order to kill them, Jon yielding, the command to kill Qhorin, the wildlings accepting Jon despite Rattleshirt’s misgivings, the pyre and the charred bones. Episode 18, his show order, orders it.',
+      note: 'Jon VIII (site 142): fourteen hunters and eight dogs, the Lord of Bones their leader, Ygritte among them, Ebben’s head, the order to kill them, Jon yielding, the command to kill Qhorin, the wildlings accepting Jon despite Rattleshirt’s misgivings, the pyre and the charred bones. Ordered at episode 18, his show gate, though episode 20 tells the killing on screen: a new record’s first story opens at its gate episode (the FIRST test of thronesSeason2Chronicle.test.ts).',
     },
   },
 }
