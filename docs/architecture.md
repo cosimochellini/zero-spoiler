@@ -631,6 +631,6 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Dated timelines        | 1141                                                                                    |
 | Affiliation steps      | 284                                                                                     |
 | Status steps           | 425                                                                                     |
-| Later visits to places | 12                                                                                      |
+| Later visits to places | 13                                                                                      |
 
 <!-- End of the generated counts. -->

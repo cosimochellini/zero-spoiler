@@ -1389,9 +1389,10 @@ export const season3: ThronesSaga = {
     // visits, each at its first naming in the stage, as
     // `game-of-thrones-season-3-places.md` lists them.
     // Show: "Valar Dohaeris", Daenerys's ship arrives at Astapor and Kraznys
-    // shows her the Unsullied. Books: Daenerys II (site chapter 167), the
-    // first chapter set in the city; Daenerys I (152) names it as the ship's
-    // destination.
+    // shows her the Unsullied. Books: Daenerys I (site chapter 152), Jorah
+    // advises sailing to Astapor to buy Unsullied; Daenerys II (167) is the
+    // first chapter set in the city. A place named, then visited, opens at
+    // the naming (filing-records §2).
     {
       id: 'astapor',
       kind: 'place',
@@ -1400,7 +1401,7 @@ export const season3: ThronesSaga = {
       // Daenerys's and Jorah's season-2 stories tell.
       nameSaidAt: 18,
       revealedAtEpisode: 21,
-      revealedAtChapter: 167,
+      revealedAtChapter: 152,
       name: { it: 'Astapor', en: 'Astapor' },
       summary: {
         it: 'Una città sulla costa della Baia degli Schiavisti, in Essos, dove gli schiavisti addestrano e vendono gli Immacolati.',
@@ -1409,13 +1410,14 @@ export const season3: ThronesSaga = {
       visual: { art: 'astapor', tint: 'vermilion' },
     },
     // Show: "The Bear and the Maiden Fair", Daenerys's army marches on Yunkai
-    // and she receives its envoy before the walls. Books: Daenerys IV (site
-    // chapter 186), the army reaches the city.
+    // and she receives its envoy before the walls. Books: Daenerys II (site
+    // chapter 167), A Wiki of Ice and Fire's chapter page listing it among
+    // the places mentioned; Daenerys IV (186) brings the army to it.
     {
       id: 'yunkai',
       kind: 'place',
       revealedAtEpisode: 27,
-      revealedAtChapter: 186,
+      revealedAtChapter: 167,
       name: { it: 'Yunkai', en: 'Yunkai' },
       summary: {
         it: 'Una città di schiavisti sulla Baia degli Schiavisti, in Essos.',
@@ -1461,8 +1463,9 @@ export const season3: ThronesSaga = {
       },
       visual: { art: 'inn-of-the-kneeling-man', tint: 'ocher' },
     },
-    // Books only. Jon I (site chapter 151), Jon meets Mance Rayder in the
-    // wildlings' camp along the river, which the prologue (144) names. The
+    // Books only. The prologue (site chapter 144), Chett hunts a bear near
+    // the river, which Mance Rayder's host is coming down; Jon I (151) meets
+    // Mance in the camp along it, a dated step. The
     // show sets Mance's camp in the Frostfangs and never names the river;
     // episode 21 orders it.
     {
@@ -1474,7 +1477,7 @@ export const season3: ThronesSaga = {
       // order at episode 15.
       nameSaidAt: 15,
       revealedAtEpisode: 21,
-      revealedAtChapter: 151,
+      revealedAtChapter: 144,
       name: { it: 'Fiumelatte', en: 'the Milkwater' },
       summary: {
         it: 'Un fiume oltre la Barriera, che scende dalle montagne.',
@@ -1744,8 +1747,8 @@ export const SEASON_3_PLACES: Record<
       en: 'Stepped pyramids of red brick above the walls on the sea',
     },
     log: {
-      it: 'Daenerys Targaryen arriva qui in cerca di un esercito. I padroni della città le mostrano gli Immacolati, soldati schiavi addestrati fin da bambini a obbedire, e le propongono di venderglieli.',
-      en: 'Daenerys Targaryen comes here looking for an army. The city’s masters show her the Unsullied, slave soldiers trained from boyhood to obey, and offer to sell them to her.',
+      it: 'Daenerys Targaryen fa vela verso la città in cerca di un esercito: qui si comprano gli Immacolati, soldati schiavi addestrati fin da bambini a obbedire.',
+      en: 'Daenerys Targaryen sails for the city looking for an army: the Unsullied are bought here, slave soldiers trained from boyhood to obey.',
     },
     filedHere: ['missandei', 'kraznys-mo-nakloz'],
     // "And Now His Watch Is Ended" and Daenerys III (site chapter 171): the
@@ -1769,8 +1772,8 @@ export const SEASON_3_PLACES: Record<
       en: 'Walls and a great gate, with a pyramid behind them',
     },
     log: {
-      it: 'Daenerys Targaryen porta il suo esercito sotto le mura della città. Uno dei padroni della città viene a offrirle dell’oro perché se ne vada, e lei rifiuta.',
-      en: 'Daenerys Targaryen brings her army to the city’s walls. One of the city’s masters comes to offer her gold to go away, and she refuses.',
+      it: 'È una delle città di schiavisti della Baia degli Schiavisti.',
+      en: 'It is one of the slaver cities of Slaver’s Bay.',
     },
     filedHere: [
       'grey-worm',
@@ -1779,16 +1782,18 @@ export const SEASON_3_PLACES: Record<
       'daario-naharis',
       'prendahl-na-ghezn',
     ],
-    // "The Rains of Castamere" takes the city by night. Daenerys IV (site
-    // chapter 186), the chapter the place opens in, tells the same night,
-    // so the visit waits for the next chapter.
+    // Daenerys IV (site chapter 186) brings the army to the walls, where a
+    // master offers gold ("The Bear and the Maiden Fair", the place's own
+    // episode), and takes the city that night ("The Rains of Castamere").
+    // The show's siege and fall run past the place's episode, so one step at
+    // 29 / 186 carries both.
     visits: [
       {
         episode: 29,
-        chapter: 187,
+        chapter: 186,
         value: {
-          it: 'Le forze di Daenerys prendono la città con un attacco notturno.',
-          en: 'Daenerys’s forces take the city in a night attack.',
+          it: 'Daenerys porta il suo esercito sotto le mura e rifiuta l’oro che uno dei padroni le offre perché se ne vada. Poi le sue forze prendono la città con un attacco notturno.',
+          en: 'Daenerys brings her army to the walls and refuses the gold one of the masters offers her to go away. Then her forces take the city in a night attack.',
         },
       },
     ],
@@ -1797,8 +1802,8 @@ export const SEASON_3_PLACES: Record<
     form: 'castle',
     region: 'the-north',
     landmark: {
-      it: 'Torri in rovina ai piedi della Barriera, attorno a un pozzo',
-      en: 'Ruined towers below the Wall, around a well',
+      it: 'Torri in rovina ai piedi della Barriera',
+      en: 'Ruined towers below the Wall',
     },
     log: {
       it: 'È uno dei castelli che i Guardiani della Notte hanno abbandonato lungo la Barriera.',
@@ -1827,9 +1832,20 @@ export const SEASON_3_PLACES: Record<
       en: 'A pale river between snowy mountains',
     },
     log: {
-      it: 'Il grande accampamento dei bruti di Mance Rayder si stende lungo le sue rive. Jon Snow viene portato qui davanti a lui.',
-      en: 'Mance Rayder’s great camp of wildlings stretches along its banks. Jon Snow is brought before him here.',
+      it: 'Il grande esercito di bruti di Mance Rayder scende lungo il fiume. Dei confratelli dei Guardiani della Notte vanno a caccia sulle sue rive.',
+      en: 'Mance Rayder’s great host of wildlings is coming down the river. Brothers of the Night’s Watch hunt along its banks.',
     },
+    // Jon I (site chapter 151); episode 22 orders it, after the place's own.
+    visits: [
+      {
+        episode: 22,
+        chapter: 151,
+        value: {
+          it: 'Il grande accampamento dei bruti di Mance Rayder si stende lungo le sue rive. Jon Snow viene portato qui davanti a lui.',
+          en: 'Mance Rayder’s great camp of wildlings stretches along its banks. Jon Snow is brought before him here.',
+        },
+      },
+    ],
     // Mance's host (#1638): the show's camp in the Frostfangs is not filed,
     // so they are filed at the book's, Jon I (site chapter 151).
     filedHere: [

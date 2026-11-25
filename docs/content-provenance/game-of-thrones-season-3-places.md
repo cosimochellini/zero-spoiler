@@ -42,11 +42,11 @@ restated for the stage:
 
 | Place                     | Episode | Chapter | Note                                     |
 | ------------------------- | ------- | ------- | ---------------------------------------- |
-| `astapor`                 | 21      | 167     | both media                               |
-| `yunkai`                  | 27      | 186     | both media                               |
+| `astapor`                 | 21      | 152     | both media; Daenerys I names it          |
+| `yunkai`                  | 27      | 167     | both media; Daenerys II names it         |
 | `nightfort`               | 29      | 170     | the show visits it; the book names it    |
 | `inn-of-the-kneeling-man` | 22      | 155     | book only; the episode orders it         |
-| `milkwater`               | 21      | 151     | book only                                |
+| `milkwater`               | 21      | 144     | book only; the prologue is set by it     |
 | `maidenpool`              | 23      | 165     | book only                                |
 | `high-heart`              | 23      | 166     | book only                                |
 | `acorn-hall`              | 23      | 166     | book only                                |
@@ -70,19 +70,20 @@ restated for the stage:
 
 ## Dated steps on earlier places
 
-| Place                   | Episode | Chapter | Step                                                  |
-| ----------------------- | ------- | ------- | ----------------------------------------------------- |
-| `harrenhal`             | 22      | 121     | taken: the northmen hold it for Robb; drawing stage   |
-| `fist-of-the-first-men` | 21      | 162     | overrun: the attack and the flight south              |
-| `crasters-keep`         | 24      | 177     | taken by the mutineers; no drawing stage              |
-| `dreadfort`             | 30      | 284     | visited: Theon held there and renamed (#852)          |
-| `flea-bottom`           | 21      | 150     | visited, the show alone: Margaery and the orphans     |
-| `astapor`               | 24      | 171     | sacked: the Unsullied bought and the masters killed   |
-| `yunkai`                | 29      | 187     | taken by night; the book's chapter is the place's own |
+| Place                   | Episode | Chapter | Step                                                     |
+| ----------------------- | ------- | ------- | -------------------------------------------------------- |
+| `harrenhal`             | 22      | 121     | taken: the northmen hold it for Robb; drawing stage      |
+| `fist-of-the-first-men` | 21      | 162     | overrun: the attack and the flight south                 |
+| `crasters-keep`         | 24      | 177     | taken by the mutineers; no drawing stage                 |
+| `dreadfort`             | 30      | 284     | visited: Theon held there and renamed (#852)             |
+| `flea-bottom`           | 21      | 150     | visited, the show alone: Margaery and the orphans        |
+| `astapor`               | 24      | 171     | sacked: the Unsullied bought and the masters killed      |
+| `yunkai`                | 29      | 186     | the army at the walls, the gold refused, the city taken  |
+| `milkwater`             | 22      | 151     | book only: Jon brought to Mance in the camp on its banks |
 
 Drawing stages: `fist-of-the-first-men` 21 / 159 (Jon II, the dead horses on the
 slope), `harrenhal` 22 / 121 (the banners over the gatehouse), `astapor` 24 /
-171 (smoke over the city, the gate open, the whip dropped), `yunkai` 29 / 187
+171 (smoke over the city, the gate open, the whip dropped), `yunkai` 29 / 186
 (the gate open).
 
 ## Open points
@@ -90,16 +91,18 @@ slope), `harrenhal` 22 / 121 (the banners over the gatehouse), `astapor` 24 /
 ### Visited
 
 - `astapor`: show 21, "Valar Dohaeris", the ship arrives and Kraznys shows
-  Daenerys the Unsullied. Book 167, Daenerys II; Daenerys I (152) names the city
-  as the ship's destination and is set at sea. The sack's smoke in the drawing
-  is the show's; the book chapter page says only that the city is conquered.
-  Filed here: Missandei and Kraznys mo Nakloz. Italian "Astapor", Italian
-  Wikipedia's section.
-- `yunkai`: show 27, "The Bear and the Maiden Fair". Book 186, Daenerys IV,
-  which also tells the night attack and the freed slaves; the visit and the
-  stage take chapter 187. Filed here: Grey Worm, Grazdan mo Eraz, Mero, Daario
-  Naharis, Prendahl na Ghezn. Owner check: the issue counts a taken place as a
-  drawing stage; the city is not damaged, so the stage only opens the gate.
+  Daenerys the Unsullied. Book 152, Daenerys I, where Jorah advises sailing to
+  Astapor (spoken; review round 2); Daenerys II (167) is set in the city. The
+  sack's smoke in the drawing is the show's; the book chapter page says only
+  that the city is conquered. Filed here: Missandei and Kraznys mo Nakloz.
+  Italian "Astapor", Italian Wikipedia's section.
+- `yunkai`: show 27, "The Bear and the Maiden Fair". Book 167, Daenerys II
+  (Mentions, the line not read), as Meereen is gated (review round 2); Daenerys
+  IV (186) brings the army and takes the city, the visit and the stage at 29
+  / 186. The log holds at 167: one of the slaver cities. Filed here: Grey Worm,
+  Grazdan mo Eraz, Mero, Daario Naharis, Prendahl na Ghezn. Owner check: the
+  issue counts a taken place as a drawing stage; the city is not damaged, so the
+  stage only opens the gate.
 - `nightfort`: show 29, Sam names it to Gilly in "The Rains of Castamere"
   (quoted on the episode page), and "Mhysa" (30) sets the first scene there; the
   gate is the naming (filing-records §2, review round 1). Owner check: stage 2
@@ -112,10 +115,12 @@ slope), `harrenhal` 22 / 121 (the banners over the gatehouse), `astapor` 24 /
   Punishment"), already filed, so the book's inn is the book's alone. Episode 22
   orders it. Italian "Locanda dell'Uomo in Ginocchio", the Italian Game of
   Thrones Wiki.
-- `milkwater`: Jon I (151), "along the Milkwater"; the prologue names it. The
-  show sets Mance's camp in the Frostfangs, folded into the Skirling Pass in
-  stage 2. Italian "Fiumelatte". Filed here: Mance Rayder, Tormund, Orell, Styr,
-  Dalla, Val and Jarl (#1638), met in Mance's camp.
+- `milkwater`: book 144, the prologue, where Chett hunts near the river and
+  Mance's host is coming down it (review round 2); Jon I (151), "along the
+  Milkwater", is a dated step. The show sets Mance's camp in the Frostfangs,
+  folded into the Skirling Pass in stage 2. Italian "Fiumelatte". Filed here:
+  Mance Rayder, Tormund, Orell, Styr, Dalla, Val and Jarl (#1638), met in
+  Mance's camp.
 - `maidenpool`: Jaime III (165), the town deserted and sacked. The show named it
   in episode 15; season 3 does not.
 - `high-heart`, `acorn-hall`: Arya IV (166). The show named Acorn Hall in season

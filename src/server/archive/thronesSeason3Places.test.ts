@@ -35,8 +35,8 @@ const PLACES: {
   id: string
   source?: 'chapter' | 'episode'
 }[] = [
-  { id: 'astapor', episode: 21, chapter: 167 },
-  { id: 'yunkai', episode: 27, chapter: 186 },
+  { id: 'astapor', episode: 21, chapter: 152 },
+  { id: 'yunkai', episode: 27, chapter: 167 },
   { id: 'nightfort', episode: 29, chapter: 170 },
   {
     id: 'inn-of-the-kneeling-man',
@@ -44,7 +44,7 @@ const PLACES: {
     chapter: 155,
     source: 'chapter',
   },
-  { id: 'milkwater', episode: 21, chapter: 151, source: 'chapter' },
+  { id: 'milkwater', episode: 21, chapter: 144, source: 'chapter' },
   { id: 'maidenpool', episode: 23, chapter: 165, source: 'chapter' },
   { id: 'high-heart', episode: 23, chapter: 166, source: 'chapter' },
   { id: 'acorn-hall', episode: 23, chapter: 166, source: 'chapter' },
@@ -82,18 +82,17 @@ const VISITS: {
   source?: 'chapter' | 'episode'
 }[] = [
   { id: 'astapor', episode: 24, chapter: 171 },
-  { id: 'yunkai', episode: 29, chapter: 187 },
+  { id: 'yunkai', episode: 29, chapter: 186 },
   { id: 'harrenhal', episode: 22, chapter: 121 },
   { id: 'fist-of-the-first-men', episode: 21, chapter: 162 },
   { id: 'crasters-keep', episode: 24, chapter: 177 },
   { id: 'dreadfort', episode: 30, chapter: 284 },
   { id: 'flea-bottom', episode: 21, chapter: 150, source: 'episode' },
+  { id: 'milkwater', episode: 22, chapter: 151, source: 'chapter' },
 ]
 
 /**
- * Each later drawing of a place this stage changes, at its pin. Yunkai is
- * taken in the chapter it opens in (186), so its stage waits for the next
- * chapter.
+ * Each later drawing of a place this stage changes, at its pin.
  */
 const STAGES: {
   chapter: number
@@ -105,7 +104,7 @@ const STAGES: {
   { id: 'harrenhal', episode: 22, chapter: 121 },
   { id: 'fist-of-the-first-men', episode: 21, chapter: 159 },
   { id: 'astapor', episode: 24, chapter: 171 },
-  { id: 'yunkai', episode: 29, chapter: 187 },
+  { id: 'yunkai', episode: 29, chapter: 186 },
 ]
 
 /** The bookmark of the other medium at the stage's last count. */

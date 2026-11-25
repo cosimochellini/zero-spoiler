@@ -2105,10 +2105,10 @@ const YUNKAI: Stroke[] = [
 ]
 
 /**
- * The Nightfort: broken towers and walls below the Wall's face, around the
- * well, as Bran's party finds the abandoned castle in episode 30, named in
- * episode 29 and in Jon III (chapter 170). The towers' far faces are hatched;
- * the accent is the mouth of the well.
+ * The Nightfort: broken towers and a fallen curtain wall below the Wall's
+ * face, the abandoned castle Sam names in episode 29 and Jon III (chapter
+ * 170) names. The towers' far faces are hatched; the accent is the ruined
+ * towers.
  */
 const NIGHTFORT: Stroke[] = [
   { d: 'M10 58 H150' },
@@ -2116,12 +2116,14 @@ const NIGHTFORT: Stroke[] = [
     d: 'M10 74 H48 M62 70 H104 M118 78 H150 M24 66 H40 M108 64 H136',
     role: 'ambient',
   },
-  { d: 'M22 150 V96 L28 90 L32 98 L38 86 L44 94 V150' },
-  { d: 'M116 150 V102 L122 96 L126 104 L132 92 L138 100 V150' },
-  { d: 'M44 124 L54 118 L60 126 M100 128 L108 120 L116 126', role: 'soft' },
-  { d: ellipse(80, 128, 16, 5), role: 'accent' },
-  { d: 'M64 128 V144 Q80 150 96 144 V128' },
-  { d: 'M68 126 V108 M92 126 V108 M62 108 H98', role: 'soft' },
+  {
+    d: 'M22 150 V96 L28 90 L32 98 L38 86 L44 94 V150 M116 150 V102 L122 96 L126 104 L132 92 L138 100 V150',
+    role: 'accent',
+  },
+  { d: 'M44 150 V124 L54 118 L60 126 L66 120 L72 130 V150' },
+  { d: 'M90 150 V128 L100 120 L108 128 L116 122 V150' },
+  { d: 'M74 150 l4 -6 h6 l3 6 M60 146 h6', role: 'soft' },
+  { d: 'M30 104 V112 M126 110 V118', role: 'soft' },
   {
     d: 'M34 110 l5 -3 M34 126 l5 -3 M34 142 l5 -3 M128 116 l5 -3 M128 132 l5 -3',
     role: 'ambient',
@@ -2999,10 +3001,9 @@ export const placesRedrawn: Redrawings = {
   // Sacked (#1630): "And Now His Watch Is Ended" (episode 24) and Daenerys
   // III (ASOS 27, site 171).
   'astapor': [{ episode: 24, chapter: 171, value: ASTAPOR_SACKED }],
-  // Taken (#1630): "The Rains of Castamere" (episode 29). Daenerys IV (ASOS
-  // 42, site 186) takes the city in the chapter its record opens in, so the
-  // stage is pinned at the next chapter, 187.
-  'yunkai': [{ episode: 29, chapter: 187, value: YUNKAI_TAKEN }],
+  // Taken (#1630): "The Rains of Castamere" (episode 29) and Daenerys IV
+  // (ASOS 42, site 186).
+  'yunkai': [{ episode: 29, chapter: 186, value: YUNKAI_TAKEN }],
   // Burned: the wildfire takes Stannis's fleet in "Blackwater" (episode
   // 19) and in Davos III (ACOK 58, site 132), the chapter the bay opens in.
   'blackwater-bay': [
