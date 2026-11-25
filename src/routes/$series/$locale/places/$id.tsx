@@ -18,7 +18,7 @@ import { liftPort, liftRecord, liftShip, loadPlace } from '~/server/api'
 import { settleStyles } from '~/styles/settle'
 
 import { DrawingsBand, MapBand } from './-$id.bands'
-import { PlaceEntry, ShipEntry } from './-$id.entry'
+import { PlaceDiptych, ShipDiptych } from './-$id.entry'
 
 // The bands under the first in DOM order. The back link and the first band
 // are the page's header, there from the first frame. Named rather than
@@ -81,12 +81,12 @@ function PlacePage(): ReactElement {
       />
 
       {'ship' in page ?
-        <ShipEntry
+        <ShipDiptych
           peek={peekShip}
           peekRecord={peekRecord}
           slot={page.ship.slot}
         />
-      : <PlaceEntry
+      : <PlaceDiptych
           detail={page.detail}
           peek={peekPort}
           peekRecord={peekRecord}

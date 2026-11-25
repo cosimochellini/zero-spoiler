@@ -25,7 +25,7 @@ import {
 } from '~/test/providers'
 
 import { DrawingsBand, MapBand } from './-$id.bands'
-import { PlaceEntry, ShipEntry } from './-$id.entry'
+import { PlaceDiptych, ShipDiptych } from './-$id.entry'
 
 const sanji = openSlot(record({ id: 'sanji', name: 'Sanji', ...at(20) }))
 const metLater = coveredSlot<RecordView>({ ...at(24) })
@@ -97,7 +97,7 @@ const fogged = detailOf({
 describe('a place’s entry', () => {
   it('shows the plate, the facts, the log and the records found there', () => {
     renderWithProviders(
-      <PlaceEntry
+      <PlaceDiptych
         detail={detailOf()}
         peek={peekPending()}
         peekRecord={peekPending()}
@@ -124,7 +124,7 @@ describe('a place’s entry', () => {
 
   it('files the records found there in a band under the plate and the entry', () => {
     renderWithProviders(
-      <PlaceEntry
+      <PlaceDiptych
         detail={detailOf()}
         peek={peekPending()}
         peekRecord={peekPending()}
@@ -143,7 +143,7 @@ describe('a place’s entry', () => {
   it('lists the characters who come from it, each a link', () => {
     const zeff = record({ id: 'zeff', name: 'Zeff', ...at(20) })
     renderWithProviders(
-      <PlaceEntry
+      <PlaceDiptych
         detail={detailOf({ natives: [zeff] })}
         peek={peekPending()}
         peekRecord={peekPending()}
@@ -169,7 +169,7 @@ describe('a place’s entry', () => {
       dossier: dossier({ filedHere: [sanji] }),
     })
     const { container } = renderWithProviders(
-      <PlaceEntry
+      <PlaceDiptych
         detail={fogged}
         peek={peekTo(jaya)}
         peekRecord={peekPending()}
@@ -202,7 +202,7 @@ describe('a place’s entry', () => {
 describe('a ship’s entry', () => {
   it('shows who designed her, her fate and the places she reaches', () => {
     renderWithProviders(
-      <ShipEntry
+      <ShipDiptych
         peek={peekPending()}
         peekRecord={peekPending()}
         slot={openSlot(merry)}
@@ -229,7 +229,7 @@ describe('a ship’s entry', () => {
   it('carries nothing of a covered ship until the reader asks', async () => {
     const user = userEvent.setup()
     const { container } = renderWithProviders(
-      <ShipEntry
+      <ShipDiptych
         peek={peekTo(merry)}
         peekRecord={peekPending()}
         slot={coveredSlot<ShipView>({ kind: 'ship', ...at(18) })}
@@ -241,6 +241,9 @@ describe('a ship’s entry', () => {
     expect(container.querySelectorAll(':scope svg svg')).toHaveLength(0)
     expect(screen.getByText('A ship under fog')).toBeInTheDocument()
     expect(screen.getByText('Episode 18')).toBeVisible()
+    expect(
+      screen.queryByRole('region', { name: 'Places she reaches' }),
+    ).not.toBeInTheDocument()
 
     await user.click(
       screen.getByRole('button', {
@@ -251,6 +254,10 @@ describe('a ship’s entry', () => {
 
     expect(
       screen.getByRole('heading', { level: 1, name: 'Going Merry' }),
+    ).toBeVisible()
+    // The band under her comes with the lift.
+    expect(
+      screen.getByRole('region', { name: 'Places she reaches' }),
     ).toBeVisible()
   })
 })

@@ -224,7 +224,7 @@ function allOpen(records: RecordView[]): Slot<RecordView>[] {
  * records found there and the characters who come from it. Only the natives
  * the reader has reached are sent, so each is open and none is counted.
  */
-export function PlaceEntry({
+export function PlaceDiptych({
   detail,
   peek,
   peekRecord,
@@ -270,7 +270,7 @@ function ShipBody({ record: ship }: { record: ShipView }): ReactElement {
  * places she reaches. Only the places the reader has reached are sent, so
  * each is open and none is counted.
  */
-export function ShipEntry({
+export function ShipDiptych({
   peek,
   peekRecord,
   slot,

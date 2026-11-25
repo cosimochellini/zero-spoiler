@@ -31,22 +31,27 @@ function Stage({
   const veil = useStageVeil(slot, peek)
 
   return (
-    <section>
-      {veil.drawing(<p data-testid="empty-frame" />, () => {
-        return <p data-testid="drawing" />
+    <>
+      <section>
+        {veil.drawing(<p data-testid="empty-frame" />, () => {
+          return <p data-testid="drawing" />
+        })}
+        <p>Character · episode 1089</p>
+        {veil.words(<h1>A character under fog</h1>, (shown) => {
+          return (
+            <div data-testid="words">
+              <h1>{shown.name}</h1>
+              {withLink ?
+                <a href="/somewhere">Somewhere</a>
+              : null}
+            </div>
+          )
+        })}
+      </section>
+      {veil.below((shown) => {
+        return <p data-testid="below">{shown.id}</p>
       })}
-      <p>Character · episode 1089</p>
-      {veil.words(<h1>A character under fog</h1>, (shown) => {
-        return (
-          <div data-testid="words">
-            <h1>{shown.name}</h1>
-            {withLink ?
-              <a href="/somewhere">Somewhere</a>
-            : null}
-          </div>
-        )
-      })}
-    </section>
+    </>
   )
 }
 
@@ -88,6 +93,8 @@ describe('a record page’s one curtain', () => {
 
     expect(screen.queryByTestId('drawing')).not.toBeInTheDocument()
     expect(screen.queryByText('Spoiler body')).not.toBeInTheDocument()
+    // Under both halves: nothing at all, not even a placeholder.
+    expect(screen.queryByTestId('below')).not.toBeInTheDocument()
   })
 
   it('lifts both halves on one press, with one request', async () => {
@@ -106,6 +113,7 @@ describe('a record page’s one curtain', () => {
 
     expect(asked).toStrictEqual(['zz'])
     expect(screen.getByTestId('drawing')).toBeInTheDocument()
+    expect(screen.getByTestId('below')).toHaveTextContent(record.id)
     expect(
       screen.getByRole('heading', { name: 'Spoiler body' }),
     ).toBeInTheDocument()
@@ -155,6 +163,7 @@ describe('a record page’s one curtain', () => {
     )
 
     expect(screen.getByTestId('drawing')).toBeInTheDocument()
+    expect(screen.getByTestId('below')).toHaveTextContent(record.id)
     expect(
       screen.queryByRole('button', { hidden: true }),
     ).not.toBeInTheDocument()
