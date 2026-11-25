@@ -10,6 +10,8 @@ import { chimeraAntPhase4Chronicles } from '~/data/series/hunter-x-hunter/record
 import { chimeraAntPhase5Chronicles } from '~/data/series/hunter-x-hunter/records/chimera-ant-phase-5.chronicle'
 import type { Entity, Story, Timeline } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
+import type { Bookmark } from '~/lib/progress/episode'
+import { type Pin, recordIn, sidesOf } from '~/test/gates'
 
 import { chronicleOf, chronicleRestOf } from './chronicle.server'
 import { homePage } from './home.server'
@@ -99,6 +101,50 @@ function titlesAt(row: Boundary, date: number, locale: Locale): string[] {
     ...chronicleRestOf(row.character.id, reader),
   ].map((entry) => entry.title)
 }
+
+/**
+ * One story per phase, pinned by hand at the scene it tells (#1410), beside
+ * the sweep below that reads every story's gate from the data.
+ */
+const PINS: (Pin & { id: string; title: string })[] = [
+  { id: 'kite', title: 'The species survey', episode: 77, chapter: 186 },
+  { id: 'knov', title: 'Palm’s teacher', episode: 86, chapter: 200 },
+  // The manga's telling; the anime tells the cave rescue instead.
+  {
+    id: 'ikalgo',
+    title: 'The spared enemy',
+    episode: 101,
+    chapter: 238,
+    source: 'chapter',
+  },
+  { id: 'zeno', title: 'The rain of dragons', episode: 111, chapter: 264 },
+  {
+    id: 'gon-freecss',
+    title: 'Leaving for Peijin',
+    episode: 127,
+    chapter: 300,
+  },
+]
+
+describe('one Chimera Ant story per phase, at its scene', () => {
+  it.each(
+    PINS.flatMap((pin) =>
+      sidesOf(pin, archive.series).map((side) => ({ ...pin, ...side })),
+    ),
+  )('opens “$title” at $unit $gate', ({ id, title, before, reached }) => {
+    const titles = (bookmark: Bookmark): string[] => {
+      const reader = readerFor(archive, bookmark, 'en')
+
+      return [
+        ...chronicleOf(recordIn(archive, id), reader).entries,
+        ...chronicleRestOf(id, reader),
+      ].map((entry) => entry.title)
+    }
+
+    expect(titles(before)).not.toContain(title)
+    expect(titles(reached)).toContain(title)
+  })
+})
 
 describe('the Chimera Ant chronicles (#910)', () => {
   it.each(AUTHORED)('uses the Italian dub names in %s', (id, stories) => {
