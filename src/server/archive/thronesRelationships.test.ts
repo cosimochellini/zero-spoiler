@@ -274,7 +274,24 @@ const STAGE_2_EARLY: Record<string, string> = { 'dontos-hollard': '#1434' }
  * gives a stage-3 snapshot. Each child fills its own row's `owners`.
  */
 const STAGE_3_GROUPS: { group: string; issue: string; owners: string[] }[] = [
-  { group: 'Essos', issue: '#1650', owners: [] },
+  {
+    group: 'Essos',
+    issue: '#1650',
+    owners: [
+      'missandei',
+      'kraznys-mo-nakloz',
+      'grey-worm',
+      'grazdan-mo-eraz',
+      'mero',
+      'daario-naharis',
+      'prendahl-na-ghezn',
+      'daenerys-targaryen',
+      'jorah-mormont',
+      'barristan-selmy',
+      'arstan-whitebeard',
+      'drogon',
+    ],
+  },
   { group: 'King’s Landing', issue: '#1651', owners: [] },
   { group: 'Robb’s war and the Riverlands', issue: '#1653', owners: [] },
   {
@@ -463,7 +480,8 @@ describe.each(LOCALES)(
     )
 
     // Each stage's group shows its reached selection at the stage's last
-    // episode or chapter, and keeps it past the edge.
+    // episode or chapter, and keeps it past the edge, unless the next stage
+    // pins a snapshot at the first number past it (Daenerys at episode 21).
     it.each([
       ...STAGE_2_GROUPS.map((row) => ({ ...row, stage: 2 })),
       ...STAGE_3_GROUPS.map((row) => ({ ...row, stage: 3 })),
@@ -478,7 +496,7 @@ describe.each(LOCALES)(
 
           expect(shown, id).toBe(true)
 
-          for (const [last, next] of edgeBookmarks(edge)) {
+          for (const [last, next] of unpinnedEdges(id, edge)) {
             expect(projected(id, next, locale), id).toStrictEqual(
               projected(id, last, locale),
             )
@@ -1809,6 +1827,138 @@ describe.each(LOCALES)(
       expect(people('melisandre', ep(14))).not.toContain('renly-baratheon')
       expect(people('melisandre', ep(15))).toContain('renly-baratheon')
       expect(people('melisandre', ch(143))).not.toContain('renly-baratheon')
+    })
+  },
+)
+
+// Essos in stage 3 (#1650): each link the two media time or tell apart,
+// checked just before its pin and at it.
+describe.each(LOCALES)(
+  'Game of Thrones stage-3 Essos revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    const said = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.summary
+    const showCeiling = ep(archive.series.episodeCeiling)
+
+    it('opens Missandei’s cards at episode 23 and chapter 171', () => {
+      expect(projected('missandei', ep(22), locale)).toStrictEqual([])
+      expect(people('missandei', ep(23))).toStrictEqual(['daenerys-targaryen'])
+      expect(projected('missandei', ch(170), locale)).toStrictEqual([])
+      expect(people('missandei', ch(171))).toStrictEqual([
+        'daenerys-targaryen',
+        'kraznys-mo-nakloz',
+      ])
+      expect(people('daenerys-targaryen', ep(22))).not.toContain('missandei')
+      expect(people('daenerys-targaryen', ep(23))).toContain('missandei')
+      expect(people('daenerys-targaryen', ch(170))).not.toContain('missandei')
+      expect(people('daenerys-targaryen', ch(171))).toContain('missandei')
+    })
+
+    it('keeps Kraznys and Prendahl, named in the books alone, off show pages', () => {
+      for (const id of ['kraznys-mo-nakloz', 'prendahl-na-ghezn']) {
+        expect(projected(id, showCeiling, locale), id).toStrictEqual([])
+      }
+
+      expect(projected('kraznys-mo-nakloz', ch(170), locale)).toStrictEqual([])
+      expect(people('kraznys-mo-nakloz', ch(171))).toContain('drogon')
+      expect(projected('prendahl-na-ghezn', ch(185), locale)).toStrictEqual([])
+      expect(people('prendahl-na-ghezn', ch(186))).toContain('daario-naharis')
+      expect(people('missandei', ep(30))).not.toContain('kraznys-mo-nakloz')
+      expect(people('daario-naharis', ep(30))).not.toContain(
+        'prendahl-na-ghezn',
+      )
+    })
+
+    it('has Barristan join Daenerys at episode 21 in the show alone', () => {
+      expect(people('barristan-selmy', ep(20))).not.toContain(
+        'daenerys-targaryen',
+      )
+      expect(people('barristan-selmy', ep(21))).toContain('daenerys-targaryen')
+      expect(people('daenerys-targaryen', ep(20))).not.toContain(
+        'barristan-selmy',
+      )
+      expect(people('daenerys-targaryen', ep(21))).toContain('barristan-selmy')
+      expect(people('jorah-mormont', ep(21))).toContain('barristan-selmy')
+
+      // The books bring him as Arstan Whitebeard through the stage.
+      const ceiling = ch(196)
+
+      expect(people('barristan-selmy', ceiling)).not.toContain(
+        'daenerys-targaryen',
+      )
+      expect(people('daenerys-targaryen', ceiling)).not.toContain(
+        'barristan-selmy',
+      )
+      expect(people('daenerys-targaryen', ceiling)).toContain(
+        'arstan-whitebeard',
+      )
+    })
+
+    it('opens Grey Worm at episode 25 and chapter 186', () => {
+      expect(projected('grey-worm', ep(24), locale)).toStrictEqual([])
+      expect(people('grey-worm', ep(25))).toContain('daenerys-targaryen')
+      expect(projected('grey-worm', ch(185), locale)).toStrictEqual([])
+      expect(people('grey-worm', ch(186))).toContain('jorah-mormont')
+      expect(people('jorah-mormont', ch(185))).not.toContain('grey-worm')
+      expect(people('jorah-mormont', ch(186))).toContain('grey-worm')
+    })
+
+    it('has the show’s Daario kill Mero and the book’s kill Prendahl', () => {
+      expect(projected('daario-naharis', ep(27), locale)).toStrictEqual([])
+      expect(people('daario-naharis', ep(28))).toContain('mero')
+      expect(said('daario-naharis', 'mero', ep(29))).not.toBe(
+        said('daario-naharis', 'mero', ep(28)),
+      )
+      expect(projected('daario-naharis', ch(185), locale)).toStrictEqual([])
+      expect(people('daario-naharis', ch(186))).toContain('prendahl-na-ghezn')
+      expect(people('daario-naharis', ch(186))).not.toContain('mero')
+      expect(people('daenerys-targaryen', ep(28))).toContain('mero')
+      expect(people('daenerys-targaryen', ch(186))).not.toContain('mero')
+      expect(said('mero', 'daenerys-targaryen', ch(186))).not.toBe(
+        said('mero', 'daenerys-targaryen', ep(28)),
+      )
+    })
+
+    it('gives the envoy of Yunkai his show and book cards at their own gates', () => {
+      expect(projected('grazdan-mo-eraz', ep(26), locale)).toStrictEqual([])
+      expect(people('grazdan-mo-eraz', ep(27))).toStrictEqual([
+        'daenerys-targaryen',
+        'missandei',
+      ])
+      expect(projected('grazdan-mo-eraz', ch(185), locale)).toStrictEqual([])
+      expect(people('grazdan-mo-eraz', ch(186))).toStrictEqual([
+        'daenerys-targaryen',
+        'drogon',
+      ])
+    })
+
+    it('has Drogon burn Kraznys at chapter 171 on book pages alone', () => {
+      expect(people('drogon', ch(170))).not.toContain('kraznys-mo-nakloz')
+      expect(people('drogon', ch(171))).toContain('kraznys-mo-nakloz')
+      expect(people('drogon', ch(185))).not.toContain('grazdan-mo-eraz')
+      expect(people('drogon', ch(186))).toContain('grazdan-mo-eraz')
+      expect(said('drogon', 'kraznys-mo-nakloz', ch(186))).not.toBe(
+        said('drogon', 'kraznys-mo-nakloz', ch(171)),
+      )
+      expect(projected('drogon', showCeiling, locale)).toStrictEqual([])
+    })
+
+    it('opens the books’ voyage to Astapor at chapter 152', () => {
+      for (const owner of ['jorah-mormont', 'arstan-whitebeard']) {
+        expect(said(owner, 'daenerys-targaryen', ch(152)), owner).not.toBe(
+          said(owner, 'daenerys-targaryen', ch(151)),
+        )
+      }
+
+      expect(people('daenerys-targaryen', ch(151))).not.toContain(
+        'illyrio-mopatis',
+      )
+      expect(people('daenerys-targaryen', ch(152))).toContain('illyrio-mopatis')
     })
   },
 )
