@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
 import { getCharacter } from '~/data/series/one-piece/characters'
-import { stories } from '~/data/series/one-piece/dated'
 import { LOCALES } from '~/i18n/locales'
 import { ONE_PIECE_BOOKMARK } from '~/lib/progress/series'
 import type { SourceCredit } from '~/lib/view/credits'
@@ -10,6 +9,13 @@ import { ep } from '~/test/providers'
 
 const OFFICIAL = 'https://one-piece.com/anime/o6217/index.html'
 const TAMA_REVISION = 'oldid=2132292'
+
+/**
+ * The gates these tests cross, pinned by hand (#1410): Tama's record, and the
+ * chapter Luffy's episode-126 story opens at in the manga.
+ */
+const TAMA_EPISODE = 894
+const RAIN_CHAPTER = 213
 
 describe('source credits', () => {
   it.each(LOCALES)(
@@ -24,11 +30,11 @@ describe('source credits', () => {
     (locale) => {
       const tama = fixture(getCharacter('tama'))
 
-      const covered = creditsPage(ep(tama.revealedAtEpisode - 1), locale)
+      const covered = creditsPage(ep(TAMA_EPISODE - 1), locale)
 
       expect(JSON.stringify(covered)).not.toContain(TAMA_REVISION)
 
-      const open = creditsPage(ep(tama.revealedAtEpisode), locale)
+      const open = creditsPage(ep(TAMA_EPISODE), locale)
 
       expect(JSON.stringify(open)).toContain(TAMA_REVISION)
       expect(JSON.stringify(open)).not.toContain('Kurozumi')
@@ -39,19 +45,13 @@ describe('source credits', () => {
   )
 
   it('gates each chronicle reference at the story in the reader’s own unit', () => {
-    const story = fixture(
-      stories.find(
-        ({ character, episode }) =>
-          character.id === 'monkey-d-luffy' && episode === 126,
-      ),
-    )
     const at = (chapter: number): SourceCredit[] =>
       creditsPage({ mode: 'chapter', chapter }, 'en').filter(
         ({ scope, episode }) => scope === 'chronicle' && episode === 126,
       )
 
-    expect(at(story.gate.revealedAtChapter - 1)).toStrictEqual([])
-    expect(at(story.gate.revealedAtChapter)).toHaveLength(1)
+    expect(at(RAIN_CHAPTER - 1)).toStrictEqual([])
+    expect(at(RAIN_CHAPTER)).toHaveLength(1)
     expect(
       creditsPage(ep(125), 'en').filter(({ episode }) => episode === 126),
     ).toStrictEqual([])
