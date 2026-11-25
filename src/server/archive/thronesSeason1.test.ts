@@ -1593,7 +1593,8 @@ const STAGES: {
   },
   { id: 'varys', episode: 41, chapter: 274, source: 'episode' },
   { id: 'varys', episode: 72, chapter: 344, source: 'episode', stage: 1 },
-  { id: 'pycelle', episode: 60, chapter: 344, source: 'episode' },
+  { id: 'pycelle', episode: 13, chapter: 99 },
+  { id: 'pycelle', episode: 60, chapter: 344, source: 'episode', stage: 1 },
   { id: 'sandor-clegane', episode: 40, chapter: 218 },
   {
     id: 'sandor-clegane',
@@ -1609,8 +1610,9 @@ const STAGES: {
     source: 'episode',
     stage: 2,
   },
-  { id: 'janos-slynt', episode: 31, chapter: 213 },
-  { id: 'janos-slynt', episode: 43, chapter: 279, stage: 1 },
+  { id: 'janos-slynt', episode: 12, chapter: 82 },
+  { id: 'janos-slynt', episode: 31, chapter: 213, stage: 1 },
+  { id: 'janos-slynt', episode: 43, chapter: 279, stage: 2 },
   { id: 'gregor-clegane', episode: 38, chapter: 243, source: 'chapter' },
   {
     id: 'gregor-clegane',

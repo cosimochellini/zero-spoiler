@@ -570,26 +570,31 @@ const SHADE_GLASS: Stroke[] = [
 ]
 
 /**
- * Quaithe: her mask, front on with its rim on one side and its ties, two
- * eye slits cut in it and hexagons worked over it, as the show makes it in
- * metal. The book's is dark red lacquer, worn when she comes to Daenerys
- * in Daenerys I (chapter 86). The accent is the mask's edge; nothing is
- * behind the slits.
+ * Quaithe: her mask turned 3/4, its rim showing on the far side, two eye
+ * slits cut through the plate with the cut's depth along their lower
+ * edges, hexagons worked over it, as the show makes it in metal, and its
+ * ties trailing. The book's is dark red lacquer, worn when she comes to
+ * Daenerys in Daenerys I (chapter 86). The accent is the mask's edge;
+ * nothing is behind the slits.
  */
 const MASK: Stroke[] = [
   {
-    d: 'M80 34 Q112 34 116 66 Q118 100 102 124 Q92 138 80 140 Q68 138 58 124 Q42 100 44 66 Q48 34 80 34 Z',
+    d: 'M88 32 Q112 34 114 66 Q114 100 102 124 Q94 136 86 140 Q66 138 52 124 Q36 100 40 66 Q46 32 88 32 Z',
     role: 'accent',
   },
-  { d: 'M116 66 Q124 98 106 128 Q96 142 82 144', role: 'soft' },
-  { d: 'M56 80 H74 M86 80 H104' },
+  { d: 'M114 66 Q122 98 108 128 Q100 140 90 143', role: 'soft' },
+  { d: 'M50 74 L78 72 L76 79 L52 81 Z M94 72 L108 70 L107 76 L95 78 Z' },
+  { d: 'M53 77 L76 75 M96 74 L107 73', role: 'soft' },
   {
-    d: `${polygon(68, 54, 8, 6)} ${polygon(92, 54, 8, 6)} ${polygon(80, 62, 6, 6)} ${polygon(58, 102, 8, 6)} ${polygon(102, 102, 8, 6)} ${polygon(70, 118, 8, 6)} ${polygon(90, 118, 8, 6)}`,
+    d: `${polygon(62, 52, 8, 6)} ${polygon(78, 54, 6, 6)} ${polygon(100, 52, 5, 6)} ${polygon(56, 102, 8, 6)} ${polygon(70, 118, 7, 6)} ${polygon(100, 102, 5, 6)} ${polygon(96, 118, 5, 6)}`,
     role: 'soft',
   },
-  { d: 'M44 66 Q30 70 24 84 M116 66 Q130 70 136 84', role: 'soft' },
-  { d: 'M112 90 l6 -3 M108 104 l6 -3 M102 118 l6 -3', role: 'ambient' },
-  shadow(80, 160, 28),
+  {
+    d: 'M40 66 Q26 72 22 90 Q20 108 28 124 M114 66 Q124 72 128 88',
+    role: 'soft',
+  },
+  { d: 'M108 90 l6 -3 M106 104 l6 -3 M100 118 l6 -3', role: 'ambient' },
+  shadow(80, 160, 30),
 ]
 
 /**

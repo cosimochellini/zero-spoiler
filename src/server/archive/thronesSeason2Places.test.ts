@@ -1,14 +1,16 @@
 import { describe, expect, it } from 'vitest'
 
+import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import {
   season2,
   SEASON_2_PLACES,
 } from '~/data/series/game-of-thrones/records/season-2'
 import type { Bookmark } from '~/lib/progress/episode'
-import { gateCases, opened, sidesOf } from '~/test/gates'
+import { gateCases, opened, recordIn, sidesOf } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { placePage } from './placePage.server'
+import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
 const { archive } = loadedSeries('game-of-thrones')
@@ -75,6 +77,22 @@ const VISITS: {
   { id: 'gods-eye', episode: 13, chapter: 88, source: 'chapter' },
   { id: 'harrenhal', episode: 14, chapter: 100 },
   { id: 'qarth', episode: 14, chapter: 101 },
+]
+
+/**
+ * Each later drawing of a place this stage files (#1489), at its pin;
+ * `source` for one medium, whose other number only orders it. The House of
+ * the Undying burns in the chapter it opens in (122), so its books-only
+ * stage waits for the next chapter.
+ */
+const STAGES: {
+  chapter: number
+  episode: number
+  id: keyof typeof DRAWINGS
+  source?: 'chapter' | 'episode'
+}[] = [
+  { id: 'blackwater-bay', episode: 19, chapter: 132 },
+  { id: 'house-of-the-undying', episode: 20, chapter: 123, source: 'chapter' },
 ]
 
 /**
@@ -179,6 +197,49 @@ describe.each(
     expect(visitsAt(id, before)).not.toContain(episode)
     expect(visitsAt(id, reached)).toContain(episode)
   })
+})
+
+describe.each(
+  STAGES.flatMap((stage) =>
+    sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
+  ),
+)(
+  '$id is redrawn by $unit at $episode/$chapter',
+  ({ before, chapter, episode, id, reached, source }) => {
+    it('at its pin, not one before', () => {
+      const place = recordIn(archive, id)
+      const stage = REDRAWINGS[id]?.[0]
+
+      expect(stage?.episode).toBe(episode)
+      expect(stage?.chapter).toBe(chapter)
+      expect(place.source ?? stage?.source).toBe(source)
+      expect(
+        drawingOf(place, readerFor(archive, before, 'en')).strokes,
+      ).toStrictEqual(DRAWINGS[id])
+      expect(
+        drawingOf(place, readerFor(archive, reached, 'en')).strokes,
+      ).toStrictEqual(stage?.value)
+    })
+  },
+)
+
+describe('the place stages one medium alone tells', () => {
+  it.each(STAGES.filter(({ source }) => source !== undefined))(
+    'never redraws $id for a reader of the other medium',
+    ({ id, source = 'episode' }) => {
+      const place = recordIn(archive, id)
+
+      expect(drawingOf(place, otherAtTheEnd(source)).strokes).toStrictEqual(
+        DRAWINGS[id],
+      )
+      expect(
+        drawingOf(
+          place,
+          readerFor(archive, { mode: 'episode', episode: 73 }, 'en'),
+        ).strokes,
+      ).toStrictEqual(DRAWINGS[id])
+    },
+  )
 })
 
 describe('the visits one medium alone tells', () => {

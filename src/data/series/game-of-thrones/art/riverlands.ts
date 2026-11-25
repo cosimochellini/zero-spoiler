@@ -1041,31 +1041,32 @@ export const riverlandsRedrawn: Redrawings = {
     },
   ],
   'weese': [
-    // The spotted bitch lying on her side, still, the spots still the
-    // accent: Arya gives Jaqen his name, and Weese is found dead with his
-    // own dog on him, in Arya VIII of A Clash of Kings (chapter 112). The
-    // record is the book's alone; episode 16 only orders it. How he dies is
-    // not drawn.
+    // The spotted bitch standing alone, alive, her tail up and the spots
+    // still the accent: Arya gives Jaqen his name, and Weese is found dead
+    // with his own bitch on his chest, in Arya VIII of A Clash of Kings
+    // (chapter 112). The record is the book's alone; episode 16 only orders
+    // it. How he dies is not drawn.
     {
       episode: 16,
       chapter: 112,
       source: 'chapter',
       value: [
         {
-          d: 'M14 146 Q14 138 24 136 L36 134 Q42 126 52 128 Q66 120 92 120 Q120 122 128 138 Q132 150 120 152 H22 Q14 152 14 146',
+          d: 'M30 84 Q30 76 40 74 Q48 66 58 66 Q68 66 72 76 L76 92 Q100 88 120 94 Q132 98 132 112 L130 150',
         },
-        { d: 'M44 128 Q56 130 54 144 Q46 146 44 136', role: 'soft' },
         {
-          d: 'M60 152 L52 158 M74 152 L70 159 M112 152 L118 159 M124 148 L134 154',
-          role: 'soft',
+          d: 'M30 84 Q34 90 44 90 Q56 92 60 100 V150 M70 150 V122 Q92 128 114 122 L118 150',
         },
-        { d: 'M128 136 Q140 132 150 140', role: 'soft' },
+        { d: 'M56 68 Q68 70 66 86 Q58 88 56 78', role: 'soft' },
+        { d: 'M78 124 V148 M124 124 L126 148', role: 'soft' },
+        { d: 'M54 96 Q66 102 76 94', role: 'soft' },
+        { d: 'M131 102 Q144 94 148 80', role: 'soft' },
         {
-          d: `${circle(80, 134, 4)} ${circle(98, 140, 3)} ${circle(110, 132, 3)} ${circle(66, 142, 3)}`,
+          d: `${circle(92, 106, 4)} ${circle(108, 112, 3)} ${circle(80, 112, 3)} ${circle(118, 102, 3)}`,
           role: 'accent',
         },
-        { d: 'M92 146 l5 -3 M104 148 l5 -3 M116 146 l5 -3', role: 'ambient' },
-        { d: 'M8 160 H152', role: 'ambient', dashed: true },
+        { d: 'M122 108 l5 -3 M122 120 l5 -3', role: 'ambient' },
+        shadow(84, 154, 48),
       ],
     },
   ],

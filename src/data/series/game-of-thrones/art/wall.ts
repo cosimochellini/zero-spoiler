@@ -787,34 +787,43 @@ const PACK: Stroke[] = [
 const LOCKE_PACK: Stroke[] = [...PACK, shadow(80, 154, 56)]
 
 /**
- * A right hand held up with its palm out, the thumb and the forefinger
- * whole and the three other fingers lost at the knuckle, over a fur cuff.
+ * A right hand held up and seen from the back in 3/4, the thumb and the
+ * forefinger whole and the three other fingers lost at the knuckle, the
+ * hand's outer edge hatched, over a fur cuff.
  */
 const HALFHAND_PALM: Stroke[] = [
   {
-    d: 'M64 150 V130 Q56 122 56 106 L42 86 Q38 78 46 76 Q52 76 56 84 L62 94 V80 M88 78 V36 Q94 30 100 36 V102 Q100 120 94 128 V150',
+    d: 'M64 140 V120 Q58 112 54 104 L42 86 Q38 78 46 76 Q52 76 56 84 L66 98 Q72 90 82 84 V40 Q88 32 96 40 V82 M125 92 Q128 112 120 128 V140',
   },
-  { d: 'M90 52 H98 M90 66 H98 M66 112 Q78 118 90 110', role: 'soft' },
-  { d: 'M50 84 L56 92 M96 84 l-4 3 M96 98 l-4 3', role: 'ambient' },
-  { d: 'M56 140 q4 -5 8 0 t8 0 t8 0 t8 0 t8 0 t8 0', role: 'soft' },
+  { d: 'M83 56 Q89 59 95 56 M83 68 Q89 71 95 68', role: 'soft' },
+  { d: 'M88 92 Q86 110 82 126 M102 96 Q102 112 98 126', role: 'soft' },
+  { d: 'M118 102 l-4 3 M120 114 l-4 3 M116 126 l-4 3', role: 'ambient' },
+  {
+    d: 'M58 140 q4 -5 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 M58 140 Q55 150 60 158 H120 Q125 150 122 140',
+  },
+  {
+    d: 'M66 146 l4 6 M78 146 l4 6 M90 146 l4 6 M102 146 l4 6 M112 146 l4 6',
+    role: 'ambient',
+  },
 ]
 
 /** The three lost fingers, three stumps along the knuckles. */
 const STUMPS = {
-  d: 'M62 80 Q62 73 66.5 73 Q71 73 71 79 Q71 73 75.5 73 Q80 73 80 79 Q80 73 84 73 Q88 73 88 78',
+  d: 'M96 82 Q96 74 101 74 Q106 74 106 82 Q106 86 108 86 Q108 78 112.5 78 Q117 78 117 86 Q117 90 119 90 Q119 84 122 84 Q125 84 125 92',
 }
 
 /**
  * Qhorin Halfhand: the right hand that names him, held up with only the
  * thumb and forefinger left, a wildling axe having taken the rest. The
  * show keeps his gloves on but names him for it from "The Ghost of
- * Harrenhal" (episode 15), the books from Jon V (chapter 117).
- * The accent is the three stumps.
+ * Harrenhal" (episode 15), the books from Jon V (chapter 117). The back
+ * of the hand is turned to the reader, so there is no palm to draw; the
+ * accent is the three stumps.
  */
 const HALFHAND: Stroke[] = [
   ...HALFHAND_PALM,
   { ...STUMPS, role: 'accent' },
-  shadow(80, 153, 30),
+  shadow(90, 164, 36),
 ]
 
 /**

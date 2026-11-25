@@ -108,6 +108,7 @@ const STAGES: {
   { id: 'melisandre', episode: 14, chapter: 116 },
   { id: 'melisandre', episode: 51, chapter: 344, source: 'episode', stage: 1 },
   { id: 'melisandre', episode: 70, chapter: 344, source: 'episode', stage: 2 },
+  { id: 'davos-seaworth', episode: 19, chapter: 132 },
   { id: 'matthos-seaworth', episode: 19, chapter: 132 },
   { id: 'selyse-baratheon', episode: 41, chapter: 316, source: 'chapter' },
   {
@@ -118,7 +119,7 @@ const STAGES: {
     stage: 1,
   },
   { id: 'shireen-baratheon', episode: 49, chapter: 344, source: 'episode' },
-  { id: 'brienne-of-tarth', episode: 15, chapter: 113, source: 'chapter' },
+  { id: 'brienne-of-tarth', episode: 15, chapter: 107, source: 'chapter' },
   { id: 'brienne-of-tarth', episode: 34, chapter: 216, stage: 1 },
   { id: 'margaery-tyrell', episode: 32, chapter: 204, source: 'episode' },
   {

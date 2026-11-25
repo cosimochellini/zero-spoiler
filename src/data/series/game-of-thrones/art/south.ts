@@ -1420,6 +1420,25 @@ export const southRedrawn: Redrawings = {
     },
   ],
   'pycelle': [
+    // The chain on its stand, smaller, under a banner of the Lannister
+    // lion, the accent moved to the lion: he confesses that all he did, he
+    // did for House Lannister, when Tyrion has him taken, in "What Is Dead
+    // May Never Die" (episode 13) and in Tyrion VI (chapter 99).
+    {
+      episode: 13,
+      chapter: 99,
+      value: [
+        ...moved(softened(GRAND_CHAIN), 'translate(0 30) scale(0.8)'),
+        { d: 'M104 22 H152' },
+        { d: 'M110 22 V74 L128 66 L146 74 V22' },
+        { d: 'M140 30 V66', role: 'soft' },
+        {
+          d: CROWN_LION,
+          role: 'accent',
+          transform: 'translate(128 44) scale(0.8) translate(-56 -130)',
+        },
+      ],
+    },
     // The show alone: the stand empty and the chain down on the floor,
     // broken, one link apart. Qyburn's little birds kill him in "The Winds
     // of Winter" (episode 60); the books keep him alive, so their last
@@ -1487,6 +1506,29 @@ export const southRedrawn: Redrawings = {
     },
   ],
   'janos-slynt': [
+    // The same spear standing bare, the gold cloak dropped in a heap at its
+    // foot: Tyrion takes the City Watch from him and sends him to the
+    // Night's Watch, in "The Night Lands" (episode 12) and in Tyrion II
+    // (chapter 82). The heap keeps the accent.
+    {
+      episode: 12,
+      chapter: 82,
+      value: [
+        ...SPEARHEAD,
+        { d: SPEAR_SOCKET },
+        { d: 'M78 64 V150 M82 64 V150' },
+        {
+          d: 'M86 150 Q88 136 100 138 Q106 126 118 130 Q130 128 136 140 Q148 142 150 152 Q144 156 138 152 Q132 158 124 153 Q116 158 108 153 Q100 158 94 153 Q88 156 86 150 Z',
+          role: 'accent',
+        },
+        {
+          d: 'M100 138 Q106 144 104 152 M118 130 Q118 142 126 150 M136 140 Q136 146 142 150',
+          role: 'soft',
+        },
+        { d: 'M128 138 l5 -3 M140 144 l4 -2.4', role: 'ambient' },
+        shadow(98, 158, 54),
+      ],
+    },
     // The same spear with a black cloak knotted where the gold one was: a
     // brother of the Night's Watch at Castle Black, in "Two Swords"
     // (episode 31) and in Jon IX (chapter 213). Black, so the tails are
