@@ -38672,6 +38672,106 @@
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23295",
       "contentSha256": "98fb3808ad68acb5c3f7028e64409f28cfffa92164df3326be9cc22a9cdecd0a"
     },
+    "got-en-Mance_Rayder-728377.json": {
+      "locale": "en",
+      "title": "Mance Rayder",
+      "revision": 728377,
+      "revisionDate": "2026-02-05T07:36:23Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Mance_Rayder",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728377",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728377",
+      "contentSha256": "3b2707d1175418b7489d7d014d8d277afb200f2845f465e3f9c81b0395ccec7e"
+    },
+    "got-en-Tormund-728498.json": {
+      "locale": "en",
+      "title": "Tormund",
+      "revision": 728498,
+      "revisionDate": "2026-02-05T08:56:06Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Tormund",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728498",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728498",
+      "contentSha256": "b20913b0428fa2eed50915f71bc5655660b543aab86c275248a034502e0cc59d"
+    },
+    "got-en-Orell-739947.json": {
+      "locale": "en",
+      "title": "Orell",
+      "revision": 739947,
+      "revisionDate": "2026-06-27T08:22:36Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Orell",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=739947",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=739947",
+      "contentSha256": "478a4c7e66518733c1c142423e24da2a0b39acab330e97184f41cbbe77206426"
+    },
+    "got-en-Karl_Tanner-748264.json": {
+      "locale": "en",
+      "title": "Karl Tanner",
+      "revision": 748264,
+      "revisionDate": "2026-08-19T08:24:02Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Karl_Tanner",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748264",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748264",
+      "contentSha256": "041b57a8dfcd072e313d4384da05cd6abd8249948a6c38d0d51bee85d5b9f35d"
+    },
+    "got-en-Styr-728466.json": {
+      "locale": "en",
+      "title": "Styr",
+      "revision": 728466,
+      "revisionDate": "2026-02-05T08:50:34Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Styr",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728466",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728466",
+      "contentSha256": "34cbac76f26ad03b1318a1f844e9ee51b67f9f4cccb11755c4ce9ff50502e750"
+    },
+    "got-en-Bannen-727945.json": {
+      "locale": "en",
+      "title": "Bannen",
+      "revision": 727945,
+      "revisionDate": "2026-02-05T04:25:19Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Bannen",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=727945",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=727945",
+      "contentSha256": "6593e30c76cc571699c0da31986d4c18657c94fefb4a49c768252fa98e7afa49"
+    },
+    "iaf-en-Mance_Rayder-27332.json": {
+      "locale": "en",
+      "title": "Mance Rayder",
+      "revision": 27332,
+      "revisionDate": "2025-05-13T03:41:16Z",
+      "url": "https://iceandfire.fandom.com/wiki/Mance_Rayder",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27332",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27332",
+      "contentSha256": "340033dffb1ef005b08b6a9d9b49ee07fe27fdb97ffbda98a54589480792d1cc"
+    },
+    "iaf-en-Tormund-20215.json": {
+      "locale": "en",
+      "title": "Tormund",
+      "revision": 20215,
+      "revisionDate": "2018-01-18T11:08:58Z",
+      "url": "https://iceandfire.fandom.com/wiki/Tormund",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=20215",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=20215",
+      "contentSha256": "bb6cb742d6f2b27ad7186fd063cebeea067fd4d04889c22a4e4528a9f7761603"
+    },
+    "iaf-en-Small_Paul-24930.json": {
+      "locale": "en",
+      "title": "Small Paul",
+      "revision": 24930,
+      "revisionDate": "2021-04-29T11:47:16Z",
+      "url": "https://iceandfire.fandom.com/wiki/Small_Paul",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=24930",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=24930",
+      "contentSha256": "e7b09053b48d4ffef657e599c3ae4fbf0f989f24558ab29cd87a54684be6a76d"
+    },
+    "iaf-en-Coldhands-23068.json": {
+      "locale": "en",
+      "title": "Coldhands",
+      "revision": 23068,
+      "revisionDate": "2019-05-04T02:24:27Z",
+      "url": "https://iceandfire.fandom.com/wiki/Coldhands",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23068",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23068",
+      "contentSha256": "23825a02bfadbbe63715f67f9b1fa752af27287789a951c9b7e0fa4c4c43de74"
+    },
     "got-en-Valar_Dohaeris/Appearances-722999.json": {
       "locale": "en",
       "title": "Valar Dohaeris/Appearances",

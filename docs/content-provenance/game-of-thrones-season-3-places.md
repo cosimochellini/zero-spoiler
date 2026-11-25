@@ -114,7 +114,8 @@ slope), `harrenhal` 22 / 121 (the banners over the gatehouse), `astapor` 24 /
   Thrones Wiki.
 - `milkwater`: Jon I (151), "along the Milkwater"; the prologue names it. The
   show sets Mance's camp in the Frostfangs, folded into the Skirling Pass in
-  stage 2. Italian "Fiumelatte".
+  stage 2. Italian "Fiumelatte". Filed here: Mance Rayder, Tormund, Orell, Styr,
+  Dalla, Val and Jarl (#1638), met in Mance's camp.
 - `maidenpool`: Jaime III (165), the town deserted and sacked. The show named it
   in episode 15; season 3 does not.
 - `high-heart`, `acorn-hall`: Arya IV (166). The show named Acorn Hall in season

@@ -49,7 +49,7 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
   // add each lead as they file it. Essos (#1639): Daenerys. King's Landing
   // (#1634): the master of coin, his bride and the Tyrells' grandmother.
   // Robb's war and the Riverlands (#1635): the King in the North and his
-  // mother.
+  // mother. The Wall and beyond (#1638): Jon Snow and the King-Beyond-the-Wall.
   'season-3': [
     'daenerys-targaryen',
     'tyrion-lannister',
@@ -57,6 +57,8 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
     'olenna-tyrell',
     'robb-stark',
     'catelyn-stark',
+    'jon-snow',
+    'mance-rayder',
   ],
 }
 

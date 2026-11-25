@@ -4,7 +4,7 @@
  * filing child appends its block to both tables.
  */
 
-import { characters, OTHERS } from './verify-names.thrones.mjs'
+import { characters, OTHERS, watch } from './verify-names.thrones.mjs'
 
 /**
  * Each third-stage character's Italian Wikipedia page, as `Page#Section` for a
@@ -34,6 +34,14 @@ export const THRONES_STAGE_3_TITLES = {
   'roslin-frey': characters('Roslin Frey'),
   'ryman-frey': characters('Ryman Frey'),
   'aegon-frey': characters('Aegon Frey'),
+  // #1638, the third stage's Wall and beyond cast.
+  'mance-rayder': characters('Mance Rayder'),
+  'tormund': characters('Tormund'),
+  'styr': characters('Styr'),
+  'dalla': characters('Dalla'),
+  'val': characters('Val'),
+  'dirk': watch('Dirk'),
+  'clubfoot-karl': watch('Karl Piededuro'),
 }
 
 /**
@@ -65,4 +73,10 @@ export const THRONES_STAGE_3_KEPT = {
   'walder-rivers': 'Walder Rivers',
   'rolph-spicer': 'Rolph Spicer',
   'raynald-westerling': 'Raynald Westerling',
+  // #1638. No Italian Wikipedia entry: these names stay as they are until
+  // the Mondadori forms are checked.
+  'orell': 'Orell',
+  'jarl': 'Jarl',
+  'small-paul': 'Small Paul',
+  'ollo-lophand': 'Ollo Lophand',
 }

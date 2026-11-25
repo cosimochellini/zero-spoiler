@@ -372,13 +372,17 @@ whose show gates are in season 4 (#852), with the stage's steps of six earlier
 characters. The stage-3 characters show the shared `PERSON` placeholder until
 their drawing children (#1631). Robb's war and the Riverlands (#1635) adds ten
 characters, five the books' alone, one the show's and four both media's, with
-the stage's steps of three season-1 characters. The stage's places (#1630) are
-the 13 a scene of the stage is set in: Astapor and Yunkai in both media, ten the
-book's alone, and the Nightfort, which the show visits and the book only names
-(#1252), and the 7 both media name and neither visits, each with its own
-drawing; Harrenhal, the Fist of the First Men, Craster's Keep, the Dreadfort and
-Flea Bottom take the stage's changes as dated `visits` entries, and Harrenhal,
-the Fist, Astapor and Yunkai a drawing stage.
+the stage's steps of three season-1 characters. The Wall and beyond (#1638) adds
+eleven characters, eight of them the books' alone: Mance Rayder, Tormund and
+Orell, Styr, Dalla, Val and Jarl from Mance's host, and Small Paul and three
+mutineers of Craster's Keep, with the stage's steps of Jon Snow, Rast, Chett,
+Ygritte and Gilly. The stage's places (#1630) are the 13 a scene of the stage is
+set in: Astapor and Yunkai in both media, ten the book's alone, and the
+Nightfort, which the show visits and the book only names (#1252), and the 7 both
+media name and neither visits, each with its own drawing; Harrenhal, the Fist of
+the First Men, Craster's Keep, the Dreadfort and Flea Bottom take the stage's
+changes as dated `visits` entries, and Harrenhal, the Fist, Astapor and Yunkai a
+drawing stage.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -618,15 +622,15 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| Records                | 343                                                                                     |
-| Characters             | 236                                                                                     |
+| Records                | 354                                                                                     |
+| Characters             | 247                                                                                     |
 | Places                 | 107                                                                                     |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 346, one per record and 3 for the seasons' headings, plus 217 redrawings of 160 records |
+| Line drawings          | 357, one per record and 3 for the seasons' headings, plus 217 redrawings of 160 records |
 | Chronicle stories      | 1188, for 213 characters                                                                |
-| Dated timelines        | 1114                                                                                    |
-| Affiliation steps      | 273                                                                                     |
-| Status steps           | 411                                                                                     |
+| Dated timelines        | 1141                                                                                    |
+| Affiliation steps      | 284                                                                                     |
+| Status steps           | 425                                                                                     |
 | Later visits to places | 12                                                                                      |
 
 <!-- End of the generated counts. -->
