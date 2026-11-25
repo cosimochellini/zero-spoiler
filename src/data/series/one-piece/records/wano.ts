@@ -52,8 +52,9 @@ export const wano: OnePieceSaga = {
       id: 'tama',
       kind: 'character',
       // She gives her name on the beach: chapter 911 (pp. 5–6, 9–19) and
-      // the end of episode 893. The rice, the river and Amigasa Village are
-      // episode 894 (chapter 912 for the village), so they are dated steps.
+      // the end of episode 893. The rice and the river are episode 894
+      // (chapter 911, pp. 12–18) and stay out of her texts; Amigasa Village
+      // is the dated step, episode 894 / chapter 912.
       revealedAtEpisode: 893,
       revealedAtChapter: 911,
       name: { it: 'O-Tama', en: 'Tama' },
@@ -749,8 +750,8 @@ export const wano: OnePieceSaga = {
         },
       ],
       log: {
-        it: 'Due uomini la portano via in un sacco per qualcosa che ha detto. Quando uno sconosciuto sulla spiaggia ne stende uno, lei esce dal sacco, colpisce l’altro e si arrende subito allo sconosciuto. Un frutto del diavolo le permette di staccarsi dalla guancia uno gnocco di miglio, e l’animale che lo mangia le obbedisce come se fosse addomesticato. Il babbuino dei due uomini è il primo animale che addomestica così. Allo sconosciuto conferma che è arrivato nel Paese di Wano, nella regione di Kuri.',
-        en: 'Two men carry her off in a sack for something she said. When a stranger on the beach knocks one of them down, she gets out of the sack, hits the other and surrenders to the stranger on the spot. A devil fruit lets her pull a millet dumpling out of her own cheek, and any animal that eats one follows her as if tamed. The men’s baboon is the first animal she tames this way. She tells the stranger he has reached Wano, in the region of Kuri.',
+        it: 'Due uomini la portano via in un sacco per qualcosa che ha detto. Quando uno sconosciuto sulla spiaggia ne stende uno, lei esce dal sacco, colpisce l’altro e si arrende subito allo sconosciuto. Un frutto del diavolo le permette di staccarsi dalla guancia uno gnocco di miglio, e l’animale che lo mangia le obbedisce come se fosse addomesticato. Allo sconosciuto conferma che è arrivato nel Paese di Wano, nella regione di Kuri.',
+        en: 'Two men carry her off in a sack for something she said. When a stranger on the beach knocks one of them down, she gets out of the sack, hits the other and surrenders to the stranger on the spot. A devil fruit lets her pull a millet dumpling out of her own cheek, and any animal that eats one follows her as if tamed. She tells the stranger he has reached Wano, in the region of Kuri.',
       },
       status: [
         { episode: 893, value: 'alive' },
