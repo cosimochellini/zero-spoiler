@@ -28,7 +28,6 @@ const EPISODE_9 = `${SHOW}Baelor`
 const EPISODE_10 = `${SHOW}Fire_and_Blood`
 // Season 2 (#1456). Episode 14's page carries "(episode)": the bare title is
 // the place outside Qarth.
-/* eslint-disable @typescript-eslint/no-unused-vars -- cited by the season-2 chronicles of #1462 */
 const EPISODE_11 = `${SHOW}The_North_Remembers`
 const EPISODE_12 = `${SHOW}The_Night_Lands`
 const EPISODE_13 = `${SHOW}What_Is_Dead_May_Never_Die`
@@ -39,7 +38,6 @@ const EPISODE_17 = `${SHOW}A_Man_Without_Honor`
 const EPISODE_18 = `${SHOW}The_Prince_of_Winterfell`
 const EPISODE_19 = `${SHOW}Blackwater`
 const EPISODE_20 = `${SHOW}Valar_Morghulis`
-/* eslint-enable @typescript-eslint/no-unused-vars -- back on after the season-2 episodes */
 const DANY_I = `${BOOKS}Daenerys_I_-_A_Game_of_Thrones`
 const DANY_II = `${BOOKS}Daenerys_II_-_A_Game_of_Thrones`
 const DANY_III = `${BOOKS}Daenerys_III_-_A_Game_of_Thrones`
@@ -116,6 +114,46 @@ const ST_135 = `${ACOK_AWOIAF}61`
 const ST_136 = `${ACOK_AWOIAF}62`
 const ST_139 = `${ACOK_AWOIAF}65`
 const ST_MATTHOS = `${AWOIAF}Matthos_Seaworth`
+// The King’s Landing and Blackwater cast of the second stage (#1484):
+// Tyrion I to XV and Sansa I to VIII of A Clash of Kings, by site chapter.
+const KL_76 = `${ACOK_AWOIAF}2`
+const KL_77 = `${ACOK_AWOIAF}3`
+const KL_82 = `${ACOK_AWOIAF}8`
+const KL_89 = `${ACOK_AWOIAF}15`
+const KL_91 = `${ACOK_AWOIAF}17`
+const KL_92 = `${ACOK_AWOIAF}18`
+const KL_94 = `${ACOK_AWOIAF}20`
+const KL_99 = `${ACOK_AWOIAF}25`
+const KL_103 = `${ACOK_AWOIAF}29`
+const KL_106 = `${ACOK_AWOIAF}32`
+const KL_110 = `${ACOK_AWOIAF}36`
+const KL_115 = `${ACOK_AWOIAF}41`
+const KL_118 = `${ACOK_AWOIAF}44`
+const KL_123 = `${ACOK_AWOIAF}49`
+const KL_126 = `${ACOK_AWOIAF}52`
+const KL_128 = `${ACOK_AWOIAF}54`
+const KL_131 = `${ACOK_AWOIAF}57`
+const KL_133 = `${ACOK_AWOIAF}59`
+const KL_134 = `${ACOK_AWOIAF}60`
+const KL_135 = `${ACOK_AWOIAF}61`
+const KL_136 = `${ACOK_AWOIAF}62`
+const KL_139 = `${ACOK_AWOIAF}65`
+const KL_141 = `${ACOK_AWOIAF}67`
+// The Winterfell and Iron Islands cast of the second stage (#1487): Bran I to
+// VII and Theon I to VI of A Clash of Kings.
+const WF_BRAN_I = `${ACOK_AWOIAF}4`
+const WF_THEON_I = `${ACOK_AWOIAF}11`
+const WF_BRAN_II = `${ACOK_AWOIAF}16`
+const WF_BRAN_III = `${ACOK_AWOIAF}21`
+const WF_THEON_II = `${ACOK_AWOIAF}24`
+const WF_BRAN_IV = `${ACOK_AWOIAF}28`
+const WF_BRAN_V = `${ACOK_AWOIAF}35`
+const WF_THEON_III = `${ACOK_AWOIAF}37`
+const WF_BRAN_VI = `${ACOK_AWOIAF}46`
+const WF_THEON_IV = `${ACOK_AWOIAF}50`
+const WF_THEON_V = `${ACOK_AWOIAF}56`
+const WF_THEON_VI = `${ACOK_AWOIAF}66`
+const WF_BRAN_VII = `${ACOK_AWOIAF}69`
 
 /** The note on a book pin past the Ice and Fire Wiki's chapter pages. */
 const PAST_CHAPTER_PAGES =
@@ -1130,6 +1168,102 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Tyrion_Lannister`,
       note: `Added after review, the book side of the 10/70 story: Tyrion IX (site 70) tells that his father put him and the clans in the vanguard hoping they would break and draw the Starks into a trap, and that holding his ground spoiled it. The rest repeats the show story. ${PAST_CHAPTER_PAGES}`,
     },
+    '11:episode': {
+      source: EPISODE_11,
+      note: 'The King’s Landing synopsis: Tommen and Myrcella glad he is alive, Joffrey’s disdain, Tywin’s letter naming him acting Hand, Cersei livid, his rebuke over Joffrey’s rule and Ned Stark’s execution, the war they are losing, Arya’s escape and the lost hostage, and Shae hidden in the Tower of the Hand against his father’s order (GOT201). Chapter 77, Tyrion I, orders it.',
+    },
+    '12:episode': {
+      source: EPISODE_12,
+      note: 'The King’s Landing synopsis: Varys discovers Shae and hints at revealing her, the dinner with Janos, his admission and silence on who gave the order, his exile to the Night’s Watch, Bronn made commander, Cersei warned she is losing the people, and Tyrion concluding that Joffrey ordered the massacre (GOT202). Chapter 82, Tyrion II, orders it.',
+    },
+    '13:episode': {
+      source: EPISODE_13,
+      note: 'The King’s Landing synopsis: the three marriage plans for Myrcella, Pycelle exposed when Cersei confronts Tyrion about the Dornish plan, Bronn arresting him, the Martell match kept over Cersei’s protests, and Petyr furious and placated with the mission to Renly and Catelyn; the Pycelle page has the black cells (GOT203). Chapter 99, Tyrion VI, orders it.',
+    },
+    '14:episode': {
+      source: EPISODE_14,
+      note: 'The King’s Landing synopsis: Sansa beaten and stripped, Tyrion stopping it, “halfwit” and the Mad King, his offer to end the engagement and her refusal, Lancel’s late message to free Pycelle, the lavender oil, the knighting question, the threat to tell Joffrey, Lancel made his spy, and Pycelle freed but kept off the council (GOT204). Chapter 103, Tyrion VII, orders it.',
+    },
+    '15:episode': {
+      source: EPISODE_15,
+      note: 'The King’s Landing synopsis: the news of Renly’s death, Cersei keeping her plans secret, Lancel’s report on the Alchemists’ Guild, the stockpile of wildfire, Bronn’s warning, the guild made to answer to Tyrion, and the street protest blaming him (GOT205). The pyromancer stays unnamed: Hallyne is the books’ record. Chapter 110, Tyrion VIII, orders it.',
+    },
+    '16:episode': {
+      source: EPISODE_16,
+      note: 'The King’s Landing synopsis: Myrcella seen off at the docks, Cersei’s refusal to forgive him, the dung, Joffrey’s order to kill the crowd, the riot, Tyrion slapping the king, Sansa lost and Joffrey refusing to send men, Sandor saving her, and his blunt answer to Tyrion’s thanks (GOT206). Chapter 115, Tyrion IX, orders it.',
+    },
+    '17:126': {
+      source: EPISODE_17,
+      note: 'The King’s Landing synopsis: Cersei’s regret at having children by Jaime, Joffrey’s cruelty as the price of their sins, Tyrion on Myrcella and Tommen, and the moment of sympathy (GOT207). Chapter 126, Sansa IV, orders it.',
+    },
+    '18:episode': {
+      source: EPISODE_18,
+      note: 'The King’s Landing synopsis: the history books, Bronn’s and Varys’s advice and the wildfire, Joffrey to fight, Ros kidnapped as collateral, Tyrion hiding his relief that Shae is safe and vowing revenge; the Ros page has her shown to him beaten, Joffrey on the walls as Tyrion plans, and his vow to free her (GOT208). Chapter 128, Tyrion XII, orders it.',
+    },
+    '19:episode': {
+      source: EPISODE_19,
+      note: 'The King’s Landing synopsis: the night with Shae and her choice to stay, the single wildfire ship, Bronn’s flaming arrow, Joffrey leaving and the gold cloaks’ broken morale, Tyrion’s rallying speech, the sortie through the tunnels and the ram at the Mud Gate, Mandon’s slash and Podrick killing him (GOT209). Chapter 135, Tyrion XIV, orders it, after Mandon’s and Podrick’s book gates.',
+    },
+    '20:episode': {
+      source: EPISODE_20,
+      note: 'The King’s Landing synopsis: the shabby quarters, Pycelle gloating that Tywin has returned to take over as Hand, Varys on Bronn’s lost command and the tribesmen gone home, his thanks for the defence, and Shae’s plea to leave for Pentos, refused (GOT210). Chapter 141, Tyrion XV, orders it.',
+    },
+    '11:chapter': {
+      source: KL_77,
+      note: 'Tyrion I (site 77): Tywin’s letter and the Hand’s chair, the promise to free Jaime for Cersei’s support, Lancel’s strongwine, the slaps over Jaime, the heads of Eddard and his household taken down, Varys waiting with Shae at the Broken Anvil, and the riddle of the king, the priest, the rich man and the sellsword.',
+    },
+    '12:chapter': {
+      source: KL_82,
+      note: 'Tyrion II (site 82): the dinner with Janos, Allar Deem and the whore and her infant daughter, Janos sent to the Wall, Jacelyn introduced as the new commander, Varys concealing that Cersei sent the gold cloaks, “power resides where men believe it resides”, and Bronn’s “I’d ask how much”.',
+    },
+    '13:91': {
+      source: KL_91,
+      note: 'Tyrion IV (site 91): the sealed letter for Doran Martell kept from the queen, Littlefinger sent to Lysa with Myrcella for Robert Arryn and Harrenhal as his reward, Varys guessing Tommen, and the man who told Cersei named his certain enemy; Tyrion counts the three as he goes.',
+    },
+    '15:94': {
+      source: KL_94,
+      note: 'Tyrion V (site 94): Hallyne quoting Wisdom Munciter’s morning count of 7,840 jars and the promised ten thousand, spare jars to the gates, Jacelyn to train spitfire crews, Cersei furious about the Dornish match, Trystane Martell, her tears, and the informer’s identity as “the plum in his pudding”.',
+    },
+    '13:chapter': {
+      source: KL_99,
+      note: 'Tyrion VI (site 99): the powder in Cersei’s wine, the audience held alone, Vylarr’s guardsmen sent as Cleos’s escort, the traitor’s moon, Shagga’s axe on the door and the beard, the letters to Doran and to Cersei, Pycelle’s confession about Jon Arryn and the incest, and the black cell.',
+    },
+    '14:chapter': {
+      source: KL_103,
+      note: 'Tyrion VII (site 103): Lancel’s late visit with the warrant, Jacelyn’s defiance, the knighting question, the threat to tell Joffrey, Lancel turned spy, the ride to Chataya’s, the tunnel and the manse where Shae is guarded.',
+    },
+    '15:chapter': {
+      source: KL_110,
+      note: 'Tyrion VIII (site 110): Varys’s report of Renly’s murder and the lords gone over to Stannis, the Tyrells to be won, the Margaery match over Cersei’s objection that Joffrey is promised to Sansa, Littlefinger volunteering for Bitterbridge, Cersei’s kiss on the brow, and Bronn told to find out what she is up to.',
+    },
+    '16:chapter': {
+      source: KL_115,
+      note: 'Tyrion IX (site 115): Myrcella’s departure, the dung, Sandor sent after the culprit, the riot, the slap that sends the crown flying, Sansa saved by Sandor, the High Septon, Preston Greenfield and Aron Santagar dead, Lollys raped, Tyrek missing, Jacelyn’s warning, and Bronn’s hint about Tommen. Lollys opens at 118, so she is Lady Tanda’s daughter here.',
+    },
+    '13:118': {
+      source: KL_118,
+      note: 'Tyrion X (site 118): Lancel on the plan to hide Tommen at Rosby, Jacelyn sent to take the party, Varys arriving as a begging brother with the fall of Storm’s End and sent to wait at the stables, Shae asking to be his lady, the slap and Tysha, and Varys’s proposal of Shae as Lollys’s maid with the passage to the Tower of the Hand.',
+    },
+    '18:chapter': {
+      source: KL_128,
+      note: 'Tyrion XII (site 128): the supper, Cersei’s warning about Varys, Joffrey’s small command away from the main fighting, Alayaya brought in beaten by the Kettleblacks, Tyrion’s relief and his bluff about Tommen, the threat to pay her back, and Shae in his room through the secret passage.',
+    },
+    '19:chapter': {
+      source: KL_135,
+      note: 'Tyrion XIII and XIV (sites 133 and 135): half of Stannis’s fleet ablaze, the chain raised behind it, Sandor refusing a sortie at the King’s Gate, Tyrion shaming the holdouts and leading it, the fighting along the river and over the wrecked ships, Mandon’s blow and Podrick pushing him into the water. Site 135, the later chapter, holds it all.',
+    },
+    '20:chapter': {
+      source: KL_141,
+      note: 'Tyrion XV (site 141): the fever dreams, the bandages, Ballabar and the queen’s orders, the nose, lip, rib and arrow wound, Tywin as Hand in the Tower of the Hand and Tyrion moved to Maegor’s Holdfast, dreamwine from Frenken, Bronn sent for, and Pod sworn to silence about the docks.',
+    },
+    '12:89': {
+      source: KL_89,
+      note: 'Tyrion III (site 89): Stannis’s letters, Tyrion’s advice to let them whisper, Littlefinger’s rumour about Shireen and Patchface, the thousand links ordered from Ironbelly and the smiths, the little chain for Joffrey, Chataya’s brothel behind Rhaenys’s Hill, the shaft, Varys in the tunnel and the disguised ride to Shae’s manse. No episode lists Tyrion III among the chapters it adapts; episode 12, between Tyrion II and IV, orders it. Alayaya opens at 128 and Shireen on screen at episode 25, so neither is named.',
+    },
+    '18:123': {
+      source: KL_123,
+      note: 'Tyrion XI (site 123): the clansmen sent across the Blackwater Rush, the houses by the quay burned, Osmund chosen over Tyrion’s disapproval in place of Boros, stripped for surrendering Tommen to Jacelyn’s men, Hallyne’s thirteen thousand jars, and the merchants’ plot to seize the Old Gate, with the arrest order. Boros opens on screen only at episode 19, so he stays unlinked.',
+    },
   },
   'jaime-lannister': {
     '1:5': {
@@ -1270,6 +1404,66 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Lancel_Lannister`,
       note: 'Show only, GOT110: Lancel, newly knighted, in Cersei’s bed; the letter with Jaime’s capture; she tells him to get back into bed. Reviewed relationship pin at 10/73 episode.',
     },
+    '11:episode': {
+      source: EPISODE_11,
+      note: 'The King’s Landing synopsis: the gates closed to refugees, Tyrion’s letter and her anger, Petyr’s “knowledge is power”, the guards ordered to cut his throat and called off, “power is power”, Joffrey’s questions about his parentage, the slap and his threat (GOT201). Chapter 77, Tyrion I, orders it.',
+    },
+    '12:82': {
+      source: EPISODE_12,
+      note: 'The King’s Landing synopsis: Robb’s terms rejected, Cersei confronting Tyrion over Janos, the people she does not care about, the joke about Jaime and her barb about their mother (GOT202). Chapter 82, Tyrion II, orders it.',
+    },
+    '16:115': {
+      source: EPISODE_16,
+      note: 'The King’s Landing synopsis: Myrcella’s departure, Cersei heartbroken and unforgiving, the ignored warnings about the starving peasants, the riot and the narrow escape to the castle (GOT206). Chapter 115, Tyrion IX, orders it.',
+    },
+    '17:episode': {
+      source: EPISODE_17,
+      note: 'The King’s Landing synopsis: Sansa brought to Cersei, Robert hunting at each birth and Jaime at her side, Sansa never loving Joffrey but loving their children, “the more people you love, the weaker you are”, and her regret to Tyrion about Joffrey and Jaime (GOT207). Chapter 126, Sansa IV, orders it.',
+    },
+    '18:episode': {
+      source: EPISODE_18,
+      note: 'The King’s Landing synopsis: Cersei worried about letting Joffrey fight, Ros kidnapped as collateral, Tyrion’s vow of revenge; the Ros page has the beating, her belief that Tyrion plots to kill Joffrey, the walls, and the threat of a gruesome death (GOT208). Chapter 128, Tyrion XII, orders it.',
+    },
+    '19:episode': {
+      source: EPISODE_19,
+      note: 'The King’s Landing synopsis: Maegor’s Holdfast, Ser Ilyn at her side, Pycelle’s essence of nightshade, the wine, the descriptions of rape, Shae questioned, Lancel sent for Joffrey, his wound struck, the throne room with Tommen, the story of the lion and the poison, and Tywin’s entrance with Loras (GOT209). Chapter 136, Sansa VII, orders it.',
+    },
+    '20:139': {
+      source: EPISODE_20,
+      note: 'The King’s Landing synopsis: Tywin named Hand, Littlefinger given Harrenhal, Loras asking that Joffrey wed Margaery, Cersei and Pycelle making a show of persuading Joffrey to set Sansa aside for her house’s treachery, and his agreement (GOT210). Chapter 139, Sansa VIII, orders it.',
+    },
+    '11:chapter': {
+      source: KL_77,
+      note: 'Tyrion I (site 77): Cersei’s disbelief and distaste, the letter called absurd, Arya’s escape, Joffrey taking Eddard’s death on himself, her consent to threats against Joffrey as long as Tyrion does nothing without her, the slaps over Jaime, and then Lancel’s strongwine.',
+    },
+    '15:94': {
+      source: KL_94,
+      note: 'Tyrion V (site 94): Cersei waiting in his solar, the Dornish match and Trystane, her fear for Elia’s revenge, the slap, Myrcella’s head beside hers, her tears, Jaime captured and Tywin at Harrenhal, and Tyrion sensing her agreement.',
+    },
+    '15:110': {
+      source: KL_110,
+      note: 'Tyrion VIII (site 110): Cersei’s objection that Joffrey is promised to Sansa, the fifty thousand swords, her warning, the envoy no one of them will be, Littlefinger volunteering, and her praise and kiss on the brow.',
+    },
+    '17:chapter': {
+      source: KL_126,
+      note: 'Sansa IV (site 126): the maids catching her, Cersei comforting her, Joffrey’s birth and Robert hunting, loving the children if not the husband, the lie Stannis will not like, Robert and Tyrion wanting love, and “Love is poison”.',
+    },
+    '18:chapter': {
+      source: KL_128,
+      note: 'Tyrion XII (site 128): Cersei’s warning about Varys, Osney and Osfryd Kettleblack bringing in Alayaya, the debt a Lannister pays, the girl safe as long as her sons are, Tyrion’s bluff about Tommen, and Cersei shouting at him to get out.',
+    },
+    '19:134': {
+      source: KL_134,
+      note: 'Sansa VI (site 134): the Queen’s Ballroom, the wine, the warning about rape, the horse thieves beheaded, the smallfolk refused, Joffrey ordered back, the godswood visits she does not believe are for Joffrey, and Ser Ilyn there so that Stannis will not take them alive.',
+    },
+    '19:chapter': {
+      source: KL_136,
+      note: 'Sansa VII (site 136): Lancel’s report, Tyrion and Mandon believed dead, Sandor vanished, the gold cloaks breaking when Joffrey was brought back, the drawbridge, Lancel’s plea and the blow to his wound.',
+    },
+    '13:99': {
+      source: EPISODE_13,
+      note: 'The King’s Landing synopsis: the awkward dinner with her children and Sansa, Cersei confronting Tyrion about the plan fed to Pycelle, Pycelle exposed and arrested, and the Martell match pursued over her protests (GOT203). Chapter 99 orders it.',
+    },
   },
   'joffrey-baratheon': {
     '1:5': {
@@ -1311,6 +1505,46 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:68': {
       source: `${BOOKS}Joffrey_Baratheon`,
       note: `In A Game of Thrones: Meryn Trant strikes Sansa, the heads of her father and Septa Mordane on the battlements, the promise of Robb’s head, Sansa’s thought of pushing him and Sandor stopping her. Episode 10 (GOT110) has the same in another order, so the story gives none. The episode adapts Sansa VI, chapter 68. ${PAST_CHAPTER_PAGES}`,
+    },
+    '11:77': {
+      source: EPISODE_11,
+      note: 'The King’s Landing synopsis: the name-day tournament on the walls, Dontos late and drunk, the barrel of wine, Sansa’s plea of bad luck, Sandor seconding her, Dontos made fool, the rumours about his parentage, the slap and his threat (GOT201). Chapter 77, Tyrion I, orders it.',
+    },
+    '14:episode': {
+      source: EPISODE_14,
+      note: 'The King’s Landing synopsis: Robb’s victory, Sansa threatened with the crossbow, Meryn ordered to beat and strip her but leave her face, Tyrion’s intervention, “halfwit” and the Mad King, and Ros forced at crossbow point to beat Daisy as a message to Tyrion (GOT204). Chapter 106, Sansa III, orders it.',
+    },
+    '16:episode': {
+      source: EPISODE_16,
+      note: 'The King’s Landing synopsis: the dung, the order to kill the crowd, the riot, the escape to the castle, Joffrey shrieking, Tyrion’s slap unanswered, and his refusal to send men after Sansa (GOT206). Chapter 115, Tyrion IX, orders it.',
+    },
+    '19:135': {
+      source: EPISODE_19,
+      note: 'The King’s Landing synopsis: Joffrey berating Tyrion over the fleet, Sandor’s curse in the presence of the king, Lancel sent by Cersei, Joffrey leaving willingly and charging Mandon and Boros to fight in his name, and the gold cloaks’ broken morale (GOT209). Chapter 135 orders it, after Mandon’s book gate.',
+    },
+    '20:episode': {
+      source: EPISODE_20,
+      note: 'The King’s Landing synopsis: Tywin named Hand and Savior of the City, Harrenhal for Littlefinger, Loras’s request, Cersei and Pycelle’s show of persuasion, Sansa set aside and Margaery accepted (GOT210). Chapter 139, Sansa VIII, orders it.',
+    },
+    '11:76': {
+      source: KL_76,
+      note: 'Sansa I (site 76): the poor tourney, Dontos drunk and the cask of wine, Sansa’s name-day curse, Sandor’s agreement, the fool’s motley, Tommen unhorsed by the quintain, Tyrion’s arrival, his wits as a gift and Joffrey’s wish for Robb’s head.',
+    },
+    '14:chapter': {
+      source: KL_106,
+      note: 'Sansa III (site 106): the lower bailey, Lancel’s report of Oxcross, the crossbow and Cersei’s warning about Jaime, the order to Sandor, Dontos’s melon, Boros’s blows and the torn bodice, Tyrion on Aerys and on ears and mouth. Boros opens on screen only at episode 19, so this book story, ordered at episode 14, names him unlinked.',
+    },
+    '16:chapter': {
+      source: KL_115,
+      note: 'Tyrion IX (site 115): the dung on the Hook, Sandor ordered to bring the culprit, the crowd’s insults and the stampede, Joffrey ranting at the gates, the slap that knocks off his crown, the shove, and the dog he set on them.',
+    },
+    '19:133': {
+      source: KL_133,
+      note: 'Sansa V (site 131) has Sansa kissing Hearteater and his promise to kill Stannis and Robb; Tyrion XIII (site 133) has Joffrey lamenting the Kingslander, Queen Cersei and Loyal Man, the Antler Men catapulted with antlers nailed to their heads, and Tyrion’s order to Osmund to keep him safe among the defenders. The plot to seize the Old Gate is Tyrion XI (site 123).',
+    },
+    '20:chapter': {
+      source: KL_139,
+      note: 'Sansa VIII (site 139): Tywin named Hand, Garlan’s request for Margaery, the High Septon voiding the betrothal, Littlefinger granted Harrenhal, Hallyne named lord with no lands, the knight who calls Joffrey an abomination, and the cut on the Iron Throne.',
     },
   },
   'robert-baratheon': {
@@ -1406,6 +1640,14 @@ export const GAME_OF_THRONES_SOURCES = {
       source: TYRION_I,
       note: 'Chapter 10 and episode 2 (GOT102): breakfast with Cersei, Jaime and Tommen, concern for Bran, Tyrion saying he may live, the queen’s and Jaime’s reaction, the trip north and Cersei taking the children away. The answer about Bran differs in detail, so the story keeps only that he may live.',
     },
+    '16:episode': {
+      source: EPISODE_16,
+      note: 'The King’s Landing synopsis: the court at the docks, the ship bound for Dorne, House Martell until she comes of age to marry Trystane, the High Septon’s blessing, and Cersei heartbroken (GOT206). Chapter 115, Tyrion IX, orders it; the role step “Princess sent to Dorne” is at 16/115.',
+    },
+    '16:chapter': {
+      source: KL_115,
+      note: 'Tyrion IX (site 115): the harbour, Arys Oakheart as sworn shield, the Seaswift and the fleet to Braavos, Braavosi ships to Dorne, and Doran’s banners to the high passes once she is at Sunspear; the ward and the marriage to Trystane are Tyrion V (site 94).',
+    },
   },
   'tommen-baratheon': {
     '1:6': {
@@ -1437,6 +1679,30 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:73': {
       source: `${SHOW}Lancel_Lannister`,
       note: 'Show only, GOT110: newly knighted, in Cersei’s bed, excited by the war, told to be quiet. Reviewed relationship pin at 10/73 episode.',
+    },
+    '14:episode': {
+      source: EPISODE_14,
+      note: 'The King’s Landing synopsis: Lancel’s late message to free Pycelle, “Imp”, the trap of the prompt messenger, Cersei’s lavender oil, the knighting question, his plea on his knees and his agreement to report on Cersei (GOT204). Chapter 103, Tyrion VII, orders it; his role step “Knight in the queen’s service” is at 14/103.',
+    },
+    '19:episode': {
+      source: EPISODE_19,
+      note: 'The King’s Landing synopsis: Lancel in Sandor’s sortie and the arrow, Cersei’s order to bring Joffrey back and his protest about morale, his return to warn her, and the push that strikes his injured side (GOT209). Chapter 136, Sansa VII, orders it.',
+    },
+    '14:chapter': {
+      source: KL_103,
+      note: 'Tyrion VII (site 103): the warrant, the hand on the sword, the knighting question, the threat about Joffrey, Lord Tywin’s command to obey Cersei, Lancel turned spy, and the message of Tyrion’s apology. His role step “Knight in the queen’s service” is at 14/103.',
+    },
+    '16:118': {
+      source: KL_118,
+      note: 'Sansa III (site 106): Lancel’s tale of wargs and cannibal northmen and Tyrion’s correction; Tyrion IX (site 115): Lancel’s report on the hedge knight and his brothers; Tyrion X (site 118): the plan to hide Tommen at Rosby. Site 118 holds it all. Episode 16, after the warg tale’s episode 14 and Lancel’s turn as spy at 14/103, orders it. Osmund opens at 123, so the Kettleblacks stay unnamed.',
+    },
+    '19:chapter': {
+      source: KL_136,
+      note: 'Sansa VII (site 136): the wounded Lancel’s report, his plea for Joffrey to stay at the gatehouse, Cersei striking his wound, and Sansa sending for Maester Frenken.',
+    },
+    '20:139': {
+      source: KL_139,
+      note: 'Sansa VIII (site 139): Lancel named Lord of Darry with the Darry lands, absent like Tyrion for his wounds, the honours to the lords sworn to Casterly Rock and Highgarden, and Harrenhal for Littlefinger.',
     },
   },
   'barristan-selmy': {
@@ -1508,6 +1774,38 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_7,
       note: `Episode 7 (GOT107): Littlefinger proposes keeping Joffrey, Ned refuses and asks him to win the City Watch, which then turns on Ned while Petyr holds a dagger to his throat. The Ice and Fire Wiki’s Petyr page has the same in the book: advising Joffrey over Stannis, the gold cloaks hired. A Wiki of Ice and Fire’s Eddard XIV page (site 50) has the dagger and “I did warn you not to trust me”.`,
     },
+    '11:77': {
+      source: EPISODE_11,
+      note: 'The King’s Landing synopsis: Cersei tasking Petyr with finding Arya, his love for Catelyn, the reference to Jaime, “knowledge is power”, the guards ordered to seize him and cut his throat and the order rescinded, and “power is power” (GOT201). Chapter 77, Tyrion I, orders it.',
+    },
+    '12:82': {
+      source: EPISODE_12,
+      note: 'The King’s Landing synopsis: Ros unable to work after Barra’s murder, Petyr’s tale of the unhappy girl sold to a depraved customer, and the night off; the Ros page has the Lyseni pleasure house and her smile (GOT202). Chapter 82, Tyrion II, orders it.',
+    },
+    '14:106': {
+      source: EPISODE_14,
+      note: 'The Stormlands synopsis: Petyr at Renly’s camp as envoy, his hint of help from within, Margaery already knowing about Renly, Catelyn’s dagger, the exchange of Sansa and Arya for Jaime with the lie about Arya, and Ned’s bones (GOT204); his fury at Tyrion’s deception and the mission are episode 13 (GOT203). Chapter 106 orders it, after Margaery’s book gate.',
+    },
+    '16:115': {
+      source: EPISODE_16,
+      note: 'The Stormlands synopsis: Petyr accompanying the Tyrell faction after Renly’s death (GOT205); the Harrenhal synopsis: Petyr meeting Tywin, Arya hiding her face, the stormlords gone to Stannis, the Tyrells’ army back at Highgarden, and the proposed Lannister-Tyrell alliance (GOT206). Chapter 115 orders it.',
+    },
+    '20:episode': {
+      source: EPISODE_20,
+      note: 'The King’s Landing synopsis: Harrenhal for brokering the Lannister-Tyrell alliance, Sansa overjoyed, his warning that Joffrey will still torment her, the promise to help her escape for her mother’s sake (GOT210). Chapter 139 orders it; his role step “Master of coin and Lord of Harrenhal” is at 20/139.',
+    },
+    '13:91': {
+      source: KL_91,
+      note: 'Tyrion IV (site 91): Littlefinger at the window with Joffrey’s hares, the dagger offered and refused, the boast about the Tully girls, the offer to Lysa (Jon Arryn’s killer, Warden of the East, Myrcella for Robert Arryn), Harrenhal and the riverlands as his reward, and the fortnight asked.',
+    },
+    '15:110': {
+      source: KL_110,
+      note: 'Tyrion VI (site 99): Littlefinger’s complaint that Myrcella cannot wed both Robert Arryn and Trystane Martell, and “leave me out of the next deception”; Tyrion VIII (site 110): the Margaery match, her body against fifty thousand swords, Littlefinger volunteering for Bitterbridge, the escort, horses, gold, Hobber Redwyne and the reward he will name later.',
+    },
+    '20:chapter': {
+      source: KL_139,
+      note: 'Sansa VIII (site 139): Harrenhal and Lord Paramount of the Trident for the Tyrell treaty, the Tyrells presented, Garlan’s request for Margaery, and the High Septon voiding the betrothal. His role step “Master of coin and Lord of Harrenhal” is at 20/139.',
+    },
   },
   'varys': {
     '3:19': {
@@ -1538,6 +1836,42 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_9,
       note: `Corrected after review: Sansa’s life is the show’s wording, the book says his daughters, so the story says his family. Episode 9: Varys urges a confession for Sansa’s sake with the Wall as the price, the confession at the Great Sept, Joffrey’s order, Varys and Cersei trying to intervene, Ilyn beheading Ned with Ice. The Ice and Fire Wiki’s Varys page has the dungeon visit, the Night’s Watch offer and his warning to Joffrey; the reviewed pins at 9/66. ${PAST_CHAPTER_PAGES}`,
     },
+    '12:episode': {
+      source: EPISODE_12,
+      note: 'The King’s Landing synopsis: Varys discovering Shae in the Tower of the Hand and his implied threats, Tyrion’s warning; the Pycelle page has the raven from Castle Black and Varys on the wildlings organizing behind one king (GOT202). Chapter 82, Tyrion II, orders it.',
+    },
+    '19:133': {
+      source: EPISODE_19,
+      note: 'The King’s Landing synopses: Tyrion taking advice from Bronn and Varys (GOT208), the map of the tunnel network beneath the city and “he is all that stands between them and defeat” (GOT209). Chapter 133, Tyrion XIII, orders it.',
+    },
+    '20:141': {
+      source: EPISODE_20,
+      note: 'The King’s Landing synopsis: Varys’s visit to Tyrion with Bronn’s lost command and the tribesmen gone, his thanks, and the visit to Ros, who learns he is a eunuch and admits she fears Littlefinger, and his protection of those who work for him (GOT210). Chapter 141 orders it.',
+    },
+    '11:77': {
+      source: KL_77,
+      note: 'Tyrion I (site 77): Varys pronouncing the seal genuine, Shae found at the Broken Anvil, the veiled threats, the Red Messenger “to warn of fire and blood to follow”, and the riddle of the king, the priest, the rich man and the sellsword.',
+    },
+    '12:chapter': {
+      source: KL_82,
+      note: 'Tyrion II (site 82): Varys’s praise, Jacelyn as the man he vouched for, the bastard killed in the brothel and the older boy he saved, “I serve the realm, the king, and you”, and the answer to the riddle, the shadow on the wall cast by a very small man.',
+    },
+    '13:91': {
+      source: KL_91,
+      note: 'Tyrion IV (site 91): the taunt about Pycelle, Dorne kept from the other factions, the council seat and Elia’s killer, Gregor Clegane, Tommen as the token, Cersei’s objection to losing both children, the certain enemy, and Varys’s giggle.',
+    },
+    '13:118': {
+      source: KL_118,
+      note: 'Tyrion X (site 118): the begging brother recognized by Shae, the fall of Storm’s End, Lollys’s household and the secret passage, and the tale of the mummer boy cut by a sorcerer in Myr, the blue flame and his hatred of magic.',
+    },
+    '15:110': {
+      source: KL_110,
+      note: 'Tyrion VIII (site 110): Varys’s report of Renly’s throat cut, the rumoured killers (Stannis with a magic sword, a Rainbow Guard knight, a maid, a spurned woman, Lady Catelyn), the lords gone over to Stannis, Loras leaving with a fifth of the knights, gold not enough for Highgarden, and the needs of the realm before the king’s desires.',
+    },
+    '18:128': {
+      source: `${SHOW}Varys`,
+      note: 'Varys page: helping Tyrion plan the defence, the two disparaging Joffrey, the compliment on his play of the game and his work as Hand, Daenerys alive with three dragons and her enemies with nowhere to hide, and “One Game at a time” (GOT208). Chapter 128 orders it.',
+    },
   },
   'pycelle': {
     '3:21': {
@@ -1555,6 +1889,26 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:73': {
       source: EPISODE_10,
       note: 'Show only (GOT110 on the Pycelle page): Ros, the ramble about Aerys, Robert and Joffrey, and the stretching before he puts his frail manner back on. Ros’s brothel is Petyr’s, the reviewed pin for Ros at 7/48.',
+    },
+    '13:episode': {
+      source: `${SHOW}Pycelle`,
+      note: 'Pycelle page: the laxatives and the Dornish plan kept from the queen, his telling Cersei, Tyrion, Bronn and Timett bursting in on him with Daisy, his loyalty since the Mad King, Jon Arryn, the beard cut off and the black cells (GOT203). Chapter 99, Tyrion VI, orders it; the status step “imprisoned” is at 13/99.',
+    },
+    '20:139': {
+      source: `${SHOW}Pycelle`,
+      note: 'Pycelle page: the essence of nightshade she requests (GOT209), his gloating visit to Tyrion, Tywin returned as Hand, and his show with Cersei of persuading Joffrey to set Sansa aside, with the new High Septon’s approval (GOT210). Chapter 139 orders it.',
+    },
+    '13:91': {
+      source: KL_91,
+      note: 'Tyrion IV (site 91): the serving girl sent away, the two sealed copies for Doran Martell, the single raven, the message kept from the council and the queen and her “frailty”, and the bottle stolen from the high shelf.',
+    },
+    '13:chapter': {
+      source: KL_99,
+      note: 'Tyrion VI (site 99): Shagga’s axe on the door, the serving girl, the two letters, Pycelle blaming Varys and Littlefinger, the beard, the gates opened to Aerys’s enemies, the confession about Jon Arryn and the incest, and the black cell. The status step “imprisoned” is at 13/99.',
+    },
+    '14:103': {
+      source: EPISODE_14,
+      note: 'The King’s Landing synopsis: Lancel’s message to free Pycelle, and Tyrion agreeing to let Cersei have him as a pet but not back on the Small Council; the Pycelle page has the demand that he be released and reinstated, and Tyrion’s refusal of the council seat (GOT204). Chapter 103 orders it; the show’s status step “alive” is at 14/103.',
     },
   },
   'sandor-clegane': {
@@ -1590,6 +1944,50 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${BOOKS}Sandor_Clegane`,
       note: `The Ice and Fire Wiki’s Sandor page: when Joffrey shows Sansa her father’s head, Sandor cleans the blood from her face. Meryn’s blow is on the Meryn pages of both wikis (GOT110 for the show), and the reviewed pin at 10/68 holds the story in both media. Chapter 68 is Sansa VI. ${PAST_CHAPTER_PAGES}`,
     },
+    '11:episode': {
+      source: EPISODE_11,
+      note: 'The King’s Landing synopsis: the tournament, Dontos’s punishment, Sansa’s plea, Joffrey’s dismissal of it as superstition, Sandor seconding her, and Dontos made court fool (GOT201). Chapter 76, Sansa I, orders it.',
+    },
+    '14:episode': {
+      source: EPISODE_14,
+      note: 'The King’s Landing synopsis: Meryn’s beating of Sansa, a disgusted Sandor, no one intervening, Tyrion’s order and Sandor’s cloak; the Ros page has Ros and Daisy waiting in Joffrey’s chamber, guarded by Sandor (GOT204). Chapter 106, Sansa III, orders it.',
+    },
+    '16:episode': {
+      source: EPISODE_16,
+      note: 'The King’s Landing synopsis: Sansa dragged away and about to be raped, Sandor slaying her assailants, carrying her to the castle and ordering the handmaids to care for her, Tyrion’s thanks and Sandor’s answer (GOT206). Chapter 115, Tyrion IX, orders it.',
+    },
+    '17:126': {
+      source: EPISODE_17,
+      note: 'The King’s Landing synopsis: Sansa’s thanks, “very brave”, the dog that needs no courage against rats, the day his violence will stand between her and Joffrey, and the sheets Shae tries to hide and Sandor finds (GOT207). Chapter 126, Sansa IV, orders it.',
+    },
+    '19:episode': {
+      source: EPISODE_19,
+      note: 'The King’s Landing synopsis: the confrontation with Bronn, the sortie beyond the Mud Gate with Lancel, his terror at the burning men, Bronn saving him, half his men lost, the refusal, the curse on the Kingsguard, the city and the king, and the offer to take Sansa north (GOT209). Chapter 136, Sansa VII, orders it; his role step “Deserter from the Kingsguard” is at 19/136.',
+    },
+    '11:chapter': {
+      source: KL_76,
+      note: 'Sansa I (site 76): the tourney of gnats, Sandor never ordered to hit Sansa, the name-day saying about sowing and reaping, the report of Tyrion’s death, and the warning to guard his tongue.',
+    },
+    '20:92': {
+      source: KL_92,
+      note: 'Sansa II (site 92): the serpentine steps, the catch, the disbelieved prayer, the little bird, the walk back past Ser Boros, the kennelmaster grandfather and Lord Tytos’s lion, the dog that never lies, and the song he will have. Episode 20, whose adaptation list names Sansa II, orders it.',
+    },
+    '14:chapter': {
+      source: KL_106,
+      note: 'Sansa III (site 106): Sandor fetching her and calling her little bird, pulling her up not ungently, his “Enough” during Boros’s beating, the order to strip her, and the cloak he tosses her. Boros stays unlinked: his show gate is episode 19.',
+    },
+    '16:chapter': {
+      source: KL_115,
+      note: 'Tyrion IX (site 115): Sandor ordered to bring the culprit, the riot, Sansa returned by Sandor covered in blood, the fire in Flea Bottom, and the fear Tyrion sees in his eyes.',
+    },
+    '19:133': {
+      source: KL_133,
+      note: 'Tyrion XIII (site 133): the gash on his forehead and the sheared helm, the refused sortie, the sellsword’s count of half the men lost, the curses and the wine, the fear Tyrion sees and its spread to the men, and the contemptuous laugh.',
+    },
+    '19:chapter': {
+      source: KL_136,
+      note: 'Sansa VII (site 136): Sandor hiding in her chambers, drunk and battered, his loss, his wish to see Tyrion burned, the road north, the protection he offers, the song, the Mother’s hymn, the tears, and the white cloak stripped off. His role step “Deserter from the Kingsguard” is at 19/136.',
+    },
   },
   'janos-slynt': {
     '4:28': {
@@ -1603,6 +2001,18 @@ export const GAME_OF_THRONES_SOURCES = {
     '8:58': {
       source: EPISODE_8,
       note: `Episode 8 (GOT108 on the Janos page): made Lord of Harrenhal for his loyalty, at the court that dismisses Barristan. The Ice and Fire Wiki’s Janos page names him lord of Harrenhal for the arrest; his role step at 8/58. ${PAST_CHAPTER_PAGES}`,
+    },
+    '11:77': {
+      source: EPISODE_11,
+      note: 'The King’s Landing synopsis: Janos leading the massacre of Robert’s bastards, Barra killed in Petyr’s brothel before Mhaegen and Ros, and Tobho Mott revealing that Gendry left as a Night’s Watch recruit; the Ros page has the orders from someone who does not care what Petyr thinks and Janos killing the baby himself (GOT201). Chapter 77 orders it.',
+    },
+    '12:episode': {
+      source: EPISODE_12,
+      note: 'The King’s Landing synopsis: the dinner, the questions about the massacre, his admission and his silence about who ordered it, the arrest and exile to the Night’s Watch, and Bronn installed in his place (GOT202). Chapter 82, Tyrion II, orders it; his role step “Exiled to the Wall” is at 12/82.',
+    },
+    '12:chapter': {
+      source: KL_82,
+      note: 'Tyrion I (site 77) has Janos at the council; Tyrion II (site 82): the dinner, the Dornish wine, Allar Deem and the whore and her daughter, the silence about who gave the order, the bloody spear, “you have no honor”, Morros to inherit but not Harrenhal, the Summer’s Dream to the Wall, and Jacelyn at the door.',
     },
   },
   'gendry': {
@@ -1651,6 +2061,22 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:73': {
       source: `${SHOW}Ros`,
       note: 'Show only. Season 1 (GOT110): Pycelle’s client, his ramble about Aerys, Robert and Joffrey, her impatience, and her refusal of his offer to escort her.',
+    },
+    '12:82': {
+      source: EPISODE_12,
+      note: 'The Ros page: Janos killing Barra before Mhaegen and Ros (GOT201), Ros falling apart before a client, Petyr’s tale of the Lyseni girl sold to a depraved lord, the day off and her smile (GOT202). Her witnessing Barra’s murder in episode 11 is told here with its aftermath rather than in a story of its own. Chapter 82 orders it.',
+    },
+    '14:103': {
+      source: EPISODE_14,
+      note: 'The Ros page: Tyrion hiring Ros and Daisy as a late name-day present, the belt, the stag’s-head sceptre, the loaded crossbow, and the order to take Daisy to Tyrion’s chambers (GOT204). Chapter 103 orders it.',
+    },
+    '18:128': {
+      source: EPISODE_18,
+      note: 'The Ros page: captured by Cersei for the Lannister pendant from Winterfell, beaten and held, shown to Tyrion with the threat of a gruesome death if harm comes to Joffrey, both keeping Shae’s secret, his vow and her plea (GOT208). Chapter 128 orders it; her status step “captured” is at 18/128.',
+    },
+    '20:141': {
+      source: EPISODE_20,
+      note: 'The Ros page: freed some time after the Battle of the Blackwater, Varys’s visit, the eunuch discovered, her fear of Littlefinger admitted, and his protection of those who work for him (GOT210). Chapter 141 orders it; her status step “alive” is at 20/141.',
     },
   },
   'mhaegen': {
@@ -1922,6 +2348,38 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_5,
       note: 'Added after review. Synopsis and the Bronn page (GOT105): Bronn rides with Catelyn’s party on the high road, Tyrion offers a reward to whoever helps him, Bronn kills several hill tribesmen in the attack, and Tyrion and Catelyn both notice his skill. Show only: the book’s version of the attack is the 4/32 story.',
     },
+    '12:episode': {
+      source: EPISODE_12,
+      note: 'The King’s Landing synopsis: Janos arrested and exiled, Bronn installed as Commander of the City Watch (GOT202); the relationship card at 12/82 has the reward for his loyalty and the question about killing an infant. Chapter 82, Tyrion II, orders it; his role step is at 12/82.',
+    },
+    '14:103': {
+      source: EPISODE_14,
+      note: 'The Pycelle page: Bronn cutting off the beard and the arrest with Daisy in the bed (GOT203); the King’s Landing synopsis of episode 14: Bronn ordered to kill Meryn if he speaks again, and his suggestion of a prostitute for Joffrey (GOT204). Chapter 103 orders it.',
+    },
+    '19:135': {
+      source: EPISODE_19,
+      note: 'The King’s Landing synopsis: Bronn drinking and the confrontation with Sandor, his post on the shore of the bay, Tyrion’s torch, the flaming arrow and the explosion, and Bronn saving the petrified Sandor (GOT209). Chapter 135 orders it.',
+    },
+    '20:141': {
+      source: EPISODE_20,
+      note: 'The King’s Landing synopsis: Tywin back to take over as Hand, Varys telling Tyrion that Bronn has been relieved of his command and the hill tribesmen have gone home with their plunder, and Tyrion’s lost power (GOT210). Chapter 141 orders it; his role step “Former commander of the City Watch” is at 20/141.',
+    },
+    '12:chapter': {
+      source: KL_82,
+      note: 'Tyrion II (site 82): the recruiting by duel, the man who kills Bronn being one Tyrion wants, “Without question? No. I’d ask how much”, and Tyrion’s hundred such men.',
+    },
+    '13:91': {
+      source: KL_91,
+      note: 'Tyrion IV (site 91): Bronn armoured as captain of the Hand’s guard, Ser Tallad’s rhythm, the thirty supplicants (Lady Tanda’s page, the Braavosi moneylender, the river lordling, the food merchants), Alliser Thorne with his rotten hand, and the dirty cell.',
+    },
+    '19:133': {
+      source: KL_133,
+      note: 'Tyrion XI (site 123): Bronn ordered to burn the houses along the wall by the quay; Tyrion XIII (site 133): Bronn’s position under the Red Keep, the oxen and the winches, the chain raised once Stannis’s flagship has passed, and the ships trapped in the wildfire.',
+    },
+    '18:128': {
+      source: `${SHOW}Bronn`,
+      note: 'Bronn page: crime cut by culling the known thieves, the clash with Tyrion over the brutality, the defence planning, his dismissal of Tyrion’s books, food as the key in a siege, and the thieves rounded up to protect the stores (GOT208). Chapter 128 orders it.',
+    },
   },
   'shae': {
     '9:episode': {
@@ -1935,6 +2393,46 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:70': {
       source: `${SHOW}Shae`,
       note: `Season 1, citing GOT110: Tywin names Tyrion acting Hand, forbids him to take Shae to court, and Tyrion defies him; Bronn goes with him (Bronn page, GOT110). In the books she goes with him though Tywin forbade it (Ice and Fire Wiki, Shae page). Relationship pin 10/70 in both media. ${PAST_CHAPTER_PAGES}`,
+    },
+    '13:99': {
+      source: EPISODE_13,
+      note: 'The King’s Landing synopses: Shae hidden in the Tower of the Hand against Tywin’s order (GOT201), Varys discovering her (GOT202), her complaint about her confinement, Tyrion and Varys finding her a job, and her report as Sansa’s handmaiden (GOT203). Chapter 99 orders it; her role step “Sansa Stark’s handmaiden” is at 13/99.',
+    },
+    '16:115': {
+      source: EPISODE_16,
+      note: 'The King’s Landing synopsis: Sansa dragged away in the riot and saved by Sandor; the Shae page has Sansa, injured and almost raped, coming to trust Shae and confiding her hatred of Joffrey, and Shae’s warning to trust no one (GOT206). No page says Shae tends the wounds, so the story leaves it out. Chapter 115 orders it.',
+    },
+    '17:126': {
+      source: EPISODE_17,
+      note: 'The King’s Landing synopsis: the first period, Sansa’s panic over the marriage and the son expected, Shae helping her flip the mattress and hide the sheets, Sandor finding them, and Sansa brought before Cersei (GOT207). Chapter 126 orders it.',
+    },
+    '19:136': {
+      source: EPISODE_19,
+      note: 'The King’s Landing synopsis: the night with Tyrion and her loyalty, Cersei questioning the unlikely handmaiden, and Shae’s advice to Sansa to lock herself in and await Stannis rather than Ser Ilyn (GOT209). Chapter 136 orders it.',
+    },
+    '20:141': {
+      source: EPISODE_20,
+      note: 'The King’s Landing synopsis: the shabby quarters, the scar Shae uncovers, Tywin taking over as Hand, Varys on his lost power, and her plea to leave for Pentos, refused (GOT210). Chapter 141 orders it.',
+    },
+    '11:77': {
+      source: KL_77,
+      note: 'Tyrion I (site 77): Shae at the Broken Anvil with Varys and the Black Ears, Tyrion’s irritation at how quickly she was found, her guess that the rich man lives, her teasing about the Tower of the Hand, his “Shae is a whore” and “I’ll do… justice”.',
+    },
+    '14:103': {
+      source: KL_103,
+      note: 'Tyrion VII (site 103): the manse arranged by Varys, the guards Tyrion asked for (a Braavosi daggerman, a eunuch strangler and two Ibbenese), the clansmen kept away to keep the secret, the shaft from Chataya’s turret room, and “the sweetest dream”.',
+    },
+    '13:118': {
+      source: KL_118,
+      note: 'Tyrion X (site 118): Shae asking to be his lady at court and to kill Cersei, the kitchens refused, the mockery about Tywin, the slap, the story of Tysha, and Varys’s plan of Lollys’s household and the secret passage. Her role step “Lollys Stokeworth’s maid” stays at 19/131, so the story tells only the proposal.',
+    },
+    '18:128': {
+      source: KL_128,
+      note: 'Tyrion XII (site 128): Alayaya brought in beaten, Tyrion relieved that Cersei has not found Shae, and Shae in his room through the secret passage, blindfolded by Varys.',
+    },
+    '19:131': {
+      source: KL_131,
+      note: 'Sansa V (site 131): Sansa helping Tanda and Shae guide Lollys inside, the Queen’s Ballroom, and Ser Ilyn there for treasonous guards and the women’s defence. Her role step “Lollys Stokeworth’s maid” is at 19/131; Tyrion XI (site 123) already says she has entered Lollys’s service, an owner check.',
     },
   },
   'podrick-payne': {
@@ -2244,6 +2742,66 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_10,
       note: `The episode has the head on the spike, Meryn Trant striking her, her move to push Joffrey and the Hound’s handkerchief. The reviewed relationship pins at 10/68 hold Mordane’s head and the Hound’s part in both media; the episode adapts Sansa VI. ${PAST_CHAPTER_PAGES}`,
     },
+    '11:episode': {
+      source: EPISODE_11,
+      note: 'The King’s Landing synopsis: the name-day tournament, Dontos late and drunk, the wine, Sansa’s plea of bad luck, Joffrey calling it superstition, Sandor seconding her, Dontos made fool and grateful, and Tyrion’s return (GOT201). Chapter 76, Sansa I, orders it.',
+    },
+    '13:99': {
+      source: EPISODE_13,
+      note: 'The King’s Landing synopsis: the awkward dinner with Myrcella, Tommen and Sansa, her façade of loyalty, Shae reporting as her new handmaiden through Tyrion and Varys, and Sansa venting at her inexperience (GOT203). Chapter 99 orders it, with the relationship card at 13/99.',
+    },
+    '14:episode': {
+      source: EPISODE_14,
+      note: 'The King’s Landing synopsis: Robb’s victory, the crossbow, her pledges of loyalty, Meryn’s beating and the torn gown, Tyrion’s intervention, Sandor’s cloak, the offer to end the engagement, her answer, and “Lady Stark” (GOT204). Chapter 106, Sansa III, orders it.',
+    },
+    '16:episode': {
+      source: EPISODE_16,
+      note: 'The King’s Landing synopsis: Sansa lost in the riot, dragged away and nearly raped, Sandor killing the men and carrying her to the castle; the Shae page has Sansa confiding her hatred of Joffrey after she is injured, and Shae’s warning to trust no one (GOT206). Chapter 115, Tyrion IX, orders it.',
+    },
+    '17:episode': {
+      source: EPISODE_17,
+      note: 'The King’s Landing synopsis: Sansa’s thanks and the dog and the rats, the nightmare and the bloody sheets, the marriage and son expected of her, Shae’s help, Sandor finding the sheets, and Cersei’s advice to love only her children (GOT207). Chapter 126, Sansa IV, orders it.',
+    },
+    '19:episode': {
+      source: EPISODE_19,
+      note: 'The King’s Landing synopsis: Maegor’s Holdfast, Cersei’s drinking and talk of rape, her departure, Sansa leading the Mother’s hymn, Shae’s advice to lock herself in, Sandor in her room, his offer to take her to Winterfell and her fear (GOT209). Chapter 136, Sansa VII, orders it.',
+    },
+    '20:episode': {
+      source: EPISODE_20,
+      note: 'The King’s Landing synopsis: the betrothal set aside, Margaery accepted, Sansa overjoyed in private, Littlefinger’s warning that Joffrey will still torment her, and his promise to help her escape for her mother’s sake (GOT210). Chapter 139, Sansa VIII, orders it.',
+    },
+    '11:chapter': {
+      source: KL_76,
+      note: 'Sansa I (site 76): the long sleeves over the bruises from Boros, the tourney, Dontos saved by the name-day curse and the fool’s motley, Tyrion’s arrival, the deer among wolves, “Lions”, the little lion, and her resolve never to trust a Lannister. Boros opens on screen only at episode 19, so he stays unlinked here.',
+    },
+    '20:92': {
+      source: KL_92,
+      note: 'Sansa II (site 92): the note, the godswood, Dontos’s oath to the old gods and “my Florian”, the time and coin escape needs, the visits to the godswood, and the drunk Sandor on the serpentine steps with his little bird, his dogs and the song he will have. Episode 20, the one whose adaptation list names Sansa II, orders it.',
+    },
+    '14:chapter': {
+      source: KL_106,
+      note: 'Sansa III (site 106): Oxcross, Boros’s blows and the torn bodice, Tyrion’s arrival, Sandor’s cloak, the Tower of the Hand, Tyrion’s account of the battle, her declared love for the king, then his intent that she not marry Joffrey, the offered guard refused, and her own bed. Boros stays unlinked: his show gate is episode 19.',
+    },
+    '17:chapter': {
+      source: KL_126,
+      note: 'Sansa IV (site 126): Stannis’s vanguard, Dontos and the escape not yet ripe, Sandor on the roof of Maegor’s Holdfast who enjoys killing and denies true knights, the flowering and the burned sheets, the maids, and Cersei’s “Love is poison”.',
+    },
+    '19:134': {
+      source: KL_134,
+      note: 'Sansa V (site 131): the kiss on Hearteater, the candles in the royal sept and the silent prayer for Joffrey’s defeat, the Queen’s Ballroom; Sansa VI (site 134): Cersei’s wine and warning, the godswood visits she disbelieves, and Ser Ilyn there so they are not taken alive.',
+    },
+    '19:chapter': {
+      source: KL_136,
+      note: 'Sansa VII (site 136): Cersei striking Lancel’s wound, Sansa calming the guests and sending Lancel to Frenken, Sandor in her room, his offer, the song, the verse of the Mother’s hymn, the tears, the white cloak left behind, and Dontos at dawn with the Tyrells and Lord Tywin.',
+    },
+    '20:chapter': {
+      source: KL_139,
+      note: 'Sansa VIII (site 139): the gallery, Garlan’s request, the High Septon voiding the betrothal, her delight, Dontos in the godswood on Cersei’s plans and Joffrey, the escape during the wedding in about a month, and the silver hair net with amethysts.',
+    },
+    '16:chapter': {
+      source: KL_115,
+      note: 'Tyrion IX (site 115): the riot on the way back from the harbour, Sansa among the missing, Boros and Meryn ordered back to find her, Sandor returning her covered in blood, and the High Septon, Preston Greenfield and Aron Santagar dead.',
+    },
   },
   'arya-stark': {
     '1:5': {
@@ -2464,6 +3022,66 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_66`,
       note: 'Bran VII (site chapter 67): the crow’s dream of his father in the crypts, Luwin taking him down to show him he is not there, Osha carrying him, Shaggydog savaging Luwin’s arm, Summer knocking him off, Rickon’s same dream, Luwin’s tale of the children of the forest in his turret, and the raven with the news.',
     },
+    '11:episode': {
+      source: EPISODE_11,
+      note: 'At Winterfell: the vassals’ complaints, Luwin guiding him, the dream of Summer in the godswood and the wolf’s reflection, Osha and Hodor taking him to the pool, his own reflection, and the red comet as the return of dragons; the Bran Stark page has his answer that the dragons are dead (GOT201).',
+    },
+    '11:chapter': {
+      source: WF_BRAN_I,
+      note: 'Bran I (site 78): the wolf dreams, the wolves confined to the godswood after Shaggydog bit Little Walder, the answers about the howling, the red comet, Bran howling until Luwin comes, turning into a wolf when he sleeps, the sleeping draught, and the dream of the godswood walls, which his brother circles while Summer has learned it does no good. The Frey wards stay unnamed: their book gate is 90.',
+    },
+    '11:90': {
+      source: WF_BRAN_II,
+      note: 'Bran II (site 90): playing the prince for the harvest feast, Rodrik and Luwin beside him, Lord Wyman welcomed, condolences to Lady Hornwood and her fear of Ramsay, Hodor defended against the Walders, and the three-eyed crow pecking through his skull to the golden man and the fall. Bran’s lord step sits at 11/90; the guests are named unlinked, their gates falling after episode 11.',
+    },
+    '13:95': {
+      source: WF_BRAN_III,
+      note: 'Bran III (site 95): Dancer in the great hall, the cheers of Stark and Winterfell, Rickon at his right, the toast to Robb’s victories, everyone gone, the Reeds’ arrival and oath, and the wolf dream with Jojen’s touch. The episode orders a chapter no episode adapts; the Reeds are named unlinked, their show gate being 22.',
+    },
+    '13:episode': {
+      source: `${SHOW}Luwin`,
+      note: 'Luwin page (GOT203): Bran’s questions about his dreams, the Valyrian steel link and the higher mysteries, and magic long gone from the world; the Hodor page has the dream of following Hodor and looking down on his own face (GOT203).',
+    },
+    '13:chapter': {
+      source: WF_BRAN_IV,
+      note: 'Bran IV (site 102): Jojen’s greensight, the winged wolf in chains and the three-eyed crow, the third eye, the question about falling, Summer and Shaggydog driven off by Hodor, and Luwin saying no living man has that power. The Reeds are named unlinked: their show gate is 22.',
+    },
+    '15:episode': {
+      source: `${SHOW}Bran_Stark`,
+      note: 'Bran Stark page (GOT205): the three-eyed raven, the dream of the sea drowning Winterfell and Rodrik, the two orphans given to a farmer, the siege of Torrhen’s Square and the garrison sent; the Rickon Stark page has the shepherd with three sons in the south, and the Rodrik Cassel page the two hundred men (GOT205).',
+    },
+    '15:chapter': {
+      source: WF_BRAN_V,
+      note: 'Bran V (site 109): the bellows for Mikken, the raven with Oxcross, Jojen’s drowning dream and the three named, the warnings nobody heeds, Rodrik back with Reek, the longship raiders on the Stony Shore, and the dream of Bran and Rickon dead at Reek’s feet. Jojen is named unlinked: his show gate is 22.',
+    },
+    '16:episode': {
+      source: `${SHOW}Bran_Stark`,
+      note: 'Bran Stark page (GOT206): awoken by Theon, the public surrender to protect his people, Rodrik captured and executed despite Bran’s pleas, the botched beheading, and the escape with Osha, Rickon, the direwolves and Hodor; the Rodrik Cassel page has Bran protesting Theon’s promise that nobody would be harmed (GOT206).',
+    },
+    '16:chapter': {
+      source: WF_BRAN_VI,
+      note: 'Bran VI (site 120): Summer’s fall from the sentinel tree, Rodrik gone eight days to Torrhen’s Square, Theon calling himself a prince, the ironmen swimming the moat, the people gathered, Jojen’s dream come true with Mikken drowning on his own blood, Osha and Reek joining Theon, Bran’s disappointment and his persuading the rest not to fight. Jojen is named unlinked: his show gate is 22.',
+    },
+    '17:episode': {
+      source: `${SHOW}Rickon_Stark`,
+      note: 'Rickon Stark page (GOT207): the shepherd’s farm, Rickon remembering the boys Bran sent there and wanting food, Bran cautious about putting them in danger, Theon losing the scent and the charred corpses claimed as Bran and Rickon; the Bran Stark page has the same (GOT207).',
+    },
+    '17:chapter': {
+      source: WF_THEON_IV,
+      note: 'Added after review. Theon IV (site 124): the silence of the direwolves, Wex finding Bran and Rickon gone, the wolves gone, Squint and Drennan dead at the Hunter’s Gate, Reek naming the six missing, the hunt into the wolfswood and the scent lost at a brook; Bran’s status turns free at 17/124.',
+    },
+    '18:130': {
+      source: EPISODE_18,
+      note: 'The Winterfell synopsis: Luwin following Osha into the crypts, the doubling back to mask their scent, Luwin urging her not to tell the boys, and Bran listening; the Bran Stark and Hodor pages have the orphans Bran sent to the shepherd and the bread (GOT208).',
+    },
+    '20:episode': {
+      source: `${SHOW}Bran_Stark`,
+      note: 'Bran Stark page (GOT210): the hiding through the siege, the sacked castle, Luwin dying in the godswood, the Wall and Jon at Castle Black, and the tearful farewell; the Hodor page has Jon getting word to Catelyn and Robb, and the Summer page the wolves going north with them (GOT210).',
+    },
+    '20:chapter': {
+      source: WF_BRAN_VII,
+      note: 'Bran VII (site 143): three days as Summer watching the sack from the wolfswood, Jojen waking him in the crypts, Brandon’s blade taken from the tomb, Hodor moving the stone, the ashes, Luwin dying in the godswood, the parting with Osha and Rickon, and Winterfell not dead, just broken. The Reeds are named unlinked: their show gate is 22.',
+    },
   },
   'rickon-stark': {
     '1:5': {
@@ -2481,6 +3099,34 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:chapter': {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_66`,
       note: 'Bran VII (site chapter 67): Rickon at the mouth of Eddard’s tomb telling Luwin to leave his father be, saying he saw him last night and he is coming home, refusing to have Shaggydog chained, following them to the turret, and the raven.',
+    },
+    '13:95': {
+      source: WF_BRAN_III,
+      note: 'Bran III (site 95): Rickon at Bran’s right, his hair uncut since their mother left because he bit the last girl who tried, screaming happily with the Walders, and his answer that the wolves are in the godswood because Shaggydog was bad. Bran I (site 78) has Rickon taking to the Walders after Shaggydog’s bite.',
+    },
+    '16:episode': {
+      source: `${SHOW}Rickon_Stark`,
+      note: 'Rickon Stark page (GOT206): the feint and the castle seized, Bran forced to surrender, Rickon distraught at the public execution and pleading with Bran for Rodrik, and Osha freeing them and leading them out; the Shaggydog and Summer pages have the wolves fleeing with them (GOT206).',
+    },
+    '16:chapter': {
+      source: WF_BRAN_VI,
+      note: 'Added after review. Bran VI (site 120): Rodrik gone to Torrhen’s Square, the ironmen swimming the moat and unlocking the postern gate, Theon calling himself a prince, the people gathered, and Mikken dying as he refuses to kneel; Rickon’s captivity is his status pin at 16/120, the summary not naming him in the hall.',
+    },
+    '17:episode': {
+      source: `${SHOW}Rickon_Stark`,
+      note: 'Rickon Stark page (GOT207): the shepherd’s farm, the two boys Bran sent there, Rickon wanting food and Bran’s caution, Theon losing the scent, and the charred corpses claimed as Bran and Rickon; the Dagmer page has the cracked walnut shells, a favourite of Rickon (GOT207).',
+    },
+    '17:chapter': {
+      source: WF_THEON_IV,
+      note: 'Added after review. Theon IV (site 124): the silent wolves, Bran and Rickon gone, the wolves gone, the dead guards at the Hunter’s Gate, Theon realizing Osha would need to carry Rickon on foot, the hunt and the brook; Rickon’s status turns free at 17/124.',
+    },
+    '20:episode': {
+      source: `${SHOW}Rickon_Stark`,
+      note: 'Rickon Stark page (GOT210): the crypt, Winterfell in ruins, Luwin under the willow, the offer of medicine refused, warm clothing and Castle Black, Jon, and the journey north with Bran, Osha, Hodor and the two direwolves.',
+    },
+    '20:chapter': {
+      source: WF_BRAN_VII,
+      note: 'Bran VII (site 143): the hiding in the crypts, Luwin dying in the godswood, the boys as Robb’s heirs who must be separated, Bran north with the Reeds, Hodor and Summer, and Osha taking Rickon and Shaggydog.',
     },
   },
   'theon-greyjoy': {
@@ -2500,6 +3146,66 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Theon_Greyjoy`,
       note: 'Season 1, citing episodes 9 and 10: the ravens shot down at the Twins, the battle where Jaime is taken, Theon proposing to send Jaime’s head to Tywin, and after the proclamation “brothers, now and always” and the sword sworn. Show only; the chapter orders it.',
     },
+    '11:81': {
+      source: `${SHOW}Theon_Greyjoy`,
+      note: 'Theon Greyjoy page (GOT201): Theon appealing to Robb for an alliance with Balon, the fleet needed for King’s Landing, his confidence that Balon will listen, Catelyn’s reservations and Robb sending him home as envoy. Balon is named unlinked: his show gate is 12.',
+    },
+    '12:85': {
+      source: WF_THEON_I,
+      note: 'Theon I (site 85): the voyage on the Myraham, ten years a ward, Robb’s letter as good as a crown, no honour guard, Aeron’s seawater and his warning, Balon’s scorn for the gold chain, the burned letter, the backhand, and the kingdom Balon means to carve out. Aeron is named unlinked: his show gate is 55.',
+    },
+    '12:98': {
+      source: EPISODE_12,
+      note: 'The Iron Islands synopsis: no one at Lordsport, the woman’s ride to Pyke and the seduction, Balon questioning his loyalty, Robb’s letter, Yara greeted warmly, the proposal rejected, and Balon having no intention of fighting the Lannisters; the clasp is on the Balon Greyjoy page (GOT202).',
+    },
+    '13:episode': {
+      source: EPISODE_13,
+      note: 'The Iron Islands synopsis: the war council, the plan for the North, one ship for the Stony Shore and thirty for Yara against Deepwood Motte, Theon’s plea and the reminder that he was given up as a ward, the blow, the thought of warning Robb, and the baptism by a Drowned Man.',
+    },
+    '13:chapter': {
+      source: WF_THEON_II,
+      note: 'Theon II (site 98): Esgred on the docks, the ride double with his hands on her, the stableboy naming Asha, her seat at Balon’s right and the hall laughing at the axe, and the solar plan of eight ships with Aeron while Asha takes Deepwood Motte. Aeron is named unlinked: his show gate is 55.',
+    },
+    '15:episode': {
+      source: EPISODE_15,
+      note: 'The Lordsport synopsis: the insubordinate crew, Dagmer’s advice to prove himself, the raid on Torrhen’s Square to draw the Stark forces from Winterfell, and Rodrik leading two hundred men to relieve the siege; the Yara Greyjoy page has her mockery on the way to her fleet (GOT205).',
+    },
+    '15:chapter': {
+      source: WF_THEON_III,
+      note: 'Theon III (site 111): the Wild Hares beaten, Benfred drowned at Aeron’s insistence, the arrow meant for Todric’s ale horn hitting his belly and Todric silenced, and the plan told to Dagmer aboard Foamdrinker: siege engines at Torrhen’s Square to bring Rodrik out of Winterfell. Aeron is named unlinked: his show gate is 55.',
+    },
+    '16:episode': {
+      source: EPISODE_16,
+      note: 'The Winterfell synopsis: the castle taken with grappling claws, Bran’s submission, Rodrik captured and spitting in Theon’s face, Dagmer insisting, the botched beheading, and Osha sleeping with Theon and freeing the boys; the Luwin page has the ravens to Balon and Yara, and the Rodrik Cassel page the sentence and the sword (GOT206).',
+    },
+    '16:chapter': {
+      source: WF_BRAN_VI,
+      note: 'Bran VI (site 120): Rodrik gone to Torrhen’s Square, Theon calling himself a prince, the ironmen swimming the moat and unlocking the postern gate, no one hurt if they concede, Mikken dying as he refuses to kneel, and Reek and Osha joining his service.',
+    },
+    '17:episode': {
+      source: EPISODE_17,
+      note: 'The Winterfell synopsis: Osha gone with Hodor, Bran, Rickon and the direwolves, Lorren beaten for blaming Theon, the hounds, the shepherd’s farm, the lost scent, Luwin sent back, mercy exhausted, and two burned children hoisted beside the gate. The man stays unnamed: Black Lorren is the books’ record.',
+    },
+    '17:chapter': {
+      source: WF_THEON_IV,
+      note: 'Theon IV (site 124): the silence of the wolves, Wex finding the Starks gone, Reek reporting the six missing, Urzen and Black Lorren with the dead guards, the hunt into the wolfswood with Luwin, Farlen and twelve dogs, mercy promised, the brook, Reek’s mill by the Acorn Water and his sack, and mercy was for this morning.',
+    },
+    '18:episode': {
+      source: `${SHOW}Theon_Greyjoy`,
+      note: 'Theon Greyjoy page (GOT208): twenty men instead of the five hundred (GOT206), everyone in the North wanting him dead for the Stark boys, too far from the sea, the plea to come home, the refused prize, the payment for the farmer’s grief and Dagmer having murdered the farmer and his wife.',
+    },
+    '18:chapter': {
+      source: WF_THEON_V,
+      note: 'Theon V (site 130): the nightmares since the mill, the three ironborn killed by Reek, Farlen executed, Asha’s twenty men and her counsel, the refusal, Reek’s offer of two hundred men, the feast with the dead, and the heads that belong to the miller’s sons, faces flayed, Bran and Rickon never found.',
+    },
+    '20:episode': {
+      source: `${SHOW}Theon_Greyjoy`,
+      note: 'Theon Greyjoy page (GOT210): the siege and the horn all night, his anguish at being called lucky, Luwin’s advice to take the black, too late and Jon Snow likely to kill him, the rousing speech, Dagmer knocking him out and the cloth bag. Ramsay is left unnamed: his show gate is 32.',
+    },
+    '20:chapter': {
+      source: WF_THEON_VI,
+      note: 'Theon VI (site 140): Luwin’s counsel to yield and to take the black, Wex first to step over, Lorren and Beth on the walls during Rodrik’s parley, the Dreadfort men and the corpses, Reek unmasked as Ramsay Snow, the punch and the sack. Ramsay is named unlinked: his show gate is 32.',
+    },
   },
   'luwin': {
     '1:7': {
@@ -2518,6 +3224,42 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_66`,
       note: 'Bran VII (site chapter 67): Luwin takes Bran down to show his father is not there, Shaggydog savages his arm in the tomb, Osha bandages it, dreams are just dreams, the children of the forest and the dragonglass, and the raven read in tears.',
     },
+    '13:episode': {
+      source: `${SHOW}Luwin`,
+      note: 'Luwin page (GOT201, GOT203): counsel to Bran as acting lord, the Valyrian steel link and the higher mysteries, magic long gone from the world; the Bran Stark page has the beings who could enter the minds of animals (GOT203), and the episode synopsis his dismissal of the dreams.',
+    },
+    '13:chapter': {
+      source: WF_BRAN_IV,
+      note: 'Bran IV (site 102): greenseers seeing through the weirwoods and controlling animals, the dream of the crypts that came true, the maester’s chain, the Valyrian steel link for the higher mysteries, Valyria the last ember, and no living man with that power. Jojen is named unlinked: his show gate is 22.',
+    },
+    '16:120': {
+      source: `${SHOW}Luwin`,
+      note: 'Luwin page (GOT206): word sent to Robb before his capture, the ravens to Balon and Yara, the oath to serve the Lord of Winterfell whatever his family name, Rodrik worth more alive than dead, Theon’s threat, and the horror at the execution.',
+    },
+    '17:episode': {
+      source: `${SHOW}Luwin`,
+      note: 'Luwin page (GOT207): made to accompany the hunt, begging Theon to spare them, the scent lost at a farm, sent home, the burned corpses claimed as Bran and Rickon, and his scream of anguish the loudest.',
+    },
+    '17:chapter': {
+      source: WF_THEON_IV,
+      note: 'Theon IV (site 124): Luwin taken along because Theon dares not leave him, his plea for mercy for the Starks and the Reeds as hostages against Howland Reed, Theon sparing all but Osha, the crannogmen and the children of the forest, and mercy was for this morning.',
+    },
+    '18:130': {
+      source: `${SHOW}Luwin`,
+      note: 'Luwin page (GOT208): Osha sneaking into the catacombs, the stream masking their scent, the corpses realized to be Jack and Billy, the two orphans Bran sent to the shepherd, the plea not to tell the boys, and Bran overhearing.',
+    },
+    '20:140': {
+      source: WF_THEON_VI,
+      note: 'Theon VI (site 140): Luwin bound to serve whoever holds Winterfell, the counsel to yield, the walls climbed within days, the suggestion to take the black as a way to live with dignity and honour, Kromm’s interruption with the Dreadfort men, and Luwin cut down in the sack.',
+    },
+    '20:episode': {
+      source: EPISODE_20,
+      note: 'The Winterfell synopsis: Luwin suggesting the Night’s Watch, the men betraying Theon, Dagmer stabbing Luwin with a spear, the boys finding him dying in the godswood, the Wall and Jon, and the quick death asked of Osha; the Luwin page has Theon not the ruthless man he pretends to be (GOT210).',
+    },
+    '20:chapter': {
+      source: WF_BRAN_VII,
+      note: 'Bran VII (site 143): Summer leading them to Luwin near death, his knowing the bodies were not Bran and Rickon and never telling Theon, Robb’s heirs to be separated, ironmen west and the Bastard of Bolton east, Bran his father’s son, and the boon that sends the others away; that Osha gives him a quick death follows his status pin at 20/143 and the show’s telling, the chapter leaving the boon unspoken.',
+    },
   },
   'old-nan': {
     '3:episode': {
@@ -2532,11 +3274,39 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${BOOKS}Old_Nan`,
       note: 'A Game of Thrones section: after Catelyn is attacked by the assassin, Old Nan helps her wash away the blood. Catelyn III (chapter 15) has the fight and her being treated for her wounds. Her storytelling is the page’s history section.',
     },
+    '11:78': {
+      source: WF_BRAN_I,
+      note: 'Bran I (site 78): the direwolves howling, everyone’s answers, Old Nan unable to see the comet but smelling it and saying it foretold dragons, and the Starks’ wolf blood, stronger in some than others. Episode 11 adapts the comet.',
+    },
   },
   'hodor': {
     '4:25': {
       source: EPISODE_4,
       note: 'The synopsis: the stableboy who can only say “Hodor” carries Bran down to Robb’s meeting with Tyrion, who brings the saddle design. Book side: Bran IV (Ice and Fire Wiki chapter page, chapter 25): Hodor carries him downstairs to the hall where Tyrion shares the design.',
+    },
+    '11:90': {
+      source: WF_BRAN_II,
+      note: 'Bran II (site 90): Hodor helping Bran dress, his deftness and strength, a great knight had the gods left him his wits, the basket, Little Walder’s ugly horse and the bumping, and Luwin reminding the Walders that good lords protect the weak. Little Walder is named unlinked: his book-only record is ordered at episode 13.',
+    },
+    '13:102': {
+      source: WF_BRAN_IV,
+      note: 'Bran IV (site 102): Bran unable to call off the wolves, remembering he is not alone, Hodor gleefully chasing them away, Jojen back on the ground, and Hodor bringing Bran to Luwin. The Reeds are named unlinked: their show gate is 22.',
+    },
+    '16:120': {
+      source: `${SHOW}Hodor`,
+      note: 'Hodor page (GOT206): Hodor looking on as Theon declares himself Prince of Winterfell, the castle seized, and Osha killing a guard and leading Hodor, Bran and Rickon out of the gate; the Summer page has the wolves fleeing too (GOT206).',
+    },
+    '16:124': {
+      source: WF_THEON_IV,
+      note: 'Added after review. Theon IV (site 124): Hodor among the six missing, his tracks found with the Reeds’, Dancer in the stables, Bran in the basket on Hodor’s back as Theon reckons, Hodor among those Theon agrees to spare, and the brook. Ordered at 16/124 with Osha’s pin.',
+    },
+    '20:episode': {
+      source: `${SHOW}Hodor`,
+      note: 'Hodor page (GOT208, GOT210): the hiding in the crypts with Hodor asleep beside Rickon, the burned castle, Luwin badly wounded in the godswood, the Wall and Jon Snow, and Hodor pushing Bran in a wheelbarrow while Osha carries Rickon.',
+    },
+    '20:chapter': {
+      source: WF_BRAN_VII,
+      note: 'Bran VII (site 143): the hiding in the crypts, Hodor moving the massive stone from the door, Winterfell in ashes, Luwin dying in the godswood, and Hodor going north with Bran, the Reeds and Summer. Theon IV (site 124) has Bran in the basket on Hodor’s back. The Reeds are named unlinked: their show gate is 22.',
     },
   },
   'osha': {
@@ -2560,11 +3330,55 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_66`,
       note: 'Bran VII (site chapter 67): chains removed but the shackles kept, Luwin calling her to carry Bran, “winter has no king”, helping Luwin and bandaging his wound, telling him Bran is the lord, some dreams not just dreams, and telling Bran he knows what the raven brings.',
     },
+    '11:78': {
+      source: `${SHOW}Hodor`,
+      note: 'Hodor page (GOT201): the godswood, the pain-relieving plant, Bran denying more dreams, the comet as an omen for Robb, Osha stroking his hair, stars not falling for men and the red comet meaning dragons; the Osha page has the insistence on the pool (GOT201).',
+    },
+    '11:90': {
+      source: WF_BRAN_II,
+      note: 'Bran II (site 90): Osha exploding naked out of the pool by the heart tree, her scars from fighting men, mostly Night’s Watch, one killed, Little Walder big outside and little inside, the denied wolf dreams, a prince should lie better, and back to the kitchens. Little Walder is named unlinked: the story’s episode is 11, his book-only record is ordered at 13.',
+    },
+    '15:109': {
+      source: `${SHOW}Rodrik_Cassel`,
+      note: 'Rodrik Cassel page (GOT205): Osha listening intently as she lights candles while Rodrik reports the siege and his two hundred men; the Osha and Bran Stark pages have the three-eyed raven, no explanation, the dream of the sea drowning Rodrik, and her leaving abruptly (GOT205).',
+    },
+    '16:episode': {
+      source: `${SHOW}Osha`,
+      note: 'Osha page (GOT206): her offer to fight for Theon refused on suspicion, Rodrik’s execution and the dream come true, the seduction for her freedom, and the escape with Bran, Rickon, Summer, Shaggydog and Hodor, killing Drennan; the Bran Stark page has the sea as the Iron Islands (GOT206).',
+    },
+    '16:chapter': {
+      source: WF_BRAN_VI,
+      note: 'Bran VI (site 120): the household gathered, most defying Theon, Mikken killed refusing to bend the knee, Reek and Osha joining his service, Bran’s disappointment and his persuading the rest not to fight.',
+    },
+    '16:124': {
+      source: WF_THEON_IV,
+      note: 'Added after review. Theon IV (site 124): Osha among the six missing, Drennan killed by the woman as Theon surmises, the day-long hunt, and mercy for all but Osha, who took an oath and broke it. Ordered at 16/124, her role and status pin.',
+    },
+    '18:130': {
+      source: `${SHOW}Osha`,
+      note: 'Osha page (GOT208): the doubling back through a stream, the crypts, Luwin seeing her smuggle bread, the bodies of the orphan farmhands, her promise not to tell the boys, who have suffered enough; the Luwin page has Bran overhearing (GOT208).',
+    },
+    '20:episode': {
+      source: `${SHOW}Osha`,
+      note: 'Osha page (GOT210): hiding in the crypts during the sack, the dying Luwin, the instruction to take the boys to Jon at the Wall, her agreement, the gift of mercy at his request, and leaving with Hodor, Bran, Rickon and the direwolves; the Rickon Stark page has the boys leaving first (GOT210).',
+    },
+    '20:chapter': {
+      source: WF_BRAN_VII,
+      note: 'Bran VII (site 143): the wolves sent on while the humans doubled back to the crypts, the sword Mikken made for Eddard’s tomb, Luwin dying and the boys to be separated, the boon, and Osha taking Rickon and Shaggydog while Bran goes north. Theon IV (site 124) has the oath she took and broke.',
+    },
   },
   'mikken': {
     '2:54': {
       source: `${SHOW}Mikken`,
       note: 'Season 1, citing episode 2: Mikken forges Needle for Arya. The episode synopsis has Jon’s gift, the name Needle and “Stick them with the pointy end.” Book side: the Ice and Fire Wiki’s Mikken page (the bravo’s blade made for Jon, given to Arya) and Jon II. Filed at chapter 54, his book gate.',
+    },
+    '15:109': {
+      source: WF_BRAN_V,
+      note: 'Bran V (site 109): Bran at Mikken’s bellows when Robb’s raven comes, Jojen’s dream naming Mikken among the drowned, and Mikken finding it funny and saying he always wanted to see the sea. Jojen is named unlinked: his show gate is 22.',
+    },
+    '16:120': {
+      source: WF_BRAN_VI,
+      note: 'Bran VI (site 120): the people gathered in the Great Hall, Mikken drowning on his own blood as he refuses to bend the knee, and Jojen’s dream of the sea come true. Jojen is named unlinked: his show gate is 22.',
     },
   },
   'hallis-mollen': {
@@ -2586,6 +3400,26 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_66`,
       note: 'Bran VII (site chapter 67): Summer uneasy and refusing to leave the steps, then slamming into Shaggydog when Bran calls, knocking him off Luwin. Book only.',
     },
+    '11:78': {
+      source: EPISODE_11,
+      note: 'At Winterfell: the dream of being Summer in the godswood, Summer’s reflection in the pool, Osha and Hodor taking Bran there, and his own waking reflection; the Summer page has the wolf kept in the godswood and Bran experiencing its movements (GOT201).',
+    },
+    '13:95': {
+      source: WF_BRAN_III,
+      note: 'Bran III (site 95): Summer left in the godswood on Rodrik’s orders, the wolf dream, the intruders with no taint of fear, Meera’s voice, Shaggydog full of fear and rage and Summer stronger than he knows, and Jojen’s touch. The Reeds are named unlinked: their show gate is 22.',
+    },
+    '13:episode': {
+      source: `${SHOW}Hodor`,
+      note: 'Hodor page (GOT203): Summer following Hodor as he comes to wake Bran, jumping onto the bed, Bran looking down at his own face and waking into Summer’s eyes with Hodor looking on; the episode synopsis has Luwin dismissive.',
+    },
+    '13:102': {
+      source: WF_BRAN_IV,
+      note: 'Bran IV (site 102): Summer past the frog spear and entangled in the net, never drawing blood, the growl at the falling question, Meera naming Bran’s anger and the two part of each other, Shaggydog’s arrival, and Hodor chasing the wolves away. The Reeds are named unlinked: their show gate is 22.',
+    },
+    '20:143': {
+      source: WF_BRAN_VII,
+      note: 'Bran VII (site 143): Summer and Shaggydog watching the sack from the edge of the wolfswood, the wolf dream of three days, the ruins of the winter town, the wolves rejoining them near the broken tower, Summer leading them to Luwin, and Summer going north with Bran.',
+    },
   },
   'shaggydog': {
     '10:54': {
@@ -2603,6 +3437,22 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:chapter': {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_66`,
       note: 'Bran VII (site chapter 67): Shaggydog springs out of Eddard’s future tomb and savages Luwin’s arm, Summer knocks him off, Rickon does not like him chained, and Luwin calls him “the third man” savaged.',
+    },
+    '13:102': {
+      source: WF_BRAN_IV,
+      note: 'Bran IV (site 102): Shaggydog’s arrival and lunge, Summer reacting to Bran’s anger, Jojen up the tree and Meera after him, and Hodor chasing the wolves away; Bran I (site 78) has the wolves confined to the godswood after Shaggydog bit Little Walder. The Reeds are named unlinked: their show gate is 22.',
+    },
+    '16:120': {
+      source: `${SHOW}Shaggydog`,
+      note: 'Shaggydog page (GOT206): Theon capturing Winterfell and Shaggydog and Summer fleeing with Osha, Bran, Rickon and Hodor; the episode synopsis has Rodrik’s execution, Osha leaving Theon asleep and the guard killed.',
+    },
+    '20:episode': {
+      source: `${SHOW}Shaggydog`,
+      note: 'Shaggydog page (GOT210): Shaggydog and Summer reuniting with the boys after the sack and going north to Jon at the Wall; the episode synopsis has Luwin dying and sending them north.',
+    },
+    '20:chapter': {
+      source: WF_BRAN_VII,
+      note: 'Bran VII (site 143): the direwolves sent on to make a trail, watching the sack from the wolfswood, rejoining the others near the broken tower, and Osha taking Rickon and Shaggydog while Bran goes north with Summer.',
     },
   },
   'ghost-direwolf': {
@@ -2765,6 +3615,30 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:72': {
       source: `${SHOW}Rodrik_Cassel`,
       note: 'Show only: with Catelyn to Robb’s army, greeting the Greatjon “like a longtime friend” (GOT108), advising her against the Twins (GOT109), and among those proclaiming Robb (GOT110).',
+    },
+    '11:81': {
+      source: `${SHOW}Rodrik_Cassel`,
+      note: 'Rodrik Cassel page (GOT201): present when Robb gives Alton his peace terms, sent back to Winterfell to keep Bran and Rickon safe while Catelyn goes to treat with Renly; the episode synopsis has Catelyn asking to return to her younger sons.',
+    },
+    '11:90': {
+      source: WF_BRAN_II,
+      note: 'Bran II (site 90): Rodrik beside Bran at the audiences, his promise to Lady Hornwood and her hint, his discomfort and too old a knight, Benfred ordered to remain at Torrhen’s Square, and only his daughter Beth despite three marriages. Lady Hornwood is named unlinked: her book-only record is ordered at episode 13.',
+    },
+    '15:109': {
+      source: WF_BRAN_V,
+      note: 'Bran V (site 109): Rodrik back with Reek, named by Hayhead, the murder of Lady Hornwood as Bran is told it, the Bastard shot as he rode away, Reek kept for Robb’s judgement, Manderly and Bolton fighting in the Hornwood, the raiders on the Stony Shore, and the promise to leave Alebelly behind. Bran IV (site 102) has his ride east.',
+    },
+    '15:111': {
+      source: `${SHOW}Rodrik_Cassel`,
+      note: 'Rodrik Cassel page (GOT205): the siege of Torrhen’s Square barely forty leagues away, the Mountain or sellswords, Bran on protecting their bannermen, two hundred decent men, his smile at the boy’s wisdom and southerners faring badly in the North; the episode synopsis has Theon’s plan to draw the forces away.',
+    },
+    '16:120': {
+      source: `${SHOW}Rodrik_Cassel`,
+      note: 'Rodrik Cassel page (GOT206): caught returning from Torrhen’s Square after cutting down two men, the fury and the spit, the sentence, the man who passes the sentence swinging the sword, “I’m off to see your father”, and the botched beheading with three more strikes and a kick; the Theon Greyjoy page has him calling Theon a traitor (GOT206).',
+    },
+    '20:140': {
+      source: WF_THEON_VI,
+      note: 'Theon VI (site 140): the parley in the winter town, Rodrik’s demands, Beth with a noose on the walls at Theon’s signal to Lorren, sunset, craven, Rodrik’s offer to take her place declined, and the Dreadfort men, taken for allies, presenting his corpse.',
     },
   },
   'grey-wind': {
@@ -3254,6 +4128,315 @@ export const GAME_OF_THRONES_SOURCES = {
     '16:118': {
       source: ST_118,
       note: 'Tyrion X (site 118): Varys bringing word that Storm’s End has fallen, his attempt to tell how Cortnay died and his hint of magic, Tyrion’s disbelief, Varys’s hatred of magic since a sorcerer gelded him, and then Tyrion suspecting an assassin from the Free Cities. Episode 16, his status pin, orders it.',
+    },
+  },
+  'daisy': {
+    '11:77': {
+      source: `${SHOW}Daisy`,
+      note: 'Daisy page: the new prostitute learning about the brothel from Ros, impressed by the decor, and present when Janos kills Barra before Mhaegen (GOT201); the Ros page has Haystack Hall and the gold cloaks bursting in (GOT201). Chapter 77 orders it, her record’s pair.',
+    },
+    '13:99': {
+      source: `${SHOW}Daisy`,
+      note: 'Daisy page: in bed with Pycelle when Tyrion arrests him, paid for her trouble (GOT203); the Pycelle page has Bronn and Timett, the spying for Cersei, and the second coin for the struggle (GOT203). Chapter 99 orders it.',
+    },
+    '14:103': {
+      source: `${SHOW}Daisy`,
+      note: 'Daisy page: Ros and Daisy hired as a late name-day present, the belt, the stag’s head sceptre, the scream, the crossbow and the order to show Tyrion (GOT204). Chapter 103 orders it.',
+    },
+  },
+  'jacelyn-bywater': {
+    '12:82': {
+      source: KL_82,
+      note: 'Tyrion II (site 82): Jacelyn as Tyrion’s choice, “rigid” and too proud of his honour in Janos’s words, the meeting at the door, the list of successors to accompany Janos to Eastwatch, and the man Varys claims him to be. Episode 12, his record’s show pair, orders it.',
+    },
+    '15:94': {
+      source: KL_94,
+      note: 'Tyrion V (site 94): Jacelyn’s urgent summons, Cleos Frey at the Gate of the Gods with Robb’s terms, Cleos kept outside the walls with every hospitality, the spitfire crews trained with paint and burning oil, and his dislike of “alchemist’s piss”.',
+    },
+    '18:123': {
+      source: KL_123,
+      note: 'Tyrion X (site 118): Jacelyn ordered to take Rosby’s party and keep Tommen safe; Tyrion XI (site 123): Boros surrendering Tommen and stripped of his cloak, Jacelyn back with the Rosby spearmen, Tommen and his fawn, and the plans he keeps from Tyrion. Boros opens on screen only at episode 19, so he stays unlinked.',
+    },
+    '14:103': {
+      source: KL_103,
+      note: 'Tyrion VII (site 103): Lancel reporting that Jacelyn defied a command in the king’s name, Tyrion reading it as Cersei’s order to free Pycelle rebuffed, the demand that Jacelyn be removed and charged with treason, and Lancel told to assure the queen he can win Jacelyn away from Tyrion.',
+    },
+    '19:133': {
+      source: KL_133,
+      note: 'Tyrion X (site 118): the lordship promised for securing Tommen; Tyrion XIII (site 133): Lord Jacelyn’s warning that the city’s forces may break, and Tyrion’s order for another sortie against the soldiers among the charred wharves.',
+    },
+  },
+  'hallyne': {
+    '15:94': {
+      source: KL_94,
+      note: 'Tyrion V (site 94): the vaults under Rhaenys’s Hill, the substance that cannot be quenched, Aerys’s volatile old stock, Munciter’s count of 7,840 jars and the promised ten thousand, the feast put off and the demonstration at the Red Keep allowed.',
+    },
+    '18:123': {
+      source: KL_123,
+      note: 'Tyrion XI (site 123): Hallyne’s visit, the thirteen thousand jars ahead of schedule, the more potent spells, the question about dragons, and the saying that magic began to fail when the last dragon died.',
+    },
+    '20:139': {
+      source: KL_139,
+      note: 'Sansa VIII (site 139): the surviving captains honoured, “Hallyne the Pyromancer” named lord with no lands, and Tyrion absent for his wounds; the wildfire on the Blackwater is Tyrion XIII (site 133).',
+    },
+  },
+  'lollys-stokeworth': {
+    '13:118': {
+      source: KL_118,
+      note: 'Tyrion IV (site 91): Lady Tanda’s suppers and the soft, dimwitted Lollys she wants Tyrion to marry; Tyrion IX (site 115): Lollys found alive outside a tanner’s shop, raped by fifty men; Tyrion X (site 118): Varys proposing Shae as her maidservant, with the secret passage. Episode 13, her record’s show pair, orders it.',
+    },
+    '19:131': {
+      source: KL_131,
+      note: 'Sansa V (site 131): Sansa helping Tanda and Shae guide Lollys inside, the Queen’s Ballroom with almost every highborn woman in the city, and Ser Ilyn there for treasonous guards and their defence. Shae’s role step as Lollys’s maid is at this chapter.',
+    },
+  },
+  'osmund-kettleblack': {
+    '18:123': {
+      source: KL_123,
+      note: 'Tyrion IX (site 115): Lancel’s report that Cersei consorts with the hedge knight Osmund Kettleblack and his brothers to raise sellswords, and Bronn matching every copper; Tyrion XI (site 123): Osmund chosen over Tyrion’s disapproval in Boros’s place, Balon Swann for Preston Greenfield, and the white cloaks given in the royal sept. Boros stays unlinked: his show gate is episode 19.',
+    },
+    '19:133': {
+      source: KL_133,
+      note: 'Tyrion XIII (site 133): the Antler Men to be catapulted, Tyrion’s order to Osmund to keep Joffrey safe under any circumstance but among the defenders, and his wonder whether Cersei will keep her promise about Alayaya.',
+    },
+    '20:139': {
+      source: KL_139,
+      note: 'Sansa VIII (site 139): over six hundred new knights made by Balon Swann, Meryn Trant and Osmund Kettleblack, Loras named to the Kingsguard, and the betrothal to Sansa voided in favour of Margaery.',
+    },
+  },
+  'alayaya': {
+    '18:128': {
+      source: KL_128,
+      note: 'Tyrion III and VII (sites 89 and 103): Chataya’s daughter, the turret room, the wardrobe and the shaft, her sleeping while he is gone; Tyrion XII (site 128): Osney and Osfryd bringing her in beaten, Cersei taking her for his whore, Alayaya keeping his secret, and the promise tied to Joffrey and Tommen. Her record opens at 128, so the story is told from there.',
+    },
+  },
+  'garlan-tyrell': {
+    '20:139': {
+      source: KL_139,
+      note: 'Sansa VIII (site 139): Mace Tyrell and his sons Garlan and Loras among the heroes of the Blackwater, Loras to the Kingsguard, Mace to the small council, Garlan’s request that Joffrey wed Margaery, and the High Septon declaring the betrothal void for House Stark’s rebellion. Mace opens on screen only at episode 32, so he stays unlinked.',
+    },
+  },
+  // Winterfell and the Iron Islands (#1487).
+  'balon-greyjoy': {
+    '12:85': {
+      source: WF_THEON_I,
+      note: 'Theon I (site 85): the banners called, Aeron bringing Theon to the castle, the gold chain bought with gold, Robb’s offer of a crown for Lannisport and Casterly Rock, the letter burned, the backhand, what is given can be taken away, and the iron price. Aeron is named unlinked: his show gate is 55.',
+    },
+    '12:98': {
+      source: `${SHOW}Balon_Greyjoy`,
+      note: 'Balon Greyjoy page (GOT202): the nine years, what the Starks gave back, Robb’s proposal shown, then the interruption about his clothes and the clasp torn off for not paying the iron price, Yara greeted warmly and set above Theon, the letter burned and no one giving him a crown. Chapter 98 orders it, at Asha’s book gate.',
+    },
+    '13:episode': {
+      source: `${SHOW}Balon_Greyjoy`,
+      note: 'Balon Greyjoy page (GOT203): the plan to attack the poorly defended North, thirty longships for Yara to take Deepwood Motte, one ship for Theon to raid the Stony Shore, Theon’s plea for the Stark alliance, the reminder that Balon gave him away, the blow, and Balon and Yara watching the baptism.',
+    },
+    '13:chapter': {
+      source: WF_THEON_II,
+      note: 'Theon II (site 98): the feast of four hundred lords and captains, the solar with Victarion and Aeron, Theon’s suggestions refused, eight ships to harry the coast with Aeron, thirty ships and picked men for Asha against Deepwood Motte, Victarion’s thrust at Moat Cailin, and Winterfell holding a year while the rest falls. The Stony Shore is left unnamed (its book gate is 111) and Aeron unlinked (his show gate is 55).',
+    },
+  },
+  'asha-greyjoy': {
+    '12:98': {
+      source: `${SHOW}Yara_Greyjoy`,
+      note: 'Yara Greyjoy page (GOT202): posing as a commoner, the ride up to Pyke, Theon’s relentless seduction, Balon comparing him unfavourably to her and naming her to lead the assault; the Balon Greyjoy page (GOT202) has her walking in, the warm greeting and the homecoming she will tell her grandchildren about.',
+    },
+    '13:episode': {
+      source: `${SHOW}Balon_Greyjoy`,
+      note: 'Balon Greyjoy page (GOT203): thirty long ships for Yara to take Deepwood Motte, one ship for Theon, Yara twisting the knife with its name, her accusation about his other family, and the baptism she watches with Balon.',
+    },
+    '13:chapter': {
+      source: WF_THEON_II,
+      note: 'Theon II (site 98): Esgred, daughter of Ambrode and wife of Sigrin the shipwright, the flirting and the ride double to Pyke, the stableboy naming her, her wish to see who he was first, the seat at Balon’s right, the axe caught from a dancer splitting his trencher as her husband, and thirty ships for Deepwood Motte.',
+    },
+    '15:111': {
+      source: `${SHOW}Yara_Greyjoy`,
+      note: 'Yara Greyjoy page (GOT205): the ships assembled, the ride to Lordsport to reach her fleet, Theon struggling with his unruly crew, the mockery, her men waiting a year for her and Theon’s crew not loyal to him. Chapter 111 orders it.',
+    },
+    '18:episode': {
+      source: EPISODE_18,
+      note: 'The Winterfell synopsis: twenty men instead of reinforcements, too far from the sea, the North rising, the plea to come home and the refusal; the Yara Greyjoy page has Deepwood Motte taken and the five hundred men asked for (GOT206), and the reported killing of Bran and Rickon (GOT208); the Theon Greyjoy page has her memory of him as a child and not dying far from home (GOT208).',
+    },
+    '18:chapter': {
+      source: WF_THEON_V,
+      note: 'Theon V (site 130): Asha in the high seat with twenty men, the scolding for the heads on the gates, Dagmer’s defeat already known and the survivors led back to the Stony Shore, the castle to be razed and the princes taken to Pyke, the return to Deepwood Motte refused, and the castle held for the rest of his life.',
+    },
+  },
+  'aeron-greyjoy': {
+    '55:85': {
+      source: WF_THEON_I,
+      note: 'Theon I (site 85): no honour guard, the grim priest who is his uncle Aeron, gone down in a storm and turned holy, the kneeling in the mud and the seawater, the secrecy Balon commanded, the fool who thinks Balon will hand the isles to a Stark, and his leaving at once at sunset. Episode 55 is his show gate.',
+    },
+    '55:98': {
+      source: WF_THEON_II,
+      note: 'Theon II (site 98): the ship to be blessed by his uncle Aeron the next day, the solar with Balon and Victarion, eight ships for Theon with Aeron and Dagmer, which Theon reads as distrust, Asha to Deepwood Motte and Victarion to Moat Cailin. Dagmer is left out: his book gate is 111.',
+    },
+    '55:111': {
+      source: WF_THEON_III,
+      note: 'Theon III (site 111): the Wild Hares beaten and Benfred taken, Aeron insisting on the drowning, Theon giving in but declining to be in charge of it, Benfred’s body dragged from the water, and six ships for Aeron while Dagmer marches on Torrhen’s Square.',
+    },
+  },
+  'victarion-greyjoy': {
+    '13:98': {
+      source: WF_THEON_II,
+      note: 'Theon II (site 98): Victarion lending Theon his steersman Rymolf Stormdrunk, Theon calling him tireless and dutiful, the solar with Balon and Aeron, the main thrust up the Saltspear and the Fever River to Moat Cailin so that Robb cannot return north, and Asha to Deepwood Motte. Aeron is named unlinked: his show gate is 55.',
+    },
+  },
+  'dagmer': {
+    '15:episode': {
+      source: `${SHOW}Dagmer`,
+      note: 'Dagmer page (GOT205): first mate of the ship, the crew’s respect to be earned, ironborn and orders, the fishing villages of the Stony Shore, Torrhen’s Square as the seat of House Tallhart and a worthy prize, and Winterfell sending men to take it back.',
+    },
+    '15:chapter': {
+      source: WF_THEON_III,
+      note: 'Theon III (site 111): Dagmer left to guard the ships, the talk in his cabin aboard Foamdrinker, always Balon’s best man, Balon relying on Asha who never failed him, the march on Torrhen’s Square with siege engines in the open, Ser Rodrik riding to Leobald’s aid, and Torrhen’s Square not the prize.',
+    },
+    '16:120': {
+      source: `${SHOW}Dagmer`,
+      note: 'Dagmer page (GOT206): the feint and the castle seized, Rodrik captured on his return and spitting in Theon’s face, Theon suggesting prison, Dagmer insisting on execution to keep the crew’s respect, and four blows and a kick; the iron price is the Rodrik Cassel page (GOT206).',
+    },
+    '17:124': {
+      source: `${SHOW}Dagmer`,
+      note: 'Dagmer page (GOT207): Osha’s escape, Theon beating Lorren as Dagmer looks on with approval, the hunt with hounds to the shepherd’s farm, the cracked walnut shells Rickon favours, the lost scent, and the two charred corpses claimed as Bran and Rickon. The ironman stays unnamed: Black Lorren is the books’ record.',
+    },
+    '18:episode': {
+      source: `${SHOW}Theon_Greyjoy`,
+      note: 'Theon Greyjoy page (GOT208): Dagmer murdering the two farm boys, Yara’s twenty men and her plea, Theon’s guilt and the payment for the farmer’s grief, and Dagmer having also murdered the farmer and his wife; the Dagmer page (GOT208) has the same.',
+    },
+    '18:chapter': {
+      source: WF_THEON_V,
+      note: 'Theon V (site 130): Dagmer lost the fight at Torrhen’s Square, Asha unsurprised and already aware he is leading the survivors back to the Stony Shore, Theon seeing she is better informed, Leobald Tallhart joined with Ser Rodrik, Manderly’s barges and the Umbers gathering. Bran VI (site 120) has Rodrik leaving to deal with Dagmer’s threat.',
+    },
+    '20:140': {
+      source: EPISODE_20,
+      note: 'The Winterfell synopsis: the siege under Roose Bolton’s bastard son, twenty men, Theon rallying them, Dagmer knocking him out to deliver him to the Bolton army, Luwin stabbed with a spear and the bag over Theon’s head; the Dagmer page has his admiring the rhetoric (GOT210). Ramsay is left unnamed: his show gate is 32.',
+    },
+  },
+  'black-lorren': {
+    '17:124': {
+      source: WF_THEON_IV,
+      note: 'Theon IV (site 124): Urzen and Black Lorren showing Theon Squint and Drennan dead at the Hunter’s Gate, the direwolves’ work on Squint, Drennan killed by the woman with help from someone who freed the wolves. Theon III (site 111) has Dagmer name Black Lorren among the best fighters.',
+    },
+    '20:140': {
+      source: WF_THEON_VI,
+      note: 'Theon VI (site 140): the choice to leave or die, Wex stepping over first and Black Lorren among those who follow, his counsel to put the castle folk to the sword, his fetching Beth Cassel despite his disapproval, and her shown on the walls with a noose at Theon’s signal.',
+    },
+    '20:143': {
+      source: WF_BRAN_VII,
+      note: 'Bran VII (site 143): Theon’s ironmen found dead in the ruins alongside men with the Dreadfort’s badge, and Black Lorren listed among the characters appearing; Theon VI (site 140) has him stay and the Dreadfort men turn on the ironborn. That his body is among the dead follows the status pin at 20/143.',
+    },
+  },
+  'wex-pyke': {
+    '13:98': {
+      source: WF_THEON_II,
+      note: 'Theon II (site 98): Wex Pyke at Otter Gimpknee’s inn, ordered to saddle Smiler, the ride to Pyke with Esgred, the stableboy naming Asha, and Theon taking his anger out on the smirking Wex. The horse bargain is the record’s log.',
+    },
+    '17:124': {
+      source: WF_THEON_IV,
+      note: 'Theon IV (site 124): Wex woken by the bed and sent to check the Starks, the news that they are gone, the hunt, and Wex alerting them at the muddy brook that only pawprints show, so the wolves entered the water alone. Episode 17 adapts the hunt.',
+    },
+    '20:140': {
+      source: WF_THEON_VI,
+      note: 'Theon VI (site 140): the ironborn assembled, the choice of leaving or dying beside him, no reply until Wex steps over, Black Lorren and the others following, the rest leaving with Urzen and Stygg, and the Dreadfort men’s sack and fire.',
+    },
+  },
+  'farlen': {
+    '16:124': {
+      source: WF_THEON_IV,
+      note: 'Theon IV (site 124): the hunt with twelve dogs, the young elk eaten by the wolves, Theon asking Farlen whether the dogs track the wrong wolves and his denial, the brook, and Farlen’s party downstream with the same bad news. Bran I (site 78) has Farlen’s answer that the wolves howl for freedom. Episode 16 is his show gate.',
+    },
+    '18:130': {
+      source: WF_THEON_V,
+      note: 'Theon V (site 130): Gelmarr, Aggar and Gynir Rednose killed by Reek with Theon’s permission to keep the mill secret, Farlen executed to have someone to blame, beheaded by Theon himself as Eddard would have done, four difficult blows, and Farlen among the dead at the dream feast.',
+    },
+  },
+  'meera-reed': {
+    '22:95': {
+      source: WF_BRAN_III,
+      note: 'Bran III (site 95): Meera and Jojen Reed of Greywater Watch announced at the feast, the children of Howland Reed, Eddard’s companion in the rebellion, her net, bronze knife and frog spear, the oath by earth and water, bronze and iron, ice and fire, the gifts of fish, frog and fowl, and Bran’s blush. Episode 22 is her show gate.',
+    },
+    '22:102': {
+      source: WF_BRAN_IV,
+      note: 'Bran IV (site 102): Summer entangled in her net, her father teaching her, Jojen’s greensight, Meera stepping between Summer and her brother and naming Bran’s fear, Shaggydog’s lunge, Jojen up the tree with Meera after him, and Jojen’s dream of the Walders’ grey meat brought at dusk.',
+    },
+    '22:109': {
+      source: WF_BRAN_V,
+      note: 'Bran V (site 109): the drowning dream and the warnings nobody believes, Meera agreeing prophecies can be changed and angry when Jojen disagrees, both Alebelly and Bran to fight their fates, the dream of Bran and Rickon dead at Reek’s feet, her offer to kill Reek in the dungeons, and Jojen saying she would not succeed.',
+    },
+    '22:143': {
+      source: WF_BRAN_VII,
+      note: 'Bran VII (site 143): the wolves sent on to make a trail while the others doubled back to the crypts, Meera taking Rickard Stark’s sword, Hodor shifting the stone, Winterfell in ashes, Luwin’s last advice, and Bran going north with Jojen, Meera, Hodor and Summer.',
+    },
+  },
+  'jojen-reed': {
+    '22:95': {
+      source: WF_BRAN_III,
+      note: 'Bran III (site 95): Jojen unarmed and dressed all in green, the oath with Meera, his asking at once where the direwolves are, and in the wolf dream Summer stronger than he knows, not the day he dies, the touch and Bran falling. Episode 22 is his show gate.',
+    },
+    '22:102': {
+      source: WF_BRAN_IV,
+      note: 'Bran IV (site 102): the winged wolf bound by chains, the three-eyed crow pecking at them, greywater fever, the crow north beyond the Wall, their father sending them, the third eye, Bran felt in Summer at the touch, and the growl at the question whether he falls every night.',
+    },
+    '22:109': {
+      source: WF_BRAN_V,
+      note: 'Bran V (site 109): the sea lapping round Winterfell and drowned men in the yard, recognised as Alebelly, Septon Chayle and Mikken, warnings that will not save them, being called a warg, the dream of Bran and Rickon dead at Reek’s feet, and green dreams that do not lie.',
+    },
+    '22:120': {
+      source: WF_BRAN_VI,
+      note: 'Bran VI (site 120): Rodrik gone to Torrhen’s Square, the ironmen swimming the moat, the people gathered, all those Jojen saw in his dream dying, Mikken drowning on his own blood as he refuses to kneel, and all of the crannogman’s words come true. Added after review. Episode 22 is his show gate.',
+    },
+    '22:143': {
+      source: WF_BRAN_VII,
+      note: 'Bran VII (site 143): Jojen waking Bran from three days as Summer, the wolf eating while Bran does not, the hiding in the crypts, Bran’s vision of the burning, the ashes, and Bran going north with Jojen, Meera, Hodor and Summer.',
+    },
+  },
+  'ramsay-snow': {
+    '32:140': {
+      source: WF_THEON_VI,
+      note: 'Theon VI (site 140): the Dreadfort men fighting Rodrik’s army, which took them for allies, the corpses of Rodrik, Cley Cerwyn and Leobald Tallhart, the gates opened, the helm off, Reek dead and the name Ramsay Snow, six hundred men from his father’s garrison, Kyra preferred to Palla, the punch, and the order to burn it all. Episode 32 is his show gate.',
+    },
+  },
+  'big-walder-frey': {
+    '13:90': {
+      source: WF_BRAN_II,
+      note: 'Bran II (site 90): the Walders jousting at the quintains, Big Walder sitting his horse better, Little Walder mocking Hodor, Luwin’s rebuke and Big Walder looking ashamed. Bran I (site 78) has the names explained, fifty-two days older and half a foot shorter, and all the Walders named for their grandfather.',
+    },
+    '15:109': {
+      source: WF_BRAN_V,
+      note: 'Bran V (site 109): the raven with the victory at Oxcross, Big Walder saying only Lord Tywin matters, the Walders unmoved by Ser Stevron’s death, old and always tired, the line of succession from Ser Ryman, and Luwin telling them to be ashamed.',
+    },
+  },
+  'little-walder-frey': {
+    '13:90': {
+      source: WF_BRAN_II,
+      note: 'Bran II (site 90): Hodor called an ugly horse and bumped, the threat of Summer, the armour and the wolfskin cloak, Luwin’s rebuke and Little Walder staying haughty. Bran I (site 78) has him tall and stout, often lord of the crossing, and bitten by Shaggydog after hitting Rickon with the stick.',
+    },
+    '15:109': {
+      source: WF_BRAN_V,
+      note: 'Bran V (site 109): Ser Stevron’s death taken lightly, the question about Ser Emmon, Big Walder’s line of succession, Ryman too old, the question whether Little Walder will be lord, and Luwin telling them to be ashamed.',
+    },
+  },
+  'wyman-manderly': {
+    '60:90': {
+      source: WF_BRAN_II,
+      note: 'Bran II (site 90): Lord Wyman welcomed from the high seat, no prince ever late, White Harbor to mint coin and build a fleet, the widowed cousin and the offer of himself or Ser Wendel, and Tywin’s ransom offer for Ser Wylis refused. Episode 60 is his show gate.',
+    },
+    '60:109': {
+      source: WF_BRAN_V,
+      note: 'Bran IV (site 102): Lady Hornwood forced to wed and Lord Manderly taking her castle to protect it; Bran V (site 109): Rodrik back with the prisoner held for her murder, Manderly and Bolton fighting in the Hornwood, and Rodrik without the strength to stop them.',
+    },
+  },
+  'donella-hornwood': {
+    '13:90': {
+      source: WF_BRAN_II,
+      note: 'Bran II (site 90): husband dead on the Green Fork and son in the Whispering Wood, the grieving widow’s arrival, Roose Bolton’s bastard massing men at the Dreadfort, Reek, the hunting not for deer, her fear for her lands, marriage if commanded, Lord Manderly turned down, and her hint about Ser Rodrik. Roose Bolton and Wyman Manderly are named unlinked: their show gates (14 and 60) fall after the story’s episode.',
+    },
+    '14:102': {
+      source: WF_BRAN_IV,
+      note: 'Bran IV (site 102): the Bastard of Bolton forcibly taking Lady Hornwood as his wife after the harvest feast, Lord Manderly taking her castle to protect it, and Ser Rodrik gone east to settle the uprising and see justice done. Wyman Manderly is named unlinked: his show gate is 60. Episode 14 orders it, as her status does.',
+    },
+    '15:109': {
+      source: WF_BRAN_V,
+      note: 'Bran V (site 109): Rodrik back with Reek, servant of the now-dead Bastard of Bolton, the forced marriage and the will naming him heir, the murder, the bastard shot as he rode away, Reek kept for Robb’s judgement, and Manderly and Bolton fighting in the Hornwood. Hayhead tells Bran who the prisoner is; the bastard’s death is what Winterfell is told, as the chapter tells it.',
     },
   },
 }

@@ -2008,6 +2008,204 @@ export const season1Chronicles = {
         en: 'News comes that [[robb-stark|Robb Stark]] has taken [[jaime-lannister|Jaime]] prisoner in battle. Tyrion’s father [[tywin-lannister|Tywin]], whom the new king has named Hand, sends Tyrion to King’s Landing to act as Hand of the King in his place, and to keep his sister [[cersei-lannister|Cersei]] and her son [[joffrey-baratheon|Joffrey]] in check. Tywin forbids him to take his whore to court. Tyrion takes [[shae|Shae]] with him all the same. Tyrion learns that his father had put him and the clans in the vanguard on the Green Fork hoping they would break and draw the Starks into a trap, and that by holding his ground he spoiled the plan.',
       },
     ),
+    onScreen(
+      [11, 77],
+      { it: 'Di nuovo ad Approdo del Re', en: 'Back in King’s Landing' },
+      {
+        it: 'Tyrion arriva ad Approdo del Re, tra la gioia di [[tommen-baratheon|Tommen]] e [[myrcella-baratheon|Myrcella]] e il disprezzo di [[joffrey-baratheon|Joffrey]]. Si presenta al Concilio ristretto con una lettera del padre che lo nomina Primo Cavaliere in sua vece, e [[cersei-lannister|Cersei]] è furiosa. Tyrion le rimprovera di non aver tenuto a freno il figlio, che facendo giustiziare Eddard Stark ha scatenato una guerra che stanno perdendo, e di essersi lasciata sfuggire Arya, un ostaggio in meno. Nasconde [[shae|Shae]] nella Torre del Primo Cavaliere, contro l’ordine del padre.',
+        en: 'Tyrion rides into King’s Landing, to the delight of [[tommen-baratheon|Tommen]] and [[myrcella-baratheon|Myrcella]] and the disdain of [[joffrey-baratheon|Joffrey]]. He walks into the small council with a letter from his father naming him acting Hand of the King, and [[cersei-lannister|Cersei]] is livid. He tells her she has failed to rein in her son, whose execution of Eddard Stark started a war they are losing, and that letting Arya escape has cost them a hostage. He hides [[shae|Shae]] in the Tower of the Hand, against his father’s order.',
+      },
+    ),
+    onScreen(
+      [12, 82],
+      { it: 'La cena di Janos Slynt', en: 'Janos Slynt’s dinner' },
+      {
+        it: 'Tyrion cena con [[janos-slynt|Janos Slynt]], comandante della Guardia cittadina, che ammette senza problemi la sua parte nel massacro dei bastardi di Robert ma non dice chi l’abbia ordinato. Tyrion lo fa arrestare e lo manda alla Barriera a prendere il nero, e affida la Guardia cittadina a [[bronn|Bronn]]. [[varys|Varys]] ha scoperto [[shae|Shae]] nella Torre del Primo Cavaliere e glielo fa capire. Tyrion conclude che il massacro l’ha ordinato [[joffrey-baratheon|Joffrey]], e avverte [[cersei-lannister|Cersei]] che sta perdendo il popolo.',
+        en: 'Tyrion dines with [[janos-slynt|Janos Slynt]], commander of the City Watch, who freely admits his part in the massacre of Robert’s bastards but will not say who ordered it. Tyrion has him arrested and sent to the Wall to take the black, and gives the City Watch to [[bronn|Bronn]]. [[varys|Varys]] has found [[shae|Shae]] in the Tower of the Hand and lets Tyrion know it. Tyrion concludes that [[joffrey-baratheon|Joffrey]] ordered the massacre, and tells [[cersei-lannister|Cersei]] she is losing the people.',
+      },
+    ),
+    onScreen(
+      [13, 99],
+      { it: 'Tre piani di nozze', en: 'Three marriage plans' },
+      {
+        it: 'Tyrion mette alla prova il Concilio ristretto dando a ciascun membro un piano diverso per far sposare [[myrcella-baratheon|Myrcella]]. Quando [[cersei-lannister|Cersei]] gli rinfaccia le nozze con Dorne, di cui aveva parlato solo a [[pycelle|Pycelle]], Tyrion sa chi la informa. Fa arrestare il gran maestro da [[bronn|Bronn]] e lo fa rinchiudere nelle celle nere, e porta avanti le nozze con Casa Martell nonostante le proteste di Cersei. [[petyr-baelish|Petyr Baelish]], furioso per essere stato usato, si calma quando Tyrion gli affida una missione presso Renly e Catelyn.',
+        en: 'Tyrion tests the small council by giving each member a different plan to marry off [[myrcella-baratheon|Myrcella]]. When [[cersei-lannister|Cersei]] confronts him about the Dornish match he told only [[pycelle|Pycelle]], he knows who her informer is. He has [[bronn|Bronn]] arrest the Grand Maester and throw him in the black cells, and holds to the match with House Martell over Cersei’s protests. [[petyr-baelish|Petyr Baelish]], furious at being used, is placated with a mission to Renly and Catelyn.',
+      },
+    ),
+    onScreen(
+      [14, 103],
+      { it: 'Il segreto di Lancel', en: 'Lancel’s secret' },
+      {
+        it: 'Quando [[joffrey-baratheon|Joffrey]] fa picchiare e spogliare [[sansa-stark|Sansa]] davanti alla corte, Tyrion interviene, dà al re del mezzo idiota e gli ricorda che fine ha fatto il Re Folle. Sansa rifiuta la sua offerta di sciogliere il fidanzamento, e Tyrion ne resta colpito. Quella notte il cugino [[lancel-lannister|Lancel]] gli porta l’ordine di Cersei di liberare [[pycelle|Pycelle]], e ha addosso il profumo della regina. Tyrion capisce che divide il letto con lei e, minacciando di dirlo a Joffrey, ne fa la sua spia. Accetta di liberare Pycelle, ma non di riportarlo nel Concilio.',
+        en: 'When [[joffrey-baratheon|Joffrey]] has [[sansa-stark|Sansa]] beaten and stripped before the court, Tyrion stops it, calls the king a halfwit and reminds him what became of the Mad King. Sansa refuses his offer to end her engagement, and he is impressed. That night his cousin [[lancel-lannister|Lancel]] brings Cersei’s order to free [[pycelle|Pycelle]], smelling of her perfume. Tyrion guesses he shares the queen’s bed and, threatening to tell Joffrey, makes him his spy. He agrees to free Pycelle, but not to return him to the council.',
+      },
+    ),
+    onScreen(
+      [15, 110],
+      { it: 'Altofuoco', en: 'Wildfire' },
+      {
+        it: 'Tyrion porta a [[cersei-lannister|Cersei]] la notizia della morte di Renly e la avverte che ora [[stannis-baratheon|Stannis]] attaccherà; lei si rifiuta di rivelargli i suoi piani. Da [[lancel-lannister|Lancel]] viene a sapere che la regina si incontra con la Gilda degli alchimisti, e scopre che i piromanti hanno accumulato migliaia di giare di altofuoco. Ordina alla gilda di rispondere a lui e non alla regina. [[bronn|Bronn]] lo avverte che dei difensori in preda al panico potrebbero dare fuoco alla loro stessa città. Per strada, una folla incolpa Tyrion dei mali della città.',
+        en: 'Tyrion brings [[cersei-lannister|Cersei]] word that Renly is dead and warns that [[stannis-baratheon|Stannis]] will now attack; she refuses to share her plans. Through [[lancel-lannister|Lancel]] he learns she has been meeting the Alchemists’ Guild, and finds that the pyromancers have stockpiled thousands of jars of wildfire. He orders the guild to answer to him rather than to the queen. [[bronn|Bronn]] warns that panicked defenders could burn their own city. In the street, a crowd blames Tyrion for the city’s ills.',
+      },
+    ),
+    onScreen(
+      [16, 115],
+      { it: 'La rivolta', en: 'The riot' },
+      {
+        it: 'Al porto Tyrion e la corte salutano [[myrcella-baratheon|Myrcella]] in partenza per Dorne, e [[cersei-lannister|Cersei]] gli dice che non lo perdonerà. Sulla via del ritorno la folla affamata tira sterco in faccia a [[joffrey-baratheon|Joffrey]], che ordina alle guardie di ucciderli tutti, e la città insorge. Al castello Tyrion prende a schiaffi il re. [[sansa-stark|Sansa]] si è persa tra la folla; Joffrey si rifiuta di mandare uomini a cercarla, e a riportarla è [[sandor-clegane|Sandor Clegane]]. Tyrion lo ringrazia, e Sandor risponde che non l’ha fatto per lui.',
+        en: 'At the docks, Tyrion and the court see [[myrcella-baratheon|Myrcella]] off to Dorne, and [[cersei-lannister|Cersei]] tells him she will not forgive him. On the way back, starving crowds throw dung at [[joffrey-baratheon|Joffrey]], who orders his guards to kill them all, and the city riots. Back in the castle, Tyrion slaps the king. [[sansa-stark|Sansa]] has been lost in the crowd; Joffrey refuses to send men after her, and [[sandor-clegane|Sandor Clegane]] brings her back. Tyrion thanks him, and Sandor answers that he did not do it for him.',
+      },
+    ),
+    onScreen(
+      [17, 126],
+      { it: 'Un momento con Cersei', en: 'A moment with Cersei' },
+      {
+        it: 'Da sola con Tyrion, [[cersei-lannister|Cersei]] ammette di rimpiangere di aver avuto i figli dal fratello [[jaime-lannister|Jaime]], e si chiede se la crudeltà di [[joffrey-baratheon|Joffrey]] sia il prezzo del loro peccato. Tyrion risponde che [[myrcella-baratheon|Myrcella]] e [[tommen-baratheon|Tommen]] sono bambini buoni e onesti. Per un momento tra fratello e sorella c’è un po’ di comprensione.',
+        en: 'Alone with Tyrion, [[cersei-lannister|Cersei]] admits she regrets having had her children by her brother [[jaime-lannister|Jaime]], and wonders whether [[joffrey-baratheon|Joffrey]]’s cruelty is the price of their sin. Tyrion answers that [[myrcella-baratheon|Myrcella]] and [[tommen-baratheon|Tommen]] are good and decent children. For a moment brother and sister share some sympathy.',
+      },
+    ),
+    onScreen(
+      [18, 128],
+      { it: 'La donna sbagliata', en: 'The wrong woman' },
+      {
+        it: 'Tyrion cerca nei libri di storia un modo per difendere la città, si consiglia con [[bronn|Bronn]] e [[varys|Varys]] e decide di usare l’altofuoco. Vuole [[joffrey-baratheon|Joffrey]] sulle mura durante la battaglia. Per proteggere il figlio, [[cersei-lannister|Cersei]] ha fatto prendere la donna che crede l’amante di Tyrion e gliela mostra picchiata: è [[ros|Ros]]. Nascondendo il sollievo perché [[shae|Shae]] è al sicuro, Tyrion sta al gioco, promette a Ros che la libererà e giura di vendicarsi della sorella.',
+        en: 'Tyrion reads history books for a way to defend the city, takes advice from [[bronn|Bronn]] and [[varys|Varys]], and settles on the wildfire. He means to have [[joffrey-baratheon|Joffrey]] on the walls in the battle. To keep her son safe, [[cersei-lannister|Cersei]] has seized the woman she takes for his lover and shows her to him beaten: it is [[ros|Ros]]. Hiding his relief that [[shae|Shae]] is safe, Tyrion plays along, promises Ros he will free her, and vows revenge on his sister.',
+      },
+    ),
+    onScreen(
+      [19, 135],
+      {
+        it: 'La battaglia delle Acque Nere',
+        en: 'The Battle of the Blackwater',
+      },
+      {
+        it: 'La notte prima della battaglia Tyrion dice a [[shae|Shae]] che può ancora andarsene, e lei resta. Dalle mura manda una sola nave che perde altofuoco in mezzo alla flotta di [[stannis-baratheon|Stannis]], e la freccia infuocata di [[bronn|Bronn]] la fa esplodere. Quando [[joffrey-baratheon|Joffrey]] lascia le mura e le cappe dorate si perdono d’animo, Tyrion li rincuora di persona e guida una sortita attraverso i cunicoli che spezza l’ariete alla Porta del Fango. Nella mischia [[mandon-moore|ser Mandon Moore]] gli squarcia il volto, e [[podrick-payne|Podrick]] uccide Mandon prima che possa colpire di nuovo.',
+        en: 'On the eve of battle Tyrion tells [[shae|Shae]] she can still leave, and she stays. From the walls he sends a single ship leaking wildfire into [[stannis-baratheon|Stannis]]’s fleet, and [[bronn|Bronn]]’s flaming arrow sets it ablaze. When [[joffrey-baratheon|Joffrey]] leaves the walls and the gold cloaks lose heart, Tyrion rallies them himself and leads a sortie through the tunnels that breaks the ram at the Mud Gate. In the fighting [[mandon-moore|Ser Mandon Moore]] slashes his face, and [[podrick-payne|Podrick]] kills Mandon before he can strike again.',
+      },
+    ),
+    onScreen(
+      [20, 141],
+      { it: 'Non più Primo Cavaliere', en: 'No longer Hand' },
+      {
+        it: 'Tyrion si risveglia, sfregiato, in nuove stanze misere. [[pycelle|Pycelle]] gli annuncia compiaciuto che non è più Primo Cavaliere: è tornato suo padre [[tywin-lannister|Tywin]] e ne ha preso il posto. [[varys|Varys]] gli dice che [[bronn|Bronn]] ha perso il comando della Guardia cittadina e che i clan delle montagne sono tornati a casa, e lo ringrazia per la difesa della città, visto che nessun altro lo farà. [[shae|Shae]] lo supplica di partire con lei per Pentos. Tyrion rifiuta.',
+        en: 'Tyrion wakes, scarred, in shabby new quarters. [[pycelle|Pycelle]] gloats that he is no longer acting Hand: his father [[tywin-lannister|Tywin]] has returned and taken over. [[varys|Varys]] tells him that [[bronn|Bronn]] has lost the City Watch and the hill tribes have gone home, and thanks him for the city’s defence, since no one else will. [[shae|Shae]] begs him to leave with her for Pentos. He refuses.',
+      },
+    ),
+    inBooks(
+      [11, 77],
+      { it: 'La sedia del Primo Cavaliere', en: 'The Hand’s chair' },
+      {
+        it: 'Tyrion arriva a corte con la lettera del padre che lo nomina Primo Cavaliere in sua vece, e al Concilio prende la sedia del Primo Cavaliere. Da solo con [[cersei-lannister|Cersei]], promette di liberare [[jaime-lannister|Jaime]] se lei lo appoggia, viene a sapere che [[lancel-lannister|Lancel]] ha dato a Robert vino forte prima della caccia al cinghiale, e si prende degli schiaffi quando le dice che sa di lei e Jaime. Uscendo, fa togliere le teste di Eddard Stark e dei suoi uomini. In una locanda lo aspetta [[varys|Varys]] con [[shae|Shae]], e gli lascia un indovinello su un mercenario e tre grandi uomini.',
+        en: 'Tyrion arrives at court with his father’s letter naming him acting Hand, and takes the Hand’s chair at the council. Alone with [[cersei-lannister|Cersei]], he promises to free [[jaime-lannister|Jaime]] if she backs him, learns that [[lancel-lannister|Lancel]] plied Robert with strongwine before the boar, and earns slaps for saying he knows about her and Jaime. Riding out, he has the heads of Eddard Stark’s household taken down. At an inn [[varys|Varys]] is waiting with [[shae|Shae]], and leaves him a riddle about a sellsword and three great men.',
+      },
+    ),
+    inBooks(
+      [12, 82],
+      { it: 'Chi vive e chi muore', en: 'Who lives and who dies' },
+      {
+        it: 'Tyrion invita a cena [[janos-slynt|Janos Slynt]], viene a sapere che i suoi uomini hanno ucciso su ordine di qualcuno una prostituta e la sua bambina, una figlia bastarda di Robert, e lo spedisce alla Barriera. Il comando della Guardia cittadina passa a [[jacelyn-bywater|ser Jacelyn Bywater]]. Tyrion se la prende con [[varys|Varys]], che gli ha taciuto che è stata [[cersei-lannister|Cersei]] a mandare le cappe dorate. Varys risponde al suo indovinello: il potere risiede dove gli uomini credono che risieda. Alla domanda se ucciderebbe una neonata a comando, [[bronn|Bronn]] dice che prima chiederebbe quanto.',
+        en: 'Tyrion dines [[janos-slynt|Janos Slynt]], learns that his men killed a whore and her baby, a bastard daughter of Robert’s, on someone’s orders, and ships him to the Wall. [[jacelyn-bywater|Ser Jacelyn Bywater]] takes over the City Watch. Tyrion is angry that [[varys|Varys]] hid from him that [[cersei-lannister|Cersei]] sent the gold cloaks. Varys answers his riddle: power resides where men believe it resides. Asked whether he would kill a baby girl on command, [[bronn|Bronn]] says he would first ask how much.',
+      },
+    ),
+    inBooks(
+      [12, 89],
+      { it: 'Una catena per la città', en: 'A chain for the city' },
+      {
+        it: 'Al Concilio ristretto arrivano le lettere di [[stannis-baratheon|Stannis]] che accusano [[cersei-lannister|Cersei]] di incesto. Tyrion consiglia di lasciar mormorare la gente, e [[petyr-baelish|Ditocorto]] propone di spargere la voce che la figlia di Stannis sia la bastarda di un giullare. Tyrion fa forgiare ai fabbri della città mille anelli di un’enorme catena, un dono per [[joffrey-baratheon|Joffrey]], dice a Cersei. Poi, passando da un bordello dietro la collina di Rhaenys e da un pozzo nascosto, incontra [[varys|Varys]] in un cunicolo e prosegue travestito fino alla casa di [[shae|Shae]].',
+        en: 'Letters from [[stannis-baratheon|Stannis]] accusing [[cersei-lannister|Cersei]] of incest reach the small council. Tyrion advises letting people whisper, and [[petyr-baelish|Littlefinger]] proposes spreading the rumour that Stannis’s daughter is a fool’s bastard. Tyrion has the city’s smiths forge a thousand links of an immense chain, a gift for [[joffrey-baratheon|Joffrey]], he tells Cersei. Then, through a brothel behind Rhaenys’s Hill and a hidden shaft, he meets [[varys|Varys]] in a tunnel and rides on in disguise to [[shae|Shae]]’s manse.',
+      },
+    ),
+    inBooks(
+      [13, 91],
+      { it: 'Tre segreti', en: 'Three secrets' },
+      {
+        it: 'Per scoprire chi informa la regina, Tyrion confida a ciascun membro del Concilio un segreto diverso. [[pycelle|Pycelle]] deve spedire una sua lettera al principe Doran di Dorne senza dire nulla alla regina. [[petyr-baelish|Ditocorto]] deve conquistare [[lysa-arryn|Lysa Arryn]] alla causa di [[joffrey-baratheon|Joffrey]] promettendo [[myrcella-baratheon|Myrcella]] al figlio di Lysa, e per sé avrà Harrenhal. [[varys|Varys]] indovina che a Doran verrà offerto [[tommen-baratheon|Tommen]]. Tyrion avverte che chi lo dirà a [[cersei-lannister|Cersei]] sarà suo nemico.',
+        en: 'To find the informer on the council, Tyrion gives each of its members a different secret. [[pycelle|Pycelle]] is to send his letter to Prince Doran of Dorne and say nothing to the queen. [[petyr-baelish|Littlefinger]] is to win [[lysa-arryn|Lysa Arryn]] for [[joffrey-baratheon|Joffrey]] with the promise of [[myrcella-baratheon|Myrcella]] for her son, and Harrenhal for himself. [[varys|Varys]] guesses that Doran will be offered [[tommen-baratheon|Tommen]]. Tyrion warns that whoever tells [[cersei-lannister|Cersei]] will be his enemy.',
+      },
+    ),
+    inBooks(
+      [15, 94],
+      { it: 'Diecimila giare', en: 'Ten thousand jars' },
+      {
+        it: 'Nelle cantine della gilda, [[hallyne|Hallyne]] della Gilda degli alchimisti riferisce a Tyrion che la gilda ha quasi ottomila giare di altofuoco e gliene promette diecimila. Tyrion fa mandare delle giare alle porte della città, dove [[jacelyn-bywater|ser Jacelyn Bywater]] dovrà addestrare delle squadre a usarle. Nel suo solario [[cersei-lannister|Cersei]] lo aggredisce perché vuole mandare [[myrcella-baratheon|Myrcella]] a Dorne, in sposa al figlio del principe Doran. Tyrion non cede, e lei scoppia a piangere. La lettera affidata solo a [[pycelle|Pycelle]] è arrivata alla regina: Tyrion sa chi è l’informatore.',
+        en: 'In the guild’s vaults, [[hallyne|Hallyne]] of the Alchemists’ Guild tells Tyrion the guild holds nearly eight thousand jars of wildfire and promises ten thousand. Tyrion has jars sent to the city gates, where [[jacelyn-bywater|Ser Jacelyn Bywater]] is to train crews to handle them. Back in his solar, [[cersei-lannister|Cersei]] rages that he means to send [[myrcella-baratheon|Myrcella]] to Dorne, to wed Prince Doran’s son. Tyrion holds firm, and she weeps. The letter he gave only [[pycelle|Pycelle]] has reached her: he knows his informer.',
+      },
+    ),
+    inBooks(
+      [13, 99],
+      { it: 'La luna dei traditori', en: 'The traitor’s moon' },
+      {
+        it: 'Con [[cersei-lannister|Cersei]] a letto per la polvere che le ha messo nel vino, Tyrion tiene udienza da solo e manda le guardie rosse della regina a scortare l’inviato di Robb Stark, [[cleos-frey|ser Cleos Frey]]. Nella notte di luna nera [[shagga|Shagga]] sfonda la porta di [[pycelle|Pycelle]]. Tyrion dice al gran maestro che una copia della sua lettera è andata a Dorne e l’altra a Cersei. L’ascia di Shagga porta via quasi tutta la barba di Pycelle, che confessa di aver lasciato morire Jon Arryn perché Jon sapeva chi era il padre dei figli della regina. Tyrion lo fa gettare in una cella nera.',
+        en: 'With [[cersei-lannister|Cersei]] laid low by the powder he put in her wine, Tyrion holds court alone and sends her red cloaks away as escort to Robb Stark’s envoy, [[cleos-frey|Ser Cleos Frey]]. Under the black moon, [[shagga|Shagga]] breaks down [[pycelle|Pycelle]]’s door. Tyrion tells the Grand Maester that one copy of his letter went to Dorne and the other to Cersei. Shagga’s axe takes most of Pycelle’s beard, and Pycelle confesses he let Jon Arryn die because Jon knew who fathered the queen’s children. Tyrion has him thrown into a black cell.',
+      },
+    ),
+    inBooks(
+      [14, 103],
+      { it: 'Una spia nel letto della regina', en: 'A spy in the queen’s bed' },
+      {
+        it: 'A notte fonda [[lancel-lannister|ser Lancel]] porta a Tyrion il mandato di Cersei per liberare [[pycelle|Pycelle]] e chiede che [[jacelyn-bywater|ser Jacelyn Bywater]] sia accusato per averle disobbedito. Tyrion gli chiede se la regina l’abbia fatto cavaliere prima o dopo averlo portato a letto, e minaccia di dire a [[joffrey-baratheon|Joffrey]] che Lancel ha ucciso il padre di Joffrey per portarsi a letto la madre. Lancel implora pietà, e Tyrion ne fa la sua spia accanto alla regina. Poi Tyrion passa dal bordello di Chataya e da un cunicolo nascosto per raggiungere la casa dove tiene [[shae|Shae]].',
+        en: 'Late at night [[lancel-lannister|Ser Lancel]] brings Cersei’s warrant to free [[pycelle|Pycelle]] and demands that [[jacelyn-bywater|Ser Jacelyn Bywater]] be charged for defying her. Tyrion asks whether she knighted him before or after taking him to bed, and threatens to tell [[joffrey-baratheon|Joffrey]] that Lancel killed his father to bed his mother. Lancel begs for mercy, and Tyrion makes him his spy at the queen’s side. Then Tyrion rides through Chataya’s brothel and a hidden tunnel to the manse where he keeps [[shae|Shae]].',
+      },
+    ),
+    inBooks(
+      [15, 110],
+      { it: 'Una sposa per il re', en: 'A match for the king' },
+      {
+        it: 'Arriva la notizia che Renly è stato ucciso e che quasi tutti i suoi lord sono passati a [[stannis-baratheon|Stannis]]. Tyrion vede l’occasione di conquistare i Tyrell: propone che [[joffrey-baratheon|Joffrey]] sposi [[margaery-tyrell|Margaery Tyrell]] al posto di [[sansa-stark|Sansa]], figlia di un traditore morto. [[cersei-lannister|Cersei]] cede. [[petyr-baelish|Ditocorto]] si offre di andare a trattare con i Tyrell. Poi Cersei bacia Tyrion sulla fronte, e lui incarica [[bronn|Bronn]] di scoprire che cosa stia tramando.',
+        en: 'Word comes that Renly has been killed and that most of his lords have gone over to [[stannis-baratheon|Stannis]]. Tyrion sees a chance to win the Tyrells: he proposes that [[joffrey-baratheon|Joffrey]] marry [[margaery-tyrell|Margaery Tyrell]] instead of [[sansa-stark|Sansa]], the daughter of a dead traitor. [[cersei-lannister|Cersei]] gives way. [[petyr-baelish|Littlefinger]] volunteers to go and treat with the Tyrells. Afterwards Cersei kisses Tyrion on the brow, and he sets [[bronn|Bronn]] to find out what she is plotting.',
+      },
+    ),
+    inBooks(
+      [16, 115],
+      { it: 'La rivolta del pane', en: 'Bread riot' },
+      {
+        it: 'Tyrion saluta [[myrcella-baratheon|Myrcella]] in partenza per Dorne. Sulla via del ritorno la folla colpisce [[joffrey-baratheon|Joffrey]] con lo sterco; il re aizza [[sandor-clegane|il Mastino]] contro la gente, e la città insorge. Alle porte del castello Tyrion schiaffeggia il re così forte da fargli volare via la corona. [[sansa-stark|Sansa]] torna salvata dal Mastino. L’Alto Septon è morto, la figlia di lady Tanda è stata stuprata e il cugino Tyrek è scomparso. [[jacelyn-bywater|Ser Jacelyn]] avverte che la città dà la colpa a Tyrion. [[bronn|Bronn]] osserva che le cose sarebbero più facili se il re fosse [[tommen-baratheon|Tommen]].',
+        en: 'Tyrion sees [[myrcella-baratheon|Myrcella]] off to Dorne. Riding back, a mob hits [[joffrey-baratheon|Joffrey]] with dung; he sets [[sandor-clegane|Sandor Clegane]] on the crowd, and the city riots. At the castle gates Tyrion slaps the king so hard his crown flies off. [[sansa-stark|Sansa]] comes back, saved by Sandor. The High Septon is dead, Lady Tanda’s daughter has been raped, and his cousin Tyrek is missing. [[jacelyn-bywater|Ser Jacelyn]] warns that the city blames Tyrion. [[bronn|Bronn]] remarks that things would be easier if [[tommen-baratheon|Tommen]] were king.',
+      },
+    ),
+    inBooks(
+      [13, 118],
+      { it: 'La caduta di Capo Tempesta', en: 'Storm’s End falls' },
+      {
+        it: '[[lancel-lannister|Lancel]] rivela che la regina vuole nascondere [[tommen-baratheon|Tommen]] a Rosby, e Tyrion manda [[jacelyn-bywater|ser Jacelyn]] a prendere il gruppo del principe e a tenerlo al sicuro lì. Nella casa dove Tyrion tiene Shae, [[varys|Varys]], travestito da fratello mendicante, porta la notizia che Capo Tempesta è caduta e che Stannis marcerà sulla città. Rimasta sola con Tyrion, [[shae|Shae]] gli chiede di farne la sua dama a corte e lo deride perché ha paura del padre; Tyrion la schiaffeggia, poi le racconta di Tysha. Dopo, Varys propone di mettere Shae al servizio di [[lollys-stokeworth|Lollys Stokeworth]] come cameriera, con un passaggio segreto verso la Torre del Primo Cavaliere.',
+        en: '[[lancel-lannister|Lancel]] reveals that the queen means to hide [[tommen-baratheon|Tommen]] at Rosby, and Tyrion sends [[jacelyn-bywater|Ser Jacelyn]] to seize the boy’s party and keep him safe there. At the manse, [[varys|Varys]], disguised as a begging brother, brings word that Storm’s End has fallen and Stannis will march on the city. Alone with Tyrion, [[shae|Shae]] asks to be his lady at court and mocks his fear of his father; he slaps her, then tells her about Tysha. Afterwards Varys suggests Shae serve as maid to [[lollys-stokeworth|Lollys Stokeworth]], with a secret passage to the Tower of the Hand.',
+      },
+    ),
+    inBooks(
+      [18, 123],
+      { it: 'I preparativi della difesa', en: 'Preparing the defence' },
+      {
+        it: 'Tyrion manda i suoi uomini dei clan oltre le Acque Nere a razziare l’esercito di [[stannis-baratheon|Stannis]], e fa bruciare a [[bronn|Bronn]] le case lungo le mura vicino al molo. Non approva quando [[cersei-lannister|Cersei]] nomina nella Guardia reale [[osmund-kettleblack|ser Osmund Kettleblack]] al posto di ser Boros Blount, che ha consegnato [[tommen-baratheon|Tommen]] agli uomini di [[jacelyn-bywater|ser Jacelyn]]. [[hallyne|Hallyne]] riferisce di avere tredicimila giare di altofuoco, e [[varys|Varys]] scopre dei mercanti che tramano per prendere la Porta Vecchia; Tyrion ne ordina l’arresto.',
+        en: 'Tyrion sends his clansmen across the Blackwater to raid [[stannis-baratheon|Stannis]]’s army, and has [[bronn|Bronn]] burn the houses along the wall by the quay. He disapproves when [[cersei-lannister|Cersei]] names [[osmund-kettleblack|Ser Osmund Kettleblack]] to the Kingsguard in place of Ser Boros Blount, who gave up [[tommen-baratheon|Tommen]] to [[jacelyn-bywater|Ser Jacelyn]]’s men. [[hallyne|Hallyne]] reports thirteen thousand jars of wildfire, and [[varys|Varys]] uncovers merchants plotting to seize the Old Gate; Tyrion orders their arrest.',
+      },
+    ),
+    inBooks(
+      [18, 128],
+      { it: 'L’ostaggio della regina', en: 'The queen’s hostage' },
+      {
+        it: 'Tyrion cena con [[cersei-lannister|Cersei]], che lo avverte che si fida troppo di [[varys|Varys]]. Le dice che darà a [[joffrey-baratheon|Joffrey]] un comando lontano dal grosso dei combattimenti. Poi la regina fa portare una ragazza picchiata, credendola la sua amante: è [[alayaya|Alayaya]]. Sollevato che non abbia trovato [[shae|Shae]], Tyrion giura che qualunque cosa verrà fatta alla ragazza sarà fatta a [[tommen-baratheon|Tommen]], e che ripagherà Cersei quando meno se lo aspetta. Quella notte Shae arriva nella sua camera da letto attraverso un passaggio segreto.',
+        en: 'Tyrion sups with [[cersei-lannister|Cersei]], who warns him that he trusts [[varys|Varys]] too much. He tells her he will give [[joffrey-baratheon|Joffrey]] a command far from the worst of the fighting. Then she has a beaten girl brought in, taking her for his lover: [[alayaya|Alayaya]]. Relieved that she has not found [[shae|Shae]], Tyrion swears that whatever is done to the girl will be done to [[tommen-baratheon|Tommen]], and that he will pay Cersei back when she least expects it. That night Shae comes to his bedchamber through a secret passage.',
+      },
+    ),
+    inBooks(
+      [19, 135],
+      {
+        it: 'La catena e le navi in fiamme',
+        en: 'The chain and the burning ships',
+      },
+      {
+        it: 'L’altofuoco brucia metà della flotta di [[stannis-baratheon|Stannis]] sulle Acque Nere, e la grande catena che Tyrion ha fatto forgiare si alza alle sue spalle e intrappola le navi. Quando [[sandor-clegane|il Mastino]], sconvolto dal fuoco, si rifiuta di guidare un’altra sortita dalla Porta del Re, Tyrion convince gli uomini a seguirlo facendoli vergognare e la guida lui stesso. Combatte lungo il fiume e sulle navi in fiamme. Lì [[mandon-moore|ser Mandon Moore]] gli squarcia il volto e sta per finirlo quando [[podrick-payne|Podrick]] spinge il cavaliere in acqua.',
+        en: 'Wildfire burns half of [[stannis-baratheon|Stannis]]’s fleet on the Blackwater, and the great chain Tyrion had forged rises behind it to trap the ships. When [[sandor-clegane|Sandor Clegane]], shaken by the fire, refuses to lead another sortie from the King’s Gate, Tyrion shames the men into following him and leads it himself. He fights on along the river and across the burning ships. There [[mandon-moore|Ser Mandon Moore]] slashes his face and is about to finish him when [[podrick-payne|Podrick]] pushes the knight into the water.',
+      },
+    ),
+    inBooks(
+      [20, 141],
+      { it: 'Nella Fortezza di Maegor', en: 'Maegor’s Holdfast' },
+      {
+        it: 'Tyrion si risveglia da sogni febbrili nella Fortezza di Maegor, con il volto fasciato. Ha perso quasi tutto il naso e parte del labbro, ha una costola rotta e per una freccia ha rischiato di perdere un braccio. Suo padre [[tywin-lannister|Tywin]], ora Primo Cavaliere, si è preso la Torre del Primo Cavaliere. Tyrion fa cadere il papavero dalle mani del maestro della regina, chiede del vino, manda [[podrick-payne|Podrick]] a prendere vino dei sogni dal maestro Frenken e a chiamare [[bronn|Bronn]], e fa giurare allo scudiero di tacere su ciò che è successo al molo.',
+        en: 'Tyrion wakes from fevered dreams in Maegor’s Holdfast, his face bandaged. Most of his nose is gone and part of his lip, he has a broken rib, and an arrow nearly cost him his arm. His father [[tywin-lannister|Tywin]], now Hand of the King, has taken the Tower of the Hand. Tyrion knocks the poppy from the queen’s maester’s hands, demands wine, sends [[podrick-payne|Podrick]] for dreamwine from Maester Frenken and for [[bronn|Bronn]], and swears the squire to silence about what happened at the docks.',
+      },
+    ),
   ],
   // Chapter 5 only shows Jaime riding in beside the prince, so the book side
   // opens at chapter 9, where he acts.
@@ -2284,6 +2482,126 @@ export const season1Chronicles = {
         en: 'Cersei has taken her cousin [[lancel-lannister|Lancel]] as her lover: King [[robert-baratheon|Robert]]’s squire, who poured his wine on the hunt, newly made a knight. She receives a letter: Robb Stark has captured [[jaime-lannister|Jaime]]. Lancel, naked in her room, finds the war exciting, asks her for news and wants to know their next move. Cersei tells him to be quiet and come back to bed.',
       },
     ),
+    onScreen(
+      [11, 77],
+      { it: 'Il potere è potere', en: 'Power is power' },
+      {
+        it: 'Cersei fa chiudere le porte della città ai profughi, ed è furiosa quando [[tyrion-lannister|Tyrion]] arriva come Primo Cavaliere in vece del padre. Quando [[petyr-baelish|Petyr Baelish]] le fa capire che sapere di lei e [[jaime-lannister|Jaime]] è potere, Cersei ordina alle guardie di prenderlo e di tagliargli la gola, poi le ferma: il potere è potere. [[joffrey-baratheon|Joffrey]] la interroga sulle voci sulla sua nascita e la insulta; lei lo schiaffeggia, e lui la avverte di non colpirlo mai più.',
+        en: 'Cersei orders the city gates closed to refugees, and is livid when [[tyrion-lannister|Tyrion]] arrives as acting Hand. When [[petyr-baelish|Petyr Baelish]] hints that knowing about her and [[jaime-lannister|Jaime]] is power, she orders her guards to seize him and cut his throat, then calls them off: power is power. [[joffrey-baratheon|Joffrey]] asks her about the rumours of his parentage and insults her; she slaps him, and he warns her never to strike him again.',
+      },
+    ),
+    onScreen(
+      [12, 82],
+      { it: 'La battuta migliore', en: 'The finest joke' },
+      {
+        it: 'Davanti al Concilio ristretto Cersei respinge le condizioni di pace di Robb Stark. Quando [[tyrion-lannister|Tyrion]] manda [[janos-slynt|Janos Slynt]] alla Barriera, lei lo affronta. Tyrion la avverte che sta perdendo il popolo; lei risponde che non le importa. Lui scherza su di lei e [[jaime-lannister|Jaime]], e Cersei gli dice che la sua battuta migliore è stata uccidere la loro madre venendo al mondo.',
+        en: 'Cersei rejects Robb Stark’s peace terms before the small council. When [[tyrion-lannister|Tyrion]] sends [[janos-slynt|Janos Slynt]] to the Wall, she confronts him. He warns her she is losing the people; she answers that she does not care. He jokes about her and [[jaime-lannister|Jaime]], and she tells him his finest joke was killing their mother when he was born.',
+      },
+    ),
+    onScreen(
+      [13, 99],
+      { it: 'Le nozze con Dorne', en: 'The Dornish match' },
+      {
+        it: 'Cersei organizza una cena imbarazzante con i figli e la sua prigioniera, [[sansa-stark|Sansa]]. Poi affronta [[tyrion-lannister|Tyrion]] per il suo piano di dare [[myrcella-baratheon|Myrcella]] in sposa a Casa Martell, un piano che Tyrion aveva confidato soltanto a [[pycelle|Pycelle]]. Tyrion fa arrestare Pycelle per averglielo riferito, e non cede alle proteste della sorella.',
+        en: 'Cersei hosts an awkward dinner for her children and her captive, [[sansa-stark|Sansa]]. Then she confronts [[tyrion-lannister|Tyrion]] over his plan to marry [[myrcella-baratheon|Myrcella]] into House Martell, a plan he told only [[pycelle|Pycelle]]. Tyrion has Pycelle arrested for passing it on, and holds to the match over his sister’s protests.',
+      },
+    ),
+    onScreen(
+      [16, 115],
+      { it: 'La nave di Myrcella', en: 'Myrcella’s ship' },
+      {
+        it: 'Al porto Cersei guarda [[myrcella-baratheon|Myrcella]] partire per Dorne, e dice a [[tyrion-lannister|Tyrion]] che non gli perdonerà mai di averle portato via l’unica figlia. Ha ignorato i suoi avvertimenti sulla città affamata. Sulla via del ritorno la folla si rivolta contro [[joffrey-baratheon|Joffrey]], la città insorge e Cersei riesce a stento a raggiungere il castello.',
+        en: 'At the docks Cersei watches [[myrcella-baratheon|Myrcella]] sail for Dorne, and tells [[tyrion-lannister|Tyrion]] she will never forgive him for sending her only daughter away. She has ignored his warnings about the starving city. On the way back the crowd turns on [[joffrey-baratheon|Joffrey]], the city riots, and Cersei barely reaches the castle.',
+      },
+    ),
+    onScreen(
+      [17, 126],
+      { it: 'Piccola colomba', en: 'Little dove' },
+      {
+        it: 'Quando a [[sansa-stark|Sansa]] arriva il primo sangue, Cersei la conforta a modo suo. Le racconta che Robert andava a caccia ogni volta che lei partoriva, mentre [[jaime-lannister|Jaime]] le restava accanto, che Sansa non amerà mai [[joffrey-baratheon|Joffrey]] ma amerà i loro figli, e che più persone ami, più sei debole. Poi confida a [[tyrion-lannister|Tyrion]] di chiedersi se la crudeltà di Joffrey sia il prezzo del suo peccato con Jaime.',
+        en: 'When [[sansa-stark|Sansa]] has her first blood, Cersei comforts her in her own way. She tells her that Robert went hunting each time she gave birth, while [[jaime-lannister|Jaime]] stayed at her side, that Sansa will never love [[joffrey-baratheon|Joffrey]] but will love their children, and that the more people you love, the weaker you are. Later she tells [[tyrion-lannister|Tyrion]] she wonders whether Joffrey’s cruelty is the price of her sin with Jaime.',
+      },
+    ),
+    onScreen(
+      [18, 128],
+      { it: 'Un ostaggio per Joffrey', en: 'A hostage for Joffrey' },
+      {
+        it: 'Cersei teme per [[joffrey-baratheon|Joffrey]], che [[tyrion-lannister|Tyrion]] vuole mettere sulle mura nella battaglia imminente. Convinta che Tyrion trami contro suo figlio, fa prendere e picchiare la donna che crede l’amante di lui e gliela mostra: è [[ros|Ros]]. Lo avverte che Ros morirà in modo atroce se a Joffrey succederà qualcosa. Tyrion giura che gliela farà pagare.',
+        en: 'Cersei fears for [[joffrey-baratheon|Joffrey]], whom [[tyrion-lannister|Tyrion]] means to put on the walls in the coming battle. Believing Tyrion is plotting against her son, she has the woman she takes for his lover seized and beaten, and shows her to him: [[ros|Ros]]. She warns that Ros will die horribly if any harm comes to Joffrey. Tyrion vows to pay her back.',
+      },
+    ),
+    onScreen(
+      [19, 136],
+      { it: 'Sul Trono di Spade', en: 'On the Iron Throne' },
+      {
+        it: 'Durante la battaglia Cersei raccoglie le dame della corte nella Fortezza di Maegor, con [[ilyn-payne|ser Ilyn Payne]] al suo fianco e l’essenza di belladonna avuta da [[pycelle|Pycelle]]. Bevendo, racconta a [[sansa-stark|Sansa]] che cosa fanno i soldati alle donne quando una città cade, e fa domande a [[shae|Shae]]. Manda [[lancel-lannister|Lancel]] a riportare [[joffrey-baratheon|Joffrey]] via dalle mura, colpisce la ferita di Lancel quando lui protesta, e se ne va. Sul Trono di Spade racconta una storia a [[tommen-baratheon|Tommen]] e prepara il veleno per entrambi, finché [[tywin-lannister|Tywin]] e [[loras-tyrell|Loras]] non entrano con la notizia della vittoria.',
+        en: 'During the battle Cersei shelters the court’s ladies in Maegor’s Holdfast, with [[ilyn-payne|Ser Ilyn Payne]] at her side and essence of nightshade from [[pycelle|Pycelle]]. Drinking, she tells [[sansa-stark|Sansa]] what soldiers do to women when a city falls, and questions [[shae|Shae]]. She has [[lancel-lannister|Lancel]] bring [[joffrey-baratheon|Joffrey]] back from the walls, strikes Lancel’s wound when he protests, and leaves. On the Iron Throne she tells [[tommen-baratheon|Tommen]] a story and readies the poison for them both, until [[tywin-lannister|Tywin]] and [[loras-tyrell|Loras]] come in with news of victory.',
+      },
+    ),
+    inBooks(
+      [11, 77],
+      { it: 'Una lettera del padre', en: 'A letter from her father' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] interrompe il Concilio ristretto con la lettera del loro padre che lo nomina Primo Cavaliere in sua vece, e Cersei la definisce assurda. Da sola con lui, ammette di avere soltanto [[sansa-stark|Sansa]]: Arya è fuggita. Dice che [[joffrey-baratheon|Joffrey]] ha voluto la morte di Eddard Stark contro il suo parere. Accetta che Tyrion provi a spaventare Joffrey per renderlo obbediente, purché non faccia nulla senza il suo consenso. Quando Tyrion dice di sapere di lei e [[jaime-lannister|Jaime]], lo schiaffeggia più volte. Poi gli racconta che [[lancel-lannister|Lancel]] ha dato a Robert vino forte prima del cinghiale.',
+        en: '[[tyrion-lannister|Tyrion]] interrupts the small council with their father’s letter naming him acting Hand, and Cersei calls it absurd. Alone with him, she admits she has only [[sansa-stark|Sansa]]: Arya escaped. She says [[joffrey-baratheon|Joffrey]] ordered Eddard Stark’s death against her wishes. She agrees that he may try to frighten Joffrey into obedience, as long as he does nothing without her consent. When he says he knows about her and [[jaime-lannister|Jaime]], she slaps him again and again. Then she tells him that [[lancel-lannister|Lancel]] gave Robert strongwine before the boar.',
+      },
+    ),
+    inBooks(
+      [15, 94],
+      { it: 'Lacrime per Myrcella', en: 'Tears for Myrcella' },
+      {
+        it: 'Cersei affronta [[tyrion-lannister|Tyrion]] nel solario di lui, furiosa perché lui vuole mandare [[myrcella-baratheon|Myrcella]] a Dorne come pupilla del principe Doran, in sposa al figlio di Doran. Teme che Doran uccida la bambina per vendicare la sorella, e schiaffeggia Tyrion. Quando lui le dice che Renly e Stannis metterebbero la testa di Myrcella accanto alla sua, Cersei piange per la prima volta da quando erano bambini, e si sfoga contro l’inerzia del padre e la prigionia di [[jaime-lannister|Jaime]]. Alla fine Tyrion sa che accetterà.',
+        en: 'Cersei confronts [[tyrion-lannister|Tyrion]] in his solar, furious that he means to send [[myrcella-baratheon|Myrcella]] to Dorne as a ward of Prince Doran, to wed Doran’s son. She fears Doran will kill the girl to avenge his sister, and slaps Tyrion. When he says Renly and Stannis would put Myrcella’s head beside hers, she weeps for the first time since they were children, and rages at their father’s idleness and [[jaime-lannister|Jaime]]’s capture. By the end Tyrion knows she will agree.',
+      },
+    ),
+    inBooks(
+      [15, 110],
+      { it: 'Le nozze con i Tyrell', en: 'The Tyrell match' },
+      {
+        it: 'Alla notizia della morte di Renly, Cersei obietta che [[joffrey-baratheon|Joffrey]] è promesso a [[sansa-stark|Sansa]], ma [[tyrion-lannister|Tyrion]] e il Concilio sostengono che sposi [[margaery-tyrell|Margaery Tyrell]], che porterebbe cinquantamila spade. Cersei acconsente, avvertendoli per il caso che a Joffrey la ragazza non piaccia. Né lei né Tyrion vogliono lasciare la città per trattare con i Tyrell, e [[petyr-baelish|Ditocorto]] si offre di andare. Poi Cersei dice a Tyrion che è stato di grande aiuto e lo bacia sulla fronte.',
+        en: 'When news comes of Renly’s death, Cersei objects that [[joffrey-baratheon|Joffrey]] is promised to [[sansa-stark|Sansa]], but [[tyrion-lannister|Tyrion]] and the council argue for marrying him to [[margaery-tyrell|Margaery Tyrell]], who would bring fifty thousand swords. Cersei agrees, with a warning in case Joffrey does not like the girl. Neither she nor Tyrion will leave the city to treat with the Tyrells, and [[petyr-baelish|Littlefinger]] volunteers. Afterwards she tells Tyrion he has been a great help and kisses him on the brow.',
+      },
+    ),
+    inBooks(
+      [17, 126],
+      { it: 'L’amore è veleno', en: 'Love is poison' },
+      {
+        it: 'Le cameriere di [[sansa-stark|Sansa]] la sorprendono a bruciare le lenzuola del suo primo sangue e la portano da Cersei. La regina la conforta: [[joffrey-baratheon|Joffrey]] è stato difficile da partorire, e Robert era a caccia quando è nato. Sansa forse non amerà Joffrey, le dice, ma amerà i figli che gli darà. Quando Sansa dice di amarlo, Cersei le consiglia di imparare bugie migliori prima che arrivi Stannis. Robert voleva essere amato, dice, e così [[tyrion-lannister|Tyrion]]: l’amore è un veleno, dolce ma mortale lo stesso.',
+        en: '[[sansa-stark|Sansa]]’s maids catch her burning the sheets of her first blood and bring her to Cersei. The queen comforts her: [[joffrey-baratheon|Joffrey]] was hard to bear, and Robert was out hunting when he was born. Sansa may not love him, she says, but she will love the children she bears him. When Sansa says she loves him, Cersei tells her to learn better lies before Stannis comes. Robert wanted to be loved, she says, and so does [[tyrion-lannister|Tyrion]]: love is poison, sweet but deadly all the same.',
+      },
+    ),
+    inBooks(
+      [18, 128],
+      { it: 'Una ragazza picchiata', en: 'A beaten girl' },
+      {
+        it: 'A cena Cersei avverte [[tyrion-lannister|Tyrion]] che [[varys|Varys]] dà a tutti informazioni quanto basta per sembrare indispensabile. Poi fa entrare due fratelli di [[osmund-kettleblack|ser Osmund]] con una ragazza picchiata che crede l’amante di Tyrion, [[alayaya|Alayaya]]: un Lannister paga sempre i suoi debiti, e lui trama contro di lei da quando è arrivato. Alla ragazza non sarà fatto del male, dice, finché [[joffrey-baratheon|Joffrey]] e [[tommen-baratheon|Tommen]] saranno al sicuro. Tyrion minaccia di trattare Tommen allo stesso modo, e Cersei gli urla di andarsene.',
+        en: 'Over supper Cersei warns [[tyrion-lannister|Tyrion]] that [[varys|Varys]] feeds them all just enough to seem indispensable. Then she has two of [[osmund-kettleblack|Ser Osmund]]’s brothers bring in a beaten girl she takes for Tyrion’s lover, [[alayaya|Alayaya]]: a Lannister always pays her debts, and he has plotted against her since he arrived. The girl will be unharmed, she says, as long as [[joffrey-baratheon|Joffrey]] and [[tommen-baratheon|Tommen]] are safe. Tyrion threatens to treat Tommen the same way, and Cersei shouts at him to get out.',
+      },
+    ),
+    inBooks(
+      [19, 134],
+      { it: 'La sala da ballo della regina', en: 'The Queen’s Ballroom' },
+      {
+        it: 'Mentre infuria la battaglia, Cersei ospita le nobildonne della città nella sala da ballo della regina, e beve. Racconta a [[sansa-stark|Sansa]] che cosa verrebbe fatto loro se la città cadesse, fa decapitare dei servi sorpresi a rubare cavalli e rifiuta rifugio al popolo davanti alle porte. Quando le notizie peggiorano fa riportare [[joffrey-baratheon|Joffrey]] dalle mura. Sa che Sansa va a pregare nel parco degli dèi, e le rivela che [[ilyn-payne|ser Ilyn Payne]] è lì per loro: Stannis non le prenderà vive.',
+        en: 'While the battle rages, Cersei hosts the city’s highborn women in the Queen’s Ballroom, drinking. She tells [[sansa-stark|Sansa]] what would be done to them if the city fell, orders servants caught stealing horses beheaded, and refuses shelter to the smallfolk at the gates. When the news turns bad she has [[joffrey-baratheon|Joffrey]] brought back from the walls. She knows Sansa has been praying in the godswood, and reveals that [[ilyn-payne|Ser Ilyn Payne]] is there for them: Stannis will not take them alive.',
+      },
+    ),
+    inBooks(
+      [19, 136],
+      { it: 'Il ponte levatoio', en: 'The drawbridge' },
+      {
+        it: '[[lancel-lannister|Lancel]], ferito, dice a Cersei che la battaglia sembra perduta: [[tyrion-lannister|Tyrion]] forse è morto, [[sandor-clegane|il Mastino]] è sparito e le cappe dorate hanno gettato le lance quando [[joffrey-baratheon|Joffrey]] è stato portato via dalle mura. Cersei ordina di alzare il ponte levatoio della Fortezza di Maegor non appena suo figlio sarà dentro. Quando Lancel la supplica di lasciare il re a incoraggiare i difensori, lei colpisce la ferita di Lancel e lascia la sala da ballo.',
+        en: '[[lancel-lannister|Lancel]], wounded, tells Cersei the battle seems lost: [[tyrion-lannister|Tyrion]] may be dead, [[sandor-clegane|Sandor Clegane]] has vanished, and the gold cloaks threw down their spears when [[joffrey-baratheon|Joffrey]] was taken from the walls. Cersei orders the drawbridge of Maegor’s Holdfast raised once her son is inside. When Lancel begs her to let the king stay and inspire the defenders, she strikes his wound and leaves the ballroom.',
+      },
+    ),
+    onScreen(
+      [20, 139],
+      { it: 'Il fidanzamento sciolto', en: 'Set aside' },
+      {
+        it: 'Alla cerimonia che premia i vincitori, [[loras-tyrell|Loras Tyrell]] chiede al re di sposare [[margaery-tyrell|Margaery]], la sorella di Loras. Cersei e [[pycelle|Pycelle]] fingono di convincere [[joffrey-baratheon|Joffrey]] a sciogliere il fidanzamento con [[sansa-stark|Sansa Stark]] per il tradimento della famiglia di lei, e Joffrey accetta di sposare Margaery. Il padre di Cersei, [[tywin-lannister|Tywin]], è nominato Primo Cavaliere, e [[petyr-baelish|Ditocorto]] riceve Harrenhal.',
+        en: 'At the court that rewards the victors, [[loras-tyrell|Loras Tyrell]] asks the king to wed his sister [[margaery-tyrell|Margaery]]. Cersei and [[pycelle|Pycelle]] make a show of persuading [[joffrey-baratheon|Joffrey]] to set aside his betrothal to [[sansa-stark|Sansa Stark]] for her family’s treachery, and Joffrey agrees to marry Margaery. Cersei’s father [[tywin-lannister|Tywin]] is named Hand of the King, and [[petyr-baelish|Littlefinger]] is given Harrenhal.',
+      },
+    ),
   ],
   'joffrey-baratheon': [
     inBoth(
@@ -2364,6 +2682,89 @@ export const season1Chronicles = {
       {
         it: 'Joffrey porta [[sansa-stark|Sansa]] sugli spalti della Fortezza Rossa e la costringe a guardare le teste infilzate sulle picche: quella di suo padre, [[eddard-stark|Eddard]], e quella della septa [[mordane|Mordane]]. Le promette che un giorno le darà anche la testa di suo fratello Robb. Fa anche colpire Sansa da ser [[meryn-trant|Meryn Trant]]. Lei pensa di spingere Joffrey giù dagli spalti, ma il [[sandor-clegane|Mastino]] la ferma.',
         en: 'Joffrey takes [[sansa-stark|Sansa]] up on the battlements of the Red Keep and makes her look at the heads on the spikes: her father [[eddard-stark|Eddard]]’s, and Septa [[mordane|Mordane]]’s. He promises that one day he will give her the head of her brother Robb too. He also has Ser [[meryn-trant|Meryn Trant]] strike Sansa. She thinks of pushing Joffrey off the battlements, but [[sandor-clegane|the Hound]] stops her.',
+      },
+    ),
+    onScreen(
+      [11, 77],
+      { it: 'Il giorno del nome di Joffrey', en: 'Joffrey’s name day' },
+      {
+        it: 'Joffrey organizza un torneo sulle mura della Fortezza Rossa per il suo giorno del nome. Quando [[dontos-hollard|ser Dontos Hollard]] arriva in ritardo e ubriaco, il re ordina di versargli in gola un barile di vino. [[sansa-stark|Sansa]] dice che uccidere un uomo nel proprio giorno del nome porta sfortuna, [[sandor-clegane|Sandor Clegane]] le dà ragione, e Joffrey fa invece di Dontos il suo giullare. Più tardi interroga la madre, [[cersei-lannister|Cersei]], sulle voci sulla sua nascita, e la minaccia di morte quando lei lo schiaffeggia.',
+        en: 'Joffrey holds a tournament on the walls of the Red Keep for his name day. When [[dontos-hollard|Ser Dontos Hollard]] arrives late and drunk, the king orders a barrel of wine poured down his throat. [[sansa-stark|Sansa]] says that killing a man on one’s name day is bad luck, [[sandor-clegane|Sandor Clegane]] backs her, and Joffrey makes Dontos his fool instead. Later he asks his mother, [[cersei-lannister|Cersei]], about the rumours of his parentage, and threatens her with death when she slaps him.',
+      },
+    ),
+    onScreen(
+      [14, 106],
+      {
+        it: 'Una balestra nella sala del trono',
+        en: 'A crossbow in the throne room',
+      },
+      {
+        it: 'Furioso per la vittoria di Robb Stark, Joffrey fa portare [[sansa-stark|Sansa]] davanti alla corte, la minaccia con una balestra, poi la fa picchiare e spogliare da [[meryn-trant|ser Meryn Trant]], risparmiandole il viso. [[tyrion-lannister|Tyrion]] interviene, gli dà del mezzo idiota e gli ricorda com’è finito il Re Folle. Poi a Joffrey vengono mandate due donne del bordello di Ditocorto, [[ros|Ros]] e [[daisy|Daisy]]: puntando la balestra costringe Ros a picchiare Daisy, per mandare un messaggio a Tyrion.',
+        en: 'Furious at Robb Stark’s victory, Joffrey has [[sansa-stark|Sansa]] brought before the court, threatens her with a crossbow, then has [[meryn-trant|Ser Meryn Trant]] beat her and strip her, sparing her face. [[tyrion-lannister|Tyrion]] stops it, calls him a halfwit and reminds him how the Mad King ended. Joffrey is then sent two women from Littlefinger’s brothel, [[ros|Ros]] and [[daisy|Daisy]]: at crossbow point he forces Ros to beat Daisy, to send Tyrion a message.',
+      },
+    ),
+    onScreen(
+      [16, 115],
+      { it: 'Sterco in faccia al re', en: 'Dung in the king’s face' },
+      {
+        it: 'Tornando dalla partenza di [[myrcella-baratheon|Myrcella]], Joffrey viene colpito in faccia dallo sterco e ordina alle poche guardie di uccidere tutta la folla. La città insorge, e il corteo reale raggiunge a stento il castello. Lì Joffrey continua a strillare che vuole la folla morta finché [[tyrion-lannister|Tyrion]] non lo schiaffeggia; il re non reagisce. Si rifiuta di mandare uomini a cercare [[sansa-stark|Sansa]], dispersa tra la folla.',
+        en: 'Riding back from [[myrcella-baratheon|Myrcella]]’s departure, Joffrey is hit in the face with dung and orders his few guards to kill the whole crowd. The city riots, and the royal party barely reaches the castle. There Joffrey keeps shrieking for the mob’s deaths until [[tyrion-lannister|Tyrion]] slaps him; the king does not strike back. He refuses to send men after [[sansa-stark|Sansa]], lost in the crowd.',
+      },
+    ),
+    onScreen(
+      [19, 135],
+      { it: 'Il re lascia le mura', en: 'The king leaves the walls' },
+      {
+        it: 'Sulle mura durante la battaglia Joffrey rimprovera [[tyrion-lannister|Tyrion]] perché non manda la flotta contro [[stannis-baratheon|Stannis]]. Quando [[sandor-clegane|il Mastino]] abbandona lo scontro, maledice davanti a tutti la Guardia reale, la città e il re. Mandato da Cersei, [[lancel-lannister|Lancel]] viene a riportare Joffrey alla Fortezza Rossa. Joffrey lo segue di buon grado, lasciando [[mandon-moore|ser Mandon Moore]] e [[boros-blount|ser Boros Blount]] a combattere in suo nome, e le cappe dorate si perdono d’animo.',
+        en: 'On the walls during the battle Joffrey berates [[tyrion-lannister|Tyrion]] for not sending the fleet against [[stannis-baratheon|Stannis]]. When [[sandor-clegane|Sandor Clegane]] walks away from the fight, he curses the Kingsguard, the city and the king in front of everyone. Sent by Cersei, [[lancel-lannister|Lancel]] comes to bring Joffrey back to the Red Keep. Joffrey goes willingly, leaving [[mandon-moore|Ser Mandon Moore]] and [[boros-blount|Ser Boros Blount]] to fight in his name, and the gold cloaks lose heart.',
+      },
+    ),
+    onScreen(
+      [20, 139],
+      { it: 'Un nuovo fidanzamento', en: 'A new betrothal' },
+      {
+        it: 'Alla cerimonia che onora i vincitori, Joffrey nomina Primo Cavaliere il nonno [[tywin-lannister|Tywin]] e dà Harrenhal a [[petyr-baelish|Ditocorto]] per l’alleanza con i Tyrell. [[loras-tyrell|Loras Tyrell]] gli chiede di sposare la sorella, [[margaery-tyrell|Margaery]]. Su sollecitazione di [[cersei-lannister|Cersei]] e [[pycelle|Pycelle]], Joffrey scioglie il fidanzamento con [[sansa-stark|Sansa]] per il tradimento della famiglia di lei, e accetta di sposare Margaery.',
+        en: 'At the court that honours the victors, Joffrey names his grandfather [[tywin-lannister|Tywin]] Hand of the King and gives Harrenhal to [[petyr-baelish|Littlefinger]] for the Tyrell alliance. [[loras-tyrell|Loras Tyrell]] asks him to wed his sister [[margaery-tyrell|Margaery]]. At the urging of [[cersei-lannister|Cersei]] and [[pycelle|Pycelle]], Joffrey sets aside his betrothal to [[sansa-stark|Sansa]] for her family’s treachery, and agrees to marry Margaery.',
+      },
+    ),
+    inBooks(
+      [11, 76],
+      { it: 'La cometa e il giullare', en: 'The comet and the fool' },
+      {
+        it: 'Il torneo per il giorno del nome di Joffrey è misero, e il suo umore si incupisce. Quando [[dontos-hollard|ser Dontos]] si presenta ubriaco alla sua giostra, il re vuole farlo affogare in una botte di vino. [[sansa-stark|Sansa]] dice che uccidere nel proprio giorno del nome porta sfortuna, [[sandor-clegane|il Mastino]] le dà ragione, e lei propone di farne un giullare; a Joffrey l’idea piace. Ride quando [[tommen-baratheon|Tommen]] viene disarcionato da una quintana. Poi arriva [[tyrion-lannister|Tyrion]], e Joffrey gli dice che come dono avrebbe preferito la testa di Robb.',
+        en: 'Joffrey’s name-day tourney is a poor show, and his mood darkens. When [[dontos-hollard|Ser Dontos]] comes drunk to his tilt, the king wants him drowned in a cask of wine. [[sansa-stark|Sansa]] says it is bad luck to kill on one’s name day, [[sandor-clegane|Sandor Clegane]] agrees, and she suggests making Dontos a fool instead; Joffrey likes the idea. He laughs when [[tommen-baratheon|Tommen]] is unhorsed by a quintain. Then [[tyrion-lannister|Tyrion]] rides in, and Joffrey tells him he would rather have had Robb’s head as a gift.',
+      },
+    ),
+    inBooks(
+      [14, 106],
+      { it: 'Sansa paga per Robb', en: 'Sansa answers for Robb' },
+      {
+        it: 'Dopo la vittoria di Robb a Oxcross, Joffrey fa portare [[sansa-stark|Sansa]] nel cortile inferiore a rispondere dei tradimenti del fratello. La colpirebbe con la balestra, ma sua madre dice che allora ucciderebbero Jaime. Ordina al [[sandor-clegane|Mastino]] di picchiarla; [[dontos-hollard|Dontos]] la colpisce invece con un melone, e il re fa picchiare Sansa da ser Boros Blount e le fa strappare il corpetto. Arriva [[tyrion-lannister|Tyrion]], che gli chiede se sa che fine ha fatto il Re Folle e gli dice di usare di più le orecchie e meno la bocca.',
+        en: 'After Robb’s victory at Oxcross, Joffrey has [[sansa-stark|Sansa]] brought to the lower bailey to answer for her brother’s treasons. He would shoot her with his crossbow, but his mother says they would kill Jaime. He orders [[sandor-clegane|Sandor Clegane]] to hit her; [[dontos-hollard|Dontos]] clubs her with a melon instead, and the king has Ser Boros Blount beat her and tear open her bodice. [[tyrion-lannister|Tyrion]] arrives, asks whether he knows what became of the Mad King, and tells him to use his ears more and his mouth less.',
+      },
+    ),
+    inBooks(
+      [16, 115],
+      { it: 'La corona nella polvere', en: 'The crown in the dirt' },
+      {
+        it: 'Tornando dal porto dopo la partenza di [[myrcella-baratheon|Myrcella]] per Dorne, Joffrey viene colpito in faccia dallo sterco. Ordina al [[sandor-clegane|Mastino]] di portargli l’uomo che l’ha lanciato, e la folla affamata si scaglia contro il corteo reale. Alle porte del castello Joffrey inveisce contro i traditori finché [[tyrion-lannister|Tyrion]] non lo schiaffeggia così forte da fargli volare via la corona e non lo butta a terra: ha aizzato il suo cane contro di loro, che cosa si aspettava che facessero?',
+        en: 'Riding back from the harbour after [[myrcella-baratheon|Myrcella]] sails for Dorne, Joffrey is struck in the face with dung. He orders [[sandor-clegane|Sandor Clegane]] to bring him the man who threw it, and the starving crowd turns on the royal party. At the castle gates Joffrey rants about traitors until [[tyrion-lannister|Tyrion]] slaps him so hard his crown flies off and shoves him to the ground: he set his dog on them, what did he imagine they would do?',
+      },
+    ),
+    inBooks(
+      [19, 133],
+      { it: 'I traditori oltre le mura', en: 'The traitors over the walls' },
+      {
+        it: 'Prima della battaglia Joffrey costringe [[sansa-stark|Sansa]] a baciare la sua nuova spada, e promette di uccidere Stannis con quella, e anche Robb. Sulle mura, mentre l’altofuoco brucia le flotte sulle Acque Nere, si lamenta di aver perso le sue navi. Con il permesso di [[tyrion-lannister|Tyrion]] fa lanciare con le catapulte oltre le mura i mercanti che volevano prendere una porta per Stannis, nudi e con le corna inchiodate alla testa. Tyrion ordina a [[osmund-kettleblack|ser Osmund]] di tenere il re al sicuro, ma tra i difensori.',
+        en: 'Before the battle Joffrey makes [[sansa-stark|Sansa]] kiss his new sword, and promises to kill Stannis with it, and Robb too. On the walls, while the wildfire burns the fleets on the Blackwater, he complains about losing his own ships. With [[tyrion-lannister|Tyrion]]’s leave he has the merchants who plotted to seize a gate for Stannis catapulted naked over the walls, with antlers nailed to their heads. Tyrion orders [[osmund-kettleblack|Ser Osmund]] to keep him safe, but among the defenders.',
+      },
+    ),
+    inBooks(
+      [20, 139],
+      { it: 'La cerimonia delle ricompense', en: 'The court of rewards' },
+      {
+        it: 'Nella sala del trono Joffrey nomina Primo Cavaliere il nonno [[tywin-lannister|Tywin]]. [[garlan-tyrell|Ser Garlan Tyrell]] gli chiede di sposare la sorella [[margaery-tyrell|Margaery]], e l’Alto Septon dichiara nullo il fidanzamento del re con [[sansa-stark|Sansa]] per la ribellione della casa di lei. Joffrey ricompensa i vincitori: fa di [[petyr-baelish|Ditocorto]] il signore di Harrenhal e del piromante [[hallyne|Hallyne]] un lord senza terre. Quando un cavaliere prigioniero lo chiama abominio nato dall’incesto, Joffrey nella rabbia si taglia la mano sul Trono di Spade, e viene portato via per farsi curare.',
+        en: 'In the throne room Joffrey names his grandfather [[tywin-lannister|Tywin]] Hand of the King. [[garlan-tyrell|Ser Garlan Tyrell]] asks him to wed his sister [[margaery-tyrell|Margaery]], and the High Septon declares his betrothal to [[sansa-stark|Sansa]] void for her house’s rebellion. Joffrey rewards the victors, making [[petyr-baelish|Littlefinger]] lord of Harrenhal and the pyromancer [[hallyne|Hallyne]] a lord without lands. When a captive knight calls him an abomination born of incest, Joffrey cuts his hand on the Iron Throne in his anger, and is taken away to be tended.',
       },
     ),
   ],
@@ -2557,6 +2958,22 @@ export const season1Chronicles = {
         en: 'After [[bran-stark|Bran Stark]]’s fall, Myrcella breaks her fast with her mother [[cersei-lannister|Cersei]], her uncle [[jaime-lannister|Jaime]] and her brother [[tommen-baratheon|Tommen]]. Her uncle [[tyrion-lannister|Tyrion]] joins them. Myrcella is worried about Bran, and Tyrion says the boy may live, which unsettles the queen and Jaime. Then Tyrion announces that he will go north with [[benjen-stark|Benjen Stark]] and says what he means to do once he is up there. Cersei gets up and takes the children away.',
       },
     ),
+    onScreen(
+      [16, 115],
+      { it: 'Mandata a Dorne', en: 'Sent to Dorne' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] ha promesso Myrcella a Casa Martell di Dorne: resterà lì finché non avrà l’età per sposare il principe Trystane. Tutta la corte, tra cui [[joffrey-baratheon|Joffrey]], [[cersei-lannister|Cersei]] e [[tommen-baratheon|Tommen]], la saluta al porto, e l’Alto Septon benedice la sua partenza. Cersei ha il cuore spezzato.',
+        en: '[[tyrion-lannister|Tyrion]] has promised Myrcella to House Martell of Dorne: she will stay there until she is old enough to marry Prince Trystane. The whole court, [[joffrey-baratheon|Joffrey]], [[cersei-lannister|Cersei]] and [[tommen-baratheon|Tommen]] among them, sees her off at the docks, and the High Septon blesses her departure. Cersei is heartbroken.',
+      },
+    ),
+    inBooks(
+      [16, 115],
+      { it: 'In viaggio verso Braavos', en: 'Sailing for Braavos' },
+      {
+        it: 'Myrcella lascia Approdo del Re per Dorne, dove sarà pupilla del principe Doran e in seguito sposerà suo figlio Trystane. [[tyrion-lannister|Tyrion]] manda con lei [[arys-oakheart|ser Arys Oakheart]] della Guardia reale come scudo giurato. Salpa con una piccola flotta per Braavos, da dove navi braavosiane la porteranno a destinazione. Il principe Doran ha promesso di schierare i suoi vessilli sui passi di montagna quando lei sarà al sicuro a Lancia del Sole.',
+        en: 'Myrcella leaves King’s Landing for Dorne, where she is to be a ward of Prince Doran and later marry his son Trystane. [[tyrion-lannister|Tyrion]] sends [[arys-oakheart|Ser Arys Oakheart]] of the Kingsguard with her as her sworn shield. She sails with a small fleet to Braavos, from where Braavosi ships will take her the rest of the way. Prince Doran has promised to move his banners into the high passes once she is safe at Sunspear.',
+      },
+    ),
   ],
   'tommen-baratheon': [
     inBoth(
@@ -2615,6 +3032,54 @@ export const season1Chronicles = {
       {
         it: 'Lancel è appena stato fatto cavaliere ed è diventato l’amante di sua cugina, la regina [[cersei-lannister|Cersei]]. Mentre lei riceve la lettera che le annuncia la cattura di suo fratello [[jaime-lannister|Jaime]], Lancel, nudo nella sua stanza, trova la guerra emozionante. Le chiede notizie e vuole sapere quale sarà la loro prossima mossa. Cersei gli dice di tacere e di tornare a letto.',
         en: 'Lancel has just been made a knight and has become the lover of his cousin, Queen [[cersei-lannister|Cersei]]. As she receives the letter telling her that her brother [[jaime-lannister|Jaime]] has been captured, Lancel, naked in her room, finds the war exciting. He asks her for news and wants to know their next move. Cersei tells him to be quiet and come back to bed.',
+      },
+    ),
+    onScreen(
+      [14, 103],
+      { it: 'Scoperto', en: 'Caught out' },
+      {
+        it: 'Lancel porta a [[tyrion-lannister|Tyrion]] nel cuore della notte l’ordine di Cersei di liberare [[pycelle|Pycelle]], chiamandolo Folletto, e si tradisce: sostiene di consegnare ogni messaggio subito, e ha addosso l’olio di lavanda della regina. Tyrion gli chiede se sia stato fatto cavaliere prima o dopo aver cominciato a dividere il letto con lei. Lancel cade in ginocchio e implora per la sua vita, e accetta di riferire a Tyrion tutto ciò che fa [[cersei-lannister|Cersei]].',
+        en: 'Lancel brings [[tyrion-lannister|Tyrion]] Cersei’s order to free [[pycelle|Pycelle]] in the middle of the night, calling him Imp, and gives himself away: he claims to deliver every message at once, and he smells of the queen’s lavender oil. Tyrion asks whether he was knighted before or after he began sharing her bed. Lancel falls to his knees and begs for his life, and agrees to report to Tyrion on everything [[cersei-lannister|Cersei]] does.',
+      },
+    ),
+    onScreen(
+      [19, 136],
+      { it: 'La ferita di freccia', en: 'The arrow wound' },
+      {
+        it: 'Durante la battaglia Lancel esce con la sortita del [[sandor-clegane|Mastino]] oltre la Porta del Fango e viene ferito da una freccia. Mandato da [[cersei-lannister|Cersei]], riporta [[joffrey-baratheon|Joffrey]] via dalle mura, protestando che questo spezzerà il morale degli uomini. Quando torna ad avvertirla che sono perduti se il re non torna, lei lo spinge da parte, colpendogli il fianco ferito, e se ne va furiosa.',
+        en: 'During the battle Lancel rides out with [[sandor-clegane|Sandor Clegane]]’s sortie beyond the Mud Gate and is wounded by an arrow. Sent by [[cersei-lannister|Cersei]], he brings [[joffrey-baratheon|Joffrey]] back from the walls, protesting that it will break the men’s spirit. When he returns to warn her that they are lost unless the king goes back, she shoves him aside, striking his wounded side, and storms out.',
+      },
+    ),
+    inBooks(
+      [14, 103],
+      { it: 'Il cugino della regina', en: 'The queen’s cousin' },
+      {
+        it: 'A notte fonda Lancel porta a [[tyrion-lannister|Tyrion]] il mandato della regina per liberare [[pycelle|Pycelle]], e porta la mano alla spada quando Tyrion lo deride. Tyrion gli chiede se [[cersei-lannister|Cersei]] l’abbia fatto cavaliere prima o dopo averlo portato a letto, e minaccia di dire a [[joffrey-baratheon|Joffrey]] che Lancel ha ucciso il padre del re per portarsi a letto la madre. Lancel dice che [[tywin-lannister|lord Tywin]] gli aveva ordinato di obbedire a Cersei in tutto. Tyrion ne fa la sua spia, e gli dice di riferire che Tyrion implora il perdono della regina.',
+        en: 'Late at night Lancel brings [[tyrion-lannister|Tyrion]] the queen’s warrant to free [[pycelle|Pycelle]], and touches his sword when Tyrion mocks him. Tyrion asks whether [[cersei-lannister|Cersei]] knighted him before or after she took him to bed, and threatens to tell [[joffrey-baratheon|Joffrey]] that Lancel killed the king’s father to bed his mother. Lancel says [[tywin-lannister|Lord Tywin]] told him to obey Cersei in all things. Tyrion makes him his spy, and tells him to say that Tyrion begs the queen’s forgiveness.',
+      },
+    ),
+    inBooks(
+      [16, 118],
+      { it: 'Le notizie di Lancel', en: 'Lancel’s tales' },
+      {
+        it: 'Davanti alla corte Lancel racconta a [[sansa-stark|Sansa]] che suo fratello Robb si è abbattuto sull’esercito di ser Stafford Lannister con un’armata di metamorfi, per stregoneria, e che gli uomini del Nord hanno banchettato con i morti; [[tyrion-lannister|Tyrion]] le dirà poi che non c’era nessun metamorfo. Lancel continua a fare la spia per Tyrion. Rivela che [[cersei-lannister|Cersei]] paga un cavaliere errante e i suoi fratelli per formarsi un esercito di mercenari, e che vuole nascondere [[tommen-baratheon|Tommen]] a Rosby.',
+        en: 'Before the court Lancel tells [[sansa-stark|Sansa]] that her brother Robb fell on Ser Stafford Lannister’s host with an army of wargs, by sorcery, and that the northmen feasted on the dead; [[tyrion-lannister|Tyrion]] later tells her there were no wargs. Lancel goes on spying for Tyrion. He reveals that [[cersei-lannister|Cersei]] is paying a hedge knight and his brothers to raise her own sellswords, and that she means to hide [[tommen-baratheon|Tommen]] at Rosby.',
+      },
+    ),
+    inBooks(
+      [19, 136],
+      { it: 'Colpito dalla regina', en: 'Struck by the queen' },
+      {
+        it: 'Gravemente ferito in battaglia, Lancel dice a [[cersei-lannister|Cersei]] nella sala da ballo della regina che la battaglia sembra perduta, e la supplica di lasciare [[joffrey-baratheon|Joffrey]] alla porta fortificata a incoraggiare i difensori. Lei colpisce la ferita di Lancel e se ne va. [[sansa-stark|Sansa]] lo vede cadere in ginocchio e manda a chiamare un maestro che lo curi.',
+        en: 'Badly wounded in the battle, Lancel tells [[cersei-lannister|Cersei]] in the Queen’s Ballroom that the battle seems lost, and begs her to let [[joffrey-baratheon|Joffrey]] stay at the gatehouse to hearten the defenders. She strikes his wound and leaves. [[sansa-stark|Sansa]] sees him fall to his knees and sends for a maester to tend him.',
+      },
+    ),
+    inBooks(
+      [20, 139],
+      { it: 'Lord di Darry', en: 'Lord of Darry' },
+      {
+        it: 'Alla cerimonia delle ricompense [[joffrey-baratheon|Joffrey]] nomina Lancel lord di Darry e gli dà le terre dei Darry, anche se Lancel è gravemente ferito e non può essere presente, come [[tyrion-lannister|Tyrion]]. Lo stesso giorno vengono premiati molti lord giurati a Castel Granito e ai Tyrell, e [[petyr-baelish|Ditocorto]] riceve Harrenhal.',
+        en: 'At the court of rewards [[joffrey-baratheon|Joffrey]] names Lancel Lord of Darry and gives him the Darry lands, though Lancel lies gravely wounded and cannot attend, like [[tyrion-lannister|Tyrion]]. Many lords sworn to Casterly Rock and to the Tyrells are honoured the same day, and [[petyr-baelish|Littlefinger]] receives Harrenhal.',
       },
     ),
   ],
@@ -2751,6 +3216,70 @@ export const season1Chronicles = {
         en: '[[robert-baratheon|King Robert]] is dying of a wound from a boar hunt. [[eddard-stark|Eddard Stark]] means to put Robert’s brother Stannis on the throne in place of [[joffrey-baratheon|Joffrey]]. Petyr urges him to accept Joffrey instead, and Eddard refuses. Eddard then asks Petyr to win the City Watch over to their side, and Petyr agrees. When Eddard confronts [[cersei-lannister|Cersei]] in the throne room after Robert’s death, the gold cloaks of [[janos-slynt|Janos Slynt]] kill his men, and Petyr holds a dagger to Eddard’s throat, reminding him that he warned him not to trust him.',
       },
     ),
+    onScreen(
+      [11, 77],
+      { it: 'Il sapere è potere', en: 'Knowledge is power' },
+      {
+        it: '[[cersei-lannister|Cersei]] incarica Petyr di trovare Arya Stark e lo punzecchia sul suo amore non ricambiato per Catelyn. Lui risponde alludendo a lei e a [[jaime-lannister|Jaime]]: il sapere è potere. Cersei ordina alle guardie di prenderlo e di tagliargli la gola, poi le ferma subito. Il potere, gli dice, è potere.',
+        en: '[[cersei-lannister|Cersei]] tasks Petyr with finding Arya Stark and needles him about his unrequited love for Catelyn. He answers by alluding to her and [[jaime-lannister|Jaime]]: knowledge is power. She has her guards seize him and orders them to cut his throat, then calls them off at once. Power, she tells him, is power.',
+      },
+    ),
+    onScreen(
+      [12, 82],
+      { it: 'La ragazza di Lys', en: 'The Lyseni girl' },
+      {
+        it: '[[ros|Ros]] è ancora sconvolta dall’uccisione di una neonata nel bordello di Petyr e crolla davanti a un cliente. Petyr le racconta di una ragazza triste che aveva comprato a caro prezzo da una casa di piacere di Lys, e che non gli rendeva nulla, così l’ha venduta a un lord dai gusti inimmaginabili. Poi le chiede se una notte libera basterà a farla sorridere di nuovo. Ros sorride e dice di sì.',
+        en: '[[ros|Ros]] is still shaken by the killing of a baby in Petyr’s brothel and breaks down in front of a client. Petyr tells her of a sad girl he bought at great cost from a pleasure house in Lys, who earned him nothing, so he sold her to a lord with unthinkable tastes. Then he asks whether one night off will make Ros smile again. She smiles and says it will.',
+      },
+    ),
+    onScreen(
+      [14, 106],
+      { it: 'All’accampamento di Renly', en: 'At Renly’s camp' },
+      {
+        it: 'Furioso per essere stato usato nella prova di [[tyrion-lannister|Tyrion]], Petyr viene mandato come inviato all’accampamento di Renly. Fa capire a [[renly-baratheon|Renly]] che lo aiuterebbe dall’interno della capitale, e cerca di mettere in difficoltà [[margaery-tyrell|Margaery]] alludendo al fatto che il marito preferisce gli uomini, ma lei lo sa già. [[catelyn-stark|Catelyn]] sfodera un pugnale quando lui le parla d’amore. Petyr le offre Sansa e Arya in cambio di Jaime, mentendo su Arya, e le consegna le ossa di Eddard Stark.',
+        en: 'Furious at being used in [[tyrion-lannister|Tyrion]]’s test of the council, Petyr is sent as envoy to Renly’s camp. He hints to [[renly-baratheon|Renly]] that he would help him from inside the capital, and tries to unsettle [[margaery-tyrell|Margaery]] by hinting that her husband prefers men, but she already knows. [[catelyn-stark|Catelyn]] draws a dagger when he speaks of love. He offers Sansa and Arya for Jaime, lying about Arya, and hands over Eddard Stark’s bones.',
+      },
+    ),
+    onScreen(
+      [16, 115],
+      { it: 'A Harrenhal', en: 'At Harrenhal' },
+      {
+        it: 'Dopo la morte di Renly, Petyr parte con i Tyrell, fiutando l’occasione di portarli dalla parte di [[joffrey-baratheon|Joffrey]]. A Harrenhal incontra [[tywin-lannister|Tywin]] e gli dice che i lord delle terre della tempesta sono passati a Stannis, ma che i Tyrell hanno riportato a casa il loro grande esercito. Propone un’alleanza tra Casa Lannister e Casa Tyrell. [[arya-stark|Arya]], al servizio di Tywin, nasconde il viso perché Petyr non la riconosca.',
+        en: 'After Renly’s death Petyr leaves with the Tyrells, sensing a chance to win them for [[joffrey-baratheon|Joffrey]]. At Harrenhal he meets [[tywin-lannister|Tywin]] and tells him that the stormlords have gone over to Stannis, but that the Tyrells have taken their great army home. He proposes an alliance between House Lannister and House Tyrell. [[arya-stark|Arya]], serving Tywin, hides her face so that Petyr will not know her.',
+      },
+    ),
+    onScreen(
+      [20, 139],
+      { it: 'Signore di Harrenhal', en: 'Lord of Harrenhal' },
+      {
+        it: 'Alla cerimonia delle ricompense [[joffrey-baratheon|Joffrey]] dà a Petyr Harrenhal per aver combinato l’alleanza tra i Lannister e i Tyrell. Poi Petyr trova [[sansa-stark|Sansa]] felicissima di essere libera dal fidanzamento, e la avverte che Joffrey continuerà a tormentarla. Le promette di farla uscire dalla città, per amore di Catelyn.',
+        en: 'At the court of rewards [[joffrey-baratheon|Joffrey]] gives Petyr Harrenhal for brokering the alliance between the Lannisters and the Tyrells. Afterwards he finds [[sansa-stark|Sansa]] overjoyed at being freed from her betrothal, and warns her that Joffrey will still torment her. He promises to get her out of the city, for her mother’s sake.',
+      },
+    ),
+    inBooks(
+      [13, 91],
+      { it: 'Il prezzo di Harrenhal', en: 'The price of Harrenhal' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] trova Petyr alla finestra mentre guarda [[joffrey-baratheon|Joffrey]] tirare alle lepri, e rifiuta in dono il suo pugnale d’acciaio di Valyria. Petyr si vanta di aver preso la verginità di entrambe le ragazze Tully. Tyrion gli chiede di portare [[lysa-arryn|Lysa Arryn]] dalla parte di Joffrey, offrendole l’assassino di Jon Arryn, il titolo di Protettore dell’Est per il figlio e le nozze del bambino con [[myrcella-baratheon|Myrcella]]. Petyr avrà in premio Harrenhal e la signoria delle terre dei fiumi. Chiede due settimane per prepararsi.',
+        en: '[[tyrion-lannister|Tyrion]] finds Petyr at his window, watching [[joffrey-baratheon|Joffrey]] shoot hares, and turns down the gift of his Valyrian steel dagger. Petyr boasts that he took the maidenheads of both Tully girls. Tyrion asks him to win [[lysa-arryn|Lysa Arryn]] for Joffrey, offering her the killer of Jon Arryn, the title of Warden of the East for her son and a marriage between the boy and [[myrcella-baratheon|Myrcella]]. Petyr’s reward will be Harrenhal and the lordship of the riverlands. He asks for a fortnight to prepare.',
+      },
+    ),
+    inBooks(
+      [15, 110],
+      { it: 'Inviato presso i Tyrell', en: 'Envoy to the Tyrells' },
+      {
+        it: 'Petyr dice a [[tyrion-lannister|Tyrion]] di volergli bene come sempre, ma che [[myrcella-baratheon|Myrcella]] non può sposare il figlio di Lysa se sposa un principe di Dorne, e gli chiede di lasciarlo fuori dal prossimo inganno. Quando Renly viene ucciso, sostiene le nozze tra [[joffrey-baratheon|Joffrey]] e [[margaery-tyrell|Margaery Tyrell]]: Sansa porterebbe solo il suo corpo, Margaery cinquantamila spade. Né Tyrion né [[cersei-lannister|Cersei]] vogliono lasciare la città, così Petyr si offre di trattare con i Tyrell, con una scorta, dell’oro e Hobber Redwyne, e chiede una ricompensa adeguata, che sceglierà più avanti.',
+        en: 'Petyr tells [[tyrion-lannister|Tyrion]] he loves him as much as ever, but that [[myrcella-baratheon|Myrcella]] cannot wed Lysa’s son if she weds a Dornish prince, and asks to be left out of the next deception. When Renly is killed, he backs the match between [[joffrey-baratheon|Joffrey]] and [[margaery-tyrell|Margaery Tyrell]]: Sansa brings only her body, Margaery fifty thousand swords. Neither Tyrion nor [[cersei-lannister|Cersei]] will leave the city, so Petyr volunteers to treat with the Tyrells, with an escort, gold and Hobber Redwyne, and asks for a fitting reward, to be named later.',
+      },
+    ),
+    inBooks(
+      [20, 139],
+      { it: 'Lord supremo del Tridente', en: 'Lord Paramount of the Trident' },
+      {
+        it: 'Alla cerimonia delle ricompense [[joffrey-baratheon|Joffrey]] concede a Petyr Harrenhal e lo nomina lord supremo del Tridente, per aver negoziato il trattato che ha portato i Tyrell in aiuto della città. Con loro sono arrivati [[garlan-tyrell|ser Garlan]] e [[loras-tyrell|ser Loras Tyrell]], e Garlan chiede al re di sposare la sorella [[margaery-tyrell|Margaery]]. L’Alto Septon dichiara nullo il fidanzamento del re con [[sansa-stark|Sansa]].',
+        en: 'At the court of rewards [[joffrey-baratheon|Joffrey]] grants Petyr Harrenhal and names him Lord Paramount of the Trident, for negotiating the treaty that brought the Tyrells to the city’s aid. With them came [[garlan-tyrell|Ser Garlan]] and [[loras-tyrell|Ser Loras Tyrell]], and Garlan asks the king to wed his sister [[margaery-tyrell|Margaery]]. The High Septon declares the king’s betrothal to [[sansa-stark|Sansa]] void.',
+      },
+    ),
   ],
   'varys': [
     inBooks(
@@ -2809,6 +3338,78 @@ export const season1Chronicles = {
         en: 'Varys comes to [[eddard-stark|Eddard Stark]] in the dungeons and urges him to confess to treason: he would then be allowed to join the Night’s Watch, and the confession would protect his family. Eddard confesses before the crowd at the Great Sept of Baelor. [[joffrey-baratheon|Joffrey]] orders his head cut off all the same. Varys tries in vain to stop the king, and [[ilyn-payne|Ilyn Payne]] beheads Eddard with Eddard’s own sword.',
       },
     ),
+    onScreen(
+      [12, 82],
+      { it: 'Shae nella torre', en: 'Shae in the tower' },
+      {
+        it: 'Varys scopre che [[shae|Shae]] vive con [[tyrion-lannister|Tyrion]] nella Torre del Primo Cavaliere, contro l’ordine del padre di Tyrion, e lascia intendere che potrebbe rivelarlo. Tyrion lo avverte di non sottovalutarlo. Al Concilio, quando un corvo dei Guardiani della notte chiede uomini, Varys aggiunge che i bruti si stanno unendo sotto un solo capo.',
+        en: 'Varys discovers [[shae|Shae]] living with [[tyrion-lannister|Tyrion]] in the Tower of the Hand, against the order of Tyrion’s father, and makes veiled threats about revealing her. Tyrion warns him not to underestimate him. In council, when a raven from the Night’s Watch asks for men, Varys adds that the wildlings are uniting under one leader.',
+      },
+    ),
+    onScreen(
+      [18, 128],
+      { it: 'Tre draghi', en: 'Three dragons' },
+      {
+        it: 'Varys aiuta [[tyrion-lannister|Tyrion]] a preparare la difesa della città contro [[stannis-baratheon|Stannis]]. Dopo che entrambi hanno parlato male di [[joffrey-baratheon|Joffrey]] in privato, Varys loda l’abilità di Tyrion nel gioco e il suo lavoro come Primo Cavaliere. Poi gli dice che [[daenerys-targaryen|Daenerys Targaryen]] è viva e ha fatto schiudere tre draghi: quando saranno cresciuti, i suoi nemici non avranno dove nascondersi. Tyrion risponde che affronterà una partita alla volta.',
+        en: 'Varys helps [[tyrion-lannister|Tyrion]] plan the defence of the city against [[stannis-baratheon|Stannis]]. After the two of them speak ill of [[joffrey-baratheon|Joffrey]] in private, Varys praises Tyrion’s skill at the game and his work as Hand. Then he tells him that [[daenerys-targaryen|Daenerys Targaryen]] lives and has hatched three dragons: when they are grown, her enemies will have nowhere to hide. Tyrion answers that he will take one game at a time.',
+      },
+    ),
+    onScreen(
+      [19, 133],
+      { it: 'La mappa dei cunicoli', en: 'A map of the tunnels' },
+      {
+        it: 'Mentre [[stannis-baratheon|Stannis]] si avvicina, Varys consiglia [[tyrion-lannister|Tyrion]], insieme a [[bronn|Bronn]], sulla difesa della città. La notte prima della battaglia gli porta una mappa dei cunicoli sotto Approdo del Re, e gli dice che è l’unica cosa che si frappone tra la città e la sconfitta.',
+        en: 'As [[stannis-baratheon|Stannis]] nears, Varys advises [[tyrion-lannister|Tyrion]], with [[bronn|Bronn]], on the defence of the city. On the eve of the battle he brings Tyrion a map of the tunnels beneath King’s Landing, and tells him that he is all that stands between the city and defeat.',
+      },
+    ),
+    inBooks(
+      [11, 77],
+      { it: 'L’indovinello', en: 'The riddle' },
+      {
+        it: 'Al Concilio Varys esamina il sigillo sulla lettera di [[tyrion-lannister|Tyrion]] e lo dichiara autentico. Quella notte Tyrion lo trova in una locanda con [[shae|Shae]], che l’eunuco ha trovato sorprendentemente in fretta, e i due si scambiano minacce velate. Varys gli dice che la cometa rossa è chiamata messaggera di fuoco e sangue, e gli lascia un indovinello: un re, un sacerdote e un ricco ordinano ciascuno a un mercenario di uccidere gli altri due. Chi vive e chi muore?',
+        en: 'In council Varys inspects the seal on [[tyrion-lannister|Tyrion]]’s letter and proclaims it genuine. That night Tyrion finds him at an inn with [[shae|Shae]], whom the eunuch has found remarkably quickly, and the two exchange veiled threats. Varys tells him that the red comet is called a herald of fire and blood, and leaves him a riddle: a king, a priest and a rich man each bid a sellsword kill the other two. Who lives and who dies?',
+      },
+    ),
+    inBooks(
+      [12, 82],
+      { it: 'Il potere è un’ombra', en: 'Power is a shadow' },
+      {
+        it: 'Varys loda [[tyrion-lannister|Tyrion]] per aver mandato [[janos-slynt|Janos Slynt]] alla Barriera e per averlo sostituito con [[jacelyn-bywater|ser Jacelyn Bywater]], da lui raccomandato. Tyrion se la prende perché Varys gli ha taciuto che [[cersei-lannister|Cersei]] ha mandato le cappe dorate a uccidere una bastarda di Robert; Varys dice di aver salvato un ragazzo più grande. Serve il regno, il re e Tyrion, dice, e risponde all’indovinello: il potere risiede dove gli uomini credono che risieda, è un’ombra sul muro, e un uomo molto piccolo può proiettare un’ombra molto grande.',
+        en: 'Varys praises [[tyrion-lannister|Tyrion]] for sending [[janos-slynt|Janos Slynt]] to the Wall and for replacing him with [[jacelyn-bywater|Ser Jacelyn Bywater]], whom he recommended. Tyrion is angry that Varys kept from him that [[cersei-lannister|Cersei]] sent gold cloaks to kill one of Robert’s bastards; Varys says he saved an older boy. He serves the realm, the king and Tyrion, he says, and answers the riddle: power resides where men believe it resides, a shadow on the wall, and a very small man can cast a very large shadow.',
+      },
+    ),
+    inBooks(
+      [13, 91],
+      { it: 'Il prezzo di Doran', en: 'Doran’s price' },
+      {
+        it: 'Varys prende in giro [[tyrion-lannister|Tyrion]] per aver tormentato [[pycelle|Pycelle]] con un segreto, e lo indovina: Tyrion vuole impedire che Dorne si schieri con un altro re. Tyrion ha offerto al principe Doran un seggio nel Concilio e l’uomo che ha ucciso sua sorella, [[gregor-clegane|ser Gregor Clegane]]. Varys indovina che l’ostaggio offerto sarà [[tommen-baratheon|Tommen]], e avverte che [[cersei-lannister|Cersei]] non rinuncerà mai a entrambi i figli minori. Tyrion risponde che chi glielo dicesse sarebbe suo nemico, e Varys ridacchia.',
+        en: 'Varys teases [[tyrion-lannister|Tyrion]] for tormenting [[pycelle|Pycelle]] with a secret, and guesses it: Tyrion wants to keep Dorne from joining another king. Tyrion has offered Prince Doran a council seat and the man who murdered his sister, [[gregor-clegane|Ser Gregor Clegane]]. Varys guesses that the hostage Tyrion offers will be [[tommen-baratheon|Tommen]], and warns that [[cersei-lannister|Cersei]] will never give up both her younger children. Tyrion answers that whoever told her would be his enemy, and Varys giggles.',
+      },
+    ),
+    inBooks(
+      [15, 110],
+      { it: 'La morte di Renly', en: 'Renly’s death' },
+      {
+        it: 'Varys riferisce al Concilio ristretto che [[renly-baratheon|Renly]] è stato ucciso, con la gola tagliata, ed elenca le voci su chi l’abbia fatto: Stannis con una spada magica, un cavaliere della sua guardia, una donna, [[catelyn-stark|lady Catelyn]]. Quasi tutti i lord di Renly sono passati a [[stannis-baratheon|Stannis]], ma [[loras-tyrell|Loras Tyrell]] è fuggito con un quinto dei cavalieri. Varys conviene con [[tyrion-lannister|Tyrion]] che l’oro non basterà a conquistare i Tyrell, e aggiunge che le necessità del regno vengono prima dei desideri del re.',
+        en: 'Varys tells the small council that [[renly-baratheon|Renly]] has been murdered, his throat cut, and lists the tales of who did it: Stannis with a magic sword, a knight of his guard, a woman, [[catelyn-stark|Lady Catelyn]]. Most of Renly’s lords have gone over to [[stannis-baratheon|Stannis]], but [[loras-tyrell|Loras Tyrell]] has fled with a fifth of the knights. Varys agrees with [[tyrion-lannister|Tyrion]] that gold will not win the Tyrells, and adds that the needs of the realm come before the king’s desires.',
+      },
+    ),
+    inBooks(
+      [13, 118],
+      { it: 'Lo stregone di Myr', en: 'The sorcerer of Myr' },
+      {
+        it: 'Travestito da fratello mendicante, Varys porta a [[tyrion-lannister|Tyrion]] la notizia che Capo Tempesta è caduta e che Stannis marcerà sulla città. Propone di sistemare [[shae|Shae]] come cameriera di [[lollys-stokeworth|Lollys Stokeworth]], con un passaggio segreto verso la Torre del Primo Cavaliere. Poi racconta come è diventato eunuco: ragazzo in una compagnia di guitti, fu comprato a Myr da uno stregone che lo evirò e bruciò le parti tagliate, e da allora odia la magia.',
+        en: 'Disguised as a begging brother, Varys brings [[tyrion-lannister|Tyrion]] word that Storm’s End has fallen and that Stannis will march on the city. He suggests placing [[shae|Shae]] as maid to [[lollys-stokeworth|Lollys Stokeworth]], with a secret passage into the Tower of the Hand. Then he tells how he became a eunuch: a boy in a mummers’ troupe, he was bought in Myr by a sorcerer who cut him and burned the parts, and he has hated magic ever since.',
+      },
+    ),
+    onScreen(
+      [20, 141],
+      { it: 'Le visite dell’eunuco', en: 'The eunuch’s visits' },
+      {
+        it: 'Varys fa visita a [[tyrion-lannister|Tyrion]] ferito, gli dice che [[bronn|Bronn]] ha perso il comando della Guardia cittadina e che i clan delle montagne sono tornati a casa, e lo ringrazia per la difesa della città, visto che nessun altro lo farà. Poi va da [[ros|Ros]] nel bordello di [[petyr-baelish|Ditocorto]]. Lei non sa chi sia finché non scopre che è un eunuco. Varys le fa ammettere che ha paura del suo padrone, e le dice che lui protegge chi lavora per lui.',
+        en: 'Varys visits the wounded [[tyrion-lannister|Tyrion]], tells him that [[bronn|Bronn]] has lost his command of the City Watch and the hill tribes have gone home, and thanks him for the city’s defence, since no one else will. Then he calls on [[ros|Ros]] in [[petyr-baelish|Littlefinger]]’s brothel. She does not know who he is until she finds he is a eunuch. He gets her to admit she fears her employer, and tells her that he protects those who work for him.',
+      },
+    ),
   ],
   'pycelle': [
     inBoth(
@@ -2844,6 +3445,46 @@ export const season1Chronicles = {
       {
         it: 'Pycelle porta a letto [[ros|Ros]], una donna del bordello di [[petyr-baelish|Petyr Baelish]]. Poi divaga sui re che ha servito: Aerys Targaryen, che da giovane affascinante finì per diventare un folle ossessionato dal fuoco, poi [[robert-baratheon|Robert]], un grande soldato ma forse non il migliore dei re, e ora [[joffrey-baratheon|Joffrey]]. Ros se ne va, annoiata. Rimasto solo, Pycelle si stiracchia e fa esercizi come un uomo molto più giovane, poi riprende la sua aria fragile prima di uscire dalle sue stanze.',
         en: 'Pycelle takes [[ros|Ros]], a woman from [[petyr-baelish|Petyr Baelish]]’s brothel, to bed. Afterwards he rambles about the kings he has served: Aerys Targaryen, who began as a charming young man and ended a madman obsessed with fire, then [[robert-baratheon|Robert]], a great soldier but perhaps not the best of kings, and now [[joffrey-baratheon|Joffrey]]. Ros leaves, bored. Alone, Pycelle stretches and limbers up like a much younger man, then puts on his frail air again before he walks out of his chambers.',
+      },
+    ),
+    onScreen(
+      [13, 99],
+      { it: 'Le celle nere', en: 'The black cells' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] confida a Pycelle un piano per far sposare [[myrcella-baratheon|Myrcella]] a un principe di Dorne e gli dice di non parlarne alla regina. Pycelle lo dice comunque a [[cersei-lannister|Cersei]]. Tyrion e [[bronn|Bronn]] irrompono nella sua stanza mentre è a letto con [[daisy|Daisy]]; Pycelle sostiene di essere fedele a Casa Lannister dai tempi del Re Folle, e non nega di aver lasciato morire Jon Arryn. Bronn gli taglia la barba, e Pycelle viene gettato nelle celle nere.',
+        en: '[[tyrion-lannister|Tyrion]] confides to Pycelle a plan to marry [[myrcella-baratheon|Myrcella]] to a prince of Dorne and tells him not to speak of it to the queen. Pycelle tells [[cersei-lannister|Cersei]] anyway. Tyrion and [[bronn|Bronn]] burst in on him in bed with [[daisy|Daisy]]; Pycelle claims he has been loyal to House Lannister since the Mad King, and does not deny letting Jon Arryn die. Bronn cuts off his beard, and Pycelle is thrown into the black cells.',
+      },
+    ),
+    onScreen(
+      [14, 103],
+      { it: 'Fuori dalle celle', en: 'Out of the cells' },
+      {
+        it: 'Tramite [[lancel-lannister|Lancel]], [[cersei-lannister|Cersei]] pretende che Pycelle sia liberato dalle celle nere e riammesso nel Concilio ristretto. [[tyrion-lannister|Tyrion]] accetta di liberarlo, lasciandolo alla regina come suo animaletto se lo vuole, ma non lo rivuole nel Concilio. Il gran maestro torna libero, anche se non siede più nel Concilio.',
+        en: 'Through [[lancel-lannister|Lancel]], [[cersei-lannister|Cersei]] demands that Pycelle be freed from the black cells and returned to the small council. [[tyrion-lannister|Tyrion]] agrees to release him, letting the queen have him as her pet if she wants him, but will not have him back on the council. The Grand Maester is free again, though no longer on the council.',
+      },
+    ),
+    inBooks(
+      [13, 91],
+      { it: 'Una lettera per Dorne', en: 'A letter for Dorne' },
+      {
+        it: 'A colazione [[tyrion-lannister|Tyrion]] fa mandare via a Pycelle la sua serva e gli consegna due copie sigillate di una lettera segreta per il principe Doran di Dorne, da spedire con gli uccelli più veloci. Parte un solo corvo. Tyrion non vuole condividere il messaggio con il Concilio né con la regina, perché [[cersei-lannister|Cersei]] porta già un grande peso, e Pycelle conviene che è meglio non aggravarlo. Mentre il maestro è fuori, Tyrion gli ruba una boccetta dagli scaffali.',
+        en: 'At breakfast [[tyrion-lannister|Tyrion]] has Pycelle send his serving girl away and hands him two sealed copies of a secret letter for Prince Doran of Dorne, to go by his swiftest birds. Only one raven flies. Tyrion will not share the message with the council or the queen, since [[cersei-lannister|Cersei]] carries a great weight already, and Pycelle agrees it is best not to add to her burden. While the maester is out, Tyrion steals a small bottle from his shelves.',
+      },
+    ),
+    inBooks(
+      [13, 99],
+      { it: 'Quasi tutta la barba', en: 'Most of his beard' },
+      {
+        it: 'Nella notte di luna nera [[shagga|Shagga]] sfonda la porta di Pycelle, e [[tyrion-lannister|Tyrion]] fa trascinare via la serva dal suo letto. Tyrion gli dice che una copia della lettera è andata a Dorne e l’altra a [[cersei-lannister|Cersei]]. Pycelle cerca di dare la colpa a [[varys|Varys]], poi a [[petyr-baelish|Ditocorto]]. Mentre l’ascia di Shagga gli porta via la barba, confessa di aver convinto re Aerys ad aprire le porte della città, e di aver lasciato morire Jon Arryn perché Jon sapeva dell’incesto della regina. Tyrion lo fa gettare in una cella nera.',
+        en: 'On the night of the black moon [[shagga|Shagga]] breaks down Pycelle’s door, and [[tyrion-lannister|Tyrion]] has his serving girl dragged from his bed. Tyrion tells him that one copy of the letter went to Dorne and the other to [[cersei-lannister|Cersei]]. Pycelle tries to blame [[varys|Varys]], then [[petyr-baelish|Littlefinger]]. As Shagga’s axe takes his beard, he confesses that he urged King Aerys to open the city gates, and that he let Jon Arryn die because Jon knew about the queen’s incest. Tyrion has him thrown into a black cell.',
+      },
+    ),
+    onScreen(
+      [20, 139],
+      { it: 'Il nuovo Primo Cavaliere', en: 'The new Hand' },
+      {
+        it: 'Prima della battaglia Pycelle procura a [[cersei-lannister|Cersei]] l’essenza di belladonna. Dopo, annuncia compiaciuto a [[tyrion-lannister|Tyrion]] ferito che non è più Primo Cavaliere, perché [[tywin-lannister|Tywin]] è tornato. A corte si unisce a Cersei per convincere [[joffrey-baratheon|Joffrey]] a sciogliere il fidanzamento con [[sansa-stark|Sansa]]: ha parlato con il nuovo Alto Septon, che approva.',
+        en: 'Before the battle Pycelle gives [[cersei-lannister|Cersei]] essence of nightshade. Afterwards he gloats to the wounded [[tyrion-lannister|Tyrion]] that he is no longer acting Hand, since [[tywin-lannister|Tywin]] has returned. At court he joins Cersei in persuading [[joffrey-baratheon|Joffrey]] to set aside his betrothal to [[sansa-stark|Sansa]]: he has spoken with the new High Septon, who approves.',
       },
     ),
   ],
@@ -2912,6 +3553,94 @@ export const season1Chronicles = {
         en: 'King [[joffrey-baratheon|Joffrey]] takes [[sansa-stark|Sansa Stark]] to see the heads of traitors set on spikes over the walls, her father’s among them. When she says that her brother may one day bring her Joffrey’s head, the king has [[meryn-trant|Meryn Trant]] strike her. Sandor, who stands by, wipes the blood from her face.',
       },
     ),
+    onScreen(
+      [11, 76],
+      { it: 'Dalla parte di Sansa', en: 'On Sansa’s side' },
+      {
+        it: 'Al torneo per il giorno del nome di [[joffrey-baratheon|Joffrey]], il re ordina di affogare nel vino [[dontos-hollard|ser Dontos Hollard]], arrivato tardi e ubriaco. Quando [[sansa-stark|Sansa]] dice che ordinare una morte nel proprio giorno del nome porta sfortuna, Joffrey la liquida come superstizione, ma Sandor le dà ragione, e invece di essere ucciso Dontos diventa il giullare del re.',
+        en: 'At [[joffrey-baratheon|Joffrey]]’s name-day tournament, the king orders [[dontos-hollard|Ser Dontos Hollard]] drowned in wine for arriving late and drunk. When [[sansa-stark|Sansa]] says that ordering a death on one’s name day brings bad luck, Joffrey dismisses it as superstition, but Sandor seconds her, and Dontos is made the king’s fool instead of being killed.',
+      },
+    ),
+    onScreen(
+      [14, 106],
+      { it: 'Il suo mantello', en: 'His cloak' },
+      {
+        it: 'Quando [[joffrey-baratheon|Joffrey]] fa picchiare e spogliare [[sansa-stark|Sansa]] da [[meryn-trant|ser Meryn Trant]] davanti alla corte, Sandor guarda disgustato, ma nessuno interviene finché non arriva [[tyrion-lannister|Tyrion]]. Quando Tyrion ordina che qualcuno la copra, Sandor si fa avanti subito e la avvolge con delicatezza nel suo mantello. Più tardi fa la guardia mentre [[ros|Ros]] e [[daisy|Daisy]] aspettano il re nella sua stanza.',
+        en: 'When [[joffrey-baratheon|Joffrey]] has [[meryn-trant|Ser Meryn Trant]] beat and strip [[sansa-stark|Sansa]] before the court, Sandor watches in disgust, but no one steps in until [[tyrion-lannister|Tyrion]] arrives. When Tyrion orders someone to cover her, Sandor steps forward at once and gently wraps his cloak around her. Later he stands guard while [[ros|Ros]] and [[daisy|Daisy]] wait for the king in his chamber.',
+      },
+    ),
+    onScreen(
+      [16, 115],
+      { it: 'Non per te', en: 'Not for you' },
+      {
+        it: 'Nella rivolta dopo la partenza di [[myrcella-baratheon|Myrcella]], alcuni uomini trascinano via [[sansa-stark|Sansa]] e stanno per violentarla. Sandor arriva, uccide gli aggressori e la riporta al castello, dove ordina alle ancelle di occuparsi di lei. Quando [[tyrion-lannister|Tyrion]] lo ringrazia per averle salvato la vita, Sandor risponde brusco che non l’ha fatto per lui.',
+        en: 'In the riot after [[myrcella-baratheon|Myrcella]]’s departure, men drag [[sansa-stark|Sansa]] away and are about to rape her. Sandor arrives, kills her attackers and carries her back to the castle, where he orders the handmaids to take care of her. When [[tyrion-lannister|Tyrion]] thanks him for saving her life, Sandor bluntly answers that he did not do it for him.',
+      },
+    ),
+    onScreen(
+      [17, 126],
+      { it: 'Un cane e i topi', en: 'A dog and the rats' },
+      {
+        it: '[[sansa-stark|Sansa]] va a ringraziare Sandor per averla salvata e lo chiama coraggioso. Lui risponde che a un cane non serve coraggio per scacciare i topi, e la avverte che verrà un giorno in cui la sua voglia di uccidere sarà l’unica cosa tra lei e il suo amato [[joffrey-baratheon|Joffrey]]. Quando a Sansa arriva il primo sangue e [[shae|Shae]] cerca di nascondere le lenzuola, Sandor le trova.',
+        en: '[[sansa-stark|Sansa]] comes to thank Sandor for saving her and calls him brave. He answers that a dog needs no courage to fight off rats, and warns her that a day will come when his killing is all that stands between her and her beloved [[joffrey-baratheon|Joffrey]]. When Sansa has her first blood and [[shae|Shae]] tries to hide the sheets, Sandor finds them.',
+      },
+    ),
+    onScreen(
+      [19, 136],
+      { it: 'La paura del fuoco', en: 'Afraid of the fire' },
+      {
+        it: 'La notte prima della battaglia Sandor si scontra con [[bronn|Bronn]] mentre bevono. [[tyrion-lannister|Tyrion]] lo manda a guidare una sortita oltre la Porta del Fango, e [[lancel-lannister|Lancel]] va con lui. Terrorizzato dagli uomini in fiamme, Sandor si blocca finché Bronn non lo salva, e dopo aver perso metà dei suoi uomini si rifiuta di uscire di nuovo. Abbandona la battaglia e la Guardia reale, maledicendo davanti a tutti la Guardia reale, la città e il re. Trova [[sansa-stark|Sansa]] nella sua stanza e si offre di portarla a nord, ma lei ha troppa paura per seguirlo.',
+        en: 'On the eve of battle Sandor clashes with [[bronn|Bronn]] over drinks. [[tyrion-lannister|Tyrion]] sends him to lead a sortie beyond the Mud Gate, and [[lancel-lannister|Lancel]] rides with him. Terrified by the burning men, Sandor freezes until Bronn saves him, and after losing half his men he refuses to go out again. He walks away from the battle and the Kingsguard, cursing the Kingsguard, the city and the king in front of everyone. He finds [[sansa-stark|Sansa]] in her room and offers to take her north, but she is too afraid to go with him.',
+      },
+    ),
+    inBooks(
+      [11, 76],
+      { it: 'Un torneo di moscerini', en: 'A tourney of gnats' },
+      {
+        it: 'Al torneo per il giorno del nome di [[joffrey-baratheon|Joffrey]] il Mastino dice che non vale la pena di giostrare in un torneo di moscerini. Joffrey non gli ordina mai di colpire [[sansa-stark|Sansa]], come fa con i cavalieri della Guardia reale. Quando Sansa cerca di salvare [[dontos-hollard|ser Dontos]], ubriaco, il Mastino le viene in aiuto, confermando che ciò che un uomo semina nel giorno del nome lo raccoglie per tutto l’anno. Quando arriva [[tyrion-lannister|Tyrion]], il Mastino dice che lo davano per morto, e gli consiglia di tenere a freno la lingua.',
+        en: 'At [[joffrey-baratheon|Joffrey]]’s name-day tourney Sandor says it is not worth jousting in a tourney of gnats. Joffrey never orders him to strike [[sansa-stark|Sansa]], as he does the knights of the Kingsguard. When Sansa tries to save a drunk [[dontos-hollard|Ser Dontos]], Sandor comes to her aid, agreeing that what a man sows on his name day he reaps all year. When [[tyrion-lannister|Tyrion]] arrives, Sandor says they had heard he was dead, and tells him to guard his tongue.',
+      },
+    ),
+    inBooks(
+      [20, 92],
+      { it: 'Uccellino', en: 'Little bird' },
+      {
+        it: 'Di notte, sui gradini a serpentina, Sandor ubriaco afferra [[sansa-stark|Sansa]] prima che cada, mentre lei torna dal parco degli dèi. Non crede che abbia pregato, la chiama un uccellino che canta le canzoni che le hanno insegnato, e la riaccompagna alle sue stanze. Le racconta che suo nonno ebbe delle terre per aver salvato un lord Lannister da un leone, e che un cane muore per te e non ti mente mai. Un giorno, dice, avrà da lei una canzone.',
+        en: 'On the serpentine steps at night a drunk Sandor catches [[sansa-stark|Sansa]] before she falls, as she comes back from the godswood. He does not believe she was praying, calls her a little bird singing the songs she was taught, and walks her back to her chambers. He tells her that his grandfather won lands for saving a Lannister lord from a lion, and that a dog will die for you and never lie to you. One day, he says, he will have a song from her.',
+      },
+    ),
+    inBooks(
+      [14, 106],
+      { it: 'Un mantello per Sansa', en: 'A cloak for Sansa' },
+      {
+        it: 'Il Mastino porta [[sansa-stark|Sansa]] davanti a [[joffrey-baratheon|Joffrey]] a rispondere della vittoria di Robb e, quando glielo ordinano, la rimette in piedi senza brutalità. Mentre ser Boros Blount la picchia, dice con voce roca che basta, ma il re ordina di spogliarla. Quando [[tyrion-lannister|Tyrion]] chiede qualcosa per coprirla, il Mastino le getta il suo mantello.',
+        en: 'Sandor brings [[sansa-stark|Sansa]] before [[joffrey-baratheon|Joffrey]] to answer for Robb’s victory and, when told, pulls her to her feet, not ungently. As Ser Boros Blount beats her, he rasps that it is enough, but the king orders her stripped. When [[tyrion-lannister|Tyrion]] asks for something to cover her, Sandor tosses her his cloak.',
+      },
+    ),
+    inBooks(
+      [16, 115],
+      { it: 'In mezzo alla folla', en: 'Through the mob' },
+      {
+        it: 'Tornando dalla partenza di [[myrcella-baratheon|Myrcella]], [[joffrey-baratheon|Joffrey]] ordina al Mastino di portargli l’uomo che gli ha tirato lo sterco, e la folla affamata si scaglia contro il corteo reale. Nel caos [[sansa-stark|Sansa]] si perde. Il Mastino la riporta al castello, coperto di sangue. Poi [[tyrion-lannister|Tyrion]] lo manda con [[bronn|Bronn]] a spegnere un incendio a Fondo delle Pulci, e vede la paura negli occhi del Mastino.',
+        en: 'Riding back from [[myrcella-baratheon|Myrcella]]’s departure, [[joffrey-baratheon|Joffrey]] orders Sandor to bring him the man who threw dung at him, and the starving crowd turns on the royal party. In the chaos [[sansa-stark|Sansa]] is lost. Sandor brings her back to the castle, covered in blood. [[tyrion-lannister|Tyrion]] then sends him with [[bronn|Bronn]] to put out a fire in Flea Bottom, and sees fear in Sandor’s eyes.',
+      },
+    ),
+    inBooks(
+      [19, 133],
+      { it: 'La Porta del Re', en: 'The King’s Gate' },
+      {
+        it: 'Alla Porta del Re, con la fronte che sanguina, il Mastino rifiuta l’ordine di [[tyrion-lannister|Tyrion]] di guidare un’altra sortita: tre sono già costate metà degli uomini. Maledice Tyrion e chiede del vino. Tyrion vede che ha paura, sfinito dalla battaglia e dal fuoco, e che la sua paura ha contagiato gli uomini che comanda. Quando Tyrion dice che guiderà lui stesso la sortita, il Mastino ride.',
+        en: 'At the King’s Gate, bleeding from the forehead, Sandor refuses [[tyrion-lannister|Tyrion]]’s order to lead another sortie: three have already cost half the men. He curses Tyrion and asks for wine. Tyrion sees that he is afraid, worn out by the battle and by the fire, and that his fear has spread to the men he leads. When Tyrion says he will lead the sortie himself, Sandor laughs.',
+      },
+    ),
+    inBooks(
+      [19, 136],
+      { it: 'Lasciare la città', en: 'Leaving the city' },
+      {
+        it: 'Dopo aver lasciato la battaglia il Mastino aspetta nell’ombra della stanza di [[sansa-stark|Sansa]], ubriaco e malconcio. Dice di aver perso, augura a [[tyrion-lannister|Tyrion]] di bruciare e annuncia che lascerà Approdo del Re, forse per il nord. Potrebbe proteggerla, dice, e le chiede la canzone che gli aveva promesso. Lei canta una strofa dell’inno alla Madre e gli sfiora la guancia, bagnata di lacrime. Lui si toglie il mantello bianco e lascia la stanza.',
+        en: 'After leaving the battle Sandor waits in the shadows of [[sansa-stark|Sansa]]’s room, drunk and battered. He says he has lost, wishes [[tyrion-lannister|Tyrion]] burned, and is leaving King’s Landing, perhaps for the north. He could protect her, he says, and asks for the song she promised. She sings a verse of the Mother’s hymn and touches his cheek, wet with tears. He strips off his white cloak and leaves her room.',
+      },
+    ),
   ],
   'janos-slynt': [
     inBoth(
@@ -2936,6 +3665,30 @@ export const season1Chronicles = {
       {
         it: 'Re [[joffrey-baratheon|Joffrey]] tiene udienza e ricompensa Janos per il suo ruolo nell’arresto di [[eddard-stark|Eddard Stark]]: lo nomina lord di Harrenhal, il grande castello delle Terre dei Fiumi. Janos resta al comando della Guardia cittadina. Nella stessa udienza [[barristan-selmy|Barristan Selmy]] viene allontanato dalla Guardia reale.',
         en: 'King [[joffrey-baratheon|Joffrey]] holds court and rewards Janos for his part in [[eddard-stark|Eddard Stark]]’s arrest: he makes him lord of Harrenhal, the great castle of the riverlands. Janos stays in command of the City Watch. At the same court [[barristan-selmy|Barristan Selmy]] is removed from the Kingsguard.',
+      },
+    ),
+    onScreen(
+      [11, 77],
+      { it: 'Il massacro dei bastardi', en: 'The bastards’ massacre' },
+      {
+        it: 'Janos Slynt guida le cappe dorate per la città a uccidere i bastardi di Robert. Nel bordello di [[petyr-baelish|Ditocorto]] dice a [[ros|Ros]] soltanto che gli ordini vengono da qualcuno a cui non importa che cosa pensi Petyr. Quando il suo uomo non riesce a uccidere la figlioletta di [[mhaegen|Mhaegen]], Janos lo fa con le sue mani. I suoi uomini vengono anche a sapere da [[tobho-mott|Tobho Mott]] che Gendry ha lasciato la città con le reclute dei Guardiani della notte.',
+        en: 'Janos Slynt leads the gold cloaks through the city to kill Robert’s bastards. In [[petyr-baelish|Littlefinger]]’s brothel he tells [[ros|Ros]] only that his orders come from someone who does not care what Petyr thinks. When his man cannot bring himself to kill [[mhaegen|Mhaegen]]’s baby daughter, Janos does it himself. His men also learn from [[tobho-mott|Tobho Mott]] that Gendry has left the city with the Night’s Watch recruits.',
+      },
+    ),
+    onScreen(
+      [12, 82],
+      { it: 'Mandato alla Barriera', en: 'Sent to the Wall' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] invita Janos a cena e lo interroga sul massacro dei bastardi reali. Janos ammette senza problemi la sua parte, ma non dice chi abbia dato l’ordine. Tyrion lo fa arrestare e lo manda ai Guardiani della notte, e affida a [[bronn|Bronn]] il comando della Guardia cittadina.',
+        en: '[[tyrion-lannister|Tyrion]] invites Janos to dinner and questions him about the massacre of the royal bastards. Janos freely admits his part, but will not say who gave the order. Tyrion has him arrested and sent to the Night’s Watch, and gives his command of the City Watch to [[bronn|Bronn]].',
+      },
+    ),
+    inBooks(
+      [12, 82],
+      { it: 'La lancia insanguinata', en: 'The bloody spear' },
+      {
+        it: 'Al Concilio Janos dice a [[tyrion-lannister|Tyrion]] che c’è bisogno di lui, con le rivolte nelle strade. Giorni dopo, ubriaco alla tavola di Tyrion, raccomanda come successore Allar Deem, l’uomo che per lui ha ucciso una prostituta e la sua bambina, ma non dice chi l’abbia ordinato. Tyrion deride la lancia insanguinata del suo nuovo stemma e gli dice che non ha onore. Il figlio maggiore terrà un titolo e delle terre ma non Harrenhal, e una caracca porterà Janos alla Barriera. Sulla porta incontra il suo successore, [[jacelyn-bywater|ser Jacelyn Bywater]], e viene portato via.',
+        en: 'At the council Janos tells [[tyrion-lannister|Tyrion]] he is needed, with rioting in the streets. Days later, drunk at Tyrion’s table, he urges Allar Deem as his successor, the man who killed a whore and her baby girl for him, though he will not say who ordered it. Tyrion mocks the bloody spear on his new arms and tells him he has no honour. His eldest son will keep a title and lands but not Harrenhal, and the carrack Summer’s Dream will take Janos to the Wall. At the door he meets his successor, [[jacelyn-bywater|Ser Jacelyn Bywater]], and is led away.',
       },
     ),
   ],
@@ -3024,6 +3777,41 @@ export const season1Chronicles = {
       {
         it: 'Ad Approdo del Re il [[pycelle|Gran Maestro Pycelle]] paga per la compagnia di Ros. Mentre lei raccoglie i vestiti per andarsene, il vecchio comincia a raccontarle dei re che ha servito, tra cui il Re Folle e [[robert-baratheon|Robert]], e benedice il regno del nuovo re, [[joffrey-baratheon|Joffrey]]. I suoi discorsi si perdono nel nulla, e Ros, spazientita, gli chiede dove voglia arrivare. Se ne va, rifiutando la sua offerta di accompagnarla.',
         en: 'In King’s Landing, [[pycelle|Grand Maester Pycelle]] pays for Ros’s company. As she gathers her clothes to leave, the old man starts telling her about the kings he has served, the Mad King and [[robert-baratheon|Robert]] among them, and blesses the reign of the new king, [[joffrey-baratheon|Joffrey]]. His rambling trails off, and Ros, impatient, asks him what his point was. She leaves, turning down his offer to see her out.',
+      },
+    ),
+    onScreen(
+      [12, 82],
+      { it: 'Di nuovo al lavoro', en: 'Back to work' },
+      {
+        it: 'Nel bordello di [[petyr-baelish|Ditocorto]], Ros vede [[janos-slynt|Janos Slynt]] uccidere la figlioletta di [[mhaegen|Mhaegen]], una dei bastardi di Robert. È così sconvolta che crolla davanti a un cliente. Petyr le racconta di una ragazza triste che ha venduto a un lord dai gusti indicibili per riavere il suo denaro, e le chiede se una notte libera basterà a farla sorridere di nuovo. Ros sorride e dice di sì.',
+        en: 'In [[petyr-baelish|Littlefinger]]’s brothel, Ros watches [[janos-slynt|Janos Slynt]] kill [[mhaegen|Mhaegen]]’s baby daughter, one of Robert’s bastards. She is so shaken that she breaks down in front of a client. Petyr tells her of a sad girl he sold to a lord with unspeakable tastes to recoup his money, and asks whether one night off will make her smile again. She smiles and says it will.',
+      },
+    ),
+    onScreen(
+      [14, 103],
+      { it: 'Un dono per il re', en: 'A gift for the king' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] manda Ros e [[daisy|Daisy]] da [[joffrey-baratheon|Joffrey]] come dono tardivo per il giorno del nome. Invece di andare a letto con loro, il re costringe Ros a picchiare Daisy con la sua cintura e poi con uno scettro, puntandole contro una balestra carica, e le ordina di portare Daisy da Tyrion per mostrargli che cosa è stato fatto.',
+        en: '[[tyrion-lannister|Tyrion]] sends Ros and [[daisy|Daisy]] to [[joffrey-baratheon|Joffrey]] as a late name-day gift. Instead of bedding them, the king forces Ros to beat Daisy with his belt and then a sceptre, a loaded crossbow aimed at her, and orders her to take Daisy to Tyrion to show him what has been done.',
+      },
+    ),
+    onScreen(
+      [18, 128],
+      {
+        it: 'Scambiata per l’amante di Tyrion',
+        en: 'Taken for Tyrion’s lover',
+      },
+      {
+        it: '[[cersei-lannister|Cersei]] fa prendere e picchiare Ros, convinta che sia l’amante di [[tyrion-lannister|Tyrion]] per il ciondolo dei Lannister che lui le aveva regalato. La mostra a Tyrion e minaccia di ucciderla in modo atroce se a [[joffrey-baratheon|Joffrey]] succederà qualcosa. Tyrion sta al gioco per tenere segreta [[shae|Shae]], e Ros fa lo stesso. Lui giura di liberarla, e lei lo supplica di non dimenticarla.',
+        en: '[[cersei-lannister|Cersei]] has Ros seized and beaten, believing she is [[tyrion-lannister|Tyrion]]’s lover because of the Lannister pendant he once gave her. She shows Ros to Tyrion and threatens to kill her horribly if harm comes to [[joffrey-baratheon|Joffrey]]. Tyrion plays along to keep [[shae|Shae]] secret, and Ros does the same. He vows to free her, and she begs him not to forget her.',
+      },
+    ),
+    onScreen(
+      [20, 141],
+      { it: 'L’eunuco', en: 'The eunuch' },
+      {
+        it: 'Liberata dopo la battaglia, Ros riceve la visita di [[varys|Varys]], ma non sa chi sia finché non scopre che è un eunuco. Varys le fa ammettere che ha paura di [[petyr-baelish|Ditocorto]], e le dice che, a differenza del suo padrone, lui protegge chi lavora per lui.',
+        en: 'Freed after the battle, Ros is visited by [[varys|Varys]], though she does not know who he is until she discovers he is a eunuch. He gets her to admit she is afraid of [[petyr-baelish|Littlefinger]], and tells her that, unlike her employer, he protects those who work for him.',
       },
     ),
   ],
@@ -3537,6 +4325,73 @@ export const season1Chronicles = {
         en: 'In the Lannister camp, Bronn takes a young camp follower, [[shae|Shae]], from a knight and brings her to [[tyrion-lannister|Tyrion]] for the night before the battle. The next morning both Bronn and Tyrion fight in the battle on the Green Fork against a northern army, which [[tywin-lannister|Lord Tywin]]’s Lannisters defeat.',
       },
     ),
+    onScreen(
+      [12, 82],
+      { it: 'Al comando delle cappe dorate', en: 'Gold cloak commander' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] fa arrestare e mandare alla Barriera [[janos-slynt|Janos Slynt]], che ha guidato il massacro dei bastardi di Robert, e ricompensa la lealtà di Bronn affidandogli al suo posto il comando della Guardia cittadina. Poi mette alla prova il mercenario, chiedendogli se ucciderebbe un neonato se glielo ordinassero.',
+        en: '[[tyrion-lannister|Tyrion]] has [[janos-slynt|Janos Slynt]], who led the massacre of Robert’s bastards, arrested and sent to the Wall, and rewards Bronn’s loyalty with command of the City Watch in his place. Then he tests the sellsword, asking him whether he would kill an infant if he were told to.',
+      },
+    ),
+    onScreen(
+      [14, 103],
+      { it: 'Un consiglio sul re', en: 'Advice about the king' },
+      {
+        it: 'Bronn arresta [[pycelle|Pycelle]] per conto di [[tyrion-lannister|Tyrion]], trovandolo a letto con [[daisy|Daisy]], gli taglia quasi tutta la barba e lo porta nelle celle nere. Quando [[joffrey-baratheon|Joffrey]] fa picchiare [[sansa-stark|Sansa]] davanti alla corte, Tyrion zittisce [[meryn-trant|ser Meryn Trant]] ordinando a Bronn di ucciderlo se apre di nuovo bocca. Poi Bronn suggerisce che al giovane re arrabbiato serva una donna, e Tyrion gli manda due prostitute.',
+        en: 'Bronn arrests [[pycelle|Pycelle]] for [[tyrion-lannister|Tyrion]], finding him in bed with [[daisy|Daisy]], cuts off most of his beard and takes him to the black cells. When [[joffrey-baratheon|Joffrey]] has [[sansa-stark|Sansa]] beaten before the court, Tyrion silences [[meryn-trant|Ser Meryn Trant]] by ordering Bronn to kill him if he opens his mouth again. Bronn then suggests that what the angry young king needs is a woman, and Tyrion sends him two prostitutes.',
+      },
+    ),
+    onScreen(
+      [18, 128],
+      { it: 'Ladri e cibo', en: 'Thieves and food' },
+      {
+        it: 'Come comandante della Guardia cittadina, Bronn riduce i crimini eliminando i ladri noti della città, e si scontra con [[tyrion-lannister|Tyrion]] per la brutalità dei suoi metodi. Mentre aiuta Tyrion a preparare la difesa contro [[stannis-baratheon|Stannis]], deride i suoi libri e lo avverte che in un assedio conta soprattutto il cibo: per questo ha rastrellato i ladri, perché non mettano le mani sulle scorte della città.',
+        en: 'As commander of the City Watch, Bronn cuts crime by culling the city’s known thieves, and clashes with [[tyrion-lannister|Tyrion]] over his brutal methods. Helping Tyrion plan the defence against [[stannis-baratheon|Stannis]], he scoffs at Tyrion’s books and warns that food matters most in a siege: that is why he rounded up the thieves, to keep them away from the city’s stores.',
+      },
+    ),
+    onScreen(
+      [19, 135],
+      { it: 'La freccia infuocata', en: 'The flaming arrow' },
+      {
+        it: 'La notte prima della battaglia Bronn beve con gli uomini dei Lannister e si scontra con [[sandor-clegane|Sandor Clegane]]. Durante la battaglia aspetta il segnale di [[tyrion-lannister|Tyrion]] fuori dalle mura, sulla riva della baia. Quando Tyrion lascia cadere una torcia dai bastioni, Bronn scocca la freccia infuocata che incendia l’altofuoco tra le navi di [[stannis-baratheon|Stannis]]. Più tardi si unisce allo scontro in tempo per salvare il Mastino, paralizzato alla vista degli uomini in fiamme.',
+        en: 'On the eve of battle Bronn drinks with the Lannister men and clashes with [[sandor-clegane|Sandor Clegane]]. During the battle he waits outside the walls on the shore of the bay for [[tyrion-lannister|Tyrion]]’s signal. When Tyrion drops a torch from the battlements, Bronn shoots the flaming arrow that sets the wildfire ablaze among [[stannis-baratheon|Stannis]]’s ships. Later he joins the fight in time to save Sandor, frozen by the sight of burning men.',
+      },
+    ),
+    inBooks(
+      [12, 82],
+      { it: 'Chiederei quanto', en: 'I’d ask how much' },
+      {
+        it: 'Bronn recluta mercenari per la guardia di [[tyrion-lannister|Tyrion]], prendendo solo quelli che lo colpiscono in un duello; l’uomo che lo ucciderà, dice, sarà uno che Tyrion vorrà assumere. Quando Tyrion gli chiede se ucciderebbe senza fare domande una neonata su comando, Bronn risponde che una domanda la farebbe: chiederebbe quanto. Tyrion pensa di avere cento uomini così tutti suoi.',
+        en: 'Bronn hires sellswords for [[tyrion-lannister|Tyrion]]’s guard, taking only those who impress him in a duel; the man who kills him, he says, will be one Tyrion wants to hire. When Tyrion asks whether he would kill a baby girl without question if commanded, Bronn answers that he would not do it without question: he would ask how much. Tyrion reflects that he has a hundred such men of his own.',
+      },
+    ),
+    inBooks(
+      [13, 91],
+      {
+        it: 'Capitano della guardia del Primo Cavaliere',
+        en: 'Captain of the Hand’s guard',
+      },
+      {
+        it: 'Ora armato come capitano della guardia del Primo Cavaliere, Bronn osserva gli uomini d’arme che si addestrano e indica il ritmo che costerà la vita a un cavaliere errante quando lo affronterà. Riferisce a [[tyrion-lannister|Tyrion]] di trenta postulanti, tra cui un usuraio di Braavos e dei mercanti di cibo che chiedono protezione dalla folla affamata, e che [[alliser-thorne|ser Alliser Thorne]] è arrivato dalla Barriera con una mano in putrefazione. Tyrion fa mettere Alliser in una cella sporca ad aspettare.',
+        en: 'Now armoured as captain of the Hand’s guard, Bronn watches the men-at-arms at practice and points out the rhythm that will kill a hedge knight when he faces him. He reports thirty supplicants to [[tyrion-lannister|Tyrion]], among them a Braavosi moneylender and food merchants who want protection from hungry mobs, and that [[alliser-thorne|Ser Alliser Thorne]] has come from the Wall with a rotting hand. Tyrion has Alliser put in a dirty cell to wait.',
+      },
+    ),
+    inBooks(
+      [19, 133],
+      { it: 'La catena', en: 'The chain' },
+      {
+        it: 'Per conto di [[tyrion-lannister|Tyrion]], Bronn brucia le case lungo le mura della città vicino al molo, perché il nemico non possa arrampicarsi dai tetti. Nella battaglia è appostato sotto la Fortezza Rossa, agli argani della grande catena. Appena la nave ammiraglia di [[stannis-baratheon|Stannis]] è passata, la catena viene sollevata sulle Acque Nere alle spalle della flotta, e intrappola nell’altofuoco quasi tutte le navi in fiamme.',
+        en: 'For [[tyrion-lannister|Tyrion]], Bronn burns the houses along the city wall by the quay, so that the enemy cannot climb from their roofs. In the battle he is posted beneath the Red Keep, at the winches of the great chain. Once [[stannis-baratheon|Stannis]]’s flagship has passed, the chain is raised across the Blackwater behind the fleet, trapping most of the burning ships in the wildfire.',
+      },
+    ),
+    onScreen(
+      [20, 141],
+      { it: 'Sollevato dal comando', en: 'Relieved of command' },
+      {
+        it: 'Dopo la battaglia il padre di Tyrion, [[tywin-lannister|Tywin]], torna come Primo Cavaliere, e Bronn viene sollevato dal comando della Guardia cittadina. [[varys|Varys]] porta la notizia a [[tyrion-lannister|Tyrion]] ferito, insieme a quella che i clan delle montagne sono tornati a casa con il loro bottino: Tyrion ha perso tutto il suo potere.',
+        en: 'After the battle Tyrion’s father, [[tywin-lannister|Tywin]], returns as Hand, and Bronn is relieved of his command of the City Watch. [[varys|Varys]] brings the news to the wounded [[tyrion-lannister|Tyrion]], with word that the hill tribes have gone home with their plunder: Tyrion has lost all his power.',
+      },
+    ),
   ],
   'shae': [
     onScreen(
@@ -3561,6 +4416,89 @@ export const season1Chronicles = {
       {
         it: 'Dopo la battaglia [[tywin-lannister|lord Tywin]], che deve restare con l’esercito, manda [[tyrion-lannister|Tyrion]] ad Approdo del Re a fare il Primo Cavaliere al suo posto. Tywin gli proibisce di portare a corte la sua puttana. Tyrion decide di sfidare l’ordine del padre e porta Shae con sé nella capitale, con [[bronn|Bronn]] al suo fianco.',
         en: 'After the battle [[tywin-lannister|Lord Tywin]], who must stay with the army, sends [[tyrion-lannister|Tyrion]] to King’s Landing to serve as Hand of the King in his place. Tywin forbids him to take his whore to court. Tyrion decides to defy his father and takes Shae with him to the capital, with [[bronn|Bronn]] at his side.',
+      },
+    ),
+    onScreen(
+      [13, 99],
+      { it: 'L’ancella di Sansa', en: 'Sansa’s handmaiden' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] ha portato Shae ad Approdo del Re contro l’ordine del padre e la nasconde nella Torre del Primo Cavaliere. [[varys|Varys]] la scopre presto e lascia intendere che potrebbe rivelarlo. Shae si lamenta di essere chiusa nelle stanze di Tyrion, così lui e Varys le trovano un lavoro: diventa l’ancella di [[sansa-stark|Sansa Stark]], che sfoga la sua frustrazione sull’inesperienza della nuova arrivata.',
+        en: '[[tyrion-lannister|Tyrion]] has brought Shae to King’s Landing against his father’s order and hides her in the Tower of the Hand. [[varys|Varys]] soon discovers her and hints that he could reveal her. Shae complains about being confined to Tyrion’s chambers, so he and Varys find her work: she becomes the handmaiden of [[sansa-stark|Sansa Stark]], who vents her frustration on the new girl’s inexperience.',
+      },
+    ),
+    onScreen(
+      [16, 115],
+      { it: 'Non fidarti di nessuno', en: 'Trust no one' },
+      {
+        it: 'Nella rivolta che segue la partenza di [[myrcella-baratheon|Myrcella]] per Dorne, alcuni uomini della folla trascinano via [[sansa-stark|Sansa]] e stanno per violentarla, finché [[sandor-clegane|Sandor Clegane]] non li uccide e la riporta al castello. Ferita e sconvolta, Sansa comincia a fidarsi di Shae e le confida di odiare [[joffrey-baratheon|Joffrey]]. Shae la avverte di non fidarsi di nessuno.',
+        en: 'In the riot that follows [[myrcella-baratheon|Myrcella]]’s departure for Dorne, men from the mob drag [[sansa-stark|Sansa]] away and are about to rape her, until [[sandor-clegane|Sandor Clegane]] kills them and carries her back to the castle. Injured and shaken, Sansa comes to trust Shae and confides that she hates [[joffrey-baratheon|Joffrey]]. Shae warns her to trust no one.',
+      },
+    ),
+    onScreen(
+      [17, 126],
+      { it: 'Le lenzuola insanguinate', en: 'The bloody sheets' },
+      {
+        it: '[[sansa-stark|Sansa]] si sveglia e scopre di avere avuto il primo sangue, e va nel panico, perché ora può essere data in sposa a [[joffrey-baratheon|Joffrey]] e dovrà dargli un figlio. Shae la aiuta a rigirare il materasso e a nascondere le lenzuola, ma [[sandor-clegane|Sandor Clegane]] le trova, e Sansa viene portata da [[cersei-lannister|Cersei]].',
+        en: '[[sansa-stark|Sansa]] wakes to find she has had her first blood and panics, since it means she can be married to [[joffrey-baratheon|Joffrey]] and expected to bear his son. Shae helps her try to flip the mattress and hide the sheets, but [[sandor-clegane|Sandor Clegane]] finds them, and Sansa is brought before [[cersei-lannister|Cersei]].',
+      },
+    ),
+    onScreen(
+      [19, 136],
+      {
+        it: 'La notte prima della battaglia',
+        en: 'The night before the battle',
+      },
+      {
+        it: 'La notte prima della battaglia [[tyrion-lannister|Tyrion]] dice a Shae che può ancora lasciare la città, ma lei resta con lui. Durante la battaglia serve [[sansa-stark|Sansa]] tra le dame della corte nella Fortezza di Maegor, dove [[cersei-lannister|Cersei]] la interroga e la trova un’ancella poco credibile. Quando Cersei se ne va, Shae dice a Sansa di chiudersi nella sua stanza e di aspettare Stannis, che non le farebbe del male, mentre [[ilyn-payne|ser Ilyn]] potrebbe farlo.',
+        en: 'On the eve of the battle, [[tyrion-lannister|Tyrion]] tells Shae she can still leave the city, but she stays with him. During the battle she waits on [[sansa-stark|Sansa]] among the court’s ladies in Maegor’s Holdfast, where [[cersei-lannister|Cersei]] questions her and finds her an unlikely handmaiden. When Cersei leaves, Shae tells Sansa to lock herself in her room and wait for Stannis, who would not harm her, while [[ilyn-payne|Ser Ilyn]] might.',
+      },
+    ),
+    onScreen(
+      [20, 141],
+      { it: 'Pentos', en: 'Pentos' },
+      {
+        it: 'Shae va da [[tyrion-lannister|Tyrion]] nelle stanze misere dove si riprende dalla ferita, e gli scopre la cicatrice. Il padre di Tyrion, [[tywin-lannister|Tywin]], ha preso il suo posto come Primo Cavaliere, e [[varys|Varys]] gli ha detto che ha perso tutto il suo potere. Shae lo supplica di lasciare la città con lei per Pentos. Tyrion rifiuta.',
+        en: 'Shae comes to [[tyrion-lannister|Tyrion]] in the shabby quarters where he recovers from his wound, and uncovers his scar. His father [[tywin-lannister|Tywin]] has taken his place as Hand, and [[varys|Varys]] has told him he has lost all his power. Shae begs him to leave the city with her for Pentos. Tyrion refuses.',
+      },
+    ),
+    inBooks(
+      [11, 77],
+      { it: 'Una locanda in città', en: 'An inn in the city' },
+      {
+        it: 'La prima notte in città [[tyrion-lannister|Tyrion]] trova Shae in una locanda, seduta con [[varys|Varys]], che l’ha scovata in fretta. Quando Varys gli lascia il suo indovinello, Shae ipotizza che a vivere sia il ricco. Di sopra prende in giro Tyrion perché dormirà da solo nella Torre del Primo Cavaliere. Lui si dice che è una puttana e che vuole solo il suo denaro; quando lei gli chiede che cosa farà come Primo Cavaliere, risponde che farà giustizia.',
+        en: 'On his first night in the city [[tyrion-lannister|Tyrion]] finds Shae at an inn, sitting with [[varys|Varys]], who has found her quickly. When Varys leaves his riddle, Shae guesses that the rich man lives. Upstairs she teases Tyrion about sleeping alone in the Tower of the Hand. He tells himself she is a whore and only after his coin; asked what he will do as Hand, he says he will do justice.',
+      },
+    ),
+    inBooks(
+      [14, 103],
+      { it: 'La casa protetta', en: 'The manse' },
+      {
+        it: '[[varys|Varys]] ha sistemato Shae in una casa in città, sorvegliata da uomini come quelli che [[tyrion-lannister|Tyrion]] ha chiesto: brutti, spaventosi e senza alcun interesse per le donne. Tenere lontani i suoi uomini dei clan serve a mantenere il segreto. Tyrion la raggiunge di notte attraverso un cunicolo nascosto che parte dal bordello di Chataya. Lei si sveglia mentre lui la prende, e dice che stava facendo il sogno più dolce.',
+        en: '[[varys|Varys]] has set Shae up in a manse in the city, guarded by men of the kind [[tyrion-lannister|Tyrion]] asked for: ugly, frightening and with no taste for women. Keeping his clansmen away keeps her secret. Tyrion reaches her at night through a hidden tunnel from Chataya’s brothel. She wakes as he takes her, and says she was having the sweetest dream.',
+      },
+    ),
+    inBooks(
+      [13, 118],
+      { it: 'Una dama a corte', en: 'A lady at court' },
+      {
+        it: 'Shae chiede a [[tyrion-lannister|Tyrion]] di farne la sua dama a corte, e gli suggerisce perfino di uccidere Cersei. Quando lui propone di nasconderla nelle cucine della Fortezza Rossa, lei rifiuta e lo deride perché ha paura del padre, e Tyrion la schiaffeggia. Pentito, le racconta di Tysha. Poi [[varys|Varys]] propone di metterla al servizio di [[lollys-stokeworth|Lollys Stokeworth]] come cameriera, con un passaggio segreto verso la Torre del Primo Cavaliere.',
+        en: 'Shae asks [[tyrion-lannister|Tyrion]] to make her his lady at court, and even suggests he kill Cersei. When he proposes hiding her in the kitchens of the Red Keep, she refuses and mocks his fear of his father, and he slaps her. Regretting it, he tells her about Tysha. Afterwards [[varys|Varys]] suggests she serve as a maid to [[lollys-stokeworth|Lollys Stokeworth]], with a secret passage to the Tower of the Hand.',
+      },
+    ),
+    inBooks(
+      [18, 128],
+      { it: 'Il passaggio segreto', en: 'Through the passage' },
+      {
+        it: '[[cersei-lannister|Cersei]] fa prendere e picchiare una ragazza del bordello di Chataya, credendola l’amante di [[tyrion-lannister|Tyrion]]: è [[alayaya|Alayaya]], non Shae. Tyrion è sollevato che la sorella non l’abbia trovata. Quella notte trova Shae nella sua stanza nella Torre del Primo Cavaliere. È arrivata dal passaggio segreto, ma [[varys|Varys]] l’ha bendata, così non sa dove cominci.',
+        en: '[[cersei-lannister|Cersei]] seizes a girl from Chataya’s brothel, taking her for [[tyrion-lannister|Tyrion]]’s lover, and has her beaten: [[alayaya|Alayaya]], not Shae. Tyrion is relieved that his sister has not found her. That night he finds Shae in his room in the Tower of the Hand. She has come through the secret passage, but [[varys|Varys]] blindfolded her, so she does not know where it begins.',
+      },
+    ),
+    inBooks(
+      [19, 131],
+      { it: 'Al servizio di Lollys', en: 'In Lollys’s service' },
+      {
+        it: 'Ora cameriera della casa di [[lollys-stokeworth|Lollys Stokeworth]], Shae aiuta lady Tanda e [[sansa-stark|Sansa]] a portare Lollys nella Fortezza di Maegor mentre comincia la battaglia. Lì quasi tutte le nobildonne della città si riuniscono con [[cersei-lannister|Cersei]] nella sala da ballo della regina, e tra loro c’è [[ilyn-payne|ser Ilyn Payne]], per occuparsi dei traditori e, dice la regina, per difenderle se la città cadrà.',
+        en: 'Now a maid in [[lollys-stokeworth|Lollys Stokeworth]]’s household, Shae helps Lady Tanda and [[sansa-stark|Sansa]] guide Lollys into Maegor’s Holdfast as the battle begins. Almost every highborn woman in the city gathers there with [[cersei-lannister|Cersei]] in the Queen’s Ballroom, and [[ilyn-payne|Ser Ilyn Payne]] stands among them, to deal with traitors and, the queen says, to defend them if the city falls.',
       },
     ),
   ],
@@ -4155,6 +5093,132 @@ export const season1Chronicles = {
         en: 'King [[joffrey-baratheon|Joffrey]], still promised to Sansa, takes her up on the castle walls and makes her look at her father’s head on a spike. Beside it is Septa [[mordane|Mordane]]’s. Joffrey has Ser [[meryn-trant|Meryn Trant]] strike Sansa. Sansa is about to push the king off the walls when [[sandor-clegane|Sandor Clegane]] dabs the blood from her lip with a handkerchief.',
       },
     ),
+    onScreen(
+      [11, 76],
+      { it: 'Un giullare, non un morto', en: 'A fool, not a corpse' },
+      {
+        it: 'Al torneo per il giorno del nome di [[joffrey-baratheon|Joffrey]], il re ordina di affogare nel vino [[dontos-hollard|ser Dontos Hollard]], arrivato tardi e ubriaco. Sansa gli dice che ordinare una morte nel proprio giorno del nome porta sfortuna. Joffrey la chiama superstizione, ma [[sandor-clegane|Sandor Clegane]] le dà ragione, e Sansa convince il re a fare di Dontos il suo giullare. Dontos le è grato. Poi [[tyrion-lannister|Tyrion]] torna in città.',
+        en: 'At [[joffrey-baratheon|Joffrey]]’s name-day tournament, the king orders [[dontos-hollard|Ser Dontos Hollard]], late and drunk, drowned in wine. Sansa tells him that ordering a death on one’s name day is bad luck. Joffrey calls it superstition, but [[sandor-clegane|Sandor Clegane]] backs her, and Sansa persuades the king to make Dontos his fool instead. Dontos is grateful. Then [[tyrion-lannister|Tyrion]] rides back into the city.',
+      },
+    ),
+    onScreen(
+      [13, 99],
+      { it: 'Una nuova ancella', en: 'A new handmaiden' },
+      {
+        it: '[[cersei-lannister|Cersei]] organizza una cena imbarazzante con [[myrcella-baratheon|Myrcella]], [[tommen-baratheon|Tommen]] e Sansa, che continua a fingersi fedele a chi la tiene prigioniera. Poi si presenta da Sansa una nuova ancella: [[shae|Shae]], sistemata lì da [[tyrion-lannister|Tyrion]]. Sansa sfoga un po’ della sua frustrazione sull’inesperienza della ragazza.',
+        en: '[[cersei-lannister|Cersei]] hosts an awkward dinner for [[myrcella-baratheon|Myrcella]], [[tommen-baratheon|Tommen]] and Sansa, who keeps up her show of loyalty to her captors. Afterwards a new handmaiden reports to Sansa: [[shae|Shae]], placed there by [[tyrion-lannister|Tyrion]]. Sansa vents some of her frustration on the girl’s inexperience.',
+      },
+    ),
+    onScreen(
+      [14, 106],
+      { it: 'Spogliata davanti alla corte', en: 'Stripped before the court' },
+      {
+        it: 'Quando Robb vince una grande battaglia, [[joffrey-baratheon|Joffrey]] fa portare Sansa davanti alla corte e pensa di ucciderla con una balestra. Lei continua a giurargli fedeltà. Il re la fa picchiare da [[meryn-trant|ser Meryn Trant]], che le strappa il vestito davanti alla corte. [[tyrion-lannister|Tyrion]] interviene, e [[sandor-clegane|Sandor Clegane]] la avvolge nel suo mantello. Tyrion si offre di sciogliere il fidanzamento, ma lei risponde che ama Joffrey e farà il suo dovere, e lui la chiama lady Stark.',
+        en: 'When Robb wins a great victory, [[joffrey-baratheon|Joffrey]] has Sansa brought before the court and toys with killing her with a crossbow. She keeps pledging her loyalty. He has [[meryn-trant|Ser Meryn Trant]] beat her and rip open her gown while the court watches. [[tyrion-lannister|Tyrion]] stops it, and [[sandor-clegane|Sandor Clegane]] wraps his cloak around her. Tyrion offers to end her engagement, but she answers that she loves Joffrey and will do her duty, and he calls her Lady Stark.',
+      },
+    ),
+    onScreen(
+      [16, 115],
+      { it: 'Salvata dalla folla', en: 'Saved from the mob' },
+      {
+        it: 'Nella rivolta dopo la partenza di [[myrcella-baratheon|Myrcella]], Sansa si perde tra la folla. Alcuni uomini la trascinano via e stanno per violentarla quando [[sandor-clegane|Sandor Clegane]] li uccide e la porta al castello. Ferita, confida a [[shae|Shae]] di odiare [[joffrey-baratheon|Joffrey]], e Shae la avverte di non fidarsi di nessuno.',
+        en: 'In the riot after [[myrcella-baratheon|Myrcella]] sails, Sansa is lost in the crowd. Men drag her away and are about to rape her when [[sandor-clegane|Sandor Clegane]] kills them and carries her to the castle. Injured, she confides in [[shae|Shae]] that she hates [[joffrey-baratheon|Joffrey]], and Shae warns her to trust no one.',
+      },
+    ),
+    onScreen(
+      [17, 126],
+      { it: 'Il primo sangue', en: 'First blood' },
+      {
+        it: 'Sansa ringrazia [[sandor-clegane|Sandor Clegane]] per averla salvata; lui risponde che a un cane non serve coraggio per scacciare i topi. Poi si sveglia da un incubo e scopre di avere avuto il primo sangue: ora può essere data in sposa a [[joffrey-baratheon|Joffrey]] e dovrà dargli un figlio. [[shae|Shae]] la aiuta a nascondere le lenzuola, ma Sandor le trova. Portata da [[cersei-lannister|Cersei]], Sansa si sente consigliare di non amare nessuno se non i propri figli.',
+        en: 'Sansa thanks [[sandor-clegane|Sandor Clegane]] for saving her; he answers that a dog needs no courage to fight off rats. Then she wakes from a nightmare to find she has had her first blood: she can now be married to [[joffrey-baratheon|Joffrey]] and expected to bear his son. [[shae|Shae]] helps her try to hide the sheets, but Sandor finds them. Brought before [[cersei-lannister|Cersei]], Sansa hears her advise loving no one but one’s children.',
+      },
+    ),
+    onScreen(
+      [19, 136],
+      { it: 'L’inno alla Madre', en: 'The Mother’s hymn' },
+      {
+        it: 'Durante la battaglia Sansa si ripara con le dame della corte presso [[cersei-lannister|Cersei]], che beve e le racconta che cosa succederà loro se la città cadrà. Quando Cersei se ne va furiosa, Sansa rincuora le donne e le guida nell’inno alla Madre. [[shae|Shae]] le dice di chiudersi nella sua stanza, dove Sansa trova [[sandor-clegane|Sandor Clegane]]. Lui si offre di portarla a nord, a Grande Inverno, e promette di proteggerla, ma lei ha troppa paura di lui per seguirlo.',
+        en: 'During the battle Sansa shelters with the court’s ladies under [[cersei-lannister|Cersei]], who drinks and tells her what will happen to them if the city falls. When Cersei storms out, Sansa keeps up the women’s spirits and leads them in the Mother’s hymn. [[shae|Shae]] tells her to lock herself in her room, where she finds [[sandor-clegane|Sandor Clegane]]. He offers to take her north to Winterfell and promises to protect her, but she is too afraid of him to go.',
+      },
+    ),
+    onScreen(
+      [20, 139],
+      { it: 'Libera da Joffrey', en: 'Free of Joffrey' },
+      {
+        it: 'A corte [[joffrey-baratheon|Joffrey]] scioglie il fidanzamento con Sansa per il tradimento della famiglia di lei e accetta di sposare invece [[margaery-tyrell|Margaery Tyrell]]. In privato Sansa è felicissima, finché [[petyr-baelish|Ditocorto]] non le fa notare che la libertà non impedirà a Joffrey di tormentarla. Le promette di aiutarla a fuggire dalla città, per amore di sua madre Catelyn.',
+        en: 'At court, [[joffrey-baratheon|Joffrey]] sets aside his betrothal to Sansa for her family’s treachery and agrees to marry [[margaery-tyrell|Margaery Tyrell]] instead. In private Sansa is overjoyed, until [[petyr-baelish|Littlefinger]] points out that her freedom will not stop Joffrey from tormenting her. He promises to help her escape the city, for her mother’s sake.',
+      },
+    ),
+    inBooks(
+      [11, 76],
+      { it: 'Leoni', en: 'Lions' },
+      {
+        it: 'Sansa nasconde sotto le maniche lunghe i lividi delle percosse che [[joffrey-baratheon|Joffrey]] le ha fatto dare da ser Boros. Al torneo per il giorno del nome del re salva [[dontos-hollard|ser Dontos]] dall’annegare nel vino dicendo che uccidere nel proprio giorno del nome porta sfortuna, e propone di farne un giullare. Poi arriva [[tyrion-lannister|Tyrion]]. Quando lui le dice che è come una cerva tra i lupi, lei sussurra che sono leoni; Tyrion le assicura di essere solo un piccolo leone e di non volerle fare del male. Sansa si ripromette di non fidarsi mai più di un Lannister.',
+        en: 'Sansa hides under long sleeves the bruises from the blows [[joffrey-baratheon|Joffrey]] had Ser Boros give her. At the king’s name-day tourney she saves [[dontos-hollard|Ser Dontos]] from drowning in wine by saying it is bad luck to kill on one’s name day, and suggests he be made a fool. Then [[tyrion-lannister|Tyrion]] rides in. When he says she is like a deer among wolves, she whispers that they are lions; he assures her he is only a little lion and means her no harm. She resolves never to trust a Lannister again.',
+      },
+    ),
+    inBooks(
+      [20, 92],
+      { it: 'Il mio Florian', en: 'My Florian' },
+      {
+        it: 'Un biglietto sotto il cuscino invita Sansa nel parco degli dèi, se vuole tornare a casa. Lì trova [[dontos-hollard|ser Dontos]], che giura sugli antichi dèi di riportarla a casa e le chiede di essere il suo Florian; ci vorranno tempo e denaro, e lei dovrà andare spesso nel parco degli dèi. Al ritorno si scontra con [[sandor-clegane|Sandor Clegane]], ubriaco, che deride le sue canzoni sui veri cavalieri, dice di preferire i cani ai cavalieri e le annuncia che un giorno avrà da lei una canzone.',
+        en: 'A note under her pillow calls Sansa to the godswood if she wants to go home. There she finds [[dontos-hollard|Ser Dontos]], who swears by the old gods to send her home and asks to be her Florian; it will take time and coin, and she must come to the godswood often. On the way back she runs into a drunk [[sandor-clegane|Sandor Clegane]], who mocks her songs of true knights, says he likes dogs better than knights, and tells her he will have a song from her one day.',
+      },
+    ),
+    inBooks(
+      [14, 106],
+      {
+        it: 'Picchiata per la vittoria di Robb',
+        en: 'Beaten for Robb’s victory',
+      },
+      {
+        it: 'Sansa viene portata davanti a [[joffrey-baratheon|Joffrey]] a rispondere della vittoria di Robb sui Lannister a Oxcross. Per ordine del re ser Boros Blount la picchia e le strappa il corpetto davanti alla corte. [[tyrion-lannister|Tyrion]] interviene, [[sandor-clegane|il Mastino]] le getta il suo mantello, e Tyrion la fa portare nella Torre del Primo Cavaliere. Il giorno dopo, quando le chiede di Joffrey, lei risponde di amare il re. Tyrion le dice che non intende farglielo sposare e le offre la sua protezione, ma lei chiede di tornare nel suo letto.',
+        en: 'Sansa is brought before [[joffrey-baratheon|Joffrey]] to answer for Robb’s victory over the Lannisters at Oxcross. On his orders Ser Boros Blount strikes her and tears away her bodice before the court. [[tyrion-lannister|Tyrion]] stops it, [[sandor-clegane|Sandor Clegane]] tosses her his cloak, and Tyrion has her taken to the Tower of the Hand. The next day, when he asks about Joffrey, she says she loves the king. He tells her he does not mean her to marry Joffrey and offers her his protection, but she asks to go back to her own bed.',
+      },
+    ),
+    inBooks(
+      [16, 115],
+      { it: 'Dispersa nella rivolta', en: 'Lost in the riot' },
+      {
+        it: 'Mentre il corteo reale torna dalla partenza di [[myrcella-baratheon|Myrcella]], la folla affamata lo assale, e Sansa si perde nel caos. [[tyrion-lannister|Tyrion]] ordina alla Guardia reale di tornare a cercarla, e [[sandor-clegane|Sandor Clegane]] la riporta al castello, coperto di sangue. Nella rivolta sono morti l’Alto Septon e due cavalieri.',
+        en: 'As the royal party rides back from [[myrcella-baratheon|Myrcella]]’s departure, the starving crowd turns on it, and Sansa is lost in the chaos. [[tyrion-lannister|Tyrion]] orders the Kingsguard back to find her, and [[sandor-clegane|Sandor Clegane]] brings her back to the castle, covered in blood. The High Septon and two knights have died in the riot.',
+      },
+    ),
+    inBooks(
+      [17, 126],
+      { it: 'La fioritura', en: 'Flowering' },
+      {
+        it: 'Mentre l’esercito di [[stannis-baratheon|Stannis]] si avvicina, [[dontos-hollard|Dontos]] dice a Sansa che non è ancora il momento di fuggire. Sul tetto della Fortezza di Maegor [[sandor-clegane|il Mastino]] le dice che gli piace uccidere e che non esistono veri cavalieri. Quella notte le arriva il primo sangue e brucia le lenzuola, per paura che [[joffrey-baratheon|Joffrey]] voglia portarla a letto. Le cameriere la scoprono, e [[cersei-lannister|Cersei]] la conforta avvertendola che l’amore è un veleno.',
+        en: 'As [[stannis-baratheon|Stannis]]’s army nears, [[dontos-hollard|Dontos]] tells Sansa the time for escape is not yet right. On the roof of Maegor’s Holdfast, [[sandor-clegane|Sandor Clegane]] tells her he likes killing and that there are no true knights. That night she has her first blood and burns the sheets, afraid [[joffrey-baratheon|Joffrey]] will want to bed her. Her maids catch her, and [[cersei-lannister|Cersei]] comforts her, warning that love is poison.',
+      },
+    ),
+    inBooks(
+      [19, 134],
+      { it: 'Nella sala da ballo della regina', en: 'In the queen’s ballroom' },
+      {
+        it: 'Prima della battaglia [[joffrey-baratheon|Joffrey]] costringe Sansa a baciare la sua spada. Lei accende candele nel tempio e prega in silenzio per la sua sconfitta, poi raggiunge le nobildonne nella sala da ballo della regina. Lì [[cersei-lannister|Cersei]] beve e le racconta che cosa farebbero loro gli uomini di Stannis se la città cadesse. Cersei sa delle sue visite al parco degli dèi e non crede che preghi per Joffrey. [[ilyn-payne|Ser Ilyn Payne]] è lì, le rivela la regina, perché Stannis non le prenda vive.',
+        en: 'Before the battle [[joffrey-baratheon|Joffrey]] makes Sansa kiss his sword. She lights candles in the sept and silently prays for his defeat, then joins the highborn women in the Queen’s Ballroom. There [[cersei-lannister|Cersei]] drinks and tells her what Stannis’s men would do to them if the city fell. Cersei knows about her visits to the godswood and does not believe she prays for Joffrey. [[ilyn-payne|Ser Ilyn Payne]] is there, Cersei reveals, so that Stannis will not take them alive.',
+      },
+    ),
+    inBooks(
+      [19, 136],
+      {
+        it: 'Una strofa dell’inno alla Madre',
+        en: 'A verse of the Mother’s hymn',
+      },
+      {
+        it: 'Quando [[cersei-lannister|Cersei]] colpisce [[lancel-lannister|Lancel]] ferito e lascia la sala da ballo, Sansa calma gli ospiti e fa chiamare aiuto per Lancel. Nella sua stanza trova [[sandor-clegane|Sandor Clegane]], ubriaco e malconcio. Lui dice che lascerà la città e che potrebbe proteggerla, e le chiede la canzone che gli aveva promesso. Troppo spaventata per ricordarla, Sansa canta una strofa dell’inno alla Madre e gli sfiora la guancia, bagnata di lacrime. Sandor lascia lì il suo mantello bianco. All’alba [[dontos-hollard|Dontos]] porta la notizia che i Tyrell e [[tywin-lannister|lord Tywin]] hanno salvato la città.',
+        en: 'When [[cersei-lannister|Cersei]] strikes the wounded [[lancel-lannister|Lancel]] and leaves the ballroom, Sansa calms the guests and sends for help for him. In her room she finds [[sandor-clegane|Sandor Clegane]], drunk and battered. He says he is leaving the city and could protect her, and asks for the song she promised. Too frightened to remember it, she sings a verse of the Mother’s hymn and touches his cheek, wet with tears. He leaves his white cloak behind. At dawn [[dontos-hollard|Dontos]] brings news that the Tyrells and [[tywin-lannister|Lord Tywin]] have saved the city.',
+      },
+    ),
+    inBooks(
+      [20, 139],
+      { it: 'La reticella', en: 'The hair net' },
+      {
+        it: 'Dalla galleria Sansa guarda [[joffrey-baratheon|Joffrey]] ricompensare i vincitori. Quando [[garlan-tyrell|ser Garlan Tyrell]] chiede al re di sposare la sorella [[margaery-tyrell|Margaery]], l’Alto Septon dichiara nullo il fidanzamento di Sansa, e lei ne è felice. Quella notte nel parco degli dèi [[dontos-hollard|Dontos]] la avverte che [[cersei-lannister|Cersei]] vuole tenerla con sé e che Joffrey potrebbe comunque portarla a letto. Fuggiranno durante le nozze del re, tra circa un mese, dice, e le regala una reticella d’argento con delle ametiste.',
+        en: 'From the gallery Sansa watches [[joffrey-baratheon|Joffrey]] reward the victors. When [[garlan-tyrell|Ser Garlan Tyrell]] asks the king to wed his sister [[margaery-tyrell|Margaery]], the High Septon declares Sansa’s betrothal void, and she is delighted. That night in the godswood [[dontos-hollard|Dontos]] warns her that [[cersei-lannister|Cersei]] means to keep her and that Joffrey may still bed her. They will escape during the king’s wedding, in about a month, he says, and he gives her a silver hair net set with amethysts.',
+      },
+    ),
   ],
   'arya-stark': [
     inBoth(
@@ -4571,6 +5635,126 @@ export const season1Chronicles = {
         en: 'Bran dreams that the three-eyed crow takes him down into the crypts, where his father [[eddard-stark|Eddard]] is. Maester [[luwin|Luwin]] means to show him that no one is there, and [[osha|Osha]] carries Bran in her arms. At the tomb made ready for Eddard, [[shaggydog|Shaggydog]] springs out and savages Luwin’s arm, until [[summer-direwolf|Summer]] knocks him away. Bran’s brother [[rickon-stark|Rickon]] is there: he has had the same dream. In the maester’s turret, Luwin tells the boys about the children of the forest. Then a raven arrives, and Luwin reads the news of Eddard’s death.',
       },
     ),
+    onScreen(
+      [11, 78],
+      { it: 'Il lupo nello stagno', en: 'The wolf in the pool' },
+      {
+        it: 'Con [[robb-stark|Robb]] in guerra, Bran ascolta al suo posto le lamentele dei lord e della gente del Nord, guidato dal maestro [[luwin|Luwin]]. Sogna di essere il suo meta-lupo, [[summer-direwolf|Estate]], nel parco degli dei, e di vedere nello stagno il riflesso del lupo al posto del proprio. Si fa portare lì da [[osha|Osha]] e da [[hodor|Hodor]], e si rassicura trovando la propria faccia. Osha gli dice che la cometa rossa significa draghi; Bran risponde che i draghi sono tutti morti.',
+        en: 'With [[robb-stark|Robb]] at war, Bran hears the complaints of the lords and smallfolk of the North in his place, guided by Maester [[luwin|Luwin]]. He dreams that he is his direwolf, [[summer-direwolf|Summer]], walking in the godswood, and sees the wolf’s reflection in the pool instead of his own. He has [[osha|Osha]] and [[hodor|Hodor]] take him there, and is relieved to find his own face. Osha tells him the red comet means dragons; Bran says the dragons are all dead.',
+      },
+    ),
+    inBooks(
+      [11, 78],
+      { it: 'Sogni di lupo', en: 'Wolf dreams' },
+      {
+        it: 'Da qualche tempo Bran sogna i lupi. I meta-lupi sono chiusi nel parco degli dei da quando [[shaggydog|Cagnaccio]] ha morso uno dei due pupilli Frey della madre, e di notte ululano. Ognuno dà a Bran una spiegazione diversa, e sopra il castello brilla la cometa rossa. Quando Bran risponde ululando dalla finestra, il maestro [[luwin|Luwin]] viene a metterlo a letto, e Bran gli dice che quando dorme diventa un lupo. Dopo un sonnifero sogna di nuovo: è [[summer-direwolf|Estate]] nel parco degli dei, chiuso da mura troppo alte da saltare, mentre suo fratello ci gira intorno.',
+        en: 'Of late, Bran dreams of wolves. The direwolves are shut in the godswood since [[shaggydog|Shaggydog]] bit one of his mother’s two Frey wards, and at night they howl. Everyone gives Bran a different reason, and the red comet hangs over the castle. When he howls back from his window, Maester [[luwin|Luwin]] comes to put him to bed, and Bran says that when he sleeps he turns into a wolf. After a sleeping draught he dreams it again: he is [[summer-direwolf|Summer]] in the godswood, shut in by walls higher than any wolf can leap, while his brother circles them.',
+      },
+    ),
+    inBooks(
+      [11, 90],
+      { it: 'Le udienze del raccolto', en: 'The harvest audiences' },
+      {
+        it: 'Grande Inverno si riempie di lord per la festa del raccolto, e Bran deve fare il principe dal seggio del padre, con [[rodrik-cassel|ser Rodrik]] e il maestro [[luwin|Luwin]] al suo fianco. Accoglie lord Wyman Manderly e porge le condoglianze alla vedova lady Hornwood, che teme il bastardo di Roose Bolton. Nel cortile difende [[hodor|Hodor]] dalle prese in giro dei pupilli Frey. Di notte il corvo con tre occhi gli becca il cranio fino a trapassarlo, e Bran sogna di arrampicarsi su una torre e di esserne gettato giù da un uomo d’oro.',
+        en: 'Winterfell fills with lords for the harvest feast, and Bran must play the prince from his father’s chair, with Ser [[rodrik-cassel|Rodrik]] and Maester [[luwin|Luwin]] beside him. He welcomes Lord Wyman Manderly, and offers his condolences to the widowed Lady Hornwood, who fears Roose Bolton’s bastard. In the yard he defends [[hodor|Hodor]] from the mockery of the Frey wards. At night the three-eyed crow pecks through his skull, and he dreams of climbing a tower and being thrown from it by a golden man.',
+      },
+    ),
+    inBooks(
+      [13, 95],
+      { it: 'La festa del raccolto', en: 'The harvest feast' },
+      {
+        it: 'Bran entra a cavallo nella sala grande per la festa del raccolto, e gli uomini acclamano gli Stark e Grande Inverno. Dal seggio alto, con [[rickon-stark|Rickon]] accanto, brinda alle vittorie di Robb. Mentre la festa va avanti pensa a tutti quelli che non ci sono più. Poi arrivano dall’Incollatura Meera e Jojen Reed, che giurano davanti a lui il giuramento del padre agli Stark. Quella notte sogna di essere [[summer-direwolf|Estate]] nel parco degli dei, e Jojen allunga la mano per toccarlo.',
+        en: 'Bran rides his horse into the great hall for the harvest feast, and the men cheer for Stark and Winterfell. From the high seat, with [[rickon-stark|Rickon]] beside him, he toasts Robb’s victories. As the feast goes on he thinks of everyone who is gone. Then Meera and Jojen Reed arrive from the Neck, and swear their father’s oath to the Starks before him. That night he dreams he is [[summer-direwolf|Summer]] in the godswood, and Jojen reaches out to touch him.',
+      },
+    ),
+    onScreen(
+      [13, 102],
+      { it: 'Con gli occhi di Estate', en: 'Through Summer’s eyes' },
+      {
+        it: 'Bran continua a sognare con gli occhi di [[summer-direwolf|Estate]]. In un sogno il lupo segue [[hodor|Hodor]] nella stanza di Bran, salta sul letto, e Bran si ritrova a guardare dall’alto la propria faccia addormentata. Si confida con il maestro [[luwin|Luwin]], che gli mostra l’anello di acciaio di Valyria della sua catena, il segno di un maestro che ha studiato la magia, e gli dice che se la magia è mai esistita ha lasciato il mondo da tempo.',
+        en: 'Bran keeps dreaming through the eyes of [[summer-direwolf|Summer]]. In one dream the wolf follows [[hodor|Hodor]] into Bran’s own bedchamber, jumps onto the bed, and Bran finds himself looking down at his own sleeping face. He confides in Maester [[luwin|Luwin]], who shows him the Valyrian steel link of his chain, the mark of a maester who studied magic, and tells him that if magic ever existed, it has long since left the world.',
+      },
+    ),
+    inBooks(
+      [13, 102],
+      { it: 'La vista verde', en: 'Greensight' },
+      {
+        it: 'Meera racconta a Bran che il fratello Jojen fa sogni verdi, e Jojen dice che Bran è il lupo alato del suo sogno, legato alla terra da catene che un corvo con tre occhi cerca di spezzare. Per volare, Bran deve aprire il terzo occhio. Quando Jojen gli chiede se cade ogni notte, [[summer-direwolf|Estate]] e [[shaggydog|Cagnaccio]] si scagliano contro i Reed, e Bran chiama [[hodor|Hodor]] perché li scacci. Il maestro [[luwin|Luwin]] gli dice che nessun uomo vivo ha la vista verde.',
+        en: 'Meera tells Bran that her brother Jojen has green dreams, and Jojen says Bran is the winged wolf of his dream, bound to the earth by chains that a three-eyed crow is trying to break. To fly, Bran must open his third eye. When Jojen asks whether he falls every night, [[summer-direwolf|Summer]] and [[shaggydog|Shaggydog]] turn on the Reeds, and Bran calls [[hodor|Hodor]] to chase them off. Maester [[luwin|Luwin]] tells him that no living man has the greensight.',
+      },
+    ),
+    onScreen(
+      [15, 109],
+      { it: 'Duecento uomini', en: 'Two hundred men' },
+      {
+        it: 'Bran consiglia con saggezza la gente che si rivolge a lui, e manda due orfani del villaggio d’inverno ad aiutare un pastore che ha i figli in guerra. Racconta a [[osha|Osha]] di aver sognato un corvo con tre occhi, e il mare che inonda Grande Inverno e annega la sua gente, [[rodrik-cassel|ser Rodrik]] compreso. Poi Rodrik porta la notizia che Piazza di Torrhen è sotto assedio. Bran dice che devono aiutare i loro vassalli, e ordina a Rodrik di partire con duecento uomini.',
+        en: 'Bran gives well-judged counsel to the people who come to him, and sends two orphans from the winter town to help a shepherd whose sons are at war. He tells [[osha|Osha]] he has dreamed of a three-eyed raven, and of the sea flooding Winterfell and drowning its people, Ser [[rodrik-cassel|Rodrik]] among them. Then Rodrik brings word that Torrhen’s Square is under siege. Bran says they must help their bannermen, and orders Rodrik to ride with two hundred men.',
+      },
+    ),
+    inBooks(
+      [15, 109],
+      { it: 'Gli annegati', en: 'The drowned men' },
+      {
+        it: 'Bran sta azionando il mantice per [[mikken|Mikken]] quando un corvo porta la notizia della vittoria di Robb a Oxcross. Jojen gli racconta un sogno verde: il mare che si riversa in Grande Inverno, e Alebelly, septon Chayle e Mikken annegati. Bran li avverte, ma nessuno gli crede. [[rodrik-cassel|Ser Rodrik]] torna dalle terre degli Hornwood con un prigioniero chiamato Reek, e predoni sulle navi lunghe saccheggiano la costa. Jojen racconta un altro sogno: Bran e [[rickon-stark|Rickon]] morti ai piedi di Reek.',
+        en: 'Bran is working the bellows for [[mikken|Mikken]] when a raven brings news of Robb’s victory at Oxcross. Jojen tells him of a green dream: the sea pouring into Winterfell, and Alebelly, Septon Chayle and Mikken drowned. Bran warns them, but no one believes him. Ser [[rodrik-cassel|Rodrik]] comes back from the Hornwood with a prisoner called Reek, and raiders in longships are plundering the coast. Jojen tells of another dream: Bran and [[rickon-stark|Rickon]] dead at the feet of Reek.',
+      },
+    ),
+    onScreen(
+      [16, 120],
+      { it: 'La resa di Grande Inverno', en: 'Yielding Winterfell' },
+      {
+        it: 'Bran si sveglia e trova [[theon-greyjoy|Theon]] nella sua stanza: gli uomini di ferro hanno preso Grande Inverno. Per salvare la sua gente, Bran cede il castello a Theon davanti a tutti. Quando [[rodrik-cassel|ser Rodrik]] viene portato dentro e Theon lo condanna a morte, Bran implora Theon di risparmiarlo e gli ricorda la promessa che nessuno sarebbe stato ferito. Theon decapita Rodrik in modo maldestro mentre Bran singhiozza. Quella notte [[osha|Osha]] porta Bran, [[rickon-stark|Rickon]], [[hodor|Hodor]] e i meta-lupi fuori dal castello.',
+        en: 'Bran wakes to find [[theon-greyjoy|Theon]] in his room: the ironborn have taken Winterfell. To save his people, Bran yields the castle to Theon before them all. When Ser [[rodrik-cassel|Rodrik]] is brought in and Theon sentences him to death, Bran begs for his life, reminding Theon that he promised no one would be hurt. Theon beheads Rodrik clumsily as Bran sobs. That night [[osha|Osha]] leads Bran, [[rickon-stark|Rickon]], [[hodor|Hodor]] and the direwolves out of the castle.',
+      },
+    ),
+    inBooks(
+      [16, 120],
+      { it: 'Prigioniero nel suo castello', en: 'Prisoner in his own castle' },
+      {
+        it: 'In un sogno di lupo [[summer-direwolf|Estate]] fiuta qualcosa di strano e cade cercando di uscire dal parco degli dei. Bran si sveglia davanti a [[theon-greyjoy|Theon]], che si fa chiamare principe e gli dice che il castello è suo: i suoi uomini di ferro hanno attraversato il fossato a nuoto mentre [[rodrik-cassel|ser Rodrik]] partiva per Piazza di Torrhen. Davanti alla gente di Grande Inverno il sogno di Jojen si avvera: [[mikken|Mikken]] si rifiuta di inginocchiarsi e viene ucciso. Quando [[osha|Osha]] passa al servizio di Theon, Bran ci resta male, ma convince gli altri che combattere non serve.',
+        en: 'In a wolf dream [[summer-direwolf|Summer]] smells something wrong and falls trying to climb out of the godswood. Bran wakes to [[theon-greyjoy|Theon]], who calls himself a prince and tells him the castle is his: his ironmen swam the moat while Ser [[rodrik-cassel|Rodrik]] rode off to Torrhen’s Square. Before the people of Winterfell, Jojen’s dream comes true: [[mikken|Mikken]] refuses to kneel and is killed. When [[osha|Osha]] joins Theon’s service, Bran is hurt, but he persuades the others that fighting is no answer.',
+      },
+    ),
+    onScreen(
+      [17, 124],
+      { it: 'La fattoria del pastore', en: 'The shepherd’s farm' },
+      {
+        it: 'Bran, [[rickon-stark|Rickon]], [[osha|Osha]] e [[hodor|Hodor]] arrivano fino alla fattoria del pastore a cui Bran ha mandato i due orfani. Rickon vorrebbe chiedere loro da mangiare, ma Bran teme di metterli in pericolo se qualcuno li segue. [[theon-greyjoy|Theon]] li bracca con i cani e perde la loro traccia alla fattoria. Torna a Grande Inverno con due corpi carbonizzati, e davanti a tutti dice che sono Bran e Rickon.',
+        en: 'Bran, [[rickon-stark|Rickon]], [[osha|Osha]] and [[hodor|Hodor]] flee as far as the farm of the shepherd to whom Bran sent two orphans. Rickon wants to go to them for food, but Bran is wary of putting them in danger if they are tracked. [[theon-greyjoy|Theon]] hunts them with hounds and loses their scent at the farm. He returns to Winterfell with two charred bodies, and claims before everyone that they are Bran and Rickon.',
+      },
+    ),
+    inBooks(
+      [17, 124],
+      { it: 'Spariti nella notte', en: 'Gone in the night' },
+      {
+        it: 'Una notte i meta-lupi tacciono. Gli uomini di [[theon-greyjoy|Theon]] trovano vuoti i letti di Bran e di [[rickon-stark|Rickon]], il parco degli dei senza lupi e due guardie morte alla Porta del Cacciatore. Mancano anche [[osha|Osha]], [[hodor|Hodor]] e i Reed. Theon bracca i ragazzi nella Foresta del Lupo con i cani, ma la traccia finisce a un torrente, e di loro non trova alcun segno.',
+        en: 'One night the direwolves fall silent. The men of [[theon-greyjoy|Theon]] find Bran and [[rickon-stark|Rickon]] gone from their beds, the wolves gone from the godswood, and two guards dead at the Hunter’s Gate. [[osha|Osha]], [[hodor|Hodor]] and the Reeds are missing too. Theon hunts the boys through the wolfswood with his hounds, but the scent ends at a brook, and he finds no sign of them.',
+      },
+    ),
+    onScreen(
+      [18, 130],
+      { it: 'Nascosti nelle cripte', en: 'Hiding in the crypts' },
+      {
+        it: 'Bran e gli altri non sono rimasti alla fattoria: sono tornati indietro lungo un torrente per depistare i cani, e ora si nascondono nelle cripte sotto Grande Inverno, sotto il naso di [[theon-greyjoy|Theon]]. Il maestro [[luwin|Luwin]] segue [[osha|Osha]] quando lei porta loro del pane. Capisce che i corpi bruciati erano i due orfani che Bran aveva mandato alla fattoria, e le chiede di non dirlo ai ragazzi, perché Bran se ne darebbe la colpa. Bran, seduto lì vicino al buio, sente tutto.',
+        en: 'Bran and the others did not stay at the farm: they doubled back through a stream to throw off the hounds, and now they hide in the crypts beneath Winterfell, under the nose of [[theon-greyjoy|Theon]]. Maester [[luwin|Luwin]] follows [[osha|Osha]] down when she brings them bread. He guesses that the burned bodies were the two orphans Bran sent to the farm, and asks her to keep it from the boys, since Bran would blame himself. Bran, sitting in the dark nearby, hears everything.',
+      },
+    ),
+    onScreen(
+      [20, 143],
+      { it: 'Andate a nord', en: 'Go north' },
+      {
+        it: 'Bran e gli altri restano nascosti nelle cripte mentre Grande Inverno è sotto assedio. Quando escono, il castello è stato saccheggiato e bruciato. Trovano il maestro [[luwin|Luwin]] morente nel parco degli dei. Luwin dice loro di andare a nord, alla Barriera, dal fratellastro [[jon-snow|Jon]], che li proteggerà e farà sapere alla madre che sono vivi. Bran saluta in lacrime il suo maestro e parte verso nord con [[rickon-stark|Rickon]], [[osha|Osha]], [[hodor|Hodor]] e i meta-lupi.',
+        en: 'Bran and the others stay hidden in the crypts while Winterfell is besieged. When they come out, the castle has been sacked and burned. They find Maester [[luwin|Luwin]] dying in the godswood. He tells them to go north to the Wall, to their half-brother [[jon-snow|Jon]], who will keep them safe and tell their mother they are alive. Bran says a tearful farewell to his teacher, and sets out north with [[rickon-stark|Rickon]], [[osha|Osha]], [[hodor|Hodor]] and the direwolves.',
+      },
+    ),
+    inBooks(
+      [20, 143],
+      { it: 'Non morto, ma spezzato', en: 'Not dead, but broken' },
+      {
+        it: 'Per tre giorni Bran ha vissuto come [[summer-direwolf|Estate]], guardando Grande Inverno bruciare dalla Foresta del Lupo, mentre il suo corpo restava nascosto nelle cripte. Lo sveglia Jojen. Prendono delle spade dalle tombe, [[hodor|Hodor]] sposta la pietra davanti alla porta, e trovano il castello in cenere e il maestro [[luwin|Luwin]] morente nel parco degli dei. Dopo gli ultimi consigli di Luwin, Bran parte verso nord con Jojen, Meera, Hodor ed Estate, mentre [[osha|Osha]] porta [[rickon-stark|Rickon]] per un’altra strada. Grande Inverno non è morto, pensa Bran, è solo spezzato, come lui.',
+        en: 'For three days Bran has lived as [[summer-direwolf|Summer]], watching Winterfell burn from the wolfswood, while his body lay hidden in the crypts. Jojen wakes him. They take swords from the tombs, [[hodor|Hodor]] shifts the stone from the door, and they find the castle in ashes and Maester [[luwin|Luwin]] dying in the godswood. After Luwin’s last counsel, Bran sets out north with Jojen, Meera, Hodor and Summer, while [[osha|Osha]] takes [[rickon-stark|Rickon]] another way. Winterfell is not dead, Bran thinks, only broken, like him.',
+      },
+    ),
   ],
   'rickon-stark': [
     inBoth(
@@ -4603,6 +5787,65 @@ export const season1Chronicles = {
       {
         it: 'Rickon sogna il padre [[eddard-stark|Eddard]] nelle cripte e ci scende con [[shaggydog|Cagnaccio]]. Quando il maestro [[luwin|Luwin]] porta lì il fratello [[bran-stark|Bran]], Cagnaccio azzanna il braccio del maestro. Rickon esce dalla tomba preparata per Eddard e dice a Luwin di lasciare stare il padre: lo ha visto la notte prima, e sta tornando a casa. Rickon non vuole che Cagnaccio stia alla catena. Segue gli altri nella torre del maestro, dove un corvo porta la notizia della morte di Eddard.',
         en: 'Rickon dreams of his father [[eddard-stark|Eddard]] in the crypts and goes down there with [[shaggydog|Shaggydog]]. When Maester [[luwin|Luwin]] brings his brother [[bran-stark|Bran]] there, Shaggydog savages the maester’s arm. Rickon comes out of the tomb made ready for Eddard and tells Luwin to leave his father alone: he saw him last night, and he is coming home. Rickon does not want Shaggydog chained. He follows the others to the maester’s turret, where a raven brings the news of Eddard’s death.',
+      },
+    ),
+    inBooks(
+      [13, 95],
+      { it: 'Selvatico alla festa', en: 'Wild at the feast' },
+      {
+        it: 'Alla festa del raccolto Rickon siede alla destra di [[bran-stark|Bran]]. Nessuno gli taglia i capelli da quando la madre è partita, perché ha morso l’ultima ragazza che ci ha provato. Si è affezionato ai pupilli Frey dopo che [[shaggydog|Cagnaccio]] ha morso [[little-walder-frey|Little Walder]], e per tutto il pasto strilla allegro insieme a loro. Quando i Reed chiedono dove siano i meta-lupi, Rickon risponde che sono nel parco degli dei, perché Cagnaccio è stato cattivo.',
+        en: 'Rickon sits at the right of [[bran-stark|Bran]] at the harvest feast. No one has cut his hair since their mother left, because he bit the last girl who tried. He took to the Frey wards after [[shaggydog|Shaggydog]] bit [[little-walder-frey|Little Walder]], and he screams happily with them through the meal. When the Reeds ask where the direwolves are, Rickon answers that they are in the godswood, because Shaggydog was bad.',
+      },
+    ),
+    onScreen(
+      [16, 120],
+      { it: 'Una supplica per Rodrik', en: 'Pleading for Rodrik' },
+      {
+        it: 'Quando [[theon-greyjoy|Theon]] prende Grande Inverno e condanna a morte [[rodrik-cassel|ser Rodrik]], Rickon si unisce al fratello [[bran-stark|Bran]] nell’implorare Theon di risparmiarlo, senza risultato. È sconvolto mentre Theon decapita il vecchio cavaliere davanti a tutti. Quella notte [[osha|Osha]] libera i due fratelli e li porta fuori dal castello con [[hodor|Hodor]] e i loro meta-lupi, [[summer-direwolf|Estate]] e [[shaggydog|Cagnaccio]].',
+        en: 'When [[theon-greyjoy|Theon]] takes Winterfell and sentences Ser [[rodrik-cassel|Rodrik]] to death, Rickon joins his brother [[bran-stark|Bran]] in pleading for Rodrik’s life, to no avail. He is distraught as Theon beheads the old knight before everyone. That night [[osha|Osha]] frees the two brothers and leads them out of the castle with [[hodor|Hodor]] and their direwolves, [[summer-direwolf|Summer]] and [[shaggydog|Shaggydog]].',
+      },
+    ),
+    inBooks(
+      [16, 120],
+      {
+        it: 'Gli uomini di ferro nel castello',
+        en: 'The ironborn in the castle',
+      },
+      {
+        it: 'Mentre [[rodrik-cassel|ser Rodrik]] è a Piazza di Torrhen, gli uomini di ferro di [[theon-greyjoy|Theon]] attraversano il fossato a nuoto, aprono una postierla e prendono Grande Inverno. Theon si fa chiamare principe e fa radunare la gente del castello nella sala grande, dove [[mikken|Mikken]] viene ucciso perché si rifiuta di inginocchiarsi. Rickon e il fratello [[bran-stark|Bran]] sono ora prigionieri nel loro stesso castello.',
+        en: 'While Ser [[rodrik-cassel|Rodrik]] is away at Torrhen’s Square, the ironmen of [[theon-greyjoy|Theon]] swim the moat, open a postern gate and take Winterfell. Theon calls himself a prince and has the household gathered in the great hall, where [[mikken|Mikken]] is killed for refusing to kneel. Rickon and his brother [[bran-stark|Bran]] are now prisoners in their own castle.',
+      },
+    ),
+    onScreen(
+      [17, 124],
+      { it: 'I gusci di noce', en: 'The walnut shells' },
+      {
+        it: 'Rickon, [[bran-stark|Bran]], [[osha|Osha]] e [[hodor|Hodor]] arrivano alla fattoria del pastore. Rickon si ricorda che Bran ha mandato lì due ragazzi orfani, e vorrebbe chiedere loro da mangiare, ma Bran teme di metterli in pericolo. Quando [[theon-greyjoy|Theon]] arriva alla fattoria con i cani, la traccia si perde, anche se [[dagmer|Dagmer]] trova i gusci delle noci che piacciono a Rickon. Theon torna a Grande Inverno con due corpi bruciati e dice che sono Bran e Rickon.',
+        en: 'Rickon, [[bran-stark|Bran]], [[osha|Osha]] and [[hodor|Hodor]] reach the shepherd’s farm. Rickon remembers that Bran sent two orphan boys there, and wants to ask them for food, but Bran fears putting them in danger. When [[theon-greyjoy|Theon]] reaches the farm with his hounds, the scent is lost, though [[dagmer|Dagmer]] finds the walnut shells Rickon loves. Theon returns to Winterfell with two burned bodies and says they are Bran and Rickon.',
+      },
+    ),
+    inBooks(
+      [17, 124],
+      { it: 'I letti vuoti', en: 'The empty beds' },
+      {
+        it: 'Una notte i meta-lupi smettono di ululare. Gli uomini di [[theon-greyjoy|Theon]] trovano vuoti i letti di Rickon e di [[bran-stark|Bran]], il parco degli dei senza lupi e due guardie morte alla Porta del Cacciatore. Theon pensa che [[osha|Osha]] debba portare Rickon in braccio, perché sono fuggiti a piedi. Li bracca nella Foresta del Lupo con i cani, ma la traccia finisce a un torrente.',
+        en: 'One night the direwolves stop howling. The men of [[theon-greyjoy|Theon]] find Rickon and [[bran-stark|Bran]] gone from their beds, the wolves gone from the godswood, and two guards dead at the Hunter’s Gate. Theon reckons [[osha|Osha]] must carry Rickon, since they left on foot. He hunts them through the wolfswood with his hounds, but the scent ends at a brook.',
+      },
+    ),
+    onScreen(
+      [20, 143],
+      { it: 'A nord con Osha', en: 'North with Osha' },
+      {
+        it: 'Rickon e gli altri restano nascosti nelle cripte di Grande Inverno durante l’assedio e il saccheggio. Quando escono, il castello è in rovina, e trovano il maestro [[luwin|Luwin]] che muore sotto un albero nel parco degli dei. Rickon e [[bran-stark|Bran]] si offrono di portargli delle medicine, ma Luwin rifiuta e dice loro di prendere vestiti caldi e andare a nord, dal fratellastro [[jon-snow|Jon]] al Castello Nero. Rickon parte con Bran, [[osha|Osha]], [[hodor|Hodor]] e i meta-lupi.',
+        en: 'Rickon and the others hide in the crypts of Winterfell through the siege and the sack. When they come out, the castle is in ruins, and they find Maester [[luwin|Luwin]] dying under a tree in the godswood. Rickon and [[bran-stark|Bran]] offer to bring him medicine, but Luwin refuses and tells them to gather warm clothes and go north to their half-brother [[jon-snow|Jon]] at Castle Black. Rickon leaves with Bran, [[osha|Osha]], [[hodor|Hodor]] and the direwolves.',
+      },
+    ),
+    inBooks(
+      [20, 143],
+      { it: 'Strade separate', en: 'Separate ways' },
+      {
+        it: 'Rickon è fuggito da Grande Inverno con [[bran-stark|Bran]] e si è nascosto con lui nelle cripte. Dopo il saccheggio trovano il maestro [[luwin|Luwin]] morente nel parco degli dei. Luwin dice a [[osha|Osha]] di non tenere insieme i ragazzi: sono gli eredi di Robb, e vanno separati. Così Bran va a nord con i Reed e con [[hodor|Hodor]], mentre Osha porta Rickon e [[shaggydog|Cagnaccio]] per un’altra strada.',
+        en: 'Rickon escaped Winterfell with [[bran-stark|Bran]] and hid with him in the crypts. After the sack they find Maester [[luwin|Luwin]] dying in the godswood. Luwin tells [[osha|Osha]] not to keep the boys together: they are the heirs of Robb, and must be separated. So Bran goes north with the Reeds and [[hodor|Hodor]], while Osha takes Rickon and [[shaggydog|Shaggydog]] another way.',
       },
     ),
   ],
@@ -4639,6 +5882,126 @@ export const season1Chronicles = {
         en: 'Theon marches south with [[robb-stark|Robb]]. At the Twins he shoots down the ravens leaving the castle, and then he fights beside Robb in the battle where Jaime Lannister is taken. He wants Jaime’s head sent to Jaime’s father, Lord Tywin, but Robb refuses. When the news of Eddard’s death comes, [[greatjon-umber|Greatjon Umber]] and the other lords proclaim Robb King in the North. Theon asks Robb whether they are brothers, now and always. Robb says yes, and Theon swears his sword to him.',
       },
     ),
+    onScreen(
+      [11, 81],
+      { it: 'Inviato a Pyke', en: 'Envoy to Pyke' },
+      {
+        it: 'Theon ricorda a [[robb-stark|Robb]] che per sconfiggere i Lannister una volta per tutte devono prendere Approdo del Re, e per questo serve una flotta. Chiede di essere mandato dal padre, lord Balon, a cercare un’alleanza, sicuro che Balon lo ascolterà. [[catelyn-stark|Catelyn]] avverte che di Balon non ci si può fidare, ma Robb rimanda Theon a casa, a Pyke, come suo inviato.',
+        en: 'Theon reminds [[robb-stark|Robb]] that to defeat the Lannisters for good they must take King’s Landing, and for that they need a fleet. He asks to be sent to his father, Lord Balon, to seek an alliance, sure that Balon will listen to him. [[catelyn-stark|Catelyn]] warns that Balon cannot be trusted, but Robb sends Theon home to Pyke as his envoy.',
+      },
+    ),
+    inBooks(
+      [12, 85],
+      { it: 'Il figlio del kraken', en: 'The kraken’s son' },
+      {
+        it: 'Theon torna a Pyke dopo dieci anni come pupillo di lord Eddard, con la lettera di [[robb-stark|Robb]], che per lui vale quanto una corona. A Lordsport non lo aspetta nessuna scorta, solo lo zio Aeron, ormai sacerdote, che lo inzuppa di acqua di mare e lo avverte che il padre non darà mai le isole a uno Stark. Lord [[balon-greyjoy|Balon]] deride i suoi vestiti, brucia l’offerta di Robb e lo colpisce. Theon capisce di sapere già quale regno il padre intenda conquistarsi.',
+        en: 'Theon sails home to Pyke after ten years as Lord Eddard’s ward, carrying [[robb-stark|Robb]]’s letter, which he thinks as good as a crown. No escort meets him at Lordsport, only his uncle Aeron, now a priest, who drenches him with seawater and warns that his father will never give the isles to a Stark. Lord [[balon-greyjoy|Balon]] mocks his clothes, burns Robb’s offer and strikes him. Theon realizes he already knows which kingdom his father means to carve out.',
+      },
+    ),
+    onScreen(
+      [12, 98],
+      { it: 'Il ritorno a casa', en: 'Homecoming' },
+      {
+        it: 'Theon si aspetta un’accoglienza calorosa nelle Isole di Ferro, ma a Lordsport non lo aspetta nessuno. Una donna gli dà un passaggio fino a Pyke, e lui cerca di sedurla per strada. Il padre, [[balon-greyjoy|Balon]], dubita della sua lealtà dopo nove anni con gli Stark, gli strappa dal mantello il fermaglio d’oro e respinge l’offerta di [[robb-stark|Robb]]. La donna entra e Balon la saluta con calore: è la sorella di Theon, [[asha-greyjoy|Yara]]. Quando Theon lo avverte che da solo non sconfiggerà i Lannister, Balon risponde che nessuno ha parlato di combattere i Lannister.',
+        en: 'Theon expects a warm welcome on the Iron Islands, but no one meets him at Lordsport. A woman gives him a ride to Pyke, and he tries to seduce her on the way. His father, [[balon-greyjoy|Balon]], questions his loyalty after nine years with the Starks, tears the gold clasp from his cloak and rejects the offer of [[robb-stark|Robb]]. The woman walks in and Balon greets her warmly: she is Theon’s sister, [[asha-greyjoy|Yara]]. When Theon warns that Balon cannot beat the Lannisters alone, Balon answers that no one spoke of fighting the Lannisters.',
+      },
+    ),
+    onScreen(
+      [13, 98],
+      { it: 'La fede del mare', en: 'The drowned faith' },
+      {
+        it: 'Nel consiglio di guerra di [[balon-greyjoy|Balon]] Theon scopre il piano: attaccare il Nord mentre i suoi eserciti combattono al sud. La sorella [[asha-greyjoy|Yara]] riceve trenta navi per prendere Deepwood Motte; Theon una sola, per razziare i villaggi di pescatori della Costa Pietrosa. Difende l’alleanza con Robb e ricorda al padre di essere stato ceduto da lui. Balon lo colpisce. Theon pensa di avvertire Robb, ma sceglie la sua famiglia e si fa battezzare da un sacerdote del Dio Abissale.',
+        en: 'In the war council of [[balon-greyjoy|Balon]] Theon learns the plan: to attack the North while its armies fight in the south. His sister [[asha-greyjoy|Yara]] gets thirty ships to take Deepwood Motte; Theon gets one, to raid fishing villages on the Stony Shore. He argues for the alliance with Robb, and reminds his father that Balon gave him away. Balon strikes him. Theon thinks of warning Robb, but chooses his family, and is baptised by a priest of the Drowned God.',
+      },
+    ),
+    inBooks(
+      [13, 98],
+      { it: 'Otto navi', en: 'Eight ships' },
+      {
+        it: 'Sul molo di Lordsport Theon flirta con una donna che si fa chiamare Esgred, e cavalca con lei fino a Pyke allungando le mani per tutto il viaggio. È sua sorella [[asha-greyjoy|Asha]], e al banchetto, seduta al posto di lui alla destra del padre, fa ridere di lui tutta la sala. Nel solario lord [[balon-greyjoy|Balon]] non vuole sentire i suoi consigli: Theon prenderà otto navi per razziare la costa, con lo zio Aeron, mentre Asha prende Deepwood Motte.',
+        en: 'On the docks at Lordsport Theon flirts with a woman called Esgred, and rides with her to Pyke, groping her all the way. She is his sister [[asha-greyjoy|Asha]], and at the feast, seated in his place at their father’s right, she makes the whole hall laugh at him. In the solar Lord [[balon-greyjoy|Balon]] will not hear his counsel: Theon is to take eight ships and raid the coast, with his uncle Aeron, while Asha takes Deepwood Motte.',
+      },
+    ),
+    onScreen(
+      [15, 111],
+      { it: 'Un piano tutto suo', en: 'A plan of his own' },
+      {
+        it: 'A Lordsport Theon prende il comando della sua nave e trova la ciurma indisciplinata, e la sorella [[asha-greyjoy|Yara]], diretta alla sua flotta, lo schernisce. Il suo primo ufficiale, [[dagmer|Dagmer]], gli dice che gli uomini non lo rispetteranno finché non si sarà messo alla prova. Theon punta più in alto dei villaggi di pescatori: attaccherà Piazza di Torrhen per attirare la guarnigione degli Stark fuori da Grande Inverno. Il piano funziona, e [[rodrik-cassel|ser Rodrik Cassel]] parte da Grande Inverno con duecento uomini per rompere l’assedio.',
+        en: 'Theon takes command of his ship at Lordsport and finds the crew unruly, and his sister [[asha-greyjoy|Yara]] mocks him on her way to her fleet. His first mate, [[dagmer|Dagmer]], tells him the men will not respect him until he proves himself. Theon aims higher than fishing villages: he will attack Torrhen’s Square to draw the Stark garrison out of Winterfell. The plan works, and Ser [[rodrik-cassel|Rodrik Cassel]] rides from Winterfell with two hundred men to relieve the siege.',
+      },
+    ),
+    inBooks(
+      [15, 111],
+      { it: 'Non Piazza di Torrhen', en: 'Not Torrhen’s Square' },
+      {
+        it: 'Gli uomini di Theon hanno sconfitto sulla Costa Pietrosa una banda di giovani lancieri del Nord. Su insistenza dello zio Aeron, il loro capo, Benfred Tallhart, viene annegato per il Dio Abissale. Theon vuole colpire con una freccia il corno di birra in mano a un ubriaco, lo prende invece alla pancia e lo fa finire, come monito per gli altri. Poi, a bordo della Foamdrinker, svela a [[dagmer|Dagmer]] il suo piano: Dagmer marcerà su Piazza di Torrhen e costruirà macchine d’assedio, perché [[rodrik-cassel|ser Rodrik]] esca da Grande Inverno a soccorrerla. Ma non è Piazza di Torrhen che Theon vuole prendere.',
+        en: 'The men of Theon have beaten a band of young northern lancers on the Stony Shore. At the insistence of his uncle Aeron, their leader, Benfred Tallhart, is drowned for the Drowned God. Theon means to shoot the ale horn out of a drunken man’s hand, hits him in the belly instead, and has him finished as a warning to the others. Then, aboard Foamdrinker, he tells [[dagmer|Dagmer]] his plan: Dagmer is to march on Torrhen’s Square and build siege engines, so that Ser [[rodrik-cassel|Rodrik]] rides out of Winterfell to its aid. It is not Torrhen’s Square that Theon means to take.',
+      },
+    ),
+    onScreen(
+      [16, 120],
+      { it: 'Principe di Grande Inverno', en: 'Prince of Winterfell' },
+      {
+        it: 'Gli uomini di Theon scalano le mura di Grande Inverno, rimasto senza difese, e lo prendono. Theon costringe [[bran-stark|Bran]] a cedergli il castello davanti alla sua gente, e ordina al maestro [[luwin|Luwin]] di mandare corvi al padre e alla sorella. Quando [[rodrik-cassel|ser Rodrik]], catturato, gli sputa in faccia, [[dagmer|Dagmer]] insiste che Rodrik deve morire. Rodrik ricorda a Theon che chi pronuncia la sentenza deve calare la spada, e Theon sbaglia la decapitazione. Quella notte va a letto con [[osha|Osha]], che sgattaiola via e libera i ragazzi Stark.',
+        en: 'The men of Theon climb into Winterfell, left undefended, and take it. He makes [[bran-stark|Bran]] yield the castle before its people, and orders Maester [[luwin|Luwin]] to send ravens to his father and sister. When Ser [[rodrik-cassel|Rodrik]] is caught and spits in his face, [[dagmer|Dagmer]] insists that Rodrik must die. Rodrik reminds Theon that the man who passes the sentence should swing the sword, and Theon botches the beheading. That night he sleeps with [[osha|Osha]], who slips away and frees the Stark boys.',
+      },
+    ),
+    inBooks(
+      [16, 120],
+      { it: 'La postierla', en: 'The postern gate' },
+      {
+        it: 'Con [[rodrik-cassel|ser Rodrik]] partito per Piazza di Torrhen, gli uomini di ferro di Theon attraversano il fossato a nuoto e aprono una postierla. Theon irrompe nella stanza di [[bran-stark|Bran]], si fa chiamare principe e gli dice che Grande Inverno è suo: nessuno sarà ferito se il castello si arrende. Davanti alla gente radunata, [[mikken|Mikken]] si rifiuta di inginocchiarsi e viene ucciso. [[osha|Osha]] e un prigioniero chiamato Reek si offrono di servire Theon.',
+        en: 'With Ser [[rodrik-cassel|Rodrik]] gone to Torrhen’s Square, the ironmen of Theon swim the moat and open a postern gate. Theon bursts into the room of [[bran-stark|Bran]], calls himself a prince, and tells him Winterfell is his: no one will be hurt if the castle yields. Before the gathered household [[mikken|Mikken]] refuses to kneel and is killed. [[osha|Osha]] and a prisoner called Reek offer to serve Theon.',
+      },
+    ),
+    onScreen(
+      [17, 124],
+      { it: 'Due corpi sulla porta', en: 'Two bodies on the gate' },
+      {
+        it: 'Theon si sveglia e scopre che [[osha|Osha]] è fuggita con [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[hodor|Hodor]] e i meta-lupi. Quando uno dei suoi uomini gli dà la colpa per essersi lasciato sedurre da Osha, Theon lo picchia selvaggiamente. Bracca i ragazzi con i cani fino alla fattoria di un pastore, dove la traccia si perde. Rimanda a casa il maestro [[luwin|Luwin]]: sa dove sono, dice, e la sua pietà è finita. Tornato a Grande Inverno, issa ai lati della porta due corpi bruciati di bambini e dice che sono Bran e Rickon.',
+        en: 'Theon wakes to find that [[osha|Osha]] has fled with [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[hodor|Hodor]] and the direwolves. When one of his men blames him for letting Osha seduce him, Theon beats him savagely. He hunts the boys with hounds as far as a shepherd’s farm, where the scent is lost. He sends Maester [[luwin|Luwin]] home: he knows where they are, he says, and his mercy is spent. Back at Winterfell he hoists two burned bodies of children by the gate and says they are Bran and Rickon.',
+      },
+    ),
+    inBooks(
+      [17, 124],
+      { it: 'La pietà era per la mattina', en: 'Mercy was for the morning' },
+      {
+        it: 'Theon si sveglia nella notte nel silenzio: i meta-lupi hanno smesso di ululare. [[wex-pyke|Wex]] scopre che [[bran-stark|Bran]] e [[rickon-stark|Rickon]] sono spariti, Reek riferisce che mancano anche i Reed, [[hodor|Hodor]] e [[osha|Osha]], e [[black-lorren|Black Lorren]] gli mostra due guardie uccise alla Porta del Cacciatore. Con il maestro [[luwin|Luwin]], [[farlen|Farlen]] e i cani, Theon li segue nella Foresta del Lupo, promettendo pietà a Luwin, finché la traccia non si perde a un torrente. Al tramonto Reek gli indica un mulino lì vicino e gli mostra che cosa c’è nel suo sacco. Theon rimanda a casa quasi tutti i suoi uomini e dice a Luwin che la pietà era per la mattina.',
+        en: 'Theon wakes in the night to silence: the direwolves have stopped howling. [[wex-pyke|Wex]] finds [[bran-stark|Bran]] and [[rickon-stark|Rickon]] gone, Reek reports the Reeds, [[hodor|Hodor]] and [[osha|Osha]] missing too, and [[black-lorren|Black Lorren]] shows him two guards dead at the Hunter’s Gate. With Maester [[luwin|Luwin]], [[farlen|Farlen]] and the dogs, Theon follows them into the wolfswood, promising Luwin mercy, until the scent is lost at a brook. At dusk Reek points him to a mill nearby and shows him what is in his sack. Theon sends most of his men home and tells Luwin that mercy was for the morning.',
+      },
+    ),
+    onScreen(
+      [18, 130],
+      { it: 'Troppo lontano dal mare', en: 'Too far from the sea' },
+      {
+        it: 'La sorella di Theon, [[asha-greyjoy|Yara]], arriva a Grande Inverno con venti uomini invece dei cinquecento che lui le aveva chiesto. Il castello è troppo lontano dal mare, dice, e tutto il Nord lo vuole morto per aver ucciso i ragazzi Stark. Lo prega di tornare a casa, ma Theon non vuole rinunciare alla sua conquista. Preso dal rimorso, dà a [[dagmer|Dagmer]] dell’oro per il pastore a cui hanno ucciso i due ragazzi; Dagmer gli dice di aver già ucciso il pastore e sua moglie.',
+        en: 'Theon’s sister [[asha-greyjoy|Yara]] reaches Winterfell with twenty men instead of the five hundred he asked for. The castle is too far from the sea, she says, and the whole North wants him dead for killing the Stark boys. She begs him to come home, but he will not give up his prize. Feeling some guilt, he gives [[dagmer|Dagmer]] gold for the shepherd whose two farm boys they killed; Dagmer tells him he has already killed the shepherd and his wife.',
+      },
+    ),
+    inBooks(
+      [18, 130],
+      { it: 'I figli del mugnaio', en: 'The miller’s sons' },
+      {
+        it: 'Theon non ha mai trovato [[bran-stark|Bran]] e [[rickon-stark|Rickon]]. Le teste sulle porte di Grande Inverno sono di due figli del mugnaio della stessa età e dello stesso aspetto, uccisi da Theon e da Reek e con il volto scuoiato perché nessuno li riconoscesse. Poi Reek ha ucciso tre uomini di ferro che sapevano, e Theon ha decapitato [[farlen|Farlen]] per avere un colpevole. La sorella [[asha-greyjoy|Asha]] arriva con venti uomini, dice che il castello è troppo lontano dal mare e gli chiede di partire con lei; Theon rifiuta. Reek parte promettendo duecento uomini, e Theon sogna di banchettare con i morti.',
+        en: 'Theon never found [[bran-stark|Bran]] and [[rickon-stark|Rickon]]. The heads on the gates of Winterfell belong to two miller’s sons of their age and look, killed by Theon and Reek and flayed so no one could tell. Reek then killed three ironborn who knew, and Theon beheaded [[farlen|Farlen]] to have someone to blame. His sister [[asha-greyjoy|Asha]] comes with twenty men, calls the castle too far from the sea and asks him to leave with her; he refuses. Reek rides off promising two hundred men, and Theon dreams of feasting with the dead.',
+      },
+    ),
+    onScreen(
+      [20, 140],
+      { it: 'Un sacco sulla testa', en: 'A sack over his head' },
+      {
+        it: 'Gli uomini del Nord al comando del bastardo di [[roose-bolton|Roose Bolton]] assediano Grande Inverno e suonano il corno tutta la notte. Theon, in lacrime, confida al maestro [[luwin|Luwin]] di non poterne più di sentirsi dire quanto è stato fortunato a essere prigioniero degli Stark. Luwin lo esorta a fuggire alla Barriera e prendere il nero, ma Theon dice di essersi spinto troppo oltre, e che [[jon-snow|Jon Snow]] lo ucciderebbe. Chiama a raccolta i suoi venti uomini con un discorso infiammato, e [[dagmer|Dagmer]] lo stende con un colpo. Gli uomini di ferro lo trascinano via con un sacco sulla testa per consegnarlo agli assedianti.',
+        en: 'Northmen under the bastard of [[roose-bolton|Roose Bolton]] besiege Winterfell and blow horns all night. Theon tearfully tells Maester [[luwin|Luwin]] how tired he is of hearing how lucky he was to be the Starks’ prisoner. Luwin urges him to flee to the Wall and take the black, but Theon says he has gone too far, and that [[jon-snow|Jon Snow]] would kill him. He rallies his twenty men with a rousing speech, and [[dagmer|Dagmer]] knocks him out. The ironborn drag him off with a sack over his head to hand him to the besiegers.',
+      },
+    ),
+    inBooks(
+      [20, 140],
+      { it: 'Il vero nome di Reek', en: 'Reek’s true name' },
+      {
+        it: 'Il maestro [[luwin|Luwin]] esorta Theon ad arrendersi, e più tardi a prendere il nero. Theon offre ai suoi uomini di ferro la scelta tra andarsene e morire al suo fianco; [[wex-pyke|Wex]] è il primo a schierarsi con lui. Al colloquio [[rodrik-cassel|ser Rodrik]] pretende il castello, e [[black-lorren|Black Lorren]] mostra sulle mura la figlia di Rodrik con un cappio al collo. Poi seicento uomini di Forte Terrore piombano sull’esercito di Rodrik e portano a Theon i cadaveri. Il loro capo è Reek, che dice di chiamarsi Ramsay Snow, stende Theon con un pugno e dà fuoco a Grande Inverno.',
+        en: 'Maester [[luwin|Luwin]] urges Theon to yield, and later to take the black. Theon gives his ironborn the choice of leaving or dying beside him; [[wex-pyke|Wex]] steps to his side first. At the parley Ser [[rodrik-cassel|Rodrik]] demands the castle, and [[black-lorren|Black Lorren]] shows the daughter of Rodrik on the walls with a noose around her neck. Then six hundred Dreadfort men fall on Rodrik’s army and bring Theon the bodies. Their leader is Reek, who says his name is Ramsay Snow, punches Theon down and burns Winterfell.',
+      },
+    ),
   ],
   'luwin': [
     inBoth(
@@ -4673,6 +6036,78 @@ export const season1Chronicles = {
         en: '[[bran-stark|Bran]] dreams of his father [[eddard-stark|Eddard]] in the crypts. To show him that Eddard is not there, Luwin goes down with him and with [[osha|Osha]], who carries Bran. When Luwin puts his arm into the tomb made ready for Eddard, [[shaggydog|Shaggydog]] springs out and savages it. [[rickon-stark|Rickon]] has had the same dream. In his turret Luwin, bandaged by Osha, explains that dreams are only dreams and tells of the children of the forest. Then a raven arrives. Luwin reads the letter in tears: Eddard is dead.',
       },
     ),
+    onScreen(
+      [13, 102],
+      { it: 'I misteri superiori', en: 'The higher mysteries' },
+      {
+        it: 'Con [[robb-stark|Robb]] in guerra, Luwin guida [[bran-stark|Bran]] mentre il ragazzo fa da lord di Grande Inverno. Quando Bran gli racconta i sogni in cui vede con gli occhi di [[summer-direwolf|Estate]], Luwin non dà loro peso. Gli mostra l’anello di acciaio di Valyria della sua catena, il segno che ha studiato i misteri superiori, la magia, e dice che se la magia è mai esistita ha lasciato il mondo da tempo. Ammette però di aver sentito parlare di uomini capaci di entrare nella mente degli animali.',
+        en: 'With [[robb-stark|Robb]] at war, Luwin guides [[bran-stark|Bran]] as the boy acts as lord of Winterfell. When Bran tells him of dreams in which he sees through the eyes of [[summer-direwolf|Summer]], Luwin is dismissive. He shows Bran the Valyrian steel link of his chain, the sign that he studied the higher mysteries, magic, and says that if magic ever existed, it left the world long ago. He does mention having heard of men who could enter the minds of animals.',
+      },
+    ),
+    inBooks(
+      [13, 102],
+      { it: 'Nessun uomo vivo', en: 'No living man' },
+      {
+        it: '[[bran-stark|Bran]] racconta a Luwin che Jojen Reed sostiene di avere la vista verde. Luwin spiega che i Primi Uomini credevano che i veggenti verdi potessero vedere con gli occhi degli alberi-diga e dominare le bestie. Mostra a Bran l’anello di acciaio di Valyria della sua catena, il segno dei misteri superiori, uno studio di cui pochi maestri si curano. Forse un tempo la magia era una forza potente, dice Luwin, ma Valyria ne è stata l’ultima brace: nessun uomo vivo ha la vista verde. Tutti fanno sogni che si avverano, come Bran e [[rickon-stark|Rickon]] con il loro padre.',
+        en: '[[bran-stark|Bran]] tells Luwin that Jojen Reed claims the greensight. Luwin explains that the First Men believed greenseers could see through the eyes of the weirwoods and master beasts. He shows Bran the Valyrian steel link of his chain, the mark of the higher mysteries, a study few maesters trouble with. Magic may once have been a mighty force, Luwin says, but Valyria was its last ember: no living man has the greensight. Everyone has dreams that come true, as Bran and [[rickon-stark|Rickon]] did about their father.',
+      },
+    ),
+    onScreen(
+      [16, 120],
+      { it: 'Il giuramento a Grande Inverno', en: 'The oath to Winterfell' },
+      {
+        it: 'Luwin manda via un corvo mentre gli uomini di ferro prendono Grande Inverno. [[theon-greyjoy|Theon]] gli ordina di far sapere della sua vittoria al padre e alla sorella, e gli ricorda il giuramento di servire il lord di Grande Inverno, qualunque sia il suo nome. Quando [[rodrik-cassel|ser Rodrik]] viene condannato a morte, Luwin dice a Theon che Rodrik gli è più utile vivo che morto. Theon lo minaccia e va avanti, e Luwin assiste inorridito all’esecuzione.',
+        en: 'Luwin sends off a raven as the ironborn take Winterfell. [[theon-greyjoy|Theon]] orders him to send word of his victory to his father and sister, and reminds him of his oath to serve the lord of Winterfell, whatever his name. When Ser [[rodrik-cassel|Rodrik]] is sentenced to death, Luwin tells Theon that Rodrik is worth more to him alive than dead. Theon threatens him and goes ahead, and Luwin watches the execution in horror.',
+      },
+    ),
+    onScreen(
+      [17, 124],
+      { it: 'Un grido alla porta', en: 'A scream at the gate' },
+      {
+        it: 'Dopo la fuga di [[osha|Osha]] con i ragazzi Stark, [[theon-greyjoy|Theon]] costringe Luwin a seguirlo nella caccia, e Luwin lo implora di risparmiarli. Quando la traccia si perde a una fattoria, Theon rimanda Luwin a Grande Inverno. Più tardi Theon torna con i corpi bruciati di due bambini e dice che sono [[bran-stark|Bran]] e [[rickon-stark|Rickon]]. La gente di Grande Inverno piange, e il grido di dolore di Luwin è il più forte di tutti.',
+        en: 'After [[osha|Osha]] flees with the Stark boys, [[theon-greyjoy|Theon]] makes Luwin ride with him on the hunt, and Luwin begs him to spare them. When the scent is lost at a farm, Theon sends Luwin back to Winterfell. Theon later returns with the burned bodies of two children and says they are [[bran-stark|Bran]] and [[rickon-stark|Rickon]]. The people of Winterfell weep, and Luwin’s cry of grief is the loudest of all.',
+      },
+    ),
+    inBooks(
+      [17, 124],
+      { it: 'Una promessa di pietà', en: 'A promise of mercy' },
+      {
+        it: 'Quando [[bran-stark|Bran]] e [[rickon-stark|Rickon]] spariscono, [[theon-greyjoy|Theon]] porta Luwin a caccia con sé, perché non osa lasciarlo al castello. Luwin gli chiede pietà, per i ragazzi e anche per i Reed, che valgono di più come ostaggi. Theon promette di risparmiarli tutti, se potrà, tranne [[osha|Osha]]. Quando i cani perdono la traccia, Luwin ricorda che un tempo i crannogmen erano vicini ai Figli della Foresta. Al tramonto Theon lo rimanda a casa, e gli dice che la pietà era per la mattina.',
+        en: 'When [[bran-stark|Bran]] and [[rickon-stark|Rickon]] vanish, [[theon-greyjoy|Theon]] takes Luwin on the hunt, not daring to leave him in the castle. Luwin asks him to be merciful, to the boys and to the Reeds as well, who are worth more as hostages. Theon agrees to spare them all if he can, except [[osha|Osha]]. When the dogs lose the scent, Luwin recalls that the crannogmen were once close to the children of the forest. At dusk Theon sends him home, and tells him that mercy was for the morning.',
+      },
+    ),
+    onScreen(
+      [18, 130],
+      { it: 'Il pane nelle cripte', en: 'Bread in the crypts' },
+      {
+        it: 'Luwin vede [[osha|Osha]] scendere di nascosto nelle cripte con del pane e la segue. Lei gli spiega che, arrivati alla fattoria, sono tornati indietro lungo un torrente per nascondere il loro odore ai cani. Luwin capisce che i corpi bruciati erano i due orfani che [[bran-stark|Bran]] aveva mandato alla fattoria. Chiede a Osha di non dirlo ai ragazzi, perché Bran se ne darebbe la colpa, ma Bran li ascolta, nascosto dietro un angolo.',
+        en: 'Luwin sees [[osha|Osha]] slipping into the crypts with bread and follows her down. She explains that after reaching the farm they doubled back, using a stream to hide their scent from the hounds. Luwin realizes that the burned bodies were the two orphans [[bran-stark|Bran]] sent to the farm. He asks Osha not to tell the boys, because Bran would blame himself, but Bran is listening around a corner.',
+      },
+    ),
+    inBooks(
+      [20, 140],
+      { it: 'Prendere il nero', en: 'Take the black' },
+      {
+        it: 'Luwin consiglia a [[theon-greyjoy|Theon]] di cedere Grande Inverno: il suo ordine serve chiunque tenga il castello, dice, ma entro pochi giorni gli uomini del Nord scaleranno le mura. Più tardi, mentre Theon si dispera per la minaccia fatta alla figlia di [[rodrik-cassel|ser Rodrik]], Luwin gli suggerisce di prendere il nero, un modo di vivere con onore. Prima che Theon possa rispondere arrivano gli uomini di Forte Terrore. Quando si rivoltano contro gli uomini di ferro e saccheggiano il castello, Theon vede Luwin cadere.',
+        en: 'Luwin counsels [[theon-greyjoy|Theon]] to yield Winterfell: his order serves whoever holds the castle, he says, but the northmen will be over the walls within days. Later, as Theon despairs over the threat he made against the daughter of Ser [[rodrik-cassel|Rodrik]], Luwin suggests he take the black, a way to live on with honour. Before Theon can answer, men from the Dreadfort arrive. When they turn on the ironborn and sack the castle, Theon sees Luwin cut down.',
+      },
+    ),
+    onScreen(
+      [20, 143],
+      { it: 'Il dono della pietà', en: 'The gift of mercy' },
+      {
+        it: 'Con Grande Inverno sotto assedio, Luwin esorta [[theon-greyjoy|Theon]] a fuggire alla Barriera e unirsi ai Guardiani della notte: sa che Theon non è l’uomo che finge di essere. Quando gli uomini di ferro si rivoltano contro Theon, Luwin cerca di fermarli, e [[dagmer|Dagmer]] lo trafigge con una lancia. Dopo il saccheggio [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[osha|Osha]] e [[hodor|Hodor]] lo trovano morente nel parco degli dei. Luwin dice loro di andare a nord, da [[jon-snow|Jon]] alla Barriera, e chiede a Osha una morte rapida, che lei gli concede.',
+        en: 'With Winterfell besieged, Luwin urges [[theon-greyjoy|Theon]] to flee to the Wall and join the Night’s Watch, saying he knows Theon is not the man he pretends to be. When the ironborn turn on Theon, Luwin tries to stop them, and [[dagmer|Dagmer]] stabs him with a spear. After the sack, [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[osha|Osha]] and [[hodor|Hodor]] find him dying in the godswood. He tells them to go north to [[jon-snow|Jon]] at the Wall, and asks Osha for a quick death, which she gives him.',
+      },
+    ),
+    inBooks(
+      [20, 143],
+      { it: 'Gli ultimi consigli', en: 'Last counsel' },
+      {
+        it: '[[summer-direwolf|Estate]] guida i ragazzi da Luwin, in punto di morte nel parco degli dei. Il maestro è felice che siano vivi: sapeva che i corpi mostrati da [[theon-greyjoy|Theon]] non erano i loro, e non lo ha mai detto a Theon. Dice a [[osha|Osha]] di non tenere insieme i ragazzi, perché sono gli eredi di Robb, anche se non sa dove saranno al sicuro, con gli uomini di ferro a ovest e il Bastardo di Bolton a est. Dice a [[bran-stark|Bran]] di essere forte, degno figlio del padre. Poi chiede un favore a Osha, che manda via gli altri e gli dà una morte rapida.',
+        en: '[[summer-direwolf|Summer]] leads the children to Luwin, near death in the godswood. He is glad they are alive: he knew the bodies [[theon-greyjoy|Theon]] showed were not theirs, and never told Theon. He tells [[osha|Osha]] not to keep the boys together, since they are the heirs of Robb, though he cannot say where they will be safe, with ironmen to the west and the Bastard of Bolton to the east. He tells [[bran-stark|Bran]] to be strong, his father’s son. Then he asks Osha a boon; she sends the others away and gives him a quick death.',
+      },
+    ),
   ],
   'old-nan': [
     onScreen(
@@ -4699,6 +6134,14 @@ export const season1Chronicles = {
         en: 'Old Nan sits with [[bran-stark|Bran]], who can no longer walk, while his little brother [[rickon-stark|Rickon]] plays with the direwolves in the yard. Bran tells her he hates her stories, until she begins the one about the Others, the Long Night and the Last Hero. Maester [[luwin|Luwin]] comes in with [[hodor|Hodor]]: a visitor wants Bran in the great hall. Bran would rather hear the end, but Old Nan tells him that stories can wait, while visitors rarely do.',
       },
     ),
+    inBooks(
+      [11, 78],
+      { it: 'L’odore della cometa', en: 'The smell of the comet' },
+      {
+        it: '[[robb-stark|Robb]] è in guerra, e sopra Grande Inverno brilla la cometa rossa. Di notte i meta-lupi ululano nel parco degli dei, e ognuno dà a [[bran-stark|Bran]] una spiegazione diversa. La Vecchia Nan non riesce a vedere la cometa, ma dice di sentirne l’odore, e che annuncia draghi. A Bran ha raccontato che gli Stark hanno sangue di lupo, più forte in alcuni che in altri.',
+        en: '[[robb-stark|Robb]] is at war, and the red comet hangs over Winterfell. At night the direwolves howl in the godswood, and everyone gives [[bran-stark|Bran]] a different reason. Old Nan cannot see the comet, but she claims she can smell it, and says it foretells dragons. She has told Bran that the Starks have wolf blood, stronger in some than in others.',
+      },
+    ),
   ],
   'hodor': [
     inBoth(
@@ -4707,6 +6150,54 @@ export const season1Chronicles = {
       {
         it: 'Hodor è un servitore di Grande Inverno, enorme e semplice, che sa dire una sola parola: “Hodor”. Ora che [[bran-stark|Bran]] non può più camminare, è Hodor a portarlo in braccio. Lo porta giù nella sala grande, dove il fratello di Bran, [[robb-stark|Robb]], riceve [[tyrion-lannister|Tyrion Lannister]] di ritorno dalla Barriera. Tyrion ha portato il disegno di una sella con cui Bran potrà tornare a cavallo.',
         en: 'Hodor is a servant at Winterfell, huge and simple, who can say only one word: “Hodor”. Now that [[bran-stark|Bran]] can no longer walk, it is Hodor who carries him. He carries him down to the great hall, where Bran’s brother [[robb-stark|Robb]] is receiving [[tyrion-lannister|Tyrion Lannister]] on his way back from the Wall. Tyrion has brought the design for a saddle that will let Bran ride again.',
+      },
+    ),
+    inBooks(
+      [11, 90],
+      { it: 'Un brutto cavallo', en: 'An ugly horse' },
+      {
+        it: 'Hodor aiuta [[bran-stark|Bran]] a vestirsi e lo porta in una gerla sulla schiena. Bran si meraviglia della sua forza e della sua destrezza, e pensa che avrebbe potuto essere un grande cavaliere, se gli dei gli avessero lasciato il senno. Nel cortile Little Walder chiama Hodor un brutto cavallo e lo urta con il suo destriero, finché il maestro [[luwin|Luwin]] non rimprovera i pupilli Frey: i buoni signori proteggono i deboli.',
+        en: 'Hodor helps [[bran-stark|Bran]] dress and carries him in a basket on his back. Bran marvels at his strength and deftness, and thinks he could have been a great knight if the gods had left him his wits. In the yard Little Walder calls Hodor an ugly horse and bumps him with his mount, until Maester [[luwin|Luwin]] scolds the Frey wards: good lords protect the weak.',
+      },
+    ),
+    inBooks(
+      [13, 102],
+      { it: 'A caccia di lupi', en: 'Chasing the wolves' },
+      {
+        it: 'Nel parco degli dei [[summer-direwolf|Estate]] e [[shaggydog|Cagnaccio]] si scagliano contro i Reed, e [[bran-stark|Bran]] non riesce a richiamarli. Poi si ricorda di non essere solo e chiama Hodor. Hodor arriva e scaccia i lupi tutto contento, e Jojen e Meera scendono dall’albero su cui si erano rifugiati. Bran si fa portare da Hodor dal maestro [[luwin|Luwin]].',
+        en: 'In the godswood [[summer-direwolf|Summer]] and [[shaggydog|Shaggydog]] turn on the Reeds, and [[bran-stark|Bran]] cannot call them off. Then he remembers he is not alone and calls for Hodor. Hodor comes and gleefully chases the wolves away, and Jojen and Meera climb down from the tree where they took refuge. Bran has Hodor carry him to Maester [[luwin|Luwin]].',
+      },
+    ),
+    onScreen(
+      [16, 120],
+      { it: 'Fuori dal castello', en: 'Out of the castle' },
+      {
+        it: 'Hodor assiste mentre [[theon-greyjoy|Theon]] prende Grande Inverno, se ne proclama principe e costringe [[bran-stark|Bran]] a cedere il castello davanti alla sua gente. Nel cortile [[rodrik-cassel|ser Rodrik]] viene decapitato. Quella notte [[osha|Osha]] uccide una guardia e porta Hodor, Bran, [[rickon-stark|Rickon]] e i meta-lupi fuori dalla porta, lontano dagli uomini di ferro.',
+        en: 'Hodor looks on as [[theon-greyjoy|Theon]] takes Winterfell, proclaims himself its prince and makes [[bran-stark|Bran]] yield the castle before the household. Ser [[rodrik-cassel|Rodrik]] is beheaded in the yard. That night [[osha|Osha]] kills a guard and leads Hodor, Bran, [[rickon-stark|Rickon]] and the direwolves out through the gate, away from the ironborn.',
+      },
+    ),
+    inBooks(
+      [16, 124],
+      { it: 'Tra gli scomparsi', en: 'Among the missing' },
+      {
+        it: 'Una notte Hodor sparisce da Grande Inverno con [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[osha|Osha]], i Reed e i meta-lupi. Gli inseguitori di [[theon-greyjoy|Theon]] trovano le sue impronte accanto a quelle dei Reed. Dato che Dancer è ancora nelle stalle, Theon pensa che siano fuggiti a piedi, con Bran nella gerla sulle spalle di Hodor. Promette di risparmiare Hodor, se potrà, ma perde la traccia a un torrente.',
+        en: 'One night Hodor is gone from Winterfell with [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[osha|Osha]], the Reeds and the direwolves. [[theon-greyjoy|Theon]]’s trackers find his prints beside those of the Reeds. Since Dancer is still in the stables, Theon reckons they fled on foot, with Bran in the basket on Hodor’s back. He agrees to spare Hodor if he can, but loses the trail at a brook.',
+      },
+    ),
+    onScreen(
+      [20, 143],
+      { it: 'La carriola', en: 'The wheelbarrow' },
+      {
+        it: 'Hodor dorme accanto a [[rickon-stark|Rickon]] nelle cripte, dove si nascondono con [[bran-stark|Bran]] e [[osha|Osha]] mentre gli uomini di ferro tengono il castello. Quando finalmente escono, Grande Inverno è stato bruciato, e il maestro [[luwin|Luwin]] giace gravemente ferito nel parco degli dei. Luwin dice loro di portare i ragazzi alla Barriera, da [[jon-snow|Jon Snow]]. Lasciano Grande Inverno, Hodor spingendo Bran su una carriola e Osha con Rickon in braccio.',
+        en: 'Hodor sleeps beside [[rickon-stark|Rickon]] in the crypts, where they hide with [[bran-stark|Bran]] and [[osha|Osha]] while the ironborn hold the castle. When they finally come out, Winterfell has been burned, and Maester [[luwin|Luwin]] lies badly wounded in the godswood. He tells them to take the boys to the Wall, to [[jon-snow|Jon Snow]]. They leave Winterfell, Hodor pushing Bran in a wheelbarrow and Osha carrying Rickon.',
+      },
+    ),
+    inBooks(
+      [20, 143],
+      { it: 'La pietra alla porta', en: 'The stone at the door' },
+      {
+        it: 'Hodor è fuggito da Grande Inverno con [[bran-stark|Bran]] nella gerla, e si è nascosto con gli altri nelle cripte. Quando escono, è Hodor a spostare l’enorme pietra che blocca la porta della cripta. Trovano il castello in cenere e il maestro [[luwin|Luwin]] morente nel parco degli dei. Poi Hodor va a nord con Bran, Jojen, Meera ed [[summer-direwolf|Estate]].',
+        en: 'Hodor fled Winterfell with [[bran-stark|Bran]] in his basket, and hid with the others in the crypts. When they come out, it is Hodor who shifts the massive stone blocking the crypt door. They find the castle in ashes and Maester [[luwin|Luwin]] dying in the godswood. Afterwards Hodor goes north with Bran, Jojen, Meera and [[summer-direwolf|Summer]].',
       },
     ),
   ],
@@ -4751,6 +6242,78 @@ export const season1Chronicles = {
         en: 'Osha has behaved well, and her chains are off, though the shackles stay. When [[bran-stark|Bran]] dreams of his father [[eddard-stark|Eddard]] in the crypts, Maester [[luwin|Luwin]] calls for her to carry the boy down there. Osha tells Bran that winter has no king. When [[shaggydog|Shaggydog]] savages Luwin, Osha goes to help him, and later bandages the wound. She reminds the maester that Bran is the lord, and tells him some dreams are more than dreams. When the raven arrives, it is she who tells Bran that he already knows what it says.',
       },
     ),
+    onScreen(
+      [11, 78],
+      { it: 'La cometa rossa', en: 'The red comet' },
+      {
+        it: 'Osha chiede ancora a [[bran-stark|Bran]] dei suoi strani sogni, e lui dice di non averne più fatti. Eppure insiste perché lei e [[hodor|Hodor]] lo portino allo stagno nel parco degli dei. Lì Osha trova una pianta per un infuso contro il dolore, e gli accarezza i capelli. Bran le dice che secondo alcuni la cometa rossa è un presagio favorevole a [[robb-stark|Robb]]; Osha risponde che le stelle non cadono per gli uomini, e che una cometa rossa significa draghi.',
+        en: 'Osha still asks [[bran-stark|Bran]] about his strange dreams, and he says he has had no more. Still, he insists that she and [[hodor|Hodor]] take him to the pool in the godswood. There Osha finds a plant for a tea against pain, and strokes his hair. Men say the red comet is an omen for [[robb-stark|Robb]] in the war, Bran tells her; Osha answers that stars do not fall for men, and that a red comet means dragons.',
+      },
+    ),
+    inBooks(
+      [11, 90],
+      { it: 'Dallo stagno', en: 'Out of the pool' },
+      {
+        it: 'Quando [[hodor|Hodor]] porta [[bran-stark|Bran]] nel parco degli dei, Osha balza fuori nuda dallo stagno gelido accanto all’albero del cuore. Ha il corpo duro e pieno di cicatrici, guadagnate combattendo contro uomini, quasi tutti dei Guardiani della notte, dice; ne ha anche ucciso uno. Ha sentito che i pupilli Frey hanno preso in giro Hodor, e dice che Little Walder è grande fuori e piccolo dentro. Quando Bran dice di non aver più fatto sogni di lupo, Osha gli dice che un principe dovrebbe mentire meglio, e torna di corsa alle cucine.',
+        en: 'When [[hodor|Hodor]] carries [[bran-stark|Bran]] to the godswood, Osha bursts naked out of the cold pool by the heart tree. Her body is hard and scarred, marks earned fighting men, mostly of the Night’s Watch, she says; she even killed one. She has heard how the Frey wards mocked Hodor, and calls Little Walder big outside and little inside. When Bran says he has had no more wolf dreams, Osha tells him a prince should lie better, and hurries back to the kitchens.',
+      },
+    ),
+    onScreen(
+      [15, 109],
+      { it: 'Il corvo con tre occhi', en: 'The three-eyed raven' },
+      {
+        it: '[[bran-stark|Bran]] racconta a Osha di aver sognato un corvo con tre occhi, ma lei non vuole dirgli che cosa significhi. Bran le confida anche un sogno in cui il mare inonda Grande Inverno e annega la sua gente, [[rodrik-cassel|ser Rodrik]] compreso, e Osha se ne va all’improvviso. Sta accendendo le candele in fondo alla sala quando Rodrik porta la notizia che Piazza di Torrhen è sotto assedio, e ascolta attenta mentre lui si prepara a partire con duecento uomini.',
+        en: '[[bran-stark|Bran]] tells Osha he has dreamed of a three-eyed raven, but she will not tell him what it means. He also confides a dream of the sea flooding Winterfell and drowning its people, Ser [[rodrik-cassel|Rodrik]] among them, and she leaves abruptly. Osha is lighting candles at the back of the hall when Rodrik brings word that Torrhen’s Square is besieged, and she listens closely as he prepares to ride out with two hundred men.',
+      },
+    ),
+    onScreen(
+      [16, 120],
+      { it: 'La via d’uscita', en: 'The way out' },
+      {
+        it: 'Quando [[theon-greyjoy|Theon]] prende Grande Inverno, Osha si offre di combattere per lui, ma Theon rifiuta, temendo un tranello. Dopo che Theon ha decapitato [[rodrik-cassel|ser Rodrik]], Osha dice a [[bran-stark|Bran]] che il suo sogno si è avverato: il mare è arrivato a Grande Inverno. Quella notte seduce Theon, chiedendo in cambio la libertà, e sgattaiola via mentre lui dorme. Uccide una guardia e porta Bran, [[rickon-stark|Rickon]], [[hodor|Hodor]] e i meta-lupi fuori dal castello.',
+        en: 'When [[theon-greyjoy|Theon]] takes Winterfell, Osha offers to fight for him, but he refuses, suspecting a trick. After he beheads Ser [[rodrik-cassel|Rodrik]], she tells [[bran-stark|Bran]] that his dream has come true: the sea has come to Winterfell. That night she seduces Theon, asking for her freedom, and slips away while he sleeps. She kills a guard and leads Bran, [[rickon-stark|Rickon]], [[hodor|Hodor]] and the direwolves out of the castle.',
+      },
+    ),
+    inBooks(
+      [16, 120],
+      { it: 'Al servizio di Theon', en: 'In Theon’s service' },
+      {
+        it: 'Quando gli uomini di ferro di [[theon-greyjoy|Theon]] prendono Grande Inverno, Osha è tra la gente del castello radunata nella sala grande. Quasi tutti sfidano Theon, e [[mikken|Mikken]] viene ucciso perché si rifiuta di inginocchiarsi. Osha è tra i pochi che passano al servizio di Theon, insieme a un prigioniero chiamato Reek. [[bran-stark|Bran]] ci resta male, ma convince gli altri a non combattere.',
+        en: 'When the ironborn of [[theon-greyjoy|Theon]] take Winterfell, Osha is among the household gathered in the great hall. Most of them defy Theon, and [[mikken|Mikken]] is killed for refusing to kneel. Osha is one of the few who join Theon’s service, along with a prisoner called Reek. [[bran-stark|Bran]] is hurt that she would do it, but he persuades the others not to fight.',
+      },
+    ),
+    inBooks(
+      [16, 124],
+      { it: 'Il giuramento rotto', en: 'The broken oath' },
+      {
+        it: 'Osha rompe il giuramento fatto a [[theon-greyjoy|Theon]]. Una notte sparisce da Grande Inverno con [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[hodor|Hodor]], i Reed e i meta-lupi, e Theon pensa che sia stata lei a uccidere una delle due guardie trovate morte alla Porta del Cacciatore. Li bracca per tutto il giorno, e promette al maestro [[luwin|Luwin]] pietà per tutti tranne che per lei, perché ha fatto un giuramento e lo ha rotto.',
+        en: 'Osha breaks the oath she swore to [[theon-greyjoy|Theon]]. One night she is gone from Winterfell with [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[hodor|Hodor]], the Reeds and the direwolves, and Theon reckons that she killed one of the two guards found dead at the Hunter’s Gate. He hunts them all day, and promises Maester [[luwin|Luwin]] mercy for everyone but her, since she took an oath and broke it.',
+      },
+    ),
+    onScreen(
+      [18, 130],
+      { it: 'Sui propri passi', en: 'Doubling back' },
+      {
+        it: 'Osha ha portato i ragazzi Stark solo fino alla fattoria, poi è tornata indietro lungo un torrente per far perdere la traccia ai cani; ora si nascondono nelle cripte di Grande Inverno. Il maestro [[luwin|Luwin]] la sorprende mentre porta loro del pane. Luwin capisce che i corpi bruciati mostrati da [[theon-greyjoy|Theon]] erano i due orfani della fattoria, e Osha promette di non dirlo ai ragazzi: hanno già sofferto abbastanza. [[bran-stark|Bran]] però li ha sentiti.',
+        en: 'Osha led the Stark boys only as far as the farm, then doubled back through a stream to throw the hounds off their scent; now they hide in the crypts of Winterfell. Maester [[luwin|Luwin]] catches her taking bread down to them. He realizes the burned bodies [[theon-greyjoy|Theon]] showed were the two orphans from the farm, and Osha promises not to tell the boys: they have suffered enough. [[bran-stark|Bran]] has heard them all the same.',
+      },
+    ),
+    onScreen(
+      [20, 143],
+      { it: 'Una morte rapida', en: 'A quick death' },
+      {
+        it: 'Osha tiene nascosti [[bran-stark|Bran]], [[rickon-stark|Rickon]] e [[hodor|Hodor]] nelle cripte mentre Grande Inverno viene saccheggiato. Quando escono, trovano il maestro [[luwin|Luwin]] morente nel parco degli dei. Luwin dice a Osha di portare i ragazzi a nord, dal fratellastro [[jon-snow|Jon]] alla Barriera, e lei accetta. Quando i ragazzi si allontanano, Luwin le chiede una morte rapida, e Osha gli concede il dono della pietà. Poi lascia Grande Inverno con i ragazzi, Hodor e i meta-lupi.',
+        en: 'Osha keeps [[bran-stark|Bran]], [[rickon-stark|Rickon]] and [[hodor|Hodor]] hidden in the crypts while Winterfell is sacked. When they come out, they find Maester [[luwin|Luwin]] dying in the godswood. He tells Osha to take the boys north to their half-brother [[jon-snow|Jon]] at the Wall, and she agrees. After the boys go, Luwin asks her for a quick death, and she gives him the gift of mercy. Then she leaves Winterfell with the boys, Hodor and the direwolves.',
+      },
+    ),
+    inBooks(
+      [20, 143],
+      { it: 'La spada della tomba', en: 'The sword from the tomb' },
+      {
+        it: 'Osha ha rotto il giuramento fatto a [[theon-greyjoy|Theon]] ed è fuggita da Grande Inverno con i ragazzi Stark; i meta-lupi sono stati mandati avanti a lasciare una falsa traccia, mentre gli altri tornavano indietro a nascondersi nelle cripte. Dopo il saccheggio Osha prende dalla tomba di lord Eddard la spada che [[mikken|Mikken]] aveva forgiato per quella tomba. Trovano il maestro [[luwin|Luwin]] morente, e Luwin le dice che i ragazzi vanno separati. Poi le chiede un favore, e Osha manda via gli altri. Infine parte con [[rickon-stark|Rickon]] e [[shaggydog|Cagnaccio]], mentre [[bran-stark|Bran]] va a nord.',
+        en: 'Osha broke her oath to [[theon-greyjoy|Theon]] and fled Winterfell with the Stark boys; the direwolves were sent ahead to lay a false trail while the others doubled back to hide in the crypts. After the sack she takes from Lord Eddard’s tomb the sword [[mikken|Mikken]] forged for it. They find Maester [[luwin|Luwin]] dying, and he tells her the boys must be separated. Luwin asks her a boon, and she sends the others away. Then Osha sets off with [[rickon-stark|Rickon]] and [[shaggydog|Shaggydog]], while [[bran-stark|Bran]] goes north.',
+      },
+    ),
   ],
   'mikken': [
     inBoth(
@@ -4759,6 +6322,22 @@ export const season1Chronicles = {
       {
         it: 'Mikken è il fabbro di Grande Inverno. Prima di partire per la Barriera, [[jon-snow|Jon Snow]] gli fa forgiare una spada per la sorella [[arya-stark|Arya]]: una lama sottile, leggera, adatta a lei. Jon la regala ad Arya prima di andarsene, e lei la chiama Ago. Jon le dà anche il primo consiglio su come usarla: colpire con la parte appuntita.',
         en: 'Mikken is the blacksmith of Winterfell. Before he leaves for the Wall, [[jon-snow|Jon Snow]] has him forge a sword for his sister [[arya-stark|Arya]]: a slender, light blade, made for her. Jon gives it to Arya before he goes, and she names it Needle. Jon also gives her the first lesson in using it: stick them with the pointy end.',
+      },
+    ),
+    inBooks(
+      [15, 109],
+      { it: 'Il mare che voleva vedere', en: 'The sea he wanted to see' },
+      {
+        it: '[[bran-stark|Bran]] sta azionando il mantice nella fucina di Mikken quando arrivano notizie da Robb. Poi Jojen sogna che il mare inonda Grande Inverno, e che Mikken è tra gli annegati. Bran cerca di avvertire il fabbro, ma Mikken trova la cosa divertente, e dice che ha sempre voluto vedere il mare.',
+        en: '[[bran-stark|Bran]] is working the bellows in Mikken’s forge when news comes from Robb. Then Jojen dreams that the sea floods Winterfell, and that Mikken is among the drowned. Bran tries to warn the smith, but Mikken thinks it funny, and says he always wanted to see the sea.',
+      },
+    ),
+    inBooks(
+      [16, 120],
+      { it: 'Il ginocchio che non si piega', en: 'Refusing to kneel' },
+      {
+        it: 'Quando gli uomini di ferro di [[theon-greyjoy|Theon]] prendono Grande Inverno, la gente del castello viene radunata nella sala grande. Mikken si rifiuta di piegare il ginocchio davanti a Theon e viene abbattuto, e annega nel suo stesso sangue. [[bran-stark|Bran]] vede avverarsi il sogno di Jojen: il mare è arrivato a Grande Inverno.',
+        en: 'When the ironmen of [[theon-greyjoy|Theon]] take Winterfell, the people of the castle are gathered in the great hall. Mikken refuses to bend the knee to Theon and is cut down, drowning on his own blood. [[bran-stark|Bran]] sees the dream of Jojen come true: the sea has come to Winterfell.',
       },
     ),
   ],
@@ -4797,6 +6376,46 @@ export const season1Chronicles = {
         en: 'Summer goes down with [[bran-stark|Bran]], [[osha|Osha]] and Maester [[luwin|Luwin]] into the crypts of Winterfell, where Bran expects to find his father. The wolf is uneasy and will not leave the steps. When [[shaggydog|Shaggydog]] springs out of the tomb made ready for Lord Eddard and savages Luwin’s arm, Bran calls for Summer, who slams into Shaggydog and knocks him off the maester.',
       },
     ),
+    onScreen(
+      [11, 78],
+      { it: 'Il riflesso di Bran', en: 'Bran’s reflection' },
+      {
+        it: 'Estate è tenuto nel parco degli dei di Grande Inverno, e [[bran-stark|Bran]] comincia a vivere nei sogni i movimenti del lupo. In un sogno cammina nel parco degli dei nei panni di Estate e si specchia nello stagno, e la faccia che vede è quella del lupo. Turbato, Bran si fa portare allo stesso stagno da [[osha|Osha]] e da [[hodor|Hodor]], e si rassicura trovando il proprio riflesso.',
+        en: 'Summer is kept in the godswood of Winterfell, and [[bran-stark|Bran]] begins to live the wolf’s movements in his dreams. In one he walks the godswood as Summer and looks into the pool, and the face he sees is the wolf’s. Shaken, Bran has [[osha|Osha]] and [[hodor|Hodor]] take him to the same pool, and is relieved to find his own reflection.',
+      },
+    ),
+    inBooks(
+      [13, 95],
+      { it: 'Più forte di quanto sappia', en: 'Stronger than he knows' },
+      {
+        it: 'Durante la festa del raccolto [[bran-stark|Bran]] deve lasciare Estate nel parco degli dei. Quella notte, nel sogno di Bran, Estate e suo fratello [[shaggydog|Cagnaccio]] corrono tra gli alberi verso due sconosciuti, una ragazza e un ragazzo senza odore di paura. Sono Meera e Jojen. Jojen dice che Cagnaccio è pieno di paura e di rabbia, ma che Estate è più forte di quanto sappia, e allunga la mano per toccarlo.',
+        en: '[[bran-stark|Bran]] has to leave Summer in the godswood during the harvest feast. That night, in Bran’s dream, Summer and his brother [[shaggydog|Shaggydog]] race through the trees toward two strangers, a girl and a boy with no smell of fear. It is Meera and Jojen. Jojen says Shaggydog is full of fear and rage, but Summer is stronger than he knows, and reaches out to touch him.',
+      },
+    ),
+    onScreen(
+      [13, 102],
+      { it: 'Sul letto di Bran', en: 'On Bran’s bed' },
+      {
+        it: '[[bran-stark|Bran]] sogna di nuovo con gli occhi di Estate. Il lupo segue [[hodor|Hodor]], che viene a svegliare Bran, salta sul letto, e Bran si ritrova a guardare dall’alto la propria faccia. Si sveglia con gli occhi di Estate davanti ai suoi, e Hodor lì accanto. Il maestro [[luwin|Luwin]] non dà peso al sogno.',
+        en: '[[bran-stark|Bran]] dreams again through Summer’s eyes. The wolf follows [[hodor|Hodor]] as he comes to wake Bran, jumps up onto the bed, and Bran finds himself looking down at his own face. He wakes to find himself looking into Summer’s eyes, with Hodor beside them. Maester [[luwin|Luwin]] dismisses the dream.',
+      },
+    ),
+    inBooks(
+      [13, 102],
+      { it: 'Preso nella rete', en: 'Caught in the net' },
+      {
+        it: 'Nel parco degli dei Estate supera di slancio la fiocina di Meera e resta impigliato nella sua rete. Non ha mai morso nessuno a sangue, dice [[bran-stark|Bran]]. Ma quando Jojen chiede se Bran cade ogni notte, Estate ringhia; Meera dice che il lupo sente la rabbia di Bran, e che i due sono parte l’uno dell’altro. Quando [[shaggydog|Cagnaccio]] attacca, Estate si unisce a lui, e solo [[hodor|Hodor]] riesce a scacciarli.',
+        en: 'Summer charges past Meera’s frog spear in the godswood and is caught in her net. He has never drawn blood, [[bran-stark|Bran]] says. But when Jojen asks whether Bran falls every night, Summer growls; Meera says it is Bran’s anger the wolf feels, and that the two are part of each other. When [[shaggydog|Shaggydog]] attacks, Summer joins him, and only [[hodor|Hodor]] can chase them off.',
+      },
+    ),
+    inBooks(
+      [20, 143],
+      { it: 'Il saccheggio dal bosco', en: 'Watching the sack' },
+      {
+        it: 'Estate e [[shaggydog|Cagnaccio]] sono stati mandati avanti nella Foresta del Lupo per sviare la caccia di [[theon-greyjoy|Theon]]. Dal margine del bosco guardano Grande Inverno saccheggiato e bruciato, e [[bran-stark|Bran]] guarda con loro, per tre giorni, con gli occhi di Estate. I lupi attraversano le rovine e raggiungono Bran vicino alla torre in rovina, ed Estate lo guida dal maestro [[luwin|Luwin]], morente nel parco degli dei. Estate va a nord con Bran.',
+        en: 'Summer and [[shaggydog|Shaggydog]] were sent ahead into the wolfswood to lead the hunt of [[theon-greyjoy|Theon]] astray. From its edge they watch Winterfell sacked and burned, and [[bran-stark|Bran]] watches with them, for three days, through Summer’s eyes. The wolves pad through the ruins and rejoin Bran near the broken tower, and Summer leads him to Maester [[luwin|Luwin]], dying in the godswood. Summer goes north with Bran.',
+      },
+    ),
   ],
   'shaggydog': [
     inBooks(
@@ -4829,6 +6448,38 @@ export const season1Chronicles = {
       {
         it: 'Cagnaccio è nelle cripte di Grande Inverno con [[rickon-stark|Rickon]]. Quando il maestro [[luwin|Luwin]] infila il braccio nella tomba preparata per lord [[eddard-stark|Eddard]], Cagnaccio balza fuori e glielo azzanna, finché [[summer-direwolf|Estate]] non si scaglia su di lui. Il lupo doveva stare alla catena, ma Rickon non vuole che lo leghino. Luwin dice che Cagnaccio ha già sbranato tre uomini e che prima o poi ucciderà qualcuno.',
         en: 'Shaggydog is in the crypts of Winterfell with [[rickon-stark|Rickon]]. When Maester [[luwin|Luwin]] puts his arm into the tomb made ready for Lord [[eddard-stark|Eddard]], Shaggydog springs out and savages it, until [[summer-direwolf|Summer]] slams into him. The wolf was supposed to be chained, but Rickon does not want him tied. Luwin says Shaggydog has now savaged three men and will kill someone sooner or later.',
+      },
+    ),
+    inBooks(
+      [13, 102],
+      { it: 'Pieno di rabbia', en: 'Full of rage' },
+      {
+        it: 'Cagnaccio è tenuto nel parco degli dei con [[summer-direwolf|Estate]] da quando ha morso [[little-walder-frey|Little Walder]]. Mentre Jojen interroga [[bran-stark|Bran]] sui suoi sogni, Cagnaccio arriva e si avventa sui Reed, ed Estate si unisce a lui. Meera manda Jojen su un albero e lo segue. Bran non riesce a richiamare i lupi, finché non manda [[hodor|Hodor]] a scacciarli.',
+        en: 'Shaggydog is kept in the godswood with [[summer-direwolf|Summer]] since he bit [[little-walder-frey|Little Walder]]. While Jojen questions [[bran-stark|Bran]] about his dreams, Shaggydog arrives and lunges at the Reeds, and Summer joins him. Meera sends Jojen up a tree and follows him. Bran cannot call the wolves off, until he has [[hodor|Hodor]] chase them away.',
+      },
+    ),
+    onScreen(
+      [16, 120],
+      { it: 'In fuga dagli uomini di ferro', en: 'Fleeing the ironborn' },
+      {
+        it: 'Cagnaccio è il meta-lupo di [[rickon-stark|Rickon]]. Quando [[theon-greyjoy|Theon]] prende Grande Inverno e decapita [[rodrik-cassel|ser Rodrik]], i lupi sono ancora nel castello. Quella notte [[osha|Osha]] sgattaiola via dal letto di Theon, uccide una guardia e porta fuori Rickon, [[bran-stark|Bran]] e [[hodor|Hodor]], e Cagnaccio ed [[summer-direwolf|Estate]] fuggono con loro.',
+        en: 'Shaggydog is the direwolf of [[rickon-stark|Rickon]]. When [[theon-greyjoy|Theon]] captures Winterfell and beheads Ser [[rodrik-cassel|Rodrik]], the wolves are still in the castle. That night [[osha|Osha]] slips away from Theon’s bed, kills a guard and leads Rickon, [[bran-stark|Bran]] and [[hodor|Hodor]] out, and Shaggydog and [[summer-direwolf|Summer]] flee with them.',
+      },
+    ),
+    onScreen(
+      [20, 143],
+      { it: 'A nord con i ragazzi', en: 'North with the boys' },
+      {
+        it: 'Dopo il saccheggio di Grande Inverno, Cagnaccio ed [[summer-direwolf|Estate]] ritrovano i ragazzi e i loro compagni quando escono dalle cripte. Il maestro [[luwin|Luwin]], morente, li manda a nord da [[jon-snow|Jon Snow]], alla Barriera, e Cagnaccio parte con [[rickon-stark|Rickon]], [[bran-stark|Bran]], [[osha|Osha]] e [[hodor|Hodor]].',
+        en: 'After the sack of Winterfell, Shaggydog and [[summer-direwolf|Summer]] rejoin the boys and their companions when they come out of the crypts. Maester [[luwin|Luwin]], dying, sends them north to [[jon-snow|Jon Snow]] at the Wall, and Shaggydog goes with [[rickon-stark|Rickon]], [[bran-stark|Bran]], [[osha|Osha]] and [[hodor|Hodor]].',
+      },
+    ),
+    inBooks(
+      [20, 143],
+      { it: 'Con Rickon e Osha', en: 'With Rickon and Osha' },
+      {
+        it: 'Quando i ragazzi sono fuggiti da Grande Inverno, Cagnaccio ed [[summer-direwolf|Estate]] sono stati mandati avanti a lasciare una falsa traccia. Guardano il castello bruciare dal margine della Foresta del Lupo, poi raggiungono gli altri vicino alla torre in rovina. Quando si decide che i fratelli devono separarsi, Cagnaccio va con [[rickon-stark|Rickon]] e [[osha|Osha]], mentre [[bran-stark|Bran]] va a nord con Estate.',
+        en: 'Shaggydog and [[summer-direwolf|Summer]] were sent ahead to lay a false trail when the boys fled Winterfell. They watch the castle burn from the edge of the wolfswood, then rejoin the others near the broken tower. When it is decided that the brothers must part, Shaggydog goes with [[rickon-stark|Rickon]] and [[osha|Osha]], while [[bran-stark|Bran]] goes north with Summer.',
       },
     ),
   ],
@@ -5152,6 +6803,60 @@ export const season1Chronicles = {
       {
         it: 'Ser Rodrik accompagna [[catelyn-stark|Catelyn]] dal Nido dell’Aquila all’esercito di [[robb-stark|Robb]], dove saluta [[greatjon-umber|Greatjon Umber]] come un vecchio amico. Alle Torri Gemelle consiglia a Catelyn di non andare da sola a trattare con lord [[walder-frey|Walder Frey]], ma lei ci va comunque e ottiene il passaggio. Dopo la vittoria di Robb su [[jaime-lannister|Jaime Lannister]] arriva la notizia che [[eddard-stark|Eddard]] è stato decapitato, e Rodrik è tra coloro che proclamano Robb Re del Nord.',
         en: 'Ser Rodrik rides with [[catelyn-stark|Catelyn]] from the Eyrie to [[robb-stark|Robb]]’s army, where he greets [[greatjon-umber|Greatjon Umber]] like an old friend. At the Twins he advises Catelyn not to go alone to bargain with Lord [[walder-frey|Walder Frey]], but she goes anyway and wins the crossing. After Robb’s victory over [[jaime-lannister|Jaime Lannister]], word comes that [[eddard-stark|Eddard]] has been beheaded, and Rodrik is among those who proclaim Robb King in the North.',
+      },
+    ),
+    onScreen(
+      [11, 81],
+      { it: 'Ritorno a Grande Inverno', en: 'Back to Winterfell' },
+      {
+        it: '[[robb-stark|Robb]] manda le sue condizioni di pace ad Approdo del Re, e ser Rodrik è con lui. [[catelyn-stark|Catelyn]] chiede di tornare a casa dai figli più piccoli, ma Robb la manda invece a trattare con [[renly-baratheon|Renly Baratheon]], e rimanda Rodrik a Grande Inverno a proteggere [[bran-stark|Bran]] e [[rickon-stark|Rickon]].',
+        en: 'Ser Rodrik is with [[robb-stark|Robb]] when Robb sends his peace terms to King’s Landing. [[catelyn-stark|Catelyn]] asks to go home to her younger sons, but Robb sends her to treat with [[renly-baratheon|Renly Baratheon]] instead, and sends Rodrik back to Winterfell to keep [[bran-stark|Bran]] and [[rickon-stark|Rickon]] safe.',
+      },
+    ),
+    inBooks(
+      [11, 90],
+      { it: 'L’allusione della vedova', en: 'A widow’s hint' },
+      {
+        it: 'Ser Rodrik siede accanto a [[bran-stark|Bran]] mentre i lord del Nord arrivano a Grande Inverno per la festa del raccolto. Promette a lady Hornwood di proteggere le sue terre e di cercarle un marito di suo gusto, e lei lascia capire che prenderebbe lui. Dopo, Rodrik è a disagio: è solo un cavaliere, e troppo vecchio. Ordina che Benfred, il nipote di Leobald Tallhart, resti a Piazza di Torrhen, e racconta di avere una sola figlia, Beth, dopo tre matrimoni.',
+        en: 'Ser Rodrik sits beside [[bran-stark|Bran]] as the northern lords come to Winterfell for the harvest feast. He promises Lady Hornwood to protect her lands and to look for a husband to her liking, and she hints that she would take him. Afterwards Rodrik is uncomfortable: he is only a knight, and too old. He orders Benfred, the nephew of Leobald Tallhart, to stay at Torrhen’s Square, and says he has only one daughter, Beth, after three marriages.',
+      },
+    ),
+    inBooks(
+      [15, 109],
+      {
+        it: 'Il prigioniero degli Hornwood',
+        en: 'The prisoner from the Hornwood',
+      },
+      {
+        it: 'Ser Rodrik era partito verso est dopo che il bastardo di [[roose-bolton|Roose Bolton]] aveva preso con la forza [[donella-hornwood|lady Hornwood]], e torna con un prigioniero chiamato Reek. A Bran viene detto che il bastardo e Reek l’hanno uccisa, e che gli uomini di Rodrik hanno ucciso il bastardo con le frecce mentre fuggiva. Tiene in vita Reek perché sia Robb a giudicarlo, anche se uomini dei Manderly e dei Bolton si battono per le terre degli Hornwood e lui non ha la forza di fermarli. Predoni saccheggiano la costa, e Rodrik promette a [[bran-stark|Bran]] di non portare Alebelly con sé se partirà contro di loro.',
+        en: 'Ser Rodrik rode east after the bastard of [[roose-bolton|Roose Bolton]] took [[donella-hornwood|Lady Hornwood]] by force, and comes back with a prisoner called Reek. Bran is told that the bastard and Reek murdered her, and that Rodrik’s men shot the bastard dead as he fled. He keeps Reek alive for Robb to judge, though Manderly and Bolton men fight over the Hornwood and he lacks the strength to stop them. Raiders are plundering the coast, and Rodrik promises [[bran-stark|Bran]] not to take Alebelly if he rides against them.',
+      },
+    ),
+    onScreen(
+      [15, 111],
+      {
+        it: 'Piazza di Torrhen sotto assedio',
+        en: 'Torrhen’s Square under siege',
+      },
+      {
+        it: 'Ser Rodrik porta a Grande Inverno la notizia che Piazza di Torrhen, a nemmeno quaranta leghe, è sotto assedio. Pensa a predoni guidati dalla [[gregor-clegane|Montagna]], o a dei mercenari. [[bran-stark|Bran]] dice che devono aiutare i loro vassalli, e Rodrik dice di poter radunare duecento uomini validi. Quando Bran aggiunge che devono proteggere i vassalli se vogliono esserne protetti, Rodrik sorride della saggezza del ragazzo. I sudisti non se la cavano bene nel Nord, dice, e non ci vorrà molto. L’assedio è una finta di [[theon-greyjoy|Theon]] per attirare via la guarnigione.',
+        en: 'Ser Rodrik brings word to Winterfell that Torrhen’s Square is under siege, barely forty leagues away. He guesses at raiders led by [[gregor-clegane|the Mountain]], or sellswords. [[bran-stark|Bran]] says they must help their bannermen, and Rodrik says he can gather two hundred decent men. When Bran adds that they must protect their bannermen if they expect to be protected, Rodrik smiles at the boy’s wisdom. Southerners do not do well in the North, he says, and it will not take long. The siege is a feint by [[theon-greyjoy|Theon]], to draw the garrison away.',
+      },
+    ),
+    onScreen(
+      [16, 120],
+      { it: 'Prigioniero di Theon', en: 'Theon’s prisoner' },
+      {
+        it: 'Ser Rodrik viene catturato mentre torna da Piazza di Torrhen, dopo aver abbattuto due uomini di ferro. Trascinato a Grande Inverno, dà del traditore a [[theon-greyjoy|Theon]] e gli sputa in faccia. Theon lo condanna a morte. Rodrik gli ricorda che nel Nord chi pronuncia la sentenza cala la spada, e a [[bran-stark|Bran]], in lacrime, dice: “Vado da tuo padre”. A Theon servono quattro colpi e un calcio per decapitarlo.',
+        en: 'Ser Rodrik is caught on his way back from Torrhen’s Square, after cutting down two of the ironborn. Dragged into Winterfell, he calls [[theon-greyjoy|Theon]] a traitor and spits in his face. Theon sentences him to death. Rodrik reminds him that in the North the man who passes the sentence swings the sword, and tells the sobbing [[bran-stark|Bran]] that he is off to see his father. Theon needs four blows and a kick to behead him.',
+      },
+    ),
+    inBooks(
+      [20, 140],
+      { it: 'Il colloquio', en: 'The parley' },
+      {
+        it: 'Ser Rodrik raduna gli uomini del Nord fuori da Grande Inverno e, in un colloquio nel villaggio d’inverno, pretende che [[theon-greyjoy|Theon]] ceda il castello e si sottometta al giudizio di Robb. Theon risponde facendo mostrare a [[black-lorren|Black Lorren]] sulle mura Beth, la figlia di Rodrik, con un cappio al collo: sarà impiccata al tramonto. Rodrik gli dà del codardo e si offre al posto di lei, ma Theon rifiuta. Poi gli uomini di Forte Terrore, che Rodrik credeva alleati, piombano sul suo esercito, e il corpo di Rodrik viene portato a Theon.',
+        en: 'Ser Rodrik gathers the northmen outside Winterfell and, at a parley in the winter town, demands that [[theon-greyjoy|Theon]] yield the castle and be judged by Robb. Theon answers by having [[black-lorren|Black Lorren]] show Beth, the daughter of Rodrik, on the walls with a noose around her neck: she will hang at sunset. Rodrik calls him craven and offers himself in her place, but Theon refuses. Then men from the Dreadfort, whom Rodrik took for allies, fall on his army, and the body of Rodrik is brought to Theon.',
       },
     ),
   ],
