@@ -8,7 +8,7 @@ import { toldIn } from '~/data/reveal'
 import type { Dated, Entity, SeriesArchive } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
 import { FIRST_CHAPTER, FIRST_EPISODE } from '~/lib/progress/episode'
-import type { Gated } from '~/lib/progress/spoiler'
+import type { Gated, Source } from '~/lib/progress/spoiler'
 import type { Stroke } from '~/lib/view/records'
 import { ACCENT_EXCEPTIONS } from '~/test/accents'
 import { LOADED_SERIES } from '~/test/series'
@@ -94,6 +94,36 @@ function stageAt({
   told: string | undefined
 }): string {
   return told === 'chapter' ? `c${String(chapter)}` : String(episode)
+}
+
+/**
+ * Whether a stage comes late enough, in the units of the medium that tells
+ * it. A stage both media tell comes after the record's episode; a
+ * manga-only one after its chapter, at or after its episode. An anime-only
+ * stage of a record both media tell may sit at the record's episode: there
+ * the anime already shows what the manga shows later, and a chapter reader
+ * keeps the first drawing (#1683, the Okuchi-no-Makami fruit). A record one
+ * medium alone tells has no other reader, so its stages stay strictly later.
+ */
+function isLateEnough(
+  {
+    chapter = 0,
+    episode,
+    source,
+    told,
+  }: Parameters<typeof stageAt>[0] & { source?: Source | undefined },
+  record: Pick<Entity, 'revealedAtChapter' | 'revealedAtEpisode' | 'source'>,
+): boolean {
+  if (told === 'chapter') {
+    return (
+      chapter > record.revealedAtChapter && episode >= record.revealedAtEpisode
+    )
+  }
+  const atTheThreshold = source === 'episode' && record.source === undefined
+
+  return atTheThreshold ?
+      episode >= record.revealedAtEpisode
+    : episode > record.revealedAtEpisode
 }
 
 /** A dated fact or a later visit, with the record whose gate it shares. */
@@ -531,20 +561,11 @@ describe.each(LOADED_SERIES)(
 
         // That the pin is within the record's chapter and the dial is held
         // with every declared chapter in `~/data/archive.test.ts`.
-        // A stage told in the anime comes after the record's episode; a
-        // manga-only one after its chapter, at or after its episode.
         for (const stage of stages) {
-          const { chapter, episode, value } = stage
-          const mangaOnly = stage.told === 'chapter'
+          const { chapter, value } = stage
 
           expect(chapter, entity.id).toBeDefined()
-          expect(
-            mangaOnly ?
-              (chapter ?? 0) > entity.revealedAtChapter
-                && episode >= entity.revealedAtEpisode
-            : episode > entity.revealedAtEpisode,
-            entity.id,
-          ).toBe(true)
+          expect(isLateEnough(stage, entity), entity.id).toBe(true)
 
           isADrawing(`${folder}/${entity.id}@${stageAt(stage)}`, value)
         }

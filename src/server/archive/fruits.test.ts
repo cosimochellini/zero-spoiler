@@ -44,6 +44,26 @@ import type { SagaStart } from './sagaLabels.server'
 /** The drawings by any record's id, as the archive hands them out. */
 const DRAWN: Drawings = DRAWINGS
 
+/**
+ * The fruits whose page opens, in one unit, on their first redrawing rather
+ * than their first drawing, pinned by hand: episode 1041 shows the
+ * Okuchi-no-Makami fruit before it is named at 1042, and the manga draws it
+ * only at chapter 1070 (#1683).
+ */
+const OPENS_REDRAWN: Record<string, 'chapter' | 'episode'> = {
+  'dog-dog-fruit-model-okuchi-no-makami': 'episode',
+}
+
+/** The drawing a fruit's page opens on in this unit. */
+function openingOf(
+  { id, visual }: Pick<Entity, 'id' | 'visual'>,
+  unit: 'chapter' | 'episode',
+): unknown {
+  return OPENS_REDRAWN[id] === unit ?
+      REDRAWINGS[id]?.[0]?.value
+    : DRAWN[visual.art]
+}
+
 const BOOKMARKS = ONE_PIECE.bookmarks
 
 /**
@@ -420,11 +440,12 @@ describe('a fruit’s own page', () => {
       const strokes = fruit === undefined ? undefined : DRAWN[fruit.visual.art]
 
       for (const locale of ['en', 'it'] as const) {
-        for (const [before, at] of [
-          [ep(episode - 1), ep(episode)],
+        for (const [before, at, unit] of [
+          [ep(episode - 1), ep(episode), 'episode'],
           [
             { mode: 'chapter', chapter: chapter - 1 },
             { mode: 'chapter', chapter },
+            'chapter',
           ],
         ] as const) {
           const covered = fruitPage(id, before, locale)
@@ -444,7 +465,10 @@ describe('a fruit’s own page', () => {
               slot: {
                 open: true,
                 record: {
-                  visual: { strokes },
+                  visual: {
+                    strokes:
+                      fruit === undefined ? strokes : openingOf(fruit, unit),
+                  },
                   summary: fruit?.summary[locale],
                 },
               },
@@ -489,16 +513,20 @@ describe('a fruit and its eaters', () => {
     }) => {
       const eaters = eatersOf(id).map((eater) => eater.entity.id)
       const marks = [
-        { bookmark: ep(episode - 1), open: false },
-        { bookmark: ep(episode), open: true },
-        { bookmark: { mode: 'chapter', chapter: chapter - 1 }, open: false },
-        { bookmark: { mode: 'chapter', chapter }, open: true },
+        { bookmark: ep(episode - 1), open: false, unit: 'episode' },
+        { bookmark: ep(episode), open: true, unit: 'episode' },
+        {
+          bookmark: { mode: 'chapter', chapter: chapter - 1 },
+          open: false,
+          unit: 'chapter',
+        },
+        { bookmark: { mode: 'chapter', chapter }, open: true, unit: 'chapter' },
       ] as const
 
       expect(eaters.length).toBeGreaterThan(0)
 
       for (const locale of LOCALES) {
-        for (const { bookmark, open } of marks) {
+        for (const { bookmark, open, unit } of marks) {
           const page = fruitPage(id, bookmark, locale)
           const sheet = fruitAlbum(bookmark, locale)
           const specimen = sheet.bands
@@ -519,7 +547,7 @@ describe('a fruit and its eaters', () => {
           ).toBe(open)
           expect(linked).toBe(open)
           expect(drawingsFor([id], bookmark, locale)[id]).toStrictEqual(
-            open ? DRAWN[visual.art] : undefined,
+            open ? openingOf({ id, visual }, unit) : undefined,
           )
 
           saysNothing(page, bookmark)

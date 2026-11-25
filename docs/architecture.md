@@ -366,9 +366,21 @@ Storm of Swords_ through chapter 52, Arya XI (episodes 21–30, site chapters
 the books' alone, Grazdan mo Eraz filed under the books' name with the show's
 Razdal mo Eraz as his `episodeName`, with placeholder busts, stage-3 steps on
 Daenerys and the show's on Barristan Selmy, and the season's drawing, the Fist
-of the First Men. Jaime, Brienne and Harrenhal (#1637) adds two characters, one
-both media's and one the books' alone, with the stage's steps of five earlier
-records; they show the same placeholder until their drawing child draws them.
+of the First Men. King's Landing (#1634) adds six characters: Olenna Tyrell,
+Margaery's three cousins, the books' alone, and Oberyn Martell and Ellaria Sand,
+whose show gates are in season 4 (#852), with the stage's steps of six earlier
+characters. The stage-3 characters show the shared `PERSON` placeholder until
+their drawing children (#1631). Robb's war and the Riverlands (#1635) adds ten
+characters, five the books' alone, one the show's and four both media's, with
+the stage's steps of three season-1 characters. The Wall and beyond (#1638) adds
+eleven characters, eight of them the books' alone: Mance Rayder, Tormund and
+Orell, Styr, Dalla, Val and Jarl from Mance's host, and Small Paul and three
+mutineers of Craster's Keep, with the stage's steps of Jon Snow, Rast, Chett,
+Ygritte and Gilly. Arya, the Brotherhood and the Hound (#1636) adds eight
+outlaws and their allies, all the books' alone (Anguy is in the show but never
+named in the pages read), with the stage's steps of seven earlier characters.
+Jaime, Brienne and Harrenhal (#1637) adds two characters, one both media's and
+one the books' alone, with the stage's steps of five earlier records.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -579,9 +591,9 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Bodies of power           | 15, with 119 seats                                      |
 | Arcs, places, ships       | 34 · 39 · 2                                             |
 | Saga modules              | 12, plus one for the devil fruits                       |
-| Line drawings             | 742, one per record, plus 433 redrawings of 240 records |
+| Line drawings             | 742, one per record, plus 435 redrawings of 241 records |
 | Chronicle stories         | 816, for 195 characters                                 |
-| Dated timelines           | 2761                                                    |
+| Dated timelines           | 2762                                                    |
 | Affiliation steps         | 830                                                     |
 | Status steps              | 804                                                     |
 | Origins that link a place | 118                                                     |
@@ -608,15 +620,15 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| Records                | 309                                                                                     |
-| Characters             | 222                                                                                     |
+| Records                | 344                                                                                     |
+| Characters             | 257                                                                                     |
 | Places                 | 87                                                                                      |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 312, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
+| Line drawings          | 347, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
 | Chronicle stories      | 1188, for 213 characters                                                                |
-| Dated timelines        | 1077                                                                                    |
-| Affiliation steps      | 257                                                                                     |
-| Status steps           | 395                                                                                     |
+| Dated timelines        | 1160                                                                                    |
+| Affiliation steps      | 303                                                                                     |
+| Status steps           | 445                                                                                     |
 | Later visits to places | 5                                                                                       |
 
 <!-- End of the generated counts. -->
