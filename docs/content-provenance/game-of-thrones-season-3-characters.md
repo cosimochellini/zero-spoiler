@@ -60,12 +60,16 @@ order them.
   Selyse's does.
 - Megga, Alla and Elinor Tyrell: role Margaery's cousins and companions, House
   Tyrell, alive. Each also has scenes in Sansa II (160) and at the wedding feast
-  of Sansa III (172). Elinor is the eldest (Ice and Fire Wiki). No Italian page;
-  the names stay as they are until the Mondadori forms are checked.
+  of Sansa III (172). Elinor is a flowered maiden who rules the younger cousins
+  by right of womanhood (Ice and Fire Wiki); no page read calls her the eldest,
+  so her summary says only that. No Italian page; the names stay as they are
+  until the Mondadori forms are checked.
 - Oberyn Martell: role brother of the Prince of Dorne, House Martell, alive. His
-  log: he leads the Dornishmen to King's Landing for the king's wedding and asks
-  Tyrion when justice will be done for his sister Elia, told in both media at
-  the gate. Italian "Oberyn Martell" (Casa Martell).
+  log: he comes to King's Landing for the king's wedding in his brother Doran's
+  place and tells Tyrion he wants justice for his sister Elia, told in both
+  media at the gate. That he rides at the head of the Dornishmen is the book's
+  alone (in "Two Swords" he rides ahead of the embassy and is first seen in a
+  brothel), so the log leaves it out. Italian "Oberyn Martell" (Casa Martell).
 - Ellaria Sand: role Oberyn Martell's paramour, House Martell, alive. Italian
   "Ellaria Sand" (Casa Martell).
 
@@ -125,7 +129,13 @@ filed before this stage.
   Alyn Ambrose (Sansa I and III), Paxter Redwyne and Mathis Rowan (the council
   of Tyrion III and the feast of Sansa III), Desmond Crakehall and Eldrick
   Sarsfield (the sniggering lords of "Mhysa"), Daemon Sand and the Dornish lords
-  of Tyrion V (182).
+  of Tyrion V (182), Morros Slynt (Sansa I, 150), Philip Foote (Sansa III, 172,
+  and Tyrion V, 182), Ermesande Hayford (Sansa III, 172), Moon Boy (the fool at
+  the feast of Sansa III, 172) and Gyles Rosby (Sansa III, 172, and Tyrion V,
+  182). Each is listed as appearing with no scene of their own in the stage.
+- **Bit parts, not filed in stage 2 either:** Osney and Osfryd Kettleblack
+  (Sansa I, 150, among the queen's men). Neither has a record: #1463 omitted
+  both as bit parts, and Sansa I gives neither a scene of his own.
 - **Offices and descriptors:** the High Septon of Tyrion III and of "Second
   Sons", the sorcerer in Varys's crate, Margaery Tyrell's handmaiden, the Tyrell
   servant and Tyrell lady, the orphans of Flea Bottom, the old seamstress.

@@ -83,8 +83,8 @@ export const season3: ThronesSaga = {
       revealedAtChapter: 150,
       name: { it: 'Elinor Tyrell', en: 'Elinor Tyrell' },
       summary: {
-        it: 'La maggiore delle cugine che fanno compagnia a Margaery Tyrell ad Approdo del Re.',
-        en: 'The eldest of the cousins who keep Margaery Tyrell company in King’s Landing.',
+        it: 'Una cugina di Margaery Tyrell che le fa compagnia ad Approdo del Re, con le cugine più giovani.',
+        en: 'A cousin of Margaery Tyrell who keeps her company in King’s Landing, with the younger cousins.',
       },
       visual: { art: 'elinor-tyrell', tint: 'teal' },
     },
@@ -210,8 +210,8 @@ export const season3: ThronesSaga = {
         en: 'Brother of the Prince of Dorne',
       },
       log: {
-        it: 'Arriva ad Approdo del Re alla testa dei dorniani per le nozze del re, al posto del fratello Doran. Dice a Tyrion che vuole giustizia per la sorella Elia.',
-        en: 'He comes to King’s Landing at the head of the Dornishmen for the king’s wedding, in his brother Doran’s place. He tells Tyrion he wants justice for his sister Elia.',
+        it: 'Arriva ad Approdo del Re per le nozze del re, al posto del fratello Doran. Dice a Tyrion che vuole giustizia per la sorella Elia.',
+        en: 'He comes to King’s Landing for the king’s wedding, in his brother Doran’s place. He tells Tyrion he wants justice for his sister Elia.',
       },
       status: [{ episode: 31, chapter: 182, value: 'alive' }],
       affiliation: [
