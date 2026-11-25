@@ -2031,6 +2031,7 @@ export const season2: ThronesSaga = {
     // #1465: Robb's war, the Riverlands and Harrenhal.
     'alton-lannister': {
       relationships: season2Relationships['alton-lannister'],
+      chronicle: season2Chronicles['alton-lannister'],
       role: { it: 'Prigioniero di Robb Stark', en: 'Robb Stark’s prisoner' },
       log: {
         it: 'È un giovane cavaliere di Casa Lannister, prigioniero nel campo di Robb Stark. Robb lo manda ad Approdo del Re a portare le sue condizioni di pace.',
@@ -2054,6 +2055,7 @@ export const season2: ThronesSaga = {
     },
     'cleos-frey': {
       relationships: season2Relationships['cleos-frey'],
+      chronicle: season2Chronicles['cleos-frey'],
       role: { it: 'Prigioniero di Robb Stark', en: 'Robb Stark’s prisoner' },
       log: {
         it: 'È stato preso prigioniero insieme al cugino Jaime Lannister al Bosco dei Sussurri. Robb Stark lo manda ad Approdo del Re con le sue condizioni di pace, e lui promette di tornare a Delta delle Acque.',
@@ -2077,6 +2079,7 @@ export const season2: ThronesSaga = {
     },
     'talisa-maegyr': {
       relationships: season2Relationships['talisa-maegyr'],
+      chronicle: season2Chronicles['talisa-maegyr'],
       role: [
         {
           episode: 16,
@@ -2116,6 +2119,7 @@ export const season2: ThronesSaga = {
     },
     'amory-lorch': {
       relationships: season2Relationships['amory-lorch'],
+      chronicle: season2Chronicles['amory-lorch'],
       role: [
         {
           episode: 16,
@@ -2160,6 +2164,7 @@ export const season2: ThronesSaga = {
     },
     'polliver': {
       relationships: season2Relationships.polliver,
+      chronicle: season2Chronicles.polliver,
       role: {
         it: 'Uomo d’arme dell’esercito Lannister',
         en: 'Man-at-arms of the Lannister army',
@@ -2185,6 +2190,7 @@ export const season2: ThronesSaga = {
     },
     'tickler': {
       relationships: season2Relationships.tickler,
+      chronicle: season2Chronicles.tickler,
       role: {
         it: 'Torturatore di Gregor Clegane',
         en: 'Gregor Clegane’s torturer',
@@ -2214,6 +2220,7 @@ export const season2: ThronesSaga = {
     },
     'chiswyck': {
       relationships: season2Relationships.chiswyck,
+      chronicle: season2Chronicles.chiswyck,
       role: {
         it: 'Uomo d’arme di Gregor Clegane',
         en: 'Man-at-arms of Gregor Clegane',
@@ -2239,6 +2246,7 @@ export const season2: ThronesSaga = {
     },
     'weese': {
       relationships: season2Relationships.weese,
+      chronicle: season2Chronicles.weese,
       role: {
         it: 'Sottointendente di Harrenhal',
         en: 'Understeward at Harrenhal',
@@ -2264,6 +2272,7 @@ export const season2: ThronesSaga = {
     },
     'vargo-hoat': {
       relationships: season2Relationships['vargo-hoat'],
+      chronicle: season2Chronicles['vargo-hoat'],
       role: {
         it: 'Capo dei Bravi Camerati',
         en: 'Leader of the Brave Companions',
