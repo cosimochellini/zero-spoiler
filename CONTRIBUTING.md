@@ -6,6 +6,16 @@ Use Node from `.nvmrc` and npm from `package.json`, then `npm ci` and
 `npm run dev`. Keep optional dependencies: fallow and impeccable's detector each
 arrive as the optional package of your platform.
 
+`.npmrc` sets `engine-strict`, so `npm ci` refuses a Node or npm older than
+`engines`. A Node install ships an older npm, so give each new `.nvmrc` Node the
+pinned one, once:
+`npm i -g npm@$(node -p "require('./package.json').packageManager.split('@')[1]")`.
+
+Agent shells: a Claude Code hook (`scripts/nvm-env.sh`) puts the `.nvmrc` Node
+first on PATH when nvm is installed. Codex runs each command in a login shell,
+which reads `~/.zprofile` and not `~/.zshrc`; run `nvm use` there, or Codex gets
+nvm's default Node.
+
 ## Scope and implementation
 
 Keep spoilers out of issue/PR titles. Follow owner decisions and existing code
