@@ -71,13 +71,14 @@ export function parityArgs(args) {
  * @param {string} line One line of a dump.
  * @returns {{ name: string, place: string }} The payload's name and the line's place.
  */
-export function placeOf(line) {
+function placeOf(line) {
   if (line.startsWith('{"table":')) {
     return { name: 'table', place: line.slice(0, line.indexOf(',')) }
   }
   const place = line.slice(0, line.indexOf(',"payload":'))
+  const from = '{"name":"'.length
 
-  return { name: line.slice(9, line.indexOf('"', 9)), place: `${place}}` }
+  return { name: line.slice(from, line.indexOf('"', from)), place: `${place}}` }
 }
 
 /**
@@ -212,10 +213,18 @@ function baseTree(ref, folder) {
   const tree = path.join(folder, 'base')
   console.error(`archive:parity: base ${sha.slice(0, 8)} in ${tree}`)
   git('worktree', 'add', '--quiet', '--detach', tree, sha)
-  execFileSync('npm', ['ci', '--no-audit', '--no-fund'], {
-    cwd: tree,
-    stdio: ['ignore', 'ignore', 'inherit'],
-  })
+  // Not the `npm_config_*` of the `npm run` this came from: `npm ci` refuses
+  // some of them in a project, and `--silent` would hide its errors. No
+  // scripts: npm blocks the install ones, and `prepare` would rewrite the
+  // checkout's shared Git hooks from the base.
+  const env = Object.fromEntries(
+    Object.entries(process.env).filter(([name]) => !name.startsWith('npm_')),
+  )
+  execFileSync(
+    'npm',
+    ['ci', '--ignore-scripts', '--no-audit', '--no-fund', '--loglevel=error'],
+    { cwd: tree, env, stdio: ['ignore', 2, 'inherit'] },
+  )
 
   return tree
 }

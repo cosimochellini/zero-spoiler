@@ -69,10 +69,11 @@ these commands. Measure runs on a same-repo head only
    - size: `npm run build` in base too, then from head
      `PR_BODY="$(gh pr view <n> --json body -q .body)" node scripts/client-budget.mjs <dir>/base/dist/client <dir>/head/dist/client`,
      so an accepted `client-budget:` line counts;
-   - payload parity: in each worktree
-     `npm run --silent archive:dump -- --series <slug> > <dir>/<side>-<slug>.jsonl`
-     for each affected series, then `cmp`; add `--skip` or `--bookmarks` as
-     `CONTRIBUTING.md` describes;
+   - payload parity: in head, `npm run archive:parity -- --series <slug>` for
+     each affected series, with `--base-dir <dir>/base` when the base worktree
+     exists (without it, the command makes and removes its own at the
+     merge-base); add `--skip` or `--bookmarks` as `CONTRIBUTING.md` describes.
+     Exit 1 lists the lines that differ per payload;
    - scripts you write in `<dir>` that only read `dist/` or source.
 4. Always, a failed measurement included: `/usr/bin/git worktree remove --force`
    on `<dir>/head` and any `<dir>/base`, then `rm -rf <dir>`, each path written
