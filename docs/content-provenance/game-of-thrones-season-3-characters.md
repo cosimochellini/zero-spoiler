@@ -174,19 +174,21 @@ stepped.
 Gates as episode / site chapter. `source` records give the other number only to
 order them.
 
-| Record                       | Show                                                                                                                                                | Books                                                                                                                                               |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `qyburn`                     | 21, "Valar Dohaeris": found alive among the slain prisoners at Harrenhal, he identifies himself to Robb while Talisa tends his throat (Qyburn page) | 175, Jaime IV: Roose Bolton has Qyburn clean and bandage Jaime's stump; A Clash of Kings lists him among the Brave Companions with no scene (#1465) |
-| `steelshanks-walton` (books) | none: the show's Steelshanks is named only in narration in the pages read (owner check); 27 orders him                                              | 188, Jaime VI: he leads the two hundred Dreadfort men who escort Jaime, and Jaime forces him back to Harrenhal; 175 lists him unnamed (safe later)  |
+| Record                       | Show                                                                                                                                        | Books                                                                                                                                              |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `qyburn`                     | 21, "Valar Dohaeris": found alive among the slain prisoners at Harrenhal, he gives Robb his name while Talisa tends his wound (Qyburn page) | 175, Jaime IV: Roose Bolton has Qyburn clean and bandage the stump; A Clash of Kings lists him with no scene (#1465)                               |
+| `steelshanks-walton` (books) | none: the show's Steelshanks is named only in narration in the pages read (owner check); 27 orders him                                      | 188, Jaime VI: he leads the two hundred Dreadfort men who escort Jaime, and Jaime forces him back to Harrenhal; 175 lists him unnamed (safe later) |
 
-- Qyburn: role healer at Harrenhal, alive. Summary and log say he trained as a
-  maester and is at Harrenhal while the northmen hold it, true at both gates.
-  Affiliation by medium: the show's no allegiance at 21, then in Roose Bolton's
-  service at 25 ("Kissed by Fire", Lord Bolton has him treat Jaime); the books'
-  Brave Companions in Roose Bolton's service at 175. His chain, stripped by the
-  Citadel (told at 25 in the show), is in no field. He leaves Harrenhal with
-  Jaime at 27 / 188 and reaches King's Landing in "Mhysa" (30); neither changes
-  a field. Italian "Qyburn" (Personaggi).
+- Qyburn: alive. The summary, the log and the first role step ("With the
+  northmen at Harrenhal") hold only what both media tell at the gates: he is at
+  Harrenhal while the northmen hold it (review round 1). Role steps by medium:
+  the books' healer in Roose Bolton's service at 175 (Jaime IV, the stump); the
+  show's healer stripped of his maester's chain at 25 ("Kissed by Fire").
+  Affiliation: the show's no allegiance at 21, then in Roose Bolton's service at
+  25 / 175, shared. The books' maester background and Brave Companions are in
+  none of the cached chapter synopses through 196 and are not filed. He leaves
+  Harrenhal with Jaime at 27 / 188 and reaches King's Landing in "Mhysa" (30);
+  neither changes a field. Italian "Qyburn" (Personaggi).
 - Steelshanks Walton: books only, role captain in Roose Bolton's service, House
   Bolton, alive. His log holds Jaime VI: the escort, the turn back for Brienne,
   his men's crossbows against the bear. Italian kept: Italian Wikipedia has no

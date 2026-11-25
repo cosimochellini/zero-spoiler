@@ -59,12 +59,20 @@ const STEPS: {
   id: string
   source?: 'chapter' | 'episode'
 }[] = [
+  { id: 'qyburn', en: 'In Roose Bolton’s service', episode: 25, chapter: 175 },
   {
     id: 'qyburn',
-    en: 'In Roose Bolton’s service',
+    en: 'Healer stripped of his maester’s chain',
     episode: 25,
     chapter: 175,
     source: 'episode',
+  },
+  {
+    id: 'qyburn',
+    en: 'Healer in Roose Bolton’s service',
+    episode: 21,
+    chapter: 175,
+    source: 'chapter',
   },
   {
     id: 'vargo-hoat',
@@ -161,20 +169,16 @@ describe('the third season’s Jaime, Brienne and Harrenhal cast', () => {
     },
   )
 
-  it('opens Qyburn with no allegiance in the show and a Brave Companion in the books', () => {
+  it('opens Qyburn as only a man with the northmen in the show, a healer in the books', () => {
     const show = pageOf('qyburn', reader('episode', 21))
     const books = pageOf('qyburn', reader('chapter', 175))
-    const companion = JSON.stringify(
-      'Brave Companions, in Roose Bolton’s service',
-    )
 
+    expect(show).toContain(JSON.stringify('With the northmen at Harrenhal'))
     expect(show).toContain(JSON.stringify('No allegiance'))
-    expect(show).not.toContain(companion)
-    expect(books).toContain(companion)
+    expect(show).not.toMatch(/healer|maester/iu)
+    expect(books).toContain(JSON.stringify('Healer in Roose Bolton’s service'))
     expect(books).not.toContain(JSON.stringify('No allegiance'))
-    expect(
-      pageOf('qyburn', reader('episode', archive.series.episodeCeiling)),
-    ).not.toContain(companion)
+    expect(books).not.toMatch(/maester|Brave Companions/iu)
   })
 
   it('makes Roose Bolton’s Harrenhal command shared, from episode 22', () => {

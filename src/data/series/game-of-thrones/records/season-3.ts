@@ -178,15 +178,53 @@ export const season3: ThronesSaga = {
     },
     // #1637: Jaime, Brienne and Harrenhal.
     'qyburn': {
-      role: { it: 'Guaritore a Harrenhal', en: 'Healer at Harrenhal' },
+      // The gate texts hold what both media tell at his gates: the show's
+      // 21 has him give his name to Robb while Talisa tends his wound, the
+      // books' 175 has Roose Bolton set him to clean Jaime's stump. What he
+      // is comes as dated steps, by medium.
+      role: [
+        {
+          episode: 21,
+          chapter: 175,
+          value: {
+            it: 'Con gli uomini del Nord a Harrenhal',
+            en: 'With the northmen at Harrenhal',
+          },
+        },
+        // Books only: Roose Bolton has him cleanse and bandage Jaime's
+        // stump, in Jaime IV (chapter 175), his gate. Episode 21 only orders
+        // it. That he was a maester is not in the cached chapters through
+        // 196, so no step tells it.
+        {
+          episode: 21,
+          chapter: 175,
+          source: 'chapter',
+          value: {
+            it: 'Guaritore al servizio di Roose Bolton',
+            en: 'Healer in Roose Bolton’s service',
+          },
+        },
+        // Show only: he treats Jaime's stump, and tells him the Citadel
+        // stripped him of his chain for his experiments, in "Kissed by Fire"
+        // (episode 25). Chapter 175 only orders it.
+        {
+          episode: 25,
+          chapter: 175,
+          source: 'episode',
+          value: {
+            it: 'Guaritore privato della catena di maestro',
+            en: 'Healer stripped of his maester’s chain',
+          },
+        },
+      ],
       log: {
-        it: 'Si è formato come maestro e sa curare le ferite. Si trova a Harrenhal mentre il castello è in mano agli uomini del Nord.',
-        en: 'He trained as a maester and knows how to treat wounds. He is at Harrenhal while the northmen hold the castle.',
+        it: 'Si trova a Harrenhal mentre il castello è in mano agli uomini del Nord.',
+        en: 'He is at Harrenhal while the northmen hold the castle.',
       },
       status: [{ episode: 21, chapter: 175, value: 'alive' }],
       affiliation: [
         // Show only: the northmen find him alive among the prisoners Ser
-        // Gregor's men put to the sword, and he names himself to Robb, in
+        // Gregor's men put to the sword, and he gives Robb his name, in
         // "Valar Dohaeris" (episode 21).
         {
           episode: 21,
@@ -194,25 +232,12 @@ export const season3: ThronesSaga = {
           source: 'episode',
           value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
         },
-        // Books only: one of Vargo Hoat's sellswords, who serve Roose Bolton
-        // at Harrenhal when the Goat brings Jaime in, in Jaime IV (chapter
-        // 175). Episode 21 only orders it.
-        {
-          episode: 21,
-          chapter: 175,
-          source: 'chapter',
-          value: {
-            it: 'Bravi Camerati, al servizio di Roose Bolton',
-            en: 'Brave Companions, in Roose Bolton’s service',
-          },
-        },
-        // Show only: he stays at Harrenhal when Robb leaves Roose Bolton in
-        // command there, and Lord Bolton has him treat Jaime's stump, in
-        // "Kissed by Fire" (episode 25).
+        // Roose Bolton has him tend Jaime's stump, in "Kissed by Fire"
+        // (episode 25; the show's Qyburn stays at Harrenhal when Robb leaves
+        // Roose in command) and Jaime IV (chapter 175), the books' gate.
         {
           episode: 25,
           chapter: 175,
-          source: 'episode',
           value: {
             it: 'Al servizio di Roose Bolton',
             en: 'In Roose Bolton’s service',
@@ -383,7 +408,7 @@ export const season3: ThronesSaga = {
     // #1637: Jaime, Brienne and Harrenhal.
     //
     // Show: "Valar Dohaeris" (episode 21), the northmen find him alive at
-    // Harrenhal and he names himself to Robb. Books: Jaime IV (site chapter
+    // Harrenhal and he gives Robb his name. Books: Jaime IV (site chapter
     // 175), Roose Bolton has Qyburn clean and bind Jaime's stump.
     {
       id: 'qyburn',
@@ -392,8 +417,8 @@ export const season3: ThronesSaga = {
       revealedAtChapter: 175,
       name: { it: 'Qyburn', en: 'Qyburn' },
       summary: {
-        it: 'Un guaritore formatosi come maestro, a Harrenhal.',
-        en: 'A healer trained as a maester, at Harrenhal.',
+        it: 'Un uomo a Harrenhal, mentre il castello è in mano agli uomini del Nord.',
+        en: 'A man at Harrenhal while the northmen hold the castle.',
       },
       visual: { art: 'qyburn', tint: 'ivory' },
     },
