@@ -55,9 +55,10 @@ function fruitOf(id: string): Entity {
 
 /**
  * The scene that first shows each redrawn fruit drawn again, pinned by hand
- * (#1410): the real fruit, or the awakening, at its chapter and episode.
+ * (#1410): the real fruit, or the awakening, at its chapter and episode, and
+ * how many times the fruit is drawn again in all (`stages`, 1 when unset).
  */
-const REDRAWN: (Pin & { id: string })[] = [
+const REDRAWN: (Pin & { id: string; stages?: number })[] = [
   { id: 'chop-chop-fruit', episode: 8, chapter: 19 },
   { id: 'ox-ox-fruit-model-bison', episode: 1101, chapter: 1070 },
   { id: 'flame-flame-fruit', episode: 629, chapter: 700 },
@@ -74,10 +75,19 @@ const REDRAWN: (Pin & { id: string })[] = [
     episode: 1101,
     chapter: 1070,
   },
-  { id: 'cat-cat-fruit-model-leopard', episode: 1100, chapter: 1069 },
+  {
+    id: 'cat-cat-fruit-model-leopard',
+    episode: 1100,
+    chapter: 1069,
+    stages: 2,
+  },
   { id: 'love-love-fruit', episode: 1101, chapter: 1070 },
   { id: 'paw-paw-fruit', episode: 1130, chapter: 1096 },
 ]
+
+/** Two `[id, count]` pairs in the order of their ids. */
+const byId = ([a]: [string, number], [b]: [string, number]): number =>
+  a.localeCompare(b)
 
 /** A fruit's first redrawing, or the test is wrong. */
 function firstRedrawingOf(
@@ -92,8 +102,17 @@ function firstRedrawingOf(
 }
 
 describe('a fruit’s drawings', () => {
-  it('pins every fruit drawn again', () => {
-    expect(REDRAWN.map(({ id }) => id)).toStrictEqual(Object.keys(fruitRedrawn))
+  it('pins every fruit drawn again, and how many times', () => {
+    expect(
+      REDRAWN.map(({ id, stages = 1 }): [string, number] => [
+        id,
+        stages,
+      ]).toSorted(byId),
+    ).toStrictEqual(
+      Object.entries(fruitRedrawn)
+        .map(([id, entries]): [string, number] => [id, entries.length])
+        .toSorted(byId),
+    )
   })
 
   it.each(REDRAWN)(
