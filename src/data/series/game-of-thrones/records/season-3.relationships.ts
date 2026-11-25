@@ -24,8 +24,8 @@ const essos = {
     character: 'daenerys-targaryen',
     type: { en: 'Queen', it: 'Regina' },
     summary: {
-      en: 'The queen she serves on the march to Yunkai. At her order she gathers the Unsullied officers to choose a leader.',
-      it: 'La regina che serve durante la marcia verso Yunkai. Per suo ordine raduna gli ufficiali degli Immacolati perché scelgano un capo.',
+      en: 'The queen she serves on the march from Astapor. At her order she gathers the Unsullied officers to choose a leader.',
+      it: 'La regina che serve durante la marcia da Astapor. Per suo ordine raduna gli ufficiali degli Immacolati perché scelgano un capo.',
     },
   },
   misGreyWorm: {
