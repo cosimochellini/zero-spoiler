@@ -87,6 +87,7 @@ const VISITS: {
   { id: 'fist-of-the-first-men', episode: 21, chapter: 162 },
   { id: 'crasters-keep', episode: 24, chapter: 177 },
   { id: 'dreadfort', episode: 30, chapter: 284 },
+  { id: 'nightfort', episode: 30, chapter: 200 },
   { id: 'flea-bottom', episode: 21, chapter: 150, source: 'episode' },
   { id: 'milkwater', episode: 22, chapter: 151, source: 'chapter' },
   { id: 'maidenpool', episode: 23, chapter: 165, source: 'chapter' },

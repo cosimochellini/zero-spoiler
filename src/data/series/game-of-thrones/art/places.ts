@@ -2500,50 +2500,44 @@ const SHADOW_TOWER: Stroke[] = [
   shadow(98, 156, 40),
 ]
 
-/** A seal lying on a rock, at the origin: back, head raised, tail. */
-const SEAL = 'M0 0 Q2 -9 14 -10 Q22 -10 26 -16 Q30 -12 27 -6 L33 -3 L28 0 Z'
-
 /**
- * The Bay of Seals: cliffs on both sides of the bay, with seals lying on a
- * rock in the water, named in episode 29 and in Jon IV (chapter 174) and
- * never visited in the stage. The cliffs are hatched; the accent is the
- * nearer seal.
+ * The Bay of Seals: a wide bay opening to the sea between high cliffs, its
+ * far shore curving away, named in episode 29 and in Jon IV (chapter 174)
+ * and never visited in the stage. The cliffs are hatched; the accent is the
+ * bay's far shore.
  */
 const BAY_OF_SEALS: Stroke[] = [
-  { d: 'M10 96 Q30 72 54 80 L60 110 H10' },
-  { d: 'M108 112 Q122 92 150 98 V112' },
-  { d: 'M40 132 Q60 120 84 124 Q100 126 112 136 H36 Z' },
-  { d: SEAL, transform: 'translate(50 126)', role: 'accent' },
-  { d: SEAL, transform: 'translate(104 130) scale(-0.8 0.8)', role: 'soft' },
-  { d: 'M10 120 Q80 114 150 120', role: 'ambient' },
-  { d: 'M20 88 l5 -3 M30 100 l5 -3 M128 104 l5 -3', role: 'ambient' },
+  { d: 'M10 150 V92 Q22 78 40 84 L52 112 Q56 128 50 150' },
+  { d: 'M150 150 V98 Q138 86 122 92 L110 116 Q106 132 112 150' },
+  { d: 'M52 112 Q80 96 110 116', role: 'accent' },
+  { d: 'M58 124 Q80 116 104 126 M60 138 Q80 132 102 140', role: 'ambient' },
+  { d: 'M40 96 l5 -3 M44 110 l5 -3 M46 126 l5 -3', role: 'ambient' },
+  { d: 'M20 100 V120 M136 104 V122', role: 'soft' },
   ...SEA,
 ]
 
 /**
- * Castamere: a castle's towers and wall under falling rain, named in
- * episode 28 and in Tyrion III (chapter 163) and never visited in the
- * stage. The towers' far faces are hatched; the accent is the rain.
+ * Castamere: a castle's towers and wall on a hill of the Westerlands, named
+ * in episode 28 and in Tyrion III (chapter 163) and never visited in the
+ * stage. Its fall is history in the show by its gate, but the book's gate
+ * chapter does not tell it, so the drawing shows the castle as both media
+ * name it. The towers' far faces are hatched; the accent is the gate.
  */
 const CASTAMERE: Stroke[] = [
-  { d: 'M24 150 V84 H44 V150 M104 150 V92 H124 V150' },
-  { d: 'M44 150 V116 H104 V150' },
+  { d: 'M10 150 Q30 124 60 120 H100 Q130 124 150 150' },
+  { d: 'M40 122 V70 H58 V120 M102 120 V78 H120 V124' },
+  { d: 'M58 120 V96 H102 V120' },
   {
-    d: 'M24 84 V78 H30 V84 M38 84 V78 H44 V84 M104 92 V86 H110 V92 M118 92 V86 H124 V92',
+    d: 'M40 70 V64 H46 V70 M52 70 V64 H58 V70 M102 78 V72 H108 V78 M114 78 V72 H120 V78',
     role: 'soft',
   },
-  { d: 'M64 150 V132 Q74 124 84 132 V150' },
-  { d: 'M34 98 V106 M114 104 V112', role: 'soft' },
+  { d: 'M72 120 V106 Q80 98 88 106 V120', role: 'accent' },
+  { d: 'M49 84 V92 M111 90 V98', role: 'soft' },
   {
-    d: 'M20 40 l-6 14 M44 34 l-6 14 M68 42 l-6 14 M92 34 l-6 14 M116 40 l-6 14 M140 34 l-6 14 M32 60 l-6 14 M80 62 l-6 14 M128 60 l-6 14',
-    role: 'accent',
-  },
-  {
-    d: 'M118 100 l5 -3 M118 116 l5 -3 M118 132 l5 -3 M38 92 l4 -2 M38 120 l4 -2 M38 136 l4 -2',
+    d: 'M114 92 l4 -2 M114 104 l4 -2 M114 116 l4 -2 M52 80 l4 -2 M52 106 l4 -2',
     role: 'ambient',
   },
-  GROUND,
-  shadow(74, 158, 64),
+  shadow(80, 156, 66),
 ]
 
 /**

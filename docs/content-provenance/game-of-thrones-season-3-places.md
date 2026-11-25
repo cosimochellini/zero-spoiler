@@ -85,6 +85,7 @@ restated for the stage:
 | `astapor`               | 24      | 171     | sacked: the Unsullied bought and the masters killed         |
 | `yunkai`                | 29      | 186     | the army at the walls, the gold refused, the city taken     |
 | `maidenpool`            | 23      | 165     | book only: found sacked and empty                           |
+| `nightfort`             | 30      | 200     | Bran's party in the ruins; Bran IV, past the stage (#852)   |
 | `stoney-sept`           | 24      | 173     | book only: the outlaws' night, the Battle of the Bells told |
 | `milkwater`             | 22      | 151     | book only: Jon brought to Mance in the camp on its banks    |
 
@@ -166,12 +167,16 @@ houses roofless).
 - `mummers-ford`: show 24, reported speech in the synopsis; book 161, Arya III
   (Mentions).
 - `shadow-tower`: show 25, the synopsis; book 144, the prologue (Mentions).
-- `bay-of-seals`: show 29 rests on the episode's Appearances page and the place
-  page's citation; no line is quoted (owner check, as the Dreadfort was in stage
-  2). Book 174, Jon IV (Mentions).
+- `bay-of-seals`: drawn as a wide bay between cliffs (review round 4). Show 29
+  rests on the episode's Appearances page and the place page's citation; no line
+  is quoted (owner check, as the Dreadfort was in stage 2). Book 174, Jon IV
+  (Mentions).
 - `castamere`: show 28 (quoted). Book 163, Tyrion III (Mentions); the books name
   it in _A Clash of Kings_ (site 113), but a named-only place opens at the
-  stage's own naming, as Oldtown did. The drawing keeps the castle whole.
+  stage's own naming, as Oldtown did. The drawing keeps the castle whole on its
+  hill, its gate the accent (review round 4): the show tells the Reynes' fall by
+  its gate, the book's gate chapter does not, and a stage at the record's own
+  show gate is not allowed, so neither medium is shown the ruin.
 
 ### Dated steps
 

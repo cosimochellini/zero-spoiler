@@ -1814,6 +1814,18 @@ export const SEASON_3_PLACES: Record<
       en: 'It is one of the castles along the Wall that the Night’s Watch has abandoned.',
     },
     filedHere: [],
+    // "Mhysa" (episode 30) sets Bran's party there; the books do the same in
+    // Bran IV (A Storm of Swords 56, site chapter 200), past the stage (#852).
+    visits: [
+      {
+        episode: 30,
+        chapter: 200,
+        value: {
+          it: 'Bran Stark e i suoi compagni passano la notte tra le rovine, sulla strada per oltrepassare la Barriera, e Bran racconta la storia del Cuoco Ratto.',
+          en: 'Bran Stark and his companions spend the night in the ruins on their way through the Wall, and Bran tells the tale of the Rat Cook.',
+        },
+      },
+    ],
   },
   'inn-of-the-kneeling-man': {
     form: 'inn',
@@ -2048,8 +2060,8 @@ export const SEASON_3_PLACES: Record<
     form: 'bay',
     region: 'the-north',
     landmark: {
-      it: 'Foche sugli scogli tra le scogliere',
-      en: 'Seals on the rocks between cliffs',
+      it: 'Un’ampia baia tra alte scogliere',
+      en: 'A wide bay between high cliffs',
     },
     log: {
       it: 'È una baia sulla costa del Nord.',
@@ -2061,8 +2073,8 @@ export const SEASON_3_PLACES: Record<
     form: 'castle',
     region: 'the-westerlands',
     landmark: {
-      it: 'Torri di un castello sotto la pioggia',
-      en: 'A castle’s towers in the rain',
+      it: 'Le torri di un castello su una collina',
+      en: 'A castle’s towers on a hill',
     },
     log: {
       it: 'È un castello nelle Terre dell’Ovest.',

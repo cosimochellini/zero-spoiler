@@ -382,7 +382,7 @@ Nightfort, which the show visits and the book only names (#1252), and the 7 both
 media name and neither visits, each with its own drawing; Harrenhal, the Fist of
 the First Men, Craster's Keep, the Dreadfort and Flea Bottom take the stage's
 changes as dated `visits` entries, and Harrenhal, the Fist, Astapor and Yunkai a
-drawing stage.
+drawing stage, and Maidenpool a books-only one.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -631,6 +631,6 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Dated timelines        | 1142                                                                                    |
 | Affiliation steps      | 284                                                                                     |
 | Status steps           | 425                                                                                     |
-| Later visits to places | 15                                                                                      |
+| Later visits to places | 16                                                                                      |
 
 <!-- End of the generated counts. -->
