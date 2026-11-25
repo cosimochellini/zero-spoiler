@@ -100,6 +100,8 @@ Write `src/server/archive/<arc>.test.ts` on the model of `heavensArena.test.ts` 
 - each dated step, status, affiliation or role, before and at its pin;
 - the arc's leads.
 
+Every expected gate, medium and drawing comes from the test's own pins (`CODING_STANDARDS.md`, Review rules).
+
 Done when the test passes, and moving one gate or pin down by one makes it fail.
 
 ## 8. Docs

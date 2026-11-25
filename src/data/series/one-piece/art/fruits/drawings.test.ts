@@ -27,7 +27,6 @@ const OFF_KIT = new Set([
   'brush-brush-fruit',
   'bubble-bubble-fruit',
   'dark-dark-fruit',
-  'dog-dog-fruit-model-okuchi-no-makami',
   'gum-gum-fruit',
   'ox-ox-fruit-model-giraffe',
 ])
@@ -253,7 +252,7 @@ describe('the fruit sheet', () => {
 })
 
 describe('the fruits drawn again', () => {
-  it('redraws the ten real fruits and two awakenings, and no other', () => {
+  it('redraws the eleven real fruits and two awakenings, and no other', () => {
     expect(Object.keys(fruitRedrawn)).toStrictEqual([
       'chop-chop-fruit',
       'ox-ox-fruit-model-bison',
@@ -262,6 +261,7 @@ describe('the fruits drawn again', () => {
       'string-string-fruit',
       'mochi-mochi-fruit',
       'snake-snake-fruit-mythical-model-yamata-no-orochi',
+      'dog-dog-fruit-model-okuchi-no-makami',
       'fish-fish-fruit-mythical-model-azure-dragon',
       'cat-cat-fruit-model-leopard',
       'love-love-fruit',
@@ -270,15 +270,25 @@ describe('the fruits drawn again', () => {
   })
 
   // The fruit's page keys each drawing, and values each option of its
-  // switch, by its look: two of one look on a fruit would leave one
-  // unreachable. The first drawing is the power, so no entry is one.
-  it('never draws one fruit twice with the same look', () => {
+  // switch, by its look: two of one look a reader can reach would leave one
+  // unreachable. A reader reaches the entries of their own medium (no
+  // `source`, or theirs), so one look may come twice, once in each medium,
+  // as the Okuchi-no-Makami real fruit does (#1683). The first drawing is
+  // the power, so no entry is one.
+  it('never draws one fruit twice with the same look in one medium', () => {
     for (const [id, timeline] of Object.entries(fruitRedrawn)) {
-      const looks = ['power', ...timeline.map(({ look }) => look)]
+      for (const medium of ['episode', 'chapter']) {
+        const looks = [
+          'power',
+          ...timeline
+            .filter(({ source }) => (source ?? medium) === medium)
+            .map(({ look }) => look),
+        ]
 
-      const distinct = new Set(looks)
+        const distinct = new Set(looks)
 
-      expect(distinct.size, id).toBe(looks.length)
+        expect(distinct.size, `${id} (${medium})`).toBe(looks.length)
+      }
     }
   })
 
@@ -297,6 +307,7 @@ describe('the fruits drawn again', () => {
       ['string-string-fruit', ['real']],
       ['mochi-mochi-fruit', ['awakening']],
       ['snake-snake-fruit-mythical-model-yamata-no-orochi', ['real']],
+      ['dog-dog-fruit-model-okuchi-no-makami', ['real', 'real']],
       ['fish-fish-fruit-mythical-model-azure-dragon', ['real']],
       ['cat-cat-fruit-model-leopard', ['awakening', 'real']],
       ['love-love-fruit', ['real']],

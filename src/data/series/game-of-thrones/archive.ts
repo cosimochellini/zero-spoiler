@@ -47,12 +47,28 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
   ],
   // The third stage's cast row (#1626): its filing children (#1634–#1641)
   // add each lead as they file it. Essos (#1639): Daenerys. King's Landing
-  // (#1634): the master of coin, his bride and the Tyrells' grandmother.
+  // (#1634): the master of coin, his bride and the Tyrells' grandmother. Robb's
+  // war and the Riverlands (#1635): the King in the North and his mother. The
+  // Wall and beyond (#1638): Jon Snow and the King-Beyond-the-Wall. Arya, the
+  // Brotherhood and the Hound (#1636): the outlaws' captive, their leader and
+  // the Hound. Jaime, Brienne and Harrenhal (#1637): the Kingslayer and the
+  // woman who guards him. Dragonstone (#1640): Davos. Bran's road and Theon
+  // (#1641): Bran and Theon.
   'season-3': [
     'daenerys-targaryen',
     'tyrion-lannister',
     'sansa-stark',
     'olenna-tyrell',
+    'robb-stark',
+    'catelyn-stark',
+    'jon-snow',
+    'mance-rayder',
+    'arya-stark',
+    'beric-dondarrion',
+    'sandor-clegane',
+    'jaime-lannister',
+    'brienne-of-tarth',
+    'davos-seaworth',
     'bran-stark',
     'theon-greyjoy',
   ],

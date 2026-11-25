@@ -186,8 +186,8 @@ const PERSON: Stroke[] = [
  * cast, in `north.ts` and `ironborn.ts` (#1473), Wall cast, the rangers in
  * `wall.ts` and the wildlings in `wildlings.ts` (#1474), and Essos and Qarth
  * cast, in `essos.ts` (#1475). The seasons' own, which the home page's
- * frame draws, are in `seasons.ts` (#1601). The third stage's casts (#1634,
- * #1639, #1641) show `PERSON` until their drawing children draw them.
+ * frame draws, are in `seasons.ts` (#1601). The third stage's casts
+ * (#1634–#1641) show `PERSON` until their drawing children draw them.
  * `satisfies` rather than an annotation, so `ArtId` below stays the literal
  * keys.
  */
@@ -224,6 +224,47 @@ export const DRAWINGS = {
   'elinor-tyrell': PERSON,
   'oberyn-martell': PERSON,
   'ellaria-sand': PERSON,
+  // #1635, the third stage's Robb's war and Riverlands cast, until its
+  // drawing child draws it.
+  'jeyne-westerling': PERSON,
+  'rolph-spicer': PERSON,
+  'raynald-westerling': PERSON,
+  'willem-lannister': PERSON,
+  'martyn-lannister': PERSON,
+  'lothar-frey': PERSON,
+  'walder-rivers': PERSON,
+  'roslin-frey': PERSON,
+  'ryman-frey': PERSON,
+  'aegon-frey': PERSON,
+  // #1638: the Wall and beyond.
+  'mance-rayder': PERSON,
+  'tormund': PERSON,
+  'orell': PERSON,
+  'styr': PERSON,
+  'dalla': PERSON,
+  'val': PERSON,
+  'jarl': PERSON,
+  'small-paul': PERSON,
+  'dirk': PERSON,
+  'ollo-lophand': PERSON,
+  'clubfoot-karl': PERSON,
+  // #1636: Arya, the Brotherhood Without Banners and the Hound.
+  'anguy': PERSON,
+  'tom-of-sevenstreams': PERSON,
+  'lem': PERSON,
+  'jack-be-lucky': PERSON,
+  'greenbeard': PERSON,
+  'mad-huntsman': PERSON,
+  'edric-dayne': PERSON,
+  'ghost-of-high-heart': PERSON,
+  // #1637, the third stage's Jaime, Brienne and Harrenhal cast, until its
+  // drawing child draws it.
+  'qyburn': PERSON,
+  'steelshanks-walton': PERSON,
+  // #1640: the third stage's Dragonstone cast.
+  'axell-florent': PERSON,
+  'alester-florent': PERSON,
+  'edric-storm': PERSON,
   // #1641: Bran's road and Theon.
   'myranda': PERSON,
 } satisfies Drawings

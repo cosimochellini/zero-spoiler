@@ -52,6 +52,13 @@ body**, as the owner picked in #462:
   with a true chapter pair, and it is the pure real fruit with no power (the
   flame-flame and op-op entries in `fruitRedrawn`). The owner ruled that
   Gum-Gum is the real fruit from episode 1, with no redrawing.
+- **An anime-only showing is the anime's alone** (owner, #1683, replacing
+  the #465 pairing): the redrawing carries `source: 'episode'`, so a manga
+  reader keeps the drawing before it (love-love, the leopard's real fruit).
+  When the manga shows the fruit later, that is a second, `source:
+  'chapter'` stage with the same strokes; when the anime shows it before the
+  record opens, the first drawing stays the fruit and its power and the
+  anime's stage sits at the record's episode (Okuchi-no-Makami).
 - **10–14 strokes**; `drawings.test.ts` fails a kit fruit under ten. Watch
   for faces: two curls over a row of points reads as eyes and teeth, so keep
   curls off a level line and away from a jagged edge (the first ice drawing

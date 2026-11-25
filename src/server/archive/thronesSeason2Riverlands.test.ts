@@ -6,7 +6,7 @@ import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
-import { recordIn, sidesOf } from '~/test/gates'
+import { drawnIn, recordIn, sidesOf, unlisted } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage } from './pages.server'
@@ -209,12 +209,13 @@ const STEPS: {
     chapter: 112,
     source: 'episode',
   },
+  // Shared since #1637: the show leaves him in command at Harrenhal in
+  // episode 22.
   {
     id: 'roose-bolton',
     en: 'Commander of the northmen at Harrenhal',
-    episode: 18,
+    episode: 22,
     chapter: 121,
-    source: 'chapter',
   },
 ]
 
@@ -390,6 +391,15 @@ describe('the steps one medium alone tells', () => {
   )
 })
 
+describe('the table of stages', () => {
+  it('lists every stage of each record it redraws', () => {
+    expect(unlisted(STAGES, REDRAWINGS)).toStrictEqual([])
+  })
+})
+
+/** The drawings the table's stages are read against. */
+const ART = { drawings: DRAWINGS, redrawings: REDRAWINGS }
+
 describe.each(
   STAGES.flatMap((stage) =>
     sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
@@ -397,17 +407,10 @@ describe.each(
 )(
   '$id is redrawn by $unit at $episode/$chapter',
   ({ id, episode, chapter, source, unit, stage: index = 0, ...side }) => {
-    const stages = REDRAWINGS[id] ?? []
-    const stage = stages[index]
-    // The drawing just before is the last earlier stage this unit reads:
-    // a stage the other medium alone tells is never shown here.
-    const previous =
-      stages
-        .slice(0, index)
-        .findLast(
-          (earlier) =>
-            (recordIn(archive, id).source ?? earlier.source ?? unit) === unit,
-        )?.value ?? DRAWINGS[id]
+    const stage = REDRAWINGS[id]?.[index]
+    // The drawing just before is the last earlier stage this unit reads, by
+    // the table: a stage the other medium alone tells is never shown here.
+    const previous = drawnIn(STAGES, ART, { id, unit, below: index })
 
     it('at its pin, not one before', () => {
       const owner = recordIn(archive, id)
@@ -427,28 +430,20 @@ describe.each(
 )
 
 describe('the Riverlands stages one medium alone tells', () => {
-  // A reader of the other medium who has reached its end still sees the
-  // first drawing: no record of the group has a stage that medium tells.
-  // The one-medium records never open to that reader at all, which the
-  // record tests above hold.
-  it.each(
-    STAGES.filter(
-      ({ id, source }) =>
-        source !== undefined && recordIn(archive, id).source === undefined,
-    ),
-  )(
+  // A reader of the other medium who has reached its end sees the last
+  // stage their medium tells, or the first drawing when it tells none, both
+  // read off the table: a stage that lost its `source` fails here.
+  it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
     ({ id, source = 'episode', stage: index = 0 }) => {
+      const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
       const drawn = drawingOf(
         recordIn(archive, id),
         otherAtTheEnd(source),
       ).strokes
 
-      expect(
-        recordIn(archive, id).source ?? REDRAWINGS[id]?.[index]?.source,
-      ).toBe(source)
       expect(drawn).not.toStrictEqual(REDRAWINGS[id]?.[index]?.value)
-      expect(drawn).toStrictEqual(DRAWINGS[id])
+      expect(drawn).toStrictEqual(drawnIn(STAGES, ART, { id, unit: other }))
     },
   )
 })
