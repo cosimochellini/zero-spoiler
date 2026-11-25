@@ -48,11 +48,15 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
   // The third stage's cast row (#1626): its filing children (#1634–#1641)
   // add each lead as they file it. Essos (#1639): Daenerys. King's Landing
   // (#1634): the master of coin, his bride and the Tyrells' grandmother.
+  // Robb's war and the Riverlands (#1635): the King in the North and his
+  // mother.
   'season-3': [
     'daenerys-targaryen',
     'tyrion-lannister',
     'sansa-stark',
     'olenna-tyrell',
+    'robb-stark',
+    'catelyn-stark',
   ],
 }
 

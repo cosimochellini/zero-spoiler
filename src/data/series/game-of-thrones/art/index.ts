@@ -223,6 +223,18 @@ export const DRAWINGS = {
   'elinor-tyrell': PERSON,
   'oberyn-martell': PERSON,
   'ellaria-sand': PERSON,
+  // #1635, the third stage's Robb's war and Riverlands cast, until its
+  // drawing child draws it.
+  'jeyne-westerling': PERSON,
+  'rolph-spicer': PERSON,
+  'raynald-westerling': PERSON,
+  'willem-lannister': PERSON,
+  'martyn-lannister': PERSON,
+  'lothar-frey': PERSON,
+  'walder-rivers': PERSON,
+  'roslin-frey': PERSON,
+  'ryman-frey': PERSON,
+  'aegon-frey': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */

@@ -38461,6 +38461,216 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21339",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21339",
       "contentSha256": "9c2cf9ee005af9292717e65fea25c2eaa82a203caf99d7e733f956a1d30a3e3b"
+    },
+    "got-en-Blood_of_My_Blood-740222.json": {
+      "locale": "en",
+      "title": "Blood of My Blood",
+      "revision": 740222,
+      "revisionDate": "2026-06-27T12:36:25Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Blood_of_My_Blood",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740222",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740222",
+      "contentSha256": "a261e7d24c458c12b35373c4265315fccb0efba1751b67135baf9d626b4d16a5"
+    },
+    "got-en-Willem_Lannister-728229.json": {
+      "locale": "en",
+      "title": "Willem Lannister",
+      "revision": 728229,
+      "revisionDate": "2026-02-05T07:05:09Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Willem_Lannister",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728229",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728229",
+      "contentSha256": "6e66a8a6b424083f1e00b3849b5b3387260988ab921a9a894bd410d24654e5ac"
+    },
+    "got-en-Martyn_Lannister-728225.json": {
+      "locale": "en",
+      "title": "Martyn Lannister",
+      "revision": 728225,
+      "revisionDate": "2026-02-05T07:04:37Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Martyn_Lannister",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728225",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728225",
+      "contentSha256": "3fea0e403ba04098c272d744ccd2708b4404a47050d6ffe876004c22a8f00a6c"
+    },
+    "got-en-Lothar_Frey-728123.json": {
+      "locale": "en",
+      "title": "Lothar Frey",
+      "revision": 728123,
+      "revisionDate": "2026-02-05T05:29:37Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lothar_Frey",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728123",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728123",
+      "contentSha256": "1394c7f478fd07d799cd178a2873be2b0227cda74544417276875294a9cfd64d"
+    },
+    "got-en-Walder_Rivers-728400.json": {
+      "locale": "en",
+      "title": "Walder Rivers",
+      "revision": 728400,
+      "revisionDate": "2026-02-05T08:33:45Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Walder_Rivers",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728400",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728400",
+      "contentSha256": "6e8b6245a4c1209d4aeeb69f78b4dedeab1974635a8b56c7b9fc87e9bf1d1458"
+    },
+    "got-en-Roslin_Tully-728505.json": {
+      "locale": "en",
+      "title": "Roslin Tully",
+      "revision": 728505,
+      "revisionDate": "2026-02-05T08:57:39Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Roslin_Tully",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728505",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728505",
+      "contentSha256": "3c7bf7a3d9db793230b32cec2291c42d4200192def23d72753b1368b6b125956"
+    },
+    "got-en-Joyeuse_Frey-728073.json": {
+      "locale": "en",
+      "title": "Joyeuse Frey",
+      "revision": 728073,
+      "revisionDate": "2026-02-05T05:00:55Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Joyeuse_Frey",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728073",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728073",
+      "contentSha256": "1a987b61b678b5992392c791a2b16800eb0d97f4bb6be8ceba8fcd87fd807cdd"
+    },
+    "got-en-Jeyne_Westerling-729693.json": {
+      "locale": "en",
+      "title": "Jeyne Westerling",
+      "revision": 729693,
+      "revisionDate": "2026-02-11T08:48:33Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Jeyne_Westerling",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729693",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729693",
+      "contentSha256": "4aa45add13e72186e23afd7e106e5f8ac8db56e4a02865a82560761e107b63d6"
+    },
+    "iaf-en-Rolph_Spicer-27039.json": {
+      "locale": "en",
+      "title": "Rolph Spicer",
+      "revision": 27039,
+      "revisionDate": "2025-01-28T09:41:27Z",
+      "url": "https://iceandfire.fandom.com/wiki/Rolph_Spicer",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27039",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27039",
+      "contentSha256": "8b13285befd44e04e8627009abdba1684f5238c9d71bfbfda4920847a5db5e69"
+    },
+    "iaf-en-Raynald_Westerling-27041.json": {
+      "locale": "en",
+      "title": "Raynald Westerling",
+      "revision": 27041,
+      "revisionDate": "2025-01-28T09:43:00Z",
+      "url": "https://iceandfire.fandom.com/wiki/Raynald_Westerling",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27041",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27041",
+      "contentSha256": "c858efb9ebca6e459bb8a3a7eeaddc920401a3991ac7d8363557c990ccad5214"
+    },
+    "iaf-en-Sybell_Spicer-19564.json": {
+      "locale": "en",
+      "title": "Sybell Spicer",
+      "revision": 19564,
+      "revisionDate": "2017-09-15T09:50:40Z",
+      "url": "https://iceandfire.fandom.com/wiki/Sybell_Spicer",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=19564",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=19564",
+      "contentSha256": "b8cf68782b573d12536b389cfb9d6bb4d611591d31881c573d1dac177ea9ed59"
+    },
+    "iaf-en-Lothar_Frey-19567.json": {
+      "locale": "en",
+      "title": "Lothar Frey",
+      "revision": 19567,
+      "revisionDate": "2017-09-16T15:48:54Z",
+      "url": "https://iceandfire.fandom.com/wiki/Lothar_Frey",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=19567",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=19567",
+      "contentSha256": "7975be05fdb38a07eb533580b6dca785f58493a3b89809c43a340c30c60522e2"
+    },
+    "iaf-en-Walder_Rivers-21399.json": {
+      "locale": "en",
+      "title": "Walder Rivers",
+      "revision": 21399,
+      "revisionDate": "2018-02-27T16:20:08Z",
+      "url": "https://iceandfire.fandom.com/wiki/Walder_Rivers",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21399",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21399",
+      "contentSha256": "94b2aa2980d555afe38736e9145643fd0f387694a7b6e3a5a3c88ae72a0e1f2a"
+    },
+    "iaf-en-Roslin_Tully-27035.json": {
+      "locale": "en",
+      "title": "Roslin Tully",
+      "revision": 27035,
+      "revisionDate": "2025-01-28T09:36:09Z",
+      "url": "https://iceandfire.fandom.com/wiki/Roslin_Tully",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27035",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27035",
+      "contentSha256": "883d429507b081a890213d356fb13d2c33f7ecc02f032af6a23e84b179dbfa04"
+    },
+    "iaf-en-Joyeuse_Erenford-25317.json": {
+      "locale": "en",
+      "title": "Joyeuse Erenford",
+      "revision": 25317,
+      "revisionDate": "2022-08-02T18:20:28Z",
+      "url": "https://iceandfire.fandom.com/wiki/Joyeuse_Erenford",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25317",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25317",
+      "contentSha256": "157bf5dfcb8ee50d7a680979f7a9aa33f01a1304deaedc4d13069b2d00b4f119"
+    },
+    "iaf-en-Ryman_Frey-22999.json": {
+      "locale": "en",
+      "title": "Ryman Frey",
+      "revision": 22999,
+      "revisionDate": "2019-04-25T05:47:18Z",
+      "url": "https://iceandfire.fandom.com/wiki/Ryman_Frey",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=22999",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=22999",
+      "contentSha256": "bfe42536fd1d8b3df88753ae67da6c3b0773379fe91ab6fa35120f2d49e25c14"
+    },
+    "iaf-en-Aegon_Frey-26103.json": {
+      "locale": "en",
+      "title": "Aegon Frey",
+      "revision": 26103,
+      "revisionDate": "2022-10-16T20:39:55Z",
+      "url": "https://iceandfire.fandom.com/wiki/Aegon_Frey",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26103",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26103",
+      "contentSha256": "b8ac461322b89a2d55b77fe7249ca893efe1703ea5b19786ecb9af5eb900e1e7"
+    },
+    "iaf-en-Edwyn_Frey-16524.json": {
+      "locale": "en",
+      "title": "Edwyn Frey",
+      "revision": 16524,
+      "revisionDate": "2016-06-20T13:39:16Z",
+      "url": "https://iceandfire.fandom.com/wiki/Edwyn_Frey",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=16524",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=16524",
+      "contentSha256": "433ab0d66eda21e74f1232b3ca081fd3971d2ab8c81f5eb0b61ecc4ea38845ef"
+    },
+    "iaf-en-Walder_Frey_(Black)-26333.json": {
+      "locale": "en",
+      "title": "Walder Frey (Black)",
+      "revision": 26333,
+      "revisionDate": "2023-05-02T09:19:49Z",
+      "url": "https://iceandfire.fandom.com/wiki/Walder_Frey_%28Black%29",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26333",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26333",
+      "contentSha256": "f994945bb72a448fcb25601e9c0ba959cfb6dd4d72e1a86ca618aa0da74cbab0"
+    },
+    "iaf-en-Willem_Lannister-23294.json": {
+      "locale": "en",
+      "title": "Willem Lannister",
+      "revision": 23294,
+      "revisionDate": "2019-05-24T01:04:47Z",
+      "url": "https://iceandfire.fandom.com/wiki/Willem_Lannister",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23294",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23294",
+      "contentSha256": "e7a658a20a258adecebd1fe9667a5ca4ba98f3ced94269d89c4c24f726e09735"
+    },
+    "iaf-en-Martyn_Lannister-23295.json": {
+      "locale": "en",
+      "title": "Martyn Lannister",
+      "revision": 23295,
+      "revisionDate": "2019-05-24T01:06:46Z",
+      "url": "https://iceandfire.fandom.com/wiki/Martyn_Lannister",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23295",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23295",
+      "contentSha256": "98fb3808ad68acb5c3f7028e64409f28cfffa92164df3326be9cc22a9cdecd0a"
     }
   }
 }
