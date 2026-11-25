@@ -649,8 +649,17 @@ export interface DocumentHead {
   title: string
 }
 
+/**
+ * A record page drawn with no bookmark for a record only the manga or the
+ * books tell (#1431): the browser prints its thresholds, and opens the
+ * bookmark form, in chapters. Absent on every other page.
+ */
+export interface PageUnit {
+  unit?: 'chapter'
+}
+
 /** A character's own page. */
-export interface CharacterDetail {
+export interface CharacterDetail extends PageUnit {
   chronicle: CharacterChronicle
   facts: CharacterFacts
   log: null | string

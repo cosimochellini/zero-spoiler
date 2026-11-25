@@ -14,7 +14,7 @@ import { headFor, type HeadKeys } from './head.server'
 import { portOf, reachedShips, sagaNumberOf, shipOf } from './places.server'
 import { printedRegion } from './printed.server'
 import { recordOf } from './project.server'
-import type { Reader } from './reader.server'
+import { pageUnit, type Reader } from './reader.server'
 
 /** A stop's sea on the stretch of chart, or `null` for one with no dossier. */
 function seaOf(place: Entity, r: Reader): null | string {
@@ -84,6 +84,7 @@ export function placePage(
   return {
     head: headFor(entity, PLACE_HEAD, r),
     detail: {
+      ...pageUnit(r),
       slot: r.slot(entity, portOf),
       index,
       total: order.length,

@@ -8,7 +8,7 @@ import path from 'node:path'
 
 import { importArchive, ROOT } from './archive-loader.mjs'
 import { drawingSvg, seriesPalette } from './art-sheet.mjs'
-import { pagedRecords, readerOf, wordsOf } from './og-words.mjs'
+import { pagedRecords, wordsOf } from './og-words.mjs'
 
 /** @typedef {import('./art-sheet.mjs').Palette} Palette */
 /** @typedef {import('../src/lib/view/records.ts').Stroke} Stroke */
@@ -20,7 +20,7 @@ const [
   { OPEN_SERIES, archiveOf },
   { hasPage },
   { LOCALES },
-  { pageReader, readerFor },
+  { pageReader },
   { recordImages },
   { withFeatures },
 ] = await Promise.all(
@@ -169,23 +169,6 @@ export function hashOf(html) {
 }
 
 /**
- * A reader at a bookmark, built once for every record that stands there.
- * @param {SeriesArchive} archive The series' archive.
- * @param {string} locale The locale.
- * @returns {(bookmark: import('../src/lib/progress/episode.ts').Bookmark) => Reader} The readers.
- */
-function readersIn(archive, locale) {
-  const readers = new Map()
-  return (bookmark) => {
-    const key = JSON.stringify(bookmark)
-    if (!readers.has(key)) {
-      readers.set(key, readerFor(archive, bookmark, locale))
-    }
-    return readers.get(key)
-  }
-}
-
-/**
  * The pictures of one series, without their digests.
  * @param {string} slug The series' slug.
  * @returns {Promise<Omit<Picture, 'hash'>[]>} A square per record, then a card per locale.
@@ -194,9 +177,6 @@ async function seriesPictures(slug) {
   const archive = await archiveOf(slug)
   const palette = seriesPalette(slug)
   const records = pagedRecords(withFeatures(archive), hasPage)
-  const readers = new Map(
-    LOCALES.map((locale) => [locale, readersIn(archive, locale)]),
-  )
   return records.flatMap((entity) => {
     const strokes = archive.drawings[entity.visual.art]
     if (strokes === undefined || strokes.length === 0) {
@@ -208,9 +188,7 @@ async function seriesPictures(slug) {
     const cards = LOCALES.map((locale) => {
       const words = wordsOf(
         entity,
-        readerOf(entity, readers.get(locale), (id) =>
-          pageReader(archive, null, { id, locale }),
-        ),
+        pageReader(archive, null, { id: entity.id, locale }),
       )
       const brand = `Zero Spoiler · ${archive.series.name[locale]}`
       return {

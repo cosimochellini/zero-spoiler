@@ -155,9 +155,9 @@ const LOADERS = {
 }
 
 /**
- * Every card of a record the anime names otherwise (`Entity.episodeName`), in
- * every open series and locale, beside the head of the page a reader with no
- * bookmark is given.
+ * Every card of a record the anime names otherwise (`Entity.episodeName`) or
+ * only one source tells (`Entity.source`, #1431), in every open series and
+ * locale, beside the head of the page a reader with no bookmark is given.
  * @returns {Promise<{ file: string, card?: string, page: string, titled: boolean }[]>} One per card.
  */
 async function renamedCards() {
@@ -181,7 +181,8 @@ async function renamedCards() {
     const archive = await archiveOf(slug)
     const payloads = payloadsFor(archive)
     const renamed = pagedRecords(withFeatures(archive), hasPage).filter(
-      ({ episodeName }) => episodeName !== undefined,
+      ({ episodeName, source }) =>
+        episodeName !== undefined || source !== undefined,
     )
     for (const entity of renamed) {
       const load = payloads.find(({ name }) => name === LOADERS[entity.kind])
@@ -201,11 +202,14 @@ async function renamedCards() {
 }
 
 describe('the name on a card', () => {
-  it('is the one the page with no bookmark is titled with, for every record the anime names otherwise', async () => {
+  it('is the one the page with no bookmark is titled with, for every record the anime names otherwise or one source alone tells', async () => {
     const cards = await renamedCards()
 
     expect(cards.map(({ file }) => file)).toContain(
       '/og/hunter-x-hunter/en/hagya.png',
+    )
+    expect(cards.map(({ file }) => file)).toContain(
+      '/og/game-of-thrones/en/ros.png',
     )
     expect(
       cards.filter(({ card, page, titled }) => card !== page || !titled),

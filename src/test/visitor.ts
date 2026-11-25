@@ -1,14 +1,16 @@
 import type { SeriesArchive } from '~/data/types'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Payload } from '~/server/archive/payloads.server'
-import { pointOf } from '~/server/archive/reader.server'
+import { ownBookmark, pointOf } from '~/server/archive/reader.server'
 
 /**
  * The bookmarks a payload asked for at this one is held to. A page drawn for
  * a reader with no bookmark at a point (`Payload.drawnAt`, #1430) must name
  * nothing that an anime viewer at the point's episode, nor a manga reader at
- * its chapter, has not reached; any other page, nothing the bookmark itself
- * has not. The point is `pageReader`'s own (`pointOf`).
+ * its chapter, has not reached; a record page of one source only, nothing
+ * a reader of that source at its own threshold has not (#1431); any other
+ * page, nothing the bookmark itself has not. The point is `pageReader`'s own
+ * (`pointOf`).
  */
 export function heldTo(
   archive: SeriesArchive,
@@ -22,6 +24,10 @@ export function heldTo(
     return [bookmark]
   }
   const point = pointOf(archive, payload.drawnAt === 'record' ? key : undefined)
+
+  if (point?.source !== undefined) {
+    return [ownBookmark(point, point.source)]
+  }
 
   return point === undefined ?
       [bookmark]

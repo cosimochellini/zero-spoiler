@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest'
 
+import type { ReaderArchive } from '~/data/features'
 import { sourceOf } from '~/data/reveal'
-import type { BookSection } from '~/data/types'
+import type { BookSection, Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Source } from '~/lib/progress/spoiler'
@@ -10,17 +11,19 @@ import { leaksOf } from '~/test/fog'
 import { ONE_PIECE_LOADED } from '~/test/series'
 import { plant } from '~/test/sourceOnly'
 
-import { handleOf } from './handle.server'
+import { entityForHandle, handleOf } from './handle.server'
 import { landingPage } from './home.server'
 import { characterPage, charactersPage } from './pages.server'
 import { type Payload, payloadsFor } from './payloads.server'
-import { pageReader, readerFor } from './reader.server'
+import { pageReader, type Reader, readerFor } from './reader.server'
 import { sagaLabels } from './sagaLabels.server'
 
 /**
  * The owner's rule (2026-10-23): a record one source alone tells does not
- * exist for a reader of the other, nor for one with no bookmark. Proved on
- * records planted for the test (`~/test/sourceOnly`), since none is filed.
+ * exist for a reader of the other, nor for one with no bookmark, except on
+ * its own page, which a reader with none is shown as a reader of its source
+ * at its own threshold (#1431). Proved on records planted for the test
+ * (`~/test/sourceOnly`), beside the archive.
  */
 
 const SOURCES: Source[] = ['episode', 'chapter']
@@ -44,6 +47,61 @@ function ceilingOf(source: Source): number {
   return source === 'episode' ?
       BASE.series.episodeCeiling
     : BASE.series.chapterCeiling
+}
+
+/** A payload of the list, or the test is wrong. */
+function payloadNamed(payloads: Payload[], name: string): Payload {
+  const found = payloads.find((payload) => payload.name === name)
+  if (found === undefined) {
+    throw new Error(`No ${name} to ask`)
+  }
+  return found
+}
+
+/** A record a reader covers, by the handle it covers it with. */
+interface Covered {
+  handle: string
+  id: string
+}
+
+/** Every record a reader covers. */
+function coveredBy(r: Reader): Covered[] {
+  const covered: Covered[] = []
+  for (const entity of r.archive.entities) {
+    const slot = r.slot(entity, () => null)
+    if (!slot.open) {
+      covered.push({ handle: slot.covered.handle, id: entity.id })
+    }
+  }
+  return covered
+}
+
+/** The id a lifted record answers with, if it is one. */
+function idOf(value: unknown): unknown {
+  return typeof value === 'object' && value !== null && 'id' in value ?
+      value.id
+    : undefined
+}
+
+/** Whether a handle stands for a record in any of these copies. */
+function resolvesIn(handle: string, copies: ReaderArchive[]): boolean {
+  return copies.some((copy) => entityForHandle(handle, copy) !== undefined)
+}
+
+/** Whether a handle lifts anything under any of these bookmarks. */
+function liftsUnder(
+  lift: Payload,
+  handle: string,
+  bookmarks: Bookmark[],
+): boolean {
+  return bookmarks.some((bookmark) => lift.run(bookmark, 'en', handle) !== null)
+}
+
+/** A record's threshold in a source's own unit. */
+function ownThreshold(entity: Entity, source: Source): number {
+  return source === 'episode' ?
+      entity.revealedAtEpisode
+    : entity.revealedAtChapter
 }
 
 /** The source a reader of this one is not. */
@@ -99,6 +157,7 @@ describe.each(SOURCES)('a record of the %s alone', (source) => {
   )
   const before = payloadsFor(BASE)
   const after = payloadsFor(planted.archive)
+  const twins = new Set(Object.values(twin).map(({ id }) => id))
 
   it.each(after.map((mine, index) => ({ mine, name: mine.name, index })))(
     '$name is sent to a reader of the other source, or of none, byte for byte as before',
@@ -106,14 +165,17 @@ describe.each(SOURCES)('a record of the %s alone', (source) => {
       // The planting adds no page, so the two lists match one for one.
       const real = before[index] ?? mine
 
-      const changed = asksOf(mine, real, others).flatMap(
-        ({ bookmark, key, locale }) => {
-          const sent = JSON.stringify(mine.run(bookmark, locale, key))
-          const was = JSON.stringify(real.run(bookmark, locale, key))
-
-          return sent === was ? [] : `'${key}' @ ${JSON.stringify(bookmark)}`
-        },
+      // Its own page, which opens with no bookmark (#1431), is held below.
+      const asks = asksOf(mine, real, others).filter(
+        ({ bookmark, key }) =>
+          bookmark !== null || mine.drawnAt !== 'record' || !twins.has(key),
       )
+      const changed = asks.flatMap(({ bookmark, key, locale }) => {
+        const sent = JSON.stringify(mine.run(bookmark, locale, key))
+        const was = JSON.stringify(real.run(bookmark, locale, key))
+
+        return sent === was ? [] : `'${key}' @ ${JSON.stringify(bookmark)}`
+      })
 
       expect(changed).toStrictEqual([])
     },
@@ -166,14 +228,58 @@ describe.each(SOURCES)('a record of the %s alone', (source) => {
     )
   })
 
-  it('has no page for a reader with no bookmark, drawn at its own debut or not', () => {
+  it('opens its page for a reader with no bookmark at its own threshold, in its own unit', () => {
     const visitor = pageReader(planted.archive, null, {
       id: twin.character.id,
       locale: 'en',
     })
+    const page = characterPage(twin.character.id, visitor)
+    const own = at(source, ownThreshold(twin.character, source))
+    const ownPage = characterPage(
+      twin.character.id,
+      readerFor(planted.archive, own, 'en'),
+    )
 
-    expect(characterPage(twin.character.id, visitor)).toBeUndefined()
-    expect(visitor.sees(twin.character)).toBe(false)
+    expect(page?.detail.slot.open).toBe(true)
+    expect(visitor.bookmark).toBeNull()
+    expect(visitor.mode).toBe(source)
+    expect(ownPage).toBeDefined()
+    // What its own reader has by then, and the unit to print it in.
+    expect(page).toStrictEqual({
+      ...ownPage,
+      detail: {
+        ...ownPage?.detail,
+        ...(source === 'chapter' && { unit: 'chapter' }),
+      },
+    })
+  })
+
+  it('lifts every handle its page covers, with no bookmark, to the record it covered, and none under a bookmark', () => {
+    const visitor = pageReader(planted.archive, null, {
+      id: twin.place.id,
+      locale: 'en',
+    })
+    const lift = payloadNamed(after, 'liftRecord')
+    const covered = coveredBy(visitor)
+    const plain = [
+      null,
+      at(source, ceilingOf(source)),
+      at(other, ceilingOf(other)),
+    ].map((bookmark) => readerFor(planted.archive, bookmark, 'en').archive)
+    const marks = [at(source, ceilingOf(source)), at(other, 1)]
+
+    expect(covered.length).toBeGreaterThan(0)
+    expect(
+      covered.map(({ handle }) => idOf(lift.run(null, 'en', handle))),
+    ).toStrictEqual(covered.map(({ id }) => id))
+    // Not one is a handle in the copy of a reader with no bookmark, nor in
+    // the copy of a reader of either source, so none lifts under a bookmark.
+    expect(
+      covered.filter(({ handle }) => resolvesIn(handle, plain)),
+    ).toStrictEqual([])
+    expect(
+      covered.filter(({ handle }) => liftsUnder(lift, handle, marks)),
+    ).toStrictEqual([])
   })
 
   it('stays out of the demo, even for a reader of its own source on a trial', () => {

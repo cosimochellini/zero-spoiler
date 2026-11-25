@@ -28,7 +28,8 @@ vi.mock(import('~/data/series'), async (original) => {
         worldMap: false,
       },
     },
-    // The second is told by the anime alone, so no crawler is sent to it.
+    // The second is told by the anime alone, and has a page all the same
+    // (#1431).
     characters: [
       ...base.characters.slice(0, 1),
       ...base.characters
@@ -94,7 +95,9 @@ describe('a sitemap with more than one series', () => {
     expect(xml).toContain(
       `hreflang="it" href="${SITE_ORIGIN}/test-series/it/characters/`,
     )
-    expect(xml).not.toContain('/characters/anime-only')
+    expect(xml).toContain(
+      `<loc>${SITE_ORIGIN}/test-series/it/characters/anime-only</loc>`,
+    )
     expect(xml).not.toContain(`${SITE_ORIGIN}/test-series/en/fruits`)
     expect(xml).not.toContain(`${SITE_ORIGIN}/test-series/en/filler`)
     expect(xml).not.toContain(`${SITE_ORIGIN}/test-series/en/ranks`)

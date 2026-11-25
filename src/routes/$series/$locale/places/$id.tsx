@@ -5,6 +5,7 @@ import type { ReactElement, ReactNode } from 'react'
 import { ArchivePage } from '~/components/ArchivePage'
 import { VisitorBanner } from '~/components/VisitorBanner'
 import { useT } from '~/i18n/LocaleContext'
+import { PageUnitContext } from '~/lib/progress/BookmarkContext'
 import { recordHead } from '~/routes/$locale/-head'
 import { RecordBackLink } from '~/routes/$series/$locale/-back'
 import {
@@ -68,41 +69,43 @@ function PlacePage(): ReactElement {
   const place = 'detail' in page ? page.detail : null
 
   return (
-    <main
-      id="content"
-      {...stylex.props(recordStyles.page)}
-    >
-      <p {...stylex.props(recordStyles.back)}>
-        <RecordBackLink section="places" />
-      </p>
+    <PageUnitContext value={place?.unit}>
+      <main
+        id="content"
+        {...stylex.props(recordStyles.page)}
+      >
+        <p {...stylex.props(recordStyles.back)}>
+          <RecordBackLink section="places" />
+        </p>
 
-      <VisitorBanner
-        slot={'ship' in page ? page.ship.slot : page.detail.slot}
-      />
-
-      {'ship' in page ?
-        <ShipDiptych
-          peek={peekShip}
-          peekRecord={peekRecord}
-          slot={page.ship.slot}
+        <VisitorBanner
+          slot={'ship' in page ? page.ship.slot : page.detail.slot}
         />
-      : <PlaceDiptych
-          detail={page.detail}
-          peek={peekPort}
-          peekRecord={peekRecord}
-        />
-      }
 
-      {place === null ? null : (
-        <Band at={BAND.map}>
-          <MapBand detail={place} />
+        {'ship' in page ?
+          <ShipDiptych
+            peek={peekShip}
+            peekRecord={peekRecord}
+            slot={page.ship.slot}
+          />
+        : <PlaceDiptych
+            detail={page.detail}
+            peek={peekPort}
+            peekRecord={peekRecord}
+          />
+        }
+
+        {place === null ? null : (
+          <Band at={BAND.map}>
+            <MapBand detail={place} />
+          </Band>
+        )}
+
+        <Band at={BAND.drawings}>
+          <DrawingsBand detail={'ship' in page ? page.ship : page.detail} />
         </Band>
-      )}
-
-      <Band at={BAND.drawings}>
-        <DrawingsBand detail={'ship' in page ? page.ship : page.detail} />
-      </Band>
-    </main>
+      </main>
+    </PageUnitContext>
   )
 }
 

@@ -22,7 +22,7 @@ import {
   recordOf,
   searchableOf,
 } from './project.server'
-import type { Reader } from './reader.server'
+import { pageUnit, type Reader } from './reader.server'
 import { relationshipsOf } from './relationships.server'
 
 /**
@@ -169,6 +169,7 @@ export function characterPage(
   return {
     head: headFor(entity, CHARACTER_HEAD, r),
     detail: {
+      ...pageUnit(r),
       slot: r.slot(entity, pageRecordOf),
       log: dossier !== undefined && r.sees(entity) ? dossier.log[locale] : null,
       facts: { ...factsOf(entity, r), ...(seats.length > 0 && { seats }) },

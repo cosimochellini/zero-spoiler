@@ -9,8 +9,10 @@ import {
   OP_ARCHIVE,
   opReaderFor as readerFor,
 } from '~/test/archive'
+import { loadedSeries } from '~/test/series'
 
-import { pageReader } from './reader.server'
+import { characterPage } from './pages.server'
+import { pageReader, readerFor as readerIn } from './reader.server'
 
 /** A record the archive is known to file, or the test is wrong. */
 function must(id: string): Entity {
@@ -196,4 +198,62 @@ describe('pageReader', () => {
 
     expect(entities.some((entity) => r.sees(entity))).toBe(false)
   })
+})
+
+/**
+ * Records of one source only, each pinned to the source that tells it and
+ * the point it opens at there (#1431).
+ */
+const ONE_SOURCE = [
+  // Show only: Theon and Jon name her in "Cripples, Bastards, and Broken
+  // Things" (season 1, episode 4); the books have no Ros.
+  {
+    series: 'game-of-thrones',
+    id: 'ros',
+    own: { mode: 'episode', episode: 4 },
+    other: { mode: 'chapter', chapter: 400 },
+    unit: undefined,
+  },
+  // Manga only: the Kakin succession war is not animated; the third prince
+  // is named in the chapter 343 roster.
+  {
+    series: 'hunter-x-hunter',
+    id: 'tserriednich-hui-guo-rou',
+    own: { mode: 'chapter', chapter: 343 },
+    other: { mode: 'episode', episode: 148 },
+    unit: 'chapter',
+  },
+] as const
+
+describe('the page of a record of one source only, with no bookmark', () => {
+  it.each(ONE_SOURCE)(
+    '$id is drawn as its source’s reader sees it at its own threshold',
+    ({ series, id, own, unit }) => {
+      const { archive } = loadedSeries(series)
+      const page = characterPage(
+        id,
+        pageReader(archive, null, { id, locale: 'en' }),
+      )
+      const ownPage = characterPage(id, readerIn(archive, own, 'en'))
+
+      expect(page?.detail.slot.open).toBe(true)
+      expect(page?.detail.unit).toBe(unit)
+      expect(ownPage).toBeDefined()
+      expect(page).toStrictEqual({
+        ...ownPage,
+        detail: { ...ownPage?.detail, ...(unit !== undefined && { unit }) },
+      })
+    },
+  )
+
+  it.each(ONE_SOURCE)(
+    '$id is no page for a reader of the other source',
+    ({ series, id, other }) => {
+      const { archive } = loadedSeries(series)
+
+      expect(
+        characterPage(id, pageReader(archive, other, { id, locale: 'en' })),
+      ).toBeUndefined()
+    },
+  )
 })

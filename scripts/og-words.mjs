@@ -3,15 +3,13 @@
 // what the page says. The page is the one a link preview fetches with no
 // bookmark (`pageReader`): the record at its first appearance, as an anime
 // viewer and a manga reader both see it, since a shared link reaches people at
-// any point of the story. A record of one source only has no such page; its
-// card is that source's reader's at the record's threshold. Used by
-// `og-pictures.mjs`.
+// any point of the story; a record of one source only as that source's reader
+// sees it at its own threshold (#1431). Used by `og-pictures.mjs`.
 import { importArchive } from './archive-loader.mjs'
 
 /** @typedef {import('../src/data/types.ts').Entity} Entity */
 /** @typedef {import('../src/data/features.ts').ReaderArchive} ReaderArchive */
 /** @typedef {import('../src/server/archive/reader.server.ts').Reader} Reader */
-/** @typedef {import('../src/lib/progress/episode.ts').Bookmark} Bookmark */
 /** @typedef {{ name: string, line?: string, epithet?: string, role?: string }} Seen */
 /** @typedef {(entity: Entity, r: Reader) => Seen} Reading */
 
@@ -22,29 +20,6 @@ const [{ characterPage }, { portOf }, { translatorOf }] = await Promise.all(
     'server/copy.server.ts',
   ].map((module) => importArchive(module)),
 )
-
-/**
- * The reader a record's card is drawn for: the page with no bookmark for a
- * record both sources tell, the reader at its threshold for one only a single
- * source tells.
- * @param {Entity} entity The record.
- * @param {(bookmark: Bookmark) => Reader} readerAt A reader at a bookmark.
- * @param {(id: string) => Reader} visitorOf The page's reader with no bookmark.
- * @returns {Reader} The reader.
- */
-export function readerOf(entity, readerAt, visitorOf) {
-  switch (entity.source) {
-    case 'chapter': {
-      return readerAt({ mode: 'chapter', chapter: entity.revealedAtChapter })
-    }
-    case 'episode': {
-      return readerAt({ mode: 'episode', episode: entity.revealedAtEpisode })
-    }
-    default: {
-      return visitorOf(entity.id)
-    }
-  }
-}
 
 /**
  * A record's name as the reader's own copy of the archive gives it: a record
@@ -130,7 +105,7 @@ const READINGS = { ability, character, fruit, place, ship }
 
 /**
  * What one record's card prints in one locale: the name and the line its
- * reader (`readerOf`) is given.
+ * page with no bookmark (`pageReader`) is given.
  * @param {Entity} entity The record.
  * @param {Reader} r Its reader.
  * @returns {{ name: string, line?: string }} The words.
