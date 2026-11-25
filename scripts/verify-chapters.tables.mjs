@@ -89,6 +89,8 @@ export const SHOW_TITLES = {
   'asha-greyjoy': 'Yara Greyjoy',
   'ramsay-snow': 'Ramsay Bolton',
   'qhorin-halfhand': 'Qhorin',
+  // #1639: the show renamed the Yunkish envoy.
+  'grazdan-mo-eraz': 'Razdal mo Eraz',
 }
 
 // The reviewed first-use pins. See the scene evidence in the Nen inventory.

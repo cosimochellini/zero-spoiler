@@ -186,8 +186,8 @@ const PERSON: Stroke[] = [
  * cast, in `north.ts` and `ironborn.ts` (#1473), Wall cast, the rangers in
  * `wall.ts` and the wildlings in `wildlings.ts` (#1474), and Essos and Qarth
  * cast, in `essos.ts` (#1475). The seasons' own, which the home page's
- * frame draws, are in `seasons.ts` (#1601). The season-3 King's Landing
- * cast (#1634) shows `PERSON` until its drawing child draws it. `satisfies`
+ * frame draws, are in `seasons.ts` (#1601). The third stage's casts (#1634,
+ * #1639) show `PERSON` until their drawing children draw them. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -208,6 +208,14 @@ export const DRAWINGS = {
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': DRAGON_EGG,
+  // #1639: the third stage's Essos cast.
+  'missandei': PERSON,
+  'kraznys-mo-nakloz': PERSON,
+  'grey-worm': PERSON,
+  'grazdan-mo-eraz': PERSON,
+  'mero': PERSON,
+  'daario-naharis': PERSON,
+  'prendahl-na-ghezn': PERSON,
   // #1634: King's Landing.
   'olenna-tyrell': PERSON,
   'megga-tyrell': PERSON,
@@ -292,10 +300,10 @@ export const REDRAWINGS: Redrawings = {
       ],
     },
     // The runt alone again: Jon turns on the wildlings and escapes them
-    // back to the Wall in "The Rains of Castamere" (episode 29). A Storm of
-    // Swords has him back at Castle Black by Jon VII (chapter 199), the
-    // safe later chapter.
-    { episode: 29, chapter: 199, value: RUNT },
+    // back to the Wall in "The Rains of Castamere" (episode 29). In A Storm
+    // of Swords he breaks away at Queenscrown in Jon V (chapter 185) and is
+    // back at Castle Black in Jon VI (chapter 192, #1628).
+    { episode: 29, chapter: 192, value: RUNT },
     // The runt howling in the snow: Jon is killed at Castle Black in
     // "Mother's Mercy" (episode 50) and left for dead in Jon XIII of A
     // Dance with Dragons (chapter 341). Ghost howls for him in the show.
