@@ -316,7 +316,9 @@ order them.
   errand to the Golden Tooth (Catelyn V) changes no field. Italian kept.
 - Raynald Westerling: role Jeyne Westerling's brother, then Robb Stark's
   banner-bearer at 193 (Catelyn VI), books only. His fate at the Twins is told
-  only in _A Feast for Crows_ and is not filed. Italian kept.
+  only in _A Feast for Crows_: #1643 files him `presumed-dead` at 270 (Jaime
+  VII, where Edwyn Frey tells Jaime that he was never found), with his drawing's
+  stage, episode 58 ordering it (#1238). Italian kept.
 - Willem Lannister: role squire of House Lannister. Show: `captured` at 23,
   `deceased` at 25 ("Kissed by Fire", Rickard Karstark's men). Books: opens dead
   at 164. Summary and log say only that he was taken prisoner and brought to
@@ -344,6 +346,9 @@ order them.
 - Ryman Frey: role Lord Walder Frey's grandson, House Frey, alive. He kills
   Dacey Mormont at the wedding (195), which changes no field of his. Catelyn II
   and _A Clash of Kings_ only mention him. Italian "Ryman Frey" (Personaggi).
+  His hanging near Fairmarket, told in Jaime VII of _A Feast for Crows_ (270),
+  is filed by #1643, `deceased` with his drawing's stage, episode 58 ordering it
+  (#1238).
 - Aegon Frey: role Lord Walder Frey's grandson, called Jinglebell, House Frey;
   opens `deceased` at 195 (Catelyn VII: Catelyn cuts his throat). Italian "Aegon
   Frey", detto Campanello (Personaggi).
