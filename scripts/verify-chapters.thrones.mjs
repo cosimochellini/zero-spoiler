@@ -238,13 +238,25 @@ async function bookChapterTitles(ceiling, books, wiki) {
     )
   })
 
-  return new Map(titles.filter(([, chapter]) => chapter <= ceiling))
+  // A title the navboxes list twice names no chapter: A Feast for Crows'
+  // lists `Brienne IV - A Feast for Crows` as chapters 246 and 257
+  // (2026-11-25), so neither takes its page.
+  const named = titles.map(([title]) => title)
+
+  return new Map(
+    titles.filter(
+      ([title, chapter]) =>
+        chapter <= ceiling && named.indexOf(title) === named.lastIndexOf(title),
+    ),
+  )
 }
 
 /**
  * Every book chapter's wikitext from chapter 1 up to the first chapter with
  * no page. Past a gap the first page linking a character is no floor: the
- * missing page may link it first. On 2026-11-25 the Ice and Fire Wiki holds
+ * missing page may link it first. A `{{Ref}}` cite past the run still sets
+ * one (`bookFloorOf`): it bounds the first appearance from above, so it can
+ * flag a record wrongly but never clear one filed too early. On 2026-11-25 the Ice and Fire Wiki holds
  * chapters 1 to 33 whole, then a few pages of the later books.
  * @param {number} ceiling The last chapter.
  * @param {Book[]} books The series' books.

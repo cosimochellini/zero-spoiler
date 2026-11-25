@@ -25,7 +25,9 @@
 // appearance" field, so a character's chapter floor is the first chapter page
 // that links it, by its title or a redirect to it, read only up to the first
 // chapter with no page, or else the earliest chapter its page cites
-// (`{{Ref|AGOT|22}}`). The Game of
+// (`{{Ref|AGOT|22}}`), wherever that falls: a cite bounds the first
+// appearance from above, so it can flag a record wrongly but never clear one
+// filed too early. The Game of
 // Thrones Wiki's infobox names the first episode by title (`| First =
 // "[[Lord Snow]]"`), counted through `EPISODES`. A record one medium alone
 // tells (`source`) is listed as such and not read on the other's wiki.

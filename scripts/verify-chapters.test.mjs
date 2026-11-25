@@ -601,6 +601,27 @@ describe('the book chapters Game of Thrones is floored on', () => {
     ])
   })
 
+  it('leaves a title the navboxes list twice without a chapter', async () => {
+    const twice = queryAnswer({
+      'Template:A Game Of Thrones': navbox('A Game of Thrones', [
+        'Prologue',
+        'Bran I',
+        'Prologue',
+      ]),
+    })
+    const fetch = vi.fn((url) =>
+      Promise.resolve(
+        new Response(url.includes('Template') ? twice : chapters),
+      ),
+    )
+    vi.stubGlobal('fetch', fetch)
+
+    await bookTexts(3, [{ number: 1, first: 1, last: 3 }], wiki())
+
+    const url = new URL(fetch.mock.calls[1]?.[0] ?? '')
+    expect(url.searchParams.get('titles')).toBe('Bran I - A Game of Thrones')
+  })
+
   it('refuses a navbox that lists another number of chapters than the book has', async () => {
     vi.stubGlobal(
       'fetch',

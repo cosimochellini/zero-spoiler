@@ -60,8 +60,9 @@ export const TITLES = {
     'kakin-arc': 'Succession Contest arc',
   },
   // A Game of Thrones record's English name is its Game of Thrones Wiki
-  // page; this is its page on the Ice and Fire Wiki where that differs, as
-  // Robin Arryn's is Robert Arryn.
+  // page; this is its book page where that differs, as Robin Arryn's is
+  // Robert Arryn. These are A Wiki of Ice and Fire's titles, not yet remapped
+  // to the Ice and Fire Wiki's (follow-up to #1625).
   'game-of-thrones': {
     'nymeria': 'Nymeria (direwolf)',
     'robin-arryn': 'Robert Arryn',

@@ -29,9 +29,9 @@ elsewhere.
    `ref=<head-sha>`). Load `tone-of-voice` or `line-drawings` when their content
    is in scope. Owner rulings are not defects; for a UI PR, DESIGN.md's
    "Exceptions to the impeccable skill" are owner rulings. Read a Game of
-   Thrones wiki fact in this order: the main checkout's `.gate/firecrawl/` (the
+   Thrones wiki fact in the main checkout's `.gate/firecrawl/` (the
    implementer's pages are already there), then the Ice and Fire and Game of
-   Thrones fandom APIs, then the Firecrawl tool.
+   Thrones fandom APIs; report a fact neither holds as unverified.
 3. Use `/usr/bin/git` for git commands. Locate the existing PR worktree with
    `/usr/bin/git worktree list --porcelain` and verify that its HEAD matches the
    PR head SHA before reading its files. Read that worktree without changing it.

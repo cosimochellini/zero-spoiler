@@ -355,10 +355,11 @@ pass, review and audit keeps them and reports none of them as a defect.
   overused (owner, 2026-11-17).
 - **JetBrains Mono** is the voice of data: see the Mono Rule under Typography
   (owner, 2026-11-17).
-- **Dark only**: no light scheme and no theme switch (owner, 2026-11-17).
+- **Dark, and only dark**: no light scheme (owner, 2026-11-17).
 - **Visuals are judged on a production build**: `npm run build`, then
   `npm start` (`vite preview`). `vite dev` orders StyleX's layers differently
-  and breaks margins and dialog centring (owner, 2026-11-25).
+  and breaks margins and dialog centring (owner, 2026-11-25). Live mode still
+  iterates on the dev server; the verdict comes from the build.
 
 ## Do's and Don'ts
 

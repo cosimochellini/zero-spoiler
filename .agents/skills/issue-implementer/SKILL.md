@@ -20,12 +20,13 @@ in Codex or through Claude's `issue-implementer` subagent.
    Read `docs/architecture.md` for archive/server/routing/bookmark changes and
    the applicable verification/rights sections of `CONTRIBUTING.md`. For
    user-facing copy, read `.claude/skills/tone-of-voice/SKILL.md`; for art, read
-   `.claude/skills/line-drawings/SKILL.md`. For UI work, load `impeccable` and
-   answer its interview, direction and approval steps from the issue,
-   `PRODUCT.md`, `DESIGN.md` and the owner decisions in the prompt; anything
-   still open becomes a Plan-first question with a default. These are ordinary
-   Markdown instructions in either tool. Follow only pointers relevant to this
-   issue.
+   `.claude/skills/line-drawings/SKILL.md`. These are ordinary Markdown
+   instructions in either tool. For UI work, load `impeccable` and answer its
+   interview, direction and approval steps from the issue, `PRODUCT.md`,
+   `DESIGN.md` and the owner decisions in the prompt; take a default for
+   anything still open and list it under Decisions in the PR body, or as a
+   Plan-first question when the orchestrator asked for a plan first. Follow
+   only pointers relevant to this issue.
    **Plan first.** When the orchestrator asks for a plan and questions first,
    stop after this research and return a per-record plan and numbered
    questions, each with a default; implement only on its reply.
