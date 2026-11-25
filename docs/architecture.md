@@ -279,7 +279,9 @@ Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its
 red theme and its hub crown (#850). It files no arcs: each season module is
 headed by its own `heading`, and a season with no record is left out of the
-engine's sagas until its records land. Season 1 files the main cast of the
+engine's sagas until its records land. A heading's drawing, keyed `season-N` in
+`art/seasons.ts`, is the season's landmark, which the home page's frame draws
+for the season the reader is in (#1601). Season 1 files the main cast of the
 season and of _A Game of Thrones_ (#852): 63 characters, the six direwolves
 among them, each gated where it appears and is named in each medium, with every
 dated step pinned to both an episode and an absolute chapter; Ros, whom only the
@@ -593,17 +595,17 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 ### `game-of-thrones`
 
-| Thing                  | Count                                                   |
-| ---------------------- | ------------------------------------------------------- |
-| Records                | 300                                                     |
-| Characters             | 213                                                     |
-| Places                 | 87                                                      |
-| Saga modules           | 2                                                       |
-| Line drawings          | 300, one per record, plus 208 redrawings of 153 records |
-| Chronicle stories      | 1188, for 213 characters                                |
-| Dated timelines        | 1054                                                    |
-| Affiliation steps      | 243                                                     |
-| Status steps           | 382                                                     |
-| Later visits to places | 5                                                       |
+| Thing                  | Count                                                                                   |
+| ---------------------- | --------------------------------------------------------------------------------------- |
+| Records                | 300                                                                                     |
+| Characters             | 213                                                                                     |
+| Places                 | 87                                                                                      |
+| Saga modules           | 2                                                                                       |
+| Line drawings          | 302, one per record and 2 for the seasons' headings, plus 208 redrawings of 153 records |
+| Chronicle stories      | 1188, for 213 characters                                                                |
+| Dated timelines        | 1054                                                                                    |
+| Affiliation steps      | 243                                                                                     |
+| Status steps           | 382                                                                                     |
+| Later visits to places | 5                                                                                       |
 
 <!-- End of the generated counts. -->

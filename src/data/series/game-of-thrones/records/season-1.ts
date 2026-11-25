@@ -22,7 +22,7 @@ export const season1: ThronesSaga = {
       it: 'La prima stagione della serie e il primo libro, A Game of Thrones.',
       en: 'The show’s first season and the first book, A Game of Thrones.',
     },
-    visual: { art: 'season-1', tint: 'red' },
+    visual: { art: 'season-1', tint: 'ice' },
   },
   entries: [
     // Show: "Winter Is Coming", he rides out to behead a deserter and is called

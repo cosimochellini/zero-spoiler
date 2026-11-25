@@ -5,8 +5,8 @@ media are the HBO show and the five books. Its records are filed by show
 season in `src/data/series/game-of-thrones/records/season-N.ts` (no arcs), and
 its drawings are `DRAWINGS` in `src/data/series/game-of-thrones/art/index.ts`,
 spread from the files beside it: one per cast group (`winterfell.ts`,
-`court.ts`, …) and `places.ts`. A new cast group adds its own file and spreads
-it there.
+`court.ts`, …), `places.ts` and `seasons.ts`. A new cast group adds its own
+file and spreads it there.
 Every character has its own drawing; there is no shared placeholder. Render
 them with
 `npm run art:sheet -- --series game-of-thrones <id>` (or `--kind
@@ -52,6 +52,16 @@ a reason (owner, #851). Every other record takes another tint.
   a gate, a wall of ice), a ground line at y 150 and `shadow()` at y 150–160,
   as Hunter x Hunter's are. A place on the coast may stand on `...SEA` with no
   shadow. A banner may fly on it.
+- **A season** stands in for an arc: its heading's drawing (`season-N` in
+  `art/seasons.ts`) is the landmark a viewer knows that season by, which the
+  home page's frame draws (#1601): the Iron Throne for season 1, the red
+  comet for season 2. It shows from the season's first episode and chapter, so
+  it holds no reveal of the season in either medium, and it is drawn like a
+  place. A season files its drawing with its first records. It has no stages:
+  a heading has no dated timeline, and the frame shows a season only while the
+  reader is in it or it is the latest filed one, so a later change to its
+  landmark (the throne melted in episode 73) is never drawn there (owner,
+  2026-11-25).
 
 ## Later looks
 

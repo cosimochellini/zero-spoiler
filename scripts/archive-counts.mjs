@@ -85,6 +85,22 @@ function stepRows({ placeDossierOf, places, timelines }) {
 }
 
 /**
+ * Whose the drawings are. Every drawing is a record's or a season heading's
+ * (the data tests hold it), so the ones over the records are Game of
+ * Thrones' seasons (#1601).
+ * @param {Record<string, unknown>} drawings The series' first drawings.
+ * @param {unknown[]} entities Its records.
+ * @returns {string} The words after the count.
+ */
+function perRecord(drawings, entities) {
+  const headings = Object.keys(drawings).length - entities.length
+
+  return headings > 0 ?
+      `one per record and ${headings} for the seasons' headings`
+    : 'one per record'
+}
+
+/**
  * One series' table, counted from its archive, with a row for the devil
  * fruits, the ships and the bodies of power only where its description has
  * them.
@@ -130,7 +146,7 @@ export function countTable({ archive }) {
     ],
     [
       'Line drawings',
-      `${Object.keys(drawings).length}, one per record, plus ${redrawings.flat().length} redrawings of ${redrawings.length} records`,
+      `${Object.keys(drawings).length}, ${perRecord(drawings, entities)}, plus ${redrawings.flat().length} redrawings of ${redrawings.length} records`,
     ],
     [
       'Chronicle stories',
