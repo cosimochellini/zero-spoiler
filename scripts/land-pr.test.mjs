@@ -22,6 +22,8 @@ const headRepositoryName = 'owner/zero-spoiler'
 
 // Workflow runs come one fixture line per `gh api` call, the last one repeated.
 // `gh pr merge` refuses when refused.json exists, which is the PR after that.
+// `gh pr view` prints on stderr the hint gh 2.105 shows an agent for an open
+// PR, then a warning the script must keep.
 const fakeGh = `#!/bin/bash
 d=$(dirname "$0")
 echo "$*" >>"$d/calls.log"
@@ -36,6 +38,13 @@ case "$1 $2" in
     [ -n "$line" ] || line=$(tail -n 1 "$d/runs.jsonl")
     echo "$line" ;;
   "pr view")
+    cat >&2 <<'HINT'
+hint: if you need to wait for this pull request to be reviewed, merged, or closed before continuing, use this instead of polling:
+    gh event listen --resource https://github.com/owner/zero-spoiler/pull/42 --event com.github.pull_request.review.submitted.v1,com.github.pull_request.state.changed.v1
+  - It prints the first event as a JSON line on stdout and exits; run it again to wait for the next one.
+  - See gh event listen --help for other event types.
+HINT
+    echo "warning: a real error" >&2
     # A second PR file, when there is one, answers every read after the first
     # mergeable one: main moving into a conflict while CI runs.
     if [ "$q" = .mergeable ] && [ -f "$d/later.json" ]; then
@@ -152,7 +161,7 @@ ${clean ? 'exit 0' : 'echo src/a.ts; exit 1'}
  * @param {boolean} [clean] - Whether a merge with main is free of conflicts.
  * @param {string} [expectedHead] - The full or abbreviated SHA passed by the caller.
  * @param {string} [title] - The PR title.
- * @returns {{ status: number | null, stdout: string, calls: string }} The exit status, output and the `gh` calls made.
+ * @returns {{ status: number | null, stdout: string, stderr: string, calls: string }} The exit status, output and the `gh` calls made.
  */
 function land(
   runs,
@@ -174,13 +183,27 @@ function land(
       },
     })
     const calls = readFileSync(path.join(bin, 'calls.log'), 'utf8')
-    return { status: child.status, stdout: child.stdout, calls }
+    return {
+      status: child.status,
+      stdout: child.stdout,
+      stderr: child.stderr,
+      calls,
+    }
   } finally {
     rmSync(bin, { recursive: true })
   }
 }
 
 describe('land-pr.sh', () => {
+  it("drops gh's event-listen hint and keeps its other stderr", () => {
+    const { status, stderr } = land([[run(1, 'completed', 'success')]])
+
+    expect(stderr).not.toContain('hint:')
+    expect(stderr).not.toContain('event listen')
+    expect(stderr).toContain('warning: a real error')
+    expect(status).toBe(0)
+  })
+
   it('pins a short SHA to the full head for CI and merge', () => {
     const { status, calls } = land(
       [[run(1, 'completed', 'success')]],
