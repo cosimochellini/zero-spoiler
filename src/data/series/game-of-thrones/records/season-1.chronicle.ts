@@ -253,6 +253,103 @@ export const season1Chronicles = {
         en: '[[xaro-xhoan-daxos|Xaro]] warns Daenerys that the warlocks want her dead and that two of the city’s great merchant guilds want her expelled or killed. She refuses again to marry him, and refuses ten ships for one of her dragons. At the docks a merchant hands her a box with a manticore inside. An old man knocks it out of her hands: he is [[arstan-whitebeard|Arstan Whitebeard]], squire to the eunuch [[strong-belwas|Strong Belwas]]. The two say Magister [[illyrio-mopatis|Illyrio]] has sent them with three ships to bring her back to Pentos. Daenerys agrees to leave Qarth, and orders the ships renamed Balerion, Meraxes and Vhagar.',
       },
     ),
+    // The Essos cast of the third stage (#1659).
+    onScreen(
+      [21, 167],
+      { it: 'Ottomila in vendita', en: 'Eight thousand for sale' },
+      {
+        it: 'Daenerys arriva ad Astapor con i suoi draghi, ancora troppo piccoli per la guerra, e [[jorah-mormont|ser Jorah]] la spinge a comprare un esercito di Immacolati. Un Buon Padrone le mostra i suoi soldati schiavi tramite una giovane schiava che ne addolcisce gli insulti. Per dimostrare che non sentono dolore taglia un capezzolo a uno di loro, e racconta che alla fine dell’addestramento ognuno uccide un neonato. Ne sono in vendita ottomila. Sulla via del ritorno un uomo incappucciato salva Daenerys da una manticora e si inginocchia: è [[barristan-selmy|ser Barristan Selmy]], venuto a servirla.',
+        en: 'Daenerys sails into Astapor with her dragons, still too small for war, and [[jorah-mormont|Ser Jorah]] urges her to buy an army of Unsullied. A Good Master shows her his slave soldiers through a slave girl who softens his insults. To prove they feel no pain he cuts a nipple off one of them, and he tells her that each kills a newborn at the end of his training. Eight thousand are for sale. On the way back a hooded man saves her from a manticore and kneels: he is [[barristan-selmy|Ser Barristan Selmy]], come to serve her.',
+      },
+    ),
+    onScreen(
+      [23, 171],
+      { it: 'Un drago per un esercito', en: 'One dragon for an army' },
+      {
+        it: 'Ad Astapor [[jorah-mormont|ser Jorah]] e [[barristan-selmy|ser Barristan]] discutono degli Immacolati: un esercito di schiavi vince le battaglie, ma per Rhaegar gli uomini combattevano perché lo amavano. Barristan chiama il fratello di Daenerys l’ultimo drago, e lei risponde che non lo era. Daenerys offre al Buon Padrone il più grande dei suoi draghi in cambio di tutti gli ottomila Immacolati e dei ragazzi in addestramento, e chiede anche la schiava che gli fa da interprete, [[missandei|Missandei]]. I due cavalieri protestano. Uscita, Daenerys li avverte di non contraddirla mai più in pubblico.',
+        en: 'In Astapor [[jorah-mormont|Ser Jorah]] and [[barristan-selmy|Ser Barristan]] argue over the Unsullied: an army of slaves wins battles, but men fought for Rhaegar because they loved him. Barristan calls her brother the last dragon, and Daenerys says he was not. She offers the Good Master the largest of her dragons for all eight thousand Unsullied and the boys in training, and asks for his slave interpreter, [[missandei|Missandei]], as well. Both knights object. Outside, she warns them never to question her in public again.',
+      },
+    ),
+    onScreen(
+      [24, 171],
+      { it: 'Un drago non è uno schiavo', en: 'A dragon is not a slave' },
+      {
+        it: 'Sulla piazza Daenerys consegna al Buon Padrone il più grande dei suoi draghi, legato a una catena, e riceve la frusta che le dà gli Immacolati. Con stupore di [[missandei|Missandei]], Daenerys dà loro ordini in valyriano, e quando il Buon Padrone si lamenta che il drago non gli obbedisce, gli risponde in valyriano che un drago non è uno schiavo. Ordina agli Immacolati di uccidere i padroni, i loro soldati e chiunque impugni una frusta, di risparmiare i bambini e di liberare ogni schiavo. Il drago brucia il Buon Padrone. Daenerys libera gli Immacolati, e loro scelgono di restare con lei.',
+        en: 'On the plaza Daenerys hands the Good Master the largest of her dragons on a chain, and takes the whip that makes the Unsullied hers. To [[missandei|Missandei]]’s surprise she gives them orders in Valyrian, and when he complains that the dragon will not come, she tells him in Valyrian that a dragon is not a slave. She orders the Unsullied to kill the masters, their soldiers and every man holding a whip, to spare the children and to free every slave. Her dragon burns the Good Master. She frees the Unsullied, and they choose to stay with her.',
+      },
+    ),
+    onScreen(
+      [25, 186],
+      { it: 'Nomi da uomini liberi', en: 'Names for free men' },
+      {
+        it: 'In marcia verso Yunkai, Daenerys chiede agli ufficiali degli Immacolati di scegliere un capo tra loro, ora che sono uomini liberi. Quello che scelgono le dice di chiamarsi [[grey-worm|Verme Grigio]]. [[missandei|Missandei]] spiega che i padroni davano a ognuno un nome umiliante, un colore e un parassita. Daenerys ordina a ogni Immacolato di scegliersi un nome nuovo o di riprendere quello datogli dai genitori. Verme Grigio tiene il suo: è il nome che aveva quando Daenerys lo ha liberato.',
+        en: 'On the march to Yunkai, Daenerys asks the Unsullied officers to choose a leader from among them, now that they are free men. The one they pick tells her his name is [[grey-worm|Grey Worm]]. [[missandei|Missandei]] explains that the masters gave each of them a demeaning name, a color and a vermin. Daenerys orders every Unsullied to choose a new name or take back the one his parents gave him. Grey Worm keeps his: it is the name he had when she set him free.',
+      },
+    ),
+    onScreen(
+      [27, 186],
+      { it: 'L’inviato di Yunkai', en: 'The envoy of Yunkai' },
+      {
+        it: 'Davanti a Yunkai [[jorah-mormont|ser Jorah]] avverte che i padroni si chiuderanno dietro le mura, e che prendere la città non avvicinerà Daenerys a Westeros, ma lei vuole liberarne gli schiavi. [[grey-worm|Verme Grigio]] manda un messaggero alle porte. I Saggi Padroni mandano [[grazdan-mo-eraz|Razdal mo Eraz]], che le offre oro e navi se lascerà in pace la città. Daenerys chiede invece che ogni schiavo sia liberato e pagato. Quando Razdal la minaccia con gli amici potenti di Yunkai, i draghi gli soffiano contro, e Daenerys si tiene il suo oro.',
+        en: 'Before Yunkai, [[jorah-mormont|Ser Jorah]] warns that its masters will hide behind their walls, and that taking the city will not bring Daenerys any closer to Westeros, but she means to free its slaves. [[grey-worm|Grey Worm]] sends word to the gates. The Wise Masters send [[grazdan-mo-eraz|Razdal mo Eraz]], who offers her gold and ships if she leaves the city in peace. She demands every slave freed and paid instead. When he threatens her with Yunkai’s powerful friends, her dragons hiss at him, and she keeps his gold.',
+      },
+    ),
+    onScreen(
+      [28, 186],
+      { it: 'I Secondi Figli', en: 'The Second Sons' },
+      {
+        it: 'Gli amici potenti dei Saggi Padroni sono i Secondi Figli, duemila mercenari a cavallo. Daenerys invita i loro capitani nella sua tenda. [[mero|Mero]] la insulta e palpeggia [[missandei|Missandei]], e i capitani rifiutano di cambiare parte; Daenerys concede loro due giorni e una botte di vino, poi dice a [[barristan-selmy|ser Barristan]] di uccidere per primo Mero, se si arriverà alla battaglia. Quella notte, mentre Daenerys fa il bagno, [[daario-naharis|Daario Naharis]] entra di nascosto con le teste di Mero e dell’altro capitano. Daenerys gli chiede fedeltà, e lui le giura la sua spada, i suoi uomini e il suo cuore.',
+        en: 'The Wise Masters’ powerful friends are the Second Sons, two thousand mounted sellswords. Daenerys invites their captains to her tent. [[mero|Mero]] insults her and gropes [[missandei|Missandei]], and the captains refuse to change sides; she gives them two days and a barrel of wine, then tells [[barristan-selmy|Ser Barristan]] to kill Mero first if it comes to battle. That night, as she bathes, [[daario-naharis|Daario Naharis]] slips in with the heads of Mero and the other captain. She asks for his fealty, and he swears her his sword, his men and his heart.',
+      },
+    ),
+    onScreen(
+      [29, 186],
+      { it: 'Una notte fuori Yunkai', en: 'A night outside Yunkai' },
+      {
+        it: '[[daario-naharis|Daario]] propone di entrare a Yunkai da una porta secondaria poco sorvegliata e di aprire le porte principali. [[jorah-mormont|Ser Jorah]] dubita di lui, ma quando Daenerys interroga [[grey-worm|Verme Grigio]], lui dice di fidarsi di Daario. [[barristan-selmy|Ser Barristan]] chiede di andare, ma resta al fianco di Daenerys come sua Guardia della Regina. Per tutta la notte Daenerys cammina avanti e indietro nella tenda, chiedendo a Barristan quanto duri il sacco di una città. Jorah e Verme Grigio tornano sorridenti: Yunkai è sconfitta. Daario arriva per ultimo e depone ai piedi di Daenerys lo stendardo strappato della città.',
+        en: '[[daario-naharis|Daario]] proposes to get into Yunkai through a lightly guarded back gate and open the main gates. [[jorah-mormont|Ser Jorah]] doubts him, but when Daenerys asks [[grey-worm|Grey Worm]], he says he trusts Daario. [[barristan-selmy|Ser Barristan]] asks to go, but stays at her side as her Queensguard. Through the night Daenerys paces her tent, asking Barristan how long the sack of a city takes. Jorah and Grey Worm come back grinning: Yunkai is defeated. Daario comes last and lays the city’s torn flag at her feet.',
+      },
+    ),
+    onScreen(
+      [30, 186],
+      { it: 'Mhysa', en: 'Mhysa' },
+      {
+        it: 'Fuori Yunkai, Daenerys teme che gli schiavi della città, trattati meglio di quelli di Astapor, non vogliano la libertà. Poi le porte si aprono e gli schiavi escono in massa. [[missandei|Missandei]] comincia a dire loro che è stata Daenerys a liberarli, ma Daenerys la interrompe: la libertà devono prendersela da soli. Uno di loro grida “mhysa”, poi altri, finché tutta la folla lo ripete. Missandei spiega che vuol dire “madre”. Daenerys ordina agli Immacolati di farsi da parte, entra nella folla, e gli schiavi liberati la sollevano.',
+        en: 'Outside Yunkai, Daenerys fears that the city’s slaves, better treated than Astapor’s, may not want their freedom. Then the gates open and they pour out. [[missandei|Missandei]] begins to tell them that Daenerys has freed them, but Daenerys cuts in: their freedom is theirs to take. One of them calls out “mhysa”, then another, until the whole crowd is chanting it. Missandei explains that it means “mother”. Daenerys tells the Unsullied to stand down, walks into the crowd, and the freed slaves lift her up.',
+      },
+    ),
+    inBooks(
+      [21, 152],
+      { it: 'Verso la Baia degli Schiavisti', en: 'Toward Slaver’s Bay' },
+      {
+        it: 'Daenerys salpa da Qarth sulle tre navi del magistro [[illyrio-mopatis|Illyrio]] e guarda i suoi draghi volare sul mare. [[arstan-whitebeard|Arstan Barbabianca]] le parla dei draghi dei Targaryen e del fratello Rhaegar, un ragazzo che amava i libri e diventò un guerriero. [[jorah-mormont|Ser Jorah]] la avverte di non fidarsi di Arstan, di [[strong-belwas|Belwas il Forte]] né di Illyrio, e la spinge a dirigersi ad Astapor per comprare gli Immacolati invece di tornare a Pentos. Daenerys accetta di far cambiare rotta al capitano. Prima che esca dalla cabina, Jorah la bacia, e Daenerys gli dice che non avrebbe dovuto.',
+        en: 'Daenerys sails from Qarth on Magister [[illyrio-mopatis|Illyrio]]’s three ships, watching her dragons fly over the sea. [[arstan-whitebeard|Arstan Whitebeard]] tells her of the Targaryens’ dragons and of her brother Rhaegar, a bookish boy who became a warrior. [[jorah-mormont|Ser Jorah]] warns her not to trust Arstan, [[strong-belwas|Strong Belwas]] or Illyrio, and urges her to sail for Astapor and buy the Unsullied instead of going back to Pentos. She agrees to make the captain change course. Before she leaves her cabin, Jorah kisses her, and she tells him he should not have.',
+      },
+    ),
+    inBooks(
+      [21, 167],
+      { it: 'Schiavi o mercenari', en: 'Slaves or sellswords' },
+      {
+        it: 'Ad Astapor uno schiavista mostra gli Immacolati a Daenerys tramite una giovane schiava che traduce. Daenerys finge di non conoscere l’alto valyriano e capisce ogni insulto. Gli eunuchi obbediscono a qualunque ordine e quasi non sentono dolore, e ottomila sono in vendita. [[arstan-whitebeard|Arstan]] preferirebbe che lei assoldasse mercenari nelle Città Libere: un esercito di schiavi le metterebbe contro Westeros. Daenerys non vuole tornare a Pentos a mendicare, dopo aver visto cosa ha fatto del fratello. [[jorah-mormont|Ser Jorah]] le fa notare che gli Immacolati non stuprano e non saccheggiano senza un ordine, e lei si chiede quanto valga una lealtà comprata.',
+        en: 'In Astapor a slaver shows Daenerys the Unsullied through a slave girl who translates. Daenerys pretends not to know High Valyrian and understands every insult. The eunuchs obey any order and hardly feel pain, and eight thousand are for sale. [[arstan-whitebeard|Arstan]] would rather she hired sellswords in the Free Cities: a slave army would turn Westeros against her. She will not go back to Pentos as a beggar, having seen what begging did to her brother. [[jorah-mormont|Ser Jorah]] points out that the Unsullied neither rape nor sack unless ordered, and she wonders what bought loyalty is worth.',
+      },
+    ),
+    inBooks(
+      [24, 171],
+      { it: 'Il prezzo degli Immacolati', en: 'The price of the Unsullied' },
+      {
+        it: 'Daenerys dice agli schiavisti che vuole tutti gli ottomila Immacolati e ogni ragazzo in addestramento, e offre in pagamento le sue tre navi e Drogon. Libera [[missandei|Missandei]] e la prende al suo servizio, parlandole in alto valyriano. Quella notte le appare [[quaithe|Quaithe]], come in sogno, e le ripete che per andare a nord deve viaggiare a sud. Sulla piazza Daenerys colpisce [[kraznys-mo-nakloz|Kraznys]] in faccia con la frusta, grida “Drogon! Dracarys!”, e la sua gente si getta sugli schiavisti. Gli Immacolati, ormai suoi, le obbediscono, gli schiavi insorgono con loro, e Astapor cade.',
+        en: 'Daenerys tells the slavers she wants all eight thousand Unsullied and every boy in training, and offers her three ships and Drogon in payment. She frees [[missandei|Missandei]] and takes her into her service, speaking to her in High Valyrian. That night [[quaithe|Quaithe]] appears to her, as if in a dream, and tells her again that to go north she must journey south. On the plaza Daenerys lashes [[kraznys-mo-nakloz|Kraznys]] across the face with the whip, cries “Drogon! Dracarys!”, and her people fall on the slavers. The Unsullied, hers now, obey her, the slaves rise with them, and Astapor falls.',
+      },
+    ),
+    inBooks(
+      [30, 186],
+      { it: 'Madre', en: 'Mother' },
+      {
+        it: 'Yunkai è difesa da due compagnie di mercenari. Daenerys ne invita i capitani: i tre dei Corvi della Tempesta la respingono, anche se [[daario-naharis|Daario Naharis]] le sorride, e [[mero|Mero]] ride ma accetta un carro di vino. Daenerys rimanda indietro [[grazdan-mo-eraz|Grazdan mo Eraz]] con il suo oro e l’avvertimento che attaccherà tra tre giorni, poi attacca quella notte stessa. Daario torna con le teste degli altri due capitani e le giura la sua compagnia. Con i Secondi Figli ubriachi, l’esercito di Daenerys vince. Lei risparmia chi si arrende e libera gli schiavi, che la chiamano “Madre”.',
+        en: 'Yunkai is defended by two sellsword companies. Daenerys invites their captains: the three of the Stormcrows refuse her, though [[daario-naharis|Daario Naharis]] smiles at her, and [[mero|Mero]] laughs but takes a wagon of wine. She sends [[grazdan-mo-eraz|Grazdan mo Eraz]] away with his gold and a warning that she will attack in three days, then attacks that night. Daario comes back with the heads of the other two captains and swears his company to her. With the Second Sons drunk, her army wins. She spares those who yield and frees the slaves, who call her “Mother”.',
+      },
+    ),
   ],
   'viserys-targaryen': [
     inBoth(
@@ -566,6 +663,63 @@ export const season1Chronicles = {
         en: 'After the House of the Undying, Jorah comforts [[daenerys-targaryen|Daenerys]], then goes with her to the port of Qarth to find a ship, answering her questions about the visions as best he can. At the docks he warns her that a huge scarred man and an old man with a staff are following them. The old man saves her from a manticore and names himself [[arstan-whitebeard|Arstan Whitebeard]], squire to [[strong-belwas|Strong Belwas]], sent by Magister [[illyrio-mopatis|Illyrio]].',
       },
     ),
+    // The Essos cast of the third stage (#1659).
+    onScreen(
+      [21, 167],
+      { it: 'L’uomo incappucciato', en: 'The hooded man' },
+      {
+        it: 'Arrivando ad Astapor, Jorah dice a [[daenerys-targaryen|Daenerys]] che gli Immacolati sono tra i migliori soldati del mondo, e che altri dothraki la seguiranno solo quando avrà un esercito. Dopo la dimostrazione dello schiavista la spinge a comprarli: al servizio di Daenerys vivranno meglio. Sulla via del ritorno uno sconosciuto incappucciato fa cadere una palla dalle mani di Daenerys, e Jorah lotta con lui finché dalla palla esce una manticora e lo sconosciuto la uccide. Jorah lo riconosce: è [[barristan-selmy|ser Barristan Selmy]].',
+        en: 'Sailing into Astapor, Jorah tells [[daenerys-targaryen|Daenerys]] that the Unsullied are among the finest soldiers in the world, and that other Dothraki will follow her only once she has an army. After the slaver’s demonstration he urges her to buy them: they will live better in her service. On the way back a hooded stranger knocks a ball out of her hands, and Jorah grapples with him until a manticore crawls out of the ball and the stranger kills it. Jorah knows him: he is [[barristan-selmy|Ser Barristan Selmy]].',
+      },
+    ),
+    onScreen(
+      [23, 171],
+      { it: 'L’onore e il Tridente', en: 'Honor and the Trident' },
+      {
+        it: 'Ad Astapor Jorah discute con [[barristan-selmy|ser Barristan]] degli Immacolati. Non stuprano e non uccidono nessuno senza un ordine, dice, e l’onore non vince le battaglie. Quando Barristan ricorda che gli uomini morivano per Rhaegar perché lo amavano, Jorah risponde che Rhaegar combatté con onore, e morì. Poi [[daenerys-targaryen|Daenerys]] offre un drago in cambio dell’intero esercito, e i due cavalieri la supplicano di non farlo. Uscita, Daenerys li avverte di non contraddirla mai più in pubblico.',
+        en: 'In Astapor Jorah argues with [[barristan-selmy|Ser Barristan]] over the Unsullied. They will not rape or kill anyone they are not ordered to, he says, and honor does not win battles. When Barristan recalls that men died for Rhaegar out of love, Jorah answers that Rhaegar fought nobly, and died. Then [[daenerys-targaryen|Daenerys]] offers a dragon for the whole army, and both knights beg her not to. Outside, she tells them never to question her in public again.',
+      },
+    ),
+    onScreen(
+      [25, 186],
+      { it: 'Cavaliere a Pyke', en: 'Knighted at Pyke' },
+      {
+        it: 'In marcia verso Yunkai Jorah racconta a [[barristan-selmy|ser Barristan]] di quando Robert lo fece cavaliere a Pyke, dove fu tra i primi a passare per la breccia. Barristan lo avverte che il suo passato da mercante di schiavi potrebbe nuocere a [[daenerys-targaryen|Daenerys]] nei Sette Regni. Con cautela, Jorah gli chiede chi sedesse nel consiglio di Robert, per capire se Barristan sappia che un tempo lui faceva rapporto su Daenerys a [[varys|Varys]]. Robert non lo ammetteva a quelle riunioni. Sollevato, Jorah gli ricorda che è lui a proteggere Daenerys da mesi, e che lì Barristan non è lord comandante.',
+        en: 'On the road to Yunkai Jorah tells [[barristan-selmy|Ser Barristan]] how Robert knighted him at Pyke, where he was among the first through the breach. Barristan warns that Jorah’s past as a slaver may harm [[daenerys-targaryen|Daenerys]] in Westeros. Carefully, Jorah asks who sat on Robert’s council, to learn whether Barristan knows that he once reported on her to [[varys|Varys]]. Robert never let Barristan into those meetings. Relieved, Jorah reminds him that he has guarded her for months, and that Barristan is not Lord Commander here.',
+      },
+    ),
+    onScreen(
+      [29, 186],
+      { it: 'La porta secondaria', en: 'The back gate' },
+      {
+        it: 'A Yunkai Jorah diffida del piano di [[daario-naharis|Daario Naharis]] e della sua lealtà, ma [[daenerys-targaryen|Daenerys]] lo approva. Quando [[barristan-selmy|ser Barristan]] chiede di andare, Jorah gli ricorda che il posto di una Guardia della Regina è al fianco della regina. Quella notte Jorah, Daario e [[grey-worm|Verme Grigio]] entrano da una porta secondaria, si fanno strada tra molte più guardie di quante Daario avesse detto e aprono la città agli Immacolati. Nella tenda, Jorah vede tutte le attenzioni di Daenerys andare a Daario.',
+        en: 'At Yunkai Jorah doubts both [[daario-naharis|Daario Naharis]]’s plan and his loyalty, but [[daenerys-targaryen|Daenerys]] agrees to it. When [[barristan-selmy|Ser Barristan]] asks to go, Jorah reminds him that a Queensguard’s place is at the queen’s side. That night Jorah, Daario and [[grey-worm|Grey Worm]] slip in through a back gate, fight through far more guards than Daario promised and open the city to the Unsullied. Back in her tent, Jorah watches all of Daenerys’s attention go to Daario.',
+      },
+    ),
+    inBooks(
+      [21, 152],
+      { it: 'Tre teste', en: 'Three heads' },
+      {
+        it: 'Durante la navigazione da Qarth, Jorah mette in guardia [[daenerys-targaryen|Daenerys]] da [[strong-belwas|Belwas il Forte]], da [[illyrio-mopatis|Illyrio]] e soprattutto da [[arstan-whitebeard|Arstan Barbabianca]], che è più di quanto sembri. Invece di Pentos le consiglia Astapor e i suoi Immacolati, eunuchi addestrati a obbedire e a non sentire dolore, e le racconta di come tremila di loro fermarono un grande khalasar a Qohor. Poi la afferra per la vita e la bacia. Quando Daenerys gli dice che non avrebbe dovuto, lui le ricorda la visione del drago a tre teste: forse le servono altri due mariti.',
+        en: 'On the voyage from Qarth, Jorah warns [[daenerys-targaryen|Daenerys]] against [[strong-belwas|Strong Belwas]], [[illyrio-mopatis|Illyrio]] and above all [[arstan-whitebeard|Arstan Whitebeard]], who is more than he seems. Instead of Pentos he advises Astapor and its Unsullied, eunuchs trained to obey and to feel no pain, and tells her how three thousand of them held off a great khalasar at Qohor. Then he grabs her by the waist and kisses her. When she says he should not have, he recalls her vision of the three-headed dragon: she may need two more husbands.',
+      },
+    ),
+    inBooks(
+      [21, 167],
+      { it: 'Perché Astapor resiste', en: 'Why Astapor stands' },
+      {
+        it: 'Ad Astapor, quando Jorah va da lei al mattino, [[daenerys-targaryen|Daenerys]] lo aggredisce: disprezza la città e i suoi Immacolati, ma sa che sono troppo utili per rinunciarvi. Jorah le spiega che gli Immacolati non stuprano e non saccheggiano una città senza un ordine, e che con loro la sua guerra costerà meno vite. Astapor non è mai stata saccheggiata, aggiunge, perché i nemici dovrebbero affrontare tutti gli Immacolati della città. Quando Daenerys si chiede se uomini comprati possano essere leali come lo erano quelli di Rhaegar, Jorah le ricorda che l’onore di Rhaegar non lo salvò al Tridente.',
+        en: 'In Astapor [[daenerys-targaryen|Daenerys]] snaps at Jorah when he comes to her in the morning: she despises the city and its Unsullied, yet knows they are too useful to refuse. Jorah tells her the Unsullied do not rape or sack a city unless ordered, so her war will cost fewer lives. Astapor has never been sacked, he explains, because its enemies would face every Unsullied in the city. When she wonders whether bought men can be as loyal as Rhaegar’s were, he reminds her that Rhaegar’s honor did not save him at the Trident.',
+      },
+    ),
+    inBooks(
+      [29, 186],
+      { it: 'Un tyroshi di cui diffidare', en: 'A Tyroshi not to trust' },
+      {
+        it: 'A Yunkai Jorah è uno dei comandanti di [[daenerys-targaryen|Daenerys]], e [[grey-worm|Verme Grigio]], scelto come ufficiale dagli Immacolati, gli viene affidato perché impari a comandare. Quando [[daario-naharis|Daario Naharis]] torna con le teste degli altri capitani dei Corvi della Tempesta e giura la sua compagnia a Daenerys, Jorah la avverte di non fidarsi del tyroshi. Daenerys ordina che l’attacco notturno vada avanti come previsto, e la battaglia è vinta.',
+        en: 'At Yunkai Jorah is one of [[daenerys-targaryen|Daenerys]]’s commanders, and [[grey-worm|Grey Worm]], chosen as an officer by the Unsullied, is placed under him to learn to command. When [[daario-naharis|Daario Naharis]] comes back with the heads of the other Stormcrow captains and swears his company to Daenerys, Jorah warns her not to trust the Tyroshi. She orders the night attack to go ahead as planned, and the battle is won.',
+      },
+    ),
   ],
   'illyrio-mopatis': [
     inBoth(
@@ -648,6 +802,15 @@ export const season1Chronicles = {
       {
         it: 'A Qarth Irri ricuce i vestiti di [[daenerys-targaryen|Daenerys]], che la chiama amica. Quando [[doreah|Doreah]] chiama Daenerys principessa, Irri la corregge: è una khaleesi. Poi convince Daenerys a indossare l’abito fatto per lei da [[xaro-xhoan-daxos|Xaro]], per cortesia verso il padrone di casa. Mentre Daenerys è fuori a chiedere navi, Irri viene strangolata nella dimora di Xaro, e Daenerys la trova morta.',
         en: 'In Qarth Irri mends [[daenerys-targaryen|Daenerys]]’s clothes, and Daenerys calls her a friend. When [[doreah|Doreah]] calls Daenerys a princess, Irri corrects her: she is a khaleesi. She then urges Daenerys to wear the gown [[xaro-xhoan-daxos|Xaro]] had made for her, as a courtesy to their host. While Daenerys is out asking for ships, Irri is strangled in Xaro’s house, and Daenerys finds her dead.',
+      },
+    ),
+    // The Essos cast of the third stage (#1659).
+    inBooks(
+      [21, 167],
+      { it: 'Una notte con la khaleesi', en: 'A night with the khaleesi' },
+      {
+        it: 'Ad Astapor, sola dalla morte di [[drogo|Drogo]] e confusa dalle avances di [[jorah-mormont|ser Jorah]], [[daenerys-targaryen|Daenerys]] prende Irri come amante per una notte. Irri è più che disposta a darle piacere, ma Daenerys non trova sollievo, solo il senso di colpa per aver trattato la sua ancella come una schiava di letto. Il mattino dopo, quando Jorah viene a parlarle degli Immacolati, Daenerys lo tratta con durezza.',
+        en: 'In Astapor, lonely since [[drogo|Drogo]]’s death and confused by [[jorah-mormont|Ser Jorah]]’s advances, [[daenerys-targaryen|Daenerys]] takes Irri as a lover one night. Irri is more than willing to please her khaleesi, but Daenerys finds no release, only guilt at treating her handmaid as a bedslave. The next morning, when Jorah comes to speak with her about the Unsullied, Daenerys snaps at him.',
       },
     ),
   ],
@@ -3610,6 +3773,33 @@ export const season1Chronicles = {
       {
         it: '[[joffrey-baratheon|Joffrey]], ora re, tiene udienza nella sala del trono. Barristan viene allontanato dalla Guardia reale, anche se i suoi voti valgono per tutta la vita, e al suo posto [[jaime-lannister|Jaime Lannister]] viene nominato Lord Comandante. Anche [[sandor-clegane|Sandor Clegane]] entra nella Guardia reale, pur non essendo un cavaliere. Barristan, che sotto [[robert-baratheon|Robert]] comandava le guardie del re, non è più uno di loro, e lascia la corte.',
         en: '[[joffrey-baratheon|Joffrey]], now king, holds court in the throne room. Barristan is removed from the Kingsguard, although its vows are for life, and [[jaime-lannister|Jaime Lannister]] is named Lord Commander in his place. [[sandor-clegane|Sandor Clegane]] joins the Kingsguard too, although he is not a knight. Barristan, who commanded the king’s guards under [[robert-baratheon|Robert]], is no longer one of them, and he leaves the court.',
+      },
+    ),
+    // The Essos cast of the third stage (#1659): the show's alone. The books
+    // bring him to Daenerys as Arstan Whitebeard, his own record, and reveal
+    // him in Daenerys V (site 201), which orders these stories (#852).
+    onScreen(
+      [21, 201],
+      { it: 'Venuto a servirla', en: 'Come to serve her' },
+      {
+        it: 'Barristan ritrova [[daenerys-targaryen|Daenerys]] ad Astapor. Avvolto in un mantello con il cappuccio, le fa cadere dalle mani il dono di una bambina, e quando dalla palla rotta esce una manticora la uccide con il pugnale. [[jorah-mormont|Ser Jorah]] lo riconosce. Barristan si inginocchia, la chiama sua regina e le chiede perdono: congedato da Joffrey, è venuto a rimediare all’errore di non aver protetto la sua famiglia durante la ribellione, quando serviva il padre di lei. Chiede di entrare nella sua Guardia della Regina.',
+        en: 'Barristan tracks [[daenerys-targaryen|Daenerys]] to Astapor. In a hooded cloak he knocks a child’s gift out of her hands, and when a manticore crawls out of the broken ball, he kills it with his dagger. [[jorah-mormont|Ser Jorah]] recognizes him. Barristan kneels, calls her his queen and begs her forgiveness: dismissed by Joffrey, he has come to make amends for failing her family in the rebellion, when he served her father. He asks to serve in her Queensguard.',
+      },
+    ),
+    onScreen(
+      [23, 201],
+      { it: 'L’ultimo drago', en: 'The last dragon' },
+      {
+        it: 'Barristan dice a [[daenerys-targaryen|Daenerys]] che non c’è onore nel conquistare con un esercito di schiavi; [[jorah-mormont|ser Jorah]] non è d’accordo. Gli uomini combattevano per suo fratello Rhaegar perché lo amavano, dice Barristan. Ha combattuto e sanguinato accanto a Rhaegar al Tridente, e lo chiama l’uomo migliore che abbia conosciuto, l’ultimo drago. Daenerys risponde che Rhaegar non era l’ultimo. Quando lei scambia il più grande dei suoi draghi con gli Immacolati, Barristan la supplica di riconquistare il trono con i draghi, non con gli schiavi, e Daenerys avverte i due cavalieri di non contraddirla mai più in pubblico.',
+        en: 'Barristan tells [[daenerys-targaryen|Daenerys]] that there is no honor in conquering with an army of slaves; [[jorah-mormont|Ser Jorah]] disagrees. Men fought for her brother Rhaegar because they loved him, Barristan says. He fought and bled beside Rhaegar at the Trident, and calls him the finest man he ever knew, the last dragon. Daenerys says Rhaegar was not the last. When she trades the largest of her dragons for the Unsullied, Barristan begs her to win the throne with dragons, not slaves, and she warns both knights never to question her in public again.',
+      },
+    ),
+    onScreen(
+      [25, 201],
+      { it: 'Qualcuno in cui credere', en: 'Someone to believe in' },
+      {
+        it: 'In marcia verso Yunkai Barristan dice a [[jorah-mormont|ser Jorah]] che Robert era un brav’uomo e un buon guerriero, ma un pessimo re. Ha mantenuto i suoi voti con un ubriaco e con un pazzo, e prima di morire vuole servire qualcuno in cui crede. Avverte Jorah che un uomo che ha venduto schiavi potrebbe nuocere a [[daenerys-targaryen|Daenerys]] nei Sette Regni. Quando Jorah gli chiede del consiglio di Robert, Barristan risponde che Robert non si fidava abbastanza di lui da ammetterlo alle riunioni.',
+        en: 'On the road to Yunkai Barristan tells [[jorah-mormont|Ser Jorah]] that Robert was a good man and a good warrior, but a terrible king. He has kept his vows to a drunk and to a madman, and before he dies he wants to serve someone he believes in. He warns Jorah that a man who sold slaves may harm [[daenerys-targaryen|Daenerys]] in Westeros. Asked about Robert’s council, he says Robert never trusted him enough to let him sit in on its meetings.',
       },
     ),
   ],

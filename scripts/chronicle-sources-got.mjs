@@ -188,6 +188,12 @@ const WL_JON_V = `${ACOK_AWOIAF}43`
 const WL_JON_VI = `${ACOK_AWOIAF}51`
 const WL_JON_VII = `${ACOK_AWOIAF}53`
 const WL_JON_VIII = `${ACOK_AWOIAF}68`
+// The Essos cast of the third stage (#1659): Daenerys I to IV of A Storm of
+// Swords, site chapters 152, 167, 171 and 186.
+const ESSOS_152 = `${ASOS_AWOIAF}8`
+const ESSOS_167 = `${ASOS_AWOIAF}23`
+const ESSOS_171 = `${ASOS_AWOIAF}27`
+const ESSOS_186 = `${ASOS_AWOIAF}42`
 
 /** The note on a book pin past the Ice and Fire Wiki's chapter pages. */
 const PAST_CHAPTER_PAGES =
@@ -302,6 +308,54 @@ export const GAME_OF_THRONES_SOURCES = {
     '15:101': {
       source: ACOK_27,
       note: 'Daenerys II (site 101): the entry into Qarth with Drogon on her shoulder, the three carved walls, a wing of Xaro’s palace, ships and swords instead of gifts, Jorah’s return from the docks with the Summer Islander captain Quhuru Mo, Robert dead, Joffrey on the throne, Robert’s brothers fled, the Seven Kingdoms flying to pieces like Drogo’s khalasar, and “dragons die, but so do dragon-slayers”. Xaro and Pyat Pree open in the books at 114, so the story leaves them unnamed.',
+    },
+    '21:episode': {
+      source: EPISODE_21,
+      note: 'Show (21/167): the Astapor synopsis: the dragons roasting fish but still too small for war, Jorah on the Unsullied as the finest soldiers, Kraznys’s tour with Missandei translating and leaving out his insults, the nipple cut off, the newborn killed at the end of training, eight thousand for sale, the manticore in the child’s ball, and Barristan kneeling to ask for a place in her Queensguard (GOT301). Kraznys is the books’ record and Missandei opens at 23, so neither is named. Daenerys II (site 167), which the episode adapts, orders it.',
+    },
+    '23:171': {
+      source: EPISODE_23,
+      note: 'Show: the Astapor synopsis: Jorah and Barristan on the Walk of Punishment, Rhaegar loved by his men and called the last dragon, Daenerys saying he was not, all eight thousand and those in training for her largest dragon, Missandei demanded as a token, both knights objecting, and the warning never to question her in public (GOT303). Kraznys is the books’ record, so he is the Good Master. Daenerys III (site 171) orders it, Missandei’s book gate.',
+    },
+    '24:episode': {
+      source: EPISODE_24,
+      note: 'Show: the Astapor synopsis: Drogon handed over on a chain for the harpy whip, the Valyrian commands to Missandei’s surprise, “a dragon is not a slave”, the order to kill the masters, their soldiers and every man holding a whip, spare the children and free the slaves, Kraznys burned, the Unsullied freed and staying (GOT304). The dragon is left unnamed: Drogon opens on screen at episode 40. Daenerys III (site 171) orders it.',
+    },
+    '25:186': {
+      source: EPISODE_25,
+      note: 'Show: the Slaver’s Bay synopsis: the Unsullied officers choosing a leader, Grey Worm’s name, Missandei on the color-and-vermin names, the order to choose new names or take back their birth names, and Grey Worm keeping his as the name he had when she freed him (GOT305). Daenerys IV (site 186) orders it, Grey Worm’s book gate.',
+    },
+    '27:186': {
+      source: EPISODE_27,
+      note: 'Show: the Yunkai synopsis: Jorah’s warning that Yunkai will hide behind its walls and that taking it does not bring her closer to Westeros, Grey Worm sending the message, Razdal mo Eraz announced, gold and ships offered for peace, her counter-offer of freedom and payment, the threat of powerful friends, the dragons, and the gold kept (GOT307). Daenerys IV (site 186) orders it, Grazdan’s book gate.',
+    },
+    '28:186': {
+      source: EPISODE_28,
+      note: 'Show: the Yunkai synopsis: the Second Sons, two thousand mounted, Mero’s insults and groping of Missandei, two days and a barrel of wine, the order to Barristan to kill Mero first, Missandei in the bath, and Daario with the heads of Mero and Prendahl swearing his sword, his men and his heart (GOT308). Prendahl is the books’ record, so he is the other captain. Daenerys IV (site 186) orders it.',
+    },
+    '29:186': {
+      source: EPISODE_29,
+      note: 'Show: the Yunkai synopsis: Daario’s back-gate plan, Jorah’s doubt, Grey Worm saying he trusts Daario, Barristan asking to go and reminded that a Queensguard stays at the queen’s side, Daenerys pacing and asking how long a sack takes, Jorah and Grey Worm returning grinning, and Daario last with Yunkai’s torn flag (GOT309). Daenerys IV (site 186) orders it.',
+    },
+    '30:episode': {
+      source: EPISODE_30,
+      note: 'Show: the Yunkai synopsis: the fear that better-treated slaves may not want freedom, the gates opening, Missandei’s speech cut short, “mhysa” taken up by the crowd, Missandei’s explanation, the Unsullied told to stand down, and the crowd lifting her (GOT310). Daenerys IV (site 186) orders it.',
+    },
+    '21:152': {
+      source: ESSOS_152,
+      note: 'Daenerys I (site 152), cached A Wiki of Ice and Fire synopsis: Illyrio’s three ships, the dragons over the sea, Arstan on the Dragonpit and on Rhaegar the bookish boy turned warrior, Jorah warning against Belwas, Arstan and Illyrio and urging Slaver’s Bay and the Unsullied instead of Pentos, the captain made to change course, and Jorah’s kiss, which she tells him he should not have given. The captain, Groleo, has no record and stays unnamed. Episode 21 adapts the chapter (its page’s adaptation list).',
+    },
+    '21:chapter': {
+      source: ESSOS_167,
+      note: 'Daenerys II (site 167), cached synopsis: the slaver showing the Unsullied through a translator, Daenerys pretending not to know High Valyrian, the eunuchs obeying and hardly feeling pain, eight thousand for sale, Arstan for sellswords over a slave army that Westeros would oppose, Daenerys too proud to go back to Pentos as a beggar after what it did to her brother, Jorah on the Unsullied not raping or sacking unless ordered, and her doubt about loyalty that is bought. Kraznys and Missandei open at 171, so neither is named. Episode 21 adapts the chapter.',
+    },
+    '24:chapter': {
+      source: ESSOS_171,
+      note: 'Daenerys III (site 171), cached synopsis: all eight thousand and the boys in training, the three ships and Drogon in payment, Missandei freed and taken into service in High Valyrian, Quaithe’s night visit with “to go north, you must journey south”, the whip in Kraznys’s face, “Drogon! Dracarys!”, her followers attacking the slavers, the Unsullied obeying her and the slaves joining in, and Astapor conquered. The Ice and Fire Wiki’s Daenerys page has the ships, Drogon and the slaves freed. Drogon is named but not linked: his record opens on screen at 40. Episode 24, Kraznys’s show gate, orders it.',
+    },
+    '30:chapter': {
+      source: ESSOS_186,
+      note: 'Daenerys IV (site 186), cached synopsis: two sellsword companies, the three Stormcrow captains refusing and Daario smiling, the Second Sons’ captain laughing but taking a wagonload of wine, the slaver sent off with his gold and a warning of three days, the attack that night, Daario returning with the heads of the other two captains and swearing his company, the Second Sons too drunk to fight, those who yield spared, the slaves freed and calling her “Mother”. The envoy is Grazdan mo Eraz on the Game of Thrones Wiki’s Razdal mo Eraz page (In the books). Episode 30 adapts the last scene.',
     },
   },
   'viserys-targaryen': {
@@ -461,6 +515,34 @@ export const GAME_OF_THRONES_SOURCES = {
       source: ACOK_63,
       note: 'Daenerys IV (site 122) has him comfort her after the House of the Undying. Daenerys V (site 137): the ride to the port with her questions about the visions, his answers, his warning about the scarred man and the old man with a staff, the manticore, and the two sent by Illyrio.',
     },
+    '21:episode': {
+      source: EPISODE_21,
+      note: 'Show (21/167): the Astapor synopsis and the Jorah Mormont page: the Unsullied among the finest soldiers, other Dothraki joining her only if she is strong, the urging after the tour that they will live better in her service, the struggle with the hooded stranger, the manticore killed and Jorah recognizing Barristan Selmy (GOT301). Daenerys II (site 167) orders it.',
+    },
+    '23:171': {
+      source: EPISODE_23,
+      note: 'Show: the Astapor synopsis and the Jorah Mormont page: the debate with Barristan, the Unsullied who will not rape or kill unless ordered, honor not winning battles, Rhaegar fighting nobly and dying, both knights objecting to the dragon deal, and Daenerys’s rebuke (GOT303). Daenerys III (site 171) orders it, Missandei’s book gate, as for the rest of the episode’s stories.',
+    },
+    '25:186': {
+      source: EPISODE_25,
+      note: 'Show: the Slaver’s Bay synopsis and the Jorah Mormont page: Jorah knighted by Robert at the Siege of Pyke, Barristan’s warning about the taint of selling slaves, Jorah’s careful questions about the small council, Barristan never admitted to its meetings, and the bickering over months of service and Lord Commander (GOT305). Thoros of Myr, ahead of him through the breach, is left out. Daenerys IV (site 186) orders it.',
+    },
+    '29:episode': {
+      source: EPISODE_29,
+      note: 'Show: the Yunkai synopsis and the Jorah Mormont page: Jorah skeptical of Daario’s plan and loyalty, the reminder to Barristan that a Queensguard’s place is at the queen’s side, the three fighting through more soldiers than Daario expected, the gates opened, and Jorah distraught when her attention goes to Daario (GOT309). Daenerys IV (site 186) orders it.',
+    },
+    '21:152': {
+      source: ESSOS_152,
+      note: 'Daenerys I (site 152), cached synopsis: Jorah warning her against Strong Belwas, Arstan and Illyrio, Arstan more than he seems, Slaver’s Bay and the Unsullied instead of Pentos, the Three Thousand of Qohor against a huge khalasar, the eunuchs trained to obey and feeling no pain, the kiss, her rebuke, and the vision of the three-headed dragon meaning two more husbands. Episode 21 adapts the chapter.',
+    },
+    '21:chapter': {
+      source: ESSOS_167,
+      note: 'Daenerys II (site 167), cached synopsis: Daenerys snapping at him in the morning, her contempt for Astapor and the Unsullied though they are too useful to pass up, the Unsullied not raping or sacking unless ordered, Astapor never sacked because an attacker would face its whole garrison of Unsullied, and Rhaegar’s honor not saving him at the Trident. Episode 21 adapts the chapter.',
+    },
+    '29:chapter': {
+      source: ESSOS_186,
+      note: 'Daenerys IV (site 186), cached synopsis: the commanders, Daario’s return with the heads of the other two Stormcrow captains, Jorah warning her not to trust the Tyroshi, the battle as planned and won. Grey Worm placed under Jorah’s tutelage is A Wiki of Ice and Fire’s Grey Worm page (cached), citing Chapter 42. Episode 29, which shows the night attack, orders it.',
+    },
   },
   'illyrio-mopatis': {
     '1:4': {
@@ -504,6 +586,10 @@ export const GAME_OF_THRONES_SOURCES = {
     '16:114': {
       source: EPISODE_16,
       note: 'Irri page: the mended clothes, Daenerys calling her a friend, khaleesi against Doreah’s princess, the dress worn as a courtesy to Xaro (GOT205), and her body found strangled in Xaro’s mansion (GOT206). Chapter 114 orders it, after Xaro’s book gate.',
+    },
+    '21:167': {
+      source: ESSOS_167,
+      note: 'Daenerys II (site 167), cached synopsis: lonely since her husband’s death and confused by Jorah’s advances, Daenerys takes Irri as a lover one night; Irri is more than willing, but Daenerys finds no release, only guilt at treating her handmaid as a bedslave, and snaps at Jorah the next morning. Episode 21 adapts the chapter; Irri is dead on screen.',
     },
   },
   'doreah': {
@@ -1999,6 +2085,18 @@ export const GAME_OF_THRONES_SOURCES = {
     '8:58': {
       source: EPISODE_8,
       note: `Episode 8 (GOT108): dismissed though the post is for life, Jaime named Lord Commander, Sandor admitted though no knight, Barristan storms out. The book side keeps only what the Ice and Fire Wiki Barristan page and the reviewed pins at 8/58 state: removed despite life vows, Jaime Lord Commander, Sandor in the Kingsguard. ${PAST_CHAPTER_PAGES}`,
+    },
+    '21:201': {
+      source: EPISODE_21,
+      note: 'Show only: the Astapor synopsis and the Barristan Selmy page: the hooded stranger who knocks the ball away, the manticore killed with his dagger, Jorah’s recognition, the plea for forgiveness after Joffrey dismissed him, the failure of House Targaryen in the rebellion, and the request for a place in her Queensguard (GOT301). The books bring him as Arstan Whitebeard and reveal him in Daenerys V (site 201), so 201 orders his show stories, as it does his show steps (#852).',
+    },
+    '23:201': {
+      source: EPISODE_23,
+      note: 'Show only: the Astapor synopsis and the Barristan Selmy page: no honor in a slave army, men fighting for Rhaegar out of love, Barristan beside him at the Trident, the finest man and the last dragon, Daenerys saying he was not, the plea to win with dragons not slaves, and the rebuke of both knights (GOT303). Ordered at 201, as above.',
+    },
+    '25:201': {
+      source: EPISODE_25,
+      note: 'Show only: the Slaver’s Bay synopsis and the Barristan Selmy page: Robert a good man and warrior but a terrible king, vows kept to a drunk and a lunatic, the wish to serve someone he believes in, the warning about Jorah’s taint of slaving, and Robert never trusting him on the small council (GOT305). Ordered at 201, as above.',
     },
   },
   'syrio-forel': {
@@ -4483,17 +4581,37 @@ export const GAME_OF_THRONES_SOURCES = {
       source: ACOK_48,
       note: 'Daenerys IV (site 122): Drogon hisses at the ruin, enters with her, tears the Undying’s heart to pieces, and distracts Pyat Pree outside.',
     },
+    '40:152': {
+      source: ESSOS_152,
+      note: 'Daenerys I (site 152), cached synopsis: the dragons over the sea, Rhaegal and Viserion often playing while Drogon prefers to hunt, Jorah and Arstan on the behavior of dragons and Balerion’s age, and the cabin demonstration of “dracarys”, High Valyrian for dragonfire. Rhaegal and Viserion are named but not linked: they open on screen at 41. Ordered at episode 40, his show gate.',
+    },
+    '40:171': {
+      source: ESSOS_171,
+      note: 'Daenerys III (site 171), cached synopsis and A Wiki of Ice and Fire’s Kraznys mo Nakloz page (cached): Drogon offered with the three ships, handed to Kraznys on the plaza, refusing to obey, “a dragon is no slave”, the jet of flame into Kraznys’s face, and the Unsullied not lifting a finger for their old masters. Ordered at episode 40.',
+    },
+    '40:186': {
+      source: ESSOS_186,
+      note: 'Daenerys IV (site 186) and the Game of Thrones Wiki’s Drogon and Razdal mo Eraz pages (In the books): Grazdan’s threat to sell her as a bedslave, Drogon burning his tokar at “dracarys”, the safe conduct, the arrows, and “Harder than to kill a slaver.” Ordered at episode 40.',
+    },
   },
   'rhaegal': {
     '41:86': {
       source: ACOK_12,
       note: 'Daenerys I (site 86): seared meat for all three, the green-and-bronze one named Rhaegal after Rhaegar, and Irri and Jhiqui carrying two dragons in a cage while one rides on her shoulder each night. Episode 41 is his show gate.',
     },
+    '41:152': {
+      source: ESSOS_152,
+      note: 'Daenerys I (site 152), cached synopsis: the dragons flying over the sea, Rhaegal and Viserion often playing while Drogon prefers to hunt, Jorah and Arstan on dragons and Balerion two hundred years old, and the cabin demonstration of “dracarys”. Ordered at episode 41, his show gate.',
+    },
   },
   'viserion': {
     '41:86': {
       source: ACOK_12,
       note: 'Daenerys I (site 86): Viserys’s words that only men and dragons eat cooked meat, the dragons thriving, names after those the gods have taken, and the cream-and-gold one named Viserion after Viserys. Episode 41 is his show gate.',
+    },
+    '41:152': {
+      source: ESSOS_152,
+      note: 'Daenerys I (site 152), cached synopsis: the dragons flying over the ships, Rhaegal and Viserion often playing while Drogon prefers to hunt, and the cabin demonstration of “dracarys”, High Valyrian for dragonfire, with Jorah there. Ordered at episode 41, his show gate.',
     },
   },
   'strong-belwas': {
@@ -4506,6 +4624,18 @@ export const GAME_OF_THRONES_SOURCES = {
     '20:137': {
       source: ACOK_63,
       note: 'Daenerys V (site 137): the old man with a staff following them, the manticore knocked out of her hands, Arstan Whitebeard, Belwas’s squire, from the Seven Kingdoms, sent by Illyrio. His past as a squire is left out: it hints at who he is.',
+    },
+    '21:152': {
+      source: ESSOS_152,
+      note: 'Daenerys I (site 152), cached synopsis: Arstan on the Dragonpit and Balerion dead at two hundred, Rhaegar bookish until he read something in a scroll, a great warrior who won no battles, Arstan leaving to attend Strong Belwas and Jorah’s caution. That he served in Aerys’s reign is left out: it hints at the books’ later reveal (as #1559 left out House Swann). Episode 21 adapts the chapter.',
+    },
+    '21:167': {
+      source: ESSOS_167,
+      note: 'Daenerys II (site 167), cached synopsis: Arstan horrified by the Unsullied’s conditions and training, against slaves when sellswords can be bought in the Free Cities, a slave army turning the realm against her, Daenerys too proud to return to Pentos as a beggar, and Arstan and Jorah comparing her to Rhaegar. Episode 21 adapts the chapter.',
+    },
+    '29:186': {
+      source: ESSOS_186,
+      note: 'Daenerys IV (site 186), cached synopsis: during the fight she asks Arstan about Rhaegar, the melancholy and sense of doom, born in grief with that shadow over him all his days, Summerhall, and word of the easy victory with the Stormcrows and the drunk Second Sons. Italian “Sala dell’Estate” assumed from the Mondadori edition, unverified. Episode 29, the night attack, orders it.',
     },
   },
   // Robb’s war, the riverlands and Harrenhal (#1486): A Clash of Kings chapters
@@ -5381,6 +5511,84 @@ export const GAME_OF_THRONES_SOURCES = {
     '18:142': {
       source: WL_JON_VIII,
       note: 'Jon VIII (site 142): fourteen hunters and eight dogs, the Lord of Bones their leader, Ygritte among them, Ebben’s head, the order to kill them, Jon yielding, the command to kill Qhorin, the wildlings accepting Jon despite Rattleshirt’s misgivings, the pyre and the charred bones. Ordered at episode 18, his show gate, though episode 20 tells the killing on screen: a new record’s first story opens at its gate episode (the FIRST test of thronesSeason2Chronicle.test.ts).',
+    },
+  },
+  'missandei': {
+    '23:171': {
+      source: EPISODE_23,
+      note: 'Show: the Missandei page: interpreting for Kraznys and leaving out his insults (GOT301), struggling to put them politely, demanded as a gift and token of good faith, no family, the warning of war and death, “Valar morghulis” and “we are not men” (GOT303). Daenerys III (site 171) orders it, her book gate.',
+    },
+    '28:186': {
+      source: EPISODE_28,
+      note: 'Show: the Missandei page and the Yunkai synopsis: Mero groping her and slapping her backside, the nineteen languages, the corrected Dothraki, and Daario’s knife at her throat before he shows the heads (GOT308). Daenerys IV (site 186) orders it.',
+    },
+    '30:186': {
+      source: EPISODE_30,
+      note: 'Show: the Missandei page and the Yunkai synopsis: waiting with Daenerys for the infiltration (GOT309), the gates opening, her prepared speech interrupted, “mhysa” and its meaning, mother, in Old Ghiscari, and the crowd lifting Daenerys (GOT310). Daenerys IV (site 186) orders it.',
+    },
+    '24:171': {
+      source: ESSOS_171,
+      note: 'Daenerys II and III (sites 167 and 171), cached synopses, and A Wiki of Ice and Fire’s Kraznys mo Nakloz page (cached): the slave girl translating for Kraznys, Daenerys pretending not to know High Valyrian, Missandei freed and taken into service as Daenerys reveals she speaks it, and “valar morghulis”, all men must die, as her answer to the dangers ahead (her log, from A Wiki of Ice and Fire’s Missandei page as #1674 read it, citing Chapter 27). Ordered at episode 24, Kraznys’s show gate.',
+    },
+  },
+  'kraznys-mo-nakloz': {
+    '24:171': {
+      source: ESSOS_171,
+      note: 'Books only: A Wiki of Ice and Fire’s Kraznys mo Nakloz page (cached), citing Chapters 23 and 27: the Unsullied shown through Missandei, the insults he thinks she cannot understand, the bargain of every Unsullied for a dragon, Drogon refusing him on the plaza, “a dragon is no slave”, the jet of flame into his face, and the Unsullied doing nothing. The eight thousand, the eunuchs’ obedience and the boys in training are the cached Daenerys II and III synopses; the three ships the Ice and Fire Wiki’s Daenerys page. His record opens at 171, so the story tells chapter 167 from there. Episode 24 orders it.',
+    },
+  },
+  'grey-worm': {
+    '25:episode': {
+      source: EPISODE_25,
+      note: 'Show: the Slaver’s Bay synopsis and the Grey Worm page: the Unsullied choosing one leader, Missandei on the names of a color and a vermin, the order to choose new names or reclaim birth names, his birth name cursed and Grey Worm lucky, the name he had when Daenerys Stormborn set him free (GOT305). Daenerys IV (site 186) orders it, his book gate.',
+    },
+    '29:186': {
+      source: EPISODE_29,
+      note: 'Show: the Grey Worm page: the messenger to the gates (GOT307), the offer to cut out Mero’s tongue and Daenerys standing him down (GOT308), slow to give an opinion, trusting Daario, the infiltration with Jorah and Daario, the spear, and coming back battered but uninjured (GOT309). Daenerys IV (site 186) orders it.',
+    },
+    '25:chapter': {
+      source: ESSOS_186,
+      note: 'Daenerys IV (site 186): A Wiki of Ice and Fire’s Grey Worm page (cached), citing Chapter 42: chosen by the Unsullied as one of the most able for an officer, placed under Jorah to learn to command, Daenerys abolishing the daily names, and his choice to keep the one he had when freed. The names drawn by lot each day are the Game of Thrones Wiki’s Grey Worm page (In the books). Episode 25 adapts his choice.',
+    },
+  },
+  'grazdan-mo-eraz': {
+    '27:episode': {
+      source: EPISODE_27,
+      note: 'Show: the Yunkai synopsis and the Razdal mo Eraz page: the litter, Missandei announcing him as one of the Wise Masters, the dragons snarling, gold and ships for peace, her demand that every slave be freed and paid, the powerful friends who will enslave the survivors and her, the dragons hissing, and the gold left behind (GOT307). Daenerys IV (site 186) orders it, his book gate.',
+    },
+    '27:chapter': {
+      source: ESSOS_186,
+      note: 'Daenerys IV (site 186): the Game of Thrones Wiki’s Razdal mo Eraz and Drogon pages (In the books): a chest of gold coins, the threat to enslave the survivors and to sell her as a bedslave in the Free Cities, Drogon setting his tokar on fire at her command, the safe conduct, the arrows, “Harder than to kill a slaver”, and the gold sent back with him. The cached synopsis has the chest of gold and the dismissal. Episode 27 adapts it.',
+    },
+  },
+  'mero': {
+    '28:episode': {
+      source: EPISODE_28,
+      note: 'Show: the Mero page and the Yunkai synopsis: with his co-captain and Daario, the lewd remarks, the whore in Lys, Missandei groped, the offer refused, the barrel of wine, the plan to kill her, the three coins handed out by a slave, the Braavosi coin to Daario, and his head brought to Daenerys (GOT308). His co-captain, Prendahl, is the books’ record and stays unnamed. Daenerys IV (site 186) orders it; the show record is dead from 28.',
+    },
+    '28:chapter': {
+      source: ESSOS_186,
+      note: 'Daenerys IV (site 186), cached synopsis: the captain of the Second Sons laughs at her offer but accepts a wagonload of wine for his men, the attack that night when Yunkai’s defenders will not expect it, the Stormcrows’ help and the Second Sons too drunk to fight. The Second Sons are one of two companies (the same synopsis). The books keep him alive through the stage. Episode 28 orders it, his show gate.',
+    },
+  },
+  'daario-naharis': {
+    '28:episode': {
+      source: EPISODE_28,
+      note: 'Show: the Daario Naharis page: with Mero and Prendahl, the bluff of ten thousand Unsullied, the Braavosi coin, the Unsullied armor, the knife at Missandei’s throat, the heads of his captains, and the Second Sons, his sword, his life and his heart sworn to her (GOT308). Daenerys IV (site 186) orders it, his book gate.',
+    },
+    '29:186': {
+      source: EPISODE_29,
+      note: 'Show: the Yunkai synopsis and the Daario Naharis page: the back-gate plan, Jorah’s skepticism, Grey Worm’s trust, more soldiers than Daario anticipated, Jorah and Grey Worm back first, and Daario kneeling with Yunkai’s torn flag (GOT309). Daenerys IV (site 186) orders it.',
+    },
+    '28:chapter': {
+      source: ESSOS_186,
+      note: 'Daenerys IV (site 186): A Wiki of Ice and Fire’s Daario Naharis page (cached), citing Chapter 42: one of the Stormcrow captains at the parley, gold and plunder offered, Prendahl’s refusal, the smile (the cached synopsis), the vote put to each man, Prendahl and Sallor the Bald killed, their heads as proof, Jorah’s distrust and the Stormcrows’ part in the victory. Episode 28 orders it, his show gate.',
+    },
+  },
+  'prendahl-na-ghezn': {
+    '28:186': {
+      source: ESSOS_186,
+      note: 'Books only: Daenerys IV (site 186), cached synopsis (the three Stormcrow captains first to arrive, spurning her offer) and A Wiki of Ice and Fire’s Daario Naharis page (cached): gold and plunder offered, rebuffed by Prendahl, the question put to each man of a company of freedmen, Daario killing Prendahl and Sallor the Bald and bringing their heads. Ghiscari is the Game of Thrones Wiki’s Prendahl na Ghezn page (In the books). Episode 28 orders it.',
     },
   },
 }

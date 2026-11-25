@@ -4497,10 +4497,13 @@ function rowsOf(chronicles: Record<string, Dated<Story>[]>): Row[] {
   )
 }
 
-/** Whether a row opens inside the first stage in each medium it is told in. */
-function inStage1({ chapter, episode, medium }: Row): boolean {
-  const shown = medium === 'books' || episode <= STAGE_1.episode
-  const told = medium === 'show' || chapter <= STAGE_1.chapter
+/** Whether a row opens by a stage's end in each medium it is told in. */
+function inStage(
+  { chapter, episode, medium }: Row,
+  stage: { chapter: number; episode: number },
+): boolean {
+  const shown = medium === 'books' || episode <= stage.episode
+  const told = medium === 'show' || chapter <= stage.chapter
 
   return shown && told
 }
@@ -4513,8 +4516,14 @@ const STORIES_BY_ID = new Map<string, Dated<Story>[]>(
   Object.entries({ ...season1Chronicles, ...season2Chronicles }),
 )
 
-/** The data's stories of the second stage. */
-const FILED: Row[] = ALL.filter((row) => !inStage1(row))
+/**
+ * The data's stories of the second stage. A returning character's later
+ * stories sit in the same modules (#1659), and
+ * `thronesSeason3Chronicle.test.ts` holds them.
+ */
+const FILED: Row[] = ALL.filter(
+  (row) => !inStage(row, STAGE_1) && inStage(row, STAGE_2),
+)
 
 /** A row's title in one locale, read from the data. */
 function titleIn({ id, title }: Row, locale: Locale): string {
@@ -4644,9 +4653,25 @@ describe.each(LOCALES)('the chronicles of the second stage in %s', (locale) => {
       locale,
     )
 
+    // The next stage's stories may open at its first episode or chapter.
+    const shownNext = titlesOf(
+      owned.filter(
+        ({ episode, medium }) =>
+          medium !== 'books' && episode <= STAGE_2.episode + 1,
+      ),
+      locale,
+    )
+    const toldNext = titlesOf(
+      owned.filter(
+        ({ chapter, medium }) =>
+          medium !== 'show' && chapter <= STAGE_2.chapter + 1,
+      ),
+      locale,
+    )
+
     expect(at(owner, ep(STAGE_2.episode))).toStrictEqual(shown)
-    expect(at(owner, ep(STAGE_2.episode + 1))).toStrictEqual(shown)
+    expect(at(owner, ep(STAGE_2.episode + 1))).toStrictEqual(shownNext)
     expect(at(owner, ch(STAGE_2.chapter))).toStrictEqual(told)
-    expect(at(owner, ch(STAGE_2.chapter + 1))).toStrictEqual(told)
+    expect(at(owner, ch(STAGE_2.chapter + 1))).toStrictEqual(toldNext)
   })
 })

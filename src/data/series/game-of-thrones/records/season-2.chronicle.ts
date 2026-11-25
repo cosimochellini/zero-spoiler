@@ -172,6 +172,31 @@ export const season2Chronicles = {
         en: 'Drogon goes with [[daenerys-targaryen|Daenerys]] into the House of the Undying, hissing at the ruin. When the Undying try to consume her, he tears their heart to pieces, and she flees the burning house. Outside he distracts [[pyat-pree|Pyat Pree]] when the warlock attacks her with a dagger.',
       },
     ),
+    // The Essos cast of the third stage (#1659): the books', at his show gate.
+    inBooks(
+      [40, 152],
+      { it: 'Il cacciatore', en: 'The hunter' },
+      {
+        it: 'Durante la navigazione da Qarth Drogon e i suoi fratelli volano sul mare intorno alle navi di [[daenerys-targaryen|Daenerys]]. Rhaegal e Viserion spesso giocano tra loro, ma Drogon preferisce cacciare. [[jorah-mormont|Ser Jorah]] e [[arstan-whitebeard|Arstan Barbabianca]] parlano con Daenerys di come si comportano i draghi e di quanto vivono. Nella sua cabina Daenerys mostra a Jorah che cosa ha insegnato ai draghi: alla parola “dracarys”, fuoco di drago in alto valyriano, sputano fiamme.',
+        en: 'On the voyage from Qarth Drogon and his brothers fly over the sea around [[daenerys-targaryen|Daenerys]]’s ships. Rhaegal and Viserion often play together, but Drogon would rather hunt. [[jorah-mormont|Ser Jorah]] and [[arstan-whitebeard|Arstan Whitebeard]] talk with Daenerys about how dragons behave and how long they live. In her cabin she shows Jorah what she has taught her dragons: at the word “dracarys”, High Valyrian for dragonfire, they breathe fire.',
+      },
+    ),
+    inBooks(
+      [40, 171],
+      { it: 'Dracarys sulla piazza', en: 'Dracarys on the plaza' },
+      {
+        it: '[[daenerys-targaryen|Daenerys]] offre Drogon agli schiavisti di Astapor, insieme alle sue tre navi, in cambio di tutti gli Immacolati della città. Sulla piazza consegna la sua catena a [[kraznys-mo-nakloz|Kraznys mo Nakloz]], ma Drogon non gli obbedisce. Un drago non è uno schiavo, dice Daenerys. Al suo grido, “Drogon! Dracarys!”, Drogon lancia una vampata in faccia a Kraznys, e la gente di Daenerys si getta sugli schiavisti. Gli Immacolati, ormai suoi, non fanno nulla per salvare i vecchi padroni.',
+        en: '[[daenerys-targaryen|Daenerys]] offers Drogon to the slavers of Astapor, with her three ships, for every Unsullied in the city. On the plaza she hands his chain to [[kraznys-mo-nakloz|Kraznys mo Nakloz]], but Drogon will not obey him. A dragon is no slave, Daenerys says. At her cry of “Drogon! Dracarys!” he sends a jet of flame into Kraznys’s face, and her people fall on the slavers. The Unsullied, hers now, do nothing to save their old masters.',
+      },
+    ),
+    inBooks(
+      [40, 186],
+      { it: 'Un tokar in fiamme', en: 'A tokar on fire' },
+      {
+        it: 'Fuori Yunkai, [[grazdan-mo-eraz|Grazdan mo Eraz]] minaccia [[daenerys-targaryen|Daenerys]]: se Yunkai vincerà, lei sarà venduta come schiava di piacere. A una parola di Daenerys, “dracarys”, Drogon dà fuoco al tokar di Grazdan. Grazdan protesta che gli era stato promesso un salvacondotto, e avverte che Yunkai riempirà il cielo di frecce se i draghi si avvicineranno alla città: uccidere un drago non è così difficile. Più difficile che uccidere uno schiavista, risponde Daenerys.',
+        en: 'Outside Yunkai, [[grazdan-mo-eraz|Grazdan mo Eraz]] threatens [[daenerys-targaryen|Daenerys]]: if Yunkai wins, she will be sold as a bedslave. At her word, “dracarys”, Drogon sets Grazdan’s tokar alight. Grazdan protests that he was promised safe conduct, and warns that Yunkai will fill the air with arrows if the dragons come near the city: killing a dragon is not so hard. Harder than killing a slaver, Daenerys answers.',
+      },
+    ),
   ],
   'rhaegal': [
     inBooks(
@@ -182,6 +207,15 @@ export const season2Chronicles = {
         en: 'In the red waste the green-and-bronze dragon, like his brothers, eats only meat that [[daenerys-targaryen|Daenerys]] has seared. She names him Rhaegal, after her brother Rhaegar. Each night [[irri|Irri]] and [[jhiqui|Jhiqui]] carry two of the dragons in a cage between their horses, while the third rides on her shoulder.',
       },
     ),
+    // The Essos cast of the third stage (#1659): the books', at his show gate.
+    inBooks(
+      [41, 152],
+      { it: 'Giochi sul mare', en: 'Play over the sea' },
+      {
+        it: 'Durante la navigazione da Qarth Rhaegal vola sul mare con i suoi fratelli intorno alle navi di [[daenerys-targaryen|Daenerys]]. Lui e [[viserion|Viserion]] spesso giocano tra loro, mentre [[drogon|Drogon]] preferisce cacciare. [[jorah-mormont|Ser Jorah]] e [[arstan-whitebeard|Arstan Barbabianca]] parlano con Daenerys dei draghi: Balerion visse duecento anni. Nella sua cabina Daenerys mostra di aver insegnato ai suoi draghi a sputare fuoco alla parola “dracarys”.',
+        en: 'On the voyage from Qarth Rhaegal flies over the sea with his brothers around [[daenerys-targaryen|Daenerys]]’s ships. He and [[viserion|Viserion]] often play together, while [[drogon|Drogon]] would rather hunt. [[jorah-mormont|Ser Jorah]] and [[arstan-whitebeard|Arstan Whitebeard]] talk with Daenerys about dragons: Balerion lived two hundred years. In her cabin Daenerys shows that she has taught her dragons to breathe fire at the word “dracarys”.',
+      },
+    ),
   ],
   'viserion': [
     inBooks(
@@ -190,6 +224,15 @@ export const season2Chronicles = {
       {
         it: 'Nel deserto rosso il drago color crema e oro comincia a crescere quando [[daenerys-targaryen|Daenerys]] gli dà carne abbrustolita: si è ricordata che, secondo il fratello [[viserys-targaryen|Viserys]], solo gli uomini e i draghi mangiano la carne cotta. Daenerys dà ai draghi i nomi di chi gli dèi le hanno portato via, e chiama questo Viserion, in ricordo di Viserys.',
         en: 'In the red waste the cream-and-gold dragon begins to thrive once [[daenerys-targaryen|Daenerys]] feeds him seared meat, remembering her brother [[viserys-targaryen|Viserys]]’s words that only men and dragons eat cooked meat. She names her dragons after those the gods have taken from her, and this one Viserion, after Viserys.',
+      },
+    ),
+    // The Essos cast of the third stage (#1659): the books', at his show gate.
+    inBooks(
+      [41, 152],
+      { it: 'Sopra le navi', en: 'Above the ships' },
+      {
+        it: 'Durante la navigazione da Qarth il drago color crema e oro vola con i suoi fratelli sopra le tre navi di [[daenerys-targaryen|Daenerys]]. Viserion e [[rhaegal|Rhaegal]] spesso giocano insieme in aria, mentre [[drogon|Drogon]] va a caccia da solo. Nella sua cabina Daenerys mostra a [[jorah-mormont|ser Jorah]] che i draghi hanno imparato a sputare fuoco quando lei dice “dracarys”, la parola alto valyriana per il fuoco di drago.',
+        en: 'On the voyage from Qarth the cream-and-gold dragon flies with his brothers above [[daenerys-targaryen|Daenerys]]’s three ships. Viserion and [[rhaegal|Rhaegal]] often play together in the air, while [[drogon|Drogon]] goes off to hunt alone. In her cabin Daenerys shows [[jorah-mormont|Ser Jorah]] that the dragons have learned to breathe fire when she says “dracarys”, the High Valyrian word for dragonfire.',
       },
     ),
   ],
@@ -210,6 +253,31 @@ export const season2Chronicles = {
       {
         it: 'Al porto di Qarth un vecchio con un bastone segue [[daenerys-targaryen|Daenerys]]. Quando un mercante le porge uno scrigno con dentro una manticora, il vecchio glielo fa cadere dalle mani. Si presenta come Arstan Barbabianca, scudiero di [[strong-belwas|Belwas il Forte]], e dice di venire dai Sette Regni. Dice che il magistro [[illyrio-mopatis|Illyrio]] li ha mandati a riportarla a Pentos.',
         en: 'At the port of Qarth an old man with a staff follows [[daenerys-targaryen|Daenerys]]. When a merchant hands her a box with a manticore inside, the old man knocks it out of her hands. He introduces himself as Arstan Whitebeard, squire to [[strong-belwas|Strong Belwas]], and says he comes from the Seven Kingdoms. He says Magister [[illyrio-mopatis|Illyrio]] has sent them to bring her back to Pentos.',
+      },
+    ),
+    // The Essos cast of the third stage (#1659).
+    inBooks(
+      [21, 152],
+      { it: 'Rhaegar e la pergamena', en: 'Rhaegar and the scroll' },
+      {
+        it: 'Durante la navigazione da Qarth, Arstan parla di draghi con [[daenerys-targaryen|Daenerys]] e [[jorah-mormont|ser Jorah]]: Balerion aveva duecento anni quando morì. Racconta a Daenerys del fratello Rhaegar, un ragazzo sempre chino sui libri finché qualcosa letto in una pergamena lo spinse ad addestrarsi come guerriero. Rhaegar fu un grande guerriero, dice Arstan, ma non vinse battaglie. Quando Arstan va a servire [[strong-belwas|Belwas il Forte]], Jorah dice a Daenerys di stare attenta a lui.',
+        en: 'On the voyage from Qarth, Arstan talks of dragons with [[daenerys-targaryen|Daenerys]] and [[jorah-mormont|Ser Jorah]]: Balerion was two hundred years old when he died. He tells Daenerys of her brother Rhaegar, a bookish boy until something he read in a scroll made him train to be a warrior. Rhaegar was a great warrior, Arstan says, but he won no battles. When Arstan leaves to attend [[strong-belwas|Strong Belwas]], Jorah tells Daenerys to be wary of him.',
+      },
+    ),
+    inBooks(
+      [21, 167],
+      { it: 'Nessun esercito di schiavi', en: 'No slave army' },
+      {
+        it: 'Ad Astapor Arstan guarda con [[daenerys-targaryen|Daenerys]] uno schiavista che mostra gli Immacolati, ed è inorridito quanto lei da come vivono e vengono addestrati. Si oppone all’acquisto di schiavi quando nelle Città Libere si possono assoldare mercenari: se Daenerys sbarcherà a Westeros alla testa di un esercito di schiavi, molti le si opporranno solo per questo. Daenerys non vuole tornare a Pentos a mendicare. [[jorah-mormont|Ser Jorah]] sostiene il contrario, ed entrambi continuano a paragonarla a Rhaegar.',
+        en: 'In Astapor Arstan watches with [[daenerys-targaryen|Daenerys]] as a slaver shows off the Unsullied, and is as horrified as she is by how they live and are trained. He argues against buying slaves when sellswords can be hired in the Free Cities: if she lands in Westeros at the head of a slave army, many will oppose her for that alone. Daenerys will not go back to Pentos as a beggar. [[jorah-mormont|Ser Jorah]] argues the other way, and both men keep comparing her to Rhaegar.',
+      },
+    ),
+    inBooks(
+      [29, 186],
+      { it: 'Nato nel dolore', en: 'Born in grief' },
+      {
+        it: 'Mentre nella notte si combatte per Yunkai, [[daenerys-targaryen|Daenerys]] chiede ad Arstan di parlarle ancora del fratello Rhaegar. Arstan dice che il principe era sempre malinconico, con un senso di sventura addosso: era nato nel dolore, e quell’ombra lo accompagnò per tutta la vita. Daenerys capisce che Arstan parla del dolore di Sala dell’Estate. Arriva la notizia che il suo esercito ha vinto facilmente, con l’aiuto dei Corvi della Tempesta e dei Secondi Figli, troppo ubriachi per combattere.',
+        en: 'While the battle for Yunkai is fought in the night, [[daenerys-targaryen|Daenerys]] asks Arstan to tell her more of her brother Rhaegar. Arstan says the prince was always melancholy, with a sense of doom about him: he was born in grief, and that shadow stayed with him all his life. Daenerys knows he means the grief of Summerhall. Word comes that her army has won easily, helped by the Stormcrows and by the Second Sons, too drunk to fight.',
       },
     ),
   ],
