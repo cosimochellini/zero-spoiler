@@ -16,7 +16,13 @@
         "got-en-The_Old_Gods_and_the_New-740283.json",
         "got-en-A_Man_Without_Honor-740171.json",
         "got-en-Valar_Morghulis-740176.json",
-        "got-en-Kovarro-689005.json"
+        "got-en-Kovarro-689005.json",
+        "got-en-Valar_Dohaeris-746438.json",
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-Second_Sons_(episode)-740340.json",
+        "got-en-Missandei-728282.json",
+        "got-en-Grey_Worm-728152.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -33,7 +39,14 @@
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_27",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_40",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_48",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_8",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_23",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_27",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42",
+          "https://awoiaf.westeros.org/index.php/Grey_Worm",
+          "https://awoiaf.westeros.org/index.php/Kraznys_mo_Nakloz",
+          "https://awoiaf.westeros.org/index.php/Daario_Naharis"
         ]
       }
     },
@@ -95,7 +108,11 @@
         "got-en-The_Prince_of_Winterfell-740172.json",
         "got-en-Valar_Morghulis-740176.json",
         "got-en-Kovarro-689005.json",
-        "got-en-Xaro_Xhoan_Daxos-735973.json"
+        "got-en-Xaro_Xhoan_Daxos-735973.json",
+        "got-en-Valar_Dohaeris-746438.json",
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -112,7 +129,12 @@
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_27",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_40",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_48",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_8",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_23",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42",
+          "https://awoiaf.westeros.org/index.php/Grey_Worm",
+          "https://awoiaf.westeros.org/index.php/Daario_Naharis"
         ]
       }
     },
@@ -1674,7 +1696,10 @@
         "iaf-en-Barristan_Selmy-25348.json",
         "iaf-en-Eddard_VII_-_A_Game_of_Thrones-24944.json",
         "iaf-en-Hugh-24888.json",
-        "iaf-en-Sansa_I_-_A_Game_of_Thrones-24668.json"
+        "iaf-en-Sansa_I_-_A_Game_of_Thrones-24668.json",
+        "got-en-Valar_Dohaeris-746438.json",
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-Second_Sons_(episode)-740340.json"
       ]
     },
     "syrio-forel": {
@@ -2236,12 +2261,14 @@
       }
     },
     "drogon": {
-      "sources": [],
+      "sources": ["got-en-Razdal_mo_Eraz-728052.json"],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_12",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_48"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_48",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_27",
+          "https://awoiaf.westeros.org/index.php/Kraznys_mo_Nakloz"
         ]
       }
     },
@@ -2277,7 +2304,10 @@
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_8",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_23",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42"
         ]
       }
     },
@@ -3007,17 +3037,99 @@
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_44"
         ]
       }
+    },
+    "missandei": {
+      "sources": [
+        "got-en-Missandei-728282.json",
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-Second_Sons_(episode)-740340.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_23",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_27",
+          "https://awoiaf.westeros.org/index.php/Kraznys_mo_Nakloz"
+        ]
+      }
+    },
+    "kraznys-mo-nakloz": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_23",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_27",
+          "https://awoiaf.westeros.org/index.php/Kraznys_mo_Nakloz"
+        ]
+      }
+    },
+    "grey-worm": {
+      "sources": [
+        "got-en-Grey_Worm-728152.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42",
+          "https://awoiaf.westeros.org/index.php/Grey_Worm"
+        ]
+      }
+    },
+    "grazdan-mo-eraz": {
+      "sources": [
+        "got-en-Razdal_mo_Eraz-728052.json",
+        "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42"
+        ]
+      }
+    },
+    "mero": {
+      "sources": [
+        "got-en-Mero-728278.json",
+        "got-en-Second_Sons_(episode)-740340.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42"
+        ]
+      }
+    },
+    "daario-naharis": {
+      "sources": [
+        "got-en-Daario_Naharis-749230.json",
+        "got-en-Second_Sons_(episode)-740340.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42",
+          "https://awoiaf.westeros.org/index.php/Daario_Naharis"
+        ]
+      }
+    },
+    "prendahl-na-ghezn": {
+      "sources": ["got-en-Prendahl_na_Ghezn-728138.json"],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42",
+          "https://awoiaf.westeros.org/index.php/Daario_Naharis"
+        ]
+      }
     }
   },
   "omitted": {},
   "pending": {
-    "missandei": "#1650",
-    "kraznys-mo-nakloz": "#1650",
-    "grey-worm": "#1650",
-    "grazdan-mo-eraz": "#1650",
-    "mero": "#1650",
-    "daario-naharis": "#1650",
-    "prendahl-na-ghezn": "#1650",
     "olenna-tyrell": "#1651",
     "megga-tyrell": "#1651",
     "alla-tyrell": "#1651",

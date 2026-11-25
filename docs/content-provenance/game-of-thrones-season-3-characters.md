@@ -190,7 +190,9 @@ order them.
   left out. Her summary does not name her son Mace, whose show record opens only
   at episode 32. Italian: Italian Wikipedia heads her entry by her maiden name,
   "Olenna Redwyne" (Casa Tyrell); the record keeps the name both media use, as
-  Selyse's does.
+  Selyse's does. Her death at Highgarden, "The Queen's Justice" (63), is the
+  show's alone: #1642 files it, `deceased` with her drawing's stage, chapter 344
+  ordering it, as later deaths go in at the point that tells them (#1238).
 - Megga, Alla and Elinor Tyrell: role Margaery's cousins and companions, House
   Tyrell, alive. Each also has scenes in Sansa II (160) and at the wedding feast
   of Sansa III (172). Elinor is a flowered maiden who rules the younger cousins
@@ -203,6 +205,9 @@ order them.
   media at the gate. That he rides at the head of the Dornishmen is the book's
   alone (in "Two Swords" he rides ahead of the embassy and is first seen in a
   brothel), so the log leaves it out. Italian "Oberyn Martell" (Casa Martell).
+  His death in the trial by combat, "The Mountain and the Viper" (38) and Tyrion
+  X (214, A Wiki of Ice and Fire, Chapter 70), is filed by #1642, `deceased`
+  with his drawing's stage (#1238).
 - Ellaria Sand: role Oberyn Martell's paramour, House Martell, alive. Italian
   "Ellaria Sand" (Casa Martell).
 
