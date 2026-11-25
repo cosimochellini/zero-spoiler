@@ -12,11 +12,12 @@ const TAMA_REVISION = 'oldid=2132292'
 
 /**
  * The gates these tests cross, pinned by hand (#1410, #1682): Tama's record,
- * where she gives her name at the end of episode 893, and chapter 210, where
- * Crocodile goes through the ceiling and the rain starts in Luffy's
- * episode-126 story.
+ * where she gives her name at the end of episode 893 and in chapter 911, and
+ * chapter 210, where Crocodile goes through the ceiling and the rain starts
+ * in Luffy's episode-126 story.
  */
 const TAMA_EPISODE = 893
+const TAMA_CHAPTER = 911
 const RAIN_CHAPTER = 210
 
 describe('source credits', () => {
@@ -35,6 +36,12 @@ describe('source credits', () => {
       const covered = creditsPage(ep(TAMA_EPISODE - 1), locale)
 
       expect(JSON.stringify(covered)).not.toContain(TAMA_REVISION)
+
+      const chapter = (at: number): string =>
+        JSON.stringify(creditsPage({ mode: 'chapter', chapter: at }, locale))
+
+      expect(chapter(TAMA_CHAPTER - 1)).not.toContain(TAMA_REVISION)
+      expect(chapter(TAMA_CHAPTER)).toContain(TAMA_REVISION)
 
       const open = creditsPage(ep(TAMA_EPISODE), locale)
 
