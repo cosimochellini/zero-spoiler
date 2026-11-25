@@ -313,6 +313,7 @@ export function slugCanaries(repositoryRoot, folder) {
   }
 
   return [...drawings, ...(EXTRA[folder]?.slugs ?? [])].flatMap((file) => {
+    // fallow-ignore-next-line security-sink -- The root is this script’s directory or a test fixture; file is a module of a series' art folder named in the repository's own series list, or one of its listed extras.
     const source = readFileSync(path.join(repositoryRoot, file), 'utf8')
     const phrase = slugsFrom(source)[0] ?? pathFrom(source)
 
