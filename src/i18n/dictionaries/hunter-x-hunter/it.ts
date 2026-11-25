@@ -49,6 +49,9 @@ export const hunterXHunterIt: SeriesWords<'hunter-x-hunter'> = {
   'abilities.foggedHintUnset':
     'I loro nomi e i tipi di Nen sono nascosti, quindi la ricerca non le trova. Imposta il segnalibro per vederle.',
   'abilities.allOpen': 'Nessuna abilità è nella nebbia.',
+  'abilities.foldMore': 'E altre {count} nella nebbia',
+  'abilities.foldMoreOne': 'E un’altra nella nebbia',
+  'abilities.unfold': 'Espandi',
   'abilities.moreUsers': 'e altri {count} personaggi che la usano',
   'abilities.moreUsersOne': 'e un altro personaggio che la usa',
   // La pagina delle cariche (#1441), con le parole di One Piece.

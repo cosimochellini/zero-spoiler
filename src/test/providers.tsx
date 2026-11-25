@@ -1,4 +1,5 @@
 import {
+  type AnyRouter,
   createMemoryHistory,
   createRootRoute,
   createRoute,
@@ -228,14 +229,15 @@ export interface SeriesRenderOptions {
 }
 
 /**
- * Renders a component under a `/$series` match, as the app does, so what it
- * reads from the route's public description (the series' name, the pages it
- * declares) is the series given. Asynchronous, as `renderOnRoute`.
+ * A loaded router that draws `ui` under a `/$series` match, as the app does,
+ * so what it reads from the route's public description (the series' name,
+ * the pages it declares) is the series given. For a test that renders it
+ * itself (to a string, or by hydrating); `renderUnderSeries` mounts it.
  */
-export async function renderUnderSeries(
+export async function seriesRouter(
   ui: ReactElement,
   { locale = 'en', path, series }: SeriesRenderOptions,
-): Promise<RenderResult> {
+): Promise<AnyRouter> {
   const rootRoute = createRootRoute()
   const seriesRoute = createRoute({
     getParentRoute: () => rootRoute,
@@ -262,5 +264,16 @@ export async function renderUnderSeries(
   })
   await router.load()
 
-  return render(<RouterProvider router={router} />)
+  return router
+}
+
+/**
+ * Renders a component under a `/$series` match (`seriesRouter`).
+ * Asynchronous, as `renderOnRoute`.
+ */
+export async function renderUnderSeries(
+  ui: ReactElement,
+  options: SeriesRenderOptions,
+): Promise<RenderResult> {
+  return render(<RouterProvider router={await seriesRouter(ui, options)} />)
 }

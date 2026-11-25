@@ -22,7 +22,8 @@ export interface FoldWords {
 
 /**
  * A grid of fog tiles, folded on a phone (#1381): a fog band's, or a saga
- * group's tiles, the open ones first.
+ * group's tiles, the open ones first. The fruits page folds its groups and
+ * the abilities page its one fog band (#1592).
  *
  * Below 40rem a band of a hundred covered tiles is a hundred near-identical
  * screens. Folded, only the first row of fog tiles is drawn, then one line
@@ -37,8 +38,9 @@ export interface FoldWords {
  *
  * Each history entry keeps the fold as the reader left it there
  * (`useEntryFold`), so Back and Forward draw the page as tall as it was. The
- * album, and every fold with it, is drawn in the browser only
- * (`fruits/-album.ts`), so this never disagrees with the server's page.
+ * fruit album is drawn in the browser only (`fruits/-album.ts`); the
+ * abilities band comes with the server's page, folded, which is how a page
+ * load finds it too: the notes are in memory, empty after a load.
  */
 export function FoldedFog({
   children,

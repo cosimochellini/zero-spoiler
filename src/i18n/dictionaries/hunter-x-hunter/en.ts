@@ -53,6 +53,9 @@ export const hunterXHunterEn = {
   'abilities.foggedHintUnset':
     'Their names and Nen types are hidden, so search does not find them. Set your bookmark to see them.',
   'abilities.allOpen': 'No ability is under fog.',
+  'abilities.foldMore': 'And {count} more under fog',
+  'abilities.foldMoreOne': 'And 1 more under fog',
+  'abilities.unfold': 'Expand',
   'abilities.moreUsers': 'and {count} more characters who use it',
   'abilities.moreUsersOne': 'and 1 more character who uses it',
   // The ranks page (#1441), worded as One Piece's. No group's name is here:
