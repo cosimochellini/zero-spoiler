@@ -1472,6 +1472,14 @@ export const season1Chronicles = {
         en: 'Unable to cross the river, Yoren leads the recruits to an empty town on the Gods Eye and shelters them in the holdfast. That night Ser Amory Lorch, bannerman to Lord [[tywin-lannister|Tywin]], orders the gate opened in the name of King [[joffrey-baratheon|Joffrey]]. Yoren shows his black cloak and refuses, and Lorch orders his men to storm the walls. When the fight is lost, Yoren tells [[arya-stark|Arya]] to lead the others out through the tunnel under the barn, and goes back to the fighting. She does not see him again.',
       },
     ),
+    inBooks(
+      [13, 93],
+      { it: 'La tomba', en: 'The grave' },
+      {
+        it: 'La notte dopo l’attacco, [[arya-stark|Arya]] e gli altri sopravvissuti tornano al fortino e trovano il corpo di Yoren accanto a quattro uomini d’arme dei Lannister. Arya si chiede quanti uomini ci siano voluti per abbatterlo. Vuole che Yoren abbia una tomba, e lo seppelliscono. Sono sopravvissuti anche tre uomini che tenevano la torre, ma presto se ne vanno per conto loro.',
+        en: 'The night after the attack, [[arya-stark|Arya]] and the other survivors go back to the holdfast and find Yoren’s body beside four Lannister men-at-arms. Arya wonders how many men it took to bring him down. She insists that he have a grave, and they bury him. Three men who held the towerhouse have also survived, but they soon go their own way.',
+      },
+    ),
   ],
   'will': [
     inBooks(
@@ -2162,8 +2170,8 @@ export const season1Chronicles = {
       [17, 129],
       { it: 'Domande al buio', en: 'Questions in the dark' },
       {
-        it: 'A mezzanotte [[catelyn-stark|Catelyn]] scende nella cella di Jaime con del vino, e lui accetta di rispondere alle sue domande se lei risponderà alle sue. Ammette di essere il padre dei figli di Cersei e di aver gettato [[bran-stark|Bran]] dalla finestra della torre, ma dice che se avesse voluto Bran morto lo avrebbe ucciso con le sue mani. Le racconta come il Re Folle uccise il padre e il fratello di [[eddard-stark|Eddard]], e dice di essere disprezzato per la sua impresa migliore. Ubriaco, deride Eddard per aver avuto un bastardo, e Catelyn chiede la spada di [[brienne-of-tarth|Brienne]].',
-        en: 'At midnight [[catelyn-stark|Catelyn]] comes down to Jaime’s cell with wine, and he agrees to answer her questions if she answers his. He admits that he fathered Cersei’s children and threw [[bran-stark|Bran]] from the tower window, but says that if he had wanted Bran dead he would have killed him himself. He tells her how the Mad King killed [[eddard-stark|Eddard]]’s father and brother, and says he is reviled for his finest act. Drunk, he mocks Eddard for fathering a bastard, and Catelyn calls for [[brienne-of-tarth|Brienne]]’s sword.',
+        it: '[[catelyn-stark|Catelyn]] ha fatto mandare del vino nella cella di Jaime. A mezzanotte scende da lui, e Jaime accetta di rispondere alle sue domande se lei risponderà alle sue. Ammette di essere il padre dei figli di Cersei e di aver gettato [[bran-stark|Bran]] dalla finestra della torre, ma dice che se avesse voluto Bran morto lo avrebbe ucciso con le sue mani. Le racconta come il Re Folle uccise il padre e il fratello di [[eddard-stark|Eddard]], e dice di essere disprezzato per la sua impresa migliore. Ubriaco, deride Eddard per aver avuto un bastardo, e Catelyn chiede la spada di [[brienne-of-tarth|Brienne]].',
+        en: '[[catelyn-stark|Catelyn]] has sent wine to Jaime’s cell. At midnight she comes down to him, and he agrees to answer her questions if she answers his. He admits that he fathered Cersei’s children and threw [[bran-stark|Bran]] from the tower window, but says that if he had wanted Bran dead he would have killed him himself. He tells her how the Mad King killed [[eddard-stark|Eddard]]’s father and brother, and says he is reviled for his finest act. Drunk, he mocks Eddard for fathering a bastard, and Catelyn calls for [[brienne-of-tarth|Brienne]]’s sword.',
       },
     ),
     onScreen(
@@ -2178,8 +2186,8 @@ export const season1Chronicles = {
       [20, 137],
       { it: 'Tre soldati Stark', en: 'Three Stark soldiers' },
       {
-        it: 'In viaggio con [[brienne-of-tarth|Brienne]], Jaime le chiede della sua infanzia e deride il suo servizio agli Stark; lei risponde che serve [[catelyn-stark|Catelyn]]. Trovano tre donne impiccate per essere andate a letto con soldati Lannister. Mentre Brienne va a seppellirle, tre soldati Stark riconoscono Jaime, e lei li uccide tutti e tre. Jaime ne è colpito e le chiede come possa uccidere uomini degli Stark; Brienne risponde di essere fedele a Catelyn e al compito che le ha affidato.',
-        en: 'On the road with [[brienne-of-tarth|Brienne]], Jaime asks about her childhood and mocks her service to the Starks; she answers that she serves [[catelyn-stark|Catelyn]]. They find three women hanged for sleeping with Lannister soldiers. While Brienne goes to bury them, three Stark soldiers recognise Jaime, and she kills all three. Jaime is impressed, and asks her how she can kill Stark men; she answers that she is loyal to Catelyn and the task she was given.',
+        it: 'In viaggio con [[brienne-of-tarth|Brienne]], Jaime le chiede della sua infanzia. Trovano tre donne impiccate per essere andate a letto con soldati Lannister, e Jaime deride il suo servizio agli Stark; lei risponde che serve [[catelyn-stark|Catelyn]]. Mentre Brienne va a seppellirle, tre soldati Stark riconoscono Jaime, e lei li uccide tutti e tre. Jaime ne è colpito e le chiede come possa uccidere uomini degli Stark; Brienne risponde di essere fedele a Catelyn e al compito che le ha affidato.',
+        en: 'On the road with [[brienne-of-tarth|Brienne]], Jaime asks about her childhood. They find three women hanged for sleeping with Lannister soldiers, and Jaime mocks her service to the Starks; she answers that she serves [[catelyn-stark|Catelyn]]. While Brienne goes to bury them, three Stark soldiers recognise Jaime, and she kills all three. Jaime is impressed, and asks her how she can kill Stark men; she answers that she is loyal to Catelyn and the task she was given.',
       },
     ),
   ],
@@ -2260,8 +2268,8 @@ export const season1Chronicles = {
       [16, 112],
       { it: 'Una lettera sbagliata', en: 'The wrong letter' },
       {
-        it: 'Tywin rimprovera [[amory-lorch|ser Amory Lorch]], che non sa leggere bene, per aver mandato una lettera al nemico, e scopre che la sua coppiera, [[arya-stark|Arya]], legge meglio. Le chiede dove abbia imparato e le parla del proprio padre. Riceve [[petyr-baelish|Petyr Baelish]], che gli propone un’alleanza con Casa Tyrell. Poi Amory cade morto sulla porta delle stanze di Tywin, ucciso da un dardo, e Tywin crede di essere stato lui il bersaglio.',
-        en: 'Tywin berates Ser [[amory-lorch|Amory Lorch]], who cannot read well, for sending a letter to the enemy, and finds that his cupbearer, [[arya-stark|Arya]], reads better. He asks her where she learned and talks about his own father. He receives [[petyr-baelish|Petyr Baelish]], who proposes an alliance with House Tyrell. Then Amory falls dead at the door of Tywin’s chambers, killed by a dart, and Tywin believes he was the target.',
+        it: 'Tywin rimprovera [[amory-lorch|ser Amory Lorch]], che non sa leggere bene, per aver mandato una lettera al nemico, e scopre che la sua coppiera, [[arya-stark|Arya]], legge meglio. Riceve [[petyr-baelish|Petyr Baelish]], che gli propone un’alleanza con Casa Tyrell. Più tardi chiede ad Arya dove abbia imparato a leggere e le parla del proprio padre. Poi Amory cade morto sulla porta delle stanze di Tywin, ucciso da un dardo.',
+        en: 'Tywin berates Ser [[amory-lorch|Amory Lorch]], who cannot read well, for sending a letter to the enemy, and finds that his cupbearer, [[arya-stark|Arya]], reads better. He receives [[petyr-baelish|Petyr Baelish]], who proposes an alliance with House Tyrell. Later he asks Arya where she learned to read and talks about his own father. Then Amory falls dead at the door of Tywin’s chambers, killed by a dart.',
       },
     ),
     onScreen(
@@ -2302,6 +2310,14 @@ export const season1Chronicles = {
       {
         it: 'Tywin entra a cavallo nella sala del trono, e il cavallo lascia sterco sulla soglia. [[joffrey-baratheon|Joffrey]] lo proclama Salvatore della città e lo conferma Primo Cavaliere del Re. Con il ritorno di Tywin, [[tyrion-lannister|Tyrion]] non è più Primo Cavaliere reggente. [[petyr-baelish|Petyr Baelish]] riceve Harrenhal per aver procurato l’alleanza con i Tyrell, e Joffrey rompe il fidanzamento con [[sansa-stark|Sansa]] per sposare [[margaery-tyrell|Margaery Tyrell]].',
         en: 'Tywin rides his horse into the throne room, and it drops dung on the threshold. [[joffrey-baratheon|Joffrey]] names him Savior of the City and confirms him as Hand of the King. With Tywin back, [[tyrion-lannister|Tyrion]] is no longer acting Hand. [[petyr-baelish|Petyr Baelish]] is given Harrenhal for bringing about the alliance with the Tyrells, and Joffrey sets aside his betrothal to [[sansa-stark|Sansa]] to marry [[margaery-tyrell|Margaery Tyrell]].',
+      },
+    ),
+    inBooks(
+      [18, 119],
+      { it: 'I guadi della Forca Rossa', en: 'The fords of the Red Fork' },
+      {
+        it: 'L’esercito di Tywin cerca di passare i guadi della Forca Rossa, tenuti dai lord dei fiumi di Edmure Tully, e viene respinto a ogni passaggio: lord Leo Lefford annega, ser Lyle Crakehall viene catturato, [[addam-marbrand|ser Addam Marbrand]] viene respinto tre volte e [[gregor-clegane|ser Gregor Clegane]] viene fermato al Mulino di Pietra. A Delta delle Acque [[catelyn-stark|Catelyn]] riceve la notizia che Tywin si allontana verso sud-est, e sulla mappa vede che quella strada porta alle sorgenti delle Rapide delle Acque Nere.',
+        en: 'Tywin’s host tries the fords of the Red Fork, held by Edmure Tully’s river lords, and is thrown back at every crossing: Lord Leo Lefford drowns, Ser Lyle Crakehall is taken, Ser [[addam-marbrand|Addam Marbrand]] is driven back three times and Ser [[gregor-clegane|Gregor Clegane]] is held off at the Stone Mill. At Riverrun [[catelyn-stark|Catelyn]] hears that Tywin is marching away to the southeast, and on a map she sees that the road leads to the headwaters of the Blackwater Rush.',
       },
     ),
     inBooks(
@@ -3094,11 +3110,27 @@ export const season1Chronicles = {
       },
     ),
     onScreen(
+      [13, 93],
+      { it: 'L’elmo del toro', en: 'The bull helm' },
+      {
+        it: 'Soldati Lannister e cappe dorate tornano a prendere Gendry, e [[yoren|Yoren]] viene ucciso perché si rifiuta di consegnarlo. Gendry si unisce allo scontro, viene sopraffatto e fatto prigioniero. Una recluta che aveva raccolto il suo elmo a testa di toro viene uccisa, e [[arya-stark|Arya]] dice ai soldati che il ragazzo morto era Gendry. I prigionieri vengono portati a Harrenhal.',
+        en: 'Lannister soldiers and gold cloaks come back for Gendry, and [[yoren|Yoren]] is killed refusing to give him up. Gendry joins the fight and is overwhelmed and taken prisoner. A recruit who picked up his bull’s head helm is killed, and [[arya-stark|Arya]] tells the soldiers the dead boy was Gendry. The prisoners are taken to Harrenhal.',
+      },
+    ),
+    onScreen(
       [14, 100],
       { it: 'Il fabbro', en: 'The smith' },
       {
         it: 'A Harrenhal Gendry è tra i prigionieri rinchiusi in un recinto, mentre gli uomini di ser [[gregor-clegane|Gregor Clegane]] ne torturano a morte uno al giorno. Quando tocca a lui e l’interrogatorio comincia, con [[polliver|Polliver]] di guardia, arriva [[tywin-lannister|Tywin Lannister]] e lo fa smettere: i prigionieri in grado di lavorare sono troppo utili per sprecarli. Alla domanda se abbia un mestiere, Gendry risponde di essere un fabbro, e viene messo a lavorare alla forgia del castello.',
         en: 'At Harrenhal, Gendry is among the prisoners penned in a stockade while Ser [[gregor-clegane|Gregor Clegane]]’s men torture one of them to death each day. When he is chosen and the questioning begins, with [[polliver|Polliver]] standing guard, [[tywin-lannister|Tywin Lannister]] arrives and stops it: able prisoners are too useful to waste. Asked if he has a trade, Gendry says he is a smith, and he is put to work at the castle forge.',
+      },
+    ),
+    inBooks(
+      [18, 138],
+      { it: 'La postierla', en: 'The postern gate' },
+      {
+        it: 'Gendry lavora alla forgia di Harrenhal e gli sta bene restarci: si è rifiutato di aiutare [[arya-stark|Arya]] a liberare i prigionieri del Nord. Quando [[roose-bolton|Roose Bolton]] si prepara a lasciare il castello, Arya mente a Gendry dicendo che [[vargo-hoat|Vargo Hoat]] vuole tagliare un piede a ogni servo, e lo manda a prendere delle spade e [[hot-pie|Frittella]]. I tre si ritrovano vicino alla Torre dei Fantasmi. Arya uccide la guardia della postierla, e insieme escono a cavallo dal castello.',
+        en: 'Gendry works at the forge of Harrenhal and is content to stay: he refused to help [[arya-stark|Arya]] free the northern prisoners. When [[roose-bolton|Roose Bolton]] prepares to leave the castle, Arya lies to Gendry that [[vargo-hoat|Vargo Hoat]] means to cut a foot off every servant, and sends him for swords and [[hot-pie|Hot Pie]]. The three meet near the Tower of Ghosts. Arya kills the guard at the postern, and they ride out of the castle together.',
       },
     ),
     onScreen(
@@ -3107,14 +3139,6 @@ export const season1Chronicles = {
       {
         it: "Quando [[tywin-lannister|Tywin]] parte e lascia Harrenhal a ser [[gregor-clegane|Gregor Clegane]], [[arya-stark|Arya]] organizza la fuga con [[jaqen-hghar|Jaqen H'ghar]]. A mezzanotte Gendry, Arya e [[hot-pie|Frittella]] si avviano verso il cancello sorvegliato. Solo passando si accorgono che le guardie sono morte, tenute in piedi dalle lance ai loro posti, e i tre escono dal castello.",
         en: "When [[tywin-lannister|Tywin]] marches out and leaves Harrenhal to Ser [[gregor-clegane|Gregor Clegane]], [[arya-stark|Arya]] arranges their escape with [[jaqen-hghar|Jaqen H'ghar]]. At midnight Gendry, Arya and [[hot-pie|Hot Pie]] walk towards the guarded gate. Only as they pass do they see that the guards are dead, held up on spears at their posts, and the three walk out of the castle.",
-      },
-    ),
-    inBooks(
-      [18, 138],
-      { it: 'La postierla', en: 'The postern gate' },
-      {
-        it: 'Gendry lavora alla forgia di Harrenhal e gli sta bene restarci: si è rifiutato di aiutare [[arya-stark|Arya]] a liberare i prigionieri del Nord. Quando [[roose-bolton|Roose Bolton]] si prepara a lasciare il castello, Arya racconta a Gendry che [[vargo-hoat|Vargo Hoat]] vuole tagliare un piede a ogni servo, e lo manda a prendere delle spade e [[hot-pie|Frittella]]. I tre si ritrovano vicino alla Torre dei Fantasmi. Arya uccide la guardia della postierla, e insieme escono a cavallo dal castello.',
-        en: 'Gendry works at the forge of Harrenhal and is content to stay: he refused to help [[arya-stark|Arya]] free the northern prisoners. When [[roose-bolton|Roose Bolton]] prepares to leave the castle, Arya tells Gendry that [[vargo-hoat|Vargo Hoat]] means to cut a foot off every servant, and sends him for swords and [[hot-pie|Hot Pie]]. The three meet near the Tower of Ghosts. Arya kills the guard at the postern, and they ride out of the castle together.',
       },
     ),
   ],
@@ -3471,8 +3495,16 @@ export const season1Chronicles = {
       [18, 112],
       { it: 'Al comando dell’avanguardia', en: 'Command of the van' },
       {
-        it: 'Gregor torna a Harrenhal tra i comandanti di [[tywin-lannister|Tywin]]. Il suo uomo [[chiswyck|Chiswyck]] si vanta del giorno in cui Gregor stuprò la figlia di un birraio e pagò al padre una moneta d’argento. Quando l’esercito parte, Gregor ne comanda l’avanguardia, ed esce per ultimo dietro i lord con [[polliver|Polliver]] al fianco, che porta l’elmo di [[gendry|Gendry]].',
-        en: 'Gregor returns to Harrenhal among [[tywin-lannister|Tywin]]’s captains. His man [[chiswyck|Chiswyck]] boasts of the day Gregor raped a brewer’s daughter and paid her father a silver. When the host marches, Gregor commands its van, riding out last behind the lords with [[polliver|Polliver]] beside him, wearing [[gendry|Gendry]]’s helm.',
+        it: 'A Harrenhal [[arya-stark|Arya]] scopre che Gregor partirà al comando dell’avanguardia di lord [[tywin-lannister|Tywin]], e che lui e i suoi uomini saranno fuori dalla sua portata. Quando l’esercito lascia il castello, Gregor esce per ultimo dietro i lord, con al fianco [[polliver|Polliver]], che porta l’elmo di [[gendry|Gendry]].',
+        en: 'At Harrenhal, [[arya-stark|Arya]] learns that Gregor will leave to command Lord [[tywin-lannister|Tywin]]’s van, which puts him and his men beyond her reach. When the host marches out of the castle, Gregor rides last behind the lords, with [[polliver|Polliver]] beside him wearing [[gendry|Gendry]]’s helm.',
+      },
+    ),
+    inBooks(
+      [18, 119],
+      { it: 'Il Mulino di Pietra', en: 'The Stone Mill' },
+      {
+        it: 'Gregor combatte per lord [[tywin-lannister|Tywin]] ai guadi della Forca Rossa, dove i lord dei fiumi di Edmure Tully tengono i passaggi. Al Mulino di Pietra, dopo duri combattimenti, è Edmure in persona a respingerlo. Il messaggero di Edmure porta la notizia a [[catelyn-stark|Catelyn]] a Delta delle Acque, insieme alla morte di lord Leo Lefford, annegato, e alla ritirata di Tywin verso sud-est.',
+        en: 'Gregor fights for Lord [[tywin-lannister|Tywin]] at the fords of the Red Fork, where Edmure Tully’s river lords hold the crossings. At the Stone Mill, after fierce fighting, Edmure himself holds him off. Edmure’s messenger brings the news to [[catelyn-stark|Catelyn]] at Riverrun, along with Lord Leo Lefford drowned and Tywin marching away to the southeast.',
       },
     ),
   ],
@@ -3812,15 +3844,15 @@ export const season1Chronicles = {
       { it: 'L’apprendista tintore', en: 'The dyer’s apprentice' },
       {
         it: 'Lommy Maniverdi, un apprendista tintore con le mani macchiate di verde, viaggia verso nord tra le reclute di [[yoren|Yoren]]. Prende in giro [[arya-stark|Arya]], che si fa passare per l’orfano Arry, per i capelli tagliati male. Con [[hot-pie|Frittella]] deride la spada di Arry, dice che non è nemmeno vera e spinge Frittella a prendergliela. Quando Arya picchia Frittella a sangue, Lommy si fa piccolo, e da allora le sta il più lontano possibile.',
-        en: 'Lommy Greenhands, a dyer’s apprentice with green-stained hands, travels north among [[yoren|Yoren]]’s recruits. He calls [[arya-stark|Arya]], who passes as the orphan Arry, Lumpyhead for her badly cut hair. With [[hot-pie|Hot Pie]] he mocks Arry’s sword, says it is not even real and eggs Hot Pie on to take it. When Arya beats Hot Pie bloody, Lommy cowers away, and from then on he keeps as far from her as he can.',
+        en: 'Lommy Greenhands, a dyer’s apprentice with green-stained hands, travels north among [[yoren|Yoren]]’s recruits. He mocks [[arya-stark|Arya]], who passes as the orphan Arry, for her badly cut hair. With [[hot-pie|Hot Pie]] he mocks Arry’s sword, says it is not even real and eggs Hot Pie on to take it. When Arya beats Hot Pie bloody, Lommy cowers away, and from then on he keeps as far from her as he can.',
       },
     ),
     inBooks(
       [31, 88],
       { it: 'Ferito al fortino', en: 'Wounded at the holdfast' },
       {
-        it: 'Lommy è nel fortino sull’Occhio degli Dei quando gli uomini dei Lannister attaccano le reclute di [[yoren|Yoren]]. Sulle mura spacca la testa a un uomo che lotta con Dobber, poi vede Dobber morto. Quando lo scontro è perduto, [[arya-stark|Arya]], [[gendry|Gendry]] e [[hot-pie|Frittella]] lo trovano che sanguina per una ferita di lancia al polpaccio, e Lommy fugge con loro dal cunicolo sotto il fienile.',
-        en: 'Lommy is in the holdfast on the Gods Eye when the Lannister men attack [[yoren|Yoren]]’s recruits. On the wall he smashes the head of a man wrestling with Dobber, then sees Dobber dead. When the fight is lost, [[arya-stark|Arya]], [[gendry|Gendry]] and [[hot-pie|Hot Pie]] find him bleeding from a spear wound in the calf, and he escapes with them through the tunnel under the barn.',
+        it: 'Lommy è nel fortino sull’Occhio degli Dei quando gli uomini dei Lannister attaccano le reclute di [[yoren|Yoren]]. Sulle mura spacca la testa a un uomo che lotta con Dobber, poi vede Dobber morto. Quando lo scontro è perduto, [[arya-stark|Arya]], [[gendry|Gendry]] e [[hot-pie|Frittella]] lo trovano che sanguina per una ferita di lancia al polpaccio.',
+        en: 'Lommy is in the holdfast on the Gods Eye when the Lannister men attack [[yoren|Yoren]]’s recruits. On the wall he smashes the head of a man wrestling with Dobber, then sees Dobber dead. When the fight is lost, [[arya-stark|Arya]], [[gendry|Gendry]] and [[hot-pie|Hot Pie]] find him bleeding from a spear wound in the calf.',
       },
     ),
     inBooks(
@@ -3837,7 +3869,7 @@ export const season1Chronicles = {
       [12, 79],
       { it: 'Un uomo chiede acqua', en: 'A man asks for water' },
       {
-        it: "Jaqen H'ghar è uno dei tre prigionieri delle celle nere, incatenati in una gabbia sul carro di [[yoren|Yoren]] e destinati ai Guardiani della notte. Chiede dell’acqua ad [[arya-stark|Arya]], che crede un ragazzo, e parla di sé come di “un uomo”. Quando uno dei suoi compagni di prigionia la minaccia, Jaqen le chiede scusa: non è stato lui a sceglierli. Si presenta, dice di venire da Lorath e le dice che ha più coraggio che giudizio.",
+        it: "Jaqen H'ghar è uno dei tre prigionieri delle celle nere, incatenati in una gabbia sul carro di [[yoren|Yoren]] e destinati ai Guardiani della notte. Chiede dell’acqua ad [[arya-stark|Arya]], che chiama “un ragazzo”, e parla di sé come di “un uomo”. Quando uno dei suoi compagni di prigionia la minaccia, Jaqen le chiede scusa: non è stato lui a sceglierli. Si presenta, dice di venire da Lorath e le dice che ha più coraggio che giudizio.",
         en: "Jaqen H'ghar is one of three prisoners from the black cells, chained in a cage on [[yoren|Yoren]]’s wagon and bound for the Night’s Watch. He asks [[arya-stark|Arya]], whom he calls a boy, for water, speaking of himself as “a man”. When one of his fellow prisoners threatens her, he begs her pardon: he did not choose his company. He introduces himself, says he comes from Lorath and tells her she has more courage than sense.",
       },
     ),
@@ -3853,8 +3885,8 @@ export const season1Chronicles = {
       [13, 88],
       { it: 'Fuori dal fuoco', en: 'Out of the fire' },
       {
-        it: 'Quando i soldati Lannister attaccano le reclute di [[yoren|Yoren]], una torcia caduta appicca il fuoco vicino al carro dei prigionieri. Jaqen chiede aiuto mentre le fiamme lambiscono le sbarre della gabbia, e [[arya-stark|Arya]] gli passa un’ascia prima di correre a combattere. Jaqen non combatte contro i soldati, ed è sorpreso che lei lo abbia aiutato. Sopravvive all’attacco insieme ai due uomini chiusi con lui.',
-        en: 'When Lannister soldiers attack [[yoren|Yoren]]’s recruits, a dropped torch sets a fire near the prisoners’ wagon. Jaqen calls for help as the flames reach the bars of his cage, and [[arya-stark|Arya]] hands him an axe before running to join the fight. Jaqen does not fight the soldiers, and is surprised that she helped him. He survives the attack with the two men caged with him.',
+        it: 'Quando i soldati Lannister attaccano le reclute di [[yoren|Yoren]], una torcia caduta appicca il fuoco vicino al carro dei prigionieri. Jaqen chiede aiuto mentre le fiamme lambiscono le sbarre della gabbia, e [[arya-stark|Arya]] gli passa un’ascia prima di correre a combattere. Jaqen non combatte contro i soldati, ed è sorpreso che lei lo abbia aiutato.',
+        en: 'When Lannister soldiers attack [[yoren|Yoren]]’s recruits, a dropped torch sets a fire near the prisoners’ wagon. Jaqen calls for help as the flames reach the bars of his cage, and [[arya-stark|Arya]] hands him an axe before running to join the fight. Jaqen does not fight the soldiers, and is surprised that she helped him.',
       },
     ),
     inBooks(
@@ -3885,8 +3917,8 @@ export const season1Chronicles = {
       [16, 112],
       { it: 'Il dardo', en: 'The dart' },
       {
-        it: '[[arya-stark|Arya]] corre da Jaqen in preda al panico e gli chiede subito la seconda morte: ser [[amory-lorch|Amory Lorch]], che l’ha sorpresa con una lettera rubata dal tavolo di [[tywin-lannister|Tywin Lannister]] e sta andando a riferirglielo. A Jaqen non piace la fretta, ma accetta. Amory cade morto sulla soglia delle stanze di Tywin, con nel collo un dardo intinto nell’aconito. Tywin crede che il dardo fosse destinato a lui.',
-        en: '[[arya-stark|Arya]] comes to Jaqen in a panic and asks for her second death at once: Ser [[amory-lorch|Amory Lorch]], who caught her with a letter stolen from [[tywin-lannister|Tywin Lannister]]’s table and is on his way to tell him. Jaqen does not like being hurried, but he obliges. Amory falls dead on the threshold of Tywin’s chambers with a dart dipped in wolfsbane in his neck. Tywin believes the dart was meant for him.',
+        it: '[[arya-stark|Arya]] corre da Jaqen in preda al panico e gli chiede subito la seconda morte: ser [[amory-lorch|Amory Lorch]], che l’ha sorpresa con una lettera rubata dal tavolo di [[tywin-lannister|Tywin Lannister]] e sta andando a riferirglielo. A Jaqen non piace la fretta, ma accetta. Amory cade morto sulla soglia delle stanze di Tywin, con nel collo un dardo intinto nell’aconito.',
+        en: '[[arya-stark|Arya]] comes to Jaqen in a panic and asks for her second death at once: Ser [[amory-lorch|Amory Lorch]], who caught her with a letter stolen from [[tywin-lannister|Tywin Lannister]]’s table and is on his way to tell him. Jaqen does not like being hurried, but he obliges. Amory falls dead on the threshold of Tywin’s chambers with a dart dipped in wolfsbane in his neck.',
       },
     ),
     inBooks(
@@ -3927,8 +3959,8 @@ export const season1Chronicles = {
       [12, 79],
       { it: 'L’uomo senza naso', en: 'The noseless man' },
       {
-        it: "Rorge è un prigioniero delle celle nere, incatenato nella gabbia sul carro di [[yoren|Yoren]]; non ha il naso. In una locanda [[jaqen-hghar|Jaqen H'ghar]] lo presenta ad [[arya-stark|Arya]], che si fa passare per un ragazzo. Rorge la deride, le lancia contro il boccale e pretende altra birra, e la minaccia quando lei sguaina la spada di legno. Mentre [[gendry|Gendry]] porta via Arya, Rorge ride alle loro spalle.",
-        en: "Rorge is a prisoner from the black cells, chained in the cage on [[yoren|Yoren]]’s wagon; he has no nose. At an inn [[jaqen-hghar|Jaqen H'ghar]] introduces him to [[arya-stark|Arya]], who passes as a boy. Rorge mocks her, throws his tankard at her and demands more beer, and threatens her when she draws her wooden sword. As [[gendry|Gendry]] leads Arya away, Rorge laughs behind them.",
+        it: "Rorge è un prigioniero delle celle nere, incatenato sul retro del carro di [[yoren|Yoren]]; non ha il naso. In una locanda [[jaqen-hghar|Jaqen H'ghar]] lo presenta ad [[arya-stark|Arya]], che si fa passare per un ragazzo. Rorge la deride, le lancia contro il boccale e pretende altra birra, e la minaccia quando lei sguaina la spada di legno. Mentre [[gendry|Gendry]] porta via Arya, Rorge ride alle loro spalle.",
+        en: "Rorge is a prisoner from the black cells, chained in the back of [[yoren|Yoren]]’s wagon; he has no nose. At an inn [[jaqen-hghar|Jaqen H'ghar]] introduces him to [[arya-stark|Arya]], who passes as a boy. Rorge mocks her, throws his tankard at her and demands more beer, and threatens her when she draws her wooden sword. As [[gendry|Gendry]] leads Arya away, Rorge laughs behind them.",
       },
     ),
     inBooks(
@@ -3953,8 +3985,8 @@ export const season1Chronicles = {
       [12, 79],
       { it: 'Denti limati', en: 'Filed teeth' },
       {
-        it: "Mordente è il terzo prigioniero incatenato sul carro di [[yoren|Yoren]], un muto che sa solo sibilare e mostrare il moncherino della lingua. [[jaqen-hghar|Jaqen H'ghar]] dice di avergli dato lui quel nome, per i denti limati. Quando [[arya-stark|Arya]] si avvicina alla gabbia, Mordente si scaglia contro di lei, e Arya lo colpisce forte in mezzo agli occhi. Mordente si getta con tutto il peso contro le catene per afferrarla, e crolla quando le catene reggono.",
-        en: "Biter is the third prisoner chained in [[yoren|Yoren]]’s wagon, a mute who can only hiss and show the stump of his tongue. [[jaqen-hghar|Jaqen H'ghar]] says he gave him the name himself, for his filed teeth. When [[arya-stark|Arya]] comes near the cage, Biter lunges at her, and she hits him hard between the eyes. He throws all his weight against his chains to grab her, and collapses when they hold.",
+        it: "Mordente è il terzo prigioniero incatenato sul carro di [[yoren|Yoren]], un muto che sa solo sibilare e mostrare il moncherino della lingua. [[jaqen-hghar|Jaqen H'ghar]] dice di avergli dato lui quel nome, per i denti limati. Quando [[arya-stark|Arya]] si avvicina al carro, Mordente si scaglia contro di lei, e Arya lo colpisce forte in mezzo agli occhi. Mordente si getta con tutto il peso contro le catene per afferrarla, e crolla quando le catene reggono.",
+        en: "Biter is the third prisoner chained in [[yoren|Yoren]]’s wagon, a mute who can only hiss and show the stump of his tongue. [[jaqen-hghar|Jaqen H'ghar]] says he gave him the name himself, for his filed teeth. When [[arya-stark|Arya]] comes near the wagon, Biter lunges at her, and she hits him hard between the eyes. He throws all his weight against his chains to grab her, and collapses when they hold.",
       },
     ),
     inBooks(
@@ -4695,11 +4727,11 @@ export const season1Chronicles = {
       },
     ),
     onScreen(
-      [18, 121],
-      { it: 'Il terzo nome', en: 'The third name' },
+      [17, 112],
+      { it: 'Mio signore', en: 'My lord' },
       {
-        it: "[[tywin-lannister|Tywin]] marcia verso ovest e lascia Arya a servire il suo castellano, ser [[gregor-clegane|Gregor Clegane]]. Arya voleva dare a [[jaqen-hghar|Jaqen H'ghar]] il nome di Tywin, ma Jaqen era di pattuglia. Quando torna, Jaqen si rifiuta di aiutarla a fuggire. Allora Arya fa il nome di Jaqen stesso, e lo ritira solo quando lui accetta di aiutarla. A mezzanotte Arya, [[gendry|Gendry]] e [[hot-pie|Frittella]] escono dal cancello, passando davanti alle guardie che Jaqen ha ucciso e lasciato ritte ai loro posti.",
-        en: "[[tywin-lannister|Tywin]] marches west and leaves Arya to serve his castellan, Ser [[gregor-clegane|Gregor Clegane]]. She meant to give [[jaqen-hghar|Jaqen H'ghar]] Tywin’s name, but Jaqen was out on patrol. When he returns, he refuses to help her escape. So she names Jaqen himself, and takes the name back only when he agrees to help. At midnight Arya, [[gendry|Gendry]] and [[hot-pie|Hot Pie]] walk out through the gate, past guards Jaqen has killed and left standing at their posts.",
+        it: 'Mentre cerca chi ha ucciso Amory, [[tywin-lannister|Tywin]] mangia con Arya e le parla di Harrenhal e di come i draghi di Aegon la bruciarono. Nota che Arya dice “mio signore” e non “m’lord”, e sospetta che sia di nobili natali. Lei sostiene che sua madre serviva una casata nobile e le ha insegnato a parlare bene.',
+        en: 'While he hunts for Amory’s killer, [[tywin-lannister|Tywin]] eats with Arya and talks to her about Harrenhal and how Aegon’s dragons burned it. He notices that she says “my lord” and not “m’lord”, and suspects she is highborn. She claims her mother served a noble house and taught her to speak properly.',
       },
     ),
     inBooks(
@@ -4714,8 +4746,16 @@ export const season1Chronicles = {
       [18, 138],
       { it: 'Fuori da Harrenhal', en: 'Out of Harrenhal' },
       {
-        it: 'Come coppiera di [[roose-bolton|Roose Bolton]], Arya sente che [[tywin-lannister|Tywin]] ha vinto ad Approdo del Re, e le dicono che Grande Inverno è caduta e che i suoi fratelli [[bran-stark|Bran]] e [[rickon-stark|Rickon]] sono morti. Roose intende lasciare Harrenhal a [[vargo-hoat|Vargo Hoat]], e Arya con il castello. Lei dice a [[gendry|Gendry]] e [[hot-pie|Frittella]] di prepararsi e ruba a Roose una mappa e un pugnale. Alla postierla lascia cadere la moneta di Jaqen, e quando la guardia si china a raccoglierla le taglia la gola. I tre escono a cavallo dal castello.',
-        en: 'As [[roose-bolton|Roose Bolton]]’s cupbearer, Arya hears that [[tywin-lannister|Tywin]] has won at King’s Landing, and is told that Winterfell has fallen and her brothers [[bran-stark|Bran]] and [[rickon-stark|Rickon]] are dead. Roose means to leave Harrenhal to [[vargo-hoat|Vargo Hoat]], and Arya with it. She tells [[gendry|Gendry]] and [[hot-pie|Hot Pie]] to get ready, and steals a map and a dagger from Roose. At the postern she drops Jaqen’s coin, and when the guard bends for it she cuts his throat. The three ride out of the castle.',
+        it: 'Come coppiera di [[roose-bolton|Roose Bolton]], Arya sente che [[tywin-lannister|Tywin]] ha vinto ad Approdo del Re, e le dicono che Grande Inverno è caduta e che i suoi fratelli [[bran-stark|Bran]] e [[rickon-stark|Rickon]] sono morti. Roose intende lasciare Harrenhal a [[vargo-hoat|Vargo Hoat]], e Arya con il castello. Manda [[gendry|Gendry]] a prendere delle spade e [[hot-pie|Frittella]], e ruba a Roose una mappa e un pugnale. Alla postierla lascia cadere la moneta di Jaqen, e quando la guardia si china a raccoglierla le taglia la gola. I tre escono a cavallo dal castello.',
+        en: 'As [[roose-bolton|Roose Bolton]]’s cupbearer, Arya hears that [[tywin-lannister|Tywin]] has won at King’s Landing, and is told that Winterfell has fallen and her brothers [[bran-stark|Bran]] and [[rickon-stark|Rickon]] are dead. Roose means to leave Harrenhal to [[vargo-hoat|Vargo Hoat]], and Arya with it. She tells [[gendry|Gendry]] to fetch swords and [[hot-pie|Hot Pie]], and steals a map and a dagger from Roose. At the postern she drops Jaqen’s coin, and when the guard bends for it she cuts his throat. The three ride out of the castle.',
+      },
+    ),
+    onScreen(
+      [18, 121],
+      { it: 'Il terzo nome', en: 'The third name' },
+      {
+        it: "[[tywin-lannister|Tywin]] marcia verso ovest e lascia Arya a servire il suo castellano, ser [[gregor-clegane|Gregor Clegane]]. Arya voleva dare a [[jaqen-hghar|Jaqen H'ghar]] il nome di Tywin, ma Jaqen era di pattuglia. Quando torna, Jaqen si rifiuta di aiutarla a fuggire. Allora Arya fa il nome di Jaqen stesso, e lo ritira solo quando lui accetta di aiutarla. A mezzanotte Arya, [[gendry|Gendry]] e [[hot-pie|Frittella]] escono dal cancello, passando davanti alle guardie che Jaqen ha ucciso e lasciato ritte ai loro posti.",
+        en: "[[tywin-lannister|Tywin]] marches west and leaves Arya to serve his castellan, Ser [[gregor-clegane|Gregor Clegane]]. She meant to give [[jaqen-hghar|Jaqen H'ghar]] Tywin’s name, but Jaqen was out on patrol. When he returns, he refuses to help her escape. So she names Jaqen himself, and takes the name back only when he agrees to help. At midnight Arya, [[gendry|Gendry]] and [[hot-pie|Hot Pie]] walk out through the gate, past guards Jaqen has killed and left standing at their posts.",
       },
     ),
     onScreen(
@@ -5626,7 +5666,7 @@ export const season1Chronicles = {
       },
     ),
     onScreen(
-      [20, 137],
+      [20, 141],
       { it: 'Non libero di amare', en: 'Not free to love' },
       {
         it: '[[robb-stark|Robb]] va nella tenda di Catelyn per dirle che intende rompere il fidanzamento con una Frey e sposare [[talisa-maegyr|Talisa]]. Catelyn gli racconta che lei ed [[eddard-stark|Eddard]] non si amavano quando si sposarono, e che il loro amore è cresciuto col tempo, e lo mette in guardia dal rompere un giuramento per passione. Robb risponde che lei non ha il diritto di dare dell’avventato a nessuno. Contro il consiglio della madre, sposa Talisa in segreto.',
@@ -5786,7 +5826,7 @@ export const season1Chronicles = {
       },
     ),
     onScreen(
-      [20, 137],
+      [20, 141],
       { it: 'Le nozze segrete', en: 'The secret wedding' },
       {
         it: 'Robb dice a sua madre, [[catelyn-stark|Catelyn]], che ama [[talisa-maegyr|Talisa]] e non sposerà una figlia di [[walder-frey|Walder Frey]]. Catelyn lo mette in guardia dal rompere il giuramento, e gli racconta che lei e [[eddard-stark|Eddard]] non si amavano quando si sposarono, ma che il loro amore è cresciuto col tempo. Robb risponde che, dopo aver liberato [[jaime-lannister|Jaime]], lei non ha il diritto di dare dell’avventato a nessuno. Quella notte un septon sposa in segreto Robb e Talisa.',
@@ -5977,11 +6017,11 @@ export const season1Chronicles = {
       },
     ),
     inBooks(
-      [18, 121],
-      { it: 'L’uomo scuoiato sul portone', en: 'The flayed man over the gate' },
+      [17, 113],
+      { it: 'Verso Harrenhal', en: 'Toward Harrenhal' },
       {
-        it: 'Roose aveva comprato i servigi di [[vargo-hoat|Vargo Hoat]], e i prigionieri del Nord portati a Harrenhal dai Bravi Camerati erano un inganno per prendere il castello. Roose arriva al tramonto del giorno dopo e Vargo gli consegna Harrenhal. Gli portano la servetta che ha portato la zuppa, [[arya-stark|Arya]]; Roose le chiede il nome, e lei dice di chiamarsi Nymeria, Nan per gli amici. Le chiede se ha paura delle sanguisughe e la prende come coppiera. Sul corpo di guardia viene issato l’uomo scuoiato del Forte Terrore accanto al meta-lupo degli Stark.',
-        en: 'Roose had bought the service of [[vargo-hoat|Vargo Hoat]], and the northern prisoners the Brave Companions brought to Harrenhal were a ruse to take the castle. Roose arrives at evenfall the next day and Vargo turns Harrenhal over to him. He is shown the servant girl who brought the soup, [[arya-stark|Arya]], and asks her name; she says it is Nymeria, Nan for short. He asks if she is afraid of leeches, and makes her his cupbearer. The flayed man of the Dreadfort is raised over the gatehouse beside the Stark direwolf.',
+        it: 'A Delta delle Acque [[catelyn-stark|Catelyn]] viene a sapere che Roose ha preso il guado di rubino e l’incrocio, e che suo fratello Edmure gli ha ordinato di prendere Harrenhal, chiamando in suo aiuto le leve delle Torri Gemelle di ser Helman Tallhart. Roose ha anche sposato una figlia di lord [[walder-frey|Walder Frey]]. Catelyn obietta che Robb aveva lasciato quegli uomini per assicurarsi che lord Walder restasse fedele.',
+        en: 'At Riverrun [[catelyn-stark|Catelyn]] learns that Roose has taken the ruby ford and the crossroads, and that her brother Edmure has ordered him on to take Harrenhal, calling Ser Helman Tallhart’s levies from the Twins to support him. Roose has also married a daughter of Lord [[walder-frey|Walder Frey]]. Catelyn objects that Robb left those men to make sure Lord Walder kept faith.',
       },
     ),
     onScreen(
@@ -5990,6 +6030,14 @@ export const season1Chronicles = {
       {
         it: 'Dopo che [[catelyn-stark|Catelyn]] ha liberato [[jaime-lannister|Jaime]], [[robb-stark|Robb]] incontra Roose per discutere di Grande Inverno. Il piano di Robb è offrire la grazia agli uomini di [[theon-greyjoy|Theon]] se lo consegnano, così che lo abbandonino e il castello si possa riprendere con poco sangue. Roose è sicuro che funzionerà, e Robb gli affida gli ordini per il figlio bastardo di Roose. Roose se ne va quando arriva [[talisa-maegyr|Talisa]].',
         en: 'After [[catelyn-stark|Catelyn]] frees [[jaime-lannister|Jaime]], [[robb-stark|Robb]] meets Roose to discuss Winterfell. Robb’s plan is to offer mercy to [[theon-greyjoy|Theon]]’s men if they hand him over, so that they abandon him and the castle can be retaken with little bloodshed. Roose is sure it will work, and Robb sends the orders for Roose’s bastard son through him. Roose leaves when [[talisa-maegyr|Talisa]] arrives.',
+      },
+    ),
+    inBooks(
+      [18, 121],
+      { it: 'L’uomo scuoiato sul portone', en: 'The flayed man over the gate' },
+      {
+        it: 'Roose aveva comprato i servigi di [[vargo-hoat|Vargo Hoat]], e i prigionieri del Nord portati a Harrenhal dai Bravi Camerati erano un inganno per prendere il castello. Roose arriva al tramonto del giorno dopo e Vargo gli consegna Harrenhal. Gli portano la servetta che ha portato la zuppa, [[arya-stark|Arya]]; Roose le chiede il nome, e lei dice di chiamarsi Nymeria, Nan per gli amici. Le chiede se ha paura delle sanguisughe e la prende come coppiera. Sul corpo di guardia viene issato l’uomo scuoiato del Forte Terrore accanto al meta-lupo degli Stark.',
+        en: 'Roose had bought the service of [[vargo-hoat|Vargo Hoat]], and the northern prisoners the Brave Companions brought to Harrenhal were a ruse to take the castle. Roose arrives at evenfall the next day and Vargo turns Harrenhal over to him. He is shown the servant girl who brought the soup, [[arya-stark|Arya]], and asks her name; she says it is Nymeria, Nan for short. He asks if she is afraid of leeches, and makes her his cupbearer. The flayed man of the Dreadfort is raised over the gatehouse beside the Stark direwolf.',
       },
     ),
     inBooks(

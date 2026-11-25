@@ -836,6 +836,10 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${ACOK_AWOIAF}14`,
       note: 'Arya IV (site 88): the burnt bridge, the empty town and the holdfast, Ser Amory Lorch in Lord Tywin’s and King Joffrey’s name, Yoren showing his black cloak and refusing, the storm of the walls, Yoren sending Arya to the tunnel and going back to the fight; there is no sign of him when she returns.',
     },
+    '13:93': {
+      source: `${ACOK_AWOIAF}19`,
+      note: 'Arya V (site 93): the return to the holdfast the next night, Yoren found beside four Lannister men-at-arms, Arya wondering how many it took, her insistence on a grave, the burial; Cutjack, Kurz and Tarber from the towerhouse, who later leave them. Arya IV (site 88) only has no sign of him. Episode 13 orders it.',
+    },
   },
   'will': {
     '1:1': {
@@ -1187,7 +1191,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '17:chapter': {
       source: `${ACOK_AWOIAF}55`,
-      note: 'Catelyn VII (site 129): the wine, questions traded, the children and Bran’s fall admitted, “if I wanted your Bran dead I would have slain him myself”, the Mad King and the Starks, reviled for his finest act, the mockery of Ned, Brienne’s sword.',
+      note: 'Catelyn VII (site 129): the flagon sent ahead, the midnight visit, questions traded, the children and Bran’s fall admitted, “if I wanted your Bran dead I would have slain him myself”, the Mad King and the Starks, reviled for his finest act, the mockery of Ned, Brienne’s sword.',
     },
     '18:129': {
       source: `${SHOW}Jaime_Lannister`,
@@ -1195,7 +1199,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '20:137': {
       source: `${SHOW}Jaime_Lannister`,
-      note: 'Jaime Lannister page: her childhood, his mockery of her service, “she serves Catelyn”, the three hanged women, the three Stark soldiers killed, his question and her loyalty to Catelyn’s task (GOT210).',
+      note: 'Jaime Lannister page: her childhood, the three hanged women, then his mockery of her service and her answer that she serves Catelyn, the three Stark soldiers killed, his question and her loyalty to Catelyn’s task (GOT210).',
     },
   },
   'tywin-lannister': {
@@ -1237,7 +1241,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '16:112': {
       source: `${SHOW}Tywin_Lannister`,
-      note: 'Tywin Lannister page: Amory berated for the misdirected letter, Arya reading better, her literacy questioned, his father recalled, Baelish’s proposal of the Tyrell alliance, Amory dying at his chambers, Tywin thinking himself the target (GOT206).',
+      note: 'Tywin Lannister page: Amory berated for the misdirected letter, Arya reading better, her literacy questioned, his father recalled, Baelish’s proposal of the Tyrell alliance, Amory dying at his chambers (GOT206). The order follows the episode: Baelish’s visit before the talk of his father. His belief that he was the target is episode 17’s.',
     },
     '17:112': {
       source: `${SHOW}Tywin_Lannister`,
@@ -1262,6 +1266,10 @@ export const GAME_OF_THRONES_SOURCES = {
     '20:chapter': {
       source: `${ACOK_AWOIAF}65`,
       note: 'Sansa VII (site 136, ACOK_AWOIAF 62) has Tywin on the right wing; Sansa VIII (site 139) has the warhorse’s dung before the Iron Throne, Joffrey naming him Hand until he comes of age, the knight who called Joffrey an abomination killed by Meryn on Tywin’s order, and Tywin staying to hear the captives.',
+    },
+    '18:119': {
+      source: `${ACOK_AWOIAF}45`,
+      note: 'Catelyn VI (site 119): the probes at the fords held by the river lords, Lefford drowned, Crakehall taken, Marbrand thrice driven back, Gregor held off at the Stone Mill, Tywin marching southeast, and Catelyn at the map seeing the road to the headwaters of the Blackwater Rush. Episode 18 orders it, after his 18/112 story.',
     },
   },
   'kevan-lannister': {
@@ -1659,7 +1667,7 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Gendry`,
       note: 'Gendry page, Season 2: the gold cloaks sent off by Yoren, Gendry seeing through Arya’s disguise, her identity confided and his embarrassment (GOT202). Jon Arryn and Eddard questioning him is on the Arya Stark page (GOT202). Chapter 93, Arya V, where the books tell the reveal, orders it.',
     },
-    '13:93': {
+    '13:chapter': {
       source: `${ACOK_AWOIAF}19`,
       note: 'Arya V (site 93): carrying Lommy, Gendry thinking he will die and knowing she is a girl, Arya naming herself, “m’lady” until she knocks him down, Gendry caught and beaten at the village and shoved into the storehouse, Arya and Hot Pie taken. Episode 13 orders it.',
     },
@@ -1674,6 +1682,10 @@ export const GAME_OF_THRONES_SOURCES = {
     '18:chapter': {
       source: `${ACOK_AWOIAF}64`,
       note: 'Arya IX (site 121) has Gendry refusing to help free the northmen; Arya X (site 138) has the lie that Vargo will cut off a foot from each servant, swords and Hot Pie fetched, the meeting near the Tower of Ghosts, the guard killed, the ride out. Episode 18 orders it.',
+    },
+    '13:episode': {
+      source: `${SHOW}Gendry`,
+      note: 'Gendry page, Season 2: the gold cloaks back with Lannister soldiers, Yoren killed, Gendry captured, Arya passing off the dead recruit with the bull’s head helm as Gendry (GOT203); the prisoners taken to Harrenhal is the episode synopsis. Amory and Polliver stay unnamed: their show gates are 16 and 14. Chapter 93, where the books tell the capture, orders it.',
     },
   },
   'ilyn-payne': {
@@ -1865,7 +1877,11 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '18:chapter': {
       source: `${ACOK_AWOIAF}38`,
-      note: 'Arya VII (site 104) has Chiswyck’s tale of the brewer’s girl and the silver; Arya VIII (site 112) has Gregor commanding the van and riding out last with Polliver wearing Gendry’s helm. Episode 18 orders it.',
+      note: 'Arya VIII (site 112): Gregor to command Tywin’s van, out of Arya’s reach with Polliver and the rest, riding out last behind the lords with Polliver wearing Gendry’s helm. Episode 18 orders it.',
+    },
+    '18:119': {
+      source: `${ACOK_AWOIAF}45`,
+      note: 'Catelyn VI (site 119): Edmure holding off Gregor in fierce fighting at the Stone Mill, Leo Lefford drowned, Tywin marching away southeast, the news brought by Edmure’s messenger. Edmure is unlinked: his show gate is 23. Episode 18 orders it.',
     },
   },
   'beric-dondarrion': {
@@ -2048,7 +2064,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '31:88': {
       source: `${ACOK_AWOIAF}14`,
-      note: 'Arya IV (site 88): Lommy smashing the head of the man wrestling Dobber, Dobber dead, Lommy found bleeding from a spear wound in his calf and taken along to the tunnel. Episode 31 orders it.',
+      note: 'Arya IV (site 88): Lommy smashing the head of the man wrestling Dobber, Dobber dead, Lommy found bleeding from a spear wound in his calf; that he escapes with the others is told at 93, so the story stops at the wound. Episode 31 orders it.',
     },
     '31:93': {
       source: `${ACOK_AWOIAF}19`,
@@ -2066,7 +2082,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '13:episode': {
       source: `${SHOW}Jaqen_H'ghar`,
-      note: 'Jaqen H’ghar page: the dropped torch, his call for help as flames reach the bars, the axe from Arya, his not fighting the Lannister men and his surprise (GOT203).',
+      note: 'Jaqen H’ghar page: the dropped torch, his call for help as flames reach the bars, the axe from Arya, his not fighting the Lannister men and his surprise (GOT203). That the three prisoners survive is told only in episode 15, so the story stops before it.',
     },
     '13:chapter': {
       source: `${ACOK_AWOIAF}14`,
@@ -2082,7 +2098,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '16:episode': {
       source: `${SHOW}Jaqen_H'ghar`,
-      note: 'Jaqen H’ghar page and Amory Lorch page: Arya’s urgent second name, his reluctance, the wolfsbane dart seconds before Amory reaches Tywin, Tywin taking it for an attempt on himself (GOT206).',
+      note: 'Jaqen H’ghar page and Amory Lorch page: Arya’s urgent second name, his reluctance, the wolfsbane dart seconds before Amory reaches Tywin (GOT206). Tywin’s belief that he was the target is episode 17’s and is left out.',
     },
     '16:chapter': {
       source: `${ACOK_AWOIAF}38`,
@@ -2515,6 +2531,10 @@ export const GAME_OF_THRONES_SOURCES = {
     '20:121': {
       source: `${SHOW}Arya_Stark`,
       note: 'Arya Stark page: Jaqen waiting, the offer to take her to Braavos, her refusal to find her family, the coin and “valar morghulis”, the changed face and the farewell by name (GOT210).',
+    },
+    '17:112': {
+      source: EPISODE_17,
+      note: 'Episode synopsis and Tywin Lannister page: Tywin hunting Amory’s killer, the meal and Harrenhal burned by Aegon’s dragons, “my lord” instead of “m’lord”, her mother said to have served royalty and taught her to speak (GOT207). Chapter 112 orders it, as Tywin’s episode-17 story.',
     },
   },
   'jory-cassel': {
@@ -2988,7 +3008,7 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Catelyn_Stark`,
       note: 'Catelyn Stark page: Jaime released to be exchanged for her daughters, Brienne escorting him out and down the river by rowboat, Robb’s fury, her betrayal and weakened position, the guard on her (GOT208).',
     },
-    '20:137': {
+    '20:141': {
       source: `${SHOW}Catelyn_Stark`,
       note: 'Catelyn Stark page: Robb in her tent about breaking the Frey betrothal for Talisa, her marriage to Eddard and their love built over time, “no right to call anyone reckless”, the secret wedding (GOT210).',
     },
@@ -3066,7 +3086,7 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Robb_Stark`,
       note: 'Robb Stark page: back from the Crag with Talisa, Jaime freed by Catelyn, his fury and her guard, the plan of mercy for Theon’s men sent through Roose, Talisa’s past and the night together despite the Frey betrothal (GOT207, GOT208).',
     },
-    '20:137': {
+    '20:141': {
       source: `${SHOW}Robb_Stark`,
       note: 'Robb Stark page: his love for Talisa confessed to Catelyn, her warning about the Frey oath and her marriage to Ned, “no right to call anyone reckless” after Jaime’s release, the secret marriage before a septon (GOT210).',
     },
@@ -3177,6 +3197,10 @@ export const GAME_OF_THRONES_SOURCES = {
     '18:138': {
       source: `${ACOK_AWOIAF}64`,
       note: 'Arya X (site 138): leeched while the Freys urge peace after the Blackwater, “not a man to be undone”, the order to burn Darry and kill the captives in King Robb’s name, the wolf hunt, the burnt book, Harrenhal for Vargo with Arya to serve him. Episode 18 orders it.',
+    },
+    '17:113': {
+      source: `${ACOK_AWOIAF}39`,
+      note: 'Catelyn V (site 113): Roose, who took the ruby ford and the crossroads, ordered by Edmure to take Harrenhal with Helman Tallhart’s levies from the Twins, his marriage to one of Lord Walder’s daughters, Catelyn’s objection that Robb left those men to keep Walder Frey faithful. Episode 17 orders it.',
     },
   },
   'galbart-glover': {
@@ -3361,7 +3385,7 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Talisa_Stark`,
       note: 'Talisa Stark page: medical supplies and the trip to the Crag (GOT207), Robb’s father and the engagement, the news about Jaime, the slave who saved her brother, the night together (GOT208).',
     },
-    '20:137': {
+    '20:141': {
       source: `${SHOW}Talisa_Stark`,
       note: 'Talisa Stark page: Robb telling Catelyn of his love, the secret marriage before a septon, their lives pledged (GOT210).',
     },
@@ -3375,9 +3399,9 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${ACOK_AWOIAF}14`,
       note: 'Arya IV (site 88): the stout man with a manticore on his shield, bannerman to Lord Tywin, the true king Joffrey, Yoren’s refusals, the order to storm the walls and kill everyone. Episode 16, his show gate, orders it.',
     },
-    '16:112': {
+    '18:112': {
       source: `${ACOK_AWOIAF}38`,
-      note: 'Arya VII (site 104): fewer men, many wounded, after chasing Beric around the Gods Eye, Jaqen, Rorge and Biter at the end of the column; Arya VIII (site 112): castellan of Harrenhal with the Brave Companions left to forage. Episode 16 orders it.',
+      note: 'Arya VII (site 104): fewer men, many wounded, after chasing Beric around the Gods Eye, Jaqen, Rorge and Biter at the end of the column; Arya VIII (site 112): castellan of Harrenhal with the Brave Companions left to forage. Episode 18 orders it, as his castellan role step does.',
     },
     '16:121': {
       source: `${ACOK_AWOIAF}47`,
@@ -3397,7 +3421,7 @@ export const GAME_OF_THRONES_SOURCES = {
   'tickler': {
     '15:episode': {
       source: `${SHOW}Tickler`,
-      note: 'Tickler page: the rat and the heated bucket, gold, jewels and the Brotherhood, prisoners chosen by Gregor, Gendry saved by Tywin (GOT204), the first name given to Jaqen and the broken neck (GOT205). Chapter 100 orders it.',
+      note: 'Tickler page: the rat and the heated bucket, gold, jewels and the Brotherhood, prisoners chosen by Gregor, Gendry saved by Tywin (GOT204), the first name given to Jaqen and the broken neck (GOT205). Chapter 104 orders it, as his show status does.',
     },
     '15:chapter': {
       source: `${ACOK_AWOIAF}26`,

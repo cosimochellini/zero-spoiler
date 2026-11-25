@@ -481,7 +481,7 @@ const STORIES: Row[] = [
     id: 'talisa-maegyr',
     medium: 'show',
     episode: 20,
-    chapter: 137,
+    chapter: 141,
     title: 'Married in secret',
   },
   {
@@ -501,7 +501,7 @@ const STORIES: Row[] = [
   {
     id: 'amory-lorch',
     medium: 'books',
-    episode: 16,
+    episode: 18,
     chapter: 112,
     title: 'Castellan',
   },
@@ -528,17 +528,17 @@ const STORIES: Row[] = [
   },
   {
     id: 'tickler',
-    medium: 'show',
-    episode: 15,
-    chapter: 100,
-    title: 'Questions at Harrenhal',
-  },
-  {
-    id: 'tickler',
     medium: 'books',
     episode: 15,
     chapter: 100,
     title: 'The ordinary man',
+  },
+  {
+    id: 'tickler',
+    medium: 'show',
+    episode: 15,
+    chapter: 104,
+    title: 'Questions at Harrenhal',
   },
   {
     id: 'chiswyck',
@@ -810,9 +810,9 @@ const STORIES: Row[] = [
   {
     id: 'arya-stark',
     medium: 'show',
-    episode: 18,
-    chapter: 121,
-    title: 'The third name',
+    episode: 17,
+    chapter: 112,
+    title: 'My lord',
   },
   {
     id: 'arya-stark',
@@ -827,6 +827,13 @@ const STORIES: Row[] = [
     episode: 18,
     chapter: 138,
     title: 'Out of Harrenhal',
+  },
+  {
+    id: 'arya-stark',
+    medium: 'show',
+    episode: 18,
+    chapter: 121,
+    title: 'The third name',
   },
   {
     id: 'arya-stark',
@@ -859,16 +866,16 @@ const STORIES: Row[] = [
   {
     id: 'gendry',
     medium: 'show',
-    episode: 14,
-    chapter: 100,
-    title: 'The smith',
+    episode: 13,
+    chapter: 93,
+    title: 'The bull helm',
   },
   {
     id: 'gendry',
     medium: 'show',
-    episode: 18,
-    chapter: 138,
-    title: 'Through the gate',
+    episode: 14,
+    chapter: 100,
+    title: 'The smith',
   },
   {
     id: 'gendry',
@@ -876,6 +883,13 @@ const STORIES: Row[] = [
     episode: 18,
     chapter: 138,
     title: 'The postern gate',
+  },
+  {
+    id: 'gendry',
+    medium: 'show',
+    episode: 18,
+    chapter: 138,
+    title: 'Through the gate',
   },
   {
     id: 'hot-pie',
@@ -942,6 +956,13 @@ const STORIES: Row[] = [
     title: 'Open in the king’s name',
   },
   {
+    id: 'yoren',
+    medium: 'books',
+    episode: 13,
+    chapter: 93,
+    title: 'The grave',
+  },
+  {
     id: 'robb-stark',
     medium: 'show',
     episode: 11,
@@ -1001,7 +1022,7 @@ const STORIES: Row[] = [
     id: 'robb-stark',
     medium: 'show',
     episode: 20,
-    chapter: 137,
+    chapter: 141,
     title: 'The secret wedding',
   },
   {
@@ -1063,6 +1084,13 @@ const STORIES: Row[] = [
   {
     id: 'tywin-lannister',
     medium: 'books',
+    episode: 18,
+    chapter: 119,
+    title: 'The fords of the Red Fork',
+  },
+  {
+    id: 'tywin-lannister',
+    medium: 'books',
     episode: 20,
     chapter: 139,
     title: 'The Hand in the throne room',
@@ -1110,6 +1138,13 @@ const STORIES: Row[] = [
     title: 'Command of the van',
   },
   {
+    id: 'gregor-clegane',
+    medium: 'books',
+    episode: 18,
+    chapter: 119,
+    title: 'The Stone Mill',
+  },
+  {
     id: 'roose-bolton',
     medium: 'show',
     episode: 14,
@@ -1126,9 +1161,9 @@ const STORIES: Row[] = [
   {
     id: 'roose-bolton',
     medium: 'books',
-    episode: 18,
-    chapter: 121,
-    title: 'The flayed man over the gate',
+    episode: 17,
+    chapter: 113,
+    title: 'Toward Harrenhal',
   },
   {
     id: 'roose-bolton',
@@ -1136,6 +1171,13 @@ const STORIES: Row[] = [
     episode: 18,
     chapter: 129,
     title: 'Mercy for Theon’s men',
+  },
+  {
+    id: 'roose-bolton',
+    medium: 'books',
+    episode: 18,
+    chapter: 121,
+    title: 'The flayed man over the gate',
   },
   {
     id: 'roose-bolton',
@@ -1267,7 +1309,7 @@ const STORIES: Row[] = [
     id: 'catelyn-stark',
     medium: 'show',
     episode: 20,
-    chapter: 137,
+    chapter: 141,
     title: 'Not free to love',
   },
   {

@@ -214,8 +214,8 @@ export const season2Chronicles = {
       [11, 81],
       { it: 'L’inviato di Robb', en: 'Robb’s envoy' },
       {
-        it: 'Ser Alton Lannister, lontano cugino dei Lannister, è stato fatto prigioniero combattendo contro l’esercito del Nord. [[robb-stark|Robb Stark]] lo manda ad Approdo del Re con le sue condizioni: la liberazione delle sorelle, le ossa del padre, e l’indipendenza del Nord e delle Terre dei Fiumi. Alton trova onorevoli le prime richieste ma dubita del resto, e ricorda a Robb che [[joffrey-baratheon|Joffrey]] è un Baratheon. Robb risponde: “Davvero?”',
-        en: 'Ser Alton Lannister, a distant cousin of the Lannisters, was taken prisoner fighting the northern army. [[robb-stark|Robb Stark]] sends him to King’s Landing with his terms: the release of his sisters, his father’s bones, and a free North and riverlands. Alton calls the first demands honourable but doubts the rest, and reminds Robb that [[joffrey-baratheon|Joffrey]] is a Baratheon. Robb answers, “Is he?”',
+        it: 'Ser Alton Lannister, cugino dei Lannister, è stato fatto prigioniero combattendo contro l’esercito del Nord. [[robb-stark|Robb Stark]] lo manda ad Approdo del Re con le sue condizioni: la liberazione delle sorelle, le ossa del padre, e l’indipendenza del Nord e delle Terre dei Fiumi. Alton trova onorevoli le prime richieste ma dubita del resto, e ricorda a Robb che [[joffrey-baratheon|Joffrey]] è un Baratheon. Robb risponde: “Davvero?”',
+        en: 'Ser Alton Lannister, a cousin of the Lannisters, was taken prisoner fighting the northern army. [[robb-stark|Robb Stark]] sends him to King’s Landing with his terms: the release of his sisters, his father’s bones, and a free North and riverlands. Alton calls the first demands honourable but doubts the rest, and reminds Robb that [[joffrey-baratheon|Joffrey]] is a Baratheon. Robb answers, “Is he?”',
       },
     ),
     onScreen(
@@ -271,11 +271,11 @@ export const season2Chronicles = {
       },
     ),
     onScreen(
-      [20, 137],
+      [20, 141],
       { it: 'Sposa in segreto', en: 'Married in secret' },
       {
-        it: 'Talisa è rimasta nell’accampamento di [[robb-stark|Robb]] a curare i feriti. Robb dice a sua madre, [[catelyn-stark|Catelyn]], che ama Talisa e che non sposerà una Frey, nonostante gli avvertimenti di lei sul giuramento che ha fatto. Quella notte, davanti a un septon, Talisa e Robb si sposano in segreto e si promettono la vita l’uno all’altra.',
-        en: 'Talisa has stayed in [[robb-stark|Robb]]’s camp, tending the wounded. Robb tells his mother, [[catelyn-stark|Catelyn]], that he loves Talisa and will not marry a Frey, despite her warnings about the oath he swore. That night, before a septon, Talisa and Robb are married in secret and pledge their lives to each other.',
+        it: '[[robb-stark|Robb]] dice a sua madre, [[catelyn-stark|Catelyn]], che ama Talisa e che non sposerà una Frey, nonostante gli avvertimenti di lei sul giuramento che ha fatto. Quella notte, davanti a un septon, Talisa e Robb si sposano in segreto e si promettono la vita l’uno all’altra.',
+        en: '[[robb-stark|Robb]] tells his mother, [[catelyn-stark|Catelyn]], that he loves Talisa and will not marry a Frey, despite her warnings about the oath he swore. That night, before a septon, Talisa and Robb are married in secret and pledge their lives to each other.',
       },
     ),
   ],
@@ -297,7 +297,7 @@ export const season2Chronicles = {
       },
     ),
     inBooks(
-      [16, 112],
+      [18, 112],
       { it: 'Castellano', en: 'Castellan' },
       {
         it: "Amory è arrivato a Harrenhal con meno uomini di prima, molti dei quali feriti, dopo aver inseguito [[beric-dondarrion|Beric Dondarrion]] intorno all’Occhio degli Dei; [[jaqen-hghar|Jaqen H'ghar]], [[rorge|Rorge]] e [[biter|Mordente]] erano in coda alla sua colonna. Quando l’esercito di [[tywin-lannister|Tywin]] parte, Tywin lascia Amory come castellano di Harrenhal, con i suoi uomini e con i Bravi Camerati di [[vargo-hoat|Vargo Hoat]], rimasti a procurare provviste.",
@@ -332,20 +332,20 @@ export const season2Chronicles = {
     ),
   ],
   'tickler': [
-    onScreen(
-      [15, 100],
-      { it: 'Domande a Harrenhal', en: 'Questions at Harrenhal' },
-      {
-        it: "Il Tickler è il torturatore degli uomini di [[gregor-clegane|ser Gregor Clegane]] a Harrenhal. Ogni giorno interroga un prigioniero scelto da Gregor, con un topo in un secchio arroventato legato al petto, chiedendo dell’oro nascosto e della Fratellanza, e va avanti finché il prigioniero non muore. [[gendry|Gendry]] si salva quando [[tywin-lannister|Tywin]] fa smettere la tortura. [[arya-stark|Arya]] dà il nome del Tickler a [[jaqen-hghar|Jaqen H'ghar]] come prima delle tre morti, e il Tickler viene trovato nel cortile con il collo spezzato.",
-        en: "The Tickler is the torturer among Ser [[gregor-clegane|Gregor Clegane]]’s men at Harrenhal. Each day he questions a prisoner Gregor picks, with a rat in a heated bucket strapped to the chest, asking about hidden gold and the Brotherhood, and goes on until the prisoner dies. [[gendry|Gendry]] is spared when [[tywin-lannister|Tywin]] stops the torture. [[arya-stark|Arya]] gives the Tickler’s name to [[jaqen-hghar|Jaqen H'ghar]] as the first of three deaths, and the Tickler is found in the courtyard with his neck broken.",
-      },
-    ),
     inBooks(
       [15, 100],
       { it: 'L’uomo qualunque', en: 'The ordinary man' },
       {
         it: 'Il Tickler è un uomo dall’aspetto qualunque tra i soldati di [[gregor-clegane|ser Gregor Clegane]]. In un villaggio sull’Occhio degli Dei interroga il prigioniero che Gregor sceglie ogni mattina, a volte aiutato da [[chiswyck|Chiswyck]], chiedendo del cibo e dei beni nascosti e di [[beric-dondarrion|Beric Dondarrion]], finché il prigioniero non muore. Durante la marcia verso Harrenhal è più silenzioso degli altri, e [[arya-stark|Arya]] lo trova quasi troppo spaventoso per odiarlo, anche se sussurra il suo nome con gli altri. Con lui c’è [[polliver|Polliver]].',
         en: 'The Tickler is an ordinary-looking man among Ser [[gregor-clegane|Gregor Clegane]]’s soldiers. In a village on the Gods Eye he questions the prisoner Gregor picks each morning, sometimes helped by [[chiswyck|Chiswyck]], asking about hidden food and valuables and about [[beric-dondarrion|Beric Dondarrion]], until the prisoner dies. On the march to Harrenhal he is quieter than most, and [[arya-stark|Arya]] finds him almost too frightening to hate, though she whispers his name with the rest. [[polliver|Polliver]] rides with him.',
+      },
+    ),
+    onScreen(
+      [15, 104],
+      { it: 'Domande a Harrenhal', en: 'Questions at Harrenhal' },
+      {
+        it: "Il Tickler è il torturatore degli uomini di [[gregor-clegane|ser Gregor Clegane]] a Harrenhal. Ogni giorno interroga un prigioniero scelto da Gregor, con un topo in un secchio arroventato legato al petto, chiedendo dell’oro nascosto e della Fratellanza, e va avanti finché il prigioniero non muore. [[gendry|Gendry]] si salva quando [[tywin-lannister|Tywin]] fa smettere la tortura. [[arya-stark|Arya]] dà il nome del Tickler a [[jaqen-hghar|Jaqen H'ghar]] come prima delle tre morti, e il Tickler viene trovato nel cortile con il collo spezzato.",
+        en: "The Tickler is the torturer among Ser [[gregor-clegane|Gregor Clegane]]’s men at Harrenhal. Each day he questions a prisoner Gregor picks, with a rat in a heated bucket strapped to the chest, asking about hidden gold and the Brotherhood, and goes on until the prisoner dies. [[gendry|Gendry]] is spared when [[tywin-lannister|Tywin]] stops the torture. [[arya-stark|Arya]] gives the Tickler’s name to [[jaqen-hghar|Jaqen H'ghar]] as the first of three deaths, and the Tickler is found in the courtyard with his neck broken.",
       },
     ),
   ],
@@ -390,7 +390,7 @@ export const season2Chronicles = {
       [15, 104],
       { it: 'I Bravi Camerati', en: 'The Brave Companions' },
       {
-        it: 'Vargo Hoat, altissimo e magro come un bastone, guida i Bravi Camerati, mercenari al soldo di lord [[tywin-lannister|Tywin]]. Arrivano a Harrenhal e vengono alloggiati nella Torre della Vedova. La prima notte uno scudiero viene ucciso e due mercenari restano feriti in una rissa, e Tywin li fa impiccare entrambi. [[weese|Weese]] avverte [[arya-stark|Arya]] che non vuole conoscerli. Dopo poco la compagnia riparte per le sue razzie.',
+        it: 'Vargo Hoat, altissimo e magro come un bastone, guida i Bravi Camerati, mercenari al soldo di lord [[tywin-lannister|Tywin]]. Arrivano a Harrenhal e vengono alloggiati nella Torre della Vedova. La prima notte uno scudiero viene ucciso e due mercenari restano feriti in una rissa, e Tywin li fa impiccare entrambi. [[weese|Weese]] avverte [[arya-stark|Arya]] che è meglio per lei non conoscerli. Dopo poco la compagnia riparte per le sue razzie.',
         en: 'Vargo Hoat, very tall and thin as a stick, leads the Brave Companions, sellswords in Lord [[tywin-lannister|Tywin]]’s pay. They arrive at Harrenhal and are housed in the Widow’s Tower. On their first night a squire is killed and two of the sellswords are wounded in a brawl, and Tywin hangs them both. [[weese|Weese]] warns [[arya-stark|Arya]] that she does not want to know them. Before long the company rides out again to raid.',
       },
     ),
@@ -398,16 +398,16 @@ export const season2Chronicles = {
       [18, 121],
       { it: 'Il voltagabbana', en: 'The turncoat' },
       {
-        it: 'Vargo Hoat torna a Harrenhal con cento prigionieri del Nord, tra cui il loro comandante, Robett Glover, e dice che [[roose-bolton|Roose Bolton]] è fuggito. [[amory-lorch|Ser Amory Lorch]], ora castellano, li fa rinchiudere in una cella. Quella notte i Bravi Camerati si rivoltano contro gli uomini dell’ovest, e gli uomini del Nord vengono liberati. Il giorno dopo Vargo consegna il castello a Roose, che aveva comprato i suoi servigi: i prigionieri erano un inganno. I suoi uomini portano Amory nudo per il castello e lo gettano in pasto a un orso in gabbia.',
-        en: 'Vargo Hoat returns to Harrenhal with a hundred northern prisoners, among them their commander, Robett Glover, and says that [[roose-bolton|Roose Bolton]] has fled. Ser [[amory-lorch|Amory Lorch]], now castellan, has them locked in a cell. That night the Brave Companions turn on the westermen, and the northmen are freed. The next day Vargo hands the castle to Roose, who had bought his service; the prisoners were a ruse. His men parade Amory naked through the castle and feed him to a caged bear.',
+        it: 'Vargo Hoat torna a Harrenhal con cento prigionieri del Nord, tra cui il loro comandante, Robett Glover, e dice che [[roose-bolton|Roose Bolton]] è fuggito. [[amory-lorch|Ser Amory Lorch]], ora castellano, li fa rinchiudere in una cella. Quella notte i Bravi Camerati si rivoltano contro gli uomini dell’ovest, e gli uomini del Nord vengono liberati. Il giorno dopo Vargo consegna il castello a Roose, che aveva comprato i suoi servigi: i prigionieri erano un inganno. Gli uomini di Vargo portano Amory nudo per il castello e lo gettano in pasto a un orso in gabbia.',
+        en: 'Vargo Hoat returns to Harrenhal with a hundred northern prisoners, among them their commander, Robett Glover, and says that [[roose-bolton|Roose Bolton]] has fled. Ser [[amory-lorch|Amory Lorch]], now castellan, has them locked in a cell. That night the Brave Companions turn on the westermen, and the northmen are freed. The next day Vargo hands the castle to Roose, who had bought his service; the prisoners were a ruse. Vargo’s men parade Amory naked through the castle and feed him to a caged bear.',
       },
     ),
     inBooks(
       [18, 138],
       { it: 'Harrenhal promessa', en: 'Harrenhal promised' },
       {
-        it: '[[roose-bolton|Roose Bolton]] tiene Harrenhal con i Bravi Camerati di Vargo Hoat. Molti dei servi che lavoravano per i Lannister sono stati uccisi e le loro teste messe sulle picche. Roose intende tornare a nord e lasciare Harrenhal a Vargo, e dice alla sua coppiera, [[arya-stark|Arya]], che resterà a servire il caprone. Per convincere [[gendry|Gendry]] a fuggire con lei, Arya gli racconta che Vargo vuole tagliare un piede a ogni servo.',
-        en: '[[roose-bolton|Roose Bolton]] holds Harrenhal with Vargo Hoat’s Brave Companions. Many of the servants who worked for the Lannisters have been killed and their heads put on spikes. Roose means to go back north and give Harrenhal to Vargo, and tells his cupbearer, [[arya-stark|Arya]], that she will stay to serve the goat. To get [[gendry|Gendry]] to flee with her, Arya tells him that Vargo means to cut a foot off every servant.',
+        it: '[[roose-bolton|Roose Bolton]] tiene Harrenhal con i Bravi Camerati di Vargo Hoat. Molti dei servi che lavoravano per i Lannister sono stati uccisi e le loro teste messe sulle picche. Roose intende tornare a nord e lasciare Harrenhal a Vargo, e dice alla sua coppiera, [[arya-stark|Arya]], che resterà a servire il caprone. Per convincere [[gendry|Gendry]] a fuggire con lei, Arya gli mente dicendo che Vargo vuole tagliare un piede a ogni servo.',
+        en: '[[roose-bolton|Roose Bolton]] holds Harrenhal with Vargo Hoat’s Brave Companions. Many of the servants who worked for the Lannisters have been killed and their heads put on spikes. Roose means to go back north and give Harrenhal to Vargo, and tells his cupbearer, [[arya-stark|Arya]], that she will stay to serve the goat. To get [[gendry|Gendry]] to flee with her, Arya lies to him that Vargo means to cut a foot off every servant.',
       },
     ),
   ],
