@@ -2406,7 +2406,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '11:chapter': {
       source: WF_BRAN_I,
-      note: 'Bran I (site 78): the wolf dreams, the wolves confined to the godswood after Shaggydog bit Little Walder, the answers about the howling, the red comet, Bran howling until Luwin comes, turning into a wolf when he sleeps, the sleeping draught, and the dream of the godswood walls. The Frey wards stay unnamed: their book gate is 90.',
+      note: 'Bran I (site 78): the wolf dreams, the wolves confined to the godswood after Shaggydog bit Little Walder, the answers about the howling, the red comet, Bran howling until Luwin comes, turning into a wolf when he sleeps, the sleeping draught, and the dream of the godswood walls, which his brother circles while Summer has learned it does no good. The Frey wards stay unnamed: their book gate is 90.',
     },
     '11:90': {
       source: WF_BRAN_II,
@@ -2440,9 +2440,13 @@ export const GAME_OF_THRONES_SOURCES = {
       source: WF_BRAN_VI,
       note: 'Bran VI (site 120): Summer’s fall from the sentinel tree, Rodrik gone eight days to Torrhen’s Square, Theon calling himself a prince, the ironmen swimming the moat, the people gathered, Jojen’s dream come true with Mikken drowning on his own blood, Osha and Reek joining Theon, Bran’s disappointment and his persuading the rest not to fight. Jojen is named unlinked: his show gate is 22.',
     },
-    '17:124': {
+    '17:episode': {
       source: `${SHOW}Rickon_Stark`,
       note: 'Rickon Stark page (GOT207): the shepherd’s farm, Rickon remembering the boys Bran sent there and wanting food, Bran cautious about putting them in danger, Theon losing the scent and the charred corpses claimed as Bran and Rickon; the Bran Stark page has the same (GOT207).',
+    },
+    '17:chapter': {
+      source: WF_THEON_IV,
+      note: 'Added after review. Theon IV (site 124): the silence of the direwolves, Wex finding Bran and Rickon gone, the wolves gone, Squint and Drennan dead at the Hunter’s Gate, Reek naming the six missing, the hunt into the wolfswood and the scent lost at a brook; Bran’s status turns free at 17/124.',
     },
     '18:130': {
       source: EPISODE_18,
@@ -2478,13 +2482,21 @@ export const GAME_OF_THRONES_SOURCES = {
       source: WF_BRAN_III,
       note: 'Bran III (site 95): Rickon at Bran’s right, his hair uncut since their mother left because he bit the last girl who tried, screaming happily with the Walders, and his answer that the wolves are in the godswood because Shaggydog was bad. Bran I (site 78) has Rickon taking to the Walders after Shaggydog’s bite.',
     },
-    '16:120': {
+    '16:episode': {
       source: `${SHOW}Rickon_Stark`,
       note: 'Rickon Stark page (GOT206): the feint and the castle seized, Bran forced to surrender, Rickon distraught at the public execution and pleading with Bran for Rodrik, and Osha freeing them and leading them out; the Shaggydog and Summer pages have the wolves fleeing with them (GOT206).',
     },
-    '17:124': {
+    '16:chapter': {
+      source: WF_BRAN_VI,
+      note: 'Added after review. Bran VI (site 120): Rodrik gone to Torrhen’s Square, the ironmen swimming the moat and unlocking the postern gate, Theon calling himself a prince, the people gathered, and Mikken dying as he refuses to kneel; Rickon’s captivity is his status pin at 16/120, the summary not naming him in the hall.',
+    },
+    '17:episode': {
       source: `${SHOW}Rickon_Stark`,
       note: 'Rickon Stark page (GOT207): the shepherd’s farm, the two boys Bran sent there, Rickon wanting food and Bran’s caution, Theon losing the scent, and the charred corpses claimed as Bran and Rickon; the Dagmer page has the cracked walnut shells, a favourite of Rickon (GOT207).',
+    },
+    '17:chapter': {
+      source: WF_THEON_IV,
+      note: 'Added after review. Theon IV (site 124): the silent wolves, Bran and Rickon gone, the wolves gone, the dead guards at the Hunter’s Gate, Theon realizing Osha would need to carry Rickon on foot, the hunt and the brook; Rickon’s status turns free at 17/124.',
     },
     '20:episode': {
       source: `${SHOW}Rickon_Stark`,
@@ -2554,7 +2566,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '17:chapter': {
       source: WF_THEON_IV,
-      note: 'Theon IV (site 124): the silence of the wolves, Wex finding the Starks gone, the six missing, Urzen and Black Lorren with the dead guards, the hunt into the wolfswood with Luwin, Farlen and twelve dogs, mercy promised, the brook, Reek’s mill by the Acorn Water and his sack, and mercy was for this morning.',
+      note: 'Theon IV (site 124): the silence of the wolves, Wex finding the Starks gone, Reek reporting the six missing, Urzen and Black Lorren with the dead guards, the hunt into the wolfswood with Luwin, Farlen and twelve dogs, mercy promised, the brook, Reek’s mill by the Acorn Water and his sack, and mercy was for this morning.',
     },
     '18:episode': {
       source: `${SHOW}Theon_Greyjoy`,
@@ -2624,7 +2636,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '20:chapter': {
       source: WF_BRAN_VII,
-      note: 'Bran VII (site 143): Summer leading them to Luwin near death, his knowing the bodies were not Bran and Rickon and never telling Theon, Robb’s heirs to be separated, ironmen west and the Bastard of Bolton east, Bran his father’s son, and the boon that sends the others away.',
+      note: 'Bran VII (site 143): Summer leading them to Luwin near death, his knowing the bodies were not Bran and Rickon and never telling Theon, Robb’s heirs to be separated, ironmen west and the Bastard of Bolton east, Bran his father’s son, and the boon that sends the others away; that Osha gives him a quick death follows his status pin at 20/143 and the show’s telling, the chapter leaving the boon unspoken.',
     },
   },
   'old-nan': {
@@ -2661,6 +2673,10 @@ export const GAME_OF_THRONES_SOURCES = {
     '16:120': {
       source: `${SHOW}Hodor`,
       note: 'Hodor page (GOT206): Hodor looking on as Theon declares himself Prince of Winterfell, the castle seized, and Osha killing a guard and leading Hodor, Bran and Rickon out of the gate; the Summer page has the wolves fleeing too (GOT206).',
+    },
+    '16:124': {
+      source: WF_THEON_IV,
+      note: 'Added after review. Theon IV (site 124): Hodor among the six missing, his tracks found with the Reeds’, Dancer in the stables, Bran in the basket on Hodor’s back as Theon reckons, Hodor among those Theon agrees to spare, and the brook. Ordered at 16/124 with Osha’s pin.',
     },
     '20:episode': {
       source: `${SHOW}Hodor`,
@@ -2711,6 +2727,10 @@ export const GAME_OF_THRONES_SOURCES = {
     '16:chapter': {
       source: WF_BRAN_VI,
       note: 'Bran VI (site 120): the household gathered, most defying Theon, Mikken killed refusing to bend the knee, Reek and Osha joining his service, Bran’s disappointment and his persuading the rest not to fight.',
+    },
+    '16:124': {
+      source: WF_THEON_IV,
+      note: 'Added after review. Theon IV (site 124): Osha among the six missing, Drennan killed by the woman as Theon surmises, the day-long hunt, and mercy for all but Osha, who took an oath and broke it. Ordered at 16/124, her role and status pin.',
     },
     '18:130': {
       source: `${SHOW}Osha`,
@@ -2984,7 +3004,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '15:109': {
       source: WF_BRAN_V,
-      note: 'Bran V (site 109): Rodrik back with Reek, the murder of Lady Hornwood, the Bastard shot as he rode away, Reek kept for Robb’s judgement, Manderly and Bolton fighting in the Hornwood, the raiders on the Stony Shore, and the promise to leave Alebelly behind. Bran IV (site 102) has his ride east.',
+      note: 'Bran V (site 109): Rodrik back with Reek, named by Hayhead, the murder of Lady Hornwood as Bran is told it, the Bastard shot as he rode away, Reek kept for Robb’s judgement, Manderly and Bolton fighting in the Hornwood, the raiders on the Stony Shore, and the promise to leave Alebelly behind. Bran IV (site 102) has his ride east.',
     },
     '15:111': {
       source: `${SHOW}Rodrik_Cassel`,
@@ -3215,7 +3235,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '12:98': {
       source: `${SHOW}Balon_Greyjoy`,
-      note: 'Balon Greyjoy page (GOT202): the nine years, what the Starks gave back, the clasp torn off for not paying the iron price, Robb’s proposal of a crown, Yara greeted warmly and set above Theon, the letter burned and no one giving him a crown. Chapter 98 orders it, at Asha’s book gate.',
+      note: 'Balon Greyjoy page (GOT202): the nine years, what the Starks gave back, Robb’s proposal shown, then the interruption about his clothes and the clasp torn off for not paying the iron price, Yara greeted warmly and set above Theon, the letter burned and no one giving him a crown. Chapter 98 orders it, at Asha’s book gate.',
     },
     '13:episode': {
       source: `${SHOW}Balon_Greyjoy`,
@@ -3371,6 +3391,10 @@ export const GAME_OF_THRONES_SOURCES = {
       source: WF_BRAN_V,
       note: 'Bran V (site 109): the sea lapping round Winterfell and drowned men in the yard, recognised as Alebelly, Septon Chayle and Mikken, warnings that will not save them, being called a warg, the dream of Bran and Rickon dead at Reek’s feet, and green dreams that do not lie.',
     },
+    '22:120': {
+      source: WF_BRAN_VI,
+      note: 'Bran VI (site 120): Rodrik gone to Torrhen’s Square, the ironmen swimming the moat, the people gathered, all those Jojen saw in his dream dying, Mikken drowning on his own blood as he refuses to kneel, and all of the crannogman’s words come true. Added after review. Episode 22 is his show gate.',
+    },
     '22:143': {
       source: WF_BRAN_VII,
       note: 'Bran VII (site 143): Jojen waking Bran from three days as Summer, the wolf eating while Bran does not, the hiding in the crypts, Bran’s vision of the burning, the ashes, and Bran going north with Jojen, Meera, Hodor and Summer.',
@@ -3423,7 +3447,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '15:109': {
       source: WF_BRAN_V,
-      note: 'Bran V (site 109): Rodrik back with Reek, servant of the now-dead Bastard of Bolton, the forced marriage and the will naming him heir, the murder, the bastard shot as he rode away, Reek kept for Robb’s judgement, and Manderly and Bolton fighting in the Hornwood. The bastard’s death is Rodrik’s report, as the chapter tells it.',
+      note: 'Bran V (site 109): Rodrik back with Reek, servant of the now-dead Bastard of Bolton, the forced marriage and the will naming him heir, the murder, the bastard shot as he rode away, Reek kept for Robb’s judgement, and Manderly and Bolton fighting in the Hornwood. Hayhead tells Bran who the prisoner is; the bastard’s death is what Winterfell is told, as the chapter tells it.',
     },
   },
 }

@@ -4458,8 +4458,8 @@ export const season1Chronicles = {
       [11, 78],
       { it: 'Sogni di lupo', en: 'Wolf dreams' },
       {
-        it: 'Da qualche tempo Bran sogna i lupi. I meta-lupi sono chiusi nel parco degli dei da quando [[shaggydog|Cagnaccio]] ha morso uno dei due pupilli Frey della madre, e di notte ululano. Ognuno dà a Bran una spiegazione diversa, e sopra il castello brilla la cometa rossa. Quando Bran risponde ululando dalla finestra, il maestro [[luwin|Luwin]] viene a metterlo a letto, e Bran gli dice che quando dorme diventa un lupo. Dopo un sonnifero sogna di nuovo: è [[summer-direwolf|Estate]] nel parco degli dei, e gira intorno a mura troppo alte da saltare.',
-        en: 'Of late, Bran dreams of wolves. The direwolves are shut in the godswood since [[shaggydog|Shaggydog]] bit one of his mother’s two Frey wards, and at night they howl. Everyone gives Bran a different reason, and the red comet hangs over the castle. When he howls back from his window, Maester [[luwin|Luwin]] comes to put him to bed, and Bran says that when he sleeps he turns into a wolf. After a sleeping draught he dreams it again: he is [[summer-direwolf|Summer]] in the godswood, circling walls too high to leap.',
+        it: 'Da qualche tempo Bran sogna i lupi. I meta-lupi sono chiusi nel parco degli dei da quando [[shaggydog|Cagnaccio]] ha morso uno dei due pupilli Frey della madre, e di notte ululano. Ognuno dà a Bran una spiegazione diversa, e sopra il castello brilla la cometa rossa. Quando Bran risponde ululando dalla finestra, il maestro [[luwin|Luwin]] viene a metterlo a letto, e Bran gli dice che quando dorme diventa un lupo. Dopo un sonnifero sogna di nuovo: è [[summer-direwolf|Estate]] nel parco degli dei, chiuso da mura troppo alte da saltare, mentre suo fratello ci gira intorno.',
+        en: 'Of late, Bran dreams of wolves. The direwolves are shut in the godswood since [[shaggydog|Shaggydog]] bit one of his mother’s two Frey wards, and at night they howl. Everyone gives Bran a different reason, and the red comet hangs over the castle. When he howls back from his window, Maester [[luwin|Luwin]] comes to put him to bed, and Bran says that when he sleeps he turns into a wolf. After a sleeping draught he dreams it again: he is [[summer-direwolf|Summer]] in the godswood, shut in by walls higher than any wolf can leap, while his brother circles them.',
       },
     ),
     inBooks(
@@ -4532,6 +4532,14 @@ export const season1Chronicles = {
       {
         it: 'Bran, [[rickon-stark|Rickon]], [[osha|Osha]] e [[hodor|Hodor]] arrivano fino alla fattoria del pastore a cui Bran ha mandato i due orfani. Rickon vorrebbe chiedere loro da mangiare, ma Bran teme di metterli in pericolo se qualcuno li segue. [[theon-greyjoy|Theon]] li bracca con i cani e perde la loro traccia alla fattoria. Torna a Grande Inverno con due corpi carbonizzati, e davanti a tutti dice che sono Bran e Rickon.',
         en: 'Bran, [[rickon-stark|Rickon]], [[osha|Osha]] and [[hodor|Hodor]] flee as far as the farm of the shepherd to whom Bran sent two orphans. Rickon wants to go to them for food, but Bran is wary of putting them in danger if they are tracked. [[theon-greyjoy|Theon]] hunts them with hounds and loses their scent at the farm. He returns to Winterfell with two charred bodies, and claims before everyone that they are Bran and Rickon.',
+      },
+    ),
+    inBooks(
+      [17, 124],
+      { it: 'Spariti nella notte', en: 'Gone in the night' },
+      {
+        it: 'Una notte i meta-lupi tacciono. Gli uomini di [[theon-greyjoy|Theon]] trovano vuoti i letti di Bran e di [[rickon-stark|Rickon]], il parco degli dei senza lupi e due guardie morte alla Porta del Cacciatore. Mancano anche [[osha|Osha]], [[hodor|Hodor]] e i Reed. Theon bracca i ragazzi nella Foresta del Lupo con i cani, ma la traccia finisce a un torrente, e di loro non trova alcun segno.',
+        en: 'One night the direwolves fall silent. The men of [[theon-greyjoy|Theon]] find Bran and [[rickon-stark|Rickon]] gone from their beds, the wolves gone from the godswood, and two guards dead at the Hunter’s Gate. [[osha|Osha]], [[hodor|Hodor]] and the Reeds are missing too. Theon hunts the boys through the wolfswood with his hounds, but the scent ends at a brook, and he finds no sign of them.',
       },
     ),
     onScreen(
@@ -4608,12 +4616,31 @@ export const season1Chronicles = {
         en: 'When [[theon-greyjoy|Theon]] takes Winterfell and sentences Ser [[rodrik-cassel|Rodrik]] to death, Rickon joins his brother [[bran-stark|Bran]] in pleading for Rodrik’s life, to no avail. He is distraught as Theon beheads the old knight before everyone. That night [[osha|Osha]] frees the two brothers and leads them out of the castle with [[hodor|Hodor]] and their direwolves, [[summer-direwolf|Summer]] and [[shaggydog|Shaggydog]].',
       },
     ),
+    inBooks(
+      [16, 120],
+      {
+        it: 'Gli uomini di ferro nel castello',
+        en: 'The ironborn in the castle',
+      },
+      {
+        it: 'Mentre [[rodrik-cassel|ser Rodrik]] è a Piazza di Torrhen, gli uomini di ferro di [[theon-greyjoy|Theon]] attraversano il fossato a nuoto, aprono una postierla e prendono Grande Inverno. Theon si fa chiamare principe e fa radunare la gente del castello nella sala grande, dove [[mikken|Mikken]] viene ucciso perché si rifiuta di inginocchiarsi. Rickon e il fratello [[bran-stark|Bran]] sono ora prigionieri nel loro stesso castello.',
+        en: 'While Ser [[rodrik-cassel|Rodrik]] is away at Torrhen’s Square, the ironmen of [[theon-greyjoy|Theon]] swim the moat, open a postern gate and take Winterfell. Theon calls himself a prince and has the household gathered in the great hall, where [[mikken|Mikken]] is killed for refusing to kneel. Rickon and his brother [[bran-stark|Bran]] are now prisoners in their own castle.',
+      },
+    ),
     onScreen(
       [17, 124],
       { it: 'I gusci di noce', en: 'The walnut shells' },
       {
         it: 'Rickon, [[bran-stark|Bran]], [[osha|Osha]] e [[hodor|Hodor]] arrivano alla fattoria del pastore. Rickon si ricorda che Bran ha mandato lì due ragazzi orfani, e vorrebbe chiedere loro da mangiare, ma Bran teme di metterli in pericolo. Quando [[theon-greyjoy|Theon]] arriva alla fattoria con i cani, la traccia si perde, anche se [[dagmer|Dagmer]] trova i gusci delle noci che piacciono a Rickon. Theon torna a Grande Inverno con due corpi bruciati e dice che sono Bran e Rickon.',
         en: 'Rickon, [[bran-stark|Bran]], [[osha|Osha]] and [[hodor|Hodor]] reach the shepherd’s farm. Rickon remembers that Bran sent two orphan boys there, and wants to ask them for food, but Bran fears putting them in danger. When [[theon-greyjoy|Theon]] reaches the farm with his hounds, the scent is lost, though [[dagmer|Dagmer]] finds the walnut shells Rickon loves. Theon returns to Winterfell with two burned bodies and says they are Bran and Rickon.',
+      },
+    ),
+    inBooks(
+      [17, 124],
+      { it: 'I letti vuoti', en: 'The empty beds' },
+      {
+        it: 'Una notte i meta-lupi smettono di ululare. Gli uomini di [[theon-greyjoy|Theon]] trovano vuoti i letti di Rickon e di [[bran-stark|Bran]], il parco degli dei senza lupi e due guardie morte alla Porta del Cacciatore. Theon pensa che [[osha|Osha]] debba portare Rickon in braccio, perché sono fuggiti a piedi. Li bracca nella Foresta del Lupo con i cani, ma la traccia finisce a un torrente.',
+        en: 'One night the direwolves stop howling. The men of [[theon-greyjoy|Theon]] find Rickon and [[bran-stark|Bran]] gone from their beds, the wolves gone from the godswood, and two guards dead at the Hunter’s Gate. Theon reckons [[osha|Osha]] must carry Rickon, since they left on foot. He hunts them through the wolfswood with his hounds, but the scent ends at a brook.',
       },
     ),
     onScreen(
@@ -4750,8 +4777,8 @@ export const season1Chronicles = {
       [17, 124],
       { it: 'La pietà era per la mattina', en: 'Mercy was for the morning' },
       {
-        it: 'Theon si sveglia nella notte nel silenzio: i meta-lupi hanno smesso di ululare. [[wex-pyke|Wex]] scopre che [[bran-stark|Bran]] e [[rickon-stark|Rickon]] sono spariti, insieme ai Reed, a [[hodor|Hodor]] e a [[osha|Osha]], e [[black-lorren|Black Lorren]] gli mostra due guardie uccise alla Porta del Cacciatore. Con il maestro [[luwin|Luwin]], [[farlen|Farlen]] e i cani, Theon li segue nella Foresta del Lupo, promettendo pietà a Luwin, finché la traccia non si perde a un torrente. Al tramonto Reek gli indica un mulino lì vicino e gli mostra che cosa c’è nel suo sacco. Theon rimanda a casa quasi tutti i suoi uomini e dice a Luwin che la pietà era per la mattina.',
-        en: 'Theon wakes in the night to silence: the direwolves have stopped howling. [[wex-pyke|Wex]] finds [[bran-stark|Bran]] and [[rickon-stark|Rickon]] gone, along with the Reeds, [[hodor|Hodor]] and [[osha|Osha]], and [[black-lorren|Black Lorren]] shows him two guards dead at the Hunter’s Gate. With Maester [[luwin|Luwin]], [[farlen|Farlen]] and the dogs, Theon follows them into the wolfswood, promising Luwin mercy, until the scent is lost at a brook. At dusk Reek points him to a mill nearby and shows him what is in his sack. Theon sends most of his men home and tells Luwin that mercy was for the morning.',
+        it: 'Theon si sveglia nella notte nel silenzio: i meta-lupi hanno smesso di ululare. [[wex-pyke|Wex]] scopre che [[bran-stark|Bran]] e [[rickon-stark|Rickon]] sono spariti, Reek riferisce che mancano anche i Reed, [[hodor|Hodor]] e [[osha|Osha]], e [[black-lorren|Black Lorren]] gli mostra due guardie uccise alla Porta del Cacciatore. Con il maestro [[luwin|Luwin]], [[farlen|Farlen]] e i cani, Theon li segue nella Foresta del Lupo, promettendo pietà a Luwin, finché la traccia non si perde a un torrente. Al tramonto Reek gli indica un mulino lì vicino e gli mostra che cosa c’è nel suo sacco. Theon rimanda a casa quasi tutti i suoi uomini e dice a Luwin che la pietà era per la mattina.',
+        en: 'Theon wakes in the night to silence: the direwolves have stopped howling. [[wex-pyke|Wex]] finds [[bran-stark|Bran]] and [[rickon-stark|Rickon]] gone, Reek reports the Reeds, [[hodor|Hodor]] and [[osha|Osha]] missing too, and [[black-lorren|Black Lorren]] shows him two guards dead at the Hunter’s Gate. With Maester [[luwin|Luwin]], [[farlen|Farlen]] and the dogs, Theon follows them into the wolfswood, promising Luwin mercy, until the scent is lost at a brook. At dusk Reek points him to a mill nearby and shows him what is in his sack. Theon sends most of his men home and tells Luwin that mercy was for the morning.',
       },
     ),
     onScreen(
@@ -4880,16 +4907,16 @@ export const season1Chronicles = {
       [20, 143],
       { it: 'Il dono della pietà', en: 'The gift of mercy' },
       {
-        it: 'Con Grande Inverno sotto assedio, Luwin esorta [[theon-greyjoy|Theon]] a fuggire alla Barriera e unirsi ai Guardiani della notte: sa che Theon non è l’uomo che finge di essere. Quando gli uomini di ferro si rivoltano contro Theon, Luwin cerca di fermarli, e [[dagmer|Dagmer]] lo trafigge con una lancia. Dopo il saccheggio [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[osha|Osha]] e [[hodor|Hodor]] lo trovano morente nel parco degli dei. Luwin dice loro di andare a nord, da [[jon-snow|Jon]] alla Barriera, e chiede a Osha una morte rapida.',
-        en: 'With Winterfell besieged, Luwin urges [[theon-greyjoy|Theon]] to flee to the Wall and join the Night’s Watch, saying he knows Theon is not the man he pretends to be. When the ironborn turn on Theon, Luwin tries to stop them, and [[dagmer|Dagmer]] stabs him with a spear. After the sack, [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[osha|Osha]] and [[hodor|Hodor]] find him dying in the godswood. He tells them to go north to [[jon-snow|Jon]] at the Wall, and asks Osha for a quick death.',
+        it: 'Con Grande Inverno sotto assedio, Luwin esorta [[theon-greyjoy|Theon]] a fuggire alla Barriera e unirsi ai Guardiani della notte: sa che Theon non è l’uomo che finge di essere. Quando gli uomini di ferro si rivoltano contro Theon, Luwin cerca di fermarli, e [[dagmer|Dagmer]] lo trafigge con una lancia. Dopo il saccheggio [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[osha|Osha]] e [[hodor|Hodor]] lo trovano morente nel parco degli dei. Luwin dice loro di andare a nord, da [[jon-snow|Jon]] alla Barriera, e chiede a Osha una morte rapida, che lei gli concede.',
+        en: 'With Winterfell besieged, Luwin urges [[theon-greyjoy|Theon]] to flee to the Wall and join the Night’s Watch, saying he knows Theon is not the man he pretends to be. When the ironborn turn on Theon, Luwin tries to stop them, and [[dagmer|Dagmer]] stabs him with a spear. After the sack, [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[osha|Osha]] and [[hodor|Hodor]] find him dying in the godswood. He tells them to go north to [[jon-snow|Jon]] at the Wall, and asks Osha for a quick death, which she gives him.',
       },
     ),
     inBooks(
       [20, 143],
       { it: 'Gli ultimi consigli', en: 'Last counsel' },
       {
-        it: '[[summer-direwolf|Estate]] guida i ragazzi da Luwin, in punto di morte nel parco degli dei. Il maestro è felice che siano vivi: sapeva che i corpi mostrati da [[theon-greyjoy|Theon]] non erano i loro, e non lo ha mai detto a Theon. Dice a [[osha|Osha]] di non tenere insieme i ragazzi, perché sono gli eredi di Robb, anche se non sa dove saranno al sicuro, con gli uomini di ferro a ovest e il Bastardo di Bolton a est. Dice a [[bran-stark|Bran]] di essere forte, degno figlio del padre. Poi chiede un favore a Osha, e lei manda via gli altri.',
-        en: '[[summer-direwolf|Summer]] leads the children to Luwin, near death in the godswood. He is glad they are alive: he knew the bodies [[theon-greyjoy|Theon]] showed were not theirs, and never told Theon. He tells [[osha|Osha]] not to keep the boys together, since they are the heirs of Robb, though he cannot say where they will be safe, with ironmen to the west and the Bastard of Bolton to the east. He tells [[bran-stark|Bran]] to be strong, his father’s son. Then he asks Osha a boon, and she sends the others away.',
+        it: '[[summer-direwolf|Estate]] guida i ragazzi da Luwin, in punto di morte nel parco degli dei. Il maestro è felice che siano vivi: sapeva che i corpi mostrati da [[theon-greyjoy|Theon]] non erano i loro, e non lo ha mai detto a Theon. Dice a [[osha|Osha]] di non tenere insieme i ragazzi, perché sono gli eredi di Robb, anche se non sa dove saranno al sicuro, con gli uomini di ferro a ovest e il Bastardo di Bolton a est. Dice a [[bran-stark|Bran]] di essere forte, degno figlio del padre. Poi chiede un favore a Osha, che manda via gli altri e gli dà una morte rapida.',
+        en: '[[summer-direwolf|Summer]] leads the children to Luwin, near death in the godswood. He is glad they are alive: he knew the bodies [[theon-greyjoy|Theon]] showed were not theirs, and never told Theon. He tells [[osha|Osha]] not to keep the boys together, since they are the heirs of Robb, though he cannot say where they will be safe, with ironmen to the west and the Bastard of Bolton to the east. He tells [[bran-stark|Bran]] to be strong, his father’s son. Then he asks Osha a boon; she sends the others away and gives him a quick death.',
       },
     ),
   ],
@@ -4958,6 +4985,14 @@ export const season1Chronicles = {
       {
         it: 'Hodor assiste mentre [[theon-greyjoy|Theon]] prende Grande Inverno, se ne proclama principe e costringe [[bran-stark|Bran]] a cedere il castello davanti alla sua gente. Nel cortile [[rodrik-cassel|ser Rodrik]] viene decapitato. Quella notte [[osha|Osha]] uccide una guardia e porta Hodor, Bran, [[rickon-stark|Rickon]] e i meta-lupi fuori dalla porta, lontano dagli uomini di ferro.',
         en: 'Hodor looks on as [[theon-greyjoy|Theon]] takes Winterfell, proclaims himself its prince and makes [[bran-stark|Bran]] yield the castle before the household. Ser [[rodrik-cassel|Rodrik]] is beheaded in the yard. That night [[osha|Osha]] kills a guard and leads Hodor, Bran, [[rickon-stark|Rickon]] and the direwolves out through the gate, away from the ironborn.',
+      },
+    ),
+    inBooks(
+      [16, 124],
+      { it: 'Tra gli scomparsi', en: 'Among the missing' },
+      {
+        it: 'Una notte Hodor sparisce da Grande Inverno con [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[osha|Osha]], i Reed e i meta-lupi. Gli inseguitori di [[theon-greyjoy|Theon]] trovano le sue impronte accanto a quelle dei Reed. Dato che Dancer è ancora nelle stalle, Theon pensa che siano fuggiti a piedi, con Bran nella gerla sulle spalle di Hodor. Promette di risparmiare Hodor, se potrà, ma perde la traccia a un torrente.',
+        en: 'One night Hodor is gone from Winterfell with [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[osha|Osha]], the Reeds and the direwolves. [[theon-greyjoy|Theon]]’s trackers find his prints beside those of the Reeds. Since Dancer is still in the stables, Theon reckons they fled on foot, with Bran in the basket on Hodor’s back. He agrees to spare Hodor if he can, but loses the trail at a brook.',
       },
     ),
     onScreen(
@@ -5056,6 +5091,14 @@ export const season1Chronicles = {
       {
         it: 'Quando gli uomini di ferro di [[theon-greyjoy|Theon]] prendono Grande Inverno, Osha è tra la gente del castello radunata nella sala grande. Quasi tutti sfidano Theon, e [[mikken|Mikken]] viene ucciso perché si rifiuta di inginocchiarsi. Osha è tra i pochi che passano al servizio di Theon, insieme a un prigioniero chiamato Reek. [[bran-stark|Bran]] ci resta male, ma convince gli altri a non combattere.',
         en: 'When the ironborn of [[theon-greyjoy|Theon]] take Winterfell, Osha is among the household gathered in the great hall. Most of them defy Theon, and [[mikken|Mikken]] is killed for refusing to kneel. Osha is one of the few who join Theon’s service, along with a prisoner called Reek. [[bran-stark|Bran]] is hurt that she would do it, but he persuades the others not to fight.',
+      },
+    ),
+    inBooks(
+      [16, 124],
+      { it: 'Il giuramento rotto', en: 'The broken oath' },
+      {
+        it: 'Osha rompe il giuramento fatto a [[theon-greyjoy|Theon]]. Una notte sparisce da Grande Inverno con [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[hodor|Hodor]], i Reed e i meta-lupi, e Theon pensa che sia stata lei a uccidere una delle due guardie trovate morte alla Porta del Cacciatore. Li bracca per tutto il giorno, e promette al maestro [[luwin|Luwin]] pietà per tutti tranne che per lei, perché ha fatto un giuramento e lo ha rotto.',
+        en: 'Osha breaks the oath she swore to [[theon-greyjoy|Theon]]. One night she is gone from Winterfell with [[bran-stark|Bran]], [[rickon-stark|Rickon]], [[hodor|Hodor]], the Reeds and the direwolves, and Theon reckons that she killed one of the two guards found dead at the Hunter’s Gate. He hunts them all day, and promises Maester [[luwin|Luwin]] mercy for everyone but her, since she took an oath and broke it.',
       },
     ),
     onScreen(
@@ -5596,8 +5639,8 @@ export const season1Chronicles = {
         en: 'The prisoner from the Hornwood',
       },
       {
-        it: 'Ser Rodrik era partito verso est dopo che il bastardo di [[roose-bolton|Roose Bolton]] aveva preso con la forza [[donella-hornwood|lady Hornwood]], e torna con un prigioniero chiamato Reek. Dice che il bastardo e Reek l’hanno uccisa, e che i suoi uomini hanno ucciso il bastardo con le frecce mentre fuggiva. Tiene in vita Reek perché sia Robb a giudicarlo, anche se uomini dei Manderly e dei Bolton si battono per le terre degli Hornwood e lui non ha la forza di fermarli. Predoni saccheggiano la costa, e Rodrik promette a [[bran-stark|Bran]] di non portare Alebelly con sé se partirà contro di loro.',
-        en: 'Ser Rodrik rode east after the bastard of [[roose-bolton|Roose Bolton]] took [[donella-hornwood|Lady Hornwood]] by force, and comes back with a prisoner called Reek. He says the bastard and Reek murdered her, and that his men shot the bastard dead as he fled. He keeps Reek alive for Robb to judge, though Manderly and Bolton men fight over the Hornwood and he lacks the strength to stop them. Raiders are plundering the coast, and Rodrik promises [[bran-stark|Bran]] not to take Alebelly if he rides against them.',
+        it: 'Ser Rodrik era partito verso est dopo che il bastardo di [[roose-bolton|Roose Bolton]] aveva preso con la forza [[donella-hornwood|lady Hornwood]], e torna con un prigioniero chiamato Reek. A Bran viene detto che il bastardo e Reek l’hanno uccisa, e che gli uomini di Rodrik hanno ucciso il bastardo con le frecce mentre fuggiva. Tiene in vita Reek perché sia Robb a giudicarlo, anche se uomini dei Manderly e dei Bolton si battono per le terre degli Hornwood e lui non ha la forza di fermarli. Predoni saccheggiano la costa, e Rodrik promette a [[bran-stark|Bran]] di non portare Alebelly con sé se partirà contro di loro.',
+        en: 'Ser Rodrik rode east after the bastard of [[roose-bolton|Roose Bolton]] took [[donella-hornwood|Lady Hornwood]] by force, and comes back with a prisoner called Reek. Bran is told that the bastard and Reek murdered her, and that Rodrik’s men shot the bastard dead as he fled. He keeps Reek alive for Robb to judge, though Manderly and Bolton men fight over the Hornwood and he lacks the strength to stop them. Raiders are plundering the coast, and Rodrik promises [[bran-stark|Bran]] not to take Alebelly if he rides against them.',
       },
     ),
     onScreen(
@@ -5607,8 +5650,8 @@ export const season1Chronicles = {
         en: 'Torrhen’s Square under siege',
       },
       {
-        it: 'Ser Rodrik porta a Grande Inverno la notizia che Piazza di Torrhen, a nemmeno quaranta leghe, è sotto assedio. Pensa a predoni guidati dalla [[gregor-clegane|Montagna]], o a dei mercenari. [[bran-stark|Bran]] dice che devono aiutare i loro vassalli, e Rodrik, sorridendo della saggezza del ragazzo, dice di poter radunare duecento uomini validi. I sudisti non se la cavano bene nel Nord, dice, e non ci vorrà molto. L’assedio è una finta di [[theon-greyjoy|Theon]] per attirare via la guarnigione.',
-        en: 'Ser Rodrik brings word to Winterfell that Torrhen’s Square is under siege, barely forty leagues away. He guesses at raiders led by [[gregor-clegane|the Mountain]], or sellswords. [[bran-stark|Bran]] says they must help their bannermen, and Rodrik, smiling at the boy’s wisdom, says he can gather two hundred decent men. Southerners do not do well in the North, he says, and it will not take long. The siege is a feint by [[theon-greyjoy|Theon]], to draw the garrison away.',
+        it: 'Ser Rodrik porta a Grande Inverno la notizia che Piazza di Torrhen, a nemmeno quaranta leghe, è sotto assedio. Pensa a predoni guidati dalla [[gregor-clegane|Montagna]], o a dei mercenari. [[bran-stark|Bran]] dice che devono aiutare i loro vassalli, e Rodrik dice di poter radunare duecento uomini validi. Quando Bran aggiunge che devono proteggere i vassalli se vogliono esserne protetti, Rodrik sorride della saggezza del ragazzo. I sudisti non se la cavano bene nel Nord, dice, e non ci vorrà molto. L’assedio è una finta di [[theon-greyjoy|Theon]] per attirare via la guarnigione.',
+        en: 'Ser Rodrik brings word to Winterfell that Torrhen’s Square is under siege, barely forty leagues away. He guesses at raiders led by [[gregor-clegane|the Mountain]], or sellswords. [[bran-stark|Bran]] says they must help their bannermen, and Rodrik says he can gather two hundred decent men. When Bran adds that they must protect their bannermen if they expect to be protected, Rodrik smiles at the boy’s wisdom. Southerners do not do well in the North, he says, and it will not take long. The siege is a feint by [[theon-greyjoy|Theon]], to draw the garrison away.',
       },
     ),
     onScreen(

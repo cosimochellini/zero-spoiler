@@ -684,6 +684,13 @@ const STORIES: Row[] = [
     id: 'jojen-reed',
     medium: 'books',
     episode: 22,
+    chapter: 120,
+    title: 'The dream comes true',
+  },
+  {
+    id: 'jojen-reed',
+    medium: 'books',
+    episode: 22,
     chapter: 143,
     title: 'Three days a wolf',
   },
@@ -836,6 +843,13 @@ const STORIES: Row[] = [
   },
   {
     id: 'bran-stark',
+    medium: 'books',
+    episode: 17,
+    chapter: 124,
+    title: 'Gone in the night',
+  },
+  {
+    id: 'bran-stark',
     medium: 'show',
     episode: 18,
     chapter: 130,
@@ -871,10 +885,24 @@ const STORIES: Row[] = [
   },
   {
     id: 'rickon-stark',
+    medium: 'books',
+    episode: 16,
+    chapter: 120,
+    title: 'The ironborn in the castle',
+  },
+  {
+    id: 'rickon-stark',
     medium: 'show',
     episode: 17,
     chapter: 124,
     title: 'The walnut shells',
+  },
+  {
+    id: 'rickon-stark',
+    medium: 'books',
+    episode: 17,
+    chapter: 124,
+    title: 'The empty beds',
   },
   {
     id: 'rickon-stark',
@@ -1095,6 +1123,13 @@ const STORIES: Row[] = [
   },
   {
     id: 'osha',
+    medium: 'books',
+    episode: 16,
+    chapter: 124,
+    title: 'The broken oath',
+  },
+  {
+    id: 'osha',
     medium: 'show',
     episode: 18,
     chapter: 130,
@@ -1134,6 +1169,13 @@ const STORIES: Row[] = [
     episode: 16,
     chapter: 120,
     title: 'Out of the castle',
+  },
+  {
+    id: 'hodor',
+    medium: 'books',
+    episode: 16,
+    chapter: 124,
+    title: 'Among the missing',
   },
   {
     id: 'hodor',
