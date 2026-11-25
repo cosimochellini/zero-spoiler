@@ -194,7 +194,12 @@ export const season3: ThronesSaga = {
         it: 'Invita Sansa Stark a mangiare con lei e con Margaery, e la incalza perché dica la verità su re Joffrey. Sansa le confida a bassa voce che è un mostro.',
         en: 'She asks Sansa Stark to eat with her and Margaery, and presses her to tell the truth about King Joffrey. Sansa whispers that he is a monster.',
       },
-      status: [{ episode: 22, chapter: 150, value: 'alive' }],
+      // Her death at Highgarden, "The Queen's Justice" (episode 63), is the
+      // show's alone; the books leave her alive (#1642).
+      status: [
+        { episode: 22, chapter: 150, value: 'alive' },
+        { episode: 63, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 22,
@@ -275,7 +280,13 @@ export const season3: ThronesSaga = {
         it: 'Arriva ad Approdo del Re per le nozze del re, al posto del fratello Doran. Dice a Tyrion che vuole giustizia per la sorella Elia.',
         en: 'He comes to King’s Landing for the king’s wedding, in his brother Doran’s place. He tells Tyrion he wants justice for his sister Elia.',
       },
-      status: [{ episode: 31, chapter: 182, value: 'alive' }],
+      // Killed by the Mountain as Tyrion's champion, "The Mountain and the
+      // Viper" (episode 38) and Tyrion X of A Storm of Swords (site chapter
+      // 214, #1642).
+      status: [
+        { episode: 31, chapter: 182, value: 'alive' },
+        { episode: 38, chapter: 214, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 31,
