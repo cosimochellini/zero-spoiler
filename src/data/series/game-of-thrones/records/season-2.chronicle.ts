@@ -253,19 +253,19 @@ export const season2Chronicles = {
       },
     ),
     inBooks(
-      [18, 123],
-      { it: 'Tommen a Rosby', en: 'Tommen at Rosby' },
-      {
-        it: 'Per ordine di [[tyrion-lannister|Tyrion]] gli uomini di Jacelyn raggiungono il gruppo che porta [[tommen-baratheon|Tommen]] a nascondersi a Rosby. Ser Boros Blount consegna subito il principe e per questo perde il mantello bianco. Jacelyn torna con dei lancieri delle terre di Rosby: Tommen è al sicuro e ha adottato un cerbiatto. Jacelyn ha preparato dei piani per lui nel caso la battaglia sia perduta, ma non li rivela nemmeno a Tyrion, per il caso che venga catturato.',
-        en: 'On [[tyrion-lannister|Tyrion]]’s orders Jacelyn’s men overtake the party taking [[tommen-baratheon|Tommen]] to hide at Rosby. Ser Boros Blount gives the prince up at once and loses his white cloak for it. Jacelyn returns with spearmen from the Rosby lands: Tommen is safe and has adopted a fawn. Jacelyn has made plans for him in case the battle is lost, but will not tell even Tyrion, in case he is captured.',
-      },
-    ),
-    inBooks(
       [14, 103],
       { it: 'Contro la regina', en: 'Defying the queen' },
       {
         it: 'Jacelyn disobbedisce a un ordine dato in nome del re, che [[tyrion-lannister|Tyrion]] ritiene l’ordine della regina di liberare [[pycelle|Pycelle]]. [[lancel-lannister|Ser Lancel]] porta la richiesta di Cersei che Jacelyn sia rimosso e accusato di tradimento. Tyrion lo tiene al suo posto, e fa dire alla regina da Lancel, ormai sua spia, che crede di poter staccare Jacelyn da Tyrion.',
         en: 'Jacelyn defies a command given in the king’s name, which [[tyrion-lannister|Tyrion]] takes to be the queen’s order to free [[pycelle|Pycelle]]. [[lancel-lannister|Ser Lancel]] brings Cersei’s demand that Jacelyn be removed and charged with treason. Tyrion keeps him, and has Lancel, now his spy, tell the queen that he thinks he can win Jacelyn away from Tyrion.',
+      },
+    ),
+    inBooks(
+      [18, 123],
+      { it: 'Tommen a Rosby', en: 'Tommen at Rosby' },
+      {
+        it: 'Per ordine di [[tyrion-lannister|Tyrion]] gli uomini di Jacelyn raggiungono il gruppo che porta [[tommen-baratheon|Tommen]] a nascondersi a Rosby. Ser Boros Blount consegna subito il principe e per questo perde il mantello bianco. Jacelyn torna con dei lancieri delle terre di Rosby: Tommen è al sicuro e ha adottato un cerbiatto. Jacelyn ha preparato dei piani per lui nel caso la battaglia sia perduta, ma non li rivela nemmeno a Tyrion, per il caso che venga catturato.',
+        en: 'On [[tyrion-lannister|Tyrion]]’s orders Jacelyn’s men overtake the party taking [[tommen-baratheon|Tommen]] to hide at Rosby. Ser Boros Blount gives the prince up at once and loses his white cloak for it. Jacelyn returns with spearmen from the Rosby lands: Tommen is safe and has adopted a fawn. Jacelyn has made plans for him in case the battle is lost, but will not tell even Tyrion, in case he is captured.',
       },
     ),
     inBooks(
