@@ -186,8 +186,9 @@ const PERSON: Stroke[] = [
  * cast, in `north.ts` and `ironborn.ts` (#1473), Wall cast, the rangers in
  * `wall.ts` and the wildlings in `wildlings.ts` (#1474), and Essos and Qarth
  * cast, in `essos.ts` (#1475). The seasons' own, which the home page's
- * frame draws, are in `seasons.ts` (#1601). The third stage's casts
- * (#1634–#1641) show `PERSON` until their drawing children draw them.
+ * frame draws, are in `seasons.ts` (#1601). The third stage's Essos
+ * cast is drawn in `essos.ts` (#1647); its other casts (#1634–#1641) show
+ * `PERSON` until their drawing children draw them.
  * `satisfies` rather than an annotation, so `ArtId` below stays the literal
  * keys.
  */
@@ -209,14 +210,6 @@ export const DRAWINGS = {
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': DRAGON_EGG,
-  // #1639: the third stage's Essos cast.
-  'missandei': PERSON,
-  'kraznys-mo-nakloz': PERSON,
-  'grey-worm': PERSON,
-  'grazdan-mo-eraz': PERSON,
-  'mero': PERSON,
-  'daario-naharis': PERSON,
-  'prendahl-na-ghezn': PERSON,
   // #1634: King's Landing.
   'olenna-tyrell': PERSON,
   'megga-tyrell': PERSON,
@@ -275,12 +268,12 @@ export type ArtId = keyof typeof DRAWINGS
 /**
  * The records drawn again later in the story, the Winterfell household's
  * from `winterfell.ts`, the southern cast's from `south.ts`, the Night's
- * Watch's from `wall.ts`, the Essos cast's of both seasons from `essos.ts`
- * (#1052, #1475), the northern household's from `north.ts`, the Vale cast's
- * from `vale.ts`, the King's Landing cast's from `court.ts`, the Riverlands
- * cast's from `riverlands.ts`, the stormlands cast's from `stormlands.ts`,
- * the second stage's Iron Islands cast's from `ironborn.ts` and the
- * wildlings' from `wildlings.ts`. Eddard Stark is beheaded with Ice in
+ * Watch's from `wall.ts`, the Essos cast's of three seasons from `essos.ts`
+ * (#1052, #1475, #1647), the northern household's from `north.ts`, the Vale
+ * cast's from `vale.ts`, the King's Landing cast's from `court.ts`, the
+ * Riverlands cast's from `riverlands.ts`, the stormlands cast's from
+ * `stormlands.ts`, the second stage's Iron Islands cast's from `ironborn.ts`
+ * and the wildlings' from `wildlings.ts`. Eddard Stark is beheaded with Ice in
  * "Baelor" (episode 9) and in Arya V (chapter 66): from there the blade lies
  * flat on the ground, with nobody to hold it.
  */

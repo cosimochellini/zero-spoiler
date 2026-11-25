@@ -749,8 +749,213 @@ const STAFF_AND_BOX: Stroke[] = [
 ]
 
 /**
- * The Essos cast, keyed by record id: the first season's (#1052) and the
- * second season's Essos and Qarth cast (#1475).
+ * Missandei's slave collar standing on its edge in 3/4: the front rim, the
+ * band's depth on the far side, and the inside of the back band through the
+ * opening. Her first drawing and her death share it.
+ */
+const COLLAR: Stroke[] = [
+  { d: ellipse(72, 102, 30, 40), role: 'accent' },
+  { d: 'M72 62 H84 A30 40 0 0 1 84 142 H72' },
+  { d: 'M84 70 A23 32 0 0 0 84 134', role: 'soft' },
+  { d: 'M72 68 A25 34 0 0 0 72 136', role: 'soft' },
+  { d: 'M104 82 l6 -2 M106 98 l6 -2 M104 114 l6 -2', role: 'ambient' },
+]
+
+/**
+ * Missandei: the slave collar she wears as Kraznys's interpreter in
+ * "Valar Dohaeris" (episode 21), the one thing she brings across the sea.
+ * The accent is its front rim.
+ */
+const STANDING_COLLAR: Stroke[] = [...COLLAR, shadow(78, 146, 34)]
+
+/**
+ * Kraznys mo Nakloz: the scourge with the harpy hilt he hands Daenerys for
+ * the Unsullied in "And Now His Watch Is Ended" (episode 24), lying on the
+ * ground where she drops it as she rides out of Astapor. Daenerys swings the
+ * slaver's whip at him in Daenerys III (chapter 171). The harpy's spread
+ * wings are the accent; she has no face.
+ */
+const DROPPED_SCOURGE: Stroke[] = [
+  ...moved(
+    [
+      {
+        d: 'M-3 -15 Q-14 -27 -26 -23 Q-19 -16 -21 -7 Q-12 -11 -4 -7 M3 -15 Q14 -27 26 -23 Q19 -16 21 -7 Q12 -11 4 -7',
+        role: 'accent',
+      },
+      {
+        d: `M-4 0 Q-6 -10 -3 -18 Q0 -21 3 -18 Q6 -10 4 0 ${circle(0, -25, 4)}`,
+      },
+    ],
+    'translate(64 66) rotate(-45) scale(1.5)',
+  ),
+  ...moved(
+    [
+      { d: 'M47 61 L53 55 L96 98 L90 104 Z' },
+      { d: 'M60 68 L66 62 M70 78 L76 72 M80 88 L86 82', role: 'soft' },
+      { d: 'M92 102 Q110 112 116 130 Q120 144 140 148' },
+      { d: 'M92 102 Q102 122 98 136 Q94 148 108 154' },
+      { d: 'M94 100 Q122 102 134 118 Q130 128 146 128' },
+      { d: 'M90 96 l4 -3 M80 86 l4 -3 M70 76 l4 -3', role: 'ambient' },
+    ],
+    'translate(14 8)',
+  ),
+  { d: 'M14 166 H154', role: 'ambient', dashed: true },
+]
+
+/**
+ * Grey Worm: the spiked helm of the Unsullied on the ground and the spear
+ * stood beside it, the arms he leads them with into Yunkai in "The Rains of
+ * Castamere" (episode 29); the books give the Unsullied their spiked caps
+ * and spears. The accent is the helm's spike; its far side is hatched.
+ */
+const HELM_AND_SPEAR: Stroke[] = [
+  { d: 'M28 142 Q28 102 58 98 Q88 102 88 142' },
+  { d: ellipse(58, 142, 32, 7) },
+  { d: 'M54 99 L58 74 L62 99', role: 'accent' },
+  { d: 'M30 126 Q58 134 86 126', role: 'soft' },
+  { d: 'M76 108 l6 -3 M80 118 l6 -3 M82 130 l5 -3', role: 'ambient' },
+  { d: 'M111 46 V150 M117 46 V150' },
+  { d: 'M114 12 Q125 30 118 46 H110 Q103 30 114 12 Z' },
+  { d: 'M114 18 V42 M110 52 H118 M110 57 H118', role: 'soft' },
+  shadow(78, 154, 52),
+]
+
+/** Grazdan mo Eraz's chest: the box in 3/4 and its domed lid thrown back. */
+const CHEST_BOX: Stroke[] = [
+  { d: 'M30 150 V112 H104 V150 Z M104 150 L126 138 V100 L104 112' },
+  { d: 'M30 112 L52 100 H126' },
+  { d: 'M50 100 Q44 68 70 60 H120 Q130 72 126 100', role: 'soft' },
+  { d: 'M110 140 l10 -6 M110 128 l10 -6 M110 116 l10 -6', role: 'ambient' },
+]
+
+/**
+ * Grazdan mo Eraz: the chest of gold he brings to buy Daenerys away from
+ * Yunkai in "The Bear and the Maiden Fair" (episode 27) and in Daenerys IV
+ * (chapter 186), heaped with coins over the rim, the heap in the accent.
+ */
+const CHEST_OF_GOLD: Stroke[] = [
+  ...CHEST_BOX,
+  {
+    d: 'M34 110 Q44 92 60 96 Q70 84 86 90 Q98 84 108 94 Q118 92 122 102',
+    role: 'accent',
+  },
+  {
+    d: `${ellipse(56, 102, 5, 2)} ${ellipse(76, 96, 5, 2)} ${ellipse(98, 98, 5, 2)}`,
+    role: 'soft',
+  },
+  shadow(80, 154, 54),
+]
+
+/** Mero's barrel of wine, upright: the staves, the hoops and its head. */
+const BARREL: Stroke[] = [
+  { d: ellipse(80, 50, 30, 8), role: 'accent' },
+  { d: 'M50 50 Q38 98 50 146 A30 8 0 0 0 110 146 Q122 98 110 50' },
+  { d: 'M45 74 Q80 86 115 74 M45 122 Q80 134 115 122', role: 'soft' },
+  { d: 'M66 58 Q62 98 66 153 M94 58 Q98 98 94 153', role: 'soft' },
+  { d: 'M108 88 l6 -2 M110 102 l6 -2 M108 136 l6 -2', role: 'ambient' },
+]
+
+/**
+ * Mero: the barrel of wine Daenerys gives him at the parley, which he takes
+ * back to his company, in "Second Sons" (episode 28); the books give him a
+ * wagonload in Daenerys IV (chapter 186). The accent is the barrel's head.
+ */
+const WINE_BARREL: Stroke[] = [...BARREL, shadow(80, 154, 40)]
+
+/**
+ * The barrel tipped over on its side on the ground, whole, with nothing of
+ * how: the show kills him in "Second Sons" (episode 28), the books in
+ * Daenerys V (chapter 201).
+ */
+const FALLEN_BARREL: Stroke[] = [
+  ...moved(BARREL, 'translate(0 8) rotate(-90 80 110)'),
+  { d: 'M8 158 H152', role: 'ambient', dashed: true },
+]
+
+/**
+ * A golden hilt in the shape of a woman, upright at x 80 from y 20 to 58,
+ * with no face: the head, the shoulders, the waist and the hips.
+ */
+const WOMAN_HILT = `${circle(80, 17, 5)} M77 23 Q67 28 73 38 Q77 44 72 50 Q69 56 76 59 M83 23 Q93 28 87 38 Q83 44 88 50 Q91 56 84 59`
+
+/**
+ * Daario Naharis: his arakh and his Myrish stiletto crossed, their golden
+ * hilts a matched pair of women, the accent: the weapons he wears in
+ * Daenerys IV (chapter 186) and in the show. The arakh's far face is
+ * hatched.
+ */
+const CROSSED_BLADES: Stroke[] = [
+  ...moved(
+    [
+      { d: 'M68 60 H92' },
+      {
+        d: 'M76 62 Q72 100 88 128 Q98 144 92 154 Q108 136 96 116 Q86 96 86 62',
+      },
+      { d: 'M90 120 l4 -3 M88 104 l4 -3 M86 88 l4 -3', role: 'ambient' },
+    ],
+    'rotate(-24 80 100)',
+  ),
+  ...moved(
+    [
+      { d: 'M70 60 H90 M77 62 L80 154 L83 62' },
+      { d: 'M80 64 V146', role: 'soft' },
+    ],
+    'rotate(24 80 100)',
+  ),
+  { d: WOMAN_HILT, transform: 'rotate(-24 80 100)', role: 'accent' },
+  { d: WOMAN_HILT, transform: 'rotate(24 80 100)', role: 'soft' },
+  shadow(80, 160, 40),
+]
+
+/**
+ * Prendahl na Ghezn: the banner of the Stormcrows, four crows between
+ * crossed thunderbolts, fallen with its pole flat on the ground. He refuses
+ * Daenerys at the parley in Daenerys IV (chapter 186), and Daario brings her
+ * his head the same night, so the record opens on what he left. The crows
+ * are the accent.
+ */
+const FALLEN_STORMCROWS: Stroke[] = [
+  { d: `M10 150 H142 ${circle(146, 150, 4)}` },
+  { d: 'M22 150 L40 90 H132 L118 150' },
+  { d: 'M50 96 L78 118 L72 122 L104 146 M120 96 L90 116 L96 120 L40 146' },
+  {
+    d: 'M78 102 q5 -5 10 0 q5 -5 10 0 M42 122 q4 -4 8 0 q4 -4 8 0 M110 122 q4 -4 8 0 q4 -4 8 0 M66 141 q4 -4 8 0 q4 -4 8 0',
+    role: 'accent',
+  },
+  { d: 'M120 112 l6 -3 M116 128 l6 -3 M112 142 l6 -3', role: 'ambient' },
+  { d: 'M6 156 H154', role: 'ambient', dashed: true },
+]
+
+/**
+ * The collar fallen over on its side on the ground, whole, with nothing of
+ * how: the show executes her in "The Last of the Starks" (episode 71).
+ */
+const FALLEN_COLLAR: Stroke[] = [
+  ...moved(COLLAR, 'translate(6 18) rotate(-90 78 102)'),
+  { d: 'M10 160 H150', role: 'ambient', dashed: true },
+]
+
+/**
+ * The chest tipped over on its side, the coins spilled out of it on the
+ * ground, the spill in the accent, with nothing of how: the show kills him
+ * in "Battle of the Bastards" (episode 59).
+ */
+const SPILLED_CHEST: Stroke[] = [
+  { d: 'M44 112 L76 100 V140 L44 152 Z' },
+  { d: 'M50 114 L76 104 M50 114 V146', role: 'soft' },
+  { d: 'M76 100 H136 L104 112 H44 M104 112 V152 H44 M136 100 V140 L104 152' },
+  { d: 'M110 142 l10 -5 M110 130 l10 -5 M110 118 l10 -5', role: 'ambient' },
+  {
+    d: `${ellipse(16, 152, 6, 2)} ${ellipse(30, 154, 6, 2)} ${ellipse(24, 147, 6, 2)} ${ellipse(38, 146, 5, 2)} ${ellipse(10, 146, 4, 1.5)}`,
+    role: 'accent',
+  },
+  { d: 'M8 156 H152', role: 'ambient', dashed: true },
+]
+
+/**
+ * The Essos cast, keyed by record id: the first season's (#1052), the
+ * second season's Essos and Qarth cast (#1475) and the third season's
+ * Essos cast (#1647).
  */
 export const ESSOS_DRAWINGS = {
   'viserys-targaryen': [...BANNER, shadow(36, 153, 14)],
@@ -780,6 +985,13 @@ export const ESSOS_DRAWINGS = {
   'viserion': SITTING_UP,
   'strong-belwas': SCARRED_CHEST,
   'arstan-whitebeard': STAFF_AND_BOX,
+  'missandei': STANDING_COLLAR,
+  'kraznys-mo-nakloz': DROPPED_SCOURGE,
+  'grey-worm': HELM_AND_SPEAR,
+  'grazdan-mo-eraz': CHEST_OF_GOLD,
+  'mero': WINE_BARREL,
+  'daario-naharis': CROSSED_BLADES,
+  'prendahl-na-ghezn': FALLEN_STORMCROWS,
 } satisfies Drawings
 
 /** The Essos cast drawn again later in the story. */
@@ -1123,5 +1335,25 @@ export const essosRedrawn: Redrawings = {
         shadow(74, 180, 56),
       ],
     },
+  ],
+  // #1647: the third stage's Essos cast.
+  'missandei': [
+    // The show alone: the books leave her alive, so chapter 344, their
+    // last, only orders it.
+    { episode: 71, chapter: 344, source: 'episode', value: FALLEN_COLLAR },
+  ],
+  'grazdan-mo-eraz': [
+    // The show alone: Grey Worm kills Razdal at Meereen in "Battle of the
+    // Bastards" (episode 59). The books never tell his fate, so chapter
+    // 344, their last, only orders it.
+    { episode: 59, chapter: 344, source: 'episode', value: SPILLED_CHEST },
+  ],
+  'mero': [
+    // The show kills him in the episode that first names him and the books
+    // later, so the show's stage sits at his gate (#1683) and the books' at
+    // Daenerys V (chapter 201), where Arstan Whitebeard fells him with his
+    // staff and the freedmen end him.
+    { episode: 28, chapter: 201, source: 'episode', value: FALLEN_BARREL },
+    { episode: 28, chapter: 201, source: 'chapter', value: FALLEN_BARREL },
   ],
 }
