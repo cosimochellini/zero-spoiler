@@ -36,7 +36,7 @@ export const CHRONICLE_SOURCES = {
     },
     126: {
       source: 'https://onepiece.fandom.com/wiki/Episode_126',
-      note: 'Crocodile through the ceiling, Vivi sees him fall, first rain in three years. Second pass: the second defeat was at the palace (eps 121–122), not beneath it, and the water barrel was pierced in that fight — both corrected.',
+      note: 'Crocodile through the ceiling, Vivi sees him fall, first rain in three years. Second pass: the second defeat was at the palace (eps 121–122), not beneath it, and the water barrel was pierced in that fight — both corrected. Chapter (#1682): 210, the last event: Crocodile through the ceiling, Vivi sees him in the air, the rain begins (Chapter_210: Luffy’s final attack sends Crocodile through the roof of the mausoleum; it begins to rain and the fighting stops).',
     },
     129: {
       source: 'https://onepiece.fandom.com/wiki/Episode_129',
@@ -1398,7 +1398,7 @@ export const CHRONICLE_SOURCES = {
     },
     126: {
       source: 'https://onepiece.fandom.com/wiki/Episode_126',
-      note: 'Same episode as Luffy’s own story about rain over Alubarna, told from Crocodile’s side: driven through the ceiling and into the sky above Alubarna.',
+      note: 'Same episode as Luffy’s own story about rain over Alubarna, told from Crocodile’s side: driven through the ceiling and into the sky above Alubarna. Chapter (#1682): 210, the last event: Crocodile crashes into the street as the rain begins (Chapter_210: Luffy and Crocodile hit the ground as it rains and the war ends).',
     },
     475: {
       source: 'https://onepiece.fandom.com/wiki/Episode_475',

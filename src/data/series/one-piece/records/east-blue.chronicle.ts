@@ -92,6 +92,7 @@ export const eastBlueChronicles = {
     },
     {
       episode: 126,
+      chapter: 210,
       value: {
         title: { it: 'Pioggia su Alubarna', en: 'Rain over Alubarna' },
         body: {
