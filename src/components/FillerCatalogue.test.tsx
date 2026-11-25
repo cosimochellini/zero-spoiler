@@ -79,6 +79,8 @@ describe('FillerCatalogue', () => {
     expect(screen.getByText('Warship Island')).toBeInTheDocument()
     expect(screen.getByText('EP 61')).toBeInTheDocument()
     expect(screen.getByText('Mixed')).toBeInTheDocument()
+    // The covered row's title is the one label every covered entry shares.
+    expect(screen.getAllByText('Entry under fog')).toHaveLength(3)
     expect(screen.getByText('After EP 60')).toBeInTheDocument()
     expect(screen.getByText('· 2001', { exact: false })).toBeInTheDocument()
     expect(document.querySelector('#ep-54')).not.toBeNull()

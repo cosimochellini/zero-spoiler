@@ -125,6 +125,7 @@ describe('FillerCountdown', () => {
     await user.click(screen.getByRole('button', { name: 'EP 55. Filler' }))
 
     expect(screen.queryByText(opened.title)).not.toBeInTheDocument()
+    expect(screen.getByText('Entry under fog')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /Show anyway/u })).toBeVisible()
     expect(
       screen.getByRole('button', { name: 'EP 55. Filler' }),

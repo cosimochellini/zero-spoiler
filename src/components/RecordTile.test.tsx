@@ -109,7 +109,7 @@ describe('RecordTile', () => {
     )
 
     expect(screen.queryByText('Sanji')).not.toBeInTheDocument()
-    expect(screen.getByText('Spoiler')).toBeInTheDocument()
+    expect(screen.getByText('Entry under fog')).toBeInTheDocument()
     expect(container.querySelector('a')).toBeNull()
     expect(container.querySelector('svg')).toBeNull()
     expect(screen.getByText('Episode 20')).toBeVisible()

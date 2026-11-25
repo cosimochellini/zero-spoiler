@@ -31,7 +31,7 @@ describe('SpoilerVeil', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peekPending()}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={openSlot(record)}
       >
         {body}
@@ -48,7 +48,7 @@ describe('SpoilerVeil', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peekPending()}
-        placeholder={<p data-testid="fog">Spoiler</p>}
+        placeholder={<p data-testid="fog">Entry under fog</p>}
         slot={coveredSlot<CharacterView>({ ...at(1089) })}
       >
         {body}
@@ -68,7 +68,7 @@ describe('SpoilerVeil', () => {
       renderWithProviders(
         <SpoilerVeil
           peek={peekPending()}
-          placeholder={<p>Spoiler</p>}
+          placeholder={<p>Entry under fog</p>}
           slot={coveredSlot<CharacterView>()}
         >
           {() => {
@@ -83,7 +83,7 @@ describe('SpoilerVeil', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peekPending()}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={coveredSlot<CharacterView>({ ...at(1089) })}
       >
         {body}
@@ -103,7 +103,7 @@ describe('SpoilerVeil', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peek}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={coveredSlot<CharacterView>({ handle: 'zz' })}
       >
         {body}
@@ -118,7 +118,7 @@ describe('SpoilerVeil', () => {
     // The opaque handle, passed through untouched and never invented.
     expect(asked).toStrictEqual(['zz'])
     expect(screen.getByTestId('secret')).toBeInTheDocument()
-    expect(screen.queryByText('Spoiler')).not.toBeInTheDocument()
+    expect(screen.queryByText('Entry under fog')).not.toBeInTheDocument()
   })
 
   it('says it is working, and keeps the record out of the DOM, while the peek is in flight', async () => {
@@ -126,7 +126,7 @@ describe('SpoilerVeil', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peekPending()}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={coveredSlot<CharacterView>()}
       >
         {body}
@@ -145,7 +145,7 @@ describe('SpoilerVeil', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peekFails()}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={coveredSlot<CharacterView>()}
       >
         {body}
@@ -164,7 +164,7 @@ describe('SpoilerVeil', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peekTo(record)}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={openSlot(record)}
       >
         {body}
@@ -183,7 +183,7 @@ describe('SpoilerVeil', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peekTo(record)}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={coveredSlot<CharacterView>()}
       >
         {body}
@@ -203,7 +203,7 @@ describe('SpoilerVeil', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peekPending()}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={coveredSlot<CharacterView>({ ...at(890) })}
       >
         {body}
@@ -226,7 +226,7 @@ describe('SpoilerVeil in the other units', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peekPending()}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={coveredSlot<CharacterView>(dated)}
       >
         {body}
@@ -243,7 +243,7 @@ describe('SpoilerVeil in the other units', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peekPending()}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={coveredSlot<CharacterView>(dated)}
       >
         {body}
@@ -260,7 +260,7 @@ describe('SpoilerVeil in the other units', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peekPending()}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={coveredSlot<CharacterView>(dated)}
       >
         {body}
@@ -283,7 +283,7 @@ describe('SpoilerVeil at inline density', () => {
       <SpoilerVeil
         density="inline"
         peek={peekPending()}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={coveredSlot<CharacterView>({ ...at(1089) })}
       >
         {body}
@@ -316,7 +316,7 @@ describe.each(['compact', 'inline'] as const)(
           <SpoilerVeil
             density={density}
             peek={peek}
-            placeholder={<p data-testid="fog">Spoiler</p>}
+            placeholder={<p data-testid="fog">Entry under fog</p>}
             slot={coveredSlot<CharacterView>({ handle: 'zz', ...at(1089) })}
           >
             {linked}
@@ -416,7 +416,7 @@ describe('SpoilerVeil on a page of its own, at block density', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peek}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={coveredSlot<CharacterView>({ handle: 'zz' })}
       >
         {body}
@@ -444,7 +444,7 @@ describe('the fog in a listing', () => {
               key={handle}
               density="compact"
               peek={peekPending()}
-              placeholder={<p>Spoiler</p>}
+              placeholder={<p>Entry under fog</p>}
               slot={coveredSlot<CharacterView>({ handle })}
             >
               {linked}

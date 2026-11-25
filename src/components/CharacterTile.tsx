@@ -65,9 +65,7 @@ export function CharacterTile({
           <span {...stylex.props(styles.row)}>
             <span {...stylex.props(styles.frame)} />
             <span {...stylex.props(styles.words)}>
-              <span {...stylex.props(styles.name)}>
-                {t('veil.placeholder')}
-              </span>
+              <span {...stylex.props(styles.name)}>{t('veil.entry')}</span>
             </span>
           </span>
         }

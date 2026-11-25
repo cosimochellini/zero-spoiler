@@ -54,7 +54,7 @@ describe('CharacterTile', () => {
     expect(screen.queryByRole('link')).not.toBeInTheDocument()
     expect(screen.queryByText('Nami')).not.toBeInTheDocument()
     expect(container.querySelectorAll('path')).toHaveLength(0)
-    expect(screen.getByText('Spoiler')).toBeInTheDocument()
+    expect(screen.getByText('Entry under fog')).toBeInTheDocument()
     expect(screen.getByText('Episode 5')).toBeVisible()
   })
 

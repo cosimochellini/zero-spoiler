@@ -64,7 +64,7 @@ describe('the bookmark controls of Hunter x Hunter', () => {
     renderWithProviders(
       <SpoilerVeil
         peek={peekPending()}
-        placeholder={<p>Spoiler</p>}
+        placeholder={<p>Entry under fog</p>}
         slot={coveredSlot<CharacterView>(at(38))}
       >
         {body}
