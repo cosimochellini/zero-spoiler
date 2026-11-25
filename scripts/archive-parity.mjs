@@ -6,9 +6,11 @@
 //   npm run archive:parity -- --series game-of-thrones
 // Flags, after `--`:
 //   --base <ref>        the base, `git merge-base origin/main HEAD` by
-//                       default; a detached worktree of it is made in the
-//                       system's temporary folder, set up with `npm ci`, and
-//                       removed at the end, whatever happens;
+//                       default; a detached worktree of it is made in
+//                       `$TMPDIR/archive-parity-*/base`, set up with `npm ci`,
+//                       and removed at the end, on an error or a signal too.
+//                       Only a SIGKILL of this process leaves it: remove it
+//                       with `git worktree remove --force <that path>`;
 //   --base-dir <path>   an existing worktree of the base, used as it is;
 //   --series, --skip, --bookmarks   passed to both dumps.
 // Exit 0 when the dumps are identical, 1 when they differ or fall out of
@@ -19,7 +21,6 @@ import { mkdtempSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import process from 'node:process'
-import { createInterface } from 'node:readline'
 import { parseArgs } from 'node:util'
 
 import { ROOT } from './archive-loader.mjs'
@@ -149,6 +150,31 @@ function stepOf(line, base, head) {
 }
 
 /**
+ * The lines of a stream, split on `\n` alone and each with its `\n`, so a
+ * `\r` or a missing last newline is a difference too.
+ * @param {AsyncIterable<string>} chunks The stream's text.
+ * @yields {string} One line.
+ */
+export async function* linesOf(chunks) {
+  let rest = ''
+  for await (const chunk of chunks) {
+    // A long line comes in many chunks: split only once its end is here.
+    if (!chunk.includes('\n')) {
+      rest += chunk
+      continue
+    }
+    const lines = `${rest}${chunk}`.split('\n')
+    rest = lines.pop() ?? ''
+    for (const line of lines) {
+      yield `${line}\n`
+    }
+  }
+  if (rest !== '') {
+    yield rest
+  }
+}
+
+/**
  * Reads two dumps in step and counts each payload's identical and changed
  * lines. It stops at the first line where the two sides are not at the same
  * place, since every line after it would differ.
@@ -219,8 +245,13 @@ export function failedOf({ code, signal }, stopped) {
   return code !== 0 && (!stopped || signal !== 'SIGKILL')
 }
 
-/** The children of this run, and the signal that stopped it, if one did. */
+/**
+ * The children of this run, the signal that stopped it, if one did, and the
+ * base worktree it made, if it made one.
+ */
 const RUN = {
+  /** @type {string | undefined} */
+  base: undefined,
   /** @type {Set<import('node:child_process').ChildProcess>} */
   children: new Set(),
   /** @type {string | undefined} */
@@ -285,19 +316,23 @@ function git(...args) {
 }
 
 /**
- * A detached worktree of the base, with its dependencies installed.
+ * A detached worktree of the base, with its dependencies installed, in a new
+ * temporary folder.
  * @param {string | undefined} ref The base ref, or the merge-base with `origin/main`.
- * @param {string} folder The empty temporary folder to put it in.
  * @returns {Promise<string>} The worktree.
  */
-async function baseTree(ref, folder) {
+async function baseTree(ref) {
   const sha = git(
     ...(ref === undefined ?
       ['merge-base', 'origin/main', 'HEAD']
     : ['rev-parse', '--verify', `${ref}^0`]),
   )
+  // fallow-ignore-next-line security-sink -- the system's temporary folder and a literal prefix.
+  const folder = mkdtempSync(path.join(tmpdir(), 'archive-parity-'))
   // fallow-ignore-next-line security-sink -- folder is this run's own mkdtemp folder.
   const tree = path.join(folder, 'base')
+  // Set before the worktree is made, so the cleanup finds a half-made one.
+  RUN.base = tree
   console.error(`archive:parity: base ${sha.slice(0, 8)} in ${tree}`)
   git('worktree', 'add', '--quiet', '--detach', tree, sha)
   unlessStopped()
@@ -353,29 +388,40 @@ function dumpOf(tree, args) {
     ],
     { cwd: tree, stdio: ['ignore', 'pipe', 'inherit'] },
   )
-  let stopped = false
+  child.stdout.setEncoding('utf8')
   const exit = ended(child)
+  const run = { drained: false, killed: false }
+  async function* lines() {
+    yield* linesOf(child.stdout)
+    run.drained = true
+  }
+  // A dump read to its end is left to exit, and one that had exited is not
+  // killed: only a SIGKILL sent to a running dump is this script's own.
   const stop = () => {
-    stopped = true
+    if (run.drained) {
+      return
+    }
+    run.killed = child.exitCode === null && child.signalCode === null
     child.stdout.destroy()
-    child.kill('SIGKILL')
+    if (run.killed) {
+      child.kill('SIGKILL')
+    }
   }
 
   return {
-    lines: createInterface({ input: child.stdout, crlfDelay: Infinity }),
+    lines: lines(),
     stop,
-    failed: async () => failedOf(await exit, stopped),
+    failed: async () => failedOf(await exit, run.killed),
   }
 }
 
 /**
  * Compares the base's dump with this checkout's.
  * @param {{ base: string | undefined, baseDir: string | undefined, dump: string[] }} flags The flags.
- * @param {string | undefined} folder The temporary folder for a base worktree, without `--base-dir`.
  * @returns {Promise<number>} The exit code.
  */
-async function parity(flags, folder) {
-  const tree = flags.baseDir ?? (await baseTree(flags.base, folder))
+async function parity(flags) {
+  const tree = flags.baseDir ?? (await baseTree(flags.base))
   const [base, head] = [tree, ROOT].map((root) => dumpOf(root, flags.dump))
   const result = await compareDumps(base.lines, head.lines)
   base.stop()
@@ -392,13 +438,12 @@ async function parity(flags, folder) {
 }
 
 /**
- * Removes the base's worktree and its folder, and no other worktree.
- * @param {string} folder The temporary folder.
+ * Removes the base's worktree and the temporary folder around it, and no
+ * other worktree.
+ * @param {string} tree The base's worktree.
  * @returns {void}
  */
-function removeBase(folder) {
-  // fallow-ignore-next-line security-sink -- folder is this run's own mkdtemp folder.
-  const tree = path.join(folder, 'base')
+function removeBase(tree) {
   try {
     execFileSync('git', ['worktree', 'remove', '--force', tree], {
       cwd: ROOT,
@@ -407,7 +452,7 @@ function removeBase(folder) {
   } catch {
     // Never added: there is no worktree to remove, only the folder below.
   }
-  rmSync(folder, { recursive: true, force: true })
+  rmSync(path.dirname(tree), { recursive: true, force: true })
 }
 
 if (isMain(import.meta)) {
@@ -422,19 +467,15 @@ if (isMain(import.meta)) {
   for (const signal of ['SIGINT', 'SIGTERM', 'SIGHUP']) {
     process.on(signal, stopRun)
   }
-  const folder =
-    flags.baseDir === undefined ?
-      // fallow-ignore-next-line security-sink -- the system's temporary folder and a literal prefix.
-      mkdtempSync(path.join(tmpdir(), 'archive-parity-'))
-    : undefined
   try {
-    process.exitCode = await parity(flags, folder)
+    process.exitCode = await parity(flags)
   } catch (error) {
+    // A bad TMPDIR, Git or npm: a setup to fix, not a difference.
     console.error(error.message)
     process.exitCode = 2
   } finally {
-    if (folder !== undefined) {
-      removeBase(folder)
+    if (RUN.base !== undefined) {
+      removeBase(RUN.base)
     }
   }
 }

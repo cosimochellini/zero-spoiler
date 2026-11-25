@@ -82,11 +82,14 @@ comments, and it refuses a page that carries `data-impeccable-ignore`.
   without saving them, and exits 0 when they are identical. Exit 1 prints, per
   payload, the count of identical and different lines and one truncated sample
   of the first change; exit 2 is a wrong flag, a failed setup or dump, no line
-  compared, or Ctrl-C. Pass `-- --series <slug>` for another series,
-  `--skip <payload>` to leave out a payload the change alters,
-  `--bookmarks <file.json>` to hold both to the base's bookmarks, `--base <ref>`
-  for another base and `--base-dir <path>` to reuse a base worktree with
-  dependencies installed. `archive:table` covers One Piece only.
+  compared, or Ctrl-C. Only a SIGKILL of the command leaves the base behind:
+  remove it with `git worktree remove --force <$TMPDIR/archive-parity-*/base>`,
+  the path written out, then delete its `archive-parity-*` folder. Pass
+  `-- --series <slug>` for another series, `--skip <payload>` to leave out a
+  payload the change alters, `--bookmarks <file.json>` to hold both to the
+  base's bookmarks, `--base <ref>` for another base and `--base-dir <path>` to
+  reuse a base worktree with dependencies installed. `archive:table` covers One
+  Piece only.
 - **Site changes:** build, `npm start` on a free port, then check the affected
   flow in Chrome with local `puppeteer-core`, running inside the worktree. Set
   the series cookie; check before/at changed episode and chapter gates. Capture

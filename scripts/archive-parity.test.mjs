@@ -1,7 +1,14 @@
 // @vitest-environment node
-import { spawn } from 'node:child_process'
+import { execFileSync, spawn } from 'node:child_process'
 import { once } from 'node:events'
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
+import {
+  copyFileSync,
+  mkdirSync,
+  mkdtempSync,
+  readdirSync,
+  rmSync,
+  writeFileSync,
+} from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import process from 'node:process'
@@ -12,6 +19,7 @@ import {
   compareDumps,
   exitOf,
   failedOf,
+  linesOf,
   parityArgs,
   reportOf,
 } from './archive-parity.mjs'
@@ -132,6 +140,25 @@ describe('the comparison', () => {
   })
 })
 
+describe('the lines of a dump', () => {
+  it('end at a newline alone and keep it, so bytes count', async () => {
+    const chunks = Readable.from(['{"a":1}\r\n{"b"', ':2}\n', 'x', 'y'])
+    const lines = await Array.fromAsync(linesOf(chunks))
+
+    expect(lines).toStrictEqual(['{"a":1}\r\n', '{"b":2}\n', 'xy'])
+  })
+
+  it('make a missing last newline a difference', async () => {
+    const result = await compareDumps(
+      linesOf(Readable.from([`${TABLE}\n`])),
+      linesOf(Readable.from([TABLE])),
+    )
+
+    expect(result.counts.get('table')).toMatchObject({ same: 0, changed: 1 })
+    expect(exitOf(result)).toBe(1)
+  })
+})
+
 describe('the end of a run', () => {
   it('is an error when neither dump had a line', async () => {
     const result = await compareDumps(dump([]), dump([]))
@@ -176,24 +203,17 @@ describe('a run against a base worktree', () => {
   }
 
   /**
-   * Starts a comparison of this checkout with a base worktree.
-   * @param {string} tree The base worktree.
+   * Starts a parity script.
+   * @param {string} script The script.
+   * @param {string[]} args Its flags.
+   * @param {NodeJS.ProcessEnv} [env] Its environment.
    * @returns {{ child: import('node:child_process').ChildProcess, out: () => string, err: () => string }} The run and what it printed.
    */
-  const parityWith = (tree) => {
-    const child = spawn(
-      process.execPath,
-      [
-        path.join(import.meta.dirname, 'archive-parity.mjs'),
-        '--base-dir',
-        tree,
-        '--series',
-        'game-of-thrones',
-        '--bookmarks',
-        bookmarks,
-      ],
-      { stdio: ['ignore', 'pipe', 'pipe'] },
-    )
+  const start = (script, args, env = process.env) => {
+    const child = spawn(process.execPath, [script, ...args], {
+      env,
+      stdio: ['ignore', 'pipe', 'pipe'],
+    })
     runs.push(child)
     const printed = { out: '', err: '' }
     child.stdout.on('data', (chunk) => {
@@ -206,6 +226,21 @@ describe('a run against a base worktree', () => {
     return { child, out: () => printed.out, err: () => printed.err }
   }
 
+  /**
+   * Starts a comparison of this checkout with a base worktree.
+   * @param {string} tree The base worktree.
+   * @returns {{ child: import('node:child_process').ChildProcess, out: () => string, err: () => string }} The run and what it printed.
+   */
+  const parityWith = (tree) =>
+    start(path.join(import.meta.dirname, 'archive-parity.mjs'), [
+      '--base-dir',
+      tree,
+      '--series',
+      'game-of-thrones',
+      '--bookmarks',
+      bookmarks,
+    ])
+
   it('imports the base dump from a path with # % ?', async () => {
     const run = parityWith(
       baseWith(String.raw`process.stdout.write('{"table":1,"chapter":0}\n')`),
@@ -217,11 +252,127 @@ describe('a run against a base worktree', () => {
     expect(code).toBe(1)
   })
 
-  it('fails when a dump ends on a SIGTERM it did not send', async () => {
-    const run = parityWith(baseWith("process.kill(process.pid, 'SIGTERM')"))
+  // The real dump's lines, all of them, before the end.
+  const whole = [
+    "import { execFileSync } from 'node:child_process'",
+    `const dump = ${JSON.stringify(path.join(import.meta.dirname, 'archive-dump.mjs'))}`,
+    'process.stdout.write(execFileSync(process.execPath, [dump, ...process.argv.slice(2)]))',
+  ].join('\n')
+
+  it.each([
+    ['a SIGTERM before any line', "process.kill(process.pid, 'SIGTERM')"],
+    [
+      'a SIGKILL after the first line',
+      String.raw`process.stdout.write('{"table":1,"chapter":0}\n'); process.kill(process.pid, 'SIGKILL')`,
+    ],
+    [
+      'a SIGKILL after the last line',
+      `${whole}\nprocess.kill(process.pid, 'SIGKILL')`,
+    ],
+  ])('fails when a dump ends on %s it did not send', async (_, source) => {
+    const run = parityWith(baseWith(source))
     const [code] = await once(run.child, 'exit')
 
     expect(run.err()).toContain('a dump failed')
+    expect(code).toBe(2)
+  })
+
+  it('passes a base that ends with every line and exit 0', async () => {
+    const run = parityWith(baseWith(whole))
+    const [code] = await once(run.child, 'exit')
+
+    expect(run.out()).toContain('table: 73 identical')
+    expect(code).toBe(0)
+  })
+
+  /**
+   * A Git repository with the parity script, a dump of one line and an
+   * install that needs no network.
+   * @returns {string} The repository.
+   */
+  const repository = () => {
+    const root = mkdtempSync(path.join(folder, 'repository-'))
+    mkdirSync(path.join(root, 'scripts'))
+    for (const file of [
+      'archive-parity.mjs',
+      'archive-loader.mjs',
+      'is-main.mjs',
+    ]) {
+      copyFileSync(
+        path.join(import.meta.dirname, file),
+        path.join(root, 'scripts', file),
+      )
+    }
+    writeFileSync(
+      path.join(root, 'scripts/archive-dump.mjs'),
+      String.raw`process.stderr.write('dump in ' + process.cwd() + '\n'); process.stdout.write('{"table":1,"chapter":1}\n')`,
+    )
+    const manifest = { name: 'fake', version: '1.0.0', private: true }
+    writeFileSync(path.join(root, 'package.json'), JSON.stringify(manifest))
+    writeFileSync(
+      path.join(root, 'package-lock.json'),
+      JSON.stringify({
+        ...manifest,
+        lockfileVersion: 3,
+        packages: { '': manifest },
+      }),
+    )
+    const git = (...args) =>
+      execFileSync(
+        'git',
+        ['-c', 'user.name=t', '-c', 'user.email=t@t', ...args],
+        { cwd: root, encoding: 'utf8' },
+      )
+    git('init', '--quiet')
+    git('add', '--all')
+    git(
+      'commit',
+      '--quiet',
+      '--no-verify',
+      '--no-gpg-sign',
+      '--message',
+      'base',
+    )
+    return root
+  }
+
+  it('makes the base worktree in TMPDIR and removes it', async () => {
+    const root = repository()
+    const temporary = mkdtempSync(path.join(folder, 'tmp-'))
+    const worktrees = () =>
+      execFileSync('git', ['worktree', 'list', '--porcelain'], {
+        cwd: root,
+        encoding: 'utf8',
+      })
+    const before = worktrees()
+    const run = start(
+      path.join(root, 'scripts/archive-parity.mjs'),
+      ['--base', 'HEAD'],
+      { ...process.env, TMPDIR: temporary },
+    )
+    const [code] = await once(run.child, 'exit')
+
+    expect(run.err()).toMatch(/dump in \S+\/archive-parity-\w+\/base\n/u)
+    expect(run.out()).toBe('table: 1 identical\n')
+    expect(code).toBe(0)
+    expect(
+      readdirSync(temporary).filter((name) =>
+        name.startsWith('archive-parity-'),
+      ),
+    ).toStrictEqual([])
+    expect(worktrees()).toBe(before)
+  })
+
+  it('exits 2 without a stack when TMPDIR cannot hold the base', async () => {
+    const run = start(
+      path.join(repository(), 'scripts/archive-parity.mjs'),
+      ['--base', 'HEAD'],
+      { ...process.env, TMPDIR: path.join(folder, 'missing') },
+    )
+    const [code] = await once(run.child, 'exit')
+
+    expect(run.err()).toContain('ENOENT')
+    expect(run.err()).not.toContain('    at ')
     expect(code).toBe(2)
   })
 
