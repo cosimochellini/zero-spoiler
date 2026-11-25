@@ -748,7 +748,7 @@ const ROSE_PENNON: Stroke[] = [
   },
   { d: 'M96 36 Q92 54 96 72', role: 'soft' },
   { d: 'M118 44 l4 -3 M120 64 l4 -3', role: 'ambient' },
-  ...moved(ROSE_BLOOM, 'translate(66 56) scale(0.55) translate(-80 -95)'),
+  ...moved(ROSE_BLOOM, 'translate(66 50) scale(0.5) translate(-80 -95)'),
   shadow(40, 156, 18),
 ]
 
