@@ -59,7 +59,7 @@ export function CharacterCard({
             <span {...stylex.props(styles.frame)}>
               <CharacterCrest />
             </span>
-            <span {...stylex.props(styles.name)}>{t('veil.placeholder')}</span>
+            <span {...stylex.props(styles.name)}>{t('veil.entry')}</span>
           </span>
         }
         slot={slot}

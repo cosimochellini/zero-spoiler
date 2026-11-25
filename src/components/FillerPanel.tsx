@@ -40,7 +40,7 @@ export function FillerPanel({
       <SpoilerVeil
         peek={peek}
         placeholder={
-          <p {...stylex.props(styles.panelTitle)}>{t('veil.placeholder')}</p>
+          <p {...stylex.props(styles.panelTitle)}>{t('veil.entry')}</p>
         }
         slot={slot}
       >

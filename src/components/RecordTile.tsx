@@ -58,7 +58,7 @@ export function RecordTile({ slot, peek }: RecordTileProps): ReactElement {
         placeholder={
           <span {...stylex.props(styles.card)}>
             <span {...stylex.props(styles.frame)} />
-            <span {...stylex.props(styles.name)}>{t('veil.placeholder')}</span>
+            <span {...stylex.props(styles.name)}>{t('veil.entry')}</span>
           </span>
         }
         slot={slot}

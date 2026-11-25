@@ -215,7 +215,7 @@ describe('CharacterGrid', () => {
     ).not.toBeInTheDocument()
     expect(fogBand()).toHaveTextContent('1 under fog')
     // The covered name never reached the browser, so there is nothing to hide.
-    expect(within(fogBand()).getByText('Spoiler')).toBeInTheDocument()
+    expect(within(fogBand()).getByText('Entry under fog')).toBeInTheDocument()
     expect(fogBand().querySelectorAll(':scope svg svg')).toHaveLength(0)
     expect(within(fogBand()).getByText('Episode 130')).toBeVisible()
   })
