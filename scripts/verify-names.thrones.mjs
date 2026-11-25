@@ -11,7 +11,7 @@ const CHARACTERS = 'Personaggi delle Cronache del ghiaccio e del fuoco'
  * @param {string} section The section's heading.
  * @returns {string} The page and the section, as `Page#Section`.
  */
-function characters(section) {
+export function characters(section) {
   return `${CHARACTERS}#${section}`
 }
 
@@ -31,7 +31,7 @@ function watch(section) {
 const DAENERYS = 'Daenerys Targaryen'
 
 /** The list's TV cast table, which names its rows only in the table. */
-const OTHERS = characters('Altri personaggi')
+export const OTHERS = characters('Altri personaggi')
 
 /** Barristan Selmy's section, which also names Belwas and Arstan in its prose. */
 const SELMY = characters('Barristan Selmy')

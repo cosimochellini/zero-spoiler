@@ -4,20 +4,7 @@
  * filing child appends its block to both tables.
  */
 
-/** Italian Wikipedia's list of the saga's characters. */
-const CHARACTERS = 'Personaggi delle Cronache del ghiaccio e del fuoco'
-
-/**
- * A section of the characters' list.
- * @param {string} section The section's heading.
- * @returns {string} The page and the section, as `Page#Section`.
- */
-function characters(section) {
-  return `${CHARACTERS}#${section}`
-}
-
-/** The list's TV cast table, which names its rows only in the table. */
-const OTHERS = characters('Altri personaggi')
+import { characters, OTHERS } from './verify-names.thrones.mjs'
 
 /**
  * Each third-stage character's Italian Wikipedia page, as `Page#Section` for a
