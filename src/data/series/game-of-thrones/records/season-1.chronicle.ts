@@ -3066,6 +3066,58 @@ export const season1Chronicles = {
         en: 'After the death of his brother, King [[robert-baratheon|Robert]], and the execution of [[eddard-stark|Eddard Stark]], Renly does not acknowledge [[joffrey-baratheon|Joffrey]] as king. Lord [[tywin-lannister|Tywin Lannister]] and his captains learn that Renly has claimed the Iron Throne for himself. For the Lannisters, already at war with the Starks, he is a new enemy.',
       },
     ),
+    // Stage 2 (#1485): the stormlands, to his death.
+    onScreen(
+      [13, 96],
+      {
+        it: 'Il re con centomila uomini',
+        en: 'The king with a hundred thousand men',
+      },
+      {
+        it: 'Renly si è fatto re con l’appoggio dei Tyrell e ha sposato [[margaery-tyrell|Margaery]], la sorella di [[loras-tyrell|Loras]]. Al suo torneo nomina campionessa [[brienne-of-tarth|Brienne]], che chiede di entrare nella sua Guardia reale. Accoglie [[catelyn-stark|Catelyn Stark]], le promette giustizia per Eddard e le mostra l’accampamento, vantando più di centomila uomini. Nella tenda Loras si lamenta di Brienne e gli ricorda che i vassalli parlano di una sposa ancora vergine. Con Margaery, Renly non riesce a consumare il matrimonio, e lei gli propone di far venire Loras ad aiutarlo.',
+        en: 'Renly has made himself king with the Tyrells’ support and married [[margaery-tyrell|Margaery]], the sister of [[loras-tyrell|Loras]]. At his tourney he names [[brienne-of-tarth|Brienne]] champion, and she asks to join his Kingsguard. He welcomes [[catelyn-stark|Catelyn Stark]], promises her justice for Eddard and shows her round his camp, boasting of more than a hundred thousand men. In his tent Loras complains about Brienne and reminds him that his bannermen gossip about a bride still a virgin. With Margaery, Renly cannot consummate the marriage, and she offers to bring Loras in to help.',
+      },
+    ),
+    onScreen(
+      [14, 105],
+      { it: 'Un uomo senza amici', en: 'A man without friends' },
+      {
+        it: '[[petyr-baelish|Ditocorto]] arriva all’accampamento, e Renly gli dice che non si fida di lui. Petyr gli offre allora di aprirgli le porte di Approdo del Re. Sulla costa incontra il fratello [[stannis-baratheon|Stannis]] e lo deride: si prende gioco del suo stendardo e della sua nuova fede, e gli dice che non lo vuole nessuno, e che un uomo senza amici è un uomo senza potere. Stannis gli dà la notte per sottomettersi, in cambio del seggio nel concilio e del ruolo di erede. Renly rifiuta, e mentre se ne va chiede ai suoi se credono che un tempo volesse bene a Stannis.',
+        en: '[[petyr-baelish|Littlefinger]] comes to the camp, and Renly tells him he does not trust him. Petyr then offers to open the gates of King’s Landing to him. On the coast he meets his brother [[stannis-baratheon|Stannis]] and mocks him: he makes fun of his banner and his new faith, tells him nobody wants him, and says a man without friends is a man without power. Stannis gives him the night to submit, in exchange for a council seat and the place of heir. Renly refuses, and as he rides off he asks his companions whether they can believe he once loved Stannis.',
+      },
+    ),
+    onScreen(
+      [15, 107],
+      { it: 'Davanti allo specchio', en: 'Before the mirror' },
+      {
+        it: 'Nella sua tenda Renly offre a [[catelyn-stark|Catelyn Stark]] le sue condizioni: [[robb-stark|Robb]] potrà restare Re del Nord, ma dovrà giurargli fedeltà, come Eddard fece con Robert. Mentre [[brienne-of-tarth|Brienne]] lo aiuta a togliersi il mantello, Catelyn lo prega di trattare con [[stannis-baratheon|Stannis]]. Renly risponde che avrebbe più fortuna a discutere con il vento, e che insieme potrebbero finire la guerra in due settimane. Poi una folata apre la tenda e un fumo nero prende la forma di un uomo, con il volto di Stannis nello specchio. L’ombra lo trafigge, e Renly muore tra le braccia di Brienne.',
+        en: 'In his tent Renly offers [[catelyn-stark|Catelyn Stark]] his terms: [[robb-stark|Robb]] may stay King in the North, but must swear fealty to him, as Eddard did to Robert. As [[brienne-of-tarth|Brienne]] helps him out of his cloak, Catelyn begs him to negotiate with [[stannis-baratheon|Stannis]]. Renly answers that he would have better luck debating the wind, and that together they could end the war in a fortnight. Then a gust parts the tent and black smoke takes the shape of a man, with Stannis’s face in the mirror. The shadow runs him through, and Renly dies in Brienne’s arms.',
+      },
+    ),
+    inBooks(
+      [13, 96],
+      { it: 'I cavalieri dell’estate', en: 'The knights of summer' },
+      {
+        it: 'Renly si è fatto re con i lord del Sud e ha sposato [[margaery-tyrell|Margaery Tyrell]]. A Ponte Amaro nomina campionessa del torneo [[brienne-of-tarth|Brienne]], che entra nella sua guardia arcobaleno. Accoglie [[catelyn-stark|Catelyn Stark]] con calore e giura di portarle la testa di [[cersei-lannister|Cersei]]. Dal tetto di un castello le mostra i fuochi del suo esercito, e le dice che [[stannis-baratheon|Stannis]] sarebbe un re terribile. A [[robb-stark|Robb]] offre di restare Re del Nord, purché si inginocchi davanti a lui. In quel momento arriva un messaggero: Stannis assedia un castello di Renly e si fa chiamare re.',
+        en: 'Renly has made himself king with the southern lords and married [[margaery-tyrell|Margaery Tyrell]]. At Bitterbridge he names [[brienne-of-tarth|Brienne]] champion of his tourney, and she joins his Rainbow Guard. He welcomes [[catelyn-stark|Catelyn Stark]] warmly and swears to bring her [[cersei-lannister|Cersei]]’s head. From a castle roof he shows her his army’s fires, and tells her [[stannis-baratheon|Stannis]] would make an appalling king. He offers to let [[robb-stark|Robb]] stay King in the North, as long as he bends the knee to him. Just then a messenger rides in: Stannis is besieging a castle of Renly’s and calls himself king.',
+      },
+    ),
+    inBooks(
+      [14, 105],
+      { it: 'Una pesca per Stannis', en: 'A peach for Stannis' },
+      {
+        it: 'Davanti a Capo Tempesta Renly chiede a [[stannis-baratheon|Stannis]] di inginocchiarsi. Gli offre una pesca, perché la vita è breve, e poi gli offre il castello, ma Stannis rifiuta. Renly dice che entro un anno avrà un figlio da [[margaery-tyrell|Margaery]], e deride la moglie di Stannis. Stannis gli dà tempo fino all’alba. Renly ride: ha la forza delle bandiere, e il grosso del suo esercito deve ancora arrivare. Al consiglio decide di combattere e dà l’avanguardia a ser [[loras-tyrell|Loras Tyrell]], con [[brienne-of-tarth|Brienne]] al fianco di Loras. Poi chiede a Loras di restare con lui ad aiutarlo a pregare.',
+        en: 'Before Storm’s End Renly asks [[stannis-baratheon|Stannis]] to kneel. He offers him a peach, because life is short, and then the castle, but Stannis refuses. Renly says that within a year he will have a son by [[margaery-tyrell|Margaery]], and mocks Stannis’s wife. Stannis gives him until dawn. Renly laughs: he has the strength in banners, and the bulk of his army has yet to arrive. At his council he decides to fight and gives the van to Ser [[loras-tyrell|Loras Tyrell]], with [[brienne-of-tarth|Brienne]] at his side. Then he asks Loras to stay and help him pray.',
+      },
+    ),
+    inBooks(
+      [15, 107],
+      { it: 'Un’ombra nel padiglione', en: 'A shadow in the pavilion' },
+      {
+        it: 'Prima dell’alba [[brienne-of-tarth|Brienne]] arma Renly nel suo padiglione. Renly vuole che il corpo di [[stannis-baratheon|Stannis]], quando cadrà, sia trattato con rispetto, e che ser [[barristan-selmy|Barristan Selmy]] sia risparmiato. [[catelyn-stark|Catelyn Stark]] gli dice che i Lannister hanno cercato di uccidere [[bran-stark|Bran]], e prega lui e Stannis di deporre la corona, come farebbe anche Robb, per un Gran Consiglio. Renly risponde che il tempo delle parole è finito. Mentre Brienne gli allaccia la spada, un’ombra solleva una lama e gli taglia la gola, e Renly muore tra le braccia di Brienne.',
+        en: 'Before dawn [[brienne-of-tarth|Brienne]] arms Renly in his pavilion. Renly wants [[stannis-baratheon|Stannis]]’s body treated with respect when he falls, and Ser [[barristan-selmy|Barristan Selmy]] spared. [[catelyn-stark|Catelyn Stark]] tells him the Lannisters tried to kill [[bran-stark|Bran]], and begs him and Stannis to set aside their crowns, as Robb would too, for a Great Council. Renly answers that the time for talk is done. As Brienne belts on his sword, a shadow lifts a blade and cuts his throat, and Renly dies in Brienne’s arms.',
+      },
+    ),
   ],
   'myrcella-baratheon': [
     inBoth(
@@ -4146,6 +4198,79 @@ export const season1Chronicles = {
       {
         it: '[[robert-baratheon|Re Robert]] muore per una ferita riportata durante una caccia al cinghiale. Loras lascia Approdo del Re con [[renly-baratheon|Renly]], il fratello di Robert, e un certo numero di uomini. [[varys|Varys]] porta la notizia a [[eddard-stark|Eddard Stark]] prima che Eddard entri nella sala del trono, dove [[joffrey-baratheon|Joffrey]] siede sul Trono di Spade ed Eddard viene arrestato per tradimento.',
         en: '[[robert-baratheon|King Robert]] dies of a wound from a boar hunt. Loras leaves King’s Landing with Robert’s brother [[renly-baratheon|Renly]] and a number of their men. [[varys|Varys]] brings the news to [[eddard-stark|Eddard Stark]] before Eddard goes into the throne room, where [[joffrey-baratheon|Joffrey]] sits the Iron Throne and Eddard is seized for treason.',
+      },
+    ),
+    // Stage 2 (#1485): Renly’s guard, then Joffrey’s side.
+    onScreen(
+      [13, 96],
+      { it: 'Battuto da Brienne', en: 'Beaten by Brienne' },
+      {
+        it: 'Al torneo di re [[renly-baratheon|Renly]] Loras disarma il suo avversario, ma questo schiva il colpo, lo atterra e gli punta un coltello al viso, e Loras si arrende. L’avversario è una donna, [[brienne-of-tarth|Brienne]], e Renly la prende nella sua Guardia reale. Quando arriva [[catelyn-stark|Catelyn Stark]], Loras le dice che Robb avrebbe dovuto venire di persona invece di mandare la madre. Nella tenda si lamenta con Renly dell’umiliazione e chiama Brienne la Bella. Poi gli ricorda che i vassalli parlano di una sposa ancora vergine, e va a chiamare sua sorella [[margaery-tyrell|Margaery]].',
+        en: 'At King [[renly-baratheon|Renly]]’s tourney Loras disarms his opponent, but the opponent steps under his swing, knocks him down and holds a knife to his face, and Loras yields. The opponent is a woman, [[brienne-of-tarth|Brienne]], and Renly takes her into his Kingsguard. When [[catelyn-stark|Catelyn Stark]] arrives, Loras tells her Robb should have come himself instead of sending his mother. In the tent he complains to Renly of the humiliation and calls Brienne the Beauty. Then he reminds him that his bannermen gossip about a bride still a virgin, and goes to fetch his sister [[margaery-tyrell|Margaery]].',
+      },
+    ),
+    onScreen(
+      [14, 105],
+      { it: 'Al colloquio', en: 'At the parley' },
+      {
+        it: 'Loras accompagna la sorella [[margaery-tyrell|Margaery]] attraverso l’accampamento e la lascia alla tenda di [[renly-baratheon|Renly]], dove la aspetta [[petyr-baelish|Ditocorto]]. Poi cavalca con Renly, [[catelyn-stark|Catelyn Stark]] e [[brienne-of-tarth|Brienne]] al colloquio con [[stannis-baratheon|Stannis]] sulla costa. I due fratelli non trovano un accordo, e Stannis dà a Renly la notte per ripensarci. Mentre se ne vanno, Renly chiede ai suoi se credono che un tempo volesse bene a Stannis.',
+        en: 'Loras walks his sister [[margaery-tyrell|Margaery]] through the camp and leaves her at [[renly-baratheon|Renly]]’s tent, where [[petyr-baelish|Littlefinger]] is waiting for her. Then he rides with Renly, [[catelyn-stark|Catelyn Stark]] and [[brienne-of-tarth|Brienne]] to the parley with [[stannis-baratheon|Stannis]] on the coast. The two brothers reach no agreement, and Stannis gives Renly the night to reconsider. As they ride off, Renly asks his companions whether they can believe he once loved Stannis.',
+      },
+    ),
+    onScreen(
+      [15, 107],
+      { it: 'La veglia', en: 'The vigil' },
+      {
+        it: '[[renly-baratheon|Renly]] è stato ucciso, e Loras veglia il suo corpo. Quando entra [[petyr-baelish|Ditocorto]], gli ordina di andarsene. Petyr avverte che [[stannis-baratheon|Stannis]] è a un’ora di distanza e che i vassalli di Renly passeranno con lui, e Loras gli punta contro la spada. Loras non crede che sia stata [[brienne-of-tarth|Brienne]]: chi ci guadagna di più è Stannis, e giura di ucciderlo. Petyr gli dice che se vuole giustizia deve essere furbo. La sorella [[margaery-tyrell|Margaery]] gli ricorda che dalla tomba non potrà vendicare Renly, e Loras va a prendere i cavalli.',
+        en: '[[renly-baratheon|Renly]] has been killed, and Loras keeps vigil over his body. When [[petyr-baelish|Littlefinger]] comes in, Loras orders him out. Petyr warns that [[stannis-baratheon|Stannis]] is an hour away and that Renly’s bannermen will go over to him, and Loras draws his sword on him. Loras does not believe [[brienne-of-tarth|Brienne]] did it: Stannis has the most to gain, and he swears to kill him. Petyr tells him that if he wants justice he must be smart about it. His sister [[margaery-tyrell|Margaery]] reminds him he cannot avenge Renly from the grave, and Loras goes for the horses.',
+      },
+    ),
+    onScreen(
+      [19, 136],
+      { it: 'Nell’armatura di Renly', en: 'In Renly’s armor' },
+      {
+        it: 'I Tyrell si sono alleati con i Lannister. Loras indossa l’armatura di [[renly-baratheon|Renly]] e combatte con l’esercito di [[tywin-lannister|Tywin Lannister]] nella battaglia delle Acque Nere. Le sue truppe arrivano mentre [[stannis-baratheon|Stannis]] attacca la Porta del Fiume, e la loro carica di cavalleria mette in fuga gli uomini di Stannis. Poi Loras entra nella sala del trono con Tywin per annunciare la vittoria, e si toglie l’elmo.',
+        en: 'The Tyrells have allied with the Lannisters. Loras puts on [[renly-baratheon|Renly]]’s armor and fights with [[tywin-lannister|Tywin Lannister]]’s army in the battle of the Blackwater. His forces arrive as [[stannis-baratheon|Stannis]] is assaulting the River Gate, and their cavalry charge routs Stannis’s men. Then Loras walks into the throne room with Tywin to announce the victory, and takes off his helm.',
+      },
+    ),
+    onScreen(
+      [20, 139],
+      { it: 'Una ricompensa per i Tyrell', en: 'A reward for the Tyrells' },
+      {
+        it: 'Chi ha avuto un ruolo nella vittoria viene convocato nella sala del trono per ricevere la gratitudine del re e una ricompensa a sua scelta. Re [[joffrey-baratheon|Joffrey]] dice a Loras che può chiedergli qualunque cosa, e Loras chiede che il re sposi sua sorella [[margaery-tyrell|Margaery]], per unire le loro casate. Joffrey esita, perché è promesso a [[sansa-stark|Sansa Stark]], ma il Concilio ristretto lo convince che il fidanzamento con la figlia di un traditore non è più necessario. Joffrey acconsente.',
+        en: 'Those who played a part in the victory are summoned to the throne room to receive the king’s gratitude and a reward of their choosing. King [[joffrey-baratheon|Joffrey]] tells Loras he may ask anything of him, and Loras asks that the king marry his sister [[margaery-tyrell|Margaery]], to join their houses. Joffrey hesitates, since he is promised to [[sansa-stark|Sansa Stark]], but the small council persuades him that a betrothal to a traitor’s daughter is no longer needed. Joffrey consents.',
+      },
+    ),
+    inBooks(
+      [13, 96],
+      { it: 'Disarcionato', en: 'Unhorsed' },
+      {
+        it: 'Nella mischia al torneo di re [[renly-baratheon|Renly]] il re e il popolo fanno il tifo per Loras, in maglia d’argento e mantello arcobaleno. Loras disarma il cavaliere in blu di Tarth, ma quando sta per colpirlo il cavaliere gli si lancia contro, lo trascina a terra e gli apre la visiera con un pugnale, costringendolo ad arrendersi. Quando a Loras tolgono l’elmo, [[catelyn-stark|Catelyn Stark]] resta colpita dalla sua giovinezza e dalla sua bellezza. Il cavaliere in blu è [[brienne-of-tarth|Brienne]]. Al banchetto Renly imbocca la regina, ma è con Loras che scherza e si confida di più.',
+        en: 'In the melee at King [[renly-baratheon|Renly]]’s tourney the king and the commons cheer for Loras, in silver mail and a rainbow cloak. Loras disarms the blue knight of Tarth, but as he moves in for the final blow the knight charges into him, drags him to the ground and opens his visor with a dagger, forcing him to yield. When Loras’s helm comes off, [[catelyn-stark|Catelyn Stark]] is struck by his youth and beauty. The blue knight is [[brienne-of-tarth|Brienne]]. At the feast Renly feeds his queen, but it is Loras who shares most in his jests and confidences.',
+      },
+    ),
+    inBooks(
+      [15, 107],
+      { it: 'Il cervo e la rosa', en: 'The stag and the rose' },
+      {
+        it: 'Davanti a Capo Tempesta re [[renly-baratheon|Renly]] decide di combattere il fratello [[stannis-baratheon|Stannis]] all’alba e affida l’avanguardia a Loras. Loras accetta e chiede che un cavaliere di Renly cavalchi al suo fianco, perché il cervo e la rosa vadano in battaglia insieme, e Renly sceglie [[brienne-of-tarth|Brienne]]. Poi chiede a Loras di restare con lui ad aiutarlo a pregare. Prima dell’alba Renly è certo che Loras spezzerà le prime linee di Stannis. Ma mentre Brienne lo arma, un’ombra gli taglia la gola, e Renly muore.',
+        en: 'Before Storm’s End King [[renly-baratheon|Renly]] decides to fight his brother [[stannis-baratheon|Stannis]] at dawn and gives Loras the van. Loras accepts and asks for one of Renly’s knights to ride beside him, so that the stag and the rose go to battle together, and Renly chooses [[brienne-of-tarth|Brienne]]. Then he asks Loras to stay and help him pray. Before dawn Renly is sure Loras will break Stannis’s first lines. But as Brienne arms him, a shadow cuts his throat, and Renly dies.',
+      },
+    ),
+    inBooks(
+      [15, 110],
+      { it: 'Tre guardie uccise', en: 'Three guards killed' },
+      {
+        it: 'Ad Approdo del Re [[varys|Varys]] riferisce al Concilio ristretto che dopo la morte di [[renly-baratheon|Renly]] Loras, furioso, ha ucciso tre guardie di Renly, tra cui ser [[robar-royce|Robar Royce]] ed Emmon Cuy. Loras non è passato con Stannis, e se n’è andato con un quinto dei cavalieri, forse verso Ponte Amaro e sua sorella [[margaery-tyrell|Margaery]]. Tyrion vede l’occasione di portare i Tyrell dalla parte di Joffrey.',
+        en: 'In King’s Landing [[varys|Varys]] reports to the small council that after [[renly-baratheon|Renly]]’s death Loras, in a rage, killed three of Renly’s guards, among them Ser [[robar-royce|Robar Royce]] and Emmon Cuy. Loras has not gone over to Stannis, and rode off with a fifth of the knights, likely toward Bitterbridge and his sister [[margaery-tyrell|Margaery]]. Tyrion sees a chance to win the Tyrells over to Joffrey.',
+      },
+    ),
+    inBooks(
+      [20, 139],
+      { it: 'La Guardia reale', en: 'The Kingsguard' },
+      {
+        it: 'Dopo la battaglia delle Acque Nere, Loras viene presentato a re [[joffrey-baratheon|Joffrey]] tra gli eroi della vittoria, insieme al padre, lord Mace Tyrell, e al fratello ser [[garlan-tyrell|Garlan]]. Il re nomina Loras cavaliere della Guardia reale, e dà a lord Mace un seggio nel Concilio ristretto. Garlan chiede a Joffrey di sposare la loro sorella [[margaery-tyrell|Margaery]], e l’Alto Septon dichiara nullo il fidanzamento del re con [[sansa-stark|Sansa Stark]].',
+        en: 'After the battle of the Blackwater, Loras is presented to King [[joffrey-baratheon|Joffrey]] among the heroes of the victory, with his father, Lord Mace Tyrell, and his brother, Ser [[garlan-tyrell|Garlan]]. The king names Loras a knight of the Kingsguard, and gives Lord Mace a seat on the small council. Garlan asks Joffrey to wed their sister [[margaery-tyrell|Margaery]], and the High Septon declares the king’s betrothal to [[sansa-stark|Sansa Stark]] void.',
       },
     ),
   ],

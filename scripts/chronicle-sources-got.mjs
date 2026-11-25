@@ -95,6 +95,25 @@ const ACOK_27 = `${ACOK_AWOIAF}27`
 const ACOK_40 = `${ACOK_AWOIAF}40`
 const ACOK_48 = `${ACOK_AWOIAF}48`
 const ACOK_63 = `${ACOK_AWOIAF}63`
+// The Stannis, Renly and stormlands cast of the second stage (#1485): the
+// prologue, Davos I to III and the Catelyn, Tyrion and Sansa chapters they
+// cross, by site chapter, and the Matthos Seaworth page.
+const ST_74 = `${AWOIAF}A_Clash_of_Kings-Prologue`
+const ST_84 = `${ACOK_AWOIAF}10`
+const ST_96 = `${ACOK_AWOIAF}22`
+const ST_105 = `${ACOK_AWOIAF}31`
+const ST_107 = `${ACOK_AWOIAF}33`
+const ST_110 = `${ACOK_AWOIAF}36`
+const ST_113 = `${ACOK_AWOIAF}39`
+const ST_116 = `${ACOK_AWOIAF}42`
+const ST_118 = `${ACOK_AWOIAF}44`
+const ST_129 = `${ACOK_AWOIAF}55`
+const ST_132 = `${ACOK_AWOIAF}58`
+const ST_133 = `${ACOK_AWOIAF}59`
+const ST_135 = `${ACOK_AWOIAF}61`
+const ST_136 = `${ACOK_AWOIAF}62`
+const ST_139 = `${ACOK_AWOIAF}65`
+const ST_MATTHOS = `${AWOIAF}Matthos_Seaworth`
 // The King’s Landing and Blackwater cast of the second stage (#1484):
 // Tyrion I to XV and Sansa I to VIII of A Clash of Kings, by site chapter.
 const KL_76 = `${ACOK_AWOIAF}2`
@@ -1675,6 +1694,30 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_10,
       note: `Episode 10: at Tywin’s council Kevan reports that Renly has claimed the throne. Book side is Tyrion IX, chapter 70, where his role turns to claimant; ${PAST_CHAPTER_PAGES}`,
     },
+    '13:episode': {
+      source: `${SHOW}Renly_Baratheon`,
+      note: 'Renly Baratheon page: crowned with the Tyrells and married to Margaery, Loras’s sister; Brienne named champion and Kingsguard, Catelyn welcomed and promised justice, the camp tour and the hundred thousand men, Loras on Brienne and the gossip about a virgin bride, and Margaery’s offer to bring Loras in (GOT201, GOT203).',
+    },
+    '14:episode': {
+      source: `${SHOW}Renly_Baratheon`,
+      note: 'Renly Baratheon page: Petyr distrusted and his offer to open the gates, the parley, the banner and the late faith mocked, nobody wanting Stannis, a man without friends a man without power, the night to submit for a council seat and heirship, and his asking whether they believe he loved Stannis once (GOT204). Chapter 105 orders it.',
+    },
+    '15:episode': {
+      source: `${SHOW}Renly_Baratheon`,
+      note: 'Renly Baratheon page and the episode’s quotes: the terms for Robb as King in the North sworn to him as Eddard was to Robert, Brienne taking his cloak, Catelyn urging talks, “better luck debating the wind”, a fortnight together, the gust, the smoke with Stannis’s face in the mirror, the stab and his death in Brienne’s arms (GOT205).',
+    },
+    '13:chapter': {
+      source: ST_96,
+      note: 'Catelyn II (site 96): Bitterbridge, Margaery his queen, Brienne champion and of the Rainbow Guard, Catelyn welcomed with the vow of Cersei’s head, the roof and the campfires, Stannis an appalling king, the terms for Robb to bend the knee, and the messenger: Stannis at the gates of Storm’s End, calling himself king. Storm’s End stays unnamed before its book gate, 105. Episode 13 adapts the chapter.',
+    },
+    '14:chapter': {
+      source: ST_105,
+      note: 'Catelyn III (site 105): the demand to kneel, the peach because life is short, Storm’s End offered and refused, a son by Margaery within a year, the jibe at Stannis’s wife, the terms until dawn, the laugh at his strength in banners, the decision to fight, the van to Loras with Brienne, and Loras kept to help him pray. Episode 14 adapts the chapter.',
+    },
+    '15:chapter': {
+      source: ST_107,
+      note: 'Catelyn IV (site 107): Brienne arming him, Stannis’s body to be respected and Barristan spared, Catelyn on the attempt on Bran and a Great Council, the time for talk done, and the shadow cutting his throat as Brienne belts on his sword. Episode 15 adapts the chapter.',
+    },
   },
   'myrcella-baratheon': {
     '1:6': {
@@ -2232,6 +2275,42 @@ export const GAME_OF_THRONES_SOURCES = {
     '7:50': {
       source: EPISODE_7,
       note: `Episode 7: Varys tells Eddard that Renly has fled with Ser Loras and retainers before the throne room. The book has Varys bring the same news to the council the morning after Robert’s death (A Wiki of Ice and Fire’s Eddard XIV page, site 50: Renly gone with Loras and fifty retainers); the reviewed pins at 7/50.`,
+    },
+    '13:episode': {
+      source: `${SHOW}Loras_Tyrell`,
+      note: 'Loras Tyrell page: the bout lost to the woman who steps under his swing, Brienne made Kingsguard, Robb who should have come himself, the humiliation, “Brienne the Beauty”, the gossip about a virgin bride and fetching Margaery (GOT203).',
+    },
+    '14:105': {
+      source: `${SHOW}Loras_Tyrell`,
+      note: 'Loras Tyrell and Renly Baratheon pages: Margaery walked to Renly’s tent where Petyr waits, the parley with Renly, Catelyn and Brienne, no compromise, the night to reconsider and Renly asking if they believe he loved Stannis once (GOT204). Chapter 105 orders it.',
+    },
+    '15:episode': {
+      source: `${SHOW}Loras_Tyrell`,
+      note: 'Loras Tyrell page: the vigil, Petyr ordered out, Stannis an hour away, the drawn sword, Brienne not believed guilty, Stannis the one to gain, the vow of revenge, Petyr’s advice to be smart, Margaery’s plea that he cannot avenge Renly from the grave, and the horses (GOT205).',
+    },
+    '19:136': {
+      source: `${SHOW}Loras_Tyrell`,
+      note: 'Loras Tyrell page: the alliance arranged, Renly’s armor at the Blackwater, his forces arriving at the River Gate and routing Stannis’s men, and the helm removed in the throne room beside Tywin (GOT206, GOT209). Chapter 136 orders it.',
+    },
+    '20:episode': {
+      source: `${SHOW}Loras_Tyrell`,
+      note: 'Loras Tyrell page and the Valar Morghulis synopsis: the summons for the king’s reward, the request that Joffrey wed Margaery to join their houses, and Joffrey consenting once the small council persuades him the betrothal to Sansa is no longer needed (GOT210).',
+    },
+    '13:chapter': {
+      source: ST_96,
+      note: 'Catelyn II (site 96): king and commons favoring Loras in silver mail and a rainbow cloak, the blue knight disarmed and then forcing his yield with a dirk, Catelyn startled by his youth and beauty, Brienne named, and Loras sharing most in Renly’s jests at the feast. Episode 13 adapts the chapter.',
+    },
+    '15:chapter': {
+      source: ST_105,
+      note: `Catelyn III (site 105): the van given to Loras, the stag and rose side by side with Brienne, and Loras kept to help Renly pray. Catelyn IV (${ST_107}): Renly sure Loras will break Stannis’s first lines, and the shadow cutting his throat as Brienne arms him. Episode 15 adapts the second chapter, his role’s pin.`,
+    },
+    '15:110': {
+      source: ST_110,
+      note: 'Tyrion VIII (site 110): Varys’s report to the small council that Loras, Tarly and Rowan did not go over to Stannis, that Loras killed three of Renly’s guards in anger, Emmon Cuy and Robar Royce among them, and left with a fifth of the knights, likely for Bitterbridge and Margaery; Tyrion sees the chance to win the Tyrells. Episode 15 adapts the chapter.',
+    },
+    '20:chapter': {
+      source: ST_139,
+      note: 'Sansa VIII (site 139): Mace with Garlan and Loras presented among the heroes, Loras named to the Kingsguard, Mace on the small council, Garlan asking for Margaery and the betrothal to Sansa voided. Episode 20, Garlan’s show gate, orders it.',
     },
   },
   'masha-heddle': {
@@ -4334,6 +4413,287 @@ export const GAME_OF_THRONES_SOURCES = {
     '18:138': {
       source: `${ACOK_AWOIAF}64`,
       note: 'Arya X (site 138): the staked heads of servants, Harrenhal to go to Vargo when Roose goes north, Arya to serve “the goat”, the lie to Gendry about the feet. Episode 18 orders it.',
+    },
+  },
+  // Stannis, Renly and the stormlands (#1485).
+  'stannis-baratheon': {
+    '11:episode': {
+      source: `${SHOW}Stannis_Baratheon`,
+      note: 'Stannis Baratheon page: his conversion, the Seven burned, Cressen dismissed, the flaming sword from a statue and the prophesied hero; the letter on Joffrey’s incest, Davos urging peace with Renly or Robb, both called thieves, and Cressen dying of his own poison (GOT201). Melisandre page: the sword from the statue of the Mother. Chapter 84, Davos I, orders it.',
+    },
+    '12:84': {
+      source: `${SHOW}Stannis_Baratheon`,
+      note: 'Stannis Baratheon and Melisandre pages: Davos reporting Salladhor won over, Stannis doubting pirates and promising his share; Renly’s hundred thousand men, the path to victory in the flames, the marriage vow, the stillborn sons, the promised son, and Stannis taking her on the Painted Table (GOT202). His wife stays unnamed: the show names her at episode 25.',
+    },
+    '14:episode': {
+      source: `${SHOW}Stannis_Baratheon`,
+      note: 'Stannis Baratheon and Renly Baratheon pages: the parley on the coast, Renly’s companions, the mockery, the night to reconsider for their mother’s sake, the council seat and heirship until a son, the threat, and Davos ordered to smuggle Melisandre into the caves beneath Renly’s camp and never speak of it (GOT204). Chapter 116, Davos II, orders it.',
+    },
+    '15:116': {
+      source: EPISODE_15,
+      note: 'Episode synopsis and Stannis Baratheon page: Renly killed, most of his army swearing to Stannis, the Tyrells going home, Davos asking to keep Melisandre out of the battle because of the rumors, Stannis angry at the broken order but agreeing, Davos given the fleet, and Stannis fighting back tears alone in his tent (GOT205).',
+    },
+    '18:128': {
+      source: `${SHOW}Davos_Seaworth`,
+      note: 'Davos Seaworth and Stannis Baratheon pages: the fleet a day’s sail from the city, Stannis’s admiration for his loyalty and his bearing among the highborn, the siege of Storm’s End with rats and the onion ship, and the promise of the Handship, to Davos’s surprise (GOT208). Chapter 128 orders it.',
+    },
+    '19:135': {
+      source: `${SHOW}Stannis_Baratheon`,
+      note: 'Stannis Baratheon page: the wildfire destroying many ships with Davos’s, the order to land, Imry’s warning of hundreds and the answer “Thousands”, first ashore and on the walls without helm or shield, the ram at the River Gate, Tywin and Loras arriving, the rout, and his guards dragging him away shouting to stand and fight (GOT209). Chapter 135, Tyrion XIV, orders it.',
+    },
+    '20:139': {
+      source: `${SHOW}Stannis_Baratheon`,
+      note: 'Stannis Baratheon and Melisandre pages: the return to Dragonstone with a fraction of his forces, the accusation, the strangling stopped when she recalls the spell that killed Renly, his remorse, worse betrayals to come, the promise he will be king, and the vision in the flames (GOT210). Chapter 139 orders it.',
+    },
+    '11:74': {
+      source: ST_74,
+      note: 'Prologue (site 74): Davos back with the storm lords gone to Renly, Renly a thieving boy, the alliance with Robb refused, Shireen to be sent to Lysa Arryn, Selyse against begging, Renly’s army if he died and Melisandre seeing him dead in the flames, Cressen dismissed, his duties given to Pylos at the feast, and Cressen’s death. Selyse and Shireen stay unlinked: the show opens them at episode 25.',
+    },
+    '11:chapter': {
+      source: ST_84,
+      note: 'Davos I (site 84): the Seven burned, the near-molten sword from the statue of the Mother, Lightbringer and Azor Ahai come again; the letter on the incest of Joffrey, Tommen and Myrcella, Davos sent north with it, his advice to drop the Lord of Light, Stannis’s loss of faith the day the Windproud sank, Melisandre’s power and the red hawk. Episode 11 adapts the chapter.',
+    },
+    '14:105': {
+      source: ST_105,
+      note: 'Catelyn III (site 105): the siege, Melisandre as his standard bearer, condolences and justice to Catelyn but Robb a traitor, Renly’s demand to kneel, the peach and Storm’s End refused, the mockery of his wife, the drawn sword and Brienne between them, and the terms until dawn: Storm’s End, a council seat and heirship until a son. Episode 14 adapts the chapter.',
+    },
+    '14:chapter': {
+      source: ST_116,
+      note: 'Davos II (site 116): Renly’s lords come over, Stannis aged, his nightmares soothed by Melisandre in his pavilion, Cortnay refusing to yield Storm’s End and Edric Storm and challenging him, the refusal, his grief and love for Renly and the peach, the castle not to be left behind, Melisandre’s vision of Cortnay’s death, and Davos ordered to take her beneath the castle. Episode 14 adapts the chapter, Cortnay’s gate.',
+    },
+    '19:132': {
+      source: ST_132,
+      note: 'Davos III (site 132): the fleet under Imry Florent entering Blackwater Bay, Stannis waiting with his host on the south shore, Melisandre sent back to Dragonstone lest the sorceress be credited, the river fight, the Swordfish ramming a wildfire barge, the green blaze, the Black Betha burning and the chain raised behind them. Episode 19 adapts the chapter.',
+    },
+    '19:136': {
+      source: ST_136,
+      note: `Sansa VII (site 136): at dawn Dontos tells Sansa the battle is over and the city saved by Tywin and the Tyrells, the vanguard said to be led by Renly’s ghost. Tyrion XIII (${ST_133}) has half of Stannis’s fleet ablaze; Tyrion XIV (${ST_135}) has the sortie against his men at the King’s Gate and a great battle with Stannis’s men on the south shore. Episode 19 adapts them.`,
+    },
+  },
+  'melisandre': {
+    '11:episode': {
+      source: `${SHOW}Melisandre`,
+      note: 'Melisandre page: the Seven burned on the beach, darkness after the long summer and the dead rising in the north, Cressen interrupting and dismissed as old and fearful, Stannis drawing the flaming sword from the Mother, the Lord of Light behind him at the council, and the poisoned cup she drinks anyway while Cressen dies and her jewel glows (GOT201). Chapter 84 orders it.',
+    },
+    '12:84': {
+      source: `${SHOW}Melisandre`,
+      note: 'Melisandre page: the whisper to Matthos, “death by fire is the purest death”, told to Stannis; Renly’s hundred thousand men, the path to victory in the flames, giving all of himself, the wife who disgusts him and the stillborn sons, the promised son, and the Painted Table (GOT202). Matthos stays unlinked: his book gate is 132.',
+    },
+    '14:episode': {
+      source: `${SHOW}Melisandre`,
+      note: 'Melisandre page: the fiery heart of the Lord of Light, Renly told to kneel, the warning to look to his sins; Davos rowing her ashore, a champion of light and life, shadows as servants of the light, the barred passage, the robe opened, the pregnancy and the shadow passing between the bars (GOT204). Chapter 116 orders it.',
+    },
+    '20:139': {
+      source: `${SHOW}Melisandre`,
+      note: 'Melisandre and Stannis Baratheon pages: the defeat at the Blackwater, the confrontation on Dragonstone, the strangling stopped at the reminder of the spell that killed Renly, worse betrayals to come, fighting on because he will be king, and the vision in the flames (GOT209, GOT210). Chapter 139 orders it.',
+    },
+    '11:74': {
+      source: ST_74,
+      note: 'Prologue (site 74): Cressen falling with Patchface and lifted by Melisandre, “the night is dark and full of terrors”, the antlered helm placed on his head, her seat at Stannis’s right, the toast to her god, her offer to let him back out, her drinking most of the cup, the glowing ruby and Cressen’s death. Episode 11 adapts the chapter.',
+    },
+    '11:chapter': {
+      source: ST_84,
+      note: 'Davos I (site 84): the Seven burned outside the gates, the prayer in three tongues, the prophecy of Azor Ahai and Lightbringer, the near-molten sword drawn from the statue of the Mother, Stannis proclaimed Azor Ahai come again; later Stannis tells Davos half his men fear to speak her name and he means to see what more she can do. Episode 11 adapts the chapter.',
+    },
+    '14:105': {
+      source: ST_105,
+      note: 'Catelyn III (site 105): Melisandre as Stannis’s standard bearer, her answer that the sigil is the fiery heart of the Lord of Light, Renly’s remark that one banner would confuse a battle, the parley failing and the terms until dawn, Catelyn present as peacemaker. Episode 14 adapts the chapter.',
+    },
+    '14:chapter': {
+      source: ST_116,
+      note: 'Davos II (site 116): she shares Stannis’s pavilion and alone soothes his nightmares; Davos rows her beneath Storm’s End, asks if she is good or evil, “A champion of light and life”, calls her a liar for Cressen and Renly; Cressen poisoned himself, the walls warded against shadows from outside; she disrobes, pregnant, and births a shadow through a portcullis. Episode 14 adapts the chapter.',
+    },
+  },
+  'davos-seaworth': {
+    '11:84': {
+      source: `${SHOW}Davos_Seaworth`,
+      note: 'Davos Seaworth and Cressen pages: watching the burning beside Matthos, a devoted convert; Cressen asking his help and his answer that it is not the time; peace with Renly or Robb urged, the Lannisters the true enemy (Melisandre page), refused; the poison seen, the silent attempt to stop Cressen, and Cressen’s death (GOT201). Matthos stays unlinked: his book gate is 132.',
+    },
+    '12:episode': {
+      source: `${SHOW}Salladhor_Saan`,
+      note: 'Salladhor Saan and Matthos Seaworth pages: the beach meeting with Matthos, gold and glory, Stannis a proven commander and the most honorable man, Cersei wanted and not promised, thirty ships; Matthos urging him to read the holy books and Davos’s faith in Stannis; thirty years known and never trusted (GOT202). Chapter 84 orders it.',
+    },
+    '14:episode': {
+      source: `${SHOW}Davos_Seaworth`,
+      note: 'Davos Seaworth and Melisandre pages: the parley, the order to smuggle Melisandre into the caves beneath Renly’s camp without a reason, good and bad mixed, the rotten onion, the bars, the pregnancy and the shadow born while he cowers (GOT204). Chapter 116 orders it.',
+    },
+    '15:107': {
+      source: `${SHOW}Davos_Seaworth`,
+      note: 'Davos Seaworth page: Renly’s army going over, the plan for King’s Landing, Melisandre to be kept out because of the rumors, Stannis angry at the broken order but agreeing, Davos given the fleet and his worry about the bannermen’s respect for a man of his origins (GOT205).',
+    },
+    '18:128': {
+      source: `${SHOW}Davos_Seaworth`,
+      note: 'Davos Seaworth page: a day’s sail from the city, Stannis admiring his loyalty and honesty, the siege of Storm’s End, the rats, the onions, potatoes, fish and beef, and the Handship promised once the Iron Throne is taken, to Davos’s surprise (GOT208). Chapter 128 orders it.',
+    },
+    '19:episode': {
+      source: `${SHOW}Davos_Seaworth`,
+      note: 'Davos Seaworth and Matthos Seaworth pages: the night approach, the plan, the absent royal fleet, the lone ship leaking wildfire, the trap seen too late, Bronn’s flaming arrow at Tyrion’s signal, the vanguard and his ship destroyed, Matthos killed and Davos thrown overboard (GOT209). Chapter 132 orders it.',
+    },
+    '11:74': {
+      source: ST_74,
+      note: 'Prologue (site 74): Davos back in the night, the storm lords gone to Renly, Cressen on the stairs recalling the onions and salt fish carried to Stannis’s starving garrison, the knighthood and the shortened fingers; at the feast the fool’s business and Melisandre’s vision of victory, the only seat offered to Cressen, the poison in Davos’s cup and his attempt to stop him. Episode 11 adapts the chapter.',
+    },
+    '12:chapter': {
+      source: ST_84,
+      note: 'Davos I (site 84): the burning watched with his sons, Salladhor at an inn in the port, a partner from smuggling days whom Davos recruited, gold not words, the burnt sword not the true Lightbringer, his god King Stannis; the letter he cannot read, and the voyage north as far as White Harbor. Episode 12, Salladhor’s show gate, orders it.',
+    },
+    '14:chapter': {
+      source: ST_116,
+      note: 'Davos II (site 116): back with the fleet after carrying the king’s message, Cortnay’s refusal and Davos’s respect for Cortnay’s faith, the advice to strike King’s Landing at once, the order to take Melisandre beneath the castle as some fifteen years before, the liar, and the shadow whose maker he recognizes. Episode 14 adapts the chapter.',
+    },
+    '19:chapter': {
+      source: ST_132,
+      note: `Davos III (site 132): the Black Betha in the second line on the right, his doubts about Imry’s headlong attack, the chain seen but not raised, the fleets fighting in the river, the wildfire barge rammed, Davos overboard and the chain raised as the wrecks drift. Matthos killed on the Black Betha: ${ST_MATTHOS}, citing this chapter. Episode 19 adapts it.`,
+    },
+  },
+  'cressen': {
+    '11:episode': {
+      source: `${SHOW}Cressen`,
+      note: 'Cressen page: his fear of Melisandre’s influence, the interruption at the burning, named in the light of the Seven, dismissed, Davos refusing to act; at the council the poison, the apology and toast, drinking first, the bleeding nose, Melisandre drinking anyway and his death (GOT201). Melisandre page: he hangs his head and walks away.',
+    },
+    '11:chapter': {
+      source: ST_74,
+      note: 'Prologue (site 74): the red comet from his balcony, the white raven shown to Shireen, Davos back without allies, alliances with Renly or Robb urged, Selyse on Melisandre’s vision of Renly dead, Cressen dismissed, his resolve to poison her, his duties given to Pylos, the crystal in Davos’s cup, the toast and his death. Episode 11 adapts the chapter.',
+    },
+  },
+  'matthos-seaworth': {
+    '11:132': {
+      source: `${SHOW}Matthos_Seaworth`,
+      note: 'Matthos Seaworth page: the burning and the chanted praises, the letter he has prepared read at the Painted Table, Stannis objecting to “beloved brother”, Jaime to be called Kingslayer with his knighthood, and copies sent to every corner of the realm (GOT201). Chapter 132, his book gate, orders it.',
+    },
+    '12:132': {
+      source: `${SHOW}Matthos_Seaworth`,
+      note: 'Matthos Seaworth page: the beach meeting with Salladhor, Cersei wanted and Matthos’s retort that they do not fight so he can rape the queen, Stannis’s divine right, his urging his father to read the holy books, and Melisandre’s whisper as he leaves the Painted Table (GOT202). Chapter 132, his book gate, orders it.',
+    },
+    '19:episode': {
+      source: `${SHOW}Matthos_Seaworth`,
+      note: 'Matthos Seaworth page: ships ten to one and soldiers five to one, faith in the Lord of Light, their cause and his captain despite his father’s warnings, the absent royal fleet, Bronn igniting the wildfire at Tyrion’s signal, and the blast killing him on deck (GOT209).',
+    },
+    '19:chapter': {
+      source: ST_MATTHOS,
+      note: 'A Wiki of Ice and Fire’s Matthos Seaworth page, citing Davos III (site 132): Imry’s place for the Seaworth ships in the second line on the starboard wing, Allard’s honor and Davos’s peril, the sons’ pity for his nervousness, Matthos second on the Black Betha, and the wildfire explosion on the Blackwater Rush that destroys her and kills him. Episode 19 adapts the chapter.',
+    },
+  },
+  'salladhor-saan': {
+    '12:episode': {
+      source: `${SHOW}Salladhor_Saan`,
+      note: 'Salladhor Saan page: the beach near Dragonstone, gold promised, the smallest army of the claimants, the irony of a smuggler vouching for honor, an excellent pirate, Cersei wanted, thirty ships, and Davos the most honest smuggler he has met (GOT202). Chapter 84 orders it.',
+    },
+    '12:chapter': {
+      source: ST_84,
+      note: 'Davos I (site 84): the burning skipped as common in Lys, Tyrion in charge and Janos Slynt driven out, too few gold cloaks, gold not words and a swift strike, Renly gone from Highgarden with his army and new queen, the burnt sword not the true Lightbringer, and thirty thousand dragons more due. Episode 12, his show gate, orders it.',
+    },
+  },
+  'selyse-baratheon': {
+    '25:74': {
+      source: ST_74,
+      note: 'Prologue (site 74): Selyse arguing he should not beg, converted to R’hllor by Melisandre, the comet as the Lord of Light’s sign, Renly’s army if he died, Melisandre seeing him dead in the flames; at the feast she commands Cressen to put the crown back on and suggests he sing. Episode 25, her show gate, orders it.',
+    },
+    '25:84': {
+      source: ST_84,
+      note: 'Davos I (site 84): the sept wrecked by the queen’s men, the statues burning before the gates, Selyse echoing the prayer, the queen and her men chanting praises, Stannis impatiently escorting her inside, and Davos refusing to court her favor through the new god. Episode 25, her show gate, orders it.',
+    },
+  },
+  'shireen-baratheon': {
+    '25:74': {
+      source: ST_74,
+      note: 'Prologue (site 74): almost ten, scarred by greyscale, a princess now her father is king, the white raven from the Citadel with Patchface, dreams of dragons, the red woman’s dragon’s breath, the talking raven, the shadow song that frightens her, and Cressen’s proposal to send her to the Eyrie. Episode 25, her show gate, orders it.',
+    },
+  },
+  'brienne-of-tarth': {
+    '13:episode': {
+      source: `${SHOW}Renly_Baratheon`,
+      note: 'Renly Baratheon and Brienne of Tarth pages: Loras disarming the opponent who steps under his swing and holds a knife to his face, the woman revealed, the Kingsguard asked and granted, Catelyn’s “My Lord” corrected to Your Grace and kneeling, and Brienne asking to be called just Brienne (GOT203).',
+    },
+    '14:episode': {
+      source: `${SHOW}Brienne_of_Tarth`,
+      note: 'Brienne of Tarth and Renly Baratheon pages: Littlefinger as Joffrey’s envoy, her loyalty without charge, the offer to open the gates, and Brienne guarding Renly at the failed parley where Stannis threatens him (GOT204). Chapter 105 orders it.',
+    },
+    '15:episode': {
+      source: `${SHOW}Brienne_of_Tarth`,
+      note: 'Brienne of Tarth and Renly Baratheon pages: helping him out of his cloak, the shadow running him through, Stannis’s likeness, catching him in his blood, two of his Kingsguard blaming her and killed, Catelyn persuading her to flee, and the oath to Catelyn (GOT205). Robar Royce is the books’ record, so the show story names neither knight. Chapter 113 orders it.',
+    },
+    '16:113': {
+      source: EPISODE_16,
+      note: 'Episode synopsis: Catelyn back from the stormlands with Brienne, Robb introducing Talisa, Roose bringing word of Theon’s betrayal, Robb wanting to march north and agreeing to Roose’s plan; the Brienne page has the boys as Theon’s captives (GOT206). Chapter 113 orders it.',
+    },
+    '17:episode': {
+      source: `${SHOW}Brienne_of_Tarth`,
+      note: 'Brienne of Tarth page: Jaime’s escape and Torrhen Karstark killed, the recapture, Rickard demanding his head, Brienne guarding Catelyn as she persuades him to wait, the Karstarks growing violent, and her warning that Jaime will not live until Robb returns (GOT207). Chapter 129 orders it.',
+    },
+    '18:129': {
+      source: `${SHOW}Brienne_of_Tarth`,
+      note: 'Brienne of Tarth page: Catelyn freeing Jaime to trade for her daughters, Brienne ordered to smuggle him to King’s Landing, horse and rowboat, and Jaime’s taunts about her looks and her history with men (GOT208). Chapter 129 orders it.',
+    },
+    '20:139': {
+      source: `${SHOW}Brienne_of_Tarth`,
+      note: 'Brienne of Tarth page: the three hanged tavern girls, the returning Stark men, the prisoner and the stolen pig, the laughter, Jaime recognized, two killed quickly and the third slowly, her loyalty to Catelyn and not the Starks, and the burial (GOT210). Riverrun stays unnamed: the show opens it at episode 23. Chapter 139 orders it.',
+    },
+    '13:chapter': {
+      source: ST_96,
+      note: 'Catelyn II (site 96): the knight of Tarth in blue, disarmed by Loras, charging into him and forcing his yield with a dirk, Brienne the Beauty, Lord Selwyn’s daughter, last of 116, the Rainbow Guard, the cloak and her pledge, and her telling Catelyn to kneel and say Your Grace. Episode 13 adapts the chapter.',
+    },
+    '14:chapter': {
+      source: ST_105,
+      note: 'Catelyn III (site 105): Brienne bearing Renly’s banner, stepping between the brothers, Loras given the van and asking for one of Renly’s knights, Brienne chosen, her wish to fight beside the king, the request to arm him and the snigger. Episode 14 adapts the chapter.',
+    },
+    '15:107': {
+      source: ST_107,
+      note: 'Catelyn IV (site 107): Brienne arming Renly, the shadow cutting his throat as she belts on his sword, Robar and Emmon assuming her guilt, the fight, Catelyn’s brazier, the slashed tent, the flight, and her oath to kill Stannis with Renly’s sword though she saw nothing. Episode 15 adapts the chapter.',
+    },
+    '15:chapter': {
+      source: ST_113,
+      note: 'Catelyn V (site 113): Catelyn taking Brienne as her sworn sword to keep her from folly, Martyn Rivers’s outrider on Robb’s victories and Tywin’s march, the Lannister men hanged for trying to free Jaime, and Jaime chained in the deep dungeons by Edmure. Episode 15 adapts the chapter.',
+    },
+    '17:chapter': {
+      source: ST_129,
+      note: 'Catelyn VII (site 129): Riverrun celebrating, Catelyn alone with Brienne, the message of her sons’ deaths at Theon’s hands, the wine sent to Jaime, Brienne left outside the cell at midnight, and Catelyn calling for her sword when Jaime mocks Eddard. Episode 17 adapts the chapter.',
+    },
+  },
+  'margaery-tyrell': {
+    '13:episode': {
+      source: `${SHOW}Margaery_Tyrell`,
+      note: 'Margaery Tyrell page: married to Renly, Loras’s lover, knowing it; disappointed at Loras’s defeat by Brienne, the warm greeting to Catelyn, the failed night with Renly, the offer to bring Loras in, and an heir to thwart their enemies (GOT203). Renly page: the condolences for Eddard.',
+    },
+    '14:105': {
+      source: `${SHOW}Loras_Tyrell`,
+      note: 'Loras Tyrell and Margaery Tyrell pages: Loras leaving her at Renly’s tent, Petyr waiting, his knowledge of Renly and Loras, the provocation about her husband, and her loyalty to Renly (GOT204). Chapter 105 orders it.',
+    },
+    '15:episode': {
+      source: EPISODE_15,
+      note: 'Episode page and Loras Tyrell page: Loras’s vigil, the need to go home, Petyr’s warning that Stannis is an hour away, the sword pushed aside, no vengeance from the grave, the horses; her lines that if Renly was no king she was no queen, and “I want to be the Queen”; Petyr going with the Tyrells to Highgarden (GOT205).',
+    },
+    '20:episode': {
+      source: `${SHOW}Margaery_Tyrell`,
+      note: 'Margaery Tyrell page: the Tyrells sided with the Lannisters and the Blackwater won, Loras asking the king to wed her, her love from afar for Joffrey’s courage, his balking at setting aside Sansa, and his courtiers persuading him (GOT209, GOT210).',
+    },
+    '13:chapter': {
+      source: ST_96,
+      note: 'Catelyn II (site 96): a girl of Robb’s age with curly brown hair and a shy smile, the marriage as the mortar of the southron alliance, the Tyrell colors, laughing beside Renly, the condolences to Catelyn, and the feast where Renly feeds and kisses her but shares most with Loras. Episode 13 adapts the chapter.',
+    },
+    '15:chapter': {
+      source: ST_105,
+      note: `Catelyn III (site 105): Stannis calling the wedding a farce and Margaery meant for one of Robert’s whores, Renly meaning to make her queen and a son within a year. Catelyn IV (${ST_107}): the shadow cutting Renly’s throat before dawn as he arms, the flight, and Catelyn’s thought that all his power passes to Stannis. Episode 15 adapts the second chapter.`,
+    },
+    '20:chapter': {
+      source: ST_139,
+      note: 'Sansa VIII (site 139): Mace and his sons Garlan and Loras presented among the heroes, Garlan asking Joffrey to wed Margaery, the betrothal to Sansa declared void by the High Septon, and Sansa delighted. Episode 20, Garlan’s show gate, orders it.',
+    },
+  },
+  'mace-tyrell': {
+    '32:139': {
+      source: ST_139,
+      note: `Sansa VIII (site 139): Mace and his sons Garlan and Loras presented among the heroes of the Blackwater, Loras named to the Kingsguard, Mace given a small council seat, Garlan asking for Margaery, the High Septon voiding the betrothal. Mace commanding the left: Sansa VII (${ST_136}). Episode 32, his show gate, orders it.`,
+    },
+  },
+  'cortnay-penrose': {
+    '14:116': {
+      source: ST_116,
+      note: 'Davos II (site 116): Cortnay riding out to parley, scorning Stannis and his new allies once sworn to Renly, mocking Alester Florent for changing sides and gods, naming Loras among those who did not join, refusing Storm’s End and Edric Storm, the gauntlet and the challenge, and the castle’s name. Episode 14, his record’s gate, orders it.',
+    },
+    '16:118': {
+      source: ST_118,
+      note: 'Tyrion X (site 118): Varys bringing word that Storm’s End has fallen, his attempt to tell how Cortnay died and his hint of magic, Tyrion’s disbelief, Varys’s hatred of magic since a sorcerer gelded him, and then Tyrion suspecting an assassin from the Free Cities. Episode 16, his status pin, orders it.',
     },
   },
   'daisy': {
