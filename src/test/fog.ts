@@ -303,7 +303,11 @@ function drawnFogOf(
   archive: SeriesArchive,
 ): Map<string, Entity[]> {
   const at = reveal(bookmark, archive.series)
-  const all = archive.entities.flatMap((entity) =>
+  // A season's heading files no record but has a drawing of its own (#1601).
+  const headings = archive.arcs.filter(
+    (arc) => archive.getEntity(arc.id) === undefined,
+  )
+  const all = [...archive.entities, ...headings].flatMap((entity) =>
     drawingsOf(entity, at, archive),
   )
   const shown = new Set(all.filter(({ seen }) => seen).map(({ key }) => key))

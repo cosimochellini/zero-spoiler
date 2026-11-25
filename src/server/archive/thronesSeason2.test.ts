@@ -9,6 +9,7 @@ import type { CharacterStatus } from '~/lib/view/records'
 import { recordIn, sidesOf } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
+import { homePage } from './home.server'
 import { characterPage } from './pages.server'
 import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
@@ -427,5 +428,27 @@ describe('the second season’s heading', () => {
     // (Jon I, the Wall cast #1467) at chapter 80 in the books.
     expect(heading?.revealedAtEpisode).toBe(11)
     expect(heading?.revealedAtChapter).toBe(74)
+  })
+})
+
+/** What the home page's frame draws for a reader at this point. */
+function frameAt(unit: Unit, count: number): unknown {
+  return homePage(reader(unit, count)).saga.visual
+}
+
+describe('the home page’s frame', () => {
+  // Each season draws its own landmark (#1601): the reader sees the season
+  // they are in, never a later one. Seasons 3 to 8 file no record yet, so a
+  // reader past season 2 is still shown it.
+  it.each([
+    { unit: 'episode', count: 1, id: 'season-1', tint: 'ice' },
+    { unit: 'episode', count: 10, id: 'season-1', tint: 'ice' },
+    { unit: 'episode', count: 11, id: 'season-2', tint: 'red' },
+    { unit: 'episode', count: 35, id: 'season-2', tint: 'red' },
+    { unit: 'chapter', count: 1, id: 'season-1', tint: 'ice' },
+    { unit: 'chapter', count: 73, id: 'season-1', tint: 'ice' },
+    { unit: 'chapter', count: 74, id: 'season-2', tint: 'red' },
+  ] as const)('at $unit $count draws $id', ({ unit, count, id, tint }) => {
+    expect(frameAt(unit, count)).toStrictEqual({ strokes: DRAWINGS[id], tint })
   })
 })

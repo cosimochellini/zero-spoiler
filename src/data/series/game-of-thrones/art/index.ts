@@ -13,6 +13,7 @@ import { IRONBORN_DRAWINGS, ironbornRedrawn } from './ironborn'
 import { NORTH_DRAWINGS, northRedrawn } from './north'
 import { PLACE_DRAWINGS, placesRedrawn } from './places'
 import { RIVERLANDS_DRAWINGS, riverlandsRedrawn } from './riverlands'
+import { SEASON_DRAWINGS } from './seasons'
 import { SOUTH_DRAWINGS, southRedrawn } from './south'
 import { REFORGED, STORMLANDS_DRAWINGS, stormlandsRedrawn } from './stormlands'
 import { VALE_DRAWINGS, valeRedrawn } from './vale'
@@ -169,8 +170,9 @@ const GOBLET: Stroke[] = [
  * Harrenhal cast, in `riverlands.ts` (#1472), Winterfell and Iron Islands
  * cast, in `north.ts` and `ironborn.ts` (#1473), Wall cast, the rangers in
  * `wall.ts` and the wildlings in `wildlings.ts` (#1474), and Essos and Qarth
- * cast, in `essos.ts` (#1475). `satisfies` rather than an annotation, so
- * `ArtId` below stays the literal keys.
+ * cast, in `essos.ts` (#1475). The seasons' own, which the home page's
+ * frame draws, are in `seasons.ts` (#1601). `satisfies` rather than an
+ * annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
   ...WINTERFELL_DRAWINGS,
@@ -185,6 +187,7 @@ export const DRAWINGS = {
   ...STORMLANDS_DRAWINGS,
   ...IRONBORN_DRAWINGS,
   ...WILDLING_DRAWINGS,
+  ...SEASON_DRAWINGS,
   'eddard-stark': ICE_STANDING,
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,

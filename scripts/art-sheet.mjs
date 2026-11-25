@@ -348,16 +348,25 @@ async function artOf(series) {
 }
 
 /**
- * A filed series' folder and records, or a throw for a slug the series list
- * does not have, before any path is built from it.
+ * A filed series' folder and records, its seasons' headings among them, or
+ * a throw for a slug the series list does not have, before any path is built
+ * from it.
  * @param {string} slug The series' slug.
  * @returns {Promise<{ folder: string, entities: { id: string, kind: string }[], getEntity: (id: string) => ({ id: string, revealedAtEpisode: number, visual: { tint: string } } | undefined) }>} The series.
  */
 async function seriesOf(slug) {
   const { SERIES, filedArchiveOf } = await importArchive('data/series/index.ts')
-  const { entities, getEntity } = await filedArchiveOf(slug)
+  const { arcs, entities, getEntity } = await filedArchiveOf(slug)
   const { folder } = SERIES.find((entry) => entry.slug === slug)
-  return { folder, entities, getEntity }
+  // A season's heading (`Saga.heading`) is an arc but no record: Game of
+  // Thrones draws its seasons that way.
+  const headings = arcs.filter((arc) => getEntity(arc.id) === undefined)
+  return {
+    folder,
+    entities: [...entities, ...headings],
+    getEntity: (id) =>
+      getEntity(id) ?? headings.find((heading) => heading.id === id),
+  }
 }
 
 /**

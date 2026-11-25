@@ -279,7 +279,9 @@ Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its
 red theme and its hub crown (#850). It files no arcs: each season module is
 headed by its own `heading`, and a season with no record is left out of the
-engine's sagas until its records land. Season 1 files the main cast of the
+engine's sagas until its records land. A heading's drawing, keyed `season-N` in
+`art/seasons.ts`, is the season's landmark, which the home page's frame draws
+for the season the reader is in (#1601). Season 1 files the main cast of the
 season and of _A Game of Thrones_ (#852): 63 characters, the six direwolves
 among them, each gated where it appears and is named in each medium, with every
 dated step pinned to both an episode and an absolute chapter; Ros, whom only the

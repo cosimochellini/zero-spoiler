@@ -260,6 +260,25 @@ describe('what the command line asks for', { timeout: 60_000 }, () => {
     expect(exam.cells).toMatchObject([{ note: 'ep 1', tint: 'yellow' }])
   })
 
+  it('draws a season’s heading, which files no record', async () => {
+    const thrones = 'game-of-thrones'
+    const seasons = await cellsFor({
+      ids: [],
+      kind: 'arc',
+      out,
+      series: thrones,
+    })
+    const first = await cellsFor({ ids: ['season-1'], out, series: thrones })
+
+    expect(seasons.cells.map((cell) => cell.label)).toStrictEqual([
+      'season-1',
+      'season-2',
+    ])
+    expect(first.cells).toMatchObject([
+      { label: 'season-1', note: 'ep 1', tint: 'ice' },
+    ])
+  })
+
   it('refuses a series not on the list, and a saga a series does not file', async () => {
     await expect(
       cellsFor({ ids: ['x'], out, series: '../one-piece' }),

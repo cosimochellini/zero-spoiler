@@ -474,7 +474,11 @@ describe.each(LOADED_SERIES)(
     it.skipIf(!open)(
       'has a drawing for every record, and none that no record uses',
       () => {
-        const ids = new Set(entities.map((entity) => entity.id))
+        // A season's heading (`Saga.heading`) is an arc with no record, and
+        // Game of Thrones draws its seasons for the home page's frame (#1601).
+        const ids = new Set(
+          [...entities, ...archive.arcs].map((entity) => entity.id),
+        )
         const drawn = new Set(Object.keys(drawings))
 
         for (const id of ids) {

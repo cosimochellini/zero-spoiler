@@ -18,8 +18,8 @@ import { season2Relationships } from './season-2.relationships'
  *
  * The heading opens with the season's first record in each medium, so its
  * summary names only the season and the book, as season 1's does. Like
- * season 1's, its `visual.art` names no drawing: a heading is not among the
- * archive's records, and the page draws it with no strokes.
+ * season 1's, its `visual.art` names the season's own drawing, in
+ * `../art/seasons.ts`, which the home page's frame draws (#1601).
  */
 export const season2: ThronesSaga = {
   name: { it: 'Stagione 2', en: 'Season 2' },
