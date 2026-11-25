@@ -13,7 +13,7 @@
         ]
       },
       {
-        "matcher": "^mcp__claude_ai_Firecrawl__firecrawl_scrape$",
+        "matcher": "^mcp__(claude_ai_Firecrawl|firecrawl)__firecrawl_scrape$",
         "hooks": [
           {
             "type": "command",
@@ -48,7 +48,7 @@
         ]
       },
       {
-        "matcher": "^mcp__claude_ai_Firecrawl__firecrawl_scrape$",
+        "matcher": "^mcp__(claude_ai_Firecrawl|firecrawl)__firecrawl_scrape$",
         "hooks": [
           {
             "type": "command",

@@ -6,7 +6,8 @@ description:
 tools:
   Read, Glob, Grep, Bash, Edit, Write, Skill, WebFetch, WebSearch,
   mcp__claude_ai_Firecrawl__firecrawl_scrape,
-  mcp__claude_ai_Firecrawl__firecrawl_search
+  mcp__claude_ai_Firecrawl__firecrawl_search, mcp__firecrawl__firecrawl_scrape,
+  mcp__firecrawl__firecrawl_search
 model: inherit
 ---
 

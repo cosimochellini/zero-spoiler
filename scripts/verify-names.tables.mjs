@@ -204,7 +204,7 @@ export const ITALIAN_TITLES = {
     'chrollo': 'Brigata Fantasma#Quoll Lucifer',
     ...PLACE_ITALIAN_TITLES['hunter-x-hunter'],
   },
-  // On Italian Wikipedia, which A Wiki of Ice and Fire does not link: every
+  // On Italian Wikipedia, which the Ice and Fire Wiki does not link: every
   // Game of Thrones character's page is named in `./verify-names.thrones.mjs`.
   'game-of-thrones': {
     ...THRONES_ITALIAN_TITLES,

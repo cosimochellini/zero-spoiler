@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-25T08:21:32.056Z",
+  "generatedAt": "2026-11-25T11:57:48.000Z",
   "title": "Design System: Zero Spoiler",
   "extensions": {
     "colorMeta": {
@@ -949,9 +949,6 @@
     ],
     "dos": [
       "**Do** write every colour in OKLCH and take it from the tokens.",
-      "**Do** keep Instrument Sans as the body face. Impeccable lists it as overused; here it is fixed (owner, 2026-11-17).",
-      "**Do** keep the uppercase tracked label above or beside a heading. Impeccable bans a kicker above a heading; here it is part of the style (owner, 2026-11-17).",
-      "**Do** set numerals, counts and short uppercase labels in JetBrains Mono, and nothing longer: never a sentence or a heading. Impeccable treats mono outside code as a costume; here it is the voice of data by design (owner, 2026-11-17).",
       "**Do** mark a link inside text with an underline. The accent sits within 3:1 of the inks in every set, so colour alone cannot.",
       "**Do** space siblings with `gap` in new work; see Layout for today's state.",
       "**Do** keep controls at least 44px tall; a link in a list or a ledger is one too (#1379). A link inside running text is the exception.",

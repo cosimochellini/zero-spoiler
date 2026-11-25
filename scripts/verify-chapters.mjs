@@ -21,10 +21,13 @@
 // unless a hand check found the wiki late (`EPISODE_KEPT`, issue #175).
 //
 // Game of Thrones reads its two media on two wikis (`wiki.en` and
-// `wiki.episodes` in the series list). A Wiki of Ice and Fire has no "first
+// `wiki.episodes` in the series list). The Ice and Fire Wiki has no "first
 // appearance" field, so a character's chapter floor is the first chapter page
-// that links it, by its title or a redirect to it, or else
-// the earliest chapter its page cites (`{{Ref|AGOT|22}}`). The Game of
+// that links it, by its title or a redirect to it, read only up to the first
+// chapter with no page, or else the earliest chapter its page cites
+// (`{{Ref|AGOT|22}}`), wherever that falls: a cite bounds the first
+// appearance from above, so it can flag a record wrongly but never clear one
+// filed too early. The Game of
 // Thrones Wiki's infobox names the first episode by title (`| First =
 // "[[Lord Snow]]"`), counted through `EPISODES`. A record one medium alone
 // tells (`source`) is listed as such and not read on the other's wiki.
@@ -43,7 +46,7 @@ import { seriesOrExit } from './archive-loader.mjs'
 import { isMain } from './is-main.mjs'
 import { abilityReadingOf } from './verify-chapters.abilities.mjs'
 import { EPISODE_KEPT, TITLES } from './verify-chapters.tables.mjs'
-import { thronesSourceOf } from './verify-chapters.thrones.mjs'
+import { bookTexts, thronesSourceOf } from './verify-chapters.thrones.mjs'
 import { chapterTexts, chapterTitles, fetchPage, wikiOf } from './wiki.mjs'
 
 /** @typedef {import('./wiki.mjs').Page} Page */
@@ -496,10 +499,10 @@ async function verify() {
   const series = await seriesOrExit()
   const wiki = wikiOf(series)
   const { books, chapterCeiling } = series.archive.series
-  const chapters = await chapterTexts(
-    chapterTitles(chapterCeiling, books),
-    wiki,
-  )
+  const chapters =
+    books === undefined ?
+      await chapterTexts(chapterTitles(chapterCeiling), wiki)
+    : await bookTexts(chapterCeiling, books, wiki)
   /** @type {Row[]} */
   const rows = []
   for (const record of series.archive.entities) {

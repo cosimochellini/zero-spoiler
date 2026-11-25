@@ -90,9 +90,10 @@ comments, and it refuses a page that carries `data-impeccable-ignore`.
   base's bookmarks, `--base <ref>` for another base and `--base-dir <path>` to
   reuse a base worktree with dependencies installed. `archive:table` covers One
   Piece only.
-- **Site changes:** build, `npm start` on a free port, then check the affected
-  flow in Chrome with local `puppeteer-core`, running inside the worktree. Set
-  the series cookie; check before/at changed episode and chapter gates. Capture
+- **Site changes:** build, `npm start` (`vite preview`) on a free port, never
+  `vite dev`, whose StyleX layer order differs; then check the affected flow in
+  Chrome with local `puppeteer-core`, running inside the worktree. Set the
+  series cookie; check before/at changed episode and chapter gates. Capture
   visual evidence and close browser/preview. Docs/tooling need no browser flow
   or parity run; `npm run check` itself still needs Chrome, for `gate:design`.
 - **Drawings:** inspect `npm run art:sheet -- <id>` output. For One Piece
