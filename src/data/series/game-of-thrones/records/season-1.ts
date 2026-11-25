@@ -4387,12 +4387,42 @@ export const season1: ThronesSaga = {
           chapter: 60,
           value: { it: 'Casa Frey', en: 'House Frey' },
         },
+        // He betrays Robb Stark at the wedding he hosts, and Roose Bolton
+        // kills Robb with the Lannisters' regards, in "The Rains of
+        // Castamere" (episode 29) and Catelyn VII (chapter 195, #1635).
+        {
+          episode: 29,
+          chapter: 195,
+          value: {
+            it: 'Casa Frey, alleata di Casa Lannister',
+            en: 'House Frey, allied with House Lannister',
+          },
+        },
       ],
       log: {
         it: 'È un lord molto anziano, con una prole numerosissima, che tiene il ponte delle Torri Gemelle. Lascia passare l’esercito di Robb in cambio di matrimoni con la sua famiglia.',
         en: 'He is a very old lord with a great many children, and he holds the bridge at the Twins. He lets Robb’s army cross in exchange for marriages into his family.',
       },
-      role: { it: 'Signore del Guado', en: 'Lord of the Crossing' },
+      role: [
+        {
+          episode: 9,
+          chapter: 60,
+          value: { it: 'Signore del Guado', en: 'Lord of the Crossing' },
+        },
+        // Show only: "I'm lord of Riverrun!", he boasts after the Red
+        // Wedding in "Mhysa" (episode 30). The books give Riverrun to his
+        // son Emmon, in Tyrion VI (chapter 197), which only orders it
+        // (#1635).
+        {
+          episode: 30,
+          chapter: 197,
+          source: 'episode',
+          value: {
+            it: 'Signore del Guado e di Delta delle Acque',
+            en: 'Lord of the Crossing and of Riverrun',
+          },
+        },
+      ],
       status: [
         { episode: 9, chapter: 60, value: 'alive' },
         { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
@@ -5394,6 +5424,15 @@ export const season1: ThronesSaga = {
             en: 'Commander of the northmen at Harrenhal',
           },
         },
+        // The crown names him Warden of the North for his part at the Red
+        // Wedding: he says so to Lord Walder in "Mhysa" (episode 30), and
+        // Lord Tywin tells Tyrion in Tyrion VI of A Storm of Swords
+        // (chapter 197, #1635).
+        {
+          episode: 30,
+          chapter: 197,
+          value: { it: 'Protettore del Nord', en: 'Warden of the North' },
+        },
       ],
       log: {
         it: 'È a capo di Casa Bolton. Parla poco e a voce bassa, e ha portato i suoi uomini nell’esercito di Robb.',
@@ -5412,6 +5451,17 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Casa Bolton, vassalla di Casa Stark',
             en: 'House Bolton, sworn to House Stark',
+          },
+        },
+        // He kills Robb Stark at the Red Wedding with the Lannisters'
+        // regards, in "The Rains of Castamere" (episode 29) and Catelyn VII
+        // (chapter 195, #1635).
+        {
+          episode: 29,
+          chapter: 195,
+          value: {
+            it: 'Casa Bolton, alleata di Casa Lannister',
+            en: 'House Bolton, allied with House Lannister',
           },
         },
       ],
@@ -6419,15 +6469,40 @@ export const season1: ThronesSaga = {
     'edmure-tully': {
       relationships: season1Relationships['edmure-tully'],
       chronicle: season1Chronicles['edmure-tully'],
-      role: {
-        it: 'Figlio di lord Hoster Tully',
-        en: 'Son of Lord Hoster Tully',
-      },
+      role: [
+        {
+          episode: 23,
+          chapter: 72,
+          value: {
+            it: 'Figlio di lord Hoster Tully',
+            en: 'Son of Lord Hoster Tully',
+          },
+        },
+        // Lord after his father's death: the books' Hoster dies in Catelyn
+        // IV (chapter 179), and Edmure is lord at his funeral. The show's
+        // Hoster is dead when Edmure's record opens at episode 23, so a
+        // second step there cannot be told apart; the step takes "The
+        // Climb" (episode 26), where Edmure calls himself Lord Walder's
+        // liege lord (owner check: Robb calls him lord of Riverrun in
+        // episode 22, synopsis only) (#1635).
+        {
+          episode: 26,
+          chapter: 179,
+          value: { it: 'Lord di Delta delle Acque', en: 'Lord of Riverrun' },
+        },
+      ],
       log: {
         it: 'È il figlio di Hoster Tully e il fratello di Catelyn Stark e Lysa Arryn. Si trova a Delta delle Acque, il seggio della sua famiglia, insieme a Robb Stark e ai suoi alleati.',
         en: 'He is Hoster Tully’s son and the brother of Catelyn Stark and Lysa Arryn. He is at Riverrun, his family’s seat, together with Robb Stark and his allies.',
       },
-      status: [{ episode: 23, chapter: 72, value: 'alive' }],
+      status: [
+        { episode: 23, chapter: 72, value: 'alive' },
+        // The Freys hold him after his wedding: Lord Walder says he spent
+        // his wedding night in a dungeon, in "Mhysa" (episode 30), and Lord
+        // Tywin tells Tyrion that Lord Frey keeps him hostage, in Tyrion VI
+        // of A Storm of Swords (chapter 197, #1635).
+        { episode: 30, chapter: 197, value: 'captured' },
+      ],
       affiliation: [
         {
           episode: 23,

@@ -241,6 +241,15 @@ export const THRONES_ITALIAN_TITLES = {
   'strong-belwas': SELMY,
   // The owner's rulings of 2026-11-22: Arstan Barbabianca, named in prose.
   'arstan-whitebeard': SELMY,
+  // #1635, the third stage's Robb's war and Riverlands cast.
+  'jeyne-westerling': 'Casa Stark#Jeyne Westerling',
+  'willem-lannister': 'Casa Lannister#Willem Lannister',
+  'martyn-lannister': 'Casa Lannister#Martyn Lannister',
+  'lothar-frey': OTHERS,
+  'walder-rivers': OTHERS,
+  'roslin-frey': characters('Roslin Frey'),
+  'ryman-frey': characters('Ryman Frey'),
+  'aegon-frey': characters('Aegon Frey'),
 }
 
 /**
@@ -361,4 +370,11 @@ export const THRONES_NAMES_KEPT = {
   'strong-belwas': 'Belwas il Forte',
   // Named in the same section's prose, with no heading of his own.
   'arstan-whitebeard': 'Arstan Barbabianca',
+  // #1635. Italian Wikipedia names Lothar Frey and Walder Rivers only in its
+  // TV cast list, and has no entry for Rolph Spicer or Raynald Westerling,
+  // whose names stay as they are until the Mondadori forms are checked.
+  'lothar-frey': 'Lothar Frey',
+  'walder-rivers': 'Walder Rivers',
+  'rolph-spicer': 'Rolph Spicer',
+  'raynald-westerling': 'Raynald Westerling',
 }

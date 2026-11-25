@@ -74,6 +74,8 @@ export const TITLES = {
     'little-walder-frey': 'Walder Frey (son of Merrett)',
     'lord-of-bones': 'Rattleshirt',
     'strong-belwas': 'Belwas',
+    // #1635: filed under the name the stage gives him.
+    'aegon-frey': 'Aegon Frey (son of Stevron)',
   },
 }
 
@@ -88,6 +90,8 @@ export const SHOW_TITLES = {
   'asha-greyjoy': 'Yara Greyjoy',
   'ramsay-snow': 'Ramsay Bolton',
   'qhorin-halfhand': 'Qhorin',
+  // #1635: the wiki titles her by her married name.
+  'roslin-frey': 'Roslin Tully',
 }
 
 // The reviewed first-use pins. See the scene evidence in the Nen inventory.
