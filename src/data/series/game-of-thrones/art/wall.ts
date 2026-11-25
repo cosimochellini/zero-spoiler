@@ -1224,7 +1224,8 @@ export const wallRedrawn: Redrawings = {
   'chett': [
     // The peg empty and the leash fallen to the ground, the collar lying
     // flat: he dies at the Fist of the First Men, which Samwell III
-    // (chapter 190) tells when Sam meets him among the dead. The book's
+    // (chapter 190) tells when Sam meets him among the dead (A Wiki of Ice
+    // and Fire, Chett, #1628). The book's
     // alone; episode 28, where the show reaches the same scene, orders it.
     {
       episode: 28,
@@ -1244,13 +1245,14 @@ export const wallRedrawn: Redrawings = {
   ],
   'thoren-smallwood': [
     // The breastplate fallen on its side, the cloak's trim lying by it: he
-    // dies at the Fist of the First Men, which A Storm of Swords has told
-    // by Samwell II (chapter 177). The record is the books', and "Valar
-    // Dohaeris" (episode 21), where the show reaches the aftermath of the
-    // Fist, orders it.
+    // dies at the Fist of the First Men, where the dead bear takes his head,
+    // as Sam remembers it in Samwell I of A Storm of Swords (chapter 162; A
+    // Wiki of Ice and Fire, Thoren Smallwood, #1628). The record is the
+    // books', and "Valar Dohaeris" (episode 21), where the show reaches the
+    // aftermath of the Fist, orders it.
     {
       episode: 21,
-      chapter: 177,
+      chapter: 162,
       value: [
         { d: 'M14 150 Q20 140 40 142 H124 Q140 140 146 150' },
         {

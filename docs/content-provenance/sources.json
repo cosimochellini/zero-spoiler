@@ -38012,6 +38012,26 @@
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748990",
       "contentSha256": "d03b23c68a7b1ae4e539def6b9e5a252744eb5c35e264a10512c411e91731010"
     },
+    "got-en-The_Rains_of_Castamere_(episode)-729892.json": {
+      "locale": "en",
+      "title": "The Rains of Castamere (episode)",
+      "revision": 729892,
+      "revisionDate": "2026-02-14T23:31:41Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729892",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729892",
+      "contentSha256": "af8f1b27641b56378887fe61ae050019d39a6e26899a24d6dd021bc833b79c88"
+    },
+    "got-en-The_Winds_of_Winter-748970.json": {
+      "locale": "en",
+      "title": "The Winds of Winter",
+      "revision": 748970,
+      "revisionDate": "2026-10-04T16:53:36Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Winds_of_Winter",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748970",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748970",
+      "contentSha256": "33a4c48a4d53f056b6ced7ab891fe486ea2aae6bdecddcbb65a1e6e571fcffe2"
+    },
     "got-en-Dark_Wings,_Dark_Words-740180.json": {
       "locale": "en",
       "title": "Dark Wings, Dark Words",
@@ -38021,6 +38041,16 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740180",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740180",
       "contentSha256": "df9afbba49b5720281e13a44c25ff3bf5ce3a855fa8e65051e35221cc6f4acb5"
+    },
+    "got-en-Thoros-744840.json": {
+      "locale": "en",
+      "title": "Thoros",
+      "revision": 744840,
+      "revisionDate": "2026-07-26T07:30:15Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Thoros",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=744840",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=744840",
+      "contentSha256": "65911157a2a86c64ccc21937e1583eebef5c92eaa64c86515ea1d6b562fee758"
     },
     "got-en-Walk_of_Punishment_(episode)-737648.json": {
       "locale": "en",
@@ -38032,6 +38062,26 @@
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=737648",
       "contentSha256": "18adcb9d7169546c332b8f9977c9c0d58b72985b78da04fb653741ad1f64ba9a"
     },
+    "got-en-Edmure_Tully-731983.json": {
+      "locale": "en",
+      "title": "Edmure Tully",
+      "revision": 731983,
+      "revisionDate": "2026-02-24T02:55:53Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Edmure_Tully",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=731983",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=731983",
+      "contentSha256": "760035ae8323e51d62ad608dbc2ec6c4cc66e968a3bff016d321f56784625d10"
+    },
+    "got-en-Hoster_Tully-737689.json": {
+      "locale": "en",
+      "title": "Hoster Tully",
+      "revision": 737689,
+      "revisionDate": "2026-06-21T22:02:36Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Hoster_Tully",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=737689",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=737689",
+      "contentSha256": "1863f2df2d4df6f335192f800be9f45f3f9227f4a9367172b8f92d73a885a131"
+    },
     "got-en-The_Climb-740184.json": {
       "locale": "en",
       "title": "The Climb",
@@ -38042,25 +38092,35 @@
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740184",
       "contentSha256": "a569d942d02b5b7aa4eed38692a6c9573205dd15f6e36b1a3ff7aada649eafa0"
     },
-    "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json": {
+    "got-en-And_Now_His_Watch_Is_Ended-740182.json": {
       "locale": "en",
-      "title": "The Bear and the Maiden Fair (episode)",
-      "revision": 729794,
-      "revisionDate": "2026-02-12T12:45:03Z",
-      "url": "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair_%28episode%29",
-      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729794",
-      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729794",
-      "contentSha256": "9d7987c6025dd8b60fa47fa7f3fb81089278e93acfaeb9c52657f6dcef57afe9"
+      "title": "And Now His Watch Is Ended",
+      "revision": 740182,
+      "revisionDate": "2026-06-27T12:18:29Z",
+      "url": "https://gameofthrones.fandom.com/wiki/And_Now_His_Watch_Is_Ended",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740182",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740182",
+      "contentSha256": "ad5d0d80da011dc03e7513e9ba08eb2e3d9a392d067bda571f43e94878282895"
     },
-    "got-en-The_Rains_of_Castamere_(episode)-729892.json": {
+    "got-en-Second_Sons-740186.json": {
       "locale": "en",
-      "title": "The Rains of Castamere (episode)",
-      "revision": 729892,
-      "revisionDate": "2026-02-14T23:31:41Z",
-      "url": "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere_%28episode%29",
-      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729892",
-      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729892",
-      "contentSha256": "af8f1b27641b56378887fe61ae050019d39a6e26899a24d6dd021bc833b79c88"
+      "title": "Second Sons",
+      "revision": 740186,
+      "revisionDate": "2026-06-27T12:20:49Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Second_Sons",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740186",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740186",
+      "contentSha256": "15017891371821e4bd29eefbf03dca802da27f98d2abd1bda05dec79d4e05aea"
+    },
+    "got-en-The_Bear_and_the_Maiden_Fair-740185.json": {
+      "locale": "en",
+      "title": "The Bear and the Maiden Fair",
+      "revision": 740185,
+      "revisionDate": "2026-06-27T12:20:07Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740185",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740185",
+      "contentSha256": "6e72c23515659b84142a877648c0600862d38c2e1bad24207bc8854f555a965c"
     },
     "got-en-Mhysa-740189.json": {
       "locale": "en",
@@ -38072,6 +38132,36 @@
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740189",
       "contentSha256": "a54ff91b60c59eff0191850fc0c5a829ae31bbe7b5c08c6f94f4e1985c40cfb3"
     },
+    "got-en-Valar_Dohaeris-746438.json": {
+      "locale": "en",
+      "title": "Valar Dohaeris",
+      "revision": 746438,
+      "revisionDate": "2026-08-05T23:26:27Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Valar_Dohaeris",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=746438",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=746438",
+      "contentSha256": "8c70220842c47baa2161ff7f3f11466e11d8ae2ce201c62985fc8bf272a63990"
+    },
+    "iaf-en-Chett-25051.json": {
+      "locale": "en",
+      "title": "Chett",
+      "revision": 25051,
+      "revisionDate": "2021-09-07T10:06:30Z",
+      "url": "https://iceandfire.fandom.com/wiki/Chett",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25051",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25051",
+      "contentSha256": "2d1ff8f46e18f970e5e451f80a9e11febc2cb82f8159427b8250c3c06310ac75"
+    },
+    "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json": {
+      "locale": "en",
+      "title": "The Bear and the Maiden Fair (episode)",
+      "revision": 729794,
+      "revisionDate": "2026-02-12T12:45:03Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729794",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729794",
+      "contentSha256": "9d7987c6025dd8b60fa47fa7f3fb81089278e93acfaeb9c52657f6dcef57afe9"
+    },
     "got-en-Blood_of_My_Blood-740222.json": {
       "locale": "en",
       "title": "Blood of My Blood",
@@ -38081,16 +38171,6 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740222",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740222",
       "contentSha256": "a261e7d24c458c12b35373c4265315fccb0efba1751b67135baf9d626b4d16a5"
-    },
-    "got-en-The_Winds_of_Winter-748970.json": {
-      "locale": "en",
-      "title": "The Winds of Winter",
-      "revision": 748970,
-      "revisionDate": "2026-10-04T16:53:36Z",
-      "url": "https://gameofthrones.fandom.com/wiki/The_Winds_of_Winter",
-      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748970",
-      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748970",
-      "contentSha256": "33a4c48a4d53f056b6ced7ab891fe486ea2aae6bdecddcbb65a1e6e571fcffe2"
     },
     "got-en-Willem_Lannister-728229.json": {
       "locale": "en",
@@ -38161,16 +38241,6 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729693",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729693",
       "contentSha256": "4aa45add13e72186e23afd7e106e5f8ac8db56e4a02865a82560761e107b63d6"
-    },
-    "got-en-Edmure_Tully-731983.json": {
-      "locale": "en",
-      "title": "Edmure Tully",
-      "revision": 731983,
-      "revisionDate": "2026-02-24T02:55:53Z",
-      "url": "https://gameofthrones.fandom.com/wiki/Edmure_Tully",
-      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=731983",
-      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=731983",
-      "contentSha256": "760035ae8323e51d62ad608dbc2ec6c4cc66e968a3bff016d321f56784625d10"
     },
     "iaf-en-Rolph_Spicer-27039.json": {
       "locale": "en",
