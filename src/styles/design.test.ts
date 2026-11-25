@@ -5,6 +5,9 @@ import { describe, expect, it } from 'vitest'
 import { PALETTES } from '~/styles/themes'
 import { NEUTRAL } from '~/styles/tokens.stylex'
 
+// eslint-disable-next-line no-restricted-imports -- The sidecar lives beside DESIGN.md, outside src.
+import SIDECAR_JSON from '../../.impeccable/design.json' with { type: 'json' }
+
 /** A file by its path from this folder, as text. */
 function read(file: string): string {
   // eslint-disable-next-line security/detect-non-literal-fs-filename -- every call below passes a constant path.
@@ -253,5 +256,86 @@ describe('the tokens in DESIGN.md', () => {
     expect(named(between(SIDECAR, '"zIndex": [', ']'))).toBe(layers.length)
     expect(SIDECAR).toContain(`"fluid": "${hero}"`)
     expect(SIDECAR).toContain(`"fluid": "${display}"`)
+  })
+})
+
+/** Text with every run of white space as one space, and no space at the ends. */
+function collapsed(text: string): string {
+  return text.replaceAll(/\s+/gu, ' ').trim()
+}
+
+/** Each text with its white space collapsed. */
+function allCollapsed(texts: string[]): string[] {
+  return texts.map((text) => collapsed(text))
+}
+
+/** The prose of DESIGN.md, after the frontmatter. */
+const PROSE = read('../../DESIGN.md').split('\n---\n', 2)[1] ?? ''
+
+/** The `- ` bullets of a stretch of DESIGN.md, each on one line. */
+function bullets(text: string): string[] {
+  return allCollapsed(text.split('\n- ').slice(1))
+}
+
+/** Every `**The X Rule.** body` paragraph, with its `##` section. */
+function rulesOf(
+  prose: string,
+): { body: string; name: string; section: string }[] {
+  return prose.split('\n## ').flatMap((section) =>
+    section.split('\n\n').flatMap((paragraph) => {
+      const rule = /^\*\*(?<name>The .+? Rule)\.\*\* (?<body>.+)$/su.exec(
+        paragraph,
+      )?.groups
+
+      return rule === undefined ?
+          []
+        : {
+            name: rule['name'] ?? '',
+            body: collapsed(rule['body'] ?? ''),
+            section: section.split('\n', 1)[0]?.toLowerCase() ?? '',
+          }
+    }),
+  )
+}
+
+// The impeccable doctor only compares the two files' times, and the sidecar
+// once kept two Do's DESIGN.md had changed for two days (#1563, #1616).
+describe('the sidecar', () => {
+  it('holds the text of DESIGN.md', () => {
+    const { narrative } = SIDECAR_JSON
+    const sidecar = {
+      title: collapsed(SIDECAR_JSON.title),
+      northStar: collapsed(narrative.northStar),
+      overview: collapsed(narrative.overview),
+      keyCharacteristics: allCollapsed(narrative.keyCharacteristics),
+      rules: narrative.rules.map((rule) => ({
+        ...rule,
+        body: collapsed(rule.body),
+      })),
+      dos: allCollapsed(narrative.dos),
+      donts: allCollapsed(narrative.donts),
+    }
+    const northStar = between(PROSE, '**Creative North Star: "', '"**')
+    const overview = between(PROSE, '"**\n', '**Key Characteristics:**')
+    const characteristics = between(PROSE, '**Key Characteristics:**', '\n## ')
+    const donts = PROSE.slice(PROSE.indexOf("### Don't:"))
+
+    expect(sidecar).toStrictEqual({
+      title: collapsed(between(PROSE, '\n# ', '\n')),
+      northStar: collapsed(northStar),
+      overview: collapsed(overview),
+      keyCharacteristics: bullets(characteristics),
+      rules: rulesOf(PROSE),
+      dos: bullets(between(PROSE, '### Do:', "### Don't:")),
+      donts: bullets(donts),
+    })
+  })
+
+  it('gives every colour of the frontmatter as its canonical value', () => {
+    const canonical = Object.entries(SIDECAR_JSON.extensions.colorMeta).map(
+      ([key, meta]) => [key, meta.canonical],
+    )
+
+    expect(Object.fromEntries(canonical)).toStrictEqual(listed('colors'))
   })
 })

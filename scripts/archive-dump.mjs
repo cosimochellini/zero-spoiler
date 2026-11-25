@@ -1,21 +1,23 @@
 // Every payload the server sends, for every key, at every bookmark of the
 // spoiler sweep and in both locales, one JSON line each (about 1 GB for One
-// Piece). Dump the base and the head of a refactor that should change
-// nothing, and `cmp` the two. Redirect it to a file, not a pipe: stdout is
-// written without backpressure, and a pipe can fail with ENOBUFS:
-//   npm run --silent archive:dump > head.jsonl
+// Piece). `npm run archive:parity` (`scripts/archive-parity.mjs`) pipes the
+// dump of a refactor's base and of its head and compares them line by line;
+// stdout waits for `drain`, so a pipe or a file both take the whole dump:
+//   npm run --silent archive:dump -- --series game-of-thrones | wc -l
 // The list is the sweep's own (`src/server/archive/payloads.server.ts`), so
 // a page added to the server is in the dump too, and so are the bookmarks
 // (the series', in `src/data/series/index.ts`).
 //
 // The dump opens with one line per episode, `{"table":N,"chapter":C}`, from
 // the series' episode↔chapter table, so a pair that moves an anchor
-// (`anchorsOf`, `src/data/dated.ts`) shows up in `cmp` too. Flags, after `--`:
+// (`anchorsOf`, `src/data/dated.ts`) shows up in the comparison too. Flags,
+// after `--`:
 //   --series <slug>     a series other than One Piece;
 //   --skip <name>       leave out a payload the change is meant to alter
 //                       (repeatable), such as `loadRelationships`;
 //   --bookmarks <file>  a JSON array that replaces the series' bookmarks, so
 //                       a head that added sweep bookmarks dumps the base's.
+import { once } from 'node:events'
 import { readFileSync } from 'node:fs'
 import process from 'node:process'
 import { parseArgs } from 'node:util'
@@ -75,7 +77,7 @@ const BOOKMARK_FIELDS = new Map([
 /**
  * The bookmarks of a `--bookmarks` file. Anything but an array of bookmarks
  * throws here, before the first line: a payload would throw on it halfway
- * through, and two dumps cut at the same line would still `cmp` equal.
+ * through, and two dumps cut at the same line would still compare equal.
  * @param {string} file The JSON file.
  * @returns {import('../src/lib/progress/episode.ts').Bookmark[]} The bookmarks.
  */
@@ -168,6 +170,22 @@ export function* dumpLines({ archive, payloads, bookmarks, locales }) {
   }
 }
 
+/**
+ * Writes the lines, waiting for `drain` whenever the stream asks: a pipe
+ * that is read slower than the dump is written would otherwise buffer it
+ * all, and fails with ENOBUFS.
+ * @param {Iterable<string>} lines The lines.
+ * @param {import('node:stream').Writable} out Where to write them.
+ * @returns {Promise<void>} When the last line is handed over.
+ */
+export async function writeLines(lines, out) {
+  for (const line of lines) {
+    if (!out.write(line)) {
+      await once(out, 'drain')
+    }
+  }
+}
+
 if (isMain(import.meta)) {
   let run
   try {
@@ -177,7 +195,5 @@ if (isMain(import.meta)) {
     console.error(error.message)
     process.exit(2)
   }
-  for (const line of dumpLines(run)) {
-    process.stdout.write(line)
-  }
+  await writeLines(dumpLines(run), process.stdout)
 }

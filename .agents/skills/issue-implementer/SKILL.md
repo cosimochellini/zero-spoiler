@@ -29,9 +29,10 @@ in Codex or through Claude's `issue-implementer` subagent.
    exports and tests. Hidden ids, names, prose and drawings stay server-side
    until their episode/chapter gates; preserve source/series isolation.
 5. Run `npm run check`; fix introduced failures and report baseline failures.
-   Verify mappings for data changes, payload parity for behavior-preserving
-   archive/server refactors and production browser flows for site changes,
-   following `CONTRIBUTING.md`. Docs/tooling need no browser or archive dump.
+   Verify mappings for data changes, payload parity
+   (`npm run archive:parity`) for behavior-preserving archive/server refactors
+   and production browser flows for site changes, following `CONTRIBUTING.md`.
+   Docs/tooling need no browser flow or parity run.
 6. Use the `pr` skill when available and fill
    `.github/pull_request_template.md`, including sources/rights and AI
    attribution to the actual active model. Commit, push and open a **draft** PR

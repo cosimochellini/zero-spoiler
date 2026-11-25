@@ -76,17 +76,25 @@ comments, and it refuses a page that carries `data-impeccable-ignore`.
   compare mappings separately. For dated additions/removals, dump with
   `-- --dated-only`, sort both with `LC_ALL=C`, then use `comm -13` /
   `comm -23`, preserving duplicates. Report intentional changes.
-- **Behavior-preserving archive/server refactors:** run
-  `npm run --silent archive:dump` in head and an isolated worktree at the exact
-  base SHA, with dependencies installed; save outside the checkout and `cmp`.
-  Pass `-- --series <slug>` for another series, `--skip <payload>` to leave out
-  a payload the change alters and `--bookmarks <file.json>` to hold both to the
-  base's bookmarks. `archive:table` covers One Piece only.
+- **Behavior-preserving archive/server refactors:** run `npm run archive:parity`
+  in head. It dumps every payload in head and in a temporary worktree at the
+  merge-base with `origin/main`, which it removes, compares them line by line
+  without saving them, and exits 0 when they are identical. Exit 1 prints, per
+  payload, the count of identical and different lines and one truncated sample
+  of the first change; exit 2 is a wrong flag, a failed setup or dump, no line
+  compared, or Ctrl-C. Only a SIGKILL of the command leaves the base behind:
+  remove it with `git worktree remove --force <$TMPDIR/archive-parity-*/base>`,
+  the path written out, then delete its `archive-parity-*` folder. Pass
+  `-- --series <slug>` for another series, `--skip <payload>` to leave out a
+  payload the change alters, `--bookmarks <file.json>` to hold both to the
+  base's bookmarks, `--base <ref>` for another base and `--base-dir <path>` to
+  reuse a base worktree with dependencies installed. `archive:table` covers One
+  Piece only.
 - **Site changes:** build, `npm start` on a free port, then check the affected
   flow in Chrome with local `puppeteer-core`, running inside the worktree. Set
   the series cookie; check before/at changed episode and chapter gates. Capture
   visual evidence and close browser/preview. Docs/tooling need no browser flow
-  or dumps; `npm run check` itself still needs Chrome, for `gate:design`.
+  or parity run; `npm run check` itself still needs Chrome, for `gate:design`.
 - **Drawings:** inspect `npm run art:sheet -- <id>` output. For One Piece
   character redrawings, build and run `npm run art:shots -- <id>`; inspect the
   gate screenshots. Keep generated evidence out of commits.
@@ -146,8 +154,8 @@ independent and write original IT/EN type and explanation text. Four or five
 people is a target, never a quota. Self-links, duplicate ids, non-character
 targets and invalid dates fail the data checks.
 
-Entries without `source` are episode↔chapter anchors: `cmp` base and head
-`archive:dump -- --series <slug> --skip loadRelationships --bookmarks base.json`.
+Entries without `source` are episode↔chapter anchors: run
+`npm run archive:parity -- --series <slug> --skip loadRelationships --bookmarks base.json`.
 
 ## Recording provenance
 
