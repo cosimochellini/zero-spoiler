@@ -2,7 +2,14 @@ import { describe, expect, it } from 'vitest'
 
 import { type Reader, readerFor } from '~/server/archive/reader.server'
 
-import { opened, shownIn, sidesOf, type StageRow, unlisted } from './gates'
+import {
+  drawnIn,
+  opened,
+  shownIn,
+  sidesOf,
+  type StageRow,
+  unlisted,
+} from './gates'
 import { loadedSeries } from './series'
 
 const { archive } = loadedSeries('hunter-x-hunter')
@@ -93,6 +100,21 @@ describe('shownIn', () => {
     expect(() => shownIn(ROWS, { id: 'b', unit: 'season' })).toThrow(
       /not a unit/u,
     )
+  })
+})
+
+describe('drawnIn', () => {
+  const art = {
+    drawings: { a: 'first a', b: 'first b' },
+    redrawings: { a: [{ value: 'a0' }, { value: 'a1' }, { value: 'a2' }] },
+  }
+
+  it('draws the stage the table shows last, or the first drawing', () => {
+    expect(drawnIn(ROWS, art, { id: 'a', unit: 'chapter' })).toBe('a1')
+    expect(drawnIn(ROWS, art, { id: 'a', unit: 'episode', below: 2 })).toBe(
+      'a0',
+    )
+    expect(drawnIn(ROWS, art, { id: 'b', unit: 'episode' })).toBe('first b')
   })
 })
 

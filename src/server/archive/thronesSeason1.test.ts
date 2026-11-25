@@ -7,10 +7,10 @@ import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
 import {
   bookmarkAt,
+  drawnIn,
   gateCases,
   opened,
   recordIn,
-  shownIn,
   sidesOf,
   type Unit,
   unlisted,
@@ -1731,13 +1731,8 @@ describe('the table of stages', () => {
   })
 })
 
-/** A record's drawing at a stage of the table; `undefined` is its first. */
-function drawnAt(
-  id: keyof typeof DRAWINGS,
-  stage: number | undefined,
-): unknown {
-  return stage === undefined ? DRAWINGS[id] : REDRAWINGS[id]?.[stage]?.value
-}
+/** The drawings the table's stages are read against. */
+const ART = { drawings: DRAWINGS, redrawings: REDRAWINGS }
 
 describe.each(
   STAGES.flatMap((stage) =>
@@ -1749,7 +1744,7 @@ describe.each(
     const stage = REDRAWINGS[id]?.[index]
     // The drawing just before is the last earlier stage this unit reads, by
     // the table: a stage the other medium alone tells is never shown here.
-    const previous = drawnAt(id, shownIn(STAGES, { id, unit, below: index }))
+    const previous = drawnIn(STAGES, ART, { id, unit, below: index })
 
     it('at its pin, not one before', () => {
       const owner = recordIn(archive, id)
@@ -1809,9 +1804,7 @@ describe('the stages one medium alone tells', () => {
       const drawn = drawingOf(recordIn(archive, id), atTheEnd(other)).strokes
 
       expect(isNewLook(id, index) && shows(drawn, id, index)).toBe(false)
-      expect(drawn).toStrictEqual(
-        drawnAt(id, shownIn(STAGES, { id, unit: other })),
-      )
+      expect(drawn).toStrictEqual(drawnIn(STAGES, ART, { id, unit: other }))
     },
   )
 })

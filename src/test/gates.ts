@@ -160,6 +160,24 @@ export function shownIn(
   return told.length === 0 ? undefined : Math.max(...told)
 }
 
+/** A series' drawings: each record's first, and its redrawn stages. */
+export interface Art {
+  drawings: Record<string, unknown>
+  redrawings: Record<string, undefined | { value: unknown }[]>
+}
+
+/**
+ * The drawing a reader of this unit is shown last, read off the table: the
+ * strokes of the stage `shownIn` finds, or the record's first drawing.
+ */
+export function drawnIn(rows: StageRow[], art: Art, shown: Shown): unknown {
+  const stage = shownIn(rows, shown)
+
+  return stage === undefined ?
+      art.drawings[shown.id]
+    : art.redrawings[shown.id]?.[stage]?.value
+}
+
 /**
  * Each `id@stage` the data redraws, of a record the table names, that the
  * table lists no row for: a stage it would otherwise never hold.

@@ -6,7 +6,7 @@ import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
-import { recordIn, sidesOf } from '~/test/gates'
+import { recordIn, sidesOf, unlisted } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { homePage } from './home.server'
@@ -343,6 +343,12 @@ function stageOf(
   }
 }
 
+describe('the table of stages', () => {
+  it('lists every stage of each record it redraws', () => {
+    expect(unlisted(STAGES, REDRAWINGS)).toStrictEqual([])
+  })
+})
+
 describe.each(
   STAGES.flatMap((stage) =>
     sidesOf(stage, archive.series).map((side) => ({
@@ -388,11 +394,11 @@ describe('Garlan Tyrell’s armour', () => {
 describe('the stages one medium alone tells', () => {
   it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
-    ({ id, source = 'episode' }) => {
+    ({ id, source = 'episode', stage: index = 0 }) => {
       const drawn = drawingOf(recordIn(archive, id), otherAtTheEnd(source))
 
       // The record never opens to that reader, so nothing of it is drawn.
-      expect(drawn.strokes).not.toStrictEqual(REDRAWINGS[id]?.[0]?.value)
+      expect(drawn.strokes).not.toStrictEqual(REDRAWINGS[id]?.[index]?.value)
     },
   )
 })

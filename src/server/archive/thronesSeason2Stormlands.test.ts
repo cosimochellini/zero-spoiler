@@ -6,7 +6,7 @@ import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
-import { recordIn, shownIn, sidesOf, unlisted } from '~/test/gates'
+import { drawnIn, recordIn, sidesOf, unlisted } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage } from './pages.server'
@@ -354,13 +354,8 @@ describe('the table of stages', () => {
   })
 })
 
-/** A record's drawing at a stage of the table; `undefined` is its first. */
-function drawnAt(
-  id: keyof typeof DRAWINGS,
-  stage: number | undefined,
-): unknown {
-  return stage === undefined ? DRAWINGS[id] : REDRAWINGS[id]?.[stage]?.value
-}
+/** The drawings the table's stages are read against. */
+const ART = { drawings: DRAWINGS, redrawings: REDRAWINGS }
 
 describe.each(
   STAGES.flatMap((stage) =>
@@ -372,7 +367,7 @@ describe.each(
     const stage = REDRAWINGS[id]?.[index]
     // The drawing just before is the last earlier stage this unit reads, by
     // the table: a stage the other medium alone tells is never shown here.
-    const previous = drawnAt(id, shownIn(STAGES, { id, unit, below: index }))
+    const previous = drawnIn(STAGES, ART, { id, unit, below: index })
 
     it('at its pin, not one before', () => {
       const owner = recordIn(archive, id)
@@ -405,9 +400,7 @@ describe('the stormlands stages one medium alone tells', () => {
       ).strokes
 
       expect(drawn).not.toStrictEqual(REDRAWINGS[id]?.[index]?.value)
-      expect(drawn).toStrictEqual(
-        drawnAt(id, shownIn(STAGES, { id, unit: other })),
-      )
+      expect(drawn).toStrictEqual(drawnIn(STAGES, ART, { id, unit: other }))
     },
   )
 })
