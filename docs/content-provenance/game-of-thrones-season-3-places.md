@@ -10,6 +10,11 @@ text is copied from the sources.
 
 ## Rules
 
+Review round 3 swept every place against every cached chapter page from the
+prologue (144) to chapter 52 (196), the Place row, the synopsis and the Mentions
+list, and every season 3 episode page for a quoted or reported naming: each gate
+below is the first hit in the window.
+
 The stage-2 rules (`game-of-thrones-season-2-places.md`, #1469 and #1476),
 restated for the stage:
 
@@ -43,14 +48,14 @@ restated for the stage:
 | Place                     | Episode | Chapter | Note                                     |
 | ------------------------- | ------- | ------- | ---------------------------------------- |
 | `astapor`                 | 21      | 152     | both media; Daenerys I names it          |
-| `yunkai`                  | 27      | 167     | both media; Daenerys II names it         |
+| `yunkai`                  | 27      | 152     | both media; Daenerys I names it          |
 | `nightfort`               | 29      | 170     | the show visits it; the book names it    |
 | `inn-of-the-kneeling-man` | 22      | 155     | book only; the episode orders it         |
 | `milkwater`               | 21      | 144     | book only; the prologue is set by it     |
-| `maidenpool`              | 23      | 165     | book only                                |
+| `maidenpool`              | 22      | 155     | book only; Jaime II names it             |
 | `high-heart`              | 23      | 166     | book only                                |
 | `acorn-hall`              | 23      | 166     | book only                                |
-| `stoney-sept`             | 24      | 173     | book only                                |
+| `stoney-sept`             | 23      | 166     | book only; Arya IV names it              |
 | `hollow-hill`             | 24      | 178     | book only; the show's cave is not named  |
 | `queenscrown`             | 29      | 184     | book only; the show's tower is not named |
 | `oldstones`               | 29      | 189     | book only                                |
@@ -70,21 +75,24 @@ restated for the stage:
 
 ## Dated steps on earlier places
 
-| Place                   | Episode | Chapter | Step                                                     |
-| ----------------------- | ------- | ------- | -------------------------------------------------------- |
-| `harrenhal`             | 22      | 121     | taken: the northmen hold it for Robb; drawing stage      |
-| `fist-of-the-first-men` | 21      | 162     | overrun: the attack and the flight south                 |
-| `crasters-keep`         | 24      | 177     | taken by the mutineers; no drawing stage                 |
-| `dreadfort`             | 30      | 284     | visited: Theon held there and renamed (#852)             |
-| `flea-bottom`           | 21      | 150     | visited, the show alone: Margaery and the orphans        |
-| `astapor`               | 24      | 171     | sacked: the Unsullied bought and the masters killed      |
-| `yunkai`                | 29      | 186     | the army at the walls, the gold refused, the city taken  |
-| `milkwater`             | 22      | 151     | book only: Jon brought to Mance in the camp on its banks |
+| Place                   | Episode | Chapter | Step                                                        |
+| ----------------------- | ------- | ------- | ----------------------------------------------------------- |
+| `harrenhal`             | 22      | 121     | taken: the northmen hold it for Robb; drawing stage         |
+| `fist-of-the-first-men` | 21      | 162     | overrun: the attack and the flight south                    |
+| `crasters-keep`         | 24      | 177     | taken by the mutineers; no drawing stage                    |
+| `dreadfort`             | 30      | 284     | visited: Theon held there and renamed (#852)                |
+| `flea-bottom`           | 21      | 150     | visited, the show alone: Margaery and the orphans           |
+| `astapor`               | 24      | 171     | sacked: the Unsullied bought and the masters killed         |
+| `yunkai`                | 29      | 186     | the army at the walls, the gold refused, the city taken     |
+| `maidenpool`            | 23      | 165     | book only: found sacked and empty                           |
+| `stoney-sept`           | 24      | 173     | book only: the outlaws' night, the Battle of the Bells told |
+| `milkwater`             | 22      | 151     | book only: Jon brought to Mance in the camp on its banks    |
 
 Drawing stages: `fist-of-the-first-men` 21 / 159 (Jon II, the dead horses on the
 slope), `harrenhal` 22 / 121 (the banners over the gatehouse), `astapor` 24 /
 171 (smoke over the city, the gate open, the whip dropped), `yunkai` 29 / 186
-(the gate open).
+(the gate open), `maidenpool` 23 / 165, the books alone (the castle broken, the
+houses roofless).
 
 ## Open points
 
@@ -96,13 +104,14 @@ slope), `harrenhal` 22 / 121 (the banners over the gatehouse), `astapor` 24 /
   sack's smoke in the drawing is the show's; the book chapter page says only
   that the city is conquered. Filed here: Missandei and Kraznys mo Nakloz.
   Italian "Astapor", Italian Wikipedia's section.
-- `yunkai`: show 27, "The Bear and the Maiden Fair". Book 167, Daenerys II
-  (Mentions, the line not read), as Meereen is gated (review round 2); Daenerys
-  IV (186) brings the army and takes the city, the visit and the stage at 29
-  / 186. The log holds at 167: one of the slaver cities. Filed here: Grey Worm,
-  Grazdan mo Eraz, Mero, Daario Naharis, Prendahl na Ghezn. Owner check: the
-  issue counts a taken place as a drawing stage; the city is not damaged, so the
-  stage only opens the gate.
+- `yunkai`: show 27, "The Bear and the Maiden Fair". Book 152, Daenerys I
+  (Mentions, with Astapor and Meereen, the line not read; review round 3);
+  Daenerys IV (186) brings the army and takes the city, the visit and the stage
+  at 29 / 186. The log holds at 152: one of the slaver cities. Episode 25's
+  synopsis has the army head north to Yunkai in narration only, so the show gate
+  stays 27. Filed here: Grey Worm, Grazdan mo Eraz, Mero, Daario Naharis,
+  Prendahl na Ghezn. Owner check: the issue counts a taken place as a drawing
+  stage; the city is not damaged, so the stage only opens the gate.
 - `nightfort`: show 29, Sam names it to Gilly in "The Rains of Castamere"
   (quoted on the episode page), and "Mhysa" (30) sets the first scene there; the
   gate is the naming (filing-records §2, review round 1). Owner check: stage 2
@@ -121,17 +130,25 @@ slope), `harrenhal` 22 / 121 (the banners over the gatehouse), `astapor` 24 /
   folded into the Skirling Pass in stage 2. Italian "Fiumelatte". Filed here:
   Mance Rayder, Tormund, Orell, Styr, Dalla, Val and Jarl (#1638), met in
   Mance's camp.
-- `maidenpool`: Jaime III (165), the town deserted and sacked. The show named it
-  in episode 15; season 3 does not.
+- `maidenpool`: book 155, Jaime II, where the cook warns against following the
+  Trident to Maidenpool (review round 3). Jaime III (165), the town deserted and
+  sacked, is a dated visit and a books-only drawing stage. The show named it in
+  episode 15; season 3 does not.
 - `high-heart`, `acorn-hall`: Arya IV (166). The show named Acorn Hall in season
   1 (GOT107) and never sets a scene there; season 3 does not name it.
-- `stoney-sept`: Arya V (173).
+- `stoney-sept`: book 166, Arya IV (Mentions; review round 3). Arya V (173), the
+  outlaws' night and Harwin's Battle of the Bells, is a dated visit.
 - `hollow-hill`: Arya VI (178). Name as A Wiki of Ice and Fire writes it, in
-  lower case. Italian "la collina cava" is assumed.
+  lower case. Italian "la collina cava" is assumed. The Game of Thrones Wiki's
+  synopses of episodes 24-26 call the show's cave "the hollow hill" in
+  narration; no quote names it on screen, so the record stays the books' (owner
+  check).
 - `queenscrown`: Bran III (184) and Jon V (185). The Game of Thrones Wiki says
   the show's ruin in episode 29 is never named on screen. The drawing's gilded
   merlons follow its "In the books" note.
-- `oldstones`: Catelyn V (189). The show names Oldstones in season 7.
+- `oldstones`: Catelyn V (189). Arya VIII (187) names it only in the song "Jenny
+  of Oldstones", not taken as a naming of the place, as "The Rains of Castamere"
+  is not (owner check). The show names Oldstones in season 7.
 - `lord-harroways-town`: Arya IX (191). The show names it in season 7.
 
 ### Named only
@@ -139,7 +156,9 @@ slope), `harrenhal` 22 / 121 (the banners over the gatehouse), `astapor` 24 /
 - `meereen`: show 28, Mero's three coins (synopsis; the line is not quoted).
   Episode 23's "Meereenese Knot" is a lower point, an adjective (owner check).
   Book 152, Daenerys I (Mentions). Its summary and log say only "a city in
-  Essos": nothing more is told in both media by the gate.
+  Essos": nothing more is told in both media by the gate. Its drawing shows a
+  far city's walls and towers: no medium shows Meereen in the stage, so its
+  pyramids and harpy wait for the drawing audit (#1667).
 - `karhold`: show 25 (quoted); book 153, Bran I's synopsis.
 - `last-hearth`: show 26 (quoted); the show first named it in episode 4, before
   _A Game of Thrones_ did (#1248). Book 151, Jon I (Mentions); Bran I (153)

@@ -1410,14 +1410,15 @@ export const season3: ThronesSaga = {
       visual: { art: 'astapor', tint: 'vermilion' },
     },
     // Show: "The Bear and the Maiden Fair", Daenerys's army marches on Yunkai
-    // and she receives its envoy before the walls. Books: Daenerys II (site
-    // chapter 167), A Wiki of Ice and Fire's chapter page listing it among
-    // the places mentioned; Daenerys IV (186) brings the army to it.
+    // and she receives its envoy before the walls. Books: Daenerys I (site
+    // chapter 152), A Wiki of Ice and Fire's chapter page listing it among
+    // the places mentioned with Astapor and Meereen; Daenerys IV (186) brings
+    // the army to it.
     {
       id: 'yunkai',
       kind: 'place',
       revealedAtEpisode: 27,
-      revealedAtChapter: 167,
+      revealedAtChapter: 152,
       name: { it: 'Yunkai', en: 'Yunkai' },
       summary: {
         it: 'Una città di schiavisti sulla Baia degli Schiavisti, in Essos.',
@@ -1485,15 +1486,17 @@ export const season3: ThronesSaga = {
       },
       visual: { art: 'milkwater', tint: 'cyan' },
     },
-    // Books only. Jaime III (site chapter 165), Brienne and Jaime ride
-    // through the town and find it sacked and empty. Season 3 neither visits
-    // nor names it; episode 23, where Jaime's captors take him, orders it.
+    // Books only. Jaime II (site chapter 155), the cook at the inn warns
+    // against following the Trident to Maidenpool; Jaime III (165), a dated
+    // step, has Brienne and Jaime find the town sacked and empty. Season 3
+    // neither visits nor names it; episode 22, where Jaime and Brienne's road
+    // opens, orders it.
     {
       id: 'maidenpool',
       kind: 'place',
       source: 'chapter',
-      revealedAtEpisode: 23,
-      revealedAtChapter: 165,
+      revealedAtEpisode: 22,
+      revealedAtChapter: 155,
       name: { it: 'Maidenpool', en: 'Maidenpool' },
       summary: {
         it: 'Un borgo delle Terre dei Fiumi sulla strada per Approdo del Re.',
@@ -1533,19 +1536,20 @@ export const season3: ThronesSaga = {
       },
       visual: { art: 'acorn-hall', tint: 'ocher' },
     },
-    // Books only. Arya V (site chapter 173), the outlaws spend the night in
-    // the town. The show never goes there; episode 24, where the Hound is
-    // brought before the brotherhood, orders it.
+    // Books only. Arya IV (site chapter 166), A Wiki of Ice and Fire's
+    // chapter page listing it among the places mentioned; Arya V (173), a
+    // dated step, has the outlaws spend the night in the town. The show never
+    // goes there; episode 23 orders it.
     {
       id: 'stoney-sept',
       kind: 'place',
       source: 'chapter',
-      revealedAtEpisode: 24,
-      revealedAtChapter: 173,
+      revealedAtEpisode: 23,
+      revealedAtChapter: 166,
       name: { it: 'Tempio di Pietra', en: 'Stoney Sept' },
       summary: {
-        it: 'Una città cinta da mura nelle Terre dei Fiumi.',
-        en: 'A walled town in the Riverlands.',
+        it: 'Una città nelle Terre dei Fiumi.',
+        en: 'A town in the Riverlands.',
       },
       visual: { art: 'stoney-sept', tint: 'orange' },
     },
@@ -1862,14 +1866,25 @@ export const SEASON_3_PLACES: Record<
     form: 'town',
     region: 'the-riverlands',
     landmark: {
-      it: 'Case senza tetto sotto un castello, e uno stagno',
-      en: 'Roofless houses below a castle, and a pool',
+      it: 'Un castello su una collina sopra le case e uno stagno',
+      en: 'A castle on a hill above houses and a pool',
     },
     log: {
-      it: 'Jaime Lannister e Brienne di Tarth lo attraversano diretti ad Approdo del Re, e lo trovano saccheggiato e senza più nessuno.',
-      en: 'Jaime Lannister and Brienne of Tarth ride through it on their way to King’s Landing, and find it sacked and empty.',
+      it: 'Si trova seguendo il Tridente verso valle, sulla via da Delta delle Acque ad Approdo del Re.',
+      en: 'It lies down the Trident, on the way from Riverrun to King’s Landing.',
     },
     filedHere: [],
+    // Jaime III (site chapter 165); episode 23 orders it.
+    visits: [
+      {
+        episode: 23,
+        chapter: 165,
+        value: {
+          it: 'Jaime Lannister e Brienne di Tarth lo attraversano diretti ad Approdo del Re, e lo trovano saccheggiato e senza più nessuno.',
+          en: 'Jaime Lannister and Brienne of Tarth ride through it on their way to King’s Landing, and find it sacked and empty.',
+        },
+      },
+    ],
   },
   'high-heart': {
     form: 'hill',
@@ -1905,10 +1920,21 @@ export const SEASON_3_PLACES: Record<
       en: 'Walls around a sept and its bells',
     },
     log: {
-      it: 'Durante la ribellione di Robert, Eddard Stark vinse qui la Battaglia delle Campane, combattuta per le strade. I fuorilegge vi passano la notte con Arya Stark, e vedono il Cacciatore Pazzo portare in città un prigioniero in catene.',
-      en: 'In Robert’s Rebellion, Eddard Stark won the Battle of the Bells here, fought in its streets. The outlaws spend the night here with Arya Stark, and see the Mad Huntsman bring a prisoner into the town in chains.',
+      it: 'È una città delle Terre dei Fiumi.',
+      en: 'It is a town in the Riverlands.',
     },
     filedHere: [],
+    // Arya V (site chapter 173); episode 24 orders it.
+    visits: [
+      {
+        episode: 24,
+        chapter: 173,
+        value: {
+          it: 'I fuorilegge vi passano la notte con Arya Stark, e Harwin le racconta che durante la ribellione di Robert suo padre vinse qui la Battaglia delle Campane, per le strade. Nella notte il Cacciatore Pazzo porta in città un prigioniero in catene.',
+          en: 'The outlaws spend the night here with Arya Stark, and Harwin tells her that her father won the Battle of the Bells in its streets during Robert’s Rebellion. In the night the Mad Huntsman brings a prisoner into the town in chains.',
+        },
+      },
+    ],
   },
   'hollow-hill': {
     form: 'hill',
@@ -1966,8 +1992,8 @@ export const SEASON_3_PLACES: Record<
     form: 'city',
     region: 'essos',
     landmark: {
-      it: 'Una grande piramide sormontata da un’arpia',
-      en: 'A great pyramid crowned with a harpy',
+      it: 'Mura e torri di una città lontana',
+      en: 'The walls and towers of a far city',
     },
     log: { it: 'È una città di Essos.', en: 'It is a city in Essos.' },
     filedHere: [],

@@ -2182,26 +2182,49 @@ const MILKWATER: Stroke[] = [
   },
 ]
 
+/** Maidenpool's hill, castle and pool, which its sack keeps. */
+const MAIDENPOOL_HILL: Stroke[] = [
+  { d: 'M10 106 Q40 84 70 88 Q104 82 150 102' },
+  { d: ellipse(80, 140, 24, 6), role: 'accent' },
+  { d: 'M72 140 q4 -2 8 0 M84 142 q3 -2 6 0', role: 'soft' },
+  { d: 'M10 150 H50 M110 150 H150', role: 'ambient', dashed: true },
+]
+
 /**
- * Maidenpool: a castle on the hill over a sacked town, its houses roofless,
- * and the pool below, as Jaime and Brienne find it empty in Jaime III
- * (chapter 165); the show never goes there. The houses' insides are
- * hatched; the accent is the pool.
+ * Maidenpool: a castle on the hill over the town's houses, and the pool
+ * below, named in Jaime II (chapter 155) when the cook warns against
+ * following the Trident there; the show never goes there. The houses' sides
+ * are hatched; the accent is the pool.
  */
 const MAIDENPOOL: Stroke[] = [
-  { d: 'M10 106 Q40 84 70 88 Q104 82 150 102' },
+  ...MAIDENPOOL_HILL,
+  { d: 'M54 88 V70 H64 V88 M64 76 H84 V88 M84 88 V64 H96 V88' },
+  { d: 'M14 138 V118 L22 110 L30 118 V138 M32 138 V120 L38 114 L44 120 V138' },
+  {
+    d: 'M114 138 V116 L122 108 L130 116 V138 M132 138 V120 L138 114 L144 120 V138',
+  },
+  {
+    d: 'M90 72 l4 -2 M90 80 l4 -2 M24 126 l4 -2 M124 126 l4 -2',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Maidenpool sacked: the same hill and pool, the castle broken and the
+ * houses roofless, as Jaime and Brienne find the town empty in Jaime III
+ * (chapter 165).
+ */
+const MAIDENPOOL_SACKED: Stroke[] = [
+  ...MAIDENPOOL_HILL,
   { d: 'M54 88 V70 H64 V86 M64 76 H84 V86 M84 86 V64 L90 70 L96 62 V84' },
   { d: 'M14 138 V118 L22 112 L26 120 V138 M30 138 V122 L38 128 V138' },
   {
     d: 'M114 138 V116 L120 124 L126 114 V138 M130 138 V120 H142 L138 126 V138',
   },
-  { d: ellipse(80, 140, 24, 6), role: 'accent' },
-  { d: 'M72 140 q4 -2 8 0 M84 142 q3 -2 6 0', role: 'soft' },
   {
     d: 'M90 72 l4 -2 M92 80 l4 -2 M20 126 l4 -2 M120 126 l4 -2',
     role: 'ambient',
   },
-  { d: 'M10 150 H50 M110 150 H150', role: 'ambient', dashed: true },
 ]
 
 /**
@@ -2361,23 +2384,23 @@ const LORD_HARROWAYS_TOWN: Stroke[] = [
 ]
 
 /**
- * Meereen: the Great Pyramid in its tiers, crowned with the harpy, over the
- * city wall, named in episode 28 and in Daenerys I (chapter 152) and never
- * visited in the stage. The tiers' far sides are hatched; the accent is the
- * harpy.
+ * Meereen: a far city's walls and towers round its gate, named in episode
+ * 28 and in Daenerys I (chapter 152) and never visited in the stage, so it
+ * shows nothing either medium has described yet (its pyramids wait for the
+ * drawing audit, #1667). The towers' far faces are hatched; the accent is
+ * the gate.
  */
 const MEEREEN: Stroke[] = [
+  { d: 'M14 150 V92 H34 V150 M126 150 V92 H146 V150' },
+  { d: 'M34 150 V108 H126 V150' },
   {
-    d: 'M30 140 V126 H40 V112 H50 V98 H60 V84 H70 V70 H90 V84 H100 V98 H110 V112 H120 V126 H130 V140',
+    d: 'M14 92 V86 H20 V92 M28 92 V86 H34 V92 M126 92 V86 H132 V92 M140 92 V86 H146 V92',
+    role: 'soft',
   },
+  { d: 'M50 108 V80 H66 V108 M94 108 V74 H110 V108', role: 'soft' },
+  { d: 'M66 150 V128 Q80 112 94 128 V150', role: 'accent' },
   {
-    d: 'M80 62 L66 52 L60 58 L72 64 M80 62 L94 52 L100 58 L88 64 M80 62 V70 M76 70 L80 62 L84 70',
-    role: 'accent',
-  },
-  { d: 'M36 132 H124 M46 118 H114 M56 104 H104 M66 90 H94', role: 'soft' },
-  { d: 'M10 150 V140 H150 V150' },
-  {
-    d: 'M112 120 l5 -3 M102 106 l5 -3 M92 92 l5 -3 M122 134 l5 -3',
+    d: 'M138 102 l5 -3 M138 118 l5 -3 M138 134 l5 -3 M104 84 l4 -2 M104 96 l4 -2',
     role: 'ambient',
   },
   GROUND,
@@ -3001,6 +3024,11 @@ export const placesRedrawn: Redrawings = {
   // Sacked (#1630): "And Now His Watch Is Ended" (episode 24) and Daenerys
   // III (ASOS 27, site 171).
   'astapor': [{ episode: 24, chapter: 171, value: ASTAPOR_SACKED }],
+  // Sacked, the books alone (#1630): Jaime III (ASOS 21, site 165), the
+  // chapter after the town is named; episode 23 only orders it.
+  'maidenpool': [
+    { episode: 23, chapter: 165, source: 'chapter', value: MAIDENPOOL_SACKED },
+  ],
   // Taken (#1630): "The Rains of Castamere" (episode 29) and Daenerys IV
   // (ASOS 42, site 186).
   'yunkai': [{ episode: 29, chapter: 186, value: YUNKAI_TAKEN }],

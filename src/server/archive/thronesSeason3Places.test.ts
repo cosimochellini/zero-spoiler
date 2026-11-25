@@ -36,7 +36,7 @@ const PLACES: {
   source?: 'chapter' | 'episode'
 }[] = [
   { id: 'astapor', episode: 21, chapter: 152 },
-  { id: 'yunkai', episode: 27, chapter: 167 },
+  { id: 'yunkai', episode: 27, chapter: 152 },
   { id: 'nightfort', episode: 29, chapter: 170 },
   {
     id: 'inn-of-the-kneeling-man',
@@ -45,10 +45,10 @@ const PLACES: {
     source: 'chapter',
   },
   { id: 'milkwater', episode: 21, chapter: 144, source: 'chapter' },
-  { id: 'maidenpool', episode: 23, chapter: 165, source: 'chapter' },
+  { id: 'maidenpool', episode: 22, chapter: 155, source: 'chapter' },
   { id: 'high-heart', episode: 23, chapter: 166, source: 'chapter' },
   { id: 'acorn-hall', episode: 23, chapter: 166, source: 'chapter' },
-  { id: 'stoney-sept', episode: 24, chapter: 173, source: 'chapter' },
+  { id: 'stoney-sept', episode: 23, chapter: 166, source: 'chapter' },
   { id: 'hollow-hill', episode: 24, chapter: 178, source: 'chapter' },
   { id: 'queenscrown', episode: 29, chapter: 184, source: 'chapter' },
   { id: 'oldstones', episode: 29, chapter: 189, source: 'chapter' },
@@ -89,6 +89,8 @@ const VISITS: {
   { id: 'dreadfort', episode: 30, chapter: 284 },
   { id: 'flea-bottom', episode: 21, chapter: 150, source: 'episode' },
   { id: 'milkwater', episode: 22, chapter: 151, source: 'chapter' },
+  { id: 'maidenpool', episode: 23, chapter: 165, source: 'chapter' },
+  { id: 'stoney-sept', episode: 24, chapter: 173, source: 'chapter' },
 ]
 
 /**
@@ -105,6 +107,7 @@ const STAGES: {
   { id: 'fist-of-the-first-men', episode: 21, chapter: 159 },
   { id: 'astapor', episode: 24, chapter: 171 },
   { id: 'yunkai', episode: 29, chapter: 186 },
+  { id: 'maidenpool', episode: 23, chapter: 165, source: 'chapter' },
 ]
 
 /** The bookmark of the other medium at the stage's last count. */
