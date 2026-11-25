@@ -55,7 +55,7 @@ One term per concept, in both languages. Do not alternate synonyms for variety.
 | a record's first appearance | first appears in episode N | compare per la prima volta nell'episodio N |
 | a fruit's first mention | first named in episode N | nominato per la prima volta nell'episodio N |
 | any item in the wiki | entry | voce |
-| a covered tile's label, the same for every entry | Entry under fog | Voce nella nebbia |
+| a covered tile's label in a grid or list (characters, records, filler), the same for every entry; a fruit rail tile and a sea-chart stop keep their kind ("A fruit under fog", "A place under fog") | Entry under fog | Voce nella nebbia |
 | the whole site | the wiki | la wiki |
 | top-bar nav (short form, space is tight) | Fruits | Frutti |
 | loading state | Loading… / Loading characters… | Caricamento… / Caricamento dei personaggi… |
