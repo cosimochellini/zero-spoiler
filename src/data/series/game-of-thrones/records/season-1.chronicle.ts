@@ -2813,7 +2813,7 @@ export const season1Chronicles = {
       [18, 119],
       { it: 'I guadi della Forca Rossa', en: 'The fords of the Red Fork' },
       {
-        it: 'L’esercito di Tywin cerca di passare i guadi della Forca Rossa, tenuti dai lord dei fiumi di Edmure Tully, e viene respinto a ogni passaggio: lord Leo Lefford annega, ser Lyle Crakehall viene catturato, [[addam-marbrand|ser Addam Marbrand]] viene respinto tre volte e [[gregor-clegane|ser Gregor Clegane]] viene fermato al Mulino di Pietra. A Delta delle Acque [[catelyn-stark|Catelyn]] riceve la notizia che Tywin si allontana verso sud-est, e sulla mappa vede che quella strada porta alle sorgenti delle Rapide Nere.',
+        it: 'L’esercito di Tywin cerca di passare i guadi della Forca Rossa, tenuti dai lord dei fiumi di Edmure Tully, e viene respinto a ogni passaggio: lord Leo Lefford annega, ser Lyle Crakehall viene catturato, [[addam-marbrand|ser Addam Marbrand]] viene respinto tre volte e [[gregor-clegane|ser Gregor Clegane]] viene fermato al Mulino di Pietra. A Delta delle Acque [[catelyn-stark|Catelyn]] riceve la notizia che Tywin si allontana verso sud-est, e sulla mappa vede che quella strada porta alle sorgenti del fiume Rapide Nere.',
         en: 'Tywin’s host tries the fords of the Red Fork, held by Edmure Tully’s river lords, and is thrown back at every crossing: Lord Leo Lefford drowns, Ser Lyle Crakehall is taken, Ser [[addam-marbrand|Addam Marbrand]] is driven back three times and Ser [[gregor-clegane|Gregor Clegane]] is held off at the Stone Mill. At Riverrun [[catelyn-stark|Catelyn]] hears that Tywin is marching away to the southeast, and on a map she sees that the road leads to the headwaters of the Blackwater Rush.',
       },
     ),
