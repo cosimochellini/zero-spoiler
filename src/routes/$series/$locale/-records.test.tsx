@@ -40,7 +40,7 @@ import { DossierDiptych } from './characters/-$id.dossier'
 import { Route as FruitRoute } from './fruits/$id'
 import { Route as PlaceRoute } from './places/$id'
 import { DrawingsBand, MapBand } from './places/-$id.bands'
-import { PlaceEntry } from './places/-$id.entry'
+import { PlaceDiptych } from './places/-$id.entry'
 import { PlacesBody } from './places/-page'
 
 /**
@@ -166,7 +166,7 @@ function PlaceBands({
 
   return (
     <main>
-      <PlaceEntry
+      <PlaceDiptych
         detail={page.detail}
         peek={peekPending()}
         peekRecord={peekPending()}

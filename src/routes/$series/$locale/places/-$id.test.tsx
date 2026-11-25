@@ -1,11 +1,10 @@
 import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import type { ReactElement } from 'react'
 import { describe, expect, it } from 'vitest'
 
 import { HUNTER_X_HUNTER_SERIES, ONE_PIECE_SERIES } from '~/lib/progress/series'
 import type { PlaceChartView, PlaceDetail } from '~/lib/view/places'
-import type { PortView, RecordView, ShipView, Slot } from '~/lib/view/records'
+import type { PortView, RecordView, ShipView } from '~/lib/view/records'
 import {
   at,
   coveredSlot,
@@ -26,7 +25,7 @@ import {
 } from '~/test/providers'
 
 import { DrawingsBand, MapBand } from './-$id.bands'
-import { EntryDiptych, PlaceEntry, ShipBody } from './-$id.entry'
+import { PlaceDiptych, ShipDiptych } from './-$id.entry'
 
 const sanji = openSlot(record({ id: 'sanji', name: 'Sanji', ...at(20) }))
 const metLater = coveredSlot<RecordView>({ ...at(24) })
@@ -79,25 +78,6 @@ function detailOf(over: Partial<PlaceDetail> = {}): PlaceDetail {
   }
 }
 
-/** A ship's entry, as the route draws it. */
-function ShipEntry({
-  peek,
-  slot,
-}: {
-  peek: (handle: string) => Promise<ShipView>
-  slot: Slot<ShipView>
-}): ReactElement {
-  return (
-    <EntryDiptych
-      Body={ShipBody}
-      kind="ship"
-      peek={peek}
-      peekRecord={peekPending()}
-      slot={slot}
-    />
-  )
-}
-
 const merry = ship({
   id: 'going-merry',
   name: 'Going Merry',
@@ -117,7 +97,7 @@ const fogged = detailOf({
 describe('a place’s entry', () => {
   it('shows the plate, the facts, the log and the records found there', () => {
     renderWithProviders(
-      <PlaceEntry
+      <PlaceDiptych
         detail={detailOf()}
         peek={peekPending()}
         peekRecord={peekPending()}
@@ -142,10 +122,28 @@ describe('a place’s entry', () => {
     expect(screen.queryByText('From here')).not.toBeInTheDocument()
   })
 
+  it('files the records found there in a band under the plate and the entry', () => {
+    renderWithProviders(
+      <PlaceDiptych
+        detail={detailOf()}
+        peek={peekPending()}
+        peekRecord={peekPending()}
+      />,
+      { bookmark: ep(20) },
+    )
+
+    const band = screen.getByRole('region', { name: 'Found here' })
+    const entry = screen.getByRole('heading', { level: 1 }).closest('section')
+
+    // Full width under both halves, not down the entry's column (#1576).
+    expect(entry).not.toContainElement(band)
+    expect(within(band).getByRole('link', { name: 'Sanji' })).toBeVisible()
+  })
+
   it('lists the characters who come from it, each a link', () => {
     const zeff = record({ id: 'zeff', name: 'Zeff', ...at(20) })
     renderWithProviders(
-      <PlaceEntry
+      <PlaceDiptych
         detail={detailOf({ natives: [zeff] })}
         peek={peekPending()}
         peekRecord={peekPending()}
@@ -164,9 +162,14 @@ describe('a place’s entry', () => {
 
   it('carries nothing of a covered place until the reader asks', async () => {
     const user = userEvent.setup()
-    const jaya = port({ id: 'jaya', name: 'Jaya', ...at(144) })
+    const jaya = port({
+      id: 'jaya',
+      name: 'Jaya',
+      ...at(144),
+      dossier: dossier({ filedHere: [sanji] }),
+    })
     const { container } = renderWithProviders(
-      <PlaceEntry
+      <PlaceDiptych
         detail={fogged}
         peek={peekTo(jaya)}
         peekRecord={peekPending()}
@@ -177,6 +180,8 @@ describe('a place’s entry', () => {
     expect(container).not.toHaveTextContent('Jaya')
     expect(container.querySelectorAll(':scope svg svg')).toHaveLength(0)
     expect(screen.getByText('First seen in episode 144')).toBeVisible()
+    // No band under a covered entry, not even an empty one.
+    expect(screen.queryAllByRole('heading', { level: 2 })).toHaveLength(0)
 
     // One curtain over the plate and the words.
     await user.click(
@@ -189,14 +194,17 @@ describe('a place’s entry', () => {
     expect(
       screen.getByRole('heading', { level: 1, name: 'Jaya' }),
     ).toBeVisible()
+    // The band under it comes with the lift.
+    expect(screen.getByRole('region', { name: 'Found here' })).toBeVisible()
   })
 })
 
 describe('a ship’s entry', () => {
   it('shows who designed her, her fate and the places she reaches', () => {
     renderWithProviders(
-      <ShipEntry
+      <ShipDiptych
         peek={peekPending()}
+        peekRecord={peekPending()}
         slot={openSlot(merry)}
       />,
       { bookmark: ep(100) },
@@ -209,7 +217,9 @@ describe('a ship’s entry', () => {
     expect(screen.getByText('Episode 18')).toBeVisible()
     expect(screen.getByText('Merry, Kaya’s butler')).toBeVisible()
     expect(screen.getByText('The crew’s ship.')).toBeVisible()
-    expect(screen.getByText('Places she reaches')).toBeVisible()
+    expect(
+      screen.getByRole('region', { name: 'Places she reaches' }),
+    ).toBeVisible()
     expect(screen.getByRole('link', { name: 'Loguetown' })).toHaveAttribute(
       'href',
       '/one-piece/en/places/loguetown',
@@ -219,8 +229,9 @@ describe('a ship’s entry', () => {
   it('carries nothing of a covered ship until the reader asks', async () => {
     const user = userEvent.setup()
     const { container } = renderWithProviders(
-      <ShipEntry
+      <ShipDiptych
         peek={peekTo(merry)}
+        peekRecord={peekPending()}
         slot={coveredSlot<ShipView>({ kind: 'ship', ...at(18) })}
       />,
       { bookmark: ep(17) },
@@ -230,6 +241,9 @@ describe('a ship’s entry', () => {
     expect(container.querySelectorAll(':scope svg svg')).toHaveLength(0)
     expect(screen.getByText('A ship under fog')).toBeInTheDocument()
     expect(screen.getByText('Episode 18')).toBeVisible()
+    expect(
+      screen.queryByRole('region', { name: 'Places she reaches' }),
+    ).not.toBeInTheDocument()
 
     await user.click(
       screen.getByRole('button', {
@@ -240,6 +254,10 @@ describe('a ship’s entry', () => {
 
     expect(
       screen.getByRole('heading', { level: 1, name: 'Going Merry' }),
+    ).toBeVisible()
+    // The band under her comes with the lift.
+    expect(
+      screen.getByRole('region', { name: 'Places she reaches' }),
     ).toBeVisible()
   })
 })

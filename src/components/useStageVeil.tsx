@@ -9,6 +9,12 @@ import type { Gated } from '~/lib/progress/spoiler'
 
 /** One curtain over a record page's two halves, as its caller lays it out. */
 export interface StageVeil<T> {
+  /**
+   * What the record adds under both halves, outside the section: nothing at
+   * all while it is covered, not even a placeholder, so a covered page sends
+   * none of it and keeps no empty band. It opens with the lift.
+   */
+  below: (children: (record: T) => ReactNode) => null | ReactElement
   /** The drawing half, with the curtain's control centred in it. */
   drawing: (
     placeholder: ReactNode,
@@ -44,6 +50,7 @@ export function useStageVeil<T extends Gated>(
   const visible = shown !== null
 
   return {
+    below: (children) => (shown === null ? null : <>{children(shown)}</>),
     stage: styles.stage,
     drawing: (placeholder, children) => {
       return (
