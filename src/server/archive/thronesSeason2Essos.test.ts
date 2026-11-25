@@ -6,7 +6,7 @@ import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
-import { recordIn, sidesOf } from '~/test/gates'
+import { recordIn, shownIn, sidesOf, unlisted } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage } from './pages.server'
@@ -266,6 +266,20 @@ describe('the Essos steps one medium alone tells', () => {
   )
 })
 
+describe('the table of stages', () => {
+  it('lists every stage of each record it redraws', () => {
+    expect(unlisted(STAGES, REDRAWINGS)).toStrictEqual([])
+  })
+})
+
+/** A record's drawing at a stage of the table; `undefined` is its first. */
+function drawnAt(
+  id: keyof typeof DRAWINGS,
+  stage: number | undefined,
+): unknown {
+  return stage === undefined ? DRAWINGS[id] : REDRAWINGS[id]?.[stage]?.value
+}
+
 describe.each(
   STAGES.flatMap((stage) =>
     sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
@@ -273,17 +287,10 @@ describe.each(
 )(
   '$id is redrawn by $unit at $episode/$chapter',
   ({ id, episode, chapter, source, unit, stage: index = 0, ...side }) => {
-    const stages = REDRAWINGS[id] ?? []
-    const stage = stages[index]
-    // The drawing just before is the last earlier stage this unit reads:
-    // a stage the other medium alone tells is never shown here.
-    const previous =
-      stages
-        .slice(0, index)
-        .findLast(
-          (earlier) =>
-            (recordIn(archive, id).source ?? earlier.source ?? unit) === unit,
-        )?.value ?? DRAWINGS[id]
+    const stage = REDRAWINGS[id]?.[index]
+    // The drawing just before is the last earlier stage this unit reads, by
+    // the table: a stage the other medium alone tells is never shown here.
+    const previous = drawnAt(id, shownIn(STAGES, { id, unit, below: index }))
 
     it('at its pin, not one before', () => {
       const owner = recordIn(archive, id)
@@ -302,35 +309,11 @@ describe.each(
   },
 )
 
-/** The medium a stage is told in: its record's, else its own. */
-function mediumOf(
-  id: keyof typeof DRAWINGS,
-  index: number,
-): 'chapter' | 'episode' | undefined {
-  return recordIn(archive, id).source ?? REDRAWINGS[id]?.[index]?.source
-}
-
-/**
- * The drawing a reader of this medium ends on: the last stage it tells, or
- * the first drawing when it tells none.
- */
-function endsOn(id: keyof typeof DRAWINGS, unit: Unit): unknown {
-  const told = (REDRAWINGS[id] ?? []).filter(
-    (stage) => (stage.source ?? unit) === unit,
-  )
-
-  return told.at(-1)?.value ?? DRAWINGS[id]
-}
-
 describe('the Essos stages one medium alone tells', () => {
   // A reader of the other medium who has reached its end sees the last
-  // stage their medium tells, or the first drawing when it tells none.
-  it.each(
-    STAGES.filter(
-      ({ id, source }) =>
-        source !== undefined && recordIn(archive, id).source === undefined,
-    ),
-  )(
+  // stage their medium tells, or the first drawing when it tells none, both
+  // read off the table: a stage that lost its `source` fails here.
+  it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
     ({ id, source = 'episode', stage: index = 0 }) => {
       const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
@@ -339,9 +322,10 @@ describe('the Essos stages one medium alone tells', () => {
         otherAtTheEnd(source),
       ).strokes
 
-      expect(mediumOf(id, index)).toBe(source)
       expect(drawn).not.toStrictEqual(REDRAWINGS[id]?.[index]?.value)
-      expect(drawn).toStrictEqual(endsOn(id, other))
+      expect(drawn).toStrictEqual(
+        drawnAt(id, shownIn(STAGES, { id, unit: other })),
+      )
     },
   )
 })

@@ -130,6 +130,56 @@ export function gateCases<Row extends Pin>(
   )
 }
 
+/** One row of a hand-written table of redrawings: a record's stage (0 when unset) at its pin. */
+export interface StageRow extends Pin {
+  id: string
+  stage?: number | undefined
+}
+
+/** What `shownIn` asks: a record, a unit, and the stage to look below. */
+export interface Shown {
+  below?: number
+  id: string
+  unit: string
+}
+
+/**
+ * The stage of a record a reader of this unit is shown last, read off the
+ * table alone: the highest stage below `below` whose row this unit tells (no
+ * `source`, or this one). `undefined` is the first drawing.
+ */
+export function shownIn(
+  rows: StageRow[],
+  { below = Infinity, id, unit }: Shown,
+): number | undefined {
+  const told = rows
+    .filter((row) => row.id === id && (row.stage ?? 0) < below)
+    .filter((row) => (row.source ?? unitOf(unit)) === unitOf(unit))
+    .map((row) => row.stage ?? 0)
+
+  return told.length === 0 ? undefined : Math.max(...told)
+}
+
+/**
+ * Each `id@stage` the data redraws, of a record the table names, that the
+ * table lists no row for: a stage it would otherwise never hold.
+ */
+export function unlisted(
+  rows: StageRow[],
+  redrawings: Record<string, undefined | unknown[]>,
+): string[] {
+  const ids = [...new Set(rows.map(({ id }) => id))]
+
+  return ids.flatMap((id) =>
+    (redrawings[id] ?? [])
+      .map((_, stage) => stage)
+      .filter((stage) =>
+        rows.every((row) => row.id !== id || (row.stage ?? 0) !== stage),
+      )
+      .map((stage) => `${id}@${String(stage)}`),
+  )
+}
+
 /** A filed record of any kind, or the test is wrong. */
 export function recordIn(archive: SeriesArchive, id: string): Entity {
   const record = archive.getEntity(id)
