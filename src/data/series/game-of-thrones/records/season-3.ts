@@ -66,11 +66,13 @@ export const season3: ThronesSaga = {
       visual: { art: 'tormund', tint: 'orange' },
     },
     // Show: "Dark Wings, Dark Words" (episode 22), Mance explains to Jon that
-    // Orell is a warg and asks him what he has seen. Books: Jon I (site
-    // chapter 151) names him (A Wiki of Ice and Fire lists him as mentioned;
-    // the line is unverified). In the books he is the watcher Jon killed in
-    // the Skirling Pass (A Clash of Kings, Jon VI, chapter 125), so he opens
-    // dead there.
+    // Orell is a warg and asks him what he has seen, as the Game of Thrones
+    // Wiki's Mance Rayder page reports it; no page read quotes the name said
+    // in season 3 (an owner check). Books: Jon I (site chapter 151) names him
+    // (A Wiki of Ice and Fire lists him as mentioned; the line is
+    // unverified). In the books he is the watcher Jon killed in the Skirling
+    // Pass (A Clash of Kings, Jon VI, chapter 125), so he opens dead there:
+    // his summary and log say only what holds in both media.
     {
       id: 'orell',
       kind: 'character',
@@ -78,8 +80,8 @@ export const season3: ThronesSaga = {
       revealedAtChapter: 151,
       name: { it: 'Orell', en: 'Orell' },
       summary: {
-        it: 'Un warg dei bruti che vede attraverso gli occhi di un’aquila.',
-        en: 'A wildling warg who sees through the eyes of an eagle.',
+        it: 'Un warg dei bruti, legato a un’aquila.',
+        en: 'A wildling warg, bound to an eagle.',
       },
       visual: { art: 'orell', tint: 'sand' },
     },
@@ -242,8 +244,8 @@ export const season3: ThronesSaga = {
     'orell': {
       role: { it: 'Warg dei bruti', en: 'Wildling warg' },
       log: {
-        it: 'Attraverso gli occhi della sua aquila esplora il terreno davanti ai bruti.',
-        en: 'Through the eyes of his eagle he scouts ahead for the wildlings.',
+        it: 'La sua aquila esplora il terreno davanti all’esercito di Mance Rayder.',
+        en: 'His eagle scouts ahead of Mance Rayder’s host.',
       },
       status: [
         // The show's alone: alive at his gate, "Dark Wings, Dark Words"

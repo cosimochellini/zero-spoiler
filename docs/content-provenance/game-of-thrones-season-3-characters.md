@@ -75,7 +75,12 @@ order them.
 - Orell: role wildling warg, Wildlings. Status: alive at 22 in the show, dead at
   Queenscrown at 29 (Jon kills him); the books open on him dead, since Jon
   killed him in the Skirling Pass (A Clash of Kings, Jon VI, 125) before they
-  name him. Italian kept.
+  name him, so his summary and log say only what holds in both: a warg bound to
+  an eagle that scouts ahead of Mance's host. Owner check (review round 1): the
+  show gate at 22 rests on the Mance Rayder page's report that Mance explains
+  Orell is a warg and asks him what he saw, which may be the narrator's naming;
+  no page read quotes the name said in season 3, and making him books-only, as
+  Stonesnake in stage 2, would hide a six-episode show character. Italian kept.
 - Styr, books only: role Magnar of Thenn, Wildlings, alive. Owner check: the
   show's Styr (season 4); if a line there says his name, the record takes that
   show gate (#852). Italian "Styr".

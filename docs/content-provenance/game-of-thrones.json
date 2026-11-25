@@ -5189,10 +5189,11 @@
       "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere_(episode)"
     ],
     "unverified": [
-      "Show gate 22 (\"Dark Wings, Dark Words\"): the Game of Thrones Wiki's Mance Rayder page reports that Mance explains Orell is a warg and asks Orell what he saw; reported speech, whose line is not quoted.",
+      "Show gate 22 (\"Dark Wings, Dark Words\"), an owner check (review round 1, #1677): the Game of Thrones Wiki's Mance Rayder page reports that Mance explains Orell is a warg and asks Orell what he saw, which may be the narrator's naming rather than the name said. No page read quotes anyone saying \"Orell\" in season 3 (his quotes in \"The Bear and the Maiden Fair\" are his own and do not name him), and season 4 has Styr chide Tormund for losing \"their warg\", not by name. The only other choice would be a books-only record, as Stonesnake's in #1516, which would hide a six-episode show character, so the gate stays at 22.",
       "Book gate 151 (Jon I), a safe later pin: A Wiki of Ice and Fire lists Orell as mentioned in Jon I and in Jon II (159, where the eagle that was once Orell rakes Jon's face). Owner check: A Clash of Kings' Jon VIII (142) also lists him as mentioned, so the books may name him there; Jon VI (125), where Jon kills him in the Skirling Pass, lists him appearing, unnamed in the synopsis. The Ice and Fire Wiki has no Orell page, and the Firecrawl tool was out of credits for A Wiki of Ice and Fire's. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's synopsis and Appearing and Mentioned lists, read in the shared cache (.gate/firecrawl/); the line that says the name is not quoted there.",
       "Status: the books' Orell is dead from his gate (Jon kills him at 125); the show's dies at Queenscrown in \"The Rains of Castamere\" (episode 29, DeathEp).",
-      "Italian: no Italian Wikipedia entry; the name stays as it is."
+      "Italian: no Italian Wikipedia entry; the name stays as it is.",
+      "Summary and log (review round 1): they say only what holds in both media at the gate, a warg bound to an eagle that scouts ahead of Mance Rayder's host, since the books' Orell is already dead at 151 and his eagle goes on without him (Jon II, 159, \"the eagle that was once Orell\")."
     ]
   },
   "styr": {
