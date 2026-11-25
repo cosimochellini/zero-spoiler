@@ -311,7 +311,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '21:episode': {
       source: EPISODE_21,
-      note: 'Show (21/167): the Astapor synopsis: the dragons roasting fish but still too small for war, Jorah on the Unsullied as the finest soldiers, Kraznys’s tour with Missandei translating and leaving out his insults, the nipple cut off, the newborn killed at the end of training, eight thousand for sale, the manticore in the child’s ball, and Barristan kneeling to ask for a place in her Queensguard (GOT301). Kraznys is the books’ record and Missandei opens at 23, so neither is named. Daenerys II (site 167), which the episode adapts, orders it.',
+      note: 'Show (21/167): the Astapor synopsis: the dragons roasting fish but still too small for war, Jorah on the Unsullied as the finest soldiers, Kraznys’s tour with Missandei translating and leaving his insults untranslated, the nipple cut off, the newborn killed at the end of training, eight thousand for sale, the manticore in the child’s ball, and Barristan kneeling to ask for a place in her Queensguard (GOT301). Kraznys is the books’ record and Missandei opens at 23, so neither is named. Daenerys II (site 167), which the episode adapts, orders it.',
     },
     '23:171': {
       source: EPISODE_23,
@@ -339,7 +339,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '30:episode': {
       source: EPISODE_30,
-      note: 'Show: the Yunkai synopsis: the fear that better-treated slaves may not want freedom, the gates opening, Missandei’s speech cut short, “mhysa” taken up by the crowd, Missandei’s explanation, the Unsullied told to stand down, and the crowd lifting her (GOT310). Daenerys IV (site 186) orders it.',
+      note: 'Show: the Yunkai synopsis: the fear that better-treated slaves may not want freedom, the gates opening, Missandei’s speech cut short, “mhysa” taken up by the crowd, Missandei’s explanation, the Unsullied told to stand down, and the crowd lifting her up, as the Daario Naharis page tells it (GOT310). Corrected after review: the commanders hear of the night attack before Daario returns, and he returns before it. Daenerys IV (site 186) orders it.',
     },
     '21:152': {
       source: ESSOS_152,
@@ -355,7 +355,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '30:chapter': {
       source: ESSOS_186,
-      note: 'Daenerys IV (site 186), cached synopsis: two sellsword companies, the three Stormcrow captains refusing and Daario smiling, the Second Sons’ captain laughing but taking a wagonload of wine, the slaver sent off with his gold and a warning of three days, the attack that night, Daario returning with the heads of the other two captains and swearing his company, the Second Sons too drunk to fight, those who yield spared, the slaves freed and calling her “Mother”. The envoy is Grazdan mo Eraz on the Game of Thrones Wiki’s Razdal mo Eraz page (In the books). Episode 30 adapts the last scene.',
+      note: 'Daenerys IV (site 186), cached synopsis: two sellsword companies, the three Stormcrow captains refusing and Daario smiling, the Second Sons’ captain laughing but taking a wagonload of wine, the slaver sent off with his gold and a warning of three days, the commanders told they attack that night, Daario returning before the attack with the heads of the other two captains and swearing his company, the Second Sons too drunk to fight, those who yield spared, the slaves freed and calling her “Mother”. The envoy is Grazdan mo Eraz on the Game of Thrones Wiki’s Razdal mo Eraz page (In the books). Episode 30 adapts the last scene.',
     },
   },
   'viserys-targaryen': {
@@ -4611,7 +4611,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '41:152': {
       source: ESSOS_152,
-      note: 'Daenerys I (site 152), cached synopsis: the dragons flying over the ships, Rhaegal and Viserion often playing while Drogon prefers to hunt, and the cabin demonstration of “dracarys”, High Valyrian for dragonfire, with Jorah there. Ordered at episode 41, his show gate.',
+      note: 'Daenerys I (site 152), cached synopsis: the dragons flying over the ships, Rhaegal and Viserion often playing while Drogon prefers to hunt (corrected after review: not alone), and the cabin demonstration of “dracarys”, High Valyrian for dragonfire, with Jorah there. Ordered at episode 41, his show gate.',
     },
   },
   'strong-belwas': {
@@ -5534,7 +5534,7 @@ export const GAME_OF_THRONES_SOURCES = {
   'kraznys-mo-nakloz': {
     '24:171': {
       source: ESSOS_171,
-      note: 'Books only: A Wiki of Ice and Fire’s Kraznys mo Nakloz page (cached), citing Chapters 23 and 27: the Unsullied shown through Missandei, the insults he thinks she cannot understand, the bargain of every Unsullied for a dragon, Drogon refusing him on the plaza, “a dragon is no slave”, the jet of flame into his face, and the Unsullied doing nothing. The eight thousand, the eunuchs’ obedience and the boys in training are the cached Daenerys II and III synopses; the three ships the Ice and Fire Wiki’s Daenerys page. His record opens at 171, so the story tells chapter 167 from there. Episode 24 orders it.',
+      note: 'Books only: A Wiki of Ice and Fire’s Kraznys mo Nakloz page (cached), citing Chapters 23 and 27: the Unsullied shown through Missandei, the insults he thinks she cannot understand, the bargain of every Unsullied for a dragon, Drogon refusing him on the plaza, “a dragon is no slave”, the jet of flame into his face, and the Unsullied doing nothing as they are ordered to eliminate the slavers; Kraznys dies there (his status, deceased at 171). The eight thousand, the eunuchs’ obedience and the boys in training are the cached Daenerys II and III synopses; the three ships the Ice and Fire Wiki’s Daenerys page. His record opens at 171, so the story tells chapter 167 from there. Episode 24 orders it.',
     },
   },
   'grey-worm': {

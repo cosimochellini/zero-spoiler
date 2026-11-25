@@ -231,8 +231,8 @@ export const season2Chronicles = {
       [41, 152],
       { it: 'Sopra le navi', en: 'Above the ships' },
       {
-        it: 'Durante la navigazione da Qarth il drago color crema e oro vola con i suoi fratelli sopra le tre navi di [[daenerys-targaryen|Daenerys]]. Viserion e [[rhaegal|Rhaegal]] spesso giocano insieme in aria, mentre [[drogon|Drogon]] va a caccia da solo. Nella sua cabina Daenerys mostra a [[jorah-mormont|ser Jorah]] che i draghi hanno imparato a sputare fuoco quando lei dice “dracarys”, la parola alto valyriana per il fuoco di drago.',
-        en: 'On the voyage from Qarth the cream-and-gold dragon flies with his brothers above [[daenerys-targaryen|Daenerys]]’s three ships. Viserion and [[rhaegal|Rhaegal]] often play together in the air, while [[drogon|Drogon]] goes off to hunt alone. In her cabin Daenerys shows [[jorah-mormont|Ser Jorah]] that the dragons have learned to breathe fire when she says “dracarys”, the High Valyrian word for dragonfire.',
+        it: 'Durante la navigazione da Qarth il drago color crema e oro vola con i suoi fratelli sopra le tre navi di [[daenerys-targaryen|Daenerys]]. Viserion e [[rhaegal|Rhaegal]] spesso giocano insieme in aria, mentre [[drogon|Drogon]] preferisce cacciare. Nella sua cabina Daenerys mostra a [[jorah-mormont|ser Jorah]] che i draghi hanno imparato a sputare fuoco quando lei dice “dracarys”, la parola alto valyriana per il fuoco di drago.',
+        en: 'On the voyage from Qarth the cream-and-gold dragon flies with his brothers above [[daenerys-targaryen|Daenerys]]’s three ships. Viserion and [[rhaegal|Rhaegal]] often play together in the air, while [[drogon|Drogon]] would rather hunt. In her cabin Daenerys shows [[jorah-mormont|Ser Jorah]] that the dragons have learned to breathe fire when she says “dracarys”, the High Valyrian word for dragonfire.',
       },
     ),
   ],

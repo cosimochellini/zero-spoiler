@@ -1350,7 +1350,8 @@
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_23",
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42",
       "https://iceandfire.fandom.com/wiki/Daenerys_Targaryen",
-      "https://gameofthrones.fandom.com/wiki/Razdal_mo_Eraz"
+      "https://gameofthrones.fandom.com/wiki/Razdal_mo_Eraz",
+      "https://gameofthrones.fandom.com/wiki/Daario_Naharis"
     ],
     "unverified": [
       "Show wedding is in episode 1 (her gate); the khaleesi step is dated episode 2 only because episodes must strictly increase.",
@@ -2415,7 +2416,9 @@
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
       "https://gameofthrones.fandom.com/it/wiki/Robett_Glover"
     ],
-    "unverified": ["factsAtGate: the two media share little at the gate."]
+    "unverified": [
+      "factsAtGate: the two media share little at the gate."
+    ]
   },
   "maege-mormont": {
     "sources": [
@@ -5532,7 +5535,8 @@
       "Book gate 186: Jorah's \"Daario Naharis is not one of them\", quoted on A Wiki of Ice and Fire's Daario page from Daenerys IV (Chapter 42).",
       "Affiliation by medium: the Second Sons in the show, the Stormcrows in the books (Game of Thrones Wiki, Second Sons episode \"In the books\").",
       "Italian: \"Daario Naharis\", \"Corvi della Tempesta\" (Italian Wikipedia, his section).",
-      "Chronicles (#1659): the book stories rest on A Wiki of Ice and Fire’s cached chapter synopses and character pages; the chapters’ own text was not read (Firecrawl credits exhausted)."
+      "Chronicles (#1659): the book stories rest on A Wiki of Ice and Fire’s cached chapter synopses and character pages; the chapters’ own text was not read (Firecrawl credits exhausted).",
+      "Chronicles (#1659): Italian “Sallor il Calvo” for Sallor the Bald is assumed, not checked against the Mondadori edition."
     ]
   },
   "prendahl-na-ghezn": {
@@ -5549,7 +5553,8 @@
       "Show: \"Second Sons\" (episode 28) names him in narration only. Owner check: if the show says his name, the record becomes both media's, dead at 28 in both. Episode 28 only orders the record.",
       "Status deceased from his gate: Daario kills him in the chapter that names him.",
       "Italian: \"Prendahl na Ghezn\" (Italian Wikipedia, Daario's section and the TV cast list).",
-      "Chronicles (#1659): the book stories rest on A Wiki of Ice and Fire’s cached chapter synopses and character pages; the chapters’ own text was not read (Firecrawl credits exhausted)."
+      "Chronicles (#1659): the book stories rest on A Wiki of Ice and Fire’s cached chapter synopses and character pages; the chapters’ own text was not read (Firecrawl credits exhausted).",
+      "Chronicles (#1659): Italian “Sallor il Calvo” for Sallor the Bald is assumed, not checked against the Mondadori edition."
     ]
   },
   "jeyne-westerling": {

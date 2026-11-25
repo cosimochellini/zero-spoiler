@@ -20,8 +20,9 @@ import { inBooks, onScreen } from './chronicle'
  * (chapter 186) orders everything from episode 25 on. A book story sits at
  * the episode that adapts its chapter, or at the owner's or a linked
  * record's show gate when that is later: every story that links Kraznys mo
- * Nakloz is at episode 24 or after. Kraznys and Prendahl na Ghezn are the
- * books' alone.
+ * Nakloz is at episode 24 or after. Kraznys and Prendahl na Ghezn are on
+ * screen too, but only the books name them, so their records and stories are
+ * the books'.
  */
 export const season3Chronicles = {
   'missandei': [
@@ -29,8 +30,8 @@ export const season3Chronicles = {
       [23, 171],
       { it: 'Valar morghulis', en: 'Valar morghulis' },
       {
-        it: 'Missandei è la schiava che fa da interprete al Buon Padrone che vende gli Immacolati ad Astapor. Ne addolcisce gli insulti a [[daenerys-targaryen|Daenerys]] ed esita davanti ai più volgari. Quando Daenerys scambia un drago con l’intero esercito, chiede anche Missandei, come pegno di buona fede, e la ottiene. Daenerys le chiede se ha una famiglia, e Missandei non ne ha più. Avvertita che la aspettano guerra, malattie e morte, risponde “Valar morghulis”. Daenerys traduce: tutti gli uomini devono morire. Ma loro, aggiunge, non sono uomini.',
-        en: 'Missandei is the slave who interprets for the Good Master selling the Unsullied in Astapor. She softens his insults to [[daenerys-targaryen|Daenerys]], and hesitates over the coarsest. When Daenerys trades a dragon for the whole army, she asks for Missandei too, as a token of good faith, and gets her. Daenerys asks about her family, and Missandei has none left. Warned that war, sickness and death lie ahead, she answers “Valar morghulis”. Daenerys gives the meaning, all men must die, and adds that they are not men.',
+        it: 'Missandei è la schiava che fa da interprete al Buon Padrone che vende gli Immacolati ad Astapor. Ne addolcisce gli insulti a [[daenerys-targaryen|Daenerys]] ed esita davanti ai più volgari. Quando Daenerys scambia un drago con l’intero esercito, chiede anche Missandei, come pegno di buona fede, e la ottiene. Daenerys le chiede se ha una famiglia, e Missandei non ne ha più. Avvertita che la aspettano guerra, malattie e morte, risponde “Valar morghulis”. Daenerys traduce: tutti gli uomini devono morire. Ma noi, aggiunge, non siamo uomini.',
+        en: 'Missandei is the slave who interprets for the Good Master selling the Unsullied in Astapor. She softens his insults to [[daenerys-targaryen|Daenerys]], and hesitates over the coarsest. When Daenerys trades a dragon for the whole army, she asks for Missandei too, as a token of good faith, and gets her. Daenerys asks about her family, and Missandei has none left. Warned that war, sickness and death lie ahead, she answers “Valar morghulis”. Daenerys gives the meaning, all men must die, and adds: but we are not men.',
       },
     ),
     onScreen(
@@ -63,8 +64,8 @@ export const season3Chronicles = {
       [24, 171],
       { it: 'L’affare del Buon Padrone', en: 'The Good Master’s bargain' },
       {
-        it: 'Kraznys mo Nakloz mostra gli Immacolati a [[daenerys-targaryen|Daenerys]] tramite la sua interprete, [[missandei|Missandei]], e insulta Daenerys a piacimento, sicuro che lei non capisca il suo alto valyriano. I suoi eunuchi obbediscono a ogni ordine e quasi non sentono dolore, e ne ha ottomila da vendere. Accetta di venderli tutti a Daenerys, insieme ai ragazzi ancora in addestramento, in cambio delle tre navi di lei e di un drago, Drogon. Sulla piazza prende la catena del drago, ma Drogon non gli obbedisce. Daenerys dice che un drago non è uno schiavo e ordina “dracarys”: Drogon gli lancia una vampata in faccia, e gli Immacolati, ormai di Daenerys, non muovono un dito per lui.',
-        en: 'Kraznys mo Nakloz shows [[daenerys-targaryen|Daenerys]] the Unsullied through his interpreter, [[missandei|Missandei]], and insults her freely, sure she cannot understand his High Valyrian. His eunuchs obey every command and hardly feel pain, and he has eight thousand to sell. He agrees to sell her all of them, and the boys still in training, for her three ships and a dragon, Drogon. On the plaza he takes the dragon’s chain, but Drogon will not obey him. Daenerys says that a dragon is no slave and commands “dracarys”: Drogon sends a jet of flame into his face, and the Unsullied, hers now, do not lift a finger for him.',
+        it: 'Kraznys mo Nakloz mostra gli Immacolati a [[daenerys-targaryen|Daenerys]] tramite la sua interprete, [[missandei|Missandei]], e insulta Daenerys a piacimento, sicuro che lei non capisca il suo alto valyriano. I suoi eunuchi obbediscono a ogni ordine e quasi non sentono dolore, e ne ha ottomila da vendere. Accetta di venderli tutti a Daenerys, insieme ai ragazzi ancora in addestramento, in cambio delle tre navi di lei e di un drago, Drogon. Sulla piazza prende la catena del drago, ma Drogon non gli obbedisce. Daenerys dice che un drago non è uno schiavo e ordina “dracarys”: Drogon gli lancia una vampata in faccia, e gli Immacolati, ormai di Daenerys, non muovono un dito per lui. Al suo ordine uccidono gli schiavisti, e Kraznys muore sulla piazza.',
+        en: 'Kraznys mo Nakloz shows [[daenerys-targaryen|Daenerys]] the Unsullied through his interpreter, [[missandei|Missandei]], and insults her freely, sure she cannot understand his High Valyrian. His eunuchs obey every command and hardly feel pain, and he has eight thousand to sell. He agrees to sell her all of them, and the boys still in training, for her three ships and a dragon, Drogon. On the plaza he takes the dragon’s chain, but Drogon will not obey him. Daenerys says that a dragon is no slave and commands “dracarys”: Drogon sends a jet of flame into his face, and the Unsullied, hers now, do not lift a finger for him. At her order they kill the slavers, and Kraznys dies on the plaza.',
       },
     ),
   ],
