@@ -18,7 +18,7 @@ import {
 import { OTHER_BOOKMARK } from '~/test/otherSeries'
 import { ep, renderOnRoute, renderWithProviders } from '~/test/providers'
 
-import { PlaceEntry } from './-$id.entry'
+import { PlaceDiptych } from './-$id.entry'
 import { PlaceIndex } from './-index'
 import { PlacesBody } from './-page'
 import { usePlacePicks } from './-params'
@@ -155,7 +155,7 @@ describe('a series’ own place words', () => {
       visits: [],
     }
     renderWithProviders(
-      <PlaceEntry
+      <PlaceDiptych
         detail={detail}
         peek={peekPending()}
         peekRecord={peekPending()}
