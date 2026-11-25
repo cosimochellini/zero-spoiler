@@ -1699,6 +1699,7 @@ export const season2: ThronesSaga = {
     // #1464: Stannis, Renly and the stormlands.
     'stannis-baratheon': {
       relationships: season2Relationships['stannis-baratheon'],
+      chronicle: season2Chronicles['stannis-baratheon'],
       role: {
         it: 'Pretendente al Trono di Spade',
         en: 'Claimant to the Iron Throne',
@@ -1724,6 +1725,7 @@ export const season2: ThronesSaga = {
     },
     'melisandre': {
       relationships: season2Relationships.melisandre,
+      chronicle: season2Chronicles.melisandre,
       role: { it: 'Sacerdotessa rossa', en: 'Red priestess' },
       log: {
         it: 'Viene dall’oriente e serve il Signore della Luce. A Roccia del Drago si è guadagnata un posto accanto a Stannis Baratheon.',
@@ -1746,6 +1748,7 @@ export const season2: ThronesSaga = {
     },
     'davos-seaworth': {
       relationships: season2Relationships['davos-seaworth'],
+      chronicle: season2Chronicles['davos-seaworth'],
       role: [
         {
           episode: 11,
@@ -1789,6 +1792,7 @@ export const season2: ThronesSaga = {
     },
     'cressen': {
       relationships: season2Relationships.cressen,
+      chronicle: season2Chronicles.cressen,
       role: { it: 'Maestro di Roccia del Drago', en: 'Maester of Dragonstone' },
       log: {
         it: 'Teme l’influenza della sacerdotessa rossa su Stannis Baratheon. Cerca di avvelenarla, ma muore lui del veleno.',
@@ -1805,6 +1809,7 @@ export const season2: ThronesSaga = {
     },
     'matthos-seaworth': {
       relationships: season2Relationships['matthos-seaworth'],
+      chronicle: season2Chronicles['matthos-seaworth'],
       role: { it: 'Figlio di Davos Seaworth', en: 'Son of Davos Seaworth' },
       log: {
         it: 'Figlio di Davos Seaworth, al servizio di re Stannis.',
@@ -1827,6 +1832,7 @@ export const season2: ThronesSaga = {
     },
     'salladhor-saan': {
       relationships: season2Relationships['salladhor-saan'],
+      chronicle: season2Chronicles['salladhor-saan'],
       role: { it: 'Pirata di Lys', en: 'Pirate from Lys' },
       log: {
         it: 'Vecchio amico di Davos Seaworth, presta le sue navi a re Stannis in cambio della promessa di oro.',
@@ -1846,6 +1852,7 @@ export const season2: ThronesSaga = {
     },
     'selyse-baratheon': {
       relationships: season2Relationships['selyse-baratheon'],
+      chronicle: season2Chronicles['selyse-baratheon'],
       role: {
         it: 'Regina, moglie di Stannis Baratheon',
         en: 'Queen, wife of Stannis Baratheon',
@@ -1871,6 +1878,7 @@ export const season2: ThronesSaga = {
     },
     'shireen-baratheon': {
       relationships: season2Relationships['shireen-baratheon'],
+      chronicle: season2Chronicles['shireen-baratheon'],
       role: {
         it: 'Principessa, figlia di Stannis Baratheon',
         en: 'Princess, daughter of Stannis Baratheon',
@@ -1896,6 +1904,7 @@ export const season2: ThronesSaga = {
     },
     'brienne-of-tarth': {
       relationships: season2Relationships['brienne-of-tarth'],
+      chronicle: season2Chronicles['brienne-of-tarth'],
       role: [
         {
           episode: 13,
@@ -1941,6 +1950,7 @@ export const season2: ThronesSaga = {
     },
     'margaery-tyrell': {
       relationships: season2Relationships['margaery-tyrell'],
+      chronicle: season2Chronicles['margaery-tyrell'],
       role: [
         {
           episode: 13,
@@ -1990,6 +2000,7 @@ export const season2: ThronesSaga = {
     },
     'mace-tyrell': {
       relationships: season2Relationships['mace-tyrell'],
+      chronicle: season2Chronicles['mace-tyrell'],
       role: { it: 'Lord di Alto Giardino', en: 'Lord of Highgarden' },
       log: {
         it: 'È il padre di Margaery e Loras Tyrell, e ha portato la sua casata dalla parte di re Joffrey.',
@@ -2012,6 +2023,7 @@ export const season2: ThronesSaga = {
     },
     'cortnay-penrose': {
       relationships: season2Relationships['cortnay-penrose'],
+      chronicle: season2Chronicles['cortnay-penrose'],
       role: {
         it: 'Castellano di Capo Tempesta',
         en: 'Castellan of Storm’s End',
@@ -2038,6 +2050,7 @@ export const season2: ThronesSaga = {
     // #1465: Robb's war, the Riverlands and Harrenhal.
     'alton-lannister': {
       relationships: season2Relationships['alton-lannister'],
+      chronicle: season2Chronicles['alton-lannister'],
       role: { it: 'Prigioniero di Robb Stark', en: 'Robb Stark’s prisoner' },
       log: {
         it: 'È un giovane cavaliere di Casa Lannister, prigioniero nel campo di Robb Stark. Robb lo manda ad Approdo del Re a portare le sue condizioni di pace.',
@@ -2061,6 +2074,7 @@ export const season2: ThronesSaga = {
     },
     'cleos-frey': {
       relationships: season2Relationships['cleos-frey'],
+      chronicle: season2Chronicles['cleos-frey'],
       role: { it: 'Prigioniero di Robb Stark', en: 'Robb Stark’s prisoner' },
       log: {
         it: 'È stato preso prigioniero insieme al cugino Jaime Lannister al Bosco dei Sussurri. Robb Stark lo manda ad Approdo del Re con le sue condizioni di pace, e lui promette di tornare a Delta delle Acque.',
@@ -2084,6 +2098,7 @@ export const season2: ThronesSaga = {
     },
     'talisa-maegyr': {
       relationships: season2Relationships['talisa-maegyr'],
+      chronicle: season2Chronicles['talisa-maegyr'],
       role: [
         {
           episode: 16,
@@ -2123,6 +2138,7 @@ export const season2: ThronesSaga = {
     },
     'amory-lorch': {
       relationships: season2Relationships['amory-lorch'],
+      chronicle: season2Chronicles['amory-lorch'],
       role: [
         {
           episode: 16,
@@ -2167,6 +2183,7 @@ export const season2: ThronesSaga = {
     },
     'polliver': {
       relationships: season2Relationships.polliver,
+      chronicle: season2Chronicles.polliver,
       role: {
         it: 'Uomo d’arme dell’esercito Lannister',
         en: 'Man-at-arms of the Lannister army',
@@ -2192,6 +2209,7 @@ export const season2: ThronesSaga = {
     },
     'tickler': {
       relationships: season2Relationships.tickler,
+      chronicle: season2Chronicles.tickler,
       role: {
         it: 'Torturatore di Gregor Clegane',
         en: 'Gregor Clegane’s torturer',
@@ -2221,6 +2239,7 @@ export const season2: ThronesSaga = {
     },
     'chiswyck': {
       relationships: season2Relationships.chiswyck,
+      chronicle: season2Chronicles.chiswyck,
       role: {
         it: 'Uomo d’arme di Gregor Clegane',
         en: 'Man-at-arms of Gregor Clegane',
@@ -2246,6 +2265,7 @@ export const season2: ThronesSaga = {
     },
     'weese': {
       relationships: season2Relationships.weese,
+      chronicle: season2Chronicles.weese,
       role: {
         it: 'Sottointendente di Harrenhal',
         en: 'Understeward at Harrenhal',
@@ -2271,6 +2291,7 @@ export const season2: ThronesSaga = {
     },
     'vargo-hoat': {
       relationships: season2Relationships['vargo-hoat'],
+      chronicle: season2Chronicles['vargo-hoat'],
       role: {
         it: 'Capo dei Bravi Camerati',
         en: 'Leader of the Brave Companions',
