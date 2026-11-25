@@ -3223,6 +3223,14 @@ export const season1: ThronesSaga = {
         // (chapter 138, #1465).
         { episode: 13, chapter: 93, value: 'captured' },
         { episode: 18, chapter: 138, value: 'alive' },
+        // Stage 3 (#1636), split by medium. The books' outlaws take her in
+        // Arya II (chapter 157) and hold her for ransom until the Hound
+        // carries her off in Arya VIII (187). In the show Thoros says she is
+        // no prisoner ("Walk of Punishment"), so its pin is the Hound's
+        // kidnapping in "The Bear and the Maiden Fair" (episode 27); she is
+        // still his captive at the end of season 3 (owner check: 22–25).
+        { episode: 22, chapter: 157, source: 'chapter', value: 'captured' },
+        { episode: 27, chapter: 187, source: 'episode', value: 'captured' },
       ],
       affiliation: [
         {
@@ -4764,6 +4772,15 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 4, chapter: 5, value: 'alive' },
+        // Stage 3 (#1636): the outlaws bring him in as a prisoner in "Dark
+        // Wings, Dark Words" (episode 22), the Mad Huntsman in Arya V
+        // (chapter 173), split by medium so the pair does not anchor episode
+        // 22 to chapter 173. He wins his trial by combat and goes free in
+        // "Kissed by Fire" (episode 25); the books try him in Arya VI (178)
+        // and tell him let go in Arya VII (183), the safe later pin.
+        { episode: 22, chapter: 173, source: 'episode', value: 'captured' },
+        { episode: 22, chapter: 173, source: 'chapter', value: 'captured' },
+        { episode: 25, chapter: 183, value: 'alive' },
         { episode: 40, chapter: 218, value: 'presumed-dead' },
         { episode: 57, chapter: 344, source: 'episode', value: 'alive' },
         { episode: 72, chapter: 344, source: 'episode', value: 'deceased' },
@@ -4850,6 +4867,39 @@ export const season1: ThronesSaga = {
             en: 'Night’s Watch recruit',
           },
         },
+        // Stage 3 (#1636): he stays with the outlaws as their smith, in
+        // "Kissed by Fire" (episode 25) and Arya VII (chapter 183). The
+        // books' Lord Beric also knights him there; the show does not, so
+        // the shared role leaves the knighthood out.
+        {
+          episode: 25,
+          chapter: 183,
+          value: {
+            it: 'Fabbro della Fratellanza senza vessilli',
+            en: 'Smith of the Brotherhood Without Banners',
+          },
+        },
+        // The show's alone, with his status: Melisandre's prisoner from "The
+        // Climb" (episode 26), escaped from Dragonstone in "Mhysa" (episode
+        // 30). Chapter 196 only orders both.
+        {
+          episode: 26,
+          chapter: 196,
+          source: 'episode',
+          value: {
+            it: 'Prigioniero di Melisandre',
+            en: 'Melisandre’s prisoner',
+          },
+        },
+        {
+          episode: 30,
+          chapter: 196,
+          source: 'episode',
+          value: {
+            it: 'Fuggito da Roccia del Drago',
+            en: 'Escaped from Dragonstone',
+          },
+        },
       ],
       log: {
         it: 'Lavora nella bottega di un armaiolo di Approdo del Re. Eddard Stark va a trovarlo seguendo le tracce del precedente Primo Cavaliere e ammira un elmo che il ragazzo si è forgiato da solo. Guardandolo in viso, ci riconosce i tratti del re.',
@@ -4863,6 +4913,12 @@ export const season1: ThronesSaga = {
         // in "The Prince of Winterfell" (episode 18) and Arya X (chapter 138).
         { episode: 13, chapter: 93, value: 'captured' },
         { episode: 18, chapter: 138, value: 'alive' },
+        // The show's alone (#1636): the outlaws hand him to Melisandre for
+        // gold in "The Climb" (episode 26), and Davos sets him free from
+        // Dragonstone in "Mhysa" (episode 30). The books keep him with the
+        // outlaws; chapter 196 only orders both.
+        { episode: 26, chapter: 196, source: 'episode', value: 'captured' },
+        { episode: 30, chapter: 196, source: 'episode', value: 'alive' },
       ],
       affiliation: [
         {
@@ -4880,6 +4936,23 @@ export const season1: ThronesSaga = {
             it: 'Reclute dei Guardiani della notte',
             en: 'Night’s Watch recruits',
           },
+        },
+        // Stage 3 (#1636): with his role, "Kissed by Fire" (episode 25) and
+        // Arya VII (chapter 183). The show's outlaws sell him to Melisandre
+        // in "The Climb" (episode 26), the show's alone.
+        {
+          episode: 25,
+          chapter: 183,
+          value: {
+            it: 'Fratellanza senza vessilli',
+            en: 'Brotherhood Without Banners',
+          },
+        },
+        {
+          episode: 26,
+          chapter: 196,
+          source: 'episode',
+          value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
         },
       ],
     },
@@ -6302,6 +6375,18 @@ export const season1: ThronesSaga = {
             en: 'House Stark, Beric Dondarrion’s company',
           },
         },
+        // The books' alone (#1636): in Arya III (chapter 161) he tells Arya
+        // he now serves a brotherhood loyal to Lord Beric. The show's Harwin
+        // is not in season 3; episode 22 only orders it.
+        {
+          episode: 22,
+          chapter: 161,
+          source: 'chapter',
+          value: {
+            it: 'Fratellanza senza vessilli',
+            en: 'Brotherhood Without Banners',
+          },
+        },
       ],
     },
     'alyn': {
@@ -6372,6 +6457,19 @@ export const season1: ThronesSaga = {
             en: 'Leader of the riders sent against Gregor Clegane',
           },
         },
+        // Stage 3 (#1636): the outlaws who fight on in King Robert's name
+        // answer to him. The show brings him before the Hound as the leader
+        // of the Brotherhood Without Banners in "And Now His Watch Is Ended"
+        // (episode 24); in Arya III (chapter 161) Harwin tells Arya that he
+        // serves a brotherhood loyal to Lord Beric.
+        {
+          episode: 24,
+          chapter: 161,
+          value: {
+            it: 'Capo della Fratellanza senza vessilli',
+            en: 'Leader of the Brotherhood Without Banners',
+          },
+        },
       ],
       log: {
         it: 'È un lord delle Terre della Tempesta. Si trova ad Approdo del Re, alla corte del re.',
@@ -6389,6 +6487,15 @@ export const season1: ThronesSaga = {
           episode: 6,
           chapter: 28,
           value: { it: 'Casa Dondarrion', en: 'House Dondarrion' },
+        },
+        // With his role, 24 / 161 (#1636).
+        {
+          episode: 24,
+          chapter: 161,
+          value: {
+            it: 'Fratellanza senza vessilli',
+            en: 'Brotherhood Without Banners',
+          },
         },
       ],
     },
@@ -6419,6 +6526,21 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Uomini di Beric Dondarrion',
             en: 'Beric Dondarrion’s company',
+          },
+        },
+        // Stage 3 (#1636): the show meets him leading a band of the
+        // Brotherhood Without Banners at his gate, "Dark Wings, Dark Words"
+        // (episode 22), which already holds his first affiliation, so the
+        // step takes "Walk of Punishment" (episode 23), where he leads them
+        // on from the inn. The books: Arya III (161) has him only in
+        // Harwin's tale; Arya IV (chapter 166) is the first to tie him to
+        // the band, which seeks him with Lord Beric.
+        {
+          episode: 23,
+          chapter: 166,
+          value: {
+            it: 'Fratellanza senza vessilli',
+            en: 'Brotherhood Without Banners',
           },
         },
       ],
@@ -6742,10 +6864,24 @@ export const season1: ThronesSaga = {
     'hot-pie': {
       relationships: season1Relationships['hot-pie'],
       chronicle: season1Chronicles['hot-pie'],
-      role: {
-        it: 'Garzone di fornaio, recluta dei Guardiani della notte',
-        en: 'Baker’s boy, Night’s Watch recruit',
-      },
+      role: [
+        {
+          episode: 10,
+          chapter: 75,
+          value: {
+            it: 'Garzone di fornaio, recluta dei Guardiani della notte',
+            en: 'Baker’s boy, Night’s Watch recruit',
+          },
+        },
+        // Stage 3 (#1636): he stays behind to bake at the inn where the
+        // outlaws take him, in "Walk of Punishment" (episode 23); Arya III
+        // (chapter 161) tells that he stayed with Sharna at her inn.
+        {
+          episode: 23,
+          chapter: 161,
+          value: { it: 'Fornaio in una locanda', en: 'Baker at an inn' },
+        },
+      ],
       log: {
         it: 'Viaggia verso la Barriera con le reclute che Yoren porta ai Guardiani della notte. Lui e un’altra recluta prendono di mira Arya, che viaggia travestita da ragazzo.',
         en: 'He travels to the Wall with the recruits Yoren is taking to the Night’s Watch. He and another recruit pick on Arya, who is travelling disguised as a boy.',
@@ -6763,6 +6899,17 @@ export const season1: ThronesSaga = {
           episode: 10,
           chapter: 75,
           value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
+        },
+        // With his role: the show's inn is the one at the crossroads, the
+        // books' the Inn of the Kneeling Man, so the shared text names
+        // neither.
+        {
+          episode: 23,
+          chapter: 161,
+          value: {
+            it: 'Una locanda nelle Terre dei Fiumi',
+            en: 'An inn in the riverlands',
+          },
         },
       ],
     },

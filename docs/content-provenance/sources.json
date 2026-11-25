@@ -38771,6 +38771,106 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23068",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23068",
       "contentSha256": "23825a02bfadbbe63715f67f9b1fa752af27287789a951c9b7e0fa4c4c43de74"
+    },
+    "got-en-Anguy-735803.json": {
+      "locale": "en",
+      "title": "Anguy",
+      "revision": 735803,
+      "revisionDate": "2026-05-14T14:38:50Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Anguy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735803",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735803",
+      "contentSha256": "31e8d47363a2d7135d26bc45e75e7061ba86ca8f49aaff0cf79ea6ed6c434050"
+    },
+    "got-en-Lem-749136.json": {
+      "locale": "en",
+      "title": "Lem",
+      "revision": 749136,
+      "revisionDate": "2026-10-22T14:44:52Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lem",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749136",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749136",
+      "contentSha256": "71e0cd84574c2cf0b9142d611133a42b8060b920e5294078d063ac0b265e4913"
+    },
+    "got-en-Brotherhood_Without_Banners-746407.json": {
+      "locale": "en",
+      "title": "Brotherhood Without Banners",
+      "revision": 746407,
+      "revisionDate": "2026-08-05T11:46:18Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Brotherhood_Without_Banners",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=746407",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=746407",
+      "contentSha256": "6f642ab90d074c16fbf4cad65f4bfed792db96240d2b0d1d7e71cec1a6ae91fa"
+    },
+    "got-en-The_Broken_Man-740223.json": {
+      "locale": "en",
+      "title": "The Broken Man",
+      "revision": 740223,
+      "revisionDate": "2026-06-27T12:37:11Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Broken_Man",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740223",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740223",
+      "contentSha256": "02f1e2c859e2731c93f7f2e96e142fed7a63f8eeeb68b41b9166ceb033f89ee2"
+    },
+    "got-en-No_One-740224.json": {
+      "locale": "en",
+      "title": "No One",
+      "revision": 740224,
+      "revisionDate": "2026-06-27T12:37:24Z",
+      "url": "https://gameofthrones.fandom.com/wiki/No_One",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740224",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740224",
+      "contentSha256": "d62afa806abd31fd95bafda22ca7e6532404ebd1818ce7b4f5563edbfb89d9bc"
+    },
+    "iaf-en-Anguy-27121.json": {
+      "locale": "en",
+      "title": "Anguy",
+      "revision": 27121,
+      "revisionDate": "2025-02-11T14:49:22Z",
+      "url": "https://iceandfire.fandom.com/wiki/Anguy",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27121",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27121",
+      "contentSha256": "c297e74872b37aa4ab4a79b2dd4aacfa8e248b72235a525f44d5b5ede75186f4"
+    },
+    "iaf-en-Tom_of_Sevenstreams-27055.json": {
+      "locale": "en",
+      "title": "Tom of Sevenstreams",
+      "revision": 27055,
+      "revisionDate": "2025-01-28T10:01:38Z",
+      "url": "https://iceandfire.fandom.com/wiki/Tom_of_Sevenstreams",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27055",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27055",
+      "contentSha256": "2e4afeaf008b7d3e9f3a46b90c122e3fbea7ce6b99207fec4d2e0df38d6e16f8"
+    },
+    "iaf-en-Greenbeard-15475.json": {
+      "locale": "en",
+      "title": "Greenbeard",
+      "revision": 15475,
+      "revisionDate": "2016-04-11T12:25:44Z",
+      "url": "https://iceandfire.fandom.com/wiki/Greenbeard",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15475",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15475",
+      "contentSha256": "8cd3418e80f37f6406f6d36324a37b0a0ff02b9837a3d03b8b619f169cc6adcc"
+    },
+    "iaf-en-Mad_Huntsman-27172.json": {
+      "locale": "en",
+      "title": "Mad Huntsman",
+      "revision": 27172,
+      "revisionDate": "2025-02-11T15:58:18Z",
+      "url": "https://iceandfire.fandom.com/wiki/Mad_Huntsman",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27172",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27172",
+      "contentSha256": "3940f674f32ad4a2487c69eae910148bcdd4bb17178749e46f41689b6a860606"
+    },
+    "iaf-en-Edric_Dayne-6116.json": {
+      "locale": "en",
+      "title": "Edric Dayne",
+      "revision": 6116,
+      "revisionDate": "2012-06-20T18:30:10Z",
+      "url": "https://iceandfire.fandom.com/wiki/Edric_Dayne",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=6116",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=6116",
+      "contentSha256": "9f55afa05f0f55dc996fb43168dc16a78facbf478f32d578fe90af52951277a9"
     }
   }
 }
