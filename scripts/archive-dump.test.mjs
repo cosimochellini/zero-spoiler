@@ -6,6 +6,7 @@
 import { mkdtempSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
+import { Writable } from 'node:stream'
 import { describe, expect, it } from 'vitest'
 
 import {
@@ -13,6 +14,7 @@ import {
   dumpArgs,
   dumpLines,
   keptPayloads,
+  writeLines,
 } from './archive-dump.mjs'
 
 describe('the dump flags', () => {
@@ -188,5 +190,32 @@ describe('a bookmarks file', () => {
     expect(() => bookmarksFrom(file(value))).toThrow(
       /not an array of bookmarks/u,
     )
+  })
+})
+
+describe('a piped dump', () => {
+  it('writes every line, and waits for a slow reader', async () => {
+    const lines = Array.from({ length: 50 }, (_, line) => `${String(line)}\n`)
+    const read = []
+    const out = new Writable({
+      highWaterMark: 4,
+      write(chunk, _, done) {
+        read.push(String(chunk))
+        setImmediate(done)
+      },
+    })
+    let buffered = 0
+    function* watched() {
+      for (const line of lines) {
+        buffered = Math.max(buffered, out.writableLength)
+        yield line
+      }
+    }
+
+    await writeLines(watched(), out)
+
+    expect(read).toStrictEqual(lines)
+    // Without `drain` all fifty would wait in the stream's buffer.
+    expect(buffered).toBeLessThanOrEqual(4)
   })
 })
