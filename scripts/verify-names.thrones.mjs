@@ -23,7 +23,7 @@ const STARK_SERVANTS = 'Casa Stark#Servitori di Casa Stark'
  * @param {string} section The section's heading.
  * @returns {string} The page and the section, as `Page#Section`.
  */
-function watch(section) {
+export function watch(section) {
   return `Guardiani della notte#${section}`
 }
 
