@@ -7,7 +7,10 @@ import { ArchivePage } from '~/components/ArchivePage'
 import { VisitorBanner } from '~/components/VisitorBanner'
 import { useT } from '~/i18n/LocaleContext'
 import { readPlain } from '~/lib/plain'
-import { useSeriesParams } from '~/lib/progress/BookmarkContext'
+import {
+  PageUnitContext,
+  useSeriesParams,
+} from '~/lib/progress/BookmarkContext'
 import type { RelationshipView } from '~/lib/view/relationships'
 import { recordHead } from '~/routes/$locale/-head'
 import { RecordBackLink } from '~/routes/$series/$locale/-back'
@@ -76,31 +79,33 @@ function CharacterPage(): ReactElement {
   )
 
   return (
-    <main
-      id="content"
-      {...stylex.props(recordStyles.page)}
-    >
-      <p {...stylex.props(recordStyles.back)}>
-        <RecordBackLink section="characters" />
-      </p>
+    <PageUnitContext value={detail.unit}>
+      <main
+        id="content"
+        {...stylex.props(recordStyles.page)}
+      >
+        <p {...stylex.props(recordStyles.back)}>
+          <RecordBackLink section="characters" />
+        </p>
 
-      <VisitorBanner slot={detail.slot} />
+        <VisitorBanner slot={detail.slot} />
 
-      <DossierDiptych
-        detail={detail}
-        peek={peekDossier}
-      />
+        <DossierDiptych
+          detail={detail}
+          peek={peekDossier}
+        />
 
-      <ChronicleBand
-        band={BAND.chronicle}
-        detail={detail}
-        loadRest={loadRest}
-      />
+        <ChronicleBand
+          band={BAND.chronicle}
+          detail={detail}
+          loadRest={loadRest}
+        />
 
-      <Suspense fallback={null}>
-        <RelationshipsBand relationships={relationships} />
-      </Suspense>
-    </main>
+        <Suspense fallback={null}>
+          <RelationshipsBand relationships={relationships} />
+        </Suspense>
+      </main>
+    </PageUnitContext>
   )
 }
 

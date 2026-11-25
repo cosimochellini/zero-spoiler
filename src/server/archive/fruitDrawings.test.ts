@@ -22,6 +22,9 @@ const DRAWN: Drawings = DRAWINGS
  * and none at all while there is only one.
  */
 
+/** The last chapter a bookmark can hold. */
+const LAST_CHAPTER = ONE_PIECE_BOOKMARK.chapterCeiling
+
 const ep = (episode: number): Bookmark => ({ mode: 'episode', episode })
 const ch = (chapter: number): Bookmark => ({ mode: 'chapter', chapter })
 
@@ -55,8 +58,9 @@ function fruitOf(id: string): Entity {
 
 /**
  * The scene that first shows each redrawn fruit drawn again, pinned by hand
- * (#1410): the real fruit, or the awakening, at its chapter and episode, and
- * how many times the fruit is drawn again in all (`stages`, 1 when unset).
+ * (#1410): the real fruit, or the awakening, at its chapter and episode, the
+ * one medium that alone shows it (`source`, #1683), and how many times the
+ * fruit is drawn again in all (`stages`, 1 when unset).
  */
 const REDRAWN: (Pin & { id: string; stages?: number })[] = [
   { id: 'chop-chop-fruit', episode: 8, chapter: 19 },
@@ -81,7 +85,17 @@ const REDRAWN: (Pin & { id: string; stages?: number })[] = [
     chapter: 1069,
     stages: 2,
   },
-  { id: 'love-love-fruit', episode: 1101, chapter: 1070 },
+  // Episode 1101 alone shows it; chapter 1070 is the one the episode adapts.
+  { id: 'love-love-fruit', episode: 1101, chapter: 1070, source: 'episode' },
+  // Episode 1041 shows it before the fruit is named at 1042 (chapter 1020);
+  // the manga's own showing, chapter 1070 page 6, is the second stage.
+  {
+    id: 'dog-dog-fruit-model-okuchi-no-makami',
+    episode: 1042,
+    chapter: 1020,
+    source: 'episode',
+    stages: 2,
+  },
   { id: 'paw-paw-fruit', episode: 1130, chapter: 1096 },
 ]
 
@@ -101,6 +115,53 @@ function firstRedrawingOf(
   return entry
 }
 
+/** The two units a pin is told in, each at the bookmarks below. */
+const UNITS = ['episode', 'chapter'] as const
+
+/**
+ * A pin's bookmarks in one unit: one count before it, and at it; a season
+ * viewer counts episodes.
+ */
+function bookmarksIn(
+  unit: (typeof UNITS)[number],
+  { chapter, episode }: Pin,
+): { at: Bookmark[]; before: Bookmark[] } {
+  return unit === 'chapter' ?
+      { before: [ch(chapter - 1)], at: [ch(chapter)] }
+    : {
+        before: [ep(episode - 1), season(episode - 1)],
+        at: [ep(episode), season(episode)],
+      }
+}
+
+/** What a fruit's page sends: the drawings to switch between, the one held. */
+interface Sent {
+  drawings: { look: string; strokes: unknown }[]
+  /** The strokes the stage holds; the last of `drawings` when unset. */
+  shown?: unknown
+}
+
+/**
+ * A fruit's page at each bookmark: the drawings it lets the reader switch
+ * between, and the one its stage holds. Nothing on it says more than the
+ * bookmark allows.
+ */
+function expectDrawings(
+  id: string,
+  bookmarks: Bookmark[],
+  { drawings, shown = drawings.at(-1)?.strokes }: Sent,
+): void {
+  for (const bookmark of bookmarks) {
+    const detail = detailOf(id, bookmark)
+    const held = detail.slot.open ? detail.slot.record.visual.strokes : null
+
+    expect(detail.drawings, JSON.stringify(bookmark)).toStrictEqual(drawings)
+    expect(held, JSON.stringify(bookmark)).toBe(shown)
+
+    saysNothing(detail, bookmark)
+  }
+}
+
 describe('a fruit’s drawings', () => {
   it('pins every fruit drawn again, and how many times', () => {
     expect(
@@ -116,51 +177,89 @@ describe('a fruit’s drawings', () => {
   })
 
   it.each(REDRAWN)(
-    'switches $id only from its redrawing, in every unit',
-    ({ id, episode, chapter }) => {
+    'switches $id only from its redrawing, in the units that show it',
+    ({ id, source, ...pin }) => {
       const entry = firstRedrawingOf(id)
       const first = DRAWN[fruitOf(id).visual.art]
-      const before = [ep(episode - 1), season(episode - 1), ch(chapter - 1)]
-      const at = [ep(episode), season(episode), ch(chapter)]
 
-      for (const bookmark of before) {
-        const detail = detailOf(id, bookmark)
+      for (const unit of UNITS) {
+        const { before, at } = bookmarksIn(unit, pin)
 
-        expect(detail.drawings, JSON.stringify(bookmark)).toStrictEqual([])
+        for (const bookmark of before) {
+          const detail = detailOf(id, bookmark)
 
-        saysNothing(detail, bookmark)
-      }
-      for (const bookmark of at) {
-        const detail = detailOf(id, bookmark)
+          expect(detail.drawings, JSON.stringify(bookmark)).toStrictEqual([])
 
-        expect(detail.drawings, JSON.stringify(bookmark)).toStrictEqual([
-          { look: 'power', strokes: first },
-          { look: entry.look, strokes: entry.value },
-        ])
-        // The last is the drawing the stage holds, the same strokes.
-        expect(
-          detail.slot.open ? detail.slot.record.visual.strokes : undefined,
-        ).toBe(entry.value)
+          saysNothing(detail, bookmark)
+        }
+        // The medium that does not show it keeps the first drawing at the
+        // pin; the other switches to the stage, which the slot then holds.
+        if ((source ?? unit) === unit) {
+          expectDrawings(id, at, {
+            drawings: [
+              { look: 'power', strokes: first },
+              { look: entry.look, strokes: entry.value },
+            ],
+          })
+        } else {
+          expectDrawings(id, at, { drawings: [], shown: first })
+        }
       }
     },
   )
 
   it('switches a fruit drawn twice again between all three, in order', () => {
+    // The real fruit is the anime's alone (episode 1101): a manga reader
+    // switches between the first drawing and the awakening, at any chapter.
     const id = 'cat-cat-fruit-model-leopard'
     const [awakening, real] = fruitRedrawn[id] ?? []
+    const first = { look: 'power', strokes: DRAWN[fruitOf(id).visual.art] }
+    const awakened = { look: 'awakening', strokes: awakening?.value }
 
-    for (const bookmark of [ep(1101), season(1101), ch(1070)]) {
-      const detail = detailOf(id, bookmark)
+    expect.hasAssertions()
 
-      expect(detail.drawings, JSON.stringify(bookmark)).toStrictEqual([
-        { look: 'power', strokes: DRAWN[fruitOf(id).visual.art] },
-        { look: 'awakening', strokes: awakening?.value },
-        { look: 'real', strokes: real?.value },
-      ])
-      expect(
-        detail.slot.open ? detail.slot.record.visual.strokes : undefined,
-      ).toBe(real?.value)
-    }
+    expectDrawings(id, [ep(1101), season(1101)], {
+      drawings: [first, awakened, { look: 'real', strokes: real?.value }],
+    })
+    expectDrawings(id, [ch(1070), ch(LAST_CHAPTER)], {
+      drawings: [first, awakened],
+    })
+  })
+
+  it('never shows a manga reader the anime’s Love-Love Fruit', () => {
+    const id = 'love-love-fruit'
+
+    expect.hasAssertions()
+
+    expectDrawings(id, [ch(1070), ch(LAST_CHAPTER)], {
+      drawings: [],
+      shown: DRAWN[fruitOf(id).visual.art],
+    })
+  })
+
+  it('shows the Okuchi-no-Makami fruit from each medium’s own showing', () => {
+    // Episode 1041 shows the real fruit before the fruit is named (1042);
+    // the manga draws it only in chapter 1070, page 6. Both stages hold the
+    // same drawing, each told in one medium.
+    const id = 'dog-dog-fruit-model-okuchi-no-makami'
+    const [anime, manga] = fruitRedrawn[id] ?? []
+    const first = DRAWN[fruitOf(id).visual.art]
+
+    expect(manga?.value).toBe(anime?.value)
+
+    expectDrawings(id, [ep(1042), season(1042), ep(1101)], {
+      drawings: [
+        { look: 'power', strokes: first },
+        { look: 'real', strokes: anime?.value },
+      ],
+    })
+    expectDrawings(id, [ch(1020), ch(1069)], { drawings: [], shown: first })
+    expectDrawings(id, [ch(1070), ch(LAST_CHAPTER)], {
+      drawings: [
+        { look: 'power', strokes: first },
+        { look: 'real', strokes: manga?.value },
+      ],
+    })
   })
 
   it('sends nothing to switch between under fog', () => {

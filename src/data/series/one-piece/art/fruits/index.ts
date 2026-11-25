@@ -1824,6 +1824,49 @@ const TAIL: Limb = {
 /** The fur notches: steps along the outer edge (1) and the inner one (-1). */
 const FUR = { outer: [8, 13, 18], inner: [10, 15, 20] }
 
+/** The Okuchi-no-Makami fruit: a round, the deity's tail arched over it. */
+const MAKAMI_BODY: Body = { family: 'round', cy: 120 }
+
+/**
+ * The tail: out of the far lower side, up past the shoulder and over the
+ * crown in one arch, its tip hanging above the near shoulder; far larger
+ * than the wolf fruit's, which stands beside its fruit.
+ */
+const MAKAMI_TAIL: Limb = {
+  line: [
+    [120, 140],
+    [146, 132],
+    [146, 88],
+    [130, 62],
+    [116, 40],
+    [80, 32],
+    [54, 42],
+    [42, 48],
+    [32, 58],
+    [26, 72],
+  ],
+  half: plume({ root: 7, full: 11, end: 4, fullest: 0.4 }),
+  rim: { body: MAKAMI_BODY, way: 1 },
+}
+
+/** Its fur notches, along the outer edge (1) and the inner one (-1). */
+const MAKAMI_FUR = { outer: [9, 14, 19, 24], inner: [11, 16, 21, 26] }
+
+/** The trail of cold air: off the near shoulder, down and away, tapering. */
+const MAKAMI_COLD: Limb = {
+  line: [
+    [44, 96],
+    [30, 100],
+    [22, 112],
+    [24, 124],
+    [26, 136],
+    [14, 146],
+    [8, 156],
+  ],
+  half: (along) => 5 * (1 - along) + 0.8,
+  rim: { body: MAKAMI_BODY, way: -1 },
+}
+
 /** The slow fruit: a segmented one, struck on the shoulder by a beam. */
 const SLOW_BODY: Body = { family: 'segmented', cy: 116 }
 
@@ -2800,6 +2843,30 @@ function calyx(cx: number, cy: number): string {
 
   return `M${at(-126, 7)} ${leaves.join(' ')} Z`
 }
+
+/**
+ * The real fruit: round and flat like a persimmon, bare but for fishhook
+ * curls hanging from the calyx halfway down, a stalk swirling up on the
+ * left. The anime shows it in episode 1041, as Kaido and Yamato talk about
+ * why Yamato ate it (chapter 1019), one episode before the fruit is named;
+ * the manga first draws it in chapter 1070 (page 6), as Vegapunk explains
+ * copying Zoan fruits. Both stages in `fruitRedrawn` hold it. The light sits
+ * on the near shoulder and the far side is hatched.
+ */
+const MAKAMI_REAL: Stroke[] = [
+  {
+    d: 'M80 106 C106 102 132 114 134 138 C136 162 112 176 80 176 C48 176 24 162 26 138 C28 114 54 102 80 106 Z',
+  },
+  { d: calyx(80, 104) },
+  {
+    d: 'M80 102 C79 90 78 78 79 66 C90 58 102 56 114 57 M79 66 C68 60 57 61 50 56 C42 51 44 40 52 40 C59 40 61 48 56 51 C52 53 49 49 52 47',
+  },
+  { d: MAKAMI_HOOKS.map((hook) => hookCurl(hook)).join(' '), role: 'accent' },
+  // The light on the near shoulder, and the far side turning away.
+  { d: 'M45 115 C39 118 35 123 33 130', role: 'soft' },
+  { d: 'M130 126 L123 119 M131 139 L125 133', role: 'ambient' },
+  shadowUnder(2),
+]
 
 /** The pear leans under Kujaku's lash, which commands buildings in 1113/1080. */
 const WHIP_BODY: Body = { family: 'pear', cy: 118 }
@@ -6927,25 +6994,32 @@ export const fruitArt = {
   ],
 
   /**
-   * The real fruit: round and flat like a persimmon, bare but for fishhook
-   * curls hanging from the calyx halfway down, a stalk swirling up on the
-   * left. The anime shows it in episode 1041, as Kaido and Yamato talk about
-   * why Yamato ate it (chapter 1019), one episode before the fruit is named.
-   * The light sits on the near shoulder and the far side is hatched.
+   * The fruit with the deity's tail: one great plume grown out of its far
+   * lower side and arched over the crown, notched with fur, and a trail of
+   * cold air streaming off the near shoulder. In episode 1041 (chapter 1019)
+   * Yamato takes his hybrid form, a large tail and a ribbon of cold air
+   * round his shoulders, and Kaido names the fruit in episode 1042 (chapter
+   * 1020). The tail and the cold air, never the head, the horns or the ice.
    */
   'dog-dog-fruit-model-okuchi-no-makami': [
+    ...kitBody(MAKAMI_BODY, [98, 110, 122]),
+    ...skin([
+      [64, 112, 8],
+      [76, 148, -6],
+    ]),
+    ...sprout(MAKAMI_BODY, -4, 'left'),
     {
-      d: 'M80 106 C106 102 132 114 134 138 C136 162 112 176 80 176 C48 176 24 162 26 138 C28 114 54 102 80 106 Z',
+      d: [
+        limbOutline(MAKAMI_TAIL, 32, (step, way) => {
+          const notches = way > 0 ? MAKAMI_FUR.outer : MAKAMI_FUR.inner
+
+          return notches.includes(step) ? 0.7 : 1
+        }),
+        limbOutline(MAKAMI_COLD, 24),
+      ].join(' '),
+      role: 'accent',
     },
-    { d: calyx(80, 104) },
-    {
-      d: 'M80 102 C79 90 78 78 79 66 C90 58 102 56 114 57 M79 66 C68 60 57 61 50 56 C42 51 44 40 52 40 C59 40 61 48 56 51 C52 53 49 49 52 47',
-    },
-    { d: MAKAMI_HOOKS.map((hook) => hookCurl(hook)).join(' '), role: 'accent' },
-    // The light on the near shoulder, and the far side turning away.
-    { d: 'M45 115 C39 118 35 123 33 130', role: 'soft' },
-    { d: 'M130 126 L123 119 M131 139 L125 133', role: 'ambient' },
-    shadowUnder(2),
+    shadowUnder(1),
   ],
 
   /**
@@ -7744,6 +7818,29 @@ export const fruitRedrawn: Record<string, FruitRedrawing[]> = {
     },
   ],
 
+  // The real fruit, in each medium from its own showing. The anime shows it
+  // in episode 1041, before the fruit is named, so an episode reader has it
+  // from the record's own episode (its chapter, 1019, pinned at the
+  // record's 1020); the manga draws it only in chapter 1070 (page 6), so a
+  // chapter reader keeps the tail until then (1101 is the episode that
+  // adapts it, and only orders the entry).
+  'dog-dog-fruit-model-okuchi-no-makami': [
+    {
+      episode: 1042,
+      chapter: 1020,
+      source: 'episode',
+      look: 'real',
+      value: MAKAMI_REAL,
+    },
+    {
+      episode: 1101,
+      chapter: 1070,
+      source: 'chapter',
+      look: 'real',
+      value: MAKAMI_REAL,
+    },
+  ],
+
   // Vegapunk's Zoan explanation, episode 1101, chapter 1070.
   'fish-fish-fruit-mythical-model-azure-dragon': [
     {
@@ -7812,11 +7909,13 @@ export const fruitRedrawn: Record<string, FruitRedrawing[]> = {
         shadowUnder(1),
       ],
     },
-    // Vegapunk's Zoan explanation, episode 1101; anime only, paired with the
-    // chapter the episode adapts, 1070.
+    // Vegapunk's Zoan explanation, episode 1101; anime only, so a manga
+    // reader keeps the awakening (1070 is the chapter the episode adapts,
+    // and only orders the entry).
     {
       episode: 1101,
       chapter: 1070,
+      source: 'episode',
       look: 'real',
       /**
        * The real fruit: a round fruit with two pointed ears, a curl in each, under
@@ -7844,11 +7943,13 @@ export const fruitRedrawn: Record<string, FruitRedrawing[]> = {
   ],
 
   // Vegapunk names it among the Seraphim's powers, episode 1101; anime only,
-  // paired with the chapter the episode adapts, 1070.
+  // so a manga reader keeps the first drawing (1070 is the chapter the
+  // episode adapts, and only orders the entry).
   'love-love-fruit': [
     {
       episode: 1101,
       chapter: 1070,
+      source: 'episode',
       look: 'real',
       /**
        * The real fruit: two heart-shaped fruits on stems joined like cherries,

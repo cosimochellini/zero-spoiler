@@ -11,7 +11,7 @@ import type {
 import { gatedOf, SIBLING_COUNT } from './fruits.server'
 import { headFor, type HeadKeys } from './head.server'
 import { fruitOf } from './project.server'
-import type { Reader } from './reader.server'
+import { pageUnit, type Reader } from './reader.server'
 import { sagaOf } from './sagaLabels.server'
 
 /**
@@ -48,6 +48,7 @@ export function fruitPage(id: string, r: Reader): FruitPage | undefined {
   return {
     head: headFor(entity, FRUIT_HEAD, r),
     detail: {
+      ...pageUnit(r),
       slot: r.slot(entity, (seen) => fruitOf(seen, form, r)),
       ...storyOf(entity, r),
     },

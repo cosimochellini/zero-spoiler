@@ -38772,6 +38772,246 @@
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23068",
       "contentSha256": "23825a02bfadbbe63715f67f9b1fa752af27287789a951c9b7e0fa4c4c43de74"
     },
+    "got-en-Anguy-735803.json": {
+      "locale": "en",
+      "title": "Anguy",
+      "revision": 735803,
+      "revisionDate": "2026-05-14T14:38:50Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Anguy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735803",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735803",
+      "contentSha256": "31e8d47363a2d7135d26bc45e75e7061ba86ca8f49aaff0cf79ea6ed6c434050"
+    },
+    "got-en-Lem-749136.json": {
+      "locale": "en",
+      "title": "Lem",
+      "revision": 749136,
+      "revisionDate": "2026-10-22T14:44:52Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lem",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749136",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749136",
+      "contentSha256": "71e0cd84574c2cf0b9142d611133a42b8060b920e5294078d063ac0b265e4913"
+    },
+    "got-en-Brotherhood_Without_Banners-746407.json": {
+      "locale": "en",
+      "title": "Brotherhood Without Banners",
+      "revision": 746407,
+      "revisionDate": "2026-08-05T11:46:18Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Brotherhood_Without_Banners",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=746407",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=746407",
+      "contentSha256": "6f642ab90d074c16fbf4cad65f4bfed792db96240d2b0d1d7e71cec1a6ae91fa"
+    },
+    "got-en-The_Broken_Man-740223.json": {
+      "locale": "en",
+      "title": "The Broken Man",
+      "revision": 740223,
+      "revisionDate": "2026-06-27T12:37:11Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Broken_Man",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740223",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740223",
+      "contentSha256": "02f1e2c859e2731c93f7f2e96e142fed7a63f8eeeb68b41b9166ceb033f89ee2"
+    },
+    "got-en-No_One-740224.json": {
+      "locale": "en",
+      "title": "No One",
+      "revision": 740224,
+      "revisionDate": "2026-06-27T12:37:24Z",
+      "url": "https://gameofthrones.fandom.com/wiki/No_One",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740224",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740224",
+      "contentSha256": "d62afa806abd31fd95bafda22ca7e6532404ebd1818ce7b4f5563edbfb89d9bc"
+    },
+    "iaf-en-Anguy-27121.json": {
+      "locale": "en",
+      "title": "Anguy",
+      "revision": 27121,
+      "revisionDate": "2025-02-11T14:49:22Z",
+      "url": "https://iceandfire.fandom.com/wiki/Anguy",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27121",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27121",
+      "contentSha256": "c297e74872b37aa4ab4a79b2dd4aacfa8e248b72235a525f44d5b5ede75186f4"
+    },
+    "iaf-en-Tom_of_Sevenstreams-27055.json": {
+      "locale": "en",
+      "title": "Tom of Sevenstreams",
+      "revision": 27055,
+      "revisionDate": "2025-01-28T10:01:38Z",
+      "url": "https://iceandfire.fandom.com/wiki/Tom_of_Sevenstreams",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27055",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27055",
+      "contentSha256": "2e4afeaf008b7d3e9f3a46b90c122e3fbea7ce6b99207fec4d2e0df38d6e16f8"
+    },
+    "iaf-en-Greenbeard-15475.json": {
+      "locale": "en",
+      "title": "Greenbeard",
+      "revision": 15475,
+      "revisionDate": "2016-04-11T12:25:44Z",
+      "url": "https://iceandfire.fandom.com/wiki/Greenbeard",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15475",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15475",
+      "contentSha256": "8cd3418e80f37f6406f6d36324a37b0a0ff02b9837a3d03b8b619f169cc6adcc"
+    },
+    "iaf-en-Mad_Huntsman-27172.json": {
+      "locale": "en",
+      "title": "Mad Huntsman",
+      "revision": 27172,
+      "revisionDate": "2025-02-11T15:58:18Z",
+      "url": "https://iceandfire.fandom.com/wiki/Mad_Huntsman",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27172",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27172",
+      "contentSha256": "3940f674f32ad4a2487c69eae910148bcdd4bb17178749e46f41689b6a860606"
+    },
+    "iaf-en-Edric_Dayne-6116.json": {
+      "locale": "en",
+      "title": "Edric Dayne",
+      "revision": 6116,
+      "revisionDate": "2012-06-20T18:30:10Z",
+      "url": "https://iceandfire.fandom.com/wiki/Edric_Dayne",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=6116",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=6116",
+      "contentSha256": "9f55afa05f0f55dc996fb43168dc16a78facbf478f32d578fe90af52951277a9"
+    },
+    "got-en-Qyburn-749126.json": {
+      "locale": "en",
+      "title": "Qyburn",
+      "revision": 749126,
+      "revisionDate": "2026-10-21T08:14:01Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Qyburn",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749126",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749126",
+      "contentSha256": "efa93a697a1a6675f55abf0cefa22ee68d5c61153cad23a2627ed9b2b2802ec1"
+    },
+    "got-en-Locke-728248.json": {
+      "locale": "en",
+      "title": "Locke",
+      "revision": 728248,
+      "revisionDate": "2026-02-05T07:09:28Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Locke",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728248",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728248",
+      "contentSha256": "46810760c321287364e3d98520fbc10a1707e657122fa133cc153872f04555ae"
+    },
+    "got-en-Steelshanks-728451.json": {
+      "locale": "en",
+      "title": "Steelshanks",
+      "revision": 728451,
+      "revisionDate": "2026-02-05T08:47:28Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Steelshanks",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728451",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728451",
+      "contentSha256": "03d02af51ca4d0a57f46a9fa45c596c8e2356d62ab8c8d6b3a84f4cc70fbf512"
+    },
+    "iaf-en-Urswyck-27061.json": {
+      "locale": "en",
+      "title": "Urswyck",
+      "revision": 27061,
+      "revisionDate": "2025-01-28T10:10:36Z",
+      "url": "https://iceandfire.fandom.com/wiki/Urswyck",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27061",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27061",
+      "contentSha256": "03db37c705746a9ef80032cb8f200a4bd41e81aae9d9ec338877522693c6320e"
+    },
+    "iaf-en-Zollo-22846.json": {
+      "locale": "en",
+      "title": "Zollo",
+      "revision": 22846,
+      "revisionDate": "2019-03-21T01:26:36Z",
+      "url": "https://iceandfire.fandom.com/wiki/Zollo",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=22846",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=22846",
+      "contentSha256": "7272ec81e38d89ce9fc753b1f93e6663c188eaff3e9afc22c5febff1603ed125"
+    },
+    "iaf-en-Timeon-15537.json": {
+      "locale": "en",
+      "title": "Timeon",
+      "revision": 15537,
+      "revisionDate": "2016-04-13T23:42:12Z",
+      "url": "https://iceandfire.fandom.com/wiki/Timeon",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15537",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15537",
+      "contentSha256": "979693a86f159a4dd72a93b0e1fb1e1ff64c3714ee0c41dff2d3332845cb0782"
+    },
+    "iaf-en-Shagwell-27047.json": {
+      "locale": "en",
+      "title": "Shagwell",
+      "revision": 27047,
+      "revisionDate": "2025-01-28T09:51:47Z",
+      "url": "https://iceandfire.fandom.com/wiki/Shagwell",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27047",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27047",
+      "contentSha256": "3a6c9485b1f70b56d635afe9d6c4c655a712c86659f5ddcd4931040049a6e3b9"
+    },
+    "iaf-en-Pyg-15538.json": {
+      "locale": "en",
+      "title": "Pyg",
+      "revision": 15538,
+      "revisionDate": "2016-04-13T23:42:26Z",
+      "url": "https://iceandfire.fandom.com/wiki/Pyg",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15538",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15538",
+      "contentSha256": "e881daa2188f240c58284837c384ac78ae072327576fc8a4958a1453a1f73a33"
+    },
+    "iaf-en-Elmar_Frey-25596.json": {
+      "locale": "en",
+      "title": "Elmar Frey",
+      "revision": 25596,
+      "revisionDate": "2022-08-29T04:24:08Z",
+      "url": "https://iceandfire.fandom.com/wiki/Elmar_Frey",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25596",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25596",
+      "contentSha256": "8470b88a655cb084a1ea3cc63da57064bcf1b2d65e74a1ddf6fc01d93946d1b2"
+    },
+    "iaf-en-Brave_Companions-26178.json": {
+      "locale": "en",
+      "title": "Brave Companions",
+      "revision": 26178,
+      "revisionDate": "2022-10-31T23:25:16Z",
+      "url": "https://iceandfire.fandom.com/wiki/Brave_Companions",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26178",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26178",
+      "contentSha256": "611e1556e25019e027fa2459e7ce18d3eefe24cf19b78447fbd9ca442f44d793"
+    },
+    "got-en-Axell_Florent-728059.json": {
+      "locale": "en",
+      "title": "Axell Florent",
+      "revision": 728059,
+      "revisionDate": "2026-02-05T04:57:55Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Axell_Florent",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728059",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728059",
+      "contentSha256": "8a51b4a146240bbc65c4ece2c3738132d572880418476b73b6695bc29b224308"
+    },
+    "iaf-en-Edric_Storm-26977.json": {
+      "locale": "en",
+      "title": "Edric Storm",
+      "revision": 26977,
+      "revisionDate": "2025-01-27T17:46:55Z",
+      "url": "https://iceandfire.fandom.com/wiki/Edric_Storm",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26977",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26977",
+      "contentSha256": "9135d3bdd6237eb763064e927ea6fe4b083cefbcd032d9a453b9bafc666506e8"
+    },
+    "got-en-Myranda-728306.json": {
+      "locale": "en",
+      "title": "Myranda",
+      "revision": 728306,
+      "revisionDate": "2026-02-05T07:21:31Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Myranda",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728306",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728306",
+      "contentSha256": "88f8e86ded4a6defa6fd58f8b5d51cd9c60342aef7d5ec85f62da00e52136f1b"
+    },
+    "got-en-Violet-733236.json": {
+      "locale": "en",
+      "title": "Violet",
+      "revision": 733236,
+      "revisionDate": "2026-03-10T02:16:44Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Violet",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=733236",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=733236",
+      "contentSha256": "394267d384a0373c0bc7fd699d8b507d6d1c9d09cf1c518114ddedeff40338b8"
+    },
     "got-en-Valar_Dohaeris/Appearances-722999.json": {
       "locale": "en",
       "title": "Valar Dohaeris/Appearances",

@@ -13,8 +13,11 @@
 // a number (an Anime Bonus Corner, a crossover special) or that shows another
 // fruit is listed in `NOT_COUNTED` with the reason, and never counted.
 //
-// The rulings of #465 decide the rest. An anime-only showing counts. Once
-// the real fruit is drawn it stays. So a fruit fails when:
+// The rulings of #465 decide the rest, as #1683 changed them. An anime-only
+// showing counts for an episode reader alone: its redrawing carries
+// `source: 'episode'`, and a manga reader keeps the drawing before it until
+// the manga shows the fruit, if it ever does. Once the real fruit is drawn
+// it stays. So a fruit fails when:
 // - the first showing, by episode or by chapter, is at or before the
 //   record's threshold and its first drawing is not the real fruit
 //   (`REAL_FIRST`): the first drawing should be;
@@ -22,7 +25,8 @@
 // - it has redrawings and none sits at the first showing, comparing only the
 //   numbers the wiki gives: an anime-only showing gives an episode, and its
 //   chapter is the one that episode adapts, which the wiki does not say.
-// A failure a person has checked (a frame check that found the wiki wrong)
+// A failure a person has checked (a frame check that found the wiki wrong,
+// or a fruit one medium shows before its threshold and the other later)
 // goes in `SHOWING_KEPT` with the reason, and is then only listed.
 //
 // Run it with `npm run verify:fruits` (`-- --series <slug>` for a series of
@@ -55,8 +59,6 @@ const REAL_FIRST = {
   'bubble-bubble-fruit': 'beside Kaku’s in episode 271',
   'brush-brush-fruit': 'the flashback of episode 976',
   'dark-dark-fruit': 'in Teach’s hand in episode 325',
-  'dog-dog-fruit-model-okuchi-no-makami':
-    'as Kaido and Yamato talk about it in episode 1041',
   'gum-gum-fruit': 'from episode 1 by the ruling of #463',
   'ox-ox-fruit-model-giraffe': 'handed to Kaku in episode 271',
 }
@@ -94,7 +96,10 @@ const NOT_COUNTED = {
  * every failing verdict for that id.
  * @type {Record<string, string>}
  */
-const SHOWING_KEPT = {}
+const SHOWING_KEPT = {
+  'dog-dog-fruit-model-okuchi-no-makami':
+    'unchecked, on the owner’s ruling in #1683 until the frame check in its pull request is done: episode 1041 shows it before the threshold, in the anime alone, so it is an episode-only stage at the threshold, 1042, and a chapter-only one at chapter 1070, page 6',
+}
 
 /** The verdicts that fail the run. */
 const FAILS = {

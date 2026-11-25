@@ -6,6 +6,10 @@
 
 import { characters, OTHERS, watch } from './verify-names.thrones.mjs'
 
+/** The Brotherhood Without Banners' section of the world page, members in its prose. */
+const BROTHERHOOD =
+  'Mondo delle Cronache del ghiaccio e del fuoco#Fratellanza Senza Vessilli'
+
 /**
  * Each third-stage character's Italian Wikipedia page, as `Page#Section` for a
  * section.
@@ -42,6 +46,19 @@ export const THRONES_STAGE_3_TITLES = {
   'val': characters('Val'),
   'dirk': watch('Dirk'),
   'clubfoot-karl': watch('Karl Piededuro'),
+  // #1636, the third stage's Brotherhood cast, named in the prose of the
+  // Brotherhood's section of the world page.
+  'anguy': BROTHERHOOD,
+  'lem': BROTHERHOOD,
+  'edric-dayne': BROTHERHOOD,
+  // #1637, the third stage's Jaime, Brienne and Harrenhal cast.
+  'qyburn': characters('Qyburn'),
+  // #1640, the third stage's Dragonstone cast. Edric and Alester are named
+  // only in the prose of Melisandre's and Salladhor's sections.
+  'edric-storm': characters('Melisandre di Asshai'),
+  'alester-florent': characters('Salladhor Saan'),
+  // #1641, Bran's road and Theon.
+  'myranda': characters('Myranda'),
 }
 
 /**
@@ -79,4 +96,27 @@ export const THRONES_STAGE_3_KEPT = {
   'jarl': 'Jarl',
   'small-paul': 'Small Paul',
   'ollo-lophand': 'Ollo Lophand',
+  // #1636. Anguy, Lem and Edric Dayne are named in the prose of the
+  // Brotherhood's section, with no heading of their own. Italian Wikipedia
+  // gives Tom only as "Tom Settecorde" and names none of the others; these
+  // are the Italian Game of Thrones Wiki's forms, kept until the Mondadori
+  // ones are checked.
+  'anguy': 'Anguy',
+  'lem': 'Lem',
+  'edric-dayne': 'Edric Dayne',
+  'tom-of-sevenstreams': 'Tom di Settecorrenti',
+  'jack-be-lucky': 'Jack Fortunello',
+  'greenbeard': 'Barbaverde',
+  'mad-huntsman': 'Cacciatore Pazzo',
+  'ghost-of-high-heart': 'Fantasma di Cuore Alto',
+  // #1637. Italian Wikipedia has no entry for Steelshanks Walton, whose name
+  // stays as it is until the Mondadori form is checked.
+  'steelshanks-walton': 'Steelshanks Walton',
+  // #1640. Italian Wikipedia names Edric Storm and Alester Florent only in
+  // other characters' prose and has no entry for Axell Florent, whose name
+  // the Italian Game of Thrones Wiki keeps; none is checked against the
+  // Mondadori edition.
+  'edric-storm': 'Edric Storm',
+  'alester-florent': 'Alester Florent',
+  'axell-florent': 'Axell Florent',
 }

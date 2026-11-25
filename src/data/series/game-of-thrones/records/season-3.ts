@@ -799,6 +799,381 @@ export const season3: ThronesSaga = {
         },
       ],
     },
+    // #1636: Arya, the Brotherhood Without Banners and the Hound.
+    'anguy': {
+      role: {
+        it: 'Arciere della Fratellanza senza vessilli',
+        en: 'Archer of the Brotherhood Without Banners',
+      },
+      log: {
+        it: 'Con Tom di Settecorrenti e Lem trova Arya Stark, Gendry e Frittella vicino al fiume, e i fuorilegge li portano a una locanda.',
+        en: 'With Tom of Sevenstreams and Lem he comes upon Arya Stark, Gendry and Hot Pie by the river, and the outlaws take them to an inn.',
+      },
+      status: [
+        { episode: 22, chapter: 157, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 22,
+          chapter: 157,
+          source: 'chapter',
+          value: {
+            it: 'Fratellanza senza vessilli',
+            en: 'Brotherhood Without Banners',
+          },
+        },
+      ],
+    },
+    'tom-of-sevenstreams': {
+      role: {
+        it: 'Cantante della Fratellanza senza vessilli',
+        en: 'Singer of the Brotherhood Without Banners',
+      },
+      log: {
+        it: 'Con Lem e Anguy trova Arya Stark, Gendry e Frittella vicino al fiume e li porta a una locanda, cantando lungo la strada. Lì dà ad Arya un foglio che promette di pagare i loro cavalli dopo la guerra.',
+        en: 'With Lem and Anguy he comes upon Arya Stark, Gendry and Hot Pie by the river and takes them to an inn, singing on the way. There he gives Arya a paper that promises to pay for their horses after the war.',
+      },
+      status: [
+        { episode: 22, chapter: 157, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 22,
+          chapter: 157,
+          source: 'chapter',
+          value: {
+            it: 'Fratellanza senza vessilli',
+            en: 'Brotherhood Without Banners',
+          },
+        },
+      ],
+    },
+    'lem': {
+      role: {
+        it: 'Fuorilegge della Fratellanza senza vessilli',
+        en: 'Outlaw of the Brotherhood Without Banners',
+      },
+      log: {
+        it: 'Con Tom di Settecorrenti e Anguy trova Arya Stark, Gendry e Frittella vicino al fiume. Alla locanda Arya prova a scappare e lo colpisce in faccia con un boccale.',
+        en: 'With Tom of Sevenstreams and Anguy he comes upon Arya Stark, Gendry and Hot Pie by the river. At the inn Arya tries to run and hits him in the face with a tankard.',
+      },
+      status: [
+        { episode: 22, chapter: 157, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 22,
+          chapter: 157,
+          source: 'chapter',
+          value: {
+            it: 'Fratellanza senza vessilli',
+            en: 'Brotherhood Without Banners',
+          },
+        },
+      ],
+    },
+    'jack-be-lucky': {
+      role: {
+        it: 'Fuorilegge della Fratellanza senza vessilli',
+        en: 'Outlaw of the Brotherhood Without Banners',
+      },
+      log: {
+        it: 'Cavalca con i fuorilegge che portano Arya Stark da lord Beric. In un villaggio che sembra abbandonato suona il corno, e gli abitanti escono ad accogliere la banda.',
+        en: 'He rides with the outlaws who are taking Arya Stark to Lord Beric. At a village that looks abandoned he blows his horn, and its people come out to greet the band.',
+      },
+      status: [
+        { episode: 22, chapter: 161, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 22,
+          chapter: 161,
+          source: 'chapter',
+          value: {
+            it: 'Fratellanza senza vessilli',
+            en: 'Brotherhood Without Banners',
+          },
+        },
+      ],
+    },
+    'greenbeard': {
+      role: {
+        it: 'Fuorilegge della Fratellanza senza vessilli',
+        en: 'Outlaw of the Brotherhood Without Banners',
+      },
+      log: {
+        it: 'Cavalca con i fuorilegge che portano Arya Stark da lord Beric. Con Tom e Lem ascolta in disparte i sogni di una vecchia nana.',
+        en: 'He rides with the outlaws who are taking Arya Stark to Lord Beric. With Tom and Lem he listens in private to the dreams of an old dwarf woman.',
+      },
+      status: [
+        { episode: 22, chapter: 166, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 22,
+          chapter: 166,
+          source: 'chapter',
+          value: {
+            it: 'Fratellanza senza vessilli',
+            en: 'Brotherhood Without Banners',
+          },
+        },
+      ],
+    },
+    'mad-huntsman': {
+      role: { it: 'Cacciatore', en: 'Huntsman' },
+      log: {
+        it: 'Cattura gli uomini del nord che hanno saccheggiato le terre intorno e li lascia morire di fame nelle gabbie. Una notte porta in città in catene un nuovo prigioniero, Sandor Clegane.',
+        en: 'He catches the northmen who have plundered the lands around and leaves them to starve in cages. One night he brings a new prisoner into the town in chains: Sandor Clegane.',
+      },
+      status: [
+        { episode: 24, chapter: 173, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        // At his gate he keeps his own cages and his own prisoner. He hands
+        // Sandor over to the outlaws and stands with them at the hollow hill
+        // in Arya VI (chapter 178); episode 25 only orders it.
+        {
+          episode: 24,
+          chapter: 173,
+          source: 'chapter',
+          value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
+        },
+        {
+          episode: 25,
+          chapter: 178,
+          source: 'chapter',
+          value: {
+            it: 'Fratellanza senza vessilli',
+            en: 'Brotherhood Without Banners',
+          },
+        },
+      ],
+    },
+    'edric-dayne': {
+      role: {
+        it: 'Lord di Stelle al Tramonto, scudiero di Beric Dondarrion',
+        en: 'Lord of Starfall, squire to Beric Dondarrion',
+      },
+      log: {
+        it: 'È lo scudiero di lord Beric e lo chiamano Ned, come il padre di Arya. Le racconta di aver visto Eddard Stark al torneo del Primo Cavaliere, e che il padre di Arya amava sua zia Ashara. Harwin non lo smentisce.',
+        en: 'He is Lord Beric’s squire, and he is called Ned, like Arya’s father. He tells Arya he saw Eddard Stark at the Hand’s tourney, and that her father loved his aunt Ashara. Harwin does not deny it.',
+      },
+      status: [
+        { episode: 27, chapter: 187, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 27,
+          chapter: 187,
+          source: 'chapter',
+          value: {
+            it: 'Fratellanza senza vessilli',
+            en: 'Brotherhood Without Banners',
+          },
+        },
+      ],
+    },
+    'ghost-of-high-heart': {
+      role: { it: 'Veggente di Cuore Alto', en: 'Seer of High Heart' },
+      log: {
+        it: 'Quando i fuorilegge tornano a Cuore Alto, racconta i suoi sogni a lord Beric e chiede una canzone in cambio. Caccia via Arya, poi dice loro di cercare sua madre alle Torri Gemelle, dove ci sarà un matrimonio.',
+        en: 'When the outlaws come back to High Heart, she tells Lord Beric her dreams and asks for a song in payment. She sends Arya away, then tells them to seek her mother at the Twins, where there is to be a wedding.',
+      },
+      status: [
+        { episode: 27, chapter: 187, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 27,
+          chapter: 187,
+          source: 'chapter',
+          value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
+        },
+      ],
+    },
+    // #1637: Jaime, Brienne and Harrenhal.
+    'qyburn': {
+      // The gate texts hold what both media tell at his gates: the show's
+      // 21 has him give his name to Robb while Talisa tends his wound, the
+      // books' 175 has Roose Bolton set him to clean Jaime's stump. What he
+      // is comes as dated steps, by medium.
+      role: [
+        {
+          episode: 21,
+          chapter: 175,
+          value: {
+            it: 'Con gli uomini del Nord a Harrenhal',
+            en: 'With the northmen at Harrenhal',
+          },
+        },
+        // Books only: Roose Bolton has him cleanse and bandage Jaime's
+        // stump, in Jaime IV (chapter 175), his gate. Episode 21 only orders
+        // it. That he was a maester is not in the cached chapters through
+        // 196, so no step tells it.
+        {
+          episode: 21,
+          chapter: 175,
+          source: 'chapter',
+          value: {
+            it: 'Guaritore al servizio di Roose Bolton',
+            en: 'Healer in Roose Bolton’s service',
+          },
+        },
+        // Show only: he treats Jaime's stump, and tells him the Citadel
+        // stripped him of his chain for his experiments, in "Kissed by Fire"
+        // (episode 25). Chapter 175 only orders it.
+        {
+          episode: 25,
+          chapter: 175,
+          source: 'episode',
+          value: {
+            it: 'Guaritore privato della catena di maestro',
+            en: 'Healer stripped of his maester’s chain',
+          },
+        },
+      ],
+      log: {
+        it: 'Si trova a Harrenhal mentre il castello è in mano agli uomini del Nord.',
+        en: 'He is at Harrenhal while the northmen hold the castle.',
+      },
+      status: [{ episode: 21, chapter: 175, value: 'alive' }],
+      affiliation: [
+        // Show only: the northmen find him alive among the prisoners Ser
+        // Gregor's men put to the sword, and he gives Robb his name, in
+        // "Valar Dohaeris" (episode 21).
+        {
+          episode: 21,
+          chapter: 175,
+          source: 'episode',
+          value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
+        },
+        // Roose Bolton has him tend Jaime's stump, in "Kissed by Fire"
+        // (episode 25; the show's Qyburn stays at Harrenhal when Robb leaves
+        // Roose in command) and Jaime IV (chapter 175), the books' gate.
+        {
+          episode: 25,
+          chapter: 175,
+          value: {
+            it: 'Al servizio di Roose Bolton',
+            en: 'In Roose Bolton’s service',
+          },
+        },
+      ],
+    },
+    'steelshanks-walton': {
+      role: {
+        it: 'Capitano al servizio di Roose Bolton',
+        en: 'Captain in Roose Bolton’s service',
+      },
+      log: {
+        it: 'Guida i duecento uomini di Forte Terrore che scortano Jaime Lannister ad Approdo del Re. Quando Jaime lo costringe a tornare a Harrenhal per Brienne, i suoi uomini abbattono l’orso con le balestre.',
+        en: 'He leads the two hundred Dreadfort men who escort Jaime Lannister to King’s Landing. When Jaime makes him turn back to Harrenhal for Brienne, his men bring down the bear with their crossbows.',
+      },
+      status: [
+        { episode: 27, chapter: 188, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 27,
+          chapter: 188,
+          source: 'chapter',
+          value: { it: 'Casa Bolton', en: 'House Bolton' },
+        },
+      ],
+    },
+    // #1640: Dragonstone. The three are the books' alone, and each opens at
+    // Davos IV (chapter 180), the first chapter whose synopsis has his name
+    // in speech (see the entries).
+    'axell-florent': {
+      role: {
+        it: 'Castellano di Roccia del Drago',
+        en: 'Castellan of Dragonstone',
+      },
+      log: {
+        it: 'Zio della regina Selyse, è tra gli uomini della regina, i seguaci del Signore della Luce. Quando Davos Seaworth torna a Roccia del Drago lo arresta per aver tramato contro Melisandre. Vuole diventare Primo Cavaliere del re, e minaccia Davos se non lo aiuta.',
+        en: 'Queen Selyse’s uncle, he is one of the queen’s men, the followers of the Lord of Light. When Davos Seaworth comes back to Dragonstone he arrests him for plotting against Melisandre. He wants to be the king’s Hand, and threatens Davos if he does not help him.',
+      },
+      status: [
+        { episode: 28, chapter: 180, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 28,
+          chapter: 180,
+          source: 'chapter',
+          value: { it: 'Casa Florent', en: 'House Florent' },
+        },
+      ],
+    },
+    'alester-florent': {
+      role: {
+        it: 'Ex Primo Cavaliere di re Stannis',
+        en: 'Former Hand of King Stannis',
+      },
+      log: {
+        it: 'Dopo la battaglia delle Acque Nere Stannis lo nomina suo Primo Cavaliere. Scrive a Tywin Lannister per offrire la pace a nome di Stannis, e per questo è gettato in prigione come traditore. Stannis lo condanna a morte.',
+        en: 'After the battle on the Blackwater Stannis makes him his Hand. He writes to Tywin Lannister to offer peace in Stannis’s name, and is thrown in the dungeon as a traitor for it. Stannis condemns him to death.',
+      },
+      status: [
+        { episode: 28, chapter: 180, source: 'chapter', value: 'imprisoned' },
+      ],
+      affiliation: [
+        {
+          episode: 28,
+          chapter: 180,
+          source: 'chapter',
+          value: { it: 'Casa Florent', en: 'House Florent' },
+        },
+      ],
+    },
+    'edric-storm': {
+      role: {
+        it: 'Figlio bastardo di re Robert',
+        en: 'King Robert’s bastard son',
+      },
+      log: {
+        it: 'Vive a Roccia del Drago e gioca con la principessa Shireen e il suo giullare. Melisandre vuole bruciarlo, perché nel suo sangue c’è il potere di un re. Stannis rifiuta, ma getta nel fuoco tre sanguisughe piene del suo sangue, nominando i tre re rivali.',
+        en: 'He lives on Dragonstone and plays with Princess Shireen and her fool. Melisandre wants to burn him for the power of a king’s blood in him. Stannis refuses, but throws three leeches full of his blood into the fire, naming the three rival kings.',
+      },
+      status: [
+        { episode: 28, chapter: 180, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 28,
+          chapter: 180,
+          source: 'chapter',
+          value: { it: 'Casa Baratheon', en: 'House Baratheon' },
+        },
+      ],
+    },
+    // #1641: Bran's road and Theon.
+    // The show alone, so chapter 284 (Reek I of A Dance with Dragons, the
+    // chapter the scene adapts) only orders every entry. Episode 27 shows
+    // only the scene: whom she serves and her bond with Ramsay are told in
+    // season 4, steps for the stage that reaches it.
+    'myranda': {
+      role: {
+        it: 'Giovane donna nella prigione di Theon',
+        en: 'Young woman at Theon’s prison',
+      },
+      log: {
+        it: 'Con un’altra ragazza, Violet, libera Theon dalla croce a cui è legato, lo stende su un letto e lo seduce. Poi entra il suo carceriere, che fa tenere fermo Theon per evirarlo.',
+        en: 'With another young woman, Violet, she frees Theon from the cross he is bound to, lays him on a bed and seduces him. Then his captor comes in and has Theon held down to geld him.',
+      },
+      status: [
+        { episode: 27, chapter: 284, source: 'episode', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 27,
+          chapter: 284,
+          source: 'episode',
+          value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
+        },
+      ],
+    },
   },
   entries: [
     // #1639: Essos, Daenerys at Astapor and Yunkai.
@@ -1383,6 +1758,262 @@ export const season3: ThronesSaga = {
         en: 'A steward of the Night’s Watch with a club foot.',
       },
       visual: { art: 'clubfoot-karl', tint: 'violet' },
+    },
+    // #1636: Arya, the Brotherhood Without Banners and the Hound. Every
+    // record here is the books' alone: the show's outlaws are Thoros, Beric
+    // and Anguy, and no quote read has Anguy's name said on screen (owner
+    // check). Each one's episode only orders it.
+    //
+    // Books: Arya II (site chapter 157), three outlaws come upon Arya,
+    // Gendry and Hot Pie by the Trident, and Hot Pie gives his name while
+    // the other two give false ones. Anguy wins the archery at the Hand's
+    // tourney in Eddard VII of A Game of Thrones (chapter 31), where Alyn's
+    // chronicle names him (`nameSaidAt`); the record opens where he is next
+    // seen, later and so safe (owner check: 31). The show's Anguy rides with
+    // Thoros from "Dark Wings, Dark Words" (episode 22), which orders him.
+    {
+      id: 'anguy',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 22,
+      revealedAtChapter: 157,
+      nameSaidAt: 5,
+      name: { it: 'Anguy', en: 'Anguy' },
+      summary: {
+        it: 'Un arciere della Fratellanza senza vessilli, i fuorilegge che combattono in nome del defunto re Robert.',
+        en: 'An archer of the Brotherhood Without Banners, outlaws who fight in the name of the late King Robert.',
+      },
+      visual: { art: 'anguy', tint: 'wine' },
+    },
+    // Books: Arya II (site chapter 157), the same scene; he sings on the
+    // road to the inn and gives Arya a paper for their horses.
+    {
+      id: 'tom-of-sevenstreams',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 22,
+      revealedAtChapter: 157,
+      name: { it: 'Tom di Settecorrenti', en: 'Tom of Sevenstreams' },
+      summary: {
+        it: 'Un cantante, uno dei fuorilegge della Fratellanza senza vessilli.',
+        en: 'A singer, one of the outlaws of the Brotherhood Without Banners.',
+      },
+      visual: { art: 'tom-of-sevenstreams', tint: 'ocher' },
+    },
+    // Books: Arya II (site chapter 157), the same scene; Arya hits him in
+    // the face with a tankard at the inn. The show's Lem appears only in
+    // season 6, where no line says his name; episode 22 orders him.
+    {
+      id: 'lem',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 22,
+      revealedAtChapter: 157,
+      name: { it: 'Lem', en: 'Lem' },
+      summary: {
+        it: 'Un fuorilegge grande e grosso dal mantello giallo, uno della Fratellanza senza vessilli.',
+        en: 'A big outlaw in a yellow cloak, one of the Brotherhood Without Banners.',
+      },
+      visual: { art: 'lem', tint: 'yellow' },
+    },
+    // Books: Arya III (site chapter 161), he blows his horn at a village
+    // that looks abandoned, and its people come out to greet the outlaws.
+    // Arya II (157) lists him among the men who come into the inn, with no
+    // line read that names him (owner check).
+    {
+      id: 'jack-be-lucky',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 22,
+      revealedAtChapter: 161,
+      name: { it: 'Jack Fortunello', en: 'Jack-Be-Lucky' },
+      summary: {
+        it: 'Un fuorilegge della Fratellanza senza vessilli, quello che suona il corno della banda.',
+        en: 'An outlaw of the Brotherhood Without Banners, the one who blows the band’s horn.',
+      },
+      visual: { art: 'jack-be-lucky', tint: 'sand' },
+    },
+    // Books: Arya IV (site chapter 166), an old dwarf woman speaks in
+    // private to Lem, Tom and Greenbeard. Arya II and III (157, 161) list
+    // him among the outlaws, with no line read that names him (owner
+    // check).
+    {
+      id: 'greenbeard',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 22,
+      revealedAtChapter: 166,
+      name: { it: 'Barbaverde', en: 'Greenbeard' },
+      summary: {
+        it: 'Un uomo dalla barba verde, uno dei fuorilegge della Fratellanza senza vessilli.',
+        en: 'A man with a green beard, one of the outlaws of the Brotherhood Without Banners.',
+      },
+      visual: { art: 'greenbeard', tint: 'green' },
+    },
+    // Books: Arya V (site chapter 173), the northmen starving in cages were
+    // caught by the Mad Huntsman, and in the night he brings Sandor Clegane
+    // into the town in chains. Episode 24 orders him.
+    {
+      id: 'mad-huntsman',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 24,
+      revealedAtChapter: 173,
+      name: { it: 'Cacciatore Pazzo', en: 'Mad Huntsman' },
+      summary: {
+        it: 'Un cacciatore delle Terre dei Fiumi che dà la caccia agli uomini e li lascia nelle gabbie.',
+        en: 'A huntsman of the riverlands who hunts down men and leaves them in cages.',
+      },
+      visual: { art: 'mad-huntsman', tint: 'orange' },
+    },
+    // Books: Arya VIII (site chapter 187), Arya talks with Edric Dayne,
+    // called Ned, the young Lord of Starfall. Arya VI and VII (178, 183)
+    // list him at the hollow hill, with no line read that gives his name
+    // (owner check). Episode 27 orders him.
+    {
+      id: 'edric-dayne',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 27,
+      revealedAtChapter: 187,
+      name: { it: 'Edric Dayne', en: 'Edric Dayne' },
+      summary: {
+        it: 'Il giovane lord di Stelle al Tramonto, scudiero di lord Beric Dondarrion tra i fuorilegge.',
+        en: 'The young Lord of Starfall, Lord Beric Dondarrion’s squire among the outlaws.',
+      },
+      visual: { art: 'edric-dayne', tint: 'lavender' },
+    },
+    // Books: Arya VIII (site chapter 187), the outlaws come back to High
+    // Heart and the ghost of High Heart tells Lord Beric her dreams. Arya
+    // IV (166) has her as an old dwarf woman, with no line read that calls
+    // her by the name (owner check). Episode 27 orders her.
+    {
+      id: 'ghost-of-high-heart',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 27,
+      revealedAtChapter: 187,
+      name: { it: 'Fantasma di Cuore Alto', en: 'Ghost of High Heart' },
+      summary: {
+        it: 'Una minuscola vecchia che vive tra i ceppi degli alberi del cuore di Cuore Alto e sogna quello che verrà.',
+        en: 'A tiny old woman who lives among the weirwood stumps of High Heart and dreams of what is to come.',
+      },
+      visual: { art: 'ghost-of-high-heart', tint: 'ivory' },
+    },
+    // #1637: Jaime, Brienne and Harrenhal.
+    //
+    // Show: "Valar Dohaeris" (episode 21), the northmen find him alive at
+    // Harrenhal and he gives Robb his name. Books: Jaime IV (site chapter
+    // 175), Roose Bolton has Qyburn clean and bind Jaime's stump.
+    {
+      id: 'qyburn',
+      kind: 'character',
+      revealedAtEpisode: 21,
+      revealedAtChapter: 175,
+      // Episode 21 adapts chapters up to about 167; Jaime IV (175) is
+      // adapted in episode 25, so the pair vouches for no chapter table row.
+      unanchored: true,
+      name: { it: 'Qyburn', en: 'Qyburn' },
+      summary: {
+        it: 'Un uomo a Harrenhal, mentre il castello è in mano agli uomini del Nord.',
+        en: 'A man at Harrenhal while the northmen hold the castle.',
+      },
+      visual: { art: 'qyburn', tint: 'ivory' },
+    },
+    // Books only: Jaime VI (site chapter 188), he leads Jaime's escort out
+    // of Harrenhal. Jaime IV (175) lists him in the hall without naming him
+    // in its synopsis. The show's Steelshanks is named only in narration in
+    // the pages read, so episode 27 only orders him, as Rorge's record does.
+    {
+      id: 'steelshanks-walton',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 27,
+      revealedAtChapter: 188,
+      name: { it: 'Steelshanks Walton', en: 'Steelshanks Walton' },
+      summary: {
+        it: 'Un capitano al servizio di Roose Bolton.',
+        en: 'A captain in Roose Bolton’s service.',
+      },
+      visual: { art: 'steelshanks-walton', tint: 'red' },
+    },
+    // #1640: Dragonstone, the books' new cast. The show has none of the
+    // three in season 3: its Gendry takes Edric's part, and its Axell is
+    // first seen at his burning in "The Lion and the Rose" (episode 32),
+    // named in narration only. "Second Sons" (episode 28), which adapts
+    // Davos IV, only orders them.
+    //
+    // Davos II (chapter 154): Axell takes Davos into custody on his return,
+    // and Davos meets Edric playing with Shireen; the synopsis names both in
+    // narration only (owner checks). Davos III (chapter 169): Axell throws
+    // Alester into Davos's cell, also in narration. Davos IV (chapter 180)
+    // is the first chapter whose synopsis has their names in speech:
+    // Stannis has Axell tell Davos his plan and proclaims that Alester will
+    // die for treason, and Melisandre asks for Edric to be burned (A Wiki of
+    // Ice and Fire, A Storm of Swords-Chapters 10, 25 and 36). Axell and
+    // Alester are seen in A Clash of Kings too, where the second stage left
+    // them out as bit parts.
+    {
+      id: 'axell-florent',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 28,
+      revealedAtChapter: 180,
+      name: { it: 'Axell Florent', en: 'Axell Florent' },
+      summary: {
+        it: 'Uno zio della regina Selyse, castellano di Roccia del Drago.',
+        en: 'An uncle of Queen Selyse, castellan of Dragonstone.',
+      },
+      visual: { art: 'axell-florent', tint: 'red' },
+    },
+    // A Clash of Kings' Davos II (site chapter 116) has Cortnay Penrose mock
+    // him at the parley, a story only the books tell, ordered at episode 14.
+    {
+      id: 'alester-florent',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 28,
+      revealedAtChapter: 180,
+      nameSaidAt: 14,
+      name: { it: 'Alester Florent', en: 'Alester Florent' },
+      summary: {
+        it: 'Il capo di Casa Florent, zio della regina Selyse.',
+        en: 'The head of House Florent, Queen Selyse’s uncle.',
+      },
+      visual: { art: 'alester-florent', tint: 'teal' },
+    },
+    {
+      id: 'edric-storm',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 28,
+      revealedAtChapter: 180,
+      name: { it: 'Edric Storm', en: 'Edric Storm' },
+      summary: {
+        it: 'Un figlio bastardo di re Robert, cresciuto a Capo Tempesta.',
+        en: 'A bastard son of King Robert, raised at Storm’s End.',
+      },
+      visual: { art: 'edric-storm', tint: 'yellow' },
+    },
+    // #1641: Bran's road and Theon.
+    //
+    // Show only: in "The Bear and the Maiden Fair" (episode 27) Violet
+    // tells Theon that "Myranda knows what she's doing" (quoted on the Game
+    // of Thrones Wiki). The books' only Myranda is Myranda Royce of the
+    // Vale, another person; Reek I of A Dance with Dragons (chapter 284),
+    // the chapter the scene adapts, only orders her.
+    {
+      id: 'myranda',
+      kind: 'character',
+      source: 'episode',
+      revealedAtEpisode: 27,
+      revealedAtChapter: 284,
+      name: { it: 'Myranda', en: 'Myranda' },
+      summary: {
+        it: 'Una giovane donna che, con Violet, seduce Theon Greyjoy prigioniero.',
+        en: 'A young woman who, with Violet, seduces the captive Theon Greyjoy.',
+      },
+      visual: { art: 'myranda', tint: 'pink' },
     },
     // #1630: the places a scene of the stage is set in, each at its first
     // scene in each medium, and the places both media name and neither

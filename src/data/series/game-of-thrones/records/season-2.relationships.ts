@@ -4526,7 +4526,7 @@ export const season2Relationships = {
   ],
   'ramsay-snow': [
     {
-      episode: 32,
+      episode: 30,
       chapter: 140,
       source: 'chapter',
       value: [winterfell.ramTheon, winterfell.ramRoose, winterfell.ramRodrik],

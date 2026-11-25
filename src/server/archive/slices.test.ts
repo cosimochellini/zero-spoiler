@@ -723,30 +723,47 @@ function filed(id: string): Entity {
   return entity
 }
 
+/** A stage's count in one unit: its chapter, or its episode. */
+function countIn(
+  unit: 'chapter' | 'episode',
+  { chapter = 0, episode }: { chapter?: number; episode: number },
+): number {
+  return unit === 'chapter' ? chapter : episode
+}
+
+/** A bookmark at this count of one unit. */
+function bookmarkIn(unit: 'chapter' | 'episode', count: number): Bookmark {
+  return unit === 'chapter' ? { mode: 'chapter', chapter: count } : ep(count)
+}
+
 describe('every record drawn again later in the story', () => {
   // Read from the data, on Luffy's model: each stage from its own episode and
   // its own chapter, the drawing before it one short of either, and the first
   // drawing for a reader the timelines cannot place.
+  // A stage one medium alone tells (`source`, #1683) is walked in that
+  // medium's unit only, after the stage before it in that unit.
   it.each(Object.keys(REDRAWINGS))('walks %s through each stage', (id) => {
     const record = filed(id)
     const first = DRAWN[record.visual.art]
-    const stages = REDRAWINGS[id] ?? []
     const drawnAt = (bookmark: Bookmark | null): Stroke[] =>
       recordOf(record, readerFor(bookmark, 'en')).visual.strokes
 
     expect(record.visual.art).toBe(id)
     expect(drawnAt(null)).toBe(first)
 
-    for (const [index, { chapter = 0, episode, value }] of stages.entries()) {
-      const before = index === 0 ? first : stages[index - 1]?.value
-      const label = `ep ${String(episode)} / ch ${String(chapter)}`
-
-      expect(drawnAt(ep(episode - 1)), label).toBe(before)
-      expect(drawnAt(ep(episode)), label).toBe(value)
-      expect(drawnAt({ mode: 'chapter', chapter: chapter - 1 }), label).toBe(
-        before,
+    for (const unit of ['episode', 'chapter'] as const) {
+      const stages = (REDRAWINGS[id] ?? []).filter(
+        ({ source }) => (source ?? unit) === unit,
       )
-      expect(drawnAt({ mode: 'chapter', chapter }), label).toBe(value)
+
+      for (const [index, stage] of stages.entries()) {
+        const before = index === 0 ? first : stages[index - 1]?.value
+        const count = countIn(unit, stage)
+        const label = `${unit} ${String(count)}`
+
+        expect(drawnAt(bookmarkIn(unit, count - 1)), label).toBe(before)
+        expect(drawnAt(bookmarkIn(unit, count)), label).toBe(stage.value)
+      }
     }
   })
 })

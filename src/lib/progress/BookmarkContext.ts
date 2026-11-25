@@ -53,6 +53,15 @@ export interface BookmarkContextValue {
 export const BookmarkContext = createContext<BookmarkContextValue | null>(null)
 
 /**
+ * The unit a record page drawn with no bookmark counts in, when it is not
+ * the episodes a reader with none counts in elsewhere: chapters, on the page
+ * of a record only the manga or the books tell (`PageUnit`, #1431). The page
+ * provides it from its payload, so the server renders it; `useThreshold`
+ * and the bookmark form read it.
+ */
+export const PageUnitContext = createContext<'chapter' | undefined>(undefined)
+
+/**
  * The reader's bookmark and the setter that moves it. Throws outside the
  * provider rather than defaulting to "nothing read yet", because a silent
  * default would uncover the whole archive.
@@ -111,7 +120,8 @@ export function useThreshold(
   const own = useSeriesT(slug ?? 'one-piece')
   const { bookmark } = useBookmark()
   const series = useBookmarkSeries()
-  const mode = modeOf(bookmark)
+  const unit = use(PageUnitContext)
+  const mode = (bookmark === null ? unit : undefined) ?? modeOf(bookmark)
 
   return useMemo(() => {
     if (slug === undefined) {

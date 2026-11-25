@@ -11,7 +11,7 @@ import type { DocumentHead } from '~/lib/view/records'
 import { openUsersOf } from './fruits.server'
 import { headFor, type HeadKeys } from './head.server'
 import { abilityOf, deferredOf } from './project.server'
-import type { Reader } from './reader.server'
+import { pageUnit, type Reader } from './reader.server'
 
 /**
  * What the abilities page and an ability's own page are allowed to know:
@@ -104,6 +104,9 @@ export function abilityPage(id: string, r: Reader): AbilityPage | undefined {
 
   return {
     head: headFor(entity, ABILITY_HEAD, r),
-    detail: { slot: r.slot(entity, (seen) => openAbilityOf(seen, r)) },
+    detail: {
+      ...pageUnit(r),
+      slot: r.slot(entity, (seen) => openAbilityOf(seen, r)),
+    },
   }
 }

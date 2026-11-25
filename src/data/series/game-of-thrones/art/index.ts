@@ -186,10 +186,10 @@ const PERSON: Stroke[] = [
  * cast, in `north.ts` and `ironborn.ts` (#1473), Wall cast, the rangers in
  * `wall.ts` and the wildlings in `wildlings.ts` (#1474), and Essos and Qarth
  * cast, in `essos.ts` (#1475). The seasons' own, which the home page's
- * frame draws, are in `seasons.ts` (#1601). The third stage's casts (#1634,
- * #1635, #1638, #1639) show `PERSON` until their drawing children draw
- * them. `satisfies` rather than an annotation, so `ArtId` below stays the
- * literal keys.
+ * frame draws, are in `seasons.ts` (#1601). The third stage's casts
+ * (#1634–#1641) show `PERSON` until their drawing children draw them.
+ * `satisfies` rather than an annotation, so `ArtId` below stays the literal
+ * keys.
  */
 export const DRAWINGS = {
   ...WINTERFELL_DRAWINGS,
@@ -248,6 +248,25 @@ export const DRAWINGS = {
   'dirk': PERSON,
   'ollo-lophand': PERSON,
   'clubfoot-karl': PERSON,
+  // #1636: Arya, the Brotherhood Without Banners and the Hound.
+  'anguy': PERSON,
+  'tom-of-sevenstreams': PERSON,
+  'lem': PERSON,
+  'jack-be-lucky': PERSON,
+  'greenbeard': PERSON,
+  'mad-huntsman': PERSON,
+  'edric-dayne': PERSON,
+  'ghost-of-high-heart': PERSON,
+  // #1637, the third stage's Jaime, Brienne and Harrenhal cast, until its
+  // drawing child draws it.
+  'qyburn': PERSON,
+  'steelshanks-walton': PERSON,
+  // #1640: the third stage's Dragonstone cast.
+  'axell-florent': PERSON,
+  'alester-florent': PERSON,
+  'edric-storm': PERSON,
+  // #1641: Bran's road and Theon.
+  'myranda': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */

@@ -673,12 +673,14 @@ export const season2: ThronesSaga = {
     // Books: Theon VI (site chapter 140), the leader of the Dreadfort men
     // takes off his helm and names himself Ramsay Snow. From Bran V (109)
     // he is at Winterfell as the captive called Reek, an owner check.
-    // Show: unnamed from episode 22; "The Lion and the Rose" (episode 32)
-    // is the first episode the Game of Thrones Wiki cites for his name.
+    // Show: unnamed from episode 22, credited only as "Boy"; in "Mhysa"
+    // (episode 30) Roose tells Walder Frey that "Ramsay delivered the
+    // terms" to the ironborn at Winterfell (quoted on the Game of Thrones
+    // Wiki), the first line read that says his name (#1641; #1466 had 32).
     {
       id: 'ramsay-snow',
       kind: 'character',
-      revealedAtEpisode: 32,
+      revealedAtEpisode: 30,
       revealedAtChapter: 140,
       name: { it: 'Ramsay Snow', en: 'Ramsay Snow' },
       summary: {
@@ -1772,6 +1774,34 @@ export const season2: ThronesSaga = {
             en: 'Commander of King Stannis’s fleet',
           },
         },
+        // #1640, show only: the fleet burns on the Blackwater, and in
+        // "Valar Dohaeris" (episode 21) Salladhor Saan brings him back to
+        // Dragonstone with no command (Game of Thrones Wiki, Davos
+        // Seaworth). The books never gave him the fleet; Davos II (chapter
+        // 154), which the episode adapts, only orders it.
+        {
+          episode: 21,
+          chapter: 154,
+          source: 'episode',
+          value: {
+            it: 'Cavaliere al servizio di re Stannis',
+            en: 'Knight in King Stannis’s service',
+          },
+        },
+        // #1640, books only: in Davos IV (chapter 180) Stannis raises him to
+        // Lord of the Rainwood, Admiral of the Narrow Sea and Hand of the
+        // King (A Wiki of Ice and Fire, A Storm of Swords-Chapter 36). The
+        // show does not name him Hand in season 3; "Second Sons" (episode
+        // 28), which adapts the chapter, only orders it.
+        {
+          episode: 28,
+          chapter: 180,
+          source: 'chapter',
+          value: {
+            it: 'Primo Cavaliere di re Stannis',
+            en: 'Hand of King Stannis',
+          },
+        },
       ],
       log: {
         it: 'È tra gli uomini più fidati di Stannis Baratheon, e uno dei pochi che gli parlano con franchezza.',
@@ -1781,8 +1811,21 @@ export const season2: ThronesSaga = {
         { episode: 11, chapter: 74, value: 'alive' },
         // His ship burns in the wildfire on the Blackwater and he goes into
         // the water: "Blackwater" (episode 19) and Davos III (chapter 132).
-        // Neither stage tells whether he lives.
+        // The second stage does not tell whether he lives.
         { episode: 19, chapter: 132, value: 'missing' },
+        // #1640. Books: Davos I (chapter 149) has him alive on a rock in the
+        // bay, where a Lysene galley of Salladhor's picks him up (A Wiki of
+        // Ice and Fire, A Storm of Swords-Chapter 5). The show rescues and
+        // jails him in the same episode, so episode 21 only orders it.
+        { episode: 21, chapter: 149, source: 'chapter', value: 'alive' },
+        // Jailed for plotting against Melisandre: Stannis sends him to the
+        // dungeon after he draws a knife on her in "Valar Dohaeris"
+        // (episode 21, Game of Thrones Wiki, GOT301); Ser Axell Florent
+        // takes him into custody on his return in Davos II (chapter 154).
+        { episode: 21, chapter: 154, value: 'imprisoned' },
+        // Stannis frees him: "Second Sons" (episode 28, GOT308) and Davos
+        // IV (chapter 180), where Axell brings him before the king.
+        { episode: 28, chapter: 180, value: 'alive' },
       ],
       affiliation: [
         {
@@ -1941,7 +1984,18 @@ export const season2: ThronesSaga = {
         it: 'Vince il torneo di re Renly battendo Loras Tyrell, e come ricompensa chiede un posto nella sua guardia.',
         en: 'She wins King Renly’s tourney by defeating Loras Tyrell, and asks for a place in his guard as her reward.',
       },
-      status: [{ episode: 13, chapter: 96, value: 'alive' }],
+      status: [
+        { episode: 13, chapter: 96, value: 'alive' },
+        // Taken with Jaime on the road to King's Landing: by Locke's Bolton
+        // riders in "Dark Wings, Dark Words" (episode 22), by Vargo Hoat's
+        // Brave Companions in Jaime III of A Storm of Swords (chapter 165,
+        // #1637).
+        { episode: 22, chapter: 165, value: 'captured' },
+        // Jaime comes back for her and pulls her out of Harrenhal's bear
+        // pit, and she leaves with him, in "The Bear and the Maiden Fair"
+        // (episode 27) and Jaime VI (chapter 188, #1637).
+        { episode: 27, chapter: 188, value: 'alive' },
+      ],
       affiliation: [
         {
           episode: 13,
@@ -2294,10 +2348,29 @@ export const season2: ThronesSaga = {
     'vargo-hoat': {
       relationships: season2Relationships['vargo-hoat'],
       chronicle: season2Chronicles['vargo-hoat'],
-      role: {
-        it: 'Capo dei Bravi Camerati',
-        en: 'Leader of the Brave Companions',
-      },
+      role: [
+        {
+          episode: 15,
+          chapter: 104,
+          source: 'chapter',
+          value: {
+            it: 'Capo dei Bravi Camerati',
+            en: 'Leader of the Brave Companions',
+          },
+        },
+        // Urswyck tells Jaime that Roose Bolton has named the Goat Lord of
+        // Harrenhal, in Jaime III of A Storm of Swords (chapter 165).
+        // Episode 22 only orders it (#1637).
+        {
+          episode: 22,
+          chapter: 165,
+          source: 'chapter',
+          value: {
+            it: 'Capo dei Bravi Camerati e lord di Harrenhal',
+            en: 'Leader of the Brave Companions and Lord of Harrenhal',
+          },
+        },
+      ],
       log: {
         it: 'I suoi mercenari saccheggiano le terre intorno a Harrenhal per lord Tywin Lannister, e si scontrano spesso con i soldati Lannister.',
         en: 'His sellswords forage and raid around Harrenhal for Lord Tywin Lannister, and often clash with the Lannister soldiers.',
@@ -2573,7 +2646,7 @@ export const season2: ThronesSaga = {
         en: 'His men take Winterfell from the ironborn and set it on fire.',
       },
       status: [
-        { episode: 32, chapter: 140, value: 'alive' },
+        { episode: 30, chapter: 140, value: 'alive' },
         // The show alone: he dies at Winterfell at the end of "Battle of
         // the Bastards" (episode 59). The books leave him alive, so chapter
         // 344 only orders it (#1473).
@@ -2581,7 +2654,7 @@ export const season2: ThronesSaga = {
       ],
       affiliation: [
         {
-          episode: 32,
+          episode: 30,
           chapter: 140,
           value: { it: 'Casa Bolton', en: 'House Bolton' },
         },

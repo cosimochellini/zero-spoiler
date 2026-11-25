@@ -551,3 +551,455 @@ party at Queenscrown and the Nightfort (their own group's child).
   Walker of "Second Sons", the Thenns, the Night's Watch officer.
 - **Only mentioned:** Cotter Pyke, Denys Mallister, Lord Commander Qorgyle,
   Gendel and Gorne, Joramun, Bael the Bard.
+
+## Arya, the Brotherhood Without Banners and the Hound (#1636)
+
+Arya, Gendry and Hot Pie on the road from Harrenhal, the outlaws who take them,
+their holdfasts and their leaders, and the Hound, who ends the stage with Arya
+at the Twins. The book's chapters in the stage are Arya I to XI (147, 157, 161,
+166, 173, 178, 183, 187, 191, 194, 196). Candidates come from their "Appearing"
+lists on A Wiki of Ice and Fire (the shared cache) and from the Firsts, cast
+lists and Riverlands synopses of the season-3 episode pages. No A Wiki of Ice
+and Fire character page was read: the Firecrawl credits had run out, so every
+book gate rests on the chapter synopses, and the naming lines are not quoted.
+Bit parts with one scene in the stage, background outlaws and descriptors are
+omitted, as in seasons 1 and 2 (owner, 2026-11-03 and 2026-11-07).
+
+Counts: 8 filed, all the books' alone; 0 pending; the rest omitted by class
+below; 7 earlier records stepped.
+
+### Filed
+
+Gates as episode / site chapter. Every record here is `source: 'chapter'`: its
+episode only orders it.
+
+| Record                | Show                                                                                                                                                 | Books                                                                                                                                                   |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `anguy`               | none: in six episodes from "Dark Wings, Dark Words" (22), but no quote or synopsis read has his name said (owner check); 22 orders him               | 157, Arya II: with Tom and Lem he comes upon Arya, Gendry and Hot Pie, and a shot of his bow makes them come along (Chapter 13)                         |
+| `tom-of-sevenstreams` | none: the show has no Tom; 22 orders him                                                                                                             | 157, Arya II: the same scene; he sings on the road and gives Arya a paper for the horses (Chapter 13)                                                   |
+| `lem`                 | none: the show's Lem is in season 6 only ("The Broken Man", 57, notes him unnamed in dialogue; "No One", 58, has no quote naming him); 22 orders him | 157, Arya II: the same scene; Arya slams a tankard in his face at the inn (Chapter 13)                                                                  |
+| `jack-be-lucky`       | none; 22 orders him                                                                                                                                  | 161, Arya III: he blows his horn at a village that looks abandoned, and its people come out (Chapter 17); Chapter 13 lists him with no scene of his own |
+| `greenbeard`          | none; 22 orders him                                                                                                                                  | 166, Arya IV: the old woman of High Heart speaks in private to Lem, Tom and Greenbeard (Chapter 22); Chapters 13 and 17 list him with no scene read     |
+| `mad-huntsman`        | none; 24 orders him                                                                                                                                  | 173, Arya V: the caged northmen were caught by the Mad Huntsman, who brings Sandor Clegane into town in chains (Chapter 29)                             |
+| `edric-dayne`         | none (the show's Edric Storm is another character); 27 orders him                                                                                    | 187, Arya VIII: Arya talks with Edric Dayne, called Ned, the young Lord of Starfall (Chapter 43); Chapters 34 and 39 list him with no name read         |
+| `ghost-of-high-heart` | none; 27 orders her                                                                                                                                  | 187, Arya VIII: the ghost of High Heart tells the outlaws her dreams and sends Arya away (Chapter 43); Chapter 22 calls her only an old dwarf woman     |
+
+- Anguy: role archer of the Brotherhood Without Banners, alive. He wins the
+  archery at the Hand's tourney in Eddard VII of _A Game of Thrones_ (site 31),
+  and Alyn's stage-1 chronicle names him there, so the record carries
+  `nameSaidAt: 5` (the episode that orders that chronicle entry). The record
+  opens at 157, where he is next seen, later and so safe. Italian "Anguy".
+- Tom of Sevenstreams: role singer of the Brotherhood Without Banners, alive.
+  Italian "Tom di Settecorrenti", the Italian Game of Thrones Wiki's title.
+- Lem: role outlaw of the Brotherhood Without Banners, alive. Filed as "Lem",
+  the name the chapter gives; "Lemoncloak" is his nickname. Italian "Lem".
+- Jack-Be-Lucky: role outlaw of the Brotherhood Without Banners, alive. Italian
+  "Jack Fortunello".
+- Greenbeard: role outlaw of the Brotherhood Without Banners, alive. Filed under
+  the name the chapters use; he calls himself Pello of Tyrosh. Italian
+  "Barbaverde".
+- Mad Huntsman: role huntsman, no allegiance at 173, then Brotherhood Without
+  Banners at 178 (Arya VI, where he has handed Sandor to the outlaws), alive.
+  Italian "Cacciatore Pazzo".
+- Edric Dayne: role Lord of Starfall and squire to Beric Dondarrion, Brotherhood
+  Without Banners, alive. Italian "Edric Dayne"; Starfall is "Stelle al
+  Tramonto".
+- Ghost of High Heart: role seer of High Heart, no allegiance, alive. Italian
+  "Fantasma di Cuore Alto".
+
+Every new record shows the shared `PERSON` placeholder until its drawing child
+(#1631), and is under `pending` for #1654 in
+`game-of-thrones-relationships.json`.
+
+### Earlier records stepped
+
+Steps in `season-1.ts`, as episode / site chapter.
+
+- Arya Stark, status `captured`, split by medium: 157, the books' alone (Arya
+  II, where the outlaws take her; the Hound takes her from them in Arya VIII,
+  187, with no change); 27, the show's alone ("The Bear and the Maiden Fair",
+  where the Hound snatches her as she runs). In "Walk of Punishment" (23) Thoros
+  tells her she is no prisoner, so the show's pin is the kidnapping (owner
+  check: 22 or 25).
+- Sandor Clegane, status `captured` 22 / 173 ("Dark Wings, Dark Words"; Arya V,
+  the Mad Huntsman) and `alive` 25 / 183 ("Kissed by Fire"; Arya VII, where
+  Beric has let him go, the safe later pin after the trial of Arya VI, 178).
+- Gendry: role smith of the Brotherhood Without Banners and affiliation
+  Brotherhood Without Banners, 25 / 183 ("Kissed by Fire"; Arya VII, where Beric
+  also knights him, which the shared role leaves out). The show's alone:
+  `captured`, affiliation "No allegiance" and role "Melisandre's prisoner" at 26
+  ("The Climb", the outlaws hand him to Melisandre for gold), `alive` and role
+  "Escaped from Dragonstone" at 30 ("Mhysa", Davos frees him); chapter 196 only
+  orders them. These cover his Dragonstone scenes too, which the Dragonstone
+  group (#1640) shares.
+- Hot Pie: role baker at an inn and affiliation "An inn in the riverlands", 23 /
+  161 ("Walk of Punishment"; Arya III, where Arya misses him, now that he has
+  stayed with Sharna). The shared text names neither medium's inn.
+- Beric Dondarrion: role leader of the Brotherhood Without Banners and
+  affiliation Brotherhood Without Banners, 24 / 161 ("And Now His Watch Is
+  Ended"; Arya III, Harwin's tale). His death and return at the trial (25 / 178)
+  change no status.
+- Thoros of Myr: affiliation Brotherhood Without Banners, 23 / 166. His show
+  gate (22) already holds his first affiliation, so the show step takes the next
+  episode. Arya III (161) has him only in Harwin's tale; Arya IV (166) is the
+  first to tie him to the band.
+- Harwin, the books' alone: affiliation Brotherhood Without Banners, 161 (Arya
+  III); episode 22 only orders it.
+
+Not stepped: Arya's role and affiliation (unchanged), Sandor's role (deserter
+from the Kingsguard since 19 / 136), Thoros's role (red priest), Melisandre (the
+Dragonstone group). The Hound's later status (`presumed-dead` at 40 / 218) was
+filed before this stage.
+
+### Owner checks, not filed
+
+- **Anguy, show.** Restore a show gate if an episode says his name; the record
+  is the books' alone until then.
+- **Sharna** and **Husband** (Arya II, 157): the keepers of the Inn of the
+  Kneeling Man, where Hot Pie stays. One scene each in the stage; Sharna is
+  mentioned again in Arya VIII and X. File Sharna if Hot Pie's inn should have
+  its keeper.
+- **Ravella Smallwood**, Lady Smallwood (Arya IV, 166): one scene at Acorn Hall,
+  where she gives Arya her dead son's clothes.
+
+### Omitted
+
+- **Bit parts, one scene in the stage:** Utt (Arya VII, 183, hanged by the
+  outlaws), Bella (Arya V, 173), Tansy, Helly, Cass, Jyzene and Lanna of the
+  Peach (Arya V), Lymond Lychester and Maester Roone (Arya IV, 166), Donnel
+  Haigh (Arya X, 194), Iggo (Arya I, 147, seen only in Arya's wolf dream), the
+  boy at the Inn of the Kneeling Man (Arya II).
+- **Animals with no record:** Stranger, Sandor Clegane's horse (Arya VIII to XI,
+  187–196), never a character of his own.
+- **Background outlaws,** each listed as appearing with no scene of their own:
+  Dennet, Kyle, Melly (Arya VI, 178), Notch, Merrit o' Moontown, Mudge, Watty
+  the Miller and Beardless Dick (Arya VII and VIII, 183 and 187).
+- **Show descriptors:** the Brotherhood member of "Dark Wings, Dark Words", the
+  innkeeper who hires Hot Pie in "Walk of Punishment", and the Frey soldiers of
+  "Mhysa".
+- **Descriptors:** the bent-backed man (Arya IX, 191), the guard at Harrenhal.
+- **Only mentioned:** Wylla, Ashara Dayne, Allyria Dayne, Sedgekins, Fern, Old
+  Pate.
+
+## Jaime, Brienne and Harrenhal (#1637)
+
+Jaime and Brienne's road to King's Landing, their captors (the show's Locke and
+the books' Vargo Hoat and his Brave Companions), Harrenhal under Roose Bolton,
+and Qyburn. Candidates come from the Game of Thrones Wiki's season-3 episode
+pages ("Valar Dohaeris", "Dark Wings, Dark Words", "Walk of Punishment", "And
+Now His Watch Is Ended", "Kissed by Fire", "The Bear and the Maiden Fair",
+"Mhysa") and the pages of Qyburn, Locke, Steelshanks, Roose Bolton, Jaime
+Lannister and Brienne of Tarth; A Wiki of Ice and Fire's cached pages for Jaime
+I to VI (site chapters 145, 155, 165, 175, 181, 188); and the Ice and Fire
+Wiki's pages of Qyburn, Vargo Hoat, Urswyck, Zollo, Timeon, Shagwell, Pyg, Robin
+Ryger, Elmar Frey, Rorge, Cleos Frey and the Brave Companions. Bit parts and
+background figures are omitted, as in season 2 (owner, 2026-11-03 and
+2026-11-07).
+
+Counts: 2 filed, 1 pending, 22 omitted; 3 season-1 and 2 season-2 records
+stepped.
+
+### Filed
+
+Gates as episode / site chapter. `source` records give the other number only to
+order them.
+
+| Record                       | Show                                                                                                                                        | Books                                                                                                                                              |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `qyburn`                     | 21, "Valar Dohaeris": found alive among the slain prisoners at Harrenhal, he gives Robb his name while Talisa tends his wound (Qyburn page) | 175, Jaime IV: Roose Bolton has Qyburn clean and bandage the stump; A Clash of Kings lists him with no scene (#1465)                               |
+| `steelshanks-walton` (books) | none: the show's Steelshanks is named only in narration in the pages read (owner check); 27 orders him                                      | 188, Jaime VI: he leads the two hundred Dreadfort men who escort Jaime, and Jaime forces him back to Harrenhal; 175 lists him unnamed (safe later) |
+
+- Qyburn: alive. The summary, the log and the first role step ("With the
+  northmen at Harrenhal") hold only what both media tell at the gates: he is at
+  Harrenhal while the northmen hold it (review round 1). Role steps by medium:
+  the books' healer in Roose Bolton's service at 175 (Jaime IV, the stump); the
+  show's healer stripped of his maester's chain at 25 ("Kissed by Fire").
+  Affiliation: the show's no allegiance at 21, then in Roose Bolton's service at
+  25 / 175, shared. The books' maester background and Brave Companions are in
+  none of the cached chapter synopses through 196 and are not filed. He leaves
+  Harrenhal with Jaime at 27 / 188 and reaches King's Landing in "Mhysa" (30);
+  neither changes a field. Italian "Qyburn" (Personaggi).
+- Steelshanks Walton: books only, role captain in Roose Bolton's service, House
+  Bolton, alive. His log holds Jaime VI: the escort, the turn back for Brienne,
+  his men's crossbows against the bear. Italian kept: Italian Wikipedia has no
+  entry and the Mondadori form was not checked.
+
+### Pending
+
+- Locke (show only): the Game of Thrones Wiki names him in narration from "Dark
+  Wings, Dark Words" (22, "riders from House Bolton arrive led by a man named
+  Locke"), where he takes Jaime and Brienne, and his page has Roose call him his
+  "best hunter" (GOT301), but no synopsis or quote read through "First of His
+  Name" (35), his last episode, has his name said on screen. He waits for a
+  source that confirms the naming. Owner check: file him at 22 (or 21, if Roose
+  names him there) if the name is said on screen; his steps would be Roose
+  Bolton's man and the castellan of Harrenhal after Roose leaves (27). The books
+  give his part to Vargo Hoat.
+
+### Season-1 and season-2 records stepped
+
+Steps in `season-1.ts` and `season-2.ts`, as episode / site chapter.
+
+- Jaime Lannister: stays `captured` through Brienne's escort and the capture by
+  Roose Bolton's men (Locke at 22; the Brave Companions at 165); `alive` at 27 /
+  188, when Roose lets him go and he rides out for King's Landing with Bolton's
+  escort ("The Bear and the Maiden Fair"; Jaime VI). His hand (Locke at 23;
+  Zollo on Vargo Hoat's order at 165) is in no field. His arrival in King's
+  Landing ("Mhysa", 30; Jaime VII, 206) changes no field.
+- Brienne of Tarth: `captured` at 22 / 165 with Jaime ("Dark Wings, Dark Words";
+  Jaime III), `alive` at 27 / 188, when Jaime pulls her from the bear pit and
+  she leaves with him. Her role stays Catelyn's sworn sword.
+- Roose Bolton: the Harrenhal command, books only at 18 / 121 since #1465, is
+  shared at 22 / 121: Robb leaves him in command of Harrenhal in "Dark Wings,
+  Dark Words". His Red Wedding and wardenship steps are #1635's.
+- Vargo Hoat, books only: role leader of the Brave Companions and Lord of
+  Harrenhal at 165, where Urswyck tells Jaime that Roose has named him lord
+  (Jaime III; Roose says so himself in Jaime V, 181).
+- Rorge, books only: affiliation Brave Companions at 165, among the Companions
+  who take Jaime and Brienne (Jaime III); his join in Arya IX (121) rests on one
+  page and stays unfiled, so 165 is a safe later pin.
+
+Not stepped: Cleos Frey (his death on the Duskendale road at 165 was filed by
+#1472), Biter (only mentioned in Jaime III), Tywin and Cersei (their meeting
+with Jaime is past the stage in the books), Robb and Catelyn (#1635).
+
+### Omitted
+
+- **The Brave Companions, bit parts:** Urswyck (leads the party that takes Jaime
+  and Brienne, Jaime III and IV), Zollo (cuts off Jaime's hand on Vargo's order,
+  Jaime III), Timeon, Shagwell, Pyg, Nage (carries the escort's peace banner),
+  Three Toes. Owner check: file Urswyck and Zollo if their acts in Jaime III
+  should have records of their own; their deeds are told on Vargo Hoat's and
+  Jaime's steps.
+- **Harrenhal's background:** Aenys, Danwell and Hosteen Frey (Jaime IV), Elmar
+  Frey (Jaime V), Amabel (Jaime IV) and Pia (only mentioned, Jaime VI), as in
+  season 2.
+- **On the road:** Ser Robin Ryger (the Riverrun galley, Jaime I; omitted with
+  Riverrun's household in season 2), the boy and the cook of the Inn of the
+  Kneeling Man (Jaime II), the hanged women (Jaime I), the show's farmer and the
+  Bolton soldiers with Locke.
+- **Only mentioned:** Lord Selwyn Tarth (his ransom offer, Jaime VI and "The
+  Bear and the Maiden Fair"), Walda Frey (Roose's bride, Jaime V).
+- **Not a character:** the bear in Harrenhal's pit.
+- **Dream figures and backstory names only:** the Kingsguard and others in
+  Jaime's dream in Jaime VI (188), among them Gerold Hightower, Arthur Dayne,
+  Oswell Whent, Jonothor Darry, Lewyn Martell and Rhaegar Targaryen, and the
+  pyromancers and others Jaime names in Jaime V (181): Rossart, Garigus, Belis
+  and Chelsted. None has a scene of their own in the stage.
+
+## Dragonstone (#1640)
+
+Stannis's court after the Blackwater. Candidates come from the Game of Thrones
+Wiki's season-3 episode pages (Dragonstone synopses, cast, "In the books"), its
+Davos Seaworth, Stannis Baratheon, Melisandre, Shireen Baratheon, Selyse
+Florent, Salladhor Saan and Axell Florent pages, and A Wiki of Ice and Fire's
+synopses and character lists of _A Storm of Swords_ chapters 5, 10, 25 and 36
+(Davos I to IV, site chapters 149, 154, 169 and 180), with the Ice and Fire
+Wiki's Edric Storm, Axell Florent and Alester Florent pages. Davos V (chapter
+54, site 198) is past the stage. Firecrawl was not used: no character page of A
+Wiki of Ice and Fire was read, so every book gate rests on the chapter synopses.
+
+Counts: 3 filed, 0 pending, 17 omitted; 1 earlier record stepped.
+
+### Filed
+
+All three are the books' alone. The show has none of them in season 3: its
+Gendry takes Edric's part (Game of Thrones Wiki, "Second Sons", "In the books"),
+and its Axell is first seen at his burning in "The Lion and the Rose" (episode
+32). "Second Sons" (episode 28), which adapts Davos IV, orders them.
+
+| Record                         | Show                                                                                                                  | Books                                                                                                                                               |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `axell-florent` (books only)   | none in the stage: seen at his burning in episode 32, named in the synopsis and credits only (owner check); 28 orders | 180, Davos IV: Stannis has Axell tell Davos of the Claw Isle plan, then dismisses him (safe later pin; Davos II and III name him in narration only) |
+| `alester-florent` (books only) | none; 28 orders                                                                                                       | 180, Davos IV: Stannis proclaims that Alester will die for treason (Davos III, 169, names him in narration only)                                    |
+| `edric-storm` (books only)     | none: the show's Gendry takes his part; 28 orders                                                                     | 180, Davos IV: Stannis takes three leeches fat with Edric Storm's blood, and Melisandre asks to burn him (safe later pin; see below)                |
+
+- Axell Florent: role castellan of Dragonstone, House Florent, alive. Selyse's
+  uncle in the books (Ice and Fire Wiki; the show makes him her brother), one of
+  the queen's men. His log tells Davos II (154), where he takes Davos into
+  custody for plotting against Melisandre, and Davos IV (180), where he wants to
+  be Hand and threatens Davos if he does not help. Owner checks: Davos II and
+  Davos III (169) name him in narration only; A Clash of Kings has him at the
+  prologue's feast and in Davos I, where the second stage left him out as a bit
+  part; if the show says his name in episode 32, the record becomes both media's
+  at 32, dead in the show from its gate. Italian "Axell Florent" (the Italian
+  Game of Thrones Wiki; "castellano di Roccia del Drago").
+- Alester Florent: role "Former Hand of King Stannis", House Florent,
+  `imprisoned` from his gate: Davos III has Axell throw him into Davos's cell
+  for the letter he wrote to Tywin offering peace, and Davos IV, the chapter
+  that opens him, has Stannis condemn him and make Davos Hand. Khorane
+  Sathmantes tells Davos in Davos II (154) that Lord Alester Florent is
+  Stannis's Hand, before he is seen in the stage. `nameSaidAt: 14` lets Cortnay
+  Penrose's books-only story of the parley (A Clash of Kings, Davos II, 116,
+  ordered at episode 14) name him. His death is after the stage. Italian
+  "Alester Florent" (Italian Wikipedia, in Salladhor Saan's section).
+- Edric Storm: role King Robert's bastard son, House Baratheon, alive. Owner
+  check: Davos II (154), where Davos meets him playing monsters and maidens with
+  Shireen and Patchface and he talks of his father, names him in narration only;
+  if a line there says his name, the gate is 154. A Game of Thrones and A Clash
+  of Kings only mention him. His log (Melisandre wants his king's blood burned;
+  Stannis refuses but burns three leeches with it, naming Joffrey, Balon and
+  Robb) is Davos IV's. Italian "Edric Storm" (Italian Wikipedia, in Melisandre's
+  section).
+
+### Earlier records stepped
+
+- Davos Seaworth (`season-2.ts`):
+  - status `alive` at 149, the books' alone (Davos I: a Lysene galley of
+    Salladhor's picks him off his rock); the show rescues and jails him in the
+    same episode, so 21 only orders it;
+  - `imprisoned` at 21 / 154: Stannis sends him to the dungeon after he draws a
+    knife on Melisandre ("Valar Dohaeris", GOT301); Axell takes him into custody
+    for plotting to kill her (Davos II);
+  - `alive` at 28 / 180: Stannis frees him ("Second Sons", GOT308; Davos IV,
+    where Axell brings him before the king);
+  - role "Knight in King Stannis's service" again at 21, the show's alone: the
+    fleet he commanded burned on the Blackwater, and Salladhor brings him back
+    with no command; Davos II (154) orders it;
+  - role "Hand of King Stannis" at 180, the books' alone (Davos IV: Lord of the
+    Rainwood, Admiral of the Narrow Sea and Hand). The show's Stannis only
+    promises him the Handship in season 2 ("The Prince of Winterfell"); 28
+    orders it.
+  - He is a lead of `leads['season-3']`. In "Mhysa" (30) Stannis sentences him
+    to death and spares him, which changes no field.
+
+Not stepped: Stannis (no field changes; the leech ritual at 28 / 180 is a
+chronicle and relationship matter), Melisandre (she leaves Dragonstone for
+Gendry in the show, which changes no field), Selyse and Shireen (no field
+changes; Shireen teaching Davos to read in "Kissed by Fire", 25, is a
+relationship card), Salladhor Saan (Alester names him Lord of Blackwater Bay in
+the books, Davos II, 154: a title in prose, not a change of his service; owner
+check), Gendry (the Brotherhood group, #1636, files his Dragonstone steps:
+Melisandre's prisoner at 26, freed at 30, the show's alone).
+
+### Pending
+
+None: Davos V (site 198), where Davos sends Edric away, and the burning of
+Alester are past the stage and step records already filed.
+
+### Omitted
+
+- **Bit parts, one scene in the stage:** Khorane Sathmantes, captain of
+  _Shayala's Dance_, and Meizo Mahr, Salladhor's eunuch (Davos II, 154);
+  Patchface (Davos II, 154; the show has no Patchface, and the second stage left
+  him out too); Maester Pylos (Davos III, 169, where he treats Davos's fever;
+  the show gives his teaching of Davos to Shireen, and in the books it comes in
+  Davos V, 198).
+- **Descriptors:** Porridge and Lamprey, the gaolers Davos names after their
+  meals in his thoughts (Davos III, 169); the guards who drag Davos to the
+  dungeon ("Valar Dohaeris"); the crossbowman at the castle gate (Davos II).
+- **Collectives:** the queen's men and the king's men, the men burned as
+  traitors on Dragonstone ("Valar Dohaeris"; Davos II).
+- **Only mentioned:** Devan Seaworth, alive with Stannis (Davos II and III; the
+  show has no Devan); Lord Guncer Sunglass and Ser Hubard Rambton's sons, burned
+  before Davos returns (Davos II); Imry Florent, dead on the Blackwater (Davos
+  III); Andrew Estermont and Lord Estermont (Davos IV).
+
+## Bran's road and Theon (#1641)
+
+Bran's road north with the Reeds, Hodor and, in the show, Rickon and Osha;
+Theon's captivity and his captor. Candidates come from the Game of Thrones
+Wiki's ten season-3 episode pages (Bran and Theon synopses, cast lists, quotes,
+"In the books") and its pages for Theon, Ramsay, Roose, Myranda, Violet, Bran,
+Rickon, Osha, Hodor, the Reeds, Summer, Shaggydog, Balon and Yara, and from A
+Wiki of Ice and Fire's synopses and Appearing lists of _A Storm of Swords_
+chapters 9, 24 and 40 (Bran I to III, site chapters 153, 168 and 184), with
+Catelyn V and VI (189, 193) for what the books tell of Theon and Balon, and Bran
+IV (chapter 56, site 200), past the stage, for the Nightfort. The books keep
+Rickon and Osha off the page in the stage (they part from Bran in Bran VII of _A
+Clash of Kings_, site 143) and Theon too: Roose's report in Catelyn VI is all a
+reader learns of him. His captivity on the page is _A Dance with Dragons_' (Reek
+I, chapter 12, site 284), which season 3 adapts.
+
+Counts: 1 filed, 0 pending, 1 earlier record's gate moved, 13 omitted; 3 stage-1
+records stepped.
+
+### Filed
+
+Gates as episode / site chapter. `source` records give the other number only to
+order them.
+
+| Record                | Show                                                                                                                                                                       | Books                                                                                               |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `myranda` (show)      | 27, "The Bear and the Maiden Fair": Violet tells Theon that "Myranda knows what she's doing" (quoted on the Myranda page); she answers "you, me, and Violet" (Violet page) | none: the books' only Myranda is Myranda Royce of the Vale, another person; Reek I (284) orders her |
+| `ramsay-snow` (moved) | 30, "Mhysa": Roose tells Walder Frey that "Ramsay delivered the terms" and "Ramsay has his own way of doing things" (quoted on the Ramsay Bolton page). #1466 had 32       | 140, Theon VI, as filed                                                                             |
+
+- Myranda: role "Young woman at Theon's prison", "No allegiance", alive, all at
+  her gate. Episode 27 shows only the scene, so her log is it: she and Violet
+  free Theon from the cross and seduce him, and his captor comes in and has him
+  held down to geld him. That she is Ramsay's lover in House Bolton's service is
+  shown in season 4 (from "The Lion and the Rose", 32), steps for stage 4; she
+  is not in "Mhysa" (30). Italian "Myranda" (her own section of Italian
+  Wikipedia's characters list).
+- Ramsay Snow: the boy who tortures Theon from "Dark Wings, Dark Words" (22) is
+  unnamed through "The Bear and the Maiden Fair" (27) and credited only as "Boy"
+  (Ramsay Bolton page, "Behind the scenes"). "Mhysa" (30) says his name, so the
+  show record, filed by #1466 at 32 (the first episode the page cites for his
+  birth name), opens at 30. His books-only chronicle story and relationships,
+  ordered at 32, move with it; their chapter, 140, stays.
+
+### Stage-1 records stepped
+
+Steps in `season-1.ts`, as episode / site chapter.
+
+- Bran Stark: role "On the road north with the Reeds", 22 / 143 ("Dark Wings,
+  Dark Words", where the Reeds find his party on its way to the Wall; Bran VII
+  of _A Clash of Kings_, where he goes north with the Reeds, Hodor and Summer).
+  Role "Beyond the Wall with the Reeds", 30 / 200 ("Mhysa", where Sam shows them
+  through the Nightfort; Bran IV, where the Black Gate lets them through), the
+  book's chapter past the stage (#852).
+- Osha: role "On the run with Rickon Stark", 29 / 143 ("The Rains of Castamere",
+  where Bran sends her with Rickon to the Umbers; Bran VII of _A Clash of
+  Kings_, where Luwin tells her to part the boys and she leaves with Rickon).
+  Where they go differs by medium, so the role does not say.
+- Theon Greyjoy: role "Ramsay Snow's prisoner at the Dreadfort", 30 / 193
+  ("Mhysa", where Roose tells Walder Frey the ironborn handed Theon to Ramsay
+  and Yara means to sail for the Dreadfort to bring him home; Catelyn VI, where
+  Roose tells Robb that Ramsay holds Theon at the Dreadfort and shows him a
+  strip of his skin). Status `captured` at 193, the books' alone: the show has
+  had him captive since episode 20, so 30 only orders it. The show's torture,
+  his false escape, the gelding and the name Reek are told in the books only in
+  _A Dance with Dragons_ and are not filed.
+
+Not stepped: Rickon (his role, a son of Lord Eddard, does not change; the books
+keep him off the page), Hodor (Bran wargs him at 29 and in Bran III, 184, a
+change of no field), Meera and Jojen Reed (no field changes; their show gates,
+22, are in the stage, filed by #1466), Summer and Shaggydog (no change), Balon
+Greyjoy (his books death at 189 was filed with his drawing, #1473; Ramsay's box
+at Pyke in "Mhysa" changes no field), Asha Greyjoy (the show's Yara sets out to
+free Theon in "Mhysa"; the raid is in season 4), Big and Little Walder Frey (the
+books put them at the Dreadfort in Catelyn IV, 179, a report, not a role).
+
+### Owner checks
+
+- **Ramsay Snow's show gate.** It moves from 32 to 30 on Roose's quoted line in
+  "Mhysa". If the owner keeps #1466's 32, the move, the chronicle and
+  relationship orderings and the two tests go back.
+- **Theon in the books.** The brief for this child held that the books tell
+  Theon's captivity only in _A Dance with Dragons_. Catelyn VI (193) has Roose
+  report it to Robb, so the role and the books' `captured` step are filed there;
+  the torture, the gelding and the name Reek are not.
+- **Violet** (show only, not filed). She is named in "The Bear and the Maiden
+  Fair" (27), Myranda's "you, me, and Violet", and never appears again: a bit
+  part with one scene, omitted as Marei is. If the owner wants her, she is filed
+  at 27 with `source: 'episode'`, as Myranda.
+
+### Omitted
+
+- **Bit parts, one scene in the stage:** Violet (above).
+- **Descriptors:** the master torturer of Theon's cross ("Dark Wings, Dark
+  Words", "Walk of Punishment", unnamed; Ramsay kills him at 23), the Bolton
+  soldiers who chase Theon (23), the two men who hold Theon down (27), the
+  Liddle who shares his cave with Bran's party (Bran II, 168: "a Liddle", no
+  name).
+- **Dream figures:** the three-eyed raven of Bran's and Jojen's dreams (22, 24)
+  and the three-eyed crow of the books (153), a bird in a dream in the stage.
+- **Other groups:** the old horse breeder at Queenscrown and the wildlings Bran
+  wargs against (#1638), Sam and Gilly at the Nightfort (#1638), Roose Bolton
+  and Walder Frey at the Twins (#1635, #1637).
+- **Only mentioned:** Bruni, Osha's husband ("The Bear and the Maiden Fair"),
+  the Rat Cook ("Mhysa"; Bran IV), the Knight of the Laughing Tree and Howland
+  Reed (Bran II, 168), Euron Greyjoy and Lord Botley (Catelyn V, 189), and
+  Coldhands (Bran IV, past the stage). Greatjon Umber, to whom Bran sends Rickon
+  in "The Rains of Castamere", is only mentioned and has his record since
+  season 1.
