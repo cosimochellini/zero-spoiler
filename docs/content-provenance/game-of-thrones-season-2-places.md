@@ -100,7 +100,9 @@ Fifteen places, under the issue's split point of about 25.
 - Book only: Jon II (87) is set in the empty village; the show passes "several
   abandoned wildling villages" in episode 11 and names none. Episode 11 orders
   it.
-- Italian "Albero Bianco" is assumed, not checked against the Mondadori edition.
+- Italian "Whitetree": the Italian Game of Thrones Wiki keeps the English name
+  (its Albero-Diga, Bedwyck and Craster pages, #1618). Italian Wikipedia does
+  not name it.
 - Filed here: Jarman Buckwell and Mallador Locke, both books only.
 
 #### `vaes-tolorro`

@@ -1202,7 +1202,7 @@ export const season1Chronicles = {
       [11, 87],
       { it: 'Il villaggio vuoto', en: 'The empty village' },
       {
-        it: 'Ad Albero Bianco, il quarto villaggio vuoto della spedizione, un enorme albero-diga ha ossa umane nella bocca. [[jeor-mormont|Mormont]] fa estrarre a Jon un teschio dalla cenere, e Jon ne trova un altro sotto. Jon crede di sapere perché i bruti bruciano i loro morti. Perquisisce le case con Eddison Tollett e non trova nulla. [[thoren-smallwood|Thoren Smallwood]] dice che un anno fa qui c’erano ancora dei bruti. [[samwell-tarly|Sam]] manda per corvo il rapporto del lord comandante, e ha insegnato a tre degli uccelli a dire “snow”. Con i bruti è sparita anche la selvaggina, e Jon si chiede se la spedizione troverà il nemico o ne sarà trovata.',
+        it: 'A Whitetree, il quarto villaggio vuoto della spedizione, un enorme albero-diga ha ossa umane nella bocca. [[jeor-mormont|Mormont]] fa estrarre a Jon un teschio dalla cenere, e Jon ne trova un altro sotto. Jon crede di sapere perché i bruti bruciano i loro morti. Perquisisce le case con Eddison Tollett e non trova nulla. [[thoren-smallwood|Thoren Smallwood]] dice che un anno fa qui c’erano ancora dei bruti. [[samwell-tarly|Sam]] manda per corvo il rapporto del lord comandante, e ha insegnato a tre degli uccelli a dire “snow”. Con i bruti è sparita anche la selvaggina, e Jon si chiede se la spedizione troverà il nemico o ne sarà trovata.',
         en: 'At Whitetree, the fourth empty village of the ranging, a huge weirwood has human bones in its mouth. [[jeor-mormont|Mormont]] has Jon pull a skull from the ashes, and Jon finds another beneath it. Jon thinks he knows why the wildlings burn their dead. He searches the houses with Eddison Tollett and finds nothing. [[thoren-smallwood|Thoren Smallwood]] says there were wildlings here a year ago. [[samwell-tarly|Sam]] sends the Lord Commander’s report by raven, and has taught three of the birds to say snow. The game is gone along with the wildlings, and Jon wonders whether the ranging will find its enemy or be found.',
       },
     ),
@@ -1264,9 +1264,9 @@ export const season1Chronicles = {
     ),
     inBooks(
       [16, 125],
-      { it: 'La donna della lancia', en: 'The spearwife' },
+      { it: 'La moglie di lancia', en: 'The spearwife' },
       {
-        it: 'Nel Passo Skirling Jon si arrampica con [[stonesnake|Stonesnake]] fino a tre vedette dei bruti. Stonesnake uccide quella con il corno, e Jon abbatte l’uomo accanto al fuoco. La terza, addormentata, è una donna della lancia, [[ygritte|Ygritte]], che si arrende, e Jon la fa prigioniera anche se Stonesnake vorrebbe ucciderla. Ygritte gli racconta che il sangue degli Stark e quello dei bruti è lo stesso; Jon non le crede. Gli uomini di [[qhorin-halfhand|Qhorin]] la vogliono morta, e Qhorin lascia Jon solo a ucciderla. Ygritte dice che Mance Rayder accoglierebbe Jon. Jon alza Lungo Artiglio, poi si ferma, e le dice di scappare.',
+        it: 'Nel Passo Skirling Jon si arrampica con [[stonesnake|Stonesnake]] fino a tre vedette dei bruti. Stonesnake uccide quella con il corno, e Jon abbatte l’uomo accanto al fuoco. La terza, addormentata, è una moglie di lancia, [[ygritte|Ygritte]], che si arrende, e Jon la fa prigioniera anche se Stonesnake vorrebbe ucciderla. Ygritte gli racconta che il sangue degli Stark e quello dei bruti è lo stesso; Jon non le crede. Gli uomini di [[qhorin-halfhand|Qhorin]] la vogliono morta, e Qhorin lascia Jon solo a ucciderla. Ygritte dice che Mance Rayder accoglierebbe Jon. Jon alza Lungo Artiglio, poi si ferma, e le dice di scappare.',
         en: 'In the Skirling Pass Jon climbs with [[stonesnake|Stonesnake]] to three wildling watchers. Stonesnake kills the one with the horn, and Jon cuts down the man by the fire. The third, asleep, is a spearwife, [[ygritte|Ygritte]], who yields, and Jon takes her captive although Stonesnake would kill her. She tells him that the blood of the Starks and of the wildlings is the same; Jon does not believe her. [[qhorin-halfhand|Qhorin]]’s men want her dead, and Qhorin leaves Jon alone to do it. Ygritte says Mance Rayder would take Jon in. Jon raises Longclaw, then stops, and tells her to run.',
       },
     ),
@@ -1547,7 +1547,7 @@ export const season1Chronicles = {
       [11, 87],
       { it: 'Meno paura', en: 'Less afraid' },
       {
-        it: 'Durante la marcia oltre la Barriera Sam viaggia con le salmerie e con i corvi. Ha insegnato a tre degli uccelli a dire “snow”, e manda a Castello Nero il rapporto del lord comandante su Albero Bianco, desiderando che il corvo possa riportare a casa anche lui. Eppure Sam ammette con [[jon-snow|Jon]] di avere meno paura di prima: all’inizio ogni rumore era un bruto che veniva a ucciderlo, ma ora sa che in giro non ci sono bruti. Jon pensa che, di duecento uomini coraggiosi, solo il codardo ha sempre meno paura.',
+        it: 'Durante la marcia oltre la Barriera Sam viaggia con le salmerie e con i corvi. Ha insegnato a tre degli uccelli a dire “snow”, e manda a Castello Nero il rapporto del lord comandante su Whitetree, desiderando che il corvo possa riportare a casa anche lui. Eppure Sam ammette con [[jon-snow|Jon]] di avere meno paura di prima: all’inizio ogni rumore era un bruto che veniva a ucciderlo, ma ora sa che in giro non ci sono bruti. Jon pensa che, di duecento uomini coraggiosi, solo il codardo ha sempre meno paura.',
         en: 'On the march beyond the Wall Sam rides with the baggage and the ravens. He has taught three of the birds to say snow, and sends the Lord Commander’s report on Whitetree to Castle Black, wishing the raven could carry him home too. Still, Sam admits to [[jon-snow|Jon]] that he is less frightened than he was: at first every noise was a wildling coming to kill him, but now he knows there are no wildlings about. Jon reflects that of two hundred brave men, only the coward is growing less afraid.',
       },
     ),
@@ -2813,7 +2813,7 @@ export const season1Chronicles = {
       [18, 119],
       { it: 'I guadi della Forca Rossa', en: 'The fords of the Red Fork' },
       {
-        it: 'L’esercito di Tywin cerca di passare i guadi della Forca Rossa, tenuti dai lord dei fiumi di Edmure Tully, e viene respinto a ogni passaggio: lord Leo Lefford annega, ser Lyle Crakehall viene catturato, [[addam-marbrand|ser Addam Marbrand]] viene respinto tre volte e [[gregor-clegane|ser Gregor Clegane]] viene fermato al Mulino di Pietra. A Delta delle Acque [[catelyn-stark|Catelyn]] riceve la notizia che Tywin si allontana verso sud-est, e sulla mappa vede che quella strada porta alle sorgenti delle Rapide delle Acque Nere.',
+        it: 'L’esercito di Tywin cerca di passare i guadi della Forca Rossa, tenuti dai lord dei fiumi di Edmure Tully, e viene respinto a ogni passaggio: lord Leo Lefford annega, ser Lyle Crakehall viene catturato, [[addam-marbrand|ser Addam Marbrand]] viene respinto tre volte e [[gregor-clegane|ser Gregor Clegane]] viene fermato al Mulino di Pietra. A Delta delle Acque [[catelyn-stark|Catelyn]] riceve la notizia che Tywin si allontana verso sud-est, e sulla mappa vede che quella strada porta alle sorgenti del fiume Rapide Nere.',
         en: 'Tywin’s host tries the fords of the Red Fork, held by Edmure Tully’s river lords, and is thrown back at every crossing: Lord Leo Lefford drowns, Ser Lyle Crakehall is taken, Ser [[addam-marbrand|Addam Marbrand]] is driven back three times and Ser [[gregor-clegane|Gregor Clegane]] is held off at the Stone Mill. At Riverrun [[catelyn-stark|Catelyn]] hears that Tywin is marching away to the southeast, and on a map she sees that the road leads to the headwaters of the Blackwater Rush.',
       },
     ),
@@ -4233,7 +4233,7 @@ export const season1Chronicles = {
       [18, 138],
       { it: 'La postierla', en: 'The postern gate' },
       {
-        it: 'Gendry lavora alla forgia di Harrenhal e gli sta bene restarci: si è rifiutato di aiutare [[arya-stark|Arya]] a liberare i prigionieri del Nord. Quando [[roose-bolton|Roose Bolton]] si prepara a lasciare il castello, Arya mente a Gendry dicendo che [[vargo-hoat|Vargo Hoat]] vuole tagliare un piede a ogni servo, e lo manda a prendere delle spade e [[hot-pie|Frittella]]. I tre si ritrovano vicino alla Torre dei Fantasmi. Arya uccide la guardia della postierla, e insieme escono a cavallo dal castello.',
+        it: 'Gendry lavora alla forgia di Harrenhal e gli sta bene restarci: si è rifiutato di aiutare [[arya-stark|Arya]] a liberare i prigionieri del Nord. Quando [[roose-bolton|Roose Bolton]] si prepara a lasciare il castello, Arya mente a Gendry dicendo che [[vargo-hoat|Vargo Hoat]] vuole tagliare un piede a ogni servo, e lo manda a prendere delle spade e [[hot-pie|Frittella]]. I tre si ritrovano vicino alla Torre degli Spettri. Arya uccide la guardia della postierla, e insieme escono a cavallo dal castello.',
         en: 'Gendry works at the forge of Harrenhal and is content to stay: he refused to help [[arya-stark|Arya]] free the northern prisoners. When [[roose-bolton|Roose Bolton]] prepares to leave the castle, Arya lies to Gendry that [[vargo-hoat|Vargo Hoat]] means to cut a foot off every servant, and sends him for swords and [[hot-pie|Hot Pie]]. The three meet near the Tower of Ghosts. Arya kills the guard at the postern, and they ride out of the castle together.',
       },
     ),
@@ -5194,7 +5194,7 @@ export const season1Chronicles = {
       [18, 138],
       { it: 'Via dalle cucine', en: 'Out of the kitchens' },
       {
-        it: 'Arrivato a Harrenhal, Frittella non voleva entrare per paura dei fantasmi, finché [[chiswyck|Chiswyck]] non gli ha detto di unirsi a loro o di diventarne uno. Ora lavora nelle cucine, dove lui e [[arya-stark|Arya]] mangiano crostate, e preferisce il castello alla vita nei boschi. Quando [[roose-bolton|Roose Bolton]] sta per partire e lasciare il castello a [[vargo-hoat|Vargo Hoat]], [[gendry|Gendry]] va a chiamare Frittella per conto di Arya. Frittella li raggiunge vicino alla Torre dei Fantasmi, e i tre escono a cavallo da una porta secondaria.',
+        it: 'Arrivato a Harrenhal, Frittella non voleva entrare per paura dei fantasmi, finché [[chiswyck|Chiswyck]] non gli ha detto di unirsi a loro o di diventarne uno. Ora lavora nelle cucine, dove lui e [[arya-stark|Arya]] mangiano crostate, e preferisce il castello alla vita nei boschi. Quando [[roose-bolton|Roose Bolton]] sta per partire e lasciare il castello a [[vargo-hoat|Vargo Hoat]], [[gendry|Gendry]] va a chiamare Frittella per conto di Arya. Frittella li raggiunge vicino alla Torre degli Spettri, e i tre escono a cavallo da una porta secondaria.',
         en: 'Arriving at Harrenhal, Hot Pie did not want to go in for fear of ghosts, until [[chiswyck|Chiswyck]] told him to join them or become one. Now he works in the kitchens, where he and [[arya-stark|Arya]] eat tarts, and he prefers the castle to living in the woods. When [[roose-bolton|Roose Bolton]] is about to leave and hand the castle to [[vargo-hoat|Vargo Hoat]], [[gendry|Gendry]] fetches Hot Pie at Arya’s word. Hot Pie meets them near the Tower of Ghosts, and the three ride out through a sally port.',
       },
     ),

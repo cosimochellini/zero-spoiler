@@ -195,7 +195,8 @@ export const PLACE_NAMES_KEPT = {
   // scontro dei re page; Vaes Tolorro and the House of the Undying ("Casa
   // degli Eterni") are in its Jorah Mormont and Daenerys Targaryen pages;
   // Lordsport, the Stony Shore, Bitterbridge and Oxcross are the Italian Game
-  // of Thrones Wiki's pages. Whitetree and the Garden of Bones are
+  // of Thrones Wiki's pages. The same wiki keeps Whitetree in English (its
+  // Albero-Diga, Bedwyck and Craster pages, #1618). The Garden of Bones is
   // assumed, the dub's or the books' form unconfirmed.
   'crasters-keep': 'Fortezza di Craster',
   'skirling-pass': 'Passo Skirling',
@@ -205,7 +206,7 @@ export const PLACE_NAMES_KEPT = {
   'stony-shore': 'Costa Pietrosa',
   'bitterbridge': 'Ponte Amaro',
   'oxcross': 'Oxcross',
-  'whitetree': 'Albero Bianco',
+  'whitetree': 'Whitetree',
   'garden-of-bones': 'Giardino delle Ossa',
   // The second stage's named-only places (#1476) with no section of their
   // own: Deepwood Motte, Seagard and Ashemark are the Italian Game of Thrones
