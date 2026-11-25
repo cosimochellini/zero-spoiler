@@ -613,8 +613,8 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Line drawings          | 310, one per record and 2 for the seasons' headings, plus 213 redrawings of 156 records |
 | Chronicle stories      | 1188, for 213 characters                                                                |
 | Dated timelines        | 1074                                                                                    |
-| Affiliation steps      | 257                                                                                     |
-| Status steps           | 396                                                                                     |
+| Affiliation steps      | 258                                                                                     |
+| Status steps           | 397                                                                                     |
 | Later visits to places | 5                                                                                       |
 
 <!-- End of the generated counts. -->
