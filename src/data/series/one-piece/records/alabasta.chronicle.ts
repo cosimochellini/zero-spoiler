@@ -713,6 +713,7 @@ export const alabastaChronicles = {
     },
     {
       episode: 126,
+      chapter: 210,
       value: {
         title: {
           it: 'Attraverso il soffitto, nella pioggia',

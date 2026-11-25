@@ -51,12 +51,15 @@ export const wano: OnePieceSaga = {
     {
       id: 'tama',
       kind: 'character',
-      revealedAtEpisode: 894,
-      revealedAtChapter: 912,
+      // She gives her name on the beach: chapter 911 (pp. 5–6, 9–19) and
+      // the end of episode 893. The rice, the river and Amigasa Village are
+      // episode 894 (chapter 912 for the village), so they are dated steps.
+      revealedAtEpisode: 893,
+      revealedAtChapter: 911,
       name: { it: 'O-Tama', en: 'Tama' },
       summary: {
-        it: 'Una bambina affamata del villaggio di Amigasa che divide la sua unica scodella di riso con uno sconosciuto.',
-        en: 'A hungry girl from Amigasa Village who shares her one bowl of rice with a starving stranger she has just met.',
+        it: 'Una bambina di Kuri che due uomini portano via in un sacco per qualcosa che ha detto, finché uno sconosciuto sulla spiaggia non interviene. Addomestica il loro babbuino con uno gnocco staccato dalla propria guancia.',
+        en: 'A girl in Kuri whom two men carry off in a sack for something she said, until a stranger on the beach steps in. She tames their baboon with a dumpling pulled from her own cheek.',
       },
       visual: { art: 'tama', tint: 'pink' },
     },
@@ -732,16 +735,25 @@ export const wano: OnePieceSaga = {
   dossiers: {
     'tama': {
       relationships: wanoRelationships.tama,
-      role: {
-        it: 'Bambina del villaggio di Amigasa',
-        en: 'Child of Amigasa Village',
-      },
+      role: [
+        { episode: 893, value: { it: 'Bambina di Kuri', en: 'Girl of Kuri' } },
+        // Hitetsu tells the village's history: chapter 912, titled after it,
+        // and episode 894.
+        {
+          episode: 894,
+          chapter: 912,
+          value: {
+            it: 'Bambina del villaggio di Amigasa',
+            en: 'Child of Amigasa Village',
+          },
+        },
+      ],
       log: {
-        it: 'Vive in un villaggio dove l’acqua del fiume è veleno e il cibo arriva una volta ogni tanto, e regala comunque a un affamato la sua unica scodella di riso. Ha un frutto del diavolo che le permette di staccarsi una guancia e farne uno gnocco di miglio, e l’animale che lo mangia le obbedisce come se fosse addomesticato.',
-        en: 'She lives in a village where the river water is poison and food arrives once in a while, and still gives her only bowl of rice to a starving stranger. A devil fruit lets her pull a millet dumpling out of her own cheek, and any animal that eats one follows her as if tamed.',
+        it: 'Due uomini la portano via in un sacco per qualcosa che ha detto. Quando uno sconosciuto sulla spiaggia ne stende uno, lei esce dal sacco, colpisce l’altro in testa e si arrende subito allo sconosciuto. Un frutto del diavolo le permette di staccarsi dalla guancia uno gnocco di miglio, e l’animale che lo mangia le obbedisce come se fosse addomesticato. Il primo è il babbuino dei due uomini. Allo sconosciuto conferma che è arrivato nel Paese di Wano, nella regione di Kuri.',
+        en: 'Two men carry her off in a sack for something she said. When a stranger on the beach knocks one of them down, she gets out of the sack, hits the other over the head and surrenders to the stranger on the spot. A devil fruit lets her pull a millet dumpling out of her own cheek, and any animal that eats one follows her as if tamed. The men’s baboon is the first. She tells the stranger he has reached Wano, in the region of Kuri.',
       },
       status: [
-        { episode: 894, value: 'alive' },
+        { episode: 893, value: 'alive' },
         // Episode 900 adapts chapter 914: while Luffy and Zoro fight, the
         // Gifter Gazelleman snatches the sleeping Tama and runs off with her.
         { episode: 900, chapter: 914, value: 'captured' },
@@ -751,7 +763,13 @@ export const wano: OnePieceSaga = {
       ],
       affiliation: [
         {
+          episode: 893,
+          factions: ['independent'],
+          value: { it: 'Kuri, Paese di Wano', en: 'Kuri, Wano' },
+        },
+        {
           episode: 894,
+          chapter: 912,
           factions: ['independent'],
           value: {
             it: 'Kuri, Paese di Wano, bambina del villaggio di Amigasa',
@@ -768,8 +786,8 @@ export const wano: OnePieceSaga = {
           },
         },
       ],
-      origin: [{ episode: 894, value: WANO }],
-      devilFruit: [{ episode: 894, value: ['millet-millet-fruit'] }],
+      origin: [{ episode: 893, value: WANO }],
+      devilFruit: [{ episode: 893, value: ['millet-millet-fruit'] }],
     },
     'tenguyama-hitetsu': {
       relationships: wanoRelationships['tenguyama-hitetsu'],

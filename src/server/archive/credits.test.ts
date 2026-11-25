@@ -11,11 +11,13 @@ const OFFICIAL = 'https://one-piece.com/anime/o6217/index.html'
 const TAMA_REVISION = 'oldid=2132292'
 
 /**
- * The gates these tests cross, pinned by hand (#1410): Tama's record, and the
- * chapter Luffy's episode-126 story opens at in the manga.
+ * The gates these tests cross, pinned by hand (#1410, #1682): Tama's record,
+ * where she gives her name at the end of episode 893, and chapter 210, where
+ * Crocodile goes through the ceiling and the rain starts in Luffy's
+ * episode-126 story.
  */
-const TAMA_EPISODE = 894
-const RAIN_CHAPTER = 213
+const TAMA_EPISODE = 893
+const RAIN_CHAPTER = 210
 
 describe('source credits', () => {
   it.each(LOCALES)(
