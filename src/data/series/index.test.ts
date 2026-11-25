@@ -8,7 +8,7 @@ import { toldIn } from '~/data/reveal'
 import type { Dated, Entity, SeriesArchive } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
 import { FIRST_CHAPTER, FIRST_EPISODE } from '~/lib/progress/episode'
-import type { Gated } from '~/lib/progress/spoiler'
+import type { Gated, Source } from '~/lib/progress/spoiler'
 import type { Stroke } from '~/lib/view/records'
 import { ACCENT_EXCEPTIONS } from '~/test/accents'
 import { LOADED_SERIES } from '~/test/series'
@@ -100,21 +100,28 @@ function stageAt({
  * Whether a stage comes late enough, in the units of the medium that tells
  * it. A stage both media tell comes after the record's episode; a
  * manga-only one after its chapter, at or after its episode. An anime-only
- * one may sit at the record's episode: there the anime already shows what
- * the manga shows later, and a chapter reader keeps the first drawing
- * (#1683, the Okuchi-no-Makami fruit).
+ * stage of a record both media tell may sit at the record's episode: there
+ * the anime already shows what the manga shows later, and a chapter reader
+ * keeps the first drawing (#1683, the Okuchi-no-Makami fruit). A record one
+ * medium alone tells has no other reader, so its stages stay strictly later.
  */
 function isLateEnough(
-  { chapter = 0, episode, told }: Parameters<typeof stageAt>[0],
-  record: Pick<Entity, 'revealedAtChapter' | 'revealedAtEpisode'>,
+  {
+    chapter = 0,
+    episode,
+    source,
+    told,
+  }: Parameters<typeof stageAt>[0] & { source?: Source | undefined },
+  record: Pick<Entity, 'revealedAtChapter' | 'revealedAtEpisode' | 'source'>,
 ): boolean {
   if (told === 'chapter') {
     return (
       chapter > record.revealedAtChapter && episode >= record.revealedAtEpisode
     )
   }
+  const atTheThreshold = source === 'episode' && record.source === undefined
 
-  return told === 'episode' ?
+  return atTheThreshold ?
       episode >= record.revealedAtEpisode
     : episode > record.revealedAtEpisode
 }

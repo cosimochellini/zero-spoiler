@@ -98,7 +98,7 @@ const NOT_COUNTED = {
  */
 const SHOWING_KEPT = {
   'dog-dog-fruit-model-okuchi-no-makami':
-    'episode 1041 shows it before the threshold, in the anime alone (#1683): an episode-only stage at the threshold, 1042, and a chapter-only one at chapter 1070, page 6',
+    'unchecked, on the owner’s ruling in #1683 until the frame check in its pull request is done: episode 1041 shows it before the threshold, in the anime alone, so it is an episode-only stage at the threshold, 1042, and a chapter-only one at chapter 1070, page 6',
 }
 
 /** The verdicts that fail the run. */
