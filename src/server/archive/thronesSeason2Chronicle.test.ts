@@ -600,7 +600,7 @@ const STORIES: Row[] = [
     id: 'davos-seaworth',
     medium: 'show',
     episode: 15,
-    chapter: 116,
+    chapter: 107,
     title: 'The commander',
   },
   {
@@ -966,6 +966,13 @@ const STORIES: Row[] = [
     episode: 15,
     chapter: 107,
     title: 'The stag and the rose',
+  },
+  {
+    id: 'loras-tyrell',
+    medium: 'books',
+    episode: 15,
+    chapter: 110,
+    title: 'Three guards killed',
   },
   {
     id: 'loras-tyrell',

@@ -105,6 +105,7 @@ const ST_84 = `${ACOK_AWOIAF}10`
 const ST_96 = `${ACOK_AWOIAF}22`
 const ST_105 = `${ACOK_AWOIAF}31`
 const ST_107 = `${ACOK_AWOIAF}33`
+const ST_110 = `${ACOK_AWOIAF}36`
 const ST_113 = `${ACOK_AWOIAF}39`
 const ST_116 = `${ACOK_AWOIAF}42`
 const ST_118 = `${ACOK_AWOIAF}44`
@@ -1761,6 +1762,10 @@ export const GAME_OF_THRONES_SOURCES = {
       source: ST_105,
       note: `Catelyn III (site 105): the van given to Loras, the stag and rose side by side with Brienne, and Loras kept to help Renly pray. Catelyn IV (${ST_107}): Renly sure Loras will break Stannis’s first lines, and the shadow cutting his throat as Brienne arms him. Episode 15 adapts the second chapter, his role’s pin.`,
     },
+    '15:110': {
+      source: ST_110,
+      note: 'Tyrion VIII (site 110): Varys’s report to the small council that Loras, Tarly and Rowan did not go over to Stannis, that Loras killed three of Renly’s guards in anger, Emmon Cuy and Robar Royce among them, and left with a fifth of the knights, likely for Bitterbridge and Margaery; Tyrion sees the chance to win the Tyrells. Episode 15 adapts the chapter.',
+    },
     '20:chapter': {
       source: ST_139,
       note: 'Sansa VIII (site 139): Mace with Garlan and Loras presented among the heroes, Loras named to the Kingsguard, Mace on the small council, Garlan asking for Margaery and the betrothal to Sansa voided. Episode 20, Garlan’s show gate, orders it.',
@@ -3072,7 +3077,7 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Davos_Seaworth`,
       note: 'Davos Seaworth and Melisandre pages: the parley, the order to smuggle Melisandre into the caves beneath Renly’s camp without a reason, good and bad mixed, the rotten onion, the bars, the pregnancy and the shadow born while he cowers (GOT204). Chapter 116 orders it.',
     },
-    '15:116': {
+    '15:107': {
       source: `${SHOW}Davos_Seaworth`,
       note: 'Davos Seaworth page: Renly’s army going over, the plan for King’s Landing, Melisandre to be kept out because of the rumors, Stannis angry at the broken order but agreeing, Davos given the fleet and his worry about the bannermen’s respect for a man of his origins (GOT205).',
     },
@@ -3094,11 +3099,11 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '14:chapter': {
       source: ST_116,
-      note: 'Davos II (site 116): back with the fleet after carrying the king’s message, Cortnay’s refusal and Davos’s respect for his faith, the advice to strike King’s Landing at once, the order to take Melisandre beneath the castle as some fifteen years before, the liar, and the shadow whose maker he recognizes. Episode 14 adapts the chapter.',
+      note: 'Davos II (site 116): back with the fleet after carrying the king’s message, Cortnay’s refusal and Davos’s respect for Cortnay’s faith, the advice to strike King’s Landing at once, the order to take Melisandre beneath the castle as some fifteen years before, the liar, and the shadow whose maker he recognizes. Episode 14 adapts the chapter.',
     },
     '19:chapter': {
       source: ST_132,
-      note: `Davos III (site 132): the Black Betha in the second line on the right, his doubts about Imry’s headlong attack, the chain seen but not raised, the river fight, the wildfire barge rammed, Davos overboard and the chain raised as the wrecks drift. Matthos killed on the Black Betha: ${ST_MATTHOS}, citing this chapter. Episode 19 adapts it.`,
+      note: `Davos III (site 132): the Black Betha in the second line on the right, his doubts about Imry’s headlong attack, the chain seen but not raised, the fleets fighting in the river, the wildfire barge rammed, Davos overboard and the chain raised as the wrecks drift. Matthos killed on the Black Betha: ${ST_MATTHOS}, citing this chapter. Episode 19 adapts it.`,
     },
   },
   'cressen': {
@@ -3126,7 +3131,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '19:chapter': {
       source: ST_MATTHOS,
-      note: 'A Wiki of Ice and Fire’s Matthos Seaworth page, citing Davos III (site 132): Imry’s place for the Seaworth ships in the second line on the starboard wing, Allard’s honor and Davos’s peril, the sons’ pity for his nervousness, Matthos second on the Black Betha, and the wildfire explosion that destroys her and kills him. Episode 19 adapts the chapter.',
+      note: 'A Wiki of Ice and Fire’s Matthos Seaworth page, citing Davos III (site 132): Imry’s place for the Seaworth ships in the second line on the starboard wing, Allard’s honor and Davos’s peril, the sons’ pity for his nervousness, Matthos second on the Black Betha, and the wildfire explosion on the Blackwater Rush that destroys her and kills him. Episode 19 adapts the chapter.',
     },
   },
   'salladhor-saan': {
@@ -3248,7 +3253,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '16:118': {
       source: ST_118,
-      note: 'Tyrion X (site 118): Varys bringing word that Storm’s End has fallen, his attempt to tell how Cortnay died and his hint of magic, Tyrion suspecting an assassin from the Free Cities, and Varys’s hatred of magic since a sorcerer gelded him. Episode 16, his status pin, orders it.',
+      note: 'Tyrion X (site 118): Varys bringing word that Storm’s End has fallen, his attempt to tell how Cortnay died and his hint of magic, Tyrion’s disbelief, Varys’s hatred of magic since a sorcerer gelded him, and then Tyrion suspecting an assassin from the Free Cities. Episode 16, his status pin, orders it.',
     },
   },
 }
