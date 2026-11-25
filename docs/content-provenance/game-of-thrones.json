@@ -1155,7 +1155,8 @@
       "Presumed dead (#1287): episode 40 (GOT410) and Arya XIII of A Storm of Swords (site chapter 218, AWOIAF not read: unverified).",
       "Return (#1287): \"The Broken Man\" (episode 57, GOT607), show only; death in \"The Bells\" (episode 72, GOT805), show only.",
       "Stage-2 steps (#1463): deserter, no allegiance, at 19 / 136, from the Game of Thrones Wiki's \"Blackwater\" and A Wiki of Ice and Fire (read through Firecrawl): Tyrion XIII (ACOK 59, site 133) has him refuse the sortie; Sansa VII (ACOK 62, site 136) has him leave his bloodied white cloak in Sansa's chamber. Pages: https://awoiaf.westeros.org/index.php/Sandor_Clegane, https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_59.",
-      "Stage 3 (#1636): captured at 22 / 173: the outlaws bring him into the inn as a captive in \"Dark Wings, Dark Words\"; the Mad Huntsman brings him into Stoney Sept in chains in Arya V (Chapter 29). Free again at 25 / 183: he wins his trial and is let go in \"Kissed by Fire\"; the books try him in Arya VI (Chapter 34, 178) and Arya VII (Chapter 39, 183) has Beric let him go after taking his gold. 183 is the safe later pin: the trial at 178 may already free him (owner check). Neither the episodes nor the books were viewed."
+      "Stage 3 (#1636): captured at 22 / 173: the outlaws bring him into the inn as a captive in \"Dark Wings, Dark Words\"; the Mad Huntsman brings him into Stoney Sept in chains in Arya V (Chapter 29). Free again at 25 / 183: he wins his trial and is let go in \"Kissed by Fire\"; the books try him in Arya VI (Chapter 34, 178) and Arya VII (Chapter 39, 183) has Beric let him go after taking his gold. 183 is the safe later pin: the trial at 178 may already free him (owner check). Neither the episodes nor the books were viewed.",
+      "Review round 1: the capture is split by medium (22 for the show, 173 for the books), so no shared pair anchors episode 22 to chapter 173 against Beric's and Thoros's earlier-chapter pairs in later episodes."
     ]
   },
   "janos-slynt": {
@@ -1214,7 +1215,8 @@
       "Stage 2 (#1465): the recruit step is now shared, episode 10 and Arya I (chapter 75), as #1457 found. Captured in \"What Is Dead May Never Die\" (episode 13) and Arya V (93), out of Harrenhal in \"The Prince of Winterfell\" (episode 18) and Arya X (138), both chapters from A Wiki of Ice and Fire's chapter pages. Episodes not viewed.",
       "Chronicle (#1618): \"mia signora\" for Gendry's \"m'lady\" is not checked: neither Italian Wikipedia nor the Italian Game of Thrones Wiki gives the word, and the Mondadori edition was not read.",
       "Stage 3 (#1636): smith of the Brotherhood Without Banners at 25 / 183, where he decides to stay with the outlaws in \"Kissed by Fire\" and joins them as their smith in Arya VII (Chapter 39). The books' Beric knights him there (the Ice and Fire Wiki cites Arya VII); the show does not, so the shared role leaves the knighthood out.",
-      "Stage 3 (#1636), the show's alone: captured at 26, when the outlaws hand him to Melisandre for gold in \"The Climb\", and alive at 30, when Davos frees him from Dragonstone in \"Mhysa\"; affiliation \"No allegiance\" from 26. Chapter 196 only orders them; the books keep him with the outlaws. These steps cover his Dragonstone scenes too, which the Dragonstone group (#1640) shares. Neither the episodes nor the books were viewed."
+      "Stage 3 (#1636), the show's alone: captured at 26, when the outlaws hand him to Melisandre for gold in \"The Climb\", and alive at 30, when Davos frees him from Dragonstone in \"Mhysa\"; affiliation \"No allegiance\" from 26. Chapter 196 only orders them; the books keep him with the outlaws. These steps cover his Dragonstone scenes too, which the Dragonstone group (#1640) shares. Neither the episodes nor the books were viewed.",
+      "Stage 3 (#1636, review round 1), the show's alone: role \"Melisandre's prisoner\" at 26 (\"The Climb\") and \"Escaped from Dragonstone\" at 30 (\"Mhysa\"), so the shared smith role does not stay on after he is sold. Chapter 196 only orders both."
     ]
   },
   "gregor-clegane": {
@@ -2753,11 +2755,12 @@
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17",
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_34",
       "https://gameofthrones.fandom.com/wiki/Walk_of_Punishment_(episode)",
-      "https://iceandfire.fandom.com/wiki/Thoros_of_Myr"
+      "https://iceandfire.fandom.com/wiki/Thoros_of_Myr",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_22"
     ],
     "unverified": [
       "Show gate 22 (#1628): in \"Dark Wings, Dark Words\" the captive Hound greets him, \"Thoros. The fuck you doing here?\" (Thoros page, Quotes). Episode not viewed.",
-      "Stage 3 (#1636): Brotherhood Without Banners at 23 / 161. The show meets him leading the outlaws at his gate (22), which already holds his first affiliation, so the step takes \"Walk of Punishment\" (23), the safe later pin; Arya III (Chapter 17) has Harwin tell how Thoros saved Beric at the Mummer's Ford and how the survivors became outlaws. Neither the episodes nor the books were viewed."
+      "Stage 3 (#1636): Brotherhood Without Banners at 23 / 166. The show meets him leading the outlaws at his gate (22), which already holds his first affiliation, so the step takes \"Walk of Punishment\" (23), the safe later pin. In the books Arya III (Chapter 17, 161) has him only in Harwin's tale of the Mummer's Ford; Arya IV (Chapter 22, 166) is the first chapter to tie him to the band, which seeks him with Lord Beric (review round 1). Neither the episodes nor the books were viewed."
     ]
   },
   "balon-swann": {
@@ -5263,7 +5266,7 @@
     ],
     "unverified": [
       "Book gate 173 (Arya V): Chapter 29 has the northmen in cages caught by the Mad Huntsman, and the Huntsman bring a prisoner into town in chains at night. The line that says the name is not quoted. Neither the episodes nor the books were viewed.",
-      "Affiliation \"Brotherhood Without Banners\": the Ice and Fire Wiki and the Il Trono di Spade Wiki both have him join the outlaws; Chapter 34 (178) lists him at the hollow hill.",
+      "Affiliation (review round 1): \"No allegiance\" at his gate, 173, where Chapter 29 has him keep his own cages and his own prisoner; \"Brotherhood Without Banners\" at 178, where Chapter 34 has him at the hollow hill after handing Sandor over (the Ice and Fire Wiki ties him to the outlaws when he surrenders Sandor). Episode 25 only orders the step.",
       "Show: none; episode 24 only orders the record.",
       "Italian: \"Cacciatore Pazzo\" (Il Trono di Spade Wiki); the Mondadori form was not checked."
     ]

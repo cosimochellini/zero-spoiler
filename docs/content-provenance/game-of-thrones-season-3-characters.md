@@ -67,8 +67,9 @@ episode only orders it.
 - Greenbeard: role sellsword of the Brotherhood Without Banners, alive. Filed
   under the name the chapters use; he calls himself Pello of Tyrosh. Italian
   "Barbaverde".
-- Mad Huntsman: role huntsman, Brotherhood Without Banners, alive. Italian
-  "Cacciatore Pazzo".
+- Mad Huntsman: role huntsman, no allegiance at 173, then Brotherhood Without
+  Banners at 178 (Arya VI, where he has handed Sandor to the outlaws), alive.
+  Italian "Cacciatore Pazzo".
 - Edric Dayne: role Lord of Starfall and squire to Beric Dondarrion, Brotherhood
   Without Banners, alive. Italian "Edric Dayne"; Starfall is "Stelle al
   Tramonto".
@@ -95,10 +96,11 @@ Steps in `season-1.ts`, as episode / site chapter.
 - Gendry: role smith of the Brotherhood Without Banners and affiliation
   Brotherhood Without Banners, 25 / 183 ("Kissed by Fire"; Arya VII, where Beric
   also knights him, which the shared role leaves out). The show's alone:
-  `captured` and affiliation "No allegiance" at 26 ("The Climb", the outlaws
-  hand him to Melisandre for gold), `alive` at 30 ("Mhysa", Davos frees him);
-  chapter 196 only orders them. These cover his Dragonstone scenes too, which
-  the Dragonstone group (#1640) shares.
+  `captured`, affiliation "No allegiance" and role "Melisandre's prisoner" at 26
+  ("The Climb", the outlaws hand him to Melisandre for gold), `alive` and role
+  "Escaped from Dragonstone" at 30 ("Mhysa", Davos frees him); chapter 196 only
+  orders them. These cover his Dragonstone scenes too, which the Dragonstone
+  group (#1640) shares.
 - Hot Pie: role baker at an inn and affiliation "An inn in the riverlands", 23 /
   161 ("Walk of Punishment"; Arya III, where Arya misses him, now that he has
   stayed with Sharna). The shared text names neither medium's inn.
@@ -106,9 +108,10 @@ Steps in `season-1.ts`, as episode / site chapter.
   affiliation Brotherhood Without Banners, 24 / 161 ("And Now His Watch Is
   Ended"; Arya III, Harwin's tale). His death and return at the trial (25 / 178)
   change no status.
-- Thoros of Myr: affiliation Brotherhood Without Banners, 23 / 161. His show
+- Thoros of Myr: affiliation Brotherhood Without Banners, 23 / 166. His show
   gate (22) already holds his first affiliation, so the show step takes the next
-  episode.
+  episode. Arya III (161) has him only in Harwin's tale; Arya IV (166) is the
+  first to tie him to the band.
 - Harwin, the books' alone: affiliation Brotherhood Without Banners, 161 (Arya
   III); episode 22 only orders it.
 

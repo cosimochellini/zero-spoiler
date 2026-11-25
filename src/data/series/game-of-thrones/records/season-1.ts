@@ -4660,10 +4660,12 @@ export const season1: ThronesSaga = {
         { episode: 4, chapter: 5, value: 'alive' },
         // Stage 3 (#1636): the outlaws bring him in as a prisoner in "Dark
         // Wings, Dark Words" (episode 22), the Mad Huntsman in Arya V
-        // (chapter 173). He wins his trial by combat and goes free in "Kissed
-        // by Fire" (episode 25); the books try him in Arya VI (178) and tell
-        // him let go in Arya VII (183), the safe later pin.
-        { episode: 22, chapter: 173, value: 'captured' },
+        // (chapter 173), split by medium so the pair does not anchor episode
+        // 22 to chapter 173. He wins his trial by combat and goes free in
+        // "Kissed by Fire" (episode 25); the books try him in Arya VI (178)
+        // and tell him let go in Arya VII (183), the safe later pin.
+        { episode: 22, chapter: 173, source: 'episode', value: 'captured' },
+        { episode: 22, chapter: 173, source: 'chapter', value: 'captured' },
         { episode: 25, chapter: 183, value: 'alive' },
         { episode: 40, chapter: 218, value: 'presumed-dead' },
         { episode: 57, chapter: 344, source: 'episode', value: 'alive' },
@@ -4761,6 +4763,27 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Fabbro della Fratellanza senza vessilli',
             en: 'Smith of the Brotherhood Without Banners',
+          },
+        },
+        // The show's alone, with his status: Melisandre's prisoner from "The
+        // Climb" (episode 26), escaped from Dragonstone in "Mhysa" (episode
+        // 30). Chapter 196 only orders both.
+        {
+          episode: 26,
+          chapter: 196,
+          source: 'episode',
+          value: {
+            it: 'Prigioniero di Melisandre',
+            en: 'Melisandre’s prisoner',
+          },
+        },
+        {
+          episode: 30,
+          chapter: 196,
+          source: 'episode',
+          value: {
+            it: 'Fuggito da Roccia del Drago',
+            en: 'Escaped from Dragonstone',
           },
         },
       ],
@@ -6313,11 +6336,12 @@ export const season1: ThronesSaga = {
         // Brotherhood Without Banners at his gate, "Dark Wings, Dark Words"
         // (episode 22), which already holds his first affiliation, so the
         // step takes "Walk of Punishment" (episode 23), where he leads them
-        // on from the inn. In Arya III (chapter 161) Harwin tells how Thoros
-        // saved Lord Beric and how the survivors became outlaws.
+        // on from the inn. The books: Arya III (161) has him only in
+        // Harwin's tale; Arya IV (chapter 166) is the first to tie him to
+        // the band, which seeks him with Lord Beric.
         {
           episode: 23,
-          chapter: 161,
+          chapter: 166,
           value: {
             it: 'Fratellanza senza vessilli',
             en: 'Brotherhood Without Banners',

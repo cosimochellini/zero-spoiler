@@ -302,9 +302,18 @@ export const season3: ThronesSaga = {
         { episode: 24, chapter: 173, source: 'chapter', value: 'alive' },
       ],
       affiliation: [
+        // At his gate he keeps his own cages and his own prisoner. He hands
+        // Sandor over to the outlaws and stands with them at the hollow hill
+        // in Arya VI (chapter 178); episode 25 only orders it.
         {
           episode: 24,
           chapter: 173,
+          source: 'chapter',
+          value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
+        },
+        {
+          episode: 25,
+          chapter: 178,
           source: 'chapter',
           value: {
             it: 'Fratellanza senza vessilli',
@@ -319,7 +328,7 @@ export const season3: ThronesSaga = {
         en: 'Lord of Starfall, squire to Beric Dondarrion',
       },
       log: {
-        it: 'È lo scudiero di lord Beric e lo chiamano Ned, come il padre di Arya. Le racconta di aver visto Eddard Stark al torneo del Primo Cavaliere, e che suo padre amava sua zia Ashara. Harwin non lo smentisce.',
+        it: 'È lo scudiero di lord Beric e lo chiamano Ned, come il padre di Arya. Le racconta di aver visto Eddard Stark al torneo del Primo Cavaliere, e che il padre di Arya amava sua zia Ashara. Harwin non lo smentisce.',
         en: 'He is Lord Beric’s squire, and he is called Ned, like Arya’s father. He tells Arya he saw Eddard Stark at the Hand’s tourney, and that her father loved his aunt Ashara. Harwin does not deny it.',
       },
       status: [
