@@ -54,22 +54,34 @@ gates.
   (`src/data/reveal.ts`): what a reader at the point's episode and one at its
   chapter would both see. The reader keeps the null bookmark and the
   null-bookmark archive copy, so its handles are the ones “Show anyway”
-  resolves. A bookmark or a trial gets its own reader, unchanged. Each such
-  payload says so (`reads: 'page'` in `src/server/archive/payloads.server.ts`,
-  hence its `drawnAt`), and the leak sweep reads every key of it with no
-  bookmark, in both locales, held to both of its points (`src/test/visitor.ts`).
+  resolves. A record of one source only is in no such copy, so its page is drawn
+  as a reader of its source sees it at its own threshold in that source (#1431),
+  the other unit's number, which only orders it, left out. Its reader keeps the
+  null bookmark and is handed that source's copy, whose handles carry the source
+  (`c:1a`, `hunter-x-hunter:e:1a`; `markedCopy` in
+  `src/server/archive/handle.server.ts`). With no bookmark, “Show anyway”
+  resolves a marked handle in the copy it names (`liftReader`); under a bookmark
+  a marked handle is no handle and fails closed. A page about a record only the
+  manga or the books tell says so (`detail.unit`), and the browser prints its
+  thresholds, and opens the bookmark form, in chapters. Lists keep the null
+  copy. A bookmark or a trial gets its own reader, unchanged. Each such payload
+  says so (`reads: 'page'` in `src/server/archive/payloads.server.ts`, hence its
+  `drawnAt`), and the leak sweep reads every key of it with no bookmark, in both
+  locales, held to both of its points, or, for a record of one source only, to
+  the one bookmark of its source at its threshold (`heldTo` in
+  `src/test/visitor.ts`, with pins beside it in `visitor.test.ts`).
 - Drawings, search aliases, relationships, place labels and source credits use
   the same gates as prose. Later information belongs in dated entries.
 - A record's social pictures (`public/og/`, [Social pictures](#social-pictures))
   are the one exception: static files at addresses built from its slug, so
-  anyone who asks for one gets it. The sitemap lists the square of every record
-  both sources tell; a record of one source only is not listed. They hold the
-  first drawing, and the name and line of the page a link preview fetches with
-  no bookmark: the record at its own first appearance, as both an anime viewer
-  and a manga reader see it (Hagya's card says Hagya, not the anime's Leol). A
-  record of one source only has no page with no bookmark; its card is drawn by
-  that source's own reader at the record's threshold. No page under fog names
-  them. The fog is an editorial promise kept by the pages, not access control.
+  anyone who asks for one gets it. The sitemap lists the page and the square of
+  every record, of both sources and of one. They hold the first drawing, and the
+  name and line of the page a link preview fetches with no bookmark: the record
+  at its own first appearance, as both an anime viewer and a manga reader see it
+  (Hagya's card says Hagya, not the anime's Leol), or, for a record of one
+  source only, as that source's reader sees it at its own threshold. No page
+  under fog names them. The fog is an editorial promise kept by the pages, not
+  access control.
 - Personalized HTML and archive responses stay out of shared caches. Deferred
   drawings and lists are filtered server-side too; results belong to the
   bookmark they were fetched for.
@@ -168,9 +180,10 @@ request cookies, never a client-supplied bookmark.
 
 Fog prevents accidental spoilers, not deliberate access: “Show anyway” reveals a
 record by handle, and a record's own page, opened with no saved or trial
-bookmark, shows it as it stands at its first appearance. No content or fog
-decision reads the `User-Agent`: a crawler and a person with no bookmark are
-sent the same records, because answering a crawler differently is cloaking
+bookmark, shows it as it stands at its first appearance, or, told by one source
+only, as that source's reader sees it at its own threshold (#1431). No content
+or fog decision reads the `User-Agent`: a crawler and a person with no bookmark
+are sent the same records, because answering a crawler differently is cloaking
 (#1430). The one exception is layout: the places chart is drawn upright for a
 phone (`Mobi` in the `User-Agent`, or `Sec-CH-UA-Mobile`, with a `Vary` header;
 `src/routes/$series/$locale/places/index.tsx`), never with more or less open.
@@ -382,7 +395,10 @@ named in the pages read), with the stage's steps of seven earlier characters.
 Jaime, Brienne and Harrenhal (#1637) adds two characters, one both media's and
 one the books' alone, with the stage's steps of five earlier records.
 Dragonstone (#1640) adds three, all the books' alone (Axell and Alester Florent,
-Edric Storm), with stage-3 steps on Davos Seaworth.
+Edric Storm), with stage-3 steps on Davos Seaworth. Bran's road and Theon
+(#1641) adds Myranda, the show's alone, moves Ramsay Snow's show gate to episode
+30, where his name is first said, and adds the stage's steps of Bran, Osha and
+Theon, Bran's passing beyond the Wall keeping its later book chapter (#852).
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -462,10 +478,10 @@ appearance in both media): a character's epithet, else its role; a fruit's type;
 an ability's Nen type, else its kind; a place's form and region; a ship's kind.
 So a card says what the page's title says, the record's own name where the anime
 names it otherwise (Hagya, not Leol, which the manga gives only at chapter 240),
-and `scripts/og-images.test.mjs` holds the two equal for every such record. A
-record of one source only has no page with no bookmark; its card is its source's
-reader's at the record's threshold. Re-run the script after changing a record, a
-first drawing or the card layout. It draws only what changed.
+and `scripts/og-images.test.mjs` holds the two equal for every such record and
+every record of one source only, whose page and card are its source's reader's
+at the record's threshold. Re-run the script after changing a record, a first
+drawing or the card layout. It draws only what changed.
 `scripts/og-images.test.mjs` fails while a picture is missing, stale or
 orphaned.
 
@@ -622,15 +638,15 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| Records                | 347                                                                                     |
-| Characters             | 260                                                                                     |
+| Records                | 348                                                                                     |
+| Characters             | 261                                                                                     |
 | Places                 | 87                                                                                      |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 350, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
+| Line drawings          | 351, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
 | Chronicle stories      | 1235, for 220 characters                                                                |
-| Dated timelines        | 1173                                                                                    |
-| Affiliation steps      | 306                                                                                     |
-| Status steps           | 451                                                                                     |
+| Dated timelines        | 1175                                                                                    |
+| Affiliation steps      | 307                                                                                     |
+| Status steps           | 453                                                                                     |
 | Later visits to places | 5                                                                                       |
 
 <!-- End of the generated counts. -->

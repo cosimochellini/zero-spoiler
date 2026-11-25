@@ -3203,7 +3203,7 @@ const STORIES: Row[] = [
   {
     id: 'ramsay-snow',
     medium: 'books',
-    episode: 32,
+    episode: 30,
     chapter: 140,
     title: 'The man called Reek',
   },
@@ -4438,7 +4438,7 @@ const FIRST: { chapter: number; episode: number; id: string }[] = [
   { id: 'farlen', episode: 16, chapter: 124 },
   { id: 'meera-reed', episode: 22, chapter: 95 },
   { id: 'jojen-reed', episode: 22, chapter: 95 },
-  { id: 'ramsay-snow', episode: 32, chapter: 140 },
+  { id: 'ramsay-snow', episode: 30, chapter: 140 },
   { id: 'big-walder-frey', episode: 13, chapter: 90 },
   { id: 'little-walder-frey', episode: 13, chapter: 90 },
   { id: 'wyman-manderly', episode: 60, chapter: 90 },

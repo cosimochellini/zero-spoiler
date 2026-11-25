@@ -1,16 +1,16 @@
 import { byNumber, byValue } from 'sort-es'
 
-import type { ReaderArchive } from '~/data/features'
+import { type ReaderArchive, withFeatures } from '~/data/features'
 import { orderByMode } from '~/data/order'
 import { type Reveal, reveal, revealAt, sourceOf } from '~/data/reveal'
 import { archiveIn } from '~/data/source'
 import type { Entity, SeriesArchive } from '~/data/types'
 import type { Locale } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import type { Gated } from '~/lib/progress/spoiler'
+import type { Gated, Source } from '~/lib/progress/spoiler'
 import type { CoveredRecord, Slot } from '~/lib/view/records'
 
-import { handleOf } from './handle.server'
+import { handleOf, markedCopy, markOf } from './handle.server'
 
 /**
  * One reader, for one request: the bookmark's `Reveal`, the locale the page
@@ -95,13 +95,18 @@ export function readerFor(
 
 /**
  * A reader who sees what `at` sees: the bookmark's own, unless `pageReader`
- * draws a page for a reader with none.
+ * draws a page for a reader with none. `told` is the bookmark's own copy
+ * unless the page is about a record of one source only (`toldBy`).
  */
 function readerSeeing(
   archive: SeriesArchive,
-  { at, bookmark, locale }: { at: Reveal; bookmark: Bookmark; locale: Locale },
+  {
+    at,
+    bookmark,
+    locale,
+    told = archiveIn(archive, sourceOf(bookmark)),
+  }: { at: Reveal; bookmark: Bookmark; locale: Locale; told?: ReaderArchive },
 ): Reader {
-  const told = archiveIn(archive, sourceOf(bookmark))
   const order = (entries: Entity[]): Entity[] => orderByMode(entries, at.mode)
 
   const reader: Reader = {
@@ -157,8 +162,15 @@ function readerSeeing(
  * list (no `id`) open up to the end of the series' demo, both drawn by
  * `revealAt`. The bookmark stays `null` and the archive is the one a reader
  * with no bookmark is handed, so a handle this page mints is one "Show anyway"
- * (`lift*`, always `readerFor`) resolves. An id the visitor's archive does not
- * have falls back to the plain null reader, under which the page is not found.
+ * (`lift*`, `liftReader`) resolves.
+ *
+ * A record of one source only is in no such archive (#1431): its page is
+ * drawn as a reader of its source sees it at its own threshold in that
+ * source, the other unit's number, which only orders it, left out. The
+ * archive is that source's copy with its handles marked (`markedCopy`), so
+ * "Show anyway" resolves them in the same copy. An id the series does not
+ * file falls back to the plain null reader, under which the page is not
+ * found.
  */
 export function pageReader(
   archive: SeriesArchive,
@@ -170,21 +182,87 @@ export function pageReader(
   }
 
   const point = pointOf(archive, id)
+  if (point === undefined) {
+    return readerFor(archive, null, locale)
+  }
 
-  return point === undefined ?
-      readerFor(archive, null, locale)
-    : readerSeeing(archive, {
+  return point.source === undefined ?
+      readerSeeing(archive, {
         at: revealAt(point, archive.series),
         bookmark: null,
+        locale,
+      })
+    : toldBy(archive, point.source, {
+        at: reveal(ownBookmark(point, point.source), archive.series),
         locale,
       })
 }
 
 /**
+ * The reader "Show anyway" lifts a handle for: the bookmark's own, or, with
+ * no bookmark, a reader of the copy a marked handle names (`markOf`), who
+ * counts in its unit and has reached nothing, as the null reader has. A
+ * marked handle under a bookmark is resolved in the bookmark's own copy,
+ * where it is no handle at all: it fails closed, so a reader of one source
+ * cannot lift a record only the other tells.
+ */
+export function liftReader(
+  archive: SeriesArchive,
+  bookmark: Bookmark,
+  { handle, locale }: { handle: string; locale: Locale },
+): Reader {
+  const source = bookmark === null ? markOf(handle, archive) : undefined
+  if (source === undefined) {
+    return readerFor(archive, bookmark, locale)
+  }
+
+  const unit = reveal(ownBookmark(FIRST, source), archive.series)
+  return toldBy(archive, source, { at: { ...unit, sees: () => false }, locale })
+}
+
+/** Episode 1 and chapter 1: only `liftReader`'s unit is read from it. */
+const FIRST: Gated = { revealedAtEpisode: 1, revealedAtChapter: 1 }
+
+/** A reader with no bookmark handed one source's copy, its handles marked. */
+function toldBy(
+  archive: SeriesArchive,
+  source: Source,
+  { at, locale }: { at: Reveal; locale: Locale },
+): Reader {
+  return readerSeeing(archive, {
+    at,
+    bookmark: null,
+    locale,
+    told: markedCopy(archiveIn(archive, source), source),
+  })
+}
+
+/** The bookmark of this source at a point's threshold in it. */
+export function ownBookmark(
+  point: Gated,
+  source: Source,
+): NonNullable<Bookmark> {
+  return source === 'episode' ?
+      { mode: 'episode', episode: point.revealedAtEpisode }
+    : { mode: 'chapter', chapter: point.revealedAtChapter }
+}
+
+/**
+ * What a record page drawn with no bookmark in chapters says so (#1431), for
+ * the browser to print thresholds and open the bookmark form in chapters: a
+ * page about a record only the manga or the books tell. Nothing on any other
+ * page, which the browser draws in the unit of its bookmark.
+ */
+export function pageUnit(r: Reader): { unit?: 'chapter' } {
+  return r.bookmark === null && r.mode === 'chapter' ? { unit: 'chapter' } : {}
+}
+
+/**
  * The point `pageReader` draws a page at for a reader with no bookmark: a
  * record page's record (`id`) at its first appearance, a list at the end of
- * the series' demo. `undefined` for an id the null-bookmark archive does not
- * have, whose page is then not found.
+ * the series' demo. A record of one source only keeps its `source`.
+ * `undefined` for an id the series does not file, whose page is then not
+ * found.
  */
 export function pointOf(
   archive: SeriesArchive,
@@ -197,7 +275,7 @@ export function pointOf(
         revealedAtEpisode: series.demoLastEpisode,
         revealedAtChapter: series.demoLastChapter,
       }
-    : recordOf(archiveIn(archive, null), id)
+    : recordOf(withFeatures(archive), id)
 }
 
 /** Any record a page can be about: ships and fruits are kept apart. */

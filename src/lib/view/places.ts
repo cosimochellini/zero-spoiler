@@ -9,6 +9,7 @@ import type { Gated } from '~/lib/progress/spoiler'
 import type { ChartPoint } from '~/lib/view/chart'
 import type {
   CoveredRecord,
+  PageUnit,
   PlaceWordsView,
   PortView,
   RecordView,
@@ -110,7 +111,7 @@ export interface VisitView extends Gated {
 }
 
 /** A place's own page. */
-export interface PlaceDetail {
+export interface PlaceDetail extends PageUnit {
   /** The map around the place; `null` while the place is under fog. */
   chart: null | PlaceChartView
   /**
@@ -140,7 +141,7 @@ export interface PlaceDetail {
  * A ship's own page: her entry and her drawings. No map: a ship is not a
  * stop.
  */
-export interface ShipDetail {
+export interface ShipDetail extends PageUnit {
   /** As a place's: every drawing reached, oldest first; empty under fog. */
   drawings: PlaceDrawing[]
   slot: Slot<ShipView>

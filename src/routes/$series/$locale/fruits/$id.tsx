@@ -4,6 +4,7 @@ import type { ReactElement } from 'react'
 
 import { VisitorBanner } from '~/components/VisitorBanner'
 import { useSeriesT } from '~/i18n/LocaleContext'
+import { PageUnitContext } from '~/lib/progress/BookmarkContext'
 import { recordHead } from '~/routes/$locale/-head'
 import { RecordBackLink, SectionNotFound } from '~/routes/$series/$locale/-back'
 import {
@@ -71,48 +72,52 @@ function FruitPage(): ReactElement {
   const peekCharacter = usePeek(liftCharacter)
 
   return (
-    <main
-      id="content"
-      {...stylex.props(recordStyles.page)}
-    >
-      <p {...stylex.props(recordStyles.back)}>
-        <RecordBackLink section="fruits" />
-      </p>
+    <PageUnitContext value={detail.unit}>
+      <main
+        id="content"
+        {...stylex.props(recordStyles.page)}
+      >
+        <p {...stylex.props(recordStyles.back)}>
+          <RecordBackLink section="fruits" />
+        </p>
 
-      <VisitorBanner slot={detail.slot} />
+        <VisitorBanner slot={detail.slot} />
 
-      <div>
-        <StageBand
-          detail={detail}
-          peek={peekFruit}
-        />
-      </div>
+        <div>
+          <StageBand
+            detail={detail}
+            peek={peekFruit}
+          />
+        </div>
 
-      <div {...stylex.props(settleStyles.band, settleStyles.at(BAND.history))}>
-        <HistoryBand detail={detail} />
-      </div>
+        <div
+          {...stylex.props(settleStyles.band, settleStyles.at(BAND.history))}
+        >
+          <HistoryBand detail={detail} />
+        </div>
 
-      <div {...stylex.props(settleStyles.band, settleStyles.at(BAND.eaters))}>
-        <EatersBand
-          eaters={eaters}
-          peek={peekCharacter}
-        />
-      </div>
+        <div {...stylex.props(settleStyles.band, settleStyles.at(BAND.eaters))}>
+          <EatersBand
+            eaters={eaters}
+            peek={peekCharacter}
+          />
+        </div>
 
-      <div {...stylex.props(settleStyles.band, settleStyles.at(BAND.kin))}>
-        <KinBand
-          peek={peekFruit}
-          siblings={siblings}
-        />
-      </div>
+        <div {...stylex.props(settleStyles.band, settleStyles.at(BAND.kin))}>
+          <KinBand
+            peek={peekFruit}
+            siblings={siblings}
+          />
+        </div>
 
-      <div {...stylex.props(settleStyles.band, settleStyles.at(BAND.saga))}>
-        <SagaBand
-          peek={peekFruit}
-          rail={detail.sagaRail}
-        />
-      </div>
-    </main>
+        <div {...stylex.props(settleStyles.band, settleStyles.at(BAND.saga))}>
+          <SagaBand
+            peek={peekFruit}
+            rail={detail.sagaRail}
+          />
+        </div>
+      </main>
+    </PageUnitContext>
   )
 }
 

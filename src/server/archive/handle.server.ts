@@ -1,5 +1,7 @@
+import type { ReaderArchive } from '~/data/features'
 import { orderByMode } from '~/data/order'
 import type { Entity, SeriesArchive } from '~/data/types'
+import type { Source } from '~/lib/progress/spoiler'
 
 const RADIX = 36
 const HANDLE_SHAPE = /^[\da-z]{1,4}$/u
@@ -25,9 +27,57 @@ function tableOf(
   return table
 }
 
+/** The letter a marked copy's handles carry after the series' namespace. */
+const MARKS: Record<Source, string> = { chapter: 'c:', episode: 'e:' }
+
+/** Each marked copy's source, and each copy's marked twin. */
+const marks = new WeakMap<object, Source>()
+const twins = new WeakMap<ReaderArchive, ReaderArchive>()
+
+/**
+ * The copy of one source a page with no bookmark is drawn from when it is
+ * about a record of that source alone (#1431), its handles marked with the
+ * source: `c:1a` rather than `1a`. A null-bookmark "Show anyway" reads the
+ * mark to resolve the handle in the copy that minted it, not in the copy
+ * with no record of one source only, where the same ordinal stands for
+ * another record. A plain handle never resolves in a marked copy, nor a
+ * marked one in a plain copy: the colon is not an ordinal, and the prefix
+ * differs. Same records, same order, so the same ordinals as that source's
+ * reader is handed.
+ */
+export function markedCopy(copy: ReaderArchive, source: Source): ReaderArchive {
+  const known = twins.get(copy)
+  if (known !== undefined) {
+    return known
+  }
+
+  const twin = { ...copy }
+  marks.set(twin, source)
+  twins.set(copy, twin)
+  return twin
+}
+
+/** The source a handle's mark names, if it is marked. */
+export function markOf(
+  handle: string,
+  archive: Pick<SeriesArchive, 'series'>,
+): Source | undefined {
+  const series = seriesPrefixOf(archive)
+  const sources: Source[] = ['chapter', 'episode']
+  return sources.find((source) =>
+    handle.startsWith(`${series}${MARKS[source]}`),
+  )
+}
+
 /** One Piece retains its deployed ordinals; every other series has a namespace. */
-function prefixOf(archive: Pick<SeriesArchive, 'entities' | 'series'>): string {
+function seriesPrefixOf(archive: Pick<SeriesArchive, 'series'>): string {
   return archive.series.slug === 'one-piece' ? '' : `${archive.series.slug}:`
+}
+
+/** The series' namespace, and the mark of a marked copy. */
+function prefixOf(archive: Pick<SeriesArchive, 'entities' | 'series'>): string {
+  const mark = marks.get(archive)
+  return `${seriesPrefixOf(archive)}${mark === undefined ? '' : MARKS[mark]}`
 }
 
 /** A handle names an ordinal only inside the archive that minted it. */

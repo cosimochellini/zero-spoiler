@@ -57,6 +57,8 @@ export const THRONES_STAGE_3_TITLES = {
   // only in the prose of Melisandre's and Salladhor's sections.
   'edric-storm': characters('Melisandre di Asshai'),
   'alester-florent': characters('Salladhor Saan'),
+  // #1641, Bran's road and Theon.
+  'myranda': characters('Myranda'),
 }
 
 /**

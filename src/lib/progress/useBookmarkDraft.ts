@@ -1,6 +1,6 @@
-import { type SyntheticEvent, useState } from 'react'
+import { type SyntheticEvent, use, useState } from 'react'
 
-import { useBookmarkSeries } from './BookmarkContext'
+import { PageUnitContext, useBookmarkSeries } from './BookmarkContext'
 import {
   type Bookmark,
   type BookmarkMode,
@@ -71,7 +71,11 @@ export function useBookmarkDraft(
   save: (next: NonNullable<Bookmark>) => void,
 ): BookmarkDraft {
   const series = useBookmarkSeries()
-  const [mode, setMode] = useState(() => draftOf(from, series).mode)
+  // With no bookmark, a page in chapters (#1431) opens the form in chapters.
+  const unit = use(PageUnitContext)
+  const [mode, setMode] = useState(() =>
+    from === null && unit !== undefined ? unit : draftOf(from, series).mode,
+  )
   const [drafts, setDrafts] = useState(() =>
     keep(EMPTY, draftOf(from, series), series),
   )

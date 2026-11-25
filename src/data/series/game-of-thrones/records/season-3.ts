@@ -1156,6 +1156,32 @@ export const season3: ThronesSaga = {
         },
       ],
     },
+    // #1641: Bran's road and Theon.
+    // The show alone, so chapter 284 (Reek I of A Dance with Dragons, the
+    // chapter the scene adapts) only orders every entry. Episode 27 shows
+    // only the scene: whom she serves and her bond with Ramsay are told in
+    // season 4, steps for the stage that reaches it.
+    'myranda': {
+      role: {
+        it: 'Giovane donna nella prigione di Theon',
+        en: 'Young woman at Theon’s prison',
+      },
+      log: {
+        it: 'Con un’altra ragazza, Violet, libera Theon dalla croce a cui è legato, lo stende su un letto e lo seduce. Poi entra il suo carceriere, che fa tenere fermo Theon per evirarlo.',
+        en: 'With another young woman, Violet, she frees Theon from the cross he is bound to, lays him on a bed and seduces him. Then his captor comes in and has Theon held down to geld him.',
+      },
+      status: [
+        { episode: 27, chapter: 284, source: 'episode', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 27,
+          chapter: 284,
+          source: 'episode',
+          value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
+        },
+      ],
+    },
   },
   entries: [
     // #1639: Essos, Daenerys at Astapor and Yunkai.
@@ -1976,6 +2002,26 @@ export const season3: ThronesSaga = {
         en: 'A bastard son of King Robert, raised at Storm’s End.',
       },
       visual: { art: 'edric-storm', tint: 'yellow' },
+    },
+    // #1641: Bran's road and Theon.
+    //
+    // Show only: in "The Bear and the Maiden Fair" (episode 27) Violet
+    // tells Theon that "Myranda knows what she's doing" (quoted on the Game
+    // of Thrones Wiki). The books' only Myranda is Myranda Royce of the
+    // Vale, another person; Reek I of A Dance with Dragons (chapter 284),
+    // the chapter the scene adapts, only orders her.
+    {
+      id: 'myranda',
+      kind: 'character',
+      source: 'episode',
+      revealedAtEpisode: 27,
+      revealedAtChapter: 284,
+      name: { it: 'Myranda', en: 'Myranda' },
+      summary: {
+        it: 'Una giovane donna che, con Violet, seduce Theon Greyjoy prigioniero.',
+        en: 'A young woman who, with Violet, seduces the captive Theon Greyjoy.',
+      },
+      visual: { art: 'myranda', tint: 'pink' },
     },
   ],
 }

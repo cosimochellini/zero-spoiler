@@ -894,3 +894,112 @@ Alester are past the stage and step records already filed.
   show has no Devan); Lord Guncer Sunglass and Ser Hubard Rambton's sons, burned
   before Davos returns (Davos II); Imry Florent, dead on the Blackwater (Davos
   III); Andrew Estermont and Lord Estermont (Davos IV).
+
+## Bran's road and Theon (#1641)
+
+Bran's road north with the Reeds, Hodor and, in the show, Rickon and Osha;
+Theon's captivity and his captor. Candidates come from the Game of Thrones
+Wiki's ten season-3 episode pages (Bran and Theon synopses, cast lists, quotes,
+"In the books") and its pages for Theon, Ramsay, Roose, Myranda, Violet, Bran,
+Rickon, Osha, Hodor, the Reeds, Summer, Shaggydog, Balon and Yara, and from A
+Wiki of Ice and Fire's synopses and Appearing lists of _A Storm of Swords_
+chapters 9, 24 and 40 (Bran I to III, site chapters 153, 168 and 184), with
+Catelyn V and VI (189, 193) for what the books tell of Theon and Balon, and Bran
+IV (chapter 56, site 200), past the stage, for the Nightfort. The books keep
+Rickon and Osha off the page in the stage (they part from Bran in Bran VII of _A
+Clash of Kings_, site 143) and Theon too: Roose's report in Catelyn VI is all a
+reader learns of him. His captivity on the page is _A Dance with Dragons_' (Reek
+I, chapter 12, site 284), which season 3 adapts.
+
+Counts: 1 filed, 0 pending, 1 earlier record's gate moved, 13 omitted; 3 stage-1
+records stepped.
+
+### Filed
+
+Gates as episode / site chapter. `source` records give the other number only to
+order them.
+
+| Record                | Show                                                                                                                                                                       | Books                                                                                               |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `myranda` (show)      | 27, "The Bear and the Maiden Fair": Violet tells Theon that "Myranda knows what she's doing" (quoted on the Myranda page); she answers "you, me, and Violet" (Violet page) | none: the books' only Myranda is Myranda Royce of the Vale, another person; Reek I (284) orders her |
+| `ramsay-snow` (moved) | 30, "Mhysa": Roose tells Walder Frey that "Ramsay delivered the terms" and "Ramsay has his own way of doing things" (quoted on the Ramsay Bolton page). #1466 had 32       | 140, Theon VI, as filed                                                                             |
+
+- Myranda: role "Young woman at Theon's prison", "No allegiance", alive, all at
+  her gate. Episode 27 shows only the scene, so her log is it: she and Violet
+  free Theon from the cross and seduce him, and his captor comes in and has him
+  held down to geld him. That she is Ramsay's lover in House Bolton's service is
+  shown in season 4 (from "The Lion and the Rose", 32), steps for stage 4; she
+  is not in "Mhysa" (30). Italian "Myranda" (her own section of Italian
+  Wikipedia's characters list).
+- Ramsay Snow: the boy who tortures Theon from "Dark Wings, Dark Words" (22) is
+  unnamed through "The Bear and the Maiden Fair" (27) and credited only as "Boy"
+  (Ramsay Bolton page, "Behind the scenes"). "Mhysa" (30) says his name, so the
+  show record, filed by #1466 at 32 (the first episode the page cites for his
+  birth name), opens at 30. His books-only chronicle story and relationships,
+  ordered at 32, move with it; their chapter, 140, stays.
+
+### Stage-1 records stepped
+
+Steps in `season-1.ts`, as episode / site chapter.
+
+- Bran Stark: role "On the road north with the Reeds", 22 / 143 ("Dark Wings,
+  Dark Words", where the Reeds find his party on its way to the Wall; Bran VII
+  of _A Clash of Kings_, where he goes north with the Reeds, Hodor and Summer).
+  Role "Beyond the Wall with the Reeds", 30 / 200 ("Mhysa", where Sam shows them
+  through the Nightfort; Bran IV, where the Black Gate lets them through), the
+  book's chapter past the stage (#852).
+- Osha: role "On the run with Rickon Stark", 29 / 143 ("The Rains of Castamere",
+  where Bran sends her with Rickon to the Umbers; Bran VII of _A Clash of
+  Kings_, where Luwin tells her to part the boys and she leaves with Rickon).
+  Where they go differs by medium, so the role does not say.
+- Theon Greyjoy: role "Ramsay Snow's prisoner at the Dreadfort", 30 / 193
+  ("Mhysa", where Roose tells Walder Frey the ironborn handed Theon to Ramsay
+  and Yara means to sail for the Dreadfort to bring him home; Catelyn VI, where
+  Roose tells Robb that Ramsay holds Theon at the Dreadfort and shows him a
+  strip of his skin). Status `captured` at 193, the books' alone: the show has
+  had him captive since episode 20, so 30 only orders it. The show's torture,
+  his false escape, the gelding and the name Reek are told in the books only in
+  _A Dance with Dragons_ and are not filed.
+
+Not stepped: Rickon (his role, a son of Lord Eddard, does not change; the books
+keep him off the page), Hodor (Bran wargs him at 29 and in Bran III, 184, a
+change of no field), Meera and Jojen Reed (no field changes; their show gates,
+22, are in the stage, filed by #1466), Summer and Shaggydog (no change), Balon
+Greyjoy (his books death at 189 was filed with his drawing, #1473; Ramsay's box
+at Pyke in "Mhysa" changes no field), Asha Greyjoy (the show's Yara sets out to
+free Theon in "Mhysa"; the raid is in season 4), Big and Little Walder Frey (the
+books put them at the Dreadfort in Catelyn IV, 179, a report, not a role).
+
+### Owner checks
+
+- **Ramsay Snow's show gate.** It moves from 32 to 30 on Roose's quoted line in
+  "Mhysa". If the owner keeps #1466's 32, the move, the chronicle and
+  relationship orderings and the two tests go back.
+- **Theon in the books.** The brief for this child held that the books tell
+  Theon's captivity only in _A Dance with Dragons_. Catelyn VI (193) has Roose
+  report it to Robb, so the role and the books' `captured` step are filed there;
+  the torture, the gelding and the name Reek are not.
+- **Violet** (show only, not filed). She is named in "The Bear and the Maiden
+  Fair" (27), Myranda's "you, me, and Violet", and never appears again: a bit
+  part with one scene, omitted as Marei is. If the owner wants her, she is filed
+  at 27 with `source: 'episode'`, as Myranda.
+
+### Omitted
+
+- **Bit parts, one scene in the stage:** Violet (above).
+- **Descriptors:** the master torturer of Theon's cross ("Dark Wings, Dark
+  Words", "Walk of Punishment", unnamed; Ramsay kills him at 23), the Bolton
+  soldiers who chase Theon (23), the two men who hold Theon down (27), the
+  Liddle who shares his cave with Bran's party (Bran II, 168: "a Liddle", no
+  name).
+- **Dream figures:** the three-eyed raven of Bran's and Jojen's dreams (22, 24)
+  and the three-eyed crow of the books (153), a bird in a dream in the stage.
+- **Other groups:** the old horse breeder at Queenscrown and the wildlings Bran
+  wargs against (#1638), Sam and Gilly at the Nightfort (#1638), Roose Bolton
+  and Walder Frey at the Twins (#1635, #1637).
+- **Only mentioned:** Bruni, Osha's husband ("The Bear and the Maiden Fair"),
+  the Rat Cook ("Mhysa"; Bran IV), the Knight of the Laughing Tree and Howland
+  Reed (Bran II, 168), Euron Greyjoy and Lord Botley (Catelyn V, 189), and
+  Coldhands (Bran IV, past the stage). Greatjon Umber, to whom Bran sends Rickon
+  in "The Rains of Castamere", is only mentioned and has his record since
+  season 1.

@@ -4,6 +4,7 @@ import type { ReactElement } from 'react'
 
 import { VisitorBanner } from '~/components/VisitorBanner'
 import { useSeriesT } from '~/i18n/LocaleContext'
+import { PageUnitContext } from '~/lib/progress/BookmarkContext'
 import { recordHead } from '~/routes/$locale/-head'
 import { RecordBackLink, SectionNotFound } from '~/routes/$series/$locale/-back'
 import {
@@ -40,27 +41,29 @@ function AbilityPage(): ReactElement {
   const peek = usePeek(liftAbility)
 
   return (
-    <main
-      id="content"
-      {...stylex.props(recordStyles.page)}
-    >
-      <p {...stylex.props(recordStyles.back)}>
-        <RecordBackLink section="abilities" />
-      </p>
+    <PageUnitContext value={detail.unit}>
+      <main
+        id="content"
+        {...stylex.props(recordStyles.page)}
+      >
+        <p {...stylex.props(recordStyles.back)}>
+          <RecordBackLink section="abilities" />
+        </p>
 
-      <VisitorBanner slot={detail.slot} />
+        <VisitorBanner slot={detail.slot} />
 
-      <div>
-        <AbilityStage
-          peek={peek}
-          slot={detail.slot}
-        />
-      </div>
+        <div>
+          <AbilityStage
+            peek={peek}
+            slot={detail.slot}
+          />
+        </div>
 
-      <div {...stylex.props(settleStyles.band, settleStyles.at(0))}>
-        <UsersBand slot={detail.slot} />
-      </div>
-    </main>
+        <div {...stylex.props(settleStyles.band, settleStyles.at(0))}>
+          <UsersBand slot={detail.slot} />
+        </div>
+      </main>
+    </PageUnitContext>
   )
 }
 

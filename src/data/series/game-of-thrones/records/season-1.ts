@@ -3262,6 +3262,30 @@ export const season1: ThronesSaga = {
             en: 'Lord of Winterfell in his brother’s absence',
           },
         },
+        // #1641. He heads north with the Reeds and Hodor: in "Dark Wings,
+        // Dark Words" (episode 22) the Reeds find his party on its way to
+        // the Wall and go on with it; in Bran VII of A Clash of Kings
+        // (chapter 143) Osha takes Rickon one way and Bran goes north with
+        // the Reeds, Hodor and Summer.
+        {
+          episode: 22,
+          chapter: 143,
+          value: {
+            it: 'In viaggio verso nord con i Reed',
+            en: 'On the road north with the Reeds',
+          },
+        },
+        // He passes beyond the Wall at the Nightfort, shown the way by Sam:
+        // "Mhysa" (episode 30) and Bran IV (chapter 200), past the book's
+        // stage, which keeps its later chapter (#852).
+        {
+          episode: 30,
+          chapter: 200,
+          value: {
+            it: 'Oltre la Barriera con i Reed',
+            en: 'Beyond the Wall with the Reeds',
+          },
+        },
       ],
       log: {
         it: 'Per la prima volta il padre lo porta a vedere un’esecuzione, quella di un disertore. Sulla via del ritorno prende uno dei cuccioli di meta-lupo trovati dai fratelli.',
@@ -3585,6 +3609,22 @@ export const season1: ThronesSaga = {
             en: 'Prince of Winterfell',
           },
         },
+        // #1641. Both media tell, at the stage's end, who holds him and
+        // where. "Mhysa" (episode 30): Roose tells Walder Frey that the
+        // ironborn handed Theon to Ramsay, and Yara means to sail for the
+        // Dreadfort to bring him home. Catelyn VI of A Storm of Swords
+        // (chapter 193): Roose tells Robb that Ramsay holds Theon at the
+        // Dreadfort and shows him a strip of his skin. The show's torture,
+        // gelding and the name Reek are told in the books only in A Dance
+        // with Dragons, so neither is filed here.
+        {
+          episode: 30,
+          chapter: 193,
+          value: {
+            it: 'Prigioniero di Ramsay Snow a Forte Terrore',
+            en: 'Ramsay Snow’s prisoner at the Dreadfort',
+          },
+        },
       ],
       log: {
         it: 'Accompagna Lord Stark all’esecuzione di un disertore dei Guardiani della notte. Al ritorno è con i ragazzi quando trovano una lupa morta e i suoi cuccioli, e vorrebbe ucciderli.',
@@ -3597,6 +3637,10 @@ export const season1: ThronesSaga = {
         // Bastard of Bolton strikes him down in the sack, and the books
         // leave his fate open past the stage; chapter 140 only orders it.
         { episode: 20, chapter: 140, source: 'episode', value: 'captured' },
+        // #1641. The books' reader learns he lives, held at the Dreadfort,
+        // in Catelyn VI (chapter 193), at the role's pin; the show has had
+        // him captive since episode 20, so episode 30 only orders it.
+        { episode: 30, chapter: 193, source: 'chapter', value: 'captured' },
         { episode: 70, chapter: 344, source: 'episode', value: 'deceased' },
       ],
       affiliation: [
@@ -3739,6 +3783,19 @@ export const season1: ThronesSaga = {
           value: {
             it: 'In fuga con Bran e Rickon Stark',
             en: 'On the run with Bran and Rickon Stark',
+          },
+        },
+        // #1641. She parts from Bran and takes Rickon away: in "The Rains
+        // of Castamere" (episode 29) Bran sends them to the Umbers; in Bran
+        // VII of A Clash of Kings (chapter 143) Luwin tells her to part the
+        // boys and she leaves with Rickon. Where they go differs by medium,
+        // so the role does not say.
+        {
+          episode: 29,
+          chapter: 143,
+          value: {
+            it: 'In fuga con Rickon Stark',
+            en: 'On the run with Rickon Stark',
           },
         },
       ],

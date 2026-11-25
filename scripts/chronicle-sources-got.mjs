@@ -3813,11 +3813,11 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '20:episode': {
       source: `${SHOW}Theon_Greyjoy`,
-      note: 'Theon Greyjoy page (GOT210): the siege and the horn all night, his anguish at being called lucky, Luwin’s advice to take the black, too late and Jon Snow likely to kill him, the rousing speech, Dagmer knocking him out and the cloth bag. Ramsay is left unnamed: his show gate is 32.',
+      note: 'Theon Greyjoy page (GOT210): the siege and the horn all night, his anguish at being called lucky, Luwin’s advice to take the black, too late and Jon Snow likely to kill him, the rousing speech, Dagmer knocking him out and the cloth bag. Ramsay is left unnamed: his show gate is 30.',
     },
     '20:chapter': {
       source: WF_THEON_VI,
-      note: 'Theon VI (site 140): Luwin’s counsel to yield and to take the black, Wex first to step over, Lorren and Beth on the walls during Rodrik’s parley, the Dreadfort men and the corpses, Reek unmasked as Ramsay Snow, the punch and the sack. Ramsay is named unlinked: his show gate is 32.',
+      note: 'Theon VI (site 140): Luwin’s counsel to yield and to take the black, Wex first to step over, Lorren and Beth on the walls during Rodrik’s parley, the Dreadfort men and the corpses, Reek unmasked as Ramsay Snow, the punch and the sack. Ramsay is named unlinked: his show gate is 30.',
     },
   },
   'luwin': {
@@ -5210,7 +5210,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '20:140': {
       source: EPISODE_20,
-      note: 'The Winterfell synopsis: the siege under Roose Bolton’s bastard son, twenty men, Theon rallying them, Dagmer knocking him out to deliver him to the Bolton army, Luwin stabbed with a spear and the bag over Theon’s head; the Dagmer page has his admiring the rhetoric (GOT210). Ramsay is left unnamed: his show gate is 32.',
+      note: 'The Winterfell synopsis: the siege under Roose Bolton’s bastard son, twenty men, Theon rallying them, Dagmer knocking him out to deliver him to the Bolton army, Luwin stabbed with a spear and the bag over Theon’s head; the Dagmer page has his admiring the rhetoric (GOT210). Ramsay is left unnamed: his show gate is 30.',
     },
   },
   'black-lorren': {
@@ -5292,9 +5292,9 @@ export const GAME_OF_THRONES_SOURCES = {
     },
   },
   'ramsay-snow': {
-    '32:140': {
+    '30:140': {
       source: WF_THEON_VI,
-      note: 'Theon VI (site 140): the Dreadfort men fighting Rodrik’s army, which took them for allies, the corpses of Rodrik, Cley Cerwyn and Leobald Tallhart, the gates opened, the helm off, Reek dead and the name Ramsay Snow, six hundred men from his father’s garrison, Kyra preferred to Palla, the punch, and the order to burn it all. Episode 32 is his show gate.',
+      note: 'Theon VI (site 140): the Dreadfort men fighting Rodrik’s army, which took them for allies, the corpses of Rodrik, Cley Cerwyn and Leobald Tallhart, the gates opened, the helm off, Reek dead and the name Ramsay Snow, six hundred men from his father’s garrison, Kyra preferred to Palla, the punch, and the order to burn it all. Episode 30 is his show gate.',
     },
   },
   'big-walder-frey': {

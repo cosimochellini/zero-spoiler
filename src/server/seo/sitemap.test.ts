@@ -49,19 +49,20 @@ describe('the sitemap', () => {
     }
   })
 
-  it('lists the opened Game of Thrones pages and leaves out the show-only Ros', () => {
+  it('lists the opened Game of Thrones pages, the show-only Ros among them', () => {
     for (const locale of ['en', 'it']) {
       for (const path of [
         '',
         '/characters',
         '/places',
         '/characters/eddard-stark',
+        '/characters/ros',
       ]) {
         expect(locations()).toContain(
           `${SITE_ORIGIN}/game-of-thrones/${locale}${path}`,
         )
       }
-      for (const path of ['characters/ros', 'fruits', 'filler', 'ranks']) {
+      for (const path of ['fruits', 'filler', 'ranks']) {
         expect(locations()).not.toContain(
           `${SITE_ORIGIN}/game-of-thrones/${locale}/${path}`,
         )

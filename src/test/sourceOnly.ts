@@ -268,3 +268,40 @@ function shelved(
     { arc: bare, characters: [character] },
   ]
 }
+
+/**
+ * The archive with one of its Nen abilities told by one source alone. No
+ * ability is filed so yet, and `plant` copies One Piece, which files none.
+ */
+export function onlyIn(
+  base: SeriesArchive,
+  id: string,
+  source: Source,
+): SeriesArchive {
+  const abilities = base.features.abilities
+  if (abilities === undefined) {
+    throw new Error(`${base.series.slug} files no abilities`)
+  }
+  const told = (entity: Entity): Entity =>
+    entity.id === id ? { ...entity, source } : entity
+  const lookup =
+    (find: (wanted: string) => Entity | undefined) =>
+    (wanted: string): Entity | undefined => {
+      const found = find(wanted)
+      return found === undefined ? undefined : told(found)
+    }
+
+  return {
+    ...base,
+    entities: base.entities.map((entity) => told(entity)),
+    getEntity: lookup(base.getEntity),
+    features: {
+      ...base.features,
+      abilities: {
+        ...abilities,
+        abilities: abilities.abilities.map((entity) => told(entity)),
+        getAbility: lookup(abilities.getAbility),
+      },
+    },
+  }
+}

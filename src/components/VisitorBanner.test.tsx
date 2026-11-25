@@ -1,6 +1,9 @@
-import { screen } from '@testing-library/react'
+import { screen, within } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 
+import { preloadBookmarkForm } from '~/components/bookmarkFormLoader'
+import { PageUnitContext } from '~/lib/progress/BookmarkContext'
 import type { RecordView } from '~/lib/view/records'
 import { at, coveredSlot, openSlot, record } from '~/test/fixtures'
 import { ep, renderWithProviders } from '~/test/providers'
@@ -23,6 +26,37 @@ describe('VisitorBanner', () => {
     expect(
       screen.getByRole('button', { name: 'Set your bookmark' }),
     ).toBeInTheDocument()
+  })
+
+  it('counts in chapters on a page in chapters, and opens the bookmark form there (#1431)', async () => {
+    await preloadBookmarkForm()
+    const user = userEvent.setup()
+    renderWithProviders(
+      <PageUnitContext value="chapter">
+        <VisitorBanner
+          slot={openSlot(
+            record({
+              name: 'Nami',
+              revealedAtEpisode: 8,
+              revealedAtChapter: 69,
+            }),
+          )}
+        />
+      </PageUnitContext>,
+      { path: '/one-piece/en/characters/nami' },
+    )
+
+    expect(
+      screen.getByText(
+        'You are seeing Nami as first seen (Chapter 69). The rest stays under fog.',
+      ),
+    ).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'Set your bookmark' }))
+    const dialog = screen.getByRole('dialog')
+    await within(dialog).findByRole('button', { name: 'Save' })
+
+    expect(within(dialog).getByRole('radio', { name: 'Chapter' })).toBeChecked()
   })
 
   it('says a list opens only the start of the story', () => {

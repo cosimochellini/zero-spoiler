@@ -673,12 +673,14 @@ export const season2: ThronesSaga = {
     // Books: Theon VI (site chapter 140), the leader of the Dreadfort men
     // takes off his helm and names himself Ramsay Snow. From Bran V (109)
     // he is at Winterfell as the captive called Reek, an owner check.
-    // Show: unnamed from episode 22; "The Lion and the Rose" (episode 32)
-    // is the first episode the Game of Thrones Wiki cites for his name.
+    // Show: unnamed from episode 22, credited only as "Boy"; in "Mhysa"
+    // (episode 30) Roose tells Walder Frey that "Ramsay delivered the
+    // terms" to the ironborn at Winterfell (quoted on the Game of Thrones
+    // Wiki), the first line read that says his name (#1641; #1466 had 32).
     {
       id: 'ramsay-snow',
       kind: 'character',
-      revealedAtEpisode: 32,
+      revealedAtEpisode: 30,
       revealedAtChapter: 140,
       name: { it: 'Ramsay Snow', en: 'Ramsay Snow' },
       summary: {
@@ -2644,7 +2646,7 @@ export const season2: ThronesSaga = {
         en: 'His men take Winterfell from the ironborn and set it on fire.',
       },
       status: [
-        { episode: 32, chapter: 140, value: 'alive' },
+        { episode: 30, chapter: 140, value: 'alive' },
         // The show alone: he dies at Winterfell at the end of "Battle of
         // the Bastards" (episode 59). The books leave him alive, so chapter
         // 344 only orders it (#1473).
@@ -2652,7 +2654,7 @@ export const season2: ThronesSaga = {
       ],
       affiliation: [
         {
-          episode: 32,
+          episode: 30,
           chapter: 140,
           value: { it: 'Casa Bolton', en: 'House Bolton' },
         },

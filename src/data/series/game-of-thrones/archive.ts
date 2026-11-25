@@ -52,7 +52,8 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
   // Wall and beyond (#1638): Jon Snow and the King-Beyond-the-Wall. Arya, the
   // Brotherhood and the Hound (#1636): the outlaws' captive, their leader and
   // the Hound. Jaime, Brienne and Harrenhal (#1637): the Kingslayer and the
-  // woman who guards him. Dragonstone (#1640): Davos.
+  // woman who guards him. Dragonstone (#1640): Davos. Bran's road and Theon
+  // (#1641): Bran and Theon.
   'season-3': [
     'daenerys-targaryen',
     'tyrion-lannister',
@@ -68,6 +69,8 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
     'jaime-lannister',
     'brienne-of-tarth',
     'davos-seaworth',
+    'bran-stark',
+    'theon-greyjoy',
   ],
 }
 
