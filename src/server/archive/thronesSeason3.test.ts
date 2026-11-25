@@ -4,7 +4,6 @@ import { season3 } from '~/data/series/game-of-thrones/records/season-3'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import type { CharacterStatus } from '~/lib/view/records'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage } from './pages.server'
@@ -17,120 +16,89 @@ if (series === undefined) {
 const { archive } = series
 
 /**
- * Each season-3 Wall and beyond record's gate in each medium, as filed
- * (#1638); `source` for one medium, whose other number only orders the
- * record.
+ * Each season-3 King's Landing record's gate in each medium, as filed
+ * (#1634); `source` for one medium, whose other number only orders the
+ * record. Oberyn and Ellaria keep the show's later gates, in season 4
+ * (#852).
  */
-const WALL_RECORDS: {
+const RECORDS: {
   chapter: number
   episode: number
   id: string
   source?: 'chapter' | 'episode'
 }[] = [
-  { id: 'mance-rayder', episode: 21, chapter: 151 },
-  { id: 'tormund', episode: 23, chapter: 151 },
-  { id: 'orell', episode: 22, chapter: 151 },
-  { id: 'styr', episode: 21, chapter: 151, source: 'chapter' },
-  { id: 'dalla', episode: 21, chapter: 151, source: 'chapter' },
-  { id: 'val', episode: 21, chapter: 151, source: 'chapter' },
-  { id: 'jarl', episode: 21, chapter: 151, source: 'chapter' },
-  { id: 'small-paul', episode: 21, chapter: 144, source: 'chapter' },
-  { id: 'dirk', episode: 21, chapter: 144, source: 'chapter' },
-  { id: 'ollo-lophand', episode: 21, chapter: 144, source: 'chapter' },
-  { id: 'clubfoot-karl', episode: 21, chapter: 144, source: 'chapter' },
+  { id: 'olenna-tyrell', episode: 22, chapter: 150 },
+  { id: 'megga-tyrell', episode: 22, chapter: 150, source: 'chapter' },
+  { id: 'alla-tyrell', episode: 22, chapter: 150, source: 'chapter' },
+  { id: 'elinor-tyrell', episode: 22, chapter: 150, source: 'chapter' },
+  { id: 'oberyn-martell', episode: 31, chapter: 182 },
+  { id: 'ellaria-sand', episode: 32, chapter: 182 },
 ]
 
 /**
- * Every status change the Wall group files after a gate; `source` for a
- * change one medium alone tells. Orell's death is checked on its own below:
- * the books open on him dead.
+ * Every role and affiliation step the third stage's King's Landing group
+ * adds to a character an earlier stage filed, by its English text; `source`
+ * for a step one medium alone tells.
  */
-const WALL_CHANGES: {
-  chapter: number
-  episode: number
-  id: string
-  source?: 'chapter' | 'episode'
-  value: CharacterStatus
-}[] = [
-  {
-    id: 'small-paul',
-    episode: 21,
-    chapter: 162,
-    source: 'chapter',
-    value: 'deceased',
-  },
-  {
-    id: 'jarl',
-    episode: 26,
-    chapter: 174,
-    source: 'chapter',
-    value: 'deceased',
-  },
-]
-
-/**
- * Every role step the Wall group files, on its new records and on the
- * characters earlier seasons filed, by its English text; `source` for a
- * step one medium alone tells.
- */
-const WALL_STEPS: {
+const STEPS: {
   chapter: number
   en: string
   episode: number
   id: string
+  // A step back to a text the other medium shows all along, so only its
+  // timing is one medium's.
+  restores?: true
   source?: 'chapter' | 'episode'
 }[] = [
+  { id: 'tyrion-lannister', en: 'Master of coin', episode: 23, chapter: 163 },
   {
-    id: 'jon-snow',
-    en: 'Sworn brother of the Night’s Watch, back at Castle Black',
-    episode: 30,
-    chapter: 192,
+    id: 'petyr-baelish',
+    en: 'Lord of Harrenhal and suitor to Lysa Arryn',
+    episode: 23,
+    chapter: 163,
+  },
+  { id: 'bronn', en: 'Knight in Tyrion’s pay', episode: 21, chapter: 148 },
+  {
+    id: 'sansa-stark',
+    en: 'Tyrion Lannister’s wife',
+    episode: 28,
+    chapter: 172,
   },
   {
-    id: 'rast',
-    en: 'Mutineer at Craster’s Keep',
-    episode: 24,
-    chapter: 177,
-    source: 'episode',
+    id: 'boros-blount',
+    en: 'Dismissed from the Kingsguard',
+    episode: 19,
+    chapter: 123,
+    source: 'chapter',
   },
   {
-    id: 'chett',
-    en: 'Kennel hand on the ranging beyond the Wall, leading a plot to desert',
+    id: 'boros-blount',
+    en: 'House Blount',
+    episode: 19,
+    chapter: 123,
+    source: 'chapter',
+  },
+  {
+    id: 'boros-blount',
+    en: 'Knight of the Kingsguard',
     episode: 21,
-    chapter: 144,
+    chapter: 156,
+    restores: true,
     source: 'chapter',
   },
   {
-    id: 'ygritte',
-    en: 'Raider of the band that climbs the Wall',
-    episode: 26,
-    chapter: 174,
-  },
-  {
-    id: 'gilly',
-    en: 'Craster’s daughter, fleeing south with Samwell Tarly',
-    episode: 24,
-    chapter: 190,
-  },
-  {
-    id: 'dirk',
-    en: 'Mutineer at Craster’s Keep',
-    episode: 24,
-    chapter: 177,
+    id: 'boros-blount',
+    en: 'Kingsguard',
+    episode: 21,
+    chapter: 156,
+    restores: true,
     source: 'chapter',
   },
   {
-    id: 'ollo-lophand',
-    en: 'Mutineer at Craster’s Keep',
-    episode: 24,
-    chapter: 177,
-    source: 'chapter',
-  },
-  {
-    id: 'clubfoot-karl',
-    en: 'Mutineer at Craster’s Keep',
-    episode: 24,
-    chapter: 177,
+    id: 'addam-marbrand',
+    en: 'Commander of the City Watch',
+    episode: 21,
+    chapter: 148,
     source: 'chapter',
   },
 ]
@@ -156,6 +124,18 @@ function otherAtTheEnd(source: Unit): Reader {
     : reader('episode', archive.series.episodeCeiling)
 }
 
+/** Each record in each locale and in each unit that tells it, at its gate. */
+const GATES = RECORDS.flatMap((record) =>
+  LOCALES.flatMap((locale) =>
+    UNITS.filter((unit) => (record.source ?? unit) === unit).map((unit) => ({
+      id: record.id,
+      gate: unit === 'chapter' ? record.chapter : record.episode,
+      locale,
+      unit,
+    })),
+  ),
+)
+
 const byText = (a: string, b: string): number => a.localeCompare(b)
 
 function opened(id: string, view: Reader): boolean {
@@ -171,130 +151,89 @@ function character(id: string): Entity {
   return record
 }
 
-/** Each item in each unit its medium tells it in. */
-function byUnit<T extends { source?: Unit }>(
-  items: T[],
-): (T & { unit: Unit })[] {
-  return items.flatMap((item) =>
-    UNITS.filter((unit) => (item.source ?? unit) === unit).map((unit) => ({
-      ...item,
-      unit,
-    })),
-  )
-}
-
-/** Each Wall record in each locale and in each unit that tells it. */
-const WALL_GATES = WALL_RECORDS.flatMap((record) =>
-  LOCALES.flatMap((locale) =>
-    byUnit([record]).map(({ unit }) => ({
-      id: record.id,
-      gate: unit === 'chapter' ? record.chapter : record.episode,
-      locale,
-      unit,
-    })),
-  ),
-)
-
-describe('the third season’s Wall and beyond cast', () => {
+describe('the third season’s King’s Landing cast', () => {
   it('files these records', () => {
     // Each cast group's test lists its own records; the season holds them
     // all.
     expect(season3.entries.map(({ id }) => id).toSorted(byText)).toStrictEqual(
-      expect.arrayContaining(WALL_RECORDS.map(({ id }) => id).toSorted(byText)),
+      expect.arrayContaining(RECORDS.map(({ id }) => id).toSorted(byText)),
     )
   })
 
-  it.each(WALL_GATES)(
+  it.each(GATES)(
     'opens $id at its named scene by $unit in $locale',
     ({ id, gate, locale, unit }) => {
       expect(opened(id, reader(unit, gate, locale))).toBe(true)
     },
   )
 
-  it.each(WALL_GATES)(
+  it.each(GATES)(
     'keeps $id closed one $unit before it in $locale',
     ({ id, gate, locale, unit }) => {
       expect(opened(id, reader(unit, gate - 1, locale))).toBe(false)
     },
   )
 
-  it.each(WALL_RECORDS.filter(({ source }) => source !== undefined))(
+  it.each(RECORDS.filter(({ source }) => source !== undefined))(
     'never opens the one-medium $id to a reader of the other',
     ({ id, source = 'episode' }) => {
       expect(opened(id, otherAtTheEnd(source))).toBe(false)
     },
   )
-})
 
-describe('the Wall cast’s status', () => {
-  it.each(byUnit(WALL_RECORDS.filter(({ id }) => id !== 'orell')))(
-    '$id is alive at its $unit gate',
-    ({ id, episode, chapter, unit }) => {
-      const gate = unit === 'chapter' ? chapter : episode
-
-      expect(
-        archive.latestOf(reader(unit, gate), character(id), 'status'),
-      ).toBe('alive')
-    },
-  )
-
-  describe.each(byUnit(WALL_CHANGES))(
-    '$id becomes $value by $unit',
-    ({ id, episode, chapter, value, unit }) => {
-      it('at its pin, not one before', () => {
-        const pin = unit === 'chapter' ? chapter : episode
-        const owner = character(id)
-
-        expect(
-          archive.latestOf(reader(unit, pin - 1), owner, 'status'),
-        ).not.toBe(value)
-        expect(archive.latestOf(reader(unit, pin), owner, 'status')).toBe(value)
-      })
-    },
-  )
-
-  it('keeps Orell alive in the show until Queenscrown, episode 29', () => {
-    const orell = character('orell')
-
-    expect(archive.latestOf(reader('episode', 22), orell, 'status')).toBe(
-      'alive',
-    )
-    expect(archive.latestOf(reader('episode', 28), orell, 'status')).toBe(
-      'alive',
-    )
-    expect(archive.latestOf(reader('episode', 29), orell, 'status')).toBe(
-      'deceased',
-    )
-  })
-
-  it('opens Orell dead in the books, killed before they name him', () => {
-    expect(
-      archive.latestOf(reader('chapter', 151), character('orell'), 'status'),
-    ).toBe('deceased')
+  it('keeps Oberyn and Ellaria from a viewer at the end of season 3', () => {
+    // The book reader meets them at chapter 182; the show only in season 4.
+    expect(opened('oberyn-martell', reader('episode', 30))).toBe(false)
+    expect(opened('ellaria-sand', reader('episode', 31))).toBe(false)
   })
 })
 
-describe.each(byUnit(WALL_STEPS))(
-  '$id: “$en” by $unit',
-  ({ id, en, episode, chapter, unit }) => {
-    // A page names a role as a whole string of its own.
-    const shown = (count: number): boolean =>
-      JSON.stringify(characterPage(id, reader(unit, count)) ?? null).includes(
-        JSON.stringify(en),
-      )
+describe('the new records’ status', () => {
+  it.each(
+    RECORDS.flatMap((record) =>
+      UNITS.filter((unit) => (record.source ?? unit) === unit).map((unit) => ({
+        ...record,
+        unit,
+      })),
+    ),
+  )('$id is alive at its $unit gate', ({ id, episode, chapter, unit }) => {
+    const gate = unit === 'chapter' ? chapter : episode
 
-    it('at its pin, not one before', () => {
-      const pin = unit === 'chapter' ? chapter : episode
+    expect(archive.latestOf(reader(unit, gate), character(id), 'status')).toBe(
+      'alive',
+    )
+  })
+})
 
-      expect(shown(pin - 1)).toBe(false)
-      expect(shown(pin)).toBe(true)
-    })
-  },
-)
+describe.each(
+  STEPS.flatMap((step) =>
+    UNITS.filter((unit) => (step.source ?? unit) === unit).map((unit) => ({
+      ...step,
+      unit,
+    })),
+  ),
+)('$id: “$en” by $unit', ({ id, en, episode, chapter, unit }) => {
+  // A page names a role or an affiliation as a whole string of its own.
+  const shown = (count: number): boolean =>
+    JSON.stringify(characterPage(id, reader(unit, count)) ?? null).includes(
+      JSON.stringify(en),
+    )
 
-describe('the Wall steps one medium alone tells', () => {
-  it.each(WALL_STEPS.filter(({ source }) => source !== undefined))(
-    'never shows “$en” on $id’s page to a reader of the other medium',
+  it('at its pin, not one before', () => {
+    const pin = unit === 'chapter' ? chapter : episode
+
+    expect(shown(pin - 1)).toBe(false)
+    expect(shown(pin)).toBe(true)
+  })
+})
+
+describe('the steps one medium alone tells', () => {
+  it.each(
+    STEPS.filter(
+      ({ restores, source }) => source !== undefined && restores !== true,
+    ),
+  )(
+    'never shows “$en” to a reader of the other medium',
     ({ id, en, source = 'episode' }) => {
       const page = JSON.stringify(
         characterPage(id, otherAtTheEnd(source)) ?? null,
@@ -305,10 +244,26 @@ describe('the Wall steps one medium alone tells', () => {
   )
 })
 
-describe('the season’s Wall leads', () => {
-  it('lists Jon Snow and Mance Rayder', () => {
+describe('Boros Blount’s white cloak', () => {
+  it('stays on him for a viewer, who never sees him dismissed', () => {
+    const owner = character('boros-blount')
+    const viewer = otherAtTheEnd('chapter')
+
+    expect(archive.latestOf(viewer, owner, 'affiliation')?.en).toBe(
+      'Kingsguard',
+    )
+    expect(archive.roleOf(viewer, owner)?.en).toBe('Knight of the Kingsguard')
+  })
+})
+
+describe('the season’s leads', () => {
+  it('lists the King’s Landing leads', () => {
     expect(archive.leads['season-3']).toStrictEqual(
-      expect.arrayContaining(['jon-snow', 'mance-rayder']),
+      expect.arrayContaining([
+        'tyrion-lannister',
+        'sansa-stark',
+        'olenna-tyrell',
+      ]),
     )
   })
 })

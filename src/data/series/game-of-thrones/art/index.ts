@@ -186,9 +186,10 @@ const PERSON: Stroke[] = [
  * cast, in `north.ts` and `ironborn.ts` (#1473), Wall cast, the rangers in
  * `wall.ts` and the wildlings in `wildlings.ts` (#1474), and Essos and Qarth
  * cast, in `essos.ts` (#1475). The seasons' own, which the home page's
- * frame draws, are in `seasons.ts` (#1601). The season-3 Wall cast
- * (#1638) shows `PERSON` until its drawing child draws it. `satisfies`
- * rather than an annotation, so `ArtId` below stays the literal keys.
+ * frame draws, are in `seasons.ts` (#1601). The third stage's casts (#1634,
+ * #1635, #1638, #1639) show `PERSON` until their drawing children draw
+ * them. `satisfies` rather than an annotation, so `ArtId` below stays the
+ * literal keys.
  */
 export const DRAWINGS = {
   ...WINTERFELL_DRAWINGS,
@@ -208,6 +209,33 @@ export const DRAWINGS = {
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': DRAGON_EGG,
+  // #1639: the third stage's Essos cast.
+  'missandei': PERSON,
+  'kraznys-mo-nakloz': PERSON,
+  'grey-worm': PERSON,
+  'grazdan-mo-eraz': PERSON,
+  'mero': PERSON,
+  'daario-naharis': PERSON,
+  'prendahl-na-ghezn': PERSON,
+  // #1634: King's Landing.
+  'olenna-tyrell': PERSON,
+  'megga-tyrell': PERSON,
+  'alla-tyrell': PERSON,
+  'elinor-tyrell': PERSON,
+  'oberyn-martell': PERSON,
+  'ellaria-sand': PERSON,
+  // #1635, the third stage's Robb's war and Riverlands cast, until its
+  // drawing child draws it.
+  'jeyne-westerling': PERSON,
+  'rolph-spicer': PERSON,
+  'raynald-westerling': PERSON,
+  'willem-lannister': PERSON,
+  'martyn-lannister': PERSON,
+  'lothar-frey': PERSON,
+  'walder-rivers': PERSON,
+  'roslin-frey': PERSON,
+  'ryman-frey': PERSON,
+  'aegon-frey': PERSON,
   // #1638: the Wall and beyond.
   'mance-rayder': PERSON,
   'tormund': PERSON,

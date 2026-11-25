@@ -379,7 +379,7 @@ order them.
 
 - Jeyne Westerling: Robb's bride in the books, first met in A Storm of Swords
   (Robb returns married in Catelyn II); A Clash of Kings tells only that he took
-  the Crag. The show has Talisa instead.
+  the Crag. The show has Talisa instead. Filed at 158 by #1635.
 - Qyburn: listed among the Brave Companions in Arya VII and Arya X (104, 138)
   with no scene of his own; the Ice and Fire Wiki's page starts in A Storm of
   Swords, and the show's Qyburn in season 3.
