@@ -373,7 +373,7 @@ const CHANGES: {
     source: 'episode',
   },
   // Later deaths of the Wall and the Riverlands from the drawing audit (#1290).
-  { id: 'yoren', episode: 13, chapter: 88, value: 'deceased' },
+  { id: 'yoren', episode: 13, chapter: 93, value: 'deceased' },
   { id: 'jeor-mormont', episode: 24, chapter: 177, value: 'deceased' },
   { id: 'aemon', episode: 47, chapter: 261, value: 'deceased' },
   {
@@ -1451,7 +1451,7 @@ const STAGES: {
   { id: 'kevan-lannister', episode: 60, chapter: 344 },
   // The Vale, Riverlands and Night's Watch stages of the drawing audit
   // (#1290): deaths, Jaqen's coin and Pod's axe.
-  { id: 'yoren', episode: 13, chapter: 88 },
+  { id: 'yoren', episode: 13, chapter: 93 },
   { id: 'jaqen-hghar', episode: 20, chapter: 121 },
   { id: 'jeor-mormont', episode: 24, chapter: 177 },
   { id: 'podrick-payne', episode: 34, chapter: 235, source: 'episode' },

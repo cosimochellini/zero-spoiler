@@ -52,13 +52,8 @@ const CHANGES: {
   value: CharacterStatus
 }[] = [
   { id: 'pycelle', episode: 13, chapter: 99, value: 'imprisoned' },
-  {
-    id: 'pycelle',
-    episode: 14,
-    chapter: 103,
-    source: 'episode',
-    value: 'alive',
-  },
+  // Handed over to the queen in both media (#1617).
+  { id: 'pycelle', episode: 14, chapter: 103, value: 'alive' },
   {
     id: 'ros',
     episode: 18,
@@ -146,8 +141,8 @@ const STEPS: {
   {
     id: 'shae',
     en: 'Lollys Stokeworth’s maid',
-    episode: 19,
-    chapter: 131,
+    episode: 18,
+    chapter: 123,
     source: 'chapter',
   },
   {
