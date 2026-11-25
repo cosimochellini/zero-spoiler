@@ -1,6 +1,7 @@
 import type { PlaceDossier } from '~/data/types'
 
 import type { ThronesSaga, ThronesVocabulary } from './saga'
+import { season3Chronicles } from './season-3.chronicle'
 
 /**
  * Season 3 of the show and the first part of *A Storm of Swords*: the third
@@ -49,6 +50,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Al servizio di Daenerys', en: 'Daenerys’s service' },
         },
       ],
+      chronicle: season3Chronicles.missandei,
     },
     'kraznys-mo-nakloz': {
       role: { it: 'Buon Padrone di Astapor', en: 'Good Master of Astapor' },
@@ -67,6 +69,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Buoni Padroni', en: 'Good Masters' },
         },
       ],
+      chronicle: season3Chronicles['kraznys-mo-nakloz'],
     },
     'grey-worm': {
       role: { it: 'Ufficiale degli Immacolati', en: 'Unsullied officer' },
@@ -82,6 +85,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Immacolati', en: 'Unsullied' },
         },
       ],
+      chronicle: season3Chronicles['grey-worm'],
     },
     // Both media tell the log at his gate: in "The Bear and the Maiden
     // Fair" he says the Yunkai'i will enslave the survivors, Daenerys too,
@@ -105,6 +109,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Saggi Padroni', en: 'Wise Masters' },
         },
       ],
+      chronicle: season3Chronicles['grazdan-mo-eraz'],
     },
     'mero': {
       role: {
@@ -130,6 +135,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Secondi Figli', en: 'Second Sons' },
         },
       ],
+      chronicle: season3Chronicles.mero,
     },
     'daario-naharis': {
       role: { it: 'Capitano mercenario', en: 'Sellsword captain' },
@@ -154,6 +160,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Corvi della Tempesta', en: 'Stormcrows' },
         },
       ],
+      chronicle: season3Chronicles['daario-naharis'],
     },
     'prendahl-na-ghezn': {
       role: {
@@ -175,6 +182,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Corvi della Tempesta', en: 'Stormcrows' },
         },
       ],
+      chronicle: season3Chronicles['prendahl-na-ghezn'],
     },
     // #1634: King's Landing.
     'olenna-tyrell': {

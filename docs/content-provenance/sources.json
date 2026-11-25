@@ -39311,6 +39311,26 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=659995",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=659995",
       "contentSha256": "9b986a1df44a12aec0f6a519f280b2546836e651b427ce867c9917f9fc227916"
+    },
+    "iaf-en-Daenerys_I_Targaryen-27599.json": {
+      "locale": "en",
+      "title": "Daenerys I Targaryen",
+      "revision": 27599,
+      "revisionDate": "2026-09-04T00:26:21Z",
+      "url": "https://iceandfire.fandom.com/wiki/Daenerys_I_Targaryen",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27599",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27599",
+      "contentSha256": "417da75b1a7ba3f54f2d4100f2cc0352ec5cd42fe61d6e1db4fb4ac337de83c9"
+    },
+    "iaf-en-Rhaegal-16103.json": {
+      "locale": "en",
+      "title": "Rhaegal",
+      "revision": 16103,
+      "revisionDate": "2016-05-12T06:42:45Z",
+      "url": "https://iceandfire.fandom.com/wiki/Rhaegal",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=16103",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=16103",
+      "contentSha256": "1d3865a04fdba0e378308dc7fb30ecccc2ffb1e8dc0281a1a48b7ac3ce3dd8a2"
     }
   }
 }
