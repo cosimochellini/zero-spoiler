@@ -304,8 +304,8 @@ describe('the sidecar', () => {
   it('holds the text of DESIGN.md', () => {
     const { narrative } = SIDECAR_JSON
     const sidecar = {
-      title: SIDECAR_JSON.title,
-      northStar: narrative.northStar,
+      title: collapsed(SIDECAR_JSON.title),
+      northStar: collapsed(narrative.northStar),
       overview: collapsed(narrative.overview),
       keyCharacteristics: allCollapsed(narrative.keyCharacteristics),
       rules: narrative.rules.map((rule) => ({
@@ -315,13 +315,14 @@ describe('the sidecar', () => {
       dos: allCollapsed(narrative.dos),
       donts: allCollapsed(narrative.donts),
     }
+    const northStar = between(PROSE, '**Creative North Star: "', '"**')
     const overview = between(PROSE, '"**\n', '**Key Characteristics:**')
     const characteristics = between(PROSE, '**Key Characteristics:**', '\n## ')
     const donts = PROSE.slice(PROSE.indexOf("### Don't:"))
 
     expect(sidecar).toStrictEqual({
-      title: between(PROSE, '\n# ', '\n'),
-      northStar: between(PROSE, '**Creative North Star: "', '"**'),
+      title: collapsed(between(PROSE, '\n# ', '\n')),
+      northStar: collapsed(northStar),
       overview: collapsed(overview),
       keyCharacteristics: bullets(characteristics),
       rules: rulesOf(PROSE),

@@ -1,11 +1,17 @@
 // @vitest-environment node
+import { spawn } from 'node:child_process'
+import { once } from 'node:events'
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
 import path from 'node:path'
+import process from 'node:process'
 import { Readable } from 'node:stream'
-import { describe, expect, it } from 'vitest'
+import { afterAll, describe, expect, it } from 'vitest'
 
 import {
   compareDumps,
   exitOf,
+  failedOf,
   parityArgs,
   reportOf,
 } from './archive-parity.mjs'
@@ -124,4 +130,120 @@ describe('the comparison', () => {
       'the head ends at line 3, where the base goes on',
     )
   })
+})
+
+describe('the end of a run', () => {
+  it('is an error when neither dump had a line', async () => {
+    const result = await compareDumps(dump([]), dump([]))
+
+    expect(exitOf(result)).toBe(2)
+    expect(reportOf(result)).toBe('No lines compared: both dumps were empty.')
+  })
+
+  it('counts a dump as failed unless it ended well or on its own stop', () => {
+    expect(failedOf({ code: 0, signal: null }, false)).toBe(false)
+    expect(failedOf({ code: null, signal: 'SIGKILL' }, true)).toBe(false)
+    expect(failedOf({ code: 1, signal: null }, true)).toBe(true)
+    expect(failedOf({ code: null, signal: 'SIGTERM' }, true)).toBe(true)
+    expect(failedOf({ code: null, signal: 'SIGKILL' }, false)).toBe(true)
+  })
+})
+
+describe('a run against a base worktree', () => {
+  const folder = mkdtempSync(path.join(tmpdir(), 'archive-parity-test-'))
+  const bookmarks = path.join(folder, 'bookmarks.json')
+  // No bookmark: the head's dump is the episode table alone, and quick.
+  writeFileSync(bookmarks, '[]')
+  const runs = []
+  afterAll(() => {
+    for (const run of runs) {
+      run.kill('SIGKILL')
+    }
+    rmSync(folder, { recursive: true, force: true })
+  })
+
+  /**
+   * A base worktree whose dump is the given script, in a folder whose name
+   * a plain import would misread.
+   * @param {string} source The dump's source.
+   * @returns {string} The worktree.
+   */
+  const baseWith = (source) => {
+    const tree = mkdtempSync(path.join(folder, 'base #%?-'))
+    mkdirSync(path.join(tree, 'scripts'))
+    writeFileSync(path.join(tree, 'scripts/archive-dump.mjs'), source)
+    return tree
+  }
+
+  /**
+   * Starts a comparison of this checkout with a base worktree.
+   * @param {string} tree The base worktree.
+   * @returns {{ child: import('node:child_process').ChildProcess, out: () => string, err: () => string }} The run and what it printed.
+   */
+  const parityWith = (tree) => {
+    const child = spawn(
+      process.execPath,
+      [
+        path.join(import.meta.dirname, 'archive-parity.mjs'),
+        '--base-dir',
+        tree,
+        '--series',
+        'game-of-thrones',
+        '--bookmarks',
+        bookmarks,
+      ],
+      { stdio: ['ignore', 'pipe', 'pipe'] },
+    )
+    runs.push(child)
+    const printed = { out: '', err: '' }
+    child.stdout.on('data', (chunk) => {
+      printed.out += String(chunk)
+    })
+    child.stderr.on('data', (chunk) => {
+      printed.err += String(chunk)
+    })
+
+    return { child, out: () => printed.out, err: () => printed.err }
+  }
+
+  it('imports the base dump from a path with # % ?', async () => {
+    const run = parityWith(
+      baseWith(String.raw`process.stdout.write('{"table":1,"chapter":0}\n')`),
+    )
+    const [code] = await once(run.child, 'exit')
+
+    expect(run.out()).toContain('table: 0 identical, 1 different')
+    expect(run.out()).toContain('Out of step: the base ends at line 2')
+    expect(code).toBe(1)
+  })
+
+  it('fails when a dump ends on a SIGTERM it did not send', async () => {
+    const run = parityWith(baseWith("process.kill(process.pid, 'SIGTERM')"))
+    const [code] = await once(run.child, 'exit')
+
+    expect(run.err()).toContain('a dump failed')
+    expect(code).toBe(2)
+  })
+
+  it.each(['SIGINT', 'SIGTERM', 'SIGHUP'])(
+    'stops both dumps and exits 2 on %s',
+    async (signal) => {
+      const run = parityWith(
+        baseWith(
+          // Gone by itself in 10 s, so a run that never stops it leaks nothing.
+          'process.stderr.write(`ready ${process.pid}\\n`); setTimeout(() => {}, 10_000)',
+        ),
+      )
+      while (!run.err().includes('ready')) {
+        await once(run.child.stderr, 'data')
+      }
+      run.child.kill(signal)
+      const [code] = await once(run.child, 'exit')
+      const pid = Number(/ready (?<pid>\d+)/u.exec(run.err())?.groups?.pid)
+
+      expect(code).toBe(2)
+      expect(run.err()).toContain(`stopped by ${signal}`)
+      expect(() => process.kill(pid, 0)).toThrow(/ESRCH/u)
+    },
+  )
 })

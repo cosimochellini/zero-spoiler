@@ -3,7 +3,7 @@
 // Piece). `npm run archive:parity` (`scripts/archive-parity.mjs`) pipes the
 // dump of a refactor's base and of its head and compares them line by line;
 // stdout waits for `drain`, so a pipe or a file both take the whole dump:
-//   npm run --silent archive:dump | head -1
+//   npm run --silent archive:dump -- --series game-of-thrones | wc -l
 // The list is the sweep's own (`src/server/archive/payloads.server.ts`), so
 // a page added to the server is in the dump too, and so are the bookmarks
 // (the series', in `src/data/series/index.ts`).

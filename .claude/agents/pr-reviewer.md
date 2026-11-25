@@ -69,15 +69,19 @@ these commands. Measure runs on a same-repo head only
    - size: `npm run build` in base too, then from head
      `PR_BODY="$(gh pr view <n> --json body -q .body)" node scripts/client-budget.mjs <dir>/base/dist/client <dir>/head/dist/client`,
      so an accepted `client-budget:` line counts;
-   - payload parity: in head, `npm run archive:parity -- --series <slug>` for
-     each affected series, with `--base-dir <dir>/base` when the base worktree
-     exists (without it, the command makes and removes its own at the
-     merge-base); add `--skip` or `--bookmarks` as `CONTRIBUTING.md` describes.
-     Exit 1 lists the lines that differ per payload;
+   - payload parity: in head,
+     `TMPDIR=<dir> npm run archive:parity -- --series <slug>` for each affected
+     series, with `--base-dir <dir>/base` when the base worktree exists (without
+     it, the command makes its own at the merge-base in `<dir>/archive-parity-*`
+     and removes it); add `--skip` or `--bookmarks` as `CONTRIBUTING.md`
+     describes. Exit 0 is parity; exit 1 prints, per payload, the count of
+     identical and different lines and one truncated sample of the first change;
+     exit 2 is a wrong flag, a failed setup or dump, or no line compared;
    - scripts you write in `<dir>` that only read `dist/` or source.
 4. Always, a failed measurement included: `/usr/bin/git worktree remove --force`
-   on `<dir>/head` and any `<dir>/base`, then `rm -rf <dir>`, each path written
-   out literally.
+   on `<dir>/head`, any `<dir>/base` and any `<dir>/archive-parity-*/base` a
+   stopped parity run left, then `rm -rf <dir>`, each path written out
+   literally.
 
 A risk Measure settles is graded P0–P3 as a finding, with the command and its
 numbers in the finding's evidence and in Verification. A risk Measure could

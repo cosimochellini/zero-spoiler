@@ -12,7 +12,8 @@
 //   --base-dir <path>   an existing worktree of the base, used as it is;
 //   --series, --skip, --bookmarks   passed to both dumps.
 // Exit 0 when the dumps are identical, 1 when they differ or fall out of
-// step, 2 for a wrong flag, a failed setup or a dump that fails.
+// step, 2 for a wrong flag, a failed setup, a dump that fails, two empty
+// dumps, or SIGINT, SIGTERM or SIGHUP (the base is removed first).
 import { execFileSync, spawn } from 'node:child_process'
 import { mkdtempSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
@@ -183,21 +184,91 @@ export function reportOf({ counts, misstep }) {
   if (misstep !== undefined) {
     lines.push(`Out of step: ${misstep}. Nothing after it was compared.`)
   }
+  if (misstep === undefined && counts.size === 0) {
+    lines.push('No lines compared: both dumps were empty.')
+  }
 
   return lines.join('\n')
 }
 
 /**
- * The exit code of a comparison: 0 when every line is identical, else 1.
+ * The exit code of a comparison: 0 when every line is identical, 1 when
+ * any differs, and 2 when there was no line to compare.
  * @param {{ counts: Map<string, Count>, misstep: string | undefined }} result The comparison.
- * @returns {0 | 1} The code.
+ * @returns {0 | 1 | 2} The code.
  */
 export function exitOf({ counts, misstep }) {
+  if (misstep === undefined && counts.size === 0) {
+    return 2
+  }
   const same =
     misstep === undefined
     && counts.values().every(({ changed }) => changed === 0)
 
   return same ? 0 : 1
+}
+
+/**
+ * Whether a dump failed: any end but 0, except the SIGKILL this script sent.
+ * A SIGTERM always fails, since this script never sends one to a dump.
+ * @param {{ code: number | null, signal: string | null }} end How it ended.
+ * @param {boolean} stopped Whether this script stopped it.
+ * @returns {boolean} Whether it failed.
+ */
+export function failedOf({ code, signal }, stopped) {
+  return code !== 0 && (!stopped || signal !== 'SIGKILL')
+}
+
+/** The children of this run, and the signal that stopped it, if one did. */
+const RUN = {
+  /** @type {Set<import('node:child_process').ChildProcess>} */
+  children: new Set(),
+  /** @type {string | undefined} */
+  signal: undefined,
+}
+
+/**
+ * How a child ends, kept among the run's children until then.
+ * @param {import('node:child_process').ChildProcess} child The child.
+ * @returns {Promise<{ code: number | null, signal: string | null }>} Its exit code and signal; -1 when it never started.
+ */
+function ended(child) {
+  RUN.children.add(child)
+
+  return new Promise((resolve) => {
+    child.on('error', () => {
+      RUN.children.delete(child)
+      resolve({ code: -1, signal: null })
+    })
+    child.on('exit', (code, signal) => {
+      RUN.children.delete(child)
+      resolve({ code, signal })
+    })
+  })
+}
+
+/**
+ * Stops the run on a signal: every child is killed, and the run throws at
+ * its next step, so the base is removed and the exit is 2.
+ * @param {string} signal The signal.
+ * @returns {void}
+ */
+function stopRun(signal) {
+  RUN.signal ??= signal
+  console.error(`archive:parity: stopped by ${signal}`)
+  for (const child of RUN.children) {
+    child.kill('SIGKILL')
+  }
+}
+
+/**
+ * Throws when a signal stopped the run.
+ * @returns {void}
+ */
+function unlessStopped() {
+  if (RUN.signal !== undefined) {
+    throw new Error(`archive:parity: stopped by ${RUN.signal}`)
+  }
 }
 
 /**
@@ -217,9 +288,9 @@ function git(...args) {
  * A detached worktree of the base, with its dependencies installed.
  * @param {string | undefined} ref The base ref, or the merge-base with `origin/main`.
  * @param {string} folder The empty temporary folder to put it in.
- * @returns {string} The worktree.
+ * @returns {Promise<string>} The worktree.
  */
-function baseTree(ref, folder) {
+async function baseTree(ref, folder) {
   const sha = git(
     ...(ref === undefined ?
       ['merge-base', 'origin/main', 'HEAD']
@@ -229,33 +300,44 @@ function baseTree(ref, folder) {
   const tree = path.join(folder, 'base')
   console.error(`archive:parity: base ${sha.slice(0, 8)} in ${tree}`)
   git('worktree', 'add', '--quiet', '--detach', tree, sha)
+  unlessStopped()
   // Not the `npm_config_*` of the `npm run` this came from: `npm ci` refuses
   // some of them in a project, and `--silent` would hide its errors. No
   // scripts: npm blocks the install ones, and `prepare` would rewrite the
-  // checkout's shared Git hooks from the base.
+  // checkout's shared Git hooks from the base. Not synchronous, so a signal
+  // can stop it.
   const env = Object.fromEntries(
     Object.entries(process.env).filter(([name]) => !name.startsWith('npm_')),
   )
-  execFileSync(
+  const install = spawn(
     'npm',
     ['ci', '--ignore-scripts', '--no-audit', '--no-fund', '--loglevel=error'],
     { cwd: tree, env, stdio: ['ignore', 2, 'inherit'] },
   )
+  const { code } = await ended(install)
+  unlessStopped()
+  if (code !== 0) {
+    throw new Error(`archive:parity: npm ci failed in ${tree}`)
+  }
 
   return tree
 }
 
 // A base from before #1620 writes its dump without waiting for `drain`; a
-// blocking stdout makes it wait all the same.
+// blocking stdout makes it wait all the same. The script goes in as a file
+// URL, so a path with `#`, `%` or `?` imports.
 // ponytail: drop the wrapper once no base is older than #1620.
-const BLOCKING =
-  'process.stdout._handle?.setBlocking?.(true); await import(process.argv[1])'
+const BLOCKING = [
+  'process.stdout._handle?.setBlocking?.(true)',
+  "const { pathToFileURL } = await import('node:url')",
+  'await import(pathToFileURL(process.argv[1]).href)',
+].join('; ')
 
 /**
  * Starts the dump of one tree, its lines on a pipe.
  * @param {string} tree The worktree.
  * @param {string[]} args The dump's flags.
- * @returns {{ lines: AsyncIterable<string>, stop: () => void, failed: Promise<boolean> }} Its lines, a way to stop it, and whether it failed on its own.
+ * @returns {{ lines: AsyncIterable<string>, stop: () => void, failed: () => Promise<boolean> }} Its lines, a way to stop it, and whether it failed on its own.
  */
 function dumpOf(tree, args) {
   // fallow-ignore-next-line security-sink -- the command is this Node; the script is the dump of this checkout or of the base worktree, and the flags were parsed by parseArgs.
@@ -271,22 +353,18 @@ function dumpOf(tree, args) {
     ],
     { cwd: tree, stdio: ['ignore', 'pipe', 'inherit'] },
   )
-  const failed = new Promise((resolve) => {
-    child.on('error', () => resolve(true))
-    // A dump this script stopped ends on SIGTERM; any other end but 0 failed.
-    child.on('exit', (code, signal) =>
-      resolve(code !== 0 && signal !== 'SIGTERM'),
-    )
-  })
+  let stopped = false
+  const exit = ended(child)
   const stop = () => {
+    stopped = true
     child.stdout.destroy()
-    child.kill()
+    child.kill('SIGKILL')
   }
 
   return {
     lines: createInterface({ input: child.stdout, crlfDelay: Infinity }),
     stop,
-    failed,
+    failed: async () => failedOf(await exit, stopped),
   }
 }
 
@@ -297,12 +375,13 @@ function dumpOf(tree, args) {
  * @returns {Promise<number>} The exit code.
  */
 async function parity(flags, folder) {
-  const tree = flags.baseDir ?? baseTree(flags.base, folder)
+  const tree = flags.baseDir ?? (await baseTree(flags.base, folder))
   const [base, head] = [tree, ROOT].map((root) => dumpOf(root, flags.dump))
   const result = await compareDumps(base.lines, head.lines)
   base.stop()
   head.stop()
-  const failed = await Promise.all([base.failed, head.failed])
+  const failed = await Promise.all([base.failed(), head.failed()])
+  unlessStopped()
   if (failed.includes(true)) {
     console.error('archive:parity: a dump failed; its error is above')
     return 2
@@ -313,7 +392,7 @@ async function parity(flags, folder) {
 }
 
 /**
- * Removes the base's worktree and its folder, whatever state they are in.
+ * Removes the base's worktree and its folder, and no other worktree.
  * @param {string} folder The temporary folder.
  * @returns {void}
  */
@@ -326,10 +405,9 @@ function removeBase(folder) {
       stdio: 'ignore',
     })
   } catch {
-    // Never made, or half made: the folder goes below and prune forgets it.
+    // Never added: there is no worktree to remove, only the folder below.
   }
   rmSync(folder, { recursive: true, force: true })
-  git('worktree', 'prune')
 }
 
 if (isMain(import.meta)) {
@@ -340,10 +418,10 @@ if (isMain(import.meta)) {
     console.error(error.message)
     process.exit(2)
   }
-  // Ctrl-C stops the children; this process lives on to remove the base.
-  process.on('SIGINT', () => {
-    console.error('archive:parity: stopping')
-  })
+  // A signal stops the children; this process lives on to remove the base.
+  for (const signal of ['SIGINT', 'SIGTERM', 'SIGHUP']) {
+    process.on(signal, stopRun)
+  }
   const folder =
     flags.baseDir === undefined ?
       // fallow-ignore-next-line security-sink -- the system's temporary folder and a literal prefix.

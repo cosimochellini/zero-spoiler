@@ -79,8 +79,10 @@ comments, and it refuses a page that carries `data-impeccable-ignore`.
 - **Behavior-preserving archive/server refactors:** run `npm run archive:parity`
   in head. It dumps every payload in head and in a temporary worktree at the
   merge-base with `origin/main`, which it removes, compares them line by line
-  without saving them, and exits 0 when they are identical or 1 with the lines
-  that differ per payload. Pass `-- --series <slug>` for another series,
+  without saving them, and exits 0 when they are identical. Exit 1 prints, per
+  payload, the count of identical and different lines and one truncated sample
+  of the first change; exit 2 is a wrong flag, a failed setup or dump, no line
+  compared, or Ctrl-C. Pass `-- --series <slug>` for another series,
   `--skip <payload>` to leave out a payload the change alters,
   `--bookmarks <file.json>` to hold both to the base's bookmarks, `--base <ref>`
   for another base and `--base-dir <path>` to reuse a base worktree with
