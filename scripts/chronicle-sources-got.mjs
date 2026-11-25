@@ -112,6 +112,16 @@ const WF_THEON_IV = `${ACOK_AWOIAF}50`
 const WF_THEON_V = `${ACOK_AWOIAF}56`
 const WF_THEON_VI = `${ACOK_AWOIAF}66`
 const WF_BRAN_VII = `${ACOK_AWOIAF}69`
+// The Wall and beyond cast of the second stage (#1488): Jon I to VIII of A
+// Clash of Kings, site chapters 80, 87, 97, 108, 117, 125, 127 and 142.
+const WL_JON_I = `${ACOK_AWOIAF}6`
+const WL_JON_II = `${ACOK_AWOIAF}13`
+const WL_JON_III = `${ACOK_AWOIAF}23`
+const WL_JON_IV = `${ACOK_AWOIAF}34`
+const WL_JON_V = `${ACOK_AWOIAF}43`
+const WL_JON_VI = `${ACOK_AWOIAF}51`
+const WL_JON_VII = `${ACOK_AWOIAF}53`
+const WL_JON_VIII = `${ACOK_AWOIAF}68`
 
 /** The note on a book pin past the Ice and Fire Wiki's chapter pages. */
 const PAST_CHAPTER_PAGES =
@@ -705,6 +715,70 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_10,
       note: 'Both media: news of his father’s death, the horse saddled to join Robb, Sam unable to stop him, friends including Grenn and Pyp reciting the vows, Mormont letting it pass and the ranging in force to find Benjen. Jon IX (site 71) on A Wiki of Ice and Fire tells the same; who rides after him differs, so the story names only Grenn and Pyp.',
     },
+    '11:80': {
+      source: WL_JON_I,
+      note: 'Jon I (site 80): Sam in the vaults finding maps for Mormont, Sam sent in Aemon’s place to tend the ravens, Smallwood arguing that the Lord Commander’s place is at Castle Black and dismissed, Aemon’s refusal of the crown, Robb a king, and Jon’s answer that he will be troubled and keep his vows. No season-2 episode adapts Jon I, so episode 11 orders it.',
+    },
+    '11:87': {
+      source: WL_JON_II,
+      note: 'Jon II (site 87): the weirwood of Whitetree with bones in its mouth, the second skull under the first, Jon sure he knows why the dead are burned, the search with Eddison Tollett, the fourth empty village, Smallwood’s wildlings of a year ago, Sam’s ravens saying snow, the vanished game and Jon wondering if they will be found instead. Edd is named unlinked: his show gate is 20. No season-2 episode adapts Jon II, so episode 11 orders it.',
+    },
+    '11:chapter': {
+      source: WL_JON_III,
+      note: 'Jon III (site 97): the six days of rain, Craster in the only chair, Benjen not seen for three years, the escort refused as free folk, Craster taking Jon for a bastard, Ghost and the caged rabbits of the girl who is now his wife, Gilly’s plea at dawn, her child and the sons given to the gods, Jon saying they go the other way and it is for the old crow to decide, and Mormont on the ride: the rangers know, the Watch needs Craster, Mance gathering at the Frostfangs. Gilly is named unlinked: her show gate is 15.',
+    },
+    '11:episode': {
+      source: EPISODE_11,
+      note: 'At Craster’s Keep: the abandoned villages, Craster’s daughter-wives and no sons, Benjen not seen, the wildlings gathering under Mance Rayder, Jon challenging Craster over “southerners” and Jeor’s reprimand that the Watch needs him; the Jon Snow and Jeor Mormont pages have “learn how to follow” (GOT201).',
+    },
+    '12:97': {
+      source: EPISODE_12,
+      note: 'At Craster’s Keep: Sam bringing Gilly to Jon, her fear for her unborn child if it is a boy, her plea to come, Jon refusing and the argument after she leaves, Craster taking a baby into the woods, a White Walker taking it, and Craster knocking Jon out; the Jon Snow page has that Jon does not recognize the creature (GOT202). Gilly is not named: her show gate is 15.',
+    },
+    '13:97': {
+      source: EPISODE_13,
+      note: 'At Craster’s Keep: Jon dragged back beaten, the Watch ordered out and Jon blamed, Jeor having known all along, Craster too valuable to offend, Jon forbidden to interfere, the thing that took the child and Jeor saying Jon will see it again; the Craster page has Longclaw handed back with the warning not to lose it again (GOT203).',
+    },
+    '15:108': {
+      source: WL_JON_IV,
+      note: 'Jon IV (site 108): the ringfort on the Fist, waiting for the Shadow Tower’s men, the rangers kept close, one man finding two hundred more easily than the reverse, Benjen who may return as a wight, Dywen smelling cold at the stew, Ghost leading Jon outside the ring to a freshly dug mound, and the Night’s Watch cloak with dragonglass and an old warhorn.',
+    },
+    '15:chapter': {
+      source: WL_JON_V,
+      note: 'Jon V (site 117): Qhorin’s hundred from the Shadow Tower, his knowing Eddard and Rickard, the dragonglass daggers for Jon, Grenn and Jeor, the horn given to Sam, the captive’s wargs, mammoths and the plan to breach the Wall, the advice to scout the mountains, the three parties, and Qhorin choosing Jon because the old gods are still strong beyond the Wall. In the books Jon stays Mormont’s steward, lent to Qhorin.',
+    },
+    '15:episode': {
+      source: `${SHOW}Qhorin`,
+      note: 'Qhorin page (GOT205): the rendezvous at the Fist, the wildlings organizing under Mance, the lookouts and the small party Qhorin offers to lead, Jon asking to join, Jeor’s objections (not a ranger, beaten by Craster), Qhorin defending him, and Sam taking on his duties; the Eddison Tollett page has the single horn blast and Jon naming the Halfhand (GOT205). Jon’s role step sits at 15/117.',
+    },
+    '16:chapter': {
+      source: WL_JON_VI,
+      note: 'Jon VI (site 125): the watchers in the Skirling Pass, the climb with Stonesnake, the horn watcher and the man by the fire, the sleeping spearwife Ygritte who yields, Stonesnake’s warning, the tale of Bael the Bard and the shared blood Jon does not believe, Qhorin’s men wanting her killed, Jon left alone with her, Mance accepting him if he ran off with her, and Jon stopping and telling her to run.',
+    },
+    '16:episode': {
+      source: `${SHOW}Jon_Snow`,
+      note: 'Jon Snow page (GOT206): the ambush on the watchers, the hesitation before a young woman, Ygritte, Qhorin leaving Jon to execute her, Jon unable to, her escape and recapture, the party lost, the cold night and her advances rejected to keep his oath; the episode synopsis has the rest going on up the mountain (GOT206).',
+    },
+    '17:chapter': {
+      source: WL_JON_VII,
+      note: 'Jon VII (site 127): Jon telling Qhorin what Ygritte said, Qhorin knowing he let her go and saying he would have had Ebben do it, the night marches, the dream through Ghost’s eyes, the three-eyed weirwood with his brother’s face, the host and the giants on mammoths, the eagle, Qhorin taking the wolf dream seriously, Ghost found wounded, the turn back to the Fist, and Dalbridge staying behind with all the arrows. No season-2 episode adapts Jon VII; episode 17 orders it, as it orders Ebben’s and Dalbridge’s gates.',
+    },
+    '17:episode': {
+      source: `${SHOW}Jon_Snow`,
+      note: 'Jon Snow page (GOT207): Ygritte’s legs untied and hands bound, the search for the raiders, the taunt about his virginity, why the Watch hates the wildlings, the First Men and the wrong side of the Wall, the urging to forget his oath, the hand to his sword, the trip with the rope, the ambush and capture, and “should have taken her when he had the chance” (GOT207). Jon’s captured status sits at 17/127.',
+    },
+    '18:142': {
+      source: `${SHOW}Jon_Snow`,
+      note: 'Jon Snow page (GOT208): Ygritte bringing Jon to the Lord of Bones, persuading him that Mance will want to question him, Qhorin his prisoner, the men killed searching for Jon, the plan to make him a spy, and the feigned anger until Qhorin is restrained; the Lord of Bones page has the order to execute him and the Stark blood (GOT208). The leader stays unnamed: his record is the books’.',
+    },
+    '20:chapter': {
+      source: WL_JON_VIII,
+      note: 'Jon VIII (site 142): Ebben sent east with the last garron, Stonesnake sent on foot after his mare breaks a leg, the oath recited together, the order to yield and not balk, the hunters with the Lord of Bones, Ygritte and Ebben’s head, “I was warned bastard blood is craven”, the command to kill Qhorin, Ghost biting his calf, the wildlings accepting Jon, and Mance marching on the Wall. Jon’s role step sits at 20/142.',
+    },
+    '20:episode': {
+      source: EPISODE_20,
+      note: 'Beyond the Wall synopsis: the march to Mance’s camp, Qhorin stunning a captor and taking a sword, the Lord of Bones letting them fight, Ygritte giving Jon back his sword, the insult to his parentage, the killing, “We are the watchers on the Wall”, the bonds cut, and the army in the valley (GOT210). Jon’s role step and his freedom sit at 20/142. The leader stays unnamed: his record is the books’.',
+    },
   },
   'jeor-mormont': {
     '3:20': {
@@ -738,6 +812,34 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:71': {
       source: EPISODE_10,
       note: 'Both media: the desertion let pass because the Watch would have no men left otherwise, the war of Starks and Lannisters set below the threat beyond the Wall, and the ranging in force to find Benjen (episode 10 synopsis; Jon IX, site 71, on A Wiki of Ice and Fire).',
+    },
+    '11:80': {
+      source: WL_JON_I,
+      note: 'Jon I (site 80): Smallwood arguing that the Lord Commander’s place is at Castle Black, Mormont refusing to wait on a third lost ranging, Benjen First Ranger until his death is confirmed, the complaint that Smallwood called him too old, the maps, Aemon’s refusal of the crown and the question of what Jon will do. No season-2 episode adapts Jon I, so episode 11 orders it.',
+    },
+    '11:chapter': {
+      source: WL_JON_III,
+      note: 'Jon III (site 97): the order to leave Craster’s wives alone, the empty villages and the wights told in the hall, the escort refused, the axe as a guest gift, the ride where Mormont says Craster gives his sons to the wood and all the rangers know, the keep that has saved rangers’ lives, Craster having sworn no vows, and Mance gathering at the Frostfangs to be found and stopped.',
+    },
+    '11:episode': {
+      source: `${SHOW}Jeor_Mormont`,
+      note: 'Jeor Mormont page (GOT201): months of travel and the abandoned villages, Craster’s Keep, Benjen not seen in years, the wildlings under Mance, the reprimand outside and “learn how to follow”; the Craster page has the axe handed over, Mance marching south, the offer to stay accepted and the rule about his wives (GOT201).',
+    },
+    '13:97': {
+      source: EPISODE_13,
+      note: 'At Craster’s Keep: Jon dragged back, the Watch ordered out, Jeor having known all along, the disgust and the value of Craster’s shelter and information, Benjen among those helped, Jon forbidden to interfere and told he will see it again; the Craster page has Longclaw handed to the Lord Commander and given back to Jon (GOT203).',
+    },
+    '15:108': {
+      source: WL_JON_IV,
+      note: 'Jon IV (site 108): the Fist as good, defensible ground, the wait for the Shadow Tower’s men, Buckwell and Locke on the roads to the Frostfangs, Mormont unwilling to risk them, the wildlings outnumbering the Watch and needing food, the rangers kept close, one man finding two hundred, and Benjen perhaps returning as a wight.',
+    },
+    '15:chapter': {
+      source: WL_JON_V,
+      note: 'Jon V (site 117): in Jeor’s tent, the captive’s wargs and mammoths, the breach of the Wall, Mance seeking a power in the Frostfangs, the advice to send scouts, Buckwell with four men to the Giant’s Stair, Smallwood to probe the Milkwater, Qhorin to the Skirling Pass, and Jon chosen. The pass stays unnamed here: its book gate is 125.',
+    },
+    '15:episode': {
+      source: `${SHOW}Jeor_Mormont`,
+      note: 'Jeor Mormont page (GOT205): the camp on the Fist awaiting Qhorin, the lookouts, Mance’s past as a deserter of the Watch, the shift to wildling tactics with a small group, Jon’s request accepted with Qhorin’s encouragement and Sam’s promise; the Qhorin page has the objections (not a ranger, beaten by Craster) (GOT205).',
     },
   },
   'aemon': {
@@ -786,6 +888,46 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:chapter': {
       source: WALL_AGOT_70,
       note: 'Book only, Jon IX (site 71): Sam in the stable doorway, Jon spurring the mare so Sam has to leap aside, Sam waking his friends rather than the Lord Commander, and Grenn, Pyp, Toad, Halder and Matthar bringing Jon back an hour before dawn.',
+    },
+    '11:80': {
+      source: WL_JON_I,
+      note: 'Jon I (site 80): Sam in the vaults all night, the maps and the treasures of the library, “if we return”, going in Maester Aemon’s place to tend the two cages of ravens, Jon saying they are all scared and what matters is how they face it, and Mormont wanting the best ravens so that his successor knows where and how, leaving Sam speechless. Sam’s role step sits at 11/80; no season-2 episode adapts Jon I.',
+    },
+    '11:87': {
+      source: WL_JON_II,
+      note: 'Jon II (site 87): Sam watering the horses that carry the raven cages, three ravens taught to say snow, the report on Whitetree sent with the wish that it could carry him back, Sam less frightened now that he knows there are no wildlings around, and Jon’s thought that only the self-confessed coward is growing less afraid. No season-2 episode adapts Jon II, so episode 11 orders it.',
+    },
+    '11:chapter': {
+      source: WL_JON_III,
+      note: 'Jon III (site 97): Sam with the baggage repeating what Eddison Tollett and Dywen say of Craster, Craster asking for a man who can draw maps, Jon naming Sam, Gilly wearing Sam’s cloak at dawn, Sam behind the hall with her, his hope to do something for her and to take her when they come back. Gilly is named unlinked: her show gate is 15.',
+    },
+    '11:episode': {
+      source: `${SHOW}Grenn`,
+      note: 'Grenn page (GOT201): the sledge pushed through the mud, Sam’s weight, the offered ride and the blisters, the women around the keep, Craster marrying his daughters and breeding more daughters, Sam and Grenn’s disgust; the Samwell Tarly page has Craster’s news of Mance (GOT201). Edd, who explains, is not named: his show gate is 20.',
+    },
+    '12:97': {
+      source: `${SHOW}Gilly`,
+      note: 'Gilly page (GOT202): Ghost drawn by her dead rabbit, Sam telling him to get away, Gilly noting his courage and asking to be taken away, Jon refusing and her silence on what Craster does; the Grenn page has the potatoes, Violet the milkmaid and Sam wishing he grew up on a farm, and the episode synopsis the argument (GOT202). Gilly is not named: her show gate is 15.',
+    },
+    '13:97': {
+      source: `${SHOW}Gilly`,
+      note: 'Gilly page (GOT203): the Watch expelled after Jon is caught, Sam finding Gilly at her chores, his mother’s thimble, the reading while she sewed ended by his father, the only possession he has from her, and the promise to return for her (GOT203). Gilly is not named: her show gate is 15.',
+    },
+    '15:chapter': {
+      source: WL_JON_V,
+      note: 'Jon V (site 117): the cracked warhorn given to Sam because it makes no sound and he likes ancient things, the dragonglass spearhead and dozen arrowheads, the daggers for Jon, Grenn and Jeor, Qhorin’s arrival from the Shadow Tower and Jon chosen for his party; the find itself is Jon IV (site 108).',
+    },
+    '15:episode': {
+      source: `${SHOW}Samwell_Tarly`,
+      note: 'Samwell Tarly page (GOT205): Sam amazed at the Fist and assuming Jon’s duties as steward so that Jon can go with Qhorin; the Grenn page has the First Men, the horn blasts, three for White Walkers after a thousand years and the book mocked (GOT205). Sam’s role step sits at 15/117.',
+    },
+    '18:142': {
+      source: `${SHOW}Eddison_Tollett`,
+      note: 'Eddison Tollett page (GOT208): digging latrines, Jon and the Halfhand perhaps dead, Grenn lifting the stone tablet with runes, the cache of mostly spearheads and a horn in a Night’s Watch cloak, and Sam identifying dragonglass; the Samwell Tarly page has Sam refusing to give up hope (GOT208). Edd is not named: his show gate is 20.',
+    },
+    '20:142': {
+      source: `${SHOW}Samwell_Tarly`,
+      note: 'Samwell Tarly page (GOT210): collecting dung, the three horn blasts, the panic, Sam tripping and left behind, the blizzard, the rock, the wights and White Walkers, the mounted White Walker that notices and ignores him and orders the wights on; the Eddison Tollett page has the talk of Gilly and Edd’s snark, and the episode synopsis the spear raised with a shriek (GOT210).',
     },
   },
   'alliser-thorne': {
@@ -882,6 +1024,22 @@ export const GAME_OF_THRONES_SOURCES = {
     '7:49': {
       source: EPISODE_7,
       note: 'Both media, added after review: the recruits taken in, Grenn to the rangers (GOT107, on his page; Jon VI, site 49, on A Wiki of Ice and Fire) and Jon to the stewards.',
+    },
+    '11:97': {
+      source: `${SHOW}Grenn`,
+      note: 'Grenn page (GOT201): the sledge, Sam’s weight, the offered ride and the blisters, the warning not to speak to the women, Grenn’s question about Craster’s daughters, the answer that they are also his wives, and Sam and Grenn’s disgust (GOT201). Edd, who gives the warning, is not named: his show gate is 20.',
+    },
+    '15:117': {
+      source: WL_JON_V,
+      note: 'Jon V (site 117): the dragonglass daggers for Jon, Grenn and Jeor, the rest shared among his friends, and Qhorin choosing Jon; Jon IV (site 108) has Grenn at the stew with Dywen smelling cold and Ghost leading Jon to the cache.',
+    },
+    '18:142': {
+      source: `${SHOW}Eddison_Tollett`,
+      note: 'Eddison Tollett page (GOT208): the latrines, the talk of Jon and the others perhaps dead, Grenn finding the tablet with runes of the First Men, told to leave it and lifting it anyway, the spearheads and horn in a Night’s Watch cloak, and Sam identifying dragonglass; the Grenn page has the same (GOT208). Edd is not named: his show gate is 20.',
+    },
+    '20:142': {
+      source: `${SHOW}Eddison_Tollett`,
+      note: 'Eddison Tollett page (GOT210): the frozen dung, the first and second blasts, Grenn drawing his sword, Edd telling them to return to the Fist, the third blast and the scream to run, and Sam left behind unnoticed; the Grenn page has the complaint about wildlings and burning droppings (GOT210).',
     },
   },
   'pypar': {
@@ -2850,6 +3008,30 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Ghost`,
       note: 'Season 1, citing episodes 7 and 8: Othor and Jafer Flowers found dead, Ghost whining at Jon’s door at night, the wight in the Lord Commander’s quarters, and fire. Book side: the reviewed relationship pin at 8/53 (Ghost rouses Jon at his door, a dead man risen in Mormont’s rooms) and the Game of Thrones Wiki’s Jon page, In the books (Othor killed by fire to save Mormont). Jon VII is unverified on the chapter text.',
     },
+    '11:97': {
+      source: WL_JON_III,
+      note: 'Jon III (site 97): Craster’s dogs and Ghost ignoring them, the caged rabbits, Jon finding Ghost before a frightened girl and promising he will not hurt her, Lark and Chett taunting him as a coward without his wolf, the second rabbit given to Jon, Ghost finding Sam, the rabbit cooked, and Ghost gone at dawn. Gilly is named unlinked: her show gate is 15.',
+    },
+    '12:97': {
+      source: `${SHOW}Ghost`,
+      note: 'Ghost page (GOT202): the ranging deep in wildling territory, Gilly frightened when Ghost approaches for her dead rabbit, Sam shooing him away, the baleful look and Ghost slinking off (GOT202). Gilly is not named: her show gate is 15.',
+    },
+    '15:108': {
+      source: WL_JON_IV,
+      note: 'Jon IV (site 108): Ghost running off on the climb, coming inside the ring he had refused, sniffing the air, Jon remembering that Ghost knew when the dead came walking, the chase around the Fist, the freshly dug mound, the body Jon expects, and the cloak with dragonglass and the warhorn.',
+    },
+    '16:125': {
+      source: `${SHOW}Ghost`,
+      note: 'Ghost page (GOT205, GOT206): Ghost climbing the Fist with the black brothers, following Jon when he joins Qhorin’s raiders, separating from the group and disappearing despite Jon’s calls (GOT206).',
+    },
+    '17:127': {
+      source: WL_JON_VII,
+      note: 'Jon VII (site 127): the dream through Ghost’s eyes, the weirwood with his brother’s face and three eyes, the clifftop over thousands training and giants on mammoths, the eagle, Jon waking with Ghost’s name, Qhorin’s wolf dream, and Ghost found wounded after they set out at dusk. No season-2 episode adapts Jon VII; episode 17 orders it.',
+    },
+    '20:142': {
+      source: WL_JON_VIII,
+      note: 'Jon VIII (site 142): the hunters with the Lord of Bones, Jon yielding as ordered, the command to kill Qhorin, Ghost biting the man’s calf to give Jon an opening, Longclaw, and the wildlings accepting Jon.',
+    },
   },
   'benjen-stark': {
     '1:6': {
@@ -3448,6 +3630,178 @@ export const GAME_OF_THRONES_SOURCES = {
     '15:109': {
       source: WF_BRAN_V,
       note: 'Bran V (site 109): Rodrik back with Reek, servant of the now-dead Bastard of Bolton, the forced marriage and the will naming him heir, the murder, the bastard shot as he rode away, Reek kept for Robb’s judgement, and Manderly and Bolton fighting in the Hornwood. Hayhead tells Bran who the prisoner is; the bastard’s death is what Winterfell is told, as the chapter tells it.',
+    },
+  },
+  'thoren-smallwood': {
+    '11:80': {
+      source: WL_JON_I,
+      note: 'Jon I (site 80): Smallwood arguing that the Lord Commander’s place is at Castle Black and that the command should be his, Mormont refusing, the two rangings already lost, Benjen First Ranger until his death is confirmed, and the complaint that Smallwood called him too old. No season-2 episode adapts Jon I, so episode 11 orders it.',
+    },
+    '11:87': {
+      source: WL_JON_II,
+      note: 'Jon II (site 87): Smallwood on why men feared the heart trees and cut them down, his armour and cloak more lordly than Mormont’s, the wildlings of a year ago, Buckwell’s answer, and the order of march with Buckwell’s scouts first and Smallwood’s vanguard after. The armour is Ser Jaremy Rykker’s; left unnamed. No season-2 episode adapts Jon II, so episode 11 orders it.',
+    },
+    '15:117': {
+      source: WL_JON_V,
+      note: 'Jon V (site 117): Qhorin’s report and advice, and the three parties: Buckwell with four men to the Giant’s Stair, Smallwood to probe the Milkwater, Qhorin to the Skirling Pass. The river and the pass stay unnamed (the pass opens at 125).',
+    },
+  },
+  'eddison-tollett': {
+    '20:87': {
+      source: WL_JON_II,
+      note: 'Jon II (site 87): Jon paired with Eddison Tollett, nicknamed Dolorous Edd, the dead walking and now talking, the grey-haired squire’s complaints, the dismal house he was born in before he fell on hard times, and his not wanting to imagine what happened. Ordered at episode 20, his show gate. Mondadori’s “Edd l’Addolorato” is not checked.',
+    },
+    '20:97': {
+      source: WL_JON_III,
+      note: 'Jon III (site 97): Edd holding Mormont’s mount and keeping the wolf outside, the axe returned buried in a skull, the drunk Craster cutting off only an ear, and wildling friends burying you in secret graves; Sam also reports Edd saying Craster marries his daughters. Ordered at episode 20, his show gate.',
+    },
+    '20:142': {
+      source: `${SHOW}Eddison_Tollett`,
+      note: 'Eddison Tollett page (GOT210): the frozen feces, the snark about Gilly, Sam finding nothing interesting about Edd, the first and second blasts, the order to return to the Fist, the third blast and the scream to run, and Sam left behind (GOT210). Episode 20 is his show gate.',
+    },
+  },
+  'jarman-buckwell': {
+    '11:87': {
+      source: WL_JON_II,
+      note: 'Jon II (site 87): Buckwell’s answer to Smallwood that much can change in a year, the march to the lake, and his scouts riding out first ahead of the vanguard, of two hundred men in all. No season-2 episode adapts Jon II, so episode 11 orders it.',
+    },
+    '11:97': {
+      source: WL_JON_III,
+      note: 'Jon III (site 97): Buckwell’s horn meaning people at Craster’s Keep after seven villages, his question about Mance and Craster’s answer that free folk need no kings, and his advice to Jon to keep a good edge on his sword.',
+    },
+    '15:117': {
+      source: WL_JON_V,
+      note: 'Jon V (site 117): Buckwell to take four men up the Giant’s Stair; Jon IV (site 108) has his view that following the Milkwater is the easiest road to the Frostfangs but Mance will know of their approach. The names of the stair and the river are left out.',
+    },
+  },
+  'mallador-locke': {
+    '11:87': {
+      source: WL_JON_II,
+      note: 'Jon II (site 87): Smallwood and Buckwell on the wildlings of a year ago, Locke’s “fewer wildlings means fewer worries”, and the baggage train under him behind Mormont’s main force. No season-2 episode adapts Jon II, so episode 11 orders it.',
+    },
+    '15:108': {
+      source: WL_JON_IV,
+      note: 'Jon IV (site 108): the officers and the hot spiced wine, Buckwell on the Milkwater and Mance knowing their approach, Locke recommending the Giant’s Stair or the Skirling Pass, and Mormont staying on the Fist to strengthen its defences. The two passes stay unnamed: the Skirling Pass opens at 125.',
+    },
+  },
+  'craster': {
+    '11:chapter': {
+      source: WL_JON_III,
+      note: 'Jon III (site 97): Craster alone in a chair, Benjen not seen for three years, feigned ignorance of the wights, the escort refused as free folk, Mance’s messenger sent back without his tongue, food for twenty, the wine, the hand of any man who touches his wives, and his scorn when he hears the name Snow.',
+    },
+    '11:episode': {
+      source: `${SHOW}Craster`,
+      note: 'Craster page (GOT201): Benjen not seen for three years, the wine, Jon taking offence at “southerners”, the bastard surname and the real north, the axe tested on the floor, Mance gathering an army to march south, the daughter-wife made to say they are content, and the hand of any man who touches his wives (GOT201). Gilly is not named: her show gate is 15.',
+    },
+    '12:97': {
+      source: `${SHOW}Craster`,
+      note: 'Craster page (GOT202): the baby carried into the woods at night and left on the ground, Craster turning back, then finding Jon watching a White Walker pick it up, and the blow that knocks Jon out (GOT202).',
+    },
+    '13:97': {
+      source: `${SHOW}Craster`,
+      note: 'Craster page (GOT203): Jon brought back bound and bloodied, kicked, the men roused and told to get out, Jon blamed for meddling, Longclaw handed to the Lord Commander with the demand to make things right, and the departure at dawn (GOT203).',
+    },
+  },
+  'gilly': {
+    '15:97': {
+      source: WL_JON_III,
+      note: 'Jon III (site 97): the fifteen-year-old girl, Craster’s daughter and now his wife, the rabbits, the Watch making good, Sam’s cloak at dawn, the child, the boys given to the gods, the white cold at night, the plea to be taken to the Wall, the other direction and the old crow’s decision, and Sam’s hope for the return. Episode 15, her show gate, orders it.',
+    },
+    '15:108': {
+      source: `${SHOW}Gilly`,
+      note: 'Gilly page (GOT201–GOT203): the wine served, the rehearsed speech that they are protected by Craster, Ghost and the rabbit, Sam’s help and her plea, Jon’s refusal, and the thimble with the promise to return; the Grenn and Eddison Tollett pages have Sam saying Gilly would love the Fist (GOT205). Her show gate is 15, so earlier episodes are told here.',
+    },
+  },
+  'qhorin-halfhand': {
+    '15:chapter': {
+      source: WL_JON_V,
+      note: 'Jon V (site 117): the hundred from the Shadow Tower, Alfyn Crowkiller’s band met along the Wall, its leader killed and captives taken for four men lost, Qhorin knowing Eddard and Rickard, the captive’s wargs and mammoths, the breach of the Wall, the power Mance seeks in the Frostfangs, the advice to send scouts, and Jon chosen for the old gods of the First Men and the Starks.',
+    },
+    '15:episode': {
+      source: `${SHOW}Qhorin`,
+      note: 'Qhorin page (GOT205): the force from the Shadow Tower, the rendezvous at the Fist, Mance organizing the wildlings, the lookouts, the scouting party he offers to lead, Jeor arguing against Jon (not a ranger, beaten by Craster), Qhorin defending him, and Jon let go; the Jeor Mormont page has Mance’s past in the Watch and the shift to wildling tactics (GOT205).',
+    },
+    '16:chapter': {
+      source: WL_JON_VI,
+      note: 'Jon VI (site 125): the watchers in the Skirling Pass, Qhorin’s warning about the horn, Stonesnake and Jon volunteering and climbing, Ygritte recognizing the Halfhand and confirming the wildlings would kill him if he yielded, his men saying she should be killed, and Jon left alone with her to do it.',
+    },
+    '16:episode': {
+      source: `${SHOW}Qhorin`,
+      note: 'Qhorin page (GOT206): the lookouts found and ambushed, Jon hesitating before a woman, Qhorin questioning her and leaving Jon to execute her; the Ygritte page has the bodies to be burned and the suspected fire, and the episode synopsis the party going on up the mountain (GOT206).',
+    },
+    '17:127': {
+      source: WL_JON_VII,
+      note: 'Jon VII (site 127): Qhorin confirming Mance would accept Jon, Mance a wildling captured as a child, the best ranger, gone back to his roots, the suspicion that Jon let Ygritte go, Ebben, knowing his men, the eagle feared to be a skinchanger, the return through the pass, and Dalbridge staying behind with all the arrows. No season-2 episode adapts Jon VII; episode 17 orders it.',
+    },
+    '18:142': {
+      source: `${SHOW}Qhorin`,
+      note: 'Qhorin page (GOT208): Qhorin searching for Jon and following his tracks, the ambush, his men killed and Qhorin taken, Jon joining him in captivity, the deaths not to be meaningless, the spy, and the feigned anger to make Jon look like a traitor (GOT208). His captured status sits at 18/142.',
+    },
+    '20:chapter': {
+      source: WL_JON_VIII,
+      note: 'Jon VIII (site 142): Ebben sent east, Stonesnake sent on foot, the oath recited, the order to yield and not balk, the mission to learn what the wildlings plan and return, the promise to tell Mormont, the hunters with the Lord of Bones, Jon yielding, “bastard blood is craven”, the order to kill Qhorin, his death and the pyre. His death sits at 20/142, so the story is told in the past tense.',
+    },
+    '20:episode': {
+      source: `${SHOW}Qhorin`,
+      note: 'Qhorin page (GOT210): the sacrifice for the ruse, the captor stunned and the sword taken, the attack on Jon, the Lord of Bones letting them fight, the insult to his parentage, the killing per Qhorin’s instructions, “We are the watchers on the Wall”, the wildlings believing Jon a traitor, and the body burned so it will not return as a wight (GOT210). His death sits at 20/142; the leader stays unnamed, his record being the books’.',
+    },
+  },
+  'stonesnake': {
+    '15:125': {
+      source: WL_JON_VI,
+      note: 'Jon VI (site 125): Stonesnake and Jon volunteering, the lesson in climbing a sheer cliff, the watcher with the horn killed before he can sound it, Jon cutting down the man by the fire, Ygritte yielding, Stonesnake’s warning that she should be killed, and Bael called a murderer and robber. Episode 15, his show order, orders it.',
+    },
+    '20:142': {
+      source: WL_JON_VIII,
+      note: 'Jon VIII (site 142): Stonesnake’s mare breaking a leg, Qhorin sending him on foot by the high passes to the Fist, and the message for Mormont: giants and wargs and worse, and the trees have eyes again. His fate is not told in the stage.',
+    },
+  },
+  'ygritte': {
+    '16:chapter': {
+      source: WL_JON_VI,
+      note: 'Jon VI (site 125): the sleeper who turns out to be a spearwife, Ygritte, yielding and taken captive, the tale of Bael the Bard and the daughter of Winterfell, the shared blood, Ygritte recognizing the Halfhand, Jon left alone to kill her, Mance accepting Jon if he ran off with her, and Jon telling her to run. Mondadori’s form of Bael the Bard is not checked.',
+    },
+    '16:episode': {
+      source: `${SHOW}Ygritte`,
+      note: 'Ygritte page (GOT206): the sole survivor of the watchpost, the bodies to be burned, Qhorin suspecting a fire, Jon told to execute her, her plea to get it over with, the hesitation and escape, the recapture and isolation, the cold night and the advances rebuffed (GOT206).',
+    },
+    '17:127': {
+      source: `${SHOW}Ygritte`,
+      note: 'Ygritte page (GOT207): still a prisoner, the talk of his virginity, the search for Qhorin, the North before the Andals, the shared descent from the First Men, the seduction that throws him off his guard, the escape and the ambush; the Jon Snow page has the trip with the rope and “should have taken her” (GOT207).',
+    },
+    '18:142': {
+      source: `${SHOW}Ygritte`,
+      note: 'Ygritte page (GOT208): Jon brought to the Lord of Bones, the order to execute him, Mance wanting to question him for his Stark blood, Qhorin presented as a captive, his open blame for his men’s deaths, Ygritte intrigued, and the plan she does not know of; the Lord of Bones page has “a present” (GOT208). The leader stays unnamed: his record is the books’.',
+    },
+    '20:chapter': {
+      source: WL_JON_VIII,
+      note: 'Jon VIII (site 142): the fourteen hunters with eight dogs, the Lord of Bones their leader and Ygritte among them, Jon yielding and killing Qhorin, the wildlings accepting him, the eagle once the man Jon killed when they captured her, the pyre, and Mance marching on the Wall.',
+    },
+    '20:episode': {
+      source: `${SHOW}Ygritte`,
+      note: 'Ygritte page (GOT210): toying with Jon on the way to Mance, the fight, the band stunned but accepting Jon and freeing his hands; the Jon Snow page has the flat of Longclaw on his head and the crest over the encampment, and the episode synopsis Ygritte giving Jon back his sword (GOT210).',
+    },
+  },
+  'ebben': {
+    '17:127': {
+      source: WL_JON_VII,
+      note: 'Jon VII (site 127): Qhorin saying he would have had Ebben kill the girl, the wolf dream of giants and the eagle, Jon waking with Ghost’s name, Ebben calling him a skinchanger, the eagle watching them, the turn back, and Dalbridge staying behind. Mondadori’s word for skinchanger is not checked; “metamorfo” is unverified. No season-2 episode adapts Jon VII; episode 17 orders it.',
+    },
+    '20:142': {
+      source: WL_JON_VIII,
+      note: 'Jon VIII (site 142): Ebben sent east with the last garron to reach the Lord Commander with all haste, and the hunters arriving with his head. His death sits at 20/142, so the story is told in the past tense.',
+    },
+  },
+  'dalbridge': {
+    '17:127': {
+      source: WL_JON_VII,
+      note: 'Jon VII (site 127): the eagle, the fear of a skinchanger, the return through the Skirling Pass without fires, the enemy gaining, and Squire Dalbridge remaining behind with all the arrows where the wildlings were killed. The summary’s “sacrificing himself” is not told as a death: his status stays alive in the stage. No season-2 episode adapts Jon VII; episode 17 orders it.',
+    },
+  },
+  'lord-of-bones': {
+    '18:142': {
+      source: WL_JON_VIII,
+      note: 'Jon VIII (site 142): fourteen hunters and eight dogs, the Lord of Bones their leader, Ygritte among them, Ebben’s head, the order to kill them, Jon yielding, the command to kill Qhorin, the wildlings accepting Jon despite Rattleshirt’s misgivings, the pyre and the charred bones. Episode 18, his show order, orders it.',
     },
   },
 }
