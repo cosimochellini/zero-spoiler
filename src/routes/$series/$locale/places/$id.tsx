@@ -6,6 +6,7 @@ import { ArchivePage } from '~/components/ArchivePage'
 import { VisitorBanner } from '~/components/VisitorBanner'
 import { useT } from '~/i18n/LocaleContext'
 import { PageUnitContext } from '~/lib/progress/BookmarkContext'
+import type { PageUnit } from '~/lib/view/records'
 import { recordHead } from '~/routes/$locale/-head'
 import { RecordBackLink } from '~/routes/$series/$locale/-back'
 import {
@@ -41,6 +42,11 @@ export const Route = createFileRoute('/$series/$locale/places/$id')({
   notFoundComponent: PlaceNotFound,
 })
 
+/** What says which unit a place's or a ship's page counts in (#1431). */
+function unitOf(page: { detail: PageUnit } | { ship: PageUnit }): PageUnit {
+  return 'ship' in page ? page.ship : page.detail
+}
+
 /**
  * A place's page, and a ship's, which is served from the same address.
  *
@@ -67,7 +73,7 @@ function PlacePage(): ReactElement {
   const peekShip = usePeek(liftShip)
   const peekRecord = usePeek(liftRecord)
   const place = 'detail' in page ? page.detail : null
-  const { unit } = 'ship' in page ? page.ship : page.detail
+  const { unit } = unitOf(page)
 
   return (
     <PageUnitContext value={unit}>
