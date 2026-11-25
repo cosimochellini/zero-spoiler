@@ -1941,7 +1941,18 @@ export const season2: ThronesSaga = {
         it: 'Vince il torneo di re Renly battendo Loras Tyrell, e come ricompensa chiede un posto nella sua guardia.',
         en: 'She wins King Renly’s tourney by defeating Loras Tyrell, and asks for a place in his guard as her reward.',
       },
-      status: [{ episode: 13, chapter: 96, value: 'alive' }],
+      status: [
+        { episode: 13, chapter: 96, value: 'alive' },
+        // Taken with Jaime on the road to King's Landing: by Locke's Bolton
+        // riders in "Dark Wings, Dark Words" (episode 22), by Vargo Hoat's
+        // Brave Companions in Jaime III of A Storm of Swords (chapter 165,
+        // #1637).
+        { episode: 22, chapter: 165, value: 'captured' },
+        // Jaime comes back for her and pulls her out of Harrenhal's bear
+        // pit, and she leaves with him, in "The Bear and the Maiden Fair"
+        // (episode 27) and Jaime VI (chapter 188, #1637).
+        { episode: 27, chapter: 188, value: 'alive' },
+      ],
       affiliation: [
         {
           episode: 13,
@@ -2294,10 +2305,29 @@ export const season2: ThronesSaga = {
     'vargo-hoat': {
       relationships: season2Relationships['vargo-hoat'],
       chronicle: season2Chronicles['vargo-hoat'],
-      role: {
-        it: 'Capo dei Bravi Camerati',
-        en: 'Leader of the Brave Companions',
-      },
+      role: [
+        {
+          episode: 15,
+          chapter: 104,
+          source: 'chapter',
+          value: {
+            it: 'Capo dei Bravi Camerati',
+            en: 'Leader of the Brave Companions',
+          },
+        },
+        // Urswyck tells Jaime that Roose Bolton has named the Goat Lord of
+        // Harrenhal, in Jaime III of A Storm of Swords (chapter 165).
+        // Episode 22 only orders it (#1637).
+        {
+          episode: 22,
+          chapter: 165,
+          source: 'chapter',
+          value: {
+            it: 'Capo dei Bravi Camerati e lord di Harrenhal',
+            en: 'Leader of the Brave Companions and Lord of Harrenhal',
+          },
+        },
+      ],
       log: {
         it: 'I suoi mercenari saccheggiano le terre intorno a Harrenhal per lord Tywin Lannister, e si scontrano spesso con i soldati Lannister.',
         en: 'His sellswords forage and raid around Harrenhal for Lord Tywin Lannister, and often clash with the Lannister soldiers.',

@@ -241,6 +241,8 @@ export const THRONES_ITALIAN_TITLES = {
   'strong-belwas': SELMY,
   // The owner's rulings of 2026-11-22: Arstan Barbabianca, named in prose.
   'arstan-whitebeard': SELMY,
+  // #1637, the third stage's Jaime, Brienne and Harrenhal cast.
+  'qyburn': characters('Qyburn'),
 }
 
 /**
@@ -361,4 +363,7 @@ export const THRONES_NAMES_KEPT = {
   'strong-belwas': 'Belwas il Forte',
   // Named in the same section's prose, with no heading of his own.
   'arstan-whitebeard': 'Arstan Barbabianca',
+  // #1637. Italian Wikipedia has no entry for Steelshanks Walton, whose name
+  // stays as it is until the Mondadori form is checked.
+  'steelshanks-walton': 'Steelshanks Walton',
 }

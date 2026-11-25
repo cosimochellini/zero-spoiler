@@ -209,12 +209,13 @@ const STEPS: {
     chapter: 112,
     source: 'episode',
   },
+  // Shared since #1637: the show leaves him in command at Harrenhal in
+  // episode 22.
   {
     id: 'roose-bolton',
     en: 'Commander of the northmen at Harrenhal',
-    episode: 18,
+    episode: 22,
     chapter: 121,
-    source: 'chapter',
   },
 ]
 

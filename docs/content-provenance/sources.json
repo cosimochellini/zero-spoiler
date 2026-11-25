@@ -38151,6 +38151,116 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25051",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25051",
       "contentSha256": "2d1ff8f46e18f970e5e451f80a9e11febc2cb82f8159427b8250c3c06310ac75"
+    },
+    "got-en-Qyburn-749126.json": {
+      "locale": "en",
+      "title": "Qyburn",
+      "revision": 749126,
+      "revisionDate": "2026-10-21T08:14:01Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Qyburn",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749126",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749126",
+      "contentSha256": "efa93a697a1a6675f55abf0cefa22ee68d5c61153cad23a2627ed9b2b2802ec1"
+    },
+    "got-en-Locke-728248.json": {
+      "locale": "en",
+      "title": "Locke",
+      "revision": 728248,
+      "revisionDate": "2026-02-05T07:09:28Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Locke",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728248",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728248",
+      "contentSha256": "46810760c321287364e3d98520fbc10a1707e657122fa133cc153872f04555ae"
+    },
+    "got-en-Steelshanks-728451.json": {
+      "locale": "en",
+      "title": "Steelshanks",
+      "revision": 728451,
+      "revisionDate": "2026-02-05T08:47:28Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Steelshanks",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728451",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728451",
+      "contentSha256": "03d02af51ca4d0a57f46a9fa45c596c8e2356d62ab8c8d6b3a84f4cc70fbf512"
+    },
+    "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json": {
+      "locale": "en",
+      "title": "The Bear and the Maiden Fair (episode)",
+      "revision": 729794,
+      "revisionDate": "2026-02-12T12:45:03Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729794",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729794",
+      "contentSha256": "9d7987c6025dd8b60fa47fa7f3fb81089278e93acfaeb9c52657f6dcef57afe9"
+    },
+    "iaf-en-Urswyck-27061.json": {
+      "locale": "en",
+      "title": "Urswyck",
+      "revision": 27061,
+      "revisionDate": "2025-01-28T10:10:36Z",
+      "url": "https://iceandfire.fandom.com/wiki/Urswyck",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27061",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27061",
+      "contentSha256": "03db37c705746a9ef80032cb8f200a4bd41e81aae9d9ec338877522693c6320e"
+    },
+    "iaf-en-Zollo-22846.json": {
+      "locale": "en",
+      "title": "Zollo",
+      "revision": 22846,
+      "revisionDate": "2019-03-21T01:26:36Z",
+      "url": "https://iceandfire.fandom.com/wiki/Zollo",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=22846",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=22846",
+      "contentSha256": "7272ec81e38d89ce9fc753b1f93e6663c188eaff3e9afc22c5febff1603ed125"
+    },
+    "iaf-en-Timeon-15537.json": {
+      "locale": "en",
+      "title": "Timeon",
+      "revision": 15537,
+      "revisionDate": "2016-04-13T23:42:12Z",
+      "url": "https://iceandfire.fandom.com/wiki/Timeon",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15537",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15537",
+      "contentSha256": "979693a86f159a4dd72a93b0e1fb1e1ff64c3714ee0c41dff2d3332845cb0782"
+    },
+    "iaf-en-Shagwell-27047.json": {
+      "locale": "en",
+      "title": "Shagwell",
+      "revision": 27047,
+      "revisionDate": "2025-01-28T09:51:47Z",
+      "url": "https://iceandfire.fandom.com/wiki/Shagwell",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27047",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27047",
+      "contentSha256": "3a6c9485b1f70b56d635afe9d6c4c655a712c86659f5ddcd4931040049a6e3b9"
+    },
+    "iaf-en-Pyg-15538.json": {
+      "locale": "en",
+      "title": "Pyg",
+      "revision": 15538,
+      "revisionDate": "2016-04-13T23:42:26Z",
+      "url": "https://iceandfire.fandom.com/wiki/Pyg",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15538",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15538",
+      "contentSha256": "e881daa2188f240c58284837c384ac78ae072327576fc8a4958a1453a1f73a33"
+    },
+    "iaf-en-Elmar_Frey-25596.json": {
+      "locale": "en",
+      "title": "Elmar Frey",
+      "revision": 25596,
+      "revisionDate": "2022-08-29T04:24:08Z",
+      "url": "https://iceandfire.fandom.com/wiki/Elmar_Frey",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25596",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25596",
+      "contentSha256": "8470b88a655cb084a1ea3cc63da57064bcf1b2d65e74a1ddf6fc01d93946d1b2"
+    },
+    "iaf-en-Brave_Companions-26178.json": {
+      "locale": "en",
+      "title": "Brave Companions",
+      "revision": 26178,
+      "revisionDate": "2022-10-31T23:25:16Z",
+      "url": "https://iceandfire.fandom.com/wiki/Brave_Companions",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26178",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26178",
+      "contentSha256": "611e1556e25019e027fa2459e7ce18d3eefe24cf19b78447fbd9ca442f44d793"
     }
   }
 }
