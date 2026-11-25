@@ -2079,7 +2079,7 @@ export const season1Chronicles = {
         en: 'The Battle of the Blackwater',
       },
       {
-        it: 'La notte prima della battaglia Tyrion dice a [[shae|Shae]] che può ancora andarsene, e lei resta. Dalle mura manda una sola nave carica di altofuoco in mezzo alla flotta di [[stannis-baratheon|Stannis]], e la freccia infuocata di [[bronn|Bronn]] la fa esplodere. Quando [[joffrey-baratheon|Joffrey]] lascia le mura e i mantelli d’oro si perdono d’animo, Tyrion li rincuora di persona e guida una sortita attraverso i cunicoli che spezza l’ariete alla Porta del Fango. Nella mischia [[mandon-moore|ser Mandon Moore]] gli squarcia il volto, e [[podrick-payne|Podrick]] uccide Mandon prima che possa colpire di nuovo.',
+        it: 'La notte prima della battaglia Tyrion dice a [[shae|Shae]] che può ancora andarsene, e lei resta. Dalle mura manda una sola nave che perde altofuoco in mezzo alla flotta di [[stannis-baratheon|Stannis]], e la freccia infuocata di [[bronn|Bronn]] la fa esplodere. Quando [[joffrey-baratheon|Joffrey]] lascia le mura e le cappe dorate si perdono d’animo, Tyrion li rincuora di persona e guida una sortita attraverso i cunicoli che spezza l’ariete alla Porta del Fango. Nella mischia [[mandon-moore|ser Mandon Moore]] gli squarcia il volto, e [[podrick-payne|Podrick]] uccide Mandon prima che possa colpire di nuovo.',
         en: 'On the eve of battle Tyrion tells [[shae|Shae]] she can still leave, and she stays. From the walls he sends a single ship leaking wildfire into [[stannis-baratheon|Stannis]]’s fleet, and [[bronn|Bronn]]’s flaming arrow sets it ablaze. When [[joffrey-baratheon|Joffrey]] leaves the walls and the gold cloaks lose heart, Tyrion rallies them himself and leads a sortie through the tunnels that breaks the ram at the Mud Gate. In the fighting [[mandon-moore|Ser Mandon Moore]] slashes his face, and [[podrick-payne|Podrick]] kills Mandon before he can strike again.',
       },
     ),
@@ -2103,7 +2103,7 @@ export const season1Chronicles = {
       [12, 82],
       { it: 'Chi vive e chi muore', en: 'Who lives and who dies' },
       {
-        it: 'Tyrion invita a cena [[janos-slynt|Janos Slynt]], viene a sapere che i suoi uomini hanno ucciso su ordine di qualcuno una prostituta e la sua bambina, una figlia bastarda di Robert, e lo spedisce alla Barriera. Il comando della Guardia cittadina passa a [[jacelyn-bywater|ser Jacelyn Bywater]]. Tyrion se la prende con [[varys|Varys]], che gli ha taciuto che è stata [[cersei-lannister|Cersei]] a mandare i mantelli d’oro. Varys risponde al suo indovinello: il potere risiede dove gli uomini credono che risieda. Alla domanda se ucciderebbe una neonata a comando, [[bronn|Bronn]] dice che prima chiederebbe quanto.',
+        it: 'Tyrion invita a cena [[janos-slynt|Janos Slynt]], viene a sapere che i suoi uomini hanno ucciso su ordine di qualcuno una prostituta e la sua bambina, una figlia bastarda di Robert, e lo spedisce alla Barriera. Il comando della Guardia cittadina passa a [[jacelyn-bywater|ser Jacelyn Bywater]]. Tyrion se la prende con [[varys|Varys]], che gli ha taciuto che è stata [[cersei-lannister|Cersei]] a mandare le cappe dorate. Varys risponde al suo indovinello: il potere risiede dove gli uomini credono che risieda. Alla domanda se ucciderebbe una neonata a comando, [[bronn|Bronn]] dice che prima chiederebbe quanto.',
         en: 'Tyrion dines [[janos-slynt|Janos Slynt]], learns that his men killed a whore and her baby, a bastard daughter of Robert’s, on someone’s orders, and ships him to the Wall. [[jacelyn-bywater|Ser Jacelyn Bywater]] takes over the City Watch. Tyrion is angry that [[varys|Varys]] hid from him that [[cersei-lannister|Cersei]] sent the gold cloaks. Varys answers his riddle: power resides where men believe it resides. Asked whether he would kill a baby girl on command, [[bronn|Bronn]] says he would first ask how much.',
       },
     ),
@@ -2119,8 +2119,8 @@ export const season1Chronicles = {
       [15, 94],
       { it: 'Diecimila giare', en: 'Ten thousand jars' },
       {
-        it: 'Nelle cantine della gilda, [[hallyne|Hallyne]] della Gilda degli alchimisti conta per Tyrion quasi ottomila giare di altofuoco e gliene promette diecimila. Tyrion fa mandare delle giare alle porte della città, dove [[jacelyn-bywater|ser Jacelyn Bywater]] dovrà addestrare delle squadre a usarle. Nel suo solario [[cersei-lannister|Cersei]] lo aggredisce perché vuole mandare [[myrcella-baratheon|Myrcella]] a Dorne, in sposa al figlio del principe Doran. Tyrion non cede, e lei scoppia a piangere. La lettera affidata solo a [[pycelle|Pycelle]] è arrivata alla regina: Tyrion sa chi è l’informatore.',
-        en: 'In the guild’s vaults, [[hallyne|Hallyne]] of the Alchemists’ Guild counts nearly eight thousand jars of wildfire for Tyrion and promises ten thousand. Tyrion has jars sent to the city gates, where [[jacelyn-bywater|Ser Jacelyn Bywater]] is to train crews to handle them. Back in his solar, [[cersei-lannister|Cersei]] rages that he means to send [[myrcella-baratheon|Myrcella]] to Dorne, to wed Prince Doran’s son. Tyrion holds firm, and she weeps. The letter he gave only [[pycelle|Pycelle]] has reached her: he knows his informer.',
+        it: 'Nelle cantine della gilda, [[hallyne|Hallyne]] della Gilda degli alchimisti riferisce a Tyrion che la gilda ha quasi ottomila giare di altofuoco e gliene promette diecimila. Tyrion fa mandare delle giare alle porte della città, dove [[jacelyn-bywater|ser Jacelyn Bywater]] dovrà addestrare delle squadre a usarle. Nel suo solario [[cersei-lannister|Cersei]] lo aggredisce perché vuole mandare [[myrcella-baratheon|Myrcella]] a Dorne, in sposa al figlio del principe Doran. Tyrion non cede, e lei scoppia a piangere. La lettera affidata solo a [[pycelle|Pycelle]] è arrivata alla regina: Tyrion sa chi è l’informatore.',
+        en: 'In the guild’s vaults, [[hallyne|Hallyne]] of the Alchemists’ Guild tells Tyrion the guild holds nearly eight thousand jars of wildfire and promises ten thousand. Tyrion has jars sent to the city gates, where [[jacelyn-bywater|Ser Jacelyn Bywater]] is to train crews to handle them. Back in his solar, [[cersei-lannister|Cersei]] rages that he means to send [[myrcella-baratheon|Myrcella]] to Dorne, to wed Prince Doran’s son. Tyrion holds firm, and she weeps. The letter he gave only [[pycelle|Pycelle]] has reached her: he knows his informer.',
       },
     ),
     inBooks(
@@ -2152,15 +2152,15 @@ export const season1Chronicles = {
       { it: 'La rivolta del pane', en: 'Bread riot' },
       {
         it: 'Tyrion saluta [[myrcella-baratheon|Myrcella]] in partenza per Dorne. Sulla via del ritorno la folla colpisce [[joffrey-baratheon|Joffrey]] con lo sterco; il re aizza [[sandor-clegane|il Mastino]] contro la gente, e la città insorge. Alle porte del castello Tyrion schiaffeggia il re così forte da fargli volare via la corona. [[sansa-stark|Sansa]] torna salvata dal Mastino. L’Alto Septon è morto, la figlia di lady Tanda è stata stuprata e il cugino Tyrek è scomparso. [[jacelyn-bywater|Ser Jacelyn]] avverte che la città dà la colpa a Tyrion. [[bronn|Bronn]] osserva che le cose sarebbero più facili se il re fosse [[tommen-baratheon|Tommen]].',
-        en: 'Tyrion sees [[myrcella-baratheon|Myrcella]] off to Dorne. Riding back, a mob hits [[joffrey-baratheon|Joffrey]] with dung; he sets [[sandor-clegane|the Hound]] on the crowd, and the city riots. At the castle gates Tyrion slaps the king so hard his crown flies off. [[sansa-stark|Sansa]] comes back, saved by the Hound. The High Septon is dead, Lady Tanda’s daughter has been raped, and his cousin Tyrek is missing. [[jacelyn-bywater|Ser Jacelyn]] warns that the city blames Tyrion. [[bronn|Bronn]] remarks that things would be easier if [[tommen-baratheon|Tommen]] were king.',
+        en: 'Tyrion sees [[myrcella-baratheon|Myrcella]] off to Dorne. Riding back, a mob hits [[joffrey-baratheon|Joffrey]] with dung; he sets [[sandor-clegane|Sandor Clegane]] on the crowd, and the city riots. At the castle gates Tyrion slaps the king so hard his crown flies off. [[sansa-stark|Sansa]] comes back, saved by Sandor. The High Septon is dead, Lady Tanda’s daughter has been raped, and his cousin Tyrek is missing. [[jacelyn-bywater|Ser Jacelyn]] warns that the city blames Tyrion. [[bronn|Bronn]] remarks that things would be easier if [[tommen-baratheon|Tommen]] were king.',
       },
     ),
     inBooks(
       [13, 118],
       { it: 'La caduta di Capo Tempesta', en: 'Storm’s End falls' },
       {
-        it: '[[lancel-lannister|Lancel]] rivela che la regina vuole nascondere [[tommen-baratheon|Tommen]] a Rosby, e Tyrion manda [[jacelyn-bywater|ser Jacelyn]] a prendere il gruppo del principe e a tenerlo al sicuro lì. Nella casa dove la tiene, [[shae|Shae]] gli chiede di farne la sua dama a corte e lo deride perché ha paura del padre; Tyrion la schiaffeggia, poi le racconta di Tysha. [[varys|Varys]] porta la notizia che Capo Tempesta è caduta e che Stannis marcerà sulla città, e propone di mettere Shae al servizio di [[lollys-stokeworth|Lollys Stokeworth]] come cameriera, con un passaggio segreto verso la Torre del Primo Cavaliere.',
-        en: '[[lancel-lannister|Lancel]] reveals that the queen means to hide [[tommen-baratheon|Tommen]] at Rosby, and Tyrion sends [[jacelyn-bywater|Ser Jacelyn]] to seize the boy’s party and keep him safe there. At the manse, [[shae|Shae]] asks to be his lady at court and mocks his fear of his father; he slaps her, then tells her about Tysha. [[varys|Varys]] brings word that Storm’s End has fallen and Stannis will march on the city, and suggests Shae serve as maid to [[lollys-stokeworth|Lollys Stokeworth]], with a secret passage to the Tower of the Hand.',
+        it: '[[lancel-lannister|Lancel]] rivela che la regina vuole nascondere [[tommen-baratheon|Tommen]] a Rosby, e Tyrion manda [[jacelyn-bywater|ser Jacelyn]] a prendere il gruppo del principe e a tenerlo al sicuro lì. Nella casa dove Tyrion tiene Shae, [[varys|Varys]], travestito da fratello mendicante, porta la notizia che Capo Tempesta è caduta e che Stannis marcerà sulla città. Rimasta sola con Tyrion, [[shae|Shae]] gli chiede di farne la sua dama a corte e lo deride perché ha paura del padre; Tyrion la schiaffeggia, poi le racconta di Tysha. Dopo, Varys propone di mettere Shae al servizio di [[lollys-stokeworth|Lollys Stokeworth]] come cameriera, con un passaggio segreto verso la Torre del Primo Cavaliere.',
+        en: '[[lancel-lannister|Lancel]] reveals that the queen means to hide [[tommen-baratheon|Tommen]] at Rosby, and Tyrion sends [[jacelyn-bywater|Ser Jacelyn]] to seize the boy’s party and keep him safe there. At the manse, [[varys|Varys]], disguised as a begging brother, brings word that Storm’s End has fallen and Stannis will march on the city. Alone with Tyrion, [[shae|Shae]] asks to be his lady at court and mocks his fear of his father; he slaps her, then tells her about Tysha. Afterwards Varys suggests Shae serve as maid to [[lollys-stokeworth|Lollys Stokeworth]], with a secret passage to the Tower of the Hand.',
       },
     ),
     inBooks(
@@ -2179,15 +2179,31 @@ export const season1Chronicles = {
       },
       {
         it: 'L’altofuoco brucia metà della flotta di [[stannis-baratheon|Stannis]] sulle Acque Nere, e la grande catena che Tyrion ha fatto forgiare si alza alle sue spalle e intrappola le navi. Quando [[sandor-clegane|il Mastino]], sconvolto dal fuoco, si rifiuta di guidare un’altra sortita dalla Porta del Re, Tyrion convince gli uomini a seguirlo facendoli vergognare e la guida lui stesso. Combatte lungo il fiume e sulle navi in fiamme. Lì [[mandon-moore|ser Mandon Moore]] gli squarcia il volto e sta per finirlo quando [[podrick-payne|Podrick]] spinge il cavaliere in acqua.',
-        en: 'Wildfire burns half of [[stannis-baratheon|Stannis]]’s fleet on the Blackwater, and the great chain Tyrion had forged rises behind it to trap the ships. When [[sandor-clegane|the Hound]], shaken by the fire, refuses to lead another sortie from the King’s Gate, Tyrion shames the men into following him and leads it himself. He fights on along the river and across the burning ships. There [[mandon-moore|Ser Mandon Moore]] slashes his face and is about to finish him when [[podrick-payne|Podrick]] pushes the knight into the water.',
+        en: 'Wildfire burns half of [[stannis-baratheon|Stannis]]’s fleet on the Blackwater, and the great chain Tyrion had forged rises behind it to trap the ships. When [[sandor-clegane|Sandor Clegane]], shaken by the fire, refuses to lead another sortie from the King’s Gate, Tyrion shames the men into following him and leads it himself. He fights on along the river and across the burning ships. There [[mandon-moore|Ser Mandon Moore]] slashes his face and is about to finish him when [[podrick-payne|Podrick]] pushes the knight into the water.',
       },
     ),
     inBooks(
       [20, 141],
       { it: 'Nella Fortezza di Maegor', en: 'Maegor’s Holdfast' },
       {
-        it: 'Tyrion si risveglia da sogni febbrili nella Fortezza di Maegor, con il volto fasciato. Ha perso quasi tutto il naso e parte del labbro, ha una costola rotta e per una freccia ha rischiato di perdere un braccio. Suo padre [[tywin-lannister|Tywin]], ora Primo Cavaliere, si è preso la Torre del Primo Cavaliere. Tyrion fa cadere il papavero dalle mani del maestro della regina, chiede del vino, [[bronn|Bronn]] e un altro maestro, e fa giurare a [[podrick-payne|Podrick]] di tacere su ciò che è successo al molo.',
-        en: 'Tyrion wakes from fevered dreams in Maegor’s Holdfast, his face bandaged. Most of his nose is gone and part of his lip, he has a broken rib, and an arrow nearly cost him his arm. His father [[tywin-lannister|Tywin]], now Hand of the King, has taken the Tower of the Hand. Tyrion knocks the poppy from the queen’s maester’s hands, sends for wine, [[bronn|Bronn]] and another maester, and swears [[podrick-payne|Podrick]] to silence about what happened at the docks.',
+        it: 'Tyrion si risveglia da sogni febbrili nella Fortezza di Maegor, con il volto fasciato. Ha perso quasi tutto il naso e parte del labbro, ha una costola rotta e per una freccia ha rischiato di perdere un braccio. Suo padre [[tywin-lannister|Tywin]], ora Primo Cavaliere, si è preso la Torre del Primo Cavaliere. Tyrion fa cadere il papavero dalle mani del maestro della regina, chiede del vino, manda [[podrick-payne|Podrick]] a prendere vino dei sogni dal maestro Frenken e a chiamare [[bronn|Bronn]], e fa giurare allo scudiero di tacere su ciò che è successo al molo.',
+        en: 'Tyrion wakes from fevered dreams in Maegor’s Holdfast, his face bandaged. Most of his nose is gone and part of his lip, he has a broken rib, and an arrow nearly cost him his arm. His father [[tywin-lannister|Tywin]], now Hand of the King, has taken the Tower of the Hand. Tyrion knocks the poppy from the queen’s maester’s hands, demands wine, sends [[podrick-payne|Podrick]] for dreamwine from Maester Frenken and for [[bronn|Bronn]], and swears the squire to silence about what happened at the docks.',
+      },
+    ),
+    inBooks(
+      [12, 89],
+      { it: 'Una catena per la città', en: 'A chain for the city' },
+      {
+        it: 'Al Concilio ristretto arrivano le lettere di [[stannis-baratheon|Stannis]] che accusano [[cersei-lannister|Cersei]] di incesto. Tyrion consiglia di lasciar mormorare la gente, e [[petyr-baelish|Ditocorto]] propone di spargere la voce che la figlia di Stannis sia la bastarda di un giullare. Tyrion fa forgiare ai fabbri della città mille anelli di un’enorme catena, un dono per [[joffrey-baratheon|Joffrey]], dice a Cersei. Poi, passando da un bordello dietro la collina di Rhaenys e da un pozzo nascosto, incontra [[varys|Varys]] in un cunicolo e prosegue travestito fino alla casa di [[shae|Shae]].',
+        en: 'Letters from [[stannis-baratheon|Stannis]] accusing [[cersei-lannister|Cersei]] of incest reach the small council. Tyrion advises letting people whisper, and [[petyr-baelish|Littlefinger]] proposes spreading the rumour that Stannis’s daughter is a fool’s bastard. Tyrion has the city’s smiths forge a thousand links of an immense chain, a gift for [[joffrey-baratheon|Joffrey]], he tells Cersei. Then, through a brothel behind Rhaenys’s Hill and a hidden shaft, he meets [[varys|Varys]] in a tunnel and rides on in disguise to [[shae|Shae]]’s manse.',
+      },
+    ),
+    inBooks(
+      [18, 123],
+      { it: 'I preparativi della difesa', en: 'Preparing the defence' },
+      {
+        it: 'Tyrion manda i suoi uomini dei clan oltre le Acque Nere a razziare l’esercito di [[stannis-baratheon|Stannis]], e fa bruciare a [[bronn|Bronn]] le case lungo le mura vicino al molo. Non approva quando [[cersei-lannister|Cersei]] nomina nella Guardia reale [[osmund-kettleblack|ser Osmund Kettleblack]] al posto di ser Boros Blount, che ha consegnato [[tommen-baratheon|Tommen]] agli uomini di [[jacelyn-bywater|ser Jacelyn]]. [[hallyne|Hallyne]] riferisce di avere tredicimila giare di altofuoco, e [[varys|Varys]] scopre dei mercanti che tramano per prendere la Porta Vecchia; Tyrion ne ordina l’arresto.',
+        en: 'Tyrion sends his clansmen across the Blackwater to raid [[stannis-baratheon|Stannis]]’s army, and has [[bronn|Bronn]] burn the houses along the wall by the quay. He disapproves when [[cersei-lannister|Cersei]] names [[osmund-kettleblack|Ser Osmund Kettleblack]] to the Kingsguard in place of Ser Boros Blount, who gave up [[tommen-baratheon|Tommen]] to [[jacelyn-bywater|Ser Jacelyn]]’s men. [[hallyne|Hallyne]] reports thirteen thousand jars of wildfire, and [[varys|Varys]] uncovers merchants plotting to seize the Old Gate; Tyrion orders their arrest.',
       },
     ),
   ],
@@ -2478,8 +2494,8 @@ export const season1Chronicles = {
       [12, 82],
       { it: 'La battuta migliore', en: 'The finest joke' },
       {
-        it: 'Cersei legge al Concilio ristretto le condizioni di pace di Robb Stark e le strappa. Quando [[tyrion-lannister|Tyrion]] manda [[janos-slynt|Janos Slynt]] alla Barriera, lei lo affronta. Tyrion la avverte che sta perdendo il popolo; lei risponde che non le importa. Lui scherza su di lei e [[jaime-lannister|Jaime]], e Cersei gli dice che la sua battuta migliore è stata uccidere la loro madre venendo al mondo.',
-        en: 'Cersei reads Robb Stark’s peace terms to the small council and tears them up. When [[tyrion-lannister|Tyrion]] sends [[janos-slynt|Janos Slynt]] to the Wall, she confronts him. He warns her she is losing the people; she answers that she does not care. He jokes about her and [[jaime-lannister|Jaime]], and she tells him his finest joke was killing their mother when he was born.',
+        it: 'Davanti al Concilio ristretto Cersei respinge le condizioni di pace di Robb Stark. Quando [[tyrion-lannister|Tyrion]] manda [[janos-slynt|Janos Slynt]] alla Barriera, lei lo affronta. Tyrion la avverte che sta perdendo il popolo; lei risponde che non le importa. Lui scherza su di lei e [[jaime-lannister|Jaime]], e Cersei gli dice che la sua battuta migliore è stata uccidere la loro madre venendo al mondo.',
+        en: 'Cersei rejects Robb Stark’s peace terms before the small council. When [[tyrion-lannister|Tyrion]] sends [[janos-slynt|Janos Slynt]] to the Wall, she confronts him. He warns her she is losing the people; she answers that she does not care. He jokes about her and [[jaime-lannister|Jaime]], and she tells him his finest joke was killing their mother when he was born.',
       },
     ),
     onScreen(
@@ -2502,7 +2518,7 @@ export const season1Chronicles = {
       [18, 128],
       { it: 'Un ostaggio per Joffrey', en: 'A hostage for Joffrey' },
       {
-        it: 'Cersei teme per [[joffrey-baratheon|Joffrey]], che [[tyrion-lannister|Tyrion]] vuole mettere sulle mura nella battaglia imminente. Convinta che Tyrion trami contro suo figlio, fa prendere e picchiare la donna che crede la sua amante e gliela mostra: è [[ros|Ros]]. Lo avverte che Ros morirà in modo atroce se a Joffrey succederà qualcosa. Tyrion giura che gliela farà pagare.',
+        it: 'Cersei teme per [[joffrey-baratheon|Joffrey]], che [[tyrion-lannister|Tyrion]] vuole mettere sulle mura nella battaglia imminente. Convinta che Tyrion trami contro suo figlio, fa prendere e picchiare la donna che crede l’amante di lui e gliela mostra: è [[ros|Ros]]. Lo avverte che Ros morirà in modo atroce se a Joffrey succederà qualcosa. Tyrion giura che gliela farà pagare.',
         en: 'Cersei fears for [[joffrey-baratheon|Joffrey]], whom [[tyrion-lannister|Tyrion]] means to put on the walls in the coming battle. Believing Tyrion is plotting against her son, she has the woman she takes for his lover seized and beaten, and shows her to him: [[ros|Ros]]. She warns that Ros will die horribly if any harm comes to Joffrey. Tyrion vows to pay her back.',
       },
     ),
@@ -2518,7 +2534,7 @@ export const season1Chronicles = {
       [20, 139],
       { it: 'Il fidanzamento sciolto', en: 'Set aside' },
       {
-        it: 'Alla cerimonia che premia i vincitori, [[loras-tyrell|Loras Tyrell]] chiede al re di sposare [[margaery-tyrell|Margaery]], la sorella di Loras. Cersei e [[pycelle|Pycelle]] fingono di convincere [[joffrey-baratheon|Joffrey]] a sciogliere il fidanzamento con [[sansa-stark|Sansa Stark]] per il tradimento della sua famiglia, e Joffrey accetta di sposare Margaery. Il padre di Cersei, [[tywin-lannister|Tywin]], è nominato Primo Cavaliere, e [[petyr-baelish|Ditocorto]] riceve Harrenhal.',
+        it: 'Alla cerimonia che premia i vincitori, [[loras-tyrell|Loras Tyrell]] chiede al re di sposare [[margaery-tyrell|Margaery]], la sorella di Loras. Cersei e [[pycelle|Pycelle]] fingono di convincere [[joffrey-baratheon|Joffrey]] a sciogliere il fidanzamento con [[sansa-stark|Sansa Stark]] per il tradimento della famiglia di lei, e Joffrey accetta di sposare Margaery. Il padre di Cersei, [[tywin-lannister|Tywin]], è nominato Primo Cavaliere, e [[petyr-baelish|Ditocorto]] riceve Harrenhal.',
         en: 'At the court that rewards the victors, [[loras-tyrell|Loras Tyrell]] asks the king to wed his sister [[margaery-tyrell|Margaery]]. Cersei and [[pycelle|Pycelle]] make a show of persuading [[joffrey-baratheon|Joffrey]] to set aside his betrothal to [[sansa-stark|Sansa Stark]] for her family’s treachery, and Joffrey agrees to marry Margaery. Cersei’s father [[tywin-lannister|Tywin]] is named Hand of the King, and [[petyr-baelish|Littlefinger]] is given Harrenhal.',
       },
     ),
@@ -2526,15 +2542,15 @@ export const season1Chronicles = {
       [11, 77],
       { it: 'Una lettera del padre', en: 'A letter from her father' },
       {
-        it: '[[tyrion-lannister|Tyrion]] interrompe il Concilio ristretto con la lettera del loro padre che lo nomina Primo Cavaliere in sua vece, e Cersei la definisce assurda. Da sola con lui, ammette di avere soltanto [[sansa-stark|Sansa]]: Arya è fuggita. Dice che [[joffrey-baratheon|Joffrey]] ha voluto la morte di Eddard Stark contro il suo parere, e che [[lancel-lannister|Lancel]] ha dato a Robert vino forte prima del cinghiale. Quando Tyrion dice di sapere di lei e [[jaime-lannister|Jaime]], lo schiaffeggia più volte. Accetta che provi a spaventare Joffrey per renderlo obbediente, purché non faccia nulla senza il suo consenso.',
-        en: '[[tyrion-lannister|Tyrion]] interrupts the small council with their father’s letter naming him acting Hand, and Cersei calls it absurd. Alone with him, she admits she has only [[sansa-stark|Sansa]]: Arya escaped. She says [[joffrey-baratheon|Joffrey]] ordered Eddard Stark’s death against her wishes, and that [[lancel-lannister|Lancel]] gave Robert strongwine before the boar. When Tyrion says he knows about her and [[jaime-lannister|Jaime]], she slaps him again and again. She agrees that he may try to frighten Joffrey into obedience, as long as he does nothing without her consent.',
+        it: '[[tyrion-lannister|Tyrion]] interrompe il Concilio ristretto con la lettera del loro padre che lo nomina Primo Cavaliere in sua vece, e Cersei la definisce assurda. Da sola con lui, ammette di avere soltanto [[sansa-stark|Sansa]]: Arya è fuggita. Dice che [[joffrey-baratheon|Joffrey]] ha voluto la morte di Eddard Stark contro il suo parere. Accetta che Tyrion provi a spaventare Joffrey per renderlo obbediente, purché non faccia nulla senza il suo consenso. Quando Tyrion dice di sapere di lei e [[jaime-lannister|Jaime]], lo schiaffeggia più volte. Poi gli racconta che [[lancel-lannister|Lancel]] ha dato a Robert vino forte prima del cinghiale.',
+        en: '[[tyrion-lannister|Tyrion]] interrupts the small council with their father’s letter naming him acting Hand, and Cersei calls it absurd. Alone with him, she admits she has only [[sansa-stark|Sansa]]: Arya escaped. She says [[joffrey-baratheon|Joffrey]] ordered Eddard Stark’s death against her wishes. She agrees that he may try to frighten Joffrey into obedience, as long as he does nothing without her consent. When he says he knows about her and [[jaime-lannister|Jaime]], she slaps him again and again. Then she tells him that [[lancel-lannister|Lancel]] gave Robert strongwine before the boar.',
       },
     ),
     inBooks(
       [15, 94],
       { it: 'Lacrime per Myrcella', en: 'Tears for Myrcella' },
       {
-        it: 'Cersei affronta [[tyrion-lannister|Tyrion]] nel suo solario, furiosa perché lui vuole mandare [[myrcella-baratheon|Myrcella]] a Dorne come pupilla del principe Doran, in sposa al figlio di Doran. Teme che Doran uccida la bambina per vendicare la sorella, e schiaffeggia Tyrion. Quando lui le dice che Renly e Stannis metterebbero la testa di Myrcella accanto alla sua, Cersei piange per la prima volta da quando erano bambini, e si sfoga contro l’inerzia del padre e la prigionia di [[jaime-lannister|Jaime]]. Alla fine Tyrion sa che accetterà.',
+        it: 'Cersei affronta [[tyrion-lannister|Tyrion]] nel solario di lui, furiosa perché lui vuole mandare [[myrcella-baratheon|Myrcella]] a Dorne come pupilla del principe Doran, in sposa al figlio di Doran. Teme che Doran uccida la bambina per vendicare la sorella, e schiaffeggia Tyrion. Quando lui le dice che Renly e Stannis metterebbero la testa di Myrcella accanto alla sua, Cersei piange per la prima volta da quando erano bambini, e si sfoga contro l’inerzia del padre e la prigionia di [[jaime-lannister|Jaime]]. Alla fine Tyrion sa che accetterà.',
         en: 'Cersei confronts [[tyrion-lannister|Tyrion]] in his solar, furious that he means to send [[myrcella-baratheon|Myrcella]] to Dorne as a ward of Prince Doran, to wed Doran’s son. She fears Doran will kill the girl to avenge his sister, and slaps Tyrion. When he says Renly and Stannis would put Myrcella’s head beside hers, she weeps for the first time since they were children, and rages at their father’s idleness and [[jaime-lannister|Jaime]]’s capture. By the end Tyrion knows she will agree.',
       },
     ),
@@ -2574,8 +2590,16 @@ export const season1Chronicles = {
       [19, 136],
       { it: 'Il ponte levatoio', en: 'The drawbridge' },
       {
-        it: '[[lancel-lannister|Lancel]], ferito, dice a Cersei che la battaglia sembra perduta: [[tyrion-lannister|Tyrion]] forse è morto, [[sandor-clegane|il Mastino]] è sparito e i mantelli d’oro hanno gettato le lance quando [[joffrey-baratheon|Joffrey]] è stato portato via dalle mura. Cersei ordina di alzare il ponte levatoio della Fortezza di Maegor non appena suo figlio sarà dentro. Quando Lancel la supplica di lasciare il re a incoraggiare i difensori, lei colpisce la ferita di Lancel e lascia la sala da ballo.',
-        en: '[[lancel-lannister|Lancel]], wounded, tells Cersei the battle seems lost: [[tyrion-lannister|Tyrion]] may be dead, [[sandor-clegane|the Hound]] has vanished, and the gold cloaks threw down their spears when [[joffrey-baratheon|Joffrey]] was taken from the walls. Cersei orders the drawbridge of Maegor’s Holdfast raised once her son is inside. When Lancel begs her to let the king stay and inspire the defenders, she strikes his wound and leaves the ballroom.',
+        it: '[[lancel-lannister|Lancel]], ferito, dice a Cersei che la battaglia sembra perduta: [[tyrion-lannister|Tyrion]] forse è morto, [[sandor-clegane|il Mastino]] è sparito e le cappe dorate hanno gettato le lance quando [[joffrey-baratheon|Joffrey]] è stato portato via dalle mura. Cersei ordina di alzare il ponte levatoio della Fortezza di Maegor non appena suo figlio sarà dentro. Quando Lancel la supplica di lasciare il re a incoraggiare i difensori, lei colpisce la ferita di Lancel e lascia la sala da ballo.',
+        en: '[[lancel-lannister|Lancel]], wounded, tells Cersei the battle seems lost: [[tyrion-lannister|Tyrion]] may be dead, [[sandor-clegane|Sandor Clegane]] has vanished, and the gold cloaks threw down their spears when [[joffrey-baratheon|Joffrey]] was taken from the walls. Cersei orders the drawbridge of Maegor’s Holdfast raised once her son is inside. When Lancel begs her to let the king stay and inspire the defenders, she strikes his wound and leaves the ballroom.',
+      },
+    ),
+    onScreen(
+      [13, 99],
+      { it: 'Le nozze con Dorne', en: 'The Dornish match' },
+      {
+        it: 'Cersei organizza una cena imbarazzante con i figli e la sua prigioniera, [[sansa-stark|Sansa]]. Poi affronta [[tyrion-lannister|Tyrion]] per il suo piano di dare [[myrcella-baratheon|Myrcella]] in sposa a Casa Martell, un piano che Tyrion aveva confidato soltanto a [[pycelle|Pycelle]]. Tyrion fa arrestare Pycelle per averglielo riferito, e non cede alle proteste della sorella.',
+        en: 'Cersei hosts an awkward dinner for her children and her captive, [[sansa-stark|Sansa]]. Then she confronts [[tyrion-lannister|Tyrion]] over his plan to marry [[myrcella-baratheon|Myrcella]] into House Martell, a plan he told only [[pycelle|Pycelle]]. Tyrion has Pycelle arrested for passing it on, and holds to the match over his sister’s protests.',
       },
     ),
   ],
@@ -2691,15 +2715,15 @@ export const season1Chronicles = {
       [19, 135],
       { it: 'Il re lascia le mura', en: 'The king leaves the walls' },
       {
-        it: 'Sulle mura durante la battaglia Joffrey rimprovera [[tyrion-lannister|Tyrion]] perché non manda la flotta contro [[stannis-baratheon|Stannis]]. Quando [[sandor-clegane|il Mastino]] abbandona lo scontro, maledice davanti a tutti la Guardia reale, la città e il re. Mandato da Cersei, [[lancel-lannister|Lancel]] viene a riportare Joffrey alla Fortezza Rossa. Joffrey lo segue di buon grado, lasciando [[mandon-moore|ser Mandon Moore]] e [[boros-blount|ser Boros Blount]] a combattere in suo nome, e i mantelli d’oro si perdono d’animo.',
-        en: 'On the walls during the battle Joffrey berates [[tyrion-lannister|Tyrion]] for not sending the fleet against [[stannis-baratheon|Stannis]]. When [[sandor-clegane|the Hound]] walks away from the fight, he curses the Kingsguard, the city and the king in front of everyone. Sent by Cersei, [[lancel-lannister|Lancel]] comes to bring Joffrey back to the Red Keep. Joffrey goes willingly, leaving [[mandon-moore|Ser Mandon Moore]] and [[boros-blount|Ser Boros Blount]] to fight in his name, and the gold cloaks lose heart.',
+        it: 'Sulle mura durante la battaglia Joffrey rimprovera [[tyrion-lannister|Tyrion]] perché non manda la flotta contro [[stannis-baratheon|Stannis]]. Quando [[sandor-clegane|il Mastino]] abbandona lo scontro, maledice davanti a tutti la Guardia reale, la città e il re. Mandato da Cersei, [[lancel-lannister|Lancel]] viene a riportare Joffrey alla Fortezza Rossa. Joffrey lo segue di buon grado, lasciando [[mandon-moore|ser Mandon Moore]] e [[boros-blount|ser Boros Blount]] a combattere in suo nome, e le cappe dorate si perdono d’animo.',
+        en: 'On the walls during the battle Joffrey berates [[tyrion-lannister|Tyrion]] for not sending the fleet against [[stannis-baratheon|Stannis]]. When [[sandor-clegane|Sandor Clegane]] walks away from the fight, he curses the Kingsguard, the city and the king in front of everyone. Sent by Cersei, [[lancel-lannister|Lancel]] comes to bring Joffrey back to the Red Keep. Joffrey goes willingly, leaving [[mandon-moore|Ser Mandon Moore]] and [[boros-blount|Ser Boros Blount]] to fight in his name, and the gold cloaks lose heart.',
       },
     ),
     onScreen(
       [20, 139],
       { it: 'Un nuovo fidanzamento', en: 'A new betrothal' },
       {
-        it: 'Alla cerimonia che onora i vincitori, Joffrey nomina Primo Cavaliere il nonno [[tywin-lannister|Tywin]] e dà Harrenhal a [[petyr-baelish|Ditocorto]] per l’alleanza con i Tyrell. [[loras-tyrell|Loras Tyrell]] gli chiede di sposare la sorella, [[margaery-tyrell|Margaery]]. Su sollecitazione di [[cersei-lannister|Cersei]] e [[pycelle|Pycelle]], Joffrey scioglie il fidanzamento con [[sansa-stark|Sansa]] per il tradimento della sua famiglia, e accetta di sposare Margaery.',
+        it: 'Alla cerimonia che onora i vincitori, Joffrey nomina Primo Cavaliere il nonno [[tywin-lannister|Tywin]] e dà Harrenhal a [[petyr-baelish|Ditocorto]] per l’alleanza con i Tyrell. [[loras-tyrell|Loras Tyrell]] gli chiede di sposare la sorella, [[margaery-tyrell|Margaery]]. Su sollecitazione di [[cersei-lannister|Cersei]] e [[pycelle|Pycelle]], Joffrey scioglie il fidanzamento con [[sansa-stark|Sansa]] per il tradimento della famiglia di lei, e accetta di sposare Margaery.',
         en: 'At the court that honours the victors, Joffrey names his grandfather [[tywin-lannister|Tywin]] Hand of the King and gives Harrenhal to [[petyr-baelish|Littlefinger]] for the Tyrell alliance. [[loras-tyrell|Loras Tyrell]] asks him to wed his sister [[margaery-tyrell|Margaery]]. At the urging of [[cersei-lannister|Cersei]] and [[pycelle|Pycelle]], Joffrey sets aside his betrothal to [[sansa-stark|Sansa]] for her family’s treachery, and agrees to marry Margaery.',
       },
     ),
@@ -2708,7 +2732,7 @@ export const season1Chronicles = {
       { it: 'La cometa e il giullare', en: 'The comet and the fool' },
       {
         it: 'Il torneo per il giorno del nome di Joffrey è misero, e il suo umore si incupisce. Quando [[dontos-hollard|ser Dontos]] si presenta ubriaco alla sua giostra, il re vuole farlo affogare in una botte di vino. [[sansa-stark|Sansa]] dice che uccidere nel proprio giorno del nome porta sfortuna, [[sandor-clegane|il Mastino]] le dà ragione, e lei propone di farne un giullare; a Joffrey l’idea piace. Ride quando [[tommen-baratheon|Tommen]] viene disarcionato da una quintana. Poi arriva [[tyrion-lannister|Tyrion]], e Joffrey gli dice che come dono avrebbe preferito la testa di Robb.',
-        en: 'Joffrey’s name-day tourney is a poor show, and his mood darkens. When [[dontos-hollard|Ser Dontos]] comes drunk to his tilt, the king wants him drowned in a cask of wine. [[sansa-stark|Sansa]] says it is bad luck to kill on one’s name day, [[sandor-clegane|the Hound]] agrees, and she suggests making Dontos a fool instead; Joffrey likes the idea. He laughs when [[tommen-baratheon|Tommen]] is unhorsed by a quintain. Then [[tyrion-lannister|Tyrion]] rides in, and Joffrey tells him he would rather have had Robb’s head as a gift.',
+        en: 'Joffrey’s name-day tourney is a poor show, and his mood darkens. When [[dontos-hollard|Ser Dontos]] comes drunk to his tilt, the king wants him drowned in a cask of wine. [[sansa-stark|Sansa]] says it is bad luck to kill on one’s name day, [[sandor-clegane|Sandor Clegane]] agrees, and she suggests making Dontos a fool instead; Joffrey likes the idea. He laughs when [[tommen-baratheon|Tommen]] is unhorsed by a quintain. Then [[tyrion-lannister|Tyrion]] rides in, and Joffrey tells him he would rather have had Robb’s head as a gift.',
       },
     ),
     inBooks(
@@ -2716,7 +2740,7 @@ export const season1Chronicles = {
       { it: 'Sansa paga per Robb', en: 'Sansa answers for Robb' },
       {
         it: 'Dopo la vittoria di Robb a Oxcross, Joffrey fa portare [[sansa-stark|Sansa]] nel cortile inferiore a rispondere dei tradimenti del fratello. La colpirebbe con la balestra, ma sua madre dice che allora ucciderebbero Jaime. Ordina al [[sandor-clegane|Mastino]] di picchiarla; [[dontos-hollard|Dontos]] la colpisce invece con un melone, e il re fa picchiare Sansa da ser Boros Blount e le fa strappare il corpetto. Arriva [[tyrion-lannister|Tyrion]], che gli chiede se sa che fine ha fatto il Re Folle e gli dice di usare di più le orecchie e meno la bocca.',
-        en: 'After Robb’s victory at Oxcross, Joffrey has [[sansa-stark|Sansa]] brought to the lower bailey to answer for her brother’s treasons. He would shoot her with his crossbow, but his mother says they would kill Jaime. He orders [[sandor-clegane|the Hound]] to hit her; [[dontos-hollard|Dontos]] clubs her with a melon instead, and the king has Ser Boros Blount beat her and tear open her bodice. [[tyrion-lannister|Tyrion]] arrives, asks whether he knows what became of the Mad King, and tells him to use his ears more and his mouth less.',
+        en: 'After Robb’s victory at Oxcross, Joffrey has [[sansa-stark|Sansa]] brought to the lower bailey to answer for her brother’s treasons. He would shoot her with his crossbow, but his mother says they would kill Jaime. He orders [[sandor-clegane|Sandor Clegane]] to hit her; [[dontos-hollard|Dontos]] clubs her with a melon instead, and the king has Ser Boros Blount beat her and tear open her bodice. [[tyrion-lannister|Tyrion]] arrives, asks whether he knows what became of the Mad King, and tells him to use his ears more and his mouth less.',
       },
     ),
     inBooks(
@@ -2724,7 +2748,7 @@ export const season1Chronicles = {
       { it: 'La corona nella polvere', en: 'The crown in the dirt' },
       {
         it: 'Tornando dal porto dopo la partenza di [[myrcella-baratheon|Myrcella]] per Dorne, Joffrey viene colpito in faccia dallo sterco. Ordina al [[sandor-clegane|Mastino]] di portargli l’uomo che l’ha lanciato, e la folla affamata si scaglia contro il corteo reale. Alle porte del castello Joffrey inveisce contro i traditori finché [[tyrion-lannister|Tyrion]] non lo schiaffeggia così forte da fargli volare via la corona e non lo butta a terra: ha aizzato il suo cane contro di loro, che cosa si aspettava che facessero?',
-        en: 'Riding back from the harbour after [[myrcella-baratheon|Myrcella]] sails for Dorne, Joffrey is struck in the face with dung. He orders [[sandor-clegane|the Hound]] to bring him the man who threw it, and the starving crowd turns on the royal party. At the castle gates Joffrey rants about traitors until [[tyrion-lannister|Tyrion]] slaps him so hard his crown flies off and shoves him to the ground: he set his dog on them, what did he imagine they would do?',
+        en: 'Riding back from the harbour after [[myrcella-baratheon|Myrcella]] sails for Dorne, Joffrey is struck in the face with dung. He orders [[sandor-clegane|Sandor Clegane]] to bring him the man who threw it, and the starving crowd turns on the royal party. At the castle gates Joffrey rants about traitors until [[tyrion-lannister|Tyrion]] slaps him so hard his crown flies off and shoves him to the ground: he set his dog on them, what did he imagine they would do?',
       },
     ),
     inBooks(
@@ -2971,7 +2995,7 @@ export const season1Chronicles = {
       { it: 'La ferita di freccia', en: 'The arrow wound' },
       {
         it: 'Durante la battaglia Lancel esce con la sortita del [[sandor-clegane|Mastino]] oltre la Porta del Fango e viene ferito da una freccia. Mandato da [[cersei-lannister|Cersei]], riporta [[joffrey-baratheon|Joffrey]] via dalle mura, protestando che questo spezzerà il morale degli uomini. Quando torna ad avvertirla che sono perduti se il re non torna, lei lo spinge da parte, colpendogli il fianco ferito, e se ne va furiosa.',
-        en: 'During the battle Lancel rides out with [[sandor-clegane|the Hound]]’s sortie beyond the Mud Gate and is wounded by an arrow. Sent by [[cersei-lannister|Cersei]], he brings [[joffrey-baratheon|Joffrey]] back from the walls, protesting that it will break the men’s spirit. When he returns to warn her that they are lost unless the king goes back, she shoves him aside, striking his wounded side, and storms out.',
+        en: 'During the battle Lancel rides out with [[sandor-clegane|Sandor Clegane]]’s sortie beyond the Mud Gate and is wounded by an arrow. Sent by [[cersei-lannister|Cersei]], he brings [[joffrey-baratheon|Joffrey]] back from the walls, protesting that it will break the men’s spirit. When he returns to warn her that they are lost unless the king goes back, she shoves him aside, striking his wounded side, and storms out.',
       },
     ),
     inBooks(
@@ -2983,18 +3007,18 @@ export const season1Chronicles = {
       },
     ),
     inBooks(
-      [13, 118],
+      [16, 118],
       { it: 'Le notizie di Lancel', en: 'Lancel’s tales' },
       {
-        it: 'Davanti alla corte Lancel racconta a [[sansa-stark|Sansa]] che suo fratello Robb si è abbattuto sull’esercito di ser Stafford Lannister con un’armata di metamorfi, per stregoneria, e che gli uomini del Nord hanno banchettato con i morti; [[tyrion-lannister|Tyrion]] le dirà poi che non c’era nessun metamorfo. Lancel continua a fare la spia per Tyrion. Rivela che [[cersei-lannister|Cersei]] paga i fratelli Kettleblack per formarsi un esercito di mercenari, e che vuole nascondere [[tommen-baratheon|Tommen]] a Rosby.',
-        en: 'Before the court Lancel tells [[sansa-stark|Sansa]] that her brother Robb fell on Ser Stafford Lannister’s host with an army of wargs, by sorcery, and that the northmen feasted on the dead; [[tyrion-lannister|Tyrion]] later tells her there were no wargs. Lancel goes on spying for Tyrion. He reveals that [[cersei-lannister|Cersei]] is paying the Kettleblack brothers to raise her own sellswords, and that she means to hide [[tommen-baratheon|Tommen]] at Rosby.',
+        it: 'Davanti alla corte Lancel racconta a [[sansa-stark|Sansa]] che suo fratello Robb si è abbattuto sull’esercito di ser Stafford Lannister con un’armata di metamorfi, per stregoneria, e che gli uomini del Nord hanno banchettato con i morti; [[tyrion-lannister|Tyrion]] le dirà poi che non c’era nessun metamorfo. Lancel continua a fare la spia per Tyrion. Rivela che [[cersei-lannister|Cersei]] paga un cavaliere errante e i suoi fratelli per formarsi un esercito di mercenari, e che vuole nascondere [[tommen-baratheon|Tommen]] a Rosby.',
+        en: 'Before the court Lancel tells [[sansa-stark|Sansa]] that her brother Robb fell on Ser Stafford Lannister’s host with an army of wargs, by sorcery, and that the northmen feasted on the dead; [[tyrion-lannister|Tyrion]] later tells her there were no wargs. Lancel goes on spying for Tyrion. He reveals that [[cersei-lannister|Cersei]] is paying a hedge knight and his brothers to raise her own sellswords, and that she means to hide [[tommen-baratheon|Tommen]] at Rosby.',
       },
     ),
     inBooks(
       [19, 136],
       { it: 'Colpito dalla regina', en: 'Struck by the queen' },
       {
-        it: 'Gravemente ferito in battaglia, Lancel dice a [[cersei-lannister|Cersei]] nella sala da ballo della regina che la battaglia sembra perduta, e la supplica di lasciare [[joffrey-baratheon|Joffrey]] alla porta fortificata a incoraggiare i difensori. Lei colpisce la sua ferita e se ne va. [[sansa-stark|Sansa]] lo vede cadere in ginocchio e manda a chiamare un maestro che lo curi.',
+        it: 'Gravemente ferito in battaglia, Lancel dice a [[cersei-lannister|Cersei]] nella sala da ballo della regina che la battaglia sembra perduta, e la supplica di lasciare [[joffrey-baratheon|Joffrey]] alla porta fortificata a incoraggiare i difensori. Lei colpisce la ferita di Lancel e se ne va. [[sansa-stark|Sansa]] lo vede cadere in ginocchio e manda a chiamare un maestro che lo curi.',
         en: 'Badly wounded in the battle, Lancel tells [[cersei-lannister|Cersei]] in the Queen’s Ballroom that the battle seems lost, and begs her to let [[joffrey-baratheon|Joffrey]] stay at the gatehouse to hearten the defenders. She strikes his wound and leaves. [[sansa-stark|Sansa]] sees him fall to his knees and sends for a maester to tend him.',
       },
     ),
@@ -3176,8 +3200,8 @@ export const season1Chronicles = {
       [20, 139],
       { it: 'Signore di Harrenhal', en: 'Lord of Harrenhal' },
       {
-        it: 'Alla cerimonia delle ricompense [[joffrey-baratheon|Joffrey]] dà a Petyr Harrenhal per aver combinato l’alleanza tra i Lannister e i Tyrell. Poi Petyr trova [[sansa-stark|Sansa]] felicissima di essere libera dal fidanzamento, e la avverte che Joffrey continuerà a tormentarla. Le promette di farla uscire dalla città, per amore di Catelyn. Intanto [[ros|Ros]], che lavora nel suo bordello, confessa a [[varys|Varys]] di avere paura di lui.',
-        en: 'At the court of rewards [[joffrey-baratheon|Joffrey]] gives Petyr Harrenhal for brokering the alliance between the Lannisters and the Tyrells. Afterwards he finds [[sansa-stark|Sansa]] overjoyed at being freed from her betrothal, and warns her that Joffrey will still torment her. He promises to get her out of the city, for her mother’s sake. Meanwhile [[ros|Ros]], who works in his brothel, admits to [[varys|Varys]] that she is afraid of him.',
+        it: 'Alla cerimonia delle ricompense [[joffrey-baratheon|Joffrey]] dà a Petyr Harrenhal per aver combinato l’alleanza tra i Lannister e i Tyrell. Poi Petyr trova [[sansa-stark|Sansa]] felicissima di essere libera dal fidanzamento, e la avverte che Joffrey continuerà a tormentarla. Le promette di farla uscire dalla città, per amore di Catelyn.',
+        en: 'At the court of rewards [[joffrey-baratheon|Joffrey]] gives Petyr Harrenhal for brokering the alliance between the Lannisters and the Tyrells. Afterwards he finds [[sansa-stark|Sansa]] overjoyed at being freed from her betrothal, and warns her that Joffrey will still torment her. He promises to get her out of the city, for her mother’s sake.',
       },
     ),
     inBooks(
@@ -3192,8 +3216,8 @@ export const season1Chronicles = {
       [15, 110],
       { it: 'Inviato presso i Tyrell', en: 'Envoy to the Tyrells' },
       {
-        it: 'Petyr dice a [[tyrion-lannister|Tyrion]] di volergli bene come sempre, ma che [[myrcella-baratheon|Myrcella]] non può sposare il figlio di Lysa se sposa un principe di Dorne, e gli chiede di lasciarlo fuori dal prossimo inganno. Quando Renly viene ucciso, sostiene le nozze tra [[joffrey-baratheon|Joffrey]] e [[margaery-tyrell|Margaery Tyrell]]: Sansa porterebbe solo il suo corpo, Margaery cinquantamila spade. Né Tyrion né [[cersei-lannister|Cersei]] vogliono lasciare la città, così Petyr si offre di trattare con i Tyrell, con una scorta, dell’oro, Hobber Redwyne e la promessa di una ricompensa.',
-        en: 'Petyr tells [[tyrion-lannister|Tyrion]] he loves him as much as ever, but that [[myrcella-baratheon|Myrcella]] cannot wed Lysa’s son if she weds a Dornish prince, and asks to be left out of the next deception. When Renly is killed, he backs the match between [[joffrey-baratheon|Joffrey]] and [[margaery-tyrell|Margaery Tyrell]]: Sansa brings only her body, Margaery fifty thousand swords. Neither Tyrion nor [[cersei-lannister|Cersei]] will leave the city, so Petyr volunteers to treat with the Tyrells, with an escort, gold, Hobber Redwyne and the promise of a reward.',
+        it: 'Petyr dice a [[tyrion-lannister|Tyrion]] di volergli bene come sempre, ma che [[myrcella-baratheon|Myrcella]] non può sposare il figlio di Lysa se sposa un principe di Dorne, e gli chiede di lasciarlo fuori dal prossimo inganno. Quando Renly viene ucciso, sostiene le nozze tra [[joffrey-baratheon|Joffrey]] e [[margaery-tyrell|Margaery Tyrell]]: Sansa porterebbe solo il suo corpo, Margaery cinquantamila spade. Né Tyrion né [[cersei-lannister|Cersei]] vogliono lasciare la città, così Petyr si offre di trattare con i Tyrell, con una scorta, dell’oro e Hobber Redwyne, e chiede una ricompensa adeguata, che sceglierà più avanti.',
+        en: 'Petyr tells [[tyrion-lannister|Tyrion]] he loves him as much as ever, but that [[myrcella-baratheon|Myrcella]] cannot wed Lysa’s son if she weds a Dornish prince, and asks to be left out of the next deception. When Renly is killed, he backs the match between [[joffrey-baratheon|Joffrey]] and [[margaery-tyrell|Margaery Tyrell]]: Sansa brings only her body, Margaery fifty thousand swords. Neither Tyrion nor [[cersei-lannister|Cersei]] will leave the city, so Petyr volunteers to treat with the Tyrells, with an escort, gold and Hobber Redwyne, and asks for a fitting reward, to be named later.',
       },
     ),
     inBooks(
@@ -3298,7 +3322,7 @@ export const season1Chronicles = {
       [12, 82],
       { it: 'Il potere è un’ombra', en: 'Power is a shadow' },
       {
-        it: 'Varys loda [[tyrion-lannister|Tyrion]] per aver mandato [[janos-slynt|Janos Slynt]] alla Barriera e per averlo sostituito con [[jacelyn-bywater|ser Jacelyn Bywater]], da lui raccomandato. Tyrion se la prende perché Varys gli ha taciuto che [[cersei-lannister|Cersei]] ha mandato i mantelli d’oro a uccidere una bastarda di Robert; Varys dice di aver salvato un ragazzo più grande. Serve il regno, il re e Tyrion, dice, e risponde all’indovinello: il potere risiede dove gli uomini credono che risieda, è un’ombra sul muro, e un uomo molto piccolo può proiettare un’ombra molto grande.',
+        it: 'Varys loda [[tyrion-lannister|Tyrion]] per aver mandato [[janos-slynt|Janos Slynt]] alla Barriera e per averlo sostituito con [[jacelyn-bywater|ser Jacelyn Bywater]], da lui raccomandato. Tyrion se la prende perché Varys gli ha taciuto che [[cersei-lannister|Cersei]] ha mandato le cappe dorate a uccidere una bastarda di Robert; Varys dice di aver salvato un ragazzo più grande. Serve il regno, il re e Tyrion, dice, e risponde all’indovinello: il potere risiede dove gli uomini credono che risieda, è un’ombra sul muro, e un uomo molto piccolo può proiettare un’ombra molto grande.',
         en: 'Varys praises [[tyrion-lannister|Tyrion]] for sending [[janos-slynt|Janos Slynt]] to the Wall and for replacing him with [[jacelyn-bywater|Ser Jacelyn Bywater]], whom he recommended. Tyrion is angry that Varys kept from him that [[cersei-lannister|Cersei]] sent gold cloaks to kill one of Robert’s bastards; Varys says he saved an older boy. He serves the realm, the king and Tyrion, he says, and answers the riddle: power resides where men believe it resides, a shadow on the wall, and a very small man can cast a very large shadow.',
       },
     ),
@@ -3316,6 +3340,22 @@ export const season1Chronicles = {
       {
         it: 'Travestito da fratello mendicante, Varys porta a [[tyrion-lannister|Tyrion]] la notizia che Capo Tempesta è caduta e che Stannis marcerà sulla città. Propone di sistemare [[shae|Shae]] come cameriera di [[lollys-stokeworth|Lollys Stokeworth]], con un passaggio segreto verso la Torre del Primo Cavaliere. Poi racconta come è diventato eunuco: ragazzo in una compagnia di guitti, fu comprato a Myr da uno stregone che lo evirò e bruciò le parti tagliate, e da allora odia la magia.',
         en: 'Disguised as a begging brother, Varys brings [[tyrion-lannister|Tyrion]] word that Storm’s End has fallen and that Stannis will march on the city. He suggests placing [[shae|Shae]] as maid to [[lollys-stokeworth|Lollys Stokeworth]], with a secret passage into the Tower of the Hand. Then he tells how he became a eunuch: a boy in a mummers’ troupe, he was bought in Myr by a sorcerer who cut him and burned the parts, and he has hated magic ever since.',
+      },
+    ),
+    inBooks(
+      [15, 110],
+      { it: 'La morte di Renly', en: 'Renly’s death' },
+      {
+        it: 'Varys riferisce al Concilio ristretto che [[renly-baratheon|Renly]] è stato ucciso, con la gola tagliata, ed elenca le voci su chi l’abbia fatto: Stannis con una spada magica, un cavaliere della sua guardia, una donna, [[catelyn-stark|lady Catelyn]]. Quasi tutti i lord di Renly sono passati a [[stannis-baratheon|Stannis]], ma [[loras-tyrell|Loras Tyrell]] è fuggito con un quinto dei cavalieri. Varys conviene con [[tyrion-lannister|Tyrion]] che l’oro non basterà a conquistare i Tyrell, e aggiunge che le necessità del regno vengono prima dei desideri del re.',
+        en: 'Varys tells the small council that [[renly-baratheon|Renly]] has been murdered, his throat cut, and lists the tales of who did it: Stannis with a magic sword, a knight of his guard, a woman, [[catelyn-stark|Lady Catelyn]]. Most of Renly’s lords have gone over to [[stannis-baratheon|Stannis]], but [[loras-tyrell|Loras Tyrell]] has fled with a fifth of the knights. Varys agrees with [[tyrion-lannister|Tyrion]] that gold will not win the Tyrells, and adds that the needs of the realm come before the king’s desires.',
+      },
+    ),
+    onScreen(
+      [18, 128],
+      { it: 'Tre draghi', en: 'Three dragons' },
+      {
+        it: 'Varys aiuta [[tyrion-lannister|Tyrion]] a preparare la difesa della città contro [[stannis-baratheon|Stannis]]. Dopo che entrambi hanno parlato male di [[joffrey-baratheon|Joffrey]] in privato, Varys loda l’abilità di Tyrion nel gioco e il suo lavoro come Primo Cavaliere. Poi gli dice che [[daenerys-targaryen|Daenerys Targaryen]] è viva e ha fatto schiudere tre draghi: quando saranno cresciuti, i suoi nemici non avranno dove nascondersi. Tyrion risponde che affronterà una partita alla volta.',
+        en: 'Varys helps [[tyrion-lannister|Tyrion]] plan the defence of the city against [[stannis-baratheon|Stannis]]. After the two of them speak ill of [[joffrey-baratheon|Joffrey]] in private, Varys praises Tyrion’s skill at the game and his work as Hand. Then he tells him that [[daenerys-targaryen|Daenerys Targaryen]] lives and has hatched three dragons: when they are grown, her enemies will have nowhere to hide. Tyrion answers that he will take one game at a time.',
       },
     ),
   ],
@@ -3367,8 +3407,8 @@ export const season1Chronicles = {
       [20, 139],
       { it: 'Il nuovo Primo Cavaliere', en: 'The new Hand' },
       {
-        it: 'Liberato dalle celle nere su richiesta di [[cersei-lannister|Cersei]], Pycelle le procura l’essenza di belladonna prima della battaglia. Dopo, annuncia compiaciuto a [[tyrion-lannister|Tyrion]] ferito che non è più Primo Cavaliere, perché [[tywin-lannister|Tywin]] è tornato. A corte si unisce a Cersei per convincere [[joffrey-baratheon|Joffrey]] a sciogliere il fidanzamento con [[sansa-stark|Sansa]]: ha parlato con il nuovo Alto Septon, che approva.',
-        en: 'Freed from the black cells at [[cersei-lannister|Cersei]]’s demand, Pycelle gives her essence of nightshade before the battle. Afterwards he gloats to the wounded [[tyrion-lannister|Tyrion]] that he is no longer acting Hand, since [[tywin-lannister|Tywin]] has returned. At court he joins Cersei in persuading [[joffrey-baratheon|Joffrey]] to set aside his betrothal to [[sansa-stark|Sansa]]: he has spoken with the new High Septon, who approves.',
+        it: 'Prima della battaglia Pycelle procura a [[cersei-lannister|Cersei]] l’essenza di belladonna. Dopo, annuncia compiaciuto a [[tyrion-lannister|Tyrion]] ferito che non è più Primo Cavaliere, perché [[tywin-lannister|Tywin]] è tornato. A corte si unisce a Cersei per convincere [[joffrey-baratheon|Joffrey]] a sciogliere il fidanzamento con [[sansa-stark|Sansa]]: ha parlato con il nuovo Alto Septon, che approva.',
+        en: 'Before the battle Pycelle gives [[cersei-lannister|Cersei]] essence of nightshade. Afterwards he gloats to the wounded [[tyrion-lannister|Tyrion]] that he is no longer acting Hand, since [[tywin-lannister|Tywin]] has returned. At court he joins Cersei in persuading [[joffrey-baratheon|Joffrey]] to set aside his betrothal to [[sansa-stark|Sansa]]: he has spoken with the new High Septon, who approves.',
       },
     ),
     inBooks(
@@ -3385,6 +3425,14 @@ export const season1Chronicles = {
       {
         it: 'Nella notte di luna nera [[shagga|Shagga]] sfonda la porta di Pycelle, e [[tyrion-lannister|Tyrion]] fa trascinare via la serva dal suo letto. Tyrion gli dice che una copia della lettera è andata a Dorne e l’altra a [[cersei-lannister|Cersei]]. Pycelle cerca di dare la colpa a [[varys|Varys]], poi a [[petyr-baelish|Ditocorto]]. Mentre l’ascia di Shagga gli porta via la barba, confessa di aver convinto re Aerys ad aprire le porte della città, e di aver lasciato morire Jon Arryn perché Jon sapeva dell’incesto della regina. Tyrion lo fa gettare in una cella nera.',
         en: 'On the night of the black moon [[shagga|Shagga]] breaks down Pycelle’s door, and [[tyrion-lannister|Tyrion]] has his serving girl dragged from his bed. Tyrion tells him that one copy of the letter went to Dorne and the other to [[cersei-lannister|Cersei]]. Pycelle tries to blame [[varys|Varys]], then [[petyr-baelish|Littlefinger]]. As Shagga’s axe takes his beard, he confesses that he urged King Aerys to open the city gates, and that he let Jon Arryn die because Jon knew about the queen’s incest. Tyrion has him thrown into a black cell.',
+      },
+    ),
+    onScreen(
+      [14, 103],
+      { it: 'Fuori dalle celle', en: 'Out of the cells' },
+      {
+        it: 'Tramite [[lancel-lannister|Lancel]], [[cersei-lannister|Cersei]] pretende che Pycelle sia liberato dalle celle nere e riammesso nel Concilio ristretto. [[tyrion-lannister|Tyrion]] accetta di liberarlo, lasciandolo alla regina come suo animaletto se lo vuole, ma non lo rivuole nel Concilio. Il gran maestro torna libero, anche se non siede più nel Concilio.',
+        en: 'Through [[lancel-lannister|Lancel]], [[cersei-lannister|Cersei]] demands that Pycelle be freed from the black cells and returned to the small council. [[tyrion-lannister|Tyrion]] agrees to release him, letting the queen have him as her pet if she wants him, but will not have him back on the council. The Grand Maester is free again, though no longer on the council.',
       },
     ),
   ],
@@ -3498,7 +3546,7 @@ export const season1Chronicles = {
       { it: 'Un torneo di moscerini', en: 'A tourney of gnats' },
       {
         it: 'Al torneo per il giorno del nome di [[joffrey-baratheon|Joffrey]] il Mastino dice che non vale la pena di giostrare in un torneo di moscerini. Joffrey non gli ordina mai di colpire [[sansa-stark|Sansa]], come fa con i cavalieri della Guardia reale. Quando Sansa cerca di salvare [[dontos-hollard|ser Dontos]], ubriaco, il Mastino le viene in aiuto, confermando che ciò che un uomo semina nel giorno del nome lo raccoglie per tutto l’anno. Quando arriva [[tyrion-lannister|Tyrion]], il Mastino dice che lo davano per morto, e gli consiglia di tenere a freno la lingua.',
-        en: 'At [[joffrey-baratheon|Joffrey]]’s name-day tourney the Hound says it is not worth jousting in a tourney of gnats. Joffrey never orders him to strike [[sansa-stark|Sansa]], as he does the knights of the Kingsguard. When Sansa tries to save a drunk [[dontos-hollard|Ser Dontos]], the Hound comes to her aid, agreeing that what a man sows on his name day he reaps all year. When [[tyrion-lannister|Tyrion]] arrives, the Hound says they had heard he was dead, and tells him to guard his tongue.',
+        en: 'At [[joffrey-baratheon|Joffrey]]’s name-day tourney Sandor says it is not worth jousting in a tourney of gnats. Joffrey never orders him to strike [[sansa-stark|Sansa]], as he does the knights of the Kingsguard. When Sansa tries to save a drunk [[dontos-hollard|Ser Dontos]], Sandor comes to her aid, agreeing that what a man sows on his name day he reaps all year. When [[tyrion-lannister|Tyrion]] arrives, Sandor says they had heard he was dead, and tells him to guard his tongue.',
       },
     ),
     inBooks(
@@ -3514,7 +3562,7 @@ export const season1Chronicles = {
       { it: 'Un mantello per Sansa', en: 'A cloak for Sansa' },
       {
         it: 'Il Mastino porta [[sansa-stark|Sansa]] davanti a [[joffrey-baratheon|Joffrey]] a rispondere della vittoria di Robb e, quando glielo ordinano, la rimette in piedi senza brutalità. Mentre ser Boros Blount la picchia, dice con voce roca che basta, ma il re ordina di spogliarla. Quando [[tyrion-lannister|Tyrion]] chiede qualcosa per coprirla, il Mastino le getta il suo mantello.',
-        en: 'The Hound brings [[sansa-stark|Sansa]] before [[joffrey-baratheon|Joffrey]] to answer for Robb’s victory and, when told, pulls her to her feet, not ungently. As Ser Boros Blount beats her, he rasps that it is enough, but the king orders her stripped. When [[tyrion-lannister|Tyrion]] asks for something to cover her, the Hound tosses her his cloak.',
+        en: 'Sandor brings [[sansa-stark|Sansa]] before [[joffrey-baratheon|Joffrey]] to answer for Robb’s victory and, when told, pulls her to her feet, not ungently. As Ser Boros Blount beats her, he rasps that it is enough, but the king orders her stripped. When [[tyrion-lannister|Tyrion]] asks for something to cover her, Sandor tosses her his cloak.',
       },
     ),
     inBooks(
@@ -3522,7 +3570,7 @@ export const season1Chronicles = {
       { it: 'In mezzo alla folla', en: 'Through the mob' },
       {
         it: 'Tornando dalla partenza di [[myrcella-baratheon|Myrcella]], [[joffrey-baratheon|Joffrey]] ordina al Mastino di portargli l’uomo che gli ha tirato lo sterco, e la folla affamata si scaglia contro il corteo reale. Nel caos [[sansa-stark|Sansa]] si perde. Il Mastino la riporta al castello, coperto di sangue. Poi [[tyrion-lannister|Tyrion]] lo manda con [[bronn|Bronn]] a spegnere un incendio a Fondo delle Pulci, e vede la paura negli occhi del Mastino.',
-        en: 'Riding back from [[myrcella-baratheon|Myrcella]]’s departure, [[joffrey-baratheon|Joffrey]] orders the Hound to bring him the man who threw dung at him, and the starving crowd turns on the royal party. In the chaos [[sansa-stark|Sansa]] is lost. The Hound brings her back to the castle, covered in blood. [[tyrion-lannister|Tyrion]] then sends him with [[bronn|Bronn]] to put out a fire in Flea Bottom, and sees fear in the Hound’s eyes.',
+        en: 'Riding back from [[myrcella-baratheon|Myrcella]]’s departure, [[joffrey-baratheon|Joffrey]] orders Sandor to bring him the man who threw dung at him, and the starving crowd turns on the royal party. In the chaos [[sansa-stark|Sansa]] is lost. Sandor brings her back to the castle, covered in blood. [[tyrion-lannister|Tyrion]] then sends him with [[bronn|Bronn]] to put out a fire in Flea Bottom, and sees fear in Sandor’s eyes.',
       },
     ),
     inBooks(
@@ -3530,7 +3578,7 @@ export const season1Chronicles = {
       { it: 'La Porta del Re', en: 'The King’s Gate' },
       {
         it: 'Alla Porta del Re, con la fronte che sanguina, il Mastino rifiuta l’ordine di [[tyrion-lannister|Tyrion]] di guidare un’altra sortita: tre sono già costate metà degli uomini. Maledice Tyrion e chiede del vino. Tyrion vede che ha paura, sfinito dalla battaglia e dal fuoco, e che la sua paura ha contagiato gli uomini che comanda. Quando Tyrion dice che guiderà lui stesso la sortita, il Mastino ride.',
-        en: 'At the King’s Gate, bleeding from the forehead, the Hound refuses [[tyrion-lannister|Tyrion]]’s order to lead another sortie: three have already cost half the men. He curses Tyrion and asks for wine. Tyrion sees that he is afraid, worn out by the battle and by the fire, and that his fear has spread to the men he leads. When Tyrion says he will lead the sortie himself, the Hound laughs.',
+        en: 'At the King’s Gate, bleeding from the forehead, Sandor refuses [[tyrion-lannister|Tyrion]]’s order to lead another sortie: three have already cost half the men. He curses Tyrion and asks for wine. Tyrion sees that he is afraid, worn out by the battle and by the fire, and that his fear has spread to the men he leads. When Tyrion says he will lead the sortie himself, Sandor laughs.',
       },
     ),
     inBooks(
@@ -3538,7 +3586,7 @@ export const season1Chronicles = {
       { it: 'Lasciare la città', en: 'Leaving the city' },
       {
         it: 'Dopo aver lasciato la battaglia il Mastino aspetta nell’ombra della stanza di [[sansa-stark|Sansa]], ubriaco e malconcio. Dice di aver perso, augura a [[tyrion-lannister|Tyrion]] di bruciare e annuncia che lascerà Approdo del Re, forse per il nord. Potrebbe proteggerla, dice, e le chiede la canzone che gli aveva promesso. Lei canta una strofa dell’inno alla Madre e gli sfiora la guancia, bagnata di lacrime. Lui si toglie il mantello bianco e lascia la stanza.',
-        en: 'After leaving the battle the Hound waits in the shadows of [[sansa-stark|Sansa]]’s room, drunk and battered. He says he has lost, wishes [[tyrion-lannister|Tyrion]] burned, and is leaving King’s Landing, perhaps for the north. He could protect her, he says, and asks for the song she promised. She sings a verse of the Mother’s hymn and touches his cheek, wet with tears. He strips off his white cloak and leaves her room.',
+        en: 'After leaving the battle Sandor waits in the shadows of [[sansa-stark|Sansa]]’s room, drunk and battered. He says he has lost, wishes [[tyrion-lannister|Tyrion]] burned, and is leaving King’s Landing, perhaps for the north. He could protect her, he says, and asks for the song she promised. She sings a verse of the Mother’s hymn and touches his cheek, wet with tears. He strips off his white cloak and leaves her room.',
       },
     ),
   ],
@@ -3571,7 +3619,7 @@ export const season1Chronicles = {
       [11, 77],
       { it: 'Il massacro dei bastardi', en: 'The bastards’ massacre' },
       {
-        it: 'Janos Slynt guida i mantelli d’oro per la città a uccidere i bastardi di Robert. Nel bordello di [[petyr-baelish|Ditocorto]] dice a [[ros|Ros]] soltanto che gli ordini vengono da qualcuno a cui non importa che cosa pensi Petyr. Quando il suo uomo non riesce a uccidere la figlioletta di [[mhaegen|Mhaegen]], Janos lo fa con le sue mani. I suoi uomini vengono anche a sapere da [[tobho-mott|Tobho Mott]] che Gendry ha lasciato la città con le reclute dei Guardiani della notte.',
+        it: 'Janos Slynt guida le cappe dorate per la città a uccidere i bastardi di Robert. Nel bordello di [[petyr-baelish|Ditocorto]] dice a [[ros|Ros]] soltanto che gli ordini vengono da qualcuno a cui non importa che cosa pensi Petyr. Quando il suo uomo non riesce a uccidere la figlioletta di [[mhaegen|Mhaegen]], Janos lo fa con le sue mani. I suoi uomini vengono anche a sapere da [[tobho-mott|Tobho Mott]] che Gendry ha lasciato la città con le reclute dei Guardiani della notte.',
         en: 'Janos Slynt leads the gold cloaks through the city to kill Robert’s bastards. In [[petyr-baelish|Littlefinger]]’s brothel he tells [[ros|Ros]] only that his orders come from someone who does not care what Petyr thinks. When his man cannot bring himself to kill [[mhaegen|Mhaegen]]’s baby daughter, Janos does it himself. His men also learn from [[tobho-mott|Tobho Mott]] that Gendry has left the city with the Night’s Watch recruits.',
       },
     ),
@@ -3587,8 +3635,8 @@ export const season1Chronicles = {
       [12, 82],
       { it: 'La lancia insanguinata', en: 'The bloody spear' },
       {
-        it: 'Al Concilio Janos dice a [[tyrion-lannister|Tyrion]] che c’è bisogno di lui, con le rivolte nelle strade. Giorni dopo, ubriaco alla tavola di Tyrion, raccomanda come successore Allar Deem, l’uomo che per lui ha ucciso una prostituta e la sua bambina, ma non dice chi l’abbia ordinato. Tyrion deride la lancia insanguinata del suo nuovo stemma e gli dice che non ha onore. Il figlio maggiore terrà un titolo e delle terre ma non Harrenhal, e Janos parte per la Barriera. Sulla porta incontra il suo successore, [[jacelyn-bywater|ser Jacelyn Bywater]].',
-        en: 'At the council Janos tells [[tyrion-lannister|Tyrion]] he is needed, with rioting in the streets. Days later, drunk at Tyrion’s table, he urges Allar Deem as his successor, the man who killed a whore and her baby girl for him, though he will not say who ordered it. Tyrion mocks the bloody spear on his new arms and tells him he has no honour. His eldest son will keep a title and lands but not Harrenhal, and Janos sails for the Wall. At the door he meets his successor, [[jacelyn-bywater|Ser Jacelyn Bywater]].',
+        it: 'Al Concilio Janos dice a [[tyrion-lannister|Tyrion]] che c’è bisogno di lui, con le rivolte nelle strade. Giorni dopo, ubriaco alla tavola di Tyrion, raccomanda come successore Allar Deem, l’uomo che per lui ha ucciso una prostituta e la sua bambina, ma non dice chi l’abbia ordinato. Tyrion deride la lancia insanguinata del suo nuovo stemma e gli dice che non ha onore. Il figlio maggiore terrà un titolo e delle terre ma non Harrenhal, e una caracca porterà Janos alla Barriera. Sulla porta incontra il suo successore, [[jacelyn-bywater|ser Jacelyn Bywater]], e viene portato via.',
+        en: 'At the council Janos tells [[tyrion-lannister|Tyrion]] he is needed, with rioting in the streets. Days later, drunk at Tyrion’s table, he urges Allar Deem as his successor, the man who killed a whore and her baby girl for him, though he will not say who ordered it. Tyrion mocks the bloody spear on his new arms and tells him he has no honour. His eldest son will keep a title and lands but not Harrenhal, and the carrack Summer’s Dream will take Janos to the Wall. At the door he meets his successor, [[jacelyn-bywater|Ser Jacelyn Bywater]], and is led away.',
       },
     ),
   ],
@@ -4154,7 +4202,7 @@ export const season1Chronicles = {
     ),
     onScreen(
       [12, 82],
-      { it: 'Al comando dei mantelli d’oro', en: 'Gold cloak commander' },
+      { it: 'Al comando delle cappe dorate', en: 'Gold cloak commander' },
       {
         it: '[[tyrion-lannister|Tyrion]] fa arrestare e mandare alla Barriera [[janos-slynt|Janos Slynt]], che ha guidato il massacro dei bastardi di Robert, e ricompensa la lealtà di Bronn affidandogli al suo posto il comando della Guardia cittadina. Poi mette alla prova il mercenario, chiedendogli se ucciderebbe un neonato se glielo ordinassero.',
         en: '[[tyrion-lannister|Tyrion]] has [[janos-slynt|Janos Slynt]], who led the massacre of Robert’s bastards, arrested and sent to the Wall, and rewards Bronn’s loyalty with command of the City Watch in his place. Then he tests the sellsword, asking him whether he would kill an infant if he were told to.',
@@ -4173,7 +4221,7 @@ export const season1Chronicles = {
       { it: 'La freccia infuocata', en: 'The flaming arrow' },
       {
         it: 'La notte prima della battaglia Bronn beve con gli uomini dei Lannister e si scontra con [[sandor-clegane|Sandor Clegane]]. Durante la battaglia aspetta il segnale di [[tyrion-lannister|Tyrion]] fuori dalle mura, sulla riva della baia. Quando Tyrion lascia cadere una torcia dai bastioni, Bronn scocca la freccia infuocata che incendia l’altofuoco tra le navi di [[stannis-baratheon|Stannis]]. Più tardi si unisce allo scontro in tempo per salvare il Mastino, paralizzato alla vista degli uomini in fiamme.',
-        en: 'On the eve of battle Bronn drinks with the Lannister men and clashes with [[sandor-clegane|Sandor Clegane]]. During the battle he waits outside the walls on the shore of the bay for [[tyrion-lannister|Tyrion]]’s signal. When Tyrion drops a torch from the battlements, Bronn shoots the flaming arrow that sets the wildfire ablaze among [[stannis-baratheon|Stannis]]’s ships. Later he joins the fight in time to save the Hound, frozen by the sight of burning men.',
+        en: 'On the eve of battle Bronn drinks with the Lannister men and clashes with [[sandor-clegane|Sandor Clegane]]. During the battle he waits outside the walls on the shore of the bay for [[tyrion-lannister|Tyrion]]’s signal. When Tyrion drops a torch from the battlements, Bronn shoots the flaming arrow that sets the wildfire ablaze among [[stannis-baratheon|Stannis]]’s ships. Later he joins the fight in time to save Sandor, frozen by the sight of burning men.',
       },
     ),
     onScreen(
@@ -4209,6 +4257,14 @@ export const season1Chronicles = {
       {
         it: 'Per conto di [[tyrion-lannister|Tyrion]], Bronn brucia le case lungo le mura della città vicino al molo, perché il nemico non possa arrampicarsi dai tetti. Nella battaglia è appostato sotto la Fortezza Rossa, agli argani della grande catena. Appena la nave ammiraglia di [[stannis-baratheon|Stannis]] è passata, la catena viene sollevata sulle Acque Nere alle spalle della flotta, e intrappola nell’altofuoco quasi tutte le navi in fiamme.',
         en: 'For [[tyrion-lannister|Tyrion]], Bronn burns the houses along the city wall by the quay, so that the enemy cannot climb from their roofs. In the battle he is posted beneath the Red Keep, at the winches of the great chain. Once [[stannis-baratheon|Stannis]]’s flagship has passed, the chain is raised across the Blackwater behind the fleet, trapping most of the burning ships in the wildfire.',
+      },
+    ),
+    onScreen(
+      [18, 128],
+      { it: 'Ladri e cibo', en: 'Thieves and food' },
+      {
+        it: 'Come comandante della Guardia cittadina, Bronn riduce i crimini eliminando i ladri noti della città, e si scontra con [[tyrion-lannister|Tyrion]] per la brutalità dei suoi metodi. Mentre aiuta Tyrion a preparare la difesa contro [[stannis-baratheon|Stannis]], deride i suoi libri e lo avverte che in un assedio conta soprattutto il cibo: per questo ha rastrellato i ladri, perché non mettano le mani sulle scorte della città.',
+        en: 'As commander of the City Watch, Bronn cuts crime by culling the city’s known thieves, and clashes with [[tyrion-lannister|Tyrion]] over his brutal methods. Helping Tyrion plan the defence against [[stannis-baratheon|Stannis]], he scoffs at Tyrion’s books and warns that food matters most in a siege: that is why he rounded up the thieves, to keep them away from the city’s stores.',
       },
     ),
   ],
@@ -4249,8 +4305,8 @@ export const season1Chronicles = {
       [16, 115],
       { it: 'Non fidarti di nessuno', en: 'Trust no one' },
       {
-        it: 'Nella rivolta che segue la partenza di [[myrcella-baratheon|Myrcella]] per Dorne, alcuni uomini della folla trascinano via [[sansa-stark|Sansa]] e stanno per violentarla, finché [[sandor-clegane|Sandor Clegane]] non li uccide e la riporta al castello. Shae le cura le ferite. Quando Sansa dice di odiare [[joffrey-baratheon|Joffrey]], Shae la avverte di non fidarsi di nessuno.',
-        en: 'In the riot that follows [[myrcella-baratheon|Myrcella]]’s departure for Dorne, men from the mob drag [[sansa-stark|Sansa]] away and are about to rape her, until [[sandor-clegane|Sandor Clegane]] kills them and carries her back to the castle. Shae treats her injuries. When Sansa says she hates [[joffrey-baratheon|Joffrey]], Shae warns her to trust no one.',
+        it: 'Nella rivolta che segue la partenza di [[myrcella-baratheon|Myrcella]] per Dorne, alcuni uomini della folla trascinano via [[sansa-stark|Sansa]] e stanno per violentarla, finché [[sandor-clegane|Sandor Clegane]] non li uccide e la riporta al castello. Ferita e sconvolta, Sansa comincia a fidarsi di Shae e le confida di odiare [[joffrey-baratheon|Joffrey]]. Shae la avverte di non fidarsi di nessuno.',
+        en: 'In the riot that follows [[myrcella-baratheon|Myrcella]]’s departure for Dorne, men from the mob drag [[sansa-stark|Sansa]] away and are about to rape her, until [[sandor-clegane|Sandor Clegane]] kills them and carries her back to the castle. Injured and shaken, Sansa comes to trust Shae and confides that she hates [[joffrey-baratheon|Joffrey]]. Shae warns her to trust no one.',
       },
     ),
     onScreen(
@@ -4276,7 +4332,7 @@ export const season1Chronicles = {
       [20, 141],
       { it: 'Pentos', en: 'Pentos' },
       {
-        it: 'Shae va da [[tyrion-lannister|Tyrion]] nelle stanze misere dove si riprende dalla ferita, e gli scopre la cicatrice. Suo padre [[tywin-lannister|Tywin]] ha preso il suo posto come Primo Cavaliere, e [[varys|Varys]] gli ha detto che ha perso tutto il suo potere. Shae lo supplica di lasciare la città con lei per Pentos. Tyrion rifiuta.',
+        it: 'Shae va da [[tyrion-lannister|Tyrion]] nelle stanze misere dove si riprende dalla ferita, e gli scopre la cicatrice. Il padre di Tyrion, [[tywin-lannister|Tywin]], ha preso il suo posto come Primo Cavaliere, e [[varys|Varys]] gli ha detto che ha perso tutto il suo potere. Shae lo supplica di lasciare la città con lei per Pentos. Tyrion rifiuta.',
         en: 'Shae comes to [[tyrion-lannister|Tyrion]] in the shabby quarters where he recovers from his wound, and uncovers his scar. His father [[tywin-lannister|Tywin]] has taken his place as Hand, and [[varys|Varys]] has told him he has lost all his power. Shae begs him to leave the city with her for Pentos. Tyrion refuses.',
       },
     ),
@@ -4310,6 +4366,14 @@ export const season1Chronicles = {
       {
         it: '[[cersei-lannister|Cersei]] fa prendere e picchiare una ragazza del bordello di Chataya, credendola l’amante di [[tyrion-lannister|Tyrion]]: è [[alayaya|Alayaya]], non Shae. Tyrion è sollevato che la sorella non l’abbia trovata. Quella notte trova Shae nella sua stanza nella Torre del Primo Cavaliere. È arrivata dal passaggio segreto, ma [[varys|Varys]] l’ha bendata, così non sa dove cominci.',
         en: '[[cersei-lannister|Cersei]] seizes a girl from Chataya’s brothel, taking her for [[tyrion-lannister|Tyrion]]’s lover, and has her beaten: [[alayaya|Alayaya]], not Shae. Tyrion is relieved that his sister has not found her. That night he finds Shae in his room in the Tower of the Hand. She has come through the secret passage, but [[varys|Varys]] blindfolded her, so she does not know where it begins.',
+      },
+    ),
+    inBooks(
+      [19, 131],
+      { it: 'Al servizio di Lollys', en: 'In Lollys’s service' },
+      {
+        it: 'Ora cameriera della casa di [[lollys-stokeworth|Lollys Stokeworth]], Shae aiuta lady Tanda e [[sansa-stark|Sansa]] a portare Lollys nella Fortezza di Maegor mentre comincia la battaglia. Lì quasi tutte le nobildonne della città si riuniscono con [[cersei-lannister|Cersei]] nella sala da ballo della regina, e tra loro c’è [[ilyn-payne|ser Ilyn Payne]], per occuparsi dei traditori e, dice la regina, per difenderle se la città cadrà.',
+        en: 'Now a maid in [[lollys-stokeworth|Lollys Stokeworth]]’s household, Shae helps Lady Tanda and [[sansa-stark|Sansa]] guide Lollys into Maegor’s Holdfast as the battle begins. Almost every highborn woman in the city gathers there with [[cersei-lannister|Cersei]] in the Queen’s Ballroom, and [[ilyn-payne|Ser Ilyn Payne]] stands among them, to deal with traitors and, the queen says, to defend them if the city falls.',
       },
     ),
   ],
@@ -4932,8 +4996,8 @@ export const season1Chronicles = {
       [16, 115],
       { it: 'Salvata dalla folla', en: 'Saved from the mob' },
       {
-        it: 'Nella rivolta dopo la partenza di [[myrcella-baratheon|Myrcella]], Sansa si perde tra la folla. Alcuni uomini la trascinano via e stanno per violentarla quando [[sandor-clegane|Sandor Clegane]] li uccide e la porta al castello. [[shae|Shae]] le cura le ferite. Sansa dice di odiare [[joffrey-baratheon|Joffrey]], e Shae la avverte di non fidarsi di nessuno.',
-        en: 'In the riot after [[myrcella-baratheon|Myrcella]] sails, Sansa is lost in the crowd. Men drag her away and are about to rape her when [[sandor-clegane|Sandor Clegane]] kills them and carries her to the castle. [[shae|Shae]] treats her injuries. Sansa says she hates [[joffrey-baratheon|Joffrey]], and Shae warns her to trust no one.',
+        it: 'Nella rivolta dopo la partenza di [[myrcella-baratheon|Myrcella]], Sansa si perde tra la folla. Alcuni uomini la trascinano via e stanno per violentarla quando [[sandor-clegane|Sandor Clegane]] li uccide e la porta al castello. Ferita, confida a [[shae|Shae]] di odiare [[joffrey-baratheon|Joffrey]], e Shae la avverte di non fidarsi di nessuno.',
+        en: 'In the riot after [[myrcella-baratheon|Myrcella]] sails, Sansa is lost in the crowd. Men drag her away and are about to rape her when [[sandor-clegane|Sandor Clegane]] kills them and carries her to the castle. Injured, she confides in [[shae|Shae]] that she hates [[joffrey-baratheon|Joffrey]], and Shae warns her to trust no one.',
       },
     ),
     onScreen(
@@ -4956,7 +5020,7 @@ export const season1Chronicles = {
       [20, 139],
       { it: 'Libera da Joffrey', en: 'Free of Joffrey' },
       {
-        it: 'A corte [[joffrey-baratheon|Joffrey]] scioglie il fidanzamento con Sansa per il tradimento della sua famiglia e accetta di sposare invece [[margaery-tyrell|Margaery Tyrell]]. In privato Sansa è felicissima, finché [[petyr-baelish|Ditocorto]] non le fa notare che la libertà non impedirà a Joffrey di tormentarla. Le promette di aiutarla a fuggire dalla città, per amore di sua madre Catelyn.',
+        it: 'A corte [[joffrey-baratheon|Joffrey]] scioglie il fidanzamento con Sansa per il tradimento della famiglia di lei e accetta di sposare invece [[margaery-tyrell|Margaery Tyrell]]. In privato Sansa è felicissima, finché [[petyr-baelish|Ditocorto]] non le fa notare che la libertà non impedirà a Joffrey di tormentarla. Le promette di aiutarla a fuggire dalla città, per amore di sua madre Catelyn.',
         en: 'At court, [[joffrey-baratheon|Joffrey]] sets aside his betrothal to Sansa for her family’s treachery and agrees to marry [[margaery-tyrell|Margaery Tyrell]] instead. In private Sansa is overjoyed, until [[petyr-baelish|Littlefinger]] points out that her freedom will not stop Joffrey from tormenting her. He promises to help her escape the city, for her mother’s sake.',
       },
     ),
@@ -4983,8 +5047,8 @@ export const season1Chronicles = {
         en: 'Beaten for Robb’s victory',
       },
       {
-        it: 'Sansa viene portata davanti a [[joffrey-baratheon|Joffrey]] a rispondere della vittoria di Robb sui Lannister a Oxcross. Per ordine del re ser Boros Blount la picchia e le strappa il corpetto davanti alla corte. [[tyrion-lannister|Tyrion]] interviene, [[sandor-clegane|il Mastino]] le getta il suo mantello, e Tyrion la fa portare nella Torre del Primo Cavaliere. Il giorno dopo le dice che non intende farle sposare Joffrey e le offre la sua protezione; lei risponde di amare il re, e chiede di tornare nel suo letto.',
-        en: 'Sansa is brought before [[joffrey-baratheon|Joffrey]] to answer for Robb’s victory over the Lannisters at Oxcross. On his orders Ser Boros Blount strikes her and tears away her bodice before the court. [[tyrion-lannister|Tyrion]] stops it, [[sandor-clegane|the Hound]] tosses her his cloak, and Tyrion has her taken to the Tower of the Hand. The next day he tells her he does not mean her to marry Joffrey and offers her his protection; she says she loves the king, and asks to go back to her own bed.',
+        it: 'Sansa viene portata davanti a [[joffrey-baratheon|Joffrey]] a rispondere della vittoria di Robb sui Lannister a Oxcross. Per ordine del re ser Boros Blount la picchia e le strappa il corpetto davanti alla corte. [[tyrion-lannister|Tyrion]] interviene, [[sandor-clegane|il Mastino]] le getta il suo mantello, e Tyrion la fa portare nella Torre del Primo Cavaliere. Il giorno dopo, quando le chiede di Joffrey, lei risponde di amare il re. Tyrion le dice che non intende farglielo sposare e le offre la sua protezione, ma lei chiede di tornare nel suo letto.',
+        en: 'Sansa is brought before [[joffrey-baratheon|Joffrey]] to answer for Robb’s victory over the Lannisters at Oxcross. On his orders Ser Boros Blount strikes her and tears away her bodice before the court. [[tyrion-lannister|Tyrion]] stops it, [[sandor-clegane|Sandor Clegane]] tosses her his cloak, and Tyrion has her taken to the Tower of the Hand. The next day, when he asks about Joffrey, she says she loves the king. He tells her he does not mean her to marry Joffrey and offers her his protection, but she asks to go back to her own bed.',
       },
     ),
     inBooks(
@@ -4992,7 +5056,7 @@ export const season1Chronicles = {
       { it: 'La fioritura', en: 'Flowering' },
       {
         it: 'Mentre l’esercito di [[stannis-baratheon|Stannis]] si avvicina, [[dontos-hollard|Dontos]] dice a Sansa che non è ancora il momento di fuggire. Sul tetto della Fortezza di Maegor [[sandor-clegane|il Mastino]] le dice che gli piace uccidere e che non esistono veri cavalieri. Quella notte le arriva il primo sangue e brucia le lenzuola, per paura che [[joffrey-baratheon|Joffrey]] voglia portarla a letto. Le cameriere la scoprono, e [[cersei-lannister|Cersei]] la conforta avvertendola che l’amore è un veleno.',
-        en: 'As [[stannis-baratheon|Stannis]]’s army nears, [[dontos-hollard|Dontos]] tells Sansa the time for escape is not yet right. On the roof of Maegor’s Holdfast, [[sandor-clegane|the Hound]] tells her he likes killing and that there are no true knights. That night she has her first blood and burns the sheets, afraid [[joffrey-baratheon|Joffrey]] will want to bed her. Her maids catch her, and [[cersei-lannister|Cersei]] comforts her, warning that love is poison.',
+        en: 'As [[stannis-baratheon|Stannis]]’s army nears, [[dontos-hollard|Dontos]] tells Sansa the time for escape is not yet right. On the roof of Maegor’s Holdfast, [[sandor-clegane|Sandor Clegane]] tells her he likes killing and that there are no true knights. That night she has her first blood and burns the sheets, afraid [[joffrey-baratheon|Joffrey]] will want to bed her. Her maids catch her, and [[cersei-lannister|Cersei]] comforts her, warning that love is poison.',
       },
     ),
     inBooks(
@@ -5020,6 +5084,14 @@ export const season1Chronicles = {
       {
         it: 'Dalla galleria Sansa guarda [[joffrey-baratheon|Joffrey]] ricompensare i vincitori. Quando [[garlan-tyrell|ser Garlan Tyrell]] chiede al re di sposare la sorella [[margaery-tyrell|Margaery]], l’Alto Septon dichiara nullo il fidanzamento di Sansa, e lei ne è felice. Quella notte nel parco degli dèi [[dontos-hollard|Dontos]] la avverte che [[cersei-lannister|Cersei]] vuole tenerla con sé e che Joffrey potrebbe comunque portarla a letto. Fuggiranno durante le nozze del re, tra circa un mese, dice, e le regala una reticella d’argento con delle ametiste.',
         en: 'From the gallery Sansa watches [[joffrey-baratheon|Joffrey]] reward the victors. When [[garlan-tyrell|Ser Garlan Tyrell]] asks the king to wed his sister [[margaery-tyrell|Margaery]], the High Septon declares Sansa’s betrothal void, and she is delighted. That night in the godswood [[dontos-hollard|Dontos]] warns her that [[cersei-lannister|Cersei]] means to keep her and that Joffrey may still bed her. They will escape during the king’s wedding, in about a month, he says, and he gives her a silver hair net set with amethysts.',
+      },
+    ),
+    inBooks(
+      [16, 115],
+      { it: 'Dispersa nella rivolta', en: 'Lost in the riot' },
+      {
+        it: 'Mentre il corteo reale torna dalla partenza di [[myrcella-baratheon|Myrcella]], la folla affamata lo assale, e Sansa si perde nel caos. [[tyrion-lannister|Tyrion]] ordina alla Guardia reale di tornare a cercarla, e [[sandor-clegane|Sandor Clegane]] la riporta al castello, coperto di sangue. Nella rivolta sono morti l’Alto Septon e due cavalieri.',
+        en: 'As the royal party rides back from [[myrcella-baratheon|Myrcella]]’s departure, the starving crowd turns on it, and Sansa is lost in the chaos. [[tyrion-lannister|Tyrion]] orders the Kingsguard back to find her, and [[sandor-clegane|Sandor Clegane]] brings her back to the castle, covered in blood. The High Septon and two knights have died in the riot.',
       },
     ),
   ],

@@ -214,7 +214,7 @@ export const season2Chronicles = {
       [11, 77],
       { it: 'La nuova arrivata', en: 'The new girl' },
       {
-        it: 'Daisy è appena arrivata nel bordello di [[petyr-baelish|Ditocorto]], e [[ros|Ros]] le mostra il posto, spiegandole che lì servono clienti di un livello più alto di quelli che conosceva a Haystack Hall. Daisy resta colpita dal posto. Poi irrompono i mantelli d’oro di [[janos-slynt|Janos Slynt]], e Daisy è presente quando Janos uccide la bambina di [[mhaegen|Mhaegen]], una dei bastardi di Robert, davanti alla madre.',
+        it: 'Daisy è appena arrivata nel bordello di [[petyr-baelish|Ditocorto]], e [[ros|Ros]] le mostra il posto, spiegandole che lì servono clienti di un livello più alto di quelli che conosceva a Haystack Hall. Daisy resta colpita dal posto. Poi irrompono le cappe dorate di [[janos-slynt|Janos Slynt]], e Daisy è presente quando Janos uccide la bambina di [[mhaegen|Mhaegen]], una dei bastardi di Robert, davanti alla madre.',
         en: 'Daisy is new to [[petyr-baelish|Littlefinger]]’s brothel, and [[ros|Ros]] shows her round, telling her they cater to a better class of client than she knew at Haystack Hall. Daisy is impressed by the place. Then the gold cloaks of [[janos-slynt|Janos Slynt]] burst in, and Daisy is there when Janos kills the baby of [[mhaegen|Mhaegen]], one of Robert’s bastards, in front of her mother.',
       },
     ),
@@ -240,7 +240,7 @@ export const season2Chronicles = {
       [12, 82],
       { it: 'Il nuovo comandante', en: 'The new commander' },
       {
-        it: '[[tyrion-lannister|Tyrion]] nomina ser Jacelyn Bywater comandante della Guardia cittadina: un cavaliere stimato che [[janos-slynt|Janos Slynt]] definisce rigido e troppo fiero del suo onore. Jacelyn incontra Janos sulla porta mentre i mantelli d’oro lo portano via verso la Barriera, e Tyrion gli consegna la lista dei candidati di Janos, perché partano con lui. [[varys|Varys]] ha garantito per Jacelyn come per un uomo che la Guardia cittadina seguirà.',
+        it: '[[tyrion-lannister|Tyrion]] nomina ser Jacelyn Bywater comandante della Guardia cittadina: un cavaliere stimato che [[janos-slynt|Janos Slynt]] definisce rigido e troppo fiero del suo onore. Jacelyn incontra Janos sulla porta mentre le cappe dorate lo portano via verso la Barriera, e Tyrion gli consegna la lista dei candidati di Janos, perché partano con lui. [[varys|Varys]] ha garantito per Jacelyn come per un uomo che la Guardia cittadina seguirà.',
         en: '[[tyrion-lannister|Tyrion]] names Ser Jacelyn Bywater commander of the City Watch: a distinguished knight whom [[janos-slynt|Janos Slynt]] calls rigid and too proud of his honour. Jacelyn meets Janos at the door as the gold cloaks lead him away to the Wall, and Tyrion hands him the list of Janos’s candidates, to go with him. [[varys|Varys]] has spoken for Jacelyn as a man the City Watch will follow.',
       },
     ),
@@ -248,7 +248,7 @@ export const season2Chronicles = {
       [15, 94],
       { it: 'Condizioni di pace alla porta', en: 'Peace terms at the gate' },
       {
-        it: 'Jacelyn manda a chiamare [[tyrion-lannister|Tyrion]] quando [[cleos-frey|ser Cleos Frey]] arriva alla Porta degli Dèi con le condizioni di pace di Robb Stark. Tyrion gli dice di offrire a Cleos ogni ospitalità ma di tenerlo fuori dalla città, perché non veda come stanno le cose. Jacelyn dovrà anche addestrare delle squadre a maneggiare l’altofuoco che gli alchimisti consegneranno, usando vernice e olio bollente, anche se quella roba non gli piace affatto.',
+        it: 'Jacelyn manda a chiamare [[tyrion-lannister|Tyrion]] quando [[cleos-frey|ser Cleos Frey]] arriva alla Porta degli Dèi con le condizioni di pace di Robb Stark. Tyrion gli dice di offrire a Cleos ogni ospitalità ma di tenerlo fuori dalla città, perché non veda come stanno le cose. Jacelyn dovrà anche addestrare delle squadre a maneggiare l’altofuoco che gli alchimisti consegneranno, usando vernice e olio in fiamme, anche se quella roba non gli piace affatto.',
         en: 'Jacelyn sends for [[tyrion-lannister|Tyrion]] when [[cleos-frey|Ser Cleos Frey]] arrives at the Gate of the Gods with peace terms from Robb Stark. Tyrion tells him to give Cleos every hospitality but keep him outside the city, so that he does not see how things stand there. Jacelyn is also to train crews to handle the wildfire the alchemists will deliver, using paint and burning oil, though he has no love for the stuff.',
       },
     ),
@@ -258,6 +258,22 @@ export const season2Chronicles = {
       {
         it: 'Per ordine di [[tyrion-lannister|Tyrion]] gli uomini di Jacelyn raggiungono il gruppo che porta [[tommen-baratheon|Tommen]] a nascondersi a Rosby. Ser Boros Blount consegna subito il principe e per questo perde il mantello bianco. Jacelyn torna con dei lancieri delle terre di Rosby: Tommen è al sicuro e ha adottato un cerbiatto. Jacelyn ha preparato dei piani per lui nel caso la battaglia sia perduta, ma non li rivela nemmeno a Tyrion, per il caso che venga catturato.',
         en: 'On [[tyrion-lannister|Tyrion]]’s orders Jacelyn’s men overtake the party taking [[tommen-baratheon|Tommen]] to hide at Rosby. Ser Boros Blount gives the prince up at once and loses his white cloak for it. Jacelyn returns with spearmen from the Rosby lands: Tommen is safe and has adopted a fawn. Jacelyn has made plans for him in case the battle is lost, but will not tell even Tyrion, in case he is captured.',
+      },
+    ),
+    inBooks(
+      [14, 103],
+      { it: 'Contro la regina', en: 'Defying the queen' },
+      {
+        it: 'Jacelyn disobbedisce a un ordine dato in nome del re, che [[tyrion-lannister|Tyrion]] ritiene l’ordine della regina di liberare [[pycelle|Pycelle]]. [[lancel-lannister|Ser Lancel]] porta la richiesta di Cersei che Jacelyn sia rimosso e accusato di tradimento. Tyrion lo tiene al suo posto, e fa dire alla regina da Lancel, ormai sua spia, che crede di poter staccare Jacelyn da Tyrion.',
+        en: 'Jacelyn defies a command given in the king’s name, which [[tyrion-lannister|Tyrion]] takes to be the queen’s order to free [[pycelle|Pycelle]]. [[lancel-lannister|Ser Lancel]] brings Cersei’s demand that Jacelyn be removed and charged with treason. Tyrion keeps him, and has Lancel, now his spy, tell the queen that he thinks he can win Jacelyn away from Tyrion.',
+      },
+    ),
+    inBooks(
+      [19, 133],
+      { it: 'Lord Jacelyn', en: 'Lord Jacelyn' },
+      {
+        it: 'Durante la battaglia Jacelyn, ora lord Jacelyn come [[tyrion-lannister|Tyrion]] aveva promesso, ha avvertito che i difensori potrebbero cedere quando l’esercito di [[stannis-baratheon|Stannis]] attaccherà di nuovo. Mentre l’altofuoco brucia sulle Acque Nere e i soldati nemici sbarcano a fatica tra i moli carbonizzati, Tyrion gli manda l’ordine di guidare un’altra sortita contro di loro.',
+        en: 'During the battle Jacelyn, now Lord Jacelyn as [[tyrion-lannister|Tyrion]] promised, has warned that the defenders may break once [[stannis-baratheon|Stannis]]’s host attacks again. While the wildfire burns on the Blackwater and enemy soldiers stumble ashore among the charred wharves, Tyrion sends him orders to lead another sortie against them.',
       },
     ),
   ],
@@ -336,8 +352,8 @@ export const season2Chronicles = {
       [18, 128],
       { it: 'La figlia di Chataya', en: 'Chataya’s daughter' },
       {
-        it: 'Alayaya, la figlia di Chataya, accompagna [[tyrion-lannister|Tyrion]] nella stanza della torretta del bordello della madre, dove un cunicolo nascosto gli permette di sgattaiolare da [[shae|Shae]] mentre lei dorme. Credendola l’amante di Tyrion, [[cersei-lannister|Cersei]] la fa prendere e picchiare dai fratelli di [[osmund-kettleblack|ser Osmund]] e la porta davanti a lui. Alayaya non lo tradisce. La regina dice che alla ragazza non sarà fatto del male finché [[joffrey-baratheon|Joffrey]] e [[tommen-baratheon|Tommen]] saranno al sicuro.',
-        en: 'Alayaya, Chataya’s daughter, leads [[tyrion-lannister|Tyrion]] to the turret room of her mother’s brothel, where a hidden shaft lets him slip away to [[shae|Shae]] while she sleeps. Taking her for Tyrion’s lover, [[cersei-lannister|Cersei]] has her seized and beaten by [[osmund-kettleblack|Ser Osmund]]’s brothers and brings her before him. Alayaya does not give him away. The queen says the girl will be unharmed as long as [[joffrey-baratheon|Joffrey]] and [[tommen-baratheon|Tommen]] are safe.',
+        it: 'Alayaya, la figlia di Chataya, accompagna [[tyrion-lannister|Tyrion]] nella stanza della torretta del bordello della madre, dove un cunicolo nascosto gli permette di sgattaiolare da [[shae|Shae]]; intanto Alayaya dorme nella stanza della torretta fino al suo ritorno. Credendola l’amante di Tyrion, [[cersei-lannister|Cersei]] la fa prendere e picchiare, e la fa portare davanti a lui dai fratelli di [[osmund-kettleblack|ser Osmund]]. Alayaya non lo tradisce. La regina dice che alla ragazza non sarà fatto del male finché [[joffrey-baratheon|Joffrey]] e [[tommen-baratheon|Tommen]] saranno al sicuro.',
+        en: 'Alayaya, Chataya’s daughter, leads [[tyrion-lannister|Tyrion]] to the turret room of her mother’s brothel, where a hidden shaft lets him slip away to [[shae|Shae]]; Alayaya sleeps in the turret room until he returns. Taking her for Tyrion’s lover, [[cersei-lannister|Cersei]] has her seized and beaten, and has [[osmund-kettleblack|Ser Osmund]]’s brothers bring her before him. Alayaya does not give him away. The queen says the girl will be unharmed as long as [[joffrey-baratheon|Joffrey]] and [[tommen-baratheon|Tommen]] are safe.',
       },
     ),
   ],
