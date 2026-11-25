@@ -29,15 +29,6 @@
         "reason": "Permanent: house style: each line drawing takes one of the nineteen tint hues in src/styles/tokens.stylex.ts, violet, lavender and cyan among them, and its backdrop is that hue. The colours are fixed (owner 2026-11-17, #1364)."
       },
       {
-        "rule": "first-viewport-column-overflow",
-        "value": "*",
-        "files": [
-          "http://127.0.0.1:*/*/*/places/*"
-        ],
-        "createdAt": "2026-11-17T12:52:42.215Z",
-        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: at 1440px a place page opens on two columns, one several viewports tall beside one that ends above the fold."
-      },
-      {
         "rule": "nested-cards",
         "value": "*",
         "files": [

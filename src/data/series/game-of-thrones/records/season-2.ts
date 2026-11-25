@@ -2314,6 +2314,7 @@ export const season2: ThronesSaga = {
     // #1466: Winterfell and the Iron Islands.
     'balon-greyjoy': {
       relationships: season2Relationships['balon-greyjoy'],
+      chronicle: season2Chronicles['balon-greyjoy'],
       role: [
         {
           episode: 12,
@@ -2357,6 +2358,7 @@ export const season2: ThronesSaga = {
     },
     'asha-greyjoy': {
       relationships: season2Relationships['asha-greyjoy'],
+      chronicle: season2Chronicles['asha-greyjoy'],
       role: { it: 'Capitana degli uomini di ferro', en: 'Ironborn captain' },
       log: {
         it: 'Incontra Theon al suo ritorno senza dirgli chi è, e cavalca con lui fino a Pyke. Lì il padre mostra di fidarsi più di lei che del figlio.',
@@ -2373,6 +2375,7 @@ export const season2: ThronesSaga = {
     },
     'aeron-greyjoy': {
       relationships: season2Relationships['aeron-greyjoy'],
+      chronicle: season2Chronicles['aeron-greyjoy'],
       role: {
         it: 'Sacerdote del Dio Abissale',
         en: 'Priest of the Drowned God',
@@ -2392,6 +2395,7 @@ export const season2: ThronesSaga = {
     },
     'victarion-greyjoy': {
       relationships: season2Relationships['victarion-greyjoy'],
+      chronicle: season2Chronicles['victarion-greyjoy'],
       role: { it: 'Capitano degli uomini di ferro', en: 'Ironborn captain' },
       log: {
         it: 'È a Pyke quando Balon espone a Theon e ad Asha il suo piano per attaccare il Nord.',
@@ -2409,6 +2413,7 @@ export const season2: ThronesSaga = {
     },
     'dagmer': {
       relationships: season2Relationships.dagmer,
+      chronicle: season2Chronicles.dagmer,
       role: { it: 'Predone degli uomini di ferro', en: 'Ironborn raider' },
       log: {
         it: 'Theon gli spiega il suo piano: colpire Piazza di Torrhen per attirare lontano dal castello i difensori di Grande Inverno.',
@@ -2431,6 +2436,7 @@ export const season2: ThronesSaga = {
     },
     'black-lorren': {
       relationships: season2Relationships['black-lorren'],
+      chronicle: season2Chronicles['black-lorren'],
       role: { it: 'Predone degli uomini di ferro', en: 'Ironborn raider' },
       log: {
         it: 'È tra gli uomini di Theon a Grande Inverno. Quando Bran e Rickon fuggono, trova i corpi delle guardie uccise.',
@@ -2454,6 +2460,7 @@ export const season2: ThronesSaga = {
     },
     'wex-pyke': {
       relationships: season2Relationships['wex-pyke'],
+      chronicle: season2Chronicles['wex-pyke'],
       role: { it: 'Scudiero di Theon Greyjoy', en: 'Squire of Theon Greyjoy' },
       log: {
         it: 'Theon lo prende come scudiero a Pyke, come parte del prezzo di un cavallo.',
@@ -2471,6 +2478,7 @@ export const season2: ThronesSaga = {
     },
     'farlen': {
       relationships: season2Relationships.farlen,
+      chronicle: season2Chronicles.farlen,
       role: {
         it: 'Maestro dei canili di Grande Inverno',
         en: 'Kennelmaster of Winterfell',
@@ -2497,6 +2505,7 @@ export const season2: ThronesSaga = {
     },
     'meera-reed': {
       relationships: season2Relationships['meera-reed'],
+      chronicle: season2Chronicles['meera-reed'],
       role: { it: 'Figlia di Howland Reed', en: 'Daughter of Howland Reed' },
       log: {
         it: 'Con il fratello Jojen raggiunge Bran Stark e resta al suo fianco.',
@@ -2513,6 +2522,7 @@ export const season2: ThronesSaga = {
     },
     'jojen-reed': {
       relationships: season2Relationships['jojen-reed'],
+      chronicle: season2Chronicles['jojen-reed'],
       role: { it: 'Figlio di Howland Reed', en: 'Son of Howland Reed' },
       log: {
         it: 'Con la sorella Meera raggiunge Bran Stark e resta al suo fianco.',
@@ -2535,6 +2545,7 @@ export const season2: ThronesSaga = {
     },
     'ramsay-snow': {
       relationships: season2Relationships['ramsay-snow'],
+      chronicle: season2Chronicles['ramsay-snow'],
       role: { it: 'Bastardo di Roose Bolton', en: 'Bastard of Roose Bolton' },
       log: {
         it: 'I suoi uomini tolgono Grande Inverno agli uomini di ferro e la danno alle fiamme.',
@@ -2557,6 +2568,7 @@ export const season2: ThronesSaga = {
     },
     'big-walder-frey': {
       relationships: season2Relationships['big-walder-frey'],
+      chronicle: season2Chronicles['big-walder-frey'],
       role: { it: 'Pupillo a Grande Inverno', en: 'Ward at Winterfell' },
       log: {
         it: 'Lui e il cugino Little Walder sono pupilli a Grande Inverno, secondo il patto tra Robb Stark e lord Walder Frey.',
@@ -2574,6 +2586,7 @@ export const season2: ThronesSaga = {
     },
     'little-walder-frey': {
       relationships: season2Relationships['little-walder-frey'],
+      chronicle: season2Chronicles['little-walder-frey'],
       role: { it: 'Pupillo a Grande Inverno', en: 'Ward at Winterfell' },
       log: {
         it: 'Lui e il cugino Big Walder sono pupilli a Grande Inverno, secondo il patto tra Robb Stark e lord Walder Frey.',
@@ -2598,6 +2611,7 @@ export const season2: ThronesSaga = {
     },
     'wyman-manderly': {
       relationships: season2Relationships['wyman-manderly'],
+      chronicle: season2Chronicles['wyman-manderly'],
       role: { it: 'Lord di Porto Bianco', en: 'Lord of White Harbor' },
       log: {
         it: 'Va a Grande Inverno per incontrare lo Stark che la tiene, e gli offre il suo sostegno.',
@@ -2614,6 +2628,7 @@ export const season2: ThronesSaga = {
     },
     'donella-hornwood': {
       relationships: season2Relationships['donella-hornwood'],
+      chronicle: season2Chronicles['donella-hornwood'],
       role: { it: 'Signora di Hornwood', en: 'Lady of the Hornwood' },
       log: {
         it: 'Alla festa del raccolto di Grande Inverno dice a Bran che teme che il bastardo di Roose Bolton voglia prendersi le sue terre.',

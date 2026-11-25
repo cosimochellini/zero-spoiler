@@ -42,6 +42,20 @@ export const styles = stylex.create({
     minWidth: 0,
   },
 
+  // The records found at a place, a band of their own under the entry: the
+  // title is the one the page's other bands take.
+  band: { gap: space.md, display: 'grid', minWidth: 0 },
+  bandTitle: {
+    color: color.ink,
+    fontFamily: font.display,
+    fontSize: text.xl,
+    fontWeight: 800,
+    letterSpacing: '-0.02em',
+    lineHeight: leading.heading,
+    overflowWrap: 'anywhere',
+    minWidth: 0,
+  },
+  // The later visits, a list inside the map band.
   filed: { gap: space.sm, display: 'grid' },
   filedTitle: {
     color: color.ink2,

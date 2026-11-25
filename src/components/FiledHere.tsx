@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
-import type { ReactElement } from 'react'
+import { type ReactElement, useId } from 'react'
 
 import { styles } from '~/components/PortEntry.styles'
 import { RecordTile } from '~/components/RecordTile'
@@ -11,6 +11,10 @@ import type { RecordView, Slot } from '~/lib/view/records'
  * episodes after the crew does is a covered tile beside an open one. An empty
  * list draws nothing, heading included: a heading over nothing reads as
  * missing data.
+ *
+ * A section of the band under the entry, titled as the page's other bands
+ * are: the tiles run the page's full width rather than down the entry's
+ * column, which ran several screens past its plate (#1576).
  */
 export function FiledHere({
   filed,
@@ -21,13 +25,23 @@ export function FiledHere({
   peekRecord: (handle: string) => Promise<RecordView>
   title: string
 }): null | ReactElement {
+  const titleId = useId()
+
   if (filed.length === 0) {
     return null
   }
 
   return (
-    <div {...stylex.props(styles.filed)}>
-      <h2 {...stylex.props(styles.filedTitle)}>{title}</h2>
+    <section
+      aria-labelledby={titleId}
+      {...stylex.props(styles.band)}
+    >
+      <h2
+        id={titleId}
+        {...stylex.props(styles.bandTitle)}
+      >
+        {title}
+      </h2>
       <ul {...stylex.props(styles.crew)}>
         {filed.map((slot) => {
           return (
@@ -47,6 +61,6 @@ export function FiledHere({
           )
         })}
       </ul>
-    </div>
+    </section>
   )
 }
