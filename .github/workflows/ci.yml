@@ -271,9 +271,16 @@ jobs:
   # between them is found. The title is fixed: it is what finds the open issue.
   # Nothing closes it when main turns green again; the pull request that fixes
   # main does, with `Closes #N`.
+  #
+  # Not `failure()`: a gate job that runs past its `timeout-minutes` ends
+  # `cancelled`, and that is a red main too. `!cancelled()` still keeps a
+  # cancel of the whole run by hand from opening an issue.
   alert:
     needs: [static, lint, test, coverage, build]
-    if: failure() && github.event_name == 'push'
+    if:
+      ${{ !cancelled() && github.event_name == 'push' &&
+      (contains(needs.*.result, 'failure') || contains(needs.*.result,
+      'cancelled')) }}
     runs-on: ubuntu-latest
     timeout-minutes: 2
 
@@ -285,7 +292,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+        # pipefail: a failed `gh issue list` must fail the step, not read as
+        # "no issue open" and open a second p0.
         run: |
+          set -o pipefail
           title='CI is red on main'
           repo="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
           RUN="$repo/actions/runs/$GITHUB_RUN_ID"
