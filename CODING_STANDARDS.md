@@ -11,17 +11,24 @@ the compiler, ESLint, Prettier, tests and quality gates (`npm run check`).
   epic child is not missing work. Report new correctness or spoiler bugs on
   impact.
 - Keep docs, counts and PR claims consistent with the actual change.
-- A spoiler test takes its expected gate, medium and drawing from a table of
-  pins written in the test from the naming scenes, and asks `src/test/gates.ts`
-  (`sidesOf`, `gateCases`, `shownIn`, `unlisted`, `stageMissedAt`) for the
-  bookmarks and stages. An expectation read from the data under test
-  (`REDRAWINGS`, a record's `source` or `revealedAt*`, relationships, chronicle
-  stories), or worked out by the engine's own rule (`gateOf`), agrees with any
-  mistake in that data: a stage that loses its `source` leaks to the other
-  medium and the suite stays green. Report it as a P2, and the same for a table
-  whose rows are chosen by reading the data. A sweep over every record that
-  reads the data's gates (`relationshipBoundaries.test.ts`) checks the engine,
-  and is allowed when a pin table for those records sits beside it.
+- A spoiler test checks against **pins**: a table written in the test, one row
+  per record or stage, with the episode, chapter and medium it opens at.
+  - The expected gate, medium and drawing come from the pins. Report a P2 when a
+    test reads them from the data under test (`REDRAWINGS`, a record's `source`
+    or `revealedAt*`, relationships, chronicle stories), works them out with the
+    engine's own rule (`gateOf`), or picks its rows by reading the data. Such a
+    test agrees with any mistake in the data: a stage that loses its `source`
+    leaks to the other medium and the suite stays green.
+  - A pin comes from the scene, citing its chapter and page or its episode, or
+    from a snapshot of the data checked against another independent table or the
+    wiki.
+  - A sweep over every record that reads the data's gates checks the engine. It
+    stands when pins for those records sit beside it
+    (`relationshipBoundaries.test.ts`).
+  - A table lists every stage or record it covers, and fails when the data holds
+    one it does not list.
+  - For the helpers that turn pins into bookmarks and drawings, see
+    `src/test/gates.ts`.
 - Preserve accessible keyboard interaction, focus, covered-content semantics and
   theme contrast when changing UI.
 
