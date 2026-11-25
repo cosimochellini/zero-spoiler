@@ -126,24 +126,48 @@ const PINS: (Pin & { id: string; title: string })[] = [
   },
 ]
 
+/** The titles on a record's chronicle, in English, at a bookmark. */
+function titlesOf(id: string, bookmark: Bookmark): string[] {
+  const reader = readerFor(archive, bookmark, 'en')
+
+  return [
+    ...chronicleOf(recordIn(archive, id), reader).entries,
+    ...chronicleRestOf(id, reader),
+  ].map((entry) => entry.title)
+}
+
+/** The other medium's reader who has reached all of it. */
+function otherAtTheEnd(source: string): Bookmark {
+  return source === 'chapter' ?
+      { mode: 'episode', episode: archive.series.episodeCeiling }
+    : { mode: 'chapter', chapter: archive.series.chapterCeiling }
+}
+
 describe('one Chimera Ant story per phase, at its scene', () => {
   it.each(
     PINS.flatMap((pin) =>
       sidesOf(pin, archive.series).map((side) => ({ ...pin, ...side })),
     ),
   )('opens “$title” at $unit $gate', ({ id, title, before, reached }) => {
-    const titles = (bookmark: Bookmark): string[] => {
-      const reader = readerFor(archive, bookmark, 'en')
-
-      return [
-        ...chronicleOf(recordIn(archive, id), reader).entries,
-        ...chronicleRestOf(id, reader),
-      ].map((entry) => entry.title)
-    }
-
-    expect(titles(before)).not.toContain(title)
-    expect(titles(reached)).toContain(title)
+    expect(titlesOf(id, before)).not.toContain(title)
+    expect(titlesOf(id, reached)).toContain(title)
   })
+
+  it.each(PINS)('tells “$title” in the medium the table names', (pin) => {
+    const filed = archive.stories.find(
+      ({ character, story }) =>
+        character.id === pin.id && story.title.en === pin.title,
+    )
+
+    expect(filed?.gate.source).toBe(pin.source)
+  })
+
+  it.each(PINS.filter(({ source }) => source !== undefined))(
+    'never tells “$title” to a reader of the other medium',
+    ({ id, source = 'episode', title }) => {
+      expect(titlesOf(id, otherAtTheEnd(source))).not.toContain(title)
+    },
+  )
 })
 
 describe('the Chimera Ant chronicles (#910)', () => {
