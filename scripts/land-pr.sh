@@ -57,22 +57,34 @@ fetch() {
   fi
 }
 
+# `gh pr view "$PR" "$@"`, minus the hint gh prints on stderr when it detects an
+# agent (CLAUDECODE, AI_AGENT, CODEX_*) and the PR is open: an 8-line block
+# suggesting `gh event listen`. gh has no switch to turn it off. Other stderr
+# lines go through, and the exit status is gh's.
+pr_view() {
+  {
+    gh pr view "$PR" "$@" 2>&1 1>&3 3>&- |
+      awk '/^hint: .*use this instead of polling:$/ { h = 1; next } h && /^ / { next } { h = 0; print }' >&2
+    return "${PIPESTATUS[0]}"
+  } 3>&1
+}
+
 # The PR head. Callers exit 5 when gh fails.
-pr_head() { gh pr view "$PR" --json headRefOid -q .headRefOid; }
+pr_head() { pr_view --json headRefOid -q .headRefOid; }
 
 # What GitHub says about merging the PR into main: MERGEABLE, CONFLICTING, or
 # UNKNOWN while it is still computing, which is read again for up to 30s.
 # Callers exit 5 when gh fails.
 mergeable() {
   for _ in $(seq 10); do
-    m=$(gh pr view "$PR" --json mergeable -q .mergeable) || return 1
+    m=$(pr_view --json mergeable -q .mergeable) || return 1
     [ "$m" = UNKNOWN ] || break
     sleep 3
   done
   echo "$m"
 }
 
-pr=$(gh pr view "$PR" --json state,baseRefName,headRefName,headRepository \
+pr=$(pr_view --json state,baseRefName,headRefName,headRepository \
   -q '[.state, .baseRefName, .headRefName, .headRepository.nameWithOwner] | @tsv') || exit 5
 IFS=$'\t' read -r state base HEAD_BRANCH HEAD_REPO <<< "$pr"
 [ "$state $base" = "OPEN main" ] || { echo "PR $PR is not open against main: $state $base"; exit 5; }
@@ -88,7 +100,7 @@ H=$cur
 
 # The squash subject is the title, and semantic-release reads it. The pr-title
 # check skips drafts and this script does not wait for it, so check it here.
-title=$(gh pr view "$PR" --json title -q .title) || exit 5
+title=$(pr_view --json title -q .title) || exit 5
 PR_TITLE=$title node scripts/validate-pr-title.mjs || exit 5
 
 # Exits 2 naming the files $H conflicts on with origin/main. GitHub's answer
@@ -131,12 +143,12 @@ if ! gh pr merge "$PR" --squash --match-head-commit "$H"; then
   # GitHub may be merging it already ("Merge already in progress"), and the
   # state reads OPEN until that finishes.
   for _ in $(seq 5); do
-    s=$(gh pr view "$PR" --json state,headRefOid -q '"\(.state) \(.headRefOid)"') || exit 5
+    s=$(pr_view --json state,headRefOid -q '"\(.state) \(.headRefOid)"') || exit 5
     [ "$s" = "MERGED $H" ] && break
     sleep 3
   done
   [ "$s" = "MERGED $H" ] || exit 5
 fi
 echo "merged $H"
-gh pr view "$PR" --json state,mergeCommit,closingIssuesReferences \
+pr_view --json state,mergeCommit,closingIssuesReferences \
   -q '"\(.state) \(.mergeCommit.oid[:7]) closes: \([.closingIssuesReferences[].number])"' || true
