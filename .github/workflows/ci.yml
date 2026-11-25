@@ -22,7 +22,7 @@ concurrency:
   group: ci-${{ github.event.pull_request.number || github.ref }}
   # Only pull request runs are disposable. A push to main can be carrying a
   # release, and cancelling that mid-flight would leave a tag without its
-  # package.json bump, so those runs always finish.
+  # package.json bump, so those runs, once started, always finish.
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
@@ -45,13 +45,15 @@ env:
 # slowest of them rather than after their sum (about 10 minutes in one job).
 # GitHub bills no minutes on a public repository, so the extra installs cost
 # only a few seconds each. Every job carries the same `if`: it runs on a pull
-# request that is not a draft and on every push to main. Main gets the gate
-# again because two pull requests that each pass alone can break it together
-# (#1408); without a run there the break surfaced only on the next unrelated
-# pull request. A merge queue would stop the break instead of reporting it,
-# but GitHub offers it only to organization repositories. A draft skips every
-# job, so its run concludes `skipped` (scripts/land-pr.sh waits past it); a red
-# job makes the run `failure`, which is the one conclusion land-pr.sh reads.
+# request that is not a draft and on pushes to main, where a waiting run is
+# cancelled when a newer push queues behind it, so only the newest tip is
+# always checked. Main gets the gate again because two pull requests that each
+# pass alone can break it together (#1408); without a run there the break
+# surfaced only on the next unrelated pull request. A merge queue would stop
+# the break instead of reporting it, but GitHub offers it only to organization
+# repositories. A draft skips every job, so its run concludes `skipped`
+# (scripts/land-pr.sh waits past it); a red job makes the run `failure`, which
+# is the one conclusion land-pr.sh reads.
 jobs:
   # Everything that needs the sources only: no build, no tests.
   static:
