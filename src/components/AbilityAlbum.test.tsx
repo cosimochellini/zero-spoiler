@@ -1,7 +1,10 @@
-import { screen, within } from '@testing-library/react'
+import { RouterProvider } from '@tanstack/react-router'
+import { act, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { type ReactElement, useState } from 'react'
-import { describe, expect, it, vi } from 'vitest'
+import { hydrateRoot } from 'react-dom/client'
+import { renderToString as serverMarkup } from 'react-dom/server'
+import { describe, expect, it, onTestFinished, vi } from 'vitest'
 
 import type { Locale } from '~/i18n/locales'
 import { readOpenEntries } from '~/lib/progress/openEntries'
@@ -15,7 +18,7 @@ import {
   peekPending,
   untypedAbility,
 } from '~/test/fixtures'
-import { renderUnderSeries } from '~/test/providers'
+import { renderUnderSeries, seriesRouter } from '~/test/providers'
 
 import { AbilityAlbum } from './AbilityAlbum'
 
@@ -195,23 +198,28 @@ describe('AbilityAlbum', () => {
 })
 
 /** The album with nothing open and `count` abilities under fog. */
-async function renderFog(count: number, locale: Locale = 'en'): Promise<void> {
+function fogAlbum(count: number): ReactElement {
   const covered = Array.from({ length: count }, (_, at) =>
     coveredRecord({ handle: `hxh-${String(at)}`, kind: 'ability' }),
   )
-  await renderUnderSeries(
+
+  return (
     <AbilityAlbum
       onParams={vi.fn<(next: AbilityParams, replace: boolean) => void>()}
       params={{}}
       peek={peekPending()}
       sheet={{ bands: [], covered, filed: count }}
-    />,
-    {
-      locale,
-      path: `/hunter-x-hunter/${locale}/abilities`,
-      series: HUNTER_X_HUNTER_SERIES,
-    },
+    />
   )
+}
+
+/** The album with nothing open and `count` abilities under fog. */
+async function renderFog(count: number, locale: Locale = 'en'): Promise<void> {
+  await renderUnderSeries(fogAlbum(count), {
+    locale,
+    path: `/hunter-x-hunter/${locale}/abilities`,
+    series: HUNTER_X_HUNTER_SERIES,
+  })
 }
 
 describe('AbilityAlbum on a phone', () => {
@@ -267,6 +275,59 @@ describe('AbilityAlbum on a phone', () => {
       screen.queryByRole('button', { name: 'Expand' }),
     ).not.toBeInTheDocument()
     expect(screen.queryByText(/more under fog/u)).not.toBeInTheDocument()
+  })
+})
+
+describe('AbilityAlbum from the server', () => {
+  const AT = {
+    path: '/hunter-x-hunter/en/abilities',
+    series: HUNTER_X_HUNTER_SERIES,
+  }
+
+  it('draws the band folded and hydrates it as drawn', async () => {
+    // The server's page: the band comes folded, as a fresh visit finds it.
+    const markup = serverMarkup(
+      <RouterProvider router={await seriesRouter(fogAlbum(5), AT)} />,
+    )
+    const container = document.createElement('div')
+    const parser = new DOMParser()
+    // Opened with <body>, so React's leading markers stay in the body.
+    const parsed = parser.parseFromString(`<body>${markup}`, 'text/html')
+    container.append(...parsed.body.childNodes)
+    document.body.append(container)
+    onTestFinished(() => {
+      container.remove()
+    })
+
+    const tiles = within(container).getAllByRole('listitem')
+
+    expect(
+      within(container).getByRole('button', { name: 'Expand' }),
+    ).toBeInTheDocument()
+    expect(tiles[2]?.className).not.toBe(tiles[1]?.className)
+
+    // Hydrated with the fold memory as a page load leaves it (empty), the
+    // browser draws the same: no mismatch, so nothing is drawn again.
+    const errors = vi.spyOn(console, 'error').mockImplementation(() => {
+      // Silenced: the test reads it.
+    })
+    onTestFinished(() => {
+      errors.mockRestore()
+    })
+    const recovered = vi.fn<(error: unknown) => void>()
+    const router = await seriesRouter(fogAlbum(5), AT)
+    await act(async () => {
+      hydrateRoot(container, <RouterProvider router={router} />, {
+        onRecoverableError: recovered,
+      })
+      await Promise.resolve()
+    })
+
+    expect(recovered).not.toHaveBeenCalled()
+    expect(errors).not.toHaveBeenCalled()
+    expect(
+      within(container).getByRole('button', { name: 'Expand' }),
+    ).toBeInTheDocument()
   })
 })
 
