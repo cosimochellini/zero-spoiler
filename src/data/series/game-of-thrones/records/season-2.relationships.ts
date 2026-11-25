@@ -3679,6 +3679,80 @@ const winterfell = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 3's Essos cards for the season-2 cast (#1650): season 3 and A Storm
+ * of Swords through chapter 52, episodes 21 to 30 and chapters 144 to 196.
+ * The new characters' own cards are in `season-3.relationships.ts`.
+ */
+const essos3 = {
+  // Arstan Whitebeard (books only)
+  arsDaenerysRhaegar: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen he and Belwas came to fetch. On the ship from Qarth he tells her he served in her father’s time, and speaks to her of her brother Rhaegar.',
+      it: 'La regina che lui e Belwas sono venuti a prendere. Sulla nave da Qarth le dice di aver servito ai tempi di suo padre, e le parla di suo fratello Rhaegar.',
+    },
+  },
+  arsJorahWary: {
+    character: 'jorah-mormont',
+    type: { en: 'Wary knight', it: 'Cavaliere diffidente' },
+    summary: {
+      en: 'Daenerys’s knight, who warns her that the old squire is more than he seems.',
+      it: 'Il cavaliere di Daenerys, che la avverte che il vecchio scudiero è più di quel che sembra.',
+    },
+  },
+  arsBelwasMaster: {
+    character: 'strong-belwas',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The eunuch pit fighter he serves as squire, and leaves the queen to attend to.',
+      it: 'L’eunuco, combattente delle arene, di cui è lo scudiero e per cui lascia la regina.',
+    },
+  },
+  arsDaenerysShadow: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen he serves. At Astapor he argued against a slave army; during the night attack on Yunkai he tells her that grief hung over Rhaegar all his life.',
+      it: 'La regina che serve. Ad Astapor era contrario a un esercito di schiavi; durante l’attacco notturno a Yunkai le racconta che il dolore ha pesato su Rhaegar per tutta la vita.',
+    },
+  },
+  // Drogon (books)
+  drgDaenerysTrade: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'The mother of dragons. She trades him to a slaver for the Unsullied, and at the plaza, at her word, he burns his new master.',
+      it: 'La madre dei draghi. Lo cede a uno schiavista in cambio degli Immacolati, e nella piazza, a un suo ordine, lui brucia il suo nuovo padrone.',
+    },
+  },
+  drgKraznys: {
+    character: 'kraznys-mo-nakloz',
+    type: { en: 'Would-be master', it: 'Aspirante padrone' },
+    summary: {
+      en: 'The slaver who receives him in exchange for the Unsullied. Drogon will not obey him, and burns him.',
+      it: 'Lo schiavista che lo riceve in cambio degli Immacolati. Drogon non gli obbedisce, e lo brucia.',
+    },
+  },
+  drgKraznysDead: {
+    character: 'kraznys-mo-nakloz',
+    type: { en: 'Would-be master', it: 'Aspirante padrone' },
+    summary: {
+      en: 'The slaver who received him in exchange for the Unsullied. Drogon would not obey him, and burned him to death.',
+      it: 'Lo schiavista che lo aveva ricevuto in cambio degli Immacolati. Drogon non gli ha obbedito, e lo ha bruciato vivo.',
+    },
+  },
+  drgGrazdan: {
+    character: 'grazdan-mo-eraz',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The Yunkish envoy who threatens Daenerys in her tent. At her word Drogon sets his tokar alight.',
+      it: 'L’inviato di Yunkai che minaccia Daenerys nella sua tenda. A un ordine di lei, Drogon gli dà fuoco al tokar.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season2Relationships = {
   // Daisy, show only: shown round at her gate, in Pycelle’s bed at 13 and
   // sent to the king at 14. Her chapters only order her.
@@ -3986,6 +4060,32 @@ export const season2Relationships = {
         essos.drgViserion,
       ],
     },
+    // Stage 3 (#1650): Daenerys III, the plaza of Astapor (chapter 171),
+    // and Daenerys IV, the envoy of Yunkai (186). The show still names no
+    // dragon.
+    {
+      episode: 40,
+      chapter: 171,
+      source: 'chapter',
+      value: [
+        essos3.drgDaenerysTrade,
+        essos3.drgKraznys,
+        essos.drgRhaegal,
+        essos.drgViserion,
+      ],
+    },
+    {
+      episode: 40,
+      chapter: 186,
+      source: 'chapter',
+      value: [
+        essos3.drgDaenerysTrade,
+        essos3.drgGrazdan,
+        essos3.drgKraznysDead,
+        essos.drgRhaegal,
+        essos.drgViserion,
+      ],
+    },
   ],
   'rhaegal': [
     {
@@ -4031,6 +4131,28 @@ export const season2Relationships = {
         essos.arsBelwas,
         essos.arsIllyrio,
         essos.arsJorah,
+      ],
+    },
+    // Stage 3 (#1650): Daenerys I, at sea (chapter 152), and Daenerys IV,
+    // Yunkai (186).
+    {
+      episode: 21,
+      chapter: 152,
+      source: 'chapter',
+      value: [
+        essos3.arsDaenerysRhaegar,
+        essos3.arsJorahWary,
+        essos3.arsBelwasMaster,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 186,
+      source: 'chapter',
+      value: [
+        essos3.arsDaenerysShadow,
+        essos3.arsJorahWary,
+        essos3.arsBelwasMaster,
       ],
     },
   ],
