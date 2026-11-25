@@ -13465,8 +13465,8 @@ const essos3 = {
     character: 'mero',
     type: { en: 'Enemy', it: 'Nemico' },
     summary: {
-      en: 'The captain of the Second Sons, who mocks her at the parley; she tells Barristan to kill him first. Daario brought her his head.',
-      it: 'Il capitano dei Secondi Figli, che la deride alla trattativa; lei dice a Barristan di ucciderlo per primo. Daario le ha portato la sua testa.',
+      en: 'The captain of the Second Sons, who mocked her at the parley; she told Barristan to kill him first. Daario brought her his head.',
+      it: 'Il capitano dei Secondi Figli, che l’ha derisa alla trattativa; lei ha detto a Barristan di ucciderlo per primo. Daario le ha portato la sua testa.',
     },
   },
   daeMissandeiTongues: {
@@ -13768,16 +13768,16 @@ const essos3 = {
     character: 'mero',
     type: { en: 'Enemy', it: 'Nemico' },
     summary: {
-      en: 'The captain of the Second Sons, whose insults to the queen he swallows at the parley. Daario brought her his head that night.',
-      it: 'Il capitano dei Secondi Figli, di cui alla trattativa sopporta in silenzio gli insulti alla regina. Quella notte Daario le ha portato la sua testa.',
+      en: 'The captain of the Second Sons, who insulted the queen at the parley in her tent. Daario brought her his head that night.',
+      it: 'Il capitano dei Secondi Figli, che alla trattativa nella tenda ha insultato la regina. Quella notte Daario le ha portato la sua testa.',
     },
   },
   barDaario: {
     character: 'daario-naharis',
     type: { en: 'Sellsword', it: 'Mercenario' },
     summary: {
-      en: 'A sellsword of the Second Sons he brings to the queen with his captains, who swears himself to her that night.',
-      it: 'Un mercenario dei Secondi Figli che conduce dalla regina con i suoi capitani, e che quella notte le giura fedeltà.',
+      en: 'A sellsword of the Second Sons who comes to the queen’s tent with his captains, and swears himself to her that night.',
+      it: 'Un mercenario dei Secondi Figli che viene nella tenda della regina con i suoi capitani, e che quella notte le giura fedeltà.',
     },
   },
 } satisfies Record<string, Relationship>

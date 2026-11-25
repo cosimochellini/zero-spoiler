@@ -1960,5 +1960,134 @@ describe.each(LOCALES)(
       )
       expect(people('daenerys-targaryen', ch(152))).toContain('illyrio-mopatis')
     })
+
+    it.each([
+      // owner, the medium, the number of a snapshot, a person it adds there
+      {
+        owner: 'daenerys-targaryen',
+        unit: 'episode',
+        at: 25,
+        person: 'grey-worm',
+      },
+      {
+        owner: 'daenerys-targaryen',
+        unit: 'episode',
+        at: 28,
+        person: 'daario-naharis',
+      },
+      {
+        owner: 'daenerys-targaryen',
+        unit: 'chapter',
+        at: 186,
+        person: 'daario-naharis',
+      },
+      {
+        owner: 'jorah-mormont',
+        unit: 'episode',
+        at: 21,
+        person: 'barristan-selmy',
+      },
+      {
+        owner: 'jorah-mormont',
+        unit: 'episode',
+        at: 29,
+        person: 'daario-naharis',
+      },
+      { owner: 'barristan-selmy', unit: 'episode', at: 28, person: 'mero' },
+      {
+        owner: 'barristan-selmy',
+        unit: 'episode',
+        at: 28,
+        person: 'daario-naharis',
+      },
+      { owner: 'grey-worm', unit: 'episode', at: 29, person: 'daario-naharis' },
+      {
+        owner: 'daario-naharis',
+        unit: 'episode',
+        at: 29,
+        person: 'jorah-mormont',
+      },
+      { owner: 'missandei', unit: 'episode', at: 25, person: 'grey-worm' },
+      { owner: 'missandei', unit: 'episode', at: 28, person: 'daario-naharis' },
+      { owner: 'mero', unit: 'episode', at: 28, person: 'daenerys-targaryen' },
+      { owner: 'mero', unit: 'chapter', at: 186, person: 'daenerys-targaryen' },
+    ] as const)(
+      'opens $owner’s $unit $at snapshot with $person',
+      ({ owner, unit, at, person }) => {
+        const mark = unit === 'episode' ? ep : ch
+
+        expect(people(owner, mark(at - 1))).not.toContain(person)
+        expect(people(owner, mark(at))).toContain(person)
+      },
+    )
+
+    it.each([
+      // owner, the medium, the number of a snapshot, a person it rewords
+      {
+        owner: 'jorah-mormont',
+        unit: 'episode',
+        at: 25,
+        person: 'daenerys-targaryen',
+      },
+      {
+        owner: 'jorah-mormont',
+        unit: 'episode',
+        at: 29,
+        person: 'daenerys-targaryen',
+      },
+      {
+        owner: 'barristan-selmy',
+        unit: 'episode',
+        at: 23,
+        person: 'daenerys-targaryen',
+      },
+      {
+        owner: 'barristan-selmy',
+        unit: 'episode',
+        at: 28,
+        person: 'daenerys-targaryen',
+      },
+      {
+        owner: 'arstan-whitebeard',
+        unit: 'chapter',
+        at: 186,
+        person: 'daenerys-targaryen',
+      },
+      {
+        owner: 'grey-worm',
+        unit: 'episode',
+        at: 29,
+        person: 'daenerys-targaryen',
+      },
+      {
+        owner: 'daario-naharis',
+        unit: 'episode',
+        at: 29,
+        person: 'daenerys-targaryen',
+      },
+      {
+        owner: 'missandei',
+        unit: 'episode',
+        at: 25,
+        person: 'daenerys-targaryen',
+      },
+      {
+        owner: 'missandei',
+        unit: 'episode',
+        at: 28,
+        person: 'daenerys-targaryen',
+      },
+    ] as const)(
+      'rewords $owner’s card in its $unit $at snapshot for $person',
+      ({ owner, unit, at, person }) => {
+        const mark = unit === 'episode' ? ep : ch
+
+        expect(said(owner, person, mark(at - 1))).toBeDefined()
+        expect(said(owner, person, mark(at))).toBeDefined()
+        expect(said(owner, person, mark(at))).not.toBe(
+          said(owner, person, mark(at - 1)),
+        )
+      },
+    )
   },
 )
