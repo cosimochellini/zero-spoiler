@@ -7432,7 +7432,7 @@ export const season1Chronicles = {
       [11, 96],
       { it: 'Un’inviata per Renly', en: 'An envoy to Renly' },
       {
-        it: 'Robb insiste perché sua madre, [[catelyn-stark|Catelyn]], vada da [[renly-baratheon|Renly Baratheon]] come sua inviata: il nonno è troppo malato, e a Robb servono il prozio Brynden per guidare gli esploratori e lo zio Edmure per tenere Delta delle Acque quando lui marcerà. Catelyn trova avventato marciare, ma Robb risponde che aspettare lo farebbe sembrare impaurito, ora che [[lysa-arryn|Lysa Arryn]] gli nega il suo sostegno. Alla domanda se voglia attaccare Harrenhal, dice di non aver parlato di Harrenhal, e minaccia di mandare il [[greatjon-umber|Grande Jon]] al posto della madre.',
+        it: 'Robb insiste perché sua madre, [[catelyn-stark|Catelyn]], vada da [[renly-baratheon|Renly Baratheon]] come sua inviata: il nonno è troppo malato, e a Robb servono il prozio Brynden per guidare gli esploratori e lo zio Edmure per tenere Delta delle Acque quando lui marcerà. Catelyn trova avventato marciare, ma Robb risponde che aspettare lo farebbe sembrare impaurito, ora che [[lysa-arryn|Lysa Arryn]] gli nega il suo sostegno. Alla domanda se voglia attaccare Harrenhal, dice di non aver parlato di Harrenhal, e minaccia di mandare il [[greatjon-umber|Greatjon Umber]] al posto della madre.',
         en: 'Robb insists that his mother, [[catelyn-stark|Catelyn]], go to [[renly-baratheon|Renly Baratheon]] as his envoy: his grandfather is too ill, and he needs his great-uncle Brynden to lead his scouts and his uncle Edmure to hold Riverrun when he marches. Catelyn thinks marching rash, but Robb says that waiting would make him look afraid, with [[lysa-arryn|Lysa Arryn]] refusing him her support. Asked if he means to attack Harrenhal, he says he has said nothing of Harrenhal, and threatens to send the [[greatjon-umber|Greatjon]] in her place.',
       },
     ),
@@ -7448,7 +7448,7 @@ export const season1Chronicles = {
       [14, 113],
       { it: 'Notizie dall’ovest', en: 'News from the west' },
       {
-        it: 'Robb ha lasciato Delta delle Acque allo zio Edmure ed è marciato verso ovest. A [[catelyn-stark|Catelyn]] arriva la notizia che ha schiacciato a Oxcross le nuove leve di ser Stafford Lannister, raggiunte seguendo un sentiero che [[grey-wind|Vento Grigio]] ha trovato intorno al Dente d’Oro, e che il [[greatjon-umber|Grande Jon]] ha preso tre miniere d’oro dei Lannister. Intanto lord [[tywin-lannister|Tywin]] ha lasciato Harrenhal e marcia su Delta delle Acque.',
+        it: 'Robb ha lasciato Delta delle Acque allo zio Edmure ed è marciato verso ovest. A [[catelyn-stark|Catelyn]] arriva la notizia che ha schiacciato a Oxcross le nuove leve di ser Stafford Lannister, raggiunte seguendo un sentiero che [[grey-wind|Vento Grigio]] ha trovato intorno al Dente d’Oro, e che il [[greatjon-umber|Greatjon Umber]] ha preso tre miniere d’oro dei Lannister. Intanto lord [[tywin-lannister|Tywin]] ha lasciato Harrenhal e marcia su Delta delle Acque.',
         en: 'Robb has left Riverrun to his uncle Edmure and marched west. Word reaches [[catelyn-stark|Catelyn]] that he has crushed Ser Stafford Lannister’s new levies at Oxcross, which he reached by a trail [[grey-wind|Grey Wind]] found around the Golden Tooth, and that the [[greatjon-umber|Greatjon]] has seized three Lannister gold mines. Meanwhile Lord [[tywin-lannister|Tywin]] has left Harrenhal and is marching on Riverrun.',
       },
     ),
