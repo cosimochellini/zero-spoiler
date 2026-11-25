@@ -1550,4 +1550,332 @@ export const season2Chronicles = {
       },
     ),
   ],
+  // The Wall and beyond (#1488). The show and the books tell the ranging in
+  // their own ways, so every story is one medium’s. Thoren Smallwood, Jarman
+  // Buckwell, Mallador Locke, Stonesnake, Ebben, Dalbridge and the Lord of
+  // Bones are the books’ records; Gilly and Eddison Tollett open on screen at
+  // episodes 15 and 20, so their book stories are ordered there.
+  'thoren-smallwood': [
+    inBooks(
+      [11, 80],
+      { it: 'Il posto del Primo Ranger', en: 'The First Ranger’s place' },
+      {
+        it: 'Thoren Smallwood guida i ranger mentre il Primo Ranger è disperso. Alla vigilia della grande spedizione sostiene nel solario che il posto del lord comandante è a Castello Nero, e che il comando dovrebbe spettare a lui. [[jeor-mormont|Jeor Mormont]] non vuole sentirne parlare: non aspetterà di sapere se andrà perduta anche una terza spedizione, e [[benjen-stark|Benjen Stark]] resta il Primo Ranger finché la sua morte non sarà certa. Quando Smallwood se ne va, Mormont si lamenta che Smallwood lo abbia definito troppo vecchio per una spedizione.',
+        en: 'Thoren Smallwood leads the rangers while the First Ranger is missing. On the eve of the great ranging he argues in the solar that the Lord Commander’s place is at Castle Black, and that the command should be his. [[jeor-mormont|Jeor Mormont]] will have none of it: he will not wait to learn whether a third ranging is lost, and [[benjen-stark|Benjen Stark]] is First Ranger until his death is known. Once Smallwood has gone, Mormont complains that Smallwood called him too old for a ranging.',
+      },
+    ),
+    inBooks(
+      [11, 87],
+      { it: 'Un anno fa', en: 'A year ago' },
+      {
+        it: 'Ad Albero Bianco Thoren Smallwood guarda il grande albero-diga e dice di capire perché gli uomini, quando arrivarono a Westeros, temessero gli alberi del cuore e li abbattessero. Vestito con un’armatura e un mantello che gli danno un’aria più nobile di quella del lord comandante, dichiara che un anno fa nel villaggio c’erano ancora dei bruti. [[jarman-buckwell|Jarman Buckwell]] risponde che in un anno possono cambiare molte cose. Quando la colonna riparte, Smallwood ne guida l’avanguardia dietro gli esploratori di Buckwell.',
+        en: 'At Whitetree, Thoren Smallwood looks at the great weirwood and says he understands why men feared the heart trees and cut them down when they first came to Westeros. Dressed in armour and a cloak that make him look more lordly than the Lord Commander, he declares that there were wildlings in the village a year ago. [[jarman-buckwell|Jarman Buckwell]] answers that much can change in a year. When the column marches on, Smallwood leads its vanguard behind Buckwell’s scouts.',
+      },
+    ),
+    inBooks(
+      [15, 117],
+      { it: 'Lungo il fiume', en: 'Up the river' },
+      {
+        it: 'Sul Pugno dei Primi Uomini [[qhorin-halfhand|Qhorin il Monco]] porta la notizia che Mance Rayder ha dei warg e dei mammut e cerca qualcosa di potente tra le montagne, e consiglia di mandare esploratori. Il lord comandante [[jeor-mormont|Mormont]] fa partire tre gruppi. [[jarman-buckwell|Jarman Buckwell]] porta quattro uomini tra le montagne, Qhorin porta i suoi in un passo, e Thoren Smallwood guiderà un gruppo lungo il fiume.',
+        en: 'On the Fist of the First Men, [[qhorin-halfhand|Qhorin Halfhand]] brings word that Mance Rayder has wargs and mammoths and is searching the mountains for some power, and advises sending scouts. Lord Commander [[jeor-mormont|Mormont]] sends out three parties. [[jarman-buckwell|Jarman Buckwell]] takes four men into the mountains, Qhorin takes his own into a pass, and Thoren Smallwood is to lead a party up the river.',
+      },
+    ),
+  ],
+  'eddison-tollett': [
+    inBooks(
+      [20, 87],
+      { it: 'Tempi duri', en: 'Hard times' },
+      {
+        it: 'Ad Albero Bianco [[jon-snow|Jon]] viene messo in coppia con Eddison Tollett, uno scudiero dai capelli grigi detto Edd l’Addolorato, per perquisire le case vuote. Già è brutto che i morti camminino, dice Edd, e ora il lord comandante li vuole anche far parlare; i morti potrebbero mentire, o lamentarsi senza fine. Davanti a una capanna spoglia, dice di essere nato in una casa così, prima di cadere in disgrazia. Quando Jon gli chiede che cosa sia successo al villaggio, Edd risponde che preferisce non immaginarlo.',
+        en: 'At Whitetree [[jon-snow|Jon]] is paired with Eddison Tollett, a grey-haired squire known as Dolorous Edd, to search the empty houses. The dead walking is bad enough, Edd says, and now the Lord Commander wants them talking too; the dead might lie, or complain without end. Shown a bare hut, he says he was born in a house like it, before he fell on hard times. Asked what happened to the village, he says he would rather not imagine.',
+      },
+    ),
+    inBooks(
+      [20, 97],
+      { it: 'Tombe segrete', en: 'Secret graves' },
+      {
+        it: 'Alla Fortezza di Craster Edd l’Addolorato tiene il cavallo del lord comandante, e dice a [[jon-snow|Jon]] che è atteso nella sala ma il lupo deve restare fuori. Quando Jon torna a prendere un’ascia come dono d’ospite e del vino, Edd dice che il lord comandante riavrà l’ascia piantata nel cranio, e che Craster ubriaco taglierà solo un orecchio prima di ucciderli. Quando Jon gli dice che [[thoren-smallwood|Thoren Smallwood]] considera Craster un amico, Edd risponde che gli amici tra i bruti ti seppelliscono semplicemente in tombe segrete.',
+        en: 'At Craster’s Keep Dolorous Edd holds the Lord Commander’s horse, and tells [[jon-snow|Jon]] he is wanted in the hall but the wolf must stay outside. When Jon comes back for an axe as a guest gift and for wine, Edd says the Lord Commander will get the axe back buried in his skull, and that a drunk Craster will only cut off an ear before he kills them. Told that [[thoren-smallwood|Thoren Smallwood]] calls Craster a friend, Edd answers that wildling friends simply bury you in secret graves.',
+      },
+    ),
+    onScreen(
+      [20, 142],
+      { it: 'Niente di interessante', en: 'Nothing interesting' },
+      {
+        it: 'Vicino al Pugno dei Primi Uomini, Edd raccoglie sterco gelato per i fuochi con [[grenn|Grenn]] e [[samwell-tarly|Sam]]. Quando Sam parla di [[gilly|Gilly]], Edd lo schernisce: Sam la trova interessante solo perché gli ha rivolto la parola. Sam ribatte che in Edd non trova niente di interessante. Un corno suona, poi una seconda volta, ed Edd dice agli altri di tornare al Pugno invece di affrontare i bruti da soli. Al terzo squillo urla di correre. Edd e Grenn raggiungono il Pugno senza accorgersi che Sam è rimasto indietro.',
+        en: 'Near the Fist of the First Men, Edd gathers frozen dung for the fires with [[grenn|Grenn]] and [[samwell-tarly|Sam]]. When Sam talks about [[gilly|Gilly]], Edd sneers that Sam only finds her interesting because she spoke to him; Sam retorts that what he finds interesting about Edd is nothing at all. A horn sounds, then a second time, and Edd tells the others to get back to the Fist rather than fight wildlings alone. At the third blast he screams at them to run. Edd and Grenn reach the Fist without noticing that Sam has been left behind.',
+      },
+    ),
+  ],
+  'jarman-buckwell': [
+    inBooks(
+      [11, 87],
+      { it: 'In un anno cambia molto', en: 'Much can change in a year' },
+      {
+        it: 'Jarman Buckwell cavalca con la grande spedizione del lord comandante oltre la Barriera. Al villaggio vuoto di Albero Bianco, quando [[thoren-smallwood|Thoren Smallwood]] dichiara che un anno prima c’erano ancora dei bruti, Buckwell risponde che in un anno possono cambiare molte cose. Quando la colonna riparte verso un lago per accamparsi, gli esploratori di Buckwell partono per primi, davanti all’avanguardia di Smallwood e al resto dei duecento uomini.',
+        en: 'Jarman Buckwell rides with the Lord Commander’s great ranging beyond the Wall. At the empty village of Whitetree, when [[thoren-smallwood|Thoren Smallwood]] declares that there were wildlings there a year ago, Buckwell answers that much can change in a year. When the column moves on towards a lake to make camp, Buckwell’s scouts ride out first, ahead of Smallwood’s vanguard and the rest of the two hundred men.',
+      },
+    ),
+    inBooks(
+      [11, 97],
+      { it: 'Il re di Craster', en: 'Craster’s king' },
+      {
+        it: 'Dopo sette villaggi vuoti, il corno degli esploratori di Jarman Buckwell fa sapere al lord comandante che alla Fortezza di Craster c’è ancora qualcuno. Nella sala di [[craster|Craster]] Buckwell gli chiede di Mance Rayder, e Craster risponde che il popolo libero non ha bisogno di re. Il mattino dopo, quando [[jon-snow|Jon]] passa accanto agli esploratori, Buckwell gli dice di tenere ben affilata la spada: presto gli servirà.',
+        en: 'After seven empty villages, the horn of Jarman Buckwell’s scouts tells the Lord Commander that there are still people at Craster’s Keep. In [[craster|Craster]]’s hall Buckwell asks him about Mance Rayder, and Craster answers that the free folk have no need of kings. The next morning, as [[jon-snow|Jon]] passes the scouts, Buckwell tells him to keep a good edge on his sword: he will be needing it soon enough.',
+      },
+    ),
+    inBooks(
+      [15, 117],
+      { it: 'Tra le montagne', en: 'Into the mountains' },
+      {
+        it: 'Sul Pugno dei Primi Uomini Jarman Buckwell dice al lord comandante che seguire il fiume è la strada più facile per raggiungere le montagne, ma che Mance Rayder li vedrebbe arrivare. Quando [[qhorin-halfhand|Qhorin il Monco]] arriva e consiglia di mandare esploratori, [[jeor-mormont|Mormont]] fa partire tre gruppi, e Buckwell porterà quattro uomini su per le montagne.',
+        en: 'On the Fist of the First Men, Jarman Buckwell tells the Lord Commander that following the river is the easiest road into the mountains, but that Mance Rayder would see them coming. When [[qhorin-halfhand|Qhorin Halfhand]] arrives and advises sending scouts, [[jeor-mormont|Mormont]] sends out three parties, and Buckwell is to take four men and climb into the mountains.',
+      },
+    ),
+  ],
+  'mallador-locke': [
+    inBooks(
+      [11, 87],
+      { it: 'Meno preoccupazioni', en: 'Fewer worries' },
+      {
+        it: 'Ser Mallador Locke è un cavaliere dei Guardiani della notte nella grande spedizione del lord comandante. Al villaggio vuoto di Albero Bianco, mentre [[thoren-smallwood|Thoren Smallwood]] e [[jarman-buckwell|Jarman Buckwell]] discutono di quando i bruti se ne siano andati, Locke dice la sua: meno bruti, meno preoccupazioni. Quando la colonna riparte, guida le salmerie, dietro il grosso delle forze del lord comandante.',
+        en: 'Ser Mallador Locke is a knight of the Night’s Watch on the Lord Commander’s great ranging. At the empty village of Whitetree, while [[thoren-smallwood|Thoren Smallwood]] and [[jarman-buckwell|Jarman Buckwell]] argue over when the wildlings left, Locke gives his opinion: fewer wildlings means fewer worries. When the column marches on, he leads the baggage train, behind the Lord Commander’s main force.',
+      },
+    ),
+    inBooks(
+      [15, 108],
+      { it: 'Il consiglio sul Pugno', en: 'The council on the Fist' },
+      {
+        it: 'Sul Pugno dei Primi Uomini il lord comandante si consulta con i suoi ufficiali davanti al vino caldo speziato. [[jarman-buckwell|Jarman Buckwell]] dice che seguire il fiume è la strada più facile per le montagne, anche se Mance Rayder saprebbe del loro arrivo. Ser Mallador Locke propone invece uno di due passi di montagna. [[jeor-mormont|Mormont]] scarta entrambe le idee: non rischierà le montagne se non è costretto, e la spedizione resterà sul Pugno e lo fortificherà.',
+        en: 'On the Fist of the First Men the Lord Commander takes counsel with his officers over hot spiced wine. [[jarman-buckwell|Jarman Buckwell]] says following the river is the easiest road into the mountains, though Mance Rayder would know they were coming. Ser Mallador Locke recommends one of two mountain passes instead. [[jeor-mormont|Mormont]] decides against both: he will not risk the mountains unless he must, and the ranging will stay on the Fist and strengthen it.',
+      },
+    ),
+  ],
+  'craster': [
+    inBooks(
+      [11, 97],
+      { it: 'Popolo libero', en: 'Free folk' },
+      {
+        it: 'Craster è l’unico nella sua sala a sedere su una sedia, anche davanti al lord comandante. Dice a [[jeor-mormont|Jeor Mormont]] di non vedere [[benjen-stark|Benjen Stark]] da tre anni, finge di non sapere nulla dei morti che camminano, e rifiuta una scorta fino alla Barriera: lui è del popolo libero. Quando Mance Rayder gli ha mandato un uomo per farlo inginocchiare, Craster lo ha rimandato indietro senza lingua. Darà da mangiare solo a venti uomini, accetta volentieri il vino, e giura che chi metterà le mani sulle sue mogli le perderà. Quando sente il nome di [[jon-snow|Jon]], lo disprezza come bastardo.',
+        en: 'Craster is the only man in his hall who sits in a chair, even with the Lord Commander there. He tells [[jeor-mormont|Jeor Mormont]] that he has not seen [[benjen-stark|Benjen Stark]] in three years, pretends to know nothing of the dead who walk, and refuses an escort to the Wall: he is free folk. When Mance Rayder sent a man to make him kneel, Craster sent him back without his tongue. He will feed only twenty, takes the wine gladly, and swears that any man who lays a hand on his wives will lose it. Hearing [[jon-snow|Jon]]’s name, he scorns him as a bastard.',
+      },
+    ),
+    onScreen(
+      [11, 97],
+      { it: 'L’ospite del Lord Corvo', en: 'The Lord Crow’s host' },
+      {
+        it: 'La grande spedizione dei Guardiani della notte arriva alla Fortezza di Craster. Craster dice al lord comandante [[jeor-mormont|Mormont]] di non vedere [[benjen-stark|Benjen Stark]] da tre anni, e chiede del vino. Quando [[jon-snow|Jon]] protesta perché lo chiama uomo del sud, Craster si fa beffe del suo nome da bastardo: per lui chiunque venga da sud della Barriera è un uomo del sud. Ricevuta un’ascia, Craster rivela che Mance Rayder sta radunando un esercito per marciare a sud. Fa dire a una delle sue figlie e mogli che sono contente, e avverte che chi toccherà le sue mogli perderà una mano.',
+        en: 'The great ranging of the Night’s Watch arrives at Craster’s Keep. Craster tells Lord Commander [[jeor-mormont|Mormont]] that he has not seen [[benjen-stark|Benjen Stark]] for three years, and asks for wine. When [[jon-snow|Jon]] objects to being called a southerner, Craster mocks his bastard name: anyone from south of the Wall is a southerner to him. Given an axe, Craster reveals that Mance Rayder is gathering an army to march south. He has one of his daughter-wives say they are content, and warns that any man who touches his wives will lose a hand.',
+      },
+    ),
+    onScreen(
+      [12, 97],
+      { it: 'Un’offerta nel bosco', en: 'An offering in the woods' },
+      {
+        it: 'Di notte Craster porta uno dei suoi neonati nel bosco, lo lascia a terra e torna verso la sua fortezza. Quando ritorna sul posto trova [[jon-snow|Jon]], che guarda un Estraneo raccogliere il bambino. Prima che Jon possa inseguire la creatura, Craster lo stordisce con un colpo alla testa.',
+        en: 'At night Craster carries one of his babies into the woods, leaves it on the ground and turns back towards his keep. When he returns to the spot, he finds [[jon-snow|Jon]] watching as a White Walker picks the baby up. Before Jon can go after the creature, Craster knocks him out with a blow to the head.',
+      },
+    ),
+    onScreen(
+      [13, 97],
+      { it: 'Fuori da casa mia', en: 'Out of my house' },
+      {
+        it: 'Craster trascina [[jon-snow|Jon]] nella sua fortezza, con i polsi legati e il volto insanguinato. Prende a calci il prigioniero, sveglia i confratelli e ordina a tutti di andarsene, dando la colpa a Jon per essersi intromesso. Craster consegna Lungo Artiglio al lord comandante [[jeor-mormont|Mormont]] e pretende che rimedi. All’alba i Guardiani della notte lasciano la sua fortezza.',
+        en: 'Craster drags [[jon-snow|Jon]] back into his keep with his wrists bound and his face bloodied. He kicks his captive, wakes the black brothers and orders them all out, blaming Jon for meddling. Craster hands Longclaw to Lord Commander [[jeor-mormont|Mormont]] and insists that he make things right. The Night’s Watch leaves his keep at dawn.',
+      },
+    ),
+  ],
+  'gilly': [
+    inBooks(
+      [15, 97],
+      { it: 'Se sarà un maschio', en: 'If it is a boy' },
+      {
+        it: 'Gilly ha quindici anni, è una delle figlie di [[craster|Craster]] e ora una delle sue mogli. Quando [[ghost-direwolf|Spettro]] le prende i conigli che sperava di far riprodurre, [[jon-snow|Jon]] promette che i Guardiani la ripagheranno. All’alba, con indosso il mantello di [[samwell-tarly|Sam]], Gilly chiede a Jon di portarla via: è incinta, e se sarà un maschio Craster lo darà agli dei, che arrivano di notte come ombre bianche. Jon risponde che la spedizione va nella direzione opposta, e che la scelta spetta al lord comandante. Sam spera di poterla portare via al ritorno.',
+        en: 'Gilly is fifteen, one of [[craster|Craster]]’s daughters and now one of his wives. When [[ghost-direwolf|Ghost]] takes the rabbits she hoped to breed, [[jon-snow|Jon]] promises that the Watch will make it good. At dawn, wearing the cloak of [[samwell-tarly|Sam]], she asks Jon to take her away: she is with child, and if it is a boy Craster will give it to the gods, who come at night like white shadows. Jon says the ranging goes the other way, and the choice is the Lord Commander’s. Sam hopes they can take her on the way back.',
+      },
+    ),
+    onScreen(
+      [15, 108],
+      { it: 'Una speranza', en: 'Something to hope for' },
+      {
+        it: 'Gilly è una delle figlie di [[craster|Craster]] e una delle sue mogli. Quando i Guardiani della notte si fermano alla fortezza, serve il vino e dice le parole che Craster vuole sentire: con lui sono al sicuro. Spaventata da [[ghost-direwolf|Spettro]], viene soccorsa da [[samwell-tarly|Sam]] e gli chiede di portarla via, ma [[jon-snow|Jon]] rifiuta. Prima che i confratelli partano, Sam le regala un ditale appartenuto alla madre di lui e promette di tornare a prenderla. Settimane dopo, al Pugno dei Primi Uomini, Sam dice che a Gilly quel posto piacerebbe.',
+        en: 'Gilly is one of [[craster|Craster]]’s daughters and one of his wives. When the Night’s Watch stays at the keep, she serves the wine, and says the words Craster wants: they are safe with him. Frightened by [[ghost-direwolf|Ghost]], she is rescued by [[samwell-tarly|Sam]] and asks him to take her away, but [[jon-snow|Jon]] refuses. Before the brothers leave, Sam gives her his mother’s thimble and promises to come back for her. Weeks later, at the Fist of the First Men, Sam says that Gilly would love it there.',
+      },
+    ),
+  ],
+  'qhorin-halfhand': [
+    inBooks(
+      [15, 117],
+      { it: 'Dalla Torre delle Ombre', en: 'From the Shadow Tower' },
+      {
+        it: 'Qhorin il Monco arriva al Pugno dei Primi Uomini con cento uomini della Torre delle Ombre. Lungo la strada hanno incontrato una banda di bruti in esplorazione lungo la Barriera, ne hanno ucciso il capo e preso dei prigionieri, perdendo quattro confratelli. Qhorin dice a [[jon-snow|Jon]] di aver conosciuto suo padre e suo nonno. Nella tenda del lord comandante riferisce che Mance Rayder ha dei warg e dei mammut, vuole abbattere la Barriera, e cerca qualcosa di potente tra le montagne. Consiglia di mandare esploratori. [[jeor-mormont|Mormont]] è d’accordo, e Qhorin sceglie Jon per il proprio gruppo: oltre la Barriera gli antichi dei dei Primi Uomini e degli Stark sono ancora forti.',
+        en: 'Qhorin Halfhand reaches the Fist of the First Men with a hundred men of the Shadow Tower. On the way they met a wildling band scouting along the Wall, killed its leader and took captives, losing four brothers. Qhorin tells [[jon-snow|Jon]] he knew his father and grandfather. In the Lord Commander’s tent he reports that Mance Rayder has wargs and mammoths, means to break the Wall, and is searching the mountains for some power. He advises sending scouts. [[jeor-mormont|Mormont]] agrees, and Qhorin picks Jon for his own party: the old gods of the First Men and of the Starks are still strong beyond the Wall.',
+      },
+    ),
+    onScreen(
+      [15, 117],
+      { it: 'Arriva il Monco', en: 'The Halfhand arrives' },
+      {
+        it: 'Qhorin guida un gruppo a nord dalla Torre delle Ombre per incontrare il lord comandante [[jeor-mormont|Mormont]] sul Pugno dei Primi Uomini. Avverte che Mance Rayder, un tempo confratello dei Guardiani, ha organizzato i bruti, e riferisce di vedette tra le montagne. I Guardiani, dice, devono combattere come i bruti: un piccolo gruppo deve occuparsi delle vedette, e lo guiderà Qhorin. Quando Mormont rifiuta la richiesta di [[jon-snow|Jon]] di unirsi a loro, ricordandogli che si è fatto picchiare da Craster, Qhorin prende le difese di Jon. Mormont lascia partire Jon con lui.',
+        en: 'Qhorin leads a force north from the Shadow Tower to meet Lord Commander [[jeor-mormont|Mormont]] on the Fist of the First Men. He warns that Mance Rayder, once a brother of the Watch, has the wildlings organized, and reports lookouts in the mountains. The Watch, he says, must fight like the wildlings: a small party should deal with the lookouts, and Qhorin will lead it. When Mormont refuses [[jon-snow|Jon]]’s request to join, reminding him that Craster beat him, Qhorin speaks up for Jon. Mormont lets Jon go with him.',
+      },
+    ),
+    inBooks(
+      [16, 125],
+      { it: 'Le vedette nel passo', en: 'The watchers in the pass' },
+      {
+        it: 'Nel Passo Skirling il gruppo di Qhorin avvista in alto delle vedette dei bruti, e Qhorin avverte [[jon-snow|Jon]] e [[stonesnake|Stonesnake]], che salgono fino a loro, di non lasciarle suonare il corno. Quando Qhorin e gli altri arrivano in cima, la donna della lancia catturata, [[ygritte|Ygritte]], lo riconosce come il Monco, e dice che i bruti lo ucciderebbero anche se si arrendesse. Gli uomini di Qhorin la vogliono morta. Qhorin lascia Jon solo con lei perché lo faccia.',
+        en: 'In the Skirling Pass, Qhorin’s party spots wildling watchers high above, and Qhorin warns [[jon-snow|Jon]] and [[stonesnake|Stonesnake]], who climb up to them, not to let them sound their horn. When Qhorin and the others reach the top, the captive spearwife, [[ygritte|Ygritte]], knows him for the Halfhand, and says the wildlings would kill him even if he yielded. Qhorin’s men want her dead. Qhorin leaves Jon alone with her to carry it out.',
+      },
+    ),
+    onScreen(
+      [16, 125],
+      { it: 'Jon lasciato indietro', en: 'Leaving Jon behind' },
+      {
+        it: 'Il gruppo di Qhorin trova delle vedette dei bruti tra le montagne e le attacca di sorpresa, uccidendole tutte tranne una. [[jon-snow|Jon]] esita a uccidere l’ultima, una giovane donna, [[ygritte|Ygritte]]. Qhorin la interroga. Quando lei chiede che i corpi dei compagni vengano bruciati, Qhorin sospetta che voglia un fuoco per richiamare altri bruti. Ordina a Jon di giustiziarla e di raggiungere gli altri, e guida il gruppo su per la montagna.',
+        en: 'Qhorin’s party finds a group of wildling lookouts in the mountains and ambushes them, killing all but one. [[jon-snow|Jon]] hesitates to kill the last, a young woman, [[ygritte|Ygritte]]. Qhorin questions her. When she asks for her companions’ bodies to be burned, he suspects she wants a fire to draw other wildlings. He orders Jon to put her to death and catch up with the rest, and leads the party on up the mountain.',
+      },
+    ),
+    inBooks(
+      [17, 127],
+      { it: 'Conoscere i propri uomini', en: 'Knowing his men' },
+      {
+        it: 'Qhorin sente da [[jon-snow|Jon]] che [[ygritte|Ygritte]] gli ha promesso un posto tra i bruti, e conferma che Mance Rayder lo accoglierebbe: Mance era un bambino dei bruti cresciuto dai Guardiani, il loro ranger migliore, poi tornato dalla sua gente. Qhorin intuisce che Jon ha lasciato andare la ragazza, e non lo biasima; se l’avesse voluta morta, l’avrebbe fatta uccidere da [[ebben|Ebben]]. Un comandante, dice, deve conoscere i propri uomini. Quando un’aquila comincia a seguirli, Qhorin decide di tornare al Pugno, e lo scudiero [[dalbridge|Dalbridge]] resta indietro nel passo con le loro frecce.',
+        en: 'Qhorin hears from [[jon-snow|Jon]] that [[ygritte|Ygritte]] promised him a place among the wildlings, and confirms that Mance Rayder would take him in: Mance was a wildling boy raised by the Watch, its best ranger, who went back to his people. Qhorin guesses that Jon let the girl go, and does not blame him; had he wanted her dead, he would have had [[ebben|Ebben]] kill her. A commander, he says, must know his men. When an eagle starts to follow them, Qhorin turns back for the Fist, and Squire [[dalbridge|Dalbridge]] stays behind in the pass with their arrows.',
+      },
+    ),
+    onScreen(
+      [18, 142],
+      { it: 'Il piano di un prigioniero', en: 'A prisoner’s plan' },
+      {
+        it: 'Quando [[jon-snow|Jon]] non torna, Qhorin va a cercarlo e ne segue le tracce, ma i bruti tendono un’imboscata al suo gruppo. I suoi uomini vengono uccisi e Qhorin viene fatto prigioniero. Presto viene portato lì anche Jon, prigioniero a sua volta. Qhorin gli dice che gli altri sono morti mentre lo cercavano, e lo esorta a fare in modo che non siano morti invano: Jon può fare da spia tra i bruti. Poi Qhorin si scaglia contro Jon davanti ai loro carcerieri, come se fosse furioso, perché Jon sembri un traditore dei Guardiani.',
+        en: 'When [[jon-snow|Jon]] does not return, Qhorin goes looking for him and follows his tracks, but wildlings ambush his party. His men are killed and Qhorin is taken prisoner. Soon Jon is brought in as a captive too. Qhorin tells him that the others died while they searched for him, and urges Jon to make sure their deaths were not for nothing: he can serve as a spy among the wildlings. Then Qhorin rounds on Jon in front of their captors, as if in anger, so that Jon will look like a traitor to the Watch.',
+      },
+    ),
+    inBooks(
+      [20, 142],
+      { it: 'Il giuramento recitato', en: 'The oath recited' },
+      {
+        it: 'Con i bruti alle calcagna, Qhorin mandò [[ebben|Ebben]] avanti dal lord comandante e [[stonesnake|Stonesnake]] a piedi. Quella notte fece recitare a [[jon-snow|Jon]] il giuramento insieme a lui, e gli ordinò di arrendersi quando li avessero presi e di fare qualunque cosa i bruti chiedessero: Jon doveva scoprire i loro piani e tornare. Qhorin promise di dire al lord comandante che Jon non aveva mai infranto il giuramento. Quando il [[lord-of-bones|Lord delle Ossa]] li raggiunse, Jon si arrese. Qhorin disse che il sangue bastardo è vile, e Jon, a cui era stato ordinato di ucciderlo, lo abbatté. I bruti bruciarono il corpo di Qhorin.',
+        en: 'With the wildlings on their trail, Qhorin sent [[ebben|Ebben]] ahead to the Lord Commander and [[stonesnake|Stonesnake]] off on foot. That night he had [[jon-snow|Jon]] recite the oath with him, and ordered him to yield when they were caught and to do whatever the wildlings asked: Jon was to learn their plans and return. Qhorin promised to tell the Lord Commander that Jon never broke his oath. When the [[lord-of-bones|Lord of Bones]] overtook them, Jon yielded. Qhorin called bastard blood craven, and Jon, told to kill him, cut him down. The wildlings burned Qhorin’s body.',
+      },
+    ),
+    onScreen(
+      [20, 142],
+      { it: 'L’ultimo turno di guardia', en: 'The last watch' },
+      {
+        it: 'Condotto verso l’accampamento di Mance Rayder, Qhorin capì che l’inganno richiedeva la sua vita. Stordì uno dei carcerieri, prese una spada e attaccò [[jon-snow|Jon]], come per ucciderlo per tradimento. Il capo della banda li lasciò combattere, e Qhorin provocò Jon insultando suo padre e sua madre. Jon lo abbatté, come Qhorin voleva. Morendo, Qhorin sussurrò a Jon: siamo le sentinelle sulla Barriera. I bruti credettero che Jon avesse tradito il giuramento, e bruciarono il corpo di Qhorin perché non tornasse in vita.',
+        en: 'Marched towards Mance Rayder’s camp, Qhorin saw that the ruse needed his life. He stunned one of his captors, took a sword and attacked [[jon-snow|Jon]], seemingly to kill him for treachery. The leader of the war band let them fight, and Qhorin goaded Jon by insulting his father and his mother. Jon struck him down, as Qhorin meant him to. Dying, Qhorin whispered to Jon: we are the watchers on the Wall. The wildlings believed Jon had betrayed his oath, and burned Qhorin’s body so that it would not rise again.',
+      },
+    ),
+  ],
+  'stonesnake': [
+    inBooks(
+      [15, 125],
+      { it: 'La scalata', en: 'The climb' },
+      {
+        it: 'Stonesnake è un ranger del gruppo di [[qhorin-halfhand|Qhorin il Monco]]. Nel Passo Skirling lui e [[jon-snow|Jon]] si offrono di occuparsi delle vedette dei bruti appostate in alto, e Stonesnake insegna a Jon ad arrampicarsi su una parete a picco. In cima Stonesnake uccide la vedetta con il corno prima che possa suonarlo, mentre Jon abbatte l’uomo accanto al fuoco. Quando la terza, una donna della lancia di nome Ygritte, si arrende, Stonesnake avverte Jon che andrebbe uccisa, e chiama assassino e ladro il Bael del racconto di Ygritte.',
+        en: 'Stonesnake is a ranger in [[qhorin-halfhand|Qhorin Halfhand]]’s party. In the Skirling Pass he and [[jon-snow|Jon]] volunteer to deal with the wildling watchers high above, and he teaches Jon to climb a sheer cliff. At the top Stonesnake kills the watcher with the horn before he can sound it, while Jon cuts down the man by the fire. When the third, a spearwife named Ygritte, yields, Stonesnake warns Jon that she should be killed, and calls the Bael of Ygritte’s tale a murderer and a robber.',
+      },
+    ),
+    inBooks(
+      [20, 142],
+      { it: 'A piedi per i passi alti', en: 'On foot through the high passes' },
+      {
+        it: 'Mentre i bruti si avvicinano al gruppo di [[qhorin-halfhand|Qhorin]], la giumenta di Stonesnake si spezza una zampa. Qhorin lo manda avanti da solo, a piedi, per i passi alti fino al Pugno dei Primi Uomini. Stonesnake dovrà riferire al lord comandante [[jeor-mormont|Mormont]] tutto quello che [[jon-snow|Jon]] ha visto: che il lord comandante dovrà affrontare giganti, warg e di peggio, e che gli alberi hanno di nuovo gli occhi.',
+        en: 'As the wildlings close in on [[qhorin-halfhand|Qhorin]]’s party, Stonesnake’s mare breaks a leg. Qhorin sends him on alone, on foot, by the high passes to the Fist of the First Men. Stonesnake is to tell Lord Commander [[jeor-mormont|Mormont]] everything [[jon-snow|Jon]] saw: that the Lord Commander faces giants and wargs and worse, and that the trees have eyes again.',
+      },
+    ),
+  ],
+  'ygritte': [
+    inBooks(
+      [16, 125],
+      { it: 'Bael il Bardo', en: 'Bael the Bard' },
+      {
+        it: 'Ygritte dorme quando i confratelli piombano sulle vedette dei bruti nel Passo Skirling. Si arrende, e [[jon-snow|Jon]] la fa prigioniera. Quando scopre che è un bastardo degli Stark, gli racconta come Bael il Bardo rapì una figlia di Grande Inverno, e come il sangue degli Stark e quello dei bruti siano quindi lo stesso. Riconosce [[qhorin-halfhand|Qhorin]] come il Monco. Lasciata sola con Jon perché lui la uccida, gli dice che Mance Rayder lo accoglierebbe se scappasse con lei. Jon la lascia andare.',
+        en: 'Ygritte is asleep when the black brothers fall on the wildling watchers in the Skirling Pass. She yields, and [[jon-snow|Jon]] takes her captive. Learning that he is a Stark bastard, she tells him how Bael the Bard stole a daughter of Winterfell, so that Stark blood and wildling blood are the same. She knows [[qhorin-halfhand|Qhorin]] for the Halfhand. Left alone with Jon to be killed, she tells him Mance Rayder would take him in if he ran off with her. Jon lets her go.',
+      },
+    ),
+    onScreen(
+      [16, 125],
+      { it: 'Risparmiata', en: 'Spared' },
+      {
+        it: 'Ygritte è l’unica rimasta viva quando i ranger dei Guardiani della notte attaccano la sua postazione di vedetta tra le montagne. Chiede che i corpi dei compagni vengano bruciati, ma [[qhorin-halfhand|Qhorin]] sospetta che voglia un fuoco per richiamare altri bruti, e lascia [[jon-snow|Jon]] a giustiziarla. Ygritte lo implora di farla finita, ma Jon esita, e lei scappa. Jon la riprende, e perdono gli altri. Quella notte Ygritte lo convince a stringersi a lei per scaldarsi, poi lo stuzzica con delle avances, che Jon respinge.',
+        en: 'Ygritte is the only one left alive when the rangers of the Night’s Watch fall on her watch post in the mountains. She asks them to burn her companions’ bodies, but [[qhorin-halfhand|Qhorin]] suspects she wants a fire to draw other wildlings, and leaves [[jon-snow|Jon]] to put her to death. Ygritte begs him to get it over with, but Jon hesitates, and she runs. He catches her again, and they lose the others. That night she persuades him to lie close for warmth, then teases him with advances, which he rebuffs.',
+      },
+    ),
+    onScreen(
+      [17, 127],
+      {
+        it: 'Dalla parte sbagliata della Barriera',
+        en: 'The wrong side of the Wall',
+      },
+      {
+        it: 'Ancora prigioniera di [[jon-snow|Jon]], Ygritte lo prende in giro per la sua verginità mentre lui la porta con sé in cerca di [[qhorin-halfhand|Qhorin]]. Sostiene che il Nord apparteneva al popolo libero molto prima dell’arrivo degli Andali, e che gli uomini del Nord e i bruti discendono tutti dai Primi Uomini, perciò non ha senso che si combattano. Dopo aver colto Jon alla sprovvista con un altro tentativo di sedurlo, lo fa inciampare con la corda, scappa e lo conduce in un’imboscata dei bruti. Avrebbe dovuto prenderla quando poteva, gli dice.',
+        en: 'Still [[jon-snow|Jon]]’s prisoner, Ygritte teases him about his virginity as he leads her on in search of [[qhorin-halfhand|Qhorin]]. She argues that the North belonged to the free folk long before the Andals came, and that Northmen and wildlings alike descend from the First Men, so there is no sense in their fighting. Luring Jon off his guard with another attempt to seduce him, she trips him with the rope, escapes and leads him into a wildling ambush. He should have had her when he had the chance, she tells him.',
+      },
+    ),
+    onScreen(
+      [18, 142],
+      { it: 'Un regalo', en: 'A present' },
+      {
+        it: 'Ygritte porta [[jon-snow|Jon]] al capo della sua banda come regalo. Lui ordina di uccidere Jon, perché ha già un ranger da interrogare, [[qhorin-halfhand|Qhorin]]. Ygritte gli fa cambiare idea: Mance Rayder vorrà interrogare un uomo con il sangue degli Stark. Qhorin incolpa apertamente Jon della morte dei suoi uomini, e Ygritte è incuriosita dall’astio tra i due. Non sa che la rabbia di Qhorin è un espediente per infiltrare Jon tra i bruti come spia.',
+        en: 'Ygritte brings [[jon-snow|Jon]] to the leader of her war band as a present. He orders Jon killed, since he already holds a ranger for questioning, [[qhorin-halfhand|Qhorin]]. Ygritte talks him round: Mance Rayder will want to question a man of Stark blood. Qhorin openly blames Jon for the deaths of his men, and Ygritte is intrigued by the bad blood between them. She does not know that Qhorin’s anger is a ploy to plant Jon among the wildlings as a spy.',
+      },
+    ),
+    inBooks(
+      [20, 142],
+      { it: 'L’aquila', en: 'The eagle' },
+      {
+        it: 'Ygritte è tra i quattordici cacciatori del [[lord-of-bones|Lord delle Ossa]] che raggiungono [[jon-snow|Jon]] e [[qhorin-halfhand|Qhorin]] tra le montagne. Jon si arrende, e uccide Qhorin per mettersi alla prova, e i bruti lo accolgono. Ygritte dice a Jon che l’aquila che li seguiva era un tempo l’uomo che Jon ha ucciso nel passo il giorno in cui l’hanno catturata. Dopo che Qhorin viene bruciato, Ygritte dice a Jon che Mance Rayder marcia sulla Barriera.',
+        en: 'Ygritte is among the fourteen hunters of the [[lord-of-bones|Lord of Bones]] who overtake [[jon-snow|Jon]] and [[qhorin-halfhand|Qhorin]] in the mountains. Jon yields, and kills Qhorin to prove himself, and the wildlings accept him. Ygritte tells Jon that the eagle which followed them was once the man he killed in the pass the day they captured her. After Qhorin is burned, she tells Jon that Mance Rayder is marching on the Wall.',
+      },
+    ),
+    onScreen(
+      [20, 142],
+      { it: 'L’esercito nella valle', en: 'The host in the valley' },
+      {
+        it: 'Sulla strada per l’accampamento di Mance Rayder, Ygritte continua a stuzzicare [[jon-snow|Jon]], picchiettandolo sulla testa con il piatto della sua stessa spada. Quando [[qhorin-halfhand|Qhorin]] attacca Jon e i due vengono lasciati combattere, Ygritte restituisce a Jon la sua spada. Jon uccide Qhorin, e Ygritte e il resto della banda restano sbalorditi, ma accolgono Jon come uno di loro e gli liberano le mani. Ygritte lo porta sulla cresta della montagna e gli mostra l’immenso accampamento dei bruti sottostante.',
+        en: 'On the way to Mance Rayder’s camp, Ygritte keeps toying with [[jon-snow|Jon]], tapping him on the head with the flat of his own sword. When [[qhorin-halfhand|Qhorin]] attacks Jon and the two are left to fight, Ygritte gives Jon back his sword. Jon kills Qhorin, and Ygritte and the rest of the band are stunned, but they accept Jon as one of their own and free his hands. Ygritte leads him to the crest of the mountain and shows him the vast wildling camp below.',
+      },
+    ),
+  ],
+  'ebben': [
+    inBooks(
+      [17, 127],
+      { it: 'Metamorfo', en: 'Skinchanger' },
+      {
+        it: 'Ebben è uno dei ranger che esplorano le montagne con [[qhorin-halfhand|Qhorin il Monco]] e con [[jon-snow|Jon]]. Quando Jon ammette di aver lasciato andare la ragazza dei bruti, Qhorin dice che, se l’avesse voluta morta, l’avrebbe fatta uccidere da Ebben. Una mattina Jon si sveglia da un sogno di giganti e di un’aquila gridando il nome del suo lupo, ed Ebben lo chiama metamorfo. Quando un’aquila comincia a seguirli e il gruppo torna indietro, lo scudiero [[dalbridge|Dalbridge]] resta nel passo.',
+        en: 'Ebben is one of the rangers who scout the mountains with [[qhorin-halfhand|Qhorin Halfhand]] and [[jon-snow|Jon]]. When Jon admits that he let the wildling girl go, Qhorin says that, had he wanted her dead, he would have had Ebben kill her. One morning Jon wakes from a dream of giants and an eagle shouting his wolf’s name, and Ebben calls him a skinchanger. When an eagle follows them and the party turns back, Squire [[dalbridge|Dalbridge]] stays behind in the pass.',
+      },
+    ),
+    inBooks(
+      [20, 142],
+      { it: 'Mandato a est', en: 'Sent east' },
+      {
+        it: 'Con i bruti alle calcagna, [[qhorin-halfhand|Qhorin]] mandò Ebben verso est con l’ultimo cavallo del gruppo, perché raggiungesse al più presto il lord comandante. Ebben non arrivò mai. Quando i cacciatori del [[lord-of-bones|Lord delle Ossa]] raggiunsero Qhorin e [[jon-snow|Jon]] tra le montagne, portavano con sé la testa di Ebben.',
+        en: 'With the wildlings on their trail, [[qhorin-halfhand|Qhorin]] sent Ebben east with the party’s last garron, to reach the Lord Commander with all haste. Ebben never got there. When the hunters of the [[lord-of-bones|Lord of Bones]] overtook Qhorin and [[jon-snow|Jon]] in the mountains, they were carrying Ebben’s head.',
+      },
+    ),
+  ],
+  'dalbridge': [
+    inBooks(
+      [17, 127],
+      { it: 'A difesa del passo', en: 'Holding the pass' },
+      {
+        it: 'Lo scudiero Dalbridge cavalca tra le montagne con [[qhorin-halfhand|Qhorin il Monco]], [[jon-snow|Jon]] ed [[ebben|Ebben]]. Quando un’aquila li spia, Qhorin teme che siano stati visti e torna verso il Pugno, senza accendere fuochi nonostante il freddo. I bruti guadagnano terreno. Nel punto dove erano state uccise le vedette, Dalbridge resta indietro con tutte le frecce del gruppo, per tenere il passo e dare agli altri una possibilità in più.',
+        en: 'Squire Dalbridge rides with [[qhorin-halfhand|Qhorin Halfhand]], [[jon-snow|Jon]] and [[ebben|Ebben]] through the mountains. When an eagle spies on them, Qhorin fears they have been seen and turns back for the Fist, without lighting fires in the cold. The wildlings gain on them. At the place where the watchers were killed, Dalbridge stays behind with all of the party’s arrows, to hold the pass and give the others a better chance.',
+      },
+    ),
+  ],
+  'lord-of-bones': [
+    inBooks(
+      [18, 142],
+      { it: 'La prova di fedeltà', en: 'Proof of loyalty' },
+      {
+        it: 'Il Lord delle Ossa guida quattordici cacciatori dei bruti, tra cui [[ygritte|Ygritte]], con otto cani, sulle tracce di [[qhorin-halfhand|Qhorin il Monco]] e di [[jon-snow|Jon]]. Portano con sé la testa di [[ebben|Ebben]]. Quando mettono alle strette i due ranger, il Lord delle Ossa ordina di ucciderli, e Jon si arrende. Per mettersi alla prova, ordina il Lord delle Ossa, Jon deve uccidere Qhorin. Jon lo fa, e i bruti lo accolgono, anche se il Lord delle Ossa ha i suoi dubbi. Bruciano Qhorin su una pira, e il Lord delle Ossa si prende alcune delle ossa annerite.',
+        en: 'The Lord of Bones leads fourteen wildling hunters, [[ygritte|Ygritte]] among them, with eight dogs, after [[qhorin-halfhand|Qhorin Halfhand]] and [[jon-snow|Jon]]. They carry the head of [[ebben|Ebben]]. When they corner the two rangers, the Lord of Bones orders them killed, and Jon yields. To prove himself, the Lord of Bones commands, Jon must kill Qhorin. Jon does it, and the wildlings take him in, though the Lord of Bones has his doubts. They burn Qhorin on a pyre, and the Lord of Bones claims some of the charred bones.',
+      },
+    ),
+  ],
 } satisfies Record<string, Timeline<Story>>

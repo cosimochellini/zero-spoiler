@@ -1190,6 +1190,137 @@ export const season1Chronicles = {
         en: 'Jon learns that his father has been beheaded in King’s Landing. He saddles a horse to ride south and join [[robb-stark|Robb]]’s war, and [[samwell-tarly|Sam]] cannot stop him. His friends ride after him, [[grenn|Grenn]] and [[pypar|Pyp]] among them. They surround him and recite the vows of the Night’s Watch until he agrees to come back. Lord Commander [[jeor-mormont|Mormont]] lets the desertion pass. The war in the south matters less, he tells Jon, than what is coming from beyond the Wall: he means to lead the Watch north in force and find [[benjen-stark|Benjen]]. Jon stays.',
       },
     ),
+    inBooks(
+      [11, 80],
+      { it: 'Un re per fratello', en: 'A king for a brother' },
+      {
+        it: 'Alla vigilia della grande spedizione, Jon trova [[samwell-tarly|Sam]] nei sotterranei di Castello Nero, intento a cercare mappe per il lord comandante. Sam dovrà andare oltre la Barriera al posto di maestro [[aemon|Aemon]], per occuparsi dei corvi. Nel suo solario [[jeor-mormont|Jeor Mormont]] congeda [[thoren-smallwood|Thoren Smallwood]], secondo cui il lord comandante dovrebbe restare indietro. Poi Mormont racconta a Jon che Aemon un tempo rifiutò una corona per mantenere i suoi voti. Il fratello di Jon, [[robb-stark|Robb]], ora è re, e Mormont chiede a Jon che cosa farà. Jon risponde che ne sarà turbato, e manterrà i suoi voti.',
+        en: 'On the eve of the great ranging, Jon finds [[samwell-tarly|Sam]] in the vaults of Castle Black, sorting maps for the Lord Commander. Sam must go beyond the Wall in Maester [[aemon|Aemon]]’s place, to keep the ravens. In his solar, [[jeor-mormont|Jeor Mormont]] sends [[thoren-smallwood|Thoren Smallwood]] away for saying that the Lord Commander should stay behind. Then Mormont tells Jon how Aemon once turned down a crown to keep his vows. Jon’s brother [[robb-stark|Robb]] is now a king, and Mormont asks what Jon will do about it. Jon answers that he will be troubled, and keep his vows.',
+      },
+    ),
+    inBooks(
+      [11, 87],
+      { it: 'Il villaggio vuoto', en: 'The empty village' },
+      {
+        it: 'Ad Albero Bianco, il quarto villaggio vuoto della spedizione, un enorme albero-diga ha ossa umane nella bocca. [[jeor-mormont|Mormont]] fa estrarre a Jon un teschio dalla cenere, e Jon ne trova un altro sotto. Jon crede di sapere perché i bruti bruciano i loro morti. Perquisisce le case con Eddison Tollett e non trova nulla. [[thoren-smallwood|Thoren Smallwood]] dice che un anno fa qui c’erano ancora dei bruti. [[samwell-tarly|Sam]] manda per corvo il rapporto del lord comandante, e ha insegnato a tre degli uccelli a dire “snow”. Con i bruti è sparita anche la selvaggina, e Jon si chiede se la spedizione troverà il nemico o ne sarà trovata.',
+        en: 'At Whitetree, the fourth empty village of the ranging, a huge weirwood has human bones in its mouth. [[jeor-mormont|Mormont]] has Jon pull a skull from the ashes, and Jon finds another beneath it. Jon thinks he knows why the wildlings burn their dead. He searches the houses with Eddison Tollett and finds nothing. [[thoren-smallwood|Thoren Smallwood]] says there were wildlings here a year ago. [[samwell-tarly|Sam]] sends the Lord Commander’s report by raven, and has taught three of the birds to say snow. The game is gone along with the wildlings, and Jon wonders whether the ranging will find its enemy or be found.',
+      },
+    ),
+    inBooks(
+      [11, 97],
+      { it: 'La Fortezza di Craster', en: 'Craster’s Keep' },
+      {
+        it: 'Dopo giorni di pioggia la spedizione arriva alla Fortezza di Craster. Nella sala [[craster|Craster]] dice di non vedere [[benjen-stark|Benjen]] da tre anni, e rifiuta una scorta fino alla Barriera: lui è del popolo libero. Quando sente il nome di Jon, Craster capisce che è un bastardo. [[ghost-direwolf|Spettro]] ruba i conigli a una ragazza, Gilly, una delle mogli di Craster. Al mattino Gilly chiede a Jon di portarla via: è incinta, e Craster dà i figli maschi agli dei. Jon le risponde che la spedizione va nella direzione opposta, e che non spetta a lui decidere. In marcia [[jeor-mormont|Mormont]] ammette che tutti i ranger lo sanno, ma i Guardiani hanno bisogno di Craster, e Mance Rayder sta radunando i bruti tra le montagne.',
+        en: 'After days of rain the ranging reaches Craster’s Keep. In the hall [[craster|Craster]] says he has not seen [[benjen-stark|Benjen]] in three years, and refuses an escort to the Wall: he is free folk. When he hears Jon’s name, Craster knows him for a bastard. [[ghost-direwolf|Ghost]] steals the rabbits of a girl, Gilly, who is one of Craster’s wives. In the morning she asks Jon to take her away: she is with child, and Craster gives his sons to the gods. Jon tells her the ranging goes the other way, and that it is not his to decide. On the march [[jeor-mormont|Mormont]] admits that every ranger knows, but the Watch needs Craster, and Mance Rayder is gathering the wildlings in the mountains.',
+      },
+    ),
+    onScreen(
+      [11, 97],
+      { it: 'Imparare a obbedire', en: 'Learning to follow' },
+      {
+        it: 'La grande spedizione arriva alla Fortezza di Craster dopo aver attraversato diversi villaggi di bruti abbandonati. Jon è disgustato quando scopre che [[craster|Craster]] sposa le proprie figlie, e che sembra non avere figli maschi. Craster dice al lord comandante [[jeor-mormont|Mormont]] di non aver visto [[benjen-stark|Benjen]], e che i bruti si stanno radunando attorno a Mance Rayder. Quando Craster chiama i confratelli gente del sud, Jon gli risponde a tono. Poi Mormont rimprovera Jon: Craster è ripugnante, ma i Guardiani hanno bisogno del suo riparo. Se un giorno Jon vuole comandare, deve prima imparare a obbedire.',
+        en: 'The great ranging reaches Craster’s Keep after passing several empty wildling villages. Jon is disgusted to learn that [[craster|Craster]] marries his own daughters, and that there seem to be no sons. Craster tells Lord Commander [[jeor-mormont|Mormont]] that he has not seen [[benjen-stark|Benjen]], and that the wildlings are gathering under Mance Rayder. When Craster calls the black brothers southerners, Jon argues with him. Afterwards Mormont rebukes Jon: Craster is vile, but the Watch needs his shelter. If Jon wants to lead one day, he must first learn how to follow.',
+      },
+    ),
+    onScreen(
+      [12, 97],
+      { it: 'Nel bosco di notte', en: 'In the woods at night' },
+      {
+        it: '[[samwell-tarly|Sam]] porta da Jon una delle mogli di Craster, incinta e spaventata da quello che accadrà se nascerà un maschio. Lei implora di partire con la spedizione, ma non vuole dire che cosa teme. Jon rifiuta: gli ordini di Craster e quelli del lord comandante sono chiari, e dopo che lei se ne va Jon e Sam litigano. Quella notte Jon vede [[craster|Craster]] portare un neonato nel bosco. Lo segue, e vede una creatura nell’ombra prendere il bambino. Prima che Jon possa inseguirla, Craster lo colpisce e gli fa perdere i sensi.',
+        en: '[[samwell-tarly|Sam]] brings Jon one of Craster’s wives, who is with child and afraid of what will happen if it is a boy. She begs to come with the ranging, but will not say what she fears. Jon refuses: Craster’s orders and the Lord Commander’s are clear, and they argue about it after she leaves. That night Jon sees [[craster|Craster]] carry a newborn baby into the woods. He follows, and watches a creature in the shadows take the child. Before Jon can go after it, Craster knocks him out.',
+      },
+    ),
+    onScreen(
+      [13, 97],
+      { it: 'Quello che Mormont sapeva', en: 'What Mormont knew' },
+      {
+        it: '[[craster|Craster]] trascina Jon nella sua fortezza, legato e insanguinato, e ordina ai confratelli di lasciare la sua casa, dando la colpa a Jon. Fuori, Jon racconta al lord comandante [[jeor-mormont|Mormont]] che Craster si sbarazza dei figli maschi, e scopre che Mormont lo ha sempre saputo. La crudeltà di Craster disgusta anche Mormont, ma i Guardiani hanno bisogno del riparo e delle notizie di Craster, e Mormont vieta a Jon di intromettersi. Quando Jon dice che qualcosa ha preso il bambino, Mormont gli risponde che lo vedrà di nuovo. Gli restituisce Lungo Artiglio, e lo avverte di non perderlo più.',
+        en: '[[craster|Craster]] drags Jon back to his keep, bound and bloodied, and orders the black brothers out of his home, blaming Jon. Outside, Jon tells Lord Commander [[jeor-mormont|Mormont]] that Craster gives his sons away, and learns that Mormont has known all along. Craster’s cruelty sickens Mormont too, but the Watch needs Craster’s shelter and knowledge, and Mormont forbids Jon to interfere. When Jon says that something took the child, Mormont tells him he will see it again. He gives Jon back Longclaw, and warns him not to lose it again.',
+      },
+    ),
+    inBooks(
+      [15, 108],
+      { it: 'Il mantello sepolto', en: 'The buried cloak' },
+      {
+        it: 'La spedizione si accampa dentro il muro di pietra sul Pugno dei Primi Uomini, dove [[jeor-mormont|Mormont]] vuole aspettare gli uomini della Torre delle Ombre. Mormont terrà i ranger vicini: duecento uomini non possono setacciare tutta la regione per trovarne uno, e [[benjen-stark|Benjen]], se è morto, potrebbe tornare comunque. A cena il vecchio ranger Dywen dice di sentire odore di freddo. [[ghost-direwolf|Spettro]] guida Jon fuori dal cerchio di pietre e scava in un tumulo di terra smossa da poco. Dentro un mantello dei Guardiani della notte Jon trova lame di vetro di drago e un vecchio corno da guerra.',
+        en: 'The ranging makes camp inside the ring wall on the Fist of the First Men, where [[jeor-mormont|Mormont]] means to wait for the men of the Shadow Tower. Mormont will keep his rangers close: two hundred men cannot search the whole land for one, and [[benjen-stark|Benjen]], if he is dead, may still come back. At supper the old ranger Dywen says he smells cold. [[ghost-direwolf|Ghost]] leads Jon outside the ring and digs at a fresh mound. Inside a cloak of the Night’s Watch Jon finds blades of dragonglass and an old warhorn.',
+      },
+    ),
+    inBooks(
+      [15, 117],
+      { it: 'Scelto dal Monco', en: 'Chosen by the Halfhand' },
+      {
+        it: '[[qhorin-halfhand|Qhorin il Monco]] arriva al Pugno con cento uomini della Torre delle Ombre, e dice a Jon di aver conosciuto suo padre e suo nonno. Jon ha fatto pugnali di vetro di drago per sé, per [[grenn|Grenn]] e per il lord comandante, e ha regalato il vecchio corno a [[samwell-tarly|Sam]]. Un prigioniero ha detto a Qhorin che Mance Rayder ha dei warg e dei mammut, e vuole abbattere la Barriera. Qhorin consiglia di mandare esploratori tra le montagne, e [[jeor-mormont|Mormont]] fa partire tre gruppi. Qhorin ne guiderà uno, e sceglie Jon: gli antichi dei, dice, oltre la Barriera sono ancora forti.',
+        en: '[[qhorin-halfhand|Qhorin Halfhand]] reaches the Fist with a hundred men of the Shadow Tower, and tells Jon that he knew his father and his grandfather. Jon has made daggers of dragonglass for himself, [[grenn|Grenn]] and the Lord Commander, and given the old horn to [[samwell-tarly|Sam]]. A captive has told Qhorin that Mance Rayder has wargs and mammoths, and means to break the Wall. Qhorin advises scouting the mountains, and [[jeor-mormont|Mormont]] sends out three parties. Qhorin will lead one himself, and picks Jon for it: the old gods, he says, are still strong beyond the Wall.',
+      },
+    ),
+    onScreen(
+      [15, 117],
+      { it: 'Con il Monco', en: 'With the Halfhand' },
+      {
+        it: 'La spedizione sale sul Pugno dei Primi Uomini. Un solo squillo di corno annuncia dei ranger, e Jon vede che è [[qhorin-halfhand|Qhorin il Monco]], in arrivo dalla Torre delle Ombre. Qhorin avverte il lord comandante [[jeor-mormont|Mormont]] che ora i bruti sono organizzati, e propone un piccolo gruppo per eliminare le loro vedette tra le montagne. Jon chiede di andare. Mormont obietta che Jon non è un ranger e si è fatto picchiare da Craster, ma Qhorin prende le difese di Jon. Quando [[samwell-tarly|Sam]] si offre di prendere il posto di Jon come attendente, Mormont lascia partire Jon con Qhorin.',
+        en: 'The ranging climbs to the Fist of the First Men. A single horn blast announces rangers, and Jon sees that it is [[qhorin-halfhand|Qhorin Halfhand]] arriving from the Shadow Tower. Qhorin warns Lord Commander [[jeor-mormont|Mormont]] that the wildlings are organized now, and proposes a small party to deal with their lookouts in the mountains. Jon asks to go. Mormont objects that Jon is no ranger and let Craster beat him, but Qhorin speaks up for him. When [[samwell-tarly|Sam]] offers to take on Jon’s duties as steward, Mormont lets Jon go with Qhorin.',
+      },
+    ),
+    inBooks(
+      [16, 125],
+      { it: 'La donna della lancia', en: 'The spearwife' },
+      {
+        it: 'Nel Passo Skirling Jon si arrampica con [[stonesnake|Stonesnake]] fino a tre vedette dei bruti. Stonesnake uccide quella con il corno, e Jon abbatte l’uomo accanto al fuoco. La terza, addormentata, è una donna della lancia, [[ygritte|Ygritte]], che si arrende, e Jon la fa prigioniera anche se Stonesnake vorrebbe ucciderla. Ygritte gli racconta che il sangue degli Stark e quello dei bruti è lo stesso; Jon non le crede. Gli uomini di [[qhorin-halfhand|Qhorin]] la vogliono morta, e Qhorin lascia Jon solo a ucciderla. Ygritte dice che Mance Rayder accoglierebbe Jon. Jon alza Lungo Artiglio, poi si ferma, e le dice di scappare.',
+        en: 'In the Skirling Pass Jon climbs with [[stonesnake|Stonesnake]] to three wildling watchers. Stonesnake kills the one with the horn, and Jon cuts down the man by the fire. The third, asleep, is a spearwife, [[ygritte|Ygritte]], who yields, and Jon takes her captive although Stonesnake would kill her. She tells him that the blood of the Starks and of the wildlings is the same; Jon does not believe her. [[qhorin-halfhand|Qhorin]]’s men want her dead, and Qhorin leaves Jon alone to do it. Ygritte says Mance Rayder would take Jon in. Jon raises Longclaw, then stops, and tells her to run.',
+      },
+    ),
+    onScreen(
+      [16, 125],
+      { it: 'La vedetta dei bruti', en: 'The wildling lookout' },
+      {
+        it: 'Il gruppo di [[qhorin-halfhand|Qhorin]] trova le vedette dei bruti tra le montagne e le uccide tutte tranne una. Jon esita quando vede che l’ultima è una giovane donna, [[ygritte|Ygritte]]. Qhorin lascia Jon da solo a giustiziarla e prosegue su per la montagna. Jon non riesce a colpire, e Ygritte scappa. Jon la riprende, ma perde le tracce degli altri. Quando cala la notte devono dormire al freddo, e quando Ygritte gli si stringe addosso per scaldarsi, Jon resiste alle sue provocazioni per non tradire i voti.',
+        en: '[[qhorin-halfhand|Qhorin]]’s party finds the wildling lookouts in the mountains and kills all but one. Jon hesitates when he sees that the last is a young woman, [[ygritte|Ygritte]]. Qhorin leaves Jon alone to put her to death and goes on up the mountain. Jon cannot bring himself to strike, and Ygritte runs. He catches her again, but loses the rest of the party. As night falls they must lie down in the cold, and when she presses against him to share warmth, Jon resists her advances to keep his vows.',
+      },
+    ),
+    inBooks(
+      [17, 127],
+      { it: 'Il sogno del lupo', en: 'The wolf dream' },
+      {
+        it: 'Jon racconta a [[qhorin-halfhand|Qhorin]] che cosa gli ha detto [[ygritte|Ygritte]], e ammette di averla lasciata andare. Qhorin non si arrabbia: se l’avesse voluta morta, l’avrebbe fatta uccidere da [[ebben|Ebben]]. Mentre il gruppo viaggia di notte, Jon sogna con gli occhi di [[ghost-direwolf|Spettro]]. Un albero-diga con il volto di suo fratello e tre occhi lo chiama, e da una rupe Jon vede migliaia di bruti e giganti in groppa ai mammut, finché un’aquila non gli piomba addosso. Qhorin non lo deride. Al tramonto un’aquila li osserva. Dopo aver trovato Spettro ferito, Qhorin decide di tornare al Pugno, temendo che siano stati visti, e lo scudiero [[dalbridge|Dalbridge]] resta indietro nel passo con tutte le frecce.',
+        en: 'Jon tells [[qhorin-halfhand|Qhorin]] what [[ygritte|Ygritte]] said, and admits that he let her go. Qhorin is not angry: had he wanted her dead, he would have had [[ebben|Ebben]] do it. As the party travels by night, Jon dreams with the eyes of [[ghost-direwolf|Ghost]]. A weirwood with his brother’s face and three eyes calls to him, and from a cliff he sees thousands of wildlings and giants riding mammoths, until an eagle dives at him. Qhorin does not laugh at it. At dusk an eagle watches them. After they find Ghost wounded, Qhorin turns back for the Fist, fearing they have been seen, and Squire [[dalbridge|Dalbridge]] stays behind in the pass with all their arrows.',
+      },
+    ),
+    onScreen(
+      [17, 127],
+      { it: 'Condotto in trappola', en: 'Led into a trap' },
+      {
+        it: 'Jon prosegue con [[ygritte|Ygritte]] legata, cercando il gruppo di [[qhorin-halfhand|Qhorin]]. Lei lo prende in giro perché è vergine e gli chiede perché i Guardiani odino la sua gente: gli uomini del Nord e i bruti discendono tutti dai Primi Uomini, e i bruti si sono solo trovati dalla parte sbagliata quando la Barriera è stata costruita. Lo esorta a dimenticare i voti e vivere libero. Quando lei prova di nuovo a sedurlo, Jon porta la mano alla spada; Ygritte lo fa inciampare con la corda e scappa. Jon la insegue fino a un’imboscata e viene catturato. Ygritte gli dice che avrebbe dovuto prenderla quando poteva.',
+        en: 'Jon walks on with [[ygritte|Ygritte]] bound, looking for [[qhorin-halfhand|Qhorin]]’s party. She mocks him for being a virgin and asks why the Watch hates her people: Northmen and wildlings alike descend from the First Men, and hers simply ended up on the wrong side of the Wall when it was built. She urges him to forget his vows and live free. When she tries to seduce him again, Jon reaches for his sword; she trips him with the rope and runs. He chases her into an ambush and is taken. Ygritte tells him he should have had her when he had the chance.',
+      },
+    ),
+    onScreen(
+      [18, 142],
+      { it: 'Davanti ai bruti', en: 'Before the wildlings' },
+      {
+        it: '[[ygritte|Ygritte]] porta Jon davanti al capo della sua banda, che vuole farlo uccidere: ha già un corvo da interrogare. Ygritte lo convince che Mance Rayder vorrà vedere un figlio di Eddard Stark. L’altro prigioniero è [[qhorin-halfhand|Qhorin]], che dice a Jon che il resto dei suoi uomini è morto mentre lo cercava. Qhorin esorta Jon a dare un senso a quelle morti, infiltrandosi tra i bruti come spia. Poi Qhorin si scaglia contro Jon davanti ai loro carcerieri, come se fosse furioso, finché non viene trattenuto.',
+        en: '[[ygritte|Ygritte]] brings Jon before the leader of her war band, who wants him killed: he already holds a crow for questioning. Ygritte persuades him that Mance Rayder will want to see a son of Eddard Stark. The other prisoner is [[qhorin-halfhand|Qhorin]], who tells Jon that the rest of his men died searching for him. Qhorin urges Jon to make their deaths count by going among the wildlings as a spy. Then Qhorin turns on Jon in front of their captors, as if in anger, until he is held back.',
+      },
+    ),
+    inBooks(
+      [20, 142],
+      { it: 'Sangue bastardo', en: 'Bastard blood' },
+      {
+        it: 'Con i bruti sempre più vicini, [[qhorin-halfhand|Qhorin]] manda [[ebben|Ebben]] verso est e [[stonesnake|Stonesnake]] a piedi ad avvertire il lord comandante. Fa recitare il giuramento a Jon insieme a lui, poi gli ordina di arrendersi quando li prenderanno, e di fare qualunque cosa i bruti gli chiedano, per scoprire i loro piani. Il [[lord-of-bones|Lord delle Ossa]] li raggiunge con [[ygritte|Ygritte]] e con la testa di Ebben. Jon si arrende, e Qhorin dice che il sangue bastardo è vile. Quando gli ordinano di uccidere Qhorin per mettersi alla prova, Jon lo abbatte nel momento in cui [[ghost-direwolf|Spettro]] morde la gamba del ranger. I bruti accolgono Jon, e Ygritte gli dice che Mance Rayder marcia sulla Barriera.',
+        en: 'With the wildlings closing in, [[qhorin-halfhand|Qhorin]] sends [[ebben|Ebben]] east and [[stonesnake|Stonesnake]] off on foot to warn the Lord Commander. He has Jon say the oath with him, then orders him to yield when they are caught, and to do whatever the wildlings ask, so as to learn their plans. The [[lord-of-bones|Lord of Bones]] overtakes them with [[ygritte|Ygritte]] and Ebben’s head. Jon yields, and Qhorin calls bastard blood craven. Told to kill Qhorin to prove himself, Jon cuts him down when [[ghost-direwolf|Ghost]] bites the ranger’s leg. The wildlings take Jon in, and Ygritte tells him that Mance Rayder is marching on the Wall.',
+      },
+    ),
+    onScreen(
+      [20, 142],
+      {
+        it: 'Siamo le sentinelle sulla Barriera',
+        en: 'We are the watchers on the Wall',
+      },
+      {
+        it: 'Jon e [[qhorin-halfhand|Qhorin]] vengono condotti verso l’accampamento di Mance Rayder. Qhorin si libera, prende una spada e attacca Jon, e il capo della banda li lascia combattere; [[ygritte|Ygritte]] restituisce a Jon la sua spada. Jon si trattiene finché Qhorin non chiama suo padre traditore e sua madre puttana. Allora Jon lo abbatte. Morendo, Qhorin gli sussurra: siamo le sentinelle sulla Barriera. Ora i bruti credono che Jon abbia disertato. Il loro capo gli taglia le corde, e Ygritte gli mostra il grande esercito dei bruti nella valle sottostante.',
+        en: 'Jon and [[qhorin-halfhand|Qhorin]] are marched towards Mance Rayder’s camp. Qhorin breaks free, takes a sword and attacks Jon, and the leader of the war band lets them fight; [[ygritte|Ygritte]] gives Jon back his sword. Jon holds back until Qhorin calls his father a traitor and his mother a whore. Then Jon strikes him down. Dying, Qhorin whispers to him: we are the watchers on the Wall. Now the wildlings take Jon for a deserter. Their leader cuts his bonds, and Ygritte shows him the great wildling host in the valley below.',
+      },
+    ),
   ],
   'jeor-mormont': [
     inBooks(
@@ -1254,6 +1385,62 @@ export const season1Chronicles = {
       {
         it: 'Dopo la decapitazione di [[eddard-stark|Eddard Stark]], [[jon-snow|Jon Snow]] fugge per unirsi al fratello [[robb-stark|Robb]], ma gli amici di Jon lo riportano indietro. Jeor lascia correre la diserzione: se i Guardiani giustiziassero ogni uomo che scappa e poi torna, non resterebbe nessuno a difendere la Barriera. La guerra tra gli Stark e i Lannister, spiega a Jon, conta meno della minaccia oltre la Barriera. Jeor vuole guidare i Guardiani della notte a nord in forze e ritrovare [[benjen-stark|Benjen Stark]]. Jon resta.',
         en: 'After [[eddard-stark|Eddard Stark]] is beheaded, [[jon-snow|Jon Snow]] rides off to join his brother [[robb-stark|Robb]], but Jon’s friends bring him back. Jeor lets the desertion pass: if the Watch executed every man who ran off and came back, there would be no one left to guard the Wall. The war between the Starks and the Lannisters, he tells Jon, matters less than the threat beyond the Wall. Jeor means to lead the Night’s Watch north in force and find [[benjen-stark|Benjen Stark]]. Jon stays.',
+      },
+    ),
+    inBooks(
+      [11, 80],
+      { it: 'Troppo vecchio per la spedizione', en: 'Too old for a ranging' },
+      {
+        it: 'Alla vigilia della grande spedizione, [[thoren-smallwood|Thoren Smallwood]] sostiene che il posto del lord comandante è a Castello Nero. Jeor Mormont non vuole aspettare di sapere se anche una terza spedizione andrà perduta come le prime due, e ricorda a Smallwood che [[benjen-stark|Benjen Stark]] resta il Primo Ranger finché la sua morte non sarà certa. Quando Smallwood se ne va, Mormont si lamenta che Smallwood lo abbia definito troppo vecchio. Esamina le mappe trovate da [[samwell-tarly|Sam]], poi racconta a [[jon-snow|Jon]] che maestro [[aemon|Aemon]] un tempo rifiutò una corona, e gli chiede che cosa farà ora che suo fratello [[robb-stark|Robb]] è re.',
+        en: 'On the eve of the great ranging, [[thoren-smallwood|Thoren Smallwood]] argues that the Lord Commander’s place is at Castle Black. Jeor Mormont will not wait to learn whether a third ranging is lost like the first two, and reminds Smallwood that [[benjen-stark|Benjen Stark]] is First Ranger until his death is known. Once Smallwood is gone, Mormont complains that he called him too old. He looks over the maps [[samwell-tarly|Sam]] has found, then tells [[jon-snow|Jon]] how Maester [[aemon|Aemon]] once turned down a crown, and asks what Jon will do now that his brother [[robb-stark|Robb]] is a king.',
+      },
+    ),
+    inBooks(
+      [11, 97],
+      { it: 'Un uomo che non ha giurato', en: 'A man who swore no vows' },
+      {
+        it: 'Alla Fortezza di Craster, Jeor Mormont ordina ai suoi uomini di non toccare le mogli di Craster. Nella sala racconta a [[craster|Craster]] dei villaggi vuoti e dei morti che hanno attaccato Castello Nero, e gli offre una scorta fino alla Barriera, che Craster rifiuta. Mormont gli regala un’ascia come dono d’ospite. In marcia dice a [[jon-snow|Jon]] che tutti i ranger sanno che Craster dà i figli maschi al bosco, ma i Guardiani hanno bisogno della sua fortezza. Craster non ha giurato alcun voto. Craster ha anche detto a Mormont che Mance Rayder sta radunando i bruti tra le montagne, e Mormont vuole trovare Mance e fermarlo.',
+        en: 'At Craster’s Keep Jeor Mormont orders his men to keep their hands off Craster’s wives. In the hall he tells [[craster|Craster]] of the empty villages and of the dead who attacked Castle Black, and offers him an escort to the Wall, which Craster refuses. Mormont gives him an axe as a guest gift. On the march he tells [[jon-snow|Jon]] that every ranger knows Craster gives his sons to the wood, but the Watch needs his keep. Craster swore no vows. Craster has also told Mormont that Mance Rayder is gathering the wildlings in the mountains, and Mormont means to find Mance and stop him.',
+      },
+    ),
+    onScreen(
+      [11, 97],
+      { it: 'Le regole di Craster', en: 'Craster’s rules' },
+      {
+        it: 'Dopo mesi di marcia e diversi villaggi di bruti abbandonati, il lord comandante Mormont guida la grande spedizione alla Fortezza di Craster. [[craster|Craster]] gli dice di non vedere [[benjen-stark|Benjen Stark]] da anni, e che i bruti si stanno radunando attorno a Mance Rayder, che vuole marciare a sud. Mormont fa consegnare a Craster un’ascia da un ufficiale e accetta il suo tetto, e la sua regola: nessun uomo tocchi le sue mogli. Quando [[jon-snow|Jon]] provoca il loro ospite, Mormont lo rimprovera fuori: i Guardiani hanno bisogno di Craster. Se un giorno Jon vuole comandare, deve imparare a obbedire.',
+        en: 'After months on the march and several empty wildling villages, Lord Commander Mormont leads the great ranging to Craster’s Keep. [[craster|Craster]] tells him that he has not seen [[benjen-stark|Benjen Stark]] in years, and that the wildlings are gathering under Mance Rayder, who means to march south. Mormont has an officer hand Craster an axe and accepts his roof, and his rule that no man touches his wives. When [[jon-snow|Jon]] provokes their host, Mormont rebukes him outside: the Watch needs Craster. If Jon wants to lead one day, he must learn how to follow.',
+      },
+    ),
+    onScreen(
+      [13, 97],
+      { it: 'Lo sapeva da sempre', en: 'Known all along' },
+      {
+        it: '[[craster|Craster]] riporta [[jon-snow|Jon]] alla fortezza, malconcio, caccia i Guardiani e consegna Lungo Artiglio al lord comandante Mormont. Fuori, Jon racconta a Mormont quello che ha visto: Craster che lascia un neonato nel bosco. Mormont rivela di aver sempre saputo che Craster sacrifica i figli maschi. La cosa lo disgusta, ma Craster dà ai Guardiani riparo e notizie oltre la Barriera, e ha aiutato molti confratelli, tra cui [[benjen-stark|Benjen]]. Mormont vieta a Jon di intromettersi, gli dice che rivedrà quella creatura, e gli restituisce la spada.',
+        en: '[[craster|Craster]] drags [[jon-snow|Jon]] back to his keep, beaten, and throws the Watch out, handing Longclaw to Lord Commander Mormont. Outside, Jon tells Mormont what he saw: Craster leaving a baby in the woods. Mormont reveals that he has always known that Craster sacrifices his sons. It disgusts him, but Craster gives the Watch shelter and news beyond the Wall, and has helped many brothers, [[benjen-stark|Benjen]] among them. Mormont forbids Jon to interfere, tells him he will see the creature again, and gives him back his sword.',
+      },
+    ),
+    inBooks(
+      [15, 108],
+      { it: 'Un buon terreno', en: 'Good ground' },
+      {
+        it: 'Jeor Mormont porta la spedizione al Pugno dei Primi Uomini e lo giudica un buon terreno, facile da difendere. Vuole aspettare lì gli uomini della Torre delle Ombre. I suoi ufficiali parlano delle strade che portano tra le montagne, ma Mormont non vuole rischiarle se non è costretto: i bruti sono più numerosi dei Guardiani, e prima o poi dovranno scendere a cercare cibo. I ranger resteranno vicini. Quando [[jon-snow|Jon]] dice che così suo zio non si troverà, Mormont risponde che è più facile per un uomo trovarne duecento, e che [[benjen-stark|Benjen]], se è morto, potrebbe tornare comunque.',
+        en: 'Jeor Mormont brings the ranging to the Fist of the First Men and judges it good ground, easy to defend. He means to wait there for the men of the Shadow Tower. His officers talk of the roads into the mountains, but Mormont will not risk them unless he must: the wildlings outnumber the Watch, and they will have to come down for food. The rangers will stay close. When [[jon-snow|Jon]] says that his uncle will not be found that way, Mormont answers that one man finds two hundred more easily, and that [[benjen-stark|Benjen]], if dead, may still come back.',
+      },
+    ),
+    inBooks(
+      [15, 117],
+      { it: 'Tre gruppi', en: 'Three parties' },
+      {
+        it: 'Nella tenda di Jeor Mormont, [[qhorin-halfhand|Qhorin il Monco]] riferisce quello che gli ha detto un prigioniero: Mance Rayder ha dei warg e dei mammut, e vuole abbattere la Barriera. Mance cerca qualcosa di potente sulle vette delle montagne. Qhorin consiglia di mandare esploratori, e Mormont è d’accordo. [[jarman-buckwell|Jarman Buckwell]] porterà quattro uomini su per le montagne, [[thoren-smallwood|Thoren Smallwood]] guiderà un gruppo lungo il fiume, e Qhorin ne porterà un terzo in un passo. Qhorin sceglie l’attendente di Mormont, [[jon-snow|Jon]], tra i suoi uomini.',
+        en: 'In Jeor Mormont’s tent, [[qhorin-halfhand|Qhorin Halfhand]] reports what a captive told him: Mance Rayder has wargs and mammoths, and means to break the Wall. Mance is searching the high places of the mountains for some power. Qhorin advises sending scouts, and Mormont agrees. [[jarman-buckwell|Jarman Buckwell]] will take four men up into the mountains, [[thoren-smallwood|Thoren Smallwood]] will lead a party up the river, and Qhorin will take a third into a pass. Qhorin chooses Mormont’s steward, [[jon-snow|Jon]], as one of his men.',
+      },
+    ),
+    onScreen(
+      [15, 117],
+      { it: 'Lasciar partire Jon', en: 'Letting Jon go' },
+      {
+        it: 'Il lord comandante Mormont si accampa sul Pugno dei Primi Uomini per aspettare [[qhorin-halfhand|Qhorin]] e i suoi uomini della Torre delle Ombre. Qhorin riferisce di vedette tra le montagne e avverte che Mance Rayder, un tempo confratello dei Guardiani, avrà organizzato i bruti. Propone di combattere come i bruti, con un piccolo gruppo. Quando [[jon-snow|Jon]] chiede di farne parte, Mormont all’inizio rifiuta: Jon non è un ranger, e si è fatto picchiare da Craster. Qhorin prende le difese di Jon, e [[samwell-tarly|Sam]] promette di prendere il suo posto. Mormont lascia partire Jon.',
+        en: 'Lord Commander Mormont camps on the Fist of the First Men to wait for [[qhorin-halfhand|Qhorin]] and his men from the Shadow Tower. Qhorin reports lookouts in the mountains and warns that Mance Rayder, once a brother of the Watch, will have the wildlings organized. He suggests fighting like the wildlings, with a small party. When [[jon-snow|Jon]] asks to join it, Mormont refuses at first: Jon is no ranger, and let Craster beat him. Qhorin speaks for Jon, and [[samwell-tarly|Sam]] promises to take on his duties. Mormont lets Jon go.',
       },
     ),
   ],
@@ -1346,6 +1533,86 @@ export const season1Chronicles = {
       {
         it: 'A notte fonda Sam trova [[jon-snow|Jon Snow]] che sella una giumenta nelle stalle di Castello Nero, deciso a raggiungere il fratello [[robb-stark|Robb]]. Sam si piazza sulla porta e gli dice che non può farlo. Jon sprona il cavallo, e Sam deve gettarsi da parte. Sam non sveglia il lord comandante, ma avverte gli amici di Jon: [[grenn|Grenn]], [[pypar|Pyp]], Todder, [[halder|Halder]] e Matthar inseguono Jon e lo riportano indietro prima dell’alba.',
         en: 'Late at night Sam finds [[jon-snow|Jon Snow]] saddling a mare in the stables of Castle Black, set on joining his brother [[robb-stark|Robb]]. Sam stands in the doorway and says Jon cannot do this. Jon spurs the horse, and Sam has to throw himself out of the way. Sam does not wake the Lord Commander, but he tells Jon’s friends: [[grenn|Grenn]], [[pypar|Pyp]], Todder, [[halder|Halder]] and Matthar ride after Jon and bring him back before dawn.',
+      },
+    ),
+    inBooks(
+      [11, 80],
+      { it: 'Custode dei corvi', en: 'Keeper of the ravens' },
+      {
+        it: 'Sam passa la notte nei sotterranei di Castello Nero a cercare mappe per il lord comandante, e tra i vecchi libri trova dei tesori. Teme di non tornare dalla grande spedizione: dovrà andare oltre la Barriera al posto di maestro [[aemon|Aemon]], per occuparsi dei corvi. [[jon-snow|Jon]] gli dice che tutti i confratelli hanno paura, e che conta come la si affronta. Nel suo solario [[jeor-mormont|Mormont]] dice a Sam di volere gli uccelli migliori: se verranno tutti massacrati, il suo successore dovrà sapere dove e come. Sam è troppo spaventato per rispondere.',
+        en: 'Sam spends the night in the vaults of Castle Black looking for maps for the Lord Commander, and finds treasures among the old books. He fears he will not come back from the great ranging: he must go beyond the Wall in Maester [[aemon|Aemon]]’s place, to tend the ravens. [[jon-snow|Jon]] tells him that every brother is afraid, and what matters is how they face it. In his solar [[jeor-mormont|Mormont]] tells Sam he wants the best birds: if they are all butchered, his successor must know where and how. Sam is too frightened to answer.',
+      },
+    ),
+    inBooks(
+      [11, 87],
+      { it: 'Meno paura', en: 'Less afraid' },
+      {
+        it: 'Durante la marcia oltre la Barriera Sam viaggia con le salmerie e con i corvi. Ha insegnato a tre degli uccelli a dire “snow”, e manda a Castello Nero il rapporto del lord comandante su Albero Bianco, desiderando che il corvo possa riportare a casa anche lui. Eppure Sam ammette con [[jon-snow|Jon]] di avere meno paura di prima: all’inizio ogni rumore era un bruto che veniva a ucciderlo, ma ora sa che in giro non ci sono bruti. Jon pensa che, di duecento uomini coraggiosi, solo il codardo ha sempre meno paura.',
+        en: 'On the march beyond the Wall Sam rides with the baggage and the ravens. He has taught three of the birds to say snow, and sends the Lord Commander’s report on Whitetree to Castle Black, wishing the raven could carry him home too. Still, Sam admits to [[jon-snow|Jon]] that he is less frightened than he was: at first every noise was a wildling coming to kill him, but now he knows there are no wildlings about. Jon reflects that of two hundred brave men, only the coward is growing less afraid.',
+      },
+    ),
+    inBooks(
+      [11, 97],
+      { it: 'Una mappa per Craster', en: 'A map for Craster' },
+      {
+        it: 'Sulla strada per la Fortezza di Craster Sam riferisce a [[jon-snow|Jon]] quello che gli altri dicono di Craster: che sposa le figlie, segue solo le proprie leggi e ha il sangue nero. Nella sala Craster chiede un uomo capace di disegnare mappe, e Jon fa il nome di Sam, che entra con penna e pergamena. All’alba una delle mogli di Craster, Gilly, porta il mantello di Sam. Prima che la spedizione riparta, Sam dice a Jon che sperava di poter fare qualcosa per lei. Forse, dice Sam, potranno portarla con loro al ritorno.',
+        en: 'On the way to Craster’s Keep Sam passes on to [[jon-snow|Jon]] what the others say of Craster: that he marries his daughters, keeps his own laws and has black blood. In the hall Craster asks for a man who can draw maps, and Jon names Sam, who goes in with quill and parchment. At dawn one of Craster’s wives, Gilly, is wearing Sam’s cloak. Before the ranging moves on he tells Jon that he hoped to do something for her. Perhaps, Sam says, they can take her with them on the way back.',
+      },
+    ),
+    onScreen(
+      [11, 97],
+      { it: 'Un passaggio sulla slitta', en: 'A ride on the sledge' },
+      {
+        it: 'Dopo mesi di marcia, la grande spedizione arriva alla Fortezza di Craster. [[grenn|Grenn]] spinge la slitta nel fango e brontola che il peso di Sam l’ha rovinata; Sam risponde che è stato Grenn a offrirgli un passaggio, e Grenn dice di averlo fatto solo perché smettesse di lamentarsi delle vesciche. Alla fortezza i confratelli scoprono che Craster sposa le proprie figlie e con loro fa altre figlie, e Sam e Grenn ne sono disgustati. [[craster|Craster]] dice al lord comandante che i bruti si stanno radunando attorno a Mance Rayder.',
+        en: 'After months on the march, the great ranging reaches Craster’s Keep. [[grenn|Grenn]] pushes the sledge through the mud and grumbles that Sam’s weight has damaged it; Sam answers that Grenn offered him the ride, and Grenn says he only did it to stop him complaining about his blisters. At the keep the brothers learn that Craster marries his own daughters and breeds more daughters with them, and Sam and Grenn are disgusted. [[craster|Craster]] tells the Lord Commander that the wildlings are gathering under Mance Rayder.',
+      },
+    ),
+    onScreen(
+      [12, 97],
+      { it: 'La moglie di Craster', en: 'Craster’s wife' },
+      {
+        it: 'Mentre sbuccia patate fuori dalla Fortezza di Craster con [[grenn|Grenn]], Sam ascolta Grenn raccontare della mungitrice con cui è cresciuto, e vorrebbe essere cresciuto anche lui in una fattoria. Più tardi, quando [[ghost-direwolf|Spettro]] mette alle strette una delle mogli di Craster per il coniglio morto che porta, Sam allontana il lupo. Lei lo chiama coraggioso e gli chiede di portarla via. Sam la porta da [[jon-snow|Jon]], ma lei non vuole dire che cosa teme per il bambino che aspetta, e Jon rifiuta di disobbedire agli ordini del lord comandante. Sam e Jon litigano.',
+        en: 'Peeling potatoes outside Craster’s Keep with [[grenn|Grenn]], Sam listens to Grenn’s story of the milkmaid he grew up with, and wishes he had grown up on a farm. Later, when [[ghost-direwolf|Ghost]] corners one of Craster’s wives for the dead rabbit she carries, Sam sends the wolf away. She calls him brave and asks him to take her away. Sam brings her to [[jon-snow|Jon]], but she will not say what she fears for her unborn child, and Jon refuses to break the Lord Commander’s orders. Sam and Jon argue about it.',
+      },
+    ),
+    onScreen(
+      [13, 97],
+      { it: 'Il ditale di sua madre', en: 'His mother’s thimble' },
+      {
+        it: 'Craster caccia i Guardiani dalla sua fortezza dopo aver sorpreso [[jon-snow|Jon]] nel bosco. Mentre i confratelli si preparano a partire, Sam trova al lavoro la giovane moglie che ha aiutato. Le regala un ditale che apparteneva a sua madre, l’unica cosa che possiede di sua madre: Sam leggeva libri a sua madre mentre lei cuciva, finché suo padre non lo ha impedito. Lei dice che non dovrebbe darlo via. Sam le chiede di custodirlo per lui finché non tornerà a prenderla, e lei accetta.',
+        en: 'Craster throws the Watch out of his keep after catching [[jon-snow|Jon]] in the woods. As the brothers make ready to leave, Sam finds the young wife he helped at her chores. He gives her a thimble that belonged to his mother, the only thing of his mother’s he has: he used to read to his mother while she sewed, until his father put an end to it. She says he should not give it away. Sam asks her to keep it safe for him until he comes back for her, and she accepts.',
+      },
+    ),
+    inBooks(
+      [15, 117],
+      { it: 'Il corno incrinato', en: 'The broken horn' },
+      {
+        it: 'Sul Pugno dei Primi Uomini [[jon-snow|Jon]] divide quello che [[ghost-direwolf|Spettro]] ha dissotterrato. Regala a Sam il vecchio corno da guerra, incrinato e muto, perché a Sam piacciono le cose antiche. Con il corno gli dà una punta di lancia e una dozzina di punte di freccia di vetro di drago. Jon ha fatto pugnali di vetro di drago per sé, per [[grenn|Grenn]] e per il lord comandante. Poi dalla Torre delle Ombre arriva [[qhorin-halfhand|Qhorin il Monco]], che porta Jon con sé tra le montagne.',
+        en: 'On the Fist of the First Men, [[jon-snow|Jon]] shares out what [[ghost-direwolf|Ghost]] dug up. He gives Sam the old warhorn, which is cracked and makes no sound, because Sam likes old things. With it go a spearhead and a dozen arrowheads of dragonglass. Jon has made daggers of dragonglass for himself, [[grenn|Grenn]] and the Lord Commander. Then [[qhorin-halfhand|Qhorin Halfhand]] arrives from the Shadow Tower and takes Jon with him into the mountains.',
+      },
+    ),
+    onScreen(
+      [15, 117],
+      { it: 'Tre squilli', en: 'Three blasts' },
+      {
+        it: 'Sam è meravigliato dal Pugno dei Primi Uomini, e si chiede come fossero i Primi Uomini. Quando suona un corno, [[jon-snow|Jon]] spiega che uno squillo annuncia il ritorno dei ranger e due i bruti. Sam aggiunge che tre sono per gli Estranei, anche se sono passati mille anni; [[grenn|Grenn]] lo prende in giro perché l’ha letto in un libro. Chi arriva è [[qhorin-halfhand|Qhorin il Monco]], che porta un piccolo gruppo tra le montagne. Perché Jon possa andare con Qhorin, Sam si offre di prendere il suo posto come attendente del lord comandante.',
+        en: 'Sam marvels at the Fist of the First Men, and wonders what the First Men were like. When a horn sounds, [[jon-snow|Jon]] explains that one blast means rangers returning and two mean wildlings. Sam adds that three are for White Walkers, though it has been a thousand years; [[grenn|Grenn]] mocks him for having read it in a book. The newcomer is [[qhorin-halfhand|Qhorin Halfhand]], who takes a small party into the mountains. So that Jon can go with Qhorin, Sam offers to take over his duties as the Lord Commander’s steward.',
+      },
+    ),
+    onScreen(
+      [18, 142],
+      { it: 'Vetro di drago', en: 'Dragonglass' },
+      {
+        it: '[[jon-snow|Jon]] e il gruppo di esploratori non sono tornati al Pugno dei Primi Uomini, e si teme che siano morti, ma Sam si rifiuta di perdere la speranza. Mentre Sam scava latrine con [[grenn|Grenn]] e un altro confratello, Grenn solleva una pietra incisa con delle rune. Sotto c’è un fagotto avvolto in un mantello dei Guardiani della notte, pieno di punte di lancia e con un corno. Sam riconosce le lame: sono di vetro di drago.',
+        en: '[[jon-snow|Jon]] and the scouting party have not come back to the Fist of the First Men, and they are feared dead, but Sam refuses to give up hope. While Sam is digging latrines with [[grenn|Grenn]] and another brother, Grenn lifts a stone marked with runes. Beneath it lies a bundle wrapped in a cloak of the Night’s Watch, full of spearheads and with a horn. Sam knows the blades for dragonglass.',
+      },
+    ),
+    onScreen(
+      [20, 142],
+      { it: 'L’esercito dei morti', en: 'The army of the dead' },
+      {
+        it: 'Vicino al Pugno dei Primi Uomini Sam raccoglie sterco per i fuochi con [[grenn|Grenn]] ed [[eddison-tollett|Edd]], e parla di [[gilly|Gilly]] finché Edd non lo prende in giro. Poi un corno suona tre volte: il segnale degli Estranei. Corrono verso il Pugno, ma Sam inciampa nella neve e resta indietro. Mentre arriva una tormenta si nasconde dietro una roccia e guarda passare non morti ed Estranei. Un Estraneo su un cavallo morto lo vede e prosegue, poi alza la lancia e guida i morti verso il Pugno.',
+        en: 'Near the Fist of the First Men Sam gathers dung for the fires with [[grenn|Grenn]] and [[eddison-tollett|Edd]], and talks about [[gilly|Gilly]] until Edd mocks him. Then a horn sounds three times: the signal for White Walkers. They run for the Fist, but Sam trips in the snow and is left behind. As a blizzard rolls in he hides behind a rock and watches wights and White Walkers march past. A White Walker on a dead horse sees him and passes on, then raises its spear and leads the dead towards the Fist.',
       },
     ),
   ],
@@ -1577,6 +1844,38 @@ export const season1Chronicles = {
       {
         it: 'Grenn è stato assegnato ai ranger. Quando [[jon-snow|Jon Snow]] lascia Castello Nero per unirsi alla guerra del fratello [[robb-stark|Robb]], Grenn lo insegue con [[pypar|Pyp]] e altri amici. Raggiungono Jon, lo circondano e recitano il giuramento dei Guardiani della notte, finché Jon non accetta di tornare con loro.',
         en: 'Grenn has been named to the rangers. When [[jon-snow|Jon Snow]] rides away from Castle Black to join the war of his brother [[robb-stark|Robb]], Grenn rides after him with [[pypar|Pyp]] and other friends. They catch up with Jon, surround him and recite the vows of the Night’s Watch, until Jon agrees to come back with them.',
+      },
+    ),
+    onScreen(
+      [11, 97],
+      { it: 'La slitta', en: 'The sledge' },
+      {
+        it: 'Grenn marcia con la grande spedizione oltre la Barriera. Mentre spinge la slitta nel fango, si lamenta che il peso di [[samwell-tarly|Sam]] l’ha rovinata. Sam gli ricorda che è stato Grenn a offrirgli un passaggio, e Grenn dice di averlo fatto solo perché Sam smettesse di lamentarsi delle vesciche. Alla Fortezza di Craster i confratelli vengono avvertiti di non parlare con le donne, e Grenn chiede se a Craster dia fastidio che si parli con le sue figlie. Scopre che sono anche le mogli di Craster, e lui e Sam ne sono disgustati.',
+        en: 'Grenn marches with the great ranging beyond the Wall. Pushing the sledge through the mud, he complains that [[samwell-tarly|Sam]]’s weight has damaged it. Sam reminds him that Grenn offered him the ride, and Grenn says he did it only to stop Sam complaining about his blisters. At Craster’s Keep the brothers are warned not to speak to the women, and Grenn asks whether Craster minds people talking to his daughters. They are Craster’s wives too, he learns, and he and Sam are disgusted.',
+      },
+    ),
+    inBooks(
+      [15, 117],
+      { it: 'Un pugnale di vetro di drago', en: 'A dagger of dragonglass' },
+      {
+        it: 'Sul Pugno dei Primi Uomini Grenn mangia lo stufato con [[jon-snow|Jon]] e con il vecchio ranger Dywen, che dice di sentire odore di freddo. Quella notte [[ghost-direwolf|Spettro]] guida Jon a un nascondiglio di vetro di drago. Jon ne ricava tre pugnali, uno per sé, uno per il lord comandante e uno per Grenn, e divide il resto tra i suoi amici. Poi dalla Torre delle Ombre arriva [[qhorin-halfhand|Qhorin il Monco]], che porta Jon con sé tra le montagne.',
+        en: 'On the Fist of the First Men Grenn eats stew with [[jon-snow|Jon]] and the old ranger Dywen, who says he smells cold. That night [[ghost-direwolf|Ghost]] leads Jon to a buried cache of dragonglass. Jon makes three daggers from it, one for himself, one for the Lord Commander and one for Grenn, and shares out the rest among his friends. Then [[qhorin-halfhand|Qhorin Halfhand]] arrives from the Shadow Tower and takes Jon away with him into the mountains.',
+      },
+    ),
+    onScreen(
+      [18, 142],
+      { it: 'La pietra con le rune', en: 'The stone with runes' },
+      {
+        it: 'Sul Pugno dei Primi Uomini Grenn scava latrine con [[samwell-tarly|Sam]] e un altro confratello. Il gruppo di esploratori di [[jon-snow|Jon]] non è tornato, e si chiedono se Jon sia morto. Grenn trova una lastra di pietra incisa con le rune dei Primi Uomini e, anche se gli dicono di lasciarla stare, la solleva. Sotto c’è un nascondiglio avvolto in un mantello dei Guardiani della notte: punte di lancia e un corno. Sam riconosce il vetro di drago.',
+        en: 'On the Fist of the First Men, Grenn digs latrines with [[samwell-tarly|Sam]] and another brother. The scouting party of [[jon-snow|Jon]] has not returned, and they wonder whether he is dead. Grenn finds a stone tablet marked with the runes of the First Men and, though told to leave it alone, lifts it. Underneath lies a cache wrapped in a cloak of the Night’s Watch: spearheads and a horn. Sam knows them for dragonglass.',
+      },
+    ),
+    onScreen(
+      [20, 142],
+      { it: 'Correte', en: 'Run' },
+      {
+        it: 'Grenn raccoglie sterco per i fuochi vicino al Pugno dei Primi Uomini con [[samwell-tarly|Sam]] ed [[eddison-tollett|Edd]], lamentandosi di essere venuto a combattere i bruti e non a bruciare escrementi. Un corno suona una volta, poi due, e Grenn sguaina la spada, ma Edd dice di tornare indietro invece di affrontare i bruti da soli. Al terzo squillo, il segnale degli Estranei, Edd urla di correre. Grenn ed Edd raggiungono il Pugno senza accorgersi di aver lasciato indietro Sam.',
+        en: 'Grenn gathers dung for the fires near the Fist of the First Men with [[samwell-tarly|Sam]] and [[eddison-tollett|Edd]], complaining that he came to fight wildlings, not to burn droppings. A horn sounds once, then twice, and Grenn draws his sword, but Edd tells them to go back rather than face the wildlings alone. At the third blast, the signal for White Walkers, Edd yells at them to run. Grenn and Edd reach the Fist without noticing that they have left Sam behind.',
       },
     ),
   ],
@@ -7176,6 +7475,54 @@ export const season1Chronicles = {
       {
         it: 'Due uomini di Benjen Stark, [[othor|Othor]] e [[jafer-flowers|Jafer Flowers]], vengono trovati morti oltre la Barriera e portati al Castello Nero. Una notte Spettro sveglia [[jon-snow|Jon Snow]] alla sua porta e lo guida verso gli alloggi del Lord Comandante [[jeor-mormont|Jeor Mormont]]. Lì Jon trova Othor, risorto, che attacca. Jon gli dà fuoco e salva la vita di Mormont.',
         en: 'Two of Benjen Stark’s men, [[othor|Othor]] and [[jafer-flowers|Jafer Flowers]], are found dead beyond the Wall and brought back to Castle Black. One night Ghost rouses [[jon-snow|Jon Snow]] at his door and leads him towards the rooms of Lord Commander [[jeor-mormont|Jeor Mormont]]. There Jon finds Othor risen from the dead and attacking. Jon sets him on fire and saves Mormont’s life.',
+      },
+    ),
+    inBooks(
+      [11, 97],
+      { it: 'I conigli rubati', en: 'Stolen rabbits' },
+      {
+        it: 'Alla Fortezza di Craster i cani abbaiano a Spettro, che li ignora. Affamato, il lupo prende due conigli che una ragazza, Gilly, teneva per farli riprodurre, e [[jon-snow|Jon]] lo trova davanti a lei, spaventata. Jon promette che il lupo non le farà del male. I ranger Lark e [[chett|Chett]] prendono in giro Jon: senza il suo lupo, dicono, non sarebbe così audace. Spettro porta a Jon il secondo coniglio e trova per lui [[samwell-tarly|Sam]], e i due amici lo cuociono sul fuoco. All’alba Spettro è di nuovo sparito.',
+        en: 'At Craster’s Keep the dogs bark at Ghost, and he ignores them. Hungry, he takes two rabbits that a girl, Gilly, was keeping to breed, and [[jon-snow|Jon]] finds him facing her, the girl afraid. Jon promises that the wolf will not hurt her. The rangers Lark and [[chett|Chett]] mock Jon: without his wolf, they say, he would not be so bold. Ghost brings Jon the second rabbit, and finds [[samwell-tarly|Sam]] for him, and the two friends cook it over a fire. By dawn Ghost is gone again.',
+      },
+    ),
+    onScreen(
+      [12, 97],
+      { it: 'Un coniglio morto', en: 'A dead rabbit' },
+      {
+        it: 'Spettro segue [[jon-snow|Jon]] e la grande spedizione nel cuore delle terre dei bruti. Alla Fortezza di Craster il lupo bianco si avvicina a una delle mogli di Craster, attirato dal coniglio morto che lei tiene in mano, e la spaventa. [[samwell-tarly|Sam]] corre ad aiutarla e dice a Spettro di andarsene. Il meta-lupo lancia a Sam un’occhiata torva, ma obbedisce e si allontana.',
+        en: 'Ghost follows [[jon-snow|Jon]] and the great ranging deep into wildling country. At Craster’s Keep the white wolf approaches one of Craster’s wives, drawn by the dead rabbit she is holding, and frightens her. [[samwell-tarly|Sam]] comes to her aid and tells Ghost to get away. The direwolf gives Sam a baleful look, but obeys and slinks off.',
+      },
+    ),
+    inBooks(
+      [15, 108],
+      { it: 'Il tumulo', en: 'The mound' },
+      {
+        it: 'Mentre la spedizione sale sul Pugno dei Primi Uomini, Spettro continua a scappare. Quella notte entra nel cerchio di pietre, cosa che si era sempre rifiutato di fare, e fiuta l’aria. [[jon-snow|Jon]] ricorda che Spettro ha capito quando i morti si sono messi a camminare. Il lupo lo guida fuori dal cerchio, intorno alla collina, e scava in un tumulo di terra smossa da poco. Jon si aspetta un cadavere. Trova invece un mantello dei Guardiani della notte avvolto attorno a lame di vetro di drago e a un vecchio corno da guerra.',
+        en: 'Ghost keeps running off as the ranging climbs the Fist of the First Men. That night he comes inside the ring wall, which he has always refused to do, and sniffs the air. [[jon-snow|Jon]] remembers that Ghost knew when the dead came walking. The wolf leads him out of the ring, around the hill, and digs at a mound of fresh earth. Jon expects a body. Instead he finds a cloak of the Night’s Watch wrapped around blades of dragonglass and an old warhorn.',
+      },
+    ),
+    onScreen(
+      [16, 125],
+      { it: 'Sparito tra le montagne', en: 'Gone into the mountains' },
+      {
+        it: 'Spettro sale sul Pugno dei Primi Uomini con i confratelli. Quando [[jon-snow|Jon]] si unisce al gruppo di [[qhorin-halfhand|Qhorin]], il meta-lupo li segue tra le montagne. Durante il viaggio Spettro si allontana dal gruppo, e alla fine sparisce, anche se Jon continua a chiamarlo perché resti con loro.',
+        en: 'Ghost climbs the Fist of the First Men with the black brothers. When [[jon-snow|Jon]] joins [[qhorin-halfhand|Qhorin]]’s party of raiders, the direwolf follows them into the mountains. As they travel, Ghost strays from the group, and in the end he disappears, though Jon keeps calling for him to stay with them.',
+      },
+    ),
+    inBooks(
+      [17, 127],
+      { it: 'Con gli occhi del lupo', en: 'Through the wolf’s eyes' },
+      {
+        it: 'Tra le montagne [[jon-snow|Jon]] sogna di essere Spettro. Nei panni del lupo trova un albero-diga con il volto di suo fratello e tre occhi, che gli spiega come aprire gli occhi. Dall’alto di una rupe guarda migliaia di bruti che si addestrano alla guerra, e giganti in groppa ai mammut, finché un’aquila non gli piomba addosso. Jon si sveglia gridando il nome di Spettro, e [[qhorin-halfhand|Qhorin]] lo chiama un sogno di lupo. Quella sera stessa i ranger trovano Spettro ferito, e gli curano le ferite.',
+        en: 'In the mountains [[jon-snow|Jon]] dreams that he is Ghost. As the wolf he finds a weirwood with the face of his brother and three eyes, which tells him how to open his eyes. From a clifftop he looks down on thousands of wildlings training for war, and giants riding mammoths, until an eagle dives at him. Jon wakes shouting Ghost’s name, and [[qhorin-halfhand|Qhorin]] calls it a wolf dream. That evening the rangers find Ghost wounded, and dress his wounds.',
+      },
+    ),
+    inBooks(
+      [20, 142],
+      { it: 'Il morso', en: 'The bite' },
+      {
+        it: 'Quando i bruti del [[lord-of-bones|Lord delle Ossa]] raggiungono [[jon-snow|Jon]] e [[qhorin-halfhand|Qhorin]], Jon si arrende, come Qhorin gli ha ordinato. Per mettersi alla prova deve uccidere il ranger. Spettro si lancia e morde il polpaccio di Qhorin, e in quell’attimo Jon abbatte Qhorin con Lungo Artiglio. I bruti accolgono Jon come uno di loro.',
+        en: 'When the wildlings of the [[lord-of-bones|Lord of Bones]] overtake [[jon-snow|Jon]] and [[qhorin-halfhand|Qhorin]], Jon yields, as Qhorin ordered him to. To prove himself he must kill the ranger. Ghost leaps in and bites Qhorin’s calf, and in that opening Jon cuts Qhorin down with Longclaw. The wildlings accept Jon as one of their own.',
       },
     ),
   ],
