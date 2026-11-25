@@ -39012,6 +39012,306 @@
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=733236",
       "contentSha256": "394267d384a0373c0bc7fd699d8b507d6d1c9d09cf1c518114ddedeff40338b8"
     },
+    "got-en-Valar_Dohaeris/Appearances-722999.json": {
+      "locale": "en",
+      "title": "Valar Dohaeris/Appearances",
+      "revision": 722999,
+      "revisionDate": "2026-01-12T06:18:33Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Valar_Dohaeris/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722999",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722999",
+      "contentSha256": "c1cd5ae753cde3eb3bd7133e83e1d028cb626431d66ef030d89788bcfc294255"
+    },
+    "got-en-Dark_Wings,_Dark_Words/Appearances-708851.json": {
+      "locale": "en",
+      "title": "Dark Wings, Dark Words/Appearances",
+      "revision": 708851,
+      "revisionDate": "2025-02-21T08:21:27Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Dark_Wings%2C_Dark_Words/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=708851",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=708851",
+      "contentSha256": "f0d370c7c2a2302e06b254a4d4ec808479aca42d2c871a0dca433417ac897a36"
+    },
+    "got-en-Walk_of_Punishment_(episode)/Appearances-694243.json": {
+      "locale": "en",
+      "title": "Walk of Punishment (episode)/Appearances",
+      "revision": 694243,
+      "revisionDate": "2024-06-30T12:28:34Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Walk_of_Punishment_%28episode%29/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=694243",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=694243",
+      "contentSha256": "92ba084f07d71bdd7810e1c227247e0bfdcdf35245cd339a12911d24f2457617"
+    },
+    "got-en-And_Now_His_Watch_Is_Ended/Appearances-721740.json": {
+      "locale": "en",
+      "title": "And Now His Watch Is Ended/Appearances",
+      "revision": 721740,
+      "revisionDate": "2026-01-08T02:43:33Z",
+      "url": "https://gameofthrones.fandom.com/wiki/And_Now_His_Watch_Is_Ended/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=721740",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=721740",
+      "contentSha256": "2b1c787acf2e800e3fe0defba053be0da62219e76497d2afa6d3f38d538ef16b"
+    },
+    "got-en-Kissed_by_Fire/Appearances-737683.json": {
+      "locale": "en",
+      "title": "Kissed by Fire/Appearances",
+      "revision": 737683,
+      "revisionDate": "2026-06-21T13:56:46Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=737683",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=737683",
+      "contentSha256": "52932510ed988c261b438bbf4988f45aadafa85c35211278c6ec9ddb933adb1f"
+    },
+    "got-en-The_Climb/Appearances-694246.json": {
+      "locale": "en",
+      "title": "The Climb/Appearances",
+      "revision": 694246,
+      "revisionDate": "2024-06-30T12:29:40Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Climb/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=694246",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=694246",
+      "contentSha256": "ba06ad096ecc991d7d8b37e591cc39a3fb706a007226c4bfb0671a08420c5fb3"
+    },
+    "got-en-The_Bear_and_the_Maiden_Fair_(episode)/Appearances-734072.json": {
+      "locale": "en",
+      "title": "The Bear and the Maiden Fair (episode)/Appearances",
+      "revision": 734072,
+      "revisionDate": "2026-04-30T11:45:42Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair_%28episode%29/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=734072",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=734072",
+      "contentSha256": "dd32f750470354f4cfecf3e1f6978bff00f4cb7a58dda9c651e3bc9d8dc797d9"
+    },
+    "got-en-Second_Sons_(episode)/Appearances-708357.json": {
+      "locale": "en",
+      "title": "Second Sons (episode)/Appearances",
+      "revision": 708357,
+      "revisionDate": "2025-02-09T09:55:24Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Second_Sons_%28episode%29/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=708357",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=708357",
+      "contentSha256": "104a4fcb0fbd4d521c5d7396d66d264a0eeb0ada35f6b45e2c5df47a5c18fe35"
+    },
+    "got-en-The_Rains_of_Castamere_(episode)/Appearances-708358.json": {
+      "locale": "en",
+      "title": "The Rains of Castamere (episode)/Appearances",
+      "revision": 708358,
+      "revisionDate": "2025-02-09T09:55:36Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere_%28episode%29/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=708358",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=708358",
+      "contentSha256": "888c36b057da109c1c8fc95d29a0897684e656d87e9bfb1c93b09e27124bd23e"
+    },
+    "got-en-Mhysa/Appearances-708359.json": {
+      "locale": "en",
+      "title": "Mhysa/Appearances",
+      "revision": 708359,
+      "revisionDate": "2025-02-09T09:55:45Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Mhysa/Appearances",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=708359",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=708359",
+      "contentSha256": "10119fcdf126133a673d5fdbad942213af8a277341f87a1b338ec7fc5d6e2b30"
+    },
+    "got-en-Yunkai-720786.json": {
+      "locale": "en",
+      "title": "Yunkai",
+      "revision": 720786,
+      "revisionDate": "2026-01-07T12:56:47Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Yunkai",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=720786",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=720786",
+      "contentSha256": "e6c83721f7fb7b75b9d43652c2eee0a795cc3a704a427221cd482d26d8d62e83"
+    },
+    "got-en-Nightfort-722586.json": {
+      "locale": "en",
+      "title": "Nightfort",
+      "revision": 722586,
+      "revisionDate": "2026-01-11T17:20:06Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Nightfort",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=722586",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=722586",
+      "contentSha256": "d5cfb31ae3762b41149ff19107529ccc50715090ae4ef93ca168b6147096e0da"
+    },
+    "got-en-Karhold-683199.json": {
+      "locale": "en",
+      "title": "Karhold",
+      "revision": 683199,
+      "revisionDate": "2024-06-01T19:14:06Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Karhold",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=683199",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=683199",
+      "contentSha256": "99459ad49b777aad4201585d527140379533e474b0f053686cd33ef18b4ad71c"
+    },
+    "got-en-Last_Hearth-706122.json": {
+      "locale": "en",
+      "title": "Last Hearth",
+      "revision": 706122,
+      "revisionDate": "2024-09-19T14:13:07Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Last_Hearth",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=706122",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=706122",
+      "contentSha256": "a6aac413f077d4e4eb7cfb8c5b510d35a75d6be717c7d580ac4374dfd0073ead"
+    },
+    "got-en-Mummer's_Ford-708267.json": {
+      "locale": "en",
+      "title": "Mummer's Ford",
+      "revision": 708267,
+      "revisionDate": "2025-02-09T05:36:03Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Mummer's_Ford",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=708267",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=708267",
+      "contentSha256": "e83b5fb71886aed69f889b65e3bf718ea2acdd713895b3a490818d91400f4c35"
+    },
+    "got-en-Shadow_Tower-705332.json": {
+      "locale": "en",
+      "title": "Shadow Tower",
+      "revision": 705332,
+      "revisionDate": "2024-08-22T07:39:54Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Shadow_Tower",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=705332",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=705332",
+      "contentSha256": "b8db14a5fb03317248efbf19c5d734247eaca5b4f2135580bf21bd40d1fbda64"
+    },
+    "got-en-Bay_of_Seals-720429.json": {
+      "locale": "en",
+      "title": "Bay of Seals",
+      "revision": 720429,
+      "revisionDate": "2026-01-06T13:04:59Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Bay_of_Seals",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=720429",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=720429",
+      "contentSha256": "79170d1a3001bfe8961178a79f0c55d4fd2a7f0437e9ecc988ecf7a6c28d63f0"
+    },
+    "got-en-Acorn_Hall-683258.json": {
+      "locale": "en",
+      "title": "Acorn Hall",
+      "revision": 683258,
+      "revisionDate": "2024-06-02T00:43:20Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Acorn_Hall",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=683258",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=683258",
+      "contentSha256": "35fb8770ed423d708de55dd64125c034a41baef9f54e7177c605ae165247c7c4"
+    },
+    "got-en-High_Heart-699428.json": {
+      "locale": "en",
+      "title": "High Heart",
+      "revision": 699428,
+      "revisionDate": "2024-07-16T12:31:14Z",
+      "url": "https://gameofthrones.fandom.com/wiki/High_Heart",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=699428",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=699428",
+      "contentSha256": "97051df9a13404f277fa129108b863800e8a4449d0b736dedc5426dfb9ad64f9"
+    },
+    "got-en-Stoney_Sept-744227.json": {
+      "locale": "en",
+      "title": "Stoney Sept",
+      "revision": 744227,
+      "revisionDate": "2026-07-20T10:59:21Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Stoney_Sept",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=744227",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=744227",
+      "contentSha256": "e0d14fc2ef4a88b2305218ecbf61cf1f2bdbf35a24736100eea0cda2a8a46b25"
+    },
+    "got-en-Oldstones-708373.json": {
+      "locale": "en",
+      "title": "Oldstones",
+      "revision": 708373,
+      "revisionDate": "2025-02-09T10:03:32Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Oldstones",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=708373",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=708373",
+      "contentSha256": "1a0420358c9796c713a214636c702e08de74ada3df9eb31dc4bb3e8698e101e9"
+    },
+    "got-en-Lord_Harroway's_Town-706036.json": {
+      "locale": "en",
+      "title": "Lord Harroway's Town",
+      "revision": 706036,
+      "revisionDate": "2024-09-16T06:16:49Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lord_Harroway's_Town",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=706036",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=706036",
+      "contentSha256": "918b6f0d920dda42a5d0c97f6da5181fe93a524155556f718c518a2d28029386"
+    },
+    "got-en-Queenscrown-736494.json": {
+      "locale": "en",
+      "title": "Queenscrown",
+      "revision": 736494,
+      "revisionDate": "2026-05-29T14:09:26Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Queenscrown",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=736494",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=736494",
+      "contentSha256": "d83131566a0ff05a7292f09159c5c0472bb7a5ee9ca4f9add4af2edb6149abc9"
+    },
+    "got-en-Milkwater_River-671236.json": {
+      "locale": "en",
+      "title": "Milkwater River",
+      "revision": 671236,
+      "revisionDate": "2024-03-18T07:32:08Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Milkwater_River",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=671236",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=671236",
+      "contentSha256": "c7947528d2f3ac9168a536ead27b51565a68ab91047878f1273d4aeccc5f744e"
+    },
+    "got-en-Inn_at_the_Crossroads-733261.json": {
+      "locale": "en",
+      "title": "Inn at the Crossroads",
+      "revision": 733261,
+      "revisionDate": "2026-03-12T09:52:28Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Inn_at_the_Crossroads",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=733261",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=733261",
+      "contentSha256": "81cf2ee21b6c85b789819570b37b52396e3c68678f7efb964cecb41591898fb9"
+    },
+    "got-en-Harrenhal-735779.json": {
+      "locale": "en",
+      "title": "Harrenhal",
+      "revision": 735779,
+      "revisionDate": "2026-05-14T14:29:59Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Harrenhal",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735779",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735779",
+      "contentSha256": "8a2c477146ab3617911f45b37662e2883f5a899eae3bd65eee75fdf975a44b4f"
+    },
+    "got-en-Stone_Mill-708356.json": {
+      "locale": "en",
+      "title": "Stone Mill",
+      "revision": 708356,
+      "revisionDate": "2025-02-09T09:55:09Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Stone_Mill",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=708356",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=708356",
+      "contentSha256": "df3e4fb7e1fef57cf2813cd03b769f3ab2087b982765fa5a9030b204111d829f"
+    },
+    "got-en-Slaver's_Bay-723856.json": {
+      "locale": "en",
+      "title": "Slaver's Bay",
+      "revision": 723856,
+      "revisionDate": "2026-01-15T09:38:29Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Slaver's_Bay",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=723856",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=723856",
+      "contentSha256": "a07dddb7f66c4ddbc1164ee315af05f83e64764e07f38ee6091c79255965794c"
+    },
+    "got-en-Summer_Sea-658770.json": {
+      "locale": "en",
+      "title": "Summer Sea",
+      "revision": 658770,
+      "revisionDate": "2024-01-07T12:35:56Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Summer_Sea",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=658770",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=658770",
+      "contentSha256": "dbeb70ab88434196ceb59c509fe49703e27ccfc9e8f77e0ff0983f92d2a5877c"
+    },
+    "got-en-Greyguard-659995.json": {
+      "locale": "en",
+      "title": "Greyguard",
+      "revision": 659995,
+      "revisionDate": "2024-01-12T00:07:27Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Greyguard",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=659995",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=659995",
+      "contentSha256": "9b986a1df44a12aec0f6a519f280b2546836e651b427ce867c9917f9fc227916"
+    },
     "en-Chapter_911.json": {
       "locale": "en",
       "title": "Chapter 911",
