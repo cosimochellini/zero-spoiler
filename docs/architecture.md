@@ -395,7 +395,10 @@ named in the pages read), with the stage's steps of seven earlier characters.
 Jaime, Brienne and Harrenhal (#1637) adds two characters, one both media's and
 one the books' alone, with the stage's steps of five earlier records.
 Dragonstone (#1640) adds three, all the books' alone (Axell and Alester Florent,
-Edric Storm), with stage-3 steps on Davos Seaworth.
+Edric Storm), with stage-3 steps on Davos Seaworth. Bran's road and Theon
+(#1641) adds Myranda, the show's alone, moves Ramsay Snow's show gate to episode
+30, where his name is first said, and adds the stage's steps of Bran, Osha and
+Theon, Bran's passing beyond the Wall keeping its later book chapter (#852).
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -635,15 +638,15 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| Records                | 347                                                                                     |
-| Characters             | 260                                                                                     |
+| Records                | 348                                                                                     |
+| Characters             | 261                                                                                     |
 | Places                 | 87                                                                                      |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 350, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
+| Line drawings          | 351, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
 | Chronicle stories      | 1188, for 213 characters                                                                |
-| Dated timelines        | 1166                                                                                    |
-| Affiliation steps      | 306                                                                                     |
-| Status steps           | 451                                                                                     |
+| Dated timelines        | 1168                                                                                    |
+| Affiliation steps      | 307                                                                                     |
+| Status steps           | 453                                                                                     |
 | Later visits to places | 5                                                                                       |
 
 <!-- End of the generated counts. -->

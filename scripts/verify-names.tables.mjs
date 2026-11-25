@@ -209,7 +209,8 @@ export const ITALIAN_TITLES = {
     ...PLACE_ITALIAN_TITLES['hunter-x-hunter'],
   },
   // On Italian Wikipedia, which the Ice and Fire Wiki does not link: every
-  // Game of Thrones character's page is named in `./verify-names.thrones.mjs`.
+  // Game of Thrones character's page is named in `./verify-names.thrones.mjs`
+  // or, from the third stage, `./verify-names.thrones-stage3.mjs`.
   'game-of-thrones': {
     ...THRONES_ITALIAN_TITLES,
     ...THRONES_STAGE_3_TITLES,
