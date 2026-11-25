@@ -5105,8 +5105,8 @@ export const season1Chronicles = {
       [18, 123],
       { it: 'Al servizio di Lollys', en: 'In Lollys’s service' },
       {
-        it: 'Come aveva proposto [[varys|Varys]], Shae ora serve in casa di [[lollys-stokeworth|Lollys Stokeworth]] come sua cameriera, vicina a [[tyrion-lannister|Tyrion]] e nascosta a sua sorella. Tyrion ci pensa mentre i nuovi cavalieri della Guardia Reale ricevono il mantello bianco nel tempio reale. Le ha permesso di portare solo pochi vestiti e tiene gli abiti migliori e i gioielli di lei nelle proprie stanze.',
-        en: 'As [[varys|Varys]] proposed, Shae now serves in [[lollys-stokeworth|Lollys Stokeworth]]’s household as her bedmaid, close to [[tyrion-lannister|Tyrion]] and hidden from his sister. Tyrion thinks of it while the new knights of the Kingsguard take their white cloaks in the royal sept. He let her take only a few dresses, and keeps her finer clothes and her jewels in his own chambers.',
+        it: 'Come aveva proposto [[varys|Varys]], Shae ora serve in casa di [[lollys-stokeworth|Lollys Stokeworth]] come cameriera di Lollys, vicina a [[tyrion-lannister|Tyrion]] e nascosta a [[cersei-lannister|Cersei]]. Tyrion ci pensa mentre i nuovi cavalieri della Guardia Reale ricevono il mantello bianco nel tempio reale. A Shae ha permesso di portare solo pochi vestiti e tiene gli abiti migliori e i gioielli di Shae nelle proprie stanze.',
+        en: 'As [[varys|Varys]] proposed, Shae now serves in [[lollys-stokeworth|Lollys Stokeworth]]’s household as her bedmaid, close to [[tyrion-lannister|Tyrion]] and hidden from his sister [[cersei-lannister|Cersei]]. Tyrion thinks of it while the new knights of the Kingsguard take their white cloaks in the royal sept. He let her take only a few dresses, and keeps her finer clothes and her jewels in his own chambers.',
       },
     ),
     inBooks(

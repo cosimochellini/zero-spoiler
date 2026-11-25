@@ -97,15 +97,15 @@ Steps in `season-1.ts`, as episode / site chapter.
   in Sansa's chamber). Tyrion XIII (133) has him refuse the sortie only (A Wiki
   of Ice and Fire).
 - Pycelle: `imprisoned` 13 / 99 ("What Is Dead May Never Die"; Tyrion VI);
-  `alive` 14 in the show alone ("Garden of Bones", Tyrion agrees to free him),
-  103 ordering it. The books free him past the stage.
+  `alive` 14 / 103 ("Garden of Bones"; Tyrion VII, where Tyrion lets Cersei have
+  him but keeps him off the council).
 - Myrcella Baratheon: role princess sent to Dorne, 16 / 115 ("The Old Gods and
   the New"; Tyrion IX).
 - Petyr Baelish: role master of coin and Lord of Harrenhal, 20 / 139 ("Valar
   Morghulis"). The book chapter, Sansa VIII's court of rewards, is unconfirmed.
 - Shae: Sansa Stark's handmaiden, 13, show only ("What Is Dead May Never Die");
-  Lollys Stokeworth's maid, 131, books only (Sansa V, where Sansa sees her with
-  Lollys at the holdfast, the safe later pin; Tyrion X, 118, is likely).
+  Lollys Stokeworth's maid, 123, books only (Tyrion XI, where Tyrion recalls she
+  has entered the Stokeworth household; Varys proposes it in Tyrion X, 118).
 - Balon Swann, books only: knight of the Kingsguard, 123 (Tyrion XI).
 - Ros, show only: `captured` 18 ("The Prince of Winterfell"), `alive` 20 ("Valar
   Morghulis").

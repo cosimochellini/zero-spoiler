@@ -2738,7 +2738,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '13:118': {
       source: KL_118,
-      note: 'Tyrion X (site 118): Shae asking to be his lady at court and to kill Cersei, the kitchens refused, the mockery about Tywin, the slap, the story of Tysha, and Varys’s plan of Lollys’s household and the secret passage. Her role step “Lollys Stokeworth’s maid” stays at 19/131, so the story tells only the proposal.',
+      note: 'Tyrion X (site 118): Shae asking to be his lady at court and to kill Cersei, the kitchens refused, the mockery about Tywin, the slap, the story of Tysha, and Varys’s plan of Lollys’s household and the secret passage. Her role step “Lollys Stokeworth’s maid” sits at 18/123 (Tyrion XI), so the story tells only the proposal.',
     },
     '18:123': {
       source: KL_123,
