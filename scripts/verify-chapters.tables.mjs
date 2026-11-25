@@ -91,6 +91,8 @@ export const SHOW_TITLES = {
   'qhorin-halfhand': 'Qhorin',
   // #1639: the show renamed the Yunkish envoy.
   'grazdan-mo-eraz': 'Razdal mo Eraz',
+  // #1635: the wiki titles her by her married name.
+  'roslin-frey': 'Roslin Tully',
 }
 
 // The reviewed first-use pins. See the scene evidence in the Nen inventory.
