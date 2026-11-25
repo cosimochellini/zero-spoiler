@@ -1005,12 +1005,16 @@
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Barristan_Selmy",
-      "https://gameofthrones.fandom.com/wiki/Sons_of_the_Harpy_(episode)"
+      "https://gameofthrones.fandom.com/wiki/Sons_of_the_Harpy_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Valar_Dohaeris",
+      "https://gameofthrones.fandom.com/wiki/Walk_of_Punishment_(episode)",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_8"
     ],
     "unverified": [
       "Episode 3: that he is named aloud and identified as Lord Commander in the war-stories scene.",
       "Italian role wording 'Lord comandante della Guardia Reale' (it.wikipedia capitalisation, dub form not checked).",
-      "Drawing stages (#1287): the death in \"Sons of the Harpy\" (episode 44, Fandom ref GOT504), show only; the Arstan Whitebeard stage, books only, at Daenerys V of A Storm of Swords (site chapter 201, AWOIAF not read: unverified), episode 21 only orders it."
+      "Drawing stages (#1287): the death in \"Sons of the Harpy\" (episode 44, Fandom ref GOT504), show only; the Arstan Whitebeard stage, books only, at Daenerys V of A Storm of Swords (site chapter 201, AWOIAF not read: unverified), episode 21 only orders it.",
+      "Show-only steps (#1639): in \"Valar Dohaeris\" (episode 21) he saves Daenerys in Astapor, gives his name and offers his service (episode synopsis); \"Walk of Punishment\" (episode 23) first shows him in it, advising her with Jorah (Barristan page, GOT303), so role \"Knight in Daenerys's service\" and affiliation \"Daenerys Targaryen's service\" open at 23. The books bring him as Arstan Whitebeard, his own record, and reveal him in Daenerys V (site chapter 201), the scene episode 21 adapts (episode page, \"In the books\"), which orders both."
     ]
   },
   "syrio-forel": {
@@ -1270,11 +1274,14 @@
       "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_48",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63",
-      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_27"
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_27",
+      "https://gameofthrones.fandom.com/wiki/And_Now_His_Watch_Is_Ended",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_27"
     ],
     "unverified": [
       "Show wedding is in episode 1 (her gate); the khaleesi step is dated episode 2 only because episodes must strictly increase.",
-      "Drawings (#1292): the dragon egg first drawing (wedding gift, episode 1, Daenerys II, site 12) and the pyre stage at episode 10 / chapter 73 (the pin Mirri's pyre stage already uses); dies in episode 73 (Fandom DeathEp, GOT806), the show's alone, ordered at chapter 344. Chapter pins not re-checked on AWOIAF (unreachable in this session). Episodes not viewed."
+      "Drawings (#1292): the dragon egg first drawing (wedding gift, episode 1, Daenerys II, site 12) and the pyre stage at episode 10 / chapter 73 (the pin Mirri's pyre stage already uses); dies in episode 73 (Fandom DeathEp, GOT806), the show's alone, ordered at chapter 344. Chapter pins not re-checked on AWOIAF (unreachable in this session). Episodes not viewed.",
+      "Role and affiliation steps at 24 / 171 (#1639): she buys the Unsullied and turns them on the masters of Astapor in \"And Now His Watch Is Ended\" and Daenerys III (Chapter 27)."
     ]
   },
   "viserys-targaryen": {
@@ -5128,6 +5135,129 @@
       "Show gate 11: \"The North Remembers\"'s Appearances page lists Oldtown among the places mentioned; the line is not quoted. Neither the episodes nor the books were viewed.",
       "Book gate 74 (the prologue): the Ice and Fire Wiki's chapter page lists Oldtown among the places mentioned.",
       "Italian: \"Vecchia Città\", Italian Wikipedia's places page."
+    ]
+  },
+  "missandei": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Missandei",
+      "https://gameofthrones.fandom.com/wiki/Valar_Dohaeris",
+      "https://gameofthrones.fandom.com/wiki/Walk_of_Punishment_(episode)",
+      "https://iceandfire.fandom.com/wiki/Missandei",
+      "https://iceandfire.fandom.com/wiki/Template:A_Storm_of_Swords",
+      "https://awoiaf.westeros.org/index.php/Missandei",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_23",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_27",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Missandei"
+    ],
+    "unverified": [
+      "Show gate 23: the Game of Thrones Wiki's Missandei page has Daenerys ask her name after taking her in \"Walk of Punishment\" (GOT303). Owner check: \"Valar Dohaeris\" (episode 21), where she translates for the slaver, names her in narration only. Neither the episodes nor the books were viewed.",
+      "Book gate 171: A Wiki of Ice and Fire's Missandei page has Daenerys ask her name in High Valyrian to proclaim her free, in Daenerys III (Chapter 27); in Daenerys II (Chapter 23, site 167) she is only the slave girl who translates.",
+      "Role \"Daenerys's interpreter\" and affiliation \"Daenerys's service\": both media have her translate for Daenerys from the gate."
+    ]
+  },
+  "kraznys-mo-nakloz": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Kraznys_mo_Nakloz",
+      "https://gameofthrones.fandom.com/wiki/Good_Masters",
+      "https://gameofthrones.fandom.com/wiki/Valar_Dohaeris",
+      "https://gameofthrones.fandom.com/wiki/Walk_of_Punishment_(episode)",
+      "https://gameofthrones.fandom.com/wiki/And_Now_His_Watch_Is_Ended",
+      "https://awoiaf.westeros.org/index.php/Kraznys_mo_Nakloz",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_23",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_27",
+      "https://iceandfire.fandom.com/wiki/Template:A_Storm_of_Swords",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Books only: no quoted line seen says his name. A Wiki of Ice and Fire's synopses and his page name him in narration in Daenerys II and III (Chapters 23 and 27); the gate takes the later chapter, 171 (safe later pin). Owner check: if Daenerys II says his name, 167.",
+      "Show: episodes 21, 23 and 24 name him in narration and the credits only; the one quoted line to him is \"Tell the Good Master\" (Good Masters page). Owner check: if the show says his name, the record becomes both media's, with his show death at 24. Episode 24 only orders the record.",
+      "Status deceased from his gate: Drogon burns him at the plaza in Daenerys III (Chapter 27), the chapter of his gate.",
+      "Italian: \"Kraznys mo Nakloz\" from Italian Wikipedia's TV cast list; \"Buon Padrone\" / \"Buoni Padroni\" not checked against the Mondadori edition."
+    ]
+  },
+  "grey-worm": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Grey_Worm",
+      "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire",
+      "https://iceandfire.fandom.com/wiki/Grey_Worm",
+      "https://awoiaf.westeros.org/index.php/Grey_Worm",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42",
+      "https://iceandfire.fandom.com/wiki/Template:A_Storm_of_Swords",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Verme_Grigio"
+    ],
+    "unverified": [
+      "Show gate 25: \"Kissed by Fire\", Daenerys asks the leader the Unsullied chose for his name and he introduces himself as Grey Worm (episode synopsis; his quoted line on his page). Neither the episodes nor the books were viewed.",
+      "Book gate 186: his line \"Grey Worm is the name this one drew the day Daenerys Stormborn set him free\", quoted on A Wiki of Ice and Fire's Grey Worm page from Daenerys IV (Chapter 42).",
+      "Role \"Unsullied officer\": the show makes him the one commander, the books one of the officers the Unsullied choose; the role says only what both tell."
+    ]
+  },
+  "grazdan-mo-eraz": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Razdal_mo_Eraz",
+      "https://gameofthrones.fandom.com/wiki/Wise_Masters",
+      "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Greizhen_mo_Ullhor",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42",
+      "https://iceandfire.fandom.com/wiki/Template:A_Storm_of_Swords",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate 27: \"The Bear and the Maiden Fair\", Missandei announces him as Razdal mo Eraz, one of the Wise Masters (episode synopsis). Neither the episodes nor the books were viewed.",
+      "Book gate 186: A Wiki of Ice and Fire's Chapter 42 synopsis and Appearing list (Grazdan mo Eraz); no quoted line seen. His character page was not read (Firecrawl credits ran out).",
+      "One record under the books' name, with the show's \"Razdal mo Eraz\" as its episodeName (past the last chapter): the Game of Thrones Wiki says the show renamed him, as it renamed Grazdan mo Ullhor.",
+      "Italian: \"Razdal mo Eraz\" from Italian Wikipedia's TV cast list; \"Grazdan mo Eraz\" and \"Saggi Padroni\" assumed, not checked against the Mondadori edition."
+    ]
+  },
+  "mero": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Mero",
+      "https://gameofthrones.fandom.com/wiki/Second_Sons",
+      "https://gameofthrones.fandom.com/wiki/Second_Sons_(episode)",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42",
+      "https://iceandfire.fandom.com/wiki/Template:A_Storm_of_Swords",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate 28: \"come sit on Mero's lap\", quoted on the Game of Thrones Wiki's Mero page (\"Second Sons\"). Neither the episodes nor the books were viewed.",
+      "Book gate 186: A Wiki of Ice and Fire's Chapter 42 synopsis and Appearing list; no quoted line seen. His character page was not read (Firecrawl credits ran out).",
+      "Show-only death: Daario kills him in \"Second Sons\" (episode 28), so the show record opens deceased; the books keep him alive through the stage, and Daenerys V (Chapter 57, site 201), where they end him (Game of Thrones Wiki, \"In the books\"), only orders it.",
+      "Italian: \"Mero\", \"Secondi Figli\" (Italian Wikipedia, Barristan Selmy's section and the TV cast list).",
+      "Summary: \"a sellsword, captain of the Second Sons\" only; Braavosi and the Titan's Bastard are confirmed for the books only in Daenerys V (site 201), past the stage."
+    ]
+  },
+  "daario-naharis": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Daario_Naharis",
+      "https://gameofthrones.fandom.com/wiki/Second_Sons",
+      "https://gameofthrones.fandom.com/wiki/Second_Sons_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Stormcrows",
+      "https://iceandfire.fandom.com/wiki/Daario_Naharis",
+      "https://awoiaf.westeros.org/index.php/Daario_Naharis",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42",
+      "https://iceandfire.fandom.com/wiki/Template:A_Storm_of_Swords",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Daario_Naharis"
+    ],
+    "unverified": [
+      "Show gate 28: \"The Second Sons are yours, and so is Daario Naharis\", quoted on his Game of Thrones Wiki page (\"Second Sons\"). Neither the episodes nor the books were viewed.",
+      "Book gate 186: Jorah's \"Daario Naharis is not one of them\", quoted on A Wiki of Ice and Fire's Daario page from Daenerys IV (Chapter 42).",
+      "Affiliation by medium: the Second Sons in the show, the Stormcrows in the books (Game of Thrones Wiki, Second Sons episode \"In the books\").",
+      "Italian: \"Daario Naharis\", \"Corvi della Tempesta\" (Italian Wikipedia, his section)."
+    ]
+  },
+  "prendahl-na-ghezn": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Prendahl_na_Ghezn",
+      "https://gameofthrones.fandom.com/wiki/Second_Sons_(episode)",
+      "https://awoiaf.westeros.org/index.php/Daario_Naharis",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_42",
+      "https://iceandfire.fandom.com/wiki/Template:A_Storm_of_Swords",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Daario_Naharis"
+    ],
+    "unverified": [
+      "Books only: A Wiki of Ice and Fire's Chapter 42 synopsis and Appearing list, and its Daario page, which has him rebuff Daenerys at the parley; no quoted line seen. His character page was not read (Firecrawl credits ran out).",
+      "Show: \"Second Sons\" (episode 28) names him in narration only. Owner check: if the show says his name, the record becomes both media's, dead at 28 in both. Episode 28 only orders the record.",
+      "Status deceased from his gate: Daario kills him in the chapter that names him.",
+      "Italian: \"Prendahl na Ghezn\" (Italian Wikipedia, Daario's section and the TV cast list)."
     ]
   }
 }

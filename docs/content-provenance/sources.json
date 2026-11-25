@@ -38151,6 +38151,186 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25051",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25051",
       "contentSha256": "2d1ff8f46e18f970e5e451f80a9e11febc2cb82f8159427b8250c3c06310ac75"
+    },
+    "got-en-Kraznys_mo_Nakloz-746402.json": {
+      "locale": "en",
+      "title": "Kraznys mo Nakloz",
+      "revision": 746402,
+      "revisionDate": "2026-08-05T07:06:27Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Kraznys_mo_Nakloz",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=746402",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=746402",
+      "contentSha256": "9e3119c10de7598bd3d858a1e5539d8e9fe33d936104a4e4db32b811822dd112"
+    },
+    "got-en-Missandei-728282.json": {
+      "locale": "en",
+      "title": "Missandei",
+      "revision": 728282,
+      "revisionDate": "2026-02-05T07:17:25Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Missandei",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728282",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728282",
+      "contentSha256": "8cabf9378c108b1c2f70601fd7b29fa1db1dfa3c53899aaf51c6a467eebe7cd5"
+    },
+    "got-en-Grey_Worm-728152.json": {
+      "locale": "en",
+      "title": "Grey Worm",
+      "revision": 728152,
+      "revisionDate": "2026-02-05T05:37:30Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Grey_Worm",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728152",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728152",
+      "contentSha256": "d65126a6729d61167f0749e86b632b93d5a4bdfd48a303eaacff3dd9c1726209"
+    },
+    "got-en-Daario_Naharis-749230.json": {
+      "locale": "en",
+      "title": "Daario Naharis",
+      "revision": 749230,
+      "revisionDate": "2026-11-02T00:07:39Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Daario_Naharis",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749230",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749230",
+      "contentSha256": "43e347a6fbd29eedd5616b6e37c5afdc0998287fdea8d9ef69cf512f4465311e"
+    },
+    "got-en-Mero-728278.json": {
+      "locale": "en",
+      "title": "Mero",
+      "revision": 728278,
+      "revisionDate": "2026-02-05T07:16:19Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Mero",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728278",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728278",
+      "contentSha256": "3e2703f0e30bcf39034f2072b95a3b4b7ae1255fa876303d45ff232c34e0eef0"
+    },
+    "got-en-Prendahl_na_Ghezn-728138.json": {
+      "locale": "en",
+      "title": "Prendahl na Ghezn",
+      "revision": 728138,
+      "revisionDate": "2026-02-05T05:35:14Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Prendahl_na_Ghezn",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728138",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728138",
+      "contentSha256": "e3360bea4b5f960909e21b119e72543f9caca0d63938d649d8c4349bf35675b0"
+    },
+    "got-en-Razdal_mo_Eraz-728052.json": {
+      "locale": "en",
+      "title": "Razdal mo Eraz",
+      "revision": 728052,
+      "revisionDate": "2026-02-05T04:55:49Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Razdal_mo_Eraz",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728052",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728052",
+      "contentSha256": "4c747dbbc96be2c2b4a65c2c17b36d5525f991150778c34d30f2e1e0a0fc7b37"
+    },
+    "got-en-Greizhen_mo_Ullhor-728515.json": {
+      "locale": "en",
+      "title": "Greizhen mo Ullhor",
+      "revision": 728515,
+      "revisionDate": "2026-02-05T09:00:46Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Greizhen_mo_Ullhor",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728515",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728515",
+      "contentSha256": "a578b49a5f55af4fd2f2d27cabc7572be5ff8f530561194f6b45fdb432f85b94"
+    },
+    "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json": {
+      "locale": "en",
+      "title": "The Bear and the Maiden Fair (episode)",
+      "revision": 729794,
+      "revisionDate": "2026-02-12T12:45:03Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729794",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729794",
+      "contentSha256": "9d7987c6025dd8b60fa47fa7f3fb81089278e93acfaeb9c52657f6dcef57afe9"
+    },
+    "got-en-Second_Sons_(episode)-740340.json": {
+      "locale": "en",
+      "title": "Second Sons (episode)",
+      "revision": 740340,
+      "revisionDate": "2026-06-27T13:12:58Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Second_Sons_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740340",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740340",
+      "contentSha256": "1af2b7f43dd8359c198852ce96e5b043b422d331b0cd41af38cb4c9479d73073"
+    },
+    "got-en-Good_Masters-716052.json": {
+      "locale": "en",
+      "title": "Good Masters",
+      "revision": 716052,
+      "revisionDate": "2025-12-30T09:29:03Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Good_Masters",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=716052",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=716052",
+      "contentSha256": "e97d2c88a86aa6d8241164e743b01449f50727a1a58ac7397dff591aaa2e51ac"
+    },
+    "got-en-Wise_Masters-667566.json": {
+      "locale": "en",
+      "title": "Wise Masters",
+      "revision": 667566,
+      "revisionDate": "2024-02-23T12:13:13Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Wise_Masters",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=667566",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=667566",
+      "contentSha256": "d6cbf0c2eaa3beb858fbe3d541c6b660a1daa6cb691ceb08e354e94f04767b2f"
+    },
+    "got-en-Stormcrows-723222.json": {
+      "locale": "en",
+      "title": "Stormcrows",
+      "revision": 723222,
+      "revisionDate": "2026-01-12T07:55:17Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Stormcrows",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=723222",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=723222",
+      "contentSha256": "037843d43f96f8dce24f6cf5a513ce30f541c64fd0706f1143aa58c3c71b3eec"
+    },
+    "got-en-Unsullied-732103.json": {
+      "locale": "en",
+      "title": "Unsullied",
+      "revision": 732103,
+      "revisionDate": "2026-02-24T20:44:13Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Unsullied",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732103",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732103",
+      "contentSha256": "5c9633c008f9950493014f92541c422ea04afeb0f0ed6df74359ca9a01ff71f0"
+    },
+    "iaf-en-Missandei-23341.json": {
+      "locale": "en",
+      "title": "Missandei",
+      "revision": 23341,
+      "revisionDate": "2019-06-02T13:56:52Z",
+      "url": "https://iceandfire.fandom.com/wiki/Missandei",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23341",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23341",
+      "contentSha256": "a7323cbc9295f852ce47119a43a0db62f30f49905711942afa3fc3308cbb7905"
+    },
+    "iaf-en-Grey_Worm-20210.json": {
+      "locale": "en",
+      "title": "Grey Worm",
+      "revision": 20210,
+      "revisionDate": "2018-01-18T10:59:25Z",
+      "url": "https://iceandfire.fandom.com/wiki/Grey_Worm",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=20210",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=20210",
+      "contentSha256": "5ba750ee216fadc5dc75ff57ac9caef3f50e3bc6da7b77730fc2f33f8be91f2a"
+    },
+    "iaf-en-Daario_Naharis-21579.json": {
+      "locale": "en",
+      "title": "Daario Naharis",
+      "revision": 21579,
+      "revisionDate": "2018-03-06T17:55:01Z",
+      "url": "https://iceandfire.fandom.com/wiki/Daario_Naharis",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21579",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21579",
+      "contentSha256": "0dfe5abbe4a326950567d33f13cc49384c3a6139f29ac52a6a8a8ab9066fa2af"
+    },
+    "iaf-en-Template:A_Storm_of_Swords-22682.json": {
+      "locale": "en",
+      "title": "Template:A Storm of Swords",
+      "revision": 22682,
+      "revisionDate": "2019-02-17T16:12:50Z",
+      "url": "https://iceandfire.fandom.com/wiki/Template:A_Storm_of_Swords",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=22682",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=22682",
+      "contentSha256": "2b27817d69d374d330040f2906c220e2b5ca034fe5daef987594453046b97769"
     }
   }
 }

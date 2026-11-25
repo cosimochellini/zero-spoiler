@@ -157,6 +157,21 @@ const GOBLET: Stroke[] = [
 ]
 
 /**
+ * What a third-stage person shows until its drawing child draws it (#1631):
+ * a bust with a blank head and no face, the collar in the record's tint. It
+ * stands for nobody, so it tells a reader nothing.
+ */
+const PERSON: Stroke[] = [
+  { d: circle(80, 58, 19) },
+  { d: 'M72 76 V88 M88 76 V88', role: 'soft' },
+  { d: 'M72 88 Q44 92 38 118 L36 150 M88 88 Q116 92 122 118 L124 150' },
+  { d: 'M64 90 Q80 104 96 90', role: 'accent' },
+  { d: 'M56 112 Q60 130 58 148 M104 112 Q100 130 102 148', role: 'soft' },
+  { d: 'M30 150 H130', role: 'ambient' },
+  shadow(80, 154, 46),
+]
+
+/**
  * Game of Thrones' drawings, keyed by the id of the record each was drawn
  * for. The Winterfell household's are in `winterfell.ts` (#854), the
  * southern cast's in `south.ts` (#1051), the Night's Watch's in `wall.ts`
@@ -171,8 +186,9 @@ const GOBLET: Stroke[] = [
  * cast, in `north.ts` and `ironborn.ts` (#1473), Wall cast, the rangers in
  * `wall.ts` and the wildlings in `wildlings.ts` (#1474), and Essos and Qarth
  * cast, in `essos.ts` (#1475). The seasons' own, which the home page's
- * frame draws, are in `seasons.ts` (#1601). `satisfies` rather than an
- * annotation, so `ArtId` below stays the literal keys.
+ * frame draws, are in `seasons.ts` (#1601). The third stage's Essos cast
+ * (#1639) shows `PERSON` until its drawing child draws it. `satisfies`
+ * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
   ...WINTERFELL_DRAWINGS,
@@ -192,6 +208,14 @@ export const DRAWINGS = {
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': DRAGON_EGG,
+  // #1639: the third stage's Essos cast.
+  'missandei': PERSON,
+  'kraznys-mo-nakloz': PERSON,
+  'grey-worm': PERSON,
+  'grazdan-mo-eraz': PERSON,
+  'mero': PERSON,
+  'daario-naharis': PERSON,
+  'prendahl-na-ghezn': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */
