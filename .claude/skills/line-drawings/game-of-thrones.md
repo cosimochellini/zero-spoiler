@@ -57,7 +57,9 @@ a reason (owner, #851). Every other record takes another tint.
   home page's frame draws (#1601): the Iron Throne for season 1, the red
   comet for season 2. It shows from the season's first episode and chapter, so
   it holds no reveal of the season in either medium, and it is drawn like a
-  place. A season files its drawing with its first records. It has no stages:
+  place. A season's first records file its drawing with them:
+  `src/data/series/index.test.ts` fails on a filed season with no drawing,
+  and on a `season-N` drawing whose season has no record yet. It has no stages:
   a heading has no dated timeline, and the frame shows a season only while the
   reader is in it or it is the latest filed one, so a later change to its
   landmark (the throne melted in episode 73) is never drawn there (owner,

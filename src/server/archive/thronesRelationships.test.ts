@@ -94,6 +94,7 @@ interface Edge {
 const STAGES: (Edge & { stage: number })[] = [
   { stage: 1, episode: 10, chapter: 73 },
   { stage: 2, episode: 20, chapter: 143 },
+  { stage: 3, episode: 30, chapter: 196 },
 ]
 
 /**
@@ -267,6 +268,32 @@ const STAGE_2_GROUPS: { group: string; issue: string; owners: string[] }[] = [
  */
 const STAGE_2_EARLY: Record<string, string> = { 'dontos-hollard': '#1434' }
 
+/**
+ * The owners each stage-3 relationships child authors (#1632), one row per
+ * cast group of #1626: its new characters and the earlier characters it
+ * gives a stage-3 snapshot. Each child fills its own row's `owners`.
+ */
+const STAGE_3_GROUPS: { group: string; issue: string; owners: string[] }[] = [
+  { group: 'Essos', issue: '#1650', owners: [] },
+  { group: 'King’s Landing', issue: '#1651', owners: [] },
+  { group: 'Robb’s war and the Riverlands', issue: '#1653', owners: [] },
+  {
+    group: 'Arya, the Brotherhood Without Banners and the Hound',
+    issue: '#1654',
+    owners: [],
+  },
+  { group: 'Jaime, Brienne and Harrenhal', issue: '#1655', owners: [] },
+  { group: 'The Wall and beyond', issue: '#1656', owners: [] },
+  { group: 'Dragonstone', issue: '#1657', owners: [] },
+  { group: 'Bran’s road and Theon', issue: '#1658', owners: [] },
+]
+
+/**
+ * Earlier owners with a stage-3 card filed before the stage-3 relationships
+ * children, by the issue that filed it, as `STAGE_2_EARLY`.
+ */
+const STAGE_3_EARLY: Record<string, string> = {}
+
 /** Ids in alphabetical order. */
 function byId(a: string, b: string): number {
   return a.localeCompare(b)
@@ -328,28 +355,28 @@ function unpinnedEdges(owner: string, edge: Edge): [Bookmark, Bookmark][] {
   return edgeBookmarks(edge).filter(([, next]) => !pinnedAt(owner, next))
 }
 
-/** The owners with a snapshot told inside stage 2, in either medium. */
-function stage2Owners(): string[] {
+/** The owners with a snapshot told inside the stage, in either medium. */
+function stageOwners(number: number): string[] {
   return owners
     .filter((owner) =>
-      archive.datedOf(owner, 'relationships').some((entry) => inStage2(entry)),
+      archive
+        .datedOf(owner, 'relationships')
+        .some((entry) => inStage(entry, number)),
     )
     .map(({ id }) => id)
 }
 
-/** Whether a snapshot is told, in some medium, inside stage 2. */
-function inStage2(entry: Dated<Relationship[]>): boolean {
-  const [first, second] = STAGES
-  if (first === undefined || second === undefined) {
-    throw new Error('Stage 2 needs stage 1 before it')
-  }
+/** Whether a snapshot is told, in some medium, inside the stage. */
+function inStage(entry: Dated<Relationship[]>, number: number): boolean {
+  const previous = stageEdge(number - 1)
+  const edge = stageEdge(number)
   const units: Source[] = ['episode', 'chapter']
 
   return units.some(
     (unit) =>
       toldIn(entry, unit)
-      && dateIn(entry, unit) > first[unit]
-      && dateIn(entry, unit) <= second[unit],
+      && dateIn(entry, unit) > previous[unit]
+      && dateIn(entry, unit) <= edge[unit],
   )
 }
 
@@ -381,17 +408,25 @@ describe('Game of Thrones relationship stages', () => {
     expect(late).toStrictEqual([])
   })
 
-  it('files every stage-2 owner in exactly one group row', () => {
-    const grouped = [
-      ...STAGE_2_GROUPS.flatMap(({ owners: ids }) => ids),
-      ...Object.keys(STAGE_2_EARLY),
-    ]
+  it.each([
+    { stage: 2, groups: STAGE_2_GROUPS, early: STAGE_2_EARLY },
+    { stage: 3, groups: STAGE_3_GROUPS, early: STAGE_3_EARLY },
+  ])(
+    'files every stage-$stage owner in exactly one group row',
+    ({ stage, groups, early }) => {
+      const grouped = [
+        ...groups.flatMap(({ owners: ids }) => ids),
+        ...Object.keys(early),
+      ]
 
-    expect(new Set(grouped)).toHaveProperty('size', grouped.length)
-    expect(stage2Owners().toSorted(byId)).toStrictEqual(grouped.toSorted(byId))
-  })
+      expect(new Set(grouped)).toHaveProperty('size', grouped.length)
+      expect(stageOwners(stage).toSorted(byId)).toStrictEqual(
+        grouped.toSorted(byId),
+      )
+    },
+  )
 
-  it.each(STAGE_2_GROUPS)(
+  it.each([...STAGE_2_GROUPS, ...STAGE_3_GROUPS])(
     'moves the $group group ($issue) out of pending',
     ({ owners: ids }) => {
       for (const id of ids) {
@@ -427,12 +462,15 @@ describe.each(LOCALES)(
       },
     )
 
-    // Each stage-2 group shows its reached selection at the stage's last
+    // Each stage's group shows its reached selection at the stage's last
     // episode or chapter, and keeps it past the edge.
-    it.each(STAGE_2_GROUPS)(
-      'holds the $group selections at the stage-2 edge',
-      ({ owners: ids }) => {
-        const edge = stageEdge(2)
+    it.each([
+      ...STAGE_2_GROUPS.map((row) => ({ ...row, stage: 2 })),
+      ...STAGE_3_GROUPS.map((row) => ({ ...row, stage: 3 })),
+    ])(
+      'holds the $group selections at the stage-$stage edge',
+      ({ owners: ids, stage }) => {
+        const edge = stageEdge(stage)
         for (const id of ids) {
           const shown = [ep(edge.episode), ch(edge.chapter)].some(
             (bookmark) => projected(id, bookmark, locale).length > 0,
