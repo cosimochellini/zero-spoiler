@@ -1285,7 +1285,7 @@ export const wallRedrawn: Redrawings = {
       value: [
         ...moved(
           [...HALFHAND_PALM, { ...STUMPS, role: 'accent' }],
-          'rotate(-90 80 100) translate(-40 0)',
+          'rotate(-90 80 100) translate(-10 0)',
         ),
         {
           d: dots([
