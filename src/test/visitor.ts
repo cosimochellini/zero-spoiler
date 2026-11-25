@@ -49,3 +49,37 @@ export function sweptInFull(
 ): boolean {
   return bookmark === null && payload.drawnAt !== undefined
 }
+
+/**
+ * A handle a marked copy minted (`markedCopy`): its source, first or after
+ * the series' namespace, then the ordinal.
+ */
+const MARKED = /(?:^|:)[ce]:[\da-z]{1,4}$/u
+
+/** What a page's JSON writes before a handle. */
+const HANDLE_KEY = '"handle":"'
+
+/** Every handle a page holds, under any key. */
+export function handlesIn(page: unknown): string[] {
+  return Array.from(
+    JSON.stringify(page).matchAll(/"handle":"[^"]+"/gu),
+    ([found]) => found.slice(HANDLE_KEY.length, -1),
+  )
+}
+
+/** Whether a handle carries the source of the copy that minted it. */
+export function isMarked(handle: string): boolean {
+  return MARKED.test(handle)
+}
+
+/**
+ * A page drawn with no bookmark for a record of one source only (#1431), as
+ * JSON with the marks taken off its handles and its `unit` left out: what
+ * the reader of that source at the record's threshold is sent, if the page
+ * is right. The marks and the unit are held on their own.
+ */
+export function unmarked(page: unknown): string {
+  return JSON.stringify(page)
+    .replaceAll(/(?<lead>[":])[ce]:(?<at>[\da-z]{1,4})"/gu, '$<lead>$<at>"')
+    .replace('"unit":"chapter",', '')
+}

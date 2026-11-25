@@ -10,6 +10,7 @@ import { OP_ARCHIVE as BASE } from '~/test/archive'
 import { leaksOf } from '~/test/fog'
 import { ONE_PIECE_LOADED } from '~/test/series'
 import { plant } from '~/test/sourceOnly'
+import { handlesIn, isMarked, unmarked } from '~/test/visitor'
 
 import { entityForHandle, handleOf } from './handle.server'
 import { landingPage } from './home.server'
@@ -228,31 +229,36 @@ describe.each(SOURCES)('a record of the %s alone', (source) => {
     )
   })
 
-  it('opens its page for a reader with no bookmark at its own threshold, in its own unit', () => {
-    const visitor = pageReader(planted.archive, null, {
-      id: twin.character.id,
-      locale: 'en',
-    })
-    const page = characterPage(twin.character.id, visitor)
-    const own = at(source, ownThreshold(twin.character, source))
-    const ownPage = characterPage(
-      twin.character.id,
-      readerFor(planted.archive, own, 'en'),
-    )
+  it.each([
+    { kind: 'character', load: 'loadCharacter' },
+    { kind: 'place', load: 'loadPlace' },
+  ] as const)(
+    'opens its $kind page for a reader with no bookmark at its own threshold, in its own unit',
+    ({ kind, load }) => {
+      const { id } = twin[kind]
+      const page = payloadNamed(after, load)
+      const own = at(source, ownThreshold(twin[kind], source))
+      const visited = page.run(null, 'en', id)
+      const owned = page.run(own, 'en', id)
+      const visitor = pageReader(planted.archive, null, { id, locale: 'en' })
 
-    expect(page?.detail.slot.open).toBe(true)
-    expect(visitor.bookmark).toBeNull()
-    expect(visitor.mode).toBe(source)
-    expect(ownPage).toBeDefined()
-    // What its own reader has by then, and the unit to print it in.
-    expect(page).toStrictEqual({
-      ...ownPage,
-      detail: {
-        ...ownPage?.detail,
-        ...(source === 'chapter' && { unit: 'chapter' }),
-      },
-    })
-  })
+      expect(visitor.bookmark).toBeNull()
+      expect(visitor.mode).toBe(source)
+      expect(owned).not.toBeNull()
+      // What its own reader has by then, the handles' marks apart; the
+      // unit to print it in.
+      expect(unmarked(visited)).toBe(JSON.stringify(owned))
+      expect(visited).toMatchObject({ detail: { slot: { open: true } } })
+      expect(JSON.stringify(visited).includes('"unit":"chapter"')).toBe(
+        source === 'chapter',
+      )
+      // Every handle it covers by carries the source; none its own reader's.
+      expect(
+        handlesIn(visited).filter((handle) => !isMarked(handle)),
+      ).toStrictEqual([])
+      expect(handlesIn(owned).filter(isMarked)).toStrictEqual([])
+    },
+  )
 
   it('lifts every handle its page covers, with no bookmark, to the record it covered, and none under a bookmark', () => {
     const visitor = pageReader(planted.archive, null, {

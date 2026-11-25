@@ -4,15 +4,33 @@ import { featuredCharacters } from '~/data/series/one-piece/characters'
 import { entities, getEntity } from '~/data/series/one-piece/entities'
 import type { Entity } from '~/data/types'
 import type { Bookmark } from '~/lib/progress/episode'
+import { ABILITY_ARCHIVE, UNTYPED } from '~/test/abilities'
 import {
   opHandleOf as handleOf,
   OP_ARCHIVE,
   opReaderFor as readerFor,
 } from '~/test/archive'
 import { loadedSeries } from '~/test/series'
+import { onlyIn } from '~/test/sourceOnly'
+import { handlesIn, isMarked, unmarked } from '~/test/visitor'
 
+import { abilityPage } from './abilities.server'
 import { characterPage } from './pages.server'
+import { placePage } from './placePage.server'
 import { pageReader, readerFor as readerIn } from './reader.server'
+
+/** A page's own detail, a ship's included. */
+function detailOf(page: unknown): undefined | { unit?: string } {
+  if (typeof page !== 'object' || page === null) {
+    return undefined
+  }
+  const detail: unknown =
+    'ship' in page ? page.ship : Reflect.get(page, 'detail')
+  return typeof detail === 'object' && detail !== null ? detail : undefined
+}
+
+/** The fixture's untyped ability, told by the manga alone. */
+const MANGA_ONLY_ABILITY = onlyIn(ABILITY_ARCHIVE, UNTYPED.id, 'chapter')
 
 /** A record the archive is known to file, or the test is wrong. */
 function must(id: string): Entity {
@@ -200,59 +218,108 @@ describe('pageReader', () => {
   })
 })
 
+/** The page of a record of each kind a record of one source only is filed as. */
+const PAGES = {
+  ability: abilityPage,
+  character: characterPage,
+  place: placePage,
+} as const
+
 /**
- * Records of one source only, each pinned to the source that tells it and
- * the point it opens at there (#1431).
+ * Records of one source only, each pinned to the source that tells it, the
+ * point it opens at there and the unit its page prints (#1431).
  */
 const ONE_SOURCE = [
   // Show only: Theon and Jon name her in "Cripples, Bastards, and Broken
   // Things" (season 1, episode 4); the books have no Ros.
   {
-    series: 'game-of-thrones',
+    archive: loadedSeries('game-of-thrones').archive,
+    kind: 'character',
     id: 'ros',
     own: { mode: 'episode', episode: 4 },
-    other: { mode: 'chapter', chapter: 400 },
+    other: { mode: 'chapter', chapter: 100 },
     unit: undefined,
   },
   // Manga only: the Kakin succession war is not animated; the third prince
   // is named in the chapter 343 roster.
   {
-    series: 'hunter-x-hunter',
+    archive: loadedSeries('hunter-x-hunter').archive,
+    kind: 'character',
     id: 'tserriednich-hui-guo-rou',
     own: { mode: 'chapter', chapter: 343 },
     other: { mode: 'episode', episode: 148 },
+    unit: 'chapter',
+  },
+  // Books only: Eddard III (site chapter 17) holds the judgment in Castle
+  // Darry; the show moves it to the Inn at the Crossroads.
+  {
+    archive: loadedSeries('game-of-thrones').archive,
+    kind: 'place',
+    id: 'darry',
+    own: { mode: 'chapter', chapter: 17 },
+    other: { mode: 'episode', episode: 10 },
+    unit: 'chapter',
+  },
+  // Show only: Robert hunts in the Kingswood in "A Golden Crown" (season 1,
+  // episode 6); the books keep the hunt off the page.
+  {
+    archive: loadedSeries('game-of-thrones').archive,
+    kind: 'place',
+    id: 'kingswood',
+    own: { mode: 'episode', episode: 6 },
+    other: { mode: 'chapter', chapter: 100 },
+    unit: undefined,
+  },
+  // Manga only: chapter 134's map names the Shiso Tree; no anime scene does.
+  {
+    archive: loadedSeries('hunter-x-hunter').archive,
+    kind: 'place',
+    id: 'shiso-tree',
+    own: { mode: 'chapter', chapter: 134 },
+    other: { mode: 'episode', episode: 148 },
+    unit: 'chapter',
+  },
+  // No Nen ability is filed for one source only: the fixture's untyped
+  // ability (episode 45 / chapter 78, `~/test/abilities`) made a manga-only
+  // one.
+  {
+    archive: MANGA_ONLY_ABILITY,
+    kind: 'ability',
+    id: UNTYPED.id,
+    own: { mode: 'chapter', chapter: 78 },
+    other: { mode: 'episode', episode: 80 },
     unit: 'chapter',
   },
 ] as const
 
 describe('the page of a record of one source only, with no bookmark', () => {
   it.each(ONE_SOURCE)(
-    '$id is drawn as its source’s reader sees it at its own threshold',
-    ({ series, id, own, unit }) => {
-      const { archive } = loadedSeries(series)
-      const page = characterPage(
+    '$id is drawn as its source’s reader sees it at its own threshold, in its unit',
+    ({ archive, id, kind, own, unit }) => {
+      const page = PAGES[kind](
         id,
         pageReader(archive, null, { id, locale: 'en' }),
       )
-      const ownPage = characterPage(id, readerIn(archive, own, 'en'))
+      const ownPage = PAGES[kind](id, readerIn(archive, own, 'en'))
 
-      expect(page?.detail.slot.open).toBe(true)
-      expect(page?.detail.unit).toBe(unit)
       expect(ownPage).toBeDefined()
-      expect(page).toStrictEqual({
-        ...ownPage,
-        detail: { ...ownPage?.detail, ...(unit !== undefined && { unit }) },
-      })
+      expect(unmarked(page)).toBe(JSON.stringify(ownPage))
+      expect(detailOf(page)).toMatchObject({ slot: { open: true } })
+      expect(detailOf(page)?.unit).toBe(unit)
+      // Every handle the page covers by carries its source, and none the
+      // source's own reader is sent does.
+      expect(
+        handlesIn(page).filter((handle) => !isMarked(handle)),
+      ).toStrictEqual([])
+      expect(handlesIn(ownPage).filter(isMarked)).toStrictEqual([])
     },
   )
 
   it.each(ONE_SOURCE)(
     '$id is no page for a reader of the other source',
-    ({ series, id, other }) => {
-      const { archive } = loadedSeries(series)
-
+    ({ archive, id, kind, other }) => {
       expect(
-        characterPage(id, pageReader(archive, other, { id, locale: 'en' })),
+        PAGES[kind](id, pageReader(archive, other, { id, locale: 'en' })),
       ).toBeUndefined()
     },
   )

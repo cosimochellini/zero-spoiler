@@ -67,9 +67,10 @@ function PlacePage(): ReactElement {
   const peekShip = usePeek(liftShip)
   const peekRecord = usePeek(liftRecord)
   const place = 'detail' in page ? page.detail : null
+  const { unit } = 'ship' in page ? page.ship : page.detail
 
   return (
-    <PageUnitContext value={place?.unit}>
+    <PageUnitContext value={unit}>
       <main
         id="content"
         {...stylex.props(recordStyles.page)}

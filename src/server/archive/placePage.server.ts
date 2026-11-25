@@ -115,6 +115,7 @@ function shipPage(entity: Entity, r: Reader): ShipPage {
   return {
     head: headFor(entity, SHIP_HEAD, r),
     ship: {
+      ...pageUnit(r),
       slot: r.slot(entity, shipOf),
       drawings: r.sees(entity) ? drawingsOf(entity, r) : [],
     },

@@ -67,7 +67,9 @@ gates.
   copy. A bookmark or a trial gets its own reader, unchanged. Each such payload
   says so (`reads: 'page'` in `src/server/archive/payloads.server.ts`, hence its
   `drawnAt`), and the leak sweep reads every key of it with no bookmark, in both
-  locales, held to both of its points (`src/test/visitor.ts`).
+  locales, held to both of its points, or, for a record of one source only, to
+  the one bookmark of its source at its threshold (`heldTo` in
+  `src/test/visitor.ts`, with pins beside it in `visitor.test.ts`).
 - Drawings, search aliases, relationships, place labels and source credits use
   the same gates as prose. Later information belongs in dated entries.
 - A record's social pictures (`public/og/`, [Social pictures](#social-pictures))
@@ -178,9 +180,10 @@ request cookies, never a client-supplied bookmark.
 
 Fog prevents accidental spoilers, not deliberate access: “Show anyway” reveals a
 record by handle, and a record's own page, opened with no saved or trial
-bookmark, shows it as it stands at its first appearance. No content or fog
-decision reads the `User-Agent`: a crawler and a person with no bookmark are
-sent the same records, because answering a crawler differently is cloaking
+bookmark, shows it as it stands at its first appearance, or, told by one source
+only, as that source's reader sees it at its own threshold (#1431). No content
+or fog decision reads the `User-Agent`: a crawler and a person with no bookmark
+are sent the same records, because answering a crawler differently is cloaking
 (#1430). The one exception is layout: the places chart is drawn upright for a
 phone (`Mobi` in the `User-Agent`, or `Sec-CH-UA-Mobile`, with a `Vary` header;
 `src/routes/$series/$locale/places/index.tsx`), never with more or less open.

@@ -141,7 +141,7 @@ export interface PlaceDetail extends PageUnit {
  * A ship's own page: her entry and her drawings. No map: a ship is not a
  * stop.
  */
-export interface ShipDetail {
+export interface ShipDetail extends PageUnit {
   /** As a place's: every drawing reached, oldest first; empty under fog. */
   drawings: PlaceDrawing[]
   slot: Slot<ShipView>

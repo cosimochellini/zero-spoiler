@@ -16,8 +16,8 @@ import { liftReader, pageReader, type Reader, readerFor } from './reader.server'
 /**
  * The bookmark a page is drawn for: the request's cookie, through `readerFor`
  * (`cookie`; `liftReader` for a handle) or `pageReader` (`page`), the cookie
- * and the trial (`trial`,
- * the landing alone), or the demo's `null` whatever the cookie (`demo`).
+ * and the trial (`trial`, the landing alone), or the demo's `null` whatever
+ * the cookie (`demo`).
  */
 export type Reads = 'cookie' | 'demo' | 'page' | 'trial'
 

@@ -397,7 +397,7 @@ export interface FruitDrawing {
 }
 
 /** A devil fruit's own page. */
-export interface FruitDetail {
+export interface FruitDetail extends PageUnit {
   /**
    * Every drawing of the fruit the reader has reached, oldest first; the
    * last is the one the stage draws. Empty under fog and while only one is
