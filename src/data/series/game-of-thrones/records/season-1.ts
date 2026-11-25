@@ -1157,10 +1157,15 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'dacey-mormont', tint: 'magenta' },
     },
-    // Show: “The Rains of Castamere” (episode 29), his only appearance, at the wedding feast at the Twins. Books: Catelyn VIII (site chapter 56), he rides with Catelyn to Moat Cailin.
+    // Book only (#1628). Books: Catelyn VIII (site chapter 56), he rides with
+    // Catelyn to Moat Cailin. The show has him only at the wedding feast in
+    // "The Rains of Castamere" (episode 29), named in narration and the
+    // credits alone; "The Winds of Winter" (episode 60) has Lyanna speak of
+    // Wyman's son without his name. Episode 29 orders him.
     {
       id: 'wendel-manderly',
       kind: 'character',
+      source: 'chapter',
       revealedAtEpisode: 29,
       revealedAtChapter: 56,
       name: { it: 'Wendel Manderly', en: 'Wendel Manderly' },
@@ -1547,7 +1552,8 @@ export const season1: ThronesSaga = {
       visual: { art: 'beric-dondarrion', tint: 'orange' },
     },
     // Show: "Dark Wings, Dark Words" (episode 22), with the outlaws who meet Arya,
-    // Gendry and Hot Pie. Books: Sansa II (site chapter 30), the red priest with
+    // Gendry and Hot Pie; the captive Hound greets him: "Thoros. The fuck you
+    // doing here?" Books: Sansa II (site chapter 30), the red priest with
     // the flaming sword at the Hand's tourney.
     {
       id: 'thoros-of-myr',
@@ -1699,9 +1705,10 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'stevron-frey', tint: 'teal' },
     },
-    // Show: "Walk of Punishment" (episode 23), he leads his father's funeral at
-    // Riverrun. Books: Catelyn XI (site chapter 72), at Riverrun in Robb's
-    // council.
+    // Show: "Walk of Punishment" (episode 23), he fails to light his father's
+    // funeral boat at Riverrun and sits in Robb's council, named in the
+    // synopsis; no quoted line there says his name (owner check, #1628).
+    // Books: Catelyn XI (site chapter 72), at Riverrun in Robb's council.
     {
       id: 'edmure-tully',
       kind: 'character',
@@ -1714,9 +1721,11 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'edmure-tully', tint: 'azure' },
     },
-    // Show: "Walk of Punishment" (episode 23), his body at his funeral. Books:
-    // Catelyn XI (site chapter 72), Catelyn visits him on his sickbed at
-    // Riverrun.
+    // Show: "Walk of Punishment" (episode 23), his body at his funeral; Walder
+    // Frey has already called him "the fine Lord Tully" in "Baelor" (episode
+    // 9), and the Blackfish tells Catelyn "Your father was a stubborn old ox"
+    // (#1628). Books: Catelyn XI (site chapter 72), Catelyn visits him on his
+    // sickbed at Riverrun.
     {
       id: 'hoster-tully',
       kind: 'character',
@@ -1730,7 +1739,8 @@ export const season1: ThronesSaga = {
       visual: { art: 'hoster-tully', tint: 'blue' },
     },
     // Show: "Walk of Punishment" (episode 23), at Hoster's funeral he takes the
-    // bow after Edmure misses. Books: Catelyn VI (site chapter 35), he meets
+    // bow after Edmure misses, and tells Catelyn her father "asked me to stop
+    // calling myself Blackfish". Books: Catelyn VI (site chapter 35), he meets
     // Catelyn at the Bloody Gate.
     {
       id: 'brynden-tully',
@@ -5539,10 +5549,11 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 29, chapter: 56, source: 'chapter', value: 'alive' },
-        // Killed at the Red Wedding: on screen in "The Rains of Castamere"
-        // (episode 29), his threshold, and told in Catelyn VII of A Storm of
-        // Swords (chapter 195), as Vayon Poole's death is (owner, #1288).
-        { episode: 29, chapter: 195, value: 'deceased' },
+        // Killed at the Red Wedding, a quarrel through the mouth, in Catelyn
+        // VII of A Storm of Swords (chapter 195). The record is the books'
+        // alone (#1628); episode 29, where the show kills him unnamed, orders
+        // it.
+        { episode: 29, chapter: 195, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -6124,9 +6135,10 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 1, chapter: 13, value: 'alive' },
-        // Killed at the Mummer's Ford, told in A Storm of Swords. Chapter 178
-        // (Arya VI) is the safe later pin, unverified on an allowed source
-        // (#1238).
+        // Dead by Arya VI of A Storm of Swords (chapter 178), where Tom of
+        // Sevenstreams names him among the dead laid at the Hound's feet (A
+        // Wiki of Ice and Fire, Alyn, #1628). Whether he fell at the
+        // Mummer's Ford or later, the book does not say.
         { episode: 21, chapter: 178, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
@@ -7082,8 +7094,9 @@ export const season1: ThronesSaga = {
         en: 'He looks after Maester Aemon and the ravens at Castle Black. He tells Jon Snow that a steward’s work is not fit for cowards.',
       },
       // He dies at the Fist of the First Men. Samwell III (site chapter 190)
-      // tells it; an earlier chapter may (unverified, #1296). Episode 28,
-      // where the show reaches that scene, orders it.
+      // tells it, when Sam meets him among the dead (A Wiki of Ice and Fire,
+      // Chett, #1628). Episode 28, where the show reaches that scene, orders
+      // it.
       status: [
         { episode: 5, chapter: 42, value: 'alive' },
         { episode: 28, chapter: 190, value: 'deceased' },

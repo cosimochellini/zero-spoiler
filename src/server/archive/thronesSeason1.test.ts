@@ -108,7 +108,8 @@ const RECORDS: {
   { id: 'robett-glover', episode: 57, chapter: 54 },
   { id: 'maege-mormont', episode: 8, chapter: 54 },
   { id: 'dacey-mormont', episode: 9, chapter: 64, source: 'chapter' },
-  { id: 'wendel-manderly', episode: 29, chapter: 56 },
+  // Wendel is the books' alone: the show never says his name (#1628).
+  { id: 'wendel-manderly', episode: 29, chapter: 56, source: 'chapter' },
   { id: 'marillion', episode: 4, chapter: 29 },
   { id: 'willis-wode', episode: 4, chapter: 29 },
   { id: 'donnel-waynwood', episode: 35, chapter: 35 },
@@ -442,7 +443,13 @@ const CHANGES: {
     value: 'deceased',
     source: 'chapter',
   },
-  { id: 'wendel-manderly', episode: 29, chapter: 195, value: 'deceased' },
+  {
+    id: 'wendel-manderly',
+    episode: 29,
+    chapter: 195,
+    value: 'deceased',
+    source: 'chapter',
+  },
   {
     id: 'stevron-frey',
     episode: 14,
@@ -1689,7 +1696,8 @@ const STAGES: {
   // Jon's feigned desertion to the wildlings and his escape back to the
   // Wall (#1474).
   { id: 'jon-snow', episode: 20, chapter: 142 },
-  { id: 'jon-snow', episode: 29, chapter: 199, stage: 1 },
+  // Jon VI, back at Castle Black (#1628).
+  { id: 'jon-snow', episode: 29, chapter: 192, stage: 1 },
   { id: 'jon-snow', episode: 50, chapter: 341, stage: 2 },
   { id: 'jon-snow', episode: 52, chapter: 344, source: 'episode', stage: 3 },
   { id: 'jon-snow', episode: 67, chapter: 344, source: 'episode', stage: 4 },
