@@ -1129,7 +1129,7 @@ export const season2Chronicles = {
   // Reeds, the Walders, Ramsay, the Hornwood widow, Aeron, Victarion, Wex,
   // Black Lorren and Farlen have only book stories here: each is the books’
   // record or reaches the show past the stage, and its book stories are
-  // ordered at its show gate (Aeron 55, the Reeds 22, Ramsay 32, Wyman 60).
+  // ordered at its show gate (Aeron 55, the Reeds 22, Ramsay 30, Wyman 60).
   'balon-greyjoy': [
     inBooks(
       [12, 85],

@@ -293,40 +293,27 @@ export const season3: ThronesSaga = {
     },
     // #1641: Bran's road and Theon.
     // The show alone, so chapter 284 (Reek I of A Dance with Dragons, the
-    // chapter the scene adapts) only orders every entry. "Mhysa" (episode
-    // 30) names Theon's captor as Ramsay Snow, Roose Bolton's bastard: her
-    // master's name and house wait for it.
+    // chapter the scene adapts) only orders every entry. Episode 27 shows
+    // only the scene: whom she serves and her bond with Ramsay are told in
+    // season 4, steps for the stage that reaches it.
     'myranda': {
-      role: [
-        {
-          episode: 27,
-          chapter: 284,
-          source: 'episode',
-          value: {
-            it: 'Amante del carceriere di Theon',
-            en: 'Lover of Theon’s captor',
-          },
-        },
-        {
-          episode: 30,
-          chapter: 284,
-          source: 'episode',
-          value: { it: 'Amante di Ramsay Snow', en: 'Ramsay Snow’s lover' },
-        },
-      ],
+      role: {
+        it: 'Giovane donna nella prigione di Theon',
+        en: 'Young woman at Theon’s prison',
+      },
       log: {
-        it: 'Con un’altra ragazza, Violet, libera Theon dalla croce a cui è legato, lo stende su un letto e lo seduce. Il loro padrone li interrompe e fa tenere fermo Theon per evirarlo.',
-        en: 'With another young woman, Violet, she frees Theon from the cross he is bound to, lays him on a bed and seduces him. Their master interrupts them and has Theon held down to geld him.',
+        it: 'Con un’altra ragazza, Violet, libera Theon dalla croce a cui è legato, lo stende su un letto e lo seduce. Poi entra il suo carceriere, che fa tenere fermo Theon per evirarlo.',
+        en: 'With another young woman, Violet, she frees Theon from the cross he is bound to, lays him on a bed and seduces him. Then his captor comes in and has Theon held down to geld him.',
       },
       status: [
         { episode: 27, chapter: 284, source: 'episode', value: 'alive' },
       ],
       affiliation: [
         {
-          episode: 30,
+          episode: 27,
           chapter: 284,
           source: 'episode',
-          value: { it: 'Casa Bolton', en: 'House Bolton' },
+          value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
         },
       ],
     },
@@ -576,8 +563,8 @@ export const season3: ThronesSaga = {
       revealedAtChapter: 284,
       name: { it: 'Myranda', en: 'Myranda' },
       summary: {
-        it: 'Una giovane al servizio del carceriere di Theon Greyjoy.',
-        en: 'A young woman in the service of Theon Greyjoy’s captor.',
+        it: 'Una giovane donna che, con Violet, seduce Theon Greyjoy prigioniero.',
+        en: 'A young woman who, with Violet, seduces the captive Theon Greyjoy.',
       },
       visual: { art: 'myranda', tint: 'pink' },
     },

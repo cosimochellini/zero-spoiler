@@ -39,9 +39,9 @@ const RECORDS: {
 ]
 
 /**
- * Every role and affiliation step the group files, on Myranda and on the
- * characters season 1 filed, by its English text; `source` for a step one
- * medium alone tells.
+ * Every role and affiliation the group files, by its English text: Myranda's
+ * at her gate and the steps on the characters season 1 filed; `source` for
+ * what one medium alone tells.
  */
 const STEPS: {
   chapter: number
@@ -71,17 +71,18 @@ const STEPS: {
     episode: 30,
     chapter: 193,
   },
+  // Her opening role and affiliation: episode 27 shows only the scene.
   {
     id: 'myranda',
-    en: 'Ramsay Snow’s lover',
-    episode: 30,
+    en: 'Young woman at Theon’s prison',
+    episode: 27,
     chapter: 284,
     source: 'episode',
   },
   {
     id: 'myranda',
-    en: 'House Bolton',
-    episode: 30,
+    en: 'No allegiance',
+    episode: 27,
     chapter: 284,
     source: 'episode',
   },

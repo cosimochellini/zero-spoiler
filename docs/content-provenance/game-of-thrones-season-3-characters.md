@@ -301,12 +301,12 @@ order them.
 | `myranda` (show)      | 27, "The Bear and the Maiden Fair": Violet tells Theon that "Myranda knows what she's doing" (quoted on the Myranda page); she answers "you, me, and Violet" (Violet page) | none: the books' only Myranda is Myranda Royce of the Vale, another person; Reek I (284) orders her |
 | `ramsay-snow` (moved) | 30, "Mhysa": Roose tells Walder Frey that "Ramsay delivered the terms" and "Ramsay has his own way of doing things" (quoted on the Ramsay Bolton page). #1466 had 32       | 140, Theon VI, as filed                                                                             |
 
-- Myranda: role "Lover of Theon's captor" at her gate, then "Ramsay Snow's
-  lover" and House Bolton at 30, where "Mhysa" names the captor as Roose
-  Bolton's bastard; she does not appear in that episode, and at 27 neither her
-  master's name nor his house is told. Alive. Her log is the scene of 27: she
-  and Violet free Theon from the cross and seduce him, and their master has him
-  held down to geld him. Italian "Myranda" (her own section of Italian
+- Myranda: role "Young woman at Theon's prison", "No allegiance", alive, all at
+  her gate. Episode 27 shows only the scene, so her log is it: she and Violet
+  free Theon from the cross and seduce him, and his captor comes in and has him
+  held down to geld him. That she is Ramsay's lover in House Bolton's service is
+  shown in season 4 (from "The Lion and the Rose", 32), steps for stage 4; she
+  is not in "Mhysa" (30). Italian "Myranda" (her own section of Italian
   Wikipedia's characters list).
 - Ramsay Snow: the boy who tortures Theon from "Dark Wings, Dark Words" (22) is
   unnamed through "The Bear and the Maiden Fair" (27) and credited only as "Boy"
