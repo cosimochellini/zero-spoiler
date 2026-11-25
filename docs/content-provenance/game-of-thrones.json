@@ -133,13 +133,24 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_26",
       "https://gameofthrones.fandom.com/wiki/Amory_Lorch",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_38",
-      "https://gameofthrones.fandom.com/wiki/Gendry"
+      "https://gameofthrones.fandom.com/wiki/Gendry",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_13",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_43",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_47",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_52",
+      "https://gameofthrones.fandom.com/wiki/Walk_of_Punishment_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire",
+      "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Second_Sons_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Mhysa"
     ],
     "unverified": [
       "Chapter gate 5 (Eddard I): AWOIAF lists her as appearing; that she is named in Eddard I is not stated by the synopsis. If not, the gate is 6 (Jon I, named as Tommen's partner at the feast).",
       "Stages (#1285, owner 2026-11-15): Polliver takes Needle in episode 13 (Fandom \"Needle\", GOT203) and in Arya V, ACOK chapter 19 (site 93, the capture the Lommy stage cites); she takes it back in episode 31 (GOT401) and in Arya XIII, ASOS chapter 74 (site 218); she hides it in episode 43 (GOT503) and in Arya II, AFFC chapter 22 (site 248; A Wiki of Ice and Fire, Needle); she takes it back from the stones in episode 56 (GOT606), the show's alone, ordered by chapter 344. The other two book chapters are from memory, not checked on AWOIAF. Episodes not viewed; AWOIAF was read only for Needle's hiding chapter (#1285).",
       "Stage 2 (#1465): captured in episode 13 and Arya V (93), out of Harrenhal in episode 18 and Arya X (138). Her service as Tywin's cupbearer (show, episode 14) and as Roose Bolton's (books, Arya IX, 121) is not filed as a role: she stays a prisoner in disguise. Episodes not viewed.",
-      "Costume stage (#1472): the flagon and cup while she serves at Harrenhal under a name not her own, Tywin's cupbearer from \"Garden of Bones\" (episode 14; Polliver page, GOT204) and, in the books, running errands and filling wine cups in the Barracks Hall for Weese, A Clash of Kings, Chapter 30 (Arya VII, site 104; A Wiki of Ice and Fire's chapter page). The belt with Needle again from her escape, \"The Prince of Winterfell\" (episode 18) and Arya X (site 138), the filed `alive`. Not viewed. Her \"Arry\" disguise from season 1 has no stage; it is stage 1's to add."
+      "Costume stage (#1472): the flagon and cup while she serves at Harrenhal under a name not her own, Tywin's cupbearer from \"Garden of Bones\" (episode 14; Polliver page, GOT204) and, in the books, running errands and filling wine cups in the Barracks Hall for Weese, A Clash of Kings, Chapter 30 (Arya VII, site 104; A Wiki of Ice and Fire's chapter page). The belt with Needle again from her escape, \"The Prince of Winterfell\" (episode 18) and Arya X (site 138), the filed `alive`. Not viewed. Her \"Arry\" disguise from season 1 has no stage; it is stage 1's to add.",
+      "Stage 3 (#1636), split by medium. Books: captured at 157, Arya II, where A Wiki of Ice and Fire's Chapter 13 has the outlaws catch her and take her to the Inn of the Kneeling Man; Arya III (Chapter 17, 161) has her try to ride off and Harwin catch her; Arya VIII (Chapter 43, 187) has the Hound take her as she runs, so the status does not change. Show: captured at 27, \"The Bear and the Maiden Fair\", where the Hound snatches her as she runs from the outlaws; \"Second Sons\" calls her his captive. Owner check: in \"Walk of Punishment\" (23) Thoros tells her they are not prisoners, and in \"Kissed by Fire\" (25) he admits they mean to ransom her, so the show pin could move down to 22 or 25. Neither the episodes nor the books were viewed."
     ]
   },
   "bran-stark": {
@@ -1129,7 +1140,13 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_59",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_62",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Approdo_del_Re",
-      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(seconda_stagione)"
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(seconda_stagione)",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_29",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_34",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_39",
+      "https://gameofthrones.fandom.com/wiki/Dark_Wings,_Dark_Words",
+      "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire",
+      "https://iceandfire.fandom.com/wiki/Sandor_Clegane"
     ],
     "unverified": [
       "Episode gate: on screen from episode 1; gate set at 4, where Littlefinger names him to Sansa. If 'Sandor' or 'the Hound' is said aloud in episode 1 or 2, lower the gate.",
@@ -1137,7 +1154,8 @@
       "Affiliation 'House Lannister' at the gate: neither source states it in so many words at chapter 5.",
       "Presumed dead (#1287): episode 40 (GOT410) and Arya XIII of A Storm of Swords (site chapter 218, AWOIAF not read: unverified).",
       "Return (#1287): \"The Broken Man\" (episode 57, GOT607), show only; death in \"The Bells\" (episode 72, GOT805), show only.",
-      "Stage-2 steps (#1463): deserter, no allegiance, at 19 / 136, from the Game of Thrones Wiki's \"Blackwater\" and A Wiki of Ice and Fire (read through Firecrawl): Tyrion XIII (ACOK 59, site 133) has him refuse the sortie; Sansa VII (ACOK 62, site 136) has him leave his bloodied white cloak in Sansa's chamber. Pages: https://awoiaf.westeros.org/index.php/Sandor_Clegane, https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_59."
+      "Stage-2 steps (#1463): deserter, no allegiance, at 19 / 136, from the Game of Thrones Wiki's \"Blackwater\" and A Wiki of Ice and Fire (read through Firecrawl): Tyrion XIII (ACOK 59, site 133) has him refuse the sortie; Sansa VII (ACOK 62, site 136) has him leave his bloodied white cloak in Sansa's chamber. Pages: https://awoiaf.westeros.org/index.php/Sandor_Clegane, https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_59.",
+      "Stage 3 (#1636): captured at 22 / 173: the outlaws bring him into the inn as a captive in \"Dark Wings, Dark Words\"; the Mad Huntsman brings him into Stoney Sept in chains in Arya V (Chapter 29). Free again at 25 / 183: he wins his trial and is let go in \"Kissed by Fire\"; the books try him in Arya VI (Chapter 34, 178) and Arya VII (Chapter 39, 183) has Beric let him go after taking his gold. 183 is the safe later pin: the trial at 178 may already free him (owner check). Neither the episodes nor the books were viewed."
     ]
   },
   "janos-slynt": {
@@ -1183,13 +1201,20 @@
       "https://gameofthrones.fandom.com/wiki/Arya_Stark",
       "https://gameofthrones.fandom.com/wiki/Polliver",
       "https://gameofthrones.fandom.com/wiki/Hot_Pie",
-      "https://gameofthrones.fandom.com/it/wiki/Torre_degli_Spettri"
+      "https://gameofthrones.fandom.com/it/wiki/Torre_degli_Spettri",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_39",
+      "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire",
+      "https://gameofthrones.fandom.com/wiki/The_Climb",
+      "https://gameofthrones.fandom.com/wiki/Second_Sons_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Mhysa"
     ],
     "unverified": [
       "Fandom's page title is 'Gendry Baratheon'; filed as 'Gendry' (id gendry) because the surname is a later reveal.",
       "Book: he does not appear among the recruits in A Game of Thrones; he first rides with them in A Clash of Kings, Arya I (site chapter 75). (Stage 1 filed the ep-10 recruit step show-only, ordered at chapter 66; #1465 made it shared, below.)",
       "Stage 2 (#1465): the recruit step is now shared, episode 10 and Arya I (chapter 75), as #1457 found. Captured in \"What Is Dead May Never Die\" (episode 13) and Arya V (93), out of Harrenhal in \"The Prince of Winterfell\" (episode 18) and Arya X (138), both chapters from A Wiki of Ice and Fire's chapter pages. Episodes not viewed.",
-      "Chronicle (#1618): \"mia signora\" for Gendry's \"m'lady\" is not checked: neither Italian Wikipedia nor the Italian Game of Thrones Wiki gives the word, and the Mondadori edition was not read."
+      "Chronicle (#1618): \"mia signora\" for Gendry's \"m'lady\" is not checked: neither Italian Wikipedia nor the Italian Game of Thrones Wiki gives the word, and the Mondadori edition was not read.",
+      "Stage 3 (#1636): smith of the Brotherhood Without Banners at 25 / 183, where he decides to stay with the outlaws in \"Kissed by Fire\" and joins them as their smith in Arya VII (Chapter 39). The books' Beric knights him there (the Ice and Fire Wiki cites Arya VII); the show does not, so the shared role leaves the knighthood out.",
+      "Stage 3 (#1636), the show's alone: captured at 26, when the outlaws hand him to Melisandre for gold in \"The Climb\", and alive at 30, when Davos frees him from Dragonstone in \"Mhysa\"; affiliation \"No allegiance\" from 26. Chapter 196 only orders them; the books keep him with the outlaws. These steps cover his Dragonstone scenes too, which the Dragonstone group (#1640) shares. Neither the episodes nor the books were viewed."
     ]
   },
   "gregor-clegane": {
@@ -2674,10 +2699,14 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_43",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_44",
       "https://gameofthrones.fandom.com/api.php?action=query&list=search&srsearch=Harwin",
-      "https://gameofthrones.fandom.com/it/wiki/Harwin"
+      "https://gameofthrones.fandom.com/it/wiki/Harwin",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_13",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17",
+      "https://iceandfire.fandom.com/wiki/Harwin"
     ],
     "unverified": [
-      "Book step: Harwin's AWOIAF page has no citation for AGOT 43/44; the step rests on the Sansa III Appearing list and it.wikipedia's Casa Stark entry."
+      "Book step: Harwin's AWOIAF page has no citation for AGOT 43/44; the step rests on the Sansa III Appearing list and it.wikipedia's Casa Stark entry.",
+      "Stage 3 (#1636), the books' alone: Brotherhood Without Banners at 161, Arya III (Chapter 17), where he tells Arya he now serves a brotherhood loyal to Lord Beric. Arya II (Chapter 13, 157) has him recognise her at the inn. The show's Harwin is not in season 3; episode 22 only orders the step. The books were not viewed."
     ]
   },
   "alyn": {
@@ -2701,10 +2730,16 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_27",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_43",
       "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Beric_Dondarrion"
+      "https://gameofthrones.fandom.com/wiki/Beric_Dondarrion",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_34",
+      "https://gameofthrones.fandom.com/wiki/And_Now_His_Watch_Is_Ended",
+      "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire",
+      "https://iceandfire.fandom.com/wiki/Beric_Dondarrion"
     ],
     "unverified": [
-      "Show: the role is given at his gate episode; owner may prefer to fold it into roleAtGate for the show."
+      "Show: the role is given at his gate episode; owner may prefer to fold it into roleAtGate for the show.",
+      "Stage 3 (#1636): leader of the Brotherhood Without Banners at 24 / 161. \"And Now His Watch Is Ended\" brings the Hound before him as the Brotherhood's leader; in Arya III (Chapter 17) Harwin tells Arya he serves a brotherhood loyal to Lord Beric and the outlaws say they take highborn captives to him. His death and return in the trial by combat (25 / 178) change no status: he is alive before and after. Neither the episodes nor the books were viewed."
     ]
   },
   "thoros-of-myr": {
@@ -2714,10 +2749,15 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_43",
       "https://gameofthrones.fandom.com/wiki/Thoros_of_Myr",
       "https://gameofthrones.fandom.com/wiki/Dark_Wings,_Dark_Words",
-      "https://gameofthrones.fandom.com/wiki/Thoros"
+      "https://gameofthrones.fandom.com/wiki/Thoros",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_34",
+      "https://gameofthrones.fandom.com/wiki/Walk_of_Punishment_(episode)",
+      "https://iceandfire.fandom.com/wiki/Thoros_of_Myr"
     ],
     "unverified": [
-      "Show gate 22 (#1628): in \"Dark Wings, Dark Words\" the captive Hound greets him, \"Thoros. The fuck you doing here?\" (Thoros page, Quotes). Episode not viewed."
+      "Show gate 22 (#1628): in \"Dark Wings, Dark Words\" the captive Hound greets him, \"Thoros. The fuck you doing here?\" (Thoros page, Quotes). Episode not viewed.",
+      "Stage 3 (#1636): Brotherhood Without Banners at 23 / 161. The show meets him leading the outlaws at his gate (22), which already holds his first affiliation, so the step takes \"Walk of Punishment\" (23), the safe later pin; Arya III (Chapter 17) has Harwin tell how Thoros saved Beric at the Mummer's Ford and how the survivors became outlaws. Neither the episodes nor the books were viewed."
     ]
   },
   "balon-swann": {
@@ -2897,11 +2937,14 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_64",
       "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
       "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell",
-      "https://gameofthrones.fandom.com/it/wiki/Torre_degli_Spettri"
+      "https://gameofthrones.fandom.com/it/wiki/Torre_degli_Spettri",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17",
+      "https://gameofthrones.fandom.com/wiki/Walk_of_Punishment_(episode)"
     ],
     "unverified": [
       "Show gate (#1457): episode 10 holds. The Game of Thrones Wiki's Hot Pie page quotes Lommy in \"Fire and Blood\": \"You'd better give Hot Pie the sword.\" Episode not viewed. His log and stage-1 story no longer name Lommy, whose show record opens at episode 31.",
-      "Stage 2 (#1465): captured in episode 13 and Arya V (93), out of Harrenhal in episode 18 and Arya X (138). Episodes not viewed."
+      "Stage 2 (#1465): captured in episode 13 and Arya V (93), out of Harrenhal in episode 18 and Arya X (138). Episodes not viewed.",
+      "Stage 3 (#1636): baker at an inn at 23 / 161. \"Walk of Punishment\" has him stay at the inn at the crossroads, whose keeper offered him work; Arya III (Chapter 17) has Arya miss him, now that he has stayed with Sharna as a baker at the Inn of the Kneeling Man. The shared role and affiliation name neither inn. Neither the episodes nor the books were viewed."
     ]
   },
   "lommy": {
@@ -5128,6 +5171,128 @@
       "Show gate 11: \"The North Remembers\"'s Appearances page lists Oldtown among the places mentioned; the line is not quoted. Neither the episodes nor the books were viewed.",
       "Book gate 74 (the prologue): the Ice and Fire Wiki's chapter page lists Oldtown among the places mentioned.",
       "Italian: \"Vecchia Città\", Italian Wikipedia's places page."
+    ]
+  },
+  "anguy": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_13",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_29",
+      "https://gameofthrones.fandom.com/wiki/Anguy",
+      "https://gameofthrones.fandom.com/wiki/Dark_Wings,_Dark_Words",
+      "https://iceandfire.fandom.com/wiki/Anguy",
+      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
+      "https://gameofthrones.fandom.com/it/wiki/Anguy",
+      "https://it.wikipedia.org/wiki/Mondo_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book gate 157 (Arya II): A Wiki of Ice and Fire's Chapter 13 has Tom of Sevenstreams, Lem and Anguy come upon Arya, Gendry and Hot Pie, and Hot Pie give his name; the line that says Anguy's is not quoted. Neither the episodes nor the books were viewed.",
+      "Owner check, book: he wins the archery at the Hand's tourney in Eddard VII of A Game of Thrones (site chapter 31, Ice and Fire Wiki), and Alyn's stage-1 chronicle names him there, hence `nameSaidAt: 5`. The record opens at 157, later and so safe; lower it to 31 if that scene names him explicitly.",
+      "Owner check, show: the Game of Thrones Wiki lists him in six episodes from \"Dark Wings, Dark Words\" (22) to \"The Bear and the Maiden Fair\" (27), but no quote or synopsis read has his name said on screen, so the record is the books' alone (as Wendel Manderly, #1628). If an episode says it, the show gate is that episode.",
+      "Italian: Anguy (Italian Wikipedia, Mondo delle Cronache del ghiaccio e del fuoco; Il Trono di Spade Wiki). The Mondadori form was not checked."
+    ]
+  },
+  "tom-of-sevenstreams": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_13",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_22",
+      "https://iceandfire.fandom.com/wiki/Tom_of_Sevenstreams",
+      "https://gameofthrones.fandom.com/it/wiki/Tom_di_Settecorrenti",
+      "https://it.wikipedia.org/wiki/Mondo_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book gate 157 (Arya II): Chapter 13 has him among the three outlaws who come upon Arya, sing on the road and give her a paper for the horses; the line that says his name is not quoted. Neither the episodes nor the books were viewed.",
+      "Show: none; the show has no Tom. Episode 22 only orders the record.",
+      "Italian: \"Tom di Settecorrenti\", the Il Trono di Spade Wiki's title; Italian Wikipedia has \"Tom Settecorde\" or \"Tom Sette\". The Mondadori form was not checked."
+    ]
+  },
+  "lem": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_13",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_22",
+      "https://gameofthrones.fandom.com/wiki/Lem",
+      "https://gameofthrones.fandom.com/wiki/The_Broken_Man",
+      "https://gameofthrones.fandom.com/wiki/No_One",
+      "https://gameofthrones.fandom.com/it/wiki/Lem",
+      "https://it.wikipedia.org/wiki/Mondo_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book gate 157 (Arya II): Chapter 13 has him among the three outlaws, and Arya slams a tankard in his face at the inn; the Game of Thrones Wiki's Lem page cites ASOS 13 for \"Lem\" as short for Lemoncloak, after his yellow cloak. The line that says his name is not quoted. Neither the episodes nor the books were viewed.",
+      "Show: Lem appears only in season 6 (\"The Broken Man\", episode 57, and \"No One\", 58). \"The Broken Man\" notes he is unnamed in dialogue, named only by the Viewer's Guide, and no quote read from \"No One\" says his name, so the record is the books' alone; episode 22 only orders it.",
+      "Italian: \"Lem\"; Italian Wikipedia and the Il Trono di Spade Wiki give \"Lem Mantello di Limone\" as his full nickname."
+    ]
+  },
+  "jack-be-lucky": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_13",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_22",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_29",
+      "https://gameofthrones.fandom.com/it/wiki/Fratellanza_Senza_Vessilli"
+    ],
+    "unverified": [
+      "Book gate 161 (Arya III): Chapter 17 has him blow his horn at a village that looks abandoned, and its people come out. Chapter 13 (157) lists him appearing at the inn, with no scene read that names him (owner check: 157). The line that says his name is not quoted. Neither the Ice and Fire Wiki nor the Game of Thrones Wiki has a page for him. Neither the episodes nor the books were viewed.",
+      "Show: none; episode 22 only orders the record.",
+      "Italian: \"Jack Fortunello\", from the Il Trono di Spade Wiki's list of the Brotherhood's members; the Mondadori form was not checked."
+    ]
+  },
+  "greenbeard": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_13",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_22",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_29",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_34",
+      "https://iceandfire.fandom.com/wiki/Greenbeard",
+      "https://gameofthrones.fandom.com/it/wiki/Pello_di_Tyrosh"
+    ],
+    "unverified": [
+      "Book gate 166 (Arya IV): Chapter 22 has the old dwarf woman of High Heart speak in private to Lem, Tom and Greenbeard. Chapters 13 and 17 (157, 161) list him appearing, with no scene read that names him (owner check: 157 or 161; the Il Trono di Spade Wiki quotes him calling himself Pello of Tyrosh when the outlaws hear of Jaime's escape, which is Arya III, 161). The line that says his name is not quoted. Neither the episodes nor the books were viewed.",
+      "Show: none; episode 22 only orders the record.",
+      "Italian: \"Barbaverde\", the Il Trono di Spade Wiki's alias for Pello di Tyrosh; the Mondadori form was not checked."
+    ]
+  },
+  "mad-huntsman": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_29",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_34",
+      "https://iceandfire.fandom.com/wiki/Mad_Huntsman",
+      "https://gameofthrones.fandom.com/it/wiki/Cacciatore_Pazzo"
+    ],
+    "unverified": [
+      "Book gate 173 (Arya V): Chapter 29 has the northmen in cages caught by the Mad Huntsman, and the Huntsman bring a prisoner into town in chains at night. The line that says the name is not quoted. Neither the episodes nor the books were viewed.",
+      "Affiliation \"Brotherhood Without Banners\": the Ice and Fire Wiki and the Il Trono di Spade Wiki both have him join the outlaws; Chapter 34 (178) lists him at the hollow hill.",
+      "Show: none; episode 24 only orders the record.",
+      "Italian: \"Cacciatore Pazzo\" (Il Trono di Spade Wiki); the Mondadori form was not checked."
+    ]
+  },
+  "edric-dayne": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_34",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_39",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_43",
+      "https://iceandfire.fandom.com/wiki/Edric_Dayne",
+      "https://gameofthrones.fandom.com/it/wiki/Edric_Dayne",
+      "https://it.wikipedia.org/wiki/Mondo_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book gate 187 (Arya VIII): Chapter 43 has Arya speak with Edric Dayne, called Ned like her father, the young Lord of Starfall, who squired for Lord Beric at the Hand's tourney. Chapters 34 and 39 (178, 183) list him appearing, with no scene read that gives his name (owner check). The line that says it is not quoted. Neither the episodes nor the books were viewed.",
+      "Show: none (the show's Edric Storm is another character, in the Dragonstone group); episode 27 only orders the record.",
+      "Italian: \"Edric Dayne\" (Italian Wikipedia, Mondo delle Cronache del ghiaccio e del fuoco). \"Stelle al Tramonto\" for Starfall is the Il Trono di Spade Wiki's; the Mondadori forms were not checked."
+    ]
+  },
+  "ghost-of-high-heart": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_22",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_43",
+      "https://gameofthrones.fandom.com/it/wiki/Fantasma_di_Cuore_Alto"
+    ],
+    "unverified": [
+      "Book gate 187 (Arya VIII): Chapter 43 has the ghost of High Heart tell the outlaws her dreams, call Beric the Lord of Corpses, send Arya away and tell them to seek her mother at the Twins. Chapter 22 (166) has her only as an old dwarf woman; whether either chapter has a character call her by the name is not confirmed (owner check: 166, or omit as a descriptor). Neither the Ice and Fire Wiki nor the Game of Thrones Wiki has a page for her. Neither the episodes nor the books were viewed.",
+      "Show: none; episode 27 only orders the record.",
+      "Italian: \"Fantasma di Cuore Alto\" and \"Cuore Alto\" for High Heart, from the Il Trono di Spade Wiki; the Mondadori forms were not checked."
     ]
   }
 }

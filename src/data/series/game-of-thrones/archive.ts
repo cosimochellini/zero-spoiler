@@ -46,8 +46,9 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
     'daenerys-targaryen',
   ],
   // The third stage's cast row (#1626): its filing children (#1634–#1641)
-  // add each lead as they file it.
-  'season-3': [],
+  // add each lead as they file it. Arya, the Brotherhood and the Hound
+  // (#1636): the outlaws' captive, their leader and the Hound.
+  'season-3': ['arya-stark', 'beric-dondarrion', 'sandor-clegane'],
 }
 
 const { core } = sagaArchive({
