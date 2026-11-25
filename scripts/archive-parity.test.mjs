@@ -182,6 +182,12 @@ describe('a run against a base worktree', () => {
   // No bookmark: the head's dump is the episode table alone, and quick.
   writeFileSync(bookmarks, '[]')
   const runs = []
+  // A Git hook (the pre-push test run) exports GIT_DIR and friends, and Git
+  // would then act on the checkout instead of the repository made below:
+  // `git init` there once set the checkout's core.bare to true.
+  const clean = Object.fromEntries(
+    Object.entries(process.env).filter(([name]) => !name.startsWith('GIT_')),
+  )
   afterAll(() => {
     for (const run of runs) {
       run.kill('SIGKILL')
@@ -209,7 +215,7 @@ describe('a run against a base worktree', () => {
    * @param {NodeJS.ProcessEnv} [env] Its environment.
    * @returns {{ child: import('node:child_process').ChildProcess, out: () => string, err: () => string }} The run and what it printed.
    */
-  const start = (script, args, env = process.env) => {
+  const start = (script, args, env = clean) => {
     const child = spawn(process.execPath, [script, ...args], {
       env,
       stdio: ['ignore', 'pipe', 'pipe'],
@@ -321,7 +327,7 @@ describe('a run against a base worktree', () => {
       execFileSync(
         'git',
         ['-c', 'user.name=t', '-c', 'user.email=t@t', ...args],
-        { cwd: root, encoding: 'utf8' },
+        { cwd: root, encoding: 'utf8', env: clean },
       )
     git('init', '--quiet')
     git('add', '--all')
@@ -343,12 +349,13 @@ describe('a run against a base worktree', () => {
       execFileSync('git', ['worktree', 'list', '--porcelain'], {
         cwd: root,
         encoding: 'utf8',
+        env: clean,
       })
     const before = worktrees()
     const run = start(
       path.join(root, 'scripts/archive-parity.mjs'),
       ['--base', 'HEAD'],
-      { ...process.env, TMPDIR: temporary },
+      { ...clean, TMPDIR: temporary },
     )
     const [code] = await once(run.child, 'exit')
 
@@ -367,7 +374,7 @@ describe('a run against a base worktree', () => {
     const run = start(
       path.join(repository(), 'scripts/archive-parity.mjs'),
       ['--base', 'HEAD'],
-      { ...process.env, TMPDIR: path.join(folder, 'missing') },
+      { ...clean, TMPDIR: path.join(folder, 'missing') },
     )
     const [code] = await once(run.child, 'exit')
 
