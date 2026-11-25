@@ -1,6 +1,5 @@
-import type { ReaderArchive } from '~/data/features'
+import { type ReaderArchive, withFeatures } from '~/data/features'
 import { archiveOf, OPEN_SERIES } from '~/data/series'
-import { archiveIn } from '~/data/source'
 import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
 import { hasPage } from '~/lib/progress/series'
@@ -8,8 +7,6 @@ import { localeAlternates } from '~/lib/seo/paths'
 import { absoluteUrl } from '~/lib/seo/site'
 import { recordImages } from '~/lib/seo/socialImage'
 
-/** XML entries are shared by requests, but never by different series' archives. */
-const pages = new WeakMap<ReaderArchive, string[]>()
 const document: { pending?: Promise<string> } = {}
 
 const ESCAPES: Record<string, string> = {
@@ -92,17 +89,11 @@ function entryFor(path: string, image?: string): string {
 }
 
 function seriesEntries(archive: ReaderArchive): string[] {
-  const cached = pages.get(archive)
-  if (cached !== undefined) {
-    return cached
-  }
-  const entries = suffixes(archive).flatMap(({ path, image }) =>
+  return suffixes(archive).flatMap(({ path, image }) =>
     LOCALES.map((locale) =>
       entryFor(`/${archive.series.slug}/${locale}${path}`, image),
     ),
   )
-  pages.set(archive, entries)
-  return entries
 }
 
 async function buildSitemap(): Promise<string> {
@@ -116,8 +107,10 @@ async function buildSitemap(): Promise<string> {
       entryFor(`/${locale}`),
       entryFor(`/${locale}/legal`),
     ]),
-    // A request with no bookmark has no record of one source only.
-    ...archives.flatMap((archive) => seriesEntries(archiveIn(archive, null))),
+    // Every filed record has a page with no bookmark: one both sources tell
+    // at its first appearance, one of a single source at its own threshold
+    // in that source (#1431).
+    ...archives.flatMap((archive) => seriesEntries(withFeatures(archive))),
     '</urlset>',
     '',
   ].join('\n')

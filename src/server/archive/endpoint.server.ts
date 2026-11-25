@@ -4,7 +4,7 @@ import type { Bookmark } from '~/lib/progress/episode'
 import type { Series } from '~/lib/progress/series'
 import type { InputKind, Inputs, Located } from '~/server/inputs'
 
-import { pageReader, type Reader, readerFor } from './reader.server'
+import { liftReader, pageReader, type Reader, readerFor } from './reader.server'
 
 /**
  * What an entry of `ENDPOINTS` (`./payloads.server`) is made of: its input,
@@ -15,8 +15,9 @@ import { pageReader, type Reader, readerFor } from './reader.server'
 
 /**
  * The bookmark a page is drawn for: the request's cookie, through `readerFor`
- * (`cookie`) or `pageReader` (`page`), the cookie and the trial (`trial`,
- * the landing alone), or the demo's `null` whatever the cookie (`demo`).
+ * (`cookie`; `liftReader` for a handle) or `pageReader` (`page`), the cookie
+ * and the trial (`trial`, the landing alone), or the demo's `null` whatever
+ * the cookie (`demo`).
  */
 export type Reads = 'cookie' | 'demo' | 'page' | 'trial'
 
@@ -63,7 +64,7 @@ export interface WordsPage<R> extends Swept {
 export function readerAt(
   reads: Reads,
   archive: SeriesArchive,
-  ask: { bookmark: Bookmark; id?: string; locale: Locale },
+  ask: { bookmark: Bookmark; handle?: string; id?: string; locale: Locale },
 ): Reader {
   switch (reads) {
     case 'demo': {
@@ -73,7 +74,10 @@ export function readerAt(
       return pageReader(archive, ask.bookmark, ask)
     }
     default: {
-      return readerFor(archive, ask.bookmark, ask.locale)
+      // A handle is lifted in the copy that minted it (#1431).
+      return ask.handle === undefined ?
+          readerFor(archive, ask.bookmark, ask.locale)
+        : liftReader(archive, ask.bookmark, { ...ask, handle: ask.handle })
     }
   }
 }

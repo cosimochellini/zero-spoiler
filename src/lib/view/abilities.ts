@@ -8,6 +8,7 @@ import type { AbilityNen } from '~/lib/view/facts'
 import type {
   CoveredRecord,
   EaterView,
+  PageUnit,
   RecordView,
   Searchable,
   Slot,
@@ -48,6 +49,6 @@ export interface AbilitySheetView {
 }
 
 /** An ability's own page: the record, and its users inside it. */
-export interface AbilityDetail {
+export interface AbilityDetail extends PageUnit {
   slot: Slot<AbilityView>
 }
