@@ -129,29 +129,6 @@ describe('the chapter pages a series is read from', () => {
       ['Chapter 3', 3],
     ])
   })
-
-  it('titles a book chapter by its book, counted from the book first', () => {
-    const titles = chapterTitles(344, [
-      { number: 1, first: 1, last: 73 },
-      { number: 3, first: 144, last: 225 },
-    ])
-
-    expect(titles.get('A Game of Thrones-Prologue')).toBe(1)
-    expect(titles.get('A Game of Thrones-Chapter 1')).toBe(2)
-    expect(titles.get('A Game of Thrones-Chapter 22')).toBe(23)
-    expect(titles.get('A Game of Thrones-Chapter 72')).toBe(73)
-    expect(titles.get('A Storm of Swords-Chapter 80')).toBe(224)
-    expect(titles.get('A Storm of Swords-Epilogue')).toBe(225)
-  })
-
-  it('leaves out what lies past the ceiling', () => {
-    const titles = chapterTitles(2, [{ number: 1, first: 1, last: 73 }])
-
-    expect(titles.keys().toArray()).toStrictEqual([
-      'A Game of Thrones-Prologue',
-      'A Game of Thrones-Chapter 1',
-    ])
-  })
 })
 
 describe('the page a query answered', () => {

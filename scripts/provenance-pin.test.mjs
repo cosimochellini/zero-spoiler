@@ -95,11 +95,11 @@ describe('key and URL forms', () => {
     )
   })
 
-  it('pins Game of Thrones from its two fandom wikis, never A Wiki of Ice and Fire', () => {
+  it("pins Game of Thrones from its two fandom wikis, the series list's", () => {
     const thrones = {
       slug: 'game-of-thrones',
       wiki: {
-        en: 'https://awoiaf.westeros.org/api.php',
+        en: 'https://iceandfire.fandom.com/api.php',
         episodes: 'https://gameofthrones.fandom.com/api.php',
         it: 'https://it.wikipedia.org/w/api.php',
       },

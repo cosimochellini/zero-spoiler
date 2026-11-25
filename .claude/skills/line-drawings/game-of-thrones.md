@@ -116,19 +116,24 @@ itself here:
 
 ## Research and verification
 
-- **A Wiki of Ice and Fire** (`https://awoiaf.westeros.org/api.php`,
-  `wiki.en` in `src/data/series/index.ts`) for the books. `{{Ref|AGOT|N}}`
-  cites a book (`AGOT`, `ACOK`, `ASOS`, `AFFC`, `ADWD`) and its own chapter N,
-  the page `A_Game_of_Thrones-Chapter_N` (`-Prologue`, `-Epilogue`). The
+- **The Ice and Fire Wiki** (`https://iceandfire.fandom.com/api.php`,
+  `wiki.en` in `src/data/series/index.ts`) for the books. A chapter page is
+  titled by its point of view and book (`Bran I - A Game of Thrones`,
+  `Prologue - A Clash of Kings`), in the order of the book's navbox. The
   absolute chapter the site files is the book's `first` in `books`
-  (`src/lib/progress/series.ts`) plus N: a prologue is the book's first
-  chapter, an epilogue its last. Ice's beheading, `{{Ref|AGOT|1}}`, is
+  (`src/lib/progress/series.ts`) for the prologue, one more for each chapter
+  after it. A `{{Ref|AGOT|N}}`, where a page has one, cites the book and its
+  own chapter N: the book's `first` plus N. Ice's beheading, Bran I, is
   chapter 2.
 - **The Game of Thrones Wiki** (`https://gameofthrones.fandom.com/api.php`)
   for the show. `|First =` gives a character's first episode by title, and
   `{{Ref|GOT101}}` cites season 1, episode 1. The absolute episode is the
   season's `first` in `seasons` in the same file, plus the episode, minus
   one.
+- Read a wiki fact in the order of `filing-records`' Game of Thrones
+  research: the main checkout's `.gate/firecrawl/` cache, then these two
+  wikis' APIs, then the Firecrawl tool. A Wiki of Ice and Fire refuses
+  scripted requests.
 - `wiki:pairs`, `archive:table` and `art:shots` read One Piece only. Check
   every pair by hand against both wikis and the owner's own copies of the
   books and the show, or mark it "not viewed" in the PR.

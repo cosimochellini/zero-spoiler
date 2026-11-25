@@ -20,8 +20,12 @@ in Codex or through Claude's `issue-implementer` subagent.
    Read `docs/architecture.md` for archive/server/routing/bookmark changes and
    the applicable verification/rights sections of `CONTRIBUTING.md`. For
    user-facing copy, read `.claude/skills/tone-of-voice/SKILL.md`; for art, read
-   `.claude/skills/line-drawings/SKILL.md`. These are ordinary Markdown
-   instructions in either tool. Follow only pointers relevant to this issue.
+   `.claude/skills/line-drawings/SKILL.md`. For UI work, load `impeccable` and
+   answer its interview, direction and approval steps from the issue,
+   `PRODUCT.md`, `DESIGN.md` and the owner decisions in the prompt; anything
+   still open becomes a Plan-first question with a default. These are ordinary
+   Markdown instructions in either tool. Follow only pointers relevant to this
+   issue.
    **Plan first.** When the orchestrator asks for a plan and questions first,
    stop after this research and return a per-record plan and numbered
    questions, each with a default; implement only on its reply.
@@ -31,8 +35,9 @@ in Codex or through Claude's `issue-implementer` subagent.
 5. Run `npm run check`; fix introduced failures and report baseline failures.
    Verify mappings for data changes, payload parity
    (`npm run archive:parity`) for behavior-preserving archive/server refactors
-   and production browser flows for site changes, following `CONTRIBUTING.md`.
-   Docs/tooling need no browser flow or parity run.
+   and production browser flows for site changes, following `CONTRIBUTING.md`:
+   judge a site change on `npm run build` and `npm start` (`vite preview`),
+   never `vite dev`. Docs/tooling need no browser flow or parity run.
 6. Use the `pr` skill when available and fill
    `.github/pull_request_template.md`, including sources/rights and AI
    attribution to the actual active model. Commit, push and open a **draft** PR

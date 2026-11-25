@@ -18,6 +18,7 @@ import {
 import {
   bookChapterOf,
   bookFloorOf,
+  bookTexts,
   citedChaptersOf,
   episodeNumberOf,
   firstEpisodeOf,
@@ -503,6 +504,114 @@ describe('Game of Thrones', () => {
     expect(episodeStandOf(record, {}, true)).toBe('unresolved')
     // One Piece reads both on one wiki, and a page without an episode passes.
     expect(episodeStandOf(record, {}, false)).toBe('ok')
+  })
+})
+
+/**
+ * A query answer holding one page per title, each with its wikitext.
+ * @param {Record<string, string>} pages Each title's wikitext.
+ * @returns {string} The answer.
+ */
+function queryAnswer(pages) {
+  const entries = Object.entries(pages).map(([title, text], index) => [
+    index,
+    { title, revisions: [{ slots: { main: { '*': text } } }] },
+  ])
+
+  return JSON.stringify({
+    batchcomplete: '',
+    query: { pages: Object.fromEntries(entries) },
+  })
+}
+
+/**
+ * A book's navbox: a link per chapter, then the appendix.
+ * @param {string} book The book.
+ * @param {string[]} chapters Each chapter's point of view.
+ * @returns {string} The wikitext.
+ */
+function navbox(book, chapters) {
+  return [...chapters, 'Appendix']
+    .map((chapter) => `[[${chapter} - ${book}|${chapter}]]`)
+    .join(' • ')
+}
+
+describe('the book chapters Game of Thrones is floored on', () => {
+  let directory = ''
+  const books = [
+    { number: 1, first: 1, last: 3 },
+    { number: 2, first: 4, last: 5 },
+  ]
+  const navboxes = queryAnswer({
+    'Template:A Game Of Thrones': navbox('A Game of Thrones', [
+      'Prologue',
+      'Bran I',
+      'Catelyn I',
+    ]),
+    'Template:A Clash of Kings': navbox('A Clash  of Kings', [
+      'Prologue',
+      'Arya I',
+    ]),
+  })
+  // Catelyn I, chapter 3, has no page; the books' prologues do.
+  const chapters = queryAnswer({
+    'Prologue - A Game of Thrones': 'one',
+    'Bran I - A Game of Thrones': 'two',
+    'Prologue - A Clash of Kings': 'four',
+  })
+
+  beforeEach(() => {
+    directory = mkdtempSync(path.join(tmpdir(), 'books-'))
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    rmSync(directory, { recursive: true, force: true })
+  })
+
+  const wiki = () => ({
+    cache: directory,
+    en: 'https://b/api.php',
+    it: '',
+    slug: 'game-of-thrones',
+  })
+
+  it('reads each book in its navbox order, up to the first chapter with no page', async () => {
+    const fetch = vi.fn((url) =>
+      Promise.resolve(
+        new Response(url.includes('Template') ? navboxes : chapters),
+      ),
+    )
+    vi.stubGlobal('fetch', fetch)
+
+    const texts = await bookTexts(5, books, wiki())
+
+    expect(texts.entries().toArray()).toStrictEqual([
+      [1, 'one'],
+      [2, 'two'],
+    ])
+    const url = new URL(fetch.mock.calls[1]?.[0] ?? '')
+    const asked = url.searchParams
+    expect(asked.get('titles')?.split('|')).toStrictEqual([
+      'Prologue - A Game of Thrones',
+      'Bran I - A Game of Thrones',
+      'Catelyn I - A Game of Thrones',
+      'Prologue - A Clash of Kings',
+      'Arya I - A Clash of Kings',
+    ])
+  })
+
+  it('refuses a navbox that lists another number of chapters than the book has', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() => Promise.resolve(new Response(navboxes))),
+    )
+
+    await expect(
+      bookTexts(73, [{ number: 1, first: 1, last: 73 }], wiki()),
+    ).rejects.toThrow(
+      'Template:A Game Of Thrones lists 3 chapters, the book has 73',
+    )
   })
 })
 

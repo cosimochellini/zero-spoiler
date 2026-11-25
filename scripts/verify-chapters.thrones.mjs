@@ -1,9 +1,9 @@
 // How `./verify-chapters.mjs` reads Game of Thrones, whose two media sit on
-// two wikis: the books on A Wiki of Ice and Fire (`wiki.en`), the show on
+// two wikis: the books on the Ice and Fire Wiki (`wiki.en`), the show on
 // the Game of Thrones Wiki (`wiki.episodes`). Kept apart so the script
 // stays readable.
 import { SHOW_TITLES } from './verify-chapters.tables.mjs'
-import { fetchPage, redirectsOf, THRONES_BOOKS } from './wiki.mjs'
+import { chapterTexts, fetchPage, pageTexts, redirectsOf } from './wiki.mjs'
 
 /** @typedef {import('./wiki.mjs').Wiki} Wiki */
 /** @typedef {{ number: number, first: number, last: number }} Book */
@@ -176,6 +176,92 @@ export function citedChaptersOf(wikitext, books) {
 }
 
 /**
+ * The Ice and Fire Wiki's navbox for each book, by book number (the first
+ * one's title is capitalised so), and the code its `{{Ref}}` cites the book
+ * by.
+ */
+const THRONES_BOOKS = [
+  { navbox: 'A Game Of Thrones', ref: 'AGOT' },
+  { navbox: 'A Clash of Kings', ref: 'ACOK' },
+  { navbox: 'A Storm of Swords', ref: 'ASOS' },
+  { navbox: 'A Feast for Crows', ref: 'AFFC' },
+  { navbox: 'A Dance with Dragons', ref: 'ADWD' },
+]
+
+/**
+ * The chapter pages a navbox links, in its order, without its `Appendix`,
+ * each title with its spaces as MediaWiki reads them.
+ * @param {string} wikitext The navbox.
+ * @returns {string[]} The titles.
+ */
+function navboxLinks(wikitext) {
+  return wikitext
+    .matchAll(/\[\[(?<title>[^\]|]+)/gu)
+    .map(({ groups }) => (groups?.['title'] ?? '').replaceAll(/[\s_]+/gu, ' '))
+    .map((title) => title.trim())
+    .filter((title) => !title.startsWith('Appendix'))
+    .toArray()
+}
+
+/**
+ * Every chapter page's title and the absolute chapter it is, up to the
+ * ceiling. The Ice and Fire Wiki titles a chapter by its point of view
+ * (`Arya II - A Game of Thrones`), so the order is the book's navbox: its
+ * nth link is the book's `first` plus n, the prologue being the first.
+ * @param {number} ceiling The last chapter.
+ * @param {Book[]} books The series' books.
+ * @param {Wiki} wiki The series' wiki.
+ * @returns {Promise<Map<string, number>>} Title to absolute chapter.
+ */
+async function bookChapterTitles(ceiling, books, wiki) {
+  const navboxes = books.map(({ number }) => {
+    const book = THRONES_BOOKS[number - 1]
+    if (book === undefined) {
+      throw new Error(`book ${String(number)} has no wiki navbox`)
+    }
+
+    return `Template:${book.navbox}`
+  })
+  const texts = await pageTexts(navboxes, wiki, 'navboxes')
+  const titles = books.flatMap(({ first, last }, index) => {
+    const navbox = navboxes[index] ?? ''
+    const links = navboxLinks(texts.get(navbox) ?? '')
+    if (links.length !== last - first + 1) {
+      throw new Error(
+        `${navbox} lists ${String(links.length)} chapters, the book has ${String(last - first + 1)}`,
+      )
+    }
+
+    return links.map(
+      (title, chapter) =>
+        /** @type {[string, number]} */ ([title, first + chapter]),
+    )
+  })
+
+  return new Map(titles.filter(([, chapter]) => chapter <= ceiling))
+}
+
+/**
+ * Every book chapter's wikitext from chapter 1 up to the first chapter with
+ * no page. Past a gap the first page linking a character is no floor: the
+ * missing page may link it first. On 2026-11-25 the Ice and Fire Wiki holds
+ * chapters 1 to 33 whole, then a few pages of the later books.
+ * @param {number} ceiling The last chapter.
+ * @param {Book[]} books The series' books.
+ * @param {Wiki} wiki The series' wiki.
+ * @returns {Promise<Map<number, string>>} Chapter to wikitext.
+ */
+export async function bookTexts(ceiling, books, wiki) {
+  const titles = await bookChapterTitles(ceiling, books, wiki)
+  const texts = await chapterTexts(titles, wiki)
+
+  const entries = [...texts]
+  const gap = entries.findIndex(([chapter], index) => chapter !== index + 1)
+
+  return new Map(gap === -1 ? entries : entries.slice(0, gap))
+}
+
+/**
  * A link target as the wiki resolves it: an underscore is a space, and the
  * first letter is taken in either case.
  * @param {string} title The target.
@@ -216,7 +302,7 @@ export function linkingChapterOf(chapters, titles) {
 }
 
 /**
- * A character's chapter floor on A Wiki of Ice and Fire: the first chapter
+ * A character's chapter floor on the Ice and Fire Wiki: the first chapter
  * page linking it, since a chapter page links everyone who appears or is
  * mentioned in it, or, when none does, the earliest chapter its page cites.
  * @param {Map<number, string>} chapters Every chapter's wikitext, in order.
@@ -235,7 +321,7 @@ export function bookFloorOf(chapters, titles, wikitext, books) {
 }
 
 /**
- * The book floor of a record's pages on A Wiki of Ice and Fire, the latest
+ * The book floor of a record's pages on the Ice and Fire Wiki, the latest
  * of them for a paired record.
  * @param {string[]} titles The record's pages there.
  * @param {{ chapters: Map<number, string>, wiki: Wiki, books: Book[] }} read Every chapter's wikitext, the wiki and the books.
