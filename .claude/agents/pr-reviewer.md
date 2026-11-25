@@ -76,7 +76,8 @@ these commands. Measure runs on a same-repo head only
      and removes it); add `--skip` or `--bookmarks` as `CONTRIBUTING.md`
      describes. Exit 0 is parity; exit 1 prints, per payload, the count of
      identical and different lines and one truncated sample of the first change;
-     exit 2 is a wrong flag, a failed setup or dump, or no line compared;
+     exit 2 is a wrong flag, a failed setup or dump, no line compared, or a
+     signal (SIGINT, SIGTERM, SIGHUP) that stopped the run;
    - scripts you write in `<dir>` that only read `dist/` or source.
 4. Always, a failed measurement included: `/usr/bin/git worktree remove --force`
    on `<dir>/head`, any `<dir>/base` and any `<dir>/archive-parity-*/base` a

@@ -13,12 +13,12 @@ import { tmpdir } from 'node:os'
 import path from 'node:path'
 import process from 'node:process'
 import { Readable } from 'node:stream'
-import { afterAll, describe, expect, it } from 'vitest'
+import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 
 import {
   compareDumps,
   exitOf,
-  failedOf,
+  failureOf,
   linesOf,
   parityArgs,
   reportOf,
@@ -168,19 +168,31 @@ describe('the end of a run', () => {
   })
 
   it('counts a dump as failed unless it ended well or on its own stop', () => {
-    expect(failedOf({ code: 0, signal: null }, false)).toBe(false)
-    expect(failedOf({ code: null, signal: 'SIGKILL' }, true)).toBe(false)
-    expect(failedOf({ code: 1, signal: null }, true)).toBe(true)
-    expect(failedOf({ code: null, signal: 'SIGTERM' }, true)).toBe(true)
-    expect(failedOf({ code: null, signal: 'SIGKILL' }, false)).toBe(true)
+    expect(failureOf({ code: 0, signal: null }, false)).toBeUndefined()
+    expect(failureOf({ code: null, signal: 'SIGKILL' }, true)).toBeUndefined()
+    expect(failureOf({ code: 1, signal: null }, true)).toBe('exited 1')
+    expect(failureOf({ code: null, signal: 'SIGTERM' }, true)).toBe(
+      'killed by SIGTERM',
+    )
+    expect(failureOf({ code: null, signal: 'SIGKILL' }, false)).toBe(
+      'killed by SIGKILL',
+    )
+    expect(
+      failureOf({ code: -1, signal: null, error: 'spawn ENOENT' }, false),
+    ).toBe('spawn ENOENT')
   })
 })
 
 describe('a run against a base worktree', () => {
-  const folder = mkdtempSync(path.join(tmpdir(), 'archive-parity-test-'))
-  const bookmarks = path.join(folder, 'bookmarks.json')
-  // No bookmark: the head's dump is the episode table alone, and quick.
-  writeFileSync(bookmarks, '[]')
+  // Made before the first test, so a run that filters these out leaks nothing.
+  let folder = ''
+  let bookmarks = ''
+  beforeAll(() => {
+    folder = mkdtempSync(path.join(tmpdir(), 'archive-parity-test-'))
+    bookmarks = path.join(folder, 'bookmarks.json')
+    // No bookmark: the head's dump is the episode table alone, and quick.
+    writeFileSync(bookmarks, '[]')
+  })
   const runs = []
   // A Git hook (the pre-push test run) exports GIT_DIR and friends, and Git
   // would then act on the checkout instead of the repository made below:
@@ -266,22 +278,33 @@ describe('a run against a base worktree', () => {
   ].join('\n')
 
   it.each([
-    ['a SIGTERM before any line', "process.kill(process.pid, 'SIGTERM')"],
+    [
+      'a SIGTERM before any line',
+      "process.kill(process.pid, 'SIGTERM')",
+      'SIGTERM',
+    ],
     [
       'a SIGKILL after the first line',
       String.raw`process.stdout.write('{"table":1,"chapter":0}\n'); process.kill(process.pid, 'SIGKILL')`,
+      'SIGKILL',
     ],
     [
       'a SIGKILL after the last line',
       `${whole}\nprocess.kill(process.pid, 'SIGKILL')`,
+      'SIGKILL',
     ],
-  ])('fails when a dump ends on %s it did not send', async (_, source) => {
-    const run = parityWith(baseWith(source))
-    const [code] = await once(run.child, 'exit')
+  ])(
+    'fails when a dump ends on %s it did not send',
+    async (_, source, signal) => {
+      const run = parityWith(baseWith(source))
+      const [code] = await once(run.child, 'exit')
 
-    expect(run.err()).toContain('a dump failed')
-    expect(code).toBe(2)
-  })
+      expect(run.err()).toContain(
+        `the base dump killed by ${signal}; a dump failed`,
+      )
+      expect(code).toBe(2)
+    },
+  )
 
   it('passes a base that ends with every line and exit 0', async () => {
     const run = parityWith(baseWith(whole))
@@ -400,7 +423,7 @@ describe('a run against a base worktree', () => {
       const pid = Number(/ready (?<pid>\d+)/u.exec(run.err())?.groups?.pid)
 
       expect(code).toBe(2)
-      expect(run.err()).toContain(`stopped by ${signal}`)
+      expect(run.err().split(`stopped by ${signal}`)).toHaveLength(2)
       expect(() => process.kill(pid, 0)).toThrow(/ESRCH/u)
     },
   )

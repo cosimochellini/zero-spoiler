@@ -32,7 +32,7 @@ in Codex or through Claude's `issue-implementer` subagent.
    Verify mappings for data changes, payload parity
    (`npm run archive:parity`) for behavior-preserving archive/server refactors
    and production browser flows for site changes, following `CONTRIBUTING.md`.
-   Docs/tooling need no browser or parity run.
+   Docs/tooling need no browser flow or parity run.
 6. Use the `pr` skill when available and fill
    `.github/pull_request_template.md`, including sources/rights and AI
    attribution to the actual active model. Commit, push and open a **draft** PR

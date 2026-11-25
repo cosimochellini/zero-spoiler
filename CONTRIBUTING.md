@@ -94,7 +94,7 @@ comments, and it refuses a page that carries `data-impeccable-ignore`.
   flow in Chrome with local `puppeteer-core`, running inside the worktree. Set
   the series cookie; check before/at changed episode and chapter gates. Capture
   visual evidence and close browser/preview. Docs/tooling need no browser flow
-  or dumps; `npm run check` itself still needs Chrome, for `gate:design`.
+  or parity run; `npm run check` itself still needs Chrome, for `gate:design`.
 - **Drawings:** inspect `npm run art:sheet -- <id>` output. For One Piece
   character redrawings, build and run `npm run art:shots -- <id>`; inspect the
   gate screenshots. Keep generated evidence out of commits.

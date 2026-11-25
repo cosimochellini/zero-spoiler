@@ -235,14 +235,20 @@ export function exitOf({ counts, misstep }) {
 }
 
 /**
- * Whether a dump failed: any end but 0, except the SIGKILL this script sent.
- * A SIGTERM always fails, since this script never sends one to a dump.
- * @param {{ code: number | null, signal: string | null }} end How it ended.
+ * Why a dump failed, or `undefined` when it did not: any end but 0 fails,
+ * except the SIGKILL this script sent. A SIGTERM always fails, since this
+ * script never sends one to a dump.
+ * @param {{ code: number | null, signal: string | null, error?: string }} end How it ended.
  * @param {boolean} stopped Whether this script stopped it.
- * @returns {boolean} Whether it failed.
+ * @returns {string | undefined} The reason.
  */
-export function failedOf({ code, signal }, stopped) {
-  return code !== 0 && (!stopped || signal !== 'SIGKILL')
+export function failureOf({ code, signal, error }, stopped) {
+  const fine = code === 0 || (stopped && signal === 'SIGKILL')
+  const why =
+    error
+    ?? (signal === null ? `exited ${String(code)}` : `killed by ${signal}`)
+
+  return fine ? undefined : why
 }
 
 /**
@@ -261,15 +267,15 @@ const RUN = {
 /**
  * How a child ends, kept among the run's children until then.
  * @param {import('node:child_process').ChildProcess} child The child.
- * @returns {Promise<{ code: number | null, signal: string | null }>} Its exit code and signal; -1 when it never started.
+ * @returns {Promise<{ code: number | null, signal: string | null, error?: string }>} Its exit code and signal; -1 and the error when it never started.
  */
 function ended(child) {
   RUN.children.add(child)
 
   return new Promise((resolve) => {
-    child.on('error', () => {
+    child.on('error', (error) => {
       RUN.children.delete(child)
-      resolve({ code: -1, signal: null })
+      resolve({ code: -1, signal: null, error: error.message })
     })
     child.on('exit', (code, signal) => {
       RUN.children.delete(child)
@@ -286,7 +292,6 @@ function ended(child) {
  */
 function stopRun(signal) {
   RUN.signal ??= signal
-  console.error(`archive:parity: stopped by ${signal}`)
   for (const child of RUN.children) {
     child.kill('SIGKILL')
   }
@@ -372,7 +377,7 @@ const BLOCKING = [
  * Starts the dump of one tree, its lines on a pipe.
  * @param {string} tree The worktree.
  * @param {string[]} args The dump's flags.
- * @returns {{ lines: AsyncIterable<string>, stop: () => void, failed: () => Promise<boolean> }} Its lines, a way to stop it, and whether it failed on its own.
+ * @returns {{ lines: AsyncIterable<string>, stop: () => void, failure: () => Promise<string | undefined> }} Its lines, a way to stop it, and why it failed on its own, if it did.
  */
 function dumpOf(tree, args) {
   // fallow-ignore-next-line security-sink -- the command is this Node; the script is the dump of this checkout or of the base worktree, and the flags were parsed by parseArgs.
@@ -411,7 +416,7 @@ function dumpOf(tree, args) {
   return {
     lines: lines(),
     stop,
-    failed: async () => failedOf(await exit, run.killed),
+    failure: async () => failureOf(await exit, run.killed),
   }
 }
 
@@ -426,10 +431,15 @@ async function parity(flags) {
   const result = await compareDumps(base.lines, head.lines)
   base.stop()
   head.stop()
-  const failed = await Promise.all([base.failed(), head.failed()])
+  const failures = await Promise.all([base.failure(), head.failure()])
   unlessStopped()
-  if (failed.includes(true)) {
-    console.error('archive:parity: a dump failed; its error is above')
+  const failed = ['base', 'head']
+    .map(
+      (side, index) => failures[index] && `the ${side} dump ${failures[index]}`,
+    )
+    .filter(Boolean)
+  if (failed.length > 0) {
+    console.error(`archive:parity: ${failed.join('; ')}; a dump failed`)
     return 2
   }
   console.log(reportOf(result))
