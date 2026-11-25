@@ -3157,10 +3157,26 @@ export const season1: ThronesSaga = {
     'sansa-stark': {
       relationships: season1Relationships['sansa-stark'],
       chronicle: season1Chronicles['sansa-stark'],
-      role: {
-        it: 'Figlia di lord Eddard Stark',
-        en: 'Daughter of Lord Eddard Stark',
-      },
+      role: [
+        {
+          episode: 1,
+          chapter: 5,
+          value: {
+            it: 'Figlia di lord Eddard Stark',
+            en: 'Daughter of Lord Eddard Stark',
+          },
+        },
+        // Stage 3 (#1634): wed to Tyrion at his father's command, in
+        // "Second Sons" (episode 28) and Sansa III (chapter 172).
+        {
+          episode: 28,
+          chapter: 172,
+          value: {
+            it: 'Moglie di Tyrion Lannister',
+            en: 'Tyrion Lannister’s wife',
+          },
+        },
+      ],
       log: {
         it: 'Accoglie il re nel cortile di Grande Inverno con il resto della famiglia. Il re propone a suo padre di darla in sposa al principe ereditario.',
         en: 'She greets the king in the yard of Winterfell with the rest of her family. The king proposes to her father that she marry the crown prince.',
@@ -4039,6 +4055,14 @@ export const season1: ThronesSaga = {
             en: 'Former acting Hand of the King',
           },
         },
+        // Stage 3 (#1634): his father names him master of coin in
+        // Littlefinger's place, at the small council of "Walk of
+        // Punishment" (episode 23) and Tyrion III (chapter 163).
+        {
+          episode: 23,
+          chapter: 163,
+          value: { it: 'Maestro del conio', en: 'Master of coin' },
+        },
       ],
       status: [
         { episode: 1, chapter: 5, value: 'alive' },
@@ -4322,6 +4346,17 @@ export const season1: ThronesSaga = {
             en: 'Former commander of the City Watch',
           },
         },
+        // Stage 3 (#1634): knighted for the Blackwater, Ser Bronn of the
+        // Blackwater still guards Tyrion for pay: "Valar Dohaeris" (episode
+        // 21) and Tyrion I (chapter 148).
+        {
+          episode: 21,
+          chapter: 148,
+          value: {
+            it: 'Cavaliere al soldo di Tyrion',
+            en: 'Knight in Tyrion’s pay',
+          },
+        },
       ],
       status: [{ episode: 4, chapter: 32, value: 'alive' }],
     },
@@ -4534,6 +4569,14 @@ export const season1: ThronesSaga = {
             it: 'Maestro del conio e lord di Harrenhal',
             en: 'Master of coin and Lord of Harrenhal',
           },
+        },
+        // Stage 3 (#1634): bound for the Vale to wed Lysa Arryn, he gives up
+        // the coin to Tyrion at the small council of "Walk of Punishment"
+        // (episode 23) and Tyrion III (chapter 163).
+        {
+          episode: 23,
+          chapter: 163,
+          value: { it: 'Lord di Harrenhal', en: 'Lord of Harrenhal' },
         },
       ],
       log: {
@@ -5827,10 +5870,39 @@ export const season1: ThronesSaga = {
     'boros-blount': {
       relationships: season1Relationships['boros-blount'],
       chronicle: season1Chronicles['boros-blount'],
-      role: {
-        it: 'Cavaliere della Guardia reale',
-        en: 'Knight of the Kingsguard',
-      },
+      role: [
+        {
+          episode: 19,
+          chapter: 34,
+          value: {
+            it: 'Cavaliere della Guardia reale',
+            en: 'Knight of the Kingsguard',
+          },
+        },
+        // The books' alone (#1634): the queen strips him of his white cloak
+        // for yielding Tommen, and gives it to Osmund Kettleblack, in Tyrion
+        // XI (chapter 123); Varys tells Tyrion he has been restored to the
+        // Kingsguard in Tyrion II of A Storm of Swords (chapter 156). The
+        // show never dismisses him, so episodes 19 and 21 only order them.
+        {
+          episode: 19,
+          chapter: 123,
+          source: 'chapter',
+          value: {
+            it: 'Espulso dalla Guardia reale',
+            en: 'Dismissed from the Kingsguard',
+          },
+        },
+        {
+          episode: 21,
+          chapter: 156,
+          source: 'chapter',
+          value: {
+            it: 'Cavaliere della Guardia reale',
+            en: 'Knight of the Kingsguard',
+          },
+        },
+      ],
       log: {
         it: 'Fa parte della Guardia reale e veste il mantello bianco dei suoi confratelli. Presta servizio nella Fortezza Rossa, accanto al re.',
         en: 'He belongs to the Kingsguard and wears the white cloak of his sworn brothers. He serves in the Red Keep, at the king’s side.',
@@ -5840,6 +5912,19 @@ export const season1: ThronesSaga = {
         {
           episode: 19,
           chapter: 34,
+          value: { it: 'Guardia reale', en: 'Kingsguard' },
+        },
+        // Out of the Kingsguard and back, the books' alone, as his role.
+        {
+          episode: 19,
+          chapter: 123,
+          source: 'chapter',
+          value: { it: 'Casa Blount', en: 'House Blount' },
+        },
+        {
+          episode: 21,
+          chapter: 156,
+          source: 'chapter',
           value: { it: 'Guardia reale', en: 'Kingsguard' },
         },
       ],
@@ -6356,10 +6441,29 @@ export const season1: ThronesSaga = {
     'addam-marbrand': {
       relationships: season1Relationships['addam-marbrand'],
       chronicle: season1Chronicles['addam-marbrand'],
-      role: {
-        it: 'Cavaliere, comandante degli esploratori',
-        en: 'Knight, commander of outriders',
-      },
+      role: [
+        {
+          episode: 10,
+          chapter: 63,
+          value: {
+            it: 'Cavaliere, comandante degli esploratori',
+            en: 'Knight, commander of outriders',
+          },
+        },
+        // The books' alone (#1634): Bronn tells Tyrion that Ser Addam has
+        // the City Watch in Jacelyn Bywater's place, in Tyrion I of A Storm
+        // of Swords (chapter 148). The show never gives him the Watch, so
+        // episode 21 only orders it.
+        {
+          episode: 21,
+          chapter: 148,
+          source: 'chapter',
+          value: {
+            it: 'Comandante della Guardia cittadina',
+            en: 'Commander of the City Watch',
+          },
+        },
+      ],
       log: {
         it: 'Serve nell’esercito di Tywin Lannister, dove guida gli esploratori a cavallo. È tra i comandanti che lord Tywin ascolta in consiglio.',
         en: 'He serves in Tywin Lannister’s army, where he leads the outriders. He is among the captains Lord Tywin hears in council.',

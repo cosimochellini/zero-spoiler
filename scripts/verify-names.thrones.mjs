@@ -241,6 +241,10 @@ export const THRONES_ITALIAN_TITLES = {
   'strong-belwas': SELMY,
   // The owner's rulings of 2026-11-22: Arstan Barbabianca, named in prose.
   'arstan-whitebeard': SELMY,
+  // #1634, the third stage's King's Landing cast.
+  'olenna-tyrell': 'Casa Tyrell#Olenna Redwyne',
+  'oberyn-martell': 'Casa Martell#Oberyn Martell',
+  'ellaria-sand': 'Casa Martell#Ellaria Sand',
 }
 
 /**
@@ -361,4 +365,12 @@ export const THRONES_NAMES_KEPT = {
   'strong-belwas': 'Belwas il Forte',
   // Named in the same section's prose, with no heading of his own.
   'arstan-whitebeard': 'Arstan Barbabianca',
+  // #1634. Italian Wikipedia heads Olenna's entry by her maiden name,
+  // Redwyne, and the record keeps the name both media use; it has no entry
+  // for Margaery's three cousins, whose names stay as they are until the
+  // Mondadori forms are checked.
+  'olenna-tyrell': 'Olenna Tyrell',
+  'megga-tyrell': 'Megga Tyrell',
+  'alla-tyrell': 'Alla Tyrell',
+  'elinor-tyrell': 'Elinor Tyrell',
 }

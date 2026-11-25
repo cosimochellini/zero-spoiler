@@ -38011,6 +38011,226 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748990",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748990",
       "contentSha256": "d03b23c68a7b1ae4e539def6b9e5a252744eb5c35e264a10512c411e91731010"
+    },
+    "got-en-Olenna_Tyrell-749445.json": {
+      "locale": "en",
+      "title": "Olenna Tyrell",
+      "revision": 749445,
+      "revisionDate": "2026-11-24T16:20:42Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Olenna_Tyrell",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749445",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749445",
+      "contentSha256": "2fecf041bd63294dc0cd5bf63d859bc03725d9322a8284818345d4c6ab6e8940"
+    },
+    "got-en-Olyvar-728343.json": {
+      "locale": "en",
+      "title": "Olyvar",
+      "revision": 728343,
+      "revisionDate": "2026-02-05T07:30:14Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Olyvar",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728343",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728343",
+      "contentSha256": "8edb622167327bbc5ecc2e00142fe5a440f4b37601c41f6e59e84a9d644d98cb"
+    },
+    "got-en-Mirelle-728281.json": {
+      "locale": "en",
+      "title": "Mirelle",
+      "revision": 728281,
+      "revisionDate": "2026-02-05T07:17:16Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Mirelle",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728281",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728281",
+      "contentSha256": "afc519aae4bd169c440187c9fc2dd81dd2adf2bb4b3ed3967084d1cd073c83c2"
+    },
+    "got-en-Kayla-728205.json": {
+      "locale": "en",
+      "title": "Kayla",
+      "revision": 728205,
+      "revisionDate": "2026-02-05T06:58:20Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Kayla",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728205",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728205",
+      "contentSha256": "0b88decf908770bf8d49bb4d0c350ffb60adf44c85b49c31b99b88ad765f236c"
+    },
+    "got-en-Genna-728135.json": {
+      "locale": "en",
+      "title": "Genna",
+      "revision": 728135,
+      "revisionDate": "2026-02-05T05:34:34Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Genna",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728135",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728135",
+      "contentSha256": "d3ab2803fe316fe8a1bb875315669841510b5c689b2f7fb71579e26671fc0c83"
+    },
+    "got-en-Margaery_Tyrell's_handmaiden-719771.json": {
+      "locale": "en",
+      "title": "Margaery Tyrell's handmaiden",
+      "revision": 719771,
+      "revisionDate": "2026-01-05T08:40:57Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Margaery_Tyrell's_handmaiden",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=719771",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=719771",
+      "contentSha256": "ed68df6b701423cddbb23e5e687a618f73868ab16f3a4bead80cb5e3c30f33d6"
+    },
+    "got-en-Oberyn_Martell-736470.json": {
+      "locale": "en",
+      "title": "Oberyn Martell",
+      "revision": 736470,
+      "revisionDate": "2026-05-29T04:45:22Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Oberyn_Martell",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=736470",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=736470",
+      "contentSha256": "1f0bfa82fcbc9f279343f2ee822a17337e15b61bd579938e60a80094f3ca2e9f"
+    },
+    "got-en-Ellaria_Sand-742089.json": {
+      "locale": "en",
+      "title": "Ellaria Sand",
+      "revision": 742089,
+      "revisionDate": "2026-07-05T12:54:07Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Ellaria_Sand",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=742089",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=742089",
+      "contentSha256": "cbe693f668127b09d5b60b08dbabd2f89df7cb45bdd64187616029ff3aa95d20"
+    },
+    "got-en-Valar_Dohaeris-746438.json": {
+      "locale": "en",
+      "title": "Valar Dohaeris",
+      "revision": 746438,
+      "revisionDate": "2026-08-05T23:26:27Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Valar_Dohaeris",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=746438",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=746438",
+      "contentSha256": "8c70220842c47baa2161ff7f3f11466e11d8ae2ce201c62985fc8bf272a63990"
+    },
+    "got-en-Dark_Wings,_Dark_Words-740180.json": {
+      "locale": "en",
+      "title": "Dark Wings, Dark Words",
+      "revision": 740180,
+      "revisionDate": "2026-06-27T12:17:36Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Dark_Wings%2C_Dark_Words",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740180",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740180",
+      "contentSha256": "df9afbba49b5720281e13a44c25ff3bf5ce3a855fa8e65051e35221cc6f4acb5"
+    },
+    "got-en-Walk_of_Punishment_(episode)-737648.json": {
+      "locale": "en",
+      "title": "Walk of Punishment (episode)",
+      "revision": 737648,
+      "revisionDate": "2026-06-20T05:33:12Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Walk_of_Punishment_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=737648",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=737648",
+      "contentSha256": "18adcb9d7169546c332b8f9977c9c0d58b72985b78da04fb653741ad1f64ba9a"
+    },
+    "got-en-And_Now_His_Watch_Is_Ended-740182.json": {
+      "locale": "en",
+      "title": "And Now His Watch Is Ended",
+      "revision": 740182,
+      "revisionDate": "2026-06-27T12:18:29Z",
+      "url": "https://gameofthrones.fandom.com/wiki/And_Now_His_Watch_Is_Ended",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740182",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740182",
+      "contentSha256": "ad5d0d80da011dc03e7513e9ba08eb2e3d9a392d067bda571f43e94878282895"
+    },
+    "got-en-The_Climb-740184.json": {
+      "locale": "en",
+      "title": "The Climb",
+      "revision": 740184,
+      "revisionDate": "2026-06-27T12:19:00Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Climb",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740184",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740184",
+      "contentSha256": "a569d942d02b5b7aa4eed38692a6c9573205dd15f6e36b1a3ff7aada649eafa0"
+    },
+    "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json": {
+      "locale": "en",
+      "title": "The Bear and the Maiden Fair (episode)",
+      "revision": 729794,
+      "revisionDate": "2026-02-12T12:45:03Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729794",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729794",
+      "contentSha256": "9d7987c6025dd8b60fa47fa7f3fb81089278e93acfaeb9c52657f6dcef57afe9"
+    },
+    "got-en-Second_Sons_(episode)-740340.json": {
+      "locale": "en",
+      "title": "Second Sons (episode)",
+      "revision": 740340,
+      "revisionDate": "2026-06-27T13:12:58Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Second_Sons_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740340",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740340",
+      "contentSha256": "1af2b7f43dd8359c198852ce96e5b043b422d331b0cd41af38cb4c9479d73073"
+    },
+    "got-en-The_Rains_of_Castamere_(episode)-729892.json": {
+      "locale": "en",
+      "title": "The Rains of Castamere (episode)",
+      "revision": 729892,
+      "revisionDate": "2026-02-14T23:31:41Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729892",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729892",
+      "contentSha256": "af8f1b27641b56378887fe61ae050019d39a6e26899a24d6dd021bc833b79c88"
+    },
+    "got-en-Mhysa-740189.json": {
+      "locale": "en",
+      "title": "Mhysa",
+      "revision": 740189,
+      "revisionDate": "2026-06-27T12:22:28Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Mhysa",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740189",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740189",
+      "contentSha256": "a54ff91b60c59eff0191850fc0c5a829ae31bbe7b5c08c6f94f4e1985c40cfb3"
+    },
+    "iaf-en-Olenna_Tyrell-21180.json": {
+      "locale": "en",
+      "title": "Olenna Tyrell",
+      "revision": 21180,
+      "revisionDate": "2018-02-12T13:09:40Z",
+      "url": "https://iceandfire.fandom.com/wiki/Olenna_Tyrell",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21180",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21180",
+      "contentSha256": "4c7feede9d75a06217cf0fd565d3af6a0f935426344ec1882cf1ef154de747d0"
+    },
+    "iaf-en-Megga_Tyrell-26078.json": {
+      "locale": "en",
+      "title": "Megga Tyrell",
+      "revision": 26078,
+      "revisionDate": "2022-10-12T21:54:53Z",
+      "url": "https://iceandfire.fandom.com/wiki/Megga_Tyrell",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26078",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26078",
+      "contentSha256": "f6b9e71e4d28050ab079a018dc79ca02d2d6e2ddac618f5270d88ff45040a367"
+    },
+    "iaf-en-Elinor_Tyrell-25988.json": {
+      "locale": "en",
+      "title": "Elinor Tyrell",
+      "revision": 25988,
+      "revisionDate": "2022-10-01T13:09:37Z",
+      "url": "https://iceandfire.fandom.com/wiki/Elinor_Tyrell",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25988",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25988",
+      "contentSha256": "4bcfe42a6c9076c807ef44c0a66ed78cbc276ac0ac016b7c538be5165a76c677"
+    },
+    "iaf-en-Oberyn_Martell-27477.json": {
+      "locale": "en",
+      "title": "Oberyn Martell",
+      "revision": 27477,
+      "revisionDate": "2025-09-04T16:18:37Z",
+      "url": "https://iceandfire.fandom.com/wiki/Oberyn_Martell",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27477",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27477",
+      "contentSha256": "fa4c91732cada9207a3ab33d3605e38dad39fb65e27a1729405f1e4a6239cb04"
+    },
+    "iaf-en-Ellaria_Sand-21339.json": {
+      "locale": "en",
+      "title": "Ellaria Sand",
+      "revision": 21339,
+      "revisionDate": "2018-02-20T14:18:40Z",
+      "url": "https://iceandfire.fandom.com/wiki/Ellaria_Sand",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21339",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21339",
+      "contentSha256": "9c2cf9ee005af9292717e65fea25c2eaa82a203caf99d7e733f956a1d30a3e3b"
     }
   }
 }

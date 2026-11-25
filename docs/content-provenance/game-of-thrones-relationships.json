@@ -3010,5 +3010,12 @@
     }
   },
   "omitted": {},
-  "pending": {}
+  "pending": {
+    "olenna-tyrell": "#1651",
+    "megga-tyrell": "#1651",
+    "alla-tyrell": "#1651",
+    "elinor-tyrell": "#1651",
+    "oberyn-martell": "#1651",
+    "ellaria-sand": "#1651"
+  }
 }
