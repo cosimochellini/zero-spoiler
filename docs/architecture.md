@@ -398,7 +398,14 @@ Dragonstone (#1640) adds three, all the books' alone (Axell and Alester Florent,
 Edric Storm), with stage-3 steps on Davos Seaworth. Bran's road and Theon
 (#1641) adds Myranda, the show's alone, moves Ramsay Snow's show gate to episode
 30, where his name is first said, and adds the stage's steps of Bran, Osha and
-Theon, Bran's passing beyond the Wall keeping its later book chapter (#852).
+Theon, Bran's passing beyond the Wall keeping its later book chapter (#852). The
+stage's places (#1630) are the 13 a scene of the stage is set in: Astapor and
+Yunkai in both media, ten the book's alone, and the Nightfort, which the show
+visits and the book only names (#1252), and the 7 both media name and neither
+visits, each with its own drawing; Harrenhal, the Fist of the First Men,
+Craster's Keep, the Dreadfort and Flea Bottom take the stage's changes as dated
+`visits` entries, and Harrenhal, the Fist, Astapor and Yunkai a drawing stage,
+and Maidenpool a books-only one.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -638,15 +645,15 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| Records                | 348                                                                                     |
+| Records                | 368                                                                                     |
 | Characters             | 261                                                                                     |
-| Places                 | 87                                                                                      |
+| Places                 | 107                                                                                     |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 351, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
+| Line drawings          | 371, one per record and 3 for the seasons' headings, plus 218 redrawings of 161 records |
 | Chronicle stories      | 1188, for 213 characters                                                                |
-| Dated timelines        | 1175                                                                                    |
+| Dated timelines        | 1180                                                                                    |
 | Affiliation steps      | 307                                                                                     |
 | Status steps           | 453                                                                                     |
-| Later visits to places | 5                                                                                       |
+| Later visits to places | 16                                                                                      |
 
 <!-- End of the generated counts. -->

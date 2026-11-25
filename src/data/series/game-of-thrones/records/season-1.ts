@@ -1086,8 +1086,8 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 54,
       name: { it: 'Rickard Karstark', en: 'Rickard Karstark' },
       summary: {
-        it: 'Il lord di Karhold, uno dei signori del Nord che combattono nell’esercito di Robb Stark.',
-        en: 'The lord of Karhold, one of the northern lords who fight in Robb Stark’s host.',
+        it: 'Il capo di Casa Karstark, uno dei signori del Nord che combattono nell’esercito di Robb Stark.',
+        en: 'The head of House Karstark, one of the northern lords who fight in Robb Stark’s host.',
       },
       visual: { art: 'rickard-karstark', tint: 'cyan' },
     },
@@ -5614,10 +5614,10 @@ export const season1: ThronesSaga = {
     'rickard-karstark': {
       relationships: season1Relationships['rickard-karstark'],
       chronicle: season1Chronicles['rickard-karstark'],
-      role: { it: 'Lord di Karhold', en: 'Lord of Karhold' },
+      role: { it: 'A capo di Casa Karstark', en: 'Head of House Karstark' },
       log: {
-        it: 'È a capo di Casa Karstark, che ha sede a Karhold. Marcia nell’esercito di Robb con i suoi uomini.',
-        en: 'He is the head of House Karstark, whose seat is Karhold. He marches in Robb’s host with his men.',
+        it: 'È a capo di Casa Karstark, una casata del Nord. Marcia nell’esercito di Robb con i suoi uomini.',
+        en: 'He is the head of House Karstark, a house of the North. He marches in Robb’s host with his men.',
       },
       status: [
         { episode: 17, chapter: 54, value: 'alive' },
@@ -8315,6 +8315,19 @@ export const SEASON_1_PLACES: Record<
         value: {
           it: 'Soldati Lannister portano nel castello mezzo in rovina i prigionieri presi nelle Terre dei Fiumi, tra cui Arya, Gendry e Frittella. Ogni giorno uno dei prigionieri viene torturato per avere informazioni.',
           en: 'Lannister soldiers bring captives from the Riverlands to the half-ruined castle, Arya, Gendry and Hot Pie among them. Every day one of the prisoners is tortured for information.',
+        },
+      },
+      // Taken (#1630): Robb's host finds the castle abandoned in "Valar
+      // Dohaeris" and leaves Roose Bolton in command in "Dark Wings, Dark
+      // Words"; in Arya IX (A Clash of Kings, site chapter 121) the freed
+      // northmen and the Brave Companions take it, and Roose arrives to hold
+      // it.
+      {
+        episode: 22,
+        chapter: 121,
+        value: {
+          it: 'Il castello passa agli uomini del Nord, e Roose Bolton lo tiene in nome di Robb Stark.',
+          en: 'The castle passes to the northmen, and Roose Bolton holds it in Robb Stark’s name.',
         },
       },
     ],

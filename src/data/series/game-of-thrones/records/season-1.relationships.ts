@@ -10866,7 +10866,7 @@ const wall2 = {
     type: { en: 'Acting commander of rangers', it: 'Comandante dei ranger' },
     summary: {
       en: 'The ranger Jeor sends to probe the Milkwater.',
-      it: 'Il ranger che Jeor manda a esplorare il Milkwater.',
+      it: 'Il ranger che Jeor manda a esplorare il Fiumelatte.',
     },
   },
   jeoJarmanParty: {
