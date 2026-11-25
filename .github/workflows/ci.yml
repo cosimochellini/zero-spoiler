@@ -44,15 +44,18 @@ env:
 # The gate is five jobs side by side, so a pull request is green after the
 # slowest of them rather than after their sum (about 10 minutes in one job).
 # GitHub bills no minutes on a public repository, so the extra installs cost
-# only a few seconds each. Every job carries the same `if`: pull requests only,
-# the gate already ran there, and repeating it on main just to bump the version
-# cost the whole run for nothing. A draft skips every job, so its run concludes
-# `skipped` (scripts/land-pr.sh waits past it); a red job makes the run
-# `failure`, which is the one conclusion land-pr.sh reads.
+# only a few seconds each. Every job carries the same `if`: it runs on a pull
+# request that is not a draft and on every push to main. Main gets the gate
+# again because two pull requests that each pass alone can break it together
+# (#1408); without a run there the break surfaced only on the next unrelated
+# pull request. A merge queue would stop the break instead of reporting it,
+# but GitHub offers it only to organization repositories. A draft skips every
+# job, so its run concludes `skipped` (scripts/land-pr.sh waits past it); a red
+# job makes the run `failure`, which is the one conclusion land-pr.sh reads.
 jobs:
   # Everything that needs the sources only: no build, no tests.
   static:
-    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
+    if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -91,7 +94,7 @@ jobs:
   # is no `--cache`: with typed rules a file's findings can change when another
   # file's types do, and a cache keyed on the file misses it.
   lint:
-    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
+    if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -109,7 +112,7 @@ jobs:
   # coverage data; `coverage` merges them. The default reporter stays on so a
   # failing test is readable in this job's log.
   test:
-    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
+    if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     strategy:
@@ -149,7 +152,7 @@ jobs:
   # which fallow reads for its per-function CRAP score.
   coverage:
     needs: test
-    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
+    if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -188,7 +191,7 @@ jobs:
 
   # Everything that reads the build.
   build:
-    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
+    if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -215,20 +218,27 @@ jobs:
       - name: archive gate
         run: npm run gate:archive
 
+      # The client growth budget, in the next three steps, runs on pull
+      # requests only. It compares a pull request with its base and reads the
+      # `client-budget:` line from its body; on main there is neither, and the
+      # merged pull request already passed it.
+      #
       # The base build is a pure function of the base commit, so it is cached
       # by SHA: later pushes to the same PR skip a second `npm ci` and build.
       - name: Restore PR base build
+        if: github.event_name == 'pull_request'
         id: base-cache
         uses: actions/cache@v6
         with:
           path: ${{ runner.temp }}/client-base
-          key:
-            client-base-${{ github.event.pull_request.base.sha || github.sha }}
+          key: client-base-${{ github.event.pull_request.base.sha }}
 
       # A separate worktree leaves the head build intact. Use the event's exact
       # base commit, not today's main, and install its own pinned dependencies.
       - name: Build PR base
-        if: steps.base-cache.outputs.cache-hit != 'true'
+        if:
+          github.event_name == 'pull_request' &&
+          steps.base-cache.outputs.cache-hit != 'true'
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
@@ -239,6 +249,7 @@ jobs:
           cp -r dist/client "$RUNNER_TEMP/client-base"
 
       - name: Client growth budget
+        if: github.event_name == 'pull_request'
         env:
           # PR prose is data, never interpolated into the shell script.
           PR_BODY: ${{ github.event.pull_request.body }}
@@ -254,9 +265,58 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
+  # A red gate on main opens a p0 issue, or comments on the one already open,
+  # so the next agent loop picks the fix first. GitHub runs no check on a merge
+  # of two green pull requests together, so this is how a break they make
+  # between them is found. The title is fixed: it is what finds the open issue.
+  # Nothing closes it when main turns green again; the pull request that fixes
+  # main does, with `Closes #N`.
+  alert:
+    needs: [static, lint, test, coverage, build]
+    if: failure() && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    permissions:
+      issues: write
+
+    steps:
+      - name: Open or update the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          title='CI is red on main'
+          repo="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
+          RUN="$repo/actions/runs/$GITHUB_RUN_ID"
+          COMMIT="$repo/commit/$GITHUB_SHA"
+          report="The gate failed on $COMMIT: $RUN"
+          number=$(gh issue list --state open --label area:ci \
+            --search "in:title \"$title\"" --json number,title \
+            --jq ".[] | select(.title == \"$title\") | .number" | head -n 1)
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body "$report"
+            exit
+          fi
+          gh issue create --title "$title" \
+            --label type:bug,area:ci,status:ready,priority:p0,size:s,scope:infrastructure \
+            --body "## What
+          $report
+
+          Open the run, find the red job and fix main in a pull request that closes this issue.
+
+          ## Why
+          Two pull requests that each pass alone can break main together, and every pull request opened after that inherits the failure (#1408).
+
+          ## How to verify
+          - The CI run on the push that merges the fix is green on main.
+          - \`npm run check\` passes on main."
+
   # Cuts the release for every push to main, which in practice means every
-  # squashed pull request. It does not wait for the gate, which only runs on
-  # pull requests; a merge of two green PRs that break each other still tags.
+  # squashed pull request. It does not wait for the gate, which runs beside it
+  # on the same push: a merge of two green PRs that break each other still
+  # tags, and the alert job above reports the break. The site deploys from
+  # Workers Builds on every push either way.
   #
   # This job is also why `main` carries no branch protection. A ruleset that
   # requires a pull request would reject the `chore(release)` commit pushed
