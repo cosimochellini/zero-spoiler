@@ -349,20 +349,20 @@ medium tells, or tells its own way, carries `source`, so it never reaches a
 reader of the other. Their notes are in `scripts/chronicle-sources-got.mjs`, and
 the chronicle lede is the series' own copy, since a story starts at an episode
 or a chapter. The second stage, season 2 and _A Clash of Kings_ (episodes 11–20,
-site chapters 74–143), is being filed under #1455. So far `records/season-2.ts`
-holds its heading, the characters filed by cast group above and, in
-`SEASON_2_PLACES`, the 15 places a scene of the stage is set in (#1469), three
-of them the book's alone and the Garden of Bones the show's, and the 11 places
-both media name in the stage and neither visits, plus the Crag, which the show
-visits and the book only names (#1252), all filed by #1476 with no one at them;
-the five places season 1 filed as named only and the stage visits (Dragonstone,
-Pyke, the Gods Eye, Harrenhal, Qarth) keep their records and take the visit as a
-dated `visits` entry. A character an earlier season filed takes its new dated
-steps in that season's module, and the demo stays at stage 1. The third stage,
-season 3 and _A Storm of Swords_ through chapter 52, Arya XI (episodes 21–30,
-site chapters 144–196), is being filed under #1626; stage 4 is season 4 and the
-book's chapters 53–81 (episodes 31–40, site chapters 197–225). So far
-`records/season-3.ts` holds only its heading and an empty `SEASON_3_PLACES`.
+site chapters 74–143), was filed under #1455. `records/season-2.ts` holds its
+heading, the characters filed by cast group above and, in `SEASON_2_PLACES`, the
+15 places a scene of the stage is set in (#1469), three of them the book's alone
+and the Garden of Bones the show's, and the 11 places both media name in the
+stage and neither visits, plus the Crag, which the show visits and the book only
+names (#1252), all filed by #1476 with no one at them; the five places season 1
+filed as named only and the stage visits (Dragonstone, Pyke, the Gods Eye,
+Harrenhal, Qarth) keep their records and take the visit as a dated `visits`
+entry. A character an earlier season filed takes its new dated steps in that
+season's module, and the demo stays at stage 1. The third stage, season 3 and _A
+Storm of Swords_ through chapter 52, Arya XI (episodes 21–30, site chapters
+144–196), is filed under #1626 in `records/season-3.ts` and its
+`SEASON_3_PLACES`; stage 4 is season 4 and the book's chapters 53–81 (episodes
+31–40, site chapters 197–225).
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
