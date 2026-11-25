@@ -2929,8 +2929,8 @@ const STORIES: Row[] = [
   {
     id: 'shae',
     medium: 'books',
-    episode: 19,
-    chapter: 131,
+    episode: 18,
+    chapter: 123,
     title: 'In Lollys’s service',
   },
   // Winterfell and the Iron Islands (#1487).

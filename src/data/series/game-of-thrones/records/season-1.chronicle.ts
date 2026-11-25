@@ -5102,19 +5102,19 @@ export const season1Chronicles = {
       },
     ),
     inBooks(
+      [18, 123],
+      { it: 'Al servizio di Lollys', en: 'In Lollys’s service' },
+      {
+        it: 'Come aveva proposto [[varys|Varys]], Shae ora serve in casa di [[lollys-stokeworth|Lollys Stokeworth]] come sua cameriera, vicina a [[tyrion-lannister|Tyrion]] e nascosta a sua sorella. Tyrion ci pensa mentre i nuovi cavalieri della Guardia Reale ricevono il mantello bianco nel tempio reale. Le ha permesso di portare solo pochi vestiti e tiene gli abiti migliori e i gioielli di lei nelle proprie stanze.',
+        en: 'As [[varys|Varys]] proposed, Shae now serves in [[lollys-stokeworth|Lollys Stokeworth]]’s household as her bedmaid, close to [[tyrion-lannister|Tyrion]] and hidden from his sister. Tyrion thinks of it while the new knights of the Kingsguard take their white cloaks in the royal sept. He let her take only a few dresses, and keeps her finer clothes and her jewels in his own chambers.',
+      },
+    ),
+    inBooks(
       [18, 128],
       { it: 'Il passaggio segreto', en: 'Through the passage' },
       {
         it: '[[cersei-lannister|Cersei]] fa prendere e picchiare una ragazza del bordello di Chataya, credendola l’amante di [[tyrion-lannister|Tyrion]]: è [[alayaya|Alayaya]], non Shae. Tyrion è sollevato che la sorella non l’abbia trovata. Quella notte trova Shae nella sua stanza nella Torre del Primo Cavaliere. È arrivata dal passaggio segreto, ma [[varys|Varys]] l’ha bendata, così non sa dove cominci.',
         en: '[[cersei-lannister|Cersei]] seizes a girl from Chataya’s brothel, taking her for [[tyrion-lannister|Tyrion]]’s lover, and has her beaten: [[alayaya|Alayaya]], not Shae. Tyrion is relieved that his sister has not found her. That night he finds Shae in his room in the Tower of the Hand. She has come through the secret passage, but [[varys|Varys]] blindfolded her, so she does not know where it begins.',
-      },
-    ),
-    inBooks(
-      [19, 131],
-      { it: 'Al servizio di Lollys', en: 'In Lollys’s service' },
-      {
-        it: 'Ora cameriera della casa di [[lollys-stokeworth|Lollys Stokeworth]], Shae aiuta lady Tanda e [[sansa-stark|Sansa]] a portare Lollys nella Fortezza di Maegor mentre comincia la battaglia. Lì quasi tutte le nobildonne della città si riuniscono con [[cersei-lannister|Cersei]] nella sala da ballo della regina, e tra loro c’è [[ilyn-payne|ser Ilyn Payne]], per occuparsi dei traditori e, dice la regina, per difenderle se la città cadrà.',
-        en: 'Now a maid in [[lollys-stokeworth|Lollys Stokeworth]]’s household, Shae helps Lady Tanda and [[sansa-stark|Sansa]] guide Lollys into Maegor’s Holdfast as the battle begins. Almost every highborn woman in the city gathers there with [[cersei-lannister|Cersei]] in the Queen’s Ballroom, and [[ilyn-payne|Ser Ilyn Payne]] stands among them, to deal with traitors and, the queen says, to defend them if the city falls.',
       },
     ),
   ],

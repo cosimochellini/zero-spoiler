@@ -3908,7 +3908,11 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 3, chapter: 14, value: 'alive' },
-        { episode: 13, chapter: 88, value: 'deceased' },
+        // Killed by Amory Lorch's men in "What Is Dead May Never Die"
+        // (episode 13). The books tell it in Arya V (chapter 93), where Arya
+        // finds his body and buries him; in Arya IV (chapter 88) she only
+        // loses sight of him in the fight.
+        { episode: 13, chapter: 93, value: 'deceased' },
       ],
       affiliation: [
         {
@@ -4357,12 +4361,11 @@ export const season1: ThronesSaga = {
           },
         },
         // The books place her with Lollys Stokeworth. Varys proposes it in
-        // Tyrion X (chapter 118); the pin takes Sansa V (chapter 131), where
-        // Sansa sees her with Lollys, the first chapter that surely tells it.
-        // Episode 19 only orders it.
+        // Tyrion X (chapter 118); Tyrion XI (chapter 123) tells that she has
+        // entered Lollys's service as a bedmaid. Episode 18 only orders it.
         {
-          episode: 19,
-          chapter: 131,
+          episode: 18,
+          chapter: 123,
           source: 'chapter',
           value: {
             it: 'Cameriera di Lollys Stokeworth',
@@ -4583,10 +4586,11 @@ export const season1: ThronesSaga = {
         // "What Is Dead May Never Die" (episode 13) and Tyrion VI (chapter
         // 99).
         { episode: 13, chapter: 99, value: 'imprisoned' },
-        // The show frees him at the queen's demand in "Garden of Bones"
-        // (episode 14); chapter 103 only orders it. The books keep him in
-        // the cells past the stage.
-        { episode: 14, chapter: 103, source: 'episode', value: 'alive' },
+        // Freed at the queen's demand: the show in "Garden of Bones" (episode
+        // 14), the books in Tyrion VII (chapter 103), where Tyrion tells
+        // Lancel the queen may have him, though not back on the council
+        // (#1617).
+        { episode: 14, chapter: 103, value: 'alive' },
         { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
       ],
       affiliation: [

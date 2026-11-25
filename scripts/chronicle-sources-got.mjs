@@ -2740,13 +2740,13 @@ export const GAME_OF_THRONES_SOURCES = {
       source: KL_118,
       note: 'Tyrion X (site 118): Shae asking to be his lady at court and to kill Cersei, the kitchens refused, the mockery about Tywin, the slap, the story of Tysha, and Varys’s plan of Lollys’s household and the secret passage. Her role step “Lollys Stokeworth’s maid” stays at 19/131, so the story tells only the proposal.',
     },
+    '18:123': {
+      source: KL_123,
+      note: 'Tyrion XI (site 123): during the Kingsguard investiture in the royal sept Tyrion recalls that Shae has entered House Stokeworth’s service as Lollys’s bedmaid, Tyrion letting her take only a few dresses and keeping her finer clothes and jewels in his own chambers. Varys’s proposal and the hiding from Cersei are Tyrion X (site 118). Her role step “Lollys Stokeworth’s maid” is at 18/123 (#1617, owner ruling on #1489); the Queen’s Ballroom scene of Sansa V (site 131) stays in Lollys’s own story.',
+    },
     '18:128': {
       source: KL_128,
       note: 'Tyrion XII (site 128): Alayaya brought in beaten, Tyrion relieved that Cersei has not found Shae, and Shae in his room through the secret passage, blindfolded by Varys.',
-    },
-    '19:131': {
-      source: KL_131,
-      note: 'Sansa V (site 131): Sansa helping Tanda and Shae guide Lollys inside, the Queen’s Ballroom, and Ser Ilyn there for treasonous guards and the women’s defence. Her role step “Lollys Stokeworth’s maid” is at 19/131; Tyrion XI (site 123) already says she has entered Lollys’s service, an owner check.',
     },
   },
   'podrick-payne': {
