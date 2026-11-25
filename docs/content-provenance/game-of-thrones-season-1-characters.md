@@ -995,9 +995,13 @@ Wikipedia has no entry (owner, 2026-11-03).
 ### Wendel Manderly (`wendel-manderly`)
 
 - Episode 29: The Rains of Castamere (S3E9 = 29): his only appearance (Fandom),
-  at the wedding feast at the Twins.
+  at the wedding feast at the Twins, named in narration and the cast list only.
+  The Winds of Winter (episode 60) has Lyanna speak of Wyman's son without his
+  name. The show never names him, so he is the books' alone (#1628) and episode
+  29 only orders him.
 - Chapter 56: Catelyn VIII (AGOT ch 55): rides with Catelyn and his brother
   Wylis to Moat Cailin; synopsis names him.
+- `source: 'chapter'`: the other number only orders the record.
 - Italian: Wendel Manderly (it.wikipedia
   `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Wyman Manderly`).
 

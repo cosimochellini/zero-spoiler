@@ -640,7 +640,8 @@ export const season2: ThronesSaga = {
     },
     // Books: Bran III (site chapter 95), she and Jojen are greeted at the
     // harvest feast in their father's name. Show: "Dark Wings, Dark Words"
-    // (episode 22), she and Jojen find Bran in the woods.
+    // (episode 22), she and Jojen find Bran in the woods, and Jojen
+    // introduces her as his sister Meera.
     {
       id: 'meera-reed',
       kind: 'character',
@@ -655,7 +656,8 @@ export const season2: ThronesSaga = {
     },
     // Books: Bran III (site chapter 95), he and Meera are greeted at the
     // harvest feast in their father's name. Show: "Dark Wings, Dark Words"
-    // (episode 22), he comes to Bran in a dream, then in the woods.
+    // (episode 22), he comes to Bran in a dream, then in the woods, where he
+    // introduces himself as Jojen Reed.
     {
       id: 'jojen-reed',
       kind: 'character',
@@ -2685,10 +2687,11 @@ export const season2: ThronesSaga = {
       },
       status: [
         { episode: 11, chapter: 80, source: 'chapter', value: 'alive' },
-        // He dies at the Fist of the First Men, told by Samwell II of A
-        // Storm of Swords (chapter 177), the safe later chapter, filed with
-        // his drawing's stage (#1474). Episode 21 only orders it.
-        { episode: 21, chapter: 177, source: 'chapter', value: 'deceased' },
+        // He dies at the Fist of the First Men: the dead bear takes his head,
+        // as Sam remembers it in Samwell I of A Storm of Swords (chapter 162;
+        // A Wiki of Ice and Fire, Thoren Smallwood, #1628), filed with his
+        // drawing's stage. Episode 21 only orders it.
+        { episode: 21, chapter: 162, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
