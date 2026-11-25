@@ -51,6 +51,8 @@ export const THRONES_STAGE_3_TITLES = {
   'anguy': BROTHERHOOD,
   'lem': BROTHERHOOD,
   'edric-dayne': BROTHERHOOD,
+  // #1637, the third stage's Jaime, Brienne and Harrenhal cast.
+  'qyburn': characters('Qyburn'),
 }
 
 /**
@@ -101,4 +103,7 @@ export const THRONES_STAGE_3_KEPT = {
   'greenbeard': 'Barbaverde',
   'mad-huntsman': 'Cacciatore Pazzo',
   'ghost-of-high-heart': 'Fantasma di Cuore Alto',
+  // #1637. Italian Wikipedia has no entry for Steelshanks Walton, whose name
+  // stays as it is until the Mondadori form is checked.
+  'steelshanks-walton': 'Steelshanks Walton',
 }

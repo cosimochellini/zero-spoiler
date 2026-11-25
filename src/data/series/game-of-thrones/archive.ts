@@ -51,7 +51,8 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
   // war and the Riverlands (#1635): the King in the North and his mother. The
   // Wall and beyond (#1638): Jon Snow and the King-Beyond-the-Wall. Arya, the
   // Brotherhood and the Hound (#1636): the outlaws' captive, their leader and
-  // the Hound.
+  // the Hound. Jaime, Brienne and Harrenhal (#1637): the Kingslayer and the
+  // woman who guards him.
   'season-3': [
     'daenerys-targaryen',
     'tyrion-lannister',
@@ -64,6 +65,8 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
     'arya-stark',
     'beric-dondarrion',
     'sandor-clegane',
+    'jaime-lannister',
+    'brienne-of-tarth',
   ],
 }
 

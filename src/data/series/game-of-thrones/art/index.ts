@@ -186,10 +186,10 @@ const PERSON: Stroke[] = [
  * cast, in `north.ts` and `ironborn.ts` (#1473), Wall cast, the rangers in
  * `wall.ts` and the wildlings in `wildlings.ts` (#1474), and Essos and Qarth
  * cast, in `essos.ts` (#1475). The seasons' own, which the home page's
- * frame draws, are in `seasons.ts` (#1601). The third stage's casts (#1634,
- * #1635, #1636, #1638, #1639) show `PERSON` until their drawing children draw
- * them. `satisfies` rather than an annotation, so `ArtId` below stays the
- * literal keys.
+ * frame draws, are in `seasons.ts` (#1601). The third stage's casts
+ * (#1634–#1639) show `PERSON` until their drawing children draw them.
+ * `satisfies` rather than an annotation, so `ArtId` below stays the literal
+ * keys.
  */
 export const DRAWINGS = {
   ...WINTERFELL_DRAWINGS,
@@ -257,6 +257,10 @@ export const DRAWINGS = {
   'mad-huntsman': PERSON,
   'edric-dayne': PERSON,
   'ghost-of-high-heart': PERSON,
+  // #1637, the third stage's Jaime, Brienne and Harrenhal cast, until its
+  // drawing child draws it.
+  'qyburn': PERSON,
+  'steelshanks-walton': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */

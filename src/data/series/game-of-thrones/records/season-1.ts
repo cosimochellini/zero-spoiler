@@ -4040,6 +4040,13 @@ export const season1: ThronesSaga = {
       status: [
         { episode: 1, chapter: 5, value: 'alive' },
         { episode: 9, chapter: 64, value: 'captured' },
+        // Still a prisoner when Brienne takes him south in chains and when
+        // Roose Bolton's men (the show's Locke, the books' Brave Companions)
+        // take him to Harrenhal. Roose lets him go to King's Landing, and he
+        // rides out with his escort, in "The Bear and the Maiden Fair"
+        // (episode 27) and Jaime VI of A Storm of Swords (chapter 188,
+        // #1637).
+        { episode: 27, chapter: 188, value: 'alive' },
         { episode: 72, chapter: 344, source: 'episode', value: 'deceased' },
       ],
     },
@@ -5599,13 +5606,14 @@ export const season1: ThronesSaga = {
             en: 'Commander of the northern foot',
           },
         },
-        // Books only: Vargo Hoat hands him Harrenhal and he takes his seat
-        // there, in Arya IX (chapter 121). The show keeps him in Robb's camp;
-        // episode 18 only orders the step (#1465).
+        // Vargo Hoat hands him Harrenhal and he takes his seat there, in Arya
+        // IX (chapter 121, #1465). The show keeps him in Robb's camp until
+        // Robb takes the castle and leaves him in command of it, in "Dark
+        // Wings, Dark Words" (episode 22), so the step is shared from there
+        // (#1637).
         {
-          episode: 18,
+          episode: 22,
           chapter: 121,
-          source: 'chapter',
           value: {
             it: 'Comandante degli uomini del Nord a Harrenhal',
             en: 'Commander of the northmen at Harrenhal',
@@ -7002,6 +7010,15 @@ export const season1: ThronesSaga = {
             it: 'Uomini di ser Amory Lorch',
             en: 'Ser Amory Lorch’s men',
           },
+        },
+        // Among the Brave Companions who take Jaime and Brienne on the
+        // Duskendale road, where he strikes Jaime, in Jaime III of A Storm
+        // of Swords (chapter 165). Episode 22 only orders it (#1637).
+        {
+          episode: 22,
+          chapter: 165,
+          source: 'chapter',
+          value: { it: 'Bravi Camerati', en: 'Brave Companions' },
         },
       ],
     },
