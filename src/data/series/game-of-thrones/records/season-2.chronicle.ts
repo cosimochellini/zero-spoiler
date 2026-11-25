@@ -960,7 +960,7 @@ export const season2Chronicles = {
       [18, 138],
       { it: 'Harrenhal promessa', en: 'Harrenhal promised' },
       {
-        it: '[[roose-bolton|Roose Bolton]] tiene Harrenhal con i Bravi Camerati di Vargo Hoat. Molti dei servi che lavoravano per i Lannister sono stati uccisi e le loro teste messe sulle picche. Roose intende tornare a nord e lasciare Harrenhal a Vargo, e dice alla sua coppiera, [[arya-stark|Arya]], che resterà a servire il caprone. Per convincere [[gendry|Gendry]] a fuggire con lei, Arya gli mente dicendo che Vargo vuole tagliare un piede a ogni servo.',
+        it: '[[roose-bolton|Roose Bolton]] tiene Harrenhal con i Bravi Camerati di Vargo Hoat. Molti dei servi che lavoravano per i Lannister sono stati uccisi e le loro teste messe sulle picche. Roose intende tornare a nord e lasciare Harrenhal a Vargo, e dice alla sua coppiera, [[arya-stark|Arya]], che resterà a servire il Caprone. Per convincere [[gendry|Gendry]] a fuggire con lei, Arya gli mente dicendo che Vargo vuole tagliare un piede a ogni servo.',
         en: '[[roose-bolton|Roose Bolton]] holds Harrenhal with Vargo Hoat’s Brave Companions. Many of the servants who worked for the Lannisters have been killed and their heads put on spikes. Roose means to go back north and give Harrenhal to Vargo, and tells his cupbearer, [[arya-stark|Arya]], that she will stay to serve the goat. To get [[gendry|Gendry]] to flee with her, Arya lies to him that Vargo means to cut a foot off every servant.',
       },
     ),
@@ -971,7 +971,7 @@ export const season2Chronicles = {
       [11, 77],
       { it: 'La nuova arrivata', en: 'The new girl' },
       {
-        it: 'Daisy è appena arrivata nel bordello di [[petyr-baelish|Ditocorto]], e [[ros|Ros]] le mostra il posto, spiegandole che lì servono clienti di un livello più alto di quelli che conosceva a Haystack Hall. Daisy resta colpita dal posto. Poi irrompono le cappe dorate di [[janos-slynt|Janos Slynt]], e Daisy è presente quando Janos uccide la bambina di [[mhaegen|Mhaegen]], una dei bastardi di Robert, davanti alla madre.',
+        it: 'Daisy è appena arrivata nel bordello di [[petyr-baelish|Ditocorto]], e [[ros|Ros]] le mostra il posto, spiegandole che lì servono clienti di un livello più alto di quelli che conosceva a Sala del Fienile. Daisy resta colpita dal posto. Poi irrompono le cappe dorate di [[janos-slynt|Janos Slynt]], e Daisy è presente quando Janos uccide la bambina di [[mhaegen|Mhaegen]], una dei bastardi di Robert, davanti alla madre.',
         en: 'Daisy is new to [[petyr-baelish|Littlefinger]]’s brothel, and [[ros|Ros]] shows her round, telling her they cater to a better class of client than she knew at Haystack Hall. Daisy is impressed by the place. Then the gold cloaks of [[janos-slynt|Janos Slynt]] burst in, and Daisy is there when Janos kills the baby of [[mhaegen|Mhaegen]], one of Robert’s bastards, in front of her mother.',
       },
     ),
@@ -1568,7 +1568,7 @@ export const season2Chronicles = {
       [11, 87],
       { it: 'Un anno fa', en: 'A year ago' },
       {
-        it: 'Ad Albero Bianco Thoren Smallwood guarda il grande albero-diga e dice di capire perché gli uomini, quando arrivarono a Westeros, temessero gli alberi del cuore e li abbattessero. Vestito con un’armatura e un mantello che gli danno un’aria più nobile di quella del lord comandante, dichiara che un anno fa nel villaggio c’erano ancora dei bruti. [[jarman-buckwell|Jarman Buckwell]] risponde che in un anno possono cambiare molte cose. Quando la colonna riparte, Smallwood ne guida l’avanguardia dietro gli esploratori di Buckwell.',
+        it: 'A Whitetree Thoren Smallwood guarda il grande albero-diga e dice di capire perché gli uomini, quando arrivarono a Westeros, temessero gli alberi del cuore e li abbattessero. Vestito con un’armatura e un mantello che gli danno un’aria più nobile di quella del lord comandante, dichiara che un anno fa nel villaggio c’erano ancora dei bruti. [[jarman-buckwell|Jarman Buckwell]] risponde che in un anno possono cambiare molte cose. Quando la colonna riparte, Smallwood ne guida l’avanguardia dietro gli esploratori di Buckwell.',
         en: 'At Whitetree, Thoren Smallwood looks at the great weirwood and says he understands why men feared the heart trees and cut them down when they first came to Westeros. Dressed in armour and a cloak that make him look more lordly than the Lord Commander, he declares that there were wildlings in the village a year ago. [[jarman-buckwell|Jarman Buckwell]] answers that much can change in a year. When the column marches on, Smallwood leads its vanguard behind Buckwell’s scouts.',
       },
     ),
@@ -1586,7 +1586,7 @@ export const season2Chronicles = {
       [20, 87],
       { it: 'Tempi duri', en: 'Hard times' },
       {
-        it: 'Ad Albero Bianco [[jon-snow|Jon]] viene messo in coppia con Eddison Tollett, uno scudiero dai capelli grigi detto Edd l’Addolorato, per perquisire le case vuote. Già è brutto che i morti camminino, dice Edd, e ora il lord comandante li vuole anche far parlare; i morti potrebbero mentire, o lamentarsi senza fine. Davanti a una capanna spoglia, dice di essere nato in una casa così, prima di cadere in disgrazia. Quando Jon gli chiede che cosa sia successo al villaggio, Edd risponde che preferisce non immaginarlo.',
+        it: 'A Whitetree [[jon-snow|Jon]] viene messo in coppia con Eddison Tollett, uno scudiero dai capelli grigi detto Edd l’Addolorato, per perquisire le case vuote. Già è brutto che i morti camminino, dice Edd, e ora il lord comandante li vuole anche far parlare; i morti potrebbero mentire, o lamentarsi senza fine. Davanti a una capanna spoglia, dice di essere nato in una casa così, prima di cadere in disgrazia. Quando Jon gli chiede che cosa sia successo al villaggio, Edd risponde che preferisce non immaginarlo.',
         en: 'At Whitetree [[jon-snow|Jon]] is paired with Eddison Tollett, a grey-haired squire known as Dolorous Edd, to search the empty houses. The dead walking is bad enough, Edd says, and now the Lord Commander wants them talking too; the dead might lie, or complain without end. Shown a bare hut, he says he was born in a house like it, before he fell on hard times. Asked what happened to the village, he says he would rather not imagine.',
       },
     ),
@@ -1612,7 +1612,7 @@ export const season2Chronicles = {
       [11, 87],
       { it: 'In un anno cambia molto', en: 'Much can change in a year' },
       {
-        it: 'Jarman Buckwell cavalca con la grande spedizione del lord comandante oltre la Barriera. Al villaggio vuoto di Albero Bianco, quando [[thoren-smallwood|Thoren Smallwood]] dichiara che un anno prima c’erano ancora dei bruti, Buckwell risponde che in un anno possono cambiare molte cose. Quando la colonna riparte verso un lago per accamparsi, gli esploratori di Buckwell partono per primi, davanti all’avanguardia di Smallwood e al resto dei duecento uomini.',
+        it: 'Jarman Buckwell cavalca con la grande spedizione del lord comandante oltre la Barriera. Al villaggio vuoto di Whitetree, quando [[thoren-smallwood|Thoren Smallwood]] dichiara che un anno prima c’erano ancora dei bruti, Buckwell risponde che in un anno possono cambiare molte cose. Quando la colonna riparte verso un lago per accamparsi, gli esploratori di Buckwell partono per primi, davanti all’avanguardia di Smallwood e al resto dei duecento uomini.',
         en: 'Jarman Buckwell rides with the Lord Commander’s great ranging beyond the Wall. At the empty village of Whitetree, when [[thoren-smallwood|Thoren Smallwood]] declares that there were wildlings there a year ago, Buckwell answers that much can change in a year. When the column moves on towards a lake to make camp, Buckwell’s scouts ride out first, ahead of Smallwood’s vanguard and the rest of the two hundred men.',
       },
     ),
@@ -1638,7 +1638,7 @@ export const season2Chronicles = {
       [11, 87],
       { it: 'Meno preoccupazioni', en: 'Fewer worries' },
       {
-        it: 'Ser Mallador Locke è un cavaliere dei Guardiani della notte nella grande spedizione del lord comandante. Al villaggio vuoto di Albero Bianco, mentre [[thoren-smallwood|Thoren Smallwood]] e [[jarman-buckwell|Jarman Buckwell]] discutono di quando i bruti se ne siano andati, Locke dice la sua: meno bruti, meno preoccupazioni. Quando la colonna riparte, guida le salmerie, dietro il grosso delle forze del lord comandante.',
+        it: 'Ser Mallador Locke è un cavaliere dei Guardiani della notte nella grande spedizione del lord comandante. Al villaggio vuoto di Whitetree, mentre [[thoren-smallwood|Thoren Smallwood]] e [[jarman-buckwell|Jarman Buckwell]] discutono di quando i bruti se ne siano andati, Locke dice la sua: meno bruti, meno preoccupazioni. Quando la colonna riparte, guida le salmerie, dietro il grosso delle forze del lord comandante.',
         en: 'Ser Mallador Locke is a knight of the Night’s Watch on the Lord Commander’s great ranging. At the empty village of Whitetree, while [[thoren-smallwood|Thoren Smallwood]] and [[jarman-buckwell|Jarman Buckwell]] argue over when the wildlings left, Locke gives his opinion: fewer wildlings means fewer worries. When the column marches on, he leads the baggage train, behind the Lord Commander’s main force.',
       },
     ),
@@ -1724,7 +1724,7 @@ export const season2Chronicles = {
       [16, 125],
       { it: 'Le vedette nel passo', en: 'The watchers in the pass' },
       {
-        it: 'Nel Passo Skirling il gruppo di Qhorin avvista in alto delle vedette dei bruti, e Qhorin avverte [[jon-snow|Jon]] e [[stonesnake|Stonesnake]], che salgono fino a loro, di non lasciarle suonare il corno. Quando Qhorin e gli altri arrivano in cima, la donna della lancia catturata, [[ygritte|Ygritte]], lo riconosce come il Monco, e dice che i bruti lo ucciderebbero anche se si arrendesse. Gli uomini di Qhorin la vogliono morta. Qhorin lascia Jon solo con lei perché lo faccia.',
+        it: 'Nel Passo Skirling il gruppo di Qhorin avvista in alto delle vedette dei bruti, e Qhorin avverte [[jon-snow|Jon]] e [[stonesnake|Stonesnake]], che salgono fino a loro, di non lasciarle suonare il corno. Quando Qhorin e gli altri arrivano in cima, la moglie di lancia catturata, [[ygritte|Ygritte]], lo riconosce come il Monco, e dice che i bruti lo ucciderebbero anche se si arrendesse. Gli uomini di Qhorin la vogliono morta. Qhorin lascia Jon solo con lei perché lo faccia.',
         en: 'In the Skirling Pass, Qhorin’s party spots wildling watchers high above, and Qhorin warns [[jon-snow|Jon]] and [[stonesnake|Stonesnake]], who climb up to them, not to let them sound their horn. When Qhorin and the others reach the top, the captive spearwife, [[ygritte|Ygritte]], knows him for the Halfhand, and says the wildlings would kill him even if he yielded. Qhorin’s men want her dead. Qhorin leaves Jon alone with her to carry it out.',
       },
     ),
@@ -1774,7 +1774,7 @@ export const season2Chronicles = {
       [15, 125],
       { it: 'La scalata', en: 'The climb' },
       {
-        it: 'Stonesnake è un ranger del gruppo di [[qhorin-halfhand|Qhorin il Monco]]. Nel Passo Skirling lui e [[jon-snow|Jon]] si offrono di occuparsi delle vedette dei bruti appostate in alto, e Stonesnake insegna a Jon ad arrampicarsi su una parete a picco. In cima Stonesnake uccide la vedetta con il corno prima che possa suonarlo, mentre Jon abbatte l’uomo accanto al fuoco. Quando la terza, una donna della lancia di nome Ygritte, si arrende, Stonesnake avverte Jon che andrebbe uccisa, e chiama assassino e ladro il Bael del racconto di Ygritte.',
+        it: 'Stonesnake è un ranger del gruppo di [[qhorin-halfhand|Qhorin il Monco]]. Nel Passo Skirling lui e [[jon-snow|Jon]] si offrono di occuparsi delle vedette dei bruti appostate in alto, e Stonesnake insegna a Jon ad arrampicarsi su una parete a picco. In cima Stonesnake uccide la vedetta con il corno prima che possa suonarlo, mentre Jon abbatte l’uomo accanto al fuoco. Quando la terza, una moglie di lancia di nome Ygritte, si arrende, Stonesnake avverte Jon che andrebbe uccisa, e chiama assassino e ladro il Bael del racconto di Ygritte.',
         en: 'Stonesnake is a ranger in [[qhorin-halfhand|Qhorin Halfhand]]’s party. In the Skirling Pass he and [[jon-snow|Jon]] volunteer to deal with the wildling watchers high above, and he teaches Jon to climb a sheer cliff. At the top Stonesnake kills the watcher with the horn before he can sound it, while Jon cuts down the man by the fire. When the third, a spearwife named Ygritte, yields, Stonesnake warns Jon that she should be killed, and calls the Bael of Ygritte’s tale a murderer and a robber.',
       },
     ),

@@ -1162,7 +1162,7 @@ export const season2: ThronesSaga = {
       source: 'chapter',
       revealedAtEpisode: 11,
       revealedAtChapter: 87,
-      name: { it: 'Albero Bianco', en: 'Whitetree' },
+      name: { it: 'Whitetree', en: 'Whitetree' },
       summary: {
         it: 'Un villaggio di bruti abbandonato oltre la Barriera, sotto un grande albero del cuore.',
         en: 'An empty wildling village beyond the Wall, under a great heart tree.',

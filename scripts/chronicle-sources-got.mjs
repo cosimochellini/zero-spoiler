@@ -5204,7 +5204,7 @@ export const GAME_OF_THRONES_SOURCES = {
   'eddison-tollett': {
     '20:87': {
       source: WL_JON_II,
-      note: 'Jon II (site 87): Jon paired with Eddison Tollett, nicknamed Dolorous Edd, the dead walking and now talking, the grey-haired squire’s complaints, the dismal house he was born in before he fell on hard times, and his not wanting to imagine what happened. Ordered at episode 20, his show gate. Mondadori’s “Edd l’Addolorato” is not checked.',
+      note: 'Jon II (site 87): Jon paired with Eddison Tollett, nicknamed Dolorous Edd, the dead walking and now talking, the grey-haired squire’s complaints, the dismal house he was born in before he fell on hard times, and his not wanting to imagine what happened. Ordered at episode 20, his show gate. Italian “Edd l’Addolorato”: Italian Wikipedia, Guardiani della notte, Eddison Tollett.',
     },
     '20:97': {
       source: WL_JON_III,
@@ -5314,7 +5314,7 @@ export const GAME_OF_THRONES_SOURCES = {
   'ygritte': {
     '16:chapter': {
       source: WL_JON_VI,
-      note: 'Jon VI (site 125): the sleeper who turns out to be a spearwife, Ygritte, yielding and taken captive, the tale of Bael the Bard and the daughter of Winterfell, the shared blood, Ygritte recognizing the Halfhand, Jon left alone to kill her, Mance accepting Jon if he ran off with her, and Jon telling her to run. Mondadori’s form of Bael the Bard is not checked.',
+      note: 'Jon VI (site 125): the sleeper who turns out to be a spearwife, Ygritte, yielding and taken captive, the tale of Bael the Bard and the daughter of Winterfell, the shared blood, Ygritte recognizing the Halfhand, Jon left alone to kill her, Mance accepting Jon if he ran off with her, and Jon telling her to run. Italian “Bael il Bardo”: Italian Wikipedia, Casa Stark, and the Italian Game of Thrones Wiki’s Bael page.',
     },
     '16:episode': {
       source: `${SHOW}Ygritte`,
@@ -5340,7 +5340,7 @@ export const GAME_OF_THRONES_SOURCES = {
   'ebben': {
     '17:127': {
       source: WL_JON_VII,
-      note: 'Jon VII (site 127): Qhorin saying he would have had Ebben kill the girl, the wolf dream of giants and the eagle, Jon waking with Ghost’s name, Ebben calling him a skinchanger, the eagle watching them, the turn back, and Dalbridge staying behind. Mondadori’s word for skinchanger is not checked; “metamorfo” is unverified. No season-2 episode adapts Jon VII; episode 17 orders it.',
+      note: 'Jon VII (site 127): Qhorin saying he would have had Ebben kill the girl, the wolf dream of giants and the eagle, Jon waking with Ghost’s name, Ebben calling him a skinchanger, the eagle watching them, the turn back, and Dalbridge staying behind. Italian “metamorfo” for skinchanger: Italian Wikipedia, Mondo delle Cronache del ghiaccio e del fuoco and the season 3 episode list. No season-2 episode adapts Jon VII; episode 17 orders it.',
     },
     '20:142': {
       source: WL_JON_VIII,
