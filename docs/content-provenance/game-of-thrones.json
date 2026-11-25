@@ -178,12 +178,18 @@
       "https://gameofthrones.fandom.com/wiki/Rickon_Stark",
       "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69",
-      "https://gameofthrones.fandom.com/it/wiki/Casa_Stark"
+      "https://gameofthrones.fandom.com/it/wiki/Casa_Stark",
+      "https://gameofthrones.fandom.com/wiki/Dark_Wings,_Dark_Words",
+      "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Mhysa",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_9",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_56"
     ],
     "unverified": [
       "Stages (#1285): the broken tower is his first drawing in both media (owner, 2026-11-15, overturning #854); the Three-Eyed Raven from episode 56 (Fandom infobox ref GOT606), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285).",
       "Stage-2 steps (#1466): lord of Winterfell in Robb's absence at 11 / 90 (\"The North Remembers\"; Bran II); captured at 120 and free at 124 in the books alone (Bran VI, Theon IV). The show has him yield and escape in episode 16, so episodes 16 and 17 only order the book steps.",
-      "Chronicle (#1487): no season-2 episode adapts Bran III (site 95), so its book story is ordered at episode 13, beside Bran IV."
+      "Chronicle (#1487): no season-2 episode adapts Bran III (site 95), so its book story is ordered at episode 13, beside Bran IV.",
+      "Stage-3 steps (#1641): \"On the road north with the Reeds\" at 22 / 143 (\"Dark Wings, Dark Words\", where the Reeds find his party heading north to the Wall; Bran VII of A Clash of Kings, where Bran goes north with the Reeds, Hodor and Summer, A Wiki of Ice and Fire's Chapter 69 synopsis); \"Beyond the Wall with the Reeds\" at 30 / 200 (\"Mhysa\"; Bran IV, Chapter 56, where the Black Gate lets them through), the book's chapter past the stage (#852). Neither the episodes nor the books were viewed."
     ]
   },
   "rickon-stark": {
@@ -401,13 +407,19 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_37",
       "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_50",
-      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_56"
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_56",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_49",
+      "https://gameofthrones.fandom.com/wiki/Ramsay_Bolton",
+      "https://gameofthrones.fandom.com/wiki/Dark_Wings,_Dark_Words",
+      "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair_(episode)"
     ],
     "unverified": [
       "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”.",
       "Stages (#1285): Reek from episode 30, where Ramsay names him (Fandom AKA ref GOT310), and in the books from Reek I, ADWD chapter 12 (site 284), a chapter from memory, not checked on AWOIAF; dies in episode 70 (Fandom DeathEp), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285).",
       "Stage-2 steps (#1466): Robb's envoy at 11 / 81 (Catelyn I, from \"The North Remembers\", \"In the books\"); House Greyjoy at 13 / 98 (his baptism in episode 13; Theon II, where he takes his part in Balon's war); Prince of Winterfell at 16 / 120 (\"You'll address me as Prince Theon\", the Game of Thrones Wiki's quote; Bran VI); captured at 20 in the show alone (Dagmer knocks him out for the Boltons), chapter 140 only ordering it. In Theon VI the books leave him struck down in the sack, his fate untold in the stage.",
-      "Prince of Winterfell stage (#1473): the kraken on a banner over Winterfell from \"The Old Gods and the New\" (episode 16) and Bran VI (chapter 120), the pins of his \"Prince of Winterfell\" step; back to the kraken in the sea from \"Valar Morghulis\" (episode 20) and Theon VI (chapter 140), where the castle is lost. Not viewed."
+      "Prince of Winterfell stage (#1473): the kraken on a banner over Winterfell from \"The Old Gods and the New\" (episode 16) and Bran VI (chapter 120), the pins of his \"Prince of Winterfell\" step; back to the kraken in the sea from \"Valar Morghulis\" (episode 20) and Theon VI (chapter 140), where the castle is lost. Not viewed.",
+      "Stage-3 steps (#1641): role \"Ramsay Snow's prisoner at the Dreadfort\" at 30 / 193. Show: \"Mhysa\", where Roose tells Walder Frey the ironborn handed Theon to Ramsay and Yara means to march on the Dreadfort to free him (episode synopsis and quotes). Books: Catelyn VI (A Wiki of Ice and Fire's Chapter 49 synopsis, shared cache), where Roose tells Robb that Ramsay holds Theon hostage at the Dreadfort and shows a piece of his skin. Neither the episodes nor the books were viewed.",
+      "Book status captured at 193 (Catelyn VI), the chapter that tells a reader he is alive and held; the show has had him captive since episode 20, so episode 30 only orders it. His torture in season 3, the gelding of \"The Bear and the Maiden Fair\" (27) and the name Reek (\"Mhysa\", 30) are told in the books only in A Dance with Dragons (Reek I, site 284), so none is filed as a step."
     ]
   },
   "luwin": {
@@ -506,14 +518,17 @@
       "https://gameofthrones.fandom.com/wiki/Hodor",
       "https://gameofthrones.fandom.com/wiki/Rodrik_Cassel",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_16",
-      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69"
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69",
+      "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Rickon_Stark"
     ],
     "unverified": [
       "Episode 6: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “A Golden Crown”. If her name is first said in episode 7, the gate moves to 7 and the role/affiliation step must move later.",
       "Stage (#1285): dies in episode 54 (Fandom DeathEp), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285).",
       "Status (#1361): captured at her gate, 6/38, in both media: the only outlaw taken alive, brought to Winterfell as a prisoner (Ice and Fire Wiki, Bran V - A Game of Thrones; Game of Thrones Wiki, A Golden Crown). Episode not viewed.",
       "Stage-2 steps (#1466): on the run with the Stark boys, free and with House Stark at 16 / 124 (\"The Old Gods and the New\"; Theon IV, which finds her gone). In Bran VI (120) she first swears to serve Theon, a feint the books alone tell, not filed.",
-      "Chronicle (#1487): the oath she broke is Theon’s view in Theon IV (site 124); Bran VII does not say who freed the wolves."
+      "Chronicle (#1487): the oath she broke is Theon’s view in Theon IV (site 124); Bran VII does not say who freed the wolves.",
+      "Stage-3 step (#1641): \"On the run with Rickon Stark\" at 29 / 143 (\"The Rains of Castamere\", where Bran sends her with Rickon to the Umbers' Last Hearth; Bran VII of A Clash of Kings, where Luwin tells her to part the boys and she takes Rickon along the kingsroad). Where they go differs by medium and is left out. Neither the episodes nor the books were viewed."
     ]
   },
   "mordane": {
@@ -4432,7 +4447,9 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_56",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_66",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://gameofthrones.fandom.com/wiki/Mhysa",
+      "https://gameofthrones.fandom.com/wiki/Roose_Bolton"
     ],
     "unverified": [
       "Book gate 140 (Theon VI): the Dreadfort leader takes off his helm and tells Theon his name is Ramsay Snow. Owner check: from Bran V (109) he is at Winterfell as the captive Reek, under that name; Bran II (90) and Bran IV (102) name him only in talk of his crimes. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
@@ -4440,7 +4457,8 @@
       "Name: filed as Ramsay Snow, his name inside the stage; the Game of Thrones Wiki titles him Ramsay Bolton.",
       "Italian: Ramsay Snow kept; Italian Wikipedia heads him Ramsay Bolton, \"nato Snow\".",
       "Drawing (#1473): a flaying knife stood in a chopping block. The show's Ramsay comes at Theon with a knife (GOT307) and flays the ironborn; the book's house flays its enemies. No knife is checked in Theon VI (chapter 140). Retinted from vermilion to pink, House Bolton's colour: the accent is not red. Reek: the book's captive Reek is Ramsay, revealed only at Theon VI (140), the record's own gate, so no earlier stage. Neither the episodes nor the books were viewed; drawn by eye from the wikis.",
-      "Death stage (#1473): \"Battle of the Bastards\" (episode 59, Fandom DeathEp); the books leave him alive, so chapter 344 orders it. Episode not viewed."
+      "Death stage (#1473): \"Battle of the Bastards\" (episode 59, Fandom DeathEp); the books leave him alive, so chapter 344 orders it. Episode not viewed.",
+      "Show gate 30 (\"Mhysa\", #1641): Roose tells Walder Frey that \"Ramsay delivered the terms. The Ironborn turned on Theon as we knew they would. ... But Ramsay... well, Ramsay has his own way of doing things\", quoted on the Game of Thrones Wiki's Ramsay Bolton page. #1466 had filed 32, the first episode the page cites for his birth name. In episodes 22 to 27 he is unnamed and credited as \"Boy\" (the same page, \"Behind the scenes\"). Episode not viewed."
     ]
   },
   "big-walder-frey": {
@@ -6020,6 +6038,23 @@
       "Books only, gate 180 (Davos IV, Chapter 36), a safe later pin: Stannis takes three leeches fat with Edric Storm's blood, and Melisandre asks to burn him. Owner check: Davos II (154), where Davos meets him playing monsters and maidens with Shireen and Patchface and he talks of his father, names him in narration only in the synopsis; if a line there says his name, the gate is 154. A Game of Thrones and A Clash of Kings only mention him.",
       "Show: the Game of Thrones Wiki's \"Second Sons\" page says the show gives Edric's part (the bastard brought to Dragonstone, the leeches) to Gendry. The show has none of the three Dragonstone newcomers in season 3; \"Second Sons\" (episode 28), which adapts Davos IV, only orders the record.",
       "Italian: \"Edric Storm\" (Italian Wikipedia, Melisandre's section; the Italian Game of Thrones Wiki), not checked against the Mondadori edition."
+    ]
+  },
+  "myranda": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Myranda",
+      "https://gameofthrones.fandom.com/wiki/Violet",
+      "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Theon_Greyjoy",
+      "https://gameofthrones.fandom.com/wiki/Ramsay_Bolton",
+      "https://gameofthrones.fandom.com/wiki/Mhysa",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Myranda"
+    ],
+    "unverified": [
+      "Show gate 27 (\"The Bear and the Maiden Fair\"): the Myranda page quotes Violet's \"Myranda knows what she's doing. Let her.\" from the episode. Episode not viewed.",
+      "Show only: the books' only Myranda is Myranda Royce of the Vale (Game of Thrones Wiki, Myranda, \"In the books\"), another person. Reek I of A Dance with Dragons (chapter 12, site 284), the chapter the Game of Thrones Wiki says the episode adapts, only orders the record.",
+      "Gate texts hold to what \"The Bear and the Maiden Fair\" (27) shows: she and Violet free Theon from the cross and seduce him, and his captor comes in and has him gelded (episode synopsis). Her affiliation opens as \"No allegiance\". Later steps for stage 4: that she is Ramsay's lover and in House Bolton's service is shown in season 4 (\"The Lion and the Rose\", 32, the hunt of Tansy); she does not appear in \"Mhysa\" (30), so nothing of hers is stepped there.",
+      "Italian: \"Myranda\", her own section of Italian Wikipedia's characters list; the dub was not checked."
     ]
   }
 }
