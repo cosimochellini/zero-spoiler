@@ -85,6 +85,11 @@ export const PLACE_ITALIAN_TITLES = {
     'lorath': `${PLACES}#Lorath`,
     'summer-isles': `${PLACES}#Isole dell'Estate`,
     'oldtown': `${PLACES}#Vecchia Città`,
+    'astapor': `${PLACES}#Astapor`,
+    'yunkai': `${PLACES}#Yunkai`,
+    'meereen': `${PLACES}#Meereen`,
+    'karhold': `${PLACES}#Karhold`,
+    'last-hearth': `${PLACES}#Ultimo Focolare`,
   },
 }
 
@@ -215,4 +220,24 @@ export const PLACE_NAMES_KEPT = {
   'seagard': 'Seagard',
   'ashemark': 'Ashemark',
   'the-crag': 'Crag',
+  // The third stage's places (#1630) with no section of their own: the
+  // Shadow Tower, the Bay of Seals and the Milkwater (Fiumelatte) are named
+  // in the prose of Italian Wikipedia's places page; the rest are the Italian
+  // Game of Thrones Wiki's pages, Maidenpool and Mummer's Ford kept in
+  // English there. The hollow hill is assumed: no Italian page names it.
+  'shadow-tower': 'Torre delle Ombre',
+  'bay-of-seals': 'Baia delle Foche',
+  'milkwater': 'Fiumelatte',
+  'nightfort': 'Forte della Notte',
+  'inn-of-the-kneeling-man': 'Locanda dell’Uomo in Ginocchio',
+  'maidenpool': 'Maidenpool',
+  'high-heart': 'Cuore Alto',
+  'acorn-hall': 'Sala delle Ghiande',
+  'stoney-sept': 'Tempio di Pietra',
+  'hollow-hill': 'la collina cava',
+  'queenscrown': 'Corona della Regina',
+  'oldstones': 'Vecchie Pietre',
+  'lord-harroways-town': 'Città di Lord Harroway',
+  'mummers-ford': 'Mummer’s Ford',
+  'castamere': 'Castamere',
 }

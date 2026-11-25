@@ -2037,10 +2037,513 @@ const OLDTOWN: Stroke[] = [
   shadow(80, 158, 70),
 ]
 
+/** Astapor's walls on the sea, with two small pyramids, which its sack keeps. */
+const ASTAPOR_WALLS: Stroke[] = [
+  { d: 'M12 122 V114 H20 V106 H28 V114 H36 V122', role: 'soft' },
+  { d: 'M124 122 V112 H132 V102 H140 V112 H148 V122', role: 'soft' },
+  { d: 'M48 116 H112 M58 104 H102 M68 92 H92', role: 'soft' },
+  { d: 'M10 146 V122 H150 V146' },
+  {
+    d: 'M10 122 V117 H16 V122 M26 122 V117 H32 V122 M128 122 V117 H134 V122 M144 122 V117 H150 V122',
+    role: 'soft',
+  },
+  {
+    d: 'M108 104 l5 -3 M100 92 l5 -3 M92 80 l4 -2 M118 116 l5 -3',
+    role: 'ambient',
+  },
+  ...SEA,
+]
+
+/** Astapor's great stepped pyramid, the accent of both its drawings. */
+const ASTAPOR_PYRAMID: Stroke = {
+  d: 'M44 122 V110 H54 V98 H64 V86 H72 V74 H88 V86 H96 V98 H106 V110 H116 V122',
+  role: 'accent',
+}
+
 /**
- * The first season's places (#1053), the ones it only names (#1035), and
- * the second stage's visited places (#1469) and named ones (#1476), keyed
- * by record id.
+ * Astapor: a great stepped pyramid of red brick over the city's walls on
+ * the sea, with two smaller ones, as Daenerys's ship comes in in episode 21
+ * and Daenerys II (chapter 167) shows the Red City. The tiers' far sides
+ * are hatched; the accent is the great pyramid.
+ */
+const ASTAPOR: Stroke[] = [
+  ASTAPOR_PYRAMID,
+  ...ASTAPOR_WALLS,
+  { d: 'M70 146 V134 Q80 124 90 134 V146' },
+]
+
+/** Yunkai's walls, towers and the pyramid behind them, which its fall keeps. */
+const YUNKAI_WALLS: Stroke[] = [
+  {
+    d: 'M36 100 V88 H48 V76 H60 V64 H100 V76 H112 V88 H124 V100',
+    role: 'soft',
+  },
+  { d: 'M28 150 V100 H132 V150' },
+  { d: 'M10 150 V86 H28 V150 M132 150 V86 H150 V150' },
+  {
+    d: 'M10 86 V80 H16 V86 M22 86 V80 H28 V86 M132 86 V80 H138 V86 M144 86 V80 H150 V86',
+    role: 'soft',
+  },
+  { d: 'M66 150 V124 Q80 110 94 124 V150', role: 'accent' },
+  {
+    d: 'M142 96 l5 -3 M142 112 l5 -3 M142 128 l5 -3 M104 72 l5 -3 M116 84 l5 -3',
+    role: 'ambient',
+  },
+  GROUND,
+  shadow(80, 156, 70),
+]
+
+/**
+ * Yunkai: the city's walls and corner towers with the great gate shut and
+ * a stepped pyramid behind, as Daenerys's army camps before it in episode
+ * 27 and in Daenerys IV (chapter 186). The towers' far faces are hatched;
+ * the accent is the gate.
+ */
+const YUNKAI: Stroke[] = [
+  ...YUNKAI_WALLS,
+  { d: 'M73 150 V120 M80 150 V117 M87 150 V120 M66 136 H94', role: 'soft' },
+]
+
+/**
+ * The Nightfort: broken towers and a fallen curtain wall below the Wall's
+ * face, the abandoned castle Sam names in episode 29 and Jon III (chapter
+ * 170) names. The towers' far faces are hatched; the accent is the ruined
+ * towers.
+ */
+const NIGHTFORT: Stroke[] = [
+  { d: 'M10 58 H150' },
+  {
+    d: 'M10 74 H48 M62 70 H104 M118 78 H150 M24 66 H40 M108 64 H136',
+    role: 'ambient',
+  },
+  {
+    d: 'M22 150 V96 L28 90 L32 98 L38 86 L44 94 V150 M116 150 V102 L122 96 L126 104 L132 92 L138 100 V150',
+    role: 'accent',
+  },
+  { d: 'M44 150 V124 L54 118 L60 126 L66 120 L72 130 V150' },
+  { d: 'M90 150 V128 L100 120 L108 128 L116 122 V150' },
+  { d: 'M74 150 l4 -6 h6 l3 6 M60 146 h6', role: 'soft' },
+  { d: 'M30 104 V112 M126 110 V118', role: 'soft' },
+  {
+    d: 'M34 110 l5 -3 M34 126 l5 -3 M34 142 l5 -3 M128 116 l5 -3 M128 132 l5 -3',
+    role: 'ambient',
+  },
+  GROUND,
+  shadow(80, 156, 66),
+]
+
+/**
+ * The Inn of the Kneeling Man: a timber inn under a steep roof, with a
+ * stable at its side, where Jaime, Brienne and Cleos stop in Jaime II
+ * (chapter 155); the show has no such inn. The roof's far side is hatched;
+ * the accent is the door.
+ */
+const INN_OF_THE_KNEELING_MAN: Stroke[] = [
+  { d: 'M30 150 V102 H100 V150' },
+  { d: 'M24 104 L44 78 H86 L106 104' },
+  { d: 'M40 112 h10 v10 h-10 Z M80 112 h10 v10 h-10 Z', role: 'soft' },
+  { d: 'M58 150 V130 H72 V150', role: 'accent' },
+  { d: 'M100 150 V120 L130 110 V150 M108 150 V132 H122 V150', role: 'soft' },
+  { d: 'M60 92 h10 M54 98 h22', role: 'soft' },
+  {
+    d: 'M90 88 l5 -3 M96 96 l5 -3 M92 128 l5 -3 M92 140 l5 -3',
+    role: 'ambient',
+  },
+  GROUND,
+  shadow(80, 156, 62),
+]
+
+/**
+ * The Milkwater: a pale river running down between two snowy mountains,
+ * with the wildlings' tents on its bank, where Jon meets Mance Rayder in
+ * Jon I (chapter 151); the show never names the river. The mountains' far
+ * faces are hatched; the accent is the river.
+ */
+const MILKWATER: Stroke[] = [
+  { d: 'M10 112 L40 50 L64 98 M96 98 L122 44 L150 108' },
+  { d: 'M32 66 L40 58 L48 68 M114 60 L122 52 L130 62', role: 'soft' },
+  {
+    d: 'M72 98 Q70 116 60 130 Q50 144 44 160 M88 98 Q92 116 86 132 Q80 146 82 160',
+    role: 'accent',
+  },
+  { d: 'M66 120 q4 -2 8 0 M58 142 q5 -2 10 0 M74 134 q3 -2 6 0', role: 'soft' },
+  {
+    d: 'M104 144 L112 130 L120 144 Z M124 150 L131 138 L138 150 Z',
+    role: 'soft',
+  },
+  {
+    d: 'M126 70 l5 -3 M132 86 l5 -3 M50 78 l5 -3 M54 90 l5 -3',
+    role: 'ambient',
+  },
+  {
+    d: 'M10 134 Q28 128 50 134 M96 136 Q124 128 150 134',
+    role: 'ambient',
+    dashed: true,
+  },
+]
+
+/** Maidenpool's hill, castle and pool, which its sack keeps. */
+const MAIDENPOOL_HILL: Stroke[] = [
+  { d: 'M10 106 Q40 84 70 88 Q104 82 150 102' },
+  { d: ellipse(80, 140, 24, 6), role: 'accent' },
+  { d: 'M72 140 q4 -2 8 0 M84 142 q3 -2 6 0', role: 'soft' },
+  { d: 'M10 150 H50 M110 150 H150', role: 'ambient', dashed: true },
+]
+
+/**
+ * Maidenpool: a castle on the hill over the town's houses, and the pool
+ * below, named in Jaime II (chapter 155) when the cook warns against
+ * following the Trident there; the show never goes there. The houses' sides
+ * are hatched; the accent is the pool.
+ */
+const MAIDENPOOL: Stroke[] = [
+  ...MAIDENPOOL_HILL,
+  { d: 'M54 88 V70 H64 V88 M64 76 H84 V88 M84 88 V64 H96 V88' },
+  { d: 'M14 138 V118 L22 110 L30 118 V138 M32 138 V120 L38 114 L44 120 V138' },
+  {
+    d: 'M114 138 V116 L122 108 L130 116 V138 M132 138 V120 L138 114 L144 120 V138',
+  },
+  {
+    d: 'M90 72 l4 -2 M90 80 l4 -2 M24 126 l4 -2 M124 126 l4 -2',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Maidenpool sacked: the same hill and pool, the castle broken and the
+ * houses roofless, as Jaime and Brienne find the town empty in Jaime III
+ * (chapter 165).
+ */
+const MAIDENPOOL_SACKED: Stroke[] = [
+  ...MAIDENPOOL_HILL,
+  { d: 'M54 88 V70 H64 V86 M64 76 H84 V86 M84 86 V64 L90 70 L96 62 V84' },
+  { d: 'M14 138 V118 L22 112 L26 120 V138 M30 138 V122 L38 128 V138' },
+  {
+    d: 'M114 138 V116 L120 124 L126 114 V138 M130 138 V120 H142 L138 126 V138',
+  },
+  {
+    d: 'M90 72 l4 -2 M92 80 l4 -2 M20 126 l4 -2 M120 126 l4 -2',
+    role: 'ambient',
+  },
+]
+
+/**
+ * High Heart: a broad grassy hill crowned with a ring of white weirwood
+ * stumps, where the outlaws stop with Arya in Arya IV (chapter 166); the
+ * show has no such hill. The far flank is hatched; the accent is the
+ * stumps.
+ */
+const HIGH_HEART: Stroke[] = [
+  { d: 'M10 150 Q30 148 44 122 Q60 92 80 90 Q100 92 116 122 Q130 148 150 150' },
+  {
+    d: `${ellipse(53, 100, 4, 1.6)} ${ellipse(66, 88, 4, 1.6)} ${ellipse(80, 84, 4, 1.6)} ${ellipse(94, 88, 4, 1.6)} ${ellipse(107, 100, 4, 1.6)}`,
+    role: 'accent',
+  },
+  {
+    d: 'M49 100 V107 M57 100 V107 M62 88 V95 M70 88 V95 M76 84 V91 M84 84 V91 M90 88 V95 M98 88 V95 M103 100 V107 M111 100 V107',
+  },
+  { d: 'M36 140 q3 -5 6 0 M120 140 q3 -5 6 0 M56 126 q3 -5 6 0', role: 'soft' },
+  { d: 'M108 120 l6 -3 M116 132 l6 -3 M124 144 l5 -3', role: 'ambient' },
+  shadow(80, 156, 66),
+]
+
+/**
+ * Acorn Hall: Lady Smallwood's hall behind its low wall, with a great oak
+ * beside it, where the outlaws bring Arya in Arya IV (chapter 166); the
+ * show never sets a scene there. The roof's far side is hatched; the
+ * accent is the oak's crown.
+ */
+const ACORN_HALL: Stroke[] = [
+  { d: 'M26 150 V108 H86 V150' },
+  { d: 'M20 110 L36 90 H76 L92 110' },
+  { d: 'M50 150 V130 Q56 124 62 130 V150' },
+  { d: 'M34 118 h8 v8 h-8 Z M70 118 h8 v8 h-8 Z', role: 'soft' },
+  { d: 'M10 150 V134 H100 V150', role: 'soft' },
+  { d: 'M120 150 V112 M114 150 L120 140 L126 150' },
+  {
+    d: 'M120 112 q-20 2 -18 -16 q-6 -18 12 -22 q6 -12 20 -4 q16 -2 14 14 q8 14 -6 22 q-8 10 -22 6 Z',
+    role: 'accent',
+  },
+  { d: 'M78 98 l5 -3 M80 140 l5 -3 M80 124 l5 -3', role: 'ambient' },
+  GROUND,
+  shadow(80, 156, 66),
+]
+
+/**
+ * Stoney Sept: the town's wall with a sept and its bells rising in the
+ * middle, where the outlaws spend the night in Arya V (chapter 173); the
+ * show never goes there. The sept's far side is hatched; the accent is
+ * the bell.
+ */
+const STONEY_SEPT: Stroke[] = [
+  { d: 'M10 150 V118 H150 V150' },
+  {
+    d: 'M10 118 V112 H18 V118 M28 118 V112 H36 V118 M124 118 V112 H132 V118 M142 118 V112 H150 V118',
+    role: 'soft',
+  },
+  { d: 'M62 118 V74 L80 56 L98 74 V118' },
+  { d: 'M70 92 Q80 82 90 92 V110 H70 Z', role: 'soft' },
+  { d: 'M74 96 Q74 90 80 90 Q86 90 86 96 V104 H74 Z', role: 'accent' },
+  {
+    d: 'M26 118 V102 L34 96 L42 102 V118 M118 118 V100 L126 94 L134 100 V118',
+    role: 'soft',
+  },
+  { d: 'M70 150 V134 Q80 126 90 134 V150' },
+  {
+    d: 'M92 80 l4 -3 M92 100 l4 -3 M140 132 l5 -3 M140 144 l5 -3',
+    role: 'ambient',
+  },
+  shadow(80, 156, 70),
+]
+
+/**
+ * The hollow hill: a wooded hill with a cave mouth among the roots and a
+ * fire burning inside, where the outlaws bring Arya blindfolded in Arya VI
+ * (chapter 178); the show's cave is never named. The far flank is hatched;
+ * the accent is the fire.
+ */
+const HOLLOW_HILL: Stroke[] = [
+  { d: 'M10 150 Q26 104 80 94 Q134 104 150 150' },
+  { d: 'M56 150 V134 Q80 108 104 134 V150' },
+  { d: 'M64 126 q6 6 2 16 M96 126 q-6 6 -2 16 M80 112 v10', role: 'soft' },
+  { d: 'M80 148 q-7 -8 -1 -18 q2 7 5 3 q5 9 -4 15', role: 'accent' },
+  { d: 'M36 112 L42 96 L48 112 M118 110 L124 92 L130 110', role: 'soft' },
+  { d: 'M110 120 l6 -3 M120 132 l6 -3 M128 144 l6 -3', role: 'ambient' },
+  shadow(80, 156, 70),
+]
+
+/**
+ * Queenscrown: the holdfast tower on its island in the lake, with the
+ * empty village's huts on the shore, where Bran's party shelters in Bran
+ * III (chapter 184); the show's tower is never named. The tower's far side
+ * is hatched; the accent is the crown of its merlons.
+ */
+const QUEENSCROWN: Stroke[] = [
+  { d: 'M66 134 V72 H94 V134' },
+  {
+    d: 'M66 72 V64 H71 V72 M76 72 V64 H81 V72 M86 72 V64 H91 V72',
+    role: 'accent',
+  },
+  { d: 'M76 92 V100 M84 110 V118', role: 'soft' },
+  { d: 'M50 136 Q80 128 110 136' },
+  {
+    d: 'M10 142 Q80 136 150 142 M18 154 Q80 148 142 154',
+    role: 'ambient',
+    dashed: true,
+  },
+  {
+    d: 'M12 128 V116 L20 110 L28 116 V128 M128 128 V114 L136 108 L144 114 V128',
+    role: 'soft',
+  },
+  {
+    d: 'M88 80 l5 -3 M88 96 l5 -3 M88 112 l5 -3 M88 128 l4 -2',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Oldstones: a broken wall with an arched window and a tower stump on a
+ * hill, and a tomb among the ruins, where Robb's host stops in Catelyn V
+ * (chapter 189); the show never goes there. The tower's far side is
+ * hatched; the accent is the broken arch.
+ */
+const OLDSTONES: Stroke[] = [
+  { d: 'M10 150 Q40 120 80 116 Q120 120 150 150' },
+  {
+    d: 'M36 130 V96 L42 90 L46 98 V108 Q56 96 66 108 V118 L70 112',
+    role: 'accent',
+  },
+  { d: 'M96 118 V100 L102 94 L106 102 L112 98 V124' },
+  { d: 'M70 140 H104 V146 H70 Z', role: 'soft' },
+  { d: 'M118 130 l14 -4 M120 136 l10 -2', role: 'soft' },
+  {
+    d: 'M104 106 l5 -3 M104 116 l5 -3 M42 104 l3 -2 M42 120 l3 -2',
+    role: 'ambient',
+  },
+  shadow(80, 156, 66),
+]
+
+/**
+ * Lord Harroway's Town: houses standing in the flooded river, with a sept
+ * tower and the ferry, where the Hound brings Arya to cross the Trident in
+ * Arya IX (chapter 191); the show never goes there. The houses' sides are
+ * hatched; the accent is the ferry.
+ */
+const LORD_HARROWAYS_TOWN: Stroke[] = [
+  { d: 'M16 132 V108 L28 98 L40 108 V132 M46 132 V112 L56 104 L66 112 V132' },
+  { d: 'M124 132 V100 H138 V132 M120 100 H142 L131 88 Z', role: 'soft' },
+  { d: 'M10 132 Q40 128 70 132 T150 132', role: 'ambient' },
+  {
+    d: 'M10 144 Q40 140 70 144 T150 144 M10 156 Q40 152 70 156 T150 156',
+    role: 'ambient',
+    dashed: true,
+  },
+  { d: 'M78 140 H118 L112 148 H84 Z', role: 'accent' },
+  { d: 'M98 140 L108 104', role: 'soft' },
+  { d: 'M34 112 l5 -3 M60 116 l5 -3 M134 108 l4 -2', role: 'ambient' },
+]
+
+/**
+ * Meereen: a far city's walls and towers round its gate, named in episode
+ * 28 and in Daenerys I (chapter 152) and never visited in the stage, so it
+ * shows nothing either medium has described yet (its pyramids wait for the
+ * drawing audit, #1667). The towers' far faces are hatched; the accent is
+ * the gate.
+ */
+const MEEREEN: Stroke[] = [
+  { d: 'M14 150 V92 H34 V150 M126 150 V92 H146 V150' },
+  { d: 'M34 150 V108 H126 V150' },
+  {
+    d: 'M14 92 V86 H20 V92 M28 92 V86 H34 V92 M126 92 V86 H132 V92 M140 92 V86 H146 V92',
+    role: 'soft',
+  },
+  { d: 'M50 108 V80 H66 V108 M94 108 V74 H110 V108', role: 'soft' },
+  { d: 'M66 150 V128 Q80 112 94 128 V150', role: 'accent' },
+  {
+    d: 'M138 102 l5 -3 M138 118 l5 -3 M138 134 l5 -3 M104 84 l4 -2 M104 96 l4 -2',
+    role: 'ambient',
+  },
+  GROUND,
+  shadow(80, 156, 70),
+]
+
+/**
+ * Karhold: a keep between two towers under a banner with a sunburst,
+ * named in episode 25 and in Bran I (chapter 153) and never visited in the
+ * stage. The towers' far faces are hatched; the accent is the banner.
+ */
+const KARHOLD: Stroke[] = [
+  { d: 'M20 150 V96 H40 V150 M120 150 V96 H140 V150' },
+  { d: 'M40 150 V112 H120 V150' },
+  { d: 'M60 112 V70 H100 V112' },
+  {
+    d: 'M20 96 V90 H26 V96 M34 96 V90 H40 V96 M120 96 V90 H126 V96 M134 96 V90 H140 V96',
+    role: 'soft',
+  },
+  { d: 'M70 150 V132 Q80 124 90 132 V150' },
+  { d: 'M80 70 V30' },
+  { d: 'M80 32 H108 V58 H80', role: 'accent' },
+  {
+    d: `${circle(94, 45, 4)} M94 37 V35 M94 53 V55 M86 45 H84 M102 45 H104 M88 39 l-2 -2 M100 51 l2 2 M100 39 l2 -2 M88 51 l-2 2`,
+    role: 'soft',
+  },
+  {
+    d: 'M132 106 l5 -3 M132 122 l5 -3 M132 138 l5 -3 M92 80 l5 -3 M92 96 l5 -3',
+    role: 'ambient',
+  },
+  GROUND,
+  shadow(80, 158, 70),
+]
+
+/**
+ * Last Hearth: a long hall under a steep roof, its windows lit and smoke
+ * from its chimney, among the northern pines, named in episode 26 and in
+ * Jon I (chapter 151) and never visited in the stage. The roof's far side
+ * is hatched; the accent is the lit windows.
+ */
+const LAST_HEARTH: Stroke[] = [
+  { d: 'M30 150 V100 H110 V150' },
+  { d: 'M24 102 L44 78 H96 L116 102' },
+  { d: 'M90 78 V62 H100 V90' },
+  { d: 'M95 58 q-6 -8 2 -16 q-6 -8 2 -16', role: 'soft' },
+  { d: 'M60 150 V128 Q70 120 80 128 V150' },
+  { d: 'M40 112 h8 v10 h-8 Z M92 112 h8 v10 h-8 Z', role: 'accent' },
+  {
+    d: 'M124 150 L132 128 L140 150 M126 136 h12 M118 120 L132 96 L146 120',
+    role: 'soft',
+  },
+  { d: 'M104 92 l4 -3 M102 132 l5 -3 M102 144 l5 -3', role: 'ambient' },
+  GROUND,
+  shadow(76, 156, 62),
+]
+
+/**
+ * Mummer's Ford: a ford of stepping stones across a river, with a village
+ * on both banks, named in episode 24 and in Arya III (chapter 161) and
+ * never visited in the stage. The houses' sides are hatched; the accent is
+ * the ford.
+ */
+const MUMMERS_FORD: Stroke[] = [
+  { d: 'M10 118 Q80 110 150 118 M10 146 Q80 138 150 146' },
+  { d: 'M20 132 Q40 128 60 132 M100 128 Q120 124 140 128', role: 'ambient' },
+  {
+    d: 'M58 140 q4 -3 8 0 M70 134 q4 -3 8 0 M82 128 q4 -3 8 0 M94 122 q4 -3 8 0',
+    role: 'accent',
+  },
+  { d: 'M24 112 V96 L34 88 L44 96 V112 M110 110 V92 L120 84 L130 92 V110' },
+  { d: 'M54 108 V90 L60 86 L66 90 V108', role: 'soft' },
+  { d: 'M38 100 l4 -2 M124 98 l4 -2', role: 'ambient' },
+  { d: 'M10 158 Q80 150 150 158', role: 'ambient', dashed: true },
+]
+
+/**
+ * The Shadow Tower: a tall tower before the Wall's western end, where the
+ * mountains close in, named in episode 25 and in the prologue (chapter 144)
+ * and never visited in the stage. The tower's far side is hatched; the
+ * accent is its crown of merlons.
+ */
+const SHADOW_TOWER: Stroke[] = [
+  { d: 'M60 70 H84 M112 70 H150 M60 70 V150' },
+  { d: 'M64 86 H80 M116 98 H146 M118 116 H140', role: 'ambient' },
+  { d: 'M10 150 L22 92 L36 120 L48 76 L60 96' },
+  { d: 'M84 150 V60 H112 V150' },
+  {
+    d: 'M84 60 V52 H90 V60 M96 60 V52 H102 V60 M106 60 V52 H112 V60',
+    role: 'accent',
+  },
+  { d: 'M94 80 V88 M100 104 V112', role: 'soft' },
+  {
+    d: 'M104 70 l5 -3 M104 86 l5 -3 M104 102 l5 -3 M104 118 l5 -3 M104 134 l5 -3',
+    role: 'ambient',
+  },
+  GROUND,
+  shadow(98, 156, 40),
+]
+
+/**
+ * The Bay of Seals: a wide bay opening to the sea between high cliffs, its
+ * far shore curving away, named in episode 29 and in Jon IV (chapter 174)
+ * and never visited in the stage. The cliffs are hatched; the accent is the
+ * bay's far shore.
+ */
+const BAY_OF_SEALS: Stroke[] = [
+  { d: 'M10 150 V92 Q22 78 40 84 L52 112 Q56 128 50 150' },
+  { d: 'M150 150 V98 Q138 86 122 92 L110 116 Q106 132 112 150' },
+  { d: 'M52 112 Q80 96 110 116', role: 'accent' },
+  { d: 'M58 124 Q80 116 104 126 M60 138 Q80 132 102 140', role: 'ambient' },
+  { d: 'M40 96 l5 -3 M44 110 l5 -3 M46 126 l5 -3', role: 'ambient' },
+  { d: 'M20 100 V120 M136 104 V122', role: 'soft' },
+  ...SEA,
+]
+
+/**
+ * Castamere: a castle's towers and wall on a hill of the Westerlands, named
+ * in episode 28 and in Tyrion III (chapter 163) and never visited in the
+ * stage. Its fall is history in the show by its gate, but the book's gate
+ * chapter does not tell it, so the drawing shows the castle as both media
+ * name it. The towers' far faces are hatched; the accent is the gate.
+ */
+const CASTAMERE: Stroke[] = [
+  { d: 'M10 150 Q30 124 60 120 H100 Q130 124 150 150' },
+  { d: 'M40 122 V70 H58 V120 M102 120 V78 H120 V124' },
+  { d: 'M58 120 V96 H102 V120' },
+  {
+    d: 'M40 70 V64 H46 V70 M52 70 V64 H58 V70 M102 78 V72 H108 V78 M114 78 V72 H120 V78',
+    role: 'soft',
+  },
+  { d: 'M72 120 V106 Q80 98 88 106 V120', role: 'accent' },
+  { d: 'M49 84 V92 M111 90 V98', role: 'soft' },
+  {
+    d: 'M114 92 l4 -2 M114 104 l4 -2 M114 116 l4 -2 M52 80 l4 -2 M52 106 l4 -2',
+    role: 'ambient',
+  },
+  shadow(80, 156, 66),
+]
+
+/**
+ * The first season's places (#1053), the ones it only names (#1035), the
+ * second stage's visited places (#1469) and named ones (#1476), and the
+ * third stage's places (#1630), keyed by record id.
  */
 export const PLACE_DRAWINGS = {
   'haunted-forest': HAUNTED_FOREST,
@@ -2130,6 +2633,26 @@ export const PLACE_DRAWINGS = {
   'lorath': LORATH,
   'summer-isles': SUMMER_ISLES,
   'oldtown': OLDTOWN,
+  'astapor': ASTAPOR,
+  'yunkai': YUNKAI,
+  'nightfort': NIGHTFORT,
+  'inn-of-the-kneeling-man': INN_OF_THE_KNEELING_MAN,
+  'milkwater': MILKWATER,
+  'maidenpool': MAIDENPOOL,
+  'high-heart': HIGH_HEART,
+  'acorn-hall': ACORN_HALL,
+  'stoney-sept': STONEY_SEPT,
+  'hollow-hill': HOLLOW_HILL,
+  'queenscrown': QUEENSCROWN,
+  'oldstones': OLDSTONES,
+  'lord-harroways-town': LORD_HARROWAYS_TOWN,
+  'meereen': MEEREEN,
+  'karhold': KARHOLD,
+  'last-hearth': LAST_HEARTH,
+  'mummers-ford': MUMMERS_FORD,
+  'shadow-tower': SHADOW_TOWER,
+  'bay-of-seals': BAY_OF_SEALS,
+  'castamere': CASTAMERE,
 } satisfies Drawings
 
 /** Smoke rising from a ruin: two curls. */
@@ -2396,6 +2919,62 @@ const EASTWATCH_DESTROYED: Stroke[] = [
   ...SEA,
 ]
 
+/** A dead horse on its side, at the origin, two legs stiff in the air. */
+const DEAD_HORSE =
+  'M0 0 Q2 -10 14 -10 Q24 -10 27 -3 L36 -5 L40 0 H0 M6 -7 L-2 -15 M11 -9 L7 -18'
+
+/**
+ * The Fist overrun: the same hill and ring of stones, with dead horses on
+ * its slopes after the night attack, as episode 21 opens on it and Jon II
+ * (chapter 159) has Jon see it.
+ */
+const FIST_OF_THE_FIRST_MEN_OVERRUN: Stroke[] = [
+  ...FIST_OF_THE_FIRST_MEN,
+  { d: DEAD_HORSE, transform: 'translate(40 144)', role: 'soft' },
+  { d: DEAD_HORSE, transform: 'translate(122 138) scale(-1 1)', role: 'soft' },
+]
+
+/**
+ * Harrenhal held for Robb Stark: the same five towers, with banners flying
+ * over them, as the castle passes to the northmen in episode 22 and in
+ * Arya IX (chapter 121), where the flayed man and the direwolf go up over
+ * the gatehouse.
+ */
+const HARRENHAL_HELD: Stroke[] = [
+  ...HARRENHAL,
+  {
+    d: 'M52 62 V44 H66 L62 50 L66 56 H52 M116 62 V44 H130 L126 50 L130 56 H116',
+    role: 'soft',
+  },
+]
+
+/**
+ * Astapor sacked: the same pyramid and walls, the gate thrown open and
+ * smoke rising over the city, with the slaver's whip dropped outside, as
+ * Daenerys rides out of it in episode 24; Daenerys III (chapter 171) has
+ * the city taken.
+ */
+const ASTAPOR_SACKED: Stroke[] = [
+  ASTAPOR_PYRAMID,
+  ...ASTAPOR_WALLS,
+  { d: 'M70 146 V134 Q80 124 90 134 V146 M70 134 L62 140 M90 134 L98 140' },
+  { d: `${smokeAt(18, 104)} ${smokeAt(118, 100)}`, role: 'soft' },
+  { d: 'M100 150 q8 -6 16 -2 q6 4 12 0', role: 'soft' },
+]
+
+/**
+ * Yunkai taken: the same walls and towers, the gate's doors swung open, as
+ * Daenerys's forces take the city in episode 29; Daenerys IV (chapter 186)
+ * tells the same night.
+ */
+const YUNKAI_TAKEN: Stroke[] = [
+  ...YUNKAI_WALLS,
+  {
+    d: 'M66 150 L54 144 V124 L66 124 M94 150 L106 144 V124 L94 124',
+    role: 'soft',
+  },
+]
+
 /**
  * The places later seasons and books destroy, badly damage or rebuild
  * (#1236), each stage pinned in the units that tell it. A show-only stage
@@ -2428,6 +3007,25 @@ export const placesRedrawn: Redrawings = {
     { episode: 41, chapter: 256, value: DARRY },
   ],
   'moles-town': [{ episode: 38, chapter: 199, value: MOLES_TOWN_SACKED }],
+  // Taken (#1630): Robb's host holds the castle in "Dark Wings, Dark Words"
+  // (episode 22); the northmen take it in Arya IX (ACOK 47, site 121).
+  'harrenhal': [{ episode: 22, chapter: 121, value: HARRENHAL_HELD }],
+  // Overrun (#1630): "Valar Dohaeris" (episode 21) and Jon II (ASOS 15,
+  // site 159), the dead horses on the slope.
+  'fist-of-the-first-men': [
+    { episode: 21, chapter: 159, value: FIST_OF_THE_FIRST_MEN_OVERRUN },
+  ],
+  // Sacked (#1630): "And Now His Watch Is Ended" (episode 24) and Daenerys
+  // III (ASOS 27, site 171).
+  'astapor': [{ episode: 24, chapter: 171, value: ASTAPOR_SACKED }],
+  // Sacked, the books alone (#1630): Jaime III (ASOS 21, site 165), the
+  // chapter after the town is named; episode 23 only orders it.
+  'maidenpool': [
+    { episode: 23, chapter: 165, source: 'chapter', value: MAIDENPOOL_SACKED },
+  ],
+  // Taken (#1630): "The Rains of Castamere" (episode 29) and Daenerys IV
+  // (ASOS 42, site 186).
+  'yunkai': [{ episode: 29, chapter: 186, value: YUNKAI_TAKEN }],
   // Burned: the wildfire takes Stannis's fleet in "Blackwater" (episode
   // 19) and in Davos III (ACOK 58, site 132), the chapter the bay opens in.
   'blackwater-bay': [
