@@ -13628,8 +13628,8 @@ const essos3 = {
     character: 'barristan-selmy',
     type: { en: 'Fellow knight', it: 'Altro cavaliere' },
     summary: {
-      en: 'Daenerys’s other knight. On the march from Astapor they talk about the Greyjoy Rebellion and Robert. Jorah learns, relieved, that Robert kept him out of the small council, where Jorah’s old reports on Daenerys were read.',
-      it: 'L’altro cavaliere di Daenerys. Durante la marcia da Astapor parlano della ribellione dei Greyjoy e di Robert. Jorah scopre, sollevato, che Robert lo teneva fuori dal concilio ristretto, dove si leggevano i suoi vecchi rapporti su Daenerys.',
+      en: 'Daenerys’s other knight. On the march from Astapor they talk about the Greyjoy Rebellion and Robert. Jorah learns, relieved, that Robert kept Barristan out of the small council, where Jorah’s old reports on Daenerys were read.',
+      it: 'L’altro cavaliere di Daenerys. Durante la marcia da Astapor parlano della ribellione dei Greyjoy e di Robert. Jorah scopre, sollevato, che Robert teneva Barristan fuori dal concilio ristretto, dove si leggevano i suoi vecchi rapporti su Daenerys.',
     },
   },
   jorDaenerysYunkai: {

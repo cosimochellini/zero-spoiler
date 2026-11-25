@@ -48,8 +48,8 @@ const essos = {
     character: 'mero',
     type: { en: 'Sellsword', it: 'Mercenario' },
     summary: {
-      en: 'The captain of the Second Sons, who gropes her at the parley with Daenerys. That night Daario brings his head.',
-      it: 'Il capitano dei Secondi Figli, che alla trattativa con Daenerys allunga le mani su di lei. Quella notte Daario ne porta la testa.',
+      en: 'The captain of the Second Sons, who groped her at the parley with Daenerys. That night Daario brought his head.',
+      it: 'Il capitano dei Secondi Figli, che alla trattativa con Daenerys ha allungato le mani su Missandei. Quella notte Daario ne ha portato la testa.',
     },
   },
   misDaario: {
@@ -73,8 +73,8 @@ const essos = {
     character: 'kraznys-mo-nakloz',
     type: { en: 'Former master', it: 'Ex padrone' },
     summary: {
-      en: 'The slaver she interpreted for, who insulted Daenerys through her. At the plaza Daenerys turns her dragon on him and he burns.',
-      it: 'Lo schiavista per cui faceva da interprete, che tramite lei insultava Daenerys. Nella piazza Daenerys gli scatena contro il suo drago, e lui brucia.',
+      en: 'The slaver she interpreted for, who insulted Daenerys through her. At the plaza Daenerys turned her dragon on him and he burned.',
+      it: 'Lo schiavista per cui faceva da interprete, che tramite lei insultava Daenerys. Nella piazza Daenerys gli ha scatenato contro il suo drago, e lui è bruciato.',
     },
   },
 
@@ -254,8 +254,8 @@ const essos = {
     character: 'mero',
     type: { en: 'Captain', it: 'Capitano' },
     summary: {
-      en: 'The captain of the Second Sons, who has him draw the coin to kill Daenerys. Daario kills him and takes his head to her.',
-      it: 'Il capitano dei Secondi Figli, che gli fa pescare la moneta per uccidere Daenerys. Daario lo uccide e porta a lei la sua testa.',
+      en: 'The captain of the Second Sons, who had him draw the coin to kill Daenerys. Daario killed him and took his head to her.',
+      it: 'Il capitano dei Secondi Figli, che gli ha fatto pescare la moneta per uccidere Daenerys. Daario lo ha ucciso e ha portato a lei la sua testa.',
     },
   },
   daaMissandei: {
@@ -311,8 +311,8 @@ const essos = {
     character: 'prendahl-na-ghezn',
     type: { en: 'Fellow captain', it: 'Altro capitano' },
     summary: {
-      en: 'Another captain of the Stormcrows, who turns down Daenerys’s offer. Daario kills him and takes his head to her.',
-      it: 'Un altro capitano dei Corvi della Tempesta, che respinge l’offerta di Daenerys. Daario lo uccide e porta a lei la sua testa.',
+      en: 'Another captain of the Stormcrows, who turned down Daenerys’s offer. Daario killed him and took his head to her.',
+      it: 'Un altro capitano dei Corvi della Tempesta, che ha respinto l’offerta di Daenerys. Daario lo ha ucciso e ha portato a lei la sua testa.',
     },
   },
   daaJorahWary: {
