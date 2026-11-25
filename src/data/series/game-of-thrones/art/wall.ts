@@ -1002,10 +1002,11 @@ export const wallRedrawn: Redrawings = {
   'yoren': [
     // The manacles lying open on the ground, the chain slack between them:
     // Amory Lorch's men kill him in "What Is Dead May Never Die" (episode
-    // 13) and in Arya IV of A Clash of Kings (chapter 88).
+    // 13). In A Clash of Kings Arya last sees him in the fight in Arya IV
+    // (chapter 88) and finds his body in Arya V (chapter 93).
     {
       episode: 13,
-      chapter: 88,
+      chapter: 93,
       value: [
         ...OPEN_CUFF,
         ...moved(OPEN_CUFF, 'translate(160 0) scale(-1 1)'),
