@@ -44,7 +44,7 @@ restated for the stage:
 | ------------------------- | ------- | ------- | ---------------------------------------- |
 | `astapor`                 | 21      | 167     | both media                               |
 | `yunkai`                  | 27      | 186     | both media                               |
-| `nightfort`               | 30      | 170     | the show visits it; the book names it    |
+| `nightfort`               | 29      | 170     | the show visits it; the book names it    |
 | `inn-of-the-kneeling-man` | 22      | 155     | book only; the episode orders it         |
 | `milkwater`               | 21      | 151     | book only                                |
 | `maidenpool`              | 23      | 165     | book only                                |
@@ -100,11 +100,13 @@ slope), `harrenhal` 22 / 121 (the banners over the gatehouse), `astapor` 24 /
   stage take chapter 187. Filed here: Grey Worm, Grazdan mo Eraz, Mero, Daario
   Naharis, Prendahl na Ghezn. Owner check: the issue counts a taken place as a
   drawing stage; the city is not damaged, so the stage only opens the gate.
-- `nightfort`: show 30, "Mhysa"; Sam names it in "The Rains of Castamere" (29).
-  Book 170, Jon III: the chapter page lists it among the places mentioned, the
-  line not read (owner check). The books set a scene there in Bran IV (site
-  200), the next stage. Italian "Forte della Notte", the Italian Game of Thrones
-  Wiki.
+- `nightfort`: show 29, Sam names it to Gilly in "The Rains of Castamere"
+  (quoted on the episode page), and "Mhysa" (30) sets the first scene there; the
+  gate is the naming (filing-records §2, review round 1). Owner check: stage 2
+  gated the Skirling Pass at its visit, not its naming. Book 170, Jon III: the
+  chapter page lists it among the places mentioned, the line not read (owner
+  check). The books set a scene there in Bran IV (site 200), the next stage.
+  Italian "Forte della Notte", the Italian Game of Thrones Wiki.
 - `inn-of-the-kneeling-man`: Jaime II (155), the chapter's Place row; Arya II
   (157). The show's outlaws take Arya to the Inn at the Crossroads ("Walk of
   Punishment"), already filed, so the book's inn is the book's alone. Episode 22
@@ -197,6 +199,8 @@ by a `nameSaidAt`:
 - Slaver's Bay: a region; its cities are filed.
 - The Frostfangs and Mance Rayder's camp: folded into the Skirling Pass in stage
   2, and a camp.
+- Onion Rock (Davos I, 149): the rock in Blackwater Bay Davos is stranded on;
+  the show's rock is unnamed, and the bay is filed.
 - The Summer Sea: Daenerys I (152) is set aboard the _Balerion_; the scene is
   the ship, and the show never names the sea (owner check).
 - Tumbledown Tower (Bran I, 153): a ruined watchtower in the wolfswood, folded

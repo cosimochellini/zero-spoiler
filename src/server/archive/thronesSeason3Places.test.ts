@@ -37,7 +37,7 @@ const PLACES: {
 }[] = [
   { id: 'astapor', episode: 21, chapter: 167 },
   { id: 'yunkai', episode: 27, chapter: 186 },
-  { id: 'nightfort', episode: 30, chapter: 170 },
+  { id: 'nightfort', episode: 29, chapter: 170 },
   {
     id: 'inn-of-the-kneeling-man',
     episode: 22,

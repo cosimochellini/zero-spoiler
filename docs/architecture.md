@@ -373,12 +373,12 @@ characters. The stage-3 characters show the shared `PERSON` placeholder until
 their drawing children (#1631). Robb's war and the Riverlands (#1635) adds ten
 characters, five the books' alone, one the show's and four both media's, with
 the stage's steps of three season-1 characters. The stage's places (#1630) are
-the 13 a scene of the stage is set in, ten of them the book's alone and the
-Nightfort, which the show visits and the book only names (#1252), and the 7 both
-media name and neither visits, each with its own drawing; Harrenhal, the Fist of
-the First Men, Craster's Keep, the Dreadfort and Flea Bottom take the stage's
-changes as dated `visits` entries, and Harrenhal, the Fist, Astapor and Yunkai a
-drawing stage.
+the 13 a scene of the stage is set in: Astapor and Yunkai in both media, ten the
+book's alone, and the Nightfort, which the show visits and the book only names
+(#1252), and the 7 both media name and neither visits, each with its own
+drawing; Harrenhal, the Fist of the First Men, Craster's Keep, the Dreadfort and
+Flea Bottom take the stage's changes as dated `visits` entries, and Harrenhal,
+the Fist, Astapor and Yunkai a drawing stage.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to

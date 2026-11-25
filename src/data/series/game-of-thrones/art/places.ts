@@ -2107,8 +2107,8 @@ const YUNKAI: Stroke[] = [
 /**
  * The Nightfort: broken towers and walls below the Wall's face, around the
  * well, as Bran's party finds the abandoned castle in episode 30, named in
- * Jon III (chapter 170). The towers' far faces are hatched; the accent is
- * the mouth of the well.
+ * episode 29 and in Jon III (chapter 170). The towers' far faces are hatched;
+ * the accent is the mouth of the well.
  */
 const NIGHTFORT: Stroke[] = [
   { d: 'M10 58 H150' },

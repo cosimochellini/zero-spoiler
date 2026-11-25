@@ -975,15 +975,16 @@ export const season3: ThronesSaga = {
       },
       visual: { art: 'yunkai', tint: 'yellow' },
     },
-    // Show: "Mhysa", Bran's party shelters in the abandoned castle, which Sam
-    // names to Gilly in "The Rains of Castamere". Books: never visited in the
+    // Show: "The Rains of Castamere", Sam names the castle to Gilly as the
+    // way through the Wall (filing-records §2: a place named, then visited,
+    // opens at the naming); "Mhysa" sets Bran's party there. Books: never visited in the
     // stage (Bran IV, site chapter 200, is the next stage's); Jon III (site
     // chapter 170) names it, A Wiki of Ice and Fire's chapter page listing it
     // among the places mentioned (#1252).
     {
       id: 'nightfort',
       kind: 'place',
-      revealedAtEpisode: 30,
+      revealedAtEpisode: 29,
       revealedAtChapter: 170,
       name: { it: 'Forte della Notte', en: 'the Nightfort' },
       summary: {
@@ -1320,8 +1321,8 @@ export const SEASON_3_PLACES: Record<
       en: 'Walls and a great gate, with a pyramid behind them',
     },
     log: {
-      it: 'Daenerys Targaryen porta il suo esercito sotto le mura della città. I padroni hanno assoldato dei mercenari per difenderla, e uno di loro viene a offrirle dell’oro perché se ne vada. Lei lo rimanda indietro.',
-      en: 'Daenerys Targaryen brings her army to the city’s walls. Its masters have hired sellswords to defend it, and one of them comes to offer her gold to go away. She sends him back.',
+      it: 'Daenerys Targaryen porta il suo esercito sotto le mura della città. Uno dei padroni della città viene a offrirle dell’oro perché se ne vada, e lei rifiuta.',
+      en: 'Daenerys Targaryen brings her army to the city’s walls. One of the city’s masters comes to offer her gold to go away, and she refuses.',
     },
     filedHere: [
       'grey-worm',
@@ -1518,7 +1519,7 @@ export const SEASON_3_PLACES: Record<
     filedHere: [],
   },
   'mummers-ford': {
-    form: 'town',
+    form: 'river',
     region: 'the-riverlands',
     landmark: {
       it: 'Un guado di pietre tra due rive con delle case',
