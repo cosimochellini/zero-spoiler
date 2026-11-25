@@ -27,6 +27,7 @@ import {
   EXTRA,
   judge,
   officialCanaries,
+  pathFrom,
   placeWordCanaries,
   placeWordCanariesOf,
   proseCanaries,
@@ -125,6 +126,23 @@ describe('the slugs the gate looks for', () => {
       'gum-gum-fruit',
       'flame-flame-fruit',
     ])
+  })
+
+  it('falls back to a long stroke path for a module keyed by short ids', () => {
+    // Game of Thrones' seasons are keyed `season-1` (#1601), too short to be
+    // a slug canary, so the module's first long path stands in.
+    const source =
+      "  'season-1': [\n    { d: 'M77.4 98 L80 12 L82.6 98 M70.4 98.2 L67 22 L75.6 97.8' },\n"
+    const seasons = slugCanaries(repositoryRoot, 'game-of-thrones').find(
+      ({ file }) => file.endsWith('/art/seasons.ts'),
+    )
+
+    expect(slugsFrom(source)).toStrictEqual([])
+    expect(pathFrom(source)).toBe(
+      'M77.4 98 L80 12 L82.6 98 M70.4 98.2 L67 22 L75.6 97.8',
+    )
+    expect(pathFrom("{ d: 'M0 0 L1 1' }")).toBeUndefined()
+    expect(seasons?.phrase).toMatch(/^M\d/u)
   })
 
   it('covers the slug-keyed modules that live outside the drawings', () => {

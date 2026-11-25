@@ -33,7 +33,6 @@ export const SEASON_DRAWINGS = {
       d: 'M30 100 l-1 4 M28 112 l-1 4 M130 100 l1 4 M132 112 l1 4',
       role: 'soft',
     },
-    { d: 'M66 118 V130 M80 116 V130 M94 118 V130', role: 'soft' },
     { d: 'M106 108 l6 -3 M106 118 l6 -3 M106 128 l6 -3', role: 'ambient' },
     { d: 'M24 152 H136 V142 H24 Z M34 142 V132 H126 V142' },
     {

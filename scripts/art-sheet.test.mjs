@@ -269,11 +269,13 @@ describe('what the command line asks for', { timeout: 60_000 }, () => {
       series: thrones,
     })
     const first = await cellsFor({ ids: ['season-1'], out, series: thrones })
+    const listed = (label) => seasons.cells.find((cell) => cell.label === label)
 
-    expect(seasons.cells.map((cell) => cell.label)).toStrictEqual([
-      'season-1',
-      'season-2',
-    ])
+    // Each season files its drawing with its records, so the list grows.
+    expect(listed('season-1')).toMatchObject({ note: 'ep 1', tint: 'ice' })
+    expect(listed('season-1')?.strokes).toHaveLength(11)
+    expect(listed('season-2')).toMatchObject({ note: 'ep 11', tint: 'red' })
+    expect(listed('season-2')?.strokes).toHaveLength(9)
     expect(first.cells).toMatchObject([
       { label: 'season-1', note: 'ep 1', tint: 'ice' },
     ])

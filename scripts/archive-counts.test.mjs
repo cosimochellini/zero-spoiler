@@ -58,6 +58,23 @@ describe('the table of one series', () => {
     expect(table).toContain('| Arcs, places, ships | 0 · 0 · 0 |')
   })
 
+  it('counts the drawings of the seasons’ headings apart from the records', () => {
+    const table = countTable({
+      archive: {
+        drawings: { 'a': [], 'season-1': [] },
+        entities: [{ kind: 'character' }],
+        places: [],
+        sagas: [{}],
+        series: { features: { fruits: false }, kinds: ['character'] },
+        timelines: [],
+      },
+    })
+
+    expect(table).toContain(
+      "| Line drawings | 2, one per record and 1 for the seasons' headings, plus 0 redrawings of 0 records |",
+    )
+  })
+
   it('leaves out the kinds and features a series does not have', () => {
     const table = countTable({
       archive: {

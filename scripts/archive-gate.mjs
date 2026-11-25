@@ -285,9 +285,22 @@ export function proseCanaries(repositoryRoot, folder) {
   })
 }
 
+// A stroke's path long enough that no other code writes the same one.
+const PATH_PATTERN = /^ +(?:\{ )?d: '(?<path>M[^']{40,})'/gmu
+
+/**
+ * A drawing module's first long stroke path, for one keyed by ids too short
+ * to be canaries (Game of Thrones' `season-1`, #1601).
+ * @param {string} source The module's text.
+ * @returns {string | undefined} The path, or nothing.
+ */
+export const pathFrom = (source) =>
+  source.matchAll(PATH_PATTERN).next().value?.groups?.['path']
+
 /**
  * One canary per drawing module of a series: the first id long enough to be
- * unmistakable. A series with no `art/` folder is one unreadable canary.
+ * unmistakable, else its first long stroke path. A series with no `art/`
+ * folder is one unreadable canary.
  * @param {string} repositoryRoot The repository root.
  * @param {string} folder The series' folder under `src/data/series/`.
  * @returns {{file: string, phrase: null | string}[]} What to look for.
@@ -300,12 +313,11 @@ export function slugCanaries(repositoryRoot, folder) {
   }
 
   return [...drawings, ...(EXTRA[folder]?.slugs ?? [])].flatMap((file) => {
-    const slugs = slugsFrom(
-      readFileSync(path.join(repositoryRoot, file), 'utf8'),
-    )
+    const source = readFileSync(path.join(repositoryRoot, file), 'utf8')
+    const phrase = slugsFrom(source)[0] ?? pathFrom(source)
 
-    // `index.ts`: the table itself, keyed by nothing.
-    return slugs.length === 0 ? [] : { file, phrase: slugs[0] ?? null }
+    // `index.ts`: the table itself, keyed by nothing and drawing nothing.
+    return phrase === undefined ? [] : { file, phrase }
   })
 }
 

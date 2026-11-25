@@ -595,17 +595,17 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 ### `game-of-thrones`
 
-| Thing                  | Count                                                   |
-| ---------------------- | ------------------------------------------------------- |
-| Records                | 300                                                     |
-| Characters             | 213                                                     |
-| Places                 | 87                                                      |
-| Saga modules           | 2                                                       |
-| Line drawings          | 302, one per record, plus 208 redrawings of 153 records |
-| Chronicle stories      | 1188, for 213 characters                                |
-| Dated timelines        | 1054                                                    |
-| Affiliation steps      | 243                                                     |
-| Status steps           | 382                                                     |
-| Later visits to places | 5                                                       |
+| Thing                  | Count                                                                                   |
+| ---------------------- | --------------------------------------------------------------------------------------- |
+| Records                | 300                                                                                     |
+| Characters             | 213                                                                                     |
+| Places                 | 87                                                                                      |
+| Saga modules           | 2                                                                                       |
+| Line drawings          | 302, one per record and 2 for the seasons' headings, plus 208 redrawings of 153 records |
+| Chronicle stories      | 1188, for 213 characters                                                                |
+| Dated timelines        | 1054                                                                                    |
+| Affiliation steps      | 243                                                                                     |
+| Status steps           | 382                                                                                     |
+| Later visits to places | 5                                                                                       |
 
 <!-- End of the generated counts. -->
