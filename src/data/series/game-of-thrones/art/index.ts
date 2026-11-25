@@ -187,7 +187,8 @@ const PERSON: Stroke[] = [
  * `wall.ts` and the wildlings in `wildlings.ts` (#1474), and Essos and Qarth
  * cast, in `essos.ts` (#1475). The seasons' own, which the home page's
  * frame draws, are in `seasons.ts` (#1601). The third stage's Essos cast
- * (#1639) shows `PERSON` until its drawing child draws it. `satisfies`
+ * (#1639) and Dragonstone cast (#1640) show `PERSON` until their drawing
+ * children draw them. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -216,6 +217,10 @@ export const DRAWINGS = {
   'mero': PERSON,
   'daario-naharis': PERSON,
   'prendahl-na-ghezn': PERSON,
+  // #1640: the third stage's Dragonstone cast.
+  'axell-florent': PERSON,
+  'alester-florent': PERSON,
+  'edric-storm': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */

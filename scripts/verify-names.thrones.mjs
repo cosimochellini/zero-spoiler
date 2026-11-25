@@ -250,6 +250,10 @@ export const THRONES_ITALIAN_TITLES = {
   'mero': OTHERS,
   'daario-naharis': characters('Daario Naharis'),
   'prendahl-na-ghezn': OTHERS,
+  // #1640, the third stage's Dragonstone cast. Edric and Alester are named
+  // only in the prose of Melisandre's and Salladhor's sections.
+  'edric-storm': characters('Melisandre di Asshai'),
+  'alester-florent': characters('Salladhor Saan'),
 }
 
 /**
@@ -378,4 +382,11 @@ export const THRONES_NAMES_KEPT = {
   'grazdan-mo-eraz': 'Grazdan mo Eraz',
   'mero': 'Mero',
   'prendahl-na-ghezn': 'Prendahl na Ghezn',
+  // #1640. Italian Wikipedia names Edric Storm and Alester Florent only in
+  // other characters' prose and has no entry for Axell Florent, whose name
+  // the Italian Game of Thrones Wiki keeps; none is checked against the
+  // Mondadori edition.
+  'edric-storm': 'Edric Storm',
+  'alester-florent': 'Alester Florent',
+  'axell-florent': 'Axell Florent',
 }

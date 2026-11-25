@@ -46,8 +46,9 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
     'daenerys-targaryen',
   ],
   // The third stage's cast row (#1626): its filing children (#1634–#1641)
-  // add each lead as they file it. Essos (#1639): Daenerys.
-  'season-3': ['daenerys-targaryen'],
+  // add each lead as they file it. Essos (#1639): Daenerys. Dragonstone
+  // (#1640): Davos.
+  'season-3': ['daenerys-targaryen', 'davos-seaworth'],
 }
 
 const { core } = sagaArchive({

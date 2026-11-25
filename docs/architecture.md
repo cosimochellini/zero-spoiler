@@ -366,7 +366,9 @@ Storm of Swords_ through chapter 52, Arya XI (episodes 21–30, site chapters
 the books' alone, Grazdan mo Eraz filed under the books' name with the show's
 Razdal mo Eraz as his `episodeName`, with placeholder busts, stage-3 steps on
 Daenerys and the show's on Barristan Selmy, and the season's drawing, the Fist
-of the First Men.
+of the First Men. Its Dragonstone cast (#1640) adds three, all the books' alone
+(Axell and Alester Florent, Edric Storm), with placeholder busts and stage-3
+steps on Davos Seaworth.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -606,15 +608,15 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| Records                | 307                                                                                     |
-| Characters             | 220                                                                                     |
+| Records                | 310                                                                                     |
+| Characters             | 223                                                                                     |
 | Places                 | 87                                                                                      |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 310, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
+| Line drawings          | 313, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
 | Chronicle stories      | 1188, for 213 characters                                                                |
-| Dated timelines        | 1071                                                                                    |
-| Affiliation steps      | 253                                                                                     |
-| Status steps           | 390                                                                                     |
+| Dated timelines        | 1077                                                                                    |
+| Affiliation steps      | 256                                                                                     |
+| Status steps           | 396                                                                                     |
 | Later visits to places | 5                                                                                       |
 
 <!-- End of the generated counts. -->

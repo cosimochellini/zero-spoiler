@@ -150,3 +150,111 @@ field; the show gates stay 40 and 41).
   IV (186), none of them named.
 - **Only mentioned:** Mossador and Marselen, Missandei's brothers among the
   Unsullied, and Eroeh and Mago (Daenerys III, 171).
+
+## Dragonstone (#1640)
+
+Stannis's court after the Blackwater. Candidates come from the Game of Thrones
+Wiki's season-3 episode pages (Dragonstone synopses, cast, "In the books"), its
+Davos Seaworth, Stannis Baratheon, Melisandre, Shireen Baratheon, Selyse
+Florent, Salladhor Saan and Axell Florent pages, and A Wiki of Ice and Fire's
+synopses and character lists of _A Storm of Swords_ chapters 5, 10, 25 and 36
+(Davos I to IV, site chapters 149, 154, 169 and 180), with the Ice and Fire
+Wiki's Edric Storm, Axell Florent and Alester Florent pages. Davos V (chapter
+54, site 198) is past the stage. Firecrawl was not used: no character page of A
+Wiki of Ice and Fire was read, so every book gate rests on the chapter synopses.
+
+Counts: 3 filed, 0 pending, 17 omitted; 1 earlier record stepped.
+
+### Filed
+
+All three are the books' alone. The show has none of them in season 3: its
+Gendry takes Edric's part (Game of Thrones Wiki, "Second Sons", "In the books"),
+and its Axell is first seen at his burning in "The Lion and the Rose" (episode
+32). "Second Sons" (episode 28), which adapts Davos IV, orders them.
+
+| Record                         | Show                                                                                                                  | Books                                                                                                                                               |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `axell-florent` (books only)   | none in the stage: seen at his burning in episode 32, named in the synopsis and credits only (owner check); 28 orders | 180, Davos IV: Stannis has Axell tell Davos of the Claw Isle plan, then dismisses him (safe later pin; Davos II and III name him in narration only) |
+| `alester-florent` (books only) | none; 28 orders                                                                                                       | 180, Davos IV: Stannis proclaims that Alester will die for treason (Davos III, 169, names him in narration only)                                    |
+| `edric-storm` (books only)     | none: the show's Gendry takes his part; 28 orders                                                                     | 180, Davos IV: Stannis takes three leeches fat with Edric Storm's blood, and Melisandre asks to burn him (safe later pin; see below)                |
+
+- Axell Florent: role castellan of Dragonstone, House Florent, alive. Selyse's
+  uncle in the books (Ice and Fire Wiki; the show makes him her brother), one of
+  the queen's men. His log tells Davos II (154), where he takes Davos into
+  custody for plotting against Melisandre, and Davos IV (180), where he wants to
+  be Hand and threatens Davos if he does not help. Owner checks: Davos II and
+  Davos III (169) name him in narration only; A Clash of Kings has him at the
+  prologue's feast and in Davos I, where the second stage left him out as a bit
+  part; if the show says his name in episode 32, the record becomes both media's
+  at 32, dead in the show from its gate. Italian "Axell Florent" (the Italian
+  Game of Thrones Wiki; "castellano di Roccia del Drago").
+- Alester Florent: role "Former Hand of King Stannis", House Florent,
+  `imprisoned` from his gate: Davos III has Axell throw him into Davos's cell
+  for the letter he wrote to Tywin offering peace, and Davos IV, the chapter
+  that opens him, has Stannis condemn him and make Davos Hand. Khorane
+  Sathmantes tells Davos in Davos II (154) that Lord Alester Florent is
+  Stannis's Hand, before he is seen in the stage. `nameSaidAt: 14` lets Cortnay
+  Penrose's books-only story of the parley (A Clash of Kings, Davos II, 116,
+  ordered at episode 14) name him. His death is after the stage. Italian
+  "Alester Florent" (Italian Wikipedia, in Salladhor Saan's section).
+- Edric Storm: role King Robert's bastard son, House Baratheon, alive. Owner
+  check: Davos II (154), where Davos meets him playing monsters and maidens with
+  Shireen and Patchface and he talks of his father, names him in narration only;
+  if a line there says his name, the gate is 154. A Game of Thrones and A Clash
+  of Kings only mention him. His log (Melisandre wants his king's blood burned;
+  Stannis refuses but burns three leeches with it, naming Joffrey, Balon and
+  Robb) is Davos IV's. Italian "Edric Storm" (Italian Wikipedia, in Melisandre's
+  section).
+
+### Earlier records stepped
+
+- Davos Seaworth (`season-2.ts`):
+  - status `alive` at 149, the books' alone (Davos I: a Lysene galley of
+    Salladhor's picks him off his rock); the show rescues and jails him in the
+    same episode, so 21 only orders it;
+  - `imprisoned` at 21 / 154: Stannis sends him to the dungeon after he draws a
+    knife on Melisandre ("Valar Dohaeris", GOT301); Axell takes him into custody
+    for plotting to kill her (Davos II);
+  - `alive` at 28 / 180: Stannis frees him ("Second Sons", GOT308; Davos IV,
+    where Axell brings him before the king);
+  - role "Knight in King Stannis's service" again at 21, the show's alone: the
+    fleet he commanded burned on the Blackwater, and Salladhor brings him back
+    with no command; Davos II (154) orders it;
+  - role "Hand of King Stannis" at 180, the books' alone (Davos IV: Lord of the
+    Rainwood, Admiral of the Narrow Sea and Hand). The show's Stannis only
+    promises him the Handship in season 2 ("The Prince of Winterfell"); 28
+    orders it.
+  - He is a lead of `leads['season-3']`. In "Mhysa" (30) Stannis sentences him
+    to death and spares him, which changes no field.
+
+Not stepped: Stannis (no field changes; the leech ritual at 28 / 180 is a
+chronicle and relationship matter), Melisandre (she leaves Dragonstone for
+Gendry in the show, which changes no field), Selyse and Shireen (no field
+changes; Shireen teaching Davos to read in "Kissed by Fire", 25, is a
+relationship card), Salladhor Saan (Alester names him Lord of Blackwater Bay in
+the books, Davos II, 154: a title in prose, not a change of his service; owner
+check), Gendry (the Brotherhood group, #1636, files his Dragonstone steps:
+Melisandre's prisoner at 26, freed at 30, the show's alone).
+
+### Pending
+
+None: Davos V (site 198), where Davos sends Edric away, and the burning of
+Alester are past the stage and step records already filed.
+
+### Omitted
+
+- **Bit parts, one scene in the stage:** Khorane Sathmantes, captain of
+  _Shayala's Dance_, and Meizo Mahr, Salladhor's eunuch (Davos II, 154);
+  Patchface (Davos II, 154; the show has no Patchface, and the second stage left
+  him out too); Maester Pylos (Davos III, 169, where he treats Davos's fever;
+  the show gives his teaching of Davos to Shireen, and in the books it comes in
+  Davos V, 198).
+- **Descriptors:** Porridge and Lamprey, the gaolers Davos names after their
+  meals in his thoughts (Davos III, 169); the guards who drag Davos to the
+  dungeon ("Valar Dohaeris"); the crossbowman at the castle gate (Davos II).
+- **Collectives:** the queen's men and the king's men, the men burned as
+  traitors on Dragonstone ("Valar Dohaeris"; Davos II).
+- **Only mentioned:** Devan Seaworth, alive with Stannis (Davos II and III; the
+  show has no Devan); Lord Guncer Sunglass and Ser Hubard Rambton's sons, burned
+  before Davos returns (Davos II); Imry Florent, dead on the Blackwater (Davos
+  III); Andrew Estermont and Lord Estermont (Davos IV).
