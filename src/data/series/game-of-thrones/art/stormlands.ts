@@ -4,7 +4,14 @@ import {
   type Redrawings,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, dots, ellipse, SEA, shadow } from '~/lib/svg/primitives'
+import {
+  circle,
+  dots,
+  ellipse,
+  polygon,
+  SEA,
+  shadow,
+} from '~/lib/svg/primitives'
 
 /**
  * One of the two shorter swords Ice is forged into, lying flat: the
@@ -88,24 +95,43 @@ const FLAME_CROWN: Stroke[] = [
 ]
 
 /**
- * Melisandre's choker of red gold, a stiff band in 3/4 with its far rim
- * lighter and the great ruby set at its front, the stone cut in facets.
+ * Melisandre's choker of red gold, a deep stiff band in 3/4, its far side
+ * hidden by the throat it closes round, a groove along its middle, and the
+ * great oval ruby set at its front, its flat top facet drawn inside it.
  */
 const CHOKER: Stroke[] = [
-  { d: 'M36 84 A44 26 0 0 1 124 84', role: 'soft' },
-  { d: 'M36 84 A44 26 0 0 0 124 84 V90 A44 26 0 0 1 36 90 Z' },
-  { d: 'M50 104 Q60 110 68 112 M92 112 Q100 110 110 104', role: 'soft' },
-  { d: 'M80 104 L91 110 L91 124 L80 130 L69 124 L69 110 Z', role: 'accent' },
-  { d: 'M69 110 L80 117 L91 110 M80 117 V130', role: 'soft' },
-  { d: 'M112 100 l5 -4 M118 92 l5 -4', role: 'ambient' },
+  { d: 'M52 82 A28 10 0 0 0 108 82 V94 A28 10 0 0 1 52 94 Z' },
+  { d: 'M52 88 A28 10 0 0 0 108 88', role: 'soft' },
+  { d: ellipse(80, 117, 11, 14), role: 'accent' },
+  { d: polygon(80, 117, 7, 8), role: 'soft' },
+  { d: 'M98 98 l4 -5 M104 95 l3 -4', role: 'ambient' },
+]
+
+/**
+ * A jeweller's stand at the height of a throat: a neck drawn in at the
+ * middle and cut flat at the top, the shoulders flaring to a flat base,
+ * its far side hatched.
+ */
+const THROAT_STAND: Stroke[] = [
+  { d: 'M58 82 Q65 62 60 44 M102 82 Q95 62 100 44' },
+  { d: ellipse(80, 44, 20, 5), role: 'soft' },
+  {
+    d: 'M58 100 Q56 112 44 118 Q28 124 24 140 H136 Q132 124 116 118 Q104 112 102 100',
+  },
+  { d: 'M96 52 l4 -3 M96 66 l4 -3 M118 126 l5 -3', role: 'ambient' },
 ]
 
 /**
  * Melisandre: her choker, the great ruby at her throat she is never seen
  * without, from "The North Remembers" (episode 11) and the prologue
- * (chapter 74). The ruby is the accent.
+ * (chapter 74), closed round a stand at a throat's height. The ruby is the
+ * accent.
  */
-const MELISANDRE_CHOKER: Stroke[] = [...CHOKER, shadow(80, 142, 44)]
+const MELISANDRE_CHOKER: Stroke[] = [
+  ...THROAT_STAND,
+  ...CHOKER,
+  shadow(80, 148, 58),
+]
 
 /**
  * The choker taken off and laid flat, the band seen almost edge on, the
@@ -141,28 +167,78 @@ const BONE_POUCH: Stroke[] = [
   shadow(84, 154, 50),
 ]
 
+/** A chain link as `[x, y, angle]`: its centre, and its turn in degrees. */
+type Link = [number, number, number]
+
+/** One decimal, as the helpers in `~/lib/svg/primitives` write them. */
+const tenth = (value: number): string => String(Math.round(value * 10) / 10)
+
+/** Each link as an ellipse of these radii, turned along the chain. */
+function links(at: Link[], rx: number, ry: number): string {
+  return at
+    .map(([x, y, angle]) => {
+      const dx = rx * Math.cos((angle * Math.PI) / 180)
+      const dy = rx * Math.sin((angle * Math.PI) / 180)
+      const from = `${tenth(x - dx)} ${tenth(y - dy)}`
+      const arc = `A${tenth(rx)} ${tenth(ry)} ${String(angle)} 1 0`
+      return `M${from} ${arc} ${tenth(x + dx)} ${tenth(y + dy)} ${arc} ${from}`
+    })
+    .join(' ')
+}
+
+/** Cressen's chain lying slack: the links turned flat, every other one. */
+const CHAIN_FLAT: Link[] = [
+  [20, 146, 15],
+  [41, 151, 8],
+  [62, 152, 1],
+  [83, 151, -6],
+  [104, 148, -15],
+  [124, 140, -37],
+  [130, 122, 69],
+  [93, 108, -3],
+  [72, 111, -13],
+  [53, 119, -52],
+  [58, 135, 21],
+  [79, 134, -11],
+]
+
+/** The links between them, seen edge on. */
+const CHAIN_ON_EDGE: Link[] = [
+  [30, 149, 13],
+  [51, 152, 4],
+  [73, 152, -3],
+  [94, 150, -10],
+  [115, 144, -21],
+  [131, 132, -71],
+  [124, 114, 37],
+  [104, 108, 3],
+  [83, 109, -7],
+  [62, 114, -24],
+  [50, 129, 72],
+  [69, 136, -4],
+]
+
+/** The one flat link at the top of the heap that takes the accent. */
+const CHAIN_LINK: Link = [114, 109, 16]
+
 /**
  * Cressen: the maester's chain he leaves on the stone floor of the
  * Painted Table's chamber, slack in a heap, its links of mixed metals and
  * the dark iron ones hatched. He dies there of his own poison in "The
  * North Remembers" (episode 11) and in the prologue (chapter 74), the
- * scenes his record opens on. The accent is one link.
+ * scenes his record opens on. The links lie as a chain's do, each one
+ * turned flat between two seen edge on; the accent is one link.
  */
 const FALLEN_CHAIN: Stroke[] = [
+  { d: links(CHAIN_FLAT, 7.5, 4.5) },
+  { d: links([...CHAIN_FLAT, CHAIN_LINK], 4, 1.6), role: 'soft' },
+  { d: links(CHAIN_ON_EDGE, 7, 1.4) },
+  { d: links([CHAIN_LINK], 7.5, 4.5), role: 'accent' },
   {
-    d: `${ellipse(28, 144, 7, 4)} ${ellipse(42, 148, 7, 4)} ${ellipse(58, 149, 7, 4)} ${ellipse(74, 148, 7, 4)} ${ellipse(90, 145, 7, 4)} ${ellipse(105, 140, 7, 4)} ${ellipse(117, 132, 7, 4)}`,
-  },
-  {
-    d: `${ellipse(120, 120, 6, 4)} ${ellipse(110, 110, 7, 4)} ${ellipse(94, 106, 7, 4)} ${ellipse(64, 110, 7, 4)} ${ellipse(52, 118, 7, 4)} ${ellipse(56, 130, 7, 4)} ${ellipse(70, 134, 7, 4)}`,
-    role: 'soft',
-  },
-  { d: ellipse(79, 106, 8, 5), role: 'accent' },
-  {
-    d: 'M42 148 l4 -3 M90 145 l4 -3 M110 110 l4 -3 M64 110 l4 -3',
+    d: 'M37 154 l3 -5 M42 154 l3 -5 M100 151 l3 -5 M105 151 l3 -5 M49 122 l3 -5 M54 122 l3 -5',
     role: 'ambient',
   },
-  { d: 'M14 156 H146', role: 'ambient', dashed: true },
-  shadow(80, 160, 56),
+  shadow(78, 162, 64),
 ]
 
 /**
@@ -539,6 +615,38 @@ export const stormlandsRedrawn: Redrawings = {
       ],
     },
   ],
+  'davos-seaworth': [
+    // The pouch drawn shut, lying on its side alone on a wet rock at the
+    // waterline, its cord trailing down the stone: his ship burns in the
+    // wildfire on the Blackwater and he goes into the water, in
+    // "Blackwater" (episode 19) and in Davos III (chapter 132). Neither
+    // tells whether he lives, so he is drawn missing, as Benjen is. The
+    // cord is the accent.
+    {
+      episode: 19,
+      chapter: 132,
+      value: [
+        {
+          d: 'M12 152 L20 140 L40 134 L62 137 L84 130 L112 134 L134 140 L148 152',
+        },
+        { d: 'M84 130 L92 142 L88 152 M40 134 L44 144', role: 'soft' },
+        { d: 'M120 142 l5 -3 M130 147 l5 -3 M98 146 l4 -2.4', role: 'ambient' },
+        {
+          d: 'M60 136 Q52 126 60 118 Q74 108 96 112 Q112 116 112 128 Q110 138 96 140 Q76 142 60 136 Z',
+        },
+        {
+          d: 'M60 120 Q52 117 46 121 Q51 127 46 133 Q52 137 60 134',
+          role: 'soft',
+        },
+        { d: 'M72 116 Q78 126 74 138 M90 113 Q96 126 92 140', role: 'soft' },
+        {
+          d: 'M61 118 Q56 127 61 136 Q48 140 42 147 Q38 153 28 156',
+          role: 'accent',
+        },
+        ...SEA,
+      ],
+    },
+  ],
   'matthos-seaworth': [
     // The letter rolled up and fallen on the floor, the seal on its ribbon
     // beside it: he dies on his father's ship in the wildfire on the
@@ -617,12 +725,12 @@ export const stormlandsRedrawn: Redrawings = {
     },
   ],
   'brienne-of-tarth': [
-    // Renly's rainbow cloak folded on the ground, the plate gone: she
-    // leaves her armour and her horse at Storm's End when she flees with
-    // Catelyn, and keeps the cloak, in Catelyn V (chapter 113). The show's
-    // Brienne keeps her plate, so the stage is the book's alone and
-    // episode 15, where she flees, only orders it.
-    { episode: 15, chapter: 113, source: 'chapter', value: RAINBOW_CLOAK },
+    // Renly's rainbow cloak folded on the ground, the plate gone: she flees
+    // Renly's camp with Catelyn the night he dies, with no time to fetch her
+    // own armour and horse, in Catelyn IV (chapter 107). The show's Brienne
+    // keeps her plate, so the stage is the book's alone and episode 15,
+    // where she flees, only orders it.
+    { episode: 15, chapter: 107, source: 'chapter', value: RAINBOW_CLOAK },
     // Oathkeeper, one of the two swords forged from Ice, which Jaime gives
     // her when he sends her after Sansa, in "Oathkeeper" (episode 34) and in
     // Jaime IX of A Storm of Swords (chapter 216). The ripple of its steel

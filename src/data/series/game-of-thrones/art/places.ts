@@ -2217,6 +2217,45 @@ const DARRY_BURNED: Stroke[] = [
   shadow(76, 156, 58),
 ]
 
+/**
+ * Blackwater Bay after the wildfire: the same walled hill, untouched, and
+ * Stannis's ships burned down to the waterline, their masts broken, smoke
+ * on the water. The accent is the lead ship's torn sail.
+ */
+const BLACKWATER_BAY_BURNED: Stroke[] = [
+  ...BLACKWATER_BAY.slice(0, 2),
+  { d: 'M34 140 Q50 147 66 140 M50 143 V124 L56 116' },
+  {
+    d: 'M51 124 L62 122 L59 129 L63 133 L56 134 L58 138 L51 137 Z',
+    role: 'accent',
+  },
+  { d: 'M80 136 Q96 143 112 136 M96 139 V124 L92 119' },
+  { d: 'M121 144 Q134 150 147 144 M134 146 V138', role: 'soft' },
+  {
+    d: 'M40 142 l3 -3 M60 142 l3 -3 M86 139 l3 -3 M104 139 l3 -3 M128 146 l3 -3',
+    role: 'ambient',
+  },
+  { d: `${smokeAt(98, 116)} ${smokeAt(128, 132)}`, role: 'soft' },
+  { d: 'M20 98 l5 -3 M70 90 l5 -3', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * The House of the Undying burning: the same tower with no door, smoke
+ * pouring up from its crown, the crown and the walls under it scorched
+ * and hatched. The accent stays on the crown.
+ */
+const HOUSE_OF_THE_UNDYING_BURNING: Stroke[] = [
+  ...HOUSE_OF_THE_UNDYING.slice(0, 3),
+  {
+    d: 'M66 54 l6 -8 M76 50 l6 -10 M86 52 l6 -8 M66 74 l6 -6 M78 76 l6 -6 M66 98 l5 -5',
+    role: 'ambient',
+  },
+  ...HOUSE_OF_THE_UNDYING.slice(4, 5),
+  { d: `${smokeAt(76, 30)} ${smokeAt(96, 40)}`, role: 'soft' },
+  shadow(80, 156, 50),
+]
+
 /** Mole's Town after the raid: cold huts, no smoke, a door hanging open. */
 const MOLES_TOWN_SACKED: Stroke[] = [
   { d: 'M24 150 V128 L40 114 L56 128 V150' },
@@ -2389,6 +2428,24 @@ export const placesRedrawn: Redrawings = {
     { episode: 41, chapter: 256, value: DARRY },
   ],
   'moles-town': [{ episode: 38, chapter: 199, value: MOLES_TOWN_SACKED }],
+  // Burned: the wildfire takes Stannis's fleet in "Blackwater" (episode
+  // 19) and in Davos III (ACOK 58, site 132), the chapter the bay opens in.
+  'blackwater-bay': [
+    { episode: 19, chapter: 132, value: BLACKWATER_BAY_BURNED },
+  ],
+  // Burning, the books alone: Drogon sets the warlocks' chamber on fire and
+  // Daenerys flees the burning house in Daenerys IV (ACOK 48, site 122),
+  // the chapter its record opens in, so the stage is pinned at the next
+  // chapter, 123. The show leaves the house standing; episode 20, its own
+  // visit, only orders it.
+  'house-of-the-undying': [
+    {
+      episode: 20,
+      chapter: 123,
+      source: 'chapter',
+      value: HOUSE_OF_THE_UNDYING_BURNING,
+    },
+  ],
   'great-sept-of-baelor': [
     {
       episode: 60,
