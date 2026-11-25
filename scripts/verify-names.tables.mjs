@@ -9,6 +9,10 @@ import {
   PLACE_NAMES_KEPT,
 } from './verify-names.places.mjs'
 import {
+  THRONES_STAGE_3_KEPT,
+  THRONES_STAGE_3_TITLES,
+} from './verify-names.thrones-stage3.mjs'
+import {
   THRONES_ITALIAN_TITLES,
   THRONES_NAMES_KEPT,
 } from './verify-names.thrones.mjs'
@@ -205,9 +209,11 @@ export const ITALIAN_TITLES = {
     ...PLACE_ITALIAN_TITLES['hunter-x-hunter'],
   },
   // On Italian Wikipedia, which the Ice and Fire Wiki does not link: every
-  // Game of Thrones character's page is named in `./verify-names.thrones.mjs`.
+  // Game of Thrones character's page is named in `./verify-names.thrones.mjs`
+  // or, from the third stage, `./verify-names.thrones-stage3.mjs`.
   'game-of-thrones': {
     ...THRONES_ITALIAN_TITLES,
+    ...THRONES_STAGE_3_TITLES,
     ...PLACE_ITALIAN_TITLES['game-of-thrones'],
   },
 }
@@ -219,6 +225,7 @@ export const ITALIAN_TITLES = {
  */
 export const NAMES_KEPT = {
   ...THRONES_NAMES_KEPT,
+  ...THRONES_STAGE_3_KEPT,
   ...KAKIN_NAMES_KEPT,
   ...PLACE_NAMES_KEPT,
   // Election names retained after checking Italian Wikipedia; dub not viewed.

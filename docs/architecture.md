@@ -369,8 +369,11 @@ Daenerys and the show's on Barristan Selmy, and the season's drawing, the Fist
 of the First Men. King's Landing (#1634) adds six characters: Olenna Tyrell,
 Margaery's three cousins, the books' alone, and Oberyn Martell and Ellaria Sand,
 whose show gates are in season 4 (#852), with the stage's steps of six earlier
-characters. The stage-3 characters show the shared `PERSON` placeholder until
-their drawing children (#1631).
+characters. Bran's road and Theon (#1641) adds Myranda, the show's alone, moves
+Ramsay Snow's show gate to episode 30, where his name is first said, and adds
+the stage's steps of Bran, Osha and Theon, Bran's passing beyond the Wall
+keeping its later book chapter (#852). The stage-3 characters show the shared
+`PERSON` placeholder until their drawing children (#1631).
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -610,15 +613,15 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| Records                | 313                                                                                     |
-| Characters             | 226                                                                                     |
+| Records                | 314                                                                                     |
+| Characters             | 227                                                                                     |
 | Places                 | 87                                                                                      |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 316, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
+| Line drawings          | 317, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
 | Chronicle stories      | 1188, for 213 characters                                                                |
-| Dated timelines        | 1086                                                                                    |
-| Affiliation steps      | 261                                                                                     |
-| Status steps           | 396                                                                                     |
+| Dated timelines        | 1089                                                                                    |
+| Affiliation steps      | 262                                                                                     |
+| Status steps           | 398                                                                                     |
 | Later visits to places | 5                                                                                       |
 
 <!-- End of the generated counts. -->

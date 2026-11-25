@@ -38461,6 +38461,26 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21339",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21339",
       "contentSha256": "9c2cf9ee005af9292717e65fea25c2eaa82a203caf99d7e733f956a1d30a3e3b"
+    },
+    "got-en-Myranda-728306.json": {
+      "locale": "en",
+      "title": "Myranda",
+      "revision": 728306,
+      "revisionDate": "2026-02-05T07:21:31Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Myranda",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728306",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728306",
+      "contentSha256": "88f8e86ded4a6defa6fd58f8b5d51cd9c60342aef7d5ec85f62da00e52136f1b"
+    },
+    "got-en-Violet-733236.json": {
+      "locale": "en",
+      "title": "Violet",
+      "revision": 733236,
+      "revisionDate": "2026-03-10T02:16:44Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Violet",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=733236",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=733236",
+      "contentSha256": "394267d384a0373c0bc7fd699d8b507d6d1c9d09cf1c518114ddedeff40338b8"
     }
   }
 }

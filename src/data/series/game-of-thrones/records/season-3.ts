@@ -291,6 +291,45 @@ export const season3: ThronesSaga = {
         },
       ],
     },
+    // #1641: Bran's road and Theon.
+    // The show alone, so chapter 284 (Reek I of A Dance with Dragons, the
+    // chapter the scene adapts) only orders every entry. "Mhysa" (episode
+    // 30) names Theon's captor as Ramsay Snow, Roose Bolton's bastard: her
+    // master's name and house wait for it.
+    'myranda': {
+      role: [
+        {
+          episode: 27,
+          chapter: 284,
+          source: 'episode',
+          value: {
+            it: 'Amante del carceriere di Theon',
+            en: 'Lover of Theon’s captor',
+          },
+        },
+        {
+          episode: 30,
+          chapter: 284,
+          source: 'episode',
+          value: { it: 'Amante di Ramsay Snow', en: 'Ramsay Snow’s lover' },
+        },
+      ],
+      log: {
+        it: 'Con un’altra ragazza, Violet, libera Theon dalla croce a cui è legato, lo stende su un letto e lo seduce. Il loro padrone li interrompe e fa tenere fermo Theon per evirarlo.',
+        en: 'With another young woman, Violet, she frees Theon from the cross he is bound to, lays him on a bed and seduces him. Their master interrupts them and has Theon held down to geld him.',
+      },
+      status: [
+        { episode: 27, chapter: 284, source: 'episode', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 30,
+          chapter: 284,
+          source: 'episode',
+          value: { it: 'Casa Bolton', en: 'House Bolton' },
+        },
+      ],
+    },
   },
   entries: [
     // #1639: Essos, Daenerys at Astapor and Yunkai.
@@ -521,6 +560,26 @@ export const season3: ThronesSaga = {
         en: 'Prince Oberyn Martell’s paramour, who travels with him from Dorne.',
       },
       visual: { art: 'ellaria-sand', tint: 'wine' },
+    },
+    // #1641: Bran's road and Theon.
+    //
+    // Show only: in "The Bear and the Maiden Fair" (episode 27) Violet
+    // tells Theon that "Myranda knows what she's doing" (quoted on the Game
+    // of Thrones Wiki). The books' only Myranda is Myranda Royce of the
+    // Vale, another person; Reek I of A Dance with Dragons (chapter 284),
+    // the chapter the scene adapts, only orders her.
+    {
+      id: 'myranda',
+      kind: 'character',
+      source: 'episode',
+      revealedAtEpisode: 27,
+      revealedAtChapter: 284,
+      name: { it: 'Myranda', en: 'Myranda' },
+      summary: {
+        it: 'Una giovane al servizio del carceriere di Theon Greyjoy.',
+        en: 'A young woman in the service of Theon Greyjoy’s captor.',
+      },
+      visual: { art: 'myranda', tint: 'pink' },
     },
   ],
 }

@@ -43,7 +43,7 @@ const RECORDS: {
   { id: 'farlen', episode: 16, chapter: 124, source: 'chapter' },
   { id: 'meera-reed', episode: 22, chapter: 95 },
   { id: 'jojen-reed', episode: 22, chapter: 95 },
-  { id: 'ramsay-snow', episode: 32, chapter: 140 },
+  { id: 'ramsay-snow', episode: 30, chapter: 140 },
   { id: 'big-walder-frey', episode: 13, chapter: 90, source: 'chapter' },
   { id: 'little-walder-frey', episode: 13, chapter: 90, source: 'chapter' },
   { id: 'wyman-manderly', episode: 60, chapter: 90 },

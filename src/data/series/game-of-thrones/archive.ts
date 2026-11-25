@@ -53,6 +53,8 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
     'tyrion-lannister',
     'sansa-stark',
     'olenna-tyrell',
+    'bran-stark',
+    'theon-greyjoy',
   ],
 }
 
