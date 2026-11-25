@@ -110,8 +110,8 @@ export const season3: ThronesSaga = {
         en: 'Squire of House Lannister',
       },
       log: {
-        it: 'È prigioniero nelle celle di Delta delle Acque, insieme a un altro ragazzo della sua famiglia.',
-        en: 'He is a prisoner in the cells of Riverrun, together with another boy of his family.',
+        it: 'È stato fatto prigioniero in guerra e portato nelle celle di Delta delle Acque.',
+        en: 'He was taken prisoner in the war and brought to the cells of Riverrun.',
       },
       status: [
         // Show only: Edmure's men took him at the fords, and he is a
@@ -199,19 +199,32 @@ export const season3: ThronesSaga = {
       ],
     },
     'roslin-frey': {
-      role: {
-        it: 'Figlia di lord Walder Frey',
-        en: 'Daughter of Lord Walder Frey',
-      },
-      log: {
-        it: 'Il padre la dà in sposa a Edmure Tully per ricucire l’alleanza con Robb Stark. Non ha mai visto lo sposo prima che lui arrivi alle Torri Gemelle per le nozze.',
-        en: 'Her father gives her in marriage to Edmure Tully to restore his alliance with Robb Stark. She has never seen her bridegroom before he comes to the Twins for the wedding.',
-      },
-      status: [{ episode: 29, chapter: 193, value: 'alive' }],
-      affiliation: [
+      role: [
+        {
+          episode: 26,
+          chapter: 179,
+          value: {
+            it: 'Figlia di lord Walder Frey',
+            en: 'Daughter of Lord Walder Frey',
+          },
+        },
+        // She and Edmure marry at the Twins, in "The Rains of Castamere"
+        // (episode 29) and before the feast of Catelyn VII (chapter 195).
         {
           episode: 29,
-          chapter: 193,
+          chapter: 195,
+          value: { it: 'Moglie di Edmure Tully', en: 'Edmure Tully’s wife' },
+        },
+      ],
+      log: {
+        it: 'Per ricucire l’alleanza con Robb Stark, lord Walder chiede che Edmure Tully la sposi. I suoi fratelli portano la richiesta a Delta delle Acque.',
+        en: 'To restore his alliance with Robb Stark, Lord Walder demands that Edmure Tully marry her. Her brothers carry the demand to Riverrun.',
+      },
+      status: [{ episode: 26, chapter: 179, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 26,
+          chapter: 179,
           value: { it: 'Casa Frey', en: 'House Frey' },
         },
       ],
@@ -243,19 +256,18 @@ export const season3: ThronesSaga = {
         en: 'Lord Walder Frey’s grandson',
       },
       log: {
-        it: 'È nella sala del nonno quando Robb Stark arriva alle Torri Gemelle per chiedere perdono a lord Walder.',
-        en: 'He is in his grandfather’s hall when Robb Stark comes to the Twins to beg Lord Walder’s pardon.',
+        it: 'Alle nozze di Edmure Tully, Catelyn Stark gli punta un coltello alla gola per trattare la vita di Robb. Quando Robb viene ucciso, gli taglia la gola.',
+        en: 'At Edmure Tully’s wedding, Catelyn Stark holds a knife to his throat to bargain for Robb’s life. When Robb is killed, she cuts it.',
       },
       status: [
-        { episode: 29, chapter: 193, source: 'chapter', value: 'alive' },
-        // Catelyn holds a knife to his throat to bargain for Robb's life,
-        // and cuts it when Robb is killed, in Catelyn VII (chapter 195).
+        // Killed in Catelyn VII (chapter 195), the chapter that first names
+        // him, so the record opens dead.
         { episode: 29, chapter: 195, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
           episode: 29,
-          chapter: 193,
+          chapter: 195,
           source: 'chapter',
           value: { it: 'Casa Frey', en: 'House Frey' },
         },
@@ -323,8 +335,8 @@ export const season3: ThronesSaga = {
       revealedAtChapter: 164,
       name: { it: 'Willem Lannister', en: 'Willem Lannister' },
       summary: {
-        it: 'Un giovane scudiero di Casa Lannister, prigioniero a Delta delle Acque.',
-        en: 'A young squire of House Lannister, held prisoner at Riverrun.',
+        it: 'Un giovane scudiero di Casa Lannister, fatto prigioniero dalla parte di Robb Stark.',
+        en: 'A young squire of House Lannister, taken prisoner by Robb Stark’s side.',
       },
       visual: { art: 'willem-lannister', tint: 'ivory' },
     },
@@ -380,20 +392,20 @@ export const season3: ThronesSaga = {
       },
       visual: { art: 'walder-rivers', tint: 'violet' },
     },
-    // Show: "The Rains of Castamere" (episode 29), Edmure is introduced to
-    // his bride at the wedding; Lothar names her in "The Climb" (episode
-    // 26), before she is seen (owner check). Books: Catelyn VI (site chapter
-    // 193), Lord Walder has her brought out to meet Edmure; Catelyn IV (179)
-    // names her in Lord Walder's terms (owner check).
+    // Show: "The Climb" (episode 26), Lothar brings his father's terms,
+    // "Our father requires Lord Edmure to wed one of his daughters.
+    // Roslin." Books: Catelyn IV (site chapter 179), Lothar's terms are
+    // that Edmure marry Roslin Frey. She is first seen at the Twins, in
+    // "The Rains of Castamere" (episode 29) and Catelyn VI (193).
     {
       id: 'roslin-frey',
       kind: 'character',
-      revealedAtEpisode: 29,
-      revealedAtChapter: 193,
+      revealedAtEpisode: 26,
+      revealedAtChapter: 179,
       name: { it: 'Roslin Frey', en: 'Roslin Frey' },
       summary: {
-        it: 'Una figlia di lord Walder Frey, promessa in sposa a Edmure Tully.',
-        en: 'A daughter of Lord Walder Frey, promised in marriage to Edmure Tully.',
+        it: 'Una figlia di lord Walder Frey, che il padre vuole dare in sposa a Edmure Tully.',
+        en: 'A daughter of Lord Walder Frey, whom her father means to marry to Edmure Tully.',
       },
       visual: { art: 'roslin-frey', tint: 'lavender' },
     },
@@ -413,20 +425,22 @@ export const season3: ThronesSaga = {
       },
       visual: { art: 'ryman-frey', tint: 'orange' },
     },
-    // Books only: Catelyn VI (site chapter 193), he is in Lord Walder's
-    // hall when Robb comes to apologise. A Clash of Kings only mentions him.
-    // The show gives his part at the wedding to Lord Walder's wife;
-    // episode 29 only orders him.
+    // Books only: Catelyn VII (site chapter 195), Catelyn seizes Jinglebell
+    // and bargains with his life for Robb's, and kills him, so the record
+    // opens dead. Catelyn VI (193) has him in Lord Walder's hall but its
+    // synopsis does not name him: the safe later pin. A Clash of Kings only
+    // mentions him. The show gives his part at the wedding to Lord Walder's
+    // wife; episode 29 only orders him.
     {
       id: 'aegon-frey',
       kind: 'character',
       source: 'chapter',
       revealedAtEpisode: 29,
-      revealedAtChapter: 193,
+      revealedAtChapter: 195,
       name: { it: 'Aegon Frey', en: 'Aegon Frey' },
       summary: {
-        it: 'Un nipote di lord Walder Frey, detto Campanello, che fa da giullare alle Torri Gemelle.',
-        en: 'A grandson of Lord Walder Frey, called Jinglebell, who plays the fool at the Twins.',
+        it: 'Un nipote di lord Walder Frey, detto Campanello, che faceva da giullare alle Torri Gemelle.',
+        en: 'A grandson of Lord Walder Frey, called Jinglebell, who played the fool at the Twins.',
       },
       visual: { art: 'aegon-frey', tint: 'acid' },
     },

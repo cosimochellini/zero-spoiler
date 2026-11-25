@@ -34,9 +34,9 @@ const RECORDS: {
   { id: 'martyn-lannister', episode: 23, chapter: 164, source: 'episode' },
   { id: 'lothar-frey', episode: 60, chapter: 179 },
   { id: 'walder-rivers', episode: 60, chapter: 179 },
-  { id: 'roslin-frey', episode: 29, chapter: 193 },
+  { id: 'roslin-frey', episode: 26, chapter: 179 },
   { id: 'ryman-frey', episode: 29, chapter: 193, source: 'chapter' },
-  { id: 'aegon-frey', episode: 29, chapter: 193, source: 'chapter' },
+  { id: 'aegon-frey', episode: 29, chapter: 195, source: 'chapter' },
 ]
 
 /**
@@ -57,13 +57,6 @@ const CHANGES: {
     episode: 25,
     chapter: 164,
     source: 'episode',
-    value: 'deceased',
-  },
-  {
-    id: 'aegon-frey',
-    episode: 29,
-    chapter: 195,
-    source: 'chapter',
     value: 'deceased',
   },
   { id: 'edmure-tully', episode: 30, chapter: 197, value: 'captured' },
@@ -93,6 +86,7 @@ const STEPS: {
     chapter: 193,
     source: 'chapter',
   },
+  { id: 'roslin-frey', en: 'Edmure Tully’s wife', episode: 29, chapter: 195 },
   { id: 'edmure-tully', en: 'Lord of Riverrun', episode: 26, chapter: 179 },
   {
     id: 'walder-frey',
@@ -227,6 +221,16 @@ describe('the third season’s Robb’s war and Riverlands cast', () => {
     expect(archive.latestOf(reader('chapter', 164), record, 'status')).toBe(
       'deceased',
     )
+  })
+
+  it('opens Aegon Frey dead in the books', () => {
+    expect(
+      archive.latestOf(
+        reader('chapter', 195),
+        character('aegon-frey'),
+        'status',
+      ),
+    ).toBe('deceased')
   })
 
   it('lists Robb and Catelyn among the season’s leads', () => {
