@@ -33,7 +33,7 @@ site 201) is past the stage. The Firecrawl credits ran out before the Mero,
 Prendahl na Ghezn and Grazdan mo Eraz pages, so their book gates rest on the
 chapter synopsis and Appearing list alone.
 
-Counts: 7 filed, 2 pending, 22 omitted; 2 earlier records stepped.
+Counts: 7 filed, 2 pending, 25 omitted; 2 earlier records stepped.
 
 ### Filed
 
@@ -52,8 +52,12 @@ order them.
 
 - Missandei: role Daenerys's interpreter, Daenerys's service, alive. Owner
   check: "Valar Dohaeris" (episode 21), where she translates for the slaver,
-  names her in narration only. Italian "Missandei" (Italian Wikipedia, its own
-  section of the characters' list).
+  names her in narration only. Her log's last sentence (Daenerys asks her name
+  and warns her, and she answers "Valar morghulis") is both media's at her gate:
+  the Game of Thrones Wiki's Missandei page (GOT303) and A Wiki of Ice and
+  Fire's (citing Chapter 27) both tell it; the cached Chapter 27 synopsis does
+  not. Italian "Missandei" (Italian Wikipedia, its own section of the
+  characters' list).
 - Kraznys mo Nakloz: role Good Master of Astapor, Good Masters, `deceased` from
   his gate: Drogon burns him at the plaza in the chapter that names him. The
   books' alone. Owner checks: if Daenerys II (167) names him in speech, the book
@@ -68,12 +72,18 @@ order them.
   name with the show's Razdal mo Eraz as his `episodeName`, as Asha Greyjoy is
   with Yara: the show renamed him, as it renamed Grazdan mo Ullhor (Game of
   Thrones Wiki, Razdal mo Eraz). Italian "Razdal mo Eraz" (Italian Wikipedia's
-  TV cast list); "Grazdan mo Eraz" and "Saggi Padroni" assumed.
+  TV cast list); "Grazdan mo Eraz" and "Saggi Padroni" assumed. His log (the
+  threat to enslave Daenerys, the dragons that frighten him) is both media's:
+  the Razdal page's season-3 section and its "In the books" section, where
+  Grazdan threatens to sell her as a bedslave and Drogon sets his tokar alight;
+  the cached Chapter 42 synopsis does not tell it.
 - Mero: role captain of the Second Sons, the Second Sons. The show's Daario
   kills him in "Second Sons" (episode 28), the episode that names him, so the
   show record opens `deceased`, ordered at 201, where the books end him; the
-  books keep him alive through the stage. Italian "Mero", "il Bastardo del
-  Titano", "Secondi Figli" (Italian Wikipedia).
+  books keep him alive through the stage. His summary says only "a sellsword,
+  captain of the Second Sons": the Braavosi Titan's Bastard is confirmed for the
+  books only in Daenerys V (201) and on the show's Mero page, so it waits for a
+  later stage. Italian "Mero", "Secondi Figli" (Italian Wikipedia).
 - Daario Naharis: role sellsword captain, alive. His company differs by medium
   (Game of Thrones Wiki, "Second Sons", "In the books"): the Second Sons in the
   show, the Stormcrows in the books, two affiliation entries with their
@@ -93,11 +103,13 @@ order them.
   Astapor's masters ("And Now His Watch Is Ended"; Daenerys III). She is a lead
   of `leads['season-3']`.
 - Barristan Selmy (`season-1.ts`): role "Knight in Daenerys's service" and
-  affiliation "Daenerys Targaryen's service" at 21, the show's alone: in "Valar
-  Dohaeris" he saves Daenerys from the manticore in Astapor, gives his name and
-  offers his service. The books bring him to her as Arstan Whitebeard, his own
-  record (owner, 2026-11-22), and say who he is only in Daenerys V (chapter 57,
-  site 201), the scene the episode adapts, which orders both steps.
+  affiliation "Daenerys Targaryen's service" at 23, the show's alone: in "Valar
+  Dohaeris" (21) he saves Daenerys from the manticore in Astapor, gives his name
+  and offers his service; "Walk of Punishment" (23) first shows him in it,
+  advising her with Jorah until she tells them both how to advise her (Barristan
+  page, GOT303). The books bring him to her as Arstan Whitebeard, his own record
+  (owner, 2026-11-22), and say who he is only in Daenerys V (chapter 57, site
+  201), the scene episode 21 adapts, which orders both steps.
 
 Not stepped: Jorah Mormont (no field changes; the books' reveal of his spying is
 in Daenerys V, 201, the show's in episode 40), Arstan Whitebeard and Strong
@@ -128,9 +140,13 @@ field; the show gates stay 40 and 41).
 - **Titles and descriptors:** the other Good Masters at the plaza ("the fat
   one", "the tall one", "spiked beard", A Wiki of Ice and Fire's Grazdans), the
   warlock child with the manticore ("Valar Dohaeris"), the tortured slave on the
-  Walk of Punishment ("Walk of Punishment"), the Yunkish bedslave ("Second
-  Sons"), Daenerys's silver mare.
+  Walk of Punishment ("Walk of Punishment"), the master torturer of Astapor
+  ("Walk of Punishment", unnamed), the Unsullied soldier Kraznys cuts to show
+  that they feel no pain ("Valar Dohaeris", unnamed), the Yunkish bedslave
+  ("Second Sons"), Daenerys's silver mare.
 - **Collectives:** the Unsullied, the Good Masters, the Wise Masters, the Second
-  Sons, the Stormcrows, the Yunkai'i, the freed slaves of Yunkai.
+  Sons, the Stormcrows, the Yunkai'i, the freed slaves of Yunkai, and the slaves
+  and citizens of Yunkai who come out to Daenerys in "Mhysa" (30) and Daenerys
+  IV (186), none of them named.
 - **Only mentioned:** Mossador and Marselen, Missandei's brothers among the
   Unsullied, and Eroeh and Mago (Daenerys III, 171).

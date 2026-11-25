@@ -4478,13 +4478,14 @@ export const season1: ThronesSaga = {
           },
         },
         // #1639: in "Valar Dohaeris" (episode 21) he saves Daenerys in
-        // Astapor, gives his name and offers her his service; the show's
-        // alone. The books bring him to her as Arstan Whitebeard, a record
+        // Astapor, gives his name and offers her his service; "Walk of
+        // Punishment" (episode 23) first shows him in it, advising her with
+        // Jorah, and she tells them both how to advise her. The show's
+        // alone: the books bring him to her as Arstan Whitebeard, a record
         // of its own, and say who he is only in Daenerys V of A Storm of
-        // Swords (chapter 201), the scene the episode adapts, which orders
-        // it.
+        // Swords (chapter 201), the scene episode 21 adapts, which orders it.
         {
-          episode: 21,
+          episode: 23,
           chapter: 201,
           source: 'episode',
           value: {
@@ -4514,7 +4515,7 @@ export const season1: ThronesSaga = {
         },
         // #1639: the show's alone, as his role step above.
         {
-          episode: 21,
+          episode: 23,
           chapter: 201,
           source: 'episode',
           value: {

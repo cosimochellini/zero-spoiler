@@ -71,35 +71,33 @@ export const SEASON_DRAWINGS = {
     { d: 'M10 150 H150', role: 'ambient', dashed: true },
   ],
   /**
-   * The Fist of the First Men under falling snow: the ring wall of piled
-   * stones on its hilltop, seen from below, with a pine at the foot of the
-   * slope. "Valar Dohaeris" (episode 21) opens there in a blizzard, after the
-   * fight off screen, and the Prologue of A Storm of Swords (chapter 144) is
-   * set in the Night's Watch's camp on the hill as the snow begins. Nothing
-   * on the hill shows who fights there. The accent is the ring wall's face.
+   * The Fist of the First Men under falling snow: the ring wall on its
+   * hilltop, seen from below as separate piled stones, a top course with a
+   * second beneath it on the near side and the far side's stones behind, and
+   * a pine on the ground beside the hill. "Valar Dohaeris" (episode 21) opens
+   * there in a blizzard, after the fight off screen, and the Prologue of A
+   * Storm of Swords (chapter 144) is set in the Night's Watch's camp on the
+   * hill as the snow begins. Nothing on the hill shows who fights there. The
+   * accent is the near side's top course.
    */
   'season-3': [
     {
-      d: 'M36 104 Q28 114 22 128 Q16 142 4 150 M124 104 Q132 114 138 128 Q144 142 156 150',
+      d: 'M32 110 Q24 120 20 132 Q14 144 4 150 M128 110 Q136 120 140 132 Q144 142 150 150',
     },
     {
-      d: 'M36 95 Q42 101 48 101 Q53 105 60 104 Q66 107 73 106 Q80 108 87 106 Q94 107 100 104 Q107 105 112 101 Q118 101 124 95 M36 95 V104 Q80 124 124 104 V95',
+      d: 'M29.5 96.6 Q29.5 91.5 34.8 91.9 Q42.5 91.1 42.5 96 Q42.8 100.5 37.2 100.5 Q29.5 100.9 29.5 96.6 M33.7 100.4 Q33.7 96.3 41.2 96 Q47 96.5 47 100.8 Q46.8 105.3 39.6 105.3 Q33.7 105 33.7 100.4 M45.5 105.4 Q45.5 100.1 51 100.6 Q59.6 99.6 59.6 104.6 Q60 109.1 54.2 109.1 Q45.5 109.6 45.5 105.4 M62.5 106.1 Q62.5 102.2 71.4 101.8 Q77.9 102.6 77.9 106.7 Q77.6 111.2 69 111.2 Q62.5 110.8 62.5 106.1 M82.1 107 Q82.1 102.2 89.2 102.4 Q97.5 102 97.5 106.7 Q97.6 111.2 90.4 111.2 Q82.1 111.4 82.1 107 M100.4 103.9 Q100.4 100.1 108.8 99.6 Q114.5 100.6 114.5 104.6 Q114.1 109.1 106 109.1 Q100.4 108.6 100.4 103.9 M113 101.3 Q113 96.3 118.6 96.6 Q126.3 95.9 126.3 100.8 Q126.5 105.3 120.6 105.3 Q113 105.6 113 101.3 M117.5 95.7 Q117.5 91.5 124.6 91.3 Q130.5 91.7 130.5 96 Q130.3 100.5 123.4 100.5 Q117.5 100.3 117.5 95.7',
       role: 'accent',
     },
     {
-      d: 'M36 95 Q39 89 45 90 Q50 85 58 86 Q68 81 80 82 Q92 81 102 86 Q110 85 115 90 Q121 89 124 95',
-    },
-    { d: 'M46 95 Q80 86 114 95', role: 'soft' },
-    {
-      d: 'M48 103 V110 M62 107 V114 M80 109 V116 M98 107 V114 M112 103 V110 M54 108 H68 M88 111 H104',
+      d: 'M30.8 105.8 Q30.8 102.4 38.3 102 Q43.4 102.8 43.4 106.4 Q43.1 110.4 35.9 110.4 Q30.8 110 30.8 105.8 M39 111.2 Q39 106.9 45 107.1 Q52.2 106.7 52.2 110.9 Q52.3 114.9 46.2 114.9 Q39 115.1 39 111.2 M53.8 113.2 Q53.8 109.9 62.3 109.4 Q68 110.4 68 113.9 Q67.7 117.9 59.5 117.9 Q53.8 117.4 53.8 113.2 M72.2 115.5 Q72.2 111 79 111.3 Q87.8 110.7 87.8 115 Q88 119 81 119 Q72.2 119.3 72.2 115.5 M92 113.6 Q92 109.9 99.7 109.7 Q106.2 110.1 106.2 113.9 Q106 117.9 98.5 117.9 Q92 117.7 92 113.6 M107.8 111.6 Q107.8 106.9 113 107.3 Q121 106.4 121 110.9 Q121.3 114.9 115.8 114.9 Q107.8 115.3 107.8 111.6 M116.6 105.9 Q116.6 102.4 123.9 102.1 Q129.2 102.8 129.2 106.4 Q128.9 110.4 121.9 110.4 Q116.6 110.1 116.6 105.9',
       role: 'soft',
     },
     {
-      d: 'M128 118 l6 -3 M132 128 l6 -3 M136 138 l6 -3 M140 148 l6 -3',
-      role: 'ambient',
+      d: 'M32.8 91.1 Q32.8 88.3 40.7 87.8 Q45.8 88.8 45.8 91.8 Q45.5 95.3 37.9 95.3 Q32.8 94.8 32.8 91.1 M42.4 88.7 Q42.4 84.7 47.9 85.1 Q55.4 84.4 55.4 88.2 Q55.6 91.7 49.9 91.7 Q42.4 92.1 42.4 88.7 M56.7 85.5 Q56.7 82.3 63.8 82.1 Q69.7 82.5 69.7 85.8 Q69.5 89.3 62.6 89.3 Q56.7 89.1 56.7 85.5 M73.5 85.7 Q73.5 81.5 78.6 82 Q86.5 81 86.5 85 Q86.8 88.5 81.4 88.5 Q73.5 89 73.5 85.7 M90.3 85.3 Q90.3 82.3 97.8 82 Q103.3 82.7 103.3 85.8 Q103.1 89.3 95.8 89.3 Q90.3 89 90.3 85.3 M104.6 88.8 Q104.6 84.7 109.9 85.1 Q117.6 84.3 117.6 88.2 Q117.9 91.7 112.3 91.7 Q104.6 92.1 104.6 88.8 M114.2 91.4 Q114.2 88.3 121.5 88 Q127.2 88.6 127.2 91.8 Q127 95.3 119.9 95.3 Q114.2 95 114.2 91.4',
     },
-    { d: 'M26 122 Q36 127 46 124', role: 'soft' },
-    { d: 'M16 124 L10 136 H13 L7 148 H25 L19 136 H22 Z' },
+    { d: 'M120 122 l6 -3 M124 132 l6 -3 M128 142 l6 -3', role: 'ambient' },
+    { d: 'M28 128 Q38 132 48 129', role: 'soft' },
+    { d: 'M151 124 L145 136 H148 L142 148 H160 L154 136 H157 Z' },
     {
       d: dots([
         [30, 30],

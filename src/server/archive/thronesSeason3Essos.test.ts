@@ -91,18 +91,19 @@ const STEPS: {
   id: string
   source?: 'chapter' | 'episode'
 }[] = [
-  // The books bring him as Arstan Whitebeard and name him in Daenerys V.
+  // Offered in episode 21, first shown in episode 23. The books bring him
+  // as Arstan Whitebeard and name him in Daenerys V.
   {
     id: 'barristan-selmy',
     en: 'Knight in Daenerys’s service',
-    episode: 21,
+    episode: 23,
     chapter: 201,
     source: 'episode',
   },
   {
     id: 'barristan-selmy',
     en: 'Daenerys Targaryen’s service',
-    episode: 21,
+    episode: 23,
     chapter: 201,
     source: 'episode',
   },

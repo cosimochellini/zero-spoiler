@@ -29,6 +29,12 @@ export const season3: ThronesSaga = {
   },
   dossiers: {
     // #1639: Essos.
+    // Both media tell the whole log at her gate: "Walk of Punishment" has
+    // Daenerys ask her name and warn her of war, and she answers "Valar
+    // morghulis" (Game of Thrones Wiki, Missandei, GOT303); Daenerys III has
+    // Daenerys ask her name to free her, and she answers the fear of danger
+    // and death with "valar morghulis" (A Wiki of Ice and Fire, Missandei,
+    // citing Chapter 27).
     'missandei': {
       role: { it: 'Interprete di Daenerys', en: 'Daenerys’s interpreter' },
       log: {
@@ -77,13 +83,18 @@ export const season3: ThronesSaga = {
         },
       ],
     },
+    // Both media tell the log at his gate: in "The Bear and the Maiden
+    // Fair" he says the Yunkai'i will enslave the survivors, Daenerys too,
+    // and her dragons hiss him away (Game of Thrones Wiki, Razdal mo Eraz);
+    // in Daenerys IV he threatens to sell her as a bedslave, and Drogon sets
+    // his tokar alight (the same page, "In the books").
     'grazdan-mo-eraz': {
       role: {
         it: 'Inviato dei Saggi Padroni',
         en: 'Envoy of the Wise Masters',
       },
       log: {
-        it: 'Arriva all’accampamento di Daenerys fuori Yunkai con dell’oro, perché lasci in pace la città, e minaccia di farla schiava se non lo farà. I draghi di lei lo spaventano, e Daenerys lo rimanda indietro.',
+        it: 'Arriva all’accampamento di Daenerys fuori Yunkai con dell’oro, perché lasci in pace la città, e minaccia di ridurla in schiavitù se rifiuta. I draghi di lei lo spaventano, e Daenerys lo rimanda indietro.',
         en: 'He comes to Daenerys’s camp outside Yunkai with gold to make her leave the city in peace, and threatens to enslave her if she does not. Her dragons frighten him, and she sends him back.',
       },
       status: [{ episode: 27, chapter: 186, value: 'alive' }],
@@ -263,8 +274,8 @@ export const season3: ThronesSaga = {
       revealedAtChapter: 186,
       name: { it: 'Mero', en: 'Mero' },
       summary: {
-        it: 'Un mercenario di Braavos detto il Bastardo del Titano, capitano dei Secondi Figli.',
-        en: 'A Braavosi sellsword called the Titan’s Bastard, captain of the Second Sons.',
+        it: 'Un mercenario, capitano dei Secondi Figli.',
+        en: 'A sellsword, captain of the Second Sons.',
       },
       visual: { art: 'mero', tint: 'orange' },
     },
