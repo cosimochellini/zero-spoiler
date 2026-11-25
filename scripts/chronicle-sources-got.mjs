@@ -873,6 +873,30 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Yoren`,
       note: 'Show only, citing GOT110: Arya’s hair cut, Arry the orphan boy, the plan to take her to Winterfell among the recruits and the warning about them. Gendry among the recruits is the relationship pin at 10/73.',
     },
+    '10:75': {
+      source: `${ACOK_AWOIAF}1`,
+      note: 'Arya I (site 75): out of King’s Landing with the recruits and the three men from the black cells, Arya beating Hot Pie, Yoren whipping her with her own stick and warning she will get twice what she gives, and his having waited to take Lord Eddard to the Wall. Episode 10 orders it.',
+    },
+    '12:episode': {
+      source: `${SHOW}Yoren`,
+      note: 'Yoren page, Season 2: the warning about the caged prisoners, two gold cloaks with a warrant for Gendry, the dagger at the leader’s groin, the sword taken (“good steel”), the promise to return with more men (GOT202).',
+    },
+    '12:chapter': {
+      source: `${ACOK_AWOIAF}5`,
+      note: 'Arya II (site 79): six gold cloaks with the queen’s warrant for a boy, “That’s no law, just a sword. Happens I got one too.”, the recruits behind him, his sword at the officer’s throat, the ride through the night and the order to Gendry and Arya to flee for the Wall.',
+    },
+    '13:episode': {
+      source: `${SHOW}Yoren`,
+      note: 'Yoren page: the story of Willem and the name said every night, the horns, the refusal to give up Gendry, the quarrel in the shoulder, the crossbowman killed, Yoren overwhelmed and killed by the knight leading them (Amory Lorch, unnamed here: his show gate is 16) (GOT203).',
+    },
+    '13:chapter': {
+      source: `${ACOK_AWOIAF}14`,
+      note: 'Arya IV (site 88): the burnt bridge, the empty town and the holdfast, Ser Amory Lorch in Lord Tywin’s and King Joffrey’s name, Yoren showing his black cloak and refusing, the storm of the walls, Yoren sending Arya to the tunnel and going back to the fight; there is no sign of him when she returns.',
+    },
+    '13:93': {
+      source: `${ACOK_AWOIAF}19`,
+      note: 'Arya V (site 93): the return to the holdfast the next night, Yoren found beside four Lannister men-at-arms, Arya wondering how many it took, her insistence on a grave, the burial; Cutjack, Kurz and Tarber from the towerhouse, who later leave them. Arya IV (site 88) only has no sign of him. Episode 13 orders it.',
+    },
   },
   'will': {
     '1:1': {
@@ -1306,6 +1330,30 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${BOOKS}Jaime_Lannister`,
       note: `Added after review: the Golden Tooth, the Tully army defeated beneath the castle walls, its commander taken and the siege, as Catelyn VIII (site 56) reports them to Catelyn and Robb on the march south. Riverrun and Edmure are not named, since both open at 72. ${PAST_CHAPTER_PAGES}`,
     },
+    '11:81': {
+      source: `${SHOW}Jaime_Lannister`,
+      note: 'Jaime Lannister page, Season 2: chained in the camp so no bannerman can be bribed, his taunts, Stannis’s letters and his answer that Stannis would be heir, frightened by Grey Wind (GOT201); Robb’s questions about Bran are the episode synopsis.',
+    },
+    '17:113': {
+      source: `${ACOK_AWOIAF}39`,
+      note: 'Catelyn V (site 113): four men from Cleos Frey’s party nearly freeing Jaime, hanged, Jaime moved to the deep dungeons and chained to the wall. Tyrion VI (site 99, ACOK_AWOIAF 25) has Tyrion hiding four men in crimson cloaks in Cleos’s escort. Episode 17, Jaime’s show escape, orders it.',
+    },
+    '17:episode': {
+      source: `${SHOW}Jaime_Lannister`,
+      note: 'Jaime Lannister page and Alton Lannister page: Alton in his cell, the tourney where Alton squired for him, Alton beaten to death, Torrhen Karstark strangled, the recapture, Catelyn and Brienne, his conflicting vows, Cersei the only one, Ned’s bastard (GOT207).',
+    },
+    '17:chapter': {
+      source: `${ACOK_AWOIAF}55`,
+      note: 'Catelyn VII (site 129): the flagon sent ahead, the midnight visit, questions traded, the children and Bran’s fall admitted, “if I wanted your Bran dead I would have slain him myself”, the Mad King and the Starks, reviled for his finest act, the mockery of Ned, Brienne’s sword.',
+    },
+    '18:129': {
+      source: `${SHOW}Jaime_Lannister`,
+      note: 'Jaime Lannister page: Catelyn’s deal and his release, Brienne smuggling him out on horseback and by rowboat, his taunts and failed goading (GOT208).',
+    },
+    '20:137': {
+      source: `${SHOW}Jaime_Lannister`,
+      note: 'Jaime Lannister page: her childhood, the three hanged women, then his mockery of her service and her answer that she serves Catelyn, the three Stark soldiers killed, his question and her loyalty to Catelyn’s task (GOT210).',
+    },
   },
   'tywin-lannister': {
     '7:57': {
@@ -1335,6 +1383,46 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:chapter': {
       source: `${SHOW}Tyrion_Lannister`,
       note: `Added after review, the book side of the 10/70 story: Tyrion IX (site 70) tells that Tywin placed Tyrion and the clans in the vanguard hoping they would break and draw the Starks into a trap, and that Tyrion holding his ground spoiled it. The rest repeats the show story, which both media tell. ${PAST_CHAPTER_PAGES}`,
+    },
+    '14:100': {
+      source: `${SHOW}Tywin_Lannister`,
+      note: 'Tywin Lannister page, Season 2: after Oxcross, the courtyard of prisoners, the torture halted as a waste, the smith spared, the girl dressed as a boy made cupbearer (GOT204); calling Polliver an idiot is on the Polliver page (GOT204). Chapter 100 orders it, so Oxcross is not named (its book gate is 106).',
+    },
+    '15:104': {
+      source: `${ACOK_AWOIAF}30`,
+      note: 'Arya VII (site 104): Tywin’s war council, his face reminding Arya of her father’s, the Brave Companions’ first-night brawl and the two hanged with Lord Lydden’s archer, and the rumour that he ordered Maester Tothmure to burn a letter calling Joffrey a bastard.',
+    },
+    '16:112': {
+      source: `${SHOW}Tywin_Lannister`,
+      note: 'Tywin Lannister page: Amory berated for the misdirected letter, Arya reading better, her literacy questioned, his father recalled, Baelish’s proposal of the Tyrell alliance, Amory dying at his chambers (GOT206). The order follows the episode: Baelish’s visit before the talk of his father. His belief that he was the target is episode 17’s.',
+    },
+    '17:112': {
+      source: `${SHOW}Tywin_Lannister`,
+      note: 'Tywin Lannister page: his own men tortured and executed, Gregor blaming the Brotherhood, the talk of legacy and Harrenhal’s ruin by dragons (GOT207). Gregor sent to burn villages and the “my lord” suspicion are the episode synopsis.',
+    },
+    '18:episode': {
+      source: `${SHOW}Tywin_Lannister`,
+      note: 'Tywin Lannister page and the episode synopsis: Stannis sailing on King’s Landing, the war council, Kevan’s warning, Robb the greater threat, Gregor left castellan with Arya, her escape unknown to him (GOT208).',
+    },
+    '18:chapter': {
+      source: `${ACOK_AWOIAF}38`,
+      note: 'Arya VIII (site 112): Addam Marbrand riding out first, Amory left castellan with the Brave Companions to forage, Gregor commanding the van, Tywin and Kevan passing, and Arya’s regret at not naming him. Episode 18, where the show’s Tywin leaves Harrenhal, orders it.',
+    },
+    '19:136': {
+      source: `${SHOW}Tywin_Lannister`,
+      note: 'Tywin Lannister page and the episode synopsis: the Lannister-Tyrell host at the Blackwater, the knight in Renly’s armour, the rout, the victory announced as Cersei sits with Tommen, Loras revealed (GOT209).',
+    },
+    '20:episode': {
+      source: `${SHOW}Tywin_Lannister`,
+      note: 'Tywin Lannister page and the episode synopsis: riding into the throne room, the horse’s dung, Savior of the City and Hand, Tyrion no longer acting Hand, Harrenhal for Baelish, Joffrey’s betrothal to Sansa set aside for Margaery (GOT210).',
+    },
+    '20:chapter': {
+      source: `${ACOK_AWOIAF}65`,
+      note: 'Sansa VII (site 136, ACOK_AWOIAF 62) has Tywin on the right wing; Sansa VIII (site 139) has the warhorse’s dung before the Iron Throne, Joffrey naming him Hand until he comes of age, the knight who called Joffrey an abomination killed by Meryn on Tywin’s order, and Tywin staying to hear the captives.',
+    },
+    '18:119': {
+      source: `${ACOK_AWOIAF}45`,
+      note: 'Catelyn VI (site 119): the probes at the fords held by the river lords, Lefford drowned, Crakehall taken, Marbrand thrice driven back, Gregor held off at the Stone Mill, Tywin marching southeast, and Catelyn at the map seeing the road to the headwaters of the Blackwater Rush. Episode 18 orders it, after his 18/112 story.',
     },
   },
   'kevan-lannister': {
@@ -2024,6 +2112,34 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_10,
       note: 'Show only (GOT110 on the Gendry page): one of Yoren’s recruits, Arya as Arry, Hot Pie bumping into him, the threat that sends the boys off, and that none of them matters now. His master sending him away is on the Tobho Mott page (GOT110). Chapter 75 only orders it, for Hot Pie’s gate.',
     },
+    '12:79': {
+      source: `${ACOK_AWOIAF}5`,
+      note: 'Arya II (site 79): Praed’s longsword given to the Bull, Gendry leading Arya away from the wagon (“They scare me.”), the gold cloaks’ warrant for him, his name given as Gendry, Yoren’s order to ride for the Wall.',
+    },
+    '12:93': {
+      source: `${SHOW}Gendry`,
+      note: 'Gendry page, Season 2: the gold cloaks sent off by Yoren, Gendry seeing through Arya’s disguise, her identity confided and his embarrassment (GOT202). Jon Arryn and Eddard questioning him is on the Arya Stark page (GOT202). Chapter 93, Arya V, where the books tell the reveal, orders it.',
+    },
+    '13:chapter': {
+      source: `${ACOK_AWOIAF}19`,
+      note: 'Arya V (site 93): carrying Lommy, Gendry thinking he will die and knowing she is a girl, Arya naming herself, “m’lady” until she knocks him down, Gendry caught and beaten at the village and shoved into the storehouse, Arya and Hot Pie taken. Episode 13 orders it.',
+    },
+    '14:100': {
+      source: `${SHOW}Gendry`,
+      note: 'Gendry page: the prisoners at Harrenhal, Gendry chosen, Tywin arriving and asking if he has a trade, the smith put to work (GOT204); Polliver standing guard is on the Polliver page (GOT204).',
+    },
+    '18:episode': {
+      source: `${SHOW}Gendry`,
+      note: 'Gendry page and Hot Pie page: Tywin leaving, Arya arranging the escape with Jaqen, the guarded gate at midnight and the guards found dead (GOT208). Chapter 138 orders it.',
+    },
+    '18:chapter': {
+      source: `${ACOK_AWOIAF}64`,
+      note: 'Arya IX (site 121) has Gendry refusing to help free the northmen; Arya X (site 138) has the lie that Vargo will cut off a foot from each servant, swords and Hot Pie fetched, the meeting near the Tower of Ghosts, the guard killed, the ride out. Episode 18 orders it.',
+    },
+    '13:episode': {
+      source: `${SHOW}Gendry`,
+      note: 'Gendry page, Season 2: the gold cloaks back with Lannister soldiers, Yoren killed, Gendry captured, Arya passing off the dead recruit with the bull’s head helm as Gendry (GOT203); the prisoners taken to Harrenhal is the episode synopsis. Amory and Polliver stay unnamed: their show gates are 16 and 14. Chapter 93, where the books tell the capture, orders it.',
+    },
   },
   'ilyn-payne': {
     '2:16': {
@@ -2244,6 +2360,34 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_10,
       note: 'Show only (Gregor Clegane page, season 1, citing GOT110): after Robb’s victory over Jaime, Tywin withdraws towards Harrenhal and orders Gregor to take five hundred men and set the riverlands on fire, from the Gods Eye to the Red Fork. The chapter only orders it.',
     },
+    '13:93': {
+      source: `${ACOK_AWOIAF}19`,
+      note: 'Arya V (site 93): the village under the lion and three dogs, the gibbet and the storehouse, Gendry caught, Arya and Hot Pie taken, Arya remembering the Hound’s brother, Gregor sending the captives to lead his men, a spearman killing Lommy. Episode 13 orders it.',
+    },
+    '14:episode': {
+      source: `${SHOW}Gregor_Clegane`,
+      note: 'Gregor Clegane page, Season 2: raiding from Harrenhal, torture for valuables and the Brotherhood, prisoners chosen by him, Tywin arriving a day early, the full cells, the prisoners put to work (GOT204). Arya adding him to her list is on the Arya Stark page (GOT204).',
+    },
+    '14:chapter': {
+      source: `${ACOK_AWOIAF}26`,
+      note: 'Arya VI (site 100): the prisoner picked each morning and the Tickler’s questioning until death, about valuables and Beric Dondarrion, “Obey, serve, and live”, stragglers killed, the girl who struck a guard beheaded before the others. The Tickler is named unlinked: his show gate is 15.',
+    },
+    '17:112': {
+      source: `${SHOW}Gregor_Clegane`,
+      note: 'Gregor Clegane page: tasked with finding Amory’s killer, thirty of their own men hanged, the Brotherhood infiltrator suggested, sent to press the smallfolk (GOT207); the burning of villages and farms is the episode synopsis.',
+    },
+    '18:episode': {
+      source: `${SHOW}Gregor_Clegane`,
+      note: 'Gregor Clegane page: Tywin marching west and leaving him castellan (GOT208); Arya left as cupbearer and the escape through the gate are on the Tywin Lannister and Arya Stark pages (GOT208).',
+    },
+    '18:chapter': {
+      source: `${ACOK_AWOIAF}38`,
+      note: 'Arya VIII (site 112): Gregor to command Tywin’s van, out of Arya’s reach with Polliver and the rest, riding out last behind the lords with Polliver wearing Gendry’s helm. Episode 18 orders it.',
+    },
+    '18:119': {
+      source: `${ACOK_AWOIAF}45`,
+      note: 'Catelyn VI (site 119): Edmure holding off Gregor in fierce fighting at the Stone Mill, Leo Lefford drowned, Tywin marching away southeast, the news brought by Edmure’s messenger. Edmure is unlinked: his show gate is 23. Episode 18 orders it.',
+    },
   },
   'beric-dondarrion': {
     '6:28': {
@@ -2293,6 +2437,18 @@ export const GAME_OF_THRONES_SOURCES = {
     '23:72': {
       source: `${BOOKS}Edmure_Tully`,
       note: `In the books: he commands the riverlands armies, spreads them along the border, sends envoys to King’s Landing on his father’s advice, is taken by Jaime and freed when Robb lifts the siege, and is at the council that declares Robb King in the North. Relationship pin 23/72 chapter. The story does not say where he was taken, since the two wikis disagree. ${PAST_CHAPTER_PAGES}`,
+    },
+    '23:81': {
+      source: `${ACOK_AWOIAF}7`,
+      note: 'Catelyn I (site 81): urging Robb on Harrenhal, Robb lacking the strength, Catelyn blaming him for sending the river lords home, “the boy” and Robb’s roar, the comet as a Tully fish. Episode 23, his show gate, orders it.',
+    },
+    '23:113': {
+      source: `${ACOK_AWOIAF}39`,
+      note: 'Catelyn V (site 113): left to hold Riverrun, Cleos’s men hanged, Jaime in the deep dungeons, smallfolk admitted, Roose ordered to take Harrenhal, the Red Fork plan to trap Tywin, Catelyn’s dissent. Episode 23 orders it.',
+    },
+    '23:119': {
+      source: `${ACOK_AWOIAF}45`,
+      note: 'Catelyn VI (site 119): the host leaving for the fords, the Mallister archers, Jason Mallister’s ford, the victory: Leo Lefford drowned, Lyle Crakehall taken, Addam Marbrand thrice driven back, Gregor held at the Stone Mill, Tywin marching southeast. Episode 23 orders it.',
     },
   },
   'hoster-tully': {
@@ -2452,9 +2608,118 @@ export const GAME_OF_THRONES_SOURCES = {
     },
   },
   'hot-pie': {
-    '10:75': {
+    '10:episode': {
       source: `${SHOW}Hot_Pie`,
       note: 'Season 1, citing GOT110: with another recruit he bullies Arry for Needle, claims he kicked a boy to death, Arya threatens him, he backs into Gendry, who scares him off. Show only: in the books Hot Pie opens at chapter 75, so the chapter only orders it.',
+    },
+    '10:chapter': {
+      source: `${ACOK_AWOIAF}1`,
+      note: 'Arya I (site 75): Hot Pie and Lommy mocking Needle, his threat to beat Arry as he beat another boy, thrown from his donkey, his nose broken, Yoren pulling Arya off, days lying in a wagon. Episode 10 orders it: his gate.',
+    },
+    '13:88': {
+      source: `${SHOW}Hot_Pie`,
+      note: 'Hot Pie page, Season 2: the boast about battles and the two men in armour outside a Flea Bottom tavern (GOT202), hiding in the bushes and yielding, the wounded recruit killed after asking to be carried (GOT203). Lommy stays unnamed: his show gate is 31.',
+    },
+    '13:93': {
+      source: `${ACOK_AWOIAF}19`,
+      note: 'Arya IV (site 88) has him on the wall beside Arya, saying he cannot fight; Arya V (site 93) has his wish to yield and beg food, the crow on his back, his “I yield”, telling Gregor’s men about the others and promising pies. Episode 13 orders it.',
+    },
+    '18:episode': {
+      source: `${SHOW}Hot_Pie`,
+      note: 'Hot Pie page: the Tickler’s corpse found (GOT205), recipes with Gendry, food stolen from the kitchens, the walk to the gate at midnight and the dead guards (GOT208). Chapter 138 orders it.',
+    },
+    '18:chapter': {
+      source: `${ACOK_AWOIAF}64`,
+      note: 'Arya VI (site 100) has Chiswyck’s “join the ghosts or become one”; Arya IX (site 121) the tarts and his preferring the castle; Arya X (site 138) Gendry fetching him, the meeting near the Tower of Ghosts and the sally port. Episode 18 orders it.',
+    },
+  },
+  // Yoren’s prisoners and Lommy, first told in the second stage (#1486).
+  'lommy': {
+    '31:75': {
+      source: `${ACOK_AWOIAF}1`,
+      note: 'Arya I (site 75): Lommy Greenhands naming her for her hair, mocking Needle with Hot Pie and egging him on, cowering when Arya turns on him, keeping away afterwards. Episode 31, his show gate, orders it.',
+    },
+    '31:88': {
+      source: `${ACOK_AWOIAF}14`,
+      note: 'Arya IV (site 88): Lommy smashing the head of the man wrestling Dobber, Dobber dead, Lommy found bleeding from a spear wound in his calf; that he escapes with the others is told at 93, so the story stops at the wound. Episode 31 orders it.',
+    },
+    '31:93': {
+      source: `${ACOK_AWOIAF}19`,
+      note: 'Arya V (site 93): carried on a litter, his talk of yielding, Gendry thinking he will die, Gregor’s men led back to him, his yielding, “Think so?” and the spear through his throat. Episode 31 orders it.',
+    },
+  },
+  'jaqen-hghar': {
+    '12:episode': {
+      source: `${SHOW}Jaqen_H'ghar`,
+      note: 'Jaqen H’ghar page, Season 2: water asked of Arry, whom he calls a boy, speaking of himself as “a man”, his apology for his company, his introduction and Lorath, “more courage than sense” (GOT202). The black cells are on the Arya Stark page (GOT202).',
+    },
+    '12:chapter': {
+      source: `${ACOK_AWOIAF}5`,
+      note: 'Arya II (site 79): the youngest prisoner, hair red on one side and white on the other, beer asked of Arry as a boy, himself as “a man”, his introduction with Rorge and Biter, Biter struck, “more courage than sense”. Lorath is left out: it opens in the books at chapter 121.',
+    },
+    '13:episode': {
+      source: `${SHOW}Jaqen_H'ghar`,
+      note: 'Jaqen H’ghar page: the dropped torch, his call for help as flames reach the bars, the axe from Arya, his not fighting the Lannister men and his surprise (GOT203). That the three prisoners survive is told only in episode 15, so the story stops before it.',
+    },
+    '13:chapter': {
+      source: `${ACOK_AWOIAF}14`,
+      note: 'Arya IV (site 88): Jaqen calling to be freed to fight, Arya ignoring him, the burning barn, Rorge and Biter struggling, his friendly voice, the axe thrown in, Rorge hacking at the wagon.',
+    },
+    '15:episode': {
+      source: `${SHOW}Jaqen_H'ghar`,
+      note: 'Jaqen H’ghar page: in Lannister uniform, always knew she was a girl, three lives taken from the Red God and three deaths owed, the Tickler named and found dead, the finger to his cheek (GOT205).',
+    },
+    '15:chapter': {
+      source: `${ACOK_AWOIAF}30`,
+      note: 'Arya VII (site 104): at the end of Amory’s column with Rorge and Biter, the hand over her mouth, the boy become a girl, three lives for the Red God and nothing more, Riverrun refused, Chiswyck’s name in the Barracks Hall, the fall on the third day.',
+    },
+    '16:episode': {
+      source: `${SHOW}Jaqen_H'ghar`,
+      note: 'Jaqen H’ghar page and Amory Lorch page: Arya’s urgent second name, his reluctance, the wolfsbane dart seconds before Amory reaches Tywin (GOT206). Tywin’s belief that he was the target is episode 17’s and is left out.',
+    },
+    '16:chapter': {
+      source: `${ACOK_AWOIAF}38`,
+      note: 'Arya VIII (site 112): staying with Amory, the bathhouse, “clever girls go barefoot”, Weese’s name, Weese dead under his dog after the host leaves, two fingers across his cheek.',
+    },
+    '18:episode': {
+      source: `${SHOW}Jaqen_H'ghar`,
+      note: 'Jaqen H’ghar page: on patrol when Tywin leaves, the refused escape, his oath, his own name, the plea and the bargain, the guards killed and pinned with spears (GOT208).',
+    },
+    '18:chapter': {
+      source: `${ACOK_AWOIAF}47`,
+      note: 'Arya IX (site 121): the godswood, Arya Stark by name, his own name given, the kettles of soup with Rorge and Biter, the northmen freed, the debt paid, the hand over his face, the coin and “valar morghulis”. Episode 18, where the show adapts the name, orders it.',
+    },
+    '20:121': {
+      source: `${SHOW}Jaqen_H'ghar`,
+      note: 'Jaqen H’ghar page: waiting on a cliff, Braavos and the Faceless Men offered, her refusal, the coin and “valar morghulis”, Jaqen H’ghar declared dead, the new face, “Farewell, Arya Stark” (GOT210).',
+    },
+  },
+  'rorge': {
+    '12:79': {
+      source: `${ACOK_AWOIAF}5`,
+      note: 'Arya II (site 79): the noseless prisoner introduced by Jaqen, his mockery, the thrown tankard, the demand for beer, his threat, his laughter as Gendry leads her away; the black cells are Arya I (site 75).',
+    },
+    '13:88': {
+      source: `${ACOK_AWOIAF}14`,
+      note: 'Arya IV (site 88): Rorge and Biter struggling in the burning barn, the axe thrown in, Rorge catching it and hacking at the wagon, the wood splintering before the barn falls.',
+    },
+    '18:121': {
+      source: `${ACOK_AWOIAF}47`,
+      note: 'Arya VII (site 104) brings him in with Amory’s column; Arya VIII (site 112) has his threat and the fear when she asks for Jaqen; Arya IX (site 121) has the kettle carried alone and the cells unlocked for Robett Glover’s men. Episode 18 orders it.',
+    },
+  },
+  'biter': {
+    '12:79': {
+      source: `${ACOK_AWOIAF}5`,
+      note: 'Arya II (site 79): the hiss and the stump of his tongue, the name Jaqen gave him for his filed teeth, the lunge, the blow between the eyes, the chains holding.',
+    },
+    '13:88': {
+      source: `${ACOK_AWOIAF}14`,
+      note: 'Arya IV (site 88): Biter’s screams in the burning barn, Arya crawling towards them, the axe thrown in, Rorge hacking the wagon open.',
+    },
+    '18:121': {
+      source: `${ACOK_AWOIAF}47`,
+      note: 'Arya VII (site 104): his half-healed wounds in Amory’s column; Arya IX (site 121): two kettles carried at once to the cells beneath the Widow’s Tower and the soup thrown over the guards. Episode 18 orders it.',
     },
   },
   'lysa-arryn': {
@@ -2839,6 +3104,74 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:66': {
       source: EPISODE_10,
       note: 'Show only: Yoren calls her boy, cuts her hair, plans to take her to Winterfell as a recruit, and she joins Gendry, Hot Pie and another boy as Arry (Lommy is first named on screen at episode 31, #1457).',
+    },
+    '10:75': {
+      source: `${ACOK_AWOIAF}1`,
+      note: 'Arya I (site 75): Lommy’s nickname for her hair, Lommy and Hot Pie mocking Needle, Hot Pie thrown from his donkey, his nose broken, Yoren whipping her with her stick and saying hitting the boys will not bring her father back, Gendry (“the Bull”) calling the comet a sword. Episode 10 orders it: Hot Pie’s gate.',
+    },
+    '12:episode': {
+      source: `${SHOW}Arya_Stark`,
+      note: 'Arya Stark page, Season 2: drawn to Jaqen in the wagon, Rorge and Biter threatening her (unnamed on screen), the gold cloaks with a warrant for Gendry, Yoren sending them off, and Arya confessing her identity to Gendry (GOT202).',
+    },
+    '12:chapter': {
+      source: `${ACOK_AWOIAF}5`,
+      note: 'Arya II (site 79): refugees heading south, Jaqen introducing himself, Rorge and Biter at the ivy-covered inn, Arya hitting Biter between the eyes, six gold cloaks with the queen’s warrant, Arya joining the recruits with Needle, the officer wanting Gendry, Yoren’s sword at his throat.',
+    },
+    '13:episode': {
+      source: `${SHOW}Arya_Stark`,
+      note: 'Arya Stark page: Yoren’s story of Willem, the attack, Yoren killed, the axe for Jaqen and his companions, Polliver taking Needle (unnamed here: his gate is episode 14), Lommy’s body passed off as Gendry because of the helm (GOT203). The episode synopsis has the prisoners taken to Harrenhal. Lommy and Amory stay unnamed: their show gates are 31 and 16.',
+    },
+    '13:chapter': {
+      source: `${ACOK_AWOIAF}14`,
+      note: 'Arya IV (site 88): the town on the Gods Eye, the holdfast, Ser Amory Lorch as Lord Tywin’s bannerman demanding the gate in King Joffrey’s name, Yoren’s refusal, Arya on the wall shouting “Winterfell”, Yoren sending her to the tunnel under the barn, the axe thrown to the prisoners. Amory is named unlinked: his show gate is 16.',
+    },
+    '13:93': {
+      source: `${ACOK_AWOIAF}19`,
+      note: 'Arya V (site 93): Yoren buried, the group along the Gods Eye with the wounded Lommy and the crying girl, Gendry guessing she is a girl and Arya naming herself, Gendry caught at the village under Gregor Clegane’s banner, Hot Pie yielding, Needle taken, a spearman killing Lommy. Episode 13 orders it: the capture is adapted there.',
+    },
+    '14:episode': {
+      source: `${SHOW}Arya_Stark`,
+      note: 'Arya Stark page: the prisoners at Harrenhal, one tortured each day, the nightly list with the Mountain and Polliver, Tywin halting it before Gendry is killed, seeing she is a girl and making her his cupbearer (GOT204). The Brotherhood is in the episode synopsis. The Tickler stays unnamed: his gate is episode 15.',
+    },
+    '14:chapter': {
+      source: `${ACOK_AWOIAF}26`,
+      note: 'Arya VI (site 100): eight days at the village, the Tickler questioning with Chiswyck’s help, the march to Harrenhal to serve Lord Tywin, Polliver wearing Needle, the names whispered each night, and Arya hiding her name at the bathhouse before being given to the understeward. Weese is left unnamed: his gate is chapter 104.',
+    },
+    '15:episode': {
+      source: `${SHOW}Arya_Stark`,
+      note: 'Arya Stark page: Tywin’s war council, “anyone can be killed”, Jaqen as a Lannister man-at-arms owing three deaths, the Tickler named and found dead, Jaqen’s finger to his face (GOT205).',
+    },
+    '15:chapter': {
+      source: `${ACOK_AWOIAF}30`,
+      note: 'Arya VII (site 104): errands for Weese and his name on her list, Ser Amory’s column with Jaqen, Rorge and Biter, Jaqen waking her with the debt to the Red God, Chiswyck’s tale of the brewer’s girl, his name whispered, and a man falling from the wallwalk on the third day. Amory is named unlinked: his show gate is 16.',
+    },
+    '16:episode': {
+      source: `${SHOW}Arya_Stark`,
+      note: 'Arya Stark page and Amory Lorch page: Tywin berating Amory, “my cupbearer reads better than you”, Baelish’s visit, the letter about Robb taken while Tywin talks of his father, Amory catching her, the second name, Amory dead at Tywin’s door with a dart (GOT206).',
+    },
+    '16:chapter': {
+      source: `${ACOK_AWOIAF}38`,
+      note: 'Arya VIII (site 112): the host preparing to march, Amory to be castellan with Jaqen staying, Rorge’s threat and the look in his eyes, Weese’s name whispered in the bathhouse, Arya realising she should have named Tywin, Weese dead under his dog, Jaqen’s two fingers.',
+    },
+    '18:episode': {
+      source: `${SHOW}Arya_Stark`,
+      note: 'Arya Stark page: Tywin leaving her to serve Gregor, Jaqen away on patrol, his refusal, his own name given and taken back, the guards killed, the walk out with Gendry and Hot Pie (GOT208).',
+    },
+    '18:chapter': {
+      source: `${ACOK_AWOIAF}47`,
+      note: 'Arya IX (site 121): the northern prisoners brought by the Brave Companions, Jaqen in the godswood calling her Arya Stark, his own name given, the soup thrown over the guards with Rorge and Biter, the debt paid, the face changed and the coin, Roose Bolton making her his cupbearer. Episode 18 orders it: the name scene is adapted there.',
+    },
+    '18:138': {
+      source: `${ACOK_AWOIAF}64`,
+      note: 'Arya X (site 138): cupbearer to Roose, Tywin’s victory at the Blackwater and the news that Winterfell has fallen and her brothers are dead, Harrenhal to go to Vargo Hoat with Arya in it, the map and dagger stolen, the coin dropped and the guard’s throat cut, the three riding out. Episode 18, the show’s escape, orders it.',
+    },
+    '20:121': {
+      source: `${SHOW}Arya_Stark`,
+      note: 'Arya Stark page: Jaqen waiting, the offer to take her to Braavos, her refusal to find her family, the coin and “valar morghulis”, the changed face and the farewell by name (GOT210).',
+    },
+    '17:112': {
+      source: EPISODE_17,
+      note: 'Episode synopsis and Tywin Lannister page: Tywin hunting Amory’s killer, the meal and Harrenhal burned by Aegon’s dragons, “my lord” instead of “m’lord”, her mother said to have served royalty and taught her to speak (GOT207). Chapter 112 orders it, as Tywin’s episode-17 story.',
     },
   },
   'jory-cassel': {
@@ -3548,6 +3881,66 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_71`,
       note: 'Books only, Catelyn XI: the boat to Riverrun, news of Eddard’s death already received, Hoster dying, her self-blame for seizing Tyrion, her plea for peace refused by the lords, and the Greatjon’s proclamation taken up by the hall.',
     },
+    '11:episode': {
+      source: `${SHOW}Catelyn_Stark`,
+      note: 'Catelyn Stark page, Season 2: her warning about the Greyjoys, the exchange of Jaime for her daughters refused, Rodrik sent to Winterfell, her errand to Renly (GOT201); her remark on the excess of kings is on the Robb Stark page (GOT201).',
+    },
+    '11:chapter': {
+      source: `${ACOK_AWOIAF}7`,
+      note: 'Catelyn I (site 81): the terms she finds harsh, Cersei never trading the girls for cousins, Robb’s lords unmaking him, her dying father, Theon and Pyke, and with the Blackfish the idea of seeking Renly’s help. Brynden is unlinked: his show gate is 23.',
+    },
+    '13:episode': {
+      source: `${SHOW}Catelyn_Stark`,
+      note: 'Catelyn Stark page: Renly’s tournament, Brienne winning a place in his Kingsguard, Robb’s message and her rebuke, Margaery’s welcome (GOT203). Brienne’s defeat of Loras is the episode synopsis.',
+    },
+    '13:chapter': {
+      source: `${ACOK_AWOIAF}22`,
+      note: 'Catelyn II (site 96): the camp at Bitterbridge, the melee Brienne wins against Loras and her place in the Rainbow Guard, the feast of summer knights, Renly’s offer that Robb may keep his title if he kneels, and word that Stannis besieges Storm’s End, written “Renly’s castle”: that name opens at chapter 105.',
+    },
+    '14:episode': {
+      source: `${SHOW}Catelyn_Stark`,
+      note: 'Catelyn Stark page and the episode synopsis: Baelish’s overture and her dagger, Tyrion’s offer of the girls for Jaime, Ned’s remains, the parley with Stannis and the brothers like sulking children (GOT204).',
+    },
+    '14:chapter': {
+      source: `${ACOK_AWOIAF}31`,
+      note: 'Catelyn III (site 105): the parley near Storm’s End, her warning of the Lannister hosts, Stannis calling Robb a traitor and revealing the incest, the peach, the deadline at dawn, Renly deciding to fight and keeping her to watch.',
+    },
+    '15:episode': {
+      source: `${SHOW}Catelyn_Stark`,
+      note: 'Catelyn Stark page: the alliance agreed, Renly killed by a shadow, Brienne blamed, their flight, Brienne’s fealty, the army splintering to Highgarden and Stannis (GOT205).',
+    },
+    '15:chapter': {
+      source: `${ACOK_AWOIAF}33`,
+      note: 'Catelyn IV (site 107): prayer in the village sept and the realisation about Bran, her plea for a great council, the shadow cutting Renly’s throat as Brienne arms him, Robar Royce told it was sorcery, Emmon Cuy struck with a brazier, the flight with Brienne.',
+    },
+    '16:episode': {
+      source: `${SHOW}Catelyn_Stark`,
+      note: 'Catelyn Stark page: Robb found in the westerlands talking to Talisa, the warning that he is not free to follow his heart, Roose’s news of Winterfell, her request to treat with Theon refused (GOT206); the Frey agreement is on the Robb Stark page (GOT206).',
+    },
+    '16:chapter': {
+      source: `${ACOK_AWOIAF}39`,
+      note: 'Catelyn V (site 113): Brienne taken as sworn sword, Edmure holding Riverrun, Cleos’s men hanged for trying to free Jaime, her dissent from Edmure’s plan against Tywin, Ned’s bones from the silent sisters, the Imp’s doing, sent to Winterfell. Episode 16, her return, orders it.',
+    },
+    '17:119': {
+      source: `${ACOK_AWOIAF}45`,
+      note: 'Catelyn VI (site 119): Edmure leaving for the Red Fork, the Mallister archers at the ford, the drunken Cleos who saw only Sansa, looking drawn, the victory with Gregor held off at the Stone Mill and Tywin marching southeast, her fear. Episode 17, where the show adapts the envoy questioned, orders it.',
+    },
+    '17:episode': {
+      source: `${SHOW}Catelyn_Stark`,
+      note: 'Catelyn Stark page: Jaime’s escape and recapture with Robb away, Karstark demanding his head, her fear for the night, the visit with Brienne, “a man without honor”, Cersei the only one, Jon Snow thrown at her (GOT207). Asking for Brienne’s sword is the episode synopsis.',
+    },
+    '17:chapter': {
+      source: `${ACOK_AWOIAF}55`,
+      note: 'Catelyn VII (site 129): the raven about Bran and Rickon, the midnight visit with Brienne outside, the traded answers, the incest and Bran’s fall admitted, the assassin denied, the Mad King’s killing of Rickard and Brandon Stark, the mockery of Ned, her call for Brienne’s sword.',
+    },
+    '18:129': {
+      source: `${SHOW}Catelyn_Stark`,
+      note: 'Catelyn Stark page: Jaime released to be exchanged for her daughters, Brienne escorting him out and down the river by rowboat, Robb’s fury, her betrayal and weakened position, the guard on her (GOT208).',
+    },
+    '20:141': {
+      source: `${SHOW}Catelyn_Stark`,
+      note: 'Catelyn Stark page: Robb in her tent about breaking the Frey betrothal for Talisa, her marriage to Eddard and their love built over time, “no right to call anyone reckless”, the secret wedding (GOT210).',
+    },
   },
   'robb-stark': {
     '1:2': {
@@ -3589,6 +3982,42 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:chapter': {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_71`,
       note: 'Split after review to add the Battle of the Camps. Catelyn XI (chapter 72): Riverrun freed, Hoster dying, the news of Eddard’s death already received, the council over Renly and Stannis, the Greatjon’s speech about the dragons and the river lords taking up the cry. Read through Firecrawl’s condensed synopsis.',
+    },
+    '11:episode': {
+      source: `${SHOW}Robb_Stark`,
+      note: 'Robb Stark page, Season 2: “the Young Wolf”, Jaime kept chained and questioned with Grey Wind, Stannis’s letter, Alton sent with the terms, Theon sent to Pyke against Catelyn’s counsel, Catelyn sent to Renly (GOT201). The Greyjoys are not named on screen until episode 12, so only the house is.',
+    },
+    '11:chapter': {
+      source: `${ACOK_AWOIAF}7`,
+      note: 'Catelyn I (site 81): the new crown, Cleos sent to Cersei with an exchange of hostages save Jaime, Ned’s bones and Ice, the north and the Trident, “another Whispering Wood” with Grey Wind, the lords who would not let him free Jaime, Theon to Pyke against her advice.',
+    },
+    '11:96': {
+      source: `${ACOK_AWOIAF}22`,
+      note: 'Catelyn II (site 96): Robb insisting she go to Renly, Hoster too ill, Brynden for the scouts and Edmure to hold Riverrun when he marches, waiting would look afraid, Lysa refusing support, “nothing of Harrenhal”, the threat to send the Greatjon. Episode 11 orders it: it adapts the chapter’s errand.',
+    },
+    '14:106': {
+      source: `${SHOW}Robb_Stark`,
+      note: 'Robb Stark page: the night assault at Oxcross with Grey Wind first, Roose’s advice on prisoners and torture refused for his sisters’ sake, the amputation he helps with, the healer’s answer that the men were conscript boys, not Tywin’s army (GOT204). She is unnamed: Talisa’s gate is episode 16. Chapter 106, where the books name Oxcross, orders it.',
+    },
+    '14:113': {
+      source: `${ACOK_AWOIAF}39`,
+      note: 'Catelyn V (site 113): Edmure left to hold Riverrun, Stafford Lannister’s levies crushed at Oxcross by a trail Grey Wind found around the Golden Tooth, the Greatjon’s three gold mines, Tywin marching on Riverrun. Episode 14, the show’s Oxcross, orders it.',
+    },
+    '16:113': {
+      source: `${SHOW}Robb_Stark`,
+      note: 'Robb Stark page and the episode synopsis: Talisa introduced to Catelyn, Roose with news of Winterfell, Bran and Rickon held, Roose’s bastard to retake it, Theon to be brought alive and asked why (GOT206).',
+    },
+    '17:129': {
+      source: `${ACOK_AWOIAF}55`,
+      note: 'Catelyn VII (site 129): Riverrun celebrating Edmure’s victory at the fords and Robb’s storming of the Crag, the raven from Castle Cerwyn about Bran and Rickon, and Catelyn telling Jaime that Robb took the Crag from the Westerlings. Episode 17, Robb at the Crag, orders it.',
+    },
+    '18:129': {
+      source: `${SHOW}Robb_Stark`,
+      note: 'Robb Stark page: back from the Crag with Talisa, Jaime freed by Catelyn, his fury and her guard, the plan of mercy for Theon’s men sent through Roose, Talisa’s past and the night together despite the Frey betrothal (GOT207, GOT208).',
+    },
+    '20:141': {
+      source: `${SHOW}Robb_Stark`,
+      note: 'Robb Stark page: his love for Talisa confessed to Catelyn, her warning about the Frey oath and her marriage to Ned, “no right to call anyone reckless” after Jaime’s release, the secret marriage before a septon (GOT210).',
     },
   },
   'rodrik-cassel': {
@@ -3701,6 +4130,30 @@ export const GAME_OF_THRONES_SOURCES = {
     '14:63': {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_55`,
       note: 'Books only. Catelyn VIII (chapter 56): the question about Tyrion as hostage and “cold cunning”. Catelyn IX (chapter 60): the foot staying on the east bank. Tyrion VIII (chapter 63): the battle by the Green Fork and “Lord Roose Bolton has escaped”; the battle is the relationship pin at 14/63.',
+    },
+    '14:106': {
+      source: `${SHOW}Roose_Bolton`,
+      note: 'Roose Bolton page, Season 2: Oxcross, five for one, the prisoners they cannot feed, the officers he would torture, flaying outlawed, “the high road is very pretty”, the healer who says the northmen are not her men (GOT204). Chapter 106 orders it, where the books name Oxcross.',
+    },
+    '16:113': {
+      source: `${SHOW}Roose_Bolton`,
+      note: 'Roose Bolton page: Winterfell taken by Theon, no news of the brothers, Rodrik killed, everything lost by turning back, his bastard to raise men, Theon wanted alive (GOT206). The Dreadfort is the episode synopsis.',
+    },
+    '18:121': {
+      source: `${ACOK_AWOIAF}47`,
+      note: 'Arya IX (site 121): Vargo’s captives a ruse, Roose having bought his service, his arrival at evenfall, Shagwell presenting the girl who made the soup, “Nymeria, Nan”, the leeches and the cupbearer, the flayed man and the direwolf over the gatehouse. Episode 18 orders it: his role step.',
+    },
+    '18:129': {
+      source: `${SHOW}Roose_Bolton`,
+      note: 'Roose Bolton page: after Jaime’s release, Robb’s plan of mercy for Theon’s men, Roose confident it will work, his leaving as Talisa arrives (GOT208); the orders sent through Roose are on the Robb Stark page (GOT208).',
+    },
+    '18:138': {
+      source: `${ACOK_AWOIAF}64`,
+      note: 'Arya X (site 138): leeched while the Freys urge peace after the Blackwater, “not a man to be undone”, the order to burn Darry and kill the captives in King Robb’s name, the wolf hunt, the burnt book, Harrenhal for Vargo with Arya to serve him. Episode 18 orders it.',
+    },
+    '17:113': {
+      source: `${ACOK_AWOIAF}39`,
+      note: 'Catelyn V (site 113): Roose, who took the ruby ford and the crossroads, ordered by Edmure to take Harrenhal with Helman Tallhart’s levies from the Twins, his marriage to one of Lord Walder’s daughters, Catelyn’s objection that Robb left those men to keep Walder Frey faithful. Episode 17 orders it.',
     },
   },
   'galbart-glover': {
@@ -3847,6 +4300,119 @@ export const GAME_OF_THRONES_SOURCES = {
     '20:137': {
       source: ACOK_63,
       note: 'Daenerys V (site 137): the old man with a staff following them, the manticore knocked out of her hands, Arstan Whitebeard, Belwas’s squire, from the Seven Kingdoms, sent by Illyrio. His past as a squire is left out: it hints at who he is.',
+    },
+  },
+  // Robb’s war, the riverlands and Harrenhal (#1486): A Clash of Kings chapters
+  // on A Wiki of Ice and Fire, read from the shared Firecrawl cache, as
+  // `${ACOK_AWOIAF}N` for site chapter 74 + N.
+  'alton-lannister': {
+    '11:81': {
+      source: `${SHOW}Alton_Lannister`,
+      note: 'Alton Lannister page: captured fighting the northern army (GOT201), sent with the terms, the honourable demands and his doubt, “Is he?” (GOT201). Cersei’s reply is left to his next story: it is episode 12’s.',
+    },
+    '17:113': {
+      source: `${SHOW}Alton_Lannister`,
+      note: 'Alton Lannister page: Cersei’s rejection (GOT202), housed with Jaime because the pens are full, the tourney and the better squire, “die”, the headbutt and the chains (GOT207). Chapter 113 orders it, as his status does.',
+    },
+  },
+  'cleos-frey': {
+    '11:81': {
+      source: `${ACOK_AWOIAF}7`,
+      note: 'Catelyn I (site 81): son of Lady Genna, Lord Tywin’s sister, captured in the Whispering Wood, scrambling from Grey Wind, the Greatjon’s “Your Grace”, counted a Lannister, sworn on his knighthood to return.',
+    },
+    '12:99': {
+      source: `${ACOK_AWOIAF}25`,
+      note: 'Tyrion VI (site 99): Pycelle refusing the terms, Tyrion’s own terms and Ned’s bones, the sisters for Jaime, the escort of a hundred Lannister guardsmen, Tyrion’s four men hidden in it.',
+    },
+    '17:119': {
+      source: `${ACOK_AWOIAF}45`,
+      note: 'Catelyn V (site 113) has his men hanged; Catelyn VI (site 119) has the wine sent, the drunken prisoner of little use, Sansa alone at court looking drawn, Catelyn wondering whether Arya is hidden or dead. Episode 17 orders it.',
+    },
+  },
+  'talisa-maegyr': {
+    '16:100': {
+      source: `${SHOW}Talisa_Stark`,
+      note: 'Talisa Stark page: the amputation with Robb’s help and the conscripted boys (GOT204), following the camp, introduced to Catelyn, the name Maegyr (GOT206); her neutrality is the record’s note; Robb guessing she is highborn and Catelyn’s reminder of the Frey agreement are on the Robb Stark page (GOT206).',
+    },
+    '18:129': {
+      source: `${SHOW}Talisa_Stark`,
+      note: 'Talisa Stark page: medical supplies and the trip to the Crag (GOT207), Robb’s father and the engagement, the news about Jaime, the slave who saved her brother, the night together (GOT208).',
+    },
+    '20:141': {
+      source: `${SHOW}Talisa_Stark`,
+      note: 'Talisa Stark page: Robb telling Catelyn of his love, the secret marriage before a septon, their lives pledged (GOT210).',
+    },
+  },
+  'amory-lorch': {
+    '16:episode': {
+      source: `${SHOW}Amory_Lorch`,
+      note: 'Amory Lorch page: leading the attack and killing Yoren (GOT203), the misdirected letter and Tywin’s rebuke, Arya caught with the stolen letter, the wolfsbane dart at Tywin’s door (GOT206). Chapter 88 orders it: his book gate.',
+    },
+    '16:chapter': {
+      source: `${ACOK_AWOIAF}14`,
+      note: 'Arya IV (site 88): the stout man with a manticore on his shield, bannerman to Lord Tywin, the true king Joffrey, Yoren’s refusals, the order to storm the walls and kill everyone. Episode 16, his show gate, orders it.',
+    },
+    '18:112': {
+      source: `${ACOK_AWOIAF}38`,
+      note: 'Arya VII (site 104): fewer men, many wounded, after chasing Beric around the Gods Eye, Jaqen, Rorge and Biter at the end of the column; Arya VIII (site 112): castellan of Harrenhal with the Brave Companions left to forage. Episode 18 orders it, as his castellan role step does.',
+    },
+    '16:121': {
+      source: `${ACOK_AWOIAF}47`,
+      note: 'Arya IX (site 121): the northern prisoners and Robett Glover locked beneath the Widow’s Tower, Jaqen and Rorge freeing them, the Brave Companions turning, Roose taking the castle, Amory paraded naked and fed to a bear. Episode 16 orders it, as his status does.',
+    },
+  },
+  'polliver': {
+    '14:episode': {
+      source: `${SHOW}Polliver`,
+      note: 'Polliver page: Needle taken in the attack and the wounded boy stabbed with it (GOT203), the old woman beaten, Gendry guarded, “the boy” told to kneel, Tywin calling him an idiot (GOT204). Lommy stays unnamed: his show gate is 31.',
+    },
+    '14:chapter': {
+      source: `${ACOK_AWOIAF}26`,
+      note: 'Arya VI (site 100): the black-bearded, balding Polliver wearing Needle at his hip, one of the Mountain’s men on the march with Chiswyck and the Tickler, Arya hating him for the sword.',
+    },
+  },
+  'tickler': {
+    '15:episode': {
+      source: `${SHOW}Tickler`,
+      note: 'Tickler page: the rat and the heated bucket, gold, jewels and the Brotherhood, prisoners chosen by Gregor, Gendry saved by Tywin (GOT204), the first name given to Jaqen and the broken neck (GOT205). Chapter 104 orders it, as his show status does.',
+    },
+    '15:chapter': {
+      source: `${ACOK_AWOIAF}26`,
+      note: 'Arya VI (site 100): the ordinary-looking man who questions, helped by Chiswyck, about food, valuables and Beric Dondarrion until the prisoner dies, quieter than most on the march, almost too scary to hate. Episode 15, his show gate, orders it.',
+    },
+  },
+  'chiswyck': {
+    '14:100': {
+      source: `${ACOK_AWOIAF}26`,
+      note: 'Arya VI (site 100): the old stoop-shouldered man who smashed Arya’s head, helping the Tickler, hated for thinking he is funny, “join the ghosts or become one” to Hot Pie.',
+    },
+    '15:104': {
+      source: `${ACOK_AWOIAF}30`,
+      note: 'Arya VII (site 104): the tale of Layna, the brewer’s girl, raped by Gregor for a silver and then by Chiswyck, overheard by Arya, his name whispered two days later, the fall from the wallwalk on the third day.',
+    },
+  },
+  'weese': {
+    '14:104': {
+      source: `${ACOK_AWOIAF}30`,
+      note: 'Arya VI (site 100) introduces the understeward and his “fear”; Arya VII (site 104) names him on her list, the errands, the beatings, the threat to feed her tongue to his dog, the beating over the mending. Episode 14, his gate, orders it.',
+    },
+    '16:112': {
+      source: `${ACOK_AWOIAF}38`,
+      note: 'Arya VIII (site 112): unsealed messages, the threat of Vargo Hoat, the slaps for slowness and staring at the capon, his name whispered, found dead with his dog on his chest the day the host leaves.',
+    },
+  },
+  'vargo-hoat': {
+    '15:104': {
+      source: `${ACOK_AWOIAF}30`,
+      note: 'Arya VII (site 104): the very tall, stick-thin leader of the Brave Companions, housed in the Widow’s Tower, the first-night brawl, the two hanged by Tywin, Weese’s warning, the company soon riding out.',
+    },
+    '18:121': {
+      source: `${ACOK_AWOIAF}47`,
+      note: 'Arya IX (site 121): a hundred northmen and Robett Glover, Roose said to have fled, Amory locking them up, the westermen attacked, the castle turned over to Roose who had bought him, Amory fed to the bear. Episode 18 orders it, as his affiliation step does.',
+    },
+    '18:138': {
+      source: `${ACOK_AWOIAF}64`,
+      note: 'Arya X (site 138): the staked heads of servants, Harrenhal to go to Vargo when Roose goes north, Arya to serve “the goat”, the lie to Gendry about the feet. Episode 18 orders it.',
     },
   },
   // Stannis, Renly and the stormlands (#1485).
