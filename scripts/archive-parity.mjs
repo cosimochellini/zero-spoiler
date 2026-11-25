@@ -51,10 +51,12 @@ export function parityArgs(args) {
   const bookmarks =
     values.bookmarks === undefined ?
       []
+      // fallow-ignore-next-line security-sink -- a file named on the developer's own command line, read only by the dump.
     : ['--bookmarks', path.resolve(values.bookmarks)]
 
   return {
     base: values.base,
+    // fallow-ignore-next-line security-sink -- a worktree named on the developer's own command line.
     baseDir: values['base-dir'] && path.resolve(values['base-dir']),
     dump: [
       ...series,
@@ -186,6 +188,19 @@ export function reportOf({ counts, misstep }) {
 }
 
 /**
+ * The exit code of a comparison: 0 when every line is identical, else 1.
+ * @param {{ counts: Map<string, Count>, misstep: string | undefined }} result The comparison.
+ * @returns {0 | 1} The code.
+ */
+export function exitOf({ counts, misstep }) {
+  const same =
+    misstep === undefined
+    && counts.values().every(({ changed }) => changed === 0)
+
+  return same ? 0 : 1
+}
+
+/**
  * Runs Git in this checkout, its errors on stderr.
  * @param {string[]} args Its arguments.
  * @returns {string} What it printed on stdout.
@@ -210,6 +225,7 @@ function baseTree(ref, folder) {
       ['merge-base', 'origin/main', 'HEAD']
     : ['rev-parse', '--verify', `${ref}^0`]),
   )
+  // fallow-ignore-next-line security-sink -- folder is this run's own mkdtemp folder.
   const tree = path.join(folder, 'base')
   console.error(`archive:parity: base ${sha.slice(0, 8)} in ${tree}`)
   git('worktree', 'add', '--quiet', '--detach', tree, sha)
@@ -242,12 +258,14 @@ const BLOCKING =
  * @returns {{ lines: AsyncIterable<string>, stop: () => void, failed: Promise<boolean> }} Its lines, a way to stop it, and whether it failed on its own.
  */
 function dumpOf(tree, args) {
+  // fallow-ignore-next-line security-sink -- the command is this Node; the script is the dump of this checkout or of the base worktree, and the flags were parsed by parseArgs.
   const child = spawn(
     process.execPath,
     [
       '--input-type=module',
       '-e',
       BLOCKING,
+      // fallow-ignore-next-line security-sink -- tree is this checkout or the base worktree.
       path.join(tree, 'scripts/archive-dump.mjs'),
       ...args,
     ],
@@ -291,12 +309,7 @@ async function parity(flags, folder) {
   }
   console.log(reportOf(result))
 
-  return (
-      result.misstep === undefined
-        && result.counts.values().every(({ changed }) => changed === 0)
-    ) ?
-      0
-    : 1
+  return exitOf(result)
 }
 
 /**
@@ -305,6 +318,7 @@ async function parity(flags, folder) {
  * @returns {void}
  */
 function removeBase(folder) {
+  // fallow-ignore-next-line security-sink -- folder is this run's own mkdtemp folder.
   const tree = path.join(folder, 'base')
   try {
     execFileSync('git', ['worktree', 'remove', '--force', tree], {
@@ -332,6 +346,7 @@ if (isMain(import.meta)) {
   })
   const folder =
     flags.baseDir === undefined ?
+      // fallow-ignore-next-line security-sink -- the system's temporary folder and a literal prefix.
       mkdtempSync(path.join(tmpdir(), 'archive-parity-'))
     : undefined
   try {

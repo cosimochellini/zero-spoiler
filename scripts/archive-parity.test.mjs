@@ -3,7 +3,12 @@ import path from 'node:path'
 import { Readable } from 'node:stream'
 import { describe, expect, it } from 'vitest'
 
-import { compareDumps, parityArgs, reportOf } from './archive-parity.mjs'
+import {
+  compareDumps,
+  exitOf,
+  parityArgs,
+  reportOf,
+} from './archive-parity.mjs'
 
 /**
  * One payload line as the dump writes it.
@@ -70,7 +75,7 @@ describe('the comparison', () => {
   it('counts every line of identical dumps as identical', async () => {
     const result = await compareDumps(dump(BASE), dump(BASE))
 
-    expect(result.misstep).toBeUndefined()
+    expect(exitOf(result)).toBe(0)
     expect(reportOf(result)).toBe(
       'table: 1 identical\nloadHome: 1 identical\nloadCharacter: 2 identical',
     )
@@ -80,7 +85,7 @@ describe('the comparison', () => {
     const head = BASE.with(3, line('loadCharacter', 'arya', { name: 'Arry' }))
     const result = await compareDumps(dump(BASE), dump(head))
 
-    expect(result.misstep).toBeUndefined()
+    expect(exitOf(result)).toBe(1)
     expect(result.counts.get('loadCharacter')).toStrictEqual({
       same: 1,
       changed: 1,
@@ -108,6 +113,7 @@ describe('the comparison', () => {
       'line 3 is {"name":"loadCharacter","key":"jon","bookmark":null,"locale":"en"} in the base and {"name":"loadCharacter","key":"sansa","bookmark":null,"locale":"en"} in the head',
     )
     expect(result.counts.get('loadCharacter')).toBeUndefined()
+    expect(exitOf(result)).toBe(1)
     expect(reportOf(result)).toMatch(/\nOut of step: line 3 is/u)
   })
 
