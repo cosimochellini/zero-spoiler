@@ -82,7 +82,8 @@ const CHANGES: {
   {
     id: 'thoren-smallwood',
     episode: 21,
-    chapter: 177,
+    // Samwell I, where Sam remembers his death (#1628).
+    chapter: 162,
     source: 'chapter',
     value: 'deceased',
   },
@@ -117,7 +118,7 @@ const STAGES: {
   source?: 'chapter' | 'episode'
   stage?: number
 }[] = [
-  { id: 'thoren-smallwood', episode: 21, chapter: 177, source: 'chapter' },
+  { id: 'thoren-smallwood', episode: 21, chapter: 162, source: 'chapter' },
   { id: 'eddison-tollett', episode: 70, chapter: 344, source: 'episode' },
   { id: 'craster', episode: 24, chapter: 177 },
   { id: 'qhorin-halfhand', episode: 20, chapter: 142 },

@@ -293,10 +293,10 @@ export const REDRAWINGS: Redrawings = {
       ],
     },
     // The runt alone again: Jon turns on the wildlings and escapes them
-    // back to the Wall in "The Rains of Castamere" (episode 29). A Storm of
-    // Swords has him back at Castle Black by Jon VII (chapter 199), the
-    // safe later chapter.
-    { episode: 29, chapter: 199, value: RUNT },
+    // back to the Wall in "The Rains of Castamere" (episode 29). In A Storm
+    // of Swords he breaks away at Queenscrown in Jon V (chapter 185) and is
+    // back at Castle Black in Jon VI (chapter 192, #1628).
+    { episode: 29, chapter: 192, value: RUNT },
     // The runt howling in the snow: Jon is killed at Castle Black in
     // "Mother's Mercy" (episode 50) and left for dead in Jon XIII of A
     // Dance with Dragons (chapter 341). Ghost howls for him in the show.

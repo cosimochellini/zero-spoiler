@@ -736,9 +736,10 @@ export const northRedrawn: Redrawings = {
   ],
   'alyn': [
     // The standard fallen whole on the ground, the cloth draped beside its
-    // staff: he is killed at the Mummer's Ford with Beric's men, which A Storm
-    // of Swords tells. Chapter 178 (Arya VI) is the safe later pin, unverified
-    // on an allowed source. The book's alone; episode 21 orders it.
+    // staff: he is dead by Arya VI of A Storm of Swords (chapter 178), where
+    // Tom of Sevenstreams names him among the dead laid at the Hound's feet
+    // (A Wiki of Ice and Fire, Alyn, #1628). The book's alone; episode 21
+    // orders it.
     {
       episode: 21,
       chapter: 178,
@@ -907,9 +908,8 @@ export const northRedrawn: Redrawings = {
   ],
   'wendel-manderly': [
     // The trident fallen across the waves: he is killed at the Red Wedding,
-    // in Catelyn VII of A Storm of Swords (chapter 195). The show kills him
-    // in "The Rains of Castamere" (episode 29), the episode he opens in,
-    // where no stage can sit, so the stage is the book's (owner, #1288).
+    // in Catelyn VII of A Storm of Swords (chapter 195). The record is the
+    // books' alone (#1628), so the stage is too; episode 29 orders it.
     {
       episode: 29,
       chapter: 195,
