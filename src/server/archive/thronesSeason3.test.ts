@@ -51,7 +51,12 @@ const STEPS: {
   source?: 'chapter' | 'episode'
 }[] = [
   { id: 'tyrion-lannister', en: 'Master of coin', episode: 23, chapter: 163 },
-  { id: 'petyr-baelish', en: 'Lord of Harrenhal', episode: 23, chapter: 163 },
+  {
+    id: 'petyr-baelish',
+    en: 'Lord of Harrenhal and suitor to Lysa Arryn',
+    episode: 23,
+    chapter: 163,
+  },
   { id: 'bronn', en: 'Knight in Tyrion’s pay', episode: 21, chapter: 148 },
   {
     id: 'sansa-stark',

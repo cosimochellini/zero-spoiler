@@ -54,7 +54,8 @@ order them.
   log holds what both media tell at the gate: she calls Sansa to eat with her
   and Margaery, and Sansa whispers that Joffrey is a monster. The match she
   offers Sansa differs by medium (Loras in the show, Willas in the books) and is
-  left out. Italian: Italian Wikipedia heads her entry by her maiden name,
+  left out. Her summary does not name her son Mace, whose show record opens only
+  at episode 32. Italian: Italian Wikipedia heads her entry by her maiden name,
   "Olenna Redwyne" (Casa Tyrell); the record keeps the name both media use, as
   Selyse's does.
 - Megga, Alla and Elinor Tyrell: role Margaery's cousins and companions, House
@@ -74,7 +75,8 @@ Steps in `season-1.ts`, as episode / site chapter.
 
 - Tyrion Lannister: role master of coin, 23 / 163 ("Walk of Punishment"; Tyrion
   III, where Tywin names him as Littlefinger leaves for the Vale).
-- Petyr Baelish: role Lord of Harrenhal, 23 / 163, the same council.
+- Petyr Baelish: role Lord of Harrenhal and suitor to Lysa Arryn, 23 / 163, the
+  same council, where he agrees to go to the Vale to wed her.
 - Bronn: role knight in Tyrion's pay, 21 / 148 ("Valar Dohaeris", where Podrick
   confirms to Meryn Trant that he is Ser Bronn of the Blackwater; Tyrion I,
   where Bronn tells Tyrion he has been knighted).

@@ -362,7 +362,11 @@ season's module, and the demo stays at stage 1. The third stage, season 3 and _A
 Storm of Swords_ through chapter 52, Arya XI (episodes 21–30, site chapters
 144–196), is filed under #1626 in `records/season-3.ts` and its
 `SEASON_3_PLACES`; stage 4 is season 4 and the book's chapters 53–81 (episodes
-31–40, site chapters 197–225).
+31–40, site chapters 197–225). King's Landing (#1634) adds six characters:
+Olenna Tyrell, Margaery's three cousins, the books' alone, and Oberyn Martell
+and Ellaria Sand, whose show gates are in season 4 (#852), with the stage's
+steps of six earlier characters. The stage-3 characters show the shared `PERSON`
+placeholder until their drawing children (#1631).
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -602,15 +606,15 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| Records                | 300                                                                                     |
-| Characters             | 213                                                                                     |
+| Records                | 306                                                                                     |
+| Characters             | 219                                                                                     |
 | Places                 | 87                                                                                      |
-| Saga modules           | 2                                                                                       |
-| Line drawings          | 302, one per record and 2 for the seasons' headings, plus 213 redrawings of 156 records |
+| Saga modules           | 3                                                                                       |
+| Line drawings          | 308, one per record and 2 for the seasons' headings, plus 213 redrawings of 156 records |
 | Chronicle stories      | 1188, for 213 characters                                                                |
-| Dated timelines        | 1057                                                                                    |
-| Affiliation steps      | 243                                                                                     |
-| Status steps           | 382                                                                                     |
+| Dated timelines        | 1072                                                                                    |
+| Affiliation steps      | 251                                                                                     |
+| Status steps           | 388                                                                                     |
 | Later visits to places | 5                                                                                       |
 
 <!-- End of the generated counts. -->

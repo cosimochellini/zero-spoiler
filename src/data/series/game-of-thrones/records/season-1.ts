@@ -4576,7 +4576,10 @@ export const season1: ThronesSaga = {
         {
           episode: 23,
           chapter: 163,
-          value: { it: 'Lord di Harrenhal', en: 'Lord of Harrenhal' },
+          value: {
+            it: 'Lord di Harrenhal e pretendente di Lysa Arryn',
+            en: 'Lord of Harrenhal and suitor to Lysa Arryn',
+          },
         },
       ],
       log: {
