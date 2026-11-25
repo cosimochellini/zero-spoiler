@@ -258,7 +258,7 @@ function sourceOf(story) {
   )
 }
 
-/** The Game of Thrones Wiki's episode pages, in airing order (seasons 1–2). */
+/** The Game of Thrones Wiki's episode pages, in airing order (seasons 1–3). */
 const THRONES_EPISODE_PAGES = [
   'Winter_Is_Coming',
   'The_Kingsroad',
@@ -280,6 +280,16 @@ const THRONES_EPISODE_PAGES = [
   'The_Prince_of_Winterfell',
   'Blackwater',
   'Valar_Morghulis',
+  'Valar_Dohaeris',
+  'Dark_Wings,_Dark_Words',
+  'Walk_of_Punishment_(episode)',
+  'And_Now_His_Watch_Is_Ended',
+  'Kissed_by_Fire',
+  'The_Climb',
+  'The_Bear_and_the_Maiden_Fair_(episode)',
+  'Second_Sons_(episode)',
+  'The_Rains_of_Castamere_(episode)',
+  'Mhysa',
 ]
 
 /**

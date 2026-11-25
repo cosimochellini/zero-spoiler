@@ -1,6 +1,7 @@
 import type { PlaceDossier } from '~/data/types'
 
 import type { ThronesSaga, ThronesVocabulary } from './saga'
+import { season3Chronicles } from './season-3.chronicle'
 import { season3Relationships } from './season-3.relationships'
 
 /**
@@ -51,6 +52,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Al servizio di Daenerys', en: 'Daenerys’s service' },
         },
       ],
+      chronicle: season3Chronicles.missandei,
     },
     'kraznys-mo-nakloz': {
       relationships: season3Relationships['kraznys-mo-nakloz'],
@@ -70,6 +72,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Buoni Padroni', en: 'Good Masters' },
         },
       ],
+      chronicle: season3Chronicles['kraznys-mo-nakloz'],
     },
     'grey-worm': {
       relationships: season3Relationships['grey-worm'],
@@ -86,6 +89,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Immacolati', en: 'Unsullied' },
         },
       ],
+      chronicle: season3Chronicles['grey-worm'],
     },
     // Both media tell the log at his gate: in "The Bear and the Maiden
     // Fair" he says the Yunkai'i will enslave the survivors, Daenerys too,
@@ -110,6 +114,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Saggi Padroni', en: 'Wise Masters' },
         },
       ],
+      chronicle: season3Chronicles['grazdan-mo-eraz'],
     },
     'mero': {
       relationships: season3Relationships.mero,
@@ -136,6 +141,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Secondi Figli', en: 'Second Sons' },
         },
       ],
+      chronicle: season3Chronicles.mero,
     },
     'daario-naharis': {
       relationships: season3Relationships['daario-naharis'],
@@ -161,6 +167,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Corvi della Tempesta', en: 'Stormcrows' },
         },
       ],
+      chronicle: season3Chronicles['daario-naharis'],
     },
     'prendahl-na-ghezn': {
       relationships: season3Relationships['prendahl-na-ghezn'],
@@ -183,6 +190,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Corvi della Tempesta', en: 'Stormcrows' },
         },
       ],
+      chronicle: season3Chronicles['prendahl-na-ghezn'],
     },
     // #1634: King's Landing.
     'olenna-tyrell': {
@@ -194,7 +202,12 @@ export const season3: ThronesSaga = {
         it: 'Invita Sansa Stark a mangiare con lei e con Margaery, e la incalza perché dica la verità su re Joffrey. Sansa le confida a bassa voce che è un mostro.',
         en: 'She asks Sansa Stark to eat with her and Margaery, and presses her to tell the truth about King Joffrey. Sansa whispers that he is a monster.',
       },
-      status: [{ episode: 22, chapter: 150, value: 'alive' }],
+      // Her death at Highgarden, "The Queen's Justice" (episode 63), is the
+      // show's alone; the books leave her alive (#1642).
+      status: [
+        { episode: 22, chapter: 150, value: 'alive' },
+        { episode: 63, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 22,
@@ -275,7 +288,13 @@ export const season3: ThronesSaga = {
         it: 'Arriva ad Approdo del Re per le nozze del re, al posto del fratello Doran. Dice a Tyrion che vuole giustizia per la sorella Elia.',
         en: 'He comes to King’s Landing for the king’s wedding, in his brother Doran’s place. He tells Tyrion he wants justice for his sister Elia.',
       },
-      status: [{ episode: 31, chapter: 182, value: 'alive' }],
+      // Killed by the Mountain as Tyrion's champion, "The Mountain and the
+      // Viper" (episode 38) and Tyrion X of A Storm of Swords (site chapter
+      // 214, #1642).
+      status: [
+        { episode: 31, chapter: 182, value: 'alive' },
+        { episode: 38, chapter: 214, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 31,
