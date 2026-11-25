@@ -7,11 +7,13 @@ import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
 import {
   bookmarkAt,
+  drawnIn,
   gateCases,
   opened,
   recordIn,
   sidesOf,
   type Unit,
+  unlisted,
 } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
@@ -1692,6 +1694,8 @@ const STAGES: {
   { id: 'bowen-marsh', episode: 53, chapter: 344, source: 'episode', stage: 1 },
   { id: 'jaremy-rykker', episode: 8, chapter: 61, source: 'chapter' },
   // The leads and the Essos cast redrawn from the drawing audit (#1292).
+  // Ned's death, as the status table above pins it (#1410).
+  { id: 'eddard-stark', episode: 9, chapter: 66 },
   { id: 'eddard-stark', episode: 31, chapter: 204, stage: 1 },
   // Jon's feigned desertion to the wildlings and his escape back to the
   // Wall (#1474).
@@ -1721,6 +1725,15 @@ const STAGES: {
   { id: 'rakharo', episode: 12, chapter: 86, source: 'episode' },
 ]
 
+describe('the table of stages', () => {
+  it('lists every stage of each record it redraws', () => {
+    expect(unlisted(STAGES, REDRAWINGS)).toStrictEqual([])
+  })
+})
+
+/** The drawings the table's stages are read against. */
+const ART = { drawings: DRAWINGS, redrawings: REDRAWINGS }
+
 describe.each(
   STAGES.flatMap((stage) =>
     sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
@@ -1728,17 +1741,10 @@ describe.each(
 )(
   '$id is redrawn by $unit at $episode/$chapter',
   ({ id, episode, chapter, source, unit, stage: index = 0, ...side }) => {
-    const stages = REDRAWINGS[id] ?? []
-    const stage = stages[index]
-    // The drawing just before is the last earlier stage this unit reads:
-    // a stage the other medium alone tells is never shown here.
-    const previous =
-      stages
-        .slice(0, index)
-        .findLast(
-          (earlier) =>
-            (recordIn(archive, id).source ?? earlier.source ?? unit) === unit,
-        )?.value ?? DRAWINGS[id]
+    const stage = REDRAWINGS[id]?.[index]
+    // The drawing just before is the last earlier stage this unit reads, by
+    // the table: a stage the other medium alone tells is never shown here.
+    const previous = drawnIn(STAGES, ART, { id, unit, below: index })
 
     it('at its pin, not one before', () => {
       const owner = recordIn(archive, id)
@@ -1765,19 +1771,6 @@ function atTheEnd(unit: Unit): Reader {
 }
 
 /**
- * The drawing a reader of this medium ends on: the last stage it tells, or
- * the first drawing when it tells none.
- */
-function endsOn(id: keyof typeof DRAWINGS, unit: Unit): unknown {
-  const owner = recordIn(archive, id)
-  const told = (REDRAWINGS[id] ?? []).filter(
-    (stage) => (owner.source ?? stage.source ?? unit) === unit,
-  )
-
-  return told.at(-1)?.value ?? DRAWINGS[id]
-}
-
-/**
  * Whether this stage is a new look: one that does not draw the first
  * drawing again (Darry rebuilt), which every reader sees anyway.
  */
@@ -1786,14 +1779,6 @@ function isNewLook(id: keyof typeof DRAWINGS, index: number): boolean {
     JSON.stringify(REDRAWINGS[id]?.[index]?.value)
     !== JSON.stringify(DRAWINGS[id])
   )
-}
-
-/** The medium a stage is told in: its record's, else its own. */
-function mediumOf(
-  id: keyof typeof DRAWINGS,
-  index: number,
-): 'chapter' | 'episode' | undefined {
-  return recordIn(archive, id).source ?? REDRAWINGS[id]?.[index]?.source
 }
 
 /** Whether these strokes are this stage's drawing. */
@@ -1810,17 +1795,16 @@ function shows(
 describe('the stages one medium alone tells', () => {
   // A reader of the other medium who has reached its end sees the last
   // stage their medium tells (Lancel's Sparrow star, before the show alone
-  // kills him), or the first drawing when it tells none. The stage's medium
-  // is held to the table's, so a stage that lost its `source` fails here.
+  // kills him), or the first drawing when it tells none, both read off the
+  // table: a stage that lost its `source` is drawn for them and fails here.
   it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
     ({ id, source, stage: index = 0 }) => {
       const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
       const drawn = drawingOf(recordIn(archive, id), atTheEnd(other)).strokes
 
-      expect(mediumOf(id, index)).toBe(source)
       expect(isNewLook(id, index) && shows(drawn, id, index)).toBe(false)
-      expect(drawn).toStrictEqual(endsOn(id, other))
+      expect(drawn).toStrictEqual(drawnIn(STAGES, ART, { id, unit: other }))
     },
   )
 })

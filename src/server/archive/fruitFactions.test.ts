@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { type Reveal, reveal } from '~/data/reveal'
-import { gateOf } from '~/data/series/one-piece/chapter-table'
+import { chapterAtEpisode } from '~/data/series/one-piece/chapter-table'
 import { eatersOf } from '~/data/series/one-piece/dated'
 import { fruits } from '~/data/series/one-piece/fruits'
 import { CHARACTER_DOSSIERS } from '~/data/series/one-piece/sagas'
@@ -44,11 +44,26 @@ function openEatersOf(at: Reveal, fruit: Entity): Entity[] {
 
 /**
  * The factions of an eater's latest affiliation entry the reader has
- * reached, read straight off the dossier: `[null]` with none reached.
+ * reached, read straight off the dossier: `[null]` with none reached. An
+ * entry opens at the later of its own pin and its eater's; one with no
+ * chapter at the chapter its episode reaches. Stated here, not read through
+ * the engine's `gateOf`, so the two check each other.
  */
 function reachedFactions(at: Reveal, eater: Entity): (Faction | null)[] {
   const entry = (CHARACTER_DOSSIERS[eater.id]?.affiliation ?? []).findLast(
-    (affiliation) => at.sees(gateOf(affiliation, eater)),
+    ({ chapter, episode, source }) => {
+      const revealedAtEpisode = Math.max(eater.revealedAtEpisode, episode)
+      const told = eater.source ?? source
+
+      return at.sees({
+        revealedAtEpisode,
+        revealedAtChapter: Math.max(
+          eater.revealedAtChapter,
+          chapter ?? chapterAtEpisode(revealedAtEpisode),
+        ),
+        ...(told !== undefined && { source: told }),
+      })
+    },
   )
   const factions = entry?.factions ?? []
 
