@@ -38011,6 +38011,196 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748990",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748990",
       "contentSha256": "d03b23c68a7b1ae4e539def6b9e5a252744eb5c35e264a10512c411e91731010"
+    },
+    "got-en-Valar_Dohaeris-746438.json": {
+      "locale": "en",
+      "title": "Valar Dohaeris",
+      "revision": 746438,
+      "revisionDate": "2026-08-05T23:26:27Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Valar_Dohaeris",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=746438",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=746438",
+      "contentSha256": "8c70220842c47baa2161ff7f3f11466e11d8ae2ce201c62985fc8bf272a63990"
+    },
+    "got-en-Dark_Wings,_Dark_Words-740180.json": {
+      "locale": "en",
+      "title": "Dark Wings, Dark Words",
+      "revision": 740180,
+      "revisionDate": "2026-06-27T12:17:36Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Dark_Wings%2C_Dark_Words",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740180",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740180",
+      "contentSha256": "df9afbba49b5720281e13a44c25ff3bf5ce3a855fa8e65051e35221cc6f4acb5"
+    },
+    "got-en-Walk_of_Punishment_(episode)-737648.json": {
+      "locale": "en",
+      "title": "Walk of Punishment (episode)",
+      "revision": 737648,
+      "revisionDate": "2026-06-20T05:33:12Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Walk_of_Punishment_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=737648",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=737648",
+      "contentSha256": "18adcb9d7169546c332b8f9977c9c0d58b72985b78da04fb653741ad1f64ba9a"
+    },
+    "got-en-And_Now_His_Watch_Is_Ended-740182.json": {
+      "locale": "en",
+      "title": "And Now His Watch Is Ended",
+      "revision": 740182,
+      "revisionDate": "2026-06-27T12:18:29Z",
+      "url": "https://gameofthrones.fandom.com/wiki/And_Now_His_Watch_Is_Ended",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740182",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740182",
+      "contentSha256": "ad5d0d80da011dc03e7513e9ba08eb2e3d9a392d067bda571f43e94878282895"
+    },
+    "got-en-The_Climb-740184.json": {
+      "locale": "en",
+      "title": "The Climb",
+      "revision": 740184,
+      "revisionDate": "2026-06-27T12:19:00Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Climb",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740184",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740184",
+      "contentSha256": "a569d942d02b5b7aa4eed38692a6c9573205dd15f6e36b1a3ff7aada649eafa0"
+    },
+    "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json": {
+      "locale": "en",
+      "title": "The Bear and the Maiden Fair (episode)",
+      "revision": 729794,
+      "revisionDate": "2026-02-12T12:45:03Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729794",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729794",
+      "contentSha256": "9d7987c6025dd8b60fa47fa7f3fb81089278e93acfaeb9c52657f6dcef57afe9"
+    },
+    "got-en-Second_Sons_(episode)-740340.json": {
+      "locale": "en",
+      "title": "Second Sons (episode)",
+      "revision": 740340,
+      "revisionDate": "2026-06-27T13:12:58Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Second_Sons_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740340",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740340",
+      "contentSha256": "1af2b7f43dd8359c198852ce96e5b043b422d331b0cd41af38cb4c9479d73073"
+    },
+    "got-en-The_Rains_of_Castamere_(episode)-729892.json": {
+      "locale": "en",
+      "title": "The Rains of Castamere (episode)",
+      "revision": 729892,
+      "revisionDate": "2026-02-14T23:31:41Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729892",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729892",
+      "contentSha256": "af8f1b27641b56378887fe61ae050019d39a6e26899a24d6dd021bc833b79c88"
+    },
+    "got-en-Mhysa-740189.json": {
+      "locale": "en",
+      "title": "Mhysa",
+      "revision": 740189,
+      "revisionDate": "2026-06-27T12:22:28Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Mhysa",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740189",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740189",
+      "contentSha256": "a54ff91b60c59eff0191850fc0c5a829ae31bbe7b5c08c6f94f4e1985c40cfb3"
+    },
+    "got-en-Mance_Rayder-728377.json": {
+      "locale": "en",
+      "title": "Mance Rayder",
+      "revision": 728377,
+      "revisionDate": "2026-02-05T07:36:23Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Mance_Rayder",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728377",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728377",
+      "contentSha256": "3b2707d1175418b7489d7d014d8d277afb200f2845f465e3f9c81b0395ccec7e"
+    },
+    "got-en-Tormund-728498.json": {
+      "locale": "en",
+      "title": "Tormund",
+      "revision": 728498,
+      "revisionDate": "2026-02-05T08:56:06Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Tormund",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728498",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728498",
+      "contentSha256": "b20913b0428fa2eed50915f71bc5655660b543aab86c275248a034502e0cc59d"
+    },
+    "got-en-Orell-739947.json": {
+      "locale": "en",
+      "title": "Orell",
+      "revision": 739947,
+      "revisionDate": "2026-06-27T08:22:36Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Orell",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=739947",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=739947",
+      "contentSha256": "478a4c7e66518733c1c142423e24da2a0b39acab330e97184f41cbbe77206426"
+    },
+    "got-en-Karl_Tanner-748264.json": {
+      "locale": "en",
+      "title": "Karl Tanner",
+      "revision": 748264,
+      "revisionDate": "2026-08-19T08:24:02Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Karl_Tanner",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748264",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748264",
+      "contentSha256": "041b57a8dfcd072e313d4384da05cd6abd8249948a6c38d0d51bee85d5b9f35d"
+    },
+    "got-en-Styr-728466.json": {
+      "locale": "en",
+      "title": "Styr",
+      "revision": 728466,
+      "revisionDate": "2026-02-05T08:50:34Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Styr",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728466",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728466",
+      "contentSha256": "34cbac76f26ad03b1318a1f844e9ee51b67f9f4cccb11755c4ce9ff50502e750"
+    },
+    "got-en-Bannen-727945.json": {
+      "locale": "en",
+      "title": "Bannen",
+      "revision": 727945,
+      "revisionDate": "2026-02-05T04:25:19Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Bannen",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=727945",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=727945",
+      "contentSha256": "6593e30c76cc571699c0da31986d4c18657c94fefb4a49c768252fa98e7afa49"
+    },
+    "iaf-en-Mance_Rayder-27332.json": {
+      "locale": "en",
+      "title": "Mance Rayder",
+      "revision": 27332,
+      "revisionDate": "2025-05-13T03:41:16Z",
+      "url": "https://iceandfire.fandom.com/wiki/Mance_Rayder",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27332",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27332",
+      "contentSha256": "340033dffb1ef005b08b6a9d9b49ee07fe27fdb97ffbda98a54589480792d1cc"
+    },
+    "iaf-en-Tormund-20215.json": {
+      "locale": "en",
+      "title": "Tormund",
+      "revision": 20215,
+      "revisionDate": "2018-01-18T11:08:58Z",
+      "url": "https://iceandfire.fandom.com/wiki/Tormund",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=20215",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=20215",
+      "contentSha256": "bb6cb742d6f2b27ad7186fd063cebeea067fd4d04889c22a4e4528a9f7761603"
+    },
+    "iaf-en-Small_Paul-24930.json": {
+      "locale": "en",
+      "title": "Small Paul",
+      "revision": 24930,
+      "revisionDate": "2021-04-29T11:47:16Z",
+      "url": "https://iceandfire.fandom.com/wiki/Small_Paul",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=24930",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=24930",
+      "contentSha256": "e7b09053b48d4ffef657e599c3ae4fbf0f989f24558ab29cd87a54684be6a76d"
+    },
+    "iaf-en-Coldhands-23068.json": {
+      "locale": "en",
+      "title": "Coldhands",
+      "revision": 23068,
+      "revisionDate": "2019-05-04T02:24:27Z",
+      "url": "https://iceandfire.fandom.com/wiki/Coldhands",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23068",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23068",
+      "contentSha256": "23825a02bfadbbe63715f67f9b1fa752af27287789a951c9b7e0fa4c4c43de74"
     }
   }
 }

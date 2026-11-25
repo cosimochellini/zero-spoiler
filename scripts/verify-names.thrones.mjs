@@ -241,6 +241,14 @@ export const THRONES_ITALIAN_TITLES = {
   'strong-belwas': SELMY,
   // The owner's rulings of 2026-11-22: Arstan Barbabianca, named in prose.
   'arstan-whitebeard': SELMY,
+  // #1638, the third stage's Wall and beyond cast.
+  'mance-rayder': characters('Mance Rayder'),
+  'tormund': characters('Tormund'),
+  'styr': characters('Styr'),
+  'dalla': characters('Dalla'),
+  'val': characters('Val'),
+  'dirk': watch('Dirk'),
+  'clubfoot-karl': watch('Karl Piededuro'),
 }
 
 /**
@@ -361,4 +369,10 @@ export const THRONES_NAMES_KEPT = {
   'strong-belwas': 'Belwas il Forte',
   // Named in the same section's prose, with no heading of his own.
   'arstan-whitebeard': 'Arstan Barbabianca',
+  // #1638. No Italian Wikipedia entry: these names stay as they are until
+  // the Mondadori forms are checked.
+  'orell': 'Orell',
+  'jarl': 'Jarl',
+  'small-paul': 'Small Paul',
+  'ollo-lophand': 'Ollo Lophand',
 }

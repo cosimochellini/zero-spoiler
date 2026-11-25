@@ -3330,6 +3330,18 @@ export const season1: ThronesSaga = {
             en: 'Sworn brother of the Night’s Watch, posing as a deserter among the wildlings',
           },
         },
+        // He breaks away from the wildling raiders south of the Wall and
+        // rides back to Castle Black: "Mhysa" (episode 30) and Jon VI of A
+        // Storm of Swords (chapter 192), where Maester Aemon tends his
+        // wound (#1638).
+        {
+          episode: 30,
+          chapter: 192,
+          value: {
+            it: 'Confratello giurato dei Guardiani della notte, tornato a Castello Nero',
+            en: 'Sworn brother of the Night’s Watch, back at Castle Black',
+          },
+        },
       ],
       log: {
         it: 'All’esecuzione di un disertore dice a Bran di non distogliere lo sguardo. Quando trovano i cuccioli di meta-lupo convince il padre a risparmiarli, uno per ciascuno dei figli legittimi. Poi trova un sesto cucciolo, bianco, e lo tiene per sé.',
@@ -6802,6 +6814,19 @@ export const season1: ThronesSaga = {
             en: 'Sworn brother of the Night’s Watch, ranger',
           },
         },
+        // The show's alone: at Craster's Keep he stabs the Lord Commander in
+        // the back when Karl Tanner kills Craster, in "And Now His Watch Is
+        // Ended" (episode 24). The books' Rast is not at the keep; chapter
+        // 177, where their mutiny is, only orders it (#1638).
+        {
+          episode: 24,
+          chapter: 177,
+          source: 'episode',
+          value: {
+            it: 'Ammutinato alla Fortezza di Craster',
+            en: 'Mutineer at Craster’s Keep',
+          },
+        },
       ],
       log: {
         it: 'Si addestra a Castello Nero, dove combatte contro Jon Snow nel cortile.',
@@ -7074,6 +7099,19 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Addetto ai canili di Castello Nero',
             en: 'Kennel hand at Castle Black',
+          },
+        },
+        // The books' alone: on the ranging beyond the Wall he leads a plot
+        // to kill the Lord Commander and desert, in the prologue of A Storm
+        // of Swords (chapter 144). The show has no such plot; episode 21
+        // only orders it (#1638).
+        {
+          episode: 21,
+          chapter: 144,
+          source: 'chapter',
+          value: {
+            it: 'Addetto ai canili nella spedizione oltre la Barriera, a capo di un complotto per disertare',
+            en: 'Kennel hand on the ranging beyond the Wall, leading a plot to desert',
           },
         },
       ],
