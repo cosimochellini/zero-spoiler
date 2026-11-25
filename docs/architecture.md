@@ -370,7 +370,12 @@ of the First Men. King's Landing (#1634) adds six characters: Olenna Tyrell,
 Margaery's three cousins, the books' alone, and Oberyn Martell and Ellaria Sand,
 whose show gates are in season 4 (#852), with the stage's steps of six earlier
 characters. The stage-3 characters show the shared `PERSON` placeholder until
-their drawing children (#1631).
+their drawing children (#1631). Its places (#1630) are the 13 a scene of the
+stage is set in, ten of them the book's alone and the Nightfort, which the show
+visits and the book only names (#1252), and the 7 both media name and neither
+visits, each with its own drawing; Harrenhal, the Fist of the First Men,
+Craster's Keep, the Dreadfort and Flea Bottom take the stage's changes as dated
+`visits` entries, and Harrenhal, the Fist, Astapor and Yunkai a drawing stage.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -610,15 +615,15 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| Records                | 313                                                                                     |
+| Records                | 333                                                                                     |
 | Characters             | 226                                                                                     |
-| Places                 | 87                                                                                      |
+| Places                 | 107                                                                                     |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 316, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
+| Line drawings          | 336, one per record and 3 for the seasons' headings, plus 217 redrawings of 160 records |
 | Chronicle stories      | 1188, for 213 characters                                                                |
-| Dated timelines        | 1086                                                                                    |
+| Dated timelines        | 1090                                                                                    |
 | Affiliation steps      | 261                                                                                     |
 | Status steps           | 396                                                                                     |
-| Later visits to places | 5                                                                                       |
+| Later visits to places | 12                                                                                      |
 
 <!-- End of the generated counts. -->
