@@ -19,6 +19,10 @@ nvm_sh="${NVM_DIR:-$HOME/.nvm}/nvm.sh"
 . "$nvm_sh" --no-use >/dev/null 2>&1 || exit 0
 cd "$dir" && nvm use --silent >/dev/null 2>&1 && [ -n "$NVM_BIN" ] || exit 0
 
-# $PATH stays literal: Claude Code runs this line before each command.
-printf 'export PATH=%q:"$PATH"\n' "$NVM_BIN" >>"$CLAUDE_ENV_FILE"
+# $PATH stays literal: Claude Code runs this line before each command. A
+# second run (resume, clear) adds nothing new.
+# shellcheck disable=SC2016
+line="$(printf 'export PATH=%q:"$PATH"' "$NVM_BIN")"
+grep -qxF "$line" "$CLAUDE_ENV_FILE" 2>/dev/null ||
+  printf '%s\n' "$line" >>"$CLAUDE_ENV_FILE"
 exit 0

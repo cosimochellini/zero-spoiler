@@ -12,9 +12,11 @@ pinned one, once:
 `npm i -g npm@$(node -p "require('./package.json').packageManager.split('@')[1]")`.
 
 Agent shells: a Claude Code hook (`scripts/nvm-env.sh`) puts the `.nvmrc` Node
-first on PATH when nvm is installed. Codex runs each command in a login shell,
-which reads `~/.zprofile` and not `~/.zshrc`; run `nvm use` there, or Codex gets
-nvm's default Node.
+first on PATH when it finds `$NVM_DIR/nvm.sh` (default `~/.nvm`). Homebrew's nvm
+keeps `nvm.sh` outside `NVM_DIR`, so link it in once:
+`ln -s "$(brew --prefix nvm)/nvm.sh" "${NVM_DIR:-$HOME/.nvm}/nvm.sh"`. Codex
+runs each command in a login shell, which reads `~/.zprofile` and not
+`~/.zshrc`; run `nvm use` there, or Codex gets nvm's default Node.
 
 ## Scope and implementation
 
