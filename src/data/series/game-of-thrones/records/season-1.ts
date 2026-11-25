@@ -4467,6 +4467,21 @@ export const season1: ThronesSaga = {
             en: 'Knight dismissed from the Kingsguard',
           },
         },
+        // #1639: in "Valar Dohaeris" (episode 21) he saves Daenerys in
+        // Astapor, gives his name and offers her his service; the show's
+        // alone. The books bring him to her as Arstan Whitebeard, a record
+        // of its own, and say who he is only in Daenerys V of A Storm of
+        // Swords (chapter 201), the scene the episode adapts, which orders
+        // it.
+        {
+          episode: 21,
+          chapter: 201,
+          source: 'episode',
+          value: {
+            it: 'Cavaliere al servizio di Daenerys',
+            en: 'Knight in Daenerys’s service',
+          },
+        },
       ],
       log: {
         it: 'Guida la Guardia Reale, i cavalieri che hanno giurato di proteggere il re. È anziano ma ancora forte, e veste di bianco come tutti i suoi confratelli.',
@@ -4486,6 +4501,16 @@ export const season1: ThronesSaga = {
           episode: 8,
           chapter: 58,
           value: { it: 'Ex Guardia Reale', en: 'Formerly of the Kingsguard' },
+        },
+        // #1639: the show's alone, as his role step above.
+        {
+          episode: 21,
+          chapter: 201,
+          source: 'episode',
+          value: {
+            it: 'Al servizio di Daenerys Targaryen',
+            en: 'Daenerys Targaryen’s service',
+          },
         },
       ],
     },
@@ -4892,6 +4917,17 @@ export const season1: ThronesSaga = {
             en: 'Khaleesi at the head of her own khalasar',
           },
         },
+        // #1639: she buys the Unsullied of Astapor and turns them on their
+        // masters, in "And Now His Watch Is Ended" (episode 24) and Daenerys
+        // III of A Storm of Swords (chapter 171).
+        {
+          episode: 24,
+          chapter: 171,
+          value: {
+            it: 'Khaleesi a capo del suo khalasar e degli Immacolati',
+            en: 'Khaleesi at the head of her khalasar and the Unsullied',
+          },
+        },
       ],
       log: {
         it: 'Vive a Pentos con il fratello Viserys, ospite del magistro Illyrio. Viserys vuole darla in sposa a khal Drogo per avere l’esercito con cui riprendersi il Trono di Spade. Lei gli dice che vuole tornare a casa, e lui non la ascolta.',
@@ -4922,6 +4958,15 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Casa Targaryen, il suo khalasar',
             en: 'House Targaryen, her own khalasar',
+          },
+        },
+        // #1639: the Unsullied, at the same pair as her role step.
+        {
+          episode: 24,
+          chapter: 171,
+          value: {
+            it: 'Casa Targaryen, il suo khalasar e gli Immacolati',
+            en: 'House Targaryen, her khalasar and the Unsullied',
           },
         },
       ],

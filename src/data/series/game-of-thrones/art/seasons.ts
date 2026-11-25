@@ -1,5 +1,5 @@
 import type { Drawings } from '~/data/art/stroke'
-import { circle, shadow } from '~/lib/svg/primitives'
+import { circle, dots, shadow } from '~/lib/svg/primitives'
 
 /**
  * Game of Thrones' seasons, drawn for the home page's frame (#1601). A
@@ -69,5 +69,58 @@ export const SEASON_DRAWINGS = {
       role: 'ambient',
     },
     { d: 'M10 150 H150', role: 'ambient', dashed: true },
+  ],
+  /**
+   * The Fist of the First Men under falling snow: the ring wall of piled
+   * stones on its hilltop, seen from below, with a pine at the foot of the
+   * slope. "Valar Dohaeris" (episode 21) opens there in a blizzard, after the
+   * fight off screen, and the Prologue of A Storm of Swords (chapter 144) is
+   * set in the Night's Watch's camp on the hill as the snow begins. Nothing
+   * on the hill shows who fights there. The accent is the ring wall's face.
+   */
+  'season-3': [
+    {
+      d: 'M36 104 Q28 114 22 128 Q16 142 4 150 M124 104 Q132 114 138 128 Q144 142 156 150',
+    },
+    {
+      d: 'M36 95 Q42 101 48 101 Q53 105 60 104 Q66 107 73 106 Q80 108 87 106 Q94 107 100 104 Q107 105 112 101 Q118 101 124 95 M36 95 V104 Q80 124 124 104 V95',
+      role: 'accent',
+    },
+    {
+      d: 'M36 95 Q39 89 45 90 Q50 85 58 86 Q68 81 80 82 Q92 81 102 86 Q110 85 115 90 Q121 89 124 95',
+    },
+    { d: 'M46 95 Q80 86 114 95', role: 'soft' },
+    {
+      d: 'M48 103 V110 M62 107 V114 M80 109 V116 M98 107 V114 M112 103 V110 M54 108 H68 M88 111 H104',
+      role: 'soft',
+    },
+    {
+      d: 'M128 118 l6 -3 M132 128 l6 -3 M136 138 l6 -3 M140 148 l6 -3',
+      role: 'ambient',
+    },
+    { d: 'M26 122 Q36 127 46 124', role: 'soft' },
+    { d: 'M16 124 L10 136 H13 L7 148 H25 L19 136 H22 Z' },
+    {
+      d: dots([
+        [30, 30],
+        [52, 18],
+        [74, 40],
+        [96, 22],
+        [118, 36],
+        [140, 20],
+        [20, 58],
+        [44, 52],
+        [66, 64],
+        [90, 54],
+        [112, 66],
+        [134, 54],
+        [150, 80],
+        [14, 90],
+        [60, 70],
+        [102, 68],
+      ]),
+      role: 'ambient',
+    },
+    { d: 'M4 150 H156', role: 'ambient', dashed: true },
   ],
 } satisfies Drawings

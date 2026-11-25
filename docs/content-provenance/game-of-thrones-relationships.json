@@ -3010,5 +3010,13 @@
     }
   },
   "omitted": {},
-  "pending": {}
+  "pending": {
+    "missandei": "#1650",
+    "kraznys-mo-nakloz": "#1650",
+    "grey-worm": "#1650",
+    "grazdan-mo-eraz": "#1650",
+    "mero": "#1650",
+    "daario-naharis": "#1650",
+    "prendahl-na-ghezn": "#1650"
+  }
 }

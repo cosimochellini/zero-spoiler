@@ -362,7 +362,11 @@ season's module, and the demo stays at stage 1. The third stage, season 3 and _A
 Storm of Swords_ through chapter 52, Arya XI (episodes 21–30, site chapters
 144–196), is filed under #1626 in `records/season-3.ts` and its
 `SEASON_3_PLACES`; stage 4 is season 4 and the book's chapters 53–81 (episodes
-31–40, site chapters 197–225).
+31–40, site chapters 197–225). Its Essos cast (#1639) adds seven, two of them
+the books' alone, Grazdan mo Eraz filed under the books' name with the show's
+Razdal mo Eraz as his `episodeName`, with placeholder busts, stage-3 steps on
+Daenerys and the show's on Barristan Selmy, and the season's drawing, the Fist
+of the First Men.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -602,15 +606,15 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| Records                | 300                                                                                     |
-| Characters             | 213                                                                                     |
+| Records                | 307                                                                                     |
+| Characters             | 220                                                                                     |
 | Places                 | 87                                                                                      |
-| Saga modules           | 2                                                                                       |
-| Line drawings          | 302, one per record and 2 for the seasons' headings, plus 213 redrawings of 156 records |
+| Saga modules           | 3                                                                                       |
+| Line drawings          | 310, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
 | Chronicle stories      | 1188, for 213 characters                                                                |
-| Dated timelines        | 1057                                                                                    |
-| Affiliation steps      | 243                                                                                     |
-| Status steps           | 382                                                                                     |
+| Dated timelines        | 1071                                                                                    |
+| Affiliation steps      | 253                                                                                     |
+| Status steps           | 390                                                                                     |
 | Later visits to places | 5                                                                                       |
 
 <!-- End of the generated counts. -->
