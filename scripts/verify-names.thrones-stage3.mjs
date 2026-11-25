@@ -53,6 +53,10 @@ export const THRONES_STAGE_3_TITLES = {
   'edric-dayne': BROTHERHOOD,
   // #1637, the third stage's Jaime, Brienne and Harrenhal cast.
   'qyburn': characters('Qyburn'),
+  // #1640, the third stage's Dragonstone cast. Edric and Alester are named
+  // only in the prose of Melisandre's and Salladhor's sections.
+  'edric-storm': characters('Melisandre di Asshai'),
+  'alester-florent': characters('Salladhor Saan'),
 }
 
 /**
@@ -106,4 +110,11 @@ export const THRONES_STAGE_3_KEPT = {
   // #1637. Italian Wikipedia has no entry for Steelshanks Walton, whose name
   // stays as it is until the Mondadori form is checked.
   'steelshanks-walton': 'Steelshanks Walton',
+  // #1640. Italian Wikipedia names Edric Storm and Alester Florent only in
+  // other characters' prose and has no entry for Axell Florent, whose name
+  // the Italian Game of Thrones Wiki keeps; none is checked against the
+  // Mondadori edition.
+  'edric-storm': 'Edric Storm',
+  'alester-florent': 'Alester Florent',
+  'axell-florent': 'Axell Florent',
 }

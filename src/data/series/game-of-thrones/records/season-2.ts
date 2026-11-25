@@ -1772,6 +1772,34 @@ export const season2: ThronesSaga = {
             en: 'Commander of King Stannis’s fleet',
           },
         },
+        // #1640, show only: the fleet burns on the Blackwater, and in
+        // "Valar Dohaeris" (episode 21) Salladhor Saan brings him back to
+        // Dragonstone with no command (Game of Thrones Wiki, Davos
+        // Seaworth). The books never gave him the fleet; Davos II (chapter
+        // 154), which the episode adapts, only orders it.
+        {
+          episode: 21,
+          chapter: 154,
+          source: 'episode',
+          value: {
+            it: 'Cavaliere al servizio di re Stannis',
+            en: 'Knight in King Stannis’s service',
+          },
+        },
+        // #1640, books only: in Davos IV (chapter 180) Stannis raises him to
+        // Lord of the Rainwood, Admiral of the Narrow Sea and Hand of the
+        // King (A Wiki of Ice and Fire, A Storm of Swords-Chapter 36). The
+        // show does not name him Hand in season 3; "Second Sons" (episode
+        // 28), which adapts the chapter, only orders it.
+        {
+          episode: 28,
+          chapter: 180,
+          source: 'chapter',
+          value: {
+            it: 'Primo Cavaliere di re Stannis',
+            en: 'Hand of King Stannis',
+          },
+        },
       ],
       log: {
         it: 'È tra gli uomini più fidati di Stannis Baratheon, e uno dei pochi che gli parlano con franchezza.',
@@ -1781,8 +1809,21 @@ export const season2: ThronesSaga = {
         { episode: 11, chapter: 74, value: 'alive' },
         // His ship burns in the wildfire on the Blackwater and he goes into
         // the water: "Blackwater" (episode 19) and Davos III (chapter 132).
-        // Neither stage tells whether he lives.
+        // The second stage does not tell whether he lives.
         { episode: 19, chapter: 132, value: 'missing' },
+        // #1640. Books: Davos I (chapter 149) has him alive on a rock in the
+        // bay, where a Lysene galley of Salladhor's picks him up (A Wiki of
+        // Ice and Fire, A Storm of Swords-Chapter 5). The show rescues and
+        // jails him in the same episode, so episode 21 only orders it.
+        { episode: 21, chapter: 149, source: 'chapter', value: 'alive' },
+        // Jailed for plotting against Melisandre: Stannis sends him to the
+        // dungeon after he draws a knife on her in "Valar Dohaeris"
+        // (episode 21, Game of Thrones Wiki, GOT301); Ser Axell Florent
+        // takes him into custody on his return in Davos II (chapter 154).
+        { episode: 21, chapter: 154, value: 'imprisoned' },
+        // Stannis frees him: "Second Sons" (episode 28, GOT308) and Davos
+        // IV (chapter 180), where Axell brings him before the king.
+        { episode: 28, chapter: 180, value: 'alive' },
       ],
       affiliation: [
         {

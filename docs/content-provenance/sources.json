@@ -38971,6 +38971,26 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26178",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26178",
       "contentSha256": "611e1556e25019e027fa2459e7ce18d3eefe24cf19b78447fbd9ca442f44d793"
+    },
+    "got-en-Axell_Florent-728059.json": {
+      "locale": "en",
+      "title": "Axell Florent",
+      "revision": 728059,
+      "revisionDate": "2026-02-05T04:57:55Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Axell_Florent",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728059",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728059",
+      "contentSha256": "8a51b4a146240bbc65c4ece2c3738132d572880418476b73b6695bc29b224308"
+    },
+    "iaf-en-Edric_Storm-26977.json": {
+      "locale": "en",
+      "title": "Edric Storm",
+      "revision": 26977,
+      "revisionDate": "2025-01-27T17:46:55Z",
+      "url": "https://iceandfire.fandom.com/wiki/Edric_Storm",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26977",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26977",
+      "contentSha256": "9135d3bdd6237eb763064e927ea6fe4b083cefbcd032d9a453b9bafc666506e8"
     }
   }
 }

@@ -381,6 +381,8 @@ outlaws and their allies, all the books' alone (Anguy is in the show but never
 named in the pages read), with the stage's steps of seven earlier characters.
 Jaime, Brienne and Harrenhal (#1637) adds two characters, one both media's and
 one the books' alone, with the stage's steps of five earlier records.
+Dragonstone (#1640) adds three, all the books' alone (Axell and Alester Florent,
+Edric Storm), with stage-3 steps on Davos Seaworth.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -620,15 +622,15 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| Records                | 344                                                                                     |
-| Characters             | 257                                                                                     |
+| Records                | 347                                                                                     |
+| Characters             | 260                                                                                     |
 | Places                 | 87                                                                                      |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 347, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
+| Line drawings          | 350, one per record and 3 for the seasons' headings, plus 213 redrawings of 156 records |
 | Chronicle stories      | 1188, for 213 characters                                                                |
-| Dated timelines        | 1160                                                                                    |
-| Affiliation steps      | 303                                                                                     |
-| Status steps           | 445                                                                                     |
+| Dated timelines        | 1166                                                                                    |
+| Affiliation steps      | 306                                                                                     |
+| Status steps           | 451                                                                                     |
 | Later visits to places | 5                                                                                       |
 
 <!-- End of the generated counts. -->

@@ -1082,6 +1082,72 @@ export const season3: ThronesSaga = {
         },
       ],
     },
+    // #1640: Dragonstone. The three are the books' alone, and each opens at
+    // Davos IV (chapter 180), the first chapter whose synopsis has his name
+    // in speech (see the entries).
+    'axell-florent': {
+      role: {
+        it: 'Castellano di Roccia del Drago',
+        en: 'Castellan of Dragonstone',
+      },
+      log: {
+        it: 'Zio della regina Selyse, è tra gli uomini della regina, i seguaci del Signore della Luce. Quando Davos Seaworth torna a Roccia del Drago lo arresta per aver tramato contro Melisandre. Vuole diventare Primo Cavaliere del re, e minaccia Davos se non lo aiuta.',
+        en: 'Queen Selyse’s uncle, he is one of the queen’s men, the followers of the Lord of Light. When Davos Seaworth comes back to Dragonstone he arrests him for plotting against Melisandre. He wants to be the king’s Hand, and threatens Davos if he does not help him.',
+      },
+      status: [
+        { episode: 28, chapter: 180, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 28,
+          chapter: 180,
+          source: 'chapter',
+          value: { it: 'Casa Florent', en: 'House Florent' },
+        },
+      ],
+    },
+    'alester-florent': {
+      role: {
+        it: 'Ex Primo Cavaliere di re Stannis',
+        en: 'Former Hand of King Stannis',
+      },
+      log: {
+        it: 'Dopo la battaglia delle Acque Nere Stannis lo nomina suo Primo Cavaliere. Scrive a Tywin Lannister per offrire la pace a nome di Stannis, e per questo è gettato in prigione come traditore. Stannis lo condanna a morte.',
+        en: 'After the battle on the Blackwater Stannis makes him his Hand. He writes to Tywin Lannister to offer peace in Stannis’s name, and is thrown in the dungeon as a traitor for it. Stannis condemns him to death.',
+      },
+      status: [
+        { episode: 28, chapter: 180, source: 'chapter', value: 'imprisoned' },
+      ],
+      affiliation: [
+        {
+          episode: 28,
+          chapter: 180,
+          source: 'chapter',
+          value: { it: 'Casa Florent', en: 'House Florent' },
+        },
+      ],
+    },
+    'edric-storm': {
+      role: {
+        it: 'Figlio bastardo di re Robert',
+        en: 'King Robert’s bastard son',
+      },
+      log: {
+        it: 'Vive a Roccia del Drago e gioca con la principessa Shireen e il suo giullare. Melisandre vuole bruciarlo, perché nel suo sangue c’è il potere di un re. Stannis rifiuta, ma getta nel fuoco tre sanguisughe piene del suo sangue, nominando i tre re rivali.',
+        en: 'He lives on Dragonstone and plays with Princess Shireen and her fool. Melisandre wants to burn him for the power of a king’s blood in him. Stannis refuses, but throws three leeches full of his blood into the fire, naming the three rival kings.',
+      },
+      status: [
+        { episode: 28, chapter: 180, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 28,
+          chapter: 180,
+          source: 'chapter',
+          value: { it: 'Casa Baratheon', en: 'House Baratheon' },
+        },
+      ],
+    },
   },
   entries: [
     // #1639: Essos, Daenerys at Astapor and Yunkai.
@@ -1844,6 +1910,64 @@ export const season3: ThronesSaga = {
         en: 'A captain in Roose Bolton’s service.',
       },
       visual: { art: 'steelshanks-walton', tint: 'red' },
+    },
+    // #1640: Dragonstone, the books' new cast. The show has none of the
+    // three in season 3: its Gendry takes Edric's part, and its Axell is
+    // first seen at his burning in "The Lion and the Rose" (episode 32),
+    // named in narration only. "Second Sons" (episode 28), which adapts
+    // Davos IV, only orders them.
+    //
+    // Davos II (chapter 154): Axell takes Davos into custody on his return,
+    // and Davos meets Edric playing with Shireen; the synopsis names both in
+    // narration only (owner checks). Davos III (chapter 169): Axell throws
+    // Alester into Davos's cell, also in narration. Davos IV (chapter 180)
+    // is the first chapter whose synopsis has their names in speech:
+    // Stannis has Axell tell Davos his plan and proclaims that Alester will
+    // die for treason, and Melisandre asks for Edric to be burned (A Wiki of
+    // Ice and Fire, A Storm of Swords-Chapters 10, 25 and 36). Axell and
+    // Alester are seen in A Clash of Kings too, where the second stage left
+    // them out as bit parts.
+    {
+      id: 'axell-florent',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 28,
+      revealedAtChapter: 180,
+      name: { it: 'Axell Florent', en: 'Axell Florent' },
+      summary: {
+        it: 'Uno zio della regina Selyse, castellano di Roccia del Drago.',
+        en: 'An uncle of Queen Selyse, castellan of Dragonstone.',
+      },
+      visual: { art: 'axell-florent', tint: 'red' },
+    },
+    // A Clash of Kings' Davos II (site chapter 116) has Cortnay Penrose mock
+    // him at the parley, a story only the books tell, ordered at episode 14.
+    {
+      id: 'alester-florent',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 28,
+      revealedAtChapter: 180,
+      nameSaidAt: 14,
+      name: { it: 'Alester Florent', en: 'Alester Florent' },
+      summary: {
+        it: 'Il capo di Casa Florent, zio della regina Selyse.',
+        en: 'The head of House Florent, Queen Selyse’s uncle.',
+      },
+      visual: { art: 'alester-florent', tint: 'teal' },
+    },
+    {
+      id: 'edric-storm',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 28,
+      revealedAtChapter: 180,
+      name: { it: 'Edric Storm', en: 'Edric Storm' },
+      summary: {
+        it: 'Un figlio bastardo di re Robert, cresciuto a Capo Tempesta.',
+        en: 'A bastard son of King Robert, raised at Storm’s End.',
+      },
+      visual: { art: 'edric-storm', tint: 'yellow' },
     },
   ],
 }

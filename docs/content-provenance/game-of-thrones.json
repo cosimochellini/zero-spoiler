@@ -4009,13 +4009,24 @@
       "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_10",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_42",
-      "https://awoiaf.westeros.org/index.php/Matthos_Seaworth"
+      "https://awoiaf.westeros.org/index.php/Matthos_Seaworth",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_5",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_10",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_25",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_36",
+      "https://iceandfire.fandom.com/wiki/Template:A_Storm_of_Swords",
+      "https://gameofthrones.fandom.com/wiki/Valar_Dohaeris",
+      "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire",
+      "https://gameofthrones.fandom.com/wiki/Second_Sons_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Mhysa"
     ],
     "unverified": [
       "Owner check, show gate 11: the synopsis has Cressen ask Davos for help; the line with his name is not quoted. Book gate 74: Pylos tells Cressen that Ser Davos Seaworth came back in the night (prologue summary). Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
       "Fleet command, show only, episode 15 (\"The Ghost of Harrenhal\"); chapter 107 orders it. Missing at 19 / 132: his ship burns and he goes into the water (\"Blackwater\"; Davos III); neither stage tells his rescue.",
       "Drawing (#1471): the pouch of finger bones round his neck, A Clash of Kings, Prologue (site 74; A Wiki of Ice and Fire, through Firecrawl) and \"Garden of Bones\" (episode 14, Davos page). The pouch's shape and the two bones are drawn by eye; not viewed.",
-      "Missing stage (#1489, owner ruling: as Benjen's): the pouch drawn shut on a wet rock at the waterline, at the filed `missing` 19 / 132 (\"Blackwater\"; Davos III, site 132, A Wiki of Ice and Fire's chapter page: Davos goes overboard). The books' loss of the pouch, told after this stage, is left to stage 3. Drawn by eye; not viewed."
+      "Missing stage (#1489, owner ruling: as Benjen's): the pouch drawn shut on a wet rock at the waterline, at the filed `missing` 19 / 132 (\"Blackwater\"; Davos III, site 132, A Wiki of Ice and Fire's chapter page: Davos goes overboard). The books' loss of the pouch, told after this stage, is left to stage 3. Drawn by eye; not viewed.",
+      "Stage 3 (#1640). Status: alive at 149, the books' alone (Davos I, Chapter 5: a Lysene galley of Salladhor's picks him off his rock; the show rescues and jails him in the same episode, so 21 only orders it); imprisoned at 21 / 154 (\"Valar Dohaeris\": Stannis sends him to the dungeon after he draws a knife on Melisandre, GOT301; Davos II, Chapter 10: Axell Florent takes him into custody for plotting to kill her); alive at 28 / 180 (\"Second Sons\": Stannis frees him, GOT308; Davos IV, Chapter 36: Axell brings him before Stannis, who makes him Hand). In \"Mhysa\" (30) Stannis sentences him to death and spares him, which changes no field.",
+      "Stage 3 (#1640). Role: \"Knight in King Stannis's service\" again at 21, the show's alone (the fleet he commanded burned on the Blackwater; Davos II, 154, which the episode adapts, orders it); \"Hand of King Stannis\" at 180, the books' alone (Davos IV, Chapter 36: Lord of the Rainwood, Admiral of the Narrow Sea and Hand; the Game of Thrones Wiki has the show's Stannis promise him the Handship in GOT208, and its season-3 synopses never call him Hand, so \"Second Sons\", 28, which adapts the chapter, only orders it). Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire's chapter pages in the shared cache."
     ]
   },
   "cressen": {
@@ -5946,6 +5957,57 @@
       "Books only (#1637): the Game of Thrones Wiki calls the show's character \"Steelshanks\", named only in narration in \"The Bear and the Maiden Fair\" and on his page, with no quoted line that says the name, so the show never opens him, as with Rorge (#1457); episode 27 orders him. Owner check: open the show side at 24 (\"And Now His Watch Is Ended\", his first appearance) or 27 if the episode says \"Steelshanks\" on screen. The show never says \"Walton\".",
       "Role and affiliation: a captain of House Bolton (Game of Thrones Wiki, \"In the books\": he serves Roose Bolton as his captain).",
       "Italian: kept as \"Steelshanks Walton\"; Italian Wikipedia has no entry, and the Mondadori form was not checked."
+    ]
+  },
+  "axell-florent": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_10",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_25",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_36",
+      "https://iceandfire.fandom.com/wiki/Axell_Florent",
+      "https://iceandfire.fandom.com/wiki/Template:A_Storm_of_Swords",
+      "https://gameofthrones.fandom.com/wiki/Axell_Florent",
+      "https://gameofthrones.fandom.com/wiki/The_Lion_and_the_Rose",
+      "https://gameofthrones.fandom.com/it/wiki/Axell_Florent"
+    ],
+    "unverified": [
+      "Books only, gate 180 (Davos IV, Chapter 36), a safe later pin: the synopsis has Stannis have Axell tell Davos of the Claw Isle plan and dismiss him. Owner checks: Davos II (154), where he takes Davos into custody, and Davos III (169), where he throws Alester into the cell, name him in narration only in the synopses; A Clash of Kings has him at the prologue's feast and in Davos I, where the second stage left him out as a bit part.",
+      "Show: first seen at his burning in \"The Lion and the Rose\" (episode 32), named in the episode synopsis and credits only. Owner check: if the show says his name there, the record becomes both media's at 32, dead in the show from its gate. The show has none of the three Dragonstone newcomers in season 3; \"Second Sons\" (episode 28), which adapts Davos IV, only orders the record.",
+      "Selyse's uncle in the books (Ice and Fire Wiki: Stannis is the husband of his niece; the show makes him her brother). Role \"Castellan of Dragonstone\" (Ice and Fire Wiki; Italian Game of Thrones Wiki, \"castellano di Roccia del Drago\").",
+      "Italian: \"Axell Florent\" (the Italian Game of Thrones Wiki), not checked against the Mondadori edition."
+    ]
+  },
+  "alester-florent": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_10",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_25",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_36",
+      "https://iceandfire.fandom.com/wiki/Alester_Florent",
+      "https://iceandfire.fandom.com/wiki/Template:A_Storm_of_Swords",
+      "https://gameofthrones.fandom.com/it/wiki/Alester_Florent",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Books only, gate 180 (Davos IV, Chapter 36): Stannis proclaims that Alester will die for treason. Owner check: Davos III (169), where Axell throws him into Davos's cell and he tells Davos of the letter to Tywin, names him in narration only in the synopsis; Davos II (154) has Khorane Sathmantes tell Davos that Lord Alester Florent is Stannis's Hand before he is seen in the stage. A Clash of Kings has him at the parley before Storm's End (Davos II), where the second stage left him out as a bit part; nameSaidAt 14 lets Cortnay Penrose's books-only story of that parley, ordered at episode 14, name him.",
+      "Status imprisoned from his gate: he is in the cells from Davos III, condemned in Davos IV. His death is after the stage. The show has none of the three Dragonstone newcomers in season 3; \"Second Sons\" (episode 28), which adapts Davos IV, only orders the record.",
+      "Role \"Former Hand of King Stannis\": Davos IV gives the Handship to Davos in the chapter that opens him.",
+      "Italian: \"Alester Florent\" (Italian Wikipedia, Salladhor Saan's section; the Italian Game of Thrones Wiki), not checked against the Mondadori edition."
+    ]
+  },
+  "edric-storm": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_10",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_36",
+      "https://iceandfire.fandom.com/wiki/Edric_Storm",
+      "https://iceandfire.fandom.com/wiki/Template:A_Storm_of_Swords",
+      "https://gameofthrones.fandom.com/wiki/Second_Sons_(episode)",
+      "https://gameofthrones.fandom.com/it/wiki/Edric_Storm",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Books only, gate 180 (Davos IV, Chapter 36), a safe later pin: Stannis takes three leeches fat with Edric Storm's blood, and Melisandre asks to burn him. Owner check: Davos II (154), where Davos meets him playing monsters and maidens with Shireen and Patchface and he talks of his father, names him in narration only in the synopsis; if a line there says his name, the gate is 154. A Game of Thrones and A Clash of Kings only mention him.",
+      "Show: the Game of Thrones Wiki's \"Second Sons\" page says the show gives Edric's part (the bastard brought to Dragonstone, the leeches) to Gendry. The show has none of the three Dragonstone newcomers in season 3; \"Second Sons\" (episode 28), which adapts Davos IV, only orders the record.",
+      "Italian: \"Edric Storm\" (Italian Wikipedia, Melisandre's section; the Italian Game of Thrones Wiki), not checked against the Mondadori edition."
     ]
   }
 }
