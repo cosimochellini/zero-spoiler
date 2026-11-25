@@ -31,21 +31,14 @@ const PREFIX = { 'one-piece': '', 'hunter-x-hunter': 'hxh-' }
 
 /**
  * Game of Thrones' wikis, by `--wiki`: the Game of Thrones Wiki (the show,
- * the default) and the Ice and Fire Wiki (the books), each with its key
- * prefix and a cache folder inside the series' one. Never A Wiki of Ice and
- * Fire, the series' `wiki.en`: it refuses scripted requests (#1009).
+ * the default, the series list's `wiki.episodes`) and the Ice and Fire Wiki
+ * (the books, its `wiki.en`), each with its key prefix and a cache folder
+ * inside the series' one.
+ * @type {Record<string, { prefix: string, folder: string, wiki: 'en' | 'episodes' }>}
  */
 const THRONES = {
-  show: {
-    prefix: 'got-',
-    folder: 'episodes',
-    api: 'https://gameofthrones.fandom.com/api.php',
-  },
-  books: {
-    prefix: 'iaf-',
-    folder: 'books',
-    api: 'https://iceandfire.fandom.com/api.php',
-  },
+  show: { prefix: 'got-', folder: 'episodes', wiki: 'episodes' },
+  books: { prefix: 'iaf-', folder: 'books', wiki: 'en' },
 }
 
 /** @typedef {{ locale: string, title: string, revision: number, revisionDate: string, url: string, revisionUrl: string, apiUrl: string, contentSha256: string }} Source */
@@ -131,7 +124,7 @@ export function targetOf(series, name) {
       ...own,
       // fallow-ignore-next-line security-sink -- the series' cache folder and a literal
       cache: path.join(own.cache, thrones.folder),
-      en: thrones.api,
+      en: series.wiki[thrones.wiki] ?? '',
     },
   }
 }

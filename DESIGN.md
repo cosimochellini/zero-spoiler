@@ -344,19 +344,28 @@ plus a drawing's stroke drawing itself in. No layout property is animated. A
 page's title does not settle in with the bands, because it is the largest paint.
 Under `prefers-reduced-motion` spatial motion becomes a crossfade.
 
+## Exceptions to the impeccable skill
+
+These owner rulings override the impeccable skill and its craft floor. Every
+pass, review and audit keeps them and reports none of them as a defect.
+
+- **Uppercase tracked labels** stay above or beside a heading; this overrides
+  the craft floor's kicker ban (owner, 2026-11-17).
+- **Instrument Sans** stays the body face, though impeccable lists it as
+  overused (owner, 2026-11-17).
+- **JetBrains Mono** is the voice of data: see the Mono Rule under Typography
+  (owner, 2026-11-17).
+- **Dark, and only dark**: no light scheme (owner, 2026-11-17).
+- **Visuals are judged on a production build**: `npm run build`, then
+  `npm start` (`vite preview`). `vite dev` orders StyleX's layers differently
+  and breaks margins and dialog centring (owner, 2026-11-25). Live mode still
+  iterates on the dev server; the verdict comes from the build.
+
 ## Do's and Don'ts
 
 ### Do:
 
 - **Do** write every colour in OKLCH and take it from the tokens.
-- **Do** keep Instrument Sans as the body face. Impeccable lists it as overused;
-  here it is fixed (owner, 2026-11-17).
-- **Do** keep the uppercase tracked label above or beside a heading. Impeccable
-  bans a kicker above a heading; here it is part of the style (owner,
-  2026-11-17).
-- **Do** set numerals, counts and short uppercase labels in JetBrains Mono, and
-  nothing longer: never a sentence or a heading. Impeccable treats mono outside
-  code as a costume; here it is the voice of data by design (owner, 2026-11-17).
 - **Do** mark a link inside text with an underline. The accent sits within 3:1
   of the inks in every set, so colour alone cannot.
 - **Do** space siblings with `gap` in new work; see Layout for today's state.

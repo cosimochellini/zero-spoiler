@@ -174,60 +174,49 @@ export async function fetchPage(title, wiki) {
 }
 
 /**
- * A Wiki of Ice and Fire's title for each book of Game of Thrones, by book
- * number, and the code its `{{Ref}}` cites the book by.
- */
-export const THRONES_BOOKS = [
-  { page: 'A Game of Thrones', ref: 'AGOT' },
-  { page: 'A Clash of Kings', ref: 'ACOK' },
-  { page: 'A Storm of Swords', ref: 'ASOS' },
-  { page: 'A Feast for Crows', ref: 'AFFC' },
-  { page: 'A Dance with Dragons', ref: 'ADWD' },
-]
-
-/**
  * Every chapter page's title and the absolute chapter it is, up to the
- * ceiling. One Piece's wiki titles a chapter by its number; A Wiki of Ice and
- * Fire by its book and the book's own chapter (`A Game of Thrones-Chapter
- * 22` is the book's `first` plus 22), a prologue being the book's first
- * chapter and an epilogue its last. Every book is asked for an epilogue, and
- * for a last numbered chapter where an epilogue takes its place: the API
- * leaves out the page that does not exist.
+ * ceiling: One Piece's wiki titles a chapter by its number.
  * @param {number} ceiling The last chapter.
- * @param {{ number: number, first: number, last: number }[]} [books] The series' books, if it is read in books.
  * @returns {Map<string, number>} Title to absolute chapter.
  */
-export function chapterTitles(ceiling, books) {
-  /** @type {[string, number][]} */
-  const titles =
-    books === undefined ?
-      Array.from({ length: ceiling }, (_, index) => [
-        `Chapter ${String(index + 1)}`,
-        index + 1,
-      ])
-    : books.flatMap(({ number, first, last }) => {
-        const book = THRONES_BOOKS[number - 1]?.page
-        if (book === undefined) {
-          throw new Error(`book ${String(number)} has no wiki title`)
-        }
+export function chapterTitles(ceiling) {
+  return new Map(
+    Array.from({ length: ceiling }, (_, index) => [
+      `Chapter ${String(index + 1)}`,
+      index + 1,
+    ]),
+  )
+}
 
-        return [
-          [`${book}-Prologue`, first],
-          ...Array.from({ length: last - first }, (_, index) => [
-            `${book}-Chapter ${String(index + 1)}`,
-            first + index + 1,
-          ]),
-          [`${book}-Epilogue`, last],
-        ]
-      })
+/**
+ * Each page's wikitext, fifty to a call, kept in a folder of the wiki's
+ * cache. A missing page is left out.
+ * @param {string[]} titles The page titles.
+ * @param {Wiki} wiki The series' wiki.
+ * @param {string} folder The cache folder, inside the wiki's.
+ * @returns {Promise<Map<string, string>>} Asked title to wikitext.
+ */
+export async function pageTexts(titles, wiki, folder) {
+  const pages = await queried(
+    wiki.en + REVISIONS,
+    // fallow-ignore-next-line security-sink -- the series' cache folder, from its slug in the repository's own list, and a literal from the caller
+    path.join(wiki.cache, folder),
+    titles,
+  )
 
-  return new Map(titles.filter(([, chapter]) => chapter <= ceiling))
+  return new Map(
+    pages.flatMap(([asked, page]) => {
+      const text = page.revisions?.[0]?.slots?.main?.['*']
+
+      return text === undefined ? [] : [[asked, text]]
+    }),
+  )
 }
 
 /**
  * Every chapter's wikitext, in chapter order, from the cache or the API in
  * batches of fifty titles.
- * @param {Map<string, number>} titles Each chapter page's title and chapter (`chapterTitles`).
+ * @param {Map<string, number>} titles Each chapter page's title and chapter (`chapterTitles`, `bookTexts`).
  * @param {Wiki} wiki The series' wiki.
  * @returns {Promise<Map<number, string>>} Chapter to wikitext.
  */

@@ -298,3 +298,41 @@ describe('the hook input', () => {
     expect(respond({ hook_event_name: 'Stop' }, env, NOW)).toBeUndefined()
   })
 })
+
+/**
+ * The matchers of the hooks that run the Firecrawl hook, for one event.
+ * @param {Record<string, { matcher: string, hooks: { command: string }[] }[]>} hooks The settings' hooks.
+ * @param {string} event The event.
+ * @returns {string[]} The matchers.
+ */
+function firecrawlMatchers(hooks, event) {
+  return (hooks[event] ?? [])
+    .filter((entry) =>
+      entry.hooks.some((hook) => hook.command.includes('firecrawl-hook.mjs')),
+    )
+    .map((entry) => entry.matcher)
+}
+
+describe('the hook in .claude/settings.json', () => {
+  const { hooks } = JSON.parse(
+    readFileSync(
+      path.join(import.meta.dirname, '..', '.claude', 'settings.json'),
+      'utf8',
+    ),
+  )
+
+  it.each(['PreToolUse', 'PostToolUse'])(
+    'runs on %s for the scrape tool under both names a session gives it',
+    (event) => {
+      const [matcher = '$^'] = firecrawlMatchers(hooks, event)
+      // eslint-disable-next-line security/detect-non-literal-regexp -- the repository's own settings
+      const pattern = new RegExp(matcher, 'u')
+
+      expect(pattern.test('mcp__firecrawl__firecrawl_scrape')).toBe(true)
+      expect(pattern.test('mcp__claude_ai_Firecrawl__firecrawl_scrape')).toBe(
+        true,
+      )
+      expect(pattern.test('mcp__firecrawl__firecrawl_search')).toBe(false)
+    },
+  )
+})

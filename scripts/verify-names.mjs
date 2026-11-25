@@ -21,7 +21,7 @@
 // Italian Wikipedia (owner, 2026-10-24), whose minor characters are sections
 // of a list page, named in `ITALIAN_TITLES` as `Page#Section`. A section
 // accepts its heading and the bold name that opens it. Game of Thrones' names
-// come from Italian Wikipedia too, which A Wiki of Ice and Fire does not
+// come from Italian Wikipedia too, which the Ice and Fire Wiki does not
 // link, so every one of its pages is named in `ITALIAN_TITLES`.
 //
 // Run it with `npm run verify:names` (`-- --series <slug>` for a series of
@@ -41,7 +41,7 @@ import { italianPages, italianTitles, wikiOf } from './wiki.mjs'
 /** @typedef {{ id: string, kind: string, name: { en: string, it: string } }} Record_ */
 
 /**
- * Series whose English wiki links no Italian page (A Wiki of Ice and Fire):
+ * Series whose English wiki links no Italian page (the Ice and Fire Wiki):
  * it is not asked, and a page `ITALIAN_TITLES` does not name is unresolved.
  */
 const UNLINKED = new Set(['game-of-thrones'])

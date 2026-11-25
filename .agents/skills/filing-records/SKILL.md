@@ -158,12 +158,13 @@ A Game of Thrones record, step or chronicle story is checked against these sourc
   - Chapter pages are titled by the POV character and the Roman numeral of that character's chapter (`Eddard I - A Game of Thrones`); a prologue is `Prologue - <Book>`. Their `chapter_number` is the chapter's place in its own book, the prologue first (sometimes as a word, `One`): the site chapter is the book's start plus `chapter_number` minus 1 (`Arya I - A Clash of Kings`, 2, is site 75).
   - Book 1's chapter pages stop around site chapter 33, and the later books' coverage varies, so ask for the title and read what comes back. Where no chapter page exists, read the character pages and the episode page's list of the chapters it adapts.
 - **Show facts**: the Game of Thrones Wiki, through the same API on `gameofthrones.fandom.com`. A citation `{{Ref|GOT105}}` is season 1, episode 5. Each episode page lists the book chapters it adapts.
-- **A Wiki of Ice and Fire** refuses scripted requests; never retry or route around the block with proxies or archive mirrors. Its pages are titled `A_Game_of_Thrones-Chapter_N`. For a fact from it, stop at the first source that holds it:
-  1. the shared cache: `grep -ril <name> <main checkout>/.gate/firecrawl/` (the main checkout, also from a worktree);
-  2. the two wikis above;
-  3. the Firecrawl tool, when the session has it (the owner's one exception), on the chapter or character page, with `formats: ["markdown"]`, never `query` (5 credits a page against 1). Its daily credits run out quickly; when it fails, the pin goes on the unverified list.
+- **Order for a wiki fact**: stop at the first source that holds it.
+  1. The shared cache: `grep -ril <name> <main checkout>/.gate/firecrawl/` (the main checkout, also from a worktree).
+  2. The Ice and Fire and Game of Thrones Wiki APIs above.
+  3. The Firecrawl tool, when the session has it (the owner's one exception), on the chapter or character page, with `formats: ["markdown"]`, never `query` (5 credits a page against 1). Its daily credits run out quickly; when it fails, the pin goes on the unverified list.
 
   A hook (`scripts/firecrawl-hook.mjs`) saves each scraped page in the cache, hands back its path to grep, and refuses a second paid fetch of it.
+- **A Wiki of Ice and Fire** refuses scripted requests; never retry or route around the block with proxies or archive mirrors. Read its pages (`A_Game_of_Thrones-Chapter_N`) only through the cache or the Firecrawl tool.
 - **Site chapter numbers**: every book's prologue counts, and books 1 to 5 start at site chapters 1, 74, 144, 226 and 272. A Wiki of Ice and Fire's "Chapter N" of a book is that book's start plus N: site N+1 in book 1, site 74+N in book 2. An epilogue is its book's last site chapter (`last` in `src/lib/progress/series.ts`).
 - **Unconfirmed pins**: a pin no source confirms takes the safe later chapter, and goes under `unverified` in `docs/content-provenance/game-of-thrones.json` and in the PR body.
 
