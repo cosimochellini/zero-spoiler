@@ -186,8 +186,9 @@ const PERSON: Stroke[] = [
  * cast, in `north.ts` and `ironborn.ts` (#1473), Wall cast, the rangers in
  * `wall.ts` and the wildlings in `wildlings.ts` (#1474), and Essos and Qarth
  * cast, in `essos.ts` (#1475). The seasons' own, which the home page's
- * frame draws, are in `seasons.ts` (#1601). The third stage's casts
- * (#1634–#1641) show `PERSON` until their drawing children draw them.
+ * frame draws, are in `seasons.ts` (#1601). The third stage's King's
+ * Landing cast is drawn in `court.ts` (#1642); its other casts
+ * (#1635–#1641) show `PERSON` until their drawing children draw them.
  * `satisfies` rather than an annotation, so `ArtId` below stays the literal
  * keys.
  */
@@ -217,13 +218,6 @@ export const DRAWINGS = {
   'mero': PERSON,
   'daario-naharis': PERSON,
   'prendahl-na-ghezn': PERSON,
-  // #1634: King's Landing.
-  'olenna-tyrell': PERSON,
-  'megga-tyrell': PERSON,
-  'alla-tyrell': PERSON,
-  'elinor-tyrell': PERSON,
-  'oberyn-martell': PERSON,
-  'ellaria-sand': PERSON,
   // #1635, the third stage's Robb's war and Riverlands cast, until its
   // drawing child draws it.
   'jeyne-westerling': PERSON,
