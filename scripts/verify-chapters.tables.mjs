@@ -74,6 +74,7 @@ export const TITLES = {
     'little-walder-frey': 'Walder Frey (son of Merrett)',
     'lord-of-bones': 'Rattleshirt',
     'strong-belwas': 'Belwas',
+    'olenna-tyrell': 'Olenna Redwyne',
   },
 }
 

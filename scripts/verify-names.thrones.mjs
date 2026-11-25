@@ -250,6 +250,10 @@ export const THRONES_ITALIAN_TITLES = {
   'mero': OTHERS,
   'daario-naharis': characters('Daario Naharis'),
   'prendahl-na-ghezn': OTHERS,
+  // #1634, the third stage's King's Landing cast.
+  'olenna-tyrell': 'Casa Tyrell#Olenna Redwyne',
+  'oberyn-martell': 'Casa Martell#Oberyn Martell',
+  'ellaria-sand': 'Casa Martell#Ellaria Sand',
 }
 
 /**
@@ -378,4 +382,12 @@ export const THRONES_NAMES_KEPT = {
   'grazdan-mo-eraz': 'Grazdan mo Eraz',
   'mero': 'Mero',
   'prendahl-na-ghezn': 'Prendahl na Ghezn',
+  // #1634. Italian Wikipedia heads Olenna's entry by her maiden name,
+  // Redwyne, and the record keeps the name both media use; it has no entry
+  // for Margaery's three cousins, whose names stay as they are until the
+  // Mondadori forms are checked.
+  'olenna-tyrell': 'Olenna Tyrell',
+  'megga-tyrell': 'Megga Tyrell',
+  'alla-tyrell': 'Alla Tyrell',
+  'elinor-tyrell': 'Elinor Tyrell',
 }
