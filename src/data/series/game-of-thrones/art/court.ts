@@ -658,6 +658,161 @@ const ANTLERED_HELM: Stroke[] = [
   },
 ]
 
+/** A wedge of cheese in 3/4, its rind along the back, the top face given. */
+const CHEESE_WEDGE: Stroke[] = [
+  { d: 'M30 112 Q44 98 62 96 L84 120 Z', role: 'accent' },
+  { d: 'M30 112 V124 L84 134 V120' },
+  { d: 'M34 112 Q46 101 61 99', role: 'soft' },
+]
+
+/** Two small round cakes, each a top and its side. */
+const LEMON_CAKES: Stroke[] = [
+  { d: `${ellipse(108, 112, 11, 4)} ${ellipse(120, 126, 11, 4)}` },
+  {
+    d: 'M97 112 V118 Q108 124 119 118 V112 M109 126 V132 Q120 138 131 132 V126',
+  },
+  { d: 'M114 120 l3 -2 M126 134 l3 -2', role: 'ambient' },
+]
+
+/** An oval platter seen from above, its rim showing at the front. */
+const PLATTER: Stroke[] = [
+  { d: ellipse(80, 122, 58, 18) },
+  { d: 'M22 122 V126 Q24 144 80 144 Q136 144 138 126 V122', role: 'soft' },
+]
+
+/**
+ * Olenna Tyrell: a platter with a wedge of cheese and lemon cakes, the
+ * lunch she sets for Sansa in the gardens in "Dark Wings, Dark Words"
+ * (episode 22): the lemon cakes are Sansa's favourite, the cheese her own.
+ * The book's supper in Sansa I (chapter 150) has no such dish; the show is
+ * the reference. The accent is the cheese.
+ */
+const OLENNA_LUNCH: Stroke[] = [
+  ...PLATTER,
+  ...CHEESE_WEDGE,
+  ...LEMON_CAKES,
+  shadow(80, 152, 56),
+]
+
+/**
+ * Sansa's necklace laid out in a curve, a crystal set at each link and one
+ * setting empty: the stone Olenna takes from it at the king's wedding.
+ */
+const EMPTY_SETTING_NECKLACE: Stroke[] = [
+  { d: 'M34 130 Q80 176 126 130' },
+  {
+    d: 'M52.4 140.7 l3 4 l-3 4 l-3 -4 Z M66.2 146.9 l3 4 l-3 4 l-3 -4 Z M93.8 146.9 l3 4 l-3 4 l-3 -4 Z M107.6 140.7 l3 4 l-3 4 l-3 -4 Z',
+    role: 'soft',
+  },
+  {
+    d: `${circle(80, 157, 3.5)} M77 154.5 l-2 -2.5 M83 154.5 l2 -2.5`,
+    role: 'accent',
+  },
+]
+
+/**
+ * The tall standard of a house in 3/4: a pole with its finial, a crossbar
+ * and the banner hanging from it to a point, its folds given.
+ */
+const HANGING_BANNER: Stroke[] = [
+  { d: `${circle(80, 14, 4)} M80 18 V28 M80 128 V150` },
+  { d: 'M42 28 H118' },
+  { d: 'M48 28 V112 L80 128 L112 112 V28' },
+  { d: 'M60 32 Q58 72 62 114 M100 32 Q102 72 98 114', role: 'soft' },
+  { d: 'M104 52 l5 -3 M104 72 l5 -3 M104 92 l5 -3', role: 'ambient' },
+]
+
+/**
+ * Megga Tyrell: the standard of her house, its golden rose on a banner
+ * hung from the crossbar, for the cousin Sansa meets at Margaery's supper
+ * in the Maidenvault in Sansa I (chapter 150). The books' alone. No page
+ * gives her an object of her own, so the house's rose stands in. The
+ * accent is the bloom.
+ */
+const ROSE_STANDARD: Stroke[] = [
+  ...HANGING_BANNER,
+  ...moved(ROSE_BLOOM, 'translate(80 76) scale(0.85) translate(-80 -95)'),
+  shadow(80, 154, 20),
+]
+
+/**
+ * Alla Tyrell: a swallow-tailed pennon with the golden rose of her house,
+ * flying from its staff, for the cousin Sansa meets at Margaery's supper
+ * in Sansa I (chapter 150). The books' alone. No page gives her an object
+ * of her own, so the house's rose stands in. The accent is the bloom.
+ */
+const ROSE_PENNON: Stroke[] = [
+  { d: `${circle(40, 20, 4)} M40 24 V150` },
+  {
+    d: 'M42 30 Q66 22 90 32 Q112 40 140 34 L114 54 L140 74 Q112 80 90 72 Q66 62 42 78',
+  },
+  { d: 'M96 36 Q92 54 96 72', role: 'soft' },
+  { d: 'M118 44 l4 -3 M120 64 l4 -3', role: 'ambient' },
+  ...moved(ROSE_BLOOM, 'translate(66 56) scale(0.55) translate(-80 -95)'),
+  shadow(40, 156, 18),
+]
+
+/**
+ * Elinor Tyrell: a round shield in 3/4 with the golden rose of her house,
+ * standing on its rim, for the cousin who keeps Margaery's younger cousins
+ * in hand when Sansa meets them in Sansa I (chapter 150). The books' alone.
+ * No page gives her an object of her own, so the house's rose stands in.
+ * Its far edge is hatched; the accent is the bloom.
+ */
+const ROSE_ROUNDEL: Stroke[] = [
+  { d: ellipse(74, 96, 36, 50) },
+  { d: 'M74 46 Q118 48 120 96 Q118 144 74 146' },
+  { d: ellipse(74, 96, 30, 44), role: 'soft' },
+  {
+    d: 'M108 60 l6 -4 M112 80 l6 -4 M112 100 l6 -4 M110 120 l6 -4',
+    role: 'ambient',
+  },
+  ...moved(ROSE_BLOOM, 'translate(74 98) scale(0.75) translate(-80 -95)'),
+  shadow(82, 152, 40),
+]
+
+/**
+ * A spear of the show's duel: a long shaft wrapped at the grip, a socket
+ * and a heavy leaf-shaped blade with its midrib, the far half of the blade
+ * hatched. The blade is the accent.
+ */
+const SPEAR: Stroke[] = [
+  { d: 'M80 6 L87 42 Q87 56 82 62 H78 Q73 56 73 42 Z', role: 'accent' },
+  { d: 'M80 14 V58', role: 'soft' },
+  { d: 'M83 36 l3 -2 M83 50 l3 -2', role: 'ambient' },
+  { d: 'M78 62 L77 72 H83 L82 62 M77 72 L76 76 H84 L83 72' },
+  { d: 'M78 76 V146 Q80 149 82 146 V76' },
+  { d: 'M78 96 L82 93 M78 101 L82 98 M78 106 L82 103', role: 'soft' },
+]
+
+/**
+ * Oberyn Martell: his spear stood upright, for the prince who fights the
+ * Mountain with it as Tyrion's champion in "The Mountain and the Viper"
+ * (episode 38) and in Tyrion X (chapter 214), the season and the book that
+ * bring him to King's Landing.
+ */
+const STANDING_SPEAR: Stroke[] = [...SPEAR, shadow(80, 152, 18)]
+
+/**
+ * Ellaria Sand: the banner of House Martell on its pole, the sun pierced by
+ * a spear, for Prince Oberyn's paramour, who comes with him to King's
+ * Landing in "The Lion and the Rose" (episode 32) and in Tyrion V (chapter
+ * 182). Nothing of her own reads, so the house she comes with stands in.
+ * The sun is red on the show's banner, so it is the accent.
+ */
+const SUN_BANNER: Stroke[] = [
+  { d: `${circle(40, 20, 4)} M40 24 V150` },
+  { d: 'M42 30 Q70 22 92 32 Q112 40 134 32 V94 Q112 102 92 94 Q70 86 42 98' },
+  { d: circle(86, 62, 13), role: 'accent' },
+  {
+    d: 'M86 43 V39 M86 81 V85 M67 62 H63 M105 62 H109 M72.6 48.6 L69.8 45.8 M99.4 75.4 L102.2 78.2',
+    role: 'soft',
+  },
+  { d: 'M60 88 L75 73 M97 51 L102 46 M99.5 43.5 L110 38 L104.5 48.5 Z' },
+  { d: 'M120 44 l5 -3 M120 74 l5 -3', role: 'ambient' },
+  shadow(40, 156, 18),
+]
+
 /** The first season's King's Landing guard and tourney cast (#1056), keyed by record id. */
 export const COURT_DRAWINGS = {
   'meryn-trant': WHITE_HELM,
@@ -682,6 +837,13 @@ export const COURT_DRAWINGS = {
   'osmund-kettleblack': SWORN_CLOAK,
   'alayaya': BEADED_GOWN,
   'garlan-tyrell': ROSE_SHIELD,
+  // #1642: the third stage's King's Landing cast.
+  'olenna-tyrell': OLENNA_LUNCH,
+  'megga-tyrell': ROSE_STANDARD,
+  'alla-tyrell': ROSE_PENNON,
+  'elinor-tyrell': ROSE_ROUNDEL,
+  'oberyn-martell': STANDING_SPEAR,
+  'ellaria-sand': SUN_BANNER,
 } satisfies Drawings
 
 /** The King's Landing cast drawn again later in the story. */
@@ -1033,5 +1195,53 @@ export const courtRedrawn: Redrawings = {
     // (chapter 156). The books' alone; episode 21, the show's first after
     // the battle, orders it.
     { episode: 21, chapter: 156, source: 'chapter', value: SHOULDER_CLOAK },
+  ],
+  'olenna-tyrell': [
+    // Sansa's necklace laid over the platter, one setting empty, the
+    // accent passing to it: Olenna tells Margaery that she could not leave
+    // her to Joffrey, and Margaery sees who poisoned him, in "Oathkeeper"
+    // (episode 34). In the books Petyr leads Sansa to see that the Queen of
+    // Thorns took the stone from her hair net, in Sansa VI of A Storm of
+    // Swords (chapter 212). The show's necklace is drawn.
+    {
+      episode: 34,
+      chapter: 212,
+      value: [
+        ...PLATTER,
+        ...softened(CHEESE_WEDGE),
+        ...LEMON_CAKES,
+        ...EMPTY_SETTING_NECKLACE,
+        shadow(80, 152, 56),
+      ],
+    },
+    // The cheese and the cakes fallen off the platter to the ground, the
+    // necklace still over it: she dies at Highgarden in "The Queen's
+    // Justice" (episode 63), the show's alone. The books leave her alive,
+    // so chapter 344, their last, orders it.
+    {
+      episode: 63,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...PLATTER,
+        ...EMPTY_SETTING_NECKLACE,
+        shadow(80, 152, 56),
+        ...moved(
+          softened(CHEESE_WEDGE),
+          'translate(-12 62) rotate(-16 57 115)',
+        ),
+        ...moved(LEMON_CAKES, 'translate(10 50)'),
+      ],
+    },
+  ],
+  'oberyn-martell': [
+    // The spear fallen flat on the ground: he dies fighting the Mountain as
+    // Tyrion's champion in "The Mountain and the Viper" (episode 38) and in
+    // Tyrion X of A Storm of Swords (chapter 214).
+    {
+      episode: 38,
+      chapter: 214,
+      value: [...moved(SPEAR, 'translate(0 62) rotate(-90 80 80)'), GROUND],
+    },
   ],
 }
