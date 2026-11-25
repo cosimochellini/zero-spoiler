@@ -4181,15 +4181,6 @@ describe('the Essos chronicles of the first stage', () => {
     },
   )
 
-  it('keeps Jaqen H’ghar, Rorge and Biter out, past the stage', () => {
-    for (const id of ['jaqen-hghar', 'rorge', 'biter']) {
-      expect(
-        archive.dossierOf(recordIn(archive, id))?.chronicle,
-        id,
-      ).toBeUndefined()
-    }
-  })
-
   it('stays inside the stage in each medium it is told in', () => {
     const shown = STORIES.filter(({ medium }) => medium !== 'books')
     const told = STORIES.filter(({ medium }) => medium !== 'show')
