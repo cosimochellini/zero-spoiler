@@ -23,7 +23,7 @@ const headRepositoryName = 'owner/zero-spoiler'
 // Workflow runs come one fixture line per `gh api` call, the last one repeated.
 // `gh pr merge` refuses when refused.json exists, which is the PR after that.
 // `gh pr view` prints on stderr the hint gh 2.105 shows an agent for an open
-// PR, then a warning the script must keep.
+// PR, then a warning the script must keep, and fails when view-fails exists.
 const fakeGh = `#!/bin/bash
 d=$(dirname "$0")
 echo "$*" >>"$d/calls.log"
@@ -45,6 +45,7 @@ hint: if you need to wait for this pull request to be reviewed, merged, or close
   - See gh event listen --help for other event types.
 HINT
     echo "warning: a real error" >&2
+    [ -f "$d/view-fails" ] && exit 1
     # A second PR file, when there is one, answers every read after the first
     # mergeable one: main moving into a conflict while CI runs.
     if [ "$q" = .mergeable ] && [ -f "$d/later.json" ]; then
@@ -104,8 +105,18 @@ const pr = (state, mergeable = 'MERGEABLE', title = 'ci: land it') => ({
  * @param {string} [later] - What GitHub reports on every later read.
  * @param {boolean} [clean] - Whether a merge with main is free of conflicts.
  * @param {string} [title] - The PR title.
+ * @param {boolean} [viewFails] - Whether every `gh pr view` fails.
  */
-function prepare(bin, runs, refusedThen, mergeable, later, clean, title) {
+function prepare(
+  bin,
+  runs,
+  refusedThen,
+  mergeable,
+  later,
+  clean,
+  title,
+  viewFails,
+) {
   /**
    * Writes an executable fake into the bin directory.
    * @param {string} name - The command it stands in for.
@@ -149,6 +160,9 @@ ${clean ? 'exit 0' : 'echo src/a.ts; exit 1'}
       JSON.stringify(pr(refusedThen)),
     )
   }
+  if (viewFails) {
+    writeFileSync(path.join(bin, 'view-fails'), '')
+  }
   writeFileSync(path.join(bin, 'calls.log'), '')
 }
 
@@ -161,6 +175,7 @@ ${clean ? 'exit 0' : 'echo src/a.ts; exit 1'}
  * @param {boolean} [clean] - Whether a merge with main is free of conflicts.
  * @param {string} [expectedHead] - The full or abbreviated SHA passed by the caller.
  * @param {string} [title] - The PR title.
+ * @param {boolean} [viewFails] - Whether every `gh pr view` fails.
  * @returns {{ status: number | null, stdout: string, stderr: string, calls: string }} The exit status, output and the `gh` calls made.
  */
 function land(
@@ -171,10 +186,11 @@ function land(
   clean,
   expectedHead = head,
   title,
+  viewFails,
 ) {
   const bin = mkdtempSync(path.join(tmpdir(), 'land-pr-'))
   try {
-    prepare(bin, runs, refusedThen, mergeable, later, clean, title)
+    prepare(bin, runs, refusedThen, mergeable, later, clean, title, viewFails)
     const child = spawnSync('bash', [script, '42', expectedHead], {
       encoding: 'utf8',
       env: {
@@ -202,6 +218,25 @@ describe('land-pr.sh', () => {
     expect(stderr).not.toContain('event listen')
     expect(stderr).toContain('warning: a real error')
     expect(status).toBe(0)
+  })
+
+  it('exits 5 on a failed gh pr view, showing its error without the hint', () => {
+    const { status, stdout, stderr, calls } = land(
+      [[run(1, 'completed', 'success')]],
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      head,
+      undefined,
+      true,
+    )
+
+    expect(stderr).toContain('warning: a real error')
+    expect(stderr).not.toContain('hint:')
+    expect(stdout).not.toContain('not open against main')
+    expect(calls).not.toContain('pr ready')
+    expect(status).toBe(5)
   })
 
   it('pins a short SHA to the full head for CI and merge', () => {
