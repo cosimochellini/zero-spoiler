@@ -96,6 +96,29 @@ function stageAt({
   return told === 'chapter' ? `c${String(chapter)}` : String(episode)
 }
 
+/**
+ * Whether a stage comes late enough, in the units of the medium that tells
+ * it. A stage both media tell comes after the record's episode; a
+ * manga-only one after its chapter, at or after its episode. An anime-only
+ * one may sit at the record's episode: there the anime already shows what
+ * the manga shows later, and a chapter reader keeps the first drawing
+ * (#1683, the Okuchi-no-Makami fruit).
+ */
+function isLateEnough(
+  { chapter = 0, episode, told }: Parameters<typeof stageAt>[0],
+  record: Pick<Entity, 'revealedAtChapter' | 'revealedAtEpisode'>,
+): boolean {
+  if (told === 'chapter') {
+    return (
+      chapter > record.revealedAtChapter && episode >= record.revealedAtEpisode
+    )
+  }
+
+  return told === 'episode' ?
+      episode >= record.revealedAtEpisode
+    : episode > record.revealedAtEpisode
+}
+
 /** A dated fact or a later visit, with the record whose gate it shares. */
 interface Told {
   entry: Dated<unknown>
@@ -531,20 +554,11 @@ describe.each(LOADED_SERIES)(
 
         // That the pin is within the record's chapter and the dial is held
         // with every declared chapter in `~/data/archive.test.ts`.
-        // A stage told in the anime comes after the record's episode; a
-        // manga-only one after its chapter, at or after its episode.
         for (const stage of stages) {
-          const { chapter, episode, value } = stage
-          const mangaOnly = stage.told === 'chapter'
+          const { chapter, value } = stage
 
           expect(chapter, entity.id).toBeDefined()
-          expect(
-            mangaOnly ?
-              (chapter ?? 0) > entity.revealedAtChapter
-                && episode >= entity.revealedAtEpisode
-            : episode > entity.revealedAtEpisode,
-            entity.id,
-          ).toBe(true)
+          expect(isLateEnough(stage, entity), entity.id).toBe(true)
 
           isADrawing(`${folder}/${entity.id}@${stageAt(stage)}`, value)
         }

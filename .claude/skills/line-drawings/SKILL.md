@@ -217,7 +217,10 @@ medium's units (below), as many per record as the story has.
   `revealedAtChapter` and an episode at or after `revealedAtEpisode`; its
   episode is left out of every episode check. Every other stage needs a
   distinct, ascending episode after `revealedAtEpisode`. A redrawing at the
-  record's threshold fails a test: that is the first drawing.
+  record's threshold fails a test: that is the first drawing. The one
+  exception is a stage only the anime or show tells (`source: 'episode'`),
+  which may sit at `revealedAtEpisode` when that medium already shows by the
+  threshold what the other shows later (#1683).
 - **A stage whose true chapter is below its record's chapter is pinned at the
   record's chapter**, as the status entries are (#459). The pin adds nothing
   to the chapter table.
