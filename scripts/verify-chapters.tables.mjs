@@ -74,8 +74,6 @@ export const TITLES = {
     'little-walder-frey': 'Walder Frey (son of Merrett)',
     'lord-of-bones': 'Rattleshirt',
     'strong-belwas': 'Belwas',
-    // #1635: filed under the name the stage gives him.
-    'aegon-frey': 'Aegon Frey (son of Stevron)',
   },
 }
 
