@@ -28,6 +28,8 @@ A phase issue gives a work window of chapters and an inventory of candidates. Ev
 
 A record's gate in each medium is the first chapter or episode whose English-wiki synopsis gives an **explicit naming signal**: an introduction, "named", the name in someone's quoted or reported speech or printed thought, or a caption. An episode title card counts as a caption. Narration alone never counts; that medium waits for its next explicit naming signal. Cite the chapter and the episode. The PR lists the lower narration-only points as owner checks.
 
+When the owner checks a scene in the work itself (owner, 2026-11-26, #1145), a character is named only by a name said in a speech balloon, including one said to the listener ("Naipei, come here!"), or by a name printed beside the character in a caption or introduction box. A thought balloon, a nickname that differs from the record's name ("Dog" is not "Dogman"), wiki narration, cast lists and images alone do not name a character. Record the answer as owner-accepted, with the chapter.
+
 ### Candidates
 
 - Wiki first appearances and cast lists only name candidates. An unnamed appearance is a floor, never a gate.
