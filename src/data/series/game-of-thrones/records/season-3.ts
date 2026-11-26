@@ -44,7 +44,13 @@ export const season3: ThronesSaga = {
         it: 'Traduce per lo schiavista che vende gli Immacolati a Daenerys, e ne addolcisce gli insulti. Daenerys la ottiene dal suo padrone nell’accordo e la prende al suo servizio. Quando le chiede il nome e la avverte dei pericoli che correrà, lei risponde “Valar morghulis”.',
         en: 'She translates for the slaver who sells the Unsullied to Daenerys, and softens his insults. Daenerys gets her from her master as part of the deal and takes her into her service. When Daenerys asks her name and warns her of the dangers ahead, she answers “Valar morghulis”.',
       },
-      status: [{ episode: 23, chapter: 171, value: 'alive' }],
+      status: [
+        { episode: 23, chapter: 171, value: 'alive' },
+        // Show only: the Mountain executes her at King's Landing in "The
+        // Last of the Starks" (episode 71). The books leave her alive, so
+        // chapter 344, their last, only orders it (#1647).
+        { episode: 71, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 23,
@@ -106,7 +112,13 @@ export const season3: ThronesSaga = {
         it: 'Arriva all’accampamento di Daenerys fuori Yunkai con dell’oro, perché lasci in pace la città, e minaccia di ridurla in schiavitù se rifiuta. I draghi di lei lo spaventano, e Daenerys lo rimanda indietro.',
         en: 'He comes to Daenerys’s camp outside Yunkai with gold to make her leave the city in peace, and threatens to enslave her if she does not. Her dragons frighten him, and she sends him back.',
       },
-      status: [{ episode: 27, chapter: 186, value: 'alive' }],
+      status: [
+        { episode: 27, chapter: 186, value: 'alive' },
+        // Show only: Grey Worm kills Razdal at Meereen in "Battle of the
+        // Bastards" (episode 59). The books never tell Grazdan's fate, so
+        // chapter 344, their last, only orders it (#1647).
+        { episode: 59, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 27,
@@ -128,11 +140,13 @@ export const season3: ThronesSaga = {
       },
       status: [
         { episode: 28, chapter: 186, source: 'chapter', value: 'alive' },
-        // Show only: Daario Naharis kills him in "Second Sons" (episode 28),
-        // the episode that first names him, so the show record opens dead.
-        // The books keep him alive through the stage; Daenerys V (chapter
-        // 201), where they end him, only orders it.
-        { episode: 28, chapter: 201, source: 'episode', value: 'deceased' },
+        // Daario Naharis kills him in "Second Sons" (episode 28), the
+        // episode that first names him, so the show record opens dead. The
+        // books keep him alive through the stage and kill him in Daenerys V
+        // (chapter 201): Arstan Whitebeard fells him with his staff and the
+        // freedmen end him (A Wiki of Ice and Fire, Chapter 57). Both media
+        // kill him, each at its own point (#1238, #1647).
+        { episode: 28, chapter: 201, value: 'deceased' },
       ],
       affiliation: [
         {
@@ -390,6 +404,16 @@ export const season3: ThronesSaga = {
       },
       status: [
         { episode: 23, chapter: 158, source: 'chapter', value: 'alive' },
+        // Edwyn Frey tells Jaime that he loosed Grey Wind at the Twins and
+        // was never found, in Jaime VII of A Feast for Crows (site chapter
+        // 270, #1643). Episode 58, where the show's Jaime takes Riverrun,
+        // only orders it.
+        {
+          episode: 58,
+          chapter: 270,
+          source: 'chapter',
+          value: 'presumed-dead',
+        },
       ],
       affiliation: [
         {
@@ -536,6 +560,10 @@ export const season3: ThronesSaga = {
       },
       status: [
         { episode: 29, chapter: 193, source: 'chapter', value: 'alive' },
+        // Outlaws hang him near Fairmarket, as Edwyn tells Jaime in Jaime
+        // VII of A Feast for Crows (site chapter 270, #1643). Episode 58
+        // only orders it.
+        { episode: 58, chapter: 270, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {

@@ -79,11 +79,14 @@ order them.
   the cached Chapter 42 synopsis does not tell it.
 - Mero: role captain of the Second Sons, the Second Sons. The show's Daario
   kills him in "Second Sons" (episode 28), the episode that names him, so the
-  show record opens `deceased`, ordered at 201, where the books end him; the
-  books keep him alive through the stage. His summary says only "a sellsword,
-  captain of the Second Sons": the Braavosi Titan's Bastard is confirmed for the
-  books only in Daenerys V (201) and on the show's Mero page, so it waits for a
-  later stage. Italian "Mero", "Secondi Figli" (Italian Wikipedia).
+  show record opens `deceased`. The books keep him alive through the stage and
+  kill him in Daenerys V (201), where Arstan Whitebeard fells him and the
+  freedmen end him (A Wiki of Ice and Fire, Chapter 57): #1647 makes the death
+  one `deceased` entry for both media, 28 / 201, with his drawing's stages
+  (#1238). His summary says only "a sellsword, captain of the Second Sons": the
+  Braavosi Titan's Bastard is confirmed for the books only in Daenerys V (201)
+  and on the show's Mero page, so it waits for a later stage. Italian "Mero",
+  "Secondi Figli" (Italian Wikipedia).
 - Daario Naharis: role sellsword captain, alive. His company differs by medium
   (Game of Thrones Wiki, "Second Sons", "In the books"): the Second Sons in the
   show, the Stormcrows in the books, two affiliation entries with their
@@ -316,7 +319,9 @@ order them.
   errand to the Golden Tooth (Catelyn V) changes no field. Italian kept.
 - Raynald Westerling: role Jeyne Westerling's brother, then Robb Stark's
   banner-bearer at 193 (Catelyn VI), books only. His fate at the Twins is told
-  only in _A Feast for Crows_ and is not filed. Italian kept.
+  only in _A Feast for Crows_: #1643 files him `presumed-dead` at 270 (Jaime
+  VII, where Edwyn Frey tells Jaime that he was never found), with his drawing's
+  stage, episode 58 ordering it (#1238). Italian kept.
 - Willem Lannister: role squire of House Lannister. Show: `captured` at 23,
   `deceased` at 25 ("Kissed by Fire", Rickard Karstark's men). Books: opens dead
   at 164. Summary and log say only that he was taken prisoner and brought to
@@ -344,6 +349,9 @@ order them.
 - Ryman Frey: role Lord Walder Frey's grandson, House Frey, alive. He kills
   Dacey Mormont at the wedding (195), which changes no field of his. Catelyn II
   and _A Clash of Kings_ only mention him. Italian "Ryman Frey" (Personaggi).
+  His hanging near Fairmarket, told in Jaime VII of _A Feast for Crows_ (270),
+  is filed by #1643, `deceased` with his drawing's stage, episode 58 ordering it
+  (#1238).
 - Aegon Frey: role Lord Walder Frey's grandson, called Jinglebell, House Frey;
   opens `deceased` at 195 (Catelyn VII: Catelyn cuts his throat). Italian "Aegon
   Frey", detto Campanello (Personaggi).

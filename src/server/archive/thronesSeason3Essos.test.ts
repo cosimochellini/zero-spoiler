@@ -1,15 +1,17 @@
 import { describe, expect, it } from 'vitest'
 
-import { DRAWINGS } from '~/data/series/game-of-thrones/art'
+import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import { season3 } from '~/data/series/game-of-thrones/records/season-3'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
+import { drawnIn, recordIn, sidesOf, unlisted } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { homePage } from './home.server'
 import { characterPage } from './pages.server'
+import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
@@ -45,7 +47,8 @@ const RECORDS: {
 
 /**
  * Every status the group files that is not alive, pinned in both media:
- * three of them open the record, dead in the scene that names him.
+ * three of them open the record, dead in the scene that names him, and the
+ * drawing child adds the later deaths (#1647).
  */
 const CHANGES: {
   chapter: number
@@ -61,15 +64,8 @@ const CHANGES: {
     source: 'chapter',
     value: 'deceased',
   },
-  // The show's alone: the books end him in Daenerys V (201), which orders
-  // it.
-  {
-    id: 'mero',
-    episode: 28,
-    chapter: 201,
-    source: 'episode',
-    value: 'deceased',
-  },
+  // Both media's: the show's at his gate, the books' in Daenerys V (201).
+  { id: 'mero', episode: 28, chapter: 201, value: 'deceased' },
   {
     id: 'prendahl-na-ghezn',
     episode: 28,
@@ -77,6 +73,42 @@ const CHANGES: {
     source: 'chapter',
     value: 'deceased',
   },
+  // The show's alone; chapter 344, the books' last, orders each.
+  {
+    id: 'grazdan-mo-eraz',
+    episode: 59,
+    chapter: 344,
+    source: 'episode',
+    value: 'deceased',
+  },
+  {
+    id: 'missandei',
+    episode: 71,
+    chapter: 344,
+    source: 'episode',
+    value: 'deceased',
+  },
+]
+
+/**
+ * Every stage the Essos cast's drawings take after their first, pinned in
+ * both media (#1647): the deaths told after the record opens. Mero's death
+ * is one stage in each medium, with the same drawing: the show's at his
+ * gate, where it already tells what the books tell later (#1683). `source`
+ * for a stage one medium alone tells; `stage` counts a record's stages from
+ * 0.
+ */
+const STAGES: {
+  chapter: number
+  episode: number
+  id: keyof typeof DRAWINGS
+  source?: 'chapter' | 'episode'
+  stage?: number
+}[] = [
+  { id: 'mero', episode: 28, chapter: 201, source: 'episode' },
+  { id: 'mero', episode: 28, chapter: 201, source: 'chapter', stage: 1 },
+  { id: 'grazdan-mo-eraz', episode: 59, chapter: 344, source: 'episode' },
+  { id: 'missandei', episode: 71, chapter: 344, source: 'episode' },
 ]
 
 /**
@@ -303,6 +335,74 @@ describe('the Essos steps one medium alone tells', () => {
       expect(pageText(id, otherAtStageEnd(source))).not.toContain(
         JSON.stringify(en),
       )
+    },
+  )
+})
+
+describe('the table of stages', () => {
+  it('lists every stage of each record it redraws', () => {
+    expect(unlisted(STAGES, REDRAWINGS)).toStrictEqual([])
+  })
+})
+
+/** The drawings the table's stages are read against. */
+const ART = { drawings: DRAWINGS, redrawings: REDRAWINGS }
+
+describe.each(
+  STAGES.flatMap((stage) =>
+    sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
+  ),
+)(
+  '$id is redrawn by $unit at $episode/$chapter',
+  ({ id, episode, chapter, source, unit, stage: index = 0, ...side }) => {
+    const stage = REDRAWINGS[id]?.[index]
+    // The drawing just before is the last earlier stage this unit reads, by
+    // the table: a stage the other medium alone tells is never shown here.
+    const previous = drawnIn(STAGES, ART, { id, unit, below: index })
+
+    it('at its pin, not one before', () => {
+      const owner = recordIn(archive, id)
+
+      expect(stage?.episode).toBe(episode)
+      expect(stage?.chapter).toBe(chapter)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? stage?.source).toBe(source)
+      expect(
+        drawingOf(owner, readerFor(archive, side.before, 'en')).strokes,
+      ).toStrictEqual(previous)
+      expect(
+        drawingOf(owner, readerFor(archive, side.reached, 'en')).strokes,
+      ).toStrictEqual(stage?.value)
+    })
+  },
+)
+
+describe('the Essos stages one medium alone tells', () => {
+  // A reader of the other medium who has reached its end sees the last
+  // stage their medium tells, or the first drawing when it tells none, both
+  // read off the table. Mero's two stages draw the same fallen barrel, so
+  // the check is against the table, not against the stage's own drawing.
+  it.each(STAGES.filter(({ source }) => source !== undefined))(
+    'draws $id for a reader of the other medium as that medium tells it',
+    ({ id, source = 'episode' }) => {
+      const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
+      const drawn = drawingOf(
+        recordIn(archive, id),
+        otherAtTheEnd(source),
+      ).strokes
+
+      expect(drawn).toStrictEqual(drawnIn(STAGES, ART, { id, unit: other }))
+    },
+  )
+
+  it.each(
+    STAGES.filter(({ id, source }) => source === 'episode' && id !== 'mero'),
+  )(
+    'never redraws $id for a book reader, as the show alone kills them',
+    ({ id, stage: index = 0 }) => {
+      expect(
+        drawingOf(recordIn(archive, id), otherAtTheEnd('episode')).strokes,
+      ).not.toStrictEqual(REDRAWINGS[id]?.[index]?.value)
     },
   )
 })

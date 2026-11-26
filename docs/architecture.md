@@ -249,7 +249,7 @@ characters; all sit at episode 148, so the home ledger and the uniqueness test
 key a story by its chapter as well. Chapters 371–400 (#1157) add 120 more for
 the 40 characters filed there and 44 returning ones, and chapters 401–420
 (#1159) 84 for the 22 filed there and 37 returning ones. Candidates whose naming
-stays unverified are deferred to #1141–#1145. Gyro is unanchored at 78 / 203.
+stays unverified are deferred to #1141–#1144. Gyro is unanchored at 78 / 203.
 Silva, Killua's father, is named in episode 24 but in chapter 95 in the manga,
 so his record is unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter
 71 but named in the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is
@@ -377,7 +377,7 @@ Storm of Swords_ through chapter 52, Arya XI (episodes 21–30, site chapters
 `SEASON_3_PLACES`; stage 4 is season 4 and the book's chapters 53–81 (episodes
 31–40, site chapters 197–225). Its Essos cast (#1639) adds seven, two of them
 the books' alone, Grazdan mo Eraz filed under the books' name with the show's
-Razdal mo Eraz as his `episodeName`, with placeholder busts, stage-3 steps on
+Razdal mo Eraz as his `episodeName`, drawn in #1647, with stage-3 steps on
 Daenerys and the show's on Barristan Selmy, and the season's drawing, the Fist
 of the First Men. King's Landing (#1634) adds six characters: Olenna Tyrell,
 Margaery's three cousins, the books' alone, and Oberyn Martell and Ellaria Sand,
@@ -649,11 +649,11 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Characters             | 261                                                                                     |
 | Places                 | 107                                                                                     |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 371, one per record and 3 for the seasons' headings, plus 221 redrawings of 163 records |
+| Line drawings          | 371, one per record and 3 for the seasons' headings, plus 232 redrawings of 173 records |
 | Chronicle stories      | 1235, for 220 characters                                                                |
-| Dated timelines        | 1195                                                                                    |
+| Dated timelines        | 1205                                                                                    |
 | Affiliation steps      | 307                                                                                     |
-| Status steps           | 455                                                                                     |
+| Status steps           | 459                                                                                     |
 | Later visits to places | 16                                                                                      |
 
 <!-- End of the generated counts. -->
