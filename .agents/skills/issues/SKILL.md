@@ -23,7 +23,7 @@ Agents take their work from the issue list by label, so every issue is a queue e
 
 - **Title**: the change in plain words, without the spoiler. Titles are public and show up in notifications: "Redraw a place once its chapter airs", with the place named only in the body when the name itself spoils.
 - **Body**: `## What`, `## Why`, `## How to verify`. Name the files, record ids, episode/chapter pairs and the commands that prove it is done. The agent that picks it up knows only the body.
-- **Ruling**: before filing an `area:art` or `area:records` issue, read the area's skill (`line-drawings` and its series file, or `filing-records`) and the owner rulings in related issue comments, then quote in `## Why` the exact sentence the change rests on, or write `Ruling: none` when no rule applies.
+- **Ruling**: before filing an `area:art` or `area:records` issue, read the area's skill (`.claude/skills/line-drawings/SKILL.md` and its `<series>.md`, or `.agents/skills/filing-records/SKILL.md`) and the owner rulings in the parent epic and in the issues that name the same record id, bodies and comments, then quote in `## Why` each sentence the change rests on, or write `Ruling: none (read: <sections>)`.
 - **Blocked work**: one line starting `Unblocks at:` listing every condition, comma-separated. All of them must hold:
   - `ch. 1178`: an episode adapts chapter 1178;
   - `ch. 1151 p. 9`: an episode adapts page 9 (use this when the episode before has already adapted part of the chapter);
