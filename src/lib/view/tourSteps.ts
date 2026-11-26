@@ -26,8 +26,8 @@ export interface TourStep {
  */
 const STEPS: Omit<TourStep, 'last'>[] = [
   { key: 'bookmark', scrub: true, series: 'one-piece' },
-  { at: 15, key: 'fog', scrub: false, series: 'one-piece' },
-  { at: 15, key: 'anyway', scrub: false, series: 'one-piece' },
+  { at: 4, key: 'fog', scrub: false, series: 'one-piece' },
+  { at: 4, key: 'anyway', scrub: false, series: 'one-piece' },
   { key: 'grows', scrub: true, series: 'one-piece' },
   { key: 'groups', scrub: true, series: 'game-of-thrones' },
   { key: 'bonds', scrub: true, series: 'hunter-x-hunter' },

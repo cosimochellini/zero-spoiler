@@ -75,12 +75,12 @@ describe('the hub tour', () => {
     expect(JSON.stringify(tour).length).toBeLessThan(40_000)
   })
 
-  it('follows Killua’s list through the demo, and covers the Nen abilities', () => {
+  it('follows one lead’s list through the demo, and covers the Nen abilities', () => {
     const tour = tourPage(
       readerFor(loadedSeries('hunter-x-hunter').archive, null, 'en'),
     )
 
-    expect(tour.bonds?.of).toBe('killua')
+    expect(tour.cast.map(({ id }) => id)).toContain(tour.bonds?.of)
     expect(tour.bonds?.snapshots.length).toBeGreaterThan(1)
     expect(new Set(tour.covered.map(({ kind }) => kind))).toStrictEqual(
       new Set(['ability']),

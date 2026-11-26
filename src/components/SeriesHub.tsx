@@ -65,15 +65,15 @@ export function SeriesHub({
   )
 }
 
+/** A card of the opening row, settling in at its turn. */
+function settle(index: number): stylex.StyleXStyles[] {
+  return [styles.item, settleStyles.band, settleStyles.at(index)]
+}
+
 /** The headline, every wiki in one row, the request card, and the tour's link. */
 function Opening({ coming, series }: HubProps): ReactElement {
   const { locale } = useLocale()
   const t = useT()
-  const settle = (index: number): stylex.StyleXStyles[] => [
-    styles.item,
-    settleStyles.band,
-    settleStyles.at(index),
-  ]
 
   return (
     <section {...stylex.props(styles.opening)}>

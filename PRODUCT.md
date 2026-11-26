@@ -74,6 +74,10 @@ for this project, and no official artwork is used.
     line names the arc and marks an episode inside a filler run (owner,
     2026-10-12; the filler mark, 2026-10-10).
   - The landing page's demo stretch, with its covered tail.
+  - The hub's tour: a few records of each series' demo stretch, with their dated
+    facts and relationships inside it, and covered records past it (handle, kind
+    and thresholds only). The one copy of the demo outside the landing (owner,
+    2026-11-26, #1703).
   - Counts of entries, where the contract allows them.
   - The sitemap: the address and square picture of every record both sources
     tell, with no bookmark (`docs/architecture.md`; the code gives no dated

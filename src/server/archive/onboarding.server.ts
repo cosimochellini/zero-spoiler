@@ -120,14 +120,14 @@ export function demoOf(entity: Entity, r: Reader): DemoEntry {
 }
 
 /** The arcs of East Blue: the ones with leads of their own, not the saga. */
-function demoArcs(r: Reader): Entity[] {
+export function demoArcs(r: Reader): Entity[] {
   return r.archive.arcs.filter(
     (arc) => inDemo(arc, r) && Object.hasOwn(r.archive.leads, arc.id),
   )
 }
 
 /** Every lead of those arcs, once each, in the order they first appear. */
-function demoCast(arcsHere: Entity[], r: Reader): Entity[] {
+export function demoCast(arcsHere: Entity[], r: Reader): Entity[] {
   const ids = new Set(arcsHere.flatMap((arc) => r.archive.leads[arc.id] ?? []))
 
   return orderByMode(
