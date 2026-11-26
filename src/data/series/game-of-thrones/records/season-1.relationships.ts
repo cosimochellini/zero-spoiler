@@ -14118,7 +14118,7 @@ const kingsLanding3 = {
     type: { en: 'Intended husband', it: 'Promesso sposo' },
     summary: {
       en: 'The Knight of Flowers. He talks of the feast and her gown more than of her, and agrees that the Red Keep is the worst place there is.',
-      it: 'Il Cavaliere di Fiori. Parla del banchetto e del suo abito più che di lei, e conviene che la Fortezza Rossa sia il posto peggiore che ci sia.',
+      it: 'Il Cavaliere di Fiori. Parla del banchetto e dell’abito di Sansa più che di lei, e conviene che la Fortezza Rossa sia il posto peggiore che ci sia.',
     },
   },
   sanPetyrGone: {
@@ -15010,7 +15010,7 @@ const kingsLanding3 = {
     type: { en: 'Intended bride', it: 'Promessa sposa' },
     summary: {
       en: 'The Stark girl he is to marry. He talks happily of the feast and her gown, and agrees with her that the Red Keep is a terrible place.',
-      it: 'La ragazza Stark che deve sposare. Parla volentieri del banchetto e del suo abito, e conviene con lei che la Fortezza Rossa è un posto terribile.',
+      it: 'La ragazza Stark che deve sposare. Parla volentieri del banchetto e dell’abito di Sansa, e conviene con lei che la Fortezza Rossa è un posto terribile.',
     },
   },
   // Loras, the books

@@ -1702,7 +1702,8 @@
         "got-en-Valar_Dohaeris-746438.json",
         "got-en-Dark_Wings,_Dark_Words-740180.json",
         "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json",
-        "got-en-Mhysa-740189.json"
+        "got-en-Mhysa-740189.json",
+        "got-en-The_Climb-740184.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -1839,7 +1840,8 @@
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_25",
-          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_19"
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_19",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_12"
         ]
       }
     },
@@ -3268,7 +3270,8 @@
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
-          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_38"
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_38",
+          "https://awoiaf.westeros.org/index.php/Ellaria_Sand"
         ]
       }
     },

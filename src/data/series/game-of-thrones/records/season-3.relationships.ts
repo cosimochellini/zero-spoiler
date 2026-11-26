@@ -403,8 +403,8 @@ const kingsLanding = {
     character: 'tywin-lannister',
     type: { en: 'Hand of the King', it: 'Primo Cavaliere del re' },
     summary: {
-      en: 'The Hand, who wants Loras to marry his daughter Cersei. She refuses until he threatens to name Loras to the Kingsguard, then gives way.',
-      it: 'Il Primo Cavaliere, che vuole Loras come marito per la figlia Cersei. Lei rifiuta finché lui non minaccia di mettere Loras nella Guardia reale, poi cede.',
+      en: 'The Hand, who wants Loras to marry his daughter Cersei. Olenna refuses until he threatens to name Loras to the Kingsguard, then gives way.',
+      it: 'Il Primo Cavaliere, che vuole Loras come marito per la figlia Cersei. Olenna rifiuta finché lui non minaccia di mettere Loras nella Guardia reale, poi cede.',
     },
   },
   oleTyrion: {
