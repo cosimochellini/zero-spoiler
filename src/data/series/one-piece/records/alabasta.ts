@@ -2025,8 +2025,8 @@ export const alabasta: OnePieceSaga = {
       },
       status: [
         { episode: 130, value: 'alive' },
-        // Episode 1178 adapts chapter 1148, which ends with Sommers holding
-        // her in his thorns (#1554). Sanji burns them away in chapter 1175,
+        // Episode 1178 adapts chapter 1148, where Sommers restrains her with
+        // his thorns just before Gaban arrives (#1554). Sanji burns them away in chapter 1175,
         // past the last aired episode.
         { episode: 1178, chapter: 1148, value: 'captured' },
       ],

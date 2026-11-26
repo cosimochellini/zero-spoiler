@@ -497,7 +497,7 @@ export const elbaf: OnePieceSaga = {
       status: [
         { episode: 1165, value: 'alive' },
         // Episode 1176 adapts chapter 1146, where Gunko wraps an arrow round
-        // his neck and carries him off to the other children (#1554). He only
+        // his neck and carries him off (#1554). He only
         // leaves the branch in chapter 1174, which no episode adapts yet.
         { episode: 1176, chapter: 1146, value: 'captured' },
       ],

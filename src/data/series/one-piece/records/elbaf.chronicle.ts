@@ -187,7 +187,7 @@ export const elbafChronicles = {
         title: { it: 'Una fan di Brook', en: 'A fan of Brook' },
         body: {
           it: 'Gunko porta da Sommers i Cappello di Paglia che ha catturato e legato con le sue frecce. Chiede a [[brook|Brook]] di diventare il suo schiavo e di scrivere musica per lei per sempre, perché è una fan delle sue canzoni del Soul King. Brook rifiuta: ha già giurato fedeltà a [[monkey-d-luffy|Rufy]]. Gunko minaccia di ucciderlo se non ritira il giuramento, e lui risponde che accetterà anche quello, così lei lo picchia, anche se per qualche motivo si stringe il petto.',
-          en: 'Gunko brings the Straw Hats she has captured to Sommers, bound in her arrows. She asks [[brook|Brook]] to become her slave and write music for her forever, because she is a fan of his Soul King songs. Brook refuses: he has already sworn loyalty to [[monkey-d-luffy|Luffy]]. Gunko threatens to kill him unless he takes it back, and he says he will accept that too, so she beats him, though for some reason she grips her chest.',
+          en: 'Gunko brings Sommers the Straw Hats she has captured and bound with her arrows. She asks [[brook|Brook]] to become her slave and write music for her forever, because she is a fan of his Soul King songs. Brook refuses: he has already sworn loyalty to [[monkey-d-luffy|Luffy]]. Gunko threatens to kill him unless he takes it back, and he says he will accept that too, so she beats him, though for some reason she grips her chest.',
         },
       },
     },
