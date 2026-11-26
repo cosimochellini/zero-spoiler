@@ -583,6 +583,30 @@ const kingsLanding = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Megga's and Alla's snapshots before the wedding, the same in both: Margaery
+ * and Sansa from Sansa I (150), and Elinor from Sansa II (160), where the
+ * cousins' ranks are told. Books only; the episodes only order them.
+ */
+const COUSINS_BEFORE_THE_WEDDING = [
+  {
+    episode: 22,
+    chapter: 150,
+    source: 'chapter',
+    value: [kingsLanding.cousinMargaery, kingsLanding.cousinSansaMet],
+  },
+  {
+    episode: 24,
+    chapter: 160,
+    source: 'chapter',
+    value: [
+      kingsLanding.cousinMargaery,
+      kingsLanding.cousinSansaMet,
+      kingsLanding.megElinor,
+    ],
+  },
+] satisfies Timeline<Relationship[]>
+
 export const season3Relationships = {
   // Essos (#1650). The show: "Walk of Punishment" (episode 23), "Kissed by
   // Fire" (25) and "Second Sons" (28). The books: Daenerys III (chapter
@@ -790,22 +814,7 @@ export const season3Relationships = {
   // Books only: Sansa I (150), Sansa II (160, the cousins' ranks) and
   // Sansa III (172, the wedding feast). Episodes only order them.
   'megga-tyrell': [
-    {
-      episode: 22,
-      chapter: 150,
-      source: 'chapter',
-      value: [kingsLanding.cousinMargaery, kingsLanding.cousinSansaMet],
-    },
-    {
-      episode: 24,
-      chapter: 160,
-      source: 'chapter',
-      value: [
-        kingsLanding.cousinMargaery,
-        kingsLanding.cousinSansaMet,
-        kingsLanding.megElinor,
-      ],
-    },
+    ...COUSINS_BEFORE_THE_WEDDING,
     {
       episode: 28,
       chapter: 172,
@@ -819,22 +828,7 @@ export const season3Relationships = {
     },
   ],
   'alla-tyrell': [
-    {
-      episode: 22,
-      chapter: 150,
-      source: 'chapter',
-      value: [kingsLanding.cousinMargaery, kingsLanding.cousinSansaMet],
-    },
-    {
-      episode: 24,
-      chapter: 160,
-      source: 'chapter',
-      value: [
-        kingsLanding.cousinMargaery,
-        kingsLanding.cousinSansaMet,
-        kingsLanding.megElinor,
-      ],
-    },
+    ...COUSINS_BEFORE_THE_WEDDING,
     {
       episode: 28,
       chapter: 172,
