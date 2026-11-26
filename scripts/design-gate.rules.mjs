@@ -197,25 +197,38 @@ export function detectorProblem(status) {
     : `exited ${status}: a page could not be scanned`
 }
 
+/** How many of its last stderr lines a retried run prints. */
+const STDERR_TAIL = 3
+
 /**
  * One detector run, once more when the tool failed: a slow runner can time a
  * page out (PR #1681, CI run 45653012554) and pass on the next try. Findings
- * (exit 2) are a completed scan and never run again.
- * @param {() => Promise<{status: null | number}>} run One detector run.
+ * (exit 2) are a completed scan and never run again. The retry line keeps the
+ * first run's time and the end of its stderr, so a flake that passes on the
+ * retry can still be read.
+ * @param {() => Promise<{status: null | number, output: {stdout: string, stderr: string}}>} run
+ *   One detector run.
  * @param {string} label The pages and the viewport it scans.
  * @param {(line: string) => void} log Told why before the second run.
- * @returns {Promise<{status: null | number, problem: null | string}>} The last
- *   run, with `detectorProblem` of its status.
+ * @returns {Promise<{status: null | number, output: {stdout: string, stderr: string}, problem: null | string}>}
+ *   The last run, with `detectorProblem` of its status.
  */
 export async function detectWithRetry(run, label, log) {
+  const started = Date.now()
   const first = await run()
   const problem = detectorProblem(first.status)
   if (problem === null) {
     return { ...first, problem }
   }
-  // ponytail: one retry; raise it if runners get slower.
+  // ponytail: one retry. It holds while (retries + 1) x DETECT_TIMEOUT_MS
+  // (300 s) plus the build and the other gates stays under the build job's
+  // `timeout-minutes: 15` in .github/workflows/ci.yml; raise the two together
+  // if runners get slower.
+  const seconds = Math.round((Date.now() - started) / 1000)
+  const tail = first.output.stderr.trim().split('\n').slice(-STDERR_TAIL)
+  const indented = tail.map((line) => `    ${line}\n`).join('')
   log(
-    `design gate: retrying ${label} after a tool failure: impeccable detect ${problem}\n`,
+    `design gate: retrying ${label} after a tool failure in ${seconds}s: impeccable detect ${problem}\n${indented}`,
   )
   const second = await run()
   return { ...second, problem: detectorProblem(second.status) }

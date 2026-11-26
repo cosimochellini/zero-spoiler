@@ -253,17 +253,35 @@ describe('the detector run', () => {
     expect(detectorProblem(status)).toBe(problem)
   })
 
+  const RETRY =
+    'design gate: retrying 3 page(s) at 390x844 after a tool failure in 0s: impeccable detect'
+
   it.each([
-    ['passes on a retry after a tool failure', [1, 0], 2, null],
+    [
+      'passes on a retry after a tool failure',
+      [1, 0],
+      [
+        `${RETRY} exited 1: a page could not be scanned\n    run 0 line 1\n    run 0 line 2\n    run 0 line 3\n`,
+      ],
+      null,
+    ],
     [
       'fails when the retry fails too',
       [null, 1],
-      2,
+      [
+        `${RETRY} was killed: it did not finish in time\n    run 0 line 1\n    run 0 line 2\n    run 0 line 3\n`,
+      ],
       'exited 1: a page could not be scanned',
     ],
-    ['never retries findings', [2, 1], 1, null],
-  ])('%s', async (_, statuses, runs, problem) => {
-    const replies = statuses.map((status) => ({ status }))
+    ['never retries findings', [2, 1], [], null],
+  ])('%s', async (_, statuses, logged, problem) => {
+    const replies = statuses.map((status, run) => ({
+      status,
+      output: {
+        stdout: `stdout of run ${run}`,
+        stderr: `run ${run} line 0\nrun ${run} line 1\nrun ${run} line 2\nrun ${run} line 3\n`,
+      },
+    }))
     const lines = []
     let calls = 0
     const result = await detectWithRetry(
@@ -273,15 +291,10 @@ describe('the detector run', () => {
         lines.push(line)
       },
     )
-    expect(calls).toBe(runs)
-    expect(lines).toEqual(
-      runs === 1 ?
-        []
-      : [
-          `design gate: retrying 3 page(s) at 390x844 after a tool failure: impeccable detect ${detectorProblem(statuses[0])}\n`,
-        ],
-    )
-    expect(result.problem).toBe(problem)
+    const last = replies[calls - 1]
+    expect(calls).toBe(logged.length + 1)
+    expect(lines).toEqual(logged)
+    expect(result).toEqual({ ...last, problem })
   })
 })
 

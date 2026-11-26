@@ -327,7 +327,8 @@ async function assertServed(origin, { landing, bookmarked }) {
 }
 
 /**
- * One detector run: one browser profile, one viewport.
+ * One detector scan: one browser profile, one viewport, run a second time
+ * when the first run ends as a tool failure (`detectWithRetry`).
  * @param {string} viewport Width and height, as `390x844`.
  * @param {string[]} urls Addresses, scanned in order; never empty.
  * @param {string} [cwd] Where it runs; any other than the repository's root
