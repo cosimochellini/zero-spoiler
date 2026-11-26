@@ -207,6 +207,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
       ],
+      chronicle: season3Chronicles['olenna-tyrell'],
     },
     'megga-tyrell': {
       role: {
@@ -228,6 +229,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
       ],
+      chronicle: season3Chronicles['megga-tyrell'],
     },
     'alla-tyrell': {
       role: {
@@ -249,6 +251,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
       ],
+      chronicle: season3Chronicles['alla-tyrell'],
     },
     'elinor-tyrell': {
       role: {
@@ -270,6 +273,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
       ],
+      chronicle: season3Chronicles['elinor-tyrell'],
     },
     'oberyn-martell': {
       role: {
@@ -294,6 +298,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Martell', en: 'House Martell' },
         },
       ],
+      chronicle: season3Chronicles['oberyn-martell'],
     },
     'ellaria-sand': {
       role: { it: 'Amante di Oberyn Martell', en: 'Oberyn Martell’s paramour' },
@@ -309,6 +314,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Martell', en: 'House Martell' },
         },
       ],
+      chronicle: season3Chronicles['ellaria-sand'],
     },
     // #1635: Robb's war and the Riverlands.
     'jeyne-westerling': {

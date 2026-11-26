@@ -23,6 +23,16 @@ import { inBooks, onScreen } from './chronicle'
  * Nakloz is at episode 24 or after. Kraznys and Prendahl na Ghezn are on
  * screen too, but only the books name them, so their records and stories are
  * the books'.
+ *
+ * The King's Landing cast (#1660) follows. The show and the books tell the
+ * court in different scenes, so here too every story is one medium's. A show
+ * story sits at the King's Landing chapter its episode adapts (Tyrion I, 148,
+ * for episode 21; Sansa I, 150, for 22 and 24; Tyrion III, 163, for 23 and
+ * 25; Sansa III, 172, for 26 to 28; Tyrion VI, 197, for 30). A book story sits
+ * at the episode that adapts its chapter, or at the owner's show gate: the
+ * three cousins' stories open at 22, Oberyn's at 31 and Ellaria's at 32.
+ * Mace Tyrell opens on screen only at 32, so the show stories and the book
+ * stories before that episode leave him unnamed.
  */
 export const season3Chronicles = {
   'missandei': [
@@ -167,6 +177,123 @@ export const season3Chronicles = {
       {
         it: 'Prendahl na Ghezn, un ghiscariano, è uno dei tre capitani dei Corvi della Tempesta, assoldati da Yunkai contro [[daenerys-targaryen|Daenerys]]. I tre sono i primi a presentarsi alla trattativa fuori città. Daenerys offre loro oro e bottino perché passino con lei, e Prendahl respinge l’offerta. Tornati al loro accampamento, i Corvi della Tempesta mettono la scelta ai voti di ogni uomo. Mentre discutono, [[daario-naharis|Daario Naharis]] uccide Prendahl e l’altro capitano, Sallor il Calvo, e porta le due teste a Daenerys.',
         en: 'Prendahl na Ghezn, a Ghiscari, is one of the three captains of the Stormcrows, hired by Yunkai against [[daenerys-targaryen|Daenerys]]. The three are the first to come to her parley outside the city. She offers them gold and plunder to join her, and Prendahl rebuffs her. Back in their camp the Stormcrows put the question to every man. While they argue, [[daario-naharis|Daario Naharis]] kills Prendahl and his fellow captain Sallor the Bald, and brings both heads to Daenerys.',
+      },
+    ),
+  ],
+  // King’s Landing (#1660).
+  'olenna-tyrell': [
+    onScreen(
+      [22, 150],
+      { it: 'La verità sul re', en: 'The truth about the king' },
+      {
+        it: 'Olenna Tyrell riceve [[sansa-stark|Sansa]] nei giardini insieme alla nipote [[margaery-tyrell|Margaery]]. Dice quello che pensa: suo figlio è stato uno sciocco ad appoggiare la pretesa di [[renly-baratheon|Renly]]. Poi insiste perché Sansa le dica come sia davvero [[joffrey-baratheon|Joffrey]], promettendo di non ripetere una parola. Sansa si sfoga con rabbia sulla morte del padre, poi ritratta, e infine si lascia sfuggire che Joffrey è un mostro. Olenna è delusa ma non sorpresa. Il figlio di Olenna, assicura lei a Sansa, vuole che Margaery diventi regina, quindi le nozze non saranno annullate.',
+        en: 'Olenna Tyrell receives [[sansa-stark|Sansa]] in the gardens with her granddaughter [[margaery-tyrell|Margaery]]. She speaks her mind: her son was a fool to back [[renly-baratheon|Renly]]’s claim. Then she insists that Sansa tell her what [[joffrey-baratheon|Joffrey]] is really like, promising not to repeat a word. After an angry outburst about her father’s death, Sansa takes it back, then blurts out that Joffrey is a monster. Olenna is disappointed but not surprised. Her son wants Margaery to be queen, she assures Sansa, so the wedding will not be called off.',
+      },
+    ),
+    onScreen(
+      [24, 150],
+      { it: 'Crescere forti', en: 'Growing Strong' },
+      {
+        it: 'Nei giardini Olenna si lamenta che Casa Tyrell abbia lo stemma e il motto più noiosi del regno. Quando arriva [[varys|Varys]], manda via le cugine di Margaery e vede subito oltre i convenevoli dell’eunuco. Varys teme che [[petyr-baelish|Petyr Baelish]] voglia impadronirsi di [[sansa-stark|Sansa]]: con i fratelli minori creduti morti, se [[robb-stark|Robb]] cade l’erede del Nord è lei. Petyr brucerebbe il regno pur di essere re delle ceneri. Olenna è d’accordo, e dice che la soluzione è ovvia.',
+        en: 'In the gardens Olenna complains that House Tyrell has the dullest sigil and words in the realm. When [[varys|Varys]] arrives she sends Margaery’s cousins away and sees through his pleasantries. He fears that [[petyr-baelish|Petyr Baelish]] means to take [[sansa-stark|Sansa]]: with her younger brothers thought dead, she is the heir to the North if [[robb-stark|Robb]] falls. Petyr would burn the realm to be king of the ashes. Olenna agrees, and says the answer is obvious.',
+      },
+    ),
+    onScreen(
+      [25, 163],
+      { it: 'Metà della spesa', en: 'Half the cost' },
+      {
+        it: '[[tyrion-lannister|Tyrion]], il nuovo maestro del conio, solleva con Olenna la questione del costo delle nozze del re. Annoiata dai discorsi di denaro, lei elenca comunque con precisione i soldati e le provviste che i Tyrell hanno dato alla corona per la guerra e per l’inverno in arrivo. Le nozze devono farsi per tirare su il morale della città, dice, altrimenti il popolo tornerà a dare la colpa della guerra ai Lannister. Alla fine decide da sola che nessuno dirà che Casa Tyrell non ha fatto la sua parte, e accetta di pagare la metà.',
+        en: '[[tyrion-lannister|Tyrion]], the new master of coin, raises the cost of the royal wedding with Olenna. Bored by talk of money, she still lists exactly the soldiers and supplies the Tyrells have given the crown for the war and the winter to come. The wedding must go ahead to lift the city’s spirits, she says, or the people will blame the Lannisters for the war again. In the end she decides on her own that no one will say House Tyrell did not do its part, and agrees to pay half.',
+      },
+    ),
+    onScreen(
+      [26, 172],
+      { it: 'Loras per Cersei', en: 'Loras for Cersei' },
+      {
+        it: '[[tywin-lannister|Tywin]] propone che il nipote di Olenna, [[loras-tyrell|Loras]], sposi sua figlia [[cersei-lannister|Cersei]]. Olenna scambia frecciate con lui sull’età di Cersei, sulle voci su di lei e [[jaime-lannister|Jaime]] e sui gusti ben noti di Loras, e rifiuta: non getterà un altro fiore nel fango, dice, alludendo all’origine di [[joffrey-baratheon|Joffrey]]. Tywin risponde minacciando di fare di Loras un cavaliere della Guardia reale, che non può sposarsi né ereditare Alto Giardino. Olenna cede e acconsente alle nozze.',
+        en: '[[tywin-lannister|Tywin]] proposes that her grandson [[loras-tyrell|Loras]] marry his daughter [[cersei-lannister|Cersei]]. Olenna trades barbs with him about Cersei’s age, the talk about her and [[jaime-lannister|Jaime]], and Loras’s well-known tastes, and refuses: she will not throw another flower into the dirt, she says, hinting at where [[joffrey-baratheon|Joffrey]] came from. Tywin answers by threatening to make Loras a knight of the Kingsguard, who can neither marry nor inherit Highgarden. Olenna gives in and consents to the match.',
+      },
+    ),
+    inBooks(
+      [22, 150],
+      { it: 'La Regina di Spine', en: 'The Queen of Thorns' },
+      {
+        it: 'Olenna Tyrell, la Regina di Spine, cena con la nipote [[margaery-tyrell|Margaery]] e con [[sansa-stark|Sansa]], ed è lei a interessarsi di più alla ragazza. Si fa beffe delle ambizioni di [[renly-baratheon|Renly]] e chiama il proprio figlio uno zuccone per essersi alleato con i Lannister. Vuole la verità su [[joffrey-baratheon|Joffrey]], e quando Sansa teme di essere ascoltata, fa cantare a squarciagola il suo giullare. Sansa sussurra che Joffrey è un mostro. Le nozze si faranno, dice Olenna, e propone a Sansa di sposare il proprio nipote Willas.',
+        en: 'Olenna Tyrell, the Queen of Thorns, joins her granddaughter [[margaery-tyrell|Margaery]] for supper with [[sansa-stark|Sansa]] and takes the most interest in her. She scoffs at [[renly-baratheon|Renly]]’s ambitions and calls her own son an oaf for allying with the Lannisters. She wants the truth about [[joffrey-baratheon|Joffrey]], and when Sansa fears listeners, has her fool sing at the top of his voice. Sansa whispers that Joffrey is a monster. The wedding will go on, Olenna says, and she proposes that Sansa marry her grandson Willas.',
+      },
+    ),
+  ],
+  'megga-tyrell': [
+    inBooks(
+      [22, 150],
+      { it: 'Le cugine di Margaery', en: 'Margaery’s cousins' },
+      {
+        it: 'Megga Tyrell è una delle cugine che fanno compagnia a [[margaery-tyrell|Margaery Tyrell]] ad Approdo del Re. Quando Margaery invita [[sansa-stark|Sansa]] a cena con lei e con la nonna, [[olenna-tyrell|lady Olenna]], Sansa conosce Megga e le altre, tra cui [[alla-tyrell|Alla]] ed [[elinor-tyrell|Elinor]]. È però l’anziana signora a interessarsi di più a Sansa e a interrogarla sul re.',
+        en: 'Megga Tyrell is one of the cousins who keep [[margaery-tyrell|Margaery Tyrell]] company in King’s Landing. When Margaery invites [[sansa-stark|Sansa]] to sup with her and her grandmother, [[olenna-tyrell|Lady Olenna]], Sansa is introduced to Megga and the others, among them [[alla-tyrell|Alla]] and [[elinor-tyrell|Elinor]]. It is the old lady, though, who takes the most interest in Sansa, and questions her about the king.',
+      },
+    ),
+    inBooks(
+      [28, 172],
+      { it: 'Un ballo con il principe', en: 'A dance with the prince' },
+      {
+        it: 'Rumorosa e rotondetta, Megga è diventata amica di [[sansa-stark|Sansa]] insieme ad [[alla-tyrell|Alla]], e tutte e due seguono la cugina [[elinor-tyrell|Elinor]]; Megga sogna di essere baciata da un uomo. Quando Sansa sposa [[tyrion-lannister|Tyrion]] invece di Willas Tyrell, Megga e le cugine partecipano al banchetto di nozze ma ignorano la sposa, per mostrare cosa pensano del matrimonio. Megga balla con il principe [[tommen-baratheon|Tommen]].',
+        en: 'Loud and round, Megga has become one of [[sansa-stark|Sansa]]’s friends, with [[alla-tyrell|Alla]], and both of them follow their cousin [[elinor-tyrell|Elinor]]; Megga dreams of being kissed by a man. When Sansa is married to [[tyrion-lannister|Tyrion]] instead of Willas Tyrell, Megga and her cousins come to the wedding feast but ignore the bride, to show how they feel about the match. Megga dances with Prince [[tommen-baratheon|Tommen]].',
+      },
+    ),
+  ],
+  'alla-tyrell': [
+    inBooks(
+      [22, 150],
+      { it: 'Una nuova amica', en: 'A new friend' },
+      {
+        it: 'Alla Tyrell è una delle cugine che accompagnano sempre [[margaery-tyrell|Margaery Tyrell]] ad Approdo del Re. Conosce [[sansa-stark|Sansa]] quando Margaery la invita a cena con i Tyrell, e Sansa la incontra insieme a [[megga-tyrell|Megga]], a [[elinor-tyrell|Elinor]] e alle altre compagne di Margaery. Alla stessa cena [[olenna-tyrell|lady Olenna]] incalza Sansa perché dica la verità sul re.',
+        en: 'Alla Tyrell is one of the cousins who are [[margaery-tyrell|Margaery Tyrell]]’s constant companions in King’s Landing. She meets [[sansa-stark|Sansa]] when Margaery invites her to sup with the Tyrells, and Sansa is introduced to her with [[megga-tyrell|Megga]], [[elinor-tyrell|Elinor]] and the rest of Margaery’s companions. At the same supper [[olenna-tyrell|Lady Olenna]] presses Sansa for the truth about the king.',
+      },
+    ),
+    inBooks(
+      [26, 160],
+      { it: 'Canzoni di cavalieri', en: 'Songs of chivalry' },
+      {
+        it: 'Alla è diventata una delle amiche di [[sansa-stark|Sansa]] tra le dame di [[margaery-tyrell|Margaery]]. È timida e graziosa, ha più o meno l’età di Sansa e, come [[megga-tyrell|Megga]], segue la cugina [[elinor-tyrell|Elinor]], che è già una donna. Alla ha una bella voce e, se la si prega, suona l’arpa e canta canzoni di cavalieri e di amori perduti. A volte gioca con Megga a un gioco di baci.',
+        en: 'Alla has become one of [[sansa-stark|Sansa]]’s friends among [[margaery-tyrell|Margaery]]’s ladies. She is shy and pretty, close to Sansa in age, and, like [[megga-tyrell|Megga]], follows their cousin [[elinor-tyrell|Elinor]], who has flowered. Alla has a lovely voice, and when coaxed she plays the woodharp and sings songs of chivalry and lost loves. Sometimes she and Megga play a kissing game.',
+      },
+    ),
+  ],
+  'elinor-tyrell': [
+    inBooks(
+      [22, 150],
+      { it: 'Tra le dame di Margaery', en: 'Among Margaery’s ladies' },
+      {
+        it: 'Elinor Tyrell è una delle dame al servizio della cugina [[margaery-tyrell|Margaery Tyrell]] ad Approdo del Re. Quando Margaery invita [[sansa-stark|Sansa]] a cena con lei e con [[olenna-tyrell|lady Olenna]], Sansa conosce Elinor insieme alle altre cugine, [[megga-tyrell|Megga]] e [[alla-tyrell|Alla]], e alle altre compagne di Margaery. La cena si chiude con Olenna che chiede a Sansa di sposare il proprio nipote Willas.',
+        en: 'Elinor Tyrell is one of the ladies who attend her cousin [[margaery-tyrell|Margaery Tyrell]] in King’s Landing. When Margaery invites [[sansa-stark|Sansa]] to sup with her and [[olenna-tyrell|Lady Olenna]], Sansa is introduced to Elinor along with the other cousins, [[megga-tyrell|Megga]] and [[alla-tyrell|Alla]], and the rest of Margaery’s companions. The supper ends with Olenna asking Sansa to marry her grandson Willas.',
+      },
+    ),
+    inBooks(
+      [28, 172],
+      { it: 'Il pegno di Alyn', en: 'Alyn’s favour' },
+      {
+        it: 'Elinor, già donna e seguita dalle cugine [[megga-tyrell|Megga]] e [[alla-tyrell|Alla]], è tra le amiche più strette di [[margaery-tyrell|Margaery]], e ora anche di [[sansa-stark|Sansa]]. Il suo promesso sposo, Alyn Ambrose, ha portato il pegno di Elinor nella battaglia delle Acque Nere. Quando Sansa sposa [[tyrion-lannister|Tyrion]] invece di Willas, Elinor e le cugine vengono al banchetto ma fanno finta di non conoscere la sposa. Elinor balla con Alyn.',
+        en: 'Elinor, who has flowered and whom her cousins [[megga-tyrell|Megga]] and [[alla-tyrell|Alla]] follow, is one of [[margaery-tyrell|Margaery]]’s closest friends, and now [[sansa-stark|Sansa]]’s too. Her betrothed, Alyn Ambrose, wore her favour in the Battle of the Blackwater. When Sansa is married to [[tyrion-lannister|Tyrion]] instead of Willas, Elinor and her cousins come to the feast but act as if they do not know the bride. Elinor dances with Alyn.',
+      },
+    ),
+  ],
+  'oberyn-martell': [
+    inBooks(
+      [31, 182],
+      { it: 'Giustizia per Elia', en: 'Justice for Elia' },
+      {
+        it: 'Oberyn Martell, la Vipera Rossa di Dorne, guida i trecento dorniani ad Approdo del Re al posto del fratello, il principe Doran. È noto per le armi avvelenate, per una compagnia di mercenari tutta sua, per gli anni passati alla Cittadella e per un torneo in cui ha reso storpio l’erede dei Tyrell, cosa che i Tyrell non hanno dimenticato. Accogliendo [[tyrion-lannister|Tyrion]], ricorda di essere stato a Castel Granito con la sorella Elia quando Tyrion era in fasce. Poi chiede quando sarà fatta giustizia: intende uccidere [[gregor-clegane|Gregor Clegane]], e sapere da lui chi diede gli ordini.',
+        en: 'Oberyn Martell, the Red Viper of Dorne, leads the three hundred Dornishmen to King’s Landing in place of his brother, Prince Doran. He is known for poisoned weapons, a sellsword company of his own, years at the Citadel, and a tourney in which he crippled the Tyrell heir, which the Tyrells have not forgotten. Greeting [[tyrion-lannister|Tyrion]], he recalls visiting Casterly Rock with his sister Elia when Tyrion was a baby. Then he asks when justice will be served: he means to kill [[gregor-clegane|Gregor Clegane]], and learn from him who gave the orders.',
+      },
+    ),
+  ],
+  'ellaria-sand': [
+    inBooks(
+      [32, 182],
+      { it: 'Ellaria è curiosa', en: 'Ellaria is curious' },
+      {
+        it: 'Ellaria Sand arriva ad Approdo del Re al fianco del suo amante, il [[oberyn-martell|principe Oberyn]], venuto per le nozze del re al posto del fratello Doran. Di nascita umile e amante di un principe, Ellaria dà a [[tyrion-lannister|Tyrion]] una nuova preoccupazione: dove farla sedere alle nozze di [[joffrey-baratheon|Joffrey]] e [[margaery-tyrell|Margaery]]. Oberyn allude ai gusti di Ellaria. Lui ed Ellaria hanno condiviso molto, dice a Tyrion, ma mai una bella donna bionda, ed Ellaria è curiosa.',
+        en: 'Ellaria Sand rides to King’s Landing at the side of her lover, [[oberyn-martell|Prince Oberyn]], who comes for the king’s wedding in his brother Doran’s place. Baseborn and a paramour, she gives [[tyrion-lannister|Tyrion]] a new worry: where to seat her at the wedding of [[joffrey-baratheon|Joffrey]] and [[margaery-tyrell|Margaery]]. Oberyn hints at her tastes. The two of them have shared much, he tells Tyrion, but never a beautiful blonde woman, and Ellaria is curious.',
       },
     ),
   ],
