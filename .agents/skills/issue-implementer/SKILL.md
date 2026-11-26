@@ -34,7 +34,12 @@ in Codex or through Claude's `issue-implementer` subagent.
    exports and tests. Hidden ids, names, prose and drawings stay server-side
    until their episode/chapter gates; preserve source/series isolation.
 5. Run `npm run check`; fix introduced failures and report baseline failures.
-   Verify mappings for data changes, payload parity
+   When the change adds or moves a gate, a pin or a dated step (`revealedAt*`, a
+   role or affiliation step, a chronicle `chapter:`, a redrawing), shift each by
+   one in a scratch edit, watch a pin test go **red**, revert, and list each
+   mutation with its red test in the PR body; one that stays green gets an
+   independent pin before step 6 (`CODING_STANDARDS.md` Review rules,
+   `filing-records` §7). Verify mappings for data changes, payload parity
    (`npm run archive:parity`) for behavior-preserving archive/server refactors
    and production browser flows for site changes, following `CONTRIBUTING.md`:
    judge a site change on `npm run build` and `npm start` (`vite preview`),
