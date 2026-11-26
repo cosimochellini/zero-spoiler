@@ -3753,6 +3753,133 @@ const essos3 = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 3's King's Landing cards for the season-2 cast (#1651): season 3
+ * and A Storm of Swords through chapter 52, episodes 21 to 30 and chapters
+ * 144 to 196. The new characters' own cards are in
+ * `season-3.relationships.ts`.
+ */
+const kingsLanding3 = {
+  // Margaery, the show
+  marJoffreyCrossbow: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Intended husband', it: 'Promesso sposo' },
+    summary: {
+      en: 'The king she is to marry. When he asks about Renly, she plays the frustrated bride, then admires his crossbow until he offers to take her hunting.',
+      it: 'Il re che deve sposare. Quando lui le chiede di Renly, recita la parte della sposa delusa, poi ammira la sua balestra finché lui non le propone di portarla a caccia.',
+    },
+  },
+  marOlenna: {
+    character: 'olenna-tyrell',
+    type: { en: 'Grandmother', it: 'Nonna' },
+    summary: {
+      en: 'Her grandmother, with whom she questions Sansa about Joffrey.',
+      it: 'Sua nonna, con cui interroga Sansa su Joffrey.',
+    },
+  },
+  marSansa: {
+    character: 'sansa-stark',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Stark girl she and her grandmother invite to the gardens. Sansa tells them Joffrey is a monster.',
+      it: 'La ragazza Stark che lei e la nonna invitano nei giardini. Sansa dice loro che Joffrey è un mostro.',
+    },
+  },
+  marLorasCourt: {
+    character: 'loras-tyrell',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, at court with her, who brings Sansa to the gardens.',
+      it: 'Suo fratello, a corte con lei, che accompagna Sansa nei giardini.',
+    },
+  },
+  marSansaLoras: {
+    character: 'sansa-stark',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The Stark girl she finds in the godswood. She offers her a home among the Tyrells, as Loras’s wife.',
+      it: 'La ragazza Stark che trova nel parco degli dei. Le offre una casa tra i Tyrell, come moglie di Loras.',
+    },
+  },
+  marJoffreySept: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Intended husband', it: 'Promesso sposo' },
+    summary: {
+      en: 'The king she is to marry, who shows her the sept where they will wed. She leads him out to greet the cheering crowd.',
+      it: 'Il re che deve sposare, che le mostra il tempio dove si sposeranno. Lei lo porta fuori a salutare la folla festante.',
+    },
+  },
+  marCerseiThreat: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen regent', it: 'Regina reggente' },
+    summary: {
+      en: 'Joffrey’s mother. When Margaery calls them sisters, Cersei tells her how the Reynes ended and threatens to have her strangled.',
+      it: 'La madre di Joffrey. Quando Margaery dice che saranno sorelle, Cersei le racconta come sono finiti i Reyne e minaccia di farla strangolare.',
+    },
+  },
+  marSansaConsoles: {
+    character: 'sansa-stark',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The Stark girl now to marry Tyrion. Margaery consoles her that he is far from the worst Lannister.',
+      it: 'La ragazza Stark che ora dovrà sposare Tyrion. Margaery la consola dicendole che lui è tutt’altro che il peggiore dei Lannister.',
+    },
+  },
+  // Margaery, the books
+  marSansaBook: {
+    character: 'sansa-stark',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Stark girl she invites to sup with her grandmother. Together they get her to say what Joffrey is.',
+      it: 'La ragazza Stark che invita a cena con la nonna. Insieme la convincono a dire che cosa sia Joffrey.',
+    },
+  },
+  marOlennaBook: {
+    character: 'olenna-tyrell',
+    type: { en: 'Grandmother', it: 'Nonna' },
+    summary: {
+      en: 'Her grandmother, the Queen of Thorns, who hosts the supper with her.',
+      it: 'Sua nonna, la Regina di Spine, che ospita con lei la cena.',
+    },
+  },
+  marLorasBook: {
+    character: 'loras-tyrell',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, now of the Kingsguard, who brings Sansa to the supper.',
+      it: 'Suo fratello, ora nella Guardia reale, che accompagna Sansa alla cena.',
+    },
+  },
+
+  // Garlan Tyrell (books only)
+  garSansa: {
+    character: 'sansa-stark',
+    type: { en: 'Bride he comforts', it: 'Sposa che consola' },
+    summary: {
+      en: 'Tyrion’s bride, whom he comforts at the wedding feast, telling her there is more to her husband than she sees.',
+      it: 'La sposa di Tyrion, che consola al banchetto di nozze dicendole che in suo marito c’è più di quanto lei veda.',
+    },
+  },
+  garTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Groom', it: 'Sposo' },
+    summary: {
+      en: 'The dwarf Sansa marries. Garlan speaks well of him to her.',
+      it: 'Il nano che Sansa sposa. Garlan gliene parla bene.',
+    },
+  },
+
+  // Daisy (show only)
+  daiRosDead: {
+    character: 'ros',
+    type: { en: 'Fellow prostitute', it: 'Collega' },
+    summary: {
+      en: 'The woman Joffrey forced to hit her, and who then had to take her to Tyrion to show him what the king had done.',
+      it: 'La donna che Joffrey aveva costretto a colpirla, e che poi aveva dovuto portarla da Tyrion a mostrargli che cosa aveva fatto il re.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season2Relationships = {
   // Daisy, show only: shown round at her gate, in Pycelle’s bed at 13 and
   // sent to the king at 14. Her chapters only order her.
@@ -3776,6 +3903,18 @@ export const season2Relationships = {
       value: [
         kingsLanding.daiJoffrey,
         kingsLanding.daiRosBeats,
+        kingsLanding.daiTyrionSent,
+      ],
+    },
+    // Stage 3 (#1651): Ros is killed in "The Climb" (26), and Daisy's card
+    // on her turns to the past tense.
+    {
+      episode: 26,
+      chapter: 175,
+      source: 'episode',
+      value: [
+        kingsLanding.daiJoffrey,
+        kingsLanding3.daiRosDead,
         kingsLanding.daiTyrionSent,
       ],
     },
@@ -3877,6 +4016,19 @@ export const season2Relationships = {
         kingsLanding.garMargaery,
         kingsLanding.garLoras,
         kingsLanding.garMace,
+      ],
+    },
+    // Stage 3 (#1651): Sansa III (172), the wedding feast.
+    {
+      episode: 28,
+      chapter: 172,
+      source: 'chapter',
+      value: [
+        kingsLanding3.garSansa,
+        kingsLanding3.garTyrion,
+        kingsLanding.garJoffrey,
+        kingsLanding.garMargaery,
+        kingsLanding.garLoras,
       ],
     },
   ],
@@ -5353,6 +5505,57 @@ export const season2Relationships = {
       chapter: 139,
       source: 'chapter',
       value: [stormlands.marJoffreyBook, stormlands.marRenlyDeadBook],
+    },
+    // Stage 3 (#1651). The show: "Dark Wings, Dark Words" (22, with the
+    // charity of 21), "And Now His Watch Is Ended" (24) and "Second Sons"
+    // (28, with the consolation of 27). The books: Sansa I (150).
+    {
+      episode: 22,
+      chapter: 150,
+      source: 'episode',
+      value: [
+        kingsLanding3.marJoffreyCrossbow,
+        kingsLanding3.marOlenna,
+        kingsLanding3.marSansa,
+        kingsLanding3.marLorasCourt,
+        stormlands.marRenlyDeadShow,
+      ],
+    },
+    {
+      episode: 24,
+      chapter: 160,
+      source: 'episode',
+      value: [
+        kingsLanding3.marSansaLoras,
+        kingsLanding3.marJoffreySept,
+        kingsLanding3.marOlenna,
+        kingsLanding3.marLorasCourt,
+        stormlands.marRenlyDeadShow,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 172,
+      source: 'episode',
+      value: [
+        kingsLanding3.marCerseiThreat,
+        kingsLanding3.marSansaConsoles,
+        kingsLanding3.marJoffreySept,
+        kingsLanding3.marOlenna,
+        kingsLanding3.marLorasCourt,
+      ],
+    },
+    {
+      episode: 22,
+      chapter: 150,
+      source: 'chapter',
+      value: [
+        kingsLanding3.marSansaBook,
+        kingsLanding3.marOlennaBook,
+        kingsLanding3.marLorasBook,
+        stormlands.marJoffreyBook,
+        stormlands.marRenlyDeadBook,
+      ],
     },
   ],
   // The show first has him at Joffrey's wedding (episode 32): his cards are

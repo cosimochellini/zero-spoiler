@@ -580,7 +580,7 @@ const GRAND_CHAIN: Stroke[] = [
  * The Hound's dog's-head helm side on, with no eye or teeth. The steel's
  * far side is hatched; the accent is the snout.
  */
-const HOUND_HELM: Stroke[] = [
+export const HOUND_HELM: Stroke[] = [
   {
     d: 'M60 72 Q64 56 78 48 L82 24 L98 44 L110 22 Q120 44 120 62 Q128 88 118 124',
   },

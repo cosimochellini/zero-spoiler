@@ -7,6 +7,7 @@ import {
 import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 import type { Stroke } from '~/lib/view/records'
 
+import { BROTHERHOOD_DRAWINGS, brotherhoodRedrawn } from './brotherhood'
 import { COURT_DRAWINGS, courtRedrawn } from './court'
 import { DRAGON_SIGIL, ESSOS_DRAWINGS, essosRedrawn } from './essos'
 import { IRONBORN_DRAWINGS, ironbornRedrawn } from './ironborn'
@@ -188,7 +189,8 @@ const PERSON: Stroke[] = [
  * cast, in `essos.ts` (#1475). The seasons' own, which the home page's
  * frame draws, are in `seasons.ts` (#1601). The third stage's King's
  * Landing cast is drawn in `court.ts` (#1642), its Robb's war and Riverlands
- * cast in `riverlands.ts` (#1643) and its Essos cast in `essos.ts` (#1647);
+ * cast in `riverlands.ts` (#1643), its Essos cast in `essos.ts` (#1647) and
+ * Arya's group, the Brotherhood Without Banners, in `brotherhood.ts` (#1644);
  * its other casts show `PERSON` until their drawing children draw them.
  * `satisfies` rather than an annotation, so `ArtId` below stays the literal
  * keys.
@@ -207,6 +209,7 @@ export const DRAWINGS = {
   ...IRONBORN_DRAWINGS,
   ...WILDLING_DRAWINGS,
   ...SEASON_DRAWINGS,
+  ...BROTHERHOOD_DRAWINGS,
   'eddard-stark': ICE_STANDING,
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
@@ -223,15 +226,6 @@ export const DRAWINGS = {
   'dirk': PERSON,
   'ollo-lophand': PERSON,
   'clubfoot-karl': PERSON,
-  // #1636: Arya, the Brotherhood Without Banners and the Hound.
-  'anguy': PERSON,
-  'tom-of-sevenstreams': PERSON,
-  'lem': PERSON,
-  'jack-be-lucky': PERSON,
-  'greenbeard': PERSON,
-  'mad-huntsman': PERSON,
-  'edric-dayne': PERSON,
-  'ghost-of-high-heart': PERSON,
   // #1637, the third stage's Jaime, Brienne and Harrenhal cast, until its
   // drawing child draws it.
   'qyburn': PERSON,
@@ -254,8 +248,9 @@ export type ArtId = keyof typeof DRAWINGS
  * (#1052, #1475, #1647), the northern household's from `north.ts`, the Vale
  * cast's from `vale.ts`, the King's Landing cast's from `court.ts`, the
  * Riverlands cast's from `riverlands.ts`, the stormlands cast's from
- * `stormlands.ts`, the second stage's Iron Islands cast's from `ironborn.ts`
- * and the wildlings' from `wildlings.ts`. Eddard Stark is beheaded with Ice in
+ * `stormlands.ts`, the second stage's Iron Islands cast's from `ironborn.ts`,
+ * the wildlings' from `wildlings.ts` and the third stage's Brotherhood cast's
+ * from `brotherhood.ts` (#1644). Eddard Stark is beheaded with Ice in
  * "Baelor" (episode 9) and in Arya V (chapter 66): from there the blade lies
  * flat on the ground, with nobody to hold it.
  */
@@ -272,6 +267,7 @@ export const REDRAWINGS: Redrawings = {
   ...ironbornRedrawn,
   ...wildlingsRedrawn,
   ...placesRedrawn,
+  ...brotherhoodRedrawn,
   'eddard-stark': [
     {
       episode: 9,
