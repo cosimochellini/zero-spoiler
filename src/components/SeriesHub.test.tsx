@@ -1,10 +1,11 @@
-import { screen } from '@testing-library/react'
+import { screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
 import type { ComingSeries, HubSeries } from '~/lib/view/hub'
 import { ep, renderWithProviders } from '~/test/providers'
 import { settleDelay } from '~/test/settle'
 
+import { REQUEST_URL } from './HubCards'
 import { SeriesHub } from './SeriesHub'
 
 const HUNTER_X_HUNTER: ComingSeries = {
@@ -17,26 +18,49 @@ const onePiece = (bookmark: HubSeries['bookmark']): HubSeries => ({
   name: { en: 'One Piece', it: 'One Piece' },
   theme: 'one-piece',
   count: 737,
+  demoLastEpisode: 61,
   open: bookmark === null ? 0 : 58,
   bookmark,
 })
 
+// The tour's records are not asked for here: jsdom never brings it near.
+async function noTour(): Promise<never> {
+  await Promise.resolve()
+  throw new Error('no tour')
+}
+
+/** The opening row: every wiki at a glance, and the request card. */
+function openingRow(): HTMLElement {
+  const [row] = screen.getAllByRole('list')
+  if (row === undefined) {
+    throw new Error('The hub has no opening row')
+  }
+  return row
+}
+
+/** The opening row's card of One Piece. */
+function onePieceCard(): HTMLElement {
+  return within(openingRow()).getByRole('link', { name: /One Piece/u })
+}
+
 describe('SeriesHub', () => {
-  it('shows its header at once and settles the cards in order', () => {
+  it('shows its header at once and settles the row in order', () => {
     renderWithProviders(
       <SeriesHub
         coming={[HUNTER_X_HUNTER]}
+        load={noTour}
         series={[onePiece(null)]}
       />,
     )
 
     const header = screen.getByRole('banner')
-    const cards = screen.getAllByRole('listitem')
+    const cards = within(openingRow()).getAllByRole('listitem')
 
     expect(settleDelay(header)).toBeNull()
     expect(cards.map((card) => settleDelay(card))).toStrictEqual([
       '0ms',
       '70ms',
+      '140ms',
     ])
   })
 
@@ -44,12 +68,13 @@ describe('SeriesHub', () => {
     renderWithProviders(
       <SeriesHub
         coming={[]}
+        load={noTour}
         series={[onePiece(ep(650))]}
       />,
       { locale: 'it', path: '/it' },
     )
 
-    const card = screen.getByRole('link', { name: /One Piece/u })
+    const card = onePieceCard()
 
     expect(card).toHaveAttribute('href', '/one-piece/it')
     expect(card).toHaveTextContent('Episodio 650')
@@ -60,15 +85,14 @@ describe('SeriesHub', () => {
     renderWithProviders(
       <SeriesHub
         coming={[]}
+        load={noTour}
         series={[onePiece(null)]}
       />,
       { path: '/en' },
     )
 
-    const card = screen.getByRole('link', { name: /One Piece/u })
-
-    expect(card).toHaveTextContent('737 entries')
-    expect(card).not.toHaveTextContent('open')
+    expect(onePieceCard()).toHaveTextContent('737 entries')
+    expect(onePieceCard()).not.toHaveTextContent('open')
   })
 
   it.each([
@@ -85,30 +109,81 @@ describe('SeriesHub', () => {
     renderWithProviders(
       <SeriesHub
         coming={[]}
+        load={noTour}
         series={[onePiece(bookmark)]}
       />,
       { path: '/en' },
     )
 
-    expect(screen.getByRole('link', { name: /One Piece/u })).toHaveTextContent(
-      said,
-    )
+    expect(onePieceCard()).toHaveTextContent(said)
   })
 
   it('announces a series still to come with no link and no count', () => {
     renderWithProviders(
       <SeriesHub
         coming={[HUNTER_X_HUNTER]}
+        load={noTour}
         series={[onePiece(null)]}
       />,
       { path: '/en' },
     )
 
-    const coming = screen.getByRole('heading', { name: 'Hunter x Hunter' })
+    const row = within(openingRow())
+    const coming = row.getByRole('heading', { name: 'Hunter x Hunter' })
 
     expect(coming.closest('a')).not.toBeInTheDocument()
     expect(coming.parentElement).toHaveTextContent('Coming later')
-    expect(screen.getAllByText(/entries/u)).toHaveLength(1)
-    expect(screen.getAllByRole('link')).toHaveLength(1)
+    expect(row.getAllByText(/entries/u)).toHaveLength(1)
+    expect(
+      row.getAllByRole('link').map((link) => link.getAttribute('href')),
+    ).toStrictEqual(['/one-piece/en', REQUEST_URL])
+  })
+
+  it('asks for a new wiki through the GitHub form', () => {
+    renderWithProviders(
+      <SeriesHub
+        coming={[]}
+        load={noTour}
+        series={[onePiece(null)]}
+      />,
+      { locale: 'it', path: '/it' },
+    )
+
+    expect(
+      within(openingRow()).getByRole('link', {
+        name: /Richiedi una nuova wiki/u,
+      }),
+    ).toHaveAttribute(
+      'href',
+      'https://github.com/cosimochellini/zero-spoiler/issues/new?template=series.yml',
+    )
+  })
+
+  it('writes out the tour’s steps with no script, the open series’ only', () => {
+    renderWithProviders(
+      <SeriesHub
+        coming={[HUNTER_X_HUNTER]}
+        load={noTour}
+        series={[onePiece(null)]}
+      />,
+      { path: '/en' },
+    )
+
+    const tour = screen.getByRole('region', { name: 'How it works' })
+
+    expect(
+      within(tour)
+        .getAllByRole('heading', { level: 3 })
+        .map((heading) => heading.textContent),
+    ).toStrictEqual([
+      'One bookmark per series',
+      'The rest is under fog',
+      'Show anyway',
+      'Each entry follows your bookmark',
+    ])
+    expect(screen.getByRole('link', { name: /How it works/u })).toHaveAttribute(
+      'href',
+      '#how-it-works',
+    )
   })
 })

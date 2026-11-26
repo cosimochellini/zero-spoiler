@@ -35,6 +35,36 @@ export const enDictionary = {
   'hub.countOpen': '{open} of {count} open',
   'hub.noBookmark': 'No bookmark yet',
   'hub.coming': 'Coming later',
+  'hub.request': 'Request a new wiki',
+  'hub.requestHint': 'Opens a form on GitHub',
+  'hub.how': 'How it works',
+  'hub.tour.title': 'How it works',
+  'hub.tour.lede':
+    'Scroll, and the screen follows the text. You can also move the bookmark by hand.',
+  'hub.tour.bookmark.title': 'One bookmark per series',
+  'hub.tour.bookmark.body':
+    'You set the last episode you watched or the last chapter you read. Each entry opens when your bookmark reaches it.',
+  'hub.tour.fog.title': 'The rest is under fog',
+  'hub.tour.fog.body':
+    'Of an entry under fog you see only where it opens. Its name, drawing and text are not in the page you receive.',
+  'hub.tour.anyway.title': 'Show anyway',
+  'hub.tour.anyway.body':
+    'You can open a single entry by hand. The others stay under fog, and your bookmark does not move.',
+  'hub.tour.grows.title': 'Each entry follows your bookmark',
+  'hub.tour.grows.body':
+    'Role, affiliation, bounty and drawing change when you reach the change. Until then you see the version you know.',
+  'hub.tour.groups.title': 'Crews and houses',
+  'hub.tour.groups.body':
+    'Crews, houses and factions follow your bookmark too. When someone changes side, you see it once you reach that episode.',
+  'hub.tour.bonds.title': 'Relationships and Nen',
+  'hub.tour.bonds.body':
+    'The relationships between characters change with your bookmark. Nen abilities you have not reached stay under fog.',
+  'hub.tour.end': 'Pick your series',
+  'hub.tour.screen': 'Preview of {series}',
+  'hub.tour.past': '{count} more entries after episode {last}, all under fog',
+  'hub.tour.anywayDone': 'Opened by hand',
+  'hub.tour.nen': 'Nen abilities',
+  'hub.tour.bondsOf': 'Relationships of {name}',
   'seo.imageAlt':
     'The Zero Spoiler card: the logo above a route that disappears into fog.',
 

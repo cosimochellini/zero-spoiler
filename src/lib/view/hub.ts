@@ -13,6 +13,8 @@ export interface HubSeries {
   /** The series' books, so a chapter bookmark is said as book and chapter. */
   books?: Book[]
   count: number
+  /** The demo's last episode: where the hub's tour stops (#1703). */
+  demoLastEpisode: number
   name: Record<Locale, string>
   /** How many of the `count` entries the bookmark has reached; 0 with none. */
   open: number
