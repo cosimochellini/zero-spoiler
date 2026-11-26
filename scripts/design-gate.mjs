@@ -42,10 +42,10 @@
  *   1  findings that no waiver covers
  *   2  the gate cannot vouch for the scan: no build, the server did not
  *      start, the page list is short, a page was not served as asked, the
- *      detector could not scan a target or ran out of time, the token scan's
- *      canary page was not flagged as expected, or a waiver gives
- *      no reason, is one the detector would not apply, or is temporary and
- *      matches nothing
+ *      detector could not scan a target or ran out of time on a run and on
+ *      its one retry, the token scan's canary page was not flagged as
+ *      expected, or a waiver gives no reason, is one the detector would not
+ *      apply, or is temporary and matches nothing
  */
 import { spawn } from 'node:child_process'
 import { once } from 'node:events'
@@ -65,7 +65,7 @@ import { fileURLToPath } from 'node:url'
 import {
   bookmarkedPageProblem,
   bookmarkProblem,
-  detectorProblem,
+  detectWithRetry,
   judge,
   pageProblem,
   pagesOf,
@@ -187,9 +187,7 @@ function freePort() {
     probe.on('error', reject)
     probe.listen(0, HOST, () => {
       const { port } = probe.address()
-      probe.close(() => {
-        resolve(port)
-      })
+      probe.close(() => resolve(port))
     })
   })
 }
@@ -329,7 +327,8 @@ async function assertServed(origin, { landing, bookmarked }) {
 }
 
 /**
- * One detector run: one browser profile, one viewport.
+ * One detector scan: one browser profile, one viewport, run a second time
+ * when the first run ends as a tool failure (`detectWithRetry`).
  * @param {string} viewport Width and height, as `390x844`.
  * @param {string[]} urls Addresses, scanned in order; never empty.
  * @param {string} [cwd] Where it runs; any other than the repository's root
@@ -343,17 +342,20 @@ async function detect(viewport, urls, cwd = repositoryRoot) {
   // The npm shim: it runs the engine of this platform's optional package.
   // Resolved here, inside `main`, so a missing package is a tool failure.
   const cli = fileURLToPath(import.meta.resolve('impeccable/cli/bin/cli.js'))
-  const { child, output } = start(
-    [cli, 'detect', '--json', flag, '--viewport', viewport, ...urls],
-    cwd,
+  const args = [cli, 'detect', '--json', flag, '--viewport', viewport, ...urls]
+  const run = async () => {
+    const { child, output } = start(args, cwd)
+    const timer = setTimeout(() => killGroup(child), DETECT_TIMEOUT_MS)
+    child.on('close', () => clearTimeout(timer))
+    const [status] = await once(child, 'close')
+    return { status, output }
+  }
+  // The engine scans every address in one browser and does not say which one
+  // failed in a form worth parsing, so the whole run goes again.
+  const label = `${urls.length} page(s) at ${viewport}`
+  const { problem, output } = await detectWithRetry(run, label, (line) =>
+    process.stdout.write(line),
   )
-  const timer = setTimeout(() => {
-    killGroup(child)
-  }, DETECT_TIMEOUT_MS)
-  const [status] = await once(child, 'close')
-  clearTimeout(timer)
-
-  const problem = detectorProblem(status)
   if (problem !== null) {
     fail(
       `impeccable detect ${problem} (${viewport}, limit ${DETECT_TIMEOUT_MS / 1000}s).\n`
