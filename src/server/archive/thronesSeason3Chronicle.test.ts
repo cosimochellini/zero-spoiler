@@ -722,6 +722,13 @@ const STORIES: Row[] = [
     title: 'Robb Stark’s head',
   },
   {
+    id: 'joffrey-baratheon',
+    medium: 'books',
+    episode: 28,
+    chapter: 172,
+    title: 'The bedding refused',
+  },
+  {
     id: 'petyr-baelish',
     medium: 'show',
     episode: 21,
@@ -767,7 +774,7 @@ const STORIES: Row[] = [
     id: 'varys',
     medium: 'show',
     episode: 26,
-    chapter: 172,
+    chapter: 175,
     title: 'Serving the realm',
   },
   {
@@ -915,7 +922,7 @@ const STORIES: Row[] = [
     id: 'ros',
     medium: 'show',
     episode: 26,
-    chapter: 172,
+    chapter: 175,
     title: 'Given to a friend',
   },
   {

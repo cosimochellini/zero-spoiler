@@ -802,7 +802,8 @@
       "Stage-2 step (#1463): former acting Hand at 20 / 141, from the Game of Thrones Wiki's \"Valar Morghulis\" (Tyrion XV). Chapter numbering from the Ice and Fire Wiki's chapter navigation.",
       "Stage 3 (#1634): master of coin at 23 / 163, the small council of \"Walk of Punishment\" and Tyrion III (A Wiki of Ice and Fire, Chapter 19, shared cache).",
       "Chronicles (#1660): the show stories rest on the Game of Thrones Wiki’s season-3 episode synopses; the episodes were not viewed; the book stories rest on A Wiki of Ice and Fire’s cached chapter synopses and character pages; the chapters’ own text was not read.",
-      "Chronicles (#1660): Tyrion II (site 156) is adapted by no season-3 episode; episode 22 only orders its book story. Italian “Symon Lingua d’Argento” is assumed, not checked against the Mondadori edition."
+      "Chronicles (#1660): Tyrion II (site 156) is adapted by no season-3 episode; episode 22 only orders its book story. Italian “Symon Lingua d’Argento” is assumed, not checked against the Mondadori edition.",
+      "Chronicles (#1660): Italian “Symon Lingua d’Argento” and Elinor’s betrothed “Alyn Ambrose” are kept as assumed, not checked against the Mondadori edition."
     ]
   },
   "tywin-lannister": {
@@ -872,13 +873,14 @@
       "https://gameofthrones.fandom.com/wiki/The_Climb",
       "https://gameofthrones.fandom.com/wiki/The_Bear_and_the_Maiden_Fair_(episode)",
       "https://gameofthrones.fandom.com/wiki/Second_Sons_(episode)",
-      "https://gameofthrones.fandom.com/wiki/Mhysa"
+      "https://gameofthrones.fandom.com/wiki/Mhysa",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_28"
     ],
     "unverified": [
       "Crown (#1286): he takes the throne at Robert’s death, “You Win or You Die” (episode 7, Fandom ref GOT107) and Eddard XIV (chapter 50); the owner rules crowns a costume stage; episode not viewed.",
       "Death (#1286): “The Lion and the Rose” (episode 32, Fandom DeathEp, ref GOT402) and Tyrion VIII of A Storm of Swords (site chapter 204, provisional: he chokes in Sansa IV, chapter 203); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed.",
-      "Chronicles (#1660): the show stories rest on the Game of Thrones Wiki’s season-3 episode synopses; the episodes were not viewed.",
-      "Chronicles (#1660): no book story is written for him in the stage: the Sansa III synopsis gives him only the bedding scene, which Tyrion’s and Sansa’s stories tell."
+      "Chronicles (#1660): the show stories rest on the Game of Thrones Wiki’s season-3 episode synopses; the episodes were not viewed; the book stories rest on A Wiki of Ice and Fire’s cached chapter synopses; the chapters’ own text was not read.",
+      "Chronicles (#1660): his one book story of the stage (28/172, added after verification) rests on the Sansa III synopsis alone, which gives him only the bedding scene."
     ]
   },
   "myrcella-baratheon": {
@@ -3872,7 +3874,8 @@
       "Italian: Alayaya, named in Italian Wikipedia's Chataya section; the Mondadori form was not checked.",
       "Drawing (#1470): a gown of flowing silks cinched with a beaded belt, as A Wiki of Ice and Fire (through Firecrawl) cites A Clash of Kings, Chapter 15 (Tyrion III, site 89) for her dress. The book not viewed; the gown's cut is drawn by eye.",
       "Lookup (#1489): \"Alayaya dresses in flowing silks, cinched at the waist with a beaded belt\", A Clash of Kings 15 (Tyrion III, site 89; A Wiki of Ice and Fire's Alayaya page, through Firecrawl).",
-      "Chronicles (#1660): the book stories rest on A Wiki of Ice and Fire’s cached chapter synopses and character pages; the chapters’ own text was not read."
+      "Chronicles (#1660): the book stories rest on A Wiki of Ice and Fire’s cached chapter synopses and character pages; the chapters’ own text was not read.",
+      "Status (#1660, verifier finding): alive again at 148 (books), when Tywin has her whipped and thrown out of the Red Keep (Tyrion I, cached synopsis and A Wiki of Ice and Fire’s Alayaya page); episode 21 only orders it."
     ]
   },
   "garlan-tyrell": {
@@ -5152,7 +5155,8 @@
       "Show: none; episode 22 only orders the record.",
       "Italian: no Italian Wikipedia entry; the name stays as it is until the Mondadori form is checked.",
       "Drawing (#1642): she has no page on either Fandom wiki; the Ice and Fire Wiki's Megga Tyrell page gives her only a good singing voice. The high harp of Sansa II belongs to Leonette Fossoway, who teaches it to Sansa (Ice and Fire Wiki, Leonette Fossoway), so it is not hers. The rose of House Tyrell stands in, on a swallow-tailed pennon drawn by eye.",
-      "Chronicles (#1660): the book stories rest on A Wiki of Ice and Fire’s cached chapter synopses and character pages; the chapters’ own text was not read."
+      "Chronicles (#1660): the book stories rest on A Wiki of Ice and Fire’s cached chapter synopses and character pages; the chapters’ own text was not read.",
+      "Chronicles (#1660): Italian “arpa” for her woodharp is assumed, not checked against the Mondadori edition."
     ]
   },
   "elinor-tyrell": {
@@ -5169,7 +5173,8 @@
       "Show: none; episode 22 only orders the record.",
       "Italian: no Italian Wikipedia entry; the name stays as it is until the Mondadori form is checked.",
       "Drawing (#1642): her one object on the Ice and Fire Wiki is the favour Alyn Ambrose wore on the Blackwater, which no page describes; the rose of House Tyrell stands in, on a round shield drawn by eye.",
-      "Chronicles (#1660): the book stories rest on A Wiki of Ice and Fire’s cached chapter synopses and character pages; the chapters’ own text was not read."
+      "Chronicles (#1660): the book stories rest on A Wiki of Ice and Fire’s cached chapter synopses and character pages; the chapters’ own text was not read.",
+      "Chronicles (#1660): “Alyn Ambrose” is kept in Italian as in English; no Mondadori form was checked."
     ]
   },
   "oberyn-martell": {

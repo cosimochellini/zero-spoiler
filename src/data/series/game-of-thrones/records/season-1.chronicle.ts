@@ -2810,8 +2810,8 @@ export const season1Chronicles = {
       [28, 172],
       { it: 'Un mantello per la sposa', en: 'A cloak for the bride' },
       {
-        it: 'Prima delle nozze Tyrion si scusa con [[sansa-stark|Sansa]]: il matrimonio è un desiderio di [[tywin-lannister|lord Tywin]]. Nel tempio reale lei non si piega perché lui le metta il mantello sulle spalle, e gli invitati lo vedono in imbarazzo. Al banchetto Tyrion deve minacciare [[joffrey-baratheon|Joffrey]] perché smetta di pretendere la cerimonia della messa a letto, e dichiara che non ci sarà. Quella notte, a letto, vede che Sansa è terrorizzata e le dice che non la toccherà finché non sarà lei a volerlo.',
-        en: 'Tyrion apologizes to [[sansa-stark|Sansa]] before the wedding: the match is [[tywin-lannister|Lord Tywin]]’s wish. In the royal sept she will not bend for him to put his cloak on her shoulders, and the guests see him embarrassed. At the feast he has to threaten [[joffrey-baratheon|Joffrey]] to stop him insisting on the bedding, and declares there will be none. In bed that night he sees that Sansa is terrified, and tells her he will not touch her until she wants him to.',
+        it: 'Prima delle nozze Tyrion si scusa con [[sansa-stark|Sansa]]: il matrimonio è un desiderio di [[tywin-lannister|lord Tywin]]. Nel tempio reale Sansa non si piega perché lui le metta il mantello sulle spalle, e Tyrion resta in imbarazzo. Al banchetto dichiara che non ci sarà nessuna cerimonia della messa a letto, e deve minacciare [[joffrey-baratheon|Joffrey]] perché smetta di pretenderla. Quella notte, a letto, vede che Sansa è terrorizzata e le dice che non la toccherà finché non sarà lei a volerlo.',
+        en: 'Tyrion apologizes to [[sansa-stark|Sansa]] before the wedding: the match is [[tywin-lannister|Lord Tywin]]’s wish. In the royal sept she will not bend for him to put his cloak on her shoulders, and he is left embarrassed. At the feast he declares there will be no bedding, and has to threaten [[joffrey-baratheon|Joffrey]] to stop him pushing for it. In bed that night he sees that Sansa is terrified, and tells her he will not touch her until she wants him to.',
       },
     ),
     inBooks(
@@ -3465,8 +3465,8 @@ export const season1Chronicles = {
       [25, 163],
       { it: 'Di nuovo in sposa', en: 'Married off again' },
       {
-        it: 'Cersei chiede a [[petyr-baelish|Petyr Baelish]] di scoprire cosa tramano i Tyrell, visto che il padre non la ascolta, e gli ricorda che non è mai riuscito a trovare [[arya-stark|Arya]]. Poco dopo assiste mentre [[tywin-lannister|Tywin]] annuncia a [[tyrion-lannister|Tyrion]] che sposerà [[sansa-stark|Sansa]], e se la gode, finché Tywin non le ordina di sposare [[loras-tyrell|Loras]]. È la regina reggente, non una giumenta da riproduzione, protesta Cersei; è figlia sua, ruggisce Tywin. Cersei lo supplica di non imporle un secondo matrimonio, ma Tywin se ne va, e lei si volta verso Tyrion, troppo cupo per accorgersene.',
-        en: 'Cersei asks [[petyr-baelish|Petyr Baelish]] to find out what the Tyrells are plotting, since her father will not listen, and reminds him that he never found [[arya-stark|Arya]]. Soon she sits by [[tywin-lannister|Tywin]] as he tells [[tyrion-lannister|Tyrion]] that he will marry [[sansa-stark|Sansa]], and enjoys it, until Tywin orders her to marry [[loras-tyrell|Loras]]. She is queen regent, not a brood mare, she protests; she is his daughter, he roars. She begs him not to force a second marriage on her, but he leaves, and she looks to Tyrion, who is too glum to notice.',
+        it: 'Cersei chiede a [[petyr-baelish|Petyr Baelish]] di scoprire cosa tramano i Tyrell, visto che il padre non la ascolta, e gli ricorda che non è mai riuscito a trovare [[arya-stark|Arya]]. Poco dopo è con [[tywin-lannister|Tywin]] mentre annuncia a [[tyrion-lannister|Tyrion]] che sposerà [[sansa-stark|Sansa]], e se la gode, finché Tywin non le ordina di sposare [[loras-tyrell|Loras]]. È la regina reggente, non una giumenta da riproduzione, protesta Cersei; è figlia sua, ruggisce Tywin. Cersei lo supplica di non imporle un secondo matrimonio, ma Tywin se ne va, e lei si volta verso Tyrion, troppo cupo per accorgersene.',
+        en: 'Cersei asks [[petyr-baelish|Petyr Baelish]] to find out what the Tyrells are plotting, since her father will not listen, and reminds him that he never found [[arya-stark|Arya]]. Soon she is with [[tywin-lannister|Tywin]] as he tells [[tyrion-lannister|Tyrion]] that he will marry [[sansa-stark|Sansa]], and enjoys it, until Tywin orders her to marry [[loras-tyrell|Loras]]. She is queen regent, not a brood mare, she protests; she is his daughter, he roars. She begs him not to force a second marriage on her, but he leaves, and she looks to Tyrion, who is too glum to notice.',
       },
     ),
     onScreen(
@@ -3694,16 +3694,16 @@ export const season1Chronicles = {
       [24, 150],
       { it: 'Le storie del Grande Tempio', en: 'Tales of the Great Sept' },
       {
-        it: 'Joffrey mostra a [[margaery-tyrell|Margaery]] il Grande Tempio di Baelor, dove si sposeranno, e le racconta le sue storie più cupe, mentre [[cersei-lannister|Cersei]] e [[olenna-tyrell|lady Olenna]] li seguono. Margaery ascolta come affascinata, poi lo convince a uscire sulla scalinata a salutare la folla. La gente, conquistata dalla carità di Margaery, acclama la coppia, e Joffrey ricambia il saluto. Cersei capisce che il figlio ormai dà ascolto ai Tyrell.',
-        en: 'Joffrey shows [[margaery-tyrell|Margaery]] the Great Sept of Baelor, where they will marry, and tells her its grimmest stories, with [[cersei-lannister|Cersei]] and [[olenna-tyrell|Lady Olenna]] behind them. Margaery listens as if fascinated, then coaxes him out onto the steps to greet the crowd. The people, won over by her charity, cheer the couple, and Joffrey waves back. Cersei sees that her son now listens to the Tyrells.',
+        it: 'Joffrey mostra a [[margaery-tyrell|Margaery]] il Grande Tempio di Baelor, dove si sposeranno, e le racconta le sue storie più cupe, mentre [[cersei-lannister|Cersei]] e [[olenna-tyrell|lady Olenna]] li seguono. Margaery ascolta come affascinata, poi lo convince a uscire a salutare la folla. La gente, conquistata dalla carità di Margaery, acclama la coppia, e Joffrey ricambia il saluto. Cersei capisce che il figlio ormai dà ascolto ai Tyrell.',
+        en: 'Joffrey shows [[margaery-tyrell|Margaery]] the Great Sept of Baelor, where they will marry, and tells her its grimmest stories, with [[cersei-lannister|Cersei]] and [[olenna-tyrell|Lady Olenna]] behind them. Margaery listens as if fascinated, then coaxes him outside to greet the crowd. The people, won over by her charity, cheer the couple, and Joffrey waves back. Cersei sees that her son now listens to the Tyrells.',
       },
     ),
     onScreen(
       [26, 172],
       { it: 'Un dono di Ditocorto', en: 'A gift from Littlefinger' },
       {
-        it: '[[petyr-baelish|Petyr Baelish]] ha scoperto che [[ros|Ros]] fa rapporto su di lui a [[varys|Varys]]. Nella sala del trono dice a Varys di averla data a un amico desideroso di un’esperienza nuova. L’amico è Joffrey. Mentre la nave di Petyr lascia la città, il re siede nella sua camera da letto e guarda freddamente il corpo di Ros, trafitto dai dardi di una balestra.',
-        en: '[[petyr-baelish|Petyr Baelish]] has found out that [[ros|Ros]] reports on him to [[varys|Varys]]. In the throne room he tells Varys that he has given her to a friend eager for a new experience. The friend is Joffrey. As Petyr’s ship leaves the city, the king sits in his bedchamber, coldly looking at Ros’s body, shot through with crossbow bolts.',
+        it: '[[petyr-baelish|Petyr Baelish]] ha scoperto che [[ros|Ros]] fa rapporto su di lui a [[varys|Varys]]. Nella sala del trono dice a Varys di averla data a un amico desideroso di un’esperienza nuova. L’amico è Joffrey. Mentre la nave di Petyr lascia la città, il re, nella sua camera da letto, guarda freddamente il corpo di Ros, trafitto dai dardi di una balestra.',
+        en: '[[petyr-baelish|Petyr Baelish]] has found out that [[ros|Ros]] reports on him to [[varys|Varys]]. In the throne room he tells Varys that he has given her to a friend eager for a new experience. The friend is Joffrey. As Petyr’s ship leaves the city, the king, in his bedchamber, coldly looks at Ros’s body, shot through with crossbow bolts.',
       },
     ),
     onScreen(
@@ -3728,6 +3728,14 @@ export const season1Chronicles = {
       {
         it: 'Joffrey spiega esultante una lettera di [[walder-frey|Walder Frey]]: [[robb-stark|Robb]] e [[catelyn-stark|Catelyn Stark]] sono morti. Vuole far servire a [[sansa-stark|Sansa]] la testa di Robb al suo banchetto di nozze. Quando [[tyrion-lannister|Tyrion]] glielo proibisce, Joffrey grida di essere il re e che chiunque è suo da tormentare. Il nonno [[tywin-lannister|Tywin]] risponde che un uomo che deve ricordare di essere re non è un vero re. Joffrey accusa Tywin di essersi nascosto a Castel Granito come un codardo mentre [[robert-baratheon|Robert]] vinceva la guerra, e viene mandato a letto.',
         en: 'Joffrey gleefully explains a letter from [[walder-frey|Walder Frey]]: [[robb-stark|Robb]] and [[catelyn-stark|Catelyn Stark]] are dead. He means to have Robb’s head served to [[sansa-stark|Sansa]] at his wedding feast. When [[tyrion-lannister|Tyrion]] forbids it, Joffrey shouts that he is the king and everyone is his to torment. His grandfather [[tywin-lannister|Tywin]] answers that a man who must say he is king is no true king. Joffrey calls Tywin a coward who hid at Casterly Rock while [[robert-baratheon|Robert]] won the war, and is sent to bed.',
+      },
+    ),
+    inBooks(
+      [28, 172],
+      { it: 'La messa a letto negata', en: 'The bedding refused' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] ha sposato [[sansa-stark|Sansa]] nel tempio reale, per volere di lord Tywin. Al banchetto di nozze, quando arriva il momento della cerimonia della messa a letto, Tyrion dichiara che non ci sarà. Joffrey continua a pretenderla anche dopo che lo zio ha parlato, e rende ancora più tesa la situazione, finché Tyrion non deve minacciarlo.',
+        en: '[[tyrion-lannister|Tyrion]] has married [[sansa-stark|Sansa]] in the royal sept, on Lord Tywin’s orders. At the wedding feast, when the time comes for the bedding, Tyrion declares there will be none. Joffrey keeps pushing for it after his uncle has spoken, and makes the tense moment worse, until Tyrion has to threaten him.',
       },
     ),
   ],
@@ -4293,8 +4301,8 @@ export const season1Chronicles = {
       [25, 163],
       { it: 'Una spia nel letto di Loras', en: 'A spy in Loras’s bed' },
       {
-        it: '[[cersei-lannister|Cersei]] chiede a Petyr di scoprire cosa tramano i Tyrell, avvertendolo di fare meglio di quando non è riuscito a trovare [[arya-stark|Arya]]. Il suo uomo Olyvar, che si finge scudiero di [[loras-tyrell|Loras]], va a letto con Loras e scopre che Loras si sposerà. Petyr offre a [[sansa-stark|Sansa]] un passaggio sulla sua nave per la Valle, ma lei chiede di aspettare la fine delle nozze del re, per il bene di lui. Petyr sospetta una bugia, non insiste, e le dice di chiamarlo Petyr.',
-        en: '[[cersei-lannister|Cersei]] asks Petyr to find out what the Tyrells are up to, warning him to do better than when he failed to find [[arya-stark|Arya]]. His man Olyvar, posing as [[loras-tyrell|Loras]]’s squire, beds Loras and learns that he is to marry. Petyr offers [[sansa-stark|Sansa]] passage on his ship to the Vale, but she asks to wait until after the royal wedding, for his sake. He suspects a lie, does not press her, and tells her to call him Petyr.',
+        it: '[[cersei-lannister|Cersei]] chiede a Petyr di scoprire cosa tramano i Tyrell, avvertendolo di fare meglio di quando non è riuscito a trovare [[arya-stark|Arya]]. Il suo uomo Olyvar, nuovo scudiero di [[loras-tyrell|Loras]], va a letto con Loras e scopre che Loras si sposerà. Petyr offre a [[sansa-stark|Sansa]] un passaggio sulla sua nave per la Valle, ma lei chiede di aspettare la fine delle nozze del re, per il bene di lui. Petyr sospetta una bugia, non insiste, e le dice di chiamarlo Petyr.',
+        en: '[[cersei-lannister|Cersei]] asks Petyr to find out what the Tyrells are up to, warning him to do better than when he failed to find [[arya-stark|Arya]]. His man Olyvar, [[loras-tyrell|Loras]]’s new squire, beds Loras and learns that he is to marry. Petyr offers [[sansa-stark|Sansa]] passage on his ship to the Vale, but she asks to wait until after the royal wedding, for his sake. He suspects a lie, does not press her, and tells her to call him Petyr.',
       },
     ),
     onScreen(
@@ -4452,7 +4460,7 @@ export const season1Chronicles = {
       },
     ),
     onScreen(
-      [26, 172],
+      [26, 175],
       { it: 'Al servizio del regno', en: 'Serving the realm' },
       {
         it: 'Varys trova [[petyr-baelish|Petyr Baelish]] nella sala del trono, e parlano del Trono di Spade e delle storie che fanno un regno. Varys dice di servire il regno. Petyr ribatte che il regno è solo una storia, poi gli dice di sapere di [[ros|Ros]] e di averla data a un amico. Varys vede il caos come un abisso; Petyr lo chiama una scala. Poco dopo Ros giace morta nella camera da letto di [[joffrey-baratheon|Joffrey]].',
@@ -4564,7 +4572,7 @@ export const season1Chronicles = {
       [23, 163],
       { it: 'Il terzo posto', en: 'The third seat' },
       {
-        it: 'Al primo Concilio ristretto di [[tywin-lannister|Tywin]], il gran maestro Pycelle, che sopravvive evitando i contrasti, lascia a [[petyr-baelish|Petyr Baelish]] e a [[varys|Varys]] i posti più vicini al Primo Cavaliere e si siede in silenzio al terzo. Quando Tywin spiega che il titolo di lord di Harrenhal permette a Petyr di corteggiare [[lysa-arryn|Lysa Arryn]], Pycelle osserva che il matrimonio farebbe di Petyr il Difensore della Valle.',
+        it: 'Al primo Concilio ristretto di [[tywin-lannister|Tywin]], il gran maestro Pycelle, che sopravvive evitando i contrasti, lascia a [[petyr-baelish|Petyr Baelish]] e a [[varys|Varys]] i posti più vicini al Primo Cavaliere e si siede in silenzio al terzo. Quando Tywin spiega che il titolo di lord di Harrenhal permette a Petyr di corteggiare [[lysa-arryn|Lysa Arryn]], Pycelle osserva che il matrimonio farebbe di Petyr il Difensore della Valle facente funzione.',
         en: 'At [[tywin-lannister|Tywin]]’s first small council, Grand Maester Pycelle, who survives by avoiding fights, lets [[petyr-baelish|Petyr Baelish]] and [[varys|Varys]] take the seats nearest the Hand and quietly sits third. When Tywin explains that the title of Lord of Harrenhal lets Petyr court [[lysa-arryn|Lysa Arryn]], Pycelle points out that the marriage would make Petyr the acting Defender of the Vale.',
       },
     ),
@@ -4992,11 +5000,11 @@ export const season1Chronicles = {
       },
     ),
     onScreen(
-      [26, 172],
+      [26, 175],
       { it: 'Data a un amico', en: 'Given to a friend' },
       {
-        it: '[[petyr-baelish|Petyr Baelish]] ha scoperto che Ros lo spia per conto di [[varys|Varys]]. Nella sala del trono dice a Varys di averla data a un amico desideroso di un’esperienza nuova. L’amico è [[joffrey-baratheon|Joffrey]]. Mentre la nave di Petyr lascia la città, il re siede nella sua camera da letto accanto al corpo di Ros, trafitto dai dardi di una balestra.',
-        en: '[[petyr-baelish|Petyr Baelish]] has learned that Ros spies on him for [[varys|Varys]]. In the throne room he tells Varys that he has given her to a friend who wanted a new experience. The friend is [[joffrey-baratheon|Joffrey]]. As Petyr’s ship leaves the city, the king sits in his bedchamber beside Ros’s body, shot through with crossbow bolts.',
+        it: '[[petyr-baelish|Petyr Baelish]] ha scoperto che Ros lo spia per conto di [[varys|Varys]]. Nella sala del trono dice a Varys di averla data a un amico desideroso di un’esperienza nuova. L’amico è [[joffrey-baratheon|Joffrey]]. Mentre la nave di Petyr lascia la città, il re, nella sua camera da letto, guarda il corpo di Ros, trafitto dai dardi di una balestra.',
+        en: '[[petyr-baelish|Petyr Baelish]] has learned that Ros spies on him for [[varys|Varys]]. In the throne room he tells Varys that he has given her to a friend who wanted a new experience. The friend is [[joffrey-baratheon|Joffrey]]. As Petyr’s ship leaves the city, the king, in his bedchamber, looks at Ros’s body, shot through with crossbow bolts.',
       },
     ),
   ],

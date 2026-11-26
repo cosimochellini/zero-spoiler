@@ -1610,7 +1610,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '28:chapter': {
       source: KL_172,
-      note: 'Sansa III (site 172), cached synopsis: Tyrion’s apology and his father’s wish, Sansa not bending in the royal sept for the cloak, his embarrassment, the threat to Joffrey, no bedding, and his promise not to touch her until she wants him. Episode 28 adapts the chapter.',
+      note: 'Sansa III (site 172), cached synopsis: Tyrion’s apology and his father’s wish, Sansa not bending in the royal sept for the cloak, his embarrassment, no bedding declared, then the threat to Joffrey, and his promise not to touch her until she wants him. Episode 28 adapts the chapter.',
     },
     '28:176': {
       source: KL_176,
@@ -2062,13 +2062,17 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_27,
       note: 'Show: the King’s Landing synopsis: the summons, what the council has been doing, the meetings moved to the Tower of the Hand, too busy and too many steps, Tywin at the throne offering to have him carried, Daenerys and her dragons, heeding counsel, and Joffrey left squirming (GOT307). Sansa III (site 172), the last King’s Landing chapter before the episode, orders it.',
     },
-    '28:172': {
+    '28:episode': {
       source: EPISODE_28,
       note: 'Show: the King’s Landing synopsis: Joffrey escorting Sansa in her father’s place, the stool removed and the snickers, the drinking against Cersei’s protests, the taunts, the threat with the Kingsguard holding her down, the bedding called for, the dagger and Tyrion’s threat, and Tywin blaming the drink (GOT308). Sansa III (site 172), which the episode adapts, orders it.',
     },
     '30:197': {
       source: EPISODE_30,
       note: 'Show: the King’s Landing synopsis: Joffrey explaining Lord Frey’s coded message, Robb and Catelyn dead, Robb’s head for Sansa at the wedding feast, Tyrion forbidding it, everyone his to torment, “no true king”, the coward who hid under Casterly Rock while Robert won the war, and Joffrey sent to bed (GOT310). Tyrion VI (site 197), which the episode adapts, orders it.',
+    },
+    '28:chapter': {
+      source: KL_172,
+      note: 'Sansa III (site 172), cached synopsis: the wedding in the royal sept, Tywin’s wish, the feast in the Small Hall, Tyrion demanding no bedding, and Tyrion having to threaten Joffrey to keep him from making the tense moment worse. Added after verification (#1660). Episode 28 adapts the chapter.',
     },
   },
   'robert-baratheon': {
@@ -2432,9 +2436,9 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_24,
       note: 'Show: the King’s Landing synopsis: the sorcerer in Myr, the potion, the gelding, the voice from the flames, his hatred of magic, the sorcerer in the crate, Ros spying on Littlefinger with the manifest and its two feather beds, and Varys warning Olenna, who says the solution is obvious (GOT304). Sansa I (site 150), the episode’s King’s Landing chapter, orders it.',
     },
-    '26:172': {
+    '26:175': {
       source: EPISODE_26,
-      note: 'Show: the King’s Landing synopsis: Varys finding Littlefinger in the throne room, the realm and its invention, the arrangement with Ros known and Ros given to “a friend”, chaos as a ladder, and Joffrey contemplating Ros’s corpse (GOT306). Sansa III (site 172), which the episode adapts, orders it.',
+      note: 'Show: the King’s Landing synopsis: Varys finding Littlefinger in the throne room, the realm and its invention, the arrangement with Ros known and Ros given to “a friend”, chaos as a ladder, and Joffrey contemplating Ros’s corpse (GOT306). Site 175 orders it, the pair of Ros’s deceased step in season-1.ts.',
     },
     '30:197': {
       source: EPISODE_30,
@@ -2706,9 +2710,9 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_24,
       note: 'Show only: the King’s Landing synopsis: Ros spying on Littlefinger for Varys, the girls’ report on Podrick Payne, Littlefinger’s visits to Sansa and his obsession, the stolen manifest, Varys surprised that she can read, and the two feather beds (GOT304). Sansa I (site 150) orders it.',
     },
-    '26:172': {
+    '26:175': {
       source: EPISODE_26,
-      note: 'Show only: the King’s Landing synopsis: Littlefinger aware of Varys’s arrangement with Ros, Ros given to “a friend” eager for a new experience, the ship departing, and Joffrey contemplating her quarrel-ridden corpse (GOT306). Her status step is deceased at 26 (season-1.ts). Sansa III (site 172) orders it.',
+      note: 'Show only: the King’s Landing synopsis: Littlefinger aware of Varys’s arrangement with Ros, Ros given to “a friend” eager for a new experience, the ship departing, and Joffrey contemplating her quarrel-ridden corpse (GOT306). Site 175 orders it, the pair of her deceased step in season-1.ts (26/175).',
     },
   },
   'mhaegen': {
@@ -5995,7 +5999,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '26:172': {
       source: EPISODE_26,
-      note: 'Show: the King’s Landing synopsis: Tywin and Olenna on Loras and Cersei, the barbs about age, incest and Loras, the refusal and the hint about Joffrey, another flower thrown into the dirt, the Kingsguard threat with no marriage and no Highgarden, and her consent (GOT306). Sansa III (site 172), which the episode adapts, orders it.',
+      note: 'Show: the King’s Landing synopsis: Tywin and Olenna on Loras and Cersei, the barbs about age, incest and Loras, the refusal and the hint about Joffrey, Tywin’s flower thrown into the dirt and Olenna’s refusal to throw another if Cersei cannot bear heirs, the Kingsguard threat with no marriage and no Highgarden, and her consent (GOT306). Sansa III (site 172), which the episode adapts, orders it.',
     },
     '22:chapter': {
       source: KL_150,
