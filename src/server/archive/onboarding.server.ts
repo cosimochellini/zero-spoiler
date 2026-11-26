@@ -31,7 +31,7 @@ const TAIL_COUNT = 6
  * that a single source tells is not, wherever it is filed: the dial moves in
  * either unit, in the browser.
  */
-function inDemo(gated: Gated, r: Reader): boolean {
+export function inDemo(gated: Gated, r: Reader): boolean {
   return (
     gated.source === undefined
     && gated.revealedAtEpisode <= r.archive.series.demoLastEpisode
@@ -48,7 +48,7 @@ function gateOf(gated: Gated): Gated {
 }
 
 /** A record's dated facts inside East Blue, as steps the dial picks from. */
-function stepsOf<T, V>(
+export function stepsOf<T, V>(
   entries: { gate: Gated; value: T }[],
   value: (raw: T) => V,
   r: Reader,
@@ -69,7 +69,7 @@ function drawn(strokes: Drawing['strokes'], tint: Drawing['tint']): Drawing {
 }
 
 /** Every drawing the demo dial can reach, independent of the saved bookmark. */
-function demoDrawings(entity: Entity, r: Reader): Step<Drawing>[] {
+export function demoDrawings(entity: Entity, r: Reader): Step<Drawing>[] {
   const tint = entity.visual.tint
   return [
     {
@@ -101,7 +101,7 @@ function roleStepsOf(entity: Entity, r: Reader): Pick<DemoEntry, 'role'> {
 }
 
 /** One demo record, with every fact the dial can reach about it. */
-function demoOf(entity: Entity, r: Reader): DemoEntry {
+export function demoOf(entity: Entity, r: Reader): DemoEntry {
   const { locale } = r
   return {
     id: entity.id,

@@ -63,6 +63,11 @@ function byDesignOf({
       entity.source === undefined
       && entity.revealedAtEpisode <= demoLastEpisode
       && entity.revealedAtChapter <= demoLastChapter,
+    // The hub's tour shows a few records of the same demo (owner, 2026-11-26).
+    loadTour: (entity) =>
+      entity.source === undefined
+      && entity.revealedAtEpisode <= demoLastEpisode
+      && entity.revealedAtChapter <= demoLastChapter,
     // The saga names are always shown, so a reader can find their way by them
     // (owner, 2026-10-12).
     loadFiller: isArc,
