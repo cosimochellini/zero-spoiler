@@ -198,6 +198,30 @@ export function detectorProblem(status) {
 }
 
 /**
+ * One detector run, once more when the tool failed: a slow runner can time a
+ * page out (PR #1681, CI run 45653012554) and pass on the next try. Findings
+ * (exit 2) are a completed scan and never run again.
+ * @param {() => Promise<{status: null | number}>} run One detector run.
+ * @param {string} label The pages and the viewport it scans.
+ * @param {(line: string) => void} log Told why before the second run.
+ * @returns {Promise<{status: null | number, problem: null | string}>} The last
+ *   run, with `detectorProblem` of its status.
+ */
+export async function detectWithRetry(run, label, log) {
+  const first = await run()
+  const problem = detectorProblem(first.status)
+  if (problem === null) {
+    return { ...first, problem }
+  }
+  // ponytail: one retry; raise it if runners get slower.
+  log(
+    `design gate: retrying ${label} after a tool failure: impeccable detect ${problem}\n`,
+  )
+  const second = await run()
+  return { ...second, problem: detectorProblem(second.status) }
+}
+
+/**
  * How a waiver's reason starts when it states the house style and stays for
  * good. It lives in the reason because the detector's own config writer
  * (`impeccable ignores …`) drops a field it does not know.

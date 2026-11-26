@@ -10,6 +10,7 @@ import {
   CANARY,
   clientBuilt,
   detectorProblem,
+  detectWithRetry,
   judge,
   pageProblem,
   pagesOf,
@@ -250,6 +251,37 @@ describe('the detector run', () => {
     [null, 'was killed: it did not finish in time'],
   ])('reads exit status %s', (status, problem) => {
     expect(detectorProblem(status)).toBe(problem)
+  })
+
+  it.each([
+    ['passes on a retry after a tool failure', [1, 0], 2, null],
+    [
+      'fails when the retry fails too',
+      [null, 1],
+      2,
+      'exited 1: a page could not be scanned',
+    ],
+    ['never retries findings', [2, 1], 1, null],
+  ])('%s', async (_, statuses, runs, problem) => {
+    const replies = statuses.map((status) => ({ status }))
+    const lines = []
+    let calls = 0
+    const result = await detectWithRetry(
+      async () => replies[calls++],
+      '3 page(s) at 390x844',
+      (line) => {
+        lines.push(line)
+      },
+    )
+    expect(calls).toBe(runs)
+    expect(lines).toEqual(
+      runs === 1 ?
+        []
+      : [
+          `design gate: retrying 3 page(s) at 390x844 after a tool failure: impeccable detect ${detectorProblem(statuses[0])}\n`,
+        ],
+    )
+    expect(result.problem).toBe(problem)
   })
 })
 
