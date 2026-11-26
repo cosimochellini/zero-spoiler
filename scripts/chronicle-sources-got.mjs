@@ -2054,9 +2054,9 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_24,
       note: 'Show: the King’s Landing synopsis: Joffrey’s tour of the Great Sept, the darker chapters of its history, Margaery’s feigned interest, Cersei and Olenna following, the crowd cheering the pair, and Cersei realizing she has lost control of Joffrey to the Tyrells (GOT304). Sansa I (site 150), the episode’s King’s Landing chapter, orders it.',
     },
-    '26:172': {
+    '26:175': {
       source: EPISODE_26,
-      note: 'Show: the King’s Landing synopsis: Littlefinger telling Varys he knows of the arrangement with Ros and has given her to “a friend” eager for a new experience, the ship departing, and Joffrey in his bedchamber coldly contemplating Ros’s quarrel-ridden corpse (GOT306). Sansa III (site 172), which the episode adapts, orders it.',
+      note: 'Show: the King’s Landing synopsis: Littlefinger telling Varys he knows of the arrangement with Ros and has given her to “a friend” eager for a new experience, the ship departing, and Joffrey in his bedchamber coldly contemplating Ros’s quarrel-ridden corpse (GOT306). Site 175 orders it, the pair of Ros’s deceased step in season-1.ts (26/175).',
     },
     '27:172': {
       source: EPISODE_27,

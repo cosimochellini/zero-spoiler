@@ -697,7 +697,7 @@ const STORIES: Row[] = [
     id: 'joffrey-baratheon',
     medium: 'show',
     episode: 26,
-    chapter: 172,
+    chapter: 175,
     title: 'A gift from Littlefinger',
   },
   {

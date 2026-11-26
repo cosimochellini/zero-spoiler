@@ -3699,7 +3699,7 @@ export const season1Chronicles = {
       },
     ),
     onScreen(
-      [26, 172],
+      [26, 175],
       { it: 'Un dono di Ditocorto', en: 'A gift from Littlefinger' },
       {
         it: '[[petyr-baelish|Petyr Baelish]] ha scoperto che [[ros|Ros]] fa rapporto su di lui a [[varys|Varys]]. Nella sala del trono dice a Varys di averla data a un amico desideroso di un’esperienza nuova. L’amico è Joffrey. Mentre la nave di Petyr lascia la città, il re, nella sua camera da letto, guarda freddamente il corpo di Ros, trafitto dai dardi di una balestra.',
