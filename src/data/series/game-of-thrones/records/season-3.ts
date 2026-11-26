@@ -1844,7 +1844,7 @@ export const season3: ThronesSaga = {
         it: 'Un arciere della Fratellanza senza vessilli, i fuorilegge che combattono in nome del defunto re Robert.',
         en: 'An archer of the Brotherhood Without Banners, outlaws who fight in the name of the late King Robert.',
       },
-      visual: { art: 'anguy', tint: 'wine' },
+      visual: { art: 'anguy', tint: 'teal' },
     },
     // Books: Arya II (site chapter 157), the same scene; he sings on the
     // road to the inn and gives Arya a paper for their horses.
