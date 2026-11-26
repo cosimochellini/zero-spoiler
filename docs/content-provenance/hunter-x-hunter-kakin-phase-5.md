@@ -18,12 +18,15 @@ someone's quoted or reported speech, a broadcast, a letter or a
 self-introduction. Narration, a cast list and a name used only in narrated
 thought are not gates. A name the synopsis writes for the person being spoken to
 ("Belerainte says that he did not expect Naipei to be targeted", said to Naipei)
-stands for "you" and is not a gate either. Earlier chapters that later wiki
-infoboxes give as a name chapter (Rihan 374, Musse 366, Shikaku 376, Sumidori
-386, Balsamilco 363) were audited by phases 2–4 without an explicit signal; the
-phase initially used later naming scenes. Issue #1173 revised these gates after
-checking the earlier scenes. The table below preserves the original phase 5
-evidence for the later appearances.
+stands for "you" and is not a gate either. The owner's 2026-11-26 rule, under
+[Naming checks (#1145)](#naming-checks-1145), replaced the last part of this
+reading for the follow-up: a name said to the listener does count, provided it
+is said in a speech balloon. Earlier chapters that later wiki infoboxes give as
+a name chapter (Rihan 374, Musse 366, Shikaku 376, Sumidori 386, Balsamilco 363)
+were audited by phases 2–4 without an explicit signal; the phase initially used
+later naming scenes. Issue #1173 revised these gates after checking the earlier
+scenes. The table below preserves the original phase 5 evidence for the later
+appearances.
 
 | Record   |                                                   Revised gate | Naming evidence                                                                                                  |
 | -------- | -------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------------------- |
@@ -88,10 +91,10 @@ earlier live stage is invented. Every fact carries `source: 'chapter'`, episode
 Changes not pinned: Tserriednich's death at 417 is staged, and the reader is
 told the plan at 416, so his status stays alive. Camilla, Tubeppa and Tyson are
 infected with TSK-17 but alive at 420. Zhang Lei and Luzurus flee before martial
-law, and the soldiers report how; they are not lost to the story. The deaths of
-Luini (405) and Moswana (416) are not filed because neither has a record.
-Sumidori's infobox lists him as deceased, but no death is told in the window, so
-he stays alive.
+law, and the soldiers report how; they are not lost to the story. Neither
+Luini's death, which Nobunaga reports at 405 as already past, nor Moswana's at
+416 is filed, because neither character has a record. Sumidori's infobox lists
+him as deceased, but no death is told in the window, so he stays alive.
 
 ## Relationships
 
@@ -115,37 +118,89 @@ Borksen, Cashew, Maizan, Mizaistom, Botobai, Gipper, Yuri, Slakka, Myuhan,
 Saiyu, Momoze, Salé-salé, Vergei, Hanzo, Izunavi, Pyon, Gon, Alluka, Killua,
 Netero, Famule, Taler, Madwig and Himoncé.
 
-## Deferred to #1145
+## Naming checks (#1145)
 
-These candidates appear in the window but no pinned synopsis gives an explicit
-naming signal. They are deferred to
-[#1145](https://github.com/cosimochellini/zero-spoiler/issues/1145), not filed.
+[#1145](https://github.com/cosimochellini/zero-spoiler/issues/1145) resolved
+every candidate the phase deferred. None is filed: no candidate has a naming
+scene in chapters 401–420.
 
-| Candidates                                                                                           | Reason                                                                                                                                                     |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Nasubi Hui Guo Rou                                                                                   | Owner ruling on #916: the full-name gate is unresolved. Kaiser's speech (403) and a reported line (411) give only "Nasubi" and "King Nasubi"; owner check. |
-| Steiner, Peuckert                                                                                    | Narration only (402–403). Steiner stays with #1144.                                                                                                        |
-| Babimyna, Butch, Vantine, Heisen, Komiya, Yushohi                                                    | Only named as the person spoken to ("Kurapika tells Babimyna", "Tubeppa instructs Heisen and Komiya"), never inside anyone's speech.                       |
-| Naipei, Sarahell                                                                                     | Their names appear in speech addressed to them (411), standing for "you". Owner check.                                                                     |
-| Salkov, Theta, Chiyamasi, Sevanti Hui Guo Rou                                                        | Named only in narrated thoughts (402–418), never in speech. Owner check for the thought balloons.                                                          |
-| Orarge                                                                                               | The dealer of Morena's game (407–410). Only Morena's reconstruction of the cheat (410) includes his name, and it reads as narration. Owner check.          |
-| Dogman                                                                                               | Morena calls him "Dog" (405); "Dogman" is not said. Owner check.                                                                                           |
-| Bharate, Rice, Ridge, Orau, Giuliano, Scairt, Javietti, Roccoli, Nugui, Mozbe, Moswana               | Narration or addressee only in 402–416. Moswana dies at 416.                                                                                               |
-| Gadeau, Lizlura, Toneaster                                                                           | Debut at 411 in narration only.                                                                                                                            |
-| Brocco Li, Luini                                                                                     | Linked in the synopsis only as "their boss", "the mafia boss" and "the wall guy". Luini is killed at 405.                                                  |
-| Narumi McGait, Gateaume, Notre, Soufflé                                                              | Images only (406, 408, 410).                                                                                                                               |
-| Guerimori, Anesuto, Kōbihi, Kontasutin, Naikēru, Rēuen, Gihoruto, Deruboro, Furichosefu, Nikoraurusu | Halkenburg's guards with the casket (406–407): in the cast lists, not in the synopses.                                                                     |
-| Woody, Noko, Momiita, Ryubihhi, Pitakusu, Macne, Odessa, Mizaurouno, Beeta, Bachaem                  | Cast lists of 414–415 only; the synopses do not name them.                                                                                                 |
+**The owner's naming rule (2026-11-26).** A character is named only when the
+name is said in a speech balloon or printed beside the character (a caption or
+an introduction box, as in #833). A name said to the listener counts ("Naipei,
+come here!"). These do not count: a thought balloon, a nickname that differs
+from the record's name ("Dog" is not "Dogman"), the wiki's narration or
+synopsis, cast lists and images alone. This replaces "reported speech or
+thought" in the issue body. A candidate with no proof stays deferred or is
+omitted, with its reason, and the issue still closes. Kakin is manga-only, so
+any later record is `source: 'chapter'`.
+
+**How it was checked.** The pinned chapter synopses and the candidates' wiki
+pages pointed to every scene in the window where a name could be said. The owner
+checked those scenes and answered each one "no" (owner-accepted, VIZ page not
+viewed). No manga mirror, scan or fan transcript was used (#725).
+
+### Asked, and still deferred to an earlier phase
+
+Each of these appears in an earlier phase's window, and that phase's issue still
+holds its owner check. The 401–420 result does not set a gate. It only rules out
+a later fallback: if the earlier check is also negative, the candidate stays
+unfiled through chapter 420.
+
+| Candidate          | Scenes checked                                                                                                             | Disposition                                                                                         |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Babimyna           | Furykov asks him about a reassignment (401); Kurapika asks who represents Benjamin (404) and hands him the postcards (415) | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1142.           |
+| Butch              | Kaiser's request (402); Benjamin calls him over (403) and gives the Room 1009 order (413)                                  | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1142.           |
+| Vantine            | Tserriednich's orders (402); the scene after the staged death (418)                                                        | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1142.           |
+| Salkov             | Tserriednich's orders (402, 418); the exchange Salkov replays (416); Benjamin calls to him (417)                           | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1141.           |
+| Steiner            | The Justice Bureau talk with Kaiser (402–403)                                                                              | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1141 and #1144. |
+| Nasubi Hui Guo Rou | Kaiser to Worio (403); Kurapika's "King Nasubi" line (411)                                                                 | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1141.           |
+| Dogman             | The Heil-Ly scenes, where Morena calls him "Dog" (405–410)                                                                 | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1143 and #1144. |
+| Orarge             | The card game he deals, and Morena's account of the cheat (408–410)                                                        | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1143 and #1144. |
+| Naipei             | Belerainte answering her before the second class (411)                                                                     | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1142.           |
+| Roccoli            | Yuri hushing her (411)                                                                                                     | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1142.           |
+| Sarahell           | Fukataki and her makeover (411)                                                                                            | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1142.           |
+| Gadeau             | His debut in the second class (411), where the wiki says the text spells him "Gateau"                                      | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1144.           |
+| Rice               | Basho and Luzurus in Room 1007 (414); the search for him once he is gone (415)                                             | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1144.           |
+| Ridge              | Luzurus's order to stall Kanjidol (414); Basho's question (415)                                                            | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1142.           |
+| Yushohi            | Chiyamasi asking if he is ready (414)                                                                                      | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1142.           |
+| Chiyamasi          | The Room 1009 scene, where his name is in Yushohi's thought (414)                                                          | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1142.           |
+| Heisen             | Rihan, Tubeppa and Komiya in Room 1005 (415)                                                                               | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1144.           |
+| Theta              | Salkov telling her not to open the casket (418)                                                                            | Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420. Deferred to #1141.           |
+
+### Not asked, and still deferred to an earlier phase
+
+The synopses give these no scene where the name could be said in the window:
+they appear only in narration, a narrated thought, a cast list or an image. Each
+keeps the owner check of the phase that first lists it.
+
+| Candidate                | Window evidence                                                                               | Deferred to     |
+| ------------------------ | --------------------------------------------------------------------------------------------- | --------------- |
+| Peuckert                 | Narration of Kaiser's escort (402)                                                            | #1142           |
+| Sevanti Hui Guo Rou      | Narration (404) and a narrated thought (415)                                                  | #1141           |
+| Nugui                    | Speaks with Nasubi at the burial chamber, unaddressed (413)                                   | #1141           |
+| Orau, Giuliano, Scairt   | Narration (402, 415) or cast lists (404, 413, 415)                                            | #1142           |
+| Moswana                  | Narration; she dies at 416 and no one names her                                               | #1142           |
+| Bachaem                  | Cast list (415)                                                                               | #1142           |
+| Brocco Li, Luini         | Only "their boss", "the mafia boss" and "the wall guy" (405, 415, 417); Luini is already dead | #1143           |
+| Gateaume, Notre, Soufflé | Images only (408, 410)                                                                        | #1143 and #1144 |
+| Bharate, Javietti, Mozbe | Narration (411, 414, 416)                                                                     | #1144           |
+| Macne, Odessa            | Cast list (415); their names are in Kanjidol's narrated thought at 389                        | #1144           |
 
 ## Omitted
 
-| Candidate                | Reason                                                                                                    |
-| ------------------------ | --------------------------------------------------------------------------------------------------------- |
-| Woble (boy)              | Oito's nephew, the stand-in for Woble. His own name is not given; "Woble" is the name he stands in for.   |
-| Prince of Moony          | A role a Tyson employee performs (404), not a person.                                                     |
-| Unnamed IPA member (402) | A descriptor.                                                                                             |
-| Mom's Help               | A charity, not a person or a visited place.                                                               |
-| The real Morena Prudo    | Morena says at 408 that the royal Morena Prudo lies in a grave marked for the current Morena. Never seen. |
+| Candidate                                                                                            | Reason                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Woble (boy)                                                                                          | Oito's nephew, the stand-in for Woble. His own name is not given; "Woble" is the name he stands in for.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Prince of Moony                                                                                      | A role a Tyson employee performs (404), not a person.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Unnamed IPA member (402)                                                                             | A descriptor.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Mom's Help                                                                                           | A charity, not a person or a visited place.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| The real Morena Prudo                                                                                | Morena says at 408 that the royal Morena Prudo lies in a grave marked for the current Morena. Never seen.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Lizlura, Toneaster                                                                                   | Seen only from their debut at 411, so this phase is their only window. Owner-checked 2026-11-26: no naming balloon or caption in ch. 401–420 (owner-accepted, VIZ page not viewed).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Komiya, Momiita, Ryubihhi, Pitakusu                                                                  | Seen only at 415. Their names come only from Togashi's character sheets in Jump Ryu! Vol. 21, outside the story ([Komiya](https://hunterxhunter.fandom.com/index.php?oldid=424585), [Momiita](https://hunterxhunter.fandom.com/index.php?oldid=424305), [Ryubihhi](https://hunterxhunter.fandom.com/index.php?oldid=424094), [Pitakusu](https://hunterxhunter.fandom.com/index.php?oldid=424167)).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Woody, Mizaurouno, Beeta                                                                             | Their names come only from the Jump Ryu! Vol. 21 sheets ([Woody](https://hunterxhunter.fandom.com/index.php?oldid=423907), [Mizaurouno](https://hunterxhunter.fandom.com/index.php?oldid=424308), [Beeta](https://hunterxhunter.fandom.com/index.php?oldid=425008)). Woody is only pictured in a flashback at 414. Phase 2 (#1142) also lists all three; the reason holds there too.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Guerimori, Anesuto, Kōbihi, Kontasutin, Naikēru, Rēuen, Gihoruto, Deruboro, Furichosefu, Nikoraurusu | Halkenburg's guards with the casket (406–407). Their names come only from a Togashi post of December 2024, outside the story; the wiki marks the pages as unofficially titled ([Guerimori](https://hunterxhunter.fandom.com/index.php?oldid=424760), [Anesuto](https://hunterxhunter.fandom.com/index.php?oldid=425055), [Kōbihi](https://hunterxhunter.fandom.com/index.php?oldid=424590), [Kontasutin](https://hunterxhunter.fandom.com/index.php?oldid=424577), [Naikēru](https://hunterxhunter.fandom.com/index.php?oldid=424254), [Rēuen](https://hunterxhunter.fandom.com/index.php?oldid=424126), [Gihoruto](https://hunterxhunter.fandom.com/index.php?oldid=424784), [Deruboro](https://hunterxhunter.fandom.com/index.php?oldid=424846), [Furichosefu](https://hunterxhunter.fandom.com/index.php?oldid=424811), [Nikoraurusu](https://hunterxhunter.fandom.com/index.php?oldid=424238)). Phases 2 and 3 (#1142, #1143) also list them; the reason holds there too. |
+| Narumi McGait                                                                                        | Only a picture on a page of Chrollo's book (406). Her name is written there in the series' own alphabet, which is an image, not a caption ([Narumi McGait](https://hunterxhunter.fandom.com/index.php?oldid=424250), [Chapter 406](https://hunterxhunter.fandom.com/index.php?oldid=422647)).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Noko                                                                                                 | Gon's friend from Whale Island, only pictured at 414. The wiki places her naming at chapter 64, when Gon mentions her to Killua ([Noko](https://hunterxhunter.fandom.com/index.php?oldid=424225)). No earlier arc files her; that gap is [#1702](https://github.com/cosimochellini/zero-spoiler/issues/1702).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 ## Places
 
