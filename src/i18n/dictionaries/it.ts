@@ -33,7 +33,7 @@ export const itDictionary: Dictionary = {
     'Indichi l’ultimo episodio che hai visto o l’ultimo capitolo che hai letto. Ogni voce diventa visibile quando il segnalibro la raggiunge.',
   'hub.tour.fog.title': 'Il resto è nella nebbia',
   'hub.tour.fog.body':
-    'Di una voce nella nebbia vedi solo da dove diventa visibile. Oltre il segnalibro, le pagine della serie non ne contengono nemmeno nome, disegno e testo.',
+    'Di una voce nella nebbia vedi solo da quale episodio diventa visibile. Oltre il segnalibro, le pagine della serie non ne contengono né il nome, né il disegno, né il testo.',
   'hub.tour.anyway.title': 'Mostra comunque',
   'hub.tour.anyway.body':
     'Puoi aprire a mano una sola voce. Le altre restano nella nebbia e il segnalibro non si sposta.',
