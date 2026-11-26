@@ -36,7 +36,7 @@ export const CHRONICLE_SOURCES = {
     },
     126: {
       source: 'https://onepiece.fandom.com/wiki/Episode_126',
-      note: 'Crocodile through the ceiling, Vivi sees him fall, first rain in three years. Second pass: the second defeat was at the palace (eps 121–122), not beneath it, and the water barrel was pierced in that fight — both corrected.',
+      note: 'Crocodile through the ceiling, Vivi sees him fall, first rain in three years. Second pass: the second defeat was at the palace (eps 121–122), not beneath it, and the water barrel was pierced in that fight — both corrected. Chapter (#1682): 210, the last event: Crocodile through the ceiling, Vivi sees him in the air, the rain begins (Chapter_210: Luffy’s final attack sends Crocodile through the roof of the mausoleum; it begins to rain and the fighting stops).',
     },
     129: {
       source: 'https://onepiece.fandom.com/wiki/Episode_129',
@@ -692,7 +692,7 @@ export const CHRONICLE_SOURCES = {
     },
     1178: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1178',
-      note: 'Episode_1178 short summary: Ronja is chosen as the first victim unless Jarul gives in, Robin fights Sommers and tries to force him into the Underworld, is captured, and Gaban saves her as Jarul reluctantly gives in. Chapter_1148 (pages 2 to 15): the thirty-second countdown, Cien Fleur Craspedia breaking Sommers’ back, his recovery, her copy tackling him off the branch while the real Robin tries to cut Gunko’s arrows, Jarul ordering Ange to burn the school, Sommers pinning her down with his thorns, and Gaban cutting off Sommers’ arm. The story puts the order before the cut, as the chapter does. It says pinned down, not captured: no captured status is filed for Robin (see #1554).',
+      note: 'Episode_1178 short summary: Ronja is chosen as the first victim unless Jarul gives in, Robin fights Sommers and tries to force him into the Underworld, is captured, and Gaban saves her as Jarul reluctantly gives in. Chapter_1148 (pages 2 to 15): the thirty-second countdown, Cien Fleur Craspedia breaking Sommers’ back, his recovery, her copy tackling him off the branch while the real Robin tries to cut Gunko’s arrows, Jarul ordering Ange to burn the school, Sommers pinning her down with his thorns, and Gaban cutting off Sommers’ arm. The story puts the order before the cut, as the chapter does. It says captured, as Robin’s status does from 1178 / 1148 (#1554).',
     },
   },
   'franky': {
@@ -1398,7 +1398,7 @@ export const CHRONICLE_SOURCES = {
     },
     126: {
       source: 'https://onepiece.fandom.com/wiki/Episode_126',
-      note: 'Same episode as Luffy’s own story about rain over Alubarna, told from Crocodile’s side: driven through the ceiling and into the sky above Alubarna.',
+      note: 'Same episode as Luffy’s own story about rain over Alubarna, told from Crocodile’s side: driven through the ceiling and into the sky above Alubarna. Chapter (#1682): 210, the last event: Crocodile crashes into the street as the rain begins (Chapter_210: Luffy and Crocodile hit the ground as it rains and the war ends).',
     },
     475: {
       source: 'https://onepiece.fandom.com/wiki/Episode_475',
@@ -3636,7 +3636,7 @@ export const CHRONICLE_SOURCES = {
     },
     1177: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1177',
-      note: 'Episode_1177 short summary: Nami’s group is captured and Sommers makes his presence and intentions known. Chapter_1147 (pages 2 to 17): Gunko brings the Straw Hats she has bound with her arrows to Sommers, asks Brook to become her slave and write music for her, being a fan of his Soul King songs, Brook refuses because he has sworn loyalty to Luffy, she threatens to kill him and beats him when he accepts that, gripping her chest. The Gunko page ties this to chapter 1147. The story says bound, not captured, as no status entry is filed for it.',
+      note: 'Episode_1177 short summary: Nami’s group is captured and Sommers makes his presence and intentions known. Chapter_1147 (pages 2 to 17): Gunko brings the Straw Hats she has bound with her arrows to Sommers, asks Brook to become her slave and write music for her, being a fan of his Soul King songs, Brook refuses because he has sworn loyalty to Luffy, she threatens to kill him and beats him when he accepts that, gripping her chest. The Gunko page ties this to chapter 1147. The story says captured, as the status of Nami, Jinbe, Usopp and Brook does from 1177 / 1147 (#1554).',
     },
   },
   'shepherd-sommers': {

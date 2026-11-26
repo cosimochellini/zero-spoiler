@@ -394,7 +394,7 @@ describe('a fruit’s own page', () => {
       episode: 1042,
       chapter: 1020,
     },
-    { id: 'millet-millet-fruit', episode: 894, chapter: 913 },
+    { id: 'millet-millet-fruit', episode: 893, chapter: 911 },
     { id: 'straw-straw-fruit', episode: 898, chapter: 913 },
     { id: 'ripe-ripe-fruit', episode: 916, chapter: 930 },
     {

@@ -1039,6 +1039,22 @@ const ROLES: { changes: Change[]; id: string }[] = [
       },
     ],
   },
+  // #1682: a girl of Kuri from her naming on the beach, ep 893 / ch 911;
+  // Amigasa Village is named by Hitetsu at ch 912, ep 894.
+  {
+    id: 'tama',
+    changes: [
+      {
+        episode: 894,
+        chapter: 912,
+        from: role('Bambina di Kuri', 'Girl of Kuri'),
+        to: role(
+          'Bambina del villaggio di Amigasa',
+          'Child of Amigasa Village',
+        ),
+      },
+    ],
+  },
   {
     id: 'kiku',
     changes: [
