@@ -39381,6 +39381,26 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740225",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740225",
       "contentSha256": "5f935afb8beb2c1606007c378ef331de7b88ab02a761fd96e267ab7bd5d33ed3"
+    },
+    "iaf-en-House_Dayne-24606.json": {
+      "locale": "en",
+      "title": "House Dayne",
+      "revision": 24606,
+      "revisionDate": "2021-03-18T22:38:45Z",
+      "url": "https://iceandfire.fandom.com/wiki/House_Dayne",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=24606",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=24606",
+      "contentSha256": "c16ef952b0e2abb431f28b7746f922309192f7a5aaa1d3a3a177f55821ce3cf1"
+    },
+    "iaf-en-Lem_Lemoncloak-27156.json": {
+      "locale": "en",
+      "title": "Lem Lemoncloak",
+      "revision": 27156,
+      "revisionDate": "2025-02-11T15:38:02Z",
+      "url": "https://iceandfire.fandom.com/wiki/Lem_Lemoncloak",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27156",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27156",
+      "contentSha256": "68234679f4e70973323e5fc49abbe29d7445a652d9669e5fbb5b37cd65c1ad99"
     }
   }
 }

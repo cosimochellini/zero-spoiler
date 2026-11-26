@@ -5939,13 +5939,16 @@
       "https://iceandfire.fandom.com/wiki/Anguy",
       "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
       "https://gameofthrones.fandom.com/it/wiki/Anguy",
-      "https://it.wikipedia.org/wiki/Mondo_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Mondo_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://awoiaf.westeros.org/index.php/Anguy"
     ],
     "unverified": [
       "Book gate 157 (Arya II): A Wiki of Ice and Fire's Chapter 13 has Tom of Sevenstreams, Lem and Anguy come upon Arya, Gendry and Hot Pie, and Hot Pie give his name; the line that says Anguy's is not quoted. Neither the episodes nor the books were viewed.",
       "Owner check, book: he wins the archery at the Hand's tourney in Eddard VII of A Game of Thrones (site chapter 31, Ice and Fire Wiki), and Alyn's stage-1 chronicle names him there, hence `nameSaidAt: 5`. The record opens at 157, later and so safe; lower it to 31 if that scene names him explicitly.",
       "Owner check, show: the Game of Thrones Wiki lists him in six episodes from \"Dark Wings, Dark Words\" (22) to \"The Bear and the Maiden Fair\" (27), but no quote or synopsis read has his name said on screen, so the record is the books' alone (as Wendel Manderly, #1628). If an episode says it, the show gate is that episode.",
-      "Italian: Anguy (Italian Wikipedia, Mondo delle Cronache del ghiaccio e del fuoco; Il Trono di Spade Wiki). The Mondadori form was not checked."
+      "Italian: Anguy (Italian Wikipedia, Mondo delle Cronache del ghiaccio e del fuoco; Il Trono di Spade Wiki). The Mondadori form was not checked.",
+      "Drawing (#1644): his longbow strung and leaning, and the duck he brings down by a brook on the road to the inn, an arrow through it, in Arya II (A Wiki of Ice and Fire, Chapter 13 synopsis); his page has him carry a longbow (Arya IV, Chapter 22) and use bodkin and broadhead arrows. The record's tint moves from wine to teal: no mark of his is red in the show, and wine goes only to a record whose accent mark is red (#851). The bow and the duck are drawn by eye. Neither viewed.",
+      "Stages (#1644), none filed: the books leave him alive, gone from the brotherhood after Beric's last death."
     ]
   },
   "tom-of-sevenstreams": {
@@ -5955,12 +5958,15 @@
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_22",
       "https://iceandfire.fandom.com/wiki/Tom_of_Sevenstreams",
       "https://gameofthrones.fandom.com/it/wiki/Tom_di_Settecorrenti",
-      "https://it.wikipedia.org/wiki/Mondo_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Mondo_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://awoiaf.westeros.org/index.php/Tom_of_Sevenstreams"
     ],
     "unverified": [
       "Book gate 157 (Arya II): Chapter 13 has him among the three outlaws who come upon Arya, sing on the road and give her a paper for the horses; the line that says his name is not quoted. Neither the episodes nor the books were viewed.",
       "Show: none; the show has no Tom. Episode 22 only orders the record.",
-      "Italian: \"Tom di Settecorrenti\", the Il Trono di Spade Wiki's title; Italian Wikipedia has \"Tom Settecorde\" or \"Tom Sette\". The Mondadori form was not checked."
+      "Italian: \"Tom di Settecorrenti\", the Il Trono di Spade Wiki's title; Italian Wikipedia has \"Tom Settecorde\" or \"Tom Sette\". The Mondadori form was not checked.",
+      "Drawing (#1644): his woodharp, which he plucks as he talks, and the woodman's axe he wields (A Wiki of Ice and Fire, Tom of Sevenstreams, citing Arya II, Chapter 13). The harp's shape and the axe are drawn by eye. Neither viewed.",
+      "Stages (#1644), none filed: the books leave him alive with Lady Stoneheart's outlaws."
     ]
   },
   "lem": {
@@ -5972,12 +5978,16 @@
       "https://gameofthrones.fandom.com/wiki/The_Broken_Man",
       "https://gameofthrones.fandom.com/wiki/No_One",
       "https://gameofthrones.fandom.com/it/wiki/Lem",
-      "https://it.wikipedia.org/wiki/Mondo_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Mondo_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://awoiaf.westeros.org/index.php/Lem",
+      "https://iceandfire.fandom.com/wiki/Lem_Lemoncloak"
     ],
     "unverified": [
       "Book gate 157 (Arya II): Chapter 13 has him among the three outlaws, and Arya slams a tankard in his face at the inn; the Game of Thrones Wiki's Lem page cites ASOS 13 for \"Lem\" as short for Lemoncloak, after his yellow cloak. The line that says his name is not quoted. Neither the episodes nor the books were viewed.",
       "Show: Lem appears only in season 6 (\"The Broken Man\", episode 57, and \"No One\", 58). \"The Broken Man\" notes he is unnamed in dialogue, named only by the Viewer's Guide, and no quote read from \"No One\" says his name, so the record is the books' alone; episode 22 only orders it.",
-      "Italian: \"Lem\"; Italian Wikipedia and the Il Trono di Spade Wiki give \"Lem Mantello di Limone\" as his full nickname."
+      "Italian: \"Lem\"; Italian Wikipedia and the Il Trono di Spade Wiki give \"Lem Mantello di Limone\" as his full nickname.",
+      "Drawing (#1644): his large hooded yellow cloak, patched with deerskin, and his black iron conic helm (A Wiki of Ice and Fire, Lem, citing Arya II, Chapter 13), hung on a stand so no face shows. The stand, the patch's place and the helm's shape are drawn by eye. Neither viewed.",
+      "Stage (#1644), 268, the books' alone: he takes the Hound's helm from Rorge's body and wears it, though Thoros opposes it, in Brienne VIII of A Feast for Crows (A Wiki of Ice and Fire, Lem, citing AFFC 42; the Game of Thrones Wiki's Lem page, \"In the books\", AFFC 42). The drawing puts the Hound's own helm, scaled, on the stand in place of his. Episode 57, where the show first brings on its Lem (\"The Broken Man\"), only orders it; owner check on that ordering point. Not viewed."
     ]
   },
   "jack-be-lucky": {
@@ -5986,12 +5996,15 @@
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17",
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_22",
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_29",
-      "https://gameofthrones.fandom.com/it/wiki/Fratellanza_Senza_Vessilli"
+      "https://gameofthrones.fandom.com/it/wiki/Fratellanza_Senza_Vessilli",
+      "https://awoiaf.westeros.org/index.php/Jack-Be-Lucky"
     ],
     "unverified": [
       "Book gate 161 (Arya III): Chapter 17 has him blow his horn at a village that looks abandoned, and its people come out. Chapter 13 (157) lists him appearing at the inn, with no scene read that names him (owner check: 157). The line that says his name is not quoted. Neither the Ice and Fire Wiki nor the Game of Thrones Wiki has a page for him. Neither the episodes nor the books were viewed.",
       "Show: none; episode 22 only orders the record.",
-      "Italian: \"Jack Fortunello\", from the Il Trono di Spade Wiki's list of the Brotherhood's members; the Mondadori form was not checked."
+      "Italian: \"Jack Fortunello\", from the Il Trono di Spade Wiki's list of the Brotherhood's members; the Mondadori form was not checked.",
+      "Drawing (#1644): the hunting horn he blows at a village that looks abandoned, and the rusty pothelm he wears (A Wiki of Ice and Fire, Jack-Be-Lucky, citing Arya III, Chapter 17). The horn's shape, its strap and the helm are drawn by eye. Neither viewed.",
+      "Stages (#1644), none filed: the books leave him alive with Lady Stoneheart's outlaws."
     ]
   },
   "greenbeard": {
@@ -6002,12 +6015,15 @@
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_29",
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_34",
       "https://iceandfire.fandom.com/wiki/Greenbeard",
-      "https://gameofthrones.fandom.com/it/wiki/Pello_di_Tyrosh"
+      "https://gameofthrones.fandom.com/it/wiki/Pello_di_Tyrosh",
+      "https://awoiaf.westeros.org/index.php/Greenbeard"
     ],
     "unverified": [
       "Book gate 166 (Arya IV): Chapter 22 has the old dwarf woman of High Heart speak in private to Lem, Tom and Greenbeard. Chapters 13 and 17 (157, 161) list him appearing, with no scene read that names him (owner check: 157 or 161; the Il Trono di Spade Wiki quotes him calling himself Pello of Tyrosh when the outlaws hear of Jaime's escape, which is Arya III, 161). The line that says his name is not quoted. Neither the episodes nor the books were viewed.",
       "Show: none; episode 22 only orders the record.",
-      "Italian: \"Barbaverde\", the Il Trono di Spade Wiki's alias for Pello di Tyrosh; the Mondadori form was not checked."
+      "Italian: \"Barbaverde\", the Il Trono di Spade Wiki's alias for Pello di Tyrosh; the Mondadori form was not checked.",
+      "Drawing (#1644): a sack of grain. Lord Beric sends him with the Mad Huntsman to buy grain south of the Mander with the gold taken from the Hound (A Wiki of Ice and Fire, Greenbeard, citing Arya VI, Chapter 39, site 183). No page read gives him an object of his own (only his green beard going grey), so the errand stands in, a declared B. Owner check: is a stand-in acceptable here? The sack is drawn by eye. Neither viewed.",
+      "Stages (#1644), none filed: the books leave him alive, among Beric's followers rather than Lady Stoneheart's."
     ]
   },
   "mad-huntsman": {
@@ -6015,13 +6031,16 @@
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_29",
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_34",
       "https://iceandfire.fandom.com/wiki/Mad_Huntsman",
-      "https://gameofthrones.fandom.com/it/wiki/Cacciatore_Pazzo"
+      "https://gameofthrones.fandom.com/it/wiki/Cacciatore_Pazzo",
+      "https://awoiaf.westeros.org/index.php/Mad_Huntsman"
     ],
     "unverified": [
       "Book gate 173 (Arya V): Chapter 29 has the northmen in cages caught by the Mad Huntsman, and the Huntsman bring a prisoner into town in chains at night. The line that says the name is not quoted. Neither the episodes nor the books were viewed.",
       "Affiliation (review round 1): \"No allegiance\" at his gate, 173, where Chapter 29 has him keep his own cages and his own prisoner; \"Brotherhood Without Banners\" at 178, where Chapter 34 has him at the hollow hill after handing Sandor over (the Ice and Fire Wiki ties him to the outlaws when he surrenders Sandor). Episode 25 only orders the step.",
       "Show: none; episode 24 only orders the record.",
-      "Italian: \"Cacciatore Pazzo\" (Il Trono di Spade Wiki); the Mondadori form was not checked."
+      "Italian: \"Cacciatore Pazzo\" (Il Trono di Spade Wiki); the Mondadori form was not checked.",
+      "Drawing (#1644): a crow cage hung on its chain, the kind he puts the northmen he catches in to starve at Stoney Sept (A Wiki of Ice and Fire, Mad Huntsman, citing Arya V, Chapter 29); he means to cage Sandor too. The cage, the chain and the gibbet are drawn by eye. Neither viewed.",
+      "Stages (#1644), none filed: the books leave him alive."
     ]
   },
   "edric-dayne": {
@@ -6031,24 +6050,31 @@
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_43",
       "https://iceandfire.fandom.com/wiki/Edric_Dayne",
       "https://gameofthrones.fandom.com/it/wiki/Edric_Dayne",
-      "https://it.wikipedia.org/wiki/Mondo_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Mondo_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://awoiaf.westeros.org/index.php/Edric_Dayne",
+      "https://iceandfire.fandom.com/wiki/House_Dayne"
     ],
     "unverified": [
       "Book gate 187 (Arya VIII): Chapter 43 has Arya speak with Edric Dayne, called Ned like her father, the young Lord of Starfall, who squired for Lord Beric at the Hand's tourney. Chapters 34 and 39 (178, 183) list him appearing, with no scene read that gives his name (owner check). The line that says it is not quoted. Neither the episodes nor the books were viewed.",
       "Show: none (the show's Edric Storm is another character, in the Dragonstone group); episode 27 only orders the record.",
-      "Italian: \"Edric Dayne\" (Italian Wikipedia, Mondo delle Cronache del ghiaccio e del fuoco). \"Stelle al Tramonto\" for Starfall is the Il Trono di Spade Wiki's; the Mondadori forms were not checked."
+      "Italian: \"Edric Dayne\" (Italian Wikipedia, Mondo delle Cronache del ghiaccio e del fuoco). \"Stelle al Tramonto\" for Starfall is the Il Trono di Spade Wiki's; the Mondadori forms were not checked.",
+      "Drawing (#1644): the arms of House Dayne, a white sword and falling star on a lilac field (Ice and Fire Wiki, House Dayne), on a shield. The only thing of his own a page names is a pale purple cloak (A Wiki of Ice and Fire, Edric Dayne, citing Arya VIII, Chapter 43), so his house's sigil stands in. The shield's cut and the star are drawn by eye. Neither viewed.",
+      "Stages (#1644), none filed: the books leave him alive, gone from the brotherhood after Beric's last death."
     ]
   },
   "ghost-of-high-heart": {
     "sources": [
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_22",
       "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_43",
-      "https://gameofthrones.fandom.com/it/wiki/Fantasma_di_Cuore_Alto"
+      "https://gameofthrones.fandom.com/it/wiki/Fantasma_di_Cuore_Alto",
+      "https://awoiaf.westeros.org/index.php/Ghost_of_High_Heart"
     ],
     "unverified": [
       "Book gate 187 (Arya VIII): Chapter 43 has the ghost of High Heart tell the outlaws her dreams, call Beric the Lord of Corpses, send Arya away and tell them to seek her mother at the Twins. Chapter 22 (166) has her only as an old dwarf woman; whether either chapter has a character call her by the name is not confirmed (owner check: 166, or omit as a descriptor). Neither the Ice and Fire Wiki nor the Game of Thrones Wiki has a page for her. Neither the episodes nor the books were viewed.",
       "Show: none; episode 27 only orders the record.",
-      "Italian: \"Fantasma di Cuore Alto\" and \"Cuore Alto\" for High Heart, from the Il Trono di Spade Wiki; the Mondadori forms were not checked."
+      "Italian: \"Fantasma di Cuore Alto\" and \"Cuore Alto\" for High Heart, from the Il Trono di Spade Wiki; the Mondadori forms were not checked.",
+      "Drawing (#1644): the gnarled black cane she walks with (A Wiki of Ice and Fire, Ghost of High Heart, citing Arya IV, Chapter 22), leaning on one of the weirwood stumps of High Heart she sleeps among (Chapter 22 synopsis). The cane's shape and the stumps are drawn by eye. Neither viewed.",
+      "Stages (#1644), none filed: the books leave her alive."
     ]
   },
   "qyburn": {
