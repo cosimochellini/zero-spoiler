@@ -39561,6 +39561,26 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425799",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425799",
       "contentSha256": "ae0f278c1c7f5d7f196bdbd107790e42afbef14a8c0608b0edfbb77fcde0d965"
+    },
+    "hxh-en-Salkov-425508.json": {
+      "locale": "en",
+      "title": "Salkov",
+      "revision": 425508,
+      "revisionDate": "2026-09-03T11:29:24Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Salkov",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425508",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425508",
+      "contentSha256": "4c211c7c5c4cdfe55781f33067430257e294f2b4ceaed76e1861c4919e8c464c"
+    },
+    "hxh-en-Vantine-425501.json": {
+      "locale": "en",
+      "title": "Vantine",
+      "revision": 425501,
+      "revisionDate": "2026-09-02T13:48:52Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Vantine",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425501",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425501",
+      "contentSha256": "5c31acc1f1560ede85d41edc7089ca43df1cba8c668691fe4b3fcb9094e82b5d"
     }
   }
 }
