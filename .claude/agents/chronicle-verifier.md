@@ -105,8 +105,8 @@ Run every check on every story, in this order of severity:
    the death.
 4. **Status mismatch (P1).** A story's death, capture or hire matches a record
    entry at the same chapter, and every such entry has its story. `captured` is
-   custody before a sentence; `imprisoned` is serving one
-   (`src/lib/view/records.ts`).
+   being held by someone right now, a hold inside a fight included (#1554);
+   `imprisoned` is serving a sentence (`src/lib/view/records.ts`).
 5. **IT/EN mismatch (P2).** The two texts carry the same meaning and grammatical
    gender, and the Italian uses the repo's name forms (each record's Italian
    name, and the dub rule in `tone-of-voice`).
