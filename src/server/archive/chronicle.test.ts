@@ -180,3 +180,27 @@ describe('the markers in a story', () => {
     ])
   })
 })
+
+/**
+ * The scene both episode-126 stories tell, read off the wiki's Chapter 210
+ * and Episode 126 pages (#1682): Luffy drives Crocodile through the ceiling
+ * of the tomb, and the rain begins over Alubarna.
+ */
+const RAIN = { episode: 126, chapter: 210 }
+
+describe('the episode-126 stories', () => {
+  it.each([
+    ['monkey-d-luffy', 'Rain over Alubarna'],
+    ['crocodile', 'Through the ceiling, into the rain'],
+  ])('open %s’s “%s” at the scene, not before', (id, title) => {
+    const titles = (r: Reader): string[] =>
+      [...chronicleOf(onFile(id), r).entries, ...chronicleRestOf(id, r)].map(
+        (entry) => entry.title,
+      )
+
+    expect(titles(ep(RAIN.episode - 1))).not.toContain(title)
+    expect(titles(ep(RAIN.episode))).toContain(title)
+    expect(titles(ch(RAIN.chapter - 1))).not.toContain(title)
+    expect(titles(ch(RAIN.chapter))).toContain(title)
+  })
+})

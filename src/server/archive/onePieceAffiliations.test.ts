@@ -229,6 +229,10 @@ const MOVED: Moved[] = [
     'Beasts Pirates, governor-general; fell at Wano',
   ],
   ['kurozumi-orochi', 1078, 1051, 'Shogun of Wano', 'Deposed'],
+  // #1682: she opens on the beach, ep 893 / ch 911, as a girl of Kuri;
+  // Hitetsu names Amigasa Village at ch 912, ep 894.
+  ['tama', 893, 911, undefined, 'Kuri, Wano', true],
+  ['tama', 894, 912, 'Kuri, Wano', 'Kuri, Wano, a child of Amigasa Village'],
   [
     'tama',
     1083,
