@@ -1245,6 +1245,10 @@ export const summitWar: OnePieceSaga = {
         // Episode 451 adapts chapter 548: the escapees sail out through the
         // Gates of Justice.
         { episode: 451, chapter: 548, value: 'alive' },
+        // Episode 1177 adapts chapter 1147: his attack turned on Brook's, he
+        // is tied up in Gunko's arrows (#1554). He slips them in chapter
+        // 1173, which the anime has not reached.
+        { episode: 1177, chapter: 1147, value: 'captured' },
       ],
       affiliation: [
         { episode: 430, value: WARLORDS },

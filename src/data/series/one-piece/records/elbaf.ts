@@ -494,7 +494,13 @@ export const elbaf: OnePieceSaga = {
         it: 'È mezzo gigante, più rissoso di tutti i compagni, e alla Scuola Walrus lo conoscono come il teppista. Colpisce Rufy in testa con una spada di legno, che si spezza, ed è entusiasta quando Rufy risponde con un pugno nel terreno; sua madre Ripley lo sgrida ma loda il colpo, e suo padre è un ex pirata umano. Vuole diventare un guerriero di Erbaf, e non gli importa quanti pugni deve prendere per arrivarci.',
         en: 'He is half giant, quicker to fight than any of his classmates, and at the Walrus School he is known as the delinquent. He swings a wooden sword at Luffy’s head, which snaps, and is thrilled when Luffy answers with a punch into the ground; his mother Ripley scolds him but praises the strike, and his father is a human former pirate. He wants to become a warrior of Elbaph, and does not care how many punches it takes.',
       },
-      status: [{ episode: 1165, value: 'alive' }],
+      status: [
+        { episode: 1165, value: 'alive' },
+        // Episode 1176 adapts chapter 1146, where Gunko wraps an arrow round
+        // his neck and carries him off to the other children (#1554). He only
+        // leaves the branch in chapter 1174, which no episode adapts yet.
+        { episode: 1176, chapter: 1146, value: 'captured' },
+      ],
       affiliation: [{ episode: 1165, value: WALRUS_SCHOOL('alunno', 'pupil') }],
       origin: [
         { episode: 1165, chapter: 1135, place: 'elbaf-island', value: ELBAF },

@@ -2023,7 +2023,13 @@ export const alabasta: OnePieceSaga = {
         it: 'Era Miss All Sunday, la vicepresidente di Baroque Works, e per tutto il tempo ha seguito il suo capo per una ragione sua: una stele scritta in una lingua che solo lei legge. Fa spuntare braccia dove vuole, dal pavimento o dalla schiena di un nemico. Dopo che Rufy le ha salvato la vita contro la sua volontà, sale sulla Going Merry e dichiara di farne parte.',
         en: 'She was Miss All Sunday, vice-president of Baroque Works, and all along she followed her boss for a reason of her own: a stone slab written in a language only she can read. She sprouts arms wherever she likes, from the floor or from an enemy’s back. After Luffy saves her life against her will, she boards the Going Merry and declares herself part of the crew.',
       },
-      status: [{ episode: 130, value: 'alive' }],
+      status: [
+        { episode: 130, value: 'alive' },
+        // Episode 1178 adapts chapter 1148, which ends with Sommers holding
+        // her in his thorns (#1554). Sanji burns them away in chapter 1175,
+        // past the last aired episode.
+        { episode: 1178, chapter: 1148, value: 'captured' },
+      ],
       affiliation: [
         { episode: 130, factions: ['straw-hat-pirates'], value: STRAW_HATS },
         // Ch 340 / ep 240: she tells Sanji and Chopper goodbye and walks away.

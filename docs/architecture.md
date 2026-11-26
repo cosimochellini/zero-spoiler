@@ -620,7 +620,7 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Chronicle stories         | 816, for 195 characters                                 |
 | Dated timelines           | 2763                                                    |
 | Affiliation steps         | 831                                                     |
-| Status steps              | 804                                                     |
+| Status steps              | 810                                                     |
 | Origins that link a place | 118                                                     |
 | Later visits to places    | 13                                                      |
 
