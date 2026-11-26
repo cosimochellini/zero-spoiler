@@ -13,20 +13,17 @@ viewed. Italian names come from Italian Wikipedia, read through its API on
 
 ## How a gate was read
 
-A gate is the first chapter in the window whose synopsis puts the name in
-someone's quoted or reported speech, a broadcast, a letter or a
-self-introduction. Narration, a cast list and a name used only in narrated
-thought are not gates. A name the synopsis writes for the person being spoken to
-("Belerainte says that he did not expect Naipei to be targeted", said to Naipei)
-stands for "you" and is not a gate either. The owner's 2026-11-26 rule, under
-[Naming checks (#1145)](#naming-checks-1145), replaced the last part of this
-reading for the follow-up: a name said to the listener does count, provided it
-is said in a speech balloon. Earlier chapters that later wiki infoboxes give as
-a name chapter (Rihan 374, Musse 366, Shikaku 376, Sumidori 386, Balsamilco 363)
-were audited by phases 2–4 without an explicit signal; the phase initially used
-later naming scenes. Issue #1173 revised these gates after checking the earlier
-scenes. The table below preserves the original phase 5 evidence for the later
-appearances.
+The gates below were filed at the first chapter in the window whose synopsis
+puts the name in someone's quoted or reported speech, a broadcast, a letter or a
+self-introduction. Narration, a cast list and narrated thought were not gates.
+They stay as filed (owner, 2026-11-26). The candidates left over were checked in
+#1145 under the owner's 2026-11-26 rule, which now decides every new gate; see
+[Naming checks (#1145)](#naming-checks-1145). Earlier chapters that later wiki
+infoboxes give as a name chapter (Rihan 374, Musse 366, Shikaku 376, Sumidori
+386, Balsamilco 363) were audited by phases 2–4 without an explicit signal; the
+phase initially used later naming scenes. Issue #1173 revised these gates after
+checking the earlier scenes. The table below preserves the original phase 5
+evidence for the later appearances.
 
 | Record   |                                                   Revised gate | Naming evidence                                                                                                  |
 | -------- | -------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------------------- |
@@ -144,7 +141,9 @@ mirror, scan or fan transcript was used (#725).
 
 Each of these appears in an earlier phase's window, and the issues listed still
 hold its owner check. A listed issue either has the candidate in its phase's
-inventory, or its window holds the chapter the wiki gives for the name. The
+inventory as deferred or awaiting an owner check, or its window holds the
+chapter the wiki infobox gives as the name chapter. A row that only carries the
+candidate forward from an earlier phase does not list that phase's issue. The
 401–420 answer does not set a gate. It only rules out a later fallback in the
 scenes asked.
 
@@ -154,10 +153,10 @@ scenes asked.
 | Butch              | Kaiser's request (402); Benjamin calls him over (403) and gives the Room 1009 order (413)                                                                    | #1142                                                 |
 | Vantine            | Tserriednich's orders (402); the scene after the staged death (418)                                                                                          | #1142, #1144 (his self-introduction to Melody at 400) |
 | Salkov             | Tserriednich's orders (402, 418); the exchange Salkov replays (416); Benjamin calls to him (417)                                                             | #1141, #1142 (wiki name chapter 362), #1144           |
-| Steiner            | The Justice Bureau talk with Kaiser (402–403)                                                                                                                | #1141, #1144                                          |
+| Steiner            | The Justice Bureau talk with Kaiser (403)                                                                                                                    | #1141, #1144                                          |
 | Nasubi Hui Guo Rou | Kaiser to Worio (403); Kurapika's "King Nasubi" line (411)                                                                                                   | #1141                                                 |
-| Dogman             | The Heil-Ly scenes, where Morena calls him "Dog" (405–410)                                                                                                   | #1143, #1144                                          |
-| Orarge             | The card game he deals, and Morena's account of the cheat (408–410)                                                                                          | #1143, #1144                                          |
+| Dogman             | Morena's briefing, where she calls him "Dog" (405); his later appearances (407–410)                                                                          | #1143, #1144                                          |
+| Orarge             | The card game he deals (408–409); Morena's account of the cheat (410)                                                                                        | #1143, #1144                                          |
 | Naipei             | Belerainte answering her before the second class (411)                                                                                                       | #1142                                                 |
 | Roccoli            | Yuri hushing her (411)                                                                                                                                       | #1142, #1143                                          |
 | Sarahell           | Fukataki and her makeover (411)                                                                                                                              | #1142, #1143, #1144                                   |
@@ -180,10 +179,10 @@ listed, chosen as in the table above.
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
 | Peuckert                 | Narration of Kaiser's escort (402)                                                                                                      | #1142, #1144        |
 | Sevanti Hui Guo Rou      | Narration (404) and a narrated thought (415)                                                                                            | #1141, #1142        |
-| Nugui                    | Speaks with Nasubi at the burial chamber; not addressed by name in the synopsis (413)                                                   | #1141, #1143        |
+| Nugui                    | Speaks with Nasubi at the burial chamber; not addressed by name in the synopsis (413)                                                   | #1141               |
 | Orau                     | Narration (415)                                                                                                                         | #1142, #1143        |
 | Giuliano                 | Cast lists (404, 413, 415)                                                                                                              | #1142, #1143, #1144 |
-| Scairt                   | Narration (402)                                                                                                                         | #1142, #1144        |
+| Scairt                   | Narration (402)                                                                                                                         | #1142               |
 | Moswana                  | Narration of her death (416); not addressed by name in the synopsis                                                                     | #1142, #1143, #1144 |
 | Bachaem                  | Cast list (415)                                                                                                                         | #1142               |
 | Woody                    | Pictured in a flashback (414); his name is cited to the 358 synopsis ([Woody](https://hunterxhunter.fandom.com/index.php?oldid=423907)) | #1142               |
@@ -207,7 +206,7 @@ listed, chosen as in the table above.
 | Komiya, Momiita, Ryubihhi, Pitakusu                                                                  | Seen only at 415. Their names come only from Togashi's character sheets in Jump Ryu! Vol. 21, outside the story ([Komiya](https://hunterxhunter.fandom.com/index.php?oldid=424585), [Momiita](https://hunterxhunter.fandom.com/index.php?oldid=424305), [Ryubihhi](https://hunterxhunter.fandom.com/index.php?oldid=424094), [Pitakusu](https://hunterxhunter.fandom.com/index.php?oldid=424167)).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Mizaurouno, Beeta                                                                                    | Their names come only from the Jump Ryu! Vol. 21 sheets ([Mizaurouno](https://hunterxhunter.fandom.com/index.php?oldid=424308), [Beeta](https://hunterxhunter.fandom.com/index.php?oldid=425008)). Phase 2 (#1142) also lists both; the reason holds there too.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | Guerimori, Anesuto, Kōbihi, Kontasutin, Naikēru, Rēuen, Gihoruto, Deruboro, Furichosefu, Nikoraurusu | Halkenburg's guards with the casket (406–407). Their names come only from a Togashi post of December 2024, outside the story; the wiki marks the pages as unofficially titled ([Guerimori](https://hunterxhunter.fandom.com/index.php?oldid=424760), [Anesuto](https://hunterxhunter.fandom.com/index.php?oldid=425055), [Kōbihi](https://hunterxhunter.fandom.com/index.php?oldid=424590), [Kontasutin](https://hunterxhunter.fandom.com/index.php?oldid=424577), [Naikēru](https://hunterxhunter.fandom.com/index.php?oldid=424254), [Rēuen](https://hunterxhunter.fandom.com/index.php?oldid=424126), [Gihoruto](https://hunterxhunter.fandom.com/index.php?oldid=424784), [Deruboro](https://hunterxhunter.fandom.com/index.php?oldid=424846), [Furichosefu](https://hunterxhunter.fandom.com/index.php?oldid=424811), [Nikoraurusu](https://hunterxhunter.fandom.com/index.php?oldid=424238)). Phase 2 (#1142) lists five of them (Anesuto, Kōbihi, Kontasutin, Furichosefu, Nikoraurusu) and phase 3 (#1143) lists all ten; the reason holds there too. |
-| Narumi McGait                                                                                        | Only a picture on a page of Chrollo's book (406). Her name is written there in the series' own alphabet, which is an image, not a caption ([Narumi McGait](https://hunterxhunter.fandom.com/index.php?oldid=424250), [Chapter 406](https://hunterxhunter.fandom.com/index.php?oldid=422647)).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Narumi McGait                                                                                        | Only a picture on a page of Chrollo's book (406). Her name is written there in the series' own alphabet, which is an image, not a caption. Owner ruling, 2026-11-26: the "McGait Narumi" text in the book at 406 does not name her ([Narumi McGait](https://hunterxhunter.fandom.com/index.php?oldid=424250), [Chapter 406](https://hunterxhunter.fandom.com/index.php?oldid=422647)).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Noko                                                                                                 | Gon's friend from Whale Island, only pictured at 414. The wiki places her naming at chapter 64, when Gon mentions her to Killua ([Noko](https://hunterxhunter.fandom.com/index.php?oldid=424225)). No earlier arc files her; that gap is [#1702](https://github.com/cosimochellini/zero-spoiler/issues/1702).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 ## Places
