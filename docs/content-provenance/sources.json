@@ -39581,6 +39581,26 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425501",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425501",
       "contentSha256": "5c31acc1f1560ede85d41edc7089ca43df1cba8c668691fe4b3fcb9094e82b5d"
+    },
+    "got-en-The_Last_of_the_Starks-749435.json": {
+      "locale": "en",
+      "title": "The Last of the Starks",
+      "revision": 749435,
+      "revisionDate": "2026-11-21T09:52:41Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Last_of_the_Starks",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749435",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749435",
+      "contentSha256": "9a2bb5743eb5c55620dd4fdd2c3f330556dcce114d5d27a8d66b765c500adda7"
+    },
+    "got-en-Battle_of_the_Bastards-740225.json": {
+      "locale": "en",
+      "title": "Battle of the Bastards",
+      "revision": 740225,
+      "revisionDate": "2026-06-27T12:37:51Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Battle_of_the_Bastards",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740225",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740225",
+      "contentSha256": "5f935afb8beb2c1606007c378ef331de7b88ab02a761fd96e267ab7bd5d33ed3"
     }
   }
 }
