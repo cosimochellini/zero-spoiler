@@ -111,7 +111,7 @@ function mostBonded(cast: Entity[], r: Reader): Entity | undefined {
 }
 
 /** One character's list of people, each snapshot cut to the demo's people. */
-function bondsOf(owner: Entity, r: Reader): TourBonds {
+export function bondsOf(owner: Entity, r: Reader): TourBonds {
   const people = new Map<string, Entity>()
   const snapshots = stepsOf(
     r.archive.datedOf(owner, 'relationships'),
@@ -141,10 +141,12 @@ function bondsOf(owner: Entity, r: Reader): TourBonds {
 /** The tour's slice of one series: its leads, one's people, and the fog. */
 export function tourPage(r: Reader): TourView {
   const entities = castOf(r)
-  const owner = mostBonded(entities, r)
-  // Only Hunter x Hunter's step shows covered tiles: its Nen abilities.
+  // Only Hunter x Hunter's step draws a list of people and covered tiles,
+  // its Nen abilities; another series sends neither.
+  const nen = r.archive.series.features.nen
+  const owner = nen ? mostBonded(entities, r) : undefined
   const past =
-    r.archive.series.features.nen ?
+    nen ?
       orderByMode(r.archive.abilities, 'episode').filter(
         (entity) => !inDemo(entity, r),
       )

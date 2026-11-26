@@ -57,6 +57,7 @@ export function GridView({
                 card.id === offered ?
                   () => {
                     onOpen(card.id)
+                    focusOpened(card.id)
                   }
                 : null
               }
@@ -136,9 +137,8 @@ function OpenCard({
 
   return (
     <div
-      // The card opened by hand takes the focus its button had, so a
-      // keyboard reader stays where they were.
-      ref={opened ? focusOnMount : undefined}
+      // The card opened by hand can take the focus its button had.
+      id={opened ? openedId(card.id) : undefined}
       tabIndex={opened ? -1 : undefined}
       {...stylex.props(
         styles.card,
@@ -303,9 +303,20 @@ function CoveredChip({ covered }: { covered: CoveredRecord }): ReactElement {
   )
 }
 
-/** Moves the focus to an element as it mounts. */
-function focusOnMount(element: HTMLElement | null): void {
-  element?.focus()
+/** The address of a card opened by hand. */
+function openedId(id: string): string {
+  return `tour-opened-${id}`
+}
+
+/**
+ * Hands the focus of the Show button, which leaves with its click, to the
+ * card it opened, once that has rendered; only on the click, so coming back
+ * to the step later leaves the focus where it is.
+ */
+function focusOpened(id: string): void {
+  requestAnimationFrame(() => {
+    document.querySelector<HTMLElement>(`#${openedId(id)}`)?.focus()
+  })
 }
 
 /** A record's drawing in its seal, or the bare seal with none to draw. */

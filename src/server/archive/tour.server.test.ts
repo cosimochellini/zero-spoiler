@@ -5,8 +5,9 @@ import type { Gated } from '~/lib/progress/spoiler'
 import type { TourView } from '~/lib/view/tour'
 import { LOADED_SERIES, loadedSeries } from '~/test/series'
 
+import { demoArcs, demoCast } from './onboarding.server'
 import { readerFor } from './reader.server'
-import { tourPage } from './tour.server'
+import { bondsOf, tourPage } from './tour.server'
 
 /** Whether a gate is inside the series' demo, by the landing's own rule. */
 function demoOf(archive: SeriesArchive): (gated: Gated) => boolean {
@@ -15,6 +16,11 @@ function demoOf(archive: SeriesArchive): (gated: Gated) => boolean {
     gated.source === undefined
     && gated.revealedAtEpisode <= demoLastEpisode
     && gated.revealedAtChapter <= demoLastChapter
+}
+
+/** A gate's two numbers, to compare a step with the filed entry it came from. */
+function thresholdsOf(gated: Gated): [number, number] {
+  return [gated.revealedAtEpisode, gated.revealedAtChapter]
 }
 
 /** Every gate the tour opens: cards, their dated facts, the people and links. */
@@ -85,5 +91,44 @@ describe('the hub tour', () => {
     expect(new Set(tour.covered.map(({ kind }) => kind))).toStrictEqual(
       new Set(['ability']),
     )
+  })
+
+  // The payload carries thresholds only, so its own gates cannot tell a
+  // single-source snapshot from one both media tell: read the filed archive,
+  // for every lead of every demo, Gon's source-only snapshots among them.
+  it('drops the relationship snapshots only one medium tells', () => {
+    let dropped = 0
+    for (const { archive } of LOADED_SERIES) {
+      const { demoLastChapter, demoLastEpisode } = archive.series
+      const r = readerFor(archive, null, 'en')
+      const leads = demoCast(demoArcs(r), r)
+      for (const lead of leads) {
+        const filed = archive
+          .datedOf(lead, 'relationships')
+          .filter(
+            ({ gate }) =>
+              gate.revealedAtEpisode <= demoLastEpisode
+              && gate.revealedAtChapter <= demoLastChapter,
+          )
+        const both = filed.filter(({ gate }) => gate.source === undefined)
+        dropped += filed.length - both.length
+
+        expect(
+          bondsOf(lead, r).snapshots.map((snapshot) => thresholdsOf(snapshot)),
+        ).toStrictEqual(both.map(({ gate }) => thresholdsOf(gate)))
+      }
+    }
+
+    expect(dropped).toBeGreaterThan(0)
+  })
+
+  it('sends a list of people and covered tiles only where a step shows them', () => {
+    for (const { archive } of LOADED_SERIES) {
+      const tour = tourPage(readerFor(archive, null, 'en'))
+      const shown = archive.series.features.nen
+
+      expect(tour.bonds !== undefined).toBe(shown)
+      expect(tour.covered.length > 0).toBe(shown)
+    }
   })
 })
