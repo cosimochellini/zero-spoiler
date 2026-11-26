@@ -9,7 +9,10 @@ export type LoadTour = (series: string, locale: Locale) => Promise<TourView>
 /** One request per series and locale, kept for the page's life. */
 const tours = new Map<string, Promise<TourView>>()
 
-/** One series' tour, once it has come; a failed request is asked again later. */
+/**
+ * One series' tour, once it has come. A failed request leaves the screen's
+ * bar alone and is asked again the next time the series shows.
+ */
 export function useTour(
   load: LoadTour,
   series: string,

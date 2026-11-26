@@ -546,7 +546,7 @@ Copy rules live in the
   Start's compiler needs one per export. The sweep, the dump and the JSON
   round-trip checks read the same entry. A new entry goes at the end of the
   table, after the deployed ones, so One Piece's sweep and dump stay byte for
-  byte: `loadAbilities`, `loadAbility` and `liftAbility` (#923) are the last.
+  byte: `loadTour` (#1703) is the last.
 - Register new prose outside a series' `records/` in its `EXTRA.prose` entry in
   `scripts/archive-gate.mjs` and in `textsOf` in `src/data/leaks.test.ts`, using
   the page's actual gate.

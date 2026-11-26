@@ -30,8 +30,8 @@ import { coveredOf, type Reader } from './reader.server'
 /** How many cards the screen's grid holds: four across, three down. */
 const CAST_COUNT = 12
 
-/** How many covered tiles stand for what is past the demo. */
-const COVERED_COUNT = 6
+/** How many abilities under fog stand for the rest: one row of tiles. */
+const COVERED_COUNT = 3
 
 /** A single role as the one step it always was, from the record's opening. */
 function roleSteps(entity: Entity, r: Reader): Step<string>[] {
@@ -142,12 +142,13 @@ function bondsOf(owner: Entity, r: Reader): TourBonds {
 export function tourPage(r: Reader): TourView {
   const entities = castOf(r)
   const owner = mostBonded(entities, r)
-  // Hunter x Hunter's covered tiles are its Nen abilities, which the screen
-  // names as such; another series covers the route past its demo.
-  const past = orderByMode(
-    r.archive.series.features.nen ? r.archive.abilities : r.archive.chart,
-    'episode',
-  ).filter((entity) => !inDemo(entity, r))
+  // Only Hunter x Hunter's step shows covered tiles: its Nen abilities.
+  const past =
+    r.archive.series.features.nen ?
+      orderByMode(r.archive.abilities, 'episode').filter(
+        (entity) => !inDemo(entity, r),
+      )
+    : []
 
   return {
     ...(owner !== undefined && { bonds: bondsOf(owner, r) }),
@@ -157,6 +158,5 @@ export function tourPage(r: Reader): TourView {
       .map((entity) => coveredOf(entity, r.archive)),
     fogged: r.archive.entities.filter((entity) => !inDemo(entity, r)).length,
     lastEpisode: r.archive.series.demoLastEpisode,
-    total: r.archive.entities.length,
   }
 }

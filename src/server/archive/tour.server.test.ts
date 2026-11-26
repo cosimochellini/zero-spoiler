@@ -51,8 +51,7 @@ describe('the hub tour', () => {
 
   it.each(TOURS)(
     'says of a covered record of $slug its kind and where it opens, and no more',
-    ({ inDemo, tour }) => {
-      expect(tour.covered.length).toBeGreaterThan(0)
+    ({ archive, inDemo, tour }) => {
       expect(tour.covered.filter((covered) => inDemo(covered))).toStrictEqual(
         [],
       )
@@ -67,7 +66,7 @@ describe('the hub tour', () => {
         ),
       ).toStrictEqual(tour.covered)
       expect(tour.fogged).toBeGreaterThan(0)
-      expect(tour.fogged).toBeLessThan(tour.total)
+      expect(tour.fogged).toBeLessThan(archive.entities.length)
     },
   )
 
@@ -82,6 +81,7 @@ describe('the hub tour', () => {
 
     expect(tour.cast.map(({ id }) => id)).toContain(tour.bonds?.of)
     expect(tour.bonds?.snapshots.length).toBeGreaterThan(1)
+    expect(tour.covered.length).toBeGreaterThan(0)
     expect(new Set(tour.covered.map(({ kind }) => kind))).toStrictEqual(
       new Set(['ability']),
     )

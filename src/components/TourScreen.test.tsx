@@ -61,7 +61,6 @@ const TOUR: TourView = {
   ],
   fogged: 600,
   lastEpisode: 10,
-  total: 700,
 }
 
 const step = (key: TourStep['key']): TourStep => ({

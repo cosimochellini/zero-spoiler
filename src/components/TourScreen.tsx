@@ -104,15 +104,17 @@ function ScreenBar({
   return (
     <div {...stylex.props(styles.bar)}>
       <span {...stylex.props(styles.mono, styles.series)}>{name}</span>
-      <output
-        aria-live="polite"
-        htmlFor={SLIDER_ID}
+      {/* Not a live region: it changes on every frame of a scrolling step,
+          and the slider already says its value. */}
+      <span
+        aria-hidden="true"
         {...stylex.props(styles.point)}
       >
         {t('mark.episode', { threshold: value })}
-      </output>
+      </span>
       <input
         aria-label={t('onboarding.unitEpisode')}
+        aria-valuetext={t('mark.episode', { threshold: value })}
         id={SLIDER_ID}
         max={last}
         min={1}

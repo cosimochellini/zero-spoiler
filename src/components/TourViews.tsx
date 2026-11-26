@@ -15,9 +15,6 @@ import { groupsAt, linksAt } from './tourGroups'
 /** A threshold as the site bar says a bookmark: "EP 20". */
 const EPISODE = 'mark.episode'
 
-/** How many abilities under fog stand for the rest: one row of chips. */
-const NEN_SHOWN = 3
-
 /** What every view of the screen is handed. */
 export interface ViewProps {
   at: DialPoint
@@ -94,24 +91,12 @@ function GridCard({
   const t = useT()
   if (opened || dialSees(at, card)) {
     return (
-      <div
-        {...stylex.props(
-          styles.card,
-          settleStyles.band,
-          dim && styles.quiet,
-          opened && styles.lifted,
-        )}
-      >
-        <span {...stylex.props(styles.crest)}>
-          <Crest visual={latestStep(card.drawings, at)} />
-        </span>
-        <span {...stylex.props(styles.cardName)}>{card.name}</span>
-        {opened && (
-          <span {...stylex.props(styles.mono, styles.accent)}>
-            {t('hub.tour.anywayDone')}
-          </span>
-        )}
-      </div>
+      <OpenCard
+        at={at}
+        card={card}
+        dim={dim}
+        opened={opened}
+      />
     )
   }
   return (
@@ -135,10 +120,50 @@ function GridCard({
   )
 }
 
+/** An open card: its drawing at the point, its name, and if opened by hand, so. */
+function OpenCard({
+  at,
+  card,
+  dim,
+  opened,
+}: {
+  at: DialPoint
+  card: TourCard
+  dim: boolean
+  opened: boolean
+}): ReactElement {
+  const t = useT()
+
+  return (
+    <div
+      // The card opened by hand takes the focus its button had, so a
+      // keyboard reader stays where they were.
+      ref={opened ? focusOnMount : undefined}
+      tabIndex={opened ? -1 : undefined}
+      {...stylex.props(
+        styles.card,
+        settleStyles.band,
+        dim && styles.quiet,
+        opened && styles.lifted,
+      )}
+    >
+      <span {...stylex.props(styles.crest)}>
+        <Crest visual={latestStep(card.drawings, at)} />
+      </span>
+      <span {...stylex.props(styles.cardName)}>{card.name}</span>
+      {opened && (
+        <span {...stylex.props(styles.mono, styles.accent)}>
+          {t('hub.tour.anywayDone')}
+        </span>
+      )}
+    </div>
+  )
+}
+
 /** The first card large, each of its facts at the step the point reached. */
 export function FocusView({ at, tour }: ViewProps): null | ReactElement {
   const card = tour.cast[0]
-  if (card === undefined) {
+  if (card === undefined || !dialSees(at, card)) {
     return null
   }
   const facts = [
@@ -181,7 +206,7 @@ export function GroupsView({ at, tour }: ViewProps): ReactElement {
           key={group}
           {...stylex.props(styles.group)}
         >
-          <h4 {...stylex.props(styles.mono, styles.groupName)}>{group}</h4>
+          <h3 {...stylex.props(styles.mono, styles.groupName)}>{group}</h3>
           <ul {...stylex.props(styles.members)}>
             {cards.map((card) => (
               <li
@@ -231,11 +256,11 @@ export function BondsView({ at, tour }: ViewProps): ReactElement {
           </li>
         ))}
       </ul>
-      <h4 {...stylex.props(styles.mono, styles.groupName)}>
+      <h3 {...stylex.props(styles.mono, styles.groupName)}>
         {t('hub.tour.nen')}
-      </h4>
+      </h3>
       <ul {...stylex.props(styles.covered)}>
-        {tour.covered.slice(0, NEN_SHOWN).map((covered) => (
+        {tour.covered.map((covered) => (
           <li key={covered.handle}>
             <CoveredChip covered={covered} />
           </li>
@@ -276,6 +301,11 @@ function CoveredChip({ covered }: { covered: CoveredRecord }): ReactElement {
       </span>
     </div>
   )
+}
+
+/** Moves the focus to an element as it mounts. */
+function focusOnMount(element: HTMLElement | null): void {
+  element?.focus()
 }
 
 /** A record's drawing in its seal, or the bare seal with none to draw. */

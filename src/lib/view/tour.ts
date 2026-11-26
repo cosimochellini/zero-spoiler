@@ -42,10 +42,12 @@ export interface TourBonds {
 export interface TourView {
   bonds?: TourBonds
   cast: TourCard[]
-  /** Records past the demo, as the fog shows them: handle, kind, thresholds. */
+  /**
+   * A series' Nen abilities past the demo, as the fog shows them: handle,
+   * kind, thresholds. Empty for a series with no Nen; only its step shows them.
+   */
   covered: CoveredRecord[]
   /** How many records are past the demo. */
   fogged: number
   lastEpisode: number
-  total: number
 }

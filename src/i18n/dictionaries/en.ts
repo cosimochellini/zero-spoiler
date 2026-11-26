@@ -46,7 +46,7 @@ export const enDictionary = {
     'You set the last episode you watched or the last chapter you read. Each entry opens when your bookmark reaches it.',
   'hub.tour.fog.title': 'The rest is under fog',
   'hub.tour.fog.body':
-    'Of an entry under fog you see only where it opens. Its name, drawing and text are not in the page you receive.',
+    'Of an entry under fog you see only where it opens. Past your bookmark, a series’ pages do not even contain its name, drawing or text.',
   'hub.tour.anyway.title': 'Show anyway',
   'hub.tour.anyway.body':
     'You can open a single entry by hand. The others stay under fog, and your bookmark does not move.',
