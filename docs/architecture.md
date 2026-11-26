@@ -249,7 +249,7 @@ characters; all sit at episode 148, so the home ledger and the uniqueness test
 key a story by its chapter as well. Chapters 371–400 (#1157) add 120 more for
 the 40 characters filed there and 44 returning ones, and chapters 401–420
 (#1159) 84 for the 22 filed there and 37 returning ones. Candidates whose naming
-stays unverified are deferred to #1141–#1145. Gyro is unanchored at 78 / 203.
+stays unverified are deferred to #1141–#1144. Gyro is unanchored at 78 / 203.
 Silva, Killua's father, is named in episode 24 but in chapter 95 in the manga,
 so his record is unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter
 71 but named in the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is
