@@ -1520,7 +1520,12 @@ export const eastBlue: OnePieceSaga = {
         it: 'Disegna carte nautiche a mano e sente il tempo cambiare prima che cambi. Ha rubato una mappa della Rotta Maggiore a Bagy e si è aggregata a Rufy e Zoro solo per convenienza, come tiene a precisare. Odia i pirati, e non spiega perché.',
         en: 'She draws sea charts by hand and feels the weather turn before it does. She stole a map of the Grand Line from Buggy and has thrown in with Luffy and Zoro purely for convenience, as she is careful to point out. She hates pirates, and does not say why.',
       },
-      status: [{ episode: 5, value: 'alive' }],
+      status: [
+        { episode: 5, value: 'alive' },
+        // Episode 1177 adapts chapter 1147, where Gunko brings her to Sommers
+        // bound in arrows (#1554). Only the manga has freed her yet (ch. 1173).
+        { episode: 1177, chapter: 1147, value: 'captured' },
+      ],
       affiliation: [
         {
           episode: 5,
@@ -1676,6 +1681,10 @@ export const eastBlue: OnePieceSaga = {
         // Episode 34 adapts chapter 76: he walks back into Cocoyasi soaked,
         // and she had stabbed her own hand instead (p. 10).
         { episode: 34, chapter: 76, value: 'alive' },
+        // Episode 1177 adapts chapter 1147: beaten on Colon's ship, he is
+        // held in Gunko's arrows with Nami's group (#1554); the manga frees
+        // them at chapter 1173, which no episode has adapted yet.
+        { episode: 1177, chapter: 1147, value: 'captured' },
       ],
       affiliation: [
         {
