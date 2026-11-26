@@ -2,6 +2,7 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
 import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
@@ -507,6 +508,14 @@ const HEATER_SHIELD: Stroke[] = [
     role: 'ambient',
   },
 ]
+/** The heater shield's face laid flat on its back on the ground. */
+const HEATER_FLAT = 'translate(0 150) scale(1 0.4) translate(0 -140)'
+/** The rim of a heater shield laid flat, its edge hatched, and the ground. */
+const HEATER_FLAT_RIM: Stroke[] = [
+  { d: 'M42 128 V132 Q50 146 76 156 Q102 146 110 132 V128' },
+  { d: 'M100 146 l5 -3 M90 152 l5 -3', role: 'ambient' },
+  { d: 'M8 160 H152', role: 'ambient', dashed: true },
+]
 /**
  * The manticore of House Lorch walking on a shield, no face: a lion's body
  * and mane, a bat's wing folded on its back and the scorpion's tail curled
@@ -658,6 +667,260 @@ const COIN_CHAIN: Stroke[] = [
  */
 const GOAT_COINS: Stroke[] = [...GOAT_HELM, ...COIN_CHAIN, shadow(80, 154, 44)]
 
+/** The point a shell's hinge sits at, its centre at x and y. */
+function hinge(x: number, y: number): string {
+  return `M${String(x)} ${String(y + 7)}`
+}
+/** A scallop shell of House Westerling, hinge down, centred on x and y. */
+function shell(x: number, y: number): string {
+  return `${hinge(x, y)} l-7 -8 q0 -7 7 -7 q7 0 7 7 z m-3 0 h6`
+}
+/** The ribs of the shell `shell` draws at the same x and y. */
+function shellRibs(x: number, y: number): string {
+  return `${hinge(x, y)} l-3.5 -14 m3.5 14 v-15 m0 15 l3.5 -14`
+}
+/** Six shells set three, two and one, as the Westerling arms carry them. */
+function sixShells(x: number, y: number): Stroke[] {
+  const at: [number, number][] = [
+    [x - 18, y],
+    [x, y],
+    [x + 18, y],
+    [x - 9, y + 21],
+    [x + 9, y + 21],
+    [x, y + 42],
+  ]
+
+  return [
+    { d: at.map(([sx, sy]) => shell(sx, sy)).join(' '), role: 'accent' },
+    { d: at.map(([sx, sy]) => shellRibs(sx, sy)).join(' '), role: 'soft' },
+  ]
+}
+
+/**
+ * Jeyne Westerling: the standard of her house, six white seashells set
+ * three, two and one on a banner hung from its crossbar, for the young
+ * wife Robb brings to Riverrun in Catelyn II of A Storm of Swords (chapter
+ * 158). The books' alone. No page gives her an object of her own, so the
+ * house's shells stand in; they are the accent.
+ */
+const SHELL_STANDARD: Stroke[] = [
+  { d: `${circle(80, 16, 4)} M80 20 V30 M80 112 V150` },
+  { d: 'M40 30 H120' },
+  { d: 'M48 30 V122 L80 106 L112 122 V30' },
+  ...sixShells(80, 50),
+  { d: 'M54 34 Q52 76 55 114', role: 'soft' },
+  { d: 'M108 46 l4 -3 M108 66 l4 -3 M108 86 l4 -3', role: 'ambient' },
+  shadow(80, 156, 22),
+]
+
+/** The Westerling shells on a heater shield, as Raynald bears them. */
+const SHELLS_ON_SHIELD: Stroke[] = sixShells(76, 62)
+/**
+ * Raynald Westerling: a heater shield with the six seashells of his house,
+ * for Jeyne's brother, who comes to Riverrun with Robb in Catelyn II of A
+ * Storm of Swords (chapter 158). The books' alone. No page gives him an
+ * object of his own, so the house's arms stand in. The edge is hatched;
+ * the accent is the shells.
+ */
+const SHELL_SHIELD: Stroke[] = [
+  ...HEATER_SHIELD,
+  ...SHELLS_ON_SHIELD,
+  shadow(80, 156, 38),
+]
+
+/**
+ * A shield of the Spicer shape, rounded at its foot, seen in 3/4: the
+ * field's stripes broken by the bend, and the three pepperpots on the bend.
+ */
+const SPICER_FIELD: Stroke[] = [
+  { d: 'M44 40 H116 V100 Q116 140 80 148 Q44 140 44 100 Z' },
+  { d: 'M116 40 L122 44 V102 Q120 142 86 152', role: 'soft' },
+  {
+    d: 'M56 40 V56.7 M56 80.8 V138 M68 40 V67.3 M68 91.6 V146 M92 40 V88.7 M92 113.2 V145 M104 40 V99.3 M104 124 V138',
+    role: 'soft',
+  },
+  {
+    d: 'M56 78.3 V71.3 Q56 66.3 60 66.3 Q64 66.3 64 71.3 V78.3 Z M74 94.4 V87.4 Q74 82.4 78 82.4 Q82 82.4 82 87.4 V94.4 Z M92 110.5 V103.5 Q92 98.5 96 98.5 Q100 98.5 100 103.5 V110.5 Z M60 66.3 V63.3 M78 82.4 V79.4 M96 98.5 V95.5',
+  },
+  { d: 'M118 58 l5 -3 M118 76 l5 -3 M118 96 l5 -3', role: 'ambient' },
+]
+/** The saffron bend of House Spicer, its two edges. */
+const SPICER_BEND: Stroke = {
+  d: 'M44 46 L116 110 M44 70 L104 124',
+  role: 'accent',
+}
+/**
+ * Rolph Spicer: a shield with the arms of his house, three pepperpots on a
+ * bend across a striped field, for Lady Sybell's brother, whom Grey Wind
+ * growls at in Catelyn II of A Storm of Swords (chapter 158). The books'
+ * alone. The edge is hatched; the accent is the bend.
+ */
+const PEPPERPOT_SHIELD: Stroke[] = [
+  ...SPICER_FIELD,
+  SPICER_BEND,
+  shadow(82, 158, 32),
+]
+
+/** The lion of House Lannister on a field, the walking lion of `LION`. */
+const SMALL_LION: Stroke[] = LION.slice(0, 5)
+/** A round shield in 3/4, its far rim seen on the right and hatched. */
+const ROUNDEL: Stroke[] = [
+  { d: ellipse(76, 96, 38, 50) },
+  { d: 'M76 46 Q122 48 124 96 Q122 144 76 146' },
+  {
+    d: 'M114 62 l6 -4 M118 82 l6 -4 M118 102 l6 -4 M114 122 l6 -4',
+    role: 'ambient',
+  },
+]
+/**
+ * Willem Lannister: a squire's round shield with the lion of his house,
+ * for the boy Edmure holds at Riverrun as a hostage in "Walk of
+ * Punishment" (episode 23). The books open on his body, in Catelyn III of
+ * A Storm of Swords (chapter 164). No page gives him an object of his own,
+ * so the house's lion stands in; its mane is the accent.
+ */
+const LION_ROUNDEL: Stroke[] = [
+  ...ROUNDEL,
+  { d: ellipse(76, 96, 32, 44), role: 'soft' },
+  ...moved(SMALL_LION, 'translate(76 98) scale(0.45) translate(-90 -102)'),
+  shadow(84, 156, 40),
+]
+
+/** A lance with its head, standing, that a pennon flies from. */
+const LANCE: Stroke = { d: 'M37 30 L40 12 L43 30 Z M40 30 V150' }
+/**
+ * Martyn Lannister: a swallow-tailed pennon with the lion of his house,
+ * flying from a lance, for the boy held at Riverrun with his brother
+ * Willem, whose hand Talisa tends in "Walk of Punishment" (episode 23).
+ * The show's alone. No page gives him an object of his own, so the house's
+ * lion stands in; its mane is the accent.
+ */
+const LION_PENNON: Stroke[] = [
+  LANCE,
+  {
+    d: 'M43 34 Q70 26 98 36 Q118 42 144 38 L120 60 L144 82 Q118 86 98 80 Q70 70 43 86',
+  },
+  { d: 'M104 40 Q100 60 104 80', role: 'soft' },
+  { d: 'M124 46 l4 -3 M126 70 l4 -3', role: 'ambient' },
+  ...moved(SMALL_LION, 'translate(74 58) scale(0.38) translate(-90 -102)'),
+  shadow(40, 156, 18),
+]
+
+/** The twin towers and the bridge of House Frey, from Stevron's shield. */
+const FREY_TOWERS: Stroke[] = TOWERS_SHIELD.slice(2, 4)
+/** A square banner of House Frey flying from its staff. */
+const FREY_BANNER_CLOTH: Stroke = {
+  d: 'M44 30 Q66 24 88 30 Q108 36 128 30 V98 Q108 104 88 98 Q66 92 44 98',
+}
+/**
+ * Lothar Frey: the banner of his house, the twin towers and the bridge,
+ * flying from its staff, for the son who brings Lord Walder's terms to
+ * Riverrun in Catelyn IV of A Storm of Swords (chapter 179) and in "The
+ * Climb" (episode 26). No page gives him an object of his own, so the
+ * house's arms stand in. The far folds are hatched; the towers are the
+ * accent.
+ */
+const TOWERS_BANNER: Stroke[] = [
+  { d: `${circle(40, 16, 4)} M40 20 V150` },
+  FREY_BANNER_CLOTH,
+  { d: 'M108 35 Q104 66 108 101', role: 'soft' },
+  { d: 'M116 46 l5 -3 M116 66 l5 -3 M116 86 l5 -3', role: 'ambient' },
+  ...moved(FREY_TOWERS, 'translate(84 64) scale(0.8) translate(-80 -83)'),
+  shadow(40, 156, 18),
+]
+
+/** The castle of House Frey under the bend sinister, on the heater shield. */
+const BASTARD_ARMS: Stroke[] = [
+  ...moved(softened(FREY_TOWERS), 'translate(-4 2)'),
+  { d: 'M110 50 L46 108.4 M110 74 L54 125', role: 'accent' },
+]
+/**
+ * Walder Rivers: his own shield, the castle of House Frey with its colours
+ * reversed under a bend sinister, the arms of Lord Walder's eldest bastard,
+ * who rides to Riverrun with Lothar in Catelyn IV of A Storm of Swords
+ * (chapter 179). The show gives him no arms; the books are the reference.
+ * The edge is hatched; the bend, red in the books, is the accent.
+ */
+const BEND_SINISTER_SHIELD: Stroke[] = [
+  ...HEATER_SHIELD,
+  ...BASTARD_ARMS,
+  shadow(80, 156, 38),
+]
+
+/** A tall pewter flagon with its lid, its far side hatched. */
+const FLAGON: Stroke[] = [
+  { d: 'M40 150 Q34 122 42 102 L46 74 H66 L70 102 Q78 122 72 150 Z' },
+  { d: 'M44 74 Q56 64 68 74 M66 70 L72 63' },
+  { d: 'M72 88 Q90 92 86 114 Q84 124 74 126', role: 'soft' },
+  { d: 'M62 104 l4 -3 M64 118 l4 -3 M64 132 l4 -3', role: 'ambient' },
+]
+/** A stemmed wine cup: its bowl, stem and foot. */
+const WINE_CUP: Stroke[] = [
+  { d: 'M96 96 Q96 122 112 126 Q128 122 128 96' },
+  { d: `M112 126 V144 ${ellipse(112, 147, 12, 3)}` },
+]
+/** The cup's rim. */
+const CUP_RIM = ellipse(112, 96, 16, 4)
+/**
+ * Ryman Frey: a flagon and a cup of wine, for Lord Walder's heir, who
+ * sweats over his wine beside Catelyn at the wedding feast in Catelyn VII
+ * of A Storm of Swords (chapter 195). The books' alone. The accent is the
+ * wine in the cup.
+ */
+const FLAGON_CUP: Stroke[] = [
+  ...FLAGON,
+  ...WINE_CUP,
+  { d: CUP_RIM },
+  { d: ellipse(112, 101, 13, 3), role: 'accent' },
+  shadow(84, 156, 56),
+]
+
+/**
+ * Roslin Frey: her bridal veil, hung from a thin circlet and lifted back
+ * over it, as her father lifts it to show her to Edmure in "The Rains of
+ * Castamere" (episode 29). The books have her wed at the Twins in Catelyn
+ * VII of A Storm of Swords (chapter 195). The accent is the veil's hem.
+ */
+const BRIDAL_VEIL: Stroke[] = [
+  { d: ellipse(80, 40, 18, 5) },
+  { d: 'M62 41 Q58 96 34 142 M98 41 Q104 96 126 142' },
+  {
+    d: 'M34 142 q5 5 10 3 t10 3 t10 2 t10 1 t10 0 t10 -1 t10 -2 t10 -3 t12 -3',
+    role: 'accent',
+  },
+  { d: 'M62 40 Q80 16 98 40 M63 36 Q48 62 52 100 M97 36 Q112 62 108 100' },
+  { d: 'M52 100 Q60 96 66 102 M108 100 Q100 96 94 102', role: 'soft' },
+  { d: 'M74 48 Q72 100 62 148 M88 48 Q92 100 100 149', role: 'soft' },
+  { d: 'M110 110 l5 -3 M114 124 l5 -3 M118 136 l5 -3', role: 'ambient' },
+  shadow(80, 158, 46),
+]
+
+/** A fool's crown of cloth points, each tipped with a small brass bell. */
+const BELL_CROWN: Stroke[] = [
+  { d: 'M50 120 V106 Q80 116 110 106 V120 Q80 130 50 120 Z' },
+  { d: 'M50 106 L46 72 L64 96 L80 64 L96 96 L114 72 L110 106' },
+  {
+    d: `${circle(46, 67, 5)} ${circle(80, 59, 5)} ${circle(114, 67, 5)} M44 69 H48 M78 61 H82 M112 69 H116`,
+    role: 'accent',
+  },
+  { d: 'M56 114 Q80 122 104 114', role: 'soft' },
+]
+/**
+ * Aegon Frey: his fool's crown and his collar of brass bells, the crown
+ * tipped over on the floor, for the lackwit grandson Lord Walder keeps at
+ * the Twins. The record opens with his death, in Catelyn VII of A Storm of
+ * Swords (chapter 195), so the drawing is what he left. The books' alone.
+ * The accent is the crown's bells.
+ */
+const FALLEN_BELL_CROWN: Stroke[] = [
+  ...moved(BELL_CROWN, 'translate(6 4) rotate(-75 80 120)'),
+  {
+    d: `${ellipse(128, 150, 20, 5)} ${circle(113, 154, 3)} ${circle(128, 156, 3)} ${circle(143, 154, 3)}`,
+    role: 'soft',
+  },
+  { d: 'M8 158 H152', role: 'ambient', dashed: true },
+]
+
 /** The first season's Riverlands and kingsroad cast (#1057), keyed by record id. */
 export const RIVERLANDS_DRAWINGS = {
   'jason-mallister': EAGLE_HELM,
@@ -686,6 +949,17 @@ export const RIVERLANDS_DRAWINGS = {
   'chiswyck': DOGS_SHIELD,
   'weese': SPOTTED_BITCH,
   'vargo-hoat': GOAT_COINS,
+  // The third season's Robb's war and Riverlands cast (#1643).
+  'jeyne-westerling': SHELL_STANDARD,
+  'rolph-spicer': PEPPERPOT_SHIELD,
+  'raynald-westerling': SHELL_SHIELD,
+  'willem-lannister': LION_ROUNDEL,
+  'martyn-lannister': LION_PENNON,
+  'lothar-frey': TOWERS_BANNER,
+  'walder-rivers': BEND_SINISTER_SHIELD,
+  'roslin-frey': BRIDAL_VEIL,
+  'ryman-frey': FLAGON_CUP,
+  'aegon-frey': FALLEN_BELL_CROWN,
 } satisfies Drawings
 
 /** The Riverlands cast drawn again later in the story. */
@@ -955,13 +1229,8 @@ export const riverlandsRedrawn: Redrawings = {
       chapter: 121,
       source: 'chapter',
       value: [
-        ...moved(
-          [...HEATER_SHIELD.slice(0, 1), ...MANTICORE],
-          'translate(0 150) scale(1 0.4) translate(0 -140)',
-        ),
-        { d: 'M42 128 V132 Q50 146 76 156 Q102 146 110 132 V128' },
-        { d: 'M100 146 l5 -3 M90 152 l5 -3', role: 'ambient' },
-        { d: 'M8 160 H152', role: 'ambient', dashed: true },
+        ...moved([...HEATER_SHIELD.slice(0, 1), ...MANTICORE], HEATER_FLAT),
+        ...HEATER_FLAT_RIM,
       ],
     },
   ],
@@ -1032,11 +1301,9 @@ export const riverlandsRedrawn: Redrawings = {
       value: [
         ...moved(
           [...HEATER_SHIELD.slice(0, 1), ...DOGS_SHIELD.slice(3, 5)],
-          'translate(0 150) scale(1 0.4) translate(0 -140)',
+          HEATER_FLAT,
         ),
-        { d: 'M42 128 V132 Q50 146 76 156 Q102 146 110 132 V128' },
-        { d: 'M100 146 l5 -3 M90 152 l5 -3', role: 'ambient' },
-        { d: 'M8 160 H152', role: 'ambient', dashed: true },
+        ...HEATER_FLAT_RIM,
       ],
     },
   ],
@@ -1088,6 +1355,150 @@ export const riverlandsRedrawn: Redrawings = {
           role: 'soft',
         },
         { d: 'M8 160 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  // The third season's Robb's war and Riverlands cast (#1643).
+  'rolph-spicer': [
+    // His shield set down beside the Lannister banner, the accent moved to
+    // the lion: Jaime tells Lady Sybell that her brother has been named
+    // Lord of Castamere, a reward for the Westerlings' part in the Red
+    // Wedding, in Jaime VII of A Feast for Crows (chapter 270). The record
+    // is the books' alone; episode 58, where the show's Jaime takes
+    // Riverrun, only orders it.
+    {
+      episode: 58,
+      chapter: 270,
+      source: 'chapter',
+      value: [
+        ...moved(
+          softened(PEPPERPOT_SHIELD.slice(0, 6)),
+          'translate(-6 28) scale(0.78)',
+        ),
+        { d: `${circle(128, 18, 4)} M128 22 V28 M128 80 V150` },
+        { d: 'M108 28 H148 M110 28 V84 L128 76 L146 84 V28' },
+        ...moved(
+          SMALL_LION,
+          'translate(128 54) scale(0.3) translate(-90 -102)',
+        ),
+        shadow(84, 158, 52),
+      ],
+    },
+  ],
+  'raynald-westerling': [
+    // The shield fallen flat on its back, the shells still on it: Edwyn
+    // Frey tells Jaime that he loosed Grey Wind at the Twins and was not
+    // found after, in Jaime VII of A Feast for Crows (chapter 270), so he is
+    // presumed dead. The record is the books' alone; episode 58 only orders
+    // it. How he died is not drawn.
+    {
+      episode: 58,
+      chapter: 270,
+      source: 'chapter',
+      value: [
+        ...moved(
+          [...HEATER_SHIELD.slice(0, 1), ...SHELLS_ON_SHIELD],
+          HEATER_FLAT,
+        ),
+        ...HEATER_FLAT_RIM,
+      ],
+    },
+  ],
+  'willem-lannister': [
+    // The shield fallen flat on its back, the lion still on it: Rickard
+    // Karstark's men kill him in his cell in "Kissed by Fire" (episode 25).
+    // The books open on his body, in Catelyn III (chapter 164), so the
+    // stage is the show's; the chapter only orders it.
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'episode',
+      value: [
+        ...moved(
+          [...ROUNDEL.slice(0, 1), ...LION_ROUNDEL.slice(3, 9)],
+          'translate(0 150) scale(1 0.35) translate(0 -146)',
+        ),
+        { d: 'M38 132.5 V137 A38 17.5 0 0 0 114 137 V132.5' },
+        { d: 'M100 148 l5 -3 M86 151 l5 -3', role: 'ambient' },
+        { d: 'M8 158 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'martyn-lannister': [
+    // The lance down on the ground and the pennon crumpled beside it: he is
+    // killed with his brother in "Kissed by Fire" (episode 25). The record
+    // is the show's alone. How he dies is not drawn.
+    {
+      episode: 25,
+      chapter: 164,
+      value: [
+        { d: 'M12 140 L132 136 M132 133 L148 135 L132 139 Z' },
+        {
+          d: 'M84 139 L126 137 Q130 150 124 163 L108 155 L94 165 Q82 152 84 139 Z',
+          role: 'accent',
+        },
+        { d: 'M104 139 Q100 152 104 160', role: 'soft' },
+        { d: 'M118 146 l4 -3 M118 156 l4 -3', role: 'ambient' },
+        { d: 'M8 170 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'lothar-frey': [
+    // The staff down on the ground and the banner fallen across it: Arya
+    // kills him at the Twins in "The Winds of Winter" (episode 60), the
+    // episode that first names him, so the show reader meets this drawing.
+    // The books leave him alive; chapter 344, their last, only orders it.
+    // How he dies is not drawn.
+    {
+      episode: 60,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        { d: `M10 140 L128 134 ${circle(132, 134, 4)}` },
+        {
+          d: 'M70 138 L122 135 Q127 150 121 166 Q96 171 72 166 Q66 152 70 138 Z',
+        },
+        ...moved(
+          FREY_TOWERS,
+          'translate(96 152) scale(0.55 0.3) translate(-80 -83)',
+        ),
+        { d: 'M112 142 l4 -3 M114 154 l4 -3', role: 'ambient' },
+        { d: 'M8 174 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'walder-rivers': [
+    // The shield fallen flat on its back, the bend still across it: Arya
+    // kills him with Lothar in "The Winds of Winter" (episode 60), the
+    // episode that first names him. The books leave him alive; chapter 344
+    // only orders it. How he dies is not drawn.
+    {
+      episode: 60,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved([...HEATER_SHIELD.slice(0, 1), ...BASTARD_ARMS], HEATER_FLAT),
+        ...HEATER_FLAT_RIM,
+      ],
+    },
+  ],
+  'ryman-frey': [
+    // The flagon and the cup both on their sides, the cup empty, its rim
+    // the accent: outlaws hang him near Fairmarket on his way back to the
+    // Twins, as Edwyn tells Jaime in Jaime VII of A Feast for Crows
+    // (chapter 270). The record is the books' alone; episode 58 only
+    // orders it. How he dies is not drawn.
+    {
+      episode: 58,
+      chapter: 270,
+      source: 'chapter',
+      value: [
+        ...moved(FLAGON, 'translate(30 22) scale(0.8) rotate(-90 56 150)'),
+        ...moved(
+          [...WINE_CUP, { d: CUP_RIM, role: 'accent' }],
+          'translate(40 -8) rotate(-90 112 150)',
+        ),
+        { d: 'M6 160 H154', role: 'ambient', dashed: true },
       ],
     },
   ],

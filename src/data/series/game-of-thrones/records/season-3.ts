@@ -398,6 +398,16 @@ export const season3: ThronesSaga = {
       },
       status: [
         { episode: 23, chapter: 158, source: 'chapter', value: 'alive' },
+        // Edwyn Frey tells Jaime that he loosed Grey Wind at the Twins and
+        // was never found, in Jaime VII of A Feast for Crows (site chapter
+        // 270, #1643). Episode 58, where the show's Jaime takes Riverrun,
+        // only orders it.
+        {
+          episode: 58,
+          chapter: 270,
+          source: 'chapter',
+          value: 'presumed-dead',
+        },
       ],
       affiliation: [
         {
@@ -544,6 +554,10 @@ export const season3: ThronesSaga = {
       },
       status: [
         { episode: 29, chapter: 193, source: 'chapter', value: 'alive' },
+        // Outlaws hang him near Fairmarket, as Edwyn tells Jaime in Jaime
+        // VII of A Feast for Crows (site chapter 270, #1643). Episode 58
+        // only orders it.
+        { episode: 58, chapter: 270, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {

@@ -60,11 +60,11 @@ const WOODHARP_AND_AXE: Stroke[] = [
 /**
  * Lem's big hooded yellow cloak, patched with deerskin, hung from a stand:
  * the cloak he is known by in Arya II of A Storm of Swords (chapter 157).
- * The cloak is the accent; its far side is hatched. The helm on the stand
- * is left to each drawing.
+ * The cloak is the accent; its far side is hatched. The helm on the stand,
+ * and the stretch of pole between it and the bar, are left to each drawing.
  */
 const YELLOW_CLOAK: Stroke[] = [
-  { d: 'M80 48 V62 M80 148 V150 M62 156 L80 150 L98 156' },
+  { d: 'M80 148 V150 M62 156 L80 150 L98 156' },
   { d: 'M48 62 H112' },
   {
     d: 'M48 62 Q38 100 34 146 Q80 156 126 146 Q122 100 112 62',
@@ -92,13 +92,14 @@ const YELLOW_CLOAK: Stroke[] = [
 
 /**
  * Lem: the cloak with his black iron conic helm on the stand above it, as
- * he wears both in Arya II (chapter 157). The book's alone. The iron is
- * hatched on its far side.
+ * he wears both in Arya II (chapter 157), the pole showing below the brim.
+ * The book's alone. The iron is hatched on its far side.
  */
 const CLOAK_AND_CONIC_HELM: Stroke[] = [
   { d: 'M62 48 Q62 26 80 12 Q98 26 98 48' },
   { d: ellipse(80, 48, 18, 4) },
   { d: 'M80 14 V52', role: 'soft' },
+  { d: 'M80 52 V62' },
   { d: 'M88 24 l4 -2 M91 32 l4 -2 M93 40 l4 -2', role: 'ambient' },
   ...YELLOW_CLOAK,
 ]

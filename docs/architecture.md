@@ -249,7 +249,7 @@ characters; all sit at episode 148, so the home ledger and the uniqueness test
 key a story by its chapter as well. Chapters 371–400 (#1157) add 120 more for
 the 40 characters filed there and 44 returning ones, and chapters 401–420
 (#1159) 84 for the 22 filed there and 37 returning ones. Candidates whose naming
-stays unverified are deferred to #1141–#1145. Gyro is unanchored at 78 / 203.
+stays unverified are deferred to #1141–#1144. Gyro is unanchored at 78 / 203.
 Silva, Killua's father, is named in episode 24 but in chapter 95 in the manga,
 so his record is unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter
 71 but named in the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is
@@ -383,29 +383,31 @@ of the First Men. King's Landing (#1634) adds six characters: Olenna Tyrell,
 Margaery's three cousins, the books' alone, and Oberyn Martell and Ellaria Sand,
 whose show gates are in season 4 (#852), with the stage's steps of six earlier
 characters. The stage-3 characters show the shared `PERSON` placeholder until
-their drawing children (#1631). Robb's war and the Riverlands (#1635) adds ten
-characters, five the books' alone, one the show's and four both media's, with
-the stage's steps of three season-1 characters. The Wall and beyond (#1638) adds
-eleven characters, eight of them the books' alone: Mance Rayder, Tormund and
-Orell, Styr, Dalla, Val and Jarl from Mance's host, and Small Paul and three
-mutineers of Craster's Keep, with the stage's steps of Jon Snow, Rast, Chett,
-Ygritte and Gilly. Arya, the Brotherhood and the Hound (#1636) adds eight
-outlaws and their allies, all the books' alone (Anguy is in the show but never
-named in the pages read), with the stage's steps of seven earlier characters.
-Jaime, Brienne and Harrenhal (#1637) adds two characters, one both media's and
-one the books' alone, with the stage's steps of five earlier records.
-Dragonstone (#1640) adds three, all the books' alone (Axell and Alester Florent,
-Edric Storm), with stage-3 steps on Davos Seaworth. Bran's road and Theon
-(#1641) adds Myranda, the show's alone, moves Ramsay Snow's show gate to episode
-30, where his name is first said, and adds the stage's steps of Bran, Osha and
-Theon, Bran's passing beyond the Wall keeping its later book chapter (#852). The
-stage's places (#1630) are the 13 a scene of the stage is set in: Astapor and
-Yunkai in both media, ten the book's alone, and the Nightfort, which the show
-visits and the book only names (#1252), and the 7 both media name and neither
-visits, each with its own drawing; Harrenhal, the Fist of the First Men,
-Craster's Keep, the Dreadfort and Flea Bottom take the stage's changes as dated
-`visits` entries, and Harrenhal, the Fist, Astapor and Yunkai a drawing stage,
-and Maidenpool a books-only one.
+their drawing children (#1631) draw them: King's Landing in `court.ts` (#1642),
+Robb's war and the Riverlands in `riverlands.ts` (#1643), Essos in `essos.ts`
+(#1647) and Arya's group in `brotherhood.ts` (#1644). Robb's war and the
+Riverlands (#1635) adds ten characters, five the books' alone, one the show's
+and four both media's, with the stage's steps of three season-1 characters. The
+Wall and beyond (#1638) adds eleven characters, eight of them the books' alone:
+Mance Rayder, Tormund and Orell, Styr, Dalla, Val and Jarl from Mance's host,
+and Small Paul and three mutineers of Craster's Keep, with the stage's steps of
+Jon Snow, Rast, Chett, Ygritte and Gilly. Arya, the Brotherhood and the Hound
+(#1636) adds eight outlaws and their allies, all the books' alone (Anguy is in
+the show but never named in the pages read), with the stage's steps of seven
+earlier characters, drawn in #1644. Jaime, Brienne and Harrenhal (#1637) adds
+two characters, one both media's and one the books' alone, with the stage's
+steps of five earlier records. Dragonstone (#1640) adds three, all the books'
+alone (Axell and Alester Florent, Edric Storm), with stage-3 steps on Davos
+Seaworth. Bran's road and Theon (#1641) adds Myranda, the show's alone, moves
+Ramsay Snow's show gate to episode 30, where his name is first said, and adds
+the stage's steps of Bran, Osha and Theon, Bran's passing beyond the Wall
+keeping its later book chapter (#852). The stage's places (#1630) are the 13 a
+scene of the stage is set in: Astapor and Yunkai in both media, ten the book's
+alone, and the Nightfort, which the show visits and the book only names (#1252),
+and the 7 both media name and neither visits, each with its own drawing;
+Harrenhal, the Fist of the First Men, Craster's Keep, the Dreadfort and Flea
+Bottom take the stage's changes as dated `visits` entries, and Harrenhal, the
+Fist, Astapor and Yunkai a drawing stage, and Maidenpool a books-only one.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -649,11 +651,11 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Characters             | 261                                                                                     |
 | Places                 | 107                                                                                     |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 371, one per record and 3 for the seasons' headings, plus 226 redrawings of 167 records |
+| Line drawings          | 371, one per record and 3 for the seasons' headings, plus 233 redrawings of 174 records |
 | Chronicle stories      | 1235, for 220 characters                                                                |
-| Dated timelines        | 1193                                                                                    |
+| Dated timelines        | 1200                                                                                    |
 | Affiliation steps      | 307                                                                                     |
-| Status steps           | 457                                                                                     |
+| Status steps           | 459                                                                                     |
 | Later visits to places | 16                                                                                      |
 
 <!-- End of the generated counts. -->
