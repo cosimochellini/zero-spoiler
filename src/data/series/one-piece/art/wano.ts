@@ -536,8 +536,8 @@ export const wanoArt = {
   // A bowl of red bean soup, its far side hatched, and three of the dango
   // she makes from her cheek set down beside it in her colour: loose and
   // round, no skewer. She tames Hihimaru with one at 893 (ch. 911), and
-  // Tsuru gives her the oshiruko at 900 (ch. 914), in her opening arc, which
-  // arc latitude covers.
+  // Tsuru gives her the oshiruko at 900 (ch. 914), after her record opens,
+  // in the same arc: arc latitude.
   'tama': [
     { d: 'M18 106 C22 142 40 160 62 160 C84 160 102 142 106 106' },
     { d: ellipse(62, 106, 44, 10) },
