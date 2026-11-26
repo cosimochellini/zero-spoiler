@@ -6573,7 +6573,7 @@ export const fruitArt = {
    * A dango pinched out of the near flank on a narrow neck of dough, a crease
    * where it is pinched, and two finished dumplings piled on the other side of
    * the fruit, one resting on the other. Tama pinches a millet dumpling off her
-   * cheek and feeds Hihimaru in episode 893 (chapter 911), before the record
+   * cheek and feeds Hihimaru in episode 893 (chapter 911), where the record
    * opens. The dumplings sit one above the other, never side by side.
    */
   'millet-millet-fruit': [

@@ -39,8 +39,8 @@ export const elbafChronicles = {
           en: 'An arm that does not grow back',
         },
         body: {
-          it: 'Gabin ha saputo dalla trasmissione di [[shepherd-sommers|Sommers]] che Collon è tra gli ostaggi, e parte per salvarlo. Raggiunge il ramo proprio mentre Sommers, che tiene [[nico-robin|Robin]] immobilizzata con le sue spine, sta per ucciderla. Gli taglia un braccio, che non ricresce, e mentre il cavaliere lo riconosce terrorizzato Gabin lo colpisce con un fendente al petto.',
-          en: 'Gaban has learned from [[shepherd-sommers|Sommers]]’s broadcast that Colon is among the hostages, and he sets off to save him. He reaches the branch just as Sommers, who has [[nico-robin|Robin]] pinned down with his thorns, is about to kill her. He cuts off Sommers’s arm, which does not grow back, and as the knight recognises him in terror, Gaban slashes him across the chest.',
+          it: 'Gabin ha saputo dalla trasmissione di [[shepherd-sommers|Sommers]] che Collon è tra gli ostaggi, e parte per salvarlo. Raggiunge il ramo proprio mentre Sommers, che ha catturato [[nico-robin|Robin]] con le sue spine, sta per ucciderla. Gli taglia un braccio, che non ricresce, e mentre il cavaliere lo riconosce terrorizzato Gabin lo colpisce con un fendente al petto.',
+          en: 'Gaban has learned from [[shepherd-sommers|Sommers]]’s broadcast that Colon is among the hostages, and he sets off to save him. He reaches the branch just as Sommers, who has captured [[nico-robin|Robin]] in his thorns, is about to kill her. He cuts off Sommers’s arm, which does not grow back, and as the knight recognises him in terror, Gaban slashes him across the chest.',
         },
       },
     },
@@ -175,8 +175,8 @@ export const elbafChronicles = {
       value: {
         title: { it: 'Gunko prende Collon', en: 'Gunko takes Colon' },
         body: {
-          it: 'Gunko compare a prua della nave di [[colon|Collon]] e si definisce una divinità, non un’umana. Dice a [[nami|Nami]], [[jinbe|Jinbe]], [[usopp|Usop]] e [[brook|Brook]] che i bambini andranno a Marijoa, ed è Brook a capire che è una Cavaliera di Dio. Nami le scaglia contro Zeus e lei lo rimanda indietro. Quando Collon si fa avanti per combattere, gli avvolge una freccia intorno al collo, poi fa scontrare gli attacchi di Jinbe e Brook, abbatte Nami e Usop e porta via Collon.',
-          en: 'Gunko appears on the bow of [[colon|Colon]]’s ship and calls herself a god, not a human. She tells [[nami|Nami]], [[jinbe|Jinbe]], [[usopp|Usopp]] and [[brook|Brook]] that the children are going to Mary Geoise, and Brook is the one who works out that she is a Knight of God. Nami sends Zeus at her, and she turns it back on Nami. When Colon steps forward to fight, she wraps an arrow around his neck, then makes Jinbe’s and Brook’s attacks hit each other, knocks Nami and Usopp down and carries Colon off.',
+          it: 'Gunko compare a prua della nave di [[colon|Collon]] e si definisce una divinità, non un’umana. Dice a [[nami|Nami]], [[jinbe|Jinbe]], [[usopp|Usop]] e [[brook|Brook]] che i bambini andranno a Marijoa, ed è Brook a capire che è una Cavaliera di Dio. Nami le scaglia contro Zeus e lei lo rimanda indietro. Quando Collon si fa avanti per combattere, gli avvolge una freccia intorno al collo, poi fa scontrare gli attacchi di Jinbe e Brook, abbatte Nami e Usop e porta via Collon prigioniero.',
+          en: 'Gunko appears on the bow of [[colon|Colon]]’s ship and calls herself a god, not a human. She tells [[nami|Nami]], [[jinbe|Jinbe]], [[usopp|Usopp]] and [[brook|Brook]] that the children are going to Mary Geoise, and Brook is the one who works out that she is a Knight of God. Nami sends Zeus at her, and she turns it back on Nami. When Colon steps forward to fight, she wraps an arrow around his neck, then makes Jinbe’s and Brook’s attacks hit each other, knocks Nami and Usopp down and carries Colon off as her captive.',
         },
       },
     },
@@ -186,8 +186,8 @@ export const elbafChronicles = {
       value: {
         title: { it: 'Una fan di Brook', en: 'A fan of Brook' },
         body: {
-          it: 'Gunko porta da Sommers i Cappello di Paglia che ha legato con le sue frecce. Chiede a [[brook|Brook]] di diventare il suo schiavo e di scrivere musica per lei per sempre, perché è una fan delle sue canzoni del Soul King. Brook rifiuta: ha già giurato fedeltà a [[monkey-d-luffy|Rufy]]. Gunko minaccia di ucciderlo se non ritira il giuramento, e lui risponde che accetterà anche quello, così lei lo picchia, anche se per qualche motivo si stringe il petto.',
-          en: 'Gunko brings the Straw Hats she has bound with her arrows to Sommers. She asks [[brook|Brook]] to become her slave and write music for her forever, because she is a fan of his Soul King songs. Brook refuses: he has already sworn loyalty to [[monkey-d-luffy|Luffy]]. Gunko threatens to kill him unless he takes it back, and he says he will accept that too, so she beats him, though for some reason she grips her chest.',
+          it: 'Gunko porta da Sommers i Cappello di Paglia che ha catturato e legato con le sue frecce. Chiede a [[brook|Brook]] di diventare il suo schiavo e di scrivere musica per lei per sempre, perché è una fan delle sue canzoni del Soul King. Brook rifiuta: ha già giurato fedeltà a [[monkey-d-luffy|Rufy]]. Gunko minaccia di ucciderlo se non ritira il giuramento, e lui risponde che accetterà anche quello, così lei lo picchia, anche se per qualche motivo si stringe il petto.',
+          en: 'Gunko brings Sommers the Straw Hats she has captured and bound with her arrows. She asks [[brook|Brook]] to become her slave and write music for her forever, because she is a fan of his Soul King songs. Brook refuses: he has already sworn loyalty to [[monkey-d-luffy|Luffy]]. Gunko threatens to kill him unless he takes it back, and he says he will accept that too, so she beats him, though for some reason she grips her chest.',
         },
       },
     },

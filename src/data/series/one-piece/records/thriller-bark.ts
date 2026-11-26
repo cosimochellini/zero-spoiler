@@ -314,7 +314,13 @@ export const thrillerBark: OnePieceSaga = {
         it: 'Ha vagato per cinquant’anni su una nave fantasma in un mare senza sole, senza compagni e senza ombra. È morto una volta e il suo frutto lo ha riportato indietro, ma il corpo che ha ritrovato era già solo ossa. Accetta l’invito a bordo di Rufy in trenta secondi, poi chiede alla navigatrice di mostrargli le mutandine.',
         en: 'He drifted for fifty years on a ghost ship in a sunless sea, with no crew and no shadow. He died once and his fruit brought him back, but the body he found again was already bare bones. He accepts Luffy’s invitation aboard within thirty seconds, then asks the navigator to show him her panties.',
       },
-      status: [{ episode: 339, value: 'alive' }],
+      status: [
+        { episode: 339, value: 'alive' },
+        // Episode 1177 adapts chapter 1147, where he is bound in Gunko's
+        // arrows when she asks him to write music for her forever (#1554).
+        // She loosens them herself in chapter 1173, past the last aired episode.
+        { episode: 1177, chapter: 1147, value: 'captured' },
+      ],
       affiliation: [
         {
           episode: 339,

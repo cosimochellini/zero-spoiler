@@ -79,11 +79,14 @@ order them.
   the cached Chapter 42 synopsis does not tell it.
 - Mero: role captain of the Second Sons, the Second Sons. The show's Daario
   kills him in "Second Sons" (episode 28), the episode that names him, so the
-  show record opens `deceased`, ordered at 201, where the books end him; the
-  books keep him alive through the stage. His summary says only "a sellsword,
-  captain of the Second Sons": the Braavosi Titan's Bastard is confirmed for the
-  books only in Daenerys V (201) and on the show's Mero page, so it waits for a
-  later stage. Italian "Mero", "Secondi Figli" (Italian Wikipedia).
+  show record opens `deceased`. The books keep him alive through the stage and
+  kill him in Daenerys V (201), where Arstan Whitebeard fells him and the
+  freedmen end him (A Wiki of Ice and Fire, Chapter 57): #1647 makes the death
+  one `deceased` entry for both media, 28 / 201, with his drawing's stages
+  (#1238). His summary says only "a sellsword, captain of the Second Sons": the
+  Braavosi Titan's Bastard is confirmed for the books only in Daenerys V (201)
+  and on the show's Mero page, so it waits for a later stage. Italian "Mero",
+  "Secondi Figli" (Italian Wikipedia).
 - Daario Naharis: role sellsword captain, alive. His company differs by medium
   (Game of Thrones Wiki, "Second Sons", "In the books"): the Second Sons in the
   show, the Stormcrows in the books, two affiliation entries with their

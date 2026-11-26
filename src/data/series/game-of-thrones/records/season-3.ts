@@ -2,6 +2,7 @@ import type { PlaceDossier } from '~/data/types'
 
 import type { ThronesSaga, ThronesVocabulary } from './saga'
 import { season3Chronicles } from './season-3.chronicle'
+import { season3Relationships } from './season-3.relationships'
 
 /**
  * Season 3 of the show and the first part of *A Storm of Swords*: the third
@@ -37,12 +38,19 @@ export const season3: ThronesSaga = {
     // and death with "valar morghulis" (A Wiki of Ice and Fire, Missandei,
     // citing Chapter 27).
     'missandei': {
+      relationships: season3Relationships.missandei,
       role: { it: 'Interprete di Daenerys', en: 'Daenerys’s interpreter' },
       log: {
         it: 'Traduce per lo schiavista che vende gli Immacolati a Daenerys, e ne addolcisce gli insulti. Daenerys la ottiene dal suo padrone nell’accordo e la prende al suo servizio. Quando le chiede il nome e la avverte dei pericoli che correrà, lei risponde “Valar morghulis”.',
         en: 'She translates for the slaver who sells the Unsullied to Daenerys, and softens his insults. Daenerys gets her from her master as part of the deal and takes her into her service. When Daenerys asks her name and warns her of the dangers ahead, she answers “Valar morghulis”.',
       },
-      status: [{ episode: 23, chapter: 171, value: 'alive' }],
+      status: [
+        { episode: 23, chapter: 171, value: 'alive' },
+        // Show only: the Mountain executes her at King's Landing in "The
+        // Last of the Starks" (episode 71). The books leave her alive, so
+        // chapter 344, their last, only orders it (#1647).
+        { episode: 71, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 23,
@@ -53,6 +61,7 @@ export const season3: ThronesSaga = {
       chronicle: season3Chronicles.missandei,
     },
     'kraznys-mo-nakloz': {
+      relationships: season3Relationships['kraznys-mo-nakloz'],
       role: { it: 'Buon Padrone di Astapor', en: 'Good Master of Astapor' },
       log: {
         it: 'Mostra gli Immacolati a Daenerys e la insulta in valyriano tramite la sua interprete, convinto che lei non capisca. Le vende tutti gli Immacolati della città in cambio di uno dei suoi draghi. Concluso l’accordo, il drago non gli obbedisce e, a un ordine di lei, lo brucia.',
@@ -72,6 +81,7 @@ export const season3: ThronesSaga = {
       chronicle: season3Chronicles['kraznys-mo-nakloz'],
     },
     'grey-worm': {
+      relationships: season3Relationships['grey-worm'],
       role: { it: 'Ufficiale degli Immacolati', en: 'Unsullied officer' },
       log: {
         it: 'Quando Daenerys libera gli Immacolati, loro scelgono i propri ufficiali, e lui è tra questi. Gli schiavisti davano agli Immacolati nomi da schiavi; Daenerys li lascia scegliere, e lui tiene il nome che aveva il giorno in cui lei lo ha liberato.',
@@ -93,6 +103,7 @@ export const season3: ThronesSaga = {
     // in Daenerys IV he threatens to sell her as a bedslave, and Drogon sets
     // his tokar alight (the same page, "In the books").
     'grazdan-mo-eraz': {
+      relationships: season3Relationships['grazdan-mo-eraz'],
       role: {
         it: 'Inviato dei Saggi Padroni',
         en: 'Envoy of the Wise Masters',
@@ -101,7 +112,13 @@ export const season3: ThronesSaga = {
         it: 'Arriva all’accampamento di Daenerys fuori Yunkai con dell’oro, perché lasci in pace la città, e minaccia di ridurla in schiavitù se rifiuta. I draghi di lei lo spaventano, e Daenerys lo rimanda indietro.',
         en: 'He comes to Daenerys’s camp outside Yunkai with gold to make her leave the city in peace, and threatens to enslave her if she does not. Her dragons frighten him, and she sends him back.',
       },
-      status: [{ episode: 27, chapter: 186, value: 'alive' }],
+      status: [
+        { episode: 27, chapter: 186, value: 'alive' },
+        // Show only: Grey Worm kills Razdal at Meereen in "Battle of the
+        // Bastards" (episode 59). The books never tell Grazdan's fate, so
+        // chapter 344, their last, only orders it (#1647).
+        { episode: 59, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 27,
@@ -112,6 +129,7 @@ export const season3: ThronesSaga = {
       chronicle: season3Chronicles['grazdan-mo-eraz'],
     },
     'mero': {
+      relationships: season3Relationships.mero,
       role: {
         it: 'Capitano dei Secondi Figli',
         en: 'Captain of the Second Sons',
@@ -122,11 +140,13 @@ export const season3: ThronesSaga = {
       },
       status: [
         { episode: 28, chapter: 186, source: 'chapter', value: 'alive' },
-        // Show only: Daario Naharis kills him in "Second Sons" (episode 28),
-        // the episode that first names him, so the show record opens dead.
-        // The books keep him alive through the stage; Daenerys V (chapter
-        // 201), where they end him, only orders it.
-        { episode: 28, chapter: 201, source: 'episode', value: 'deceased' },
+        // Daario Naharis kills him in "Second Sons" (episode 28), the
+        // episode that first names him, so the show record opens dead. The
+        // books keep him alive through the stage and kill him in Daenerys V
+        // (chapter 201): Arstan Whitebeard fells him with his staff and the
+        // freedmen end him (A Wiki of Ice and Fire, Chapter 57). Both media
+        // kill him, each at its own point (#1238, #1647).
+        { episode: 28, chapter: 201, value: 'deceased' },
       ],
       affiliation: [
         {
@@ -138,6 +158,7 @@ export const season3: ThronesSaga = {
       chronicle: season3Chronicles.mero,
     },
     'daario-naharis': {
+      relationships: season3Relationships['daario-naharis'],
       role: { it: 'Capitano mercenario', en: 'Sellsword captain' },
       log: {
         it: 'La sua compagnia è al soldo di Yunkai, contro Daenerys. Va al suo accampamento con gli altri capi della compagnia, poi li uccide e le porta le loro teste. Le giura fedeltà con la sua spada, e i suoi uomini con lui.',
@@ -163,6 +184,7 @@ export const season3: ThronesSaga = {
       chronicle: season3Chronicles['daario-naharis'],
     },
     'prendahl-na-ghezn': {
+      relationships: season3Relationships['prendahl-na-ghezn'],
       role: {
         it: 'Capitano dei Corvi della Tempesta',
         en: 'Captain of the Stormcrows',

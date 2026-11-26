@@ -13390,6 +13390,398 @@ const stormlands2 = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 3's Essos cards for the season-1 cast (#1650): season 3 and A Storm
+ * of Swords through chapter 52, episodes 21 to 30 and chapters 144 to 196.
+ * The new characters' own cards are in `season-3.relationships.ts`.
+ */
+const essos3 = {
+  // Daenerys, the show
+  daeBarristanSaves: {
+    character: 'barristan-selmy',
+    type: { en: 'Protector', it: 'Protettore' },
+    summary: {
+      en: 'A hooded stranger who saves her from a manticore in Astapor. Jorah knows him: Ser Barristan Selmy, once of Robert’s Kingsguard, who kneels and asks to serve in her Queensguard.',
+      it: 'Uno sconosciuto incappucciato che ad Astapor la salva da una manticora. Jorah lo riconosce: è ser Barristan Selmy, un tempo nella Guardia reale di Robert, che si inginocchia e chiede di servire nella sua Guardia della regina.',
+    },
+  },
+  daeJorahArmy: {
+    character: 'jorah-mormont',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'Her knight. At Astapor he urges her to buy the Unsullied, the army she needs to take back Westeros.',
+      it: 'Il suo cavaliere. Ad Astapor la spinge a comprare gli Immacolati, l’esercito che le serve per riprendersi Westeros.',
+    },
+  },
+  daeMissandeiGift: {
+    character: 'missandei',
+    type: { en: 'Interpreter', it: 'Interprete' },
+    summary: {
+      en: 'The slaver’s interpreter, who softens his insults. Daenerys asks for her as a gift to seal the deal, and takes her into her service.',
+      it: 'L’interprete dello schiavista, che ne addolcisce gli insulti. Daenerys la chiede in dono a suggello del patto e la prende al suo servizio.',
+    },
+  },
+  daeJorahRebuked: {
+    character: 'jorah-mormont',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'Her knight, who argues for the Unsullied but objects in front of the masters when she trades a dragon for them. She tells him never to question her in public again.',
+      it: 'Il suo cavaliere, che è favorevole agli Immacolati ma protesta davanti ai padroni quando lei li paga con un drago. Lei gli dice di non contraddirla mai più in pubblico.',
+    },
+  },
+  daeBarristanRebuked: {
+    character: 'barristan-selmy',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'The old knight now in her service. He calls a slave army dishonourable and objects in front of the masters when she trades a dragon for it. She tells him never to question her in public again.',
+      it: 'Il vecchio cavaliere ora al suo servizio. Considera disonorevole un esercito di schiavi e protesta davanti ai padroni quando lei lo paga con un drago. Lei gli dice di non contraddirla mai più in pubblico.',
+    },
+  },
+  daeGreyWorm: {
+    character: 'grey-worm',
+    type: { en: 'Unsullied commander', it: 'Comandante degli Immacolati' },
+    summary: {
+      en: 'The man the freed Unsullied choose to lead them. She tells them to take new names, and he keeps his, the one he had when she set him free.',
+      it: 'L’uomo che gli Immacolati liberati scelgono come capo. Lei dice loro di prendere nomi nuovi, e lui tiene il suo, quello che aveva quando lei lo ha liberato.',
+    },
+  },
+  daeMissandeiAide: {
+    character: 'missandei',
+    type: { en: 'Interpreter', it: 'Interprete' },
+    summary: {
+      en: 'Her interpreter and aide, who explains to her the names the masters gave the Unsullied.',
+      it: 'La sua interprete e assistente, che le spiega i nomi dati dai padroni agli Immacolati.',
+    },
+  },
+  daeDaarioOath: {
+    character: 'daario-naharis',
+    type: { en: 'Sworn sword', it: 'Spada giurata' },
+    summary: {
+      en: 'A sellsword of the Second Sons who comes to the parley, then slips into her tent with his captains’ heads and swears her his sword, his men and his heart.',
+      it: 'Un mercenario dei Secondi Figli che partecipa alla trattativa, poi entra di nascosto nella sua tenda con le teste dei suoi capitani e le giura la sua spada, i suoi uomini e il suo cuore.',
+    },
+  },
+  daeMeroDead: {
+    character: 'mero',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The captain of the Second Sons, who mocked her at the parley; she told Barristan to kill him first. Daario brought her his head.',
+      it: 'Il capitano dei Secondi Figli, che l’ha derisa alla trattativa; lei ha detto a Barristan di ucciderlo per primo. Daario le ha portato la sua testa.',
+    },
+  },
+  daeMissandeiTongues: {
+    character: 'missandei',
+    type: { en: 'Interpreter', it: 'Interprete' },
+    summary: {
+      en: 'Her interpreter, who speaks nineteen languages and corrects her Dothraki.',
+      it: 'La sua interprete, che parla diciannove lingue e le corregge il dothraki.',
+    },
+  },
+  daeBarristanMero: {
+    character: 'barristan-selmy',
+    type: { en: 'Queensguard', it: 'Guardia della regina' },
+    summary: {
+      en: 'Her old knight. She tells him that if it comes to battle with the Second Sons, he is to kill Mero first.',
+      it: 'Il suo vecchio cavaliere. Gli dice che, se si arriverà a combattere contro i Secondi Figli, dovrà uccidere Mero per primo.',
+    },
+  },
+  // Daenerys, the books
+  daeJorahKiss: {
+    character: 'jorah-mormont',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'Her knight. At sea he urges her to buy Unsullied at Astapor and warns her not to trust Belwas, Arstan or Illyrio. Then he kisses her, and she tells him he should not have.',
+      it: 'Il suo cavaliere. In mare la spinge a comprare Immacolati ad Astapor e la avverte di non fidarsi di Belwas, di Arstan né di Illyrio. Poi la bacia, e lei gli dice che non avrebbe dovuto.',
+    },
+  },
+  daeArstanRhaegar: {
+    character: 'arstan-whitebeard',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'Belwas’s old squire. He served in her father’s time, and he tells her about her brother Rhaegar. Jorah warns her he is more than he seems.',
+      it: 'Il vecchio scudiero di Belwas. Ha servito ai tempi di suo padre, e le parla di suo fratello Rhaegar. Jorah la avverte che è più di quel che sembra.',
+    },
+  },
+  daeDrogonDracarys: {
+    character: 'drogon',
+    type: { en: 'Dragon', it: 'Drago' },
+    summary: {
+      en: 'The black dragon she hatched in Drogo’s pyre. Aboard ship she teaches him and his brothers to breathe fire at a word.',
+      it: 'Il drago nero che ha fatto schiudere nella pira di Drogo. A bordo insegna a lui e ai suoi fratelli a sputare fuoco a un suo comando.',
+    },
+  },
+  daeIllyrioShips: {
+    character: 'illyrio-mopatis',
+    type: { en: 'Patron', it: 'Protettore' },
+    summary: {
+      en: 'The magister of Pentos whose three ships carry her away from Qarth. Jorah warns her not to trust him.',
+      it: 'Il magistro di Pentos sulle cui tre navi lascia Qarth. Jorah la avverte di non fidarsi di lui.',
+    },
+  },
+  daeMissandeiFreed: {
+    character: 'missandei',
+    type: { en: 'Interpreter', it: 'Interprete' },
+    summary: {
+      en: 'Kraznys’s slave interpreter, who passes on his words without knowing Daenerys understands his insults. Daenerys frees her and takes her into her service.',
+      it: 'La schiava interprete di Kraznys, che riferisce le sue parole senza sapere che Daenerys ne capisce gli insulti. Daenerys la libera e la prende al suo servizio.',
+    },
+  },
+  daeKraznysBurned: {
+    character: 'kraznys-mo-nakloz',
+    type: { en: 'Slaver', it: 'Schiavista' },
+    summary: {
+      en: 'The Good Master who sells her every Unsullied for a dragon, insulting her in Valyrian all the while. At the plaza she sets the dragon on him and he burns.',
+      it: 'Il Buon Padrone che le vende tutti gli Immacolati in cambio di un drago, insultandola in valyriano per tutto il tempo. Nella piazza lei gli scatena contro il drago, e lui brucia.',
+    },
+  },
+  daeDrogonTraded: {
+    character: 'drogon',
+    type: { en: 'Dragon', it: 'Drago' },
+    summary: {
+      en: 'The black dragon she trades for the Unsullied. At the plaza he will not obey Kraznys, and burns him at her word.',
+      it: 'Il drago nero che cede in cambio degli Immacolati. Nella piazza non obbedisce a Kraznys e, a un suo ordine, lo brucia.',
+    },
+  },
+  daeJorahUnsullied: {
+    character: 'jorah-mormont',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'Her knight, who urges her to buy the Unsullied: they do not rape or put a taken town to the sword unless ordered to.',
+      it: 'Il suo cavaliere, che la spinge a comprare gli Immacolati: non stuprano e non passano a fil di spada una città presa, se non per ordine.',
+    },
+  },
+  daeArstanSlaves: {
+    character: 'arstan-whitebeard',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'Belwas’s old squire, who argues that a slave army would turn Westeros against her and urges sellswords instead.',
+      it: 'Il vecchio scudiero di Belwas, secondo cui un esercito di schiavi le metterebbe contro Westeros, e che le consiglia invece dei mercenari.',
+    },
+  },
+  daeDaarioStormcrows: {
+    character: 'daario-naharis',
+    type: { en: 'Sworn sword', it: 'Spada giurata' },
+    summary: {
+      en: 'A Tyroshi captain of the Stormcrows who smiles at her at the parley, then brings her the other two captains’ heads and swears his company to her.',
+      it: 'Un capitano tyroshi dei Corvi della Tempesta che le sorride alla trattativa, poi le porta le teste degli altri due capitani e le giura la fedeltà della sua compagnia.',
+    },
+  },
+  daeJorahDaario: {
+    character: 'jorah-mormont',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'Her knight, who warns her not to trust the Tyroshi sellsword.',
+      it: 'Il suo cavaliere, che la avverte di non fidarsi del mercenario tyroshi.',
+    },
+  },
+  daeArstanShadow: {
+    character: 'arstan-whitebeard',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'Belwas’s old squire. During the night attack on Yunkai he tells her that grief hung over Rhaegar all his life.',
+      it: 'Il vecchio scudiero di Belwas. Durante l’attacco notturno a Yunkai le racconta che il dolore ha pesato su Rhaegar per tutta la vita.',
+    },
+  },
+  daeGreyWormOfficer: {
+    character: 'grey-worm',
+    type: { en: 'Unsullied officer', it: 'Ufficiale degli Immacolati' },
+    summary: {
+      en: 'One of the officers the freed Unsullied choose. When she ends their daily slave names, he keeps the one he had the day she freed him.',
+      it: 'Uno degli ufficiali scelti dagli Immacolati liberati. Quando lei abolisce i loro nomi da schiavi quotidiani, lui tiene quello che aveva il giorno in cui lei lo ha liberato.',
+    },
+  },
+  daeGrazdan: {
+    character: 'grazdan-mo-eraz',
+    type: { en: 'Envoy', it: 'Inviato' },
+    summary: {
+      en: 'The Wise Masters’ envoy, who brings her gold to leave Yunkai alone. She sends him back with it and a warning that she will attack in three days.',
+      it: 'L’inviato dei Saggi Padroni, che le porta oro perché lasci in pace Yunkai. Lei lo rimanda indietro con l’oro e con l’avvertimento che attaccherà fra tre giorni.',
+    },
+  },
+
+  // Jorah, the show
+  jorDaenerysAstapor: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen he serves. He urges her to buy the Unsullied, and in the streets of Astapor a stranger saves her from a manticore.',
+      it: 'La regina che serve. La spinge a comprare gli Immacolati, e per le strade di Astapor uno sconosciuto la salva da una manticora.',
+    },
+  },
+  jorBarristanKnown: {
+    character: 'barristan-selmy',
+    type: { en: 'Old acquaintance', it: 'Vecchia conoscenza' },
+    summary: {
+      en: 'The stranger who saves Daenerys from the manticore. Jorah knows him and names him to her: Ser Barristan Selmy, once Lord Commander of Robert’s Kingsguard.',
+      it: 'Lo sconosciuto che salva Daenerys dalla manticora. Jorah lo riconosce e le dice chi è: ser Barristan Selmy, un tempo Lord Comandante della Guardia reale di Robert.',
+    },
+  },
+  jorDaenerysRebuke: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen he serves. When he objects in public to her trade of a dragon for the Unsullied, she tells him never to question her in public again.',
+      it: 'La regina che serve. Quando lui protesta in pubblico perché lei paga gli Immacolati con un drago, lei gli dice di non contraddirla mai più in pubblico.',
+    },
+  },
+  jorBarristanRide: {
+    character: 'barristan-selmy',
+    type: { en: 'Fellow knight', it: 'Altro cavaliere' },
+    summary: {
+      en: 'Daenerys’s other knight. On the march from Astapor they talk about the Greyjoy Rebellion and Robert. Jorah learns, relieved, that Robert kept Barristan out of the small council, where Jorah’s old reports on Daenerys were read.',
+      it: 'L’altro cavaliere di Daenerys. Durante la marcia da Astapor parlano della ribellione dei Greyjoy e di Robert. Jorah scopre, sollevato, che Robert teneva Barristan fuori dal concilio ristretto, dove si leggevano i suoi vecchi rapporti su Daenerys.',
+    },
+  },
+  jorDaenerysYunkai: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen he serves. He comes back from Yunkai with Grey Worm to tell her the city is taken.',
+      it: 'La regina che serve. Torna da Yunkai con Verme Grigio per dirle che la città è presa.',
+    },
+  },
+  jorDaario: {
+    character: 'daario-naharis',
+    type: { en: 'Doubtful ally', it: 'Alleato dubbio' },
+    summary: {
+      en: 'The sellsword who has come over to Daenerys. Jorah doubts his plan and his loyalty, but goes into Yunkai with him by night.',
+      it: 'Il mercenario passato dalla parte di Daenerys. Jorah dubita del suo piano e della sua lealtà, ma entra di notte a Yunkai con lui.',
+    },
+  },
+  jorGreyWorm: {
+    character: 'grey-worm',
+    type: { en: 'Comrade in arms', it: 'Compagno d’armi' },
+    summary: {
+      en: 'The Unsullied commander, who goes into Yunkai with him and Daario.',
+      it: 'Il comandante degli Immacolati, che entra a Yunkai con lui e Daario.',
+    },
+  },
+  jorBarristanStay: {
+    character: 'barristan-selmy',
+    type: { en: 'Fellow knight', it: 'Altro cavaliere' },
+    summary: {
+      en: 'Daenerys’s other knight. When he asks to join the attack, Jorah reminds him that a Queensguard’s place is at the queen’s side.',
+      it: 'L’altro cavaliere di Daenerys. Quando chiede di unirsi all’attacco, Jorah gli ricorda che il posto di una Guardia della regina è al fianco della regina.',
+    },
+  },
+  // Jorah, the books
+  jorDaenerysKiss: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen he serves. At sea he urges her to buy an army of Unsullied at Astapor, and kisses her; she tells him he should not have.',
+      it: 'La regina che serve. In mare la spinge a comprare un esercito di Immacolati ad Astapor, e la bacia; lei gli dice che non avrebbe dovuto.',
+    },
+  },
+  jorArstanWary: {
+    character: 'arstan-whitebeard',
+    type: { en: 'Suspect', it: 'Sospettato' },
+    summary: {
+      en: 'Belwas’s old squire. Jorah tells Daenerys he is more than he seems and not to trust him.',
+      it: 'Il vecchio scudiero di Belwas. Jorah dice a Daenerys che è più di quel che sembra e che non deve fidarsi di lui.',
+    },
+  },
+  jorBelwasWary: {
+    character: 'strong-belwas',
+    type: { en: 'Suspect', it: 'Sospettato' },
+    summary: {
+      en: 'The eunuch fighter Illyrio sent to Qarth. Jorah warns Daenerys not to trust him.',
+      it: 'Il combattente eunuco che Illyrio ha mandato a Qarth. Jorah avverte Daenerys di non fidarsi di lui.',
+    },
+  },
+  jorIllyrioWary: {
+    character: 'illyrio-mopatis',
+    type: { en: 'Suspect', it: 'Sospettato' },
+    summary: {
+      en: 'The magister whose ships carry Daenerys from Qarth. Jorah warns her not to trust him, and to sail for Astapor instead of Pentos.',
+      it: 'Il magistro sulle cui navi Daenerys lascia Qarth. Jorah la avverte di non fidarsi di lui, e di fare vela per Astapor invece che per Pentos.',
+    },
+  },
+  jorDaenerysDaario: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen he serves. At Yunkai he warns her not to trust the Tyroshi sellsword who comes over to her.',
+      it: 'La regina che serve. A Yunkai la avverte di non fidarsi del mercenario tyroshi che passa dalla sua parte.',
+    },
+  },
+  jorDaarioWary: {
+    character: 'daario-naharis',
+    type: { en: 'Suspect', it: 'Sospettato' },
+    summary: {
+      en: 'A Tyroshi captain of the Stormcrows who brings Daenerys his fellow captains’ heads. Jorah tells her not to trust him.',
+      it: 'Un capitano tyroshi dei Corvi della Tempesta che porta a Daenerys le teste degli altri capitani. Jorah le dice di non fidarsi di lui.',
+    },
+  },
+  jorGreyWormPupil: {
+    character: 'grey-worm',
+    type: { en: 'Pupil', it: 'Allievo' },
+    summary: {
+      en: 'An officer of the freed Unsullied, whom Jorah teaches to command.',
+      it: 'Un ufficiale degli Immacolati liberati, a cui Jorah insegna a comandare.',
+    },
+  },
+
+  // Barristan, the show. The books bring him to Daenerys as Arstan
+  // Whitebeard, his own record (owner, 2026-11-22).
+  barDaenerysSworn: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The last Targaryen, whom he finds in Astapor. He saves her from a manticore and kneels to ask a place in her Queensguard, to make amends for failing her family.',
+      it: 'L’ultima dei Targaryen, che trova ad Astapor. La salva da una manticora e si inginocchia a chiederle un posto nella sua Guardia della regina, per rimediare all’aver fallito con la sua famiglia.',
+    },
+  },
+  barJorahKnown: {
+    character: 'jorah-mormont',
+    type: { en: 'Old acquaintance', it: 'Vecchia conoscenza' },
+    summary: {
+      en: 'The exiled knight at Daenerys’s side, who recognises him and tells her who he is.',
+      it: 'Il cavaliere esiliato al fianco di Daenerys, che lo riconosce e le dice chi è.',
+    },
+  },
+  barDaenerysRebuke: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen he serves. He calls a slave army dishonourable and objects in public when she trades a dragon for the Unsullied; she tells him never to question her in public again.',
+      it: 'La regina che serve. Considera disonorevole un esercito di schiavi e protesta in pubblico quando lei paga gli Immacolati con un drago; lei gli dice di non contraddirla mai più in pubblico.',
+    },
+  },
+  barJorahRival: {
+    character: 'jorah-mormont',
+    type: { en: 'Rival adviser', it: 'Consigliere rivale' },
+    summary: {
+      en: 'Daenerys’s other knight, who argues for buying the Unsullied while Barristan argues against.',
+      it: 'L’altro cavaliere di Daenerys, favorevole a comprare gli Immacolati mentre Barristan è contrario.',
+    },
+  },
+  barDaenerysMero: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen he serves. After the parley outside Yunkai she tells him to kill Mero first if it comes to battle, and he says he will be glad to.',
+      it: 'La regina che serve. Dopo la trattativa fuori Yunkai gli dice di uccidere Mero per primo, se si arriverà a combattere, e lui risponde che lo farà volentieri.',
+    },
+  },
+  barMeroDead: {
+    character: 'mero',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The captain of the Second Sons, who insulted the queen at the parley in her tent. Daario brought her his head that night.',
+      it: 'Il capitano dei Secondi Figli, che alla trattativa nella tenda ha insultato la regina. Quella notte Daario le ha portato la sua testa.',
+    },
+  },
+  barDaario: {
+    character: 'daario-naharis',
+    type: { en: 'Sellsword', it: 'Mercenario' },
+    summary: {
+      en: 'A sellsword of the Second Sons who comes to the queen’s tent with his captains, and swears himself to her that night.',
+      it: 'Un mercenario dei Secondi Figli che viene nella tenda della regina con i suoi capitani, e che quella notte le giura fedeltà.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season1Relationships = {
   // The show weds her in episode 1; its wedding entry waits for episode 2,
   // the book's pair, which is later and so safe.
@@ -13575,6 +13967,89 @@ export const season1Relationships = {
         essos2.daeXaroShips,
         essos2.daeJorahComfort,
         essos2.daeDrogonHouse,
+      ],
+    },
+    // Stage 3 (#1650): season 3 and A Storm of Swords through chapter 52.
+    // The show: Barristan saves her in Astapor ("Valar Dohaeris").
+    {
+      episode: 21,
+      chapter: 167,
+      source: 'episode',
+      value: [essos3.daeBarristanSaves, essos3.daeJorahArmy],
+    },
+    // The deal for the Unsullied, "Walk of Punishment".
+    {
+      episode: 23,
+      chapter: 171,
+      source: 'episode',
+      value: [
+        essos3.daeMissandeiGift,
+        essos3.daeJorahRebuked,
+        essos3.daeBarristanRebuked,
+      ],
+    },
+    // Grey Worm named, "Kissed by Fire".
+    {
+      episode: 25,
+      chapter: 186,
+      source: 'episode',
+      value: [
+        essos3.daeGreyWorm,
+        essos3.daeMissandeiAide,
+        essos3.daeJorahRebuked,
+        essos3.daeBarristanRebuked,
+      ],
+    },
+    // The Second Sons, "Second Sons".
+    {
+      episode: 28,
+      chapter: 186,
+      source: 'episode',
+      value: [
+        essos3.daeDaarioOath,
+        essos3.daeMeroDead,
+        essos3.daeMissandeiTongues,
+        essos3.daeGreyWorm,
+        essos3.daeBarristanMero,
+      ],
+    },
+    // The books: Daenerys I, at sea from Qarth.
+    {
+      episode: 21,
+      chapter: 152,
+      source: 'chapter',
+      value: [
+        essos3.daeJorahKiss,
+        essos3.daeArstanRhaegar,
+        essos3.daeDrogonDracarys,
+        essos3.daeIllyrioShips,
+        essos2.daeBelwas,
+      ],
+    },
+    // Daenerys II and III: Astapor.
+    {
+      episode: 24,
+      chapter: 171,
+      source: 'chapter',
+      value: [
+        essos3.daeMissandeiFreed,
+        essos3.daeKraznysBurned,
+        essos3.daeDrogonTraded,
+        essos3.daeJorahUnsullied,
+        essos3.daeArstanSlaves,
+      ],
+    },
+    // Daenerys IV: Yunkai.
+    {
+      episode: 28,
+      chapter: 186,
+      source: 'chapter',
+      value: [
+        essos3.daeDaarioStormcrows,
+        essos3.daeJorahDaario,
+        essos3.daeArstanShadow,
+        essos3.daeGreyWormOfficer,
+        essos3.daeGrazdan,
       ],
     },
   ],
@@ -13921,6 +14396,55 @@ export const season1Relationships = {
         essos2.jorArstan,
         essos2.jorXaroChapter,
         essos2.jorIllyrioSelf,
+      ],
+    },
+    // Stage 3 (#1650). The show: "Valar Dohaeris", "Kissed by Fire" and
+    // "The Rains of Castamere".
+    {
+      episode: 21,
+      chapter: 167,
+      source: 'episode',
+      value: [essos3.jorDaenerysAstapor, essos3.jorBarristanKnown],
+    },
+    {
+      episode: 25,
+      chapter: 186,
+      source: 'episode',
+      value: [essos3.jorDaenerysRebuke, essos3.jorBarristanRide],
+    },
+    {
+      episode: 29,
+      chapter: 186,
+      source: 'episode',
+      value: [
+        essos3.jorDaenerysYunkai,
+        essos3.jorDaario,
+        essos3.jorGreyWorm,
+        essos3.jorBarristanStay,
+      ],
+    },
+    // The books: Daenerys I (152) and IV (186).
+    {
+      episode: 21,
+      chapter: 152,
+      source: 'chapter',
+      value: [
+        essos3.jorDaenerysKiss,
+        essos3.jorArstanWary,
+        essos3.jorBelwasWary,
+        essos3.jorIllyrioWary,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 186,
+      source: 'chapter',
+      value: [
+        essos3.jorDaenerysDaario,
+        essos3.jorDaarioWary,
+        essos3.jorGreyWormPupil,
+        essos3.jorArstanWary,
+        essos3.jorBelwasWary,
       ],
     },
   ],
@@ -18228,6 +18752,43 @@ export const season1Relationships = {
         crown.barJaime,
         crown.barRobertDead,
         crown.barHugh,
+      ],
+    },
+    // Stage 3 (#1650), the show's alone: "Valar Dohaeris", "Walk of
+    // Punishment" and "Second Sons". The books bring him to Daenerys as
+    // Arstan Whitebeard and say who he is only in Daenerys V (chapter 201),
+    // which orders these entries.
+    {
+      episode: 21,
+      chapter: 201,
+      source: 'episode',
+      value: [
+        essos3.barDaenerysSworn,
+        essos3.barJorahKnown,
+        crown.barJoffreyDismissal,
+        crown.barRobertDead,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 201,
+      source: 'episode',
+      value: [
+        essos3.barDaenerysRebuke,
+        essos3.barJorahRival,
+        crown.barJoffreyDismissal,
+        crown.barRobertDead,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 201,
+      source: 'episode',
+      value: [
+        essos3.barDaenerysMero,
+        essos3.barMeroDead,
+        essos3.barDaario,
+        essos3.barJorahRival,
       ],
     },
   ],
