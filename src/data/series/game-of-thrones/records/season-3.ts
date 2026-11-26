@@ -208,6 +208,7 @@ export const season3: ThronesSaga = {
     },
     // #1634: King's Landing.
     'olenna-tyrell': {
+      relationships: season3Relationships['olenna-tyrell'],
       role: {
         it: 'Nonna di Margaery Tyrell',
         en: 'Margaery Tyrell’s grandmother',
@@ -231,6 +232,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'megga-tyrell': {
+      relationships: season3Relationships['megga-tyrell'],
       role: {
         it: 'Cugina e compagna di Margaery Tyrell',
         en: 'Margaery Tyrell’s cousin and companion',
@@ -252,6 +254,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'alla-tyrell': {
+      relationships: season3Relationships['alla-tyrell'],
       role: {
         it: 'Cugina e compagna di Margaery Tyrell',
         en: 'Margaery Tyrell’s cousin and companion',
@@ -273,6 +276,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'elinor-tyrell': {
+      relationships: season3Relationships['elinor-tyrell'],
       role: {
         it: 'Cugina e compagna di Margaery Tyrell',
         en: 'Margaery Tyrell’s cousin and companion',
@@ -294,6 +298,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'oberyn-martell': {
+      relationships: season3Relationships['oberyn-martell'],
       role: {
         it: 'Fratello del principe di Dorne',
         en: 'Brother of the Prince of Dorne',
@@ -318,6 +323,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'ellaria-sand': {
+      relationships: season3Relationships['ellaria-sand'],
       role: { it: 'Amante di Oberyn Martell', en: 'Oberyn Martell’s paramour' },
       log: {
         it: 'Segue il principe Oberyn ad Approdo del Re per le nozze del re.',

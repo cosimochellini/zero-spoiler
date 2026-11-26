@@ -292,7 +292,33 @@ const STAGE_3_GROUPS: { group: string; issue: string; owners: string[] }[] = [
       'drogon',
     ],
   },
-  { group: 'King’s Landing', issue: '#1651', owners: [] },
+  {
+    group: 'King’s Landing',
+    issue: '#1651',
+    owners: [
+      'olenna-tyrell',
+      'megga-tyrell',
+      'alla-tyrell',
+      'elinor-tyrell',
+      'oberyn-martell',
+      'ellaria-sand',
+      'tyrion-lannister',
+      'sansa-stark',
+      'tywin-lannister',
+      'cersei-lannister',
+      'joffrey-baratheon',
+      'petyr-baelish',
+      'varys',
+      'pycelle',
+      'loras-tyrell',
+      'margaery-tyrell',
+      'garlan-tyrell',
+      'shae',
+      'ros',
+      'bronn',
+      'daisy',
+    ],
+  },
   { group: 'Robb’s war and the Riverlands', issue: '#1653', owners: [] },
   {
     group: 'Arya, the Brotherhood Without Banners and the Hound',
@@ -2077,6 +2103,463 @@ describe.each(LOCALES)(
         at: 28,
         person: 'daenerys-targaryen',
       },
+    ] as const)(
+      'rewords $owner’s card in its $unit $at snapshot for $person',
+      ({ owner, unit, at, person }) => {
+        const mark = unit === 'episode' ? ep : ch
+
+        expect(said(owner, person, mark(at - 1))).toBeDefined()
+        expect(said(owner, person, mark(at))).toBeDefined()
+        expect(said(owner, person, mark(at))).not.toBe(
+          said(owner, person, mark(at - 1)),
+        )
+      },
+    )
+  },
+)
+
+// King's Landing in stage 3 (#1651): every snapshot the group adds,
+// checked just before its pin and at it, and the links one medium alone
+// tells.
+describe.each(LOCALES)(
+  'Game of Thrones stage-3 King’s Landing revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    const said = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.summary
+    const showCeiling = ep(archive.series.episodeCeiling)
+
+    it('keeps the books’ Tyrell cousins, Oberyn and Ellaria off show pages', () => {
+      for (const id of [
+        'megga-tyrell',
+        'alla-tyrell',
+        'elinor-tyrell',
+        'oberyn-martell',
+        'ellaria-sand',
+      ]) {
+        expect(projected(id, showCeiling, locale), id).toStrictEqual([])
+        expect(projected(id, ch(196), locale), id).not.toStrictEqual([])
+      }
+
+      expect(projected('oberyn-martell', ch(181), locale)).toStrictEqual([])
+      expect(people('tyrion-lannister', ep(30))).not.toContain('oberyn-martell')
+    })
+
+    it('opens Olenna at episode 22 and chapter 150, with Mace on book pages alone', () => {
+      expect(projected('olenna-tyrell', ep(21), locale)).toStrictEqual([])
+      expect(projected('olenna-tyrell', ch(149), locale)).toStrictEqual([])
+      expect(people('olenna-tyrell', ch(150))).toContain('mace-tyrell')
+
+      for (const episode of [22, 24, 26, 30]) {
+        expect(people('olenna-tyrell', ep(episode))).not.toContain(
+          'mace-tyrell',
+        )
+      }
+    })
+
+    it('tells the Red Wedding in King’s Landing on show pages alone', () => {
+      for (const owner of [
+        'sansa-stark',
+        'tywin-lannister',
+        'joffrey-baratheon',
+      ]) {
+        expect(people(owner, ep(29)), owner).not.toContain('robb-stark')
+        expect(people(owner, ep(30)), owner).toContain('robb-stark')
+        expect(people(owner, ch(196)), owner).not.toContain('robb-stark')
+      }
+
+      expect(people('tywin-lannister', ep(30))).toContain('walder-frey')
+    })
+
+    it('turns Ros to the past tense at her death in episode 26', () => {
+      for (const owner of ['daisy', 'varys', 'shae']) {
+        expect(said(owner, 'ros', ep(26)), owner).toBeDefined()
+        expect(said(owner, 'ros', ep(26)), owner).not.toBe(
+          said(owner, 'ros', ep(25)),
+        )
+      }
+    })
+
+    it('gives Garlan the wedding feast on book pages alone', () => {
+      expect(people('sansa-stark', ch(171))).not.toContain('garlan-tyrell')
+      expect(people('sansa-stark', ch(172))).toContain('garlan-tyrell')
+
+      for (const episode of [28, 30]) {
+        expect(people('sansa-stark', ep(episode))).not.toContain(
+          'garlan-tyrell',
+        )
+      }
+    })
+
+    it.each([
+      // owner, the medium, the number of a snapshot, a person it adds there
+      {
+        owner: 'olenna-tyrell',
+        unit: 'episode',
+        at: 22,
+        person: 'sansa-stark',
+      },
+      { owner: 'olenna-tyrell', unit: 'episode', at: 24, person: 'varys' },
+      {
+        owner: 'olenna-tyrell',
+        unit: 'episode',
+        at: 26,
+        person: 'tywin-lannister',
+      },
+      {
+        owner: 'olenna-tyrell',
+        unit: 'chapter',
+        at: 150,
+        person: 'sansa-stark',
+      },
+      {
+        owner: 'megga-tyrell',
+        unit: 'chapter',
+        at: 150,
+        person: 'margaery-tyrell',
+      },
+      {
+        owner: 'megga-tyrell',
+        unit: 'chapter',
+        at: 160,
+        person: 'elinor-tyrell',
+      },
+      {
+        owner: 'megga-tyrell',
+        unit: 'chapter',
+        at: 172,
+        person: 'tommen-baratheon',
+      },
+      {
+        owner: 'alla-tyrell',
+        unit: 'chapter',
+        at: 150,
+        person: 'margaery-tyrell',
+      },
+      {
+        owner: 'alla-tyrell',
+        unit: 'chapter',
+        at: 160,
+        person: 'elinor-tyrell',
+      },
+      {
+        owner: 'elinor-tyrell',
+        unit: 'chapter',
+        at: 150,
+        person: 'margaery-tyrell',
+      },
+      {
+        owner: 'elinor-tyrell',
+        unit: 'chapter',
+        at: 160,
+        person: 'megga-tyrell',
+      },
+      {
+        owner: 'oberyn-martell',
+        unit: 'chapter',
+        at: 182,
+        person: 'tyrion-lannister',
+      },
+      {
+        owner: 'ellaria-sand',
+        unit: 'chapter',
+        at: 182,
+        person: 'oberyn-martell',
+      },
+      {
+        owner: 'tyrion-lannister',
+        unit: 'episode',
+        at: 25,
+        person: 'sansa-stark',
+      },
+      {
+        owner: 'tyrion-lannister',
+        unit: 'episode',
+        at: 28,
+        person: 'joffrey-baratheon',
+      },
+      {
+        owner: 'tyrion-lannister',
+        unit: 'chapter',
+        at: 148,
+        person: 'cersei-lannister',
+      },
+      { owner: 'tyrion-lannister', unit: 'chapter', at: 156, person: 'shae' },
+      {
+        owner: 'tyrion-lannister',
+        unit: 'chapter',
+        at: 163,
+        person: 'sansa-stark',
+      },
+      {
+        owner: 'tyrion-lannister',
+        unit: 'chapter',
+        at: 172,
+        person: 'joffrey-baratheon',
+      },
+      {
+        owner: 'tyrion-lannister',
+        unit: 'chapter',
+        at: 182,
+        person: 'oberyn-martell',
+      },
+      {
+        owner: 'sansa-stark',
+        unit: 'episode',
+        at: 22,
+        person: 'olenna-tyrell',
+      },
+      {
+        owner: 'sansa-stark',
+        unit: 'episode',
+        at: 26,
+        person: 'tyrion-lannister',
+      },
+      {
+        owner: 'sansa-stark',
+        unit: 'episode',
+        at: 28,
+        person: 'joffrey-baratheon',
+      },
+      { owner: 'sansa-stark', unit: 'episode', at: 30, person: 'robb-stark' },
+      {
+        owner: 'sansa-stark',
+        unit: 'chapter',
+        at: 150,
+        person: 'olenna-tyrell',
+      },
+      {
+        owner: 'sansa-stark',
+        unit: 'chapter',
+        at: 172,
+        person: 'tyrion-lannister',
+      },
+      {
+        owner: 'tywin-lannister',
+        unit: 'episode',
+        at: 21,
+        person: 'tyrion-lannister',
+      },
+      {
+        owner: 'tywin-lannister',
+        unit: 'episode',
+        at: 23,
+        person: 'petyr-baelish',
+      },
+      {
+        owner: 'tywin-lannister',
+        unit: 'episode',
+        at: 26,
+        person: 'olenna-tyrell',
+      },
+      {
+        owner: 'tywin-lannister',
+        unit: 'episode',
+        at: 30,
+        person: 'joffrey-baratheon',
+      },
+      {
+        owner: 'tywin-lannister',
+        unit: 'chapter',
+        at: 148,
+        person: 'tyrion-lannister',
+      },
+      {
+        owner: 'tywin-lannister',
+        unit: 'chapter',
+        at: 163,
+        person: 'cersei-lannister',
+      },
+      {
+        owner: 'tywin-lannister',
+        unit: 'chapter',
+        at: 176,
+        person: 'mace-tyrell',
+      },
+      {
+        owner: 'cersei-lannister',
+        unit: 'episode',
+        at: 21,
+        person: 'margaery-tyrell',
+      },
+      {
+        owner: 'cersei-lannister',
+        unit: 'episode',
+        at: 25,
+        person: 'tywin-lannister',
+      },
+      {
+        owner: 'cersei-lannister',
+        unit: 'episode',
+        at: 28,
+        person: 'joffrey-baratheon',
+      },
+      {
+        owner: 'cersei-lannister',
+        unit: 'chapter',
+        at: 163,
+        person: 'tywin-lannister',
+      },
+      {
+        owner: 'cersei-lannister',
+        unit: 'chapter',
+        at: 172,
+        person: 'sansa-stark',
+      },
+      { owner: 'joffrey-baratheon', unit: 'episode', at: 26, person: 'ros' },
+      {
+        owner: 'joffrey-baratheon',
+        unit: 'episode',
+        at: 28,
+        person: 'tyrion-lannister',
+      },
+      {
+        owner: 'joffrey-baratheon',
+        unit: 'episode',
+        at: 30,
+        person: 'robb-stark',
+      },
+      {
+        owner: 'joffrey-baratheon',
+        unit: 'chapter',
+        at: 172,
+        person: 'tyrion-lannister',
+      },
+      {
+        owner: 'petyr-baelish',
+        unit: 'episode',
+        at: 23,
+        person: 'tywin-lannister',
+      },
+      { owner: 'petyr-baelish', unit: 'episode', at: 26, person: 'varys' },
+      {
+        owner: 'petyr-baelish',
+        unit: 'chapter',
+        at: 163,
+        person: 'tywin-lannister',
+      },
+      { owner: 'varys', unit: 'episode', at: 24, person: 'olenna-tyrell' },
+      { owner: 'varys', unit: 'episode', at: 30, person: 'shae' },
+      { owner: 'varys', unit: 'chapter', at: 156, person: 'shae' },
+      { owner: 'pycelle', unit: 'episode', at: 23, person: 'tywin-lannister' },
+      { owner: 'pycelle', unit: 'chapter', at: 163, person: 'tywin-lannister' },
+      { owner: 'loras-tyrell', unit: 'episode', at: 22, person: 'sansa-stark' },
+      {
+        owner: 'loras-tyrell',
+        unit: 'chapter',
+        at: 150,
+        person: 'sansa-stark',
+      },
+      {
+        owner: 'margaery-tyrell',
+        unit: 'episode',
+        at: 22,
+        person: 'olenna-tyrell',
+      },
+      {
+        owner: 'margaery-tyrell',
+        unit: 'episode',
+        at: 28,
+        person: 'cersei-lannister',
+      },
+      {
+        owner: 'margaery-tyrell',
+        unit: 'chapter',
+        at: 150,
+        person: 'sansa-stark',
+      },
+      {
+        owner: 'garlan-tyrell',
+        unit: 'chapter',
+        at: 172,
+        person: 'sansa-stark',
+      },
+      { owner: 'shae', unit: 'episode', at: 22, person: 'petyr-baelish' },
+      { owner: 'ros', unit: 'episode', at: 21, person: 'sansa-stark' },
+      { owner: 'ros', unit: 'episode', at: 26, person: 'joffrey-baratheon' },
+      { owner: 'bronn', unit: 'episode', at: 27, person: 'podrick-payne' },
+      { owner: 'bronn', unit: 'chapter', at: 148, person: 'podrick-payne' },
+    ] as const)(
+      'opens $owner’s $unit $at snapshot with $person',
+      ({ owner, unit, at, person }) => {
+        const mark = unit === 'episode' ? ep : ch
+
+        expect(people(owner, mark(at - 1))).not.toContain(person)
+        expect(people(owner, mark(at))).toContain(person)
+      },
+    )
+
+    it.each([
+      // owner, the medium, the number of a snapshot, a person it rewords
+      { owner: 'alla-tyrell', unit: 'chapter', at: 172, person: 'sansa-stark' },
+      {
+        owner: 'elinor-tyrell',
+        unit: 'chapter',
+        at: 172,
+        person: 'sansa-stark',
+      },
+      {
+        owner: 'tyrion-lannister',
+        unit: 'episode',
+        at: 21,
+        person: 'tywin-lannister',
+      },
+      {
+        owner: 'tyrion-lannister',
+        unit: 'episode',
+        at: 30,
+        person: 'tywin-lannister',
+      },
+      {
+        owner: 'sansa-stark',
+        unit: 'episode',
+        at: 24,
+        person: 'margaery-tyrell',
+      },
+      {
+        owner: 'sansa-stark',
+        unit: 'chapter',
+        at: 160,
+        person: 'margaery-tyrell',
+      },
+      {
+        owner: 'cersei-lannister',
+        unit: 'episode',
+        at: 30,
+        person: 'jaime-lannister',
+      },
+      {
+        owner: 'joffrey-baratheon',
+        unit: 'episode',
+        at: 21,
+        person: 'margaery-tyrell',
+      },
+      {
+        owner: 'petyr-baelish',
+        unit: 'episode',
+        at: 21,
+        person: 'sansa-stark',
+      },
+      { owner: 'varys', unit: 'episode', at: 26, person: 'petyr-baelish' },
+      { owner: 'loras-tyrell', unit: 'episode', at: 26, person: 'sansa-stark' },
+      {
+        owner: 'margaery-tyrell',
+        unit: 'episode',
+        at: 24,
+        person: 'sansa-stark',
+      },
+      { owner: 'shae', unit: 'episode', at: 26, person: 'tyrion-lannister' },
+      { owner: 'shae', unit: 'episode', at: 27, person: 'tyrion-lannister' },
+      { owner: 'shae', unit: 'episode', at: 30, person: 'varys' },
+      { owner: 'shae', unit: 'chapter', at: 156, person: 'tyrion-lannister' },
+      { owner: 'ros', unit: 'episode', at: 24, person: 'varys' },
+      { owner: 'bronn', unit: 'episode', at: 21, person: 'tyrion-lannister' },
+      { owner: 'bronn', unit: 'chapter', at: 176, person: 'tyrion-lannister' },
+      { owner: 'daisy', unit: 'episode', at: 26, person: 'ros' },
     ] as const)(
       'rewords $owner’s card in its $unit $at snapshot for $person',
       ({ owner, unit, at, person }) => {
