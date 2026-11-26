@@ -23,7 +23,7 @@ Agents take their work from the issue list by label, so every issue is a queue e
 
 - **Title**: the change in plain words, without the spoiler. Titles are public and show up in notifications: "Redraw a place once its chapter airs", with the place named only in the body when the name itself spoils.
 - **Body**: `## What`, `## Why`, `## How to verify`. Name the files, record ids, episode/chapter pairs and the commands that prove it is done. The agent that picks it up knows only the body.
-- **Ruling**: a `type:content` issue quotes in its `## Why` the skill rule or owner ruling it rests on, so a ruling it contradicts surfaces while you write it.
+- **Ruling**: before filing an `area:art` or `area:records` issue, read the area's skill (`line-drawings` and its series file, or `filing-records`) and the owner rulings in related issue comments, then quote in `## Why` the exact sentence the change rests on, or write `Ruling: none` when no rule applies.
 - **Blocked work**: one line starting `Unblocks at:` listing every condition, comma-separated. All of them must hold:
   - `ch. 1178`: an episode adapts chapter 1178;
   - `ch. 1151 p. 9`: an episode adapts page 9 (use this when the episode before has already adapted part of the chapter);
@@ -39,7 +39,7 @@ gh issue create --title "…" --body-file body.md \
 - **Starting a loop**: run `npm run issues:unblock` first. It moves each blocked issue whose conditions all hold to `status:ready` and comments with the episode that unblocked it.
 - **Picking**: take the first match of `gh issue list --label status:ready --json number,title,labels`, ordered by `priority:` (p0 first) and then by `size:` (s first). Skip any `size:l` issue; split it instead.
 - **Taking it**: `gh issue edit N --remove-label status:ready --add-label status:in-progress`, then `Closes #N` in the pull request body.
-- **Records and drawings**: a `type:content` / `area:records` issue that files characters or places starts from the `filing-records` skill (`.agents/skills/filing-records/SKILL.md`); a `type:content` or `type:bug` issue with `area:art` starts from the `line-drawings` skill (`.claude/skills/line-drawings/SKILL.md`).
+- **Records and drawings**: a `type:content` / `area:records` issue that files characters or places starts from the `filing-records` skill (`.agents/skills/filing-records/SKILL.md`); any `area:art` issue starts from the `line-drawings` skill (`.claude/skills/line-drawings/SKILL.md`).
 - **Stopping halfway**: put it back to `status:ready` with a comment on what is done and what is left.
 - **A ruling only the owner can give**: `status:needs-decision`, with the question and your recommendation in a comment.
 - **Triage**: an issue with `status:triage` came from the web, from Codex or from a template. Set the other four groups from its body, then move it to `ready`, `blocked` (and add the `Unblocks at:` line) or `needs-decision`.
