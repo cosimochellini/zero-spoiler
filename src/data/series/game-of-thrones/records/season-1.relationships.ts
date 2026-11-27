@@ -13782,6 +13782,2224 @@ const essos3 = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 3's Robb's war and Riverlands cards for the season-1 cast (#1653):
+ * season 3 and A Storm of Swords through chapter 52. The show: episodes 22
+ * to 30. The books: Catelyn I to VII (chapters 146, 158, 164, 179, 189, 193
+ * and 195). Robb and Catelyn die at the Red Wedding in both media, episode
+ * 29 and chapter 195; from there every card that names them, or another
+ * of the dead, is in the past tense. The new characters' own cards are in
+ * `season-3.relationships.ts`.
+ */
+const riverlands3 = {
+  // Robb, the show
+  rbTalisa22: {
+    character: 'talisa-maegyr',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His queen, at his side at Harrenhal. Lord Karstark tells Robb he lost the war the day he married her.',
+      it: 'La sua regina, al suo fianco a Harrenhal. Lord Karstark dice a Robb che ha perso la guerra il giorno in cui l’ha sposata.',
+    },
+  },
+  rbCatelyn22: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, still held under guard for freeing Jaime. He tells her that her father has died and that Winterfell has been burned.',
+      it: 'Sua madre, ancora sotto custodia per aver liberato Jaime. Robb le dice che suo padre è morto e che Grande Inverno è stata data alle fiamme.',
+    },
+  },
+  rbRoose22: {
+    character: 'roose-bolton',
+    type: { en: 'Bannerman', it: 'Alfiere' },
+    summary: {
+      en: 'The lord of the Dreadfort, who brings him the two letters. Robb leaves him in command at Harrenhal and marches with the rest of his host to his mother’s family.',
+      it: 'Il signore di Forte Terrore, che gli porta le due lettere. Robb gli lascia il comando di Harrenhal e marcia con il resto dell’esercito verso la famiglia di sua madre.',
+    },
+  },
+  rbRickard22: {
+    character: 'rickard-karstark',
+    type: { en: 'Bannerman', it: 'Alfiere' },
+    summary: {
+      en: 'The Karstark lord, who calls the march to his mother’s family a waste of time. He still believes in revenge, he says, but Robb lost the war the day he married Talisa.',
+      it: 'Il lord dei Karstark, che chiama la marcia verso la famiglia di sua madre una perdita di tempo. Dice di credere ancora nella vendetta, ma che Robb ha perso la guerra il giorno in cui ha sposato Talisa.',
+    },
+  },
+  rbBran22: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother. The ironborn have burned Winterfell and no one has seen Bran or Rickon since. Robb hopes they are still alive.',
+      it: 'Suo fratello. Gli uomini di ferro hanno bruciato Grande Inverno e da allora nessuno ha più visto Bran né Rickon. Robb spera che siano ancora vivi.',
+    },
+  },
+  rbEdmure23: {
+    character: 'edmure-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, the new lord of Riverrun. Edmure boasts of his victory over the Lannisters, but by attacking he wrecked Robb’s plan, and two young Lannister hostages are no use to him.',
+      it: 'Suo zio, il nuovo signore di Delta delle Acque. Edmure si vanta della sua vittoria sui Lannister, ma attaccando ha rovinato il piano di Robb, e due giovani ostaggi Lannister non gli servono a niente.',
+    },
+  },
+  rbBrynden23: {
+    character: 'brynden-tully',
+    type: { en: 'Great-uncle', it: 'Prozio' },
+    summary: {
+      en: 'Catelyn’s uncle, the Blackfish. He launches Lord Hoster’s funeral boat with Robb, and is as angry with Edmure as Robb is.',
+      it: 'Lo zio di Catelyn, il Pesce Nero. Vara con Robb la barca funebre di lord Hoster, ed è arrabbiato con Edmure quanto lui.',
+    },
+  },
+  rbHoster23: {
+    character: 'hoster-tully',
+    type: { en: 'Grandfather', it: 'Nonno' },
+    summary: {
+      en: 'His mother’s father, the lord of Riverrun, who died after a long illness. Robb helps launch his funeral boat on the river.',
+      it: 'Il padre di sua madre, il signore di Delta delle Acque, morto dopo una lunga malattia. Robb aiuta a varare la sua barca funebre sul fiume.',
+    },
+  },
+  rbCatelyn23: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who watches her father’s funeral from the bank and mourns him in her old rooms at Riverrun.',
+      it: 'Sua madre, che assiste dalla riva al funerale del padre e lo piange nelle sue vecchie stanze a Delta delle Acque.',
+    },
+  },
+  rbTalisa23: {
+    character: 'talisa-maegyr',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His queen, who comes with him to Riverrun and goes down to the cells to tend the Lannister prisoners.',
+      it: 'La sua regina, che lo segue a Delta delle Acque e scende nelle celle a curare i prigionieri Lannister.',
+    },
+  },
+  rbRickard25: {
+    character: 'rickard-karstark',
+    type: { en: 'Traitor', it: 'Traditore' },
+    summary: {
+      en: 'The Karstark lord who murdered the two Lannister boys to avenge his sons, and called Robb the King Who Lost the North. Robb beheaded him himself, in the rain.',
+      it: 'Il lord dei Karstark che ha ucciso i due ragazzi Lannister per vendicare i suoi figli, e ha chiamato Robb il Re che ha perso il Nord. Robb lo ha decapitato con le proprie mani, sotto la pioggia.',
+    },
+  },
+  rbWillem25: {
+    character: 'willem-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'One of the two Lannister squires held at Riverrun, killed in his cell by Lord Karstark’s men. Robb refused to hide the murder.',
+      it: 'Uno dei due scudieri Lannister tenuti prigionieri a Delta delle Acque, ucciso nella sua cella dagli uomini di lord Karstark. Robb si è rifiutato di nascondere l’omicidio.',
+    },
+  },
+  rbMartyn25: {
+    character: 'martyn-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The other Lannister squire, stabbed by Lord Karstark himself. Robb saw only a boy who had nothing to do with the death of the Karstark sons.',
+      it: 'L’altro scudiero Lannister, pugnalato dallo stesso lord Karstark. Per Robb era solo un ragazzo, che con la morte dei figli di Karstark non aveva niente a che fare.',
+    },
+  },
+  rbTalisa25: {
+    character: 'talisa-maegyr',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His queen, who warns him that the Karstark men will leave if he executes their lord. They do, and he admits to her she was right; over the map with her he settles on Casterly Rock.',
+      it: 'La sua regina, che lo avverte che gli uomini dei Karstark se ne andranno se giustizierà il loro lord. Così avviene, e lui le ammette che aveva ragione; studiando la mappa con lei, sceglie Castel Granito.',
+    },
+  },
+  rbCatelyn25: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who urges him to keep Lord Karstark as a hostage rather than execute him. He does not listen.',
+      it: 'Sua madre, che lo esorta a tenere lord Karstark come ostaggio invece di giustiziarlo. Robb non la ascolta.',
+    },
+  },
+  rbWalder26: {
+    character: 'walder-frey',
+    type: { en: 'Ally to win back', it: 'Alleato da riconquistare' },
+    summary: {
+      en: 'The lord of the Twins, whose men left when Robb broke his vow to marry a Frey. To march on Casterly Rock he needs them, and Walder’s price is an apology, Harrenhal and a marriage.',
+      it: 'Il signore delle Torri Gemelle, i cui uomini se ne sono andati quando Robb ha mancato alla promessa di sposare una Frey. Per marciare su Castel Granito gli servono, e il prezzo di Walder sono delle scuse, Harrenhal e un matrimonio.',
+    },
+  },
+  rbEdmure26: {
+    character: 'edmure-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, whom Lord Walder wants for one of his daughters. Edmure balks at a bride he has never met, but gives in.',
+      it: 'Suo zio, che lord Walder vuole per una delle sue figlie. Edmure recalcitra davanti a una sposa che non ha mai visto, ma alla fine cede.',
+    },
+  },
+  rbRoslin26: {
+    character: 'roslin-frey',
+    type: { en: 'Uncle’s bride', it: 'Sposa dello zio' },
+    summary: {
+      en: 'The daughter of Lord Walder whom Edmure must marry to win back the Freys.',
+      it: 'La figlia di lord Walder che Edmure deve sposare per riconquistare i Frey.',
+    },
+  },
+  rbTalisa27: {
+    character: 'talisa-maegyr',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His queen. In their tent on the road to the Twins she tells him she is carrying his child, and he is glad.',
+      it: 'La sua regina. Nella tenda, sulla strada per le Torri Gemelle, gli dice che aspetta un figlio da lui, e Robb ne è felice.',
+    },
+  },
+  rbCatelyn27: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who warns that Lord Walder will take the delay in the rain as an insult. He is getting a wedding, she says, but not the one he wanted.',
+      it: 'Sua madre, che avverte che lord Walder prenderà come un insulto il ritardo dovuto alla pioggia. Avrà un matrimonio, dice, ma non quello che voleva.',
+    },
+  },
+  rbEdmure27: {
+    character: 'edmure-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, riding to the Twins to marry. Robb calls him the best match House Frey has ever been offered.',
+      it: 'Suo zio, in viaggio verso le Torri Gemelle per sposarsi. Robb lo definisce il miglior partito che sia mai stato offerto a Casa Frey.',
+    },
+  },
+  rbTalisa29: {
+    character: 'talisa-maegyr',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His queen, who told him at the wedding feast that if the child was a boy they should call him Eddard. She was stabbed in the belly, and died in his arms.',
+      it: 'La sua regina, che alla festa nuziale gli aveva detto che, se fosse stato un maschio, lo avrebbero chiamato Eddard. È stata pugnalata al ventre, ed è morta fra le sue braccia.',
+    },
+  },
+  rbCatelyn29: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who saw the trap too late and begged Lord Walder for his life. Robb was killed in front of her, and she after him.',
+      it: 'Sua madre, che si è accorta troppo tardi della trappola e ha implorato lord Walder di risparmiarlo. Robb è stato ucciso davanti a lei, e lei subito dopo.',
+    },
+  },
+  rbWalder29: {
+    character: 'walder-frey',
+    type: { en: 'Betrayer', it: 'Traditore' },
+    summary: {
+      en: 'The lord of the Twins, who insulted him and his queen, accepted his apology and gave him guest welcome. At the wedding feast he gave the signal for the slaughter, and mocked Robb as he died.',
+      it: 'Il signore delle Torri Gemelle, che ha insultato lui e la regina, ha accettato le sue scuse e lo ha accolto come ospite. Alla festa nuziale ha dato il segnale del massacro, e si è fatto beffe di Robb mentre moriva.',
+    },
+  },
+  rbRoose29: {
+    character: 'roose-bolton',
+    type: { en: 'Killer', it: 'Assassino' },
+    summary: {
+      en: 'His bannerman, who sat at the feast with mail under his clothes. He stabbed Robb through the heart in the Lannisters’ name.',
+      it: 'Il suo alfiere, che sedeva al banchetto con la cotta di maglia sotto i vestiti. Ha trafitto Robb al cuore in nome dei Lannister.',
+    },
+  },
+  rbEdmure29: {
+    character: 'edmure-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, whose wedding brought Robb to the Twins. Edmure was carried off to the bedding before the slaughter began.',
+      it: 'Suo zio, le cui nozze avevano portato Robb alle Torri Gemelle. Edmure era stato portato via per la cerimonia della consumazione prima che cominciasse il massacro.',
+    },
+  },
+  // Robb, the books
+  rbJeyne158: {
+    character: 'jeyne-westerling',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'The daughter of the Crag, who nursed his wound and comforted him the night he heard his brothers had been killed. He married her the next morning, for her honour, and so broke his vow to the Freys.',
+      it: 'La figlia del Crag, che ha curato la sua ferita e lo ha consolato la notte in cui ha saputo che i suoi fratelli erano stati uccisi. Lui l’ha sposata la mattina dopo, per il suo onore, e così ha infranto la promessa fatta ai Frey.',
+    },
+  },
+  rbCatelyn158: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, confined at Riverrun for freeing Jaime. Robb greets her gently before the court, and excuses what she did as love.',
+      it: 'Sua madre, confinata a Delta delle Acque per aver liberato Jaime. Robb la accoglie con dolcezza davanti alla corte, e scusa il suo gesto come un atto d’amore.',
+    },
+  },
+  rbEdmure158: {
+    character: 'edmure-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, whom he praises in the hall for his victory at the fords. In private he and the Blackfish tell Edmure that the victory ruined their plan.',
+      it: 'Suo zio, che loda nella sala per la vittoria ai guadi. In privato lui e il Pesce Nero gli dicono che quella vittoria ha rovinato il loro piano.',
+    },
+  },
+  rbRickard158: {
+    character: 'rickard-karstark',
+    type: { en: 'Bannerman', it: 'Alfiere' },
+    summary: {
+      en: 'The Karstark lord, who cannot forgive Catelyn for freeing his sons’ killer, and storms out of the hall.',
+      it: 'Il lord dei Karstark, che non perdona a Catelyn di aver liberato l’assassino dei suoi figli, ed esce furioso dalla sala.',
+    },
+  },
+  rbWalder158: {
+    character: 'walder-frey',
+    type: { en: 'Ally lost', it: 'Alleato perduto' },
+    summary: {
+      en: 'The lord of the Twins, whose men went home when Robb married another. Robb must find something to soothe his pride.',
+      it: 'Il signore delle Torri Gemelle, i cui uomini sono tornati a casa quando Robb ne ha sposata un’altra. Robb deve trovare qualcosa che plachi il suo orgoglio.',
+    },
+  },
+  rbRickard164: {
+    character: 'rickard-karstark',
+    type: { en: 'Traitor', it: 'Traditore' },
+    summary: {
+      en: 'The Karstark lord who murdered two Lannister prisoners in their cells. Robb beheaded him himself in the godswood, and Lord Karstark called him a kinslayer.',
+      it: 'Il lord dei Karstark che ha ucciso due prigionieri Lannister nelle loro celle. Robb lo ha decapitato con le proprie mani nel parco degli dèi, e lord Karstark lo ha chiamato assassino del suo sangue.',
+    },
+  },
+  rbWillem164: {
+    character: 'willem-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'A Lannister squire held at Riverrun, murdered in his cell by Lord Karstark’s men. His body was laid before Robb in the great hall.',
+      it: 'Uno scudiero Lannister tenuto prigioniero a Delta delle Acque, ucciso nella sua cella dagli uomini di lord Karstark. Il suo corpo è stato deposto davanti a Robb nella sala grande.',
+    },
+  },
+  rbEdmure164: {
+    character: 'edmure-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who urges him to keep Lord Karstark as a hostage and the murders secret. Robb will not.',
+      it: 'Suo zio, che lo esorta a tenere lord Karstark come ostaggio e a mantenere segreti gli omicidi. Robb non vuole.',
+    },
+  },
+  rbBrynden164: {
+    character: 'brynden-tully',
+    type: { en: 'Great-uncle', it: 'Prozio' },
+    summary: {
+      en: 'The Blackfish, who reports that the Karstark men have left to hunt Jaime, and rides out with a hundred men after them.',
+      it: 'Il Pesce Nero, che gli riferisce che gli uomini dei Karstark sono partiti a caccia di Jaime, e li insegue con cento uomini.',
+    },
+  },
+  rbCatelyn179: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother. He tells her that Sansa has been married to the Imp, and she begs him to make peace with the Lannisters. He will not hear of it.',
+      it: 'Sua madre. Robb le dice che Sansa è stata data in sposa al Folletto, e lei lo supplica di fare pace con i Lannister. Lui non vuole sentirne parlare.',
+    },
+  },
+  rbWalder179: {
+    character: 'walder-frey',
+    type: { en: 'Ally to win back', it: 'Alleato da riconquistare' },
+    summary: {
+      en: 'The lord of the Twins, who sends his terms: Robb must come and apologise in person, and Edmure must marry Roslin.',
+      it: 'Il signore delle Torri Gemelle, che manda le sue condizioni: Robb deve andare a scusarsi di persona, ed Edmure deve sposare Roslin.',
+    },
+  },
+  rbLothar179: {
+    character: 'lothar-frey',
+    type: { en: 'Envoy', it: 'Inviato' },
+    summary: {
+      en: 'Lord Walder’s son, whom Robb asks to help launch his grandfather’s funeral boat. He brings the terms, and the news of Winterfell.',
+      it: 'Il figlio di lord Walder, a cui Robb chiede di aiutarlo a varare la barca funebre del nonno. Porta le condizioni, e le notizie di Grande Inverno.',
+    },
+  },
+  rbEdmure179: {
+    character: 'edmure-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, now lord of Riverrun, who balks at a wife chosen for him until the Blackfish reminds him of his blunder at the fords.',
+      it: 'Suo zio, ora signore di Delta delle Acque, che recalcitra davanti a una moglie scelta da altri finché il Pesce Nero non gli ricorda il suo errore ai guadi.',
+    },
+  },
+  rbHoster179: {
+    character: 'hoster-tully',
+    type: { en: 'Grandfather', it: 'Nonno' },
+    summary: {
+      en: 'His mother’s father, the lord of Riverrun, who died. Robb launched his funeral boat with the river lords.',
+      it: 'Il padre di sua madre, il signore di Delta delle Acque, che è morto. Robb ha varato la sua barca funebre con i lord dei fiumi.',
+    },
+  },
+  rbCatelyn189: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who cannot support his choice of heir. After the wedding he means to send her to Seagard, under Lord Mallister’s protection.',
+      it: 'Sua madre, che non può appoggiare la sua scelta dell’erede. Dopo le nozze vuole mandarla a Seagard, sotto la protezione di lord Mallister.',
+    },
+  },
+  rbJon189: {
+    character: 'jon-snow',
+    type: { en: 'Heir', it: 'Erede' },
+    summary: {
+      en: 'His half-brother on the Wall. If Robb dies without a child, he means to legitimise Jon and name him heir, and he has his lords seal the decree.',
+      it: 'Il fratellastro sulla Barriera. Se Robb morirà senza figli, vuole legittimare Jon e nominarlo erede, e fa sigillare il decreto ai suoi lord.',
+    },
+  },
+  rbJeyne189: {
+    character: 'jeyne-westerling',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His queen, whom he leaves at Riverrun when he rides to the Twins.',
+      it: 'La sua regina, che lascia a Delta delle Acque quando parte per le Torri Gemelle.',
+    },
+  },
+  rbJason189: {
+    character: 'jason-mallister',
+    type: { en: 'Bannerman', it: 'Alfiere' },
+    summary: {
+      en: 'The lord of Seagard, who joins the host on the march and brings word that Balon Greyjoy is dead.',
+      it: 'Il signore di Seagard, che raggiunge l’esercito durante la marcia e porta la notizia che Balon Greyjoy è morto.',
+    },
+  },
+  rbGalbart189: {
+    character: 'galbart-glover',
+    type: { en: 'Bannerman', it: 'Alfiere' },
+    summary: {
+      en: 'A northern lord whom Robb sends through the marshes of the Neck with Lady Mormont, to find the crannogmen who will guide his attack.',
+      it: 'Un lord del Nord che Robb manda tra le paludi dell’Incollatura con lady Mormont, a cercare gli uomini delle paludi che guideranno il suo attacco.',
+    },
+  },
+  rbWalder193: {
+    character: 'walder-frey',
+    type: { en: 'Host', it: 'Ospite che accoglie' },
+    summary: {
+      en: 'The lord of the Twins, who greets him with veiled insults for his broken oath. Robb apologises, and Walder offers bread and salt.',
+      it: 'Il signore delle Torri Gemelle, che lo accoglie con insulti velati per il giuramento infranto. Robb si scusa, e Walder offre pane e sale.',
+    },
+  },
+  rbRoose193: {
+    character: 'roose-bolton',
+    type: { en: 'Bannerman', it: 'Alfiere' },
+    summary: {
+      en: 'The lord of the Dreadfort, who joins him at the Twins with news of Winterfell, and a strip of Theon’s skin. Robb lets Theon stay a prisoner at the Dreadfort.',
+      it: 'Il signore di Forte Terrore, che lo raggiunge alle Torri Gemelle con notizie di Grande Inverno e un lembo della pelle di Theon. Robb lascia Theon prigioniero a Forte Terrore.',
+    },
+  },
+  rbGreyWind193: {
+    character: 'grey-wind',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf, who growls at the Freys and will not go through the gatehouse. Robb leaves him outside with Ser Raynald.',
+      it: 'Il suo metalupo, che ringhia ai Frey e non vuole passare dal corpo di guardia. Robb lo lascia fuori con ser Raynald.',
+    },
+  },
+  rbRyman193: {
+    character: 'ryman-frey',
+    type: { en: 'Frey knight', it: 'Cavaliere Frey' },
+    summary: {
+      en: 'Lord Walder’s grandson, who meets the host on the road and is angry that Robb has not brought his queen.',
+      it: 'Il nipote di lord Walder, che va incontro all’esercito sulla strada ed è irritato perché Robb non ha portato la regina.',
+    },
+  },
+  rbCatelyn193: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who warns him again not to give offence, and asks for food as soon as they arrive, to make them guests.',
+      it: 'Sua madre, che lo avverte di nuovo di non offendere nessuno, e appena arrivati chiede da mangiare, per renderli ospiti.',
+    },
+  },
+  rbCatelyn195: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who held a dagger to a Frey’s throat and begged Lord Walder to spare her son. She was killed after him.',
+      it: 'Sua madre, che ha puntato un pugnale alla gola di un Frey e ha implorato lord Walder di risparmiare suo figlio. È stata uccisa dopo di lui.',
+    },
+  },
+  rbWalder195: {
+    character: 'walder-frey',
+    type: { en: 'Betrayer', it: 'Traditore' },
+    summary: {
+      en: 'The lord of the Twins, who made him a guest at his table. When the slaughter began he watched from his seat and mocked the wounded king.',
+      it: 'Il signore delle Torri Gemelle, che lo aveva accolto come ospite alla sua tavola. Quando è cominciato il massacro ha guardato dal suo seggio e si è fatto beffe del re ferito.',
+    },
+  },
+  rbSmalljon195: {
+    character: 'smalljon-umber',
+    type: { en: 'Guard', it: 'Guardia' },
+    summary: {
+      en: 'The Greatjon’s son, who threw a table over Robb to shield him from the crossbows. He was killed in the hall.',
+      it: 'Il figlio del Greatjon, che ha rovesciato un tavolo su Robb per ripararlo dalle balestre. È stato ucciso nella sala.',
+    },
+  },
+  rbEdmure195: {
+    character: 'edmure-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who married Roslin Frey at the Twins, as Lord Walder demanded.',
+      it: 'Suo zio, che ha sposato Roslin Frey alle Torri Gemelle, come pretendeva lord Walder.',
+    },
+  },
+  rbJeyne195: {
+    character: 'jeyne-westerling',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His queen, whom he left at Riverrun when he rode to the Twins.',
+      it: 'La sua regina, che aveva lasciato a Delta delle Acque quando era partito per le Torri Gemelle.',
+    },
+  },
+
+  // Catelyn, the show
+  ctRobb22: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, who keeps her under guard at Harrenhal. He tells her that her father has died and that Winterfell has been burned.',
+      it: 'Suo figlio, che la tiene sotto custodia a Harrenhal. Le dice che suo padre è morto e che Grande Inverno è stata data alle fiamme.',
+    },
+  },
+  ctTalisa22: {
+    character: 'talisa-maegyr',
+    type: { en: 'Son’s wife', it: 'Moglie del figlio' },
+    summary: {
+      en: 'Robb’s queen, who offers to help with the prayer wheel she is making for her sons. To her Catelyn tells the story of Jon and the pox.',
+      it: 'La regina di Robb, che si offre di aiutarla con la ruota di preghiera che sta facendo per i suoi figli. È a lei che Catelyn racconta la storia di Jon e del vaiolo.',
+    },
+  },
+  ctJon22: {
+    character: 'jon-snow',
+    type: { en: 'Husband’s bastard', it: 'Bastardo del marito' },
+    summary: {
+      en: 'Eddard’s bastard. When he was a child with the pox she prayed for him to die, then for him to live, and promised the gods she would have him made a Stark and raise him as her own. She never kept the promise.',
+      it: 'Il bastardo di Eddard. Quando da bambino aveva il vaiolo lei ha pregato che morisse, poi che vivesse, e ha promesso agli dèi che lo avrebbe fatto diventare uno Stark e lo avrebbe cresciuto come suo. Non ha mai mantenuto la promessa.',
+    },
+  },
+  ctBran22: {
+    character: 'bran-stark',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'Her son, missing with Rickon since Winterfell burned. She was not there to protect them, and believes the gods are punishing her.',
+      it: 'Suo figlio, disperso con Rickon da quando Grande Inverno è bruciata. Lei non era lì a proteggerli, e crede che gli dèi la stiano punendo.',
+    },
+  },
+  ctHoster23: {
+    character: 'hoster-tully',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, who died before she could see him again. She watches his funeral boat drift down the river.',
+      it: 'Suo padre, morto prima che lei potesse rivederlo. Guarda la sua barca funebre allontanarsi lungo il fiume.',
+    },
+  },
+  ctBrynden23: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her uncle, who tells her he made peace with her father before he died, and urges her to be strong for Robb.',
+      it: 'Suo zio, che le racconta di aver fatto pace con suo padre prima che morisse, e la esorta a essere forte per Robb.',
+    },
+  },
+  ctEdmure23: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her younger brother, now lord of Riverrun, who misses their father’s funeral boat with three burning arrows.',
+      it: 'Il fratello minore, ora signore di Delta delle Acque, che manca per tre volte la barca funebre del padre con le frecce infuocate.',
+    },
+  },
+  ctRobb23: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, who has brought his host to Riverrun for her father’s funeral.',
+      it: 'Suo figlio, che ha portato il suo esercito a Delta delle Acque per il funerale di suo padre.',
+    },
+  },
+  ctTalisa23: {
+    character: 'talisa-maegyr',
+    type: { en: 'Son’s wife', it: 'Moglie del figlio' },
+    summary: {
+      en: 'Robb’s queen, who stands beside her on the bank at the funeral.',
+      it: 'La regina di Robb, che al funerale le sta accanto sulla riva.',
+    },
+  },
+  ctRickard25: {
+    character: 'rickard-karstark',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The lord who murdered the Lannister boys and blamed her for freeing Jaime. She urged Robb to keep him as a hostage; Robb beheaded him.',
+      it: 'Il lord che ha ucciso i ragazzi Lannister e ha dato la colpa a lei per aver liberato Jaime. Lei ha esortato Robb a tenerlo come ostaggio; Robb lo ha decapitato.',
+    },
+  },
+  ctRobb25: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, who will not hear her plea to spare Lord Karstark, and loses the Karstark men.',
+      it: 'Suo figlio, che non ascolta la sua supplica di risparmiare lord Karstark, e perde gli uomini dei Karstark.',
+    },
+  },
+  ctEdmure25: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who wants the murders kept quiet, and backs her advice to hold Lord Karstark hostage.',
+      it: 'Suo fratello, che vuole tenere nascosti gli omicidi, e appoggia il suo consiglio di tenere lord Karstark in ostaggio.',
+    },
+  },
+  ctTalisa25: {
+    character: 'talisa-maegyr',
+    type: { en: 'Son’s wife', it: 'Moglie del figlio' },
+    summary: {
+      en: 'Robb’s queen, who joins her in warning Robb that executing Lord Karstark will cost him the Karstark men.',
+      it: 'La regina di Robb, che si unisce a lei nell’avvertire Robb che giustiziare lord Karstark gli costerà gli uomini dei Karstark.',
+    },
+  },
+  ctBrynden25: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her uncle, who punches Lord Karstark when he mocks Robb’s father.',
+      it: 'Suo zio, che prende a pugni lord Karstark quando questi deride il padre di Robb.',
+    },
+  },
+  ctRobb27: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, on the road to the Twins in the rain. Lord Walder wanted one of his daughters married to a king, she reminds him, with a look at Talisa.',
+      it: 'Suo figlio, sulla strada per le Torri Gemelle sotto la pioggia. Lord Walder voleva una delle sue figlie sposata a un re, gli ricorda, con uno sguardo a Talisa.',
+    },
+  },
+  ctTalisa27: {
+    character: 'talisa-maegyr',
+    type: { en: 'Son’s wife', it: 'Moglie del figlio' },
+    summary: {
+      en: 'The woman Robb married instead of a Frey.',
+      it: 'La donna che Robb ha sposato al posto di una Frey.',
+    },
+  },
+  ctWalder27: {
+    character: 'walder-frey',
+    type: { en: 'Prickly host', it: 'Ospite permaloso' },
+    summary: {
+      en: 'The lord of the Twins, who will take the delay as an insult, she warns. He is getting a wedding, but not the one he wanted.',
+      it: 'Il signore delle Torri Gemelle, che prenderà il ritardo come un insulto, avverte lei. Avrà un matrimonio, ma non quello che voleva.',
+    },
+  },
+  ctEdmure27: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, riding to the Twins to marry a Frey he has never met.',
+      it: 'Suo fratello, in viaggio verso le Torri Gemelle per sposare una Frey che non ha mai visto.',
+    },
+  },
+  ctRobb29: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son. Before the march she backed his plan to strike at the Lannisters’ home. At the Twins she begged for his life, and he was stabbed through the heart before her eyes.',
+      it: 'Suo figlio. Prima della marcia aveva appoggiato il suo piano di colpire la casa dei Lannister. Alle Torri Gemelle ha implorato per la sua vita, e lui è stato trafitto al cuore sotto i suoi occhi.',
+    },
+  },
+  ctWalder29: {
+    character: 'walder-frey',
+    type: { en: 'Betrayer', it: 'Traditore' },
+    summary: {
+      en: 'The lord of the Twins. She took his young wife hostage to save Robb, and he showed he did not care for his wife’s life.',
+      it: 'Il signore delle Torri Gemelle. Lei ha preso in ostaggio la sua giovane moglie per salvare Robb, e lui ha mostrato di non tenere alla vita della moglie.',
+    },
+  },
+  ctRoose29: {
+    character: 'roose-bolton',
+    type: { en: 'Betrayer', it: 'Traditore' },
+    summary: {
+      en: 'The lord seated beside her at the feast. She noticed the mail under his clothes and slapped him, too late; he killed Robb.',
+      it: 'Il lord seduto accanto a lei al banchetto. Ha notato la cotta di maglia sotto i suoi vestiti e lo ha schiaffeggiato, troppo tardi; è stato lui a uccidere Robb.',
+    },
+  },
+  ctTalisa29: {
+    character: 'talisa-maegyr',
+    type: { en: 'Son’s wife', it: 'Moglie del figlio' },
+    summary: {
+      en: 'Robb’s queen, who was carrying his child. She was stabbed to death at the wedding feast.',
+      it: 'La regina di Robb, che aspettava un figlio da lui. È stata uccisa a coltellate alla festa nuziale.',
+    },
+  },
+  ctEdmure29: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, whose wedding brought them to the Twins. He was carried off to the bedding before the slaughter.',
+      it: 'Suo fratello, le cui nozze li avevano portati alle Torri Gemelle. Era stato portato via per la cerimonia della consumazione prima del massacro.',
+    },
+  },
+  // Catelyn, the books
+  ctHoster146: {
+    character: 'hoster-tully',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her dying father, in whose rooms she is confined. In his fever he begs forgiveness and murmurs a name she does not know, Tansy.',
+      it: 'Il padre morente, nelle cui stanze lei è confinata. Nella febbre chiede perdono e mormora un nome che lei non conosce, Tansy.',
+    },
+  },
+  ctEdmure146: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, back from his victory at the fords, who scolds her for freeing Jaime and has sent word to Harrenhal that he escaped.',
+      it: 'Suo fratello, di ritorno dalla vittoria ai guadi, che la rimprovera per aver liberato Jaime e ha fatto sapere a Harrenhal che è fuggito.',
+    },
+  },
+  ctLysa146: {
+    character: 'lysa-arryn',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'Her sister, to whom she writes to come to Riverrun before their father dies. She guesses that Lysa was married to Jon Arryn after a lost child.',
+      it: 'Sua sorella, a cui scrive di venire a Delta delle Acque prima che il padre muoia. Intuisce che Lysa fu data in sposa a Jon Arryn dopo un figlio perduto.',
+    },
+  },
+  ctJaime146: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner she freed', it: 'Prigioniero liberato' },
+    summary: {
+      en: 'The prisoner she freed to trade for her daughters. A knight has been sent after him, and she hopes he fails.',
+      it: 'Il prigioniero che ha liberato per scambiarlo con le figlie. Gli hanno mandato dietro un cavaliere, e lei spera che fallisca.',
+    },
+  },
+  ctBrienne146: {
+    character: 'brienne-of-tarth',
+    type: { en: 'Escort', it: 'Scorta' },
+    summary: {
+      en: 'The knight taking Jaime south. If he is believed to have escaped, the Lannisters have no reason to hand her daughters to Brienne.',
+      it: 'Il cavaliere che porta Jaime a sud. Se lo crederanno fuggito, i Lannister non avranno motivo di consegnare le sue figlie a Brienne.',
+    },
+  },
+  ctRobb158: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, back at Riverrun crowned and with a wife. He forgives her before the court, and in the same breath makes it impossible to blame him for breaking his vow to the Freys.',
+      it: 'Suo figlio, tornato a Delta delle Acque con la corona e una moglie. La perdona davanti alla corte, e così rende impossibile rimproverargli la promessa infranta ai Frey.',
+    },
+  },
+  ctJeyne158: {
+    character: 'jeyne-westerling',
+    type: { en: 'Son’s wife', it: 'Moglie del figlio' },
+    summary: {
+      en: 'The girl Robb presents as his lady wife. Catelyn sees at once that the marriage has insulted House Frey and broken the alliance.',
+      it: 'La ragazza che Robb le presenta come sua moglie. Catelyn capisce subito che quel matrimonio ha offeso Casa Frey e rotto l’alleanza.',
+    },
+  },
+  ctBrynden158: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her uncle, who greets her warmly when she is brought to the hall.',
+      it: 'Suo zio, che la accoglie con calore quando la portano nella sala.',
+    },
+  },
+  ctRickard158: {
+    character: 'rickard-karstark',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The lord whose sons Jaime killed. He is not appeased by Robb’s words for her, and leaves the hall in a fury.',
+      it: 'Il lord a cui Jaime ha ucciso i figli. Le parole di Robb in sua difesa non lo placano, ed esce furioso dalla sala.',
+    },
+  },
+  ctRolph158: {
+    character: 'rolph-spicer',
+    type: { en: 'Queen’s uncle', it: 'Zio della regina' },
+    summary: {
+      en: 'Jeyne’s uncle, at whom Grey Wind growls. She does not like it, and persuades Robb to send him away on an errand.',
+      it: 'Lo zio di Jeyne, a cui Vento Grigio ringhia. A lei non piace, e convince Robb ad allontanarlo con un incarico.',
+    },
+  },
+  ctRickard164: {
+    character: 'rickard-karstark',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The lord who murdered two Lannister prisoners for vengeance on Jaime. Robb beheaded him in the godswood.',
+      it: 'Il lord che ha ucciso due prigionieri Lannister per vendicarsi di Jaime. Robb lo ha decapitato nel parco degli dèi.',
+    },
+  },
+  ctRobb164: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, who passes the sentence on Lord Karstark and swings the axe himself.',
+      it: 'Suo figlio, che pronuncia la sentenza contro lord Karstark e cala lui stesso la scure.',
+    },
+  },
+  ctJeyne164: {
+    character: 'jeyne-westerling',
+    type: { en: 'Son’s wife', it: 'Moglie del figlio' },
+    summary: {
+      en: 'Robb’s young queen, who comes to her that night to ask how to comfort him, and promises she will soon give him children.',
+      it: 'La giovane regina di Robb, che quella notte va da lei a chiederle come consolarlo, e promette che presto gli darà dei figli.',
+    },
+  },
+  ctHoster164: {
+    character: 'hoster-tully',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, at whose bedside she sits. The maester tells her he will not last much longer.',
+      it: 'Suo padre, al cui capezzale lei veglia. Il maestro le dice che non durerà ancora a lungo.',
+    },
+  },
+  ctBrynden164: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her uncle, who rides out after the Karstark men who have left to hunt Jaime.',
+      it: 'Suo zio, che parte all’inseguimento degli uomini dei Karstark andati a caccia di Jaime.',
+    },
+  },
+  ctHoster179: {
+    character: 'hoster-tully',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, who died at last. His family and bannermen gathered on the river for his funeral boat.',
+      it: 'Suo padre, che alla fine è morto. La famiglia e gli alfieri si sono riuniti sul fiume per la sua barca funebre.',
+    },
+  },
+  ctRobb179: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, who tells her Sansa has been married to the Imp. She begs him to bend the knee and make peace, and he will not hear it.',
+      it: 'Suo figlio, che le dice che Sansa è stata data in sposa al Folletto. Lei lo supplica di piegare il ginocchio e fare pace, e lui non vuole sentirne parlare.',
+    },
+  },
+  ctLothar179: {
+    character: 'lothar-frey',
+    type: { en: 'Frey envoy', it: 'Inviato dei Frey' },
+    summary: {
+      en: 'Lord Walder’s son, who brings his father’s terms. At dinner he tells them Winterfell has burned and that the Bastard of Bolton saved the survivors, which she cannot believe.',
+      it: 'Il figlio di lord Walder, che porta le condizioni del padre. A cena racconta che Grande Inverno è bruciata e che il Bastardo di Bolton ha salvato i superstiti, cosa a cui lei non riesce a credere.',
+    },
+  },
+  ctEdmure179: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who misses their father’s funeral boat three times, then balks at the bride Lord Walder chooses for him.',
+      it: 'Suo fratello, che manca tre volte la barca funebre del padre, poi recalcitra davanti alla sposa scelta per lui da lord Walder.',
+    },
+  },
+  ctBrynden179: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her uncle, who sets the funeral boat alight with one arrow, and reminds Edmure that he owes amends for the fords.',
+      it: 'Suo zio, che incendia la barca funebre con una sola freccia, e ricorda a Edmure che deve rimediare all’errore dei guadi.',
+    },
+  },
+  ctRobb189: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, who means to name Jon his heir. When she says she cannot support it, he reminds her that he is the king.',
+      it: 'Suo figlio, che vuole nominare Jon suo erede. Quando lei dice di non poterlo appoggiare, lui le ricorda che il re è lui.',
+    },
+  },
+  ctJon189: {
+    character: 'jon-snow',
+    type: { en: 'Husband’s bastard', it: 'Bastardo del marito' },
+    summary: {
+      en: 'Eddard’s bastard, whom Robb wants to legitimise and name heir. She pleads against it, remembering the Targaryens’ legitimised bastards.',
+      it: 'Il bastardo di Eddard, che Robb vuole legittimare e nominare erede. Lei lo supplica di non farlo, ricordando i bastardi legittimati dei Targaryen.',
+    },
+  },
+  ctArya189: {
+    character: 'arya-stark',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'Her younger daughter, whom she asks Robb to name heir instead. Robb answers that no one has seen Arya since their father died.',
+      it: 'La figlia minore, che lei chiede a Robb di nominare erede al posto di Jon. Robb risponde che nessuno ha più visto Arya da quando è morto il padre.',
+    },
+  },
+  ctJason189: {
+    character: 'jason-mallister',
+    type: { en: 'Protector', it: 'Protettore' },
+    summary: {
+      en: 'The lord of Seagard, who joins the host on the march. After the wedding Robb means to send her to Seagard under his protection.',
+      it: 'Il signore di Seagard, che raggiunge l’esercito durante la marcia. Dopo le nozze Robb vuole mandarla a Seagard sotto la sua protezione.',
+    },
+  },
+  ctEdmure189: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, riding to the Twins in the rain for his wedding to Roslin Frey.',
+      it: 'Suo fratello, in viaggio sotto la pioggia verso le Torri Gemelle per le nozze con Roslin Frey.',
+    },
+  },
+  ctRobb193: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, whom she warns again not to offend Lord Walder. She asks for food as soon as they arrive, to secure the guest right.',
+      it: 'Suo figlio, che lei avverte di nuovo di non offendere lord Walder. Appena arrivati chiede da mangiare, per assicurarsi il diritto dell’ospite.',
+    },
+  },
+  ctWalder193: {
+    character: 'walder-frey',
+    type: { en: 'Host', it: 'Ospite che accoglie' },
+    summary: {
+      en: 'The lord of the Twins, who insults Robb at every turn, then grants them bread and salt and welcomes them as guests.',
+      it: 'Il signore delle Torri Gemelle, che insulta Robb a ogni occasione, poi concede loro pane e sale e li accoglie come ospiti.',
+    },
+  },
+  ctRoose193: {
+    character: 'roose-bolton',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The lord of the Dreadfort, who joins them at the Twins and shows them a strip of Theon’s skin.',
+      it: 'Il signore di Forte Terrore, che li raggiunge alle Torri Gemelle e mostra loro un lembo della pelle di Theon.',
+    },
+  },
+  ctRyman193: {
+    character: 'ryman-frey',
+    type: { en: 'Frey knight', it: 'Cavaliere Frey' },
+    summary: {
+      en: 'Lord Walder’s grandson, who meets them on the road, angry that Queen Jeyne has not come. She offers her apologies.',
+      it: 'Il nipote di lord Walder, che va loro incontro sulla strada, irritato perché la regina Jeyne non è venuta. Lei gli porge le sue scuse.',
+    },
+  },
+  ctEdmure193: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who rides beside Robb to the Twins and meets his bride there.',
+      it: 'Suo fratello, che cavalca accanto a Robb fino alle Torri Gemelle e lì conosce la sua sposa.',
+    },
+  },
+  ctRobb195: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her son, struck by crossbow bolts at the wedding feast. She begged Lord Walder to trade his life for a Frey’s, and watched a man in a pink cloak run him through.',
+      it: 'Suo figlio, colpito dai dardi delle balestre alla festa nuziale. Lei ha implorato lord Walder di scambiare la sua vita con quella di un Frey, e ha visto un uomo dal mantello rosa trafiggerlo.',
+    },
+  },
+  ctWalder195: {
+    character: 'walder-frey',
+    type: { en: 'Betrayer', it: 'Traditore' },
+    summary: {
+      en: 'The lord of the Twins, who watched the slaughter from his seat. He would not trade Robb for his grandson.',
+      it: 'Il signore delle Torri Gemelle, che ha guardato il massacro dal suo seggio. Non ha voluto scambiare Robb con suo nipote.',
+    },
+  },
+  ctAegon195: {
+    character: 'aegon-frey',
+    type: { en: 'Hostage', it: 'Ostaggio' },
+    summary: {
+      en: 'Lord Walder’s simple-minded grandson, whom she seized and held a dagger to. When Robb died she kept her word and cut his throat.',
+      it: 'Il nipote di lord Walder, uno sciocco, che lei ha afferrato tenendogli un pugnale alla gola. Quando Robb è morto ha mantenuto la parola e lo ha sgozzato.',
+    },
+  },
+  ctEdmure195: {
+    character: 'edmure-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who doted on his bride at the feast and was carried off to the bedding before the slaughter.',
+      it: 'Suo fratello, che al banchetto era tutto attenzioni per la sposa ed è stato portato via per la cerimonia della consumazione prima del massacro.',
+    },
+  },
+
+  // Edmure, the show
+  edHoster23: {
+    character: 'hoster-tully',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the lord of Riverrun, who has died. At the funeral Edmure misses the boat three times with burning arrows.',
+      it: 'Suo padre, il signore di Delta delle Acque, che è morto. Al funerale Edmure manca tre volte la barca con le frecce infuocate.',
+    },
+  },
+  edBrynden23: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who pushes him aside and hits the funeral boat with a single arrow, then turns with Robb against his victory.',
+      it: 'Suo zio, che lo spinge da parte e colpisce la barca funebre con una sola freccia, poi si schiera con Robb contro la sua vittoria.',
+    },
+  },
+  edRobb23: {
+    character: 'robb-stark',
+    type: { en: 'Nephew and king', it: 'Nipote e re' },
+    summary: {
+      en: 'His nephew, who is furious that Edmure’s attack ruined his plan to draw the Lannisters west, and has no use for his hostages.',
+      it: 'Suo nipote, furioso perché l’attacco di Edmure ha rovinato il suo piano di attirare i Lannister a ovest, e che non sa che farsene dei suoi ostaggi.',
+    },
+  },
+  edWillem23: {
+    character: 'willem-lannister',
+    type: { en: 'Hostage', it: 'Ostaggio' },
+    summary: {
+      en: 'A young Lannister squire his men took in battle, held at Riverrun as a hostage.',
+      it: 'Un giovane scudiero Lannister catturato in battaglia dai suoi uomini, tenuto in ostaggio a Delta delle Acque.',
+    },
+  },
+  edMartyn23: {
+    character: 'martyn-lannister',
+    type: { en: 'Hostage', it: 'Ostaggio' },
+    summary: {
+      en: 'The other young Lannister squire taken in the same battle, held with Willem.',
+      it: 'L’altro giovane scudiero Lannister catturato nella stessa battaglia, tenuto insieme a Willem.',
+    },
+  },
+  edRobb25: {
+    character: 'robb-stark',
+    type: { en: 'Nephew and king', it: 'Nipote e re' },
+    summary: {
+      en: 'His nephew. Edmure urges him to bury the dead hostages quietly and keep Lord Karstark alive; Robb refuses to lie and beheads him.',
+      it: 'Suo nipote. Edmure lo esorta a seppellire in silenzio gli ostaggi morti e a tenere in vita lord Karstark; Robb si rifiuta di mentire e lo decapita.',
+    },
+  },
+  edRickard25: {
+    character: 'rickard-karstark',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The lord who murdered the hostages in their cell. Edmure wanted him kept as a hostage; Robb executed him.',
+      it: 'Il lord che ha ucciso gli ostaggi nella loro cella. Edmure voleva tenerlo in ostaggio; Robb lo ha giustiziato.',
+    },
+  },
+  edWillem25: {
+    character: 'willem-lannister',
+    type: { en: 'Hostage', it: 'Ostaggio' },
+    summary: {
+      en: 'The young Lannister squire his men took, murdered in his cell by the Karstark men. Edmure fears Tywin’s reprisals if the news gets out.',
+      it: 'Il giovane scudiero Lannister catturato dai suoi uomini, ucciso nella cella dagli uomini dei Karstark. Edmure teme la rappresaglia di Tywin se la notizia si diffonde.',
+    },
+  },
+  edMartyn25: {
+    character: 'martyn-lannister',
+    type: { en: 'Hostage', it: 'Ostaggio' },
+    summary: {
+      en: 'The other Lannister squire, stabbed by Lord Karstark in the same cell.',
+      it: 'L’altro scudiero Lannister, pugnalato da lord Karstark nella stessa cella.',
+    },
+  },
+  edCatelyn25: {
+    character: 'catelyn-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, whose advice to keep Lord Karstark as a hostage he backs.',
+      it: 'Sua sorella, di cui appoggia il consiglio di tenere lord Karstark in ostaggio.',
+    },
+  },
+  edRoslin26: {
+    character: 'roslin-frey',
+    type: { en: 'Promised bride', it: 'Promessa sposa' },
+    summary: {
+      en: 'The daughter Lord Walder demands he marry. Edmure protests that he has never met her, but agrees.',
+      it: 'La figlia che lord Walder pretende che lui sposi. Edmure protesta di non averla mai vista, ma accetta.',
+    },
+  },
+  edWalder26: {
+    character: 'walder-frey',
+    type: { en: 'Future father-in-law', it: 'Futuro suocero' },
+    summary: {
+      en: 'The lord of the Twins, who names Edmure’s marriage to his daughter among his terms for rejoining Robb.',
+      it: 'Il signore delle Torri Gemelle, che mette le nozze di Edmure con sua figlia fra le condizioni per tornare con Robb.',
+    },
+  },
+  edRobb26: {
+    character: 'robb-stark',
+    type: { en: 'Nephew and king', it: 'Nipote e re' },
+    summary: {
+      en: 'His nephew, who needs the Freys back and presses him to accept the match.',
+      it: 'Suo nipote, che ha bisogno di riavere i Frey e insiste perché accetti il matrimonio.',
+    },
+  },
+  edBrynden26: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who joins the others in pressing him to marry for the alliance.',
+      it: 'Suo zio, che si unisce agli altri nell’insistere perché si sposi per l’alleanza.',
+    },
+  },
+  edRoslin29: {
+    character: 'roslin-frey',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'The bride he had never met. To his relief she is beautiful, and after the wedding he has eyes only for her until they are carried off to bed.',
+      it: 'La sposa che non aveva mai visto. Con suo sollievo è bellissima, e dopo le nozze lui ha occhi solo per lei finché non vengono portati a letto.',
+    },
+  },
+  edWalder29: {
+    character: 'walder-frey',
+    type: { en: 'Father-in-law', it: 'Suocero' },
+    summary: {
+      en: 'The lord of the Twins, who gives him his daughter and calls for the bedding.',
+      it: 'Il signore delle Torri Gemelle, che gli dà in sposa sua figlia e chiama la cerimonia della consumazione.',
+    },
+  },
+  edRobb29: {
+    character: 'robb-stark',
+    type: { en: 'Nephew and king', it: 'Nipote e re' },
+    summary: {
+      en: 'His nephew, who called him the best match House Frey was ever offered. He was killed at the Twins the night of the wedding.',
+      it: 'Suo nipote, che lo aveva definito il miglior partito mai offerto a Casa Frey. È stato ucciso alle Torri Gemelle la notte delle nozze.',
+    },
+  },
+  edCatelyn29: {
+    character: 'catelyn-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who came to the Twins for his wedding. She was killed there that night.',
+      it: 'Sua sorella, venuta alle Torri Gemelle per le sue nozze. È stata uccisa lì quella notte.',
+    },
+  },
+  edBrynden29: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who drinks at the wedding feast, then leaves the hall to find a tree to relieve himself.',
+      it: 'Suo zio, che beve alla festa nuziale, poi esce dalla sala in cerca di un albero contro cui liberarsi.',
+    },
+  },
+  // Edmure, the books
+  edCatelyn146: {
+    character: 'catelyn-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, confined to their father’s rooms for freeing Jaime. He scolds her: Jaime’s word is worthless, and Cersei will never free her daughters.',
+      it: 'Sua sorella, confinata nelle stanze del padre per aver liberato Jaime. Lui la rimprovera: la parola di Jaime non vale niente, e Cersei non libererà mai le sue figlie.',
+    },
+  },
+  edHoster146: {
+    character: 'hoster-tully',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, dying in his rooms while Edmure comes home from turning back the Lannisters at the fords.',
+      it: 'Suo padre, che muore nelle sue stanze mentre Edmure torna a casa dopo aver respinto i Lannister ai guadi.',
+    },
+  },
+  edJaime146: {
+    character: 'jaime-lannister',
+    type: { en: 'Escaped prisoner', it: 'Prigioniero fuggito' },
+    summary: {
+      en: 'The prisoner Catelyn let go. Edmure treats it as an escape and has sent knights after him.',
+      it: 'Il prigioniero che Catelyn ha lasciato andare. Edmure lo considera una fuga e gli ha mandato dietro dei cavalieri.',
+    },
+  },
+  edRoose146: {
+    character: 'roose-bolton',
+    type: { en: 'Bannerman', it: 'Alfiere' },
+    summary: {
+      en: 'The northern lord at Harrenhal, to whom Edmure has sent three ravens saying that Jaime has escaped.',
+      it: 'Il lord del Nord a Harrenhal, a cui Edmure ha mandato tre corvi per dire che Jaime è fuggito.',
+    },
+  },
+  edRobb158: {
+    character: 'robb-stark',
+    type: { en: 'Nephew and king', it: 'Nipote e re' },
+    summary: {
+      en: 'His nephew, who praises him before the court for the fords, then tells him in private that the victory ruined his plan. Edmure asks to lead the van in the next battle.',
+      it: 'Suo nipote, che lo loda davanti alla corte per i guadi, poi in privato gli dice che quella vittoria ha rovinato il suo piano. Edmure chiede di guidare l’avanguardia nella prossima battaglia.',
+    },
+  },
+  edBrynden158: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who cuts short his account of the battle and berates him with Robb.',
+      it: 'Suo zio, che interrompe il suo racconto della battaglia e lo rimprovera insieme a Robb.',
+    },
+  },
+  edCatelyn158: {
+    character: 'catelyn-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, brought out of their father’s rooms when Robb returns. It is she who says a person, not a gift, must soothe Lord Walder.',
+      it: 'Sua sorella, fatta uscire dalle stanze del padre al ritorno di Robb. È lei a dire che per placare lord Walder serve una persona, non un dono.',
+    },
+  },
+  edHoster158: {
+    character: 'hoster-tully',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, weakening in his rooms above the hall.',
+      it: 'Suo padre, che si spegne nelle sue stanze sopra la sala.',
+    },
+  },
+  edRickard164: {
+    character: 'rickard-karstark',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The lord who murdered two Lannister prisoners in Edmure’s cells. Edmure urged Robb to hold him hostage; Robb beheaded him.',
+      it: 'Il lord che ha ucciso due prigionieri Lannister nelle celle di Edmure. Edmure ha esortato Robb a tenerlo in ostaggio; Robb lo ha decapitato.',
+    },
+  },
+  edWillem164: {
+    character: 'willem-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'A Lannister squire murdered in his cell at Riverrun. Edmure wants word of it kept from the Freys and the Lannisters.',
+      it: 'Uno scudiero Lannister ucciso nella sua cella a Delta delle Acque. Edmure vuole che la notizia non arrivi ai Frey e ai Lannister.',
+    },
+  },
+  edRobb164: {
+    character: 'robb-stark',
+    type: { en: 'Nephew and king', it: 'Nipote e re' },
+    summary: {
+      en: 'His nephew, who will not keep the murders secret and executes Lord Karstark for honour’s sake.',
+      it: 'Suo nipote, che non vuole tenere segreti gli omicidi e giustizia lord Karstark per una questione d’onore.',
+    },
+  },
+  edBrynden164: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who leads a hundred men after the departed Karstarks.',
+      it: 'Suo zio, che guida cento uomini all’inseguimento dei Karstark partiti.',
+    },
+  },
+  edCatelyn164: {
+    character: 'catelyn-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who keeps watch at their dying father’s bedside.',
+      it: 'Sua sorella, che veglia al capezzale del padre morente.',
+    },
+  },
+  edHoster179: {
+    character: 'hoster-tully',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who died and left him lord of Riverrun. At the funeral Edmure missed the boat three times.',
+      it: 'Suo padre, che è morto lasciandolo signore di Delta delle Acque. Al funerale Edmure ha mancato tre volte la barca.',
+    },
+  },
+  edBrynden179: {
+    character: 'brynden-tully',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who lit the funeral boat with the bow Edmure handed him, and reminds him that he must make amends for the fords.',
+      it: 'Suo zio, che ha incendiato la barca funebre con l’arco passatogli da Edmure, e gli ricorda che deve rimediare all’errore dei guadi.',
+    },
+  },
+  edRoslin179: {
+    character: 'roslin-frey',
+    type: { en: 'Promised bride', it: 'Promessa sposa' },
+    summary: {
+      en: 'The daughter Lord Walder demands he marry at once. Edmure balks at not choosing his own wife.',
+      it: 'La figlia che lord Walder pretende che lui sposi subito. Edmure recalcitra all’idea di non scegliersi la moglie.',
+    },
+  },
+  edLothar179: {
+    character: 'lothar-frey',
+    type: { en: 'Frey envoy', it: 'Inviato dei Frey' },
+    summary: {
+      en: 'Lord Walder’s son, who brings the terms that bind Edmure to Roslin.',
+      it: 'Il figlio di lord Walder, che porta le condizioni che legano Edmure a Roslin.',
+    },
+  },
+  edRobb179: {
+    character: 'robb-stark',
+    type: { en: 'Nephew and king', it: 'Nipote e re' },
+    summary: {
+      en: 'His nephew, who launched the funeral boat and accepts Lord Walder’s terms for him.',
+      it: 'Suo nipote, che ha varato la barca funebre e accetta per lui le condizioni di lord Walder.',
+    },
+  },
+  edRoslin193: {
+    character: 'roslin-frey',
+    type: { en: 'Bride', it: 'Sposa' },
+    summary: {
+      en: 'The bride he meets at the Twins, by far the most beautiful of Lord Walder’s children.',
+      it: 'La sposa che conosce alle Torri Gemelle, di gran lunga la più bella dei figli di lord Walder.',
+    },
+  },
+  edWalder193: {
+    character: 'walder-frey',
+    type: { en: 'Future father-in-law', it: 'Futuro suocero' },
+    summary: {
+      en: 'The lord of the Twins, who has Roslin brought out to meet him.',
+      it: 'Il signore delle Torri Gemelle, che fa venire Roslin per presentargliela.',
+    },
+  },
+  edRobb193: {
+    character: 'robb-stark',
+    type: { en: 'Nephew and king', it: 'Nipote e re' },
+    summary: {
+      en: 'His nephew, beside whom he rides to the Twins.',
+      it: 'Suo nipote, al cui fianco cavalca fino alle Torri Gemelle.',
+    },
+  },
+  edCatelyn193: {
+    character: 'catelyn-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who rides with them to the Twins.',
+      it: 'Sua sorella, che cavalca con loro fino alle Torri Gemelle.',
+    },
+  },
+  edRoslin195: {
+    character: 'roslin-frey',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'The bride he dotes on at the feast. She weeps as she is carried off to the bedding.',
+      it: 'La sposa per cui al banchetto è tutto attenzioni. Lei piange mentre la portano via per la cerimonia della consumazione.',
+    },
+  },
+  edRobb195: {
+    character: 'robb-stark',
+    type: { en: 'Nephew and king', it: 'Nipote e re' },
+    summary: {
+      en: 'His nephew, who rode with him to the Twins. He was killed at the wedding feast.',
+      it: 'Suo nipote, che era andato con lui alle Torri Gemelle. È stato ucciso alla festa nuziale.',
+    },
+  },
+  edCatelyn195: {
+    character: 'catelyn-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who came to the Twins for his wedding. She was killed at the feast.',
+      it: 'Sua sorella, venuta alle Torri Gemelle per le sue nozze. È stata uccisa al banchetto.',
+    },
+  },
+  edWalder195: {
+    character: 'walder-frey',
+    type: { en: 'Father-in-law', it: 'Suocero' },
+    summary: {
+      en: 'The lord of the Twins, who gives him Roslin and calls for the bedding.',
+      it: 'Il signore delle Torri Gemelle, che gli dà in sposa Roslin e chiama la cerimonia della consumazione.',
+    },
+  },
+
+  // Brynden, the show
+  brHoster23: {
+    character: 'hoster-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His elder brother, with whom he quarrelled for thirty years. On his deathbed Hoster told him to stop calling himself the Blackfish, and they made peace.',
+      it: 'Il fratello maggiore, con cui ha litigato per trent’anni. Sul letto di morte Hoster gli ha detto di smetterla di farsi chiamare Pesce Nero, e hanno fatto pace.',
+    },
+  },
+  brCatelyn23: {
+    character: 'catelyn-stark',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His niece, who mourns her father with him. He tells her not to give up hope for her sons, and to be strong for Robb.',
+      it: 'Sua nipote, che piange il padre insieme a lui. Le dice di non perdere la speranza per i suoi figli, e di essere forte per Robb.',
+    },
+  },
+  brEdmure23: {
+    character: 'edmure-tully',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His nephew, who misses the funeral boat three times. Brynden pushes him aside and makes the shot, and is furious with him for the battle that ruined Robb’s plan.',
+      it: 'Suo nipote, che manca tre volte la barca funebre. Brynden lo spinge da parte e colpisce il bersaglio, ed è furioso con lui per la battaglia che ha rovinato il piano di Robb.',
+    },
+  },
+  brRobb23: {
+    character: 'robb-stark',
+    type: { en: 'Great-nephew and king', it: 'Pronipote e re' },
+    summary: {
+      en: 'Catelyn’s son, with whom he launches Hoster’s funeral boat and plans the war.',
+      it: 'Il figlio di Catelyn, con cui vara la barca funebre di Hoster e pianifica la guerra.',
+    },
+  },
+  brRickard25: {
+    character: 'rickard-karstark',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The lord who murdered the Lannister boys and asked Robb whether his father never taught him to kill his enemies. Brynden punched him. Robb beheaded him.',
+      it: 'Il lord che ha ucciso i ragazzi Lannister e ha chiesto a Robb se suo padre non gli avesse insegnato a uccidere i nemici. Brynden lo ha preso a pugni. Robb lo ha decapitato.',
+    },
+  },
+  brRobb25: {
+    character: 'robb-stark',
+    type: { en: 'Great-nephew and king', it: 'Pronipote e re' },
+    summary: {
+      en: 'Catelyn’s son, who tells him to leave Lord Karstark alone, then executes him against everyone’s advice.',
+      it: 'Il figlio di Catelyn, che gli dice di lasciare stare lord Karstark, poi lo giustizia contro il parere di tutti.',
+    },
+  },
+  brCatelyn25: {
+    character: 'catelyn-stark',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His niece, whom Lord Karstark blames for freeing Jaime.',
+      it: 'Sua nipote, a cui lord Karstark dà la colpa per aver liberato Jaime.',
+    },
+  },
+  brEdmure25: {
+    character: 'edmure-tully',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His nephew, who wants the murders of his hostages kept quiet.',
+      it: 'Suo nipote, che vuole tenere nascosti gli omicidi dei suoi ostaggi.',
+    },
+  },
+  brRobb29: {
+    character: 'robb-stark',
+    type: { en: 'Great-nephew and king', it: 'Pronipote e re' },
+    summary: {
+      en: 'Catelyn’s son, whom Brynden followed to the Twins for Edmure’s wedding. He was killed at the feast after Brynden left the hall.',
+      it: 'Il figlio di Catelyn, che Brynden aveva seguito alle Torri Gemelle per le nozze di Edmure. È stato ucciso al banchetto dopo che Brynden era uscito dalla sala.',
+    },
+  },
+  brCatelyn29: {
+    character: 'catelyn-stark',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His niece, who came to the Twins with Robb. She was killed at the wedding feast.',
+      it: 'Sua nipote, venuta alle Torri Gemelle con Robb. È stata uccisa alla festa nuziale.',
+    },
+  },
+  brEdmure29: {
+    character: 'edmure-tully',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His nephew, married to Roslin Frey at the Twins and carried off to the bedding.',
+      it: 'Suo nipote, sposato con Roslin Frey alle Torri Gemelle e portato via per la cerimonia della consumazione.',
+    },
+  },
+  brWalder29: {
+    character: 'walder-frey',
+    type: { en: 'Host', it: 'Ospite che accoglie' },
+    summary: {
+      en: 'The lord of the Twins, at whose wedding feast Brynden drinks too much and leaves the hall to relieve himself.',
+      it: 'Il signore delle Torri Gemelle, alla cui festa nuziale Brynden beve troppo ed esce dalla sala per liberarsi.',
+    },
+  },
+  // Brynden, the books
+  brCatelyn158: {
+    character: 'catelyn-stark',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His niece, confined for freeing Jaime. He greets her warmly when she is brought to the hall.',
+      it: 'Sua nipote, confinata per aver liberato Jaime. Lui la accoglie con calore quando la portano nella sala.',
+    },
+  },
+  brRobb158: {
+    character: 'robb-stark',
+    type: { en: 'Great-nephew and king', it: 'Pronipote e re' },
+    summary: {
+      en: 'Catelyn’s son, back from the west with a wife. With him Brynden berates Edmure for the fords.',
+      it: 'Il figlio di Catelyn, tornato dall’ovest con una moglie. Insieme a lui Brynden rimprovera Edmure per i guadi.',
+    },
+  },
+  brEdmure158: {
+    character: 'edmure-tully',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His nephew, whose account of his victory Brynden cuts short: by attacking, Edmure let Tywin turn back to save King’s Landing.',
+      it: 'Suo nipote, di cui Brynden interrompe il racconto della vittoria: attaccando, Edmure ha permesso a Tywin di tornare indietro a salvare Approdo del Re.',
+    },
+  },
+  brLysa158: {
+    character: 'lysa-arryn',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His niece, the lady of the Eyrie, whose service he left to join Robb.',
+      it: 'Sua nipote, la signora del Nido dell’Aquila, al cui servizio ha rinunciato per unirsi a Robb.',
+    },
+  },
+  brRickard164: {
+    character: 'rickard-karstark',
+    type: { en: 'Northern lord', it: 'Lord del Nord' },
+    summary: {
+      en: 'The lord who murdered two Lannister prisoners and promised his daughter to whoever brings him Jaime’s head. Robb beheaded him.',
+      it: 'Il lord che ha ucciso due prigionieri Lannister e ha promesso la figlia a chi gli porterà la testa di Jaime. Robb lo ha decapitato.',
+    },
+  },
+  brRobb164: {
+    character: 'robb-stark',
+    type: { en: 'Great-nephew and king', it: 'Pronipote e re' },
+    summary: {
+      en: 'Catelyn’s son, to whom Brynden reports that the Karstark men have gone. He rides after them with a hundred men.',
+      it: 'Il figlio di Catelyn, a cui Brynden riferisce che gli uomini dei Karstark se ne sono andati. Li insegue con cento uomini.',
+    },
+  },
+  brEdmure164: {
+    character: 'edmure-tully',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His nephew, who wants Lord Karstark kept as a hostage and the murders hidden.',
+      it: 'Suo nipote, che vuole lord Karstark in ostaggio e gli omicidi nascosti.',
+    },
+  },
+  brCatelyn164: {
+    character: 'catelyn-stark',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His niece, who sits with her dying father.',
+      it: 'Sua nipote, che veglia il padre morente.',
+    },
+  },
+  brHoster179: {
+    character: 'hoster-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, the lord of Riverrun, who died. When Edmure missed the funeral boat three times, Brynden took the bow and set it alight.',
+      it: 'Suo fratello, il signore di Delta delle Acque, che è morto. Quando Edmure ha mancato tre volte la barca funebre, Brynden ha preso l’arco e l’ha incendiata.',
+    },
+  },
+  brEdmure179: {
+    character: 'edmure-tully',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His nephew, who balks at marrying the bride Lord Walder chooses. Brynden reminds him that he owes amends for the fords.',
+      it: 'Suo nipote, che recalcitra davanti alla sposa scelta da lord Walder. Brynden gli ricorda che deve rimediare all’errore dei guadi.',
+    },
+  },
+  brRobb179: {
+    character: 'robb-stark',
+    type: { en: 'Great-nephew and king', it: 'Pronipote e re' },
+    summary: {
+      en: 'Catelyn’s son, who launched Hoster’s funeral boat and hears Lord Walder’s terms.',
+      it: 'Il figlio di Catelyn, che ha varato la barca funebre di Hoster e ascolta le condizioni di lord Walder.',
+    },
+  },
+  brCatelyn179: {
+    character: 'catelyn-stark',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His niece, who mourns her father with the family on the river.',
+      it: 'Sua nipote, che piange il padre con la famiglia sul fiume.',
+    },
+  },
+  brRobb195: {
+    character: 'robb-stark',
+    type: { en: 'Great-nephew and king', it: 'Pronipote e re' },
+    summary: {
+      en: 'Catelyn’s son, with whom Brynden berated Edmure and heard Lord Walder’s terms. He was killed at the Twins.',
+      it: 'Il figlio di Catelyn, con cui Brynden aveva rimproverato Edmure e ascoltato le condizioni di lord Walder. È stato ucciso alle Torri Gemelle.',
+    },
+  },
+  brCatelyn195: {
+    character: 'catelyn-stark',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His niece, whom he greeted warmly at Riverrun. She was killed at the Twins with her son.',
+      it: 'Sua nipote, che aveva accolto con calore a Delta delle Acque. È stata uccisa alle Torri Gemelle con il figlio.',
+    },
+  },
+  brLysa195: {
+    character: 'lysa-arryn',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His niece, the lady of the Eyrie, who never answered Robb’s letters.',
+      it: 'Sua nipote, la signora del Nido dell’Aquila, che non ha mai risposto alle lettere di Robb.',
+    },
+  },
+
+  // Hoster, the show: dead when his record opens, told at his funeral
+  hoBrynden23: {
+    character: 'brynden-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His younger brother, with whom he quarrelled for thirty years. On his deathbed he told Brynden to stop calling himself the Blackfish, and they made peace.',
+      it: 'Il fratello minore, con cui ha litigato per trent’anni. Sul letto di morte ha detto a Brynden di smetterla di farsi chiamare Pesce Nero, e hanno fatto pace.',
+    },
+  },
+  hoCatelyn23: {
+    character: 'catelyn-stark',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, who had not seen him in years and could not be there when he died.',
+      it: 'Sua figlia, che non lo vedeva da anni e non ha potuto essergli vicina quando è morto.',
+    },
+  },
+  hoEdmure23: {
+    character: 'edmure-tully',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son and heir, who missed his funeral boat three times with burning arrows.',
+      it: 'Suo figlio ed erede, che ha mancato tre volte la sua barca funebre con le frecce infuocate.',
+    },
+  },
+  hoRobb23: {
+    character: 'robb-stark',
+    type: { en: 'Grandson', it: 'Nipote' },
+    summary: {
+      en: 'His grandson, the king in the North, who came to Riverrun to launch his funeral boat.',
+      it: 'Suo nipote, il re del Nord, venuto a Delta delle Acque a varare la sua barca funebre.',
+    },
+  },
+  // Hoster, the books
+  hoCatelyn146: {
+    character: 'catelyn-stark',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, confined to his rooms. In his fever he begs forgiveness and speaks of blood, of a Tansy, and of other children to come.',
+      it: 'Sua figlia, confinata nelle sue stanze. Nella febbre lui chiede perdono e parla di sangue, di una certa Tansy e di altri figli che verranno.',
+    },
+  },
+  hoCatelyn179: {
+    character: 'catelyn-stark',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, who sat at his bedside through his last fevers at Riverrun.',
+      it: 'Sua figlia, che lo ha vegliato durante le ultime febbri a Delta delle Acque.',
+    },
+  },
+  hoEdmure179: {
+    character: 'edmure-tully',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son and heir, who missed his funeral boat three times.',
+      it: 'Suo figlio ed erede, che ha mancato tre volte la sua barca funebre.',
+    },
+  },
+  hoBrynden179: {
+    character: 'brynden-tully',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, the Blackfish, who set his funeral boat alight with one arrow.',
+      it: 'Suo fratello, il Pesce Nero, che ha incendiato la sua barca funebre con una sola freccia.',
+    },
+  },
+  hoRobb179: {
+    character: 'robb-stark',
+    type: { en: 'Grandson', it: 'Nipote' },
+    summary: {
+      en: 'His grandson, Catelyn’s son, who launched his funeral boat with the river lords.',
+      it: 'Suo nipote, figlio di Catelyn, che ha varato la sua barca funebre con i lord dei fiumi.',
+    },
+  },
+  hoLysa179: {
+    character: 'lysa-arryn',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, the lady of the Eyrie, to whom Catelyn wrote to come to Riverrun before he died.',
+      it: 'Sua figlia, la signora del Nido dell’Aquila, a cui Catelyn aveva scritto di venire a Delta delle Acque prima che lui morisse.',
+    },
+  },
+
+  // Rickard Karstark, the show
+  rkRobb22: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king he follows for revenge. Robb lost Winterfell, and lost the war, Rickard tells him, the day he married Talisa.',
+      it: 'Il re che segue per vendetta. Robb ha perso Grande Inverno, e ha perso la guerra, gli dice Rickard, il giorno in cui ha sposato Talisa.',
+    },
+  },
+  rkTalisa22: {
+    character: 'talisa-maegyr',
+    type: { en: 'King’s wife', it: 'Moglie del re' },
+    summary: {
+      en: 'The woman Robb married instead of a Frey, at the cost of the war, as Lord Karstark sees it.',
+      it: 'La donna che Robb ha sposato al posto di una Frey, a costo della guerra, secondo lord Karstark.',
+    },
+  },
+  rkRobb25: {
+    character: 'robb-stark',
+    type: { en: 'King who beheaded him', it: 'Re che lo ha decapitato' },
+    summary: {
+      en: 'The king who would not let him have his vengeance. Rickard called him the King Who Lost the North and a kinslayer, and Robb beheaded him.',
+      it: 'Il re che non gli ha concesso la sua vendetta. Rickard lo ha chiamato il Re che ha perso il Nord e assassino del suo sangue, e Robb lo ha decapitato.',
+    },
+  },
+  rkWillem25: {
+    character: 'willem-lannister',
+    type: { en: 'Prisoner he had killed', it: 'Prigioniero fatto uccidere' },
+    summary: {
+      en: 'A Lannister squire held at Riverrun. Rickard’s men killed him in his cell, as kin of the Kingslayer.',
+      it: 'Uno scudiero Lannister tenuto prigioniero a Delta delle Acque. Gli uomini di Rickard lo hanno ucciso nella sua cella, in quanto parente dello Sterminatore di re.',
+    },
+  },
+  rkMartyn25: {
+    character: 'martyn-lannister',
+    type: { en: 'Prisoner he killed', it: 'Prigioniero che ha ucciso' },
+    summary: {
+      en: 'The other Lannister squire, who begged for his life. Rickard stabbed him himself.',
+      it: 'L’altro scudiero Lannister, che ha implorato di avere salva la vita. Rickard lo ha pugnalato con le sue mani.',
+    },
+  },
+  rkCatelyn25: {
+    character: 'catelyn-stark',
+    type: { en: 'Woman he blamed', it: 'Donna che ha accusato' },
+    summary: {
+      en: 'Robb’s mother, who freed the Kingslayer and robbed him of his vengeance for his sons.',
+      it: 'La madre di Robb, che ha liberato lo Sterminatore di re privandolo della vendetta per i suoi figli.',
+    },
+  },
+  rkBrynden25: {
+    character: 'brynden-tully',
+    type: { en: 'Man who struck him', it: 'Uomo che lo ha colpito' },
+    summary: {
+      en: 'Catelyn’s uncle, who punched him for asking whether Robb’s father never taught him to kill his enemies.',
+      it: 'Lo zio di Catelyn, che lo ha preso a pugni quando ha chiesto se il padre di Robb non gli avesse insegnato a uccidere i nemici.',
+    },
+  },
+  // Rickard Karstark, the books
+  rkRobb158: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king he marched south with, who greets the mother who freed Jaime with gentle words.',
+      it: 'Il re con cui ha marciato verso sud, che accoglie con parole gentili la madre che ha liberato Jaime.',
+    },
+  },
+  rkCatelyn158: {
+    character: 'catelyn-stark',
+    type: { en: 'Woman he cannot forgive', it: 'Donna che non perdona' },
+    summary: {
+      en: 'Robb’s mother, who freed the man who killed his sons. He will not be appeased, and leaves the hall in a fury.',
+      it: 'La madre di Robb, che ha liberato l’uomo che gli ha ucciso i figli. Non si lascia placare, ed esce furioso dalla sala.',
+    },
+  },
+  rkJaime158: {
+    character: 'jaime-lannister',
+    type: { en: 'Sons’ killer', it: 'Assassino dei figli' },
+    summary: {
+      en: 'The Kingslayer, who killed his sons Eddard and Torrhen in the Whispering Wood, and is free.',
+      it: 'Lo Sterminatore di re, che ha ucciso i suoi figli Eddard e Torrhen nel Bosco dei Sussurri, ed è libero.',
+    },
+  },
+  rkRobb164: {
+    character: 'robb-stark',
+    type: { en: 'King who beheaded him', it: 'Re che lo ha decapitato' },
+    summary: {
+      en: 'The king who sentenced him for the murders. In the godswood Rickard called him a kinslayer, and Robb beheaded him himself.',
+      it: 'Il re che lo ha condannato per gli omicidi. Nel parco degli dèi Rickard lo ha chiamato assassino del suo sangue, e Robb lo ha decapitato con le proprie mani.',
+    },
+  },
+  rkWillem164: {
+    character: 'willem-lannister',
+    type: { en: 'Prisoner he killed', it: 'Prigioniero che ha ucciso' },
+    summary: {
+      en: 'A Lannister squire held at Riverrun, whom Rickard and his men murdered in his cell.',
+      it: 'Uno scudiero Lannister tenuto prigioniero a Delta delle Acque, che Rickard e i suoi uomini hanno ucciso nella cella.',
+    },
+  },
+  rkJaime164: {
+    character: 'jaime-lannister',
+    type: { en: 'Sons’ killer', it: 'Assassino dei figli' },
+    summary: {
+      en: 'The Kingslayer, who killed his sons. Rickard promised his daughter to whoever brought him Jaime’s head.',
+      it: 'Lo Sterminatore di re, che gli ha ucciso i figli. Rickard ha promesso la figlia a chi gli avesse portato la testa di Jaime.',
+    },
+  },
+  rkCatelyn164: {
+    character: 'catelyn-stark',
+    type: { en: 'Woman he blamed', it: 'Donna che ha accusato' },
+    summary: {
+      en: 'Robb’s mother, whose freeing of Jaime robbed him of his vengeance.',
+      it: 'La madre di Robb, che liberando Jaime lo ha privato della sua vendetta.',
+    },
+  },
+
+  // Walder Frey, the show
+  wfRobb29: {
+    character: 'robb-stark',
+    type: {
+      en: 'King who broke his word',
+      it: 'Re che ha mancato alla parola',
+    },
+    summary: {
+      en: 'The king who broke his promise to marry a Frey. Walder insulted him, accepted his apology and gave him guest welcome, then signalled the slaughter and mocked him as he died.',
+      it: 'Il re che aveva mancato alla promessa di sposare una Frey. Walder lo ha insultato, ha accettato le sue scuse e lo ha accolto come ospite, poi ha dato il segnale del massacro e lo ha deriso mentre moriva.',
+    },
+  },
+  wfCatelyn29: {
+    character: 'catelyn-stark',
+    type: { en: 'Liege lord’s daughter', it: 'Figlia del suo signore' },
+    summary: {
+      en: 'Robb’s mother, who took his young wife hostage to save her son. He did not care for his wife’s life. She was killed in his hall.',
+      it: 'La madre di Robb, che ha preso in ostaggio la sua giovane moglie per salvare il figlio. Lui non teneva alla vita della moglie. È stata uccisa nella sua sala.',
+    },
+  },
+  wfTalisa29: {
+    character: 'talisa-maegyr',
+    type: { en: 'King’s wife', it: 'Moglie del re' },
+    summary: {
+      en: 'The woman Robb married instead of one of his daughters. Walder insulted her on her arrival. She was stabbed to death at his feast.',
+      it: 'La donna che Robb aveva sposato al posto di una delle sue figlie. Walder l’ha insultata al suo arrivo. È stata uccisa a coltellate al suo banchetto.',
+    },
+  },
+  wfRoslin29: {
+    character: 'roslin-frey',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, whom he gives to Edmure Tully. He calls for the bedding at the end of the feast.',
+      it: 'Sua figlia, che dà in sposa a Edmure Tully. A fine banchetto chiama la cerimonia della consumazione.',
+    },
+  },
+  wfEdmure29: {
+    character: 'edmure-tully',
+    type: { en: 'Son-in-law', it: 'Genero' },
+    summary: {
+      en: 'The lord of Riverrun, whose marriage to Roslin brings Robb to the Twins.',
+      it: 'Il signore di Delta delle Acque, le cui nozze con Roslin portano Robb alle Torri Gemelle.',
+    },
+  },
+  wfRoose30: {
+    character: 'roose-bolton',
+    type: { en: 'Fellow betrayer', it: 'Complice del tradimento' },
+    summary: {
+      en: 'The lord of the Dreadfort, with whom he gloats the morning after. Roose is to be Warden of the North, Walder lord of Riverrun.',
+      it: 'Il signore di Forte Terrore, con cui la mattina dopo si compiace del colpo. Roose sarà Protettore del Nord, Walder signore di Delta delle Acque.',
+    },
+  },
+  wfRobb30: {
+    character: 'robb-stark',
+    type: {
+      en: 'King who broke his word',
+      it: 'Re che ha mancato alla parola',
+    },
+    summary: {
+      en: 'The king who broke his promise to marry a Frey, and was killed in Walder’s hall for it.',
+      it: 'Il re che aveva mancato alla promessa di sposare una Frey, e per questo è stato ucciso nella sala di Walder.',
+    },
+  },
+  wfCatelyn30: {
+    character: 'catelyn-stark',
+    type: { en: 'Liege lord’s daughter', it: 'Figlia del suo signore' },
+    summary: {
+      en: 'Robb’s mother, who once bargained with him for the crossing. She was killed in his hall.',
+      it: 'La madre di Robb, che un tempo aveva trattato con lui il passaggio. È stata uccisa nella sua sala.',
+    },
+  },
+  wfBrynden30: {
+    character: 'brynden-tully',
+    type: { en: 'One who escaped', it: 'Uno che è scampato' },
+    summary: {
+      en: 'Catelyn’s uncle, who slipped away from the feast before the slaughter. Roose worries about him; Walder says he is alone and outnumbered.',
+      it: 'Lo zio di Catelyn, che si è allontanato dal banchetto prima del massacro. Roose se ne preoccupa; Walder dice che è solo e in inferiorità numerica.',
+    },
+  },
+  wfTywin30: {
+    character: 'tywin-lannister',
+    type: { en: 'New liege', it: 'Nuovo signore' },
+    summary: {
+      en: 'The Lannister lord behind the slaughter. The Freys are to replace the Tullys as his vassals in the riverlands.',
+      it: 'Il lord Lannister dietro il massacro. I Frey prenderanno il posto dei Tully come suoi vassalli nelle Terre dei Fiumi.',
+    },
+  },
+  // Walder Frey, the books
+  wfRobb193: {
+    character: 'robb-stark',
+    type: {
+      en: 'King who broke his word',
+      it: 'Re che ha mancato alla parola',
+    },
+    summary: {
+      en: 'The king who broke his solemn oath to marry a Frey. Walder greets him with veiled insults until Robb apologises.',
+      it: 'Il re che ha infranto il giuramento solenne di sposare una Frey. Walder lo accoglie con insulti velati finché Robb non si scusa.',
+    },
+  },
+  wfCatelyn193: {
+    character: 'catelyn-stark',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'Robb’s mother, who asks him for food. He gives them bread and salt and welcomes them as guests.',
+      it: 'La madre di Robb, che gli chiede da mangiare. Lui offre loro pane e sale e li accoglie come ospiti.',
+    },
+  },
+  wfEdmure193: {
+    character: 'edmure-tully',
+    type: { en: 'Son-in-law to be', it: 'Futuro genero' },
+    summary: {
+      en: 'The lord of Riverrun, come to the Twins to marry his daughter.',
+      it: 'Il signore di Delta delle Acque, venuto alle Torri Gemelle a sposare sua figlia.',
+    },
+  },
+  wfRoslin193: {
+    character: 'roslin-frey',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, whom he has brought out to meet Edmure.',
+      it: 'Sua figlia, che fa venire per presentarla a Edmure.',
+    },
+  },
+  wfLothar193: {
+    character: 'lothar-frey',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son, who carried his terms to Riverrun and meets Robb at the gate.',
+      it: 'Suo figlio, che ha portato le sue condizioni a Delta delle Acque e accoglie Robb alla porta.',
+    },
+  },
+  wfRobb195: {
+    character: 'robb-stark',
+    type: {
+      en: 'King who broke his word',
+      it: 'Re che ha mancato alla parola',
+    },
+    summary: {
+      en: 'The king who broke his oath to marry a Frey. When the slaughter began Walder watched from his seat, and mocked him as he rose wounded.',
+      it: 'Il re che aveva infranto il giuramento di sposare una Frey. Quando è cominciato il massacro Walder ha guardato dal suo seggio, e lo ha deriso mentre si rialzava ferito.',
+    },
+  },
+  wfCatelyn195: {
+    character: 'catelyn-stark',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'Robb’s mother, who held a dagger to his grandson’s throat and begged him to trade the boy for her son. He would not. She was killed in his hall.',
+      it: 'La madre di Robb, che ha puntato un pugnale alla gola di suo nipote e lo ha implorato di scambiare il ragazzo con suo figlio. Lui ha rifiutato. È stata uccisa nella sua sala.',
+    },
+  },
+  wfAegon195: {
+    character: 'aegon-frey',
+    type: { en: 'Grandson', it: 'Nipote' },
+    summary: {
+      en: 'His simple-minded grandson, whose life he would not trade for Robb’s. Catelyn cut his throat.',
+      it: 'Il nipote sciocco, la cui vita non ha voluto scambiare con quella di Robb. Catelyn lo ha sgozzato.',
+    },
+  },
+  wfEdmure195: {
+    character: 'edmure-tully',
+    type: { en: 'Son-in-law', it: 'Genero' },
+    summary: {
+      en: 'The lord of Riverrun, married to his daughter and carried off to the bedding.',
+      it: 'Il signore di Delta delle Acque, sposato con sua figlia e portato via per la cerimonia della consumazione.',
+    },
+  },
+  wfRoslin195: {
+    character: 'roslin-frey',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, wed to Edmure. She weeps as the Greatjon carries her off to the bedding.',
+      it: 'Sua figlia, sposata con Edmure. Piange mentre il Greatjon la porta via per la cerimonia della consumazione.',
+    },
+  },
+
+  // Grey Wind
+  gwRobb29: {
+    character: 'robb-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy who took him from the litter and raised him. Grey Wind was killed outside while Robb was killed in the hall.',
+      it: 'Il ragazzo che lo ha preso dalla cucciolata e lo ha allevato. Vento Grigio è stato ucciso fuori mentre Robb veniva ucciso nella sala.',
+    },
+  },
+  gwGreatjon29: {
+    character: 'greatjon-umber',
+    type: { en: 'Man he bit', it: 'Uomo che ha morso' },
+    summary: {
+      en: 'A lord who drew steel at Robb’s table. Grey Wind knocked him down and bit off two of his fingers.',
+      it: 'Un lord che aveva sguainato la spada alla tavola di Robb. Vento Grigio lo aveva atterrato e gli aveva staccato due dita.',
+    },
+  },
+  gwRobb158: {
+    character: 'robb-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy who raised him. Since Robb’s marriage he keeps Grey Wind away from his side.',
+      it: 'Il ragazzo che lo ha allevato. Da quando si è sposato, Robb tiene Vento Grigio lontano da sé.',
+    },
+  },
+  gwJeyne158: {
+    character: 'jeyne-westerling',
+    type: { en: 'One who fears him', it: 'Una che ha paura di lui' },
+    summary: {
+      en: 'Robb’s wife, who is afraid of him.',
+      it: 'La moglie di Robb, che ha paura di lui.',
+    },
+  },
+  gwRolph158: {
+    character: 'rolph-spicer',
+    type: { en: 'Man he growls at', it: 'Uomo a cui ringhia' },
+    summary: {
+      en: 'The queen’s uncle. Grey Wind growls whenever he is near.',
+      it: 'Lo zio della regina. Vento Grigio gli ringhia ogni volta che gli si avvicina.',
+    },
+  },
+  gwCatelyn158: {
+    character: 'catelyn-stark',
+    type: { en: 'Robb’s mother', it: 'Madre di Robb' },
+    summary: {
+      en: 'Robb’s mother, who wants Grey Wind back at Robb’s side.',
+      it: 'La madre di Robb, che vuole Vento Grigio di nuovo al fianco del figlio.',
+    },
+  },
+  gwRobb193: {
+    character: 'robb-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy who raised him. At the Twins Grey Wind will not go through the gate, and Robb leaves him outside.',
+      it: 'Il ragazzo che lo ha allevato. Alle Torri Gemelle Vento Grigio non vuole passare dalla porta, e Robb lo lascia fuori.',
+    },
+  },
+  gwRaynald193: {
+    character: 'raynald-westerling',
+    type: { en: 'Keeper', it: 'Custode' },
+    summary: {
+      en: 'The queen’s brother, whom Robb leaves outside the gatehouse with him.',
+      it: 'Il fratello della regina, che Robb lascia fuori dal corpo di guardia con lui.',
+    },
+  },
+  gwLothar193: {
+    character: 'lothar-frey',
+    type: { en: 'Frey', it: 'Frey' },
+    summary: {
+      en: 'A son of Lord Walder, who says the wolf must fear the water and offers to give him to the master of hounds.',
+      it: 'Un figlio di lord Walder, che dice che il lupo deve aver paura dell’acqua e si offre di affidarlo al maestro dei cani.',
+    },
+  },
+  gwRobb195: {
+    character: 'robb-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy who raised him, who left him outside the gates of the Twins. Robb was killed in the hall while Grey Wind howled.',
+      it: 'Il ragazzo che lo aveva allevato, e che lo aveva lasciato fuori dalle porte delle Torri Gemelle. Robb è stato ucciso nella sala mentre Vento Grigio ululava.',
+    },
+  },
+
+  // The northern lords at the Red Wedding, and those away from it
+  gjRobb29: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young lord he once drew steel on, and the first he proclaimed King in the North. Robb was killed at the Twins.',
+      it: 'Il giovane lord contro cui aveva sguainato la spada, e il primo che aveva proclamato Re del Nord. Robb è stato ucciso alle Torri Gemelle.',
+    },
+  },
+  gjGreyWind29: {
+    character: 'grey-wind',
+    type: { en: 'Wolf that bit him', it: 'Lupo che lo ha morso' },
+    summary: {
+      en: 'Robb’s direwolf, which knocked him down and bit off two of his fingers. He was killed at the Twins.',
+      it: 'Il metalupo di Robb, che lo aveva atterrato e gli aveva staccato due dita. È stato ucciso alle Torri Gemelle.',
+    },
+  },
+  gjRobb195: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young lord he once drew steel on, and the first he proclaimed King in the North. Robb was killed at the wedding feast.',
+      it: 'Il giovane lord contro cui aveva sguainato la spada, e il primo che aveva proclamato Re del Nord. Robb è stato ucciso alla festa nuziale.',
+    },
+  },
+  gjSmalljon195: {
+    character: 'smalljon-umber',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son, who rode in Robb’s guard. He was killed shielding Robb in the hall.',
+      it: 'Suo figlio, che cavalcava nella guardia di Robb. È stato ucciso nella sala mentre faceva scudo a Robb.',
+    },
+  },
+  gjRoslin195: {
+    character: 'roslin-frey',
+    type: { en: 'Bride he carried', it: 'Sposa che ha portato' },
+    summary: {
+      en: 'Edmure’s bride, whom he carried weeping to the bedchamber.',
+      it: 'La sposa di Edmure, che lui ha portato in lacrime nella camera nuziale.',
+    },
+  },
+  sjRobb195: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young king he guarded. When the crossbows loosed, he threw a table over Robb to shield him, and Robb was killed all the same.',
+      it: 'Il giovane re che proteggeva. Quando le balestre hanno tirato, ha rovesciato un tavolo su Robb per fargli scudo, e Robb è stato ucciso lo stesso.',
+    },
+  },
+  sjGreatjon195: {
+    character: 'greatjon-umber',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who drinks with the Freys at the wedding feast and carries the bride to bed.',
+      it: 'Suo padre, che al banchetto beve con i Frey e porta la sposa a letto.',
+    },
+  },
+  maRobb29: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young lord she marched south with, and proclaimed King in the North. He was killed at the Twins.',
+      it: 'Il giovane lord con cui aveva marciato verso sud e che aveva proclamato Re del Nord. È stato ucciso alle Torri Gemelle.',
+    },
+  },
+  maRobb195: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young lord she proclaimed King in the North, who sent her through the marshes before the wedding. He was killed at the Twins.',
+      it: 'Il giovane lord che aveva proclamato Re del Nord, e che prima delle nozze l’aveva mandata tra le paludi. È stato ucciso alle Torri Gemelle.',
+    },
+  },
+  maDacey195: {
+    character: 'dacey-mormont',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'Her eldest daughter and heir, who rode in Robb’s guard. She was killed at the wedding feast.',
+      it: 'La figlia maggiore ed erede, che cavalcava nella guardia di Robb. È stata uccisa alla festa nuziale.',
+    },
+  },
+  daRobb195: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young king in whose guard she rode. At the wedding feast the crossbows brought him down.',
+      it: 'Il giovane re nella cui guardia cavalcava. Alla festa nuziale le balestre lo hanno abbattuto.',
+    },
+  },
+  daMaege195: {
+    character: 'maege-mormont',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'Her mother, the lady of Bear Island, sent away before the wedding on Robb’s errand.',
+      it: 'Sua madre, la signora dell’Isola dell’Orso, mandata via prima delle nozze per un incarico di Robb.',
+    },
+  },
+  daRyman195: {
+    character: 'ryman-frey',
+    type: { en: 'Killer', it: 'Assassino' },
+    summary: {
+      en: 'A Frey knight who came through the door she ran for and sank his axe into her.',
+      it: 'Un cavaliere Frey che è entrato dalla porta verso cui lei correva e le ha piantato l’ascia nel ventre.',
+    },
+  },
+  gaRobb29: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young lord he marched south with, and proclaimed King in the North. Robb was killed at the Twins.',
+      it: 'Il giovane lord con cui aveva marciato verso sud e che aveva proclamato Re del Nord. Robb è stato ucciso alle Torri Gemelle.',
+    },
+  },
+  gaRobb195: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young lord he proclaimed King in the North, who sent him through the marshes before the wedding. Robb was killed at the Twins.',
+      it: 'Il giovane lord che aveva proclamato Re del Nord, e che prima delle nozze lo aveva mandato tra le paludi. Robb è stato ucciso alle Torri Gemelle.',
+    },
+  },
+  roRobb195: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'Lord Eddard’s heir, for whom Robett came to Winterfell. Robb was killed at the Twins.',
+      it: 'L’erede di lord Eddard, per cui Robett era venuto a Grande Inverno. Robb è stato ucciso alle Torri Gemelle.',
+    },
+  },
+  jaRobb189: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king whose host he joins on the march, with word that Balon Greyjoy is dead. Robb entrusts his mother to him after the wedding.',
+      it: 'Il re al cui esercito si unisce durante la marcia, con la notizia che Balon Greyjoy è morto. Robb gli affida la madre per dopo le nozze.',
+    },
+  },
+  jaCatelyn189: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady in his charge', it: 'Signora affidata a lui' },
+    summary: {
+      en: 'Lady Stark, whom he has known since she was a girl. After the wedding he is to take her to Seagard.',
+      it: 'Lady Stark, che conosce da quando era ragazza. Dopo le nozze dovrà portarla a Seagard.',
+    },
+  },
+  jaRobb195: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king whose host he joined on the march to the Twins. Robb was killed at the wedding feast.',
+      it: 'Il re al cui esercito si era unito durante la marcia verso le Torri Gemelle. Robb è stato ucciso alla festa nuziale.',
+    },
+  },
+  jaCatelyn195: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady in his charge', it: 'Signora affidata a lui' },
+    summary: {
+      en: 'Lady Stark, whom he had known since she was a girl and was to take to Seagard. She was killed at the Twins.',
+      it: 'Lady Stark, che conosceva da quando era ragazza e che doveva portare a Seagard. È stata uccisa alle Torri Gemelle.',
+    },
+  },
+  weRobb195: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'Lord Eddard’s heir, for whom the men of House Manderly marched. He was killed at the same feast as Ser Wendel.',
+      it: 'L’erede di lord Eddard, per cui marciavano gli uomini di Casa Manderly. È stato ucciso allo stesso banchetto di ser Wendel.',
+    },
+  },
+  weCatelyn195: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady he escorted', it: 'Signora che ha scortato' },
+    summary: {
+      en: 'Lord Eddard’s wife, with whom Ser Wendel rode to join Robb’s host. She was killed at the wedding feast.',
+      it: 'La moglie di lord Eddard, con cui ser Wendel aveva cavalcato per raggiungere l’esercito di Robb. È stata uccisa alla festa nuziale.',
+    },
+  },
+
+  // The past tense for Catelyn and Robb on the pages of those who met them
+  stCatelyn29: {
+    character: 'catelyn-stark',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'Lady Stark, who came to the Twins to bargain for her son’s crossing.',
+      it: 'Lady Stark, che era venuta alle Torri Gemelle a trattare il passaggio di suo figlio.',
+    },
+  },
+  lyCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'Her sister, who came to the Eyrie with Tyrion Lannister as her prisoner.',
+      it: 'Sua sorella, che era arrivata al Nido dell’Aquila con Tyrion Lannister prigioniero.',
+    },
+  },
+  rnCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Aunt', it: 'Zia' },
+    summary: {
+      en: 'His mother’s sister, who came to the Eyrie.',
+      it: 'La sorella di sua madre, che era venuta al Nido dell’Aquila.',
+    },
+  },
+  dnCatelyn195: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady he rescued', it: 'Signora che ha salvato' },
+    summary: {
+      en: 'Lady Stark, whose party his men rescued in the mountains on the way to the Bloody Gate.',
+      it: 'Lady Stark, il cui gruppo era stato salvato dai suoi uomini tra le montagne, sulla strada per la Porta Insanguinata.',
+    },
+  },
+  myCatelyn195: {
+    character: 'catelyn-stark',
+    type: { en: 'Traveller she guided', it: 'Viaggiatrice che ha guidato' },
+    summary: {
+      en: 'Lady Stark, whom she guided up the mountain to the Eyrie by night.',
+      it: 'Lady Stark, che lei aveva guidato di notte su per la montagna fino al Nido dell’Aquila.',
+    },
+  },
+  neCatelyn195: {
+    character: 'catelyn-stark',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'Lady Stark, whom he received at the Gates of the Moon with her prisoner.',
+      it: 'Lady Stark, che lui aveva accolto con il suo prigioniero alle Porte della Luna.',
+    },
+  },
+  mrCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady he followed', it: 'Signora che ha seguito' },
+    summary: {
+      en: 'A lady travelling in secret, whom he tried to charm at the inn. When she seized Tyrion, he followed her party in the hope of a song.',
+      it: 'Una signora in viaggio in segreto, che lui aveva provato a conquistare alla locanda. Quando lei aveva fatto arrestare Tyrion, aveva seguito il suo gruppo sperando di trarne una canzone.',
+    },
+  },
+  wwCatelyn195: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady he backed', it: 'Signora che ha sostenuto' },
+    summary: {
+      en: 'Lady Stark, for whom he drew his sword at the inn.',
+      it: 'Lady Stark, per cui aveva sguainato la spada alla locanda.',
+    },
+  },
+  haCatelyn195: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady', it: 'Signora' },
+    summary: {
+      en: 'The lady of Winterfell, to whom he reported on the search after a man tried to kill Bran.',
+      it: 'La signora di Grande Inverno, a cui aveva riferito le ricerche dopo che un uomo aveva cercato di uccidere Bran.',
+    },
+  },
+  haRobb195: {
+    character: 'robb-stark',
+    type: { en: 'Young lord', it: 'Giovane lord' },
+    summary: {
+      en: 'Lord Eddard’s heir, with whom he came to Catelyn after the attack.',
+      it: 'L’erede di lord Eddard, con cui si era presentato da Catelyn dopo l’aggressione.',
+    },
+  },
+  msCatelyn29: {
+    character: 'catelyn-stark',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'A guest at her inn, who had Tyrion Lannister seized under her roof.',
+      it: 'Un’ospite della sua locanda, che aveva fatto arrestare Tyrion Lannister sotto il suo tetto.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season1Relationships = {
   // The show weds her in episode 1; its wedding entry waits for episode 2,
   // the book's pair, which is later and so safe.
@@ -15289,6 +17507,150 @@ export const season1Relationships = {
         riverlands2.catEdmure129,
       ],
     },
+    // Stage 3 (#1653). The show: "Dark Wings, Dark Words" (22) to "The Rains
+    // of Castamere" (29), where she dies. The books: Catelyn I to VII (146
+    // to 195).
+    {
+      episode: 22,
+      chapter: 146,
+      source: 'episode',
+      value: [
+        riverlands3.ctRobb22,
+        riverlands3.ctTalisa22,
+        riverlands3.ctJon22,
+        riverlands3.ctBran22,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'episode',
+      value: [
+        riverlands3.ctHoster23,
+        riverlands3.ctBrynden23,
+        riverlands3.ctEdmure23,
+        riverlands3.ctRobb23,
+        riverlands3.ctTalisa23,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'episode',
+      value: [
+        riverlands3.ctRickard25,
+        riverlands3.ctRobb25,
+        riverlands3.ctEdmure25,
+        riverlands3.ctTalisa25,
+        riverlands3.ctBrynden25,
+      ],
+    },
+    {
+      episode: 27,
+      chapter: 189,
+      source: 'episode',
+      value: [
+        riverlands3.ctRobb27,
+        riverlands3.ctTalisa27,
+        riverlands3.ctWalder27,
+        riverlands3.ctEdmure27,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [
+        riverlands3.ctRobb29,
+        riverlands3.ctWalder29,
+        riverlands3.ctRoose29,
+        riverlands3.ctTalisa29,
+        riverlands3.ctEdmure29,
+      ],
+    },
+    {
+      episode: 21,
+      chapter: 146,
+      source: 'chapter',
+      value: [
+        riverlands3.ctHoster146,
+        riverlands3.ctEdmure146,
+        riverlands3.ctLysa146,
+        riverlands3.ctJaime146,
+        riverlands3.ctBrienne146,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'chapter',
+      value: [
+        riverlands3.ctRobb158,
+        riverlands3.ctJeyne158,
+        riverlands3.ctBrynden158,
+        riverlands3.ctRickard158,
+        riverlands3.ctRolph158,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'chapter',
+      value: [
+        riverlands3.ctRickard164,
+        riverlands3.ctRobb164,
+        riverlands3.ctJeyne164,
+        riverlands3.ctHoster164,
+        riverlands3.ctBrynden164,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 179,
+      source: 'chapter',
+      value: [
+        riverlands3.ctHoster179,
+        riverlands3.ctRobb179,
+        riverlands3.ctLothar179,
+        riverlands3.ctEdmure179,
+        riverlands3.ctBrynden179,
+      ],
+    },
+    {
+      episode: 27,
+      chapter: 189,
+      source: 'chapter',
+      value: [
+        riverlands3.ctRobb189,
+        riverlands3.ctJon189,
+        riverlands3.ctArya189,
+        riverlands3.ctJason189,
+        riverlands3.ctEdmure189,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 193,
+      source: 'chapter',
+      value: [
+        riverlands3.ctRobb193,
+        riverlands3.ctWalder193,
+        riverlands3.ctRoose193,
+        riverlands3.ctRyman193,
+        riverlands3.ctEdmure193,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands3.ctRobb195,
+        riverlands3.ctWalder195,
+        riverlands3.ctAegon195,
+        riverlands3.ctEdmure195,
+      ],
+    },
   ],
   'robb-stark': [
     {
@@ -15417,6 +17779,153 @@ export const season1Relationships = {
         riverlands2.robEdmure,
         riverlands2.robRickardBook,
         riverlands2.robGreatjonBook,
+      ],
+    },
+    // Stage 3 (#1653). The show: "Dark Wings, Dark Words" (22) to "The Rains
+    // of Castamere" (29), where he dies. The books: Catelyn II to VII (158
+    // to 195).
+    {
+      episode: 22,
+      chapter: 146,
+      source: 'episode',
+      value: [
+        riverlands3.rbTalisa22,
+        riverlands3.rbCatelyn22,
+        riverlands3.rbRoose22,
+        riverlands3.rbRickard22,
+        riverlands3.rbBran22,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'episode',
+      value: [
+        riverlands3.rbEdmure23,
+        riverlands3.rbBrynden23,
+        riverlands3.rbHoster23,
+        riverlands3.rbCatelyn23,
+        riverlands3.rbTalisa23,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'episode',
+      value: [
+        riverlands3.rbRickard25,
+        riverlands3.rbWillem25,
+        riverlands3.rbMartyn25,
+        riverlands3.rbTalisa25,
+        riverlands3.rbCatelyn25,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 179,
+      source: 'episode',
+      value: [
+        riverlands3.rbWalder26,
+        riverlands3.rbEdmure26,
+        riverlands3.rbRoslin26,
+        riverlands3.rbTalisa25,
+        riverlands3.rbCatelyn25,
+      ],
+    },
+    {
+      episode: 27,
+      chapter: 189,
+      source: 'episode',
+      value: [
+        riverlands3.rbTalisa27,
+        riverlands3.rbCatelyn27,
+        riverlands3.rbEdmure27,
+        riverlands3.rbWalder26,
+        riverlands3.rbRoslin26,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [
+        riverlands3.rbTalisa29,
+        riverlands3.rbCatelyn29,
+        riverlands3.rbWalder29,
+        riverlands3.rbRoose29,
+        riverlands3.rbEdmure29,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'chapter',
+      value: [
+        riverlands3.rbJeyne158,
+        riverlands3.rbCatelyn158,
+        riverlands3.rbEdmure158,
+        riverlands3.rbRickard158,
+        riverlands3.rbWalder158,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'chapter',
+      value: [
+        riverlands3.rbRickard164,
+        riverlands3.rbWillem164,
+        riverlands3.rbEdmure164,
+        riverlands3.rbBrynden164,
+        riverlands3.rbJeyne158,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 179,
+      source: 'chapter',
+      value: [
+        riverlands3.rbCatelyn179,
+        riverlands3.rbWalder179,
+        riverlands3.rbLothar179,
+        riverlands3.rbEdmure179,
+        riverlands3.rbHoster179,
+      ],
+    },
+    {
+      episode: 27,
+      chapter: 189,
+      source: 'chapter',
+      value: [
+        riverlands3.rbCatelyn189,
+        riverlands3.rbJon189,
+        riverlands3.rbJeyne189,
+        riverlands3.rbJason189,
+        riverlands3.rbGalbart189,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 193,
+      source: 'chapter',
+      value: [
+        riverlands3.rbWalder193,
+        riverlands3.rbRoose193,
+        riverlands3.rbGreyWind193,
+        riverlands3.rbRyman193,
+        riverlands3.rbCatelyn193,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands3.rbCatelyn195,
+        riverlands3.rbWalder195,
+        riverlands3.rbSmalljon195,
+        riverlands3.rbEdmure195,
+        riverlands3.rbJeyne195,
       ],
     },
   ],
@@ -16109,6 +18618,46 @@ export const season1Relationships = {
   'grey-wind': [
     { episode: 8, chapter: 11, source: 'chapter', value: [north.gwRobb] },
     { episode: 8, chapter: 54, value: [north.gwRobb, north.gwGreatjon] },
+    // Stage 3 (#1653). The show kills him at the Twins, "The Rains of
+    // Castamere" (29). The books: Catelyn II (158), VI (193) and VII (195);
+    // his own death waits for chapter 198.
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [riverlands3.gwRobb29, riverlands3.gwGreatjon29],
+    },
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'chapter',
+      value: [
+        riverlands3.gwRobb158,
+        riverlands3.gwJeyne158,
+        riverlands3.gwRolph158,
+        riverlands3.gwCatelyn158,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 193,
+      source: 'chapter',
+      value: [
+        riverlands3.gwRobb193,
+        riverlands3.gwRaynald193,
+        riverlands3.gwLothar193,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands3.gwRobb195,
+        riverlands3.gwRaynald193,
+        riverlands3.gwLothar193,
+      ],
+    },
   ],
   'lady-direwolf': [
     { episode: 1, chapter: 16, value: [north.ladySansa] },
@@ -16788,6 +19337,14 @@ export const season1Relationships = {
       source: 'chapter',
       value: [north.halCatelyn, north.halRobb],
     },
+    // Stage 3 (#1653): Catelyn and Robb in the past tense from Catelyn VII
+    // (195).
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands3.haCatelyn195, riverlands3.haRobb195],
+    },
   ],
   // Smalljon opens in the books at Catelyn X (chapter 64) and in the show
   // only in season 6.
@@ -16811,6 +19368,25 @@ export const season1Relationships = {
       source: 'chapter',
       value: [north.gjRobbKing, north.gjGreyWind, north.gjSmalljon],
     },
+    // Stage 3 (#1653): Robb and Grey Wind in the past tense from the Red
+    // Wedding, "The Rains of Castamere" (29) and Catelyn VII (195).
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [riverlands3.gjRobb29, riverlands3.gjGreyWind29],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands3.gjRobb195,
+        riverlands3.gjSmalljon195,
+        riverlands3.gjRoslin195,
+        north.gjGreyWind,
+      ],
+    },
   ],
   // The northern lords whose show gates fall after episode 10 keep the
   // book's links alone in stage 1.
@@ -16827,10 +19403,59 @@ export const season1Relationships = {
       source: 'chapter',
       value: [north.sjGreatjon, north.sjRobbKing],
     },
+    // Stage 3 (#1653): the Red Wedding, Catelyn VII (195), where he dies.
+    {
+      episode: 53,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands3.sjRobb195, riverlands3.sjGreatjon195],
+    },
   ],
   'rickard-karstark': [
     { episode: 17, chapter: 54, source: 'chapter', value: [north.rkRobb] },
     { episode: 17, chapter: 72, source: 'chapter', value: [north.rkRobbKing] },
+    // Stage 3 (#1653): his first show cards, "Dark Wings, Dark Words" (22)
+    // and "Kissed by Fire" (25), where he dies; the books, Catelyn II (158)
+    // and III (164), where he dies.
+    {
+      episode: 22,
+      chapter: 146,
+      source: 'episode',
+      value: [riverlands3.rkRobb22, riverlands3.rkTalisa22],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'episode',
+      value: [
+        riverlands3.rkRobb25,
+        riverlands3.rkWillem25,
+        riverlands3.rkMartyn25,
+        riverlands3.rkCatelyn25,
+        riverlands3.rkBrynden25,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'chapter',
+      value: [
+        riverlands3.rkRobb158,
+        riverlands3.rkCatelyn158,
+        riverlands3.rkJaime158,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'chapter',
+      value: [
+        riverlands3.rkRobb164,
+        riverlands3.rkWillem164,
+        riverlands3.rkJaime164,
+        riverlands3.rkCatelyn164,
+      ],
+    },
   ],
   // Tyrion VIII (chapter 63): the battle on the Green Fork.
   'roose-bolton': [
@@ -16894,9 +19519,30 @@ export const season1Relationships = {
       value: [north.galRobbKing, north.galGreatjon],
     },
     { episode: 10, chapter: 72, source: 'chapter', value: [north.galRobbKing] },
+    // Stage 3 (#1653): Robb in the past tense from the Red Wedding, "The
+    // Rains of Castamere" (29) and Catelyn VII (195).
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [riverlands3.gaRobb29, north.galGreatjon],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands3.gaRobb195],
+    },
   ],
   'robett-glover': [
     { episode: 57, chapter: 54, source: 'chapter', value: [north.robRobb] },
+    // Stage 3 (#1653): Robb in the past tense from Catelyn VII (195).
+    {
+      episode: 57,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands3.roRobb195],
+    },
   ],
   // Dacey is the book's alone (Catelyn X). Both media have Maege at the
   // proclamation: "Fire and Blood" and Catelyn XI.
@@ -16915,6 +19561,20 @@ export const season1Relationships = {
       source: 'chapter',
       value: [north.maeRobbKing, north.maeDacey],
     },
+    // Stage 3 (#1653): Robb, and the books' Dacey, in the past tense from
+    // the Red Wedding, "The Rains of Castamere" (29) and Catelyn VII (195).
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [riverlands3.maRobb29],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands3.maRobb195, riverlands3.maDacey195],
+    },
   ],
   'dacey-mormont': [
     {
@@ -16923,6 +19583,17 @@ export const season1Relationships = {
       source: 'chapter',
       value: [north.dacRobb, north.dacMaege],
     },
+    // Stage 3 (#1653): the Red Wedding, Catelyn VII (195), where she dies.
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands3.daRobb195,
+        riverlands3.daMaege195,
+        riverlands3.daRyman195,
+      ],
+    },
   ],
   'wendel-manderly': [
     {
@@ -16930,6 +19601,13 @@ export const season1Relationships = {
       chapter: 56,
       source: 'chapter',
       value: [north.wenCatelyn, north.wenRobb],
+    },
+    // Stage 3 (#1653): the Red Wedding, Catelyn VII (195), where he dies.
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands3.weCatelyn195, riverlands3.weRobb195],
     },
   ],
   // The show opens him at his death in "The Pointy End"; Sansa IV
@@ -18555,6 +21233,19 @@ export const season1Relationships = {
         crown.lysRobin,
       ],
     },
+    // Stage 3 (#1653): Catelyn in the past tense from the Red Wedding, "The
+    // Rains of Castamere" (29) and Catelyn VII (195).
+    {
+      episode: 29,
+      chapter: 195,
+      value: [
+        crown.lysTyrionFreed,
+        crown.lysVardis,
+        crown.lysBronn,
+        riverlands3.lyCatelyn,
+        crown.lysRobin,
+      ],
+    },
   ],
   'robin-arryn': [
     // The same split as Lysa's: the show has the nursing and the fly line in
@@ -18581,6 +21272,12 @@ export const season1Relationships = {
       episode: 6,
       chapter: 41,
       value: [crown.rbnLysa, crown.rbnCatelyn, crown.rbnTyrionFreed],
+    },
+    // Stage 3 (#1653): as Lysa's.
+    {
+      episode: 29,
+      chapter: 195,
+      value: [crown.rbnLysa, riverlands3.rnCatelyn, crown.rbnTyrionFreed],
     },
   ],
   // Show: Bronn joins Catelyn's party between "Cripples, Bastards, and
@@ -18654,6 +21351,56 @@ export const season1Relationships = {
       episode: 9,
       chapter: 60,
       value: [crown.walCatelyn, crown.walRobb, crown.walArya, crown.walStevron],
+    },
+    // Stage 3 (#1653). The show: "The Rains of Castamere" (29) and "Mhysa"
+    // (30). The books: Catelyn VI (193) and VII (195).
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [
+        riverlands3.wfRobb29,
+        riverlands3.wfCatelyn29,
+        riverlands3.wfTalisa29,
+        riverlands3.wfRoslin29,
+        riverlands3.wfEdmure29,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 197,
+      source: 'episode',
+      value: [
+        riverlands3.wfRoose30,
+        riverlands3.wfRobb30,
+        riverlands3.wfCatelyn30,
+        riverlands3.wfBrynden30,
+        riverlands3.wfTywin30,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 193,
+      source: 'chapter',
+      value: [
+        riverlands3.wfRobb193,
+        riverlands3.wfCatelyn193,
+        riverlands3.wfEdmure193,
+        riverlands3.wfRoslin193,
+        riverlands3.wfLothar193,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands3.wfRobb195,
+        riverlands3.wfCatelyn195,
+        riverlands3.wfAegon195,
+        riverlands3.wfEdmure195,
+        riverlands3.wfRoslin195,
+      ],
     },
   ],
   // Show only, as her record is. Her chapters only order her.
@@ -19488,6 +22235,20 @@ export const season1Relationships = {
   ],
   'jason-mallister': [
     { episode: 4, chapter: 29, source: 'chapter', value: [crown.jasCatelyn] },
+    // Stage 3 (#1653): Catelyn V (189), and Robb and Catelyn in the past
+    // tense from Catelyn VII (195).
+    {
+      episode: 27,
+      chapter: 189,
+      source: 'chapter',
+      value: [riverlands3.jaCatelyn189, riverlands3.jaRobb189],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands3.jaCatelyn195, riverlands3.jaRobb195],
+    },
   ],
   'masha-heddle': [
     { episode: 4, chapter: 29, value: [crown.masCatelyn, crown.masTyrion] },
@@ -19496,6 +22257,14 @@ export const season1Relationships = {
       chapter: 57,
       source: 'chapter',
       value: [crown.masTywin, crown.masCatelyn, crown.masTyrion],
+    },
+    // Stage 3 (#1653): Catelyn in the past tense from "The Rains of
+    // Castamere" (29). The books' Masha is dead by then.
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [riverlands3.msCatelyn29, crown.masTyrion],
     },
   ],
   'kevan-lannister': [
@@ -19522,6 +22291,14 @@ export const season1Relationships = {
       chapter: 72,
       source: 'chapter',
       value: [crown.steRobb, crown.steWalder, crown.steCatelyn],
+    },
+    // Stage 3 (#1653): Catelyn in the past tense from "The Rains of
+    // Castamere" (29). The books' Stevron is dead by then.
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [crown.steWalder, riverlands3.stCatelyn29],
     },
   ],
   // Edmure, Hoster and Brynden open in the show at episode 23: their
@@ -19560,6 +22337,124 @@ export const season1Relationships = {
         riverlands2.edmTywin,
       ],
     },
+    // Stage 3 (#1653): his first show cards, "Walk of Punishment" (23) to
+    // "The Rains of Castamere" (29); the books, Catelyn I to VII (146 to
+    // 195).
+    {
+      episode: 23,
+      chapter: 146,
+      source: 'episode',
+      value: [
+        riverlands3.edHoster23,
+        riverlands3.edBrynden23,
+        riverlands3.edRobb23,
+        riverlands3.edWillem23,
+        riverlands3.edMartyn23,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'episode',
+      value: [
+        riverlands3.edRobb25,
+        riverlands3.edRickard25,
+        riverlands3.edWillem25,
+        riverlands3.edMartyn25,
+        riverlands3.edCatelyn25,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 179,
+      source: 'episode',
+      value: [
+        riverlands3.edRoslin26,
+        riverlands3.edWalder26,
+        riverlands3.edRobb26,
+        riverlands3.edBrynden26,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [
+        riverlands3.edRoslin29,
+        riverlands3.edWalder29,
+        riverlands3.edRobb29,
+        riverlands3.edCatelyn29,
+        riverlands3.edBrynden29,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 146,
+      source: 'chapter',
+      value: [
+        riverlands3.edCatelyn146,
+        riverlands3.edHoster146,
+        riverlands3.edJaime146,
+        riverlands3.edRoose146,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'chapter',
+      value: [
+        riverlands3.edRobb158,
+        riverlands3.edBrynden158,
+        riverlands3.edCatelyn158,
+        riverlands3.edHoster158,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'chapter',
+      value: [
+        riverlands3.edRickard164,
+        riverlands3.edWillem164,
+        riverlands3.edRobb164,
+        riverlands3.edBrynden164,
+        riverlands3.edCatelyn164,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 179,
+      source: 'chapter',
+      value: [
+        riverlands3.edHoster179,
+        riverlands3.edBrynden179,
+        riverlands3.edRoslin179,
+        riverlands3.edLothar179,
+        riverlands3.edRobb179,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 193,
+      source: 'chapter',
+      value: [
+        riverlands3.edRoslin193,
+        riverlands3.edWalder193,
+        riverlands3.edRobb193,
+        riverlands3.edCatelyn193,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands3.edRoslin195,
+        riverlands3.edRobb195,
+        riverlands3.edCatelyn195,
+        riverlands3.edWalder195,
+      ],
+    },
   ],
   'hoster-tully': [
     {
@@ -19572,6 +22467,44 @@ export const season1Relationships = {
         crown.hosRobb,
         crown.hosLysa,
         crown.hosBrynden,
+      ],
+    },
+    // Stage 3 (#1653). The show opens him dead: his cards are told at his
+    // funeral, "Walk of Punishment" (23). The books: Catelyn I (146), and
+    // his death in Catelyn IV (179).
+    {
+      episode: 23,
+      chapter: 179,
+      source: 'episode',
+      value: [
+        riverlands3.hoBrynden23,
+        riverlands3.hoCatelyn23,
+        riverlands3.hoEdmure23,
+        riverlands3.hoRobb23,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 146,
+      source: 'chapter',
+      value: [
+        riverlands3.hoCatelyn146,
+        crown.hosEdmure,
+        crown.hosLysa,
+        crown.hosBrynden,
+        crown.hosRobb,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 179,
+      source: 'chapter',
+      value: [
+        riverlands3.hoCatelyn179,
+        riverlands3.hoEdmure179,
+        riverlands3.hoBrynden179,
+        riverlands3.hoRobb179,
+        riverlands3.hoLysa179,
       ],
     },
   ],
@@ -19590,6 +22523,87 @@ export const season1Relationships = {
       chapter: 56,
       source: 'chapter',
       value: [crown.bryRobb, crown.bryCatelynLeaves, crown.bryLysaRefuses],
+    },
+    // Stage 3 (#1653): his first show cards, "Walk of Punishment" (23) to
+    // "The Rains of Castamere" (29); the books, Catelyn II to IV (158 to
+    // 179), and Robb's and Catelyn's deaths in Catelyn VII (195).
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'episode',
+      value: [
+        riverlands3.brHoster23,
+        riverlands3.brCatelyn23,
+        riverlands3.brEdmure23,
+        riverlands3.brRobb23,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'episode',
+      value: [
+        riverlands3.brRickard25,
+        riverlands3.brRobb25,
+        riverlands3.brCatelyn25,
+        riverlands3.brEdmure25,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [
+        riverlands3.brRobb29,
+        riverlands3.brCatelyn29,
+        riverlands3.brEdmure29,
+        riverlands3.brWalder29,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'chapter',
+      value: [
+        riverlands3.brCatelyn158,
+        riverlands3.brRobb158,
+        riverlands3.brEdmure158,
+        riverlands3.brLysa158,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'chapter',
+      value: [
+        riverlands3.brRickard164,
+        riverlands3.brRobb164,
+        riverlands3.brEdmure164,
+        riverlands3.brCatelyn164,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 179,
+      source: 'chapter',
+      value: [
+        riverlands3.brHoster179,
+        riverlands3.brEdmure179,
+        riverlands3.brRobb179,
+        riverlands3.brCatelyn179,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands3.brRobb195,
+        riverlands3.brCatelyn195,
+        riverlands3.brEdmure179,
+        riverlands3.brHoster179,
+        riverlands3.brLysa195,
+      ],
     },
   ],
   // Hot Pie's book record opens after stage 1 (chapter 75). Lommy's show
@@ -19662,9 +22676,36 @@ export const season1Relationships = {
         crown.marTyrion,
       ],
     },
+    // Stage 3 (#1653): Catelyn in the past tense from the Red Wedding, "The
+    // Rains of Castamere" (29) and Catelyn VII (195).
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [
+        crown.marJoffrey,
+        crown.marIlyn,
+        riverlands3.mrCatelyn,
+        crown.marTyrion,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands3.mrCatelyn, crown.marTyrion],
+    },
   ],
   'willis-wode': [
     { episode: 4, chapter: 29, value: [crown.wilCatelyn, crown.wilTyrion] },
+    // Stage 3 (#1653): the books' Willis lives, and Catelyn turns to the
+    // past tense in Catelyn VII (195). The show's dies in episode 5.
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands3.wwCatelyn195, crown.wilTyrion],
+    },
   ],
   // Donnel opens in the show at episode 35: his stage-1 links are the
   // books'.
@@ -19675,6 +22716,13 @@ export const season1Relationships = {
       source: 'chapter',
       value: [crown.dnlCatelyn, crown.dnlTyrion],
     },
+    // Stage 3 (#1653): Catelyn in the past tense from Catelyn VII (195).
+    {
+      episode: 35,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands3.dnCatelyn195, crown.dnlTyrion],
+    },
   ],
   'nestor-royce': [
     {
@@ -19683,9 +22731,23 @@ export const season1Relationships = {
       source: 'chapter',
       value: [crown.nesCatelyn, crown.nesLysa],
     },
+    // Stage 3 (#1653): Catelyn in the past tense from Catelyn VII (195).
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands3.neCatelyn195, crown.nesLysa],
+    },
   ],
   'mya-stone': [
     { episode: 5, chapter: 35, source: 'chapter', value: [crown.myaCatelyn] },
+    // Stage 3 (#1653): Catelyn in the past tense from Catelyn VII (195).
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands3.myCatelyn195],
+    },
   ],
   'vardis-egen': [
     {

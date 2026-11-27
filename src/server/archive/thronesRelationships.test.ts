@@ -293,7 +293,49 @@ const STAGE_3_GROUPS: { group: string; issue: string; owners: string[] }[] = [
     ],
   },
   { group: 'King’s Landing', issue: '#1651', owners: [] },
-  { group: 'Robb’s war and the Riverlands', issue: '#1653', owners: [] },
+  {
+    group: 'Robb’s war and the Riverlands',
+    issue: '#1653',
+    owners: [
+      'jeyne-westerling',
+      'rolph-spicer',
+      'raynald-westerling',
+      'willem-lannister',
+      'martyn-lannister',
+      'lothar-frey',
+      'walder-rivers',
+      'roslin-frey',
+      'ryman-frey',
+      'aegon-frey',
+      'robb-stark',
+      'catelyn-stark',
+      'talisa-maegyr',
+      'edmure-tully',
+      'brynden-tully',
+      'hoster-tully',
+      'rickard-karstark',
+      'walder-frey',
+      'grey-wind',
+      'greatjon-umber',
+      'smalljon-umber',
+      'maege-mormont',
+      'dacey-mormont',
+      'galbart-glover',
+      'robett-glover',
+      'jason-mallister',
+      'wendel-manderly',
+      'stevron-frey',
+      'lysa-arryn',
+      'robin-arryn',
+      'donnel-waynwood',
+      'mya-stone',
+      'nestor-royce',
+      'marillion',
+      'willis-wode',
+      'hallis-mollen',
+      'masha-heddle',
+    ],
+  },
   {
     group: 'Arya, the Brotherhood Without Banners and the Hound',
     issue: '#1654',
@@ -831,7 +873,6 @@ describe.each(LOCALES)(
         'harwin',
         'alyn',
         'smalljon-umber',
-        'rickard-karstark',
         'robett-glover',
         'wendel-manderly',
       ]) {
@@ -841,6 +882,15 @@ describe.each(LOCALES)(
         ).toStrictEqual([])
         expect(projected(id, ch(73), locale), id).not.toStrictEqual([])
       }
+
+      // Rickard Karstark's show cards open in episode 22 (#1653).
+      expect(projected('rickard-karstark', ep(21), locale)).toStrictEqual([])
+      expect(projected('rickard-karstark', ep(22), locale)).not.toStrictEqual(
+        [],
+      )
+      expect(projected('rickard-karstark', ch(73), locale)).not.toStrictEqual(
+        [],
+      )
 
       // Roose's show cards open with episode 14 (#1481): stage 1 has none.
       expect(projected('roose-bolton', ep(10), locale)).toStrictEqual([])
@@ -1274,9 +1324,6 @@ describe.each(LOCALES)(
         'yohn-royce',
         'jason-mallister',
         'podrick-payne',
-        'edmure-tully',
-        'hoster-tully',
-        'brynden-tully',
         'donnel-waynwood',
         'nestor-royce',
         'mya-stone',
@@ -1287,6 +1334,13 @@ describe.each(LOCALES)(
           projected(id, ep(archive.series.episodeCeiling), locale),
           id,
         ).toStrictEqual([])
+        expect(projected(id, ch(73), locale), id).not.toStrictEqual([])
+      }
+
+      // The Tullys' show cards open at Hoster's funeral, episode 23 (#1653).
+      for (const id of ['edmure-tully', 'hoster-tully', 'brynden-tully']) {
+        expect(projected(id, ep(22), locale), id).toStrictEqual([])
+        expect(projected(id, ep(23), locale), id).not.toStrictEqual([])
         expect(projected(id, ch(73), locale), id).not.toStrictEqual([])
       }
     })
@@ -2076,6 +2130,631 @@ describe.each(LOCALES)(
         unit: 'episode',
         at: 28,
         person: 'daenerys-targaryen',
+      },
+    ] as const)(
+      'rewords $owner’s card in its $unit $at snapshot for $person',
+      ({ owner, unit, at, person }) => {
+        const mark = unit === 'episode' ? ep : ch
+
+        expect(said(owner, person, mark(at - 1))).toBeDefined()
+        expect(said(owner, person, mark(at))).toBeDefined()
+        expect(said(owner, person, mark(at))).not.toBe(
+          said(owner, person, mark(at - 1)),
+        )
+      },
+    )
+  },
+)
+
+// Robb's war and the Riverlands in stage 3 (#1653): every snapshot the
+// group adds, checked just before its pin and at it, and the links one
+// medium alone tells.
+describe.each(LOCALES)(
+  'Game of Thrones stage-3 Riverlands revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    const said = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.summary
+    const showCeiling = ep(archive.series.episodeCeiling)
+    const bookCeiling = ch(archive.series.chapterCeiling)
+
+    it('keeps the books’ Westerlings, Ryman and Aegon off show pages', () => {
+      for (const id of [
+        'jeyne-westerling',
+        'rolph-spicer',
+        'raynald-westerling',
+        'ryman-frey',
+        'aegon-frey',
+      ]) {
+        expect(projected(id, showCeiling, locale), id).toStrictEqual([])
+        expect(projected(id, ch(196), locale), id).not.toStrictEqual([])
+      }
+
+      expect(people('robb-stark', ep(30))).not.toContain('jeyne-westerling')
+      expect(people('robb-stark', ch(195))).toContain('jeyne-westerling')
+    })
+
+    it('keeps Talisa and Martyn off book pages, and Lothar and Walder Rivers off show pages', () => {
+      for (const id of ['talisa-maegyr', 'martyn-lannister']) {
+        expect(projected(id, bookCeiling, locale), id).toStrictEqual([])
+      }
+      for (const id of ['lothar-frey', 'walder-rivers']) {
+        expect(projected(id, ep(30), locale), id).toStrictEqual([])
+        expect(projected(id, ch(178), locale), id).toStrictEqual([])
+        expect(projected(id, ch(179), locale), id).not.toStrictEqual([])
+      }
+
+      expect(people('robb-stark', ch(196))).not.toContain('talisa-maegyr')
+      expect(people('robb-stark', ep(29))).toContain('talisa-maegyr')
+    })
+
+    it('names Robb’s killer on show pages alone', () => {
+      for (const owner of ['robb-stark', 'catelyn-stark']) {
+        expect(people(owner, ep(28)), owner).not.toContain('roose-bolton')
+        expect(people(owner, ep(29)), owner).toContain('roose-bolton')
+      }
+
+      expect(people('robb-stark', ch(193))).toContain('roose-bolton')
+      expect(people('robb-stark', ch(195))).not.toContain('roose-bolton')
+    })
+
+    it('turns Robb and Catelyn to the past tense at the Red Wedding in each medium', () => {
+      for (const [owner, person] of [
+        ['edmure-tully', 'robb-stark'],
+        ['brynden-tully', 'catelyn-stark'],
+        ['walder-frey', 'robb-stark'],
+      ] as const) {
+        expect(said(owner, person, ep(29)), owner).toBeDefined()
+        expect(said(owner, person, ep(29)), owner).not.toBe(
+          said(owner, person, ep(28)),
+        )
+        expect(said(owner, person, ch(195)), owner).toBeDefined()
+        expect(said(owner, person, ch(195)), owner).not.toBe(
+          said(owner, person, ch(194)),
+        )
+      }
+    })
+
+    it.each([
+      // owner, the medium, the number of a snapshot, a person it adds there
+      {
+        owner: 'jeyne-westerling',
+        unit: 'chapter',
+        at: 158,
+        person: 'robb-stark',
+      },
+      {
+        owner: 'rolph-spicer',
+        unit: 'chapter',
+        at: 158,
+        person: 'jeyne-westerling',
+      },
+      {
+        owner: 'raynald-westerling',
+        unit: 'chapter',
+        at: 158,
+        person: 'jeyne-westerling',
+      },
+      {
+        owner: 'raynald-westerling',
+        unit: 'chapter',
+        at: 193,
+        person: 'grey-wind',
+      },
+      {
+        owner: 'willem-lannister',
+        unit: 'episode',
+        at: 23,
+        person: 'talisa-maegyr',
+      },
+      {
+        owner: 'willem-lannister',
+        unit: 'episode',
+        at: 25,
+        person: 'rickard-karstark',
+      },
+      {
+        owner: 'willem-lannister',
+        unit: 'chapter',
+        at: 164,
+        person: 'rickard-karstark',
+      },
+      {
+        owner: 'martyn-lannister',
+        unit: 'episode',
+        at: 23,
+        person: 'talisa-maegyr',
+      },
+      {
+        owner: 'martyn-lannister',
+        unit: 'episode',
+        at: 25,
+        person: 'rickard-karstark',
+      },
+      { owner: 'lothar-frey', unit: 'chapter', at: 179, person: 'walder-frey' },
+      { owner: 'lothar-frey', unit: 'chapter', at: 193, person: 'grey-wind' },
+      {
+        owner: 'walder-rivers',
+        unit: 'chapter',
+        at: 179,
+        person: 'walder-frey',
+      },
+      { owner: 'roslin-frey', unit: 'episode', at: 26, person: 'walder-frey' },
+      { owner: 'roslin-frey', unit: 'chapter', at: 179, person: 'walder-frey' },
+      { owner: 'roslin-frey', unit: 'episode', at: 29, person: 'robb-stark' },
+      { owner: 'roslin-frey', unit: 'chapter', at: 195, person: 'lothar-frey' },
+      { owner: 'ryman-frey', unit: 'chapter', at: 193, person: 'robb-stark' },
+      {
+        owner: 'ryman-frey',
+        unit: 'chapter',
+        at: 195,
+        person: 'dacey-mormont',
+      },
+      {
+        owner: 'aegon-frey',
+        unit: 'chapter',
+        at: 195,
+        person: 'catelyn-stark',
+      },
+      { owner: 'robb-stark', unit: 'episode', at: 22, person: 'roose-bolton' },
+      { owner: 'robb-stark', unit: 'episode', at: 23, person: 'edmure-tully' },
+      {
+        owner: 'robb-stark',
+        unit: 'episode',
+        at: 25,
+        person: 'rickard-karstark',
+      },
+      { owner: 'robb-stark', unit: 'episode', at: 26, person: 'walder-frey' },
+      { owner: 'robb-stark', unit: 'episode', at: 29, person: 'roose-bolton' },
+      {
+        owner: 'robb-stark',
+        unit: 'chapter',
+        at: 158,
+        person: 'jeyne-westerling',
+      },
+      {
+        owner: 'robb-stark',
+        unit: 'chapter',
+        at: 164,
+        person: 'willem-lannister',
+      },
+      {
+        owner: 'robb-stark',
+        unit: 'chapter',
+        at: 179,
+        person: 'catelyn-stark',
+      },
+      { owner: 'robb-stark', unit: 'chapter', at: 189, person: 'jon-snow' },
+      { owner: 'robb-stark', unit: 'chapter', at: 193, person: 'walder-frey' },
+      {
+        owner: 'robb-stark',
+        unit: 'chapter',
+        at: 195,
+        person: 'smalljon-umber',
+      },
+      { owner: 'catelyn-stark', unit: 'episode', at: 22, person: 'jon-snow' },
+      {
+        owner: 'catelyn-stark',
+        unit: 'episode',
+        at: 23,
+        person: 'hoster-tully',
+      },
+      {
+        owner: 'catelyn-stark',
+        unit: 'episode',
+        at: 25,
+        person: 'rickard-karstark',
+      },
+      {
+        owner: 'catelyn-stark',
+        unit: 'episode',
+        at: 27,
+        person: 'walder-frey',
+      },
+      {
+        owner: 'catelyn-stark',
+        unit: 'episode',
+        at: 29,
+        person: 'roose-bolton',
+      },
+      {
+        owner: 'catelyn-stark',
+        unit: 'chapter',
+        at: 146,
+        person: 'hoster-tully',
+      },
+      {
+        owner: 'catelyn-stark',
+        unit: 'chapter',
+        at: 158,
+        person: 'robb-stark',
+      },
+      {
+        owner: 'catelyn-stark',
+        unit: 'chapter',
+        at: 164,
+        person: 'hoster-tully',
+      },
+      {
+        owner: 'catelyn-stark',
+        unit: 'chapter',
+        at: 179,
+        person: 'lothar-frey',
+      },
+      { owner: 'catelyn-stark', unit: 'chapter', at: 189, person: 'jon-snow' },
+      {
+        owner: 'catelyn-stark',
+        unit: 'chapter',
+        at: 193,
+        person: 'walder-frey',
+      },
+      {
+        owner: 'catelyn-stark',
+        unit: 'chapter',
+        at: 195,
+        person: 'aegon-frey',
+      },
+      {
+        owner: 'talisa-maegyr',
+        unit: 'episode',
+        at: 22,
+        person: 'catelyn-stark',
+      },
+      {
+        owner: 'talisa-maegyr',
+        unit: 'episode',
+        at: 23,
+        person: 'willem-lannister',
+      },
+      {
+        owner: 'talisa-maegyr',
+        unit: 'episode',
+        at: 25,
+        person: 'rickard-karstark',
+      },
+      {
+        owner: 'talisa-maegyr',
+        unit: 'episode',
+        at: 29,
+        person: 'walder-frey',
+      },
+      {
+        owner: 'edmure-tully',
+        unit: 'episode',
+        at: 23,
+        person: 'hoster-tully',
+      },
+      {
+        owner: 'edmure-tully',
+        unit: 'episode',
+        at: 25,
+        person: 'rickard-karstark',
+      },
+      { owner: 'edmure-tully', unit: 'episode', at: 26, person: 'roslin-frey' },
+      {
+        owner: 'edmure-tully',
+        unit: 'episode',
+        at: 29,
+        person: 'catelyn-stark',
+      },
+      {
+        owner: 'edmure-tully',
+        unit: 'chapter',
+        at: 146,
+        person: 'hoster-tully',
+      },
+      { owner: 'edmure-tully', unit: 'chapter', at: 158, person: 'robb-stark' },
+      {
+        owner: 'edmure-tully',
+        unit: 'chapter',
+        at: 164,
+        person: 'rickard-karstark',
+      },
+      {
+        owner: 'edmure-tully',
+        unit: 'chapter',
+        at: 179,
+        person: 'hoster-tully',
+      },
+      {
+        owner: 'edmure-tully',
+        unit: 'chapter',
+        at: 193,
+        person: 'walder-frey',
+      },
+      {
+        owner: 'brynden-tully',
+        unit: 'episode',
+        at: 23,
+        person: 'hoster-tully',
+      },
+      {
+        owner: 'brynden-tully',
+        unit: 'episode',
+        at: 25,
+        person: 'rickard-karstark',
+      },
+      {
+        owner: 'brynden-tully',
+        unit: 'episode',
+        at: 29,
+        person: 'walder-frey',
+      },
+      {
+        owner: 'brynden-tully',
+        unit: 'chapter',
+        at: 158,
+        person: 'edmure-tully',
+      },
+      {
+        owner: 'brynden-tully',
+        unit: 'chapter',
+        at: 164,
+        person: 'rickard-karstark',
+      },
+      {
+        owner: 'brynden-tully',
+        unit: 'chapter',
+        at: 179,
+        person: 'hoster-tully',
+      },
+      {
+        owner: 'brynden-tully',
+        unit: 'chapter',
+        at: 195,
+        person: 'lysa-arryn',
+      },
+      {
+        owner: 'hoster-tully',
+        unit: 'episode',
+        at: 23,
+        person: 'brynden-tully',
+      },
+      {
+        owner: 'rickard-karstark',
+        unit: 'episode',
+        at: 22,
+        person: 'robb-stark',
+      },
+      {
+        owner: 'rickard-karstark',
+        unit: 'episode',
+        at: 25,
+        person: 'willem-lannister',
+      },
+      {
+        owner: 'rickard-karstark',
+        unit: 'chapter',
+        at: 158,
+        person: 'catelyn-stark',
+      },
+      {
+        owner: 'rickard-karstark',
+        unit: 'chapter',
+        at: 164,
+        person: 'willem-lannister',
+      },
+      {
+        owner: 'walder-frey',
+        unit: 'episode',
+        at: 29,
+        person: 'talisa-maegyr',
+      },
+      { owner: 'walder-frey', unit: 'episode', at: 30, person: 'roose-bolton' },
+      {
+        owner: 'walder-frey',
+        unit: 'chapter',
+        at: 193,
+        person: 'edmure-tully',
+      },
+      { owner: 'walder-frey', unit: 'chapter', at: 195, person: 'aegon-frey' },
+      {
+        owner: 'grey-wind',
+        unit: 'chapter',
+        at: 158,
+        person: 'jeyne-westerling',
+      },
+      {
+        owner: 'grey-wind',
+        unit: 'chapter',
+        at: 193,
+        person: 'raynald-westerling',
+      },
+      {
+        owner: 'greatjon-umber',
+        unit: 'chapter',
+        at: 195,
+        person: 'roslin-frey',
+      },
+      {
+        owner: 'dacey-mormont',
+        unit: 'chapter',
+        at: 195,
+        person: 'ryman-frey',
+      },
+      {
+        owner: 'jason-mallister',
+        unit: 'chapter',
+        at: 189,
+        person: 'robb-stark',
+      },
+    ] as const)(
+      'opens $owner’s $unit $at snapshot with $person',
+      ({ owner, unit, at, person }) => {
+        const mark = unit === 'episode' ? ep : ch
+
+        expect(people(owner, mark(at - 1))).not.toContain(person)
+        expect(people(owner, mark(at))).toContain(person)
+      },
+    )
+
+    it.each([
+      // owner, the medium, the number of a snapshot, a person it rewords
+      {
+        owner: 'jeyne-westerling',
+        unit: 'chapter',
+        at: 164,
+        person: 'catelyn-stark',
+      },
+      {
+        owner: 'jeyne-westerling',
+        unit: 'chapter',
+        at: 189,
+        person: 'robb-stark',
+      },
+      {
+        owner: 'jeyne-westerling',
+        unit: 'chapter',
+        at: 195,
+        person: 'robb-stark',
+      },
+      { owner: 'rolph-spicer', unit: 'chapter', at: 189, person: 'robb-stark' },
+      { owner: 'rolph-spicer', unit: 'chapter', at: 195, person: 'robb-stark' },
+      {
+        owner: 'raynald-westerling',
+        unit: 'chapter',
+        at: 195,
+        person: 'robb-stark',
+      },
+      { owner: 'lothar-frey', unit: 'chapter', at: 195, person: 'walder-frey' },
+      {
+        owner: 'walder-rivers',
+        unit: 'chapter',
+        at: 195,
+        person: 'robb-stark',
+      },
+      { owner: 'robb-stark', unit: 'episode', at: 27, person: 'talisa-maegyr' },
+      { owner: 'talisa-maegyr', unit: 'episode', at: 27, person: 'robb-stark' },
+      {
+        owner: 'edmure-tully',
+        unit: 'chapter',
+        at: 195,
+        person: 'roslin-frey',
+      },
+      {
+        owner: 'hoster-tully',
+        unit: 'chapter',
+        at: 146,
+        person: 'catelyn-stark',
+      },
+      {
+        owner: 'hoster-tully',
+        unit: 'chapter',
+        at: 179,
+        person: 'catelyn-stark',
+      },
+      { owner: 'grey-wind', unit: 'episode', at: 29, person: 'robb-stark' },
+      { owner: 'grey-wind', unit: 'chapter', at: 195, person: 'robb-stark' },
+      {
+        owner: 'greatjon-umber',
+        unit: 'episode',
+        at: 29,
+        person: 'robb-stark',
+      },
+      {
+        owner: 'smalljon-umber',
+        unit: 'chapter',
+        at: 195,
+        person: 'robb-stark',
+      },
+      { owner: 'maege-mormont', unit: 'episode', at: 29, person: 'robb-stark' },
+      {
+        owner: 'maege-mormont',
+        unit: 'chapter',
+        at: 195,
+        person: 'robb-stark',
+      },
+      {
+        owner: 'galbart-glover',
+        unit: 'episode',
+        at: 29,
+        person: 'robb-stark',
+      },
+      {
+        owner: 'galbart-glover',
+        unit: 'chapter',
+        at: 195,
+        person: 'robb-stark',
+      },
+      {
+        owner: 'robett-glover',
+        unit: 'chapter',
+        at: 195,
+        person: 'robb-stark',
+      },
+      {
+        owner: 'jason-mallister',
+        unit: 'chapter',
+        at: 195,
+        person: 'catelyn-stark',
+      },
+      {
+        owner: 'wendel-manderly',
+        unit: 'chapter',
+        at: 195,
+        person: 'catelyn-stark',
+      },
+      {
+        owner: 'stevron-frey',
+        unit: 'episode',
+        at: 29,
+        person: 'catelyn-stark',
+      },
+      { owner: 'lysa-arryn', unit: 'episode', at: 29, person: 'catelyn-stark' },
+      {
+        owner: 'lysa-arryn',
+        unit: 'chapter',
+        at: 195,
+        person: 'catelyn-stark',
+      },
+      {
+        owner: 'robin-arryn',
+        unit: 'episode',
+        at: 29,
+        person: 'catelyn-stark',
+      },
+      {
+        owner: 'robin-arryn',
+        unit: 'chapter',
+        at: 195,
+        person: 'catelyn-stark',
+      },
+      {
+        owner: 'donnel-waynwood',
+        unit: 'chapter',
+        at: 195,
+        person: 'catelyn-stark',
+      },
+      { owner: 'mya-stone', unit: 'chapter', at: 195, person: 'catelyn-stark' },
+      {
+        owner: 'nestor-royce',
+        unit: 'chapter',
+        at: 195,
+        person: 'catelyn-stark',
+      },
+      { owner: 'marillion', unit: 'episode', at: 29, person: 'catelyn-stark' },
+      { owner: 'marillion', unit: 'chapter', at: 195, person: 'catelyn-stark' },
+      {
+        owner: 'willis-wode',
+        unit: 'chapter',
+        at: 195,
+        person: 'catelyn-stark',
+      },
+      {
+        owner: 'hallis-mollen',
+        unit: 'chapter',
+        at: 195,
+        person: 'catelyn-stark',
+      },
+      {
+        owner: 'masha-heddle',
+        unit: 'episode',
+        at: 29,
+        person: 'catelyn-stark',
       },
     ] as const)(
       'rewords $owner’s card in its $unit $at snapshot for $person',

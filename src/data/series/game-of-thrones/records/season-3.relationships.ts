@@ -343,6 +343,685 @@ const essos = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Robb's war and the Riverlands (#1653): the cards of the group's new
+ * characters. The show: "Walk of Punishment" (episode 23), "Kissed by Fire"
+ * (25), "The Climb" (26) and "The Rains of Castamere" (29). The books:
+ * Catelyn II to VII (chapters 158, 164, 179, 189, 193 and 195).
+ */
+const riverlands = {
+  // Jeyne Westerling (books only)
+  jeyRobb: {
+    character: 'robb-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'The king she nursed at the Crag after he was wounded storming it. The night he heard his brothers had been killed she comforted him, and he married her the next morning.',
+      it: 'Il re che ha curato al Crag, dopo che era stato ferito nell’assalto al castello. La notte in cui lui ha saputo della morte dei fratelli lei lo ha consolato, e la mattina dopo Robb l’ha sposata.',
+    },
+  },
+  jeyCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother-in-law', it: 'Suocera' },
+    summary: {
+      en: 'Robb’s mother. At Riverrun Robb presents Jeyne to her as his lady wife.',
+      it: 'La madre di Robb. A Delta delle Acque Robb le presenta Jeyne come sua moglie.',
+    },
+  },
+  jeyGreyWind: {
+    character: 'grey-wind',
+    type: { en: 'Wolf she fears', it: 'Lupo che teme' },
+    summary: {
+      en: 'Robb’s direwolf. She is afraid of him, so Robb keeps him away from her side.',
+      it: 'Il metalupo di Robb. Lei ne ha paura, e per questo Robb lo tiene lontano da lei.',
+    },
+  },
+  jeyRolph: {
+    character: 'rolph-spicer',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her mother’s brother, who came over to Robb with the family to escape the Lannisters’ revenge.',
+      it: 'Il fratello di sua madre, passato con la famiglia dalla parte di Robb per sfuggire alla vendetta dei Lannister.',
+    },
+  },
+  jeyRaynald: {
+    character: 'raynald-westerling',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who came to Riverrun with the family when she married Robb.',
+      it: 'Suo fratello, venuto a Delta delle Acque con la famiglia quando lei ha sposato Robb.',
+    },
+  },
+  jeyCatelynAdvice: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother-in-law', it: 'Suocera' },
+    summary: {
+      en: 'Robb’s mother. The night Robb beheads Lord Karstark, Jeyne goes to her to ask how to comfort him, and promises she will give him children soon.',
+      it: 'La madre di Robb. La notte in cui Robb decapita lord Karstark, Jeyne va da lei a chiederle come consolarlo, e le promette che presto gli darà dei figli.',
+    },
+  },
+  jeyRobbLeaves: {
+    character: 'robb-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'The king she married. He leaves her at Riverrun when he rides to the Twins for Edmure’s wedding.',
+      it: 'Il re che ha sposato. La lascia a Delta delle Acque quando parte per le Torri Gemelle, alle nozze di Edmure.',
+    },
+  },
+  jeyRaynaldBanner: {
+    character: 'raynald-westerling',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, the one of her family who rides with Robb to the Twins.',
+      it: 'Suo fratello, l’unico della famiglia che segue Robb alle Torri Gemelle.',
+    },
+  },
+  jeyRolphErrand: {
+    character: 'rolph-spicer',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her uncle, whom Robb sends to the Golden Tooth to hand over a Lannister prisoner in an exchange of captives.',
+      it: 'Suo zio, che Robb manda al Dente d’Oro a consegnare un prigioniero Lannister in uno scambio di ostaggi.',
+    },
+  },
+  jeyRobbDead: {
+    character: 'robb-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'The king she married, who left her at Riverrun to ride to the Twins for Edmure’s wedding. He was killed at the wedding feast.',
+      it: 'Il re che aveva sposato, che l’aveva lasciata a Delta delle Acque per andare alle nozze di Edmure alle Torri Gemelle. Alla festa nuziale è stato ucciso.',
+    },
+  },
+  jeyCatelynDead: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother-in-law', it: 'Suocera' },
+    summary: {
+      en: 'Robb’s mother, to whom Jeyne went for advice and promised children. She was killed with Robb at the Twins.',
+      it: 'La madre di Robb, a cui Jeyne aveva chiesto consiglio promettendole dei nipoti. È stata uccisa con Robb alle Torri Gemelle.',
+    },
+  },
+
+  // Rolph Spicer (books only)
+  rolJeyne: {
+    character: 'jeyne-westerling',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His sister’s daughter, whom Robb has married. The family left the Lannisters’ side with her.',
+      it: 'La figlia di sua sorella, che Robb ha sposato. La famiglia ha lasciato i Lannister insieme a lei.',
+    },
+  },
+  rolRobb: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who married his niece. At his mother’s urging Robb finds him an errand that takes him away from court.',
+      it: 'Il re che ha sposato sua nipote. Su richiesta della madre, Robb gli trova un incarico che lo allontani dalla corte.',
+    },
+  },
+  rolGreyWind: {
+    character: 'grey-wind',
+    type: { en: 'Wolf that growls at him', it: 'Lupo che gli ringhia contro' },
+    summary: {
+      en: 'Robb’s direwolf, which growls whenever Rolph comes near.',
+      it: 'Il metalupo di Robb, che ringhia ogni volta che Rolph gli si avvicina.',
+    },
+  },
+  rolCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'King’s mother', it: 'Madre del re' },
+    summary: {
+      en: 'Robb’s mother. She dislikes the way the wolf growls at Rolph, and persuades Robb to send him away.',
+      it: 'La madre di Robb. Non le piace che il lupo ringhi a Rolph, e convince Robb a mandarlo via.',
+    },
+  },
+  rolRobbErrand: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who married his niece. He sends Rolph to the Golden Tooth to hand over a Lannister prisoner in an exchange of captives.',
+      it: 'Il re che ha sposato sua nipote. Manda Rolph al Dente d’Oro a consegnare un prigioniero Lannister in uno scambio di ostaggi.',
+    },
+  },
+  rolRobbDead: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who married his niece and sent Rolph to the Golden Tooth with a Lannister prisoner. He was killed at the Twins.',
+      it: 'Il re che aveva sposato sua nipote e mandato Rolph al Dente d’Oro con un prigioniero Lannister. È stato ucciso alle Torri Gemelle.',
+    },
+  },
+  rolCatelynDead: {
+    character: 'catelyn-stark',
+    type: { en: 'King’s mother', it: 'Madre del re' },
+    summary: {
+      en: 'Robb’s mother, who had Robb send Rolph away from court. She was killed with her son at the Twins.',
+      it: 'La madre di Robb, che aveva fatto allontanare Rolph dalla corte. È stata uccisa con il figlio alle Torri Gemelle.',
+    },
+  },
+
+  // Raynald Westerling (books only)
+  rayJeyne: {
+    character: 'jeyne-westerling',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, whom Robb has married. Robb introduces the family to his mother at Riverrun.',
+      it: 'Sua sorella, che Robb ha sposato. A Delta delle Acque Robb presenta la famiglia a sua madre.',
+    },
+  },
+  rayRobb: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king his sister has married.',
+      it: 'Il re che ha sposato sua sorella.',
+    },
+  },
+  rayCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'King’s mother', it: 'Madre del re' },
+    summary: {
+      en: 'Robb’s mother, to whom the king introduces the family.',
+      it: 'La madre di Robb, a cui il re presenta la famiglia.',
+    },
+  },
+  rayRobbBanner: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'His sister’s husband. Raynald bears his banner on the road to the Twins.',
+      it: 'Il marito di sua sorella. Raynald ne porta lo stendardo sulla strada per le Torri Gemelle.',
+    },
+  },
+  rayGreyWind: {
+    character: 'grey-wind',
+    type: { en: 'Wolf in his keeping', it: 'Lupo affidato a lui' },
+    summary: {
+      en: 'Robb’s direwolf, which will not go through the gatehouse of the Twins. Robb leaves Raynald outside with him.',
+      it: 'Il metalupo di Robb, che non vuole passare dal corpo di guardia delle Torri Gemelle. Robb lascia Raynald fuori con lui.',
+    },
+  },
+  rayJeyneHome: {
+    character: 'jeyne-westerling',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, left behind at Riverrun. The Freys are angry that she has not come.',
+      it: 'Sua sorella, rimasta a Delta delle Acque. I Frey sono offesi perché non è venuta.',
+    },
+  },
+  rayRobbDead: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'His sister’s husband, whose banner Raynald bore to the Twins. He was killed at the wedding feast.',
+      it: 'Il marito di sua sorella, di cui Raynald aveva portato lo stendardo alle Torri Gemelle. È stato ucciso alla festa nuziale.',
+    },
+  },
+  rayCatelynDead: {
+    character: 'catelyn-stark',
+    type: { en: 'King’s mother', it: 'Madre del re' },
+    summary: {
+      en: 'Robb’s mother, who rode beside him to the Twins. She was killed with him there.',
+      it: 'La madre di Robb, che aveva cavalcato al suo fianco fino alle Torri Gemelle. È stata uccisa lì insieme a lui.',
+    },
+  },
+
+  // Willem Lannister, the show
+  wilTalisa: {
+    character: 'talisa-maegyr',
+    type: { en: 'Healer', it: 'Guaritrice' },
+    summary: {
+      en: 'Robb’s queen, who comes down to the cells to dress the prisoners’ wounds. Asked if Robb eats his enemies, she teases that he spares children except at the full moon.',
+      it: 'La regina di Robb, che scende nelle celle a medicare i prigionieri. Quando le chiedono se Robb divori i nemici, scherza che risparmia i bambini, tranne con la luna piena.',
+    },
+  },
+  wilEdmure: {
+    character: 'edmure-tully',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The lord whose men took him prisoner in battle. Edmure holds him at Riverrun as a hostage.',
+      it: 'Il lord i cui uomini lo hanno fatto prigioniero in battaglia. Edmure lo tiene a Delta delle Acque come ostaggio.',
+    },
+  },
+  wilMartyn: {
+    character: 'martyn-lannister',
+    type: { en: 'Fellow prisoner', it: 'Compagno di prigionia' },
+    summary: {
+      en: 'The other Lannister squire held in the cell with him. Martyn is the one who asks about Robb and the wolf.',
+      it: 'L’altro scudiero Lannister rinchiuso nella cella con lui. È Martyn a chiedere di Robb e del lupo.',
+    },
+  },
+  wilRobb: {
+    character: 'robb-stark',
+    type: { en: 'Enemy king', it: 'Re nemico' },
+    summary: {
+      en: 'The king in the North, of whom the Lannister men tell tales: that he turns into a wolf and eats his enemies.',
+      it: 'Il re del Nord, di cui gli uomini dei Lannister raccontano che si trasforma in lupo e divora i nemici.',
+    },
+  },
+  wilRickard: {
+    character: 'rickard-karstark',
+    type: { en: 'Killer', it: 'Assassino' },
+    summary: {
+      en: 'The northern lord who broke into the cell with his men. Willem asked whether it was a rescue, and the Karstark men killed him.',
+      it: 'Il lord del Nord che ha fatto irruzione nella cella con i suoi uomini. Willem ha chiesto se fosse un salvataggio, e gli uomini di Karstark lo hanno ucciso.',
+    },
+  },
+  wilMartynDead: {
+    character: 'martyn-lannister',
+    type: { en: 'Fellow prisoner', it: 'Compagno di prigionia' },
+    summary: {
+      en: 'The other Lannister squire in his cell. He begged for his life, and Lord Karstark stabbed him.',
+      it: 'L’altro scudiero Lannister della sua cella. Ha implorato di avere salva la vita, e lord Karstark lo ha pugnalato.',
+    },
+  },
+  wilTalisaPast: {
+    character: 'talisa-maegyr',
+    type: { en: 'Healer', it: 'Guaritrice' },
+    summary: {
+      en: 'Robb’s queen, who dressed the prisoners’ wounds in the cells and teased them about the tales of Robb the wolf.',
+      it: 'La regina di Robb, che medicava i prigionieri nelle celle e li prendeva in giro per le storie su Robb il lupo.',
+    },
+  },
+  wilEdmurePast: {
+    character: 'edmure-tully',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The lord who held him at Riverrun as a hostage.',
+      it: 'Il lord che lo teneva in ostaggio a Delta delle Acque.',
+    },
+  },
+  // Willem Lannister, the books: Catelyn III, where his body is laid
+  // before Robb.
+  wilRickardBook: {
+    character: 'rickard-karstark',
+    type: { en: 'Killer', it: 'Assassino' },
+    summary: {
+      en: 'The northern lord who wanted vengeance on Jaime for his sons. He and his men murdered Willem in his cell at Riverrun.',
+      it: 'Il lord del Nord che voleva vendicarsi di Jaime per i suoi figli. Lui e i suoi uomini hanno ucciso Willem nella sua cella a Delta delle Acque.',
+    },
+  },
+  wilRobbBook: {
+    character: 'robb-stark',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The king who held him prisoner at Riverrun. Willem’s body was laid before him in the great hall.',
+      it: 'Il re che lo teneva prigioniero a Delta delle Acque. Il corpo di Willem è stato deposto davanti a lui nella sala grande.',
+    },
+  },
+
+  // Martyn Lannister (show only)
+  marTalisa: {
+    character: 'talisa-maegyr',
+    type: { en: 'Healer', it: 'Guaritrice' },
+    summary: {
+      en: 'Robb’s queen, who dresses his wounded hand in the cell. When he asks if Robb eats his enemies, she teases that he spares children except at the full moon.',
+      it: 'La regina di Robb, che gli medica la mano ferita nella cella. Quando lui le chiede se Robb divori i nemici, scherza che risparmia i bambini, tranne con la luna piena.',
+    },
+  },
+  marEdmure: {
+    character: 'edmure-tully',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'The lord whose men took him prisoner in battle. Edmure holds him at Riverrun as a hostage.',
+      it: 'Il lord i cui uomini lo hanno fatto prigioniero in battaglia. Edmure lo tiene a Delta delle Acque come ostaggio.',
+    },
+  },
+  marWillem: {
+    character: 'willem-lannister',
+    type: { en: 'Fellow prisoner', it: 'Compagno di prigionia' },
+    summary: {
+      en: 'The other Lannister squire held in the cell with him, who watches in silence.',
+      it: 'L’altro scudiero Lannister rinchiuso nella cella con lui, che osserva in silenzio.',
+    },
+  },
+  marRobb: {
+    character: 'robb-stark',
+    type: { en: 'Enemy king', it: 'Re nemico' },
+    summary: {
+      en: 'The king in the North. Martyn asks the queen if it is true that he turns into a wolf and eats his enemies.',
+      it: 'Il re del Nord. Martyn chiede alla regina se sia vero che si trasforma in lupo e divora i nemici.',
+    },
+  },
+  marRickard: {
+    character: 'rickard-karstark',
+    type: { en: 'Killer', it: 'Assassino' },
+    summary: {
+      en: 'The northern lord who broke into the cell with his men. Martyn begged, saying he was only a squire, and Lord Karstark stabbed him.',
+      it: 'Il lord del Nord che ha fatto irruzione nella cella con i suoi uomini. Martyn lo ha implorato, dicendo di essere solo uno scudiero, e lord Karstark lo ha pugnalato.',
+    },
+  },
+  marWillemDead: {
+    character: 'willem-lannister',
+    type: { en: 'Fellow prisoner', it: 'Compagno di prigionia' },
+    summary: {
+      en: 'The other Lannister squire in his cell, who asked whether the men were a rescue. The Karstark men killed him first.',
+      it: 'L’altro scudiero Lannister della sua cella, che ha chiesto se quegli uomini fossero venuti a salvarli. Gli uomini di Karstark lo hanno ucciso per primo.',
+    },
+  },
+  marTalisaPast: {
+    character: 'talisa-maegyr',
+    type: { en: 'Healer', it: 'Guaritrice' },
+    summary: {
+      en: 'Robb’s queen, who dressed his wounded hand in the cell and teased him about the tales of Robb the wolf.',
+      it: 'La regina di Robb, che gli aveva medicato la mano ferita nella cella e lo aveva preso in giro per le storie su Robb il lupo.',
+    },
+  },
+
+  // Lothar Frey (the books; the show names him only past the stage)
+  lotWalder: {
+    character: 'walder-frey',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the lord of the Twins, whose terms he carries to Riverrun: Robb must come and apologise in person, and Edmure must marry Roslin.',
+      it: 'Suo padre, il signore delle Torri Gemelle, di cui porta le condizioni a Delta delle Acque: Robb deve andare a scusarsi di persona, ed Edmure deve sposare Roslin.',
+    },
+  },
+  lotRobb: {
+    character: 'robb-stark',
+    type: {
+      en: 'King who broke his word',
+      it: 'Re che ha mancato alla parola',
+    },
+    summary: {
+      en: 'The king who broke his vow to marry a Frey. He asks Lothar to help launch Lord Hoster’s funeral boat as a gesture to his house.',
+      it: 'Il re che ha mancato alla promessa di sposare una Frey. Chiede a Lothar di aiutarlo a varare la barca funebre di lord Hoster, come gesto verso la sua casata.',
+    },
+  },
+  lotEdmure: {
+    character: 'edmure-tully',
+    type: { en: 'Bridegroom', it: 'Sposo' },
+    summary: {
+      en: 'The new lord of Riverrun, whom his father demands as a husband for Roslin. Edmure balks at not choosing his own wife.',
+      it: 'Il nuovo signore di Delta delle Acque, che suo padre pretende come marito per Roslin. Edmure recalcitra all’idea di non scegliersi la moglie.',
+    },
+  },
+  lotCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'King’s mother', it: 'Madre del re' },
+    summary: {
+      en: 'Robb’s mother. At dinner Lothar tells her that Winterfell has burned, and that the Bastard of Bolton saved the survivors.',
+      it: 'La madre di Robb. A cena Lothar le racconta che Grande Inverno è bruciata, e che il Bastardo di Bolton ha salvato i superstiti.',
+    },
+  },
+  lotWalderRivers: {
+    character: 'walder-rivers',
+    type: { en: 'Fellow envoy', it: 'Compagno di ambasceria' },
+    summary: {
+      en: 'His father’s bastard son, who rides to Riverrun with him to bring the terms.',
+      it: 'Il figlio bastardo di suo padre, che va con lui a Delta delle Acque a portare le condizioni.',
+    },
+  },
+  lotGreyWind: {
+    character: 'grey-wind',
+    type: { en: 'Wolf at the gate', it: 'Lupo alla porta' },
+    summary: {
+      en: 'Robb’s direwolf, which will not go through the gatehouse. Lothar offers to hand him to the master of hounds; Robb leaves him outside with Ser Raynald.',
+      it: 'Il metalupo di Robb, che non vuole passare dal corpo di guardia. Lothar si offre di affidarlo al maestro dei cani; Robb lo lascia fuori con ser Raynald.',
+    },
+  },
+  lotRobbGuest: {
+    character: 'robb-stark',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The king who comes to the Twins for Edmure’s wedding, to apologise to Lord Walder for his broken vow.',
+      it: 'Il re che arriva alle Torri Gemelle per le nozze di Edmure, a scusarsi con lord Walder per la promessa mancata.',
+    },
+  },
+  lotEdmureWed: {
+    character: 'edmure-tully',
+    type: { en: 'Bridegroom', it: 'Sposo' },
+    summary: {
+      en: 'The lord of Riverrun, who comes to the Twins to marry Roslin.',
+      it: 'Il signore di Delta delle Acque, venuto alle Torri Gemelle a sposare Roslin.',
+    },
+  },
+  lotRobbDead: {
+    character: 'robb-stark',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The king who came to the Twins to apologise for his broken vow. He was killed at the wedding feast.',
+      it: 'Il re venuto alle Torri Gemelle a scusarsi per la promessa mancata. È stato ucciso alla festa nuziale.',
+    },
+  },
+  lotCatelynDead: {
+    character: 'catelyn-stark',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'Robb’s mother, to whom Lothar brought the news of Winterfell at Riverrun. She was killed at the wedding feast.',
+      it: 'La madre di Robb, a cui Lothar aveva portato le notizie di Grande Inverno a Delta delle Acque. È stata uccisa alla festa nuziale.',
+    },
+  },
+  lotEdmureFeast: {
+    character: 'edmure-tully',
+    type: { en: 'Bridegroom', it: 'Sposo' },
+    summary: {
+      en: 'The lord of Riverrun, who married Roslin at the Twins and was carried off to the bedding.',
+      it: 'Il signore di Delta delle Acque, che ha sposato Roslin alle Torri Gemelle ed è stato portato via per la cerimonia della consumazione.',
+    },
+  },
+  lotWalderFeast: {
+    character: 'walder-frey',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who welcomes Robb with bread and salt and calls for the bedding at the wedding feast.',
+      it: 'Suo padre, che accoglie Robb con pane e sale e alla festa nuziale chiama la cerimonia della consumazione.',
+    },
+  },
+
+  // Walder Rivers (the books; the show names him only past the stage)
+  wriWalder: {
+    character: 'walder-frey',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the lord of the Twins, whose terms he and Lothar bring to Riverrun.',
+      it: 'Suo padre, il signore delle Torri Gemelle, di cui lui e Lothar portano le condizioni a Delta delle Acque.',
+    },
+  },
+  wriLothar: {
+    character: 'lothar-frey',
+    type: { en: 'Fellow envoy', it: 'Compagno di ambasceria' },
+    summary: {
+      en: 'His father’s son, who speaks for Lord Walder at Riverrun.',
+      it: 'Il figlio di suo padre, che parla per lord Walder a Delta delle Acque.',
+    },
+  },
+  wriRobb: {
+    character: 'robb-stark',
+    type: {
+      en: 'King who broke his word',
+      it: 'Re che ha mancato alla parola',
+    },
+    summary: {
+      en: 'The king who broke his vow to marry a Frey. He hears the terms and dismisses the two envoys.',
+      it: 'Il re che ha mancato alla promessa di sposare una Frey. Ascolta le condizioni e congeda i due inviati.',
+    },
+  },
+  wriRobbDead: {
+    character: 'robb-stark',
+    type: {
+      en: 'King who broke his word',
+      it: 'Re che ha mancato alla parola',
+    },
+    summary: {
+      en: 'The king who broke his vow to marry a Frey and heard the envoys’ terms at Riverrun. He was killed at the Twins.',
+      it: 'Il re che aveva mancato alla promessa di sposare una Frey e ascoltato le condizioni degli inviati a Delta delle Acque. È stato ucciso alle Torri Gemelle.',
+    },
+  },
+
+  // Roslin Frey: both media at her gate, then each medium's wedding
+  rosWalder: {
+    character: 'walder-frey',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, who demands that Edmure Tully marry her as the price of renewing his alliance with Robb.',
+      it: 'Suo padre, che pretende che Edmure Tully la sposi come prezzo per rinnovare l’alleanza con Robb.',
+    },
+  },
+  rosEdmure: {
+    character: 'edmure-tully',
+    type: { en: 'Promised husband', it: 'Promesso sposo' },
+    summary: {
+      en: 'The lord of Riverrun her father means her to marry. He has never met her, and agrees only when the others press him.',
+      it: 'Il signore di Delta delle Acque che suo padre vuole farle sposare. Non l’ha mai vista, e accetta solo quando gli altri insistono.',
+    },
+  },
+  rosEdmureShow: {
+    character: 'edmure-tully',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'The lord she married at the Twins. He was relieved to find her beautiful, and only had eyes for her until the bedding.',
+      it: 'Il lord che ha sposato alle Torri Gemelle. È stato sollevato nel trovarla bella, e fino alla cerimonia della consumazione ha avuto occhi solo per lei.',
+    },
+  },
+  rosWalderShow: {
+    character: 'walder-frey',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, who gave her to Edmure and called for the bedding at the end of the feast.',
+      it: 'Suo padre, che l’ha data in sposa a Edmure e a fine banchetto ha chiamato la cerimonia della consumazione.',
+    },
+  },
+  rosRobbShow: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who broke his promise to marry one of her sisters, and apologised to them at the Twins. He was killed there after the wedding.',
+      it: 'Il re che aveva mancato alla promessa di sposare una delle sue sorelle, e a loro si era scusato alle Torri Gemelle. È stato ucciso lì dopo le nozze.',
+    },
+  },
+  rosCatelynShow: {
+    character: 'catelyn-stark',
+    type: { en: 'Husband’s sister', it: 'Sorella del marito' },
+    summary: {
+      en: 'Edmure’s sister, who came to the Twins for the wedding. She was killed there that night.',
+      it: 'La sorella di Edmure, venuta alle Torri Gemelle per le nozze. È stata uccisa lì quella notte.',
+    },
+  },
+  rosTalisa: {
+    character: 'talisa-maegyr',
+    type: { en: 'King’s wife', it: 'Moglie del re' },
+    summary: {
+      en: 'The woman Robb married instead of a Frey. She was killed at the wedding feast.',
+      it: 'La donna che Robb aveva sposato al posto di una Frey. È stata uccisa alla festa nuziale.',
+    },
+  },
+  rosEdmureBook: {
+    character: 'edmure-tully',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'The lord she married at the Twins. At the feast he doted on her, and she wept as she was carried off to the bedding.',
+      it: 'Il lord che ha sposato alle Torri Gemelle. Al banchetto era tutto attenzioni per lei, e lei piangeva mentre la portavano via per la cerimonia della consumazione.',
+    },
+  },
+  rosWalderBook: {
+    character: 'walder-frey',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, who had her brought out to meet Edmure and called for the bedding at the end of the feast.',
+      it: 'Suo padre, che l’ha fatta presentare a Edmure e a fine banchetto ha chiamato la cerimonia della consumazione.',
+    },
+  },
+  rosLothar: {
+    character: 'lothar-frey',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who carried their father’s terms, her marriage to Edmure among them, to Riverrun.',
+      it: 'Suo fratello, che aveva portato a Delta delle Acque le condizioni del padre, fra cui le sue nozze con Edmure.',
+    },
+  },
+  rosRobbBook: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who broke his promise to marry a Frey, and came to the Twins to apologise. He was killed at her wedding feast.',
+      it: 'Il re che aveva mancato alla promessa di sposare una Frey ed era venuto alle Torri Gemelle a scusarsi. È stato ucciso al suo banchetto di nozze.',
+    },
+  },
+  rosCatelynBook: {
+    character: 'catelyn-stark',
+    type: { en: 'Husband’s sister', it: 'Sorella del marito' },
+    summary: {
+      en: 'Edmure’s sister, who came to the Twins with Robb. She was killed at the wedding feast.',
+      it: 'La sorella di Edmure, venuta alle Torri Gemelle con Robb. È stata uccisa al banchetto di nozze.',
+    },
+  },
+
+  // Ryman Frey (books only)
+  rymRobb: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king whose host he meets on the road to the Twins. Ryman is angry that Robb has not brought his queen.',
+      it: 'Il re di cui va incontro all’esercito sulla strada per le Torri Gemelle. Ryman è irritato perché Robb non ha portato la regina.',
+    },
+  },
+  rymCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'King’s mother', it: 'Madre del re' },
+    summary: {
+      en: 'Robb’s mother, who offers her apologies for the absent queen.',
+      it: 'La madre di Robb, che si scusa per l’assenza della regina.',
+    },
+  },
+  rymWalder: {
+    character: 'walder-frey',
+    type: { en: 'Grandfather', it: 'Nonno' },
+    summary: {
+      en: 'His grandfather, the lord of the Twins, who will be displeased that the queen has not come.',
+      it: 'Suo nonno, il signore delle Torri Gemelle, che sarà scontento che la regina non sia venuta.',
+    },
+  },
+  rymDacey: {
+    character: 'dacey-mormont',
+    type: { en: 'Woman he killed', it: 'Donna che ha ucciso' },
+    summary: {
+      en: 'A northern woman who ran for the door when the slaughter began. Ryman came through it with his men and sank his axe into her.',
+      it: 'Una donna del Nord che quando è cominciato il massacro è corsa verso la porta. Ryman l’ha varcata con i suoi uomini e le ha piantato l’ascia nel ventre.',
+    },
+  },
+  rymCatelynFeast: {
+    character: 'catelyn-stark',
+    type: { en: 'King’s mother', it: 'Madre del re' },
+    summary: {
+      en: 'Robb’s mother, seated beside Ryman at the wedding feast. She was killed in the hall.',
+      it: 'La madre di Robb, seduta accanto a Ryman al banchetto di nozze. È stata uccisa nella sala.',
+    },
+  },
+  rymRobbDead: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king whose host Ryman met on the road. He was killed at the wedding feast.',
+      it: 'Il re di cui Ryman era andato incontro all’esercito sulla strada. È stato ucciso alla festa nuziale.',
+    },
+  },
+  rymWalderFeast: {
+    character: 'walder-frey',
+    type: { en: 'Grandfather', it: 'Nonno' },
+    summary: {
+      en: 'His grandfather, who watched the slaughter from his seat and mocked Robb.',
+      it: 'Suo nonno, che dal suo seggio ha guardato il massacro e si è fatto beffe di Robb.',
+    },
+  },
+
+  // Aegon Frey (books only), told at his gate, where he dies
+  aegCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Woman who killed him', it: 'Donna che lo ha ucciso' },
+    summary: {
+      en: 'Robb’s mother. In the slaughter she seized him and held a dagger to his throat to bargain for her son, and when Robb died she cut it.',
+      it: 'La madre di Robb. Durante il massacro lo ha afferrato e gli ha puntato un pugnale alla gola per trattare la vita del figlio, e quando Robb è morto lo ha sgozzato.',
+    },
+  },
+  aegWalder: {
+    character: 'walder-frey',
+    type: { en: 'Grandfather', it: 'Nonno' },
+    summary: {
+      en: 'His grandfather, who would not trade Robb for him, and dismissed him as a grandson of no use.',
+      it: 'Suo nonno, che non ha voluto scambiare Robb con lui, e lo ha liquidato come un nipote buono a nulla.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season3Relationships = {
   // Essos (#1650). The show: "Walk of Punishment" (episode 23), "Kissed by
   // Fire" (25) and "Second Sons" (28). The books: Daenerys III (chapter
@@ -492,6 +1171,306 @@ export const season3Relationships = {
       chapter: 186,
       source: 'chapter',
       value: [essos.preDaenerys, essos.preDaario],
+    },
+  ],
+  // Robb's war and the Riverlands (#1653). Books only: Catelyn II (158),
+  // III (164), V (189) and VII (195). Episodes only order the entries.
+  'jeyne-westerling': [
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'chapter',
+      value: [
+        riverlands.jeyRobb,
+        riverlands.jeyCatelyn,
+        riverlands.jeyGreyWind,
+        riverlands.jeyRolph,
+        riverlands.jeyRaynald,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'chapter',
+      value: [
+        riverlands.jeyRobb,
+        riverlands.jeyCatelynAdvice,
+        riverlands.jeyGreyWind,
+        riverlands.jeyRolph,
+        riverlands.jeyRaynald,
+      ],
+    },
+    {
+      episode: 27,
+      chapter: 189,
+      source: 'chapter',
+      value: [
+        riverlands.jeyRobbLeaves,
+        riverlands.jeyCatelynAdvice,
+        riverlands.jeyRaynaldBanner,
+        riverlands.jeyRolphErrand,
+        riverlands.jeyGreyWind,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands.jeyRobbDead,
+        riverlands.jeyCatelynDead,
+        riverlands.jeyRaynaldBanner,
+        riverlands.jeyRolphErrand,
+        riverlands.jeyGreyWind,
+      ],
+    },
+  ],
+  // Books only: Catelyn II (158), V (189) and VII (195).
+  'rolph-spicer': [
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'chapter',
+      value: [
+        riverlands.rolJeyne,
+        riverlands.rolRobb,
+        riverlands.rolGreyWind,
+        riverlands.rolCatelyn,
+      ],
+    },
+    {
+      episode: 27,
+      chapter: 189,
+      source: 'chapter',
+      value: [
+        riverlands.rolJeyne,
+        riverlands.rolRobbErrand,
+        riverlands.rolGreyWind,
+        riverlands.rolCatelyn,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands.rolJeyne,
+        riverlands.rolRobbDead,
+        riverlands.rolGreyWind,
+        riverlands.rolCatelynDead,
+      ],
+    },
+  ],
+  // Books only: Catelyn II (158), VI (193) and VII (195).
+  'raynald-westerling': [
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'chapter',
+      value: [riverlands.rayJeyne, riverlands.rayRobb, riverlands.rayCatelyn],
+    },
+    {
+      episode: 28,
+      chapter: 193,
+      source: 'chapter',
+      value: [
+        riverlands.rayRobbBanner,
+        riverlands.rayGreyWind,
+        riverlands.rayJeyneHome,
+        riverlands.rayCatelyn,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands.rayRobbDead,
+        riverlands.rayGreyWind,
+        riverlands.rayJeyneHome,
+        riverlands.rayCatelynDead,
+      ],
+    },
+  ],
+  // The show: "Walk of Punishment" (23) and "Kissed by Fire" (25), where he
+  // dies. The books: Catelyn III (164), where his body is laid before
+  // Robb, so the books' record opens dead.
+  'willem-lannister': [
+    {
+      episode: 23,
+      chapter: 164,
+      source: 'episode',
+      value: [
+        riverlands.wilTalisa,
+        riverlands.wilEdmure,
+        riverlands.wilMartyn,
+        riverlands.wilRobb,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'episode',
+      value: [
+        riverlands.wilRickard,
+        riverlands.wilMartynDead,
+        riverlands.wilTalisaPast,
+        riverlands.wilEdmurePast,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'chapter',
+      value: [riverlands.wilRickardBook, riverlands.wilRobbBook],
+    },
+  ],
+  // Show only: "Walk of Punishment" (23) and "Kissed by Fire" (25), where
+  // he dies.
+  'martyn-lannister': [
+    {
+      episode: 23,
+      chapter: 164,
+      source: 'episode',
+      value: [
+        riverlands.marTalisa,
+        riverlands.marEdmure,
+        riverlands.marWillem,
+        riverlands.marRobb,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'episode',
+      value: [
+        riverlands.marRickard,
+        riverlands.marWillemDead,
+        riverlands.marTalisaPast,
+      ],
+    },
+  ],
+  // The show says his name only in episode 60, past the stage: his cards
+  // are the books', Catelyn IV (179), VI (193) and VII (195).
+  'lothar-frey': [
+    {
+      episode: 60,
+      chapter: 179,
+      source: 'chapter',
+      value: [
+        riverlands.lotWalder,
+        riverlands.lotRobb,
+        riverlands.lotEdmure,
+        riverlands.lotCatelyn,
+        riverlands.lotWalderRivers,
+      ],
+    },
+    {
+      episode: 60,
+      chapter: 193,
+      source: 'chapter',
+      value: [
+        riverlands.lotGreyWind,
+        riverlands.lotRobbGuest,
+        riverlands.lotWalder,
+        riverlands.lotEdmureWed,
+        riverlands.lotCatelyn,
+      ],
+    },
+    {
+      episode: 60,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands.lotWalderFeast,
+        riverlands.lotRobbDead,
+        riverlands.lotCatelynDead,
+        riverlands.lotEdmureFeast,
+        riverlands.lotGreyWind,
+      ],
+    },
+  ],
+  // As Lothar: the books' Catelyn IV (179), and Robb's death in Catelyn
+  // VII (195).
+  'walder-rivers': [
+    {
+      episode: 60,
+      chapter: 179,
+      source: 'chapter',
+      value: [riverlands.wriWalder, riverlands.wriLothar, riverlands.wriRobb],
+    },
+    {
+      episode: 60,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands.wriWalder,
+        riverlands.wriLothar,
+        riverlands.wriRobbDead,
+      ],
+    },
+  ],
+  // Both media at her gate, "The Climb" (26) and Catelyn IV (179); then the
+  // show's wedding, "The Rains of Castamere" (29), and the books', Catelyn
+  // VI and VII (193, 195).
+  'roslin-frey': [
+    {
+      episode: 26,
+      chapter: 179,
+      value: [riverlands.rosWalder, riverlands.rosEdmure],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [
+        riverlands.rosEdmureShow,
+        riverlands.rosWalderShow,
+        riverlands.rosRobbShow,
+        riverlands.rosCatelynShow,
+        riverlands.rosTalisa,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands.rosEdmureBook,
+        riverlands.rosWalderBook,
+        riverlands.rosLothar,
+        riverlands.rosRobbBook,
+        riverlands.rosCatelynBook,
+      ],
+    },
+  ],
+  // Books only: Catelyn VI (193) and VII (195).
+  'ryman-frey': [
+    {
+      episode: 29,
+      chapter: 193,
+      source: 'chapter',
+      value: [riverlands.rymRobb, riverlands.rymCatelyn, riverlands.rymWalder],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        riverlands.rymDacey,
+        riverlands.rymCatelynFeast,
+        riverlands.rymRobbDead,
+        riverlands.rymWalderFeast,
+      ],
+    },
+  ],
+  // Books only: Catelyn VII (195), told at his gate, where he dies.
+  'aegon-frey': [
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [riverlands.aegCatelyn, riverlands.aegWalder],
     },
   ],
 } satisfies Record<string, Timeline<Relationship[]>>

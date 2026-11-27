@@ -39601,6 +39601,16 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740225",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740225",
       "contentSha256": "5f935afb8beb2c1606007c378ef331de7b88ab02a761fd96e267ab7bd5d33ed3"
+    },
+    "got-en-Brynden_Tully-748924.json": {
+      "locale": "en",
+      "title": "Brynden Tully",
+      "revision": 748924,
+      "revisionDate": "2026-09-30T15:19:55Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Brynden_Tully",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748924",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748924",
+      "contentSha256": "1be21507802774425de7d861fa7087ead81beae306abc95a1b5fc9e9de2ea99d"
     }
   }
 }
