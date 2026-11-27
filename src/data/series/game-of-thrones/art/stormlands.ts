@@ -522,8 +522,157 @@ const CORTNAY_GLOVE: Stroke[] = GLOVE
 const GROUND: Stroke = { d: 'M14 156 H146', role: 'ambient', dashed: true }
 
 /**
+ * A torch stood upright: the haft, its grain soft and its far side
+ * hatched, the head wrapped in two bands, and the flame in the accent with
+ * a smaller tongue inside it and sparks above.
+ */
+const TORCH_UPRIGHT: Stroke[] = [
+  { d: 'M74 74 L77 148 Q80 152 83 148 L86 74' },
+  { d: 'M79 84 Q81 110 79 140', role: 'soft' },
+  { d: 'M68 56 Q80 51 92 56 V74 Q80 79 68 74 Z' },
+  { d: 'M68 62 Q80 67 92 62 M68 68 Q80 73 92 68', role: 'soft' },
+  {
+    d: 'M70 54 Q58 42 66 26 Q69 35 73 34 Q70 18 80 6 Q88 20 86 30 Q90 26 93 20 Q104 38 90 54',
+    role: 'accent',
+  },
+  { d: 'M77 52 Q71 44 78 34 Q86 44 83 52', role: 'soft' },
+  {
+    d: 'M88 60 l3 -2 M87 92 l3 -2 M86 110 l3 -2 M85 128 l3 -2',
+    role: 'ambient',
+  },
+  {
+    d: dots([
+      [56, 22],
+      [104, 14],
+      [100, 46],
+    ]),
+    role: 'ambient',
+  },
+]
+
+/**
+ * Axell Florent: the torch he carries down to the cells of Dragonstone and
+ * takes away again, leaving his brother Alester in the dark, when he brings
+ * Davos before the king in Davos IV (chapter 180); the same chapter has him
+ * claim to see Stannis's victory in the flames. The record is the books'
+ * alone. The torch leans as he carries it; the flame is the accent.
+ */
+const AXELL_TORCH: Stroke[] = [
+  ...moved(TORCH_UPRIGHT, 'rotate(16 80 100)'),
+  shadow(80, 176, 24),
+]
+
+/** A leech, fat with blood, at the origin: its body and its rings. */
+const LEECH_BODY =
+  'M-26 4 Q-22 -3 -10 -7 Q4 -12 16 -8 Q26 -4 26 2 Q24 9 10 9 Q-6 10 -18 7 Q-24 6 -26 4 Z'
+const LEECH_RINGS: Stroke = {
+  d: 'M-14 -5 Q-16 1 -13 8 M-5 -8 Q-7 1 -4 9 M4 -10 Q2 0 5 9 M13 -9 Q11 0 14 9',
+  role: 'soft',
+}
+const LEECH: Stroke[] = [{ d: LEECH_BODY }, LEECH_RINGS]
+
+/**
+ * A brazier on three legs: the bowl in 3/4 with its rim, the coals heaped
+ * in it, two flames rising, and the far side hatched.
+ */
+const BRAZIER: Stroke[] = [
+  { d: ellipse(122, 92, 22, 6) },
+  { d: 'M100 92 Q102 110 122 115 Q142 110 144 92' },
+  { d: 'M108 110 L102 150 M136 110 L142 150 M122 115 V152' },
+  { d: 'M104 90 q4 -5 7 0 t7 0 t7 0 t7 0 t7 0', role: 'soft' },
+  {
+    d: 'M112 88 q-5 -10 1 -20 q2 6 5 4 q5 9 -1 16 M128 88 q-5 -14 3 -26 q3 9 6 5 q6 12 -2 21',
+    role: 'soft',
+  },
+  { d: 'M136 100 l4 -3 M132 107 l4 -3', role: 'ambient' },
+]
+
+/**
+ * Edric Storm: the three leeches fat with his blood that Stannis throws
+ * into the brazier one at a time, naming the three false kings, in Davos IV
+ * (chapter 180), the chapter where Melisandre asks for the boy himself to
+ * burn. The record is the books' alone (the show gives the leeches to
+ * Gendry). The leeches lie by the brazier; the nearest is the accent.
+ */
+const EDRIC_LEECHES: Stroke[] = [
+  ...BRAZIER,
+  ...moved(
+    [{ d: LEECH_BODY, role: 'accent' }, LEECH_RINGS],
+    'translate(26 145) scale(0.78)',
+  ),
+  ...moved(LEECH, 'translate(66 145) scale(-0.78 0.78)'),
+  ...moved(LEECH, 'translate(46 126) rotate(-8) scale(0.78)'),
+  { d: 'M8 152 H152', role: 'ambient', dashed: true },
+]
+
+/**
+ * The circle of flowers round the fox's head, one flower left out where
+ * its chin pokes through.
+ */
+const FLOWER_RING = `${circle(120, 72, 3)} ${circle(113, 91.3, 3)} ${circle(67, 91.3, 3)} ${circle(60, 72, 3)} ${circle(67, 52.7, 3)} ${circle(90, 42, 3)} ${circle(113, 52.7, 3)}`
+
+/**
+ * A banner of House Florent as the books blazon it: the fox's head, with
+ * no face, its chin poking through a circle of flowers. The far fold is
+ * hatched; the flowers are the accent.
+ */
+const FLORENT_CLOTH: Stroke[] = [
+  {
+    d: 'M44 30 Q70 22 96 30 Q118 36 136 30 L134 118 Q114 124 94 118 Q70 110 44 118',
+  },
+  { d: 'M124 36 Q120 76 124 120', role: 'soft' },
+  { d: 'M127 50 l5 -3 M127 72 l5 -3 M127 94 l5 -3', role: 'ambient' },
+  { d: FLOWER_RING, role: 'accent' },
+  {
+    d: 'M90 104 L78 88 L64 84 L71 74 L68 46 L83 60 H97 L112 46 L109 74 L116 84 L102 88 Z',
+  },
+  {
+    d: 'M72 54 L80 62 M108 54 L100 62 M71 74 L80 80 M109 74 L100 80',
+    role: 'soft',
+  },
+]
+
+/**
+ * Alester Florent: the banner of his house flying from its staff, the
+ * red-gold fox whose snout pokes through a circle of lapis lazuli flowers,
+ * for the lord of Brightwater and Stannis's Hand, whose letter offering
+ * peace to Tywin to win the castle back sends him to the cells in Davos III
+ * (chapter 169); his record opens in Davos IV (chapter 180). The books'
+ * alone. Nothing in either chapter is his own, so his house's arms stand
+ * in.
+ */
+const FLORENT_BANNER: Stroke[] = [
+  { d: `${circle(40, 16, 4)} M40 20 V150` },
+  ...FLORENT_CLOTH,
+  shadow(40, 156, 18),
+]
+
+/**
+ * The banner of House Seaworth flying from its staff, swallow-tailed: a
+ * ship whose sail bears an onion, the onion in the accent and the far
+ * fold hatched.
+ */
+const SEAWORTH_BANNER: Stroke[] = [
+  { d: `${circle(120, 16, 4)} M120 20 V150` },
+  {
+    d: 'M116 30 Q96 24 76 30 Q56 36 30 30 L42 68 L30 106 Q54 112 76 106 Q96 100 116 106',
+  },
+  { d: 'M50 36 Q46 70 50 108', role: 'soft' },
+  { d: 'M36 46 l5 -3 M40 64 l5 -3 M36 88 l5 -3', role: 'ambient' },
+  { d: 'M50 84 Q56 94 64 94 H96 Q104 94 108 84 Z' },
+  { d: 'M80 84 V38' },
+  { d: 'M64 44 H96 Q98 62 96 80 H64 Q62 62 64 44 Z', role: 'soft' },
+  {
+    d: 'M80 46 Q80 54 72 58 Q64 64 68 72 Q74 80 86 78 Q96 74 92 64 Q88 56 80 54 M80 46 l-3 -4 M80 46 l3 -5 M76 79 l-2 4 M80 80 v4 M84 79 l2 4',
+    role: 'accent',
+  },
+  shadow(120, 156, 18),
+]
+
+/**
  * The stormlands cast of the second season (#1464), keyed by record id:
- * Stannis's court on Dragonstone, Renly's at Bitterbridge and Storm's End.
+ * Stannis's court on Dragonstone, Renly's at Bitterbridge and Storm's End;
+ * and the third stage's Dragonstone cast (#1648).
  */
 export const STORMLANDS_DRAWINGS = {
   'stannis-baratheon': LIGHTBRINGER,
@@ -538,6 +687,9 @@ export const STORMLANDS_DRAWINGS = {
   'margaery-tyrell': MARGAERY_GOWN,
   'mace-tyrell': MACE_CHALICE,
   'cortnay-penrose': CORTNAY_GLOVE,
+  'axell-florent': AXELL_TORCH,
+  'alester-florent': FLORENT_BANNER,
+  'edric-storm': EDRIC_LEECHES,
 } satisfies Drawings
 
 /** The stormlands cast drawn again later in the story. */
@@ -670,6 +822,18 @@ export const stormlandsRedrawn: Redrawings = {
         ...SEA,
       ],
     },
+    // The pouch again, as he first wore it: a Lysene galley of Salladhor's
+    // picks him up off his rock in "Valar Dohaeris" (episode 21), and the
+    // show's Davos keeps his finger bones (#1648). The books part here (the
+    // next stage), so the stage is the show's alone and Davos I of A Storm
+    // of Swords (chapter 149), the same rescue, only orders it.
+    { episode: 21, chapter: 149, source: 'episode', value: BONE_POUCH },
+    // The banner of his house, the onion on the sail of a ship: alive on his
+    // rock in Davos I of A Storm of Swords (chapter 149), he reaches for the
+    // pouch of finger bones and finds it gone, lost in the battle, before
+    // the galley picks him up. With the pouch gone, his arms stand in. The
+    // books' alone; episode 21, the show's rescue, only orders it (#1648).
+    { episode: 21, chapter: 149, source: 'chapter', value: SEAWORTH_BANNER },
   ],
   'matthos-seaworth': [
     // The letter rolled up and fallen on the floor, the seal on its ribbon
@@ -828,6 +992,27 @@ export const stormlandsRedrawn: Redrawings = {
       value: [
         ...moved(GLOVE.slice(0, 6), 'translate(0 18) rotate(-90 80 90)'),
         GROUND,
+      ],
+    },
+  ],
+  'alester-florent': [
+    // The staff down on the ground and the banner laid flat behind it: Davos
+    // remembers that Melisandre burned him alive for a fair wind when
+    // Stannis sailed north, in Davos I of A Dance with Dragons (chapter
+    // 281). How he died is not drawn. The record is the books' alone;
+    // episode 41, when the show's Stannis is at the Wall, only orders it
+    // (#1648).
+    {
+      episode: 41,
+      chapter: 281,
+      source: 'chapter',
+      value: [
+        ...moved(
+          FLORENT_CLOTH,
+          'translate(0 142) scale(1 0.4) translate(0 -120)',
+        ),
+        { d: `${circle(16, 152, 4)} M20 152 L146 149` },
+        { d: 'M8 160 H152', role: 'ambient', dashed: true },
       ],
     },
   ],

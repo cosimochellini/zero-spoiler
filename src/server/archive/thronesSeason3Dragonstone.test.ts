@@ -1,13 +1,16 @@
 import { describe, expect, it } from 'vitest'
 
+import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import { season3 } from '~/data/series/game-of-thrones/records/season-3'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
+import { drawnIn, recordIn, sidesOf, unlisted } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage } from './pages.server'
+import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
@@ -70,7 +73,31 @@ const CHANGES: {
     source: 'chapter',
     value: 'imprisoned',
   },
+  // Burned for a fair wind, told in Davos I of A Dance with Dragons (281),
+  // filed with his drawing's stage (#1648).
+  {
+    id: 'alester-florent',
+    episode: 41,
+    chapter: 281,
+    source: 'chapter',
+    value: 'deceased',
+  },
 ]
+
+/**
+ * Every stage the group's own drawings take after their first, pinned in
+ * both media (#1648); `source` for a stage one medium alone tells, `stage`
+ * a record's stage counted from 0. Davos's rescue is a stage of a record
+ * the second season filed, so its rows are in
+ * `thronesSeason2Stormlands.test.ts`.
+ */
+const STAGES: {
+  chapter: number
+  episode: number
+  id: keyof typeof DRAWINGS
+  source?: 'chapter' | 'episode'
+  stage?: number
+}[] = [{ id: 'alester-florent', episode: 41, chapter: 281, source: 'chapter' }]
 
 /**
  * Every role step the group files on the characters the second season
@@ -269,6 +296,40 @@ describe('the Dragonstone steps one medium alone tells', () => {
     )
   })
 })
+
+describe('the Dragonstone table of stages', () => {
+  it('lists every stage of each record it redraws', () => {
+    expect(unlisted(STAGES, REDRAWINGS)).toStrictEqual([])
+  })
+})
+
+describe.each(
+  STAGES.flatMap((stage) =>
+    sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
+  ),
+)(
+  '$id is redrawn by $unit at $episode/$chapter',
+  ({ id, episode, chapter, source, unit, stage: index = 0, ...side }) => {
+    const stage = REDRAWINGS[id]?.[index]
+    const art = { drawings: DRAWINGS, redrawings: REDRAWINGS }
+    const previous = drawnIn(STAGES, art, { id, unit, below: index })
+
+    it('at its pin, not one before', () => {
+      const owner = recordIn(archive, id)
+
+      expect(stage?.episode).toBe(episode)
+      expect(stage?.chapter).toBe(chapter)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? stage?.source).toBe(source)
+      expect(
+        drawingOf(owner, readerFor(archive, side.before, 'en')).strokes,
+      ).toStrictEqual(previous)
+      expect(
+        drawingOf(owner, readerFor(archive, side.reached, 'en')).strokes,
+      ).toStrictEqual(stage?.value)
+    })
+  },
+)
 
 describe('the season’s Dragonstone lead', () => {
   it('lists Davos among the season’s leads', () => {

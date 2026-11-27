@@ -1226,6 +1226,11 @@ export const season3: ThronesSaga = {
       },
       status: [
         { episode: 28, chapter: 180, source: 'chapter', value: 'imprisoned' },
+        // Burned alive by Melisandre for a fair wind when Stannis sails
+        // north, as Davos remembers in Davos I of A Dance with Dragons (site
+        // chapter 281; A Wiki of Ice and Fire, Alester Florent). Episode 41,
+        // when the show's Stannis is at the Wall, only orders it (#1648).
+        { episode: 41, chapter: 281, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -2073,7 +2078,9 @@ export const season3: ThronesSaga = {
         it: 'Uno zio della regina Selyse, castellano di Roccia del Drago.',
         en: 'An uncle of Queen Selyse, castellan of Dragonstone.',
       },
-      visual: { art: 'axell-florent', tint: 'red' },
+      // Orange, not red: his drawing's mark is a torch's flame, and the
+      // record is the books', where nothing of his is red (#851, #1648).
+      visual: { art: 'axell-florent', tint: 'orange' },
     },
     // A Clash of Kings' Davos II (site chapter 116) has Cortnay Penrose mock
     // him at the parley, a story only the books tell, ordered at episode 14.

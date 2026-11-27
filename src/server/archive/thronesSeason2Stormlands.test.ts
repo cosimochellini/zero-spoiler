@@ -109,6 +109,22 @@ const STAGES: {
   { id: 'melisandre', episode: 51, chapter: 344, source: 'episode', stage: 1 },
   { id: 'melisandre', episode: 70, chapter: 344, source: 'episode', stage: 2 },
   { id: 'davos-seaworth', episode: 19, chapter: 132 },
+  // Davos's rescue, stage 3's drawing child (#1648): the show gives him his
+  // pouch back, the books lose it and draw his arms.
+  {
+    id: 'davos-seaworth',
+    episode: 21,
+    chapter: 149,
+    source: 'episode',
+    stage: 1,
+  },
+  {
+    id: 'davos-seaworth',
+    episode: 21,
+    chapter: 149,
+    source: 'chapter',
+    stage: 2,
+  },
   { id: 'matthos-seaworth', episode: 19, chapter: 132 },
   { id: 'selyse-baratheon', episode: 41, chapter: 316, source: 'chapter' },
   {

@@ -191,9 +191,10 @@ const PERSON: Stroke[] = [
  * Landing cast is drawn in `court.ts` (#1642), its Robb's war and Riverlands
  * cast in `riverlands.ts` (#1643), its Essos cast in `essos.ts` (#1647),
  * Arya's group, the Brotherhood Without Banners, in `brotherhood.ts` (#1644),
- * its Jaime, Brienne and Harrenhal cast in `riverlands.ts` (#1645) and its
+ * its Jaime, Brienne and Harrenhal cast in `riverlands.ts` (#1645), its
  * Wall and beyond cast, the brothers of Chett's plot in `wall.ts` and the
- * wildlings in `wildlings.ts` (#1646); its other casts show `PERSON` until
+ * wildlings in `wildlings.ts` (#1646), and its Dragonstone cast in
+ * `stormlands.ts` (#1648); its other casts show `PERSON` until
  * their drawing children draw them.
  * `satisfies` rather than an annotation, so `ArtId` below stays the literal
  * keys.
@@ -217,10 +218,6 @@ export const DRAWINGS = {
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': DRAGON_EGG,
-  // #1640: the third stage's Dragonstone cast.
-  'axell-florent': PERSON,
-  'alester-florent': PERSON,
-  'edric-storm': PERSON,
   // #1641: Bran's road and Theon.
   'myranda': PERSON,
 } satisfies Drawings
