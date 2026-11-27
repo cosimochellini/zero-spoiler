@@ -500,6 +500,51 @@ const FLAYING_KNIFE: Stroke[] = [
 ]
 
 /**
+ * Myranda: the bed in Theon's prison cell, seen in 3/4, its headboard at the
+ * far end, the frame's end rail hatched where it turns away, and the
+ * blanket thrown back over its foot, its edge in the accent. In "The Bear
+ * and the Maiden Fair" (episode 27) she and Violet free Theon from the cross
+ * and lay him on a bed; the show gives her nothing of her own in the
+ * season, so the bed of her one scene stands in. The show's alone.
+ */
+const PRISON_BED: Stroke[] = [
+  { d: 'M22 130 V78 M46 108 V60' },
+  { d: 'M22 86 L46 68 M22 100 L46 82', role: 'soft' },
+  { d: 'M22 120 H116 L140 100 M22 130 H116 L140 110 V100 M116 120 V130' },
+  { d: 'M22 130 V150 M116 130 V150 M140 110 V138' },
+  { d: 'M120 128 l5 -4 M128 122 l5 -4 M134 116 l4 -3', role: 'ambient' },
+  { d: 'M24 120 Q22 112 30 110 H112 L136 92 Q142 94 140 100' },
+  { d: 'M46 100 L50 96 H136', role: 'soft' },
+  {
+    d: 'M74 110 Q80 102 90 106 Q98 96 108 100 L124 88 Q132 90 136 92',
+    role: 'accent',
+  },
+  { d: 'M74 110 Q70 126 78 138 Q88 132 96 140 Q104 132 112 136 L116 128' },
+  { d: 'M86 114 Q84 126 88 134 M100 112 Q100 124 104 134', role: 'soft' },
+  shadow(80, 154, 60),
+]
+
+/**
+ * Myranda's hunting bow stood on its lower tip, its belly with a second
+ * line for its thickness and the grip bound: she hunts with it at Ramsay's
+ * side from "The Lion and the Rose" (episode 32) and corners Sansa with it
+ * in "Mother's Mercy" (episode 50). Its stage and her death share it.
+ */
+const HUNTING_BOW: Stroke[] = [
+  { d: 'M66 30 Q104 46 104 92 Q104 138 66 154' },
+  { d: 'M66 30 Q98 48 98 92 Q98 136 66 154', role: 'soft' },
+  { d: 'M66 30 L66 154', role: 'soft' },
+  { d: 'M98 84 h8 M98 100 h8 M99 88 h6 M99 92 h6 M99 96 h6', role: 'soft' },
+]
+
+/** The arrow on the bow's string, its head in the accent and its fletching soft. */
+const HUNTING_ARROW: Stroke[] = [
+  { d: 'M60 92 H140' },
+  { d: 'M140 92 L130 86 V98 Z', role: 'accent' },
+  { d: 'M60 92 l-8 -6 M60 92 l-8 6 M66 92 l-8 -6 M66 92 l-8 6', role: 'soft' },
+]
+
+/**
  * Big and Little Walder Frey's helm, the same silver plate for the two
  * cousins: a closed helm with its eye slit, a rib down the crown, the
  * breaths at the face and the far side hatched. Each takes his own crest
@@ -579,8 +624,9 @@ const MOOSE_SHIELD: Stroke[] = [
 ]
 
 /**
- * The first season's northern household and bannermen (#1054), and the
- * second stage's Winterfell and northern cast (#1473), keyed by record id.
+ * The first season's northern household and bannermen (#1054), the second
+ * stage's Winterfell and northern cast (#1473) and the third stage's
+ * Myranda (#1649), keyed by record id.
  */
 export const NORTH_DRAWINGS = {
   'hullen': HULLEN,
@@ -604,14 +650,15 @@ export const NORTH_DRAWINGS = {
   'meera-reed': BOW,
   'jojen-reed': LIZARD_LION,
   // Ramsay Snow: the flaying knife stood point down in a chopping block,
-  // for the Bastard of Bolton of "The Lion and the Rose" (episode 32) and
-  // of Theon VI (chapter 140), whose house flays its enemies. The blade's
-  // edge is the accent.
+  // for the Bastard of Bolton of "Mhysa" (episode 30, #1641), the boy who
+  // comes at Theon with a knife through season 3, and of Theon VI (chapter
+  // 140), whose house flays its enemies. The blade's edge is the accent.
   'ramsay-snow': [...KNIFE_BLOCK, ...FLAYING_KNIFE, shadow(80, 156, 40)],
   'big-walder-frey': [...WALDER_HELM, CASTLE_CREST, shadow(80, 146, 40)],
   'little-walder-frey': [...WALDER_HELM, STREAMERS, shadow(80, 146, 40)],
   'wyman-manderly': LITTER,
   'donella-hornwood': MOOSE_SHIELD,
+  'myranda': PRISON_BED,
 } satisfies Drawings
 
 /** The northern household drawn again later in the story. */
@@ -1040,6 +1087,34 @@ export const northRedrawn: Redrawings = {
           'translate(0 150) scale(1 0.34) translate(0 -150)',
         ),
         { d: 'M10 156 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'myranda': [
+    // The hunting bow with an arrow on its string: she hunts a girl through
+    // the forest with Ramsay and his hounds and shoots her in "The Lion and
+    // the Rose" (episode 32). The record is the
+    // show's alone; Reek I of A Dance with Dragons (chapter 284), where the
+    // books' Ramsay hunts a girl with his dogs, orders it.
+    {
+      episode: 32,
+      chapter: 284,
+      value: [...HUNTING_BOW, ...HUNTING_ARROW, shadow(84, 158, 34)],
+    },
+    // The bow fallen flat on the ground and the arrow lying apart from it:
+    // she dies at Winterfell in "Mother's Mercy" (episode 50). Theon I of A
+    // Dance with Dragons (chapter 323), where Theon escapes the castle,
+    // orders it. How she dies is not drawn.
+    {
+      episode: 50,
+      chapter: 323,
+      value: [
+        ...moved(
+          HUNTING_BOW,
+          'translate(0 150) scale(1 0.45) translate(0 -111) rotate(-90 85 92)',
+        ),
+        ...moved(HUNTING_ARROW, 'translate(-6 65) rotate(3 100 92)'),
+        { d: 'M10 164 H150', role: 'ambient', dashed: true },
       ],
     },
   ],
