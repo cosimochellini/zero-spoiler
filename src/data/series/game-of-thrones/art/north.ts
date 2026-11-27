@@ -1091,9 +1091,9 @@ export const northRedrawn: Redrawings = {
     },
   ],
   'myranda': [
-    // The hunting bow with an arrow on its string: she rides out with Ramsay
-    // and his hounds and shoots the girl they hunt in "The Lion and the
-    // Rose" (episode 32), and keeps the bow to the end. The record is the
+    // The hunting bow with an arrow on its string: she hunts a girl through
+    // the forest with Ramsay and his hounds and shoots her in "The Lion and
+    // the Rose" (episode 32). The record is the
     // show's alone; Reek I of A Dance with Dragons (chapter 284), where the
     // books' Ramsay hunts a girl with his dogs, orders it.
     {
