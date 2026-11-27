@@ -51,6 +51,24 @@ function cacheOptions(): object {
   }
 }
 
+/** How many times each page has been read. */
+interface Reads {
+  a: number
+  b: number
+}
+
+interface PagesResult {
+  hold: () => void
+  reads: Reads
+  release: () => void
+  router: AnyRouter
+}
+
+/** What a page's read answers: the cookie it was asked with. */
+interface PageRead {
+  cookie: string
+}
+
 /**
  * Two pages that count their reads and keep the cookie each read was asked
  * with. With `hold`, a read of `/a` waits for `release` before it answers.
@@ -59,18 +77,13 @@ async function pages(
   start = '/a',
   /** `/a` reloads as the landing does, on One Piece. */
   landing = false,
-): Promise<{
-  hold: () => void
-  reads: { a: number; b: number }
-  release: () => void
-  router: AnyRouter
-}> {
+): Promise<PagesResult> {
   const reads = { a: 0, b: 0 }
   // A held read of `/a` waits on this line for `release`.
   const line = new EventTarget()
   let held = false
   const root = createRootRoute()
-  const read = (page: 'a' | 'b') => async (): Promise<{ cookie: string }> => {
+  const read = (page: 'a' | 'b') => async (): Promise<PageRead> => {
     reads[page] += 1
     const cookie = document.cookie
     if (page === 'a' && held) {

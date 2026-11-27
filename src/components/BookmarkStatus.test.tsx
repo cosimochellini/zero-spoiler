@@ -34,8 +34,12 @@ function openAt(bookmark: Bookmark): number {
   return OPEN.get(bookmark?.mode === 'episode' ? bookmark.episode : null) ?? 40
 }
 
+interface ListingProps {
+  to: Bookmark
+}
+
 /** A listing that counts its open entries, and a control that moves on. */
-function Listing({ to }: { to: Bookmark }): ReactElement {
+function Listing({ to }: ListingProps): ReactElement {
   const { bookmark, setBookmark } = useBookmark()
   useOpenEntries(openAt(bookmark))
 
@@ -51,11 +55,19 @@ function Listing({ to }: { to: Bookmark }): ReactElement {
   )
 }
 
+interface CountProps {
+  count: number
+}
+
 /** The count, on screen once it has arrived. */
-function Count({ count }: { count: number }): null {
+function Count({ count }: CountProps): null {
   useOpenEntries(count)
 
   return null
+}
+
+interface LateListingProps {
+  fromStart: boolean
 }
 
 /**
@@ -63,7 +75,7 @@ function Count({ count }: { count: number }): null {
  * behind its deferred shelves: on "Arrive", for the bookmark held then. With
  * `fromStart` false it has no count yet when the save is made.
  */
-function LateListing({ fromStart }: { fromStart: boolean }): ReactElement {
+function LateListing({ fromStart }: LateListingProps): ReactElement {
   const { bookmark, setBookmark } = useBookmark()
   const [counted, setCounted] = useState(fromStart ? bookmark : undefined)
 

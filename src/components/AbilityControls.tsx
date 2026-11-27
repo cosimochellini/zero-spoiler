@@ -50,6 +50,17 @@ function summaryOf(
   return trimmed === '' ? chip : `${chip} · “${trimmed}”`
 }
 
+/** The plates, the count the album worked out, and the picks. */
+export interface AbilityControlsProps {
+  bands: AbilityBandView[]
+  /** The open abilities the query finds on the plates shown. */
+  count: number
+  fieldId: string
+  onParams: (next: AbilityParams, replace: boolean) => void
+  /** The picks, a type no open plate holds already left out. */
+  params: AbilityParams
+}
+
 /**
  * The bar: the search field and its count, and a chip per plate on the
  * page, each with its open abilities, "all" first. Both live in the address.
@@ -60,15 +71,7 @@ export function AbilityControls({
   fieldId,
   onParams,
   params,
-}: {
-  bands: AbilityBandView[]
-  /** The open abilities the query finds on the plates shown. */
-  count: number
-  fieldId: string
-  onParams: (next: AbilityParams, replace: boolean) => void
-  /** The picks, a type no open plate holds already left out. */
-  params: AbilityParams
-}): ReactElement {
+}: AbilityControlsProps): ReactElement {
   const t = useSeriesOnlyT(SERIES)
   const query = params.q ?? ''
   const pick: Pick = params.type ?? 'all'
@@ -111,6 +114,15 @@ export function AbilityControls({
   )
 }
 
+/** The field's query, and the counts its status line reads. */
+interface AbilitySearchProps {
+  count: number
+  fieldId: string
+  onQuery: (query: string) => void
+  query: string
+  total: number
+}
+
 /**
  * The search field, and the line under it: how many open abilities are
  * left of the picked chip's number, or that the query finds none. It
@@ -122,13 +134,7 @@ function AbilitySearch({
   onQuery,
   query,
   total,
-}: {
-  count: number
-  fieldId: string
-  onQuery: (query: string) => void
-  query: string
-  total: number
-}): ReactElement {
+}: AbilitySearchProps): ReactElement {
   const t = useSeriesOnlyT(SERIES)
   const trimmed = query.trim()
   const empty = trimmed !== '' && count === 0

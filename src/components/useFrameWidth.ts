@@ -16,6 +16,7 @@ export function useFrameWidth(
 ): number {
   const [width, setWidth] = useState(assumed)
 
+  // eslint-disable-next-line no-restricted-syntax -- a ResizeObserver on the frame
   useEffect(() => {
     if (element === null || typeof ResizeObserver === 'undefined') {
       return

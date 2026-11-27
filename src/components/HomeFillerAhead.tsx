@@ -28,6 +28,11 @@ import {
   text,
 } from '~/styles/tokens.stylex'
 
+export interface HomeFillerAheadProps {
+  ahead: FillerAhead
+  mode: BookmarkMode
+}
+
 /**
  * The warning on the home page when filler is close: the reader is inside a
  * run to skip, or the next one starts within their episode and the five
@@ -37,10 +42,7 @@ import {
 export function HomeFillerAhead({
   ahead,
   mode,
-}: {
-  ahead: FillerAhead
-  mode: BookmarkMode
-}): ReactElement {
+}: HomeFillerAheadProps): ReactElement {
   const { locale } = useLocale()
   const t = useSeriesOnlyT('one-piece')
   const { series } = useSeriesParams()
@@ -89,13 +91,7 @@ export function HomeFillerAhead({
 }
 
 /** The six cells, painted by kind; none of them opens anything. */
-function Row({
-  ahead,
-  mode,
-}: {
-  ahead: FillerAhead
-  mode: BookmarkMode
-}): ReactElement {
+function Row({ ahead, mode }: HomeFillerAheadProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const bookmarkSeries = useBookmarkSeries()
 

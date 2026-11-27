@@ -157,6 +157,12 @@ export function fruitOf(entity: Entity, form: FruitForm, r: Reader): FruitView {
   }
 }
 
+/** A record's aliases with its users' names, and the users' crests. */
+interface RecordUsers {
+  aliases: string[]
+  crests: EaterView[]
+}
+
 /**
  * The users of a record (a fruit's eaters, an ability's users) the caller
  * has already gated, each as a crest and a name, and the record's aliases
@@ -164,11 +170,7 @@ export function fruitOf(entity: Entity, form: FruitForm, r: Reader): FruitView {
  * Gum-Gum Fruit and so does "Rufy". Only the users passed in are folded, so
  * a search can only ever answer with a user the tile shows.
  */
-function usedBy(
-  record: Searchable,
-  users: Entity[],
-  r: Reader,
-): { aliases: string[]; crests: EaterView[] } {
+function usedBy(record: Searchable, users: Entity[], r: Reader): RecordUsers {
   // Each once: most users go by the same name in both locales.
   const named = foldAll(
     users.flatMap((user) => LOCALES.map((locale) => user.name[locale])),

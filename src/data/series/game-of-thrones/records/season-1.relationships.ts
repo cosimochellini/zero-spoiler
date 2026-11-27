@@ -13782,6 +13782,1463 @@ const essos3 = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 3's King's Landing cards for the season-1 cast (#1651): season 3
+ * and A Storm of Swords through chapter 52, episodes 21 to 30 and chapters
+ * 144 to 196. The new characters' own cards are in
+ * `season-3.relationships.ts`.
+ */
+const kingsLanding3 = {
+  // Tyrion, the show
+  tyrTywinDisowns: {
+    character: 'tywin-lannister',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the Hand. When Tyrion asks for Casterly Rock, Tywin refuses, gives him no credit for the battle and blames him for his mother’s death in childbirth.',
+      it: 'Suo padre, il Primo Cavaliere. Quando Tyrion gli chiede Castel Granito, Tywin rifiuta, non gli riconosce alcun merito per la battaglia e gli rinfaccia la morte della madre durante il parto.',
+    },
+  },
+  tyrBronnKnight: {
+    character: 'bronn',
+    type: { en: 'Sellsword', it: 'Mercenario' },
+    summary: {
+      en: 'Ser Bronn of the Blackwater now, knighted for the battle. He hears out Tyrion’s anger at his father, and wants better pay.',
+      it: 'Ora è ser Bronn delle Acque Nere, fatto cavaliere per la battaglia. Ascolta la rabbia di Tyrion contro il padre, e vuole una paga più alta.',
+    },
+  },
+  tyrShaeHidden: {
+    character: 'shae',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'His lover, whom he brought to the capital against his father’s order. Tywin holds it against him.',
+      it: 'La sua amante, che ha portato nella capitale contro l’ordine del padre. Tywin glielo rinfaccia.',
+    },
+  },
+  tyrTywinSansa: {
+    character: 'tywin-lannister',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who orders him to marry Sansa Stark, the key to the North, as his reward for the battle. Tyrion’s refusal changes nothing.',
+      it: 'Suo padre, che gli ordina di sposare Sansa Stark, la chiave del Nord, come ricompensa per la battaglia. Il rifiuto di Tyrion non cambia nulla.',
+    },
+  },
+  tyrSansaBride: {
+    character: 'sansa-stark',
+    type: { en: 'Bride forced on him', it: 'Sposa imposta' },
+    summary: {
+      en: 'The Stark girl his father means him to marry, to keep her from the Tyrells. Tyrion thinks it cruel after all Joffrey has done to her.',
+      it: 'La ragazza Stark che suo padre vuole fargli sposare, per sottrarla ai Tyrell. A Tyrion sembra una crudeltà, dopo tutto ciò che Joffrey le ha fatto.',
+    },
+  },
+  tyrOlenna: {
+    character: 'olenna-tyrell',
+    type: { en: 'Tyrell matriarch', it: 'Matriarca dei Tyrell' },
+    summary: {
+      en: 'Margaery’s grandmother. He goes to her about the cost of the royal wedding, and she agrees to pay half.',
+      it: 'La nonna di Margaery. Tyrion va da lei per il costo delle nozze reali, e lei accetta di pagarne metà.',
+    },
+  },
+  tyrCerseiGloats: {
+    character: 'cersei-lannister',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who gloats over his match until their father orders her to marry Loras Tyrell.',
+      it: 'Sua sorella, che gongola per il suo matrimonio finché il padre non le ordina di sposare Loras Tyrell.',
+    },
+  },
+  tyrShaeSansa: {
+    character: 'shae',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'His lover, Sansa’s handmaiden. She asks him to protect Sansa from Littlefinger, and he says he no longer has the power.',
+      it: 'La sua amante, ancella di Sansa. Gli chiede di proteggere Sansa da Ditocorto, e lui risponde che non ne ha più il potere.',
+    },
+  },
+  tyrSansaWife: {
+    character: 'sansa-stark',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His bride. Before the wedding he promises not to mistreat her; that night he tells her he will not touch her unless she wants him to.',
+      it: 'La sua sposa. Prima delle nozze le promette che non la tratterà male; quella notte le dice che non la toccherà se non sarà lei a volerlo.',
+    },
+  },
+  tyrJoffreyThreat: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'The king, who mocks him at the wedding and calls for the bedding. Tyrion drives his dagger into the table and threatens him, then plays the drunk.',
+      it: 'Il re, che lo deride alle nozze e pretende la messa a letto degli sposi. Tyrion pianta il pugnale nel tavolo e lo minaccia, poi si finge ubriaco.',
+    },
+  },
+  tyrTywinWedding: {
+    character: 'tywin-lannister',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who silences the court with a look at the wedding, and ends the quarrel over the bedding by blaming Tyrion’s drink.',
+      it: 'Suo padre, che alle nozze zittisce la corte con uno sguardo, e chiude la lite sulla messa a letto dando la colpa al vino di Tyrion.',
+    },
+  },
+  tyrShaeEnds: {
+    character: 'shae',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'His lover, who tells him she will not sleep with him once he has married Sansa.',
+      it: 'La sua amante, che gli dice che non dormirà più con lui quando avrà sposato Sansa.',
+    },
+  },
+  tyrBronnAdvice: {
+    character: 'bronn',
+    type: { en: 'Sellsword', it: 'Mercenario' },
+    summary: {
+      en: 'Ser Bronn, who tells him to marry Sansa, get an heir on her and keep Shae on the side.',
+      it: 'Ser Bronn, che gli consiglia di sposare Sansa, darle un erede e tenersi Shae di nascosto.',
+    },
+  },
+  tyrTywinRedWedding: {
+    character: 'tywin-lannister',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who admits he arranged the slaughter of Robb Stark and his mother at a wedding. He tells Tyrion he once wanted to throw him into the sea.',
+      it: 'Suo padre, che ammette di aver organizzato il massacro di Robb Stark e di sua madre durante un matrimonio. Gli dice che un tempo avrebbe voluto gettarlo in mare.',
+    },
+  },
+  tyrSansaGrief: {
+    character: 'sansa-stark',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His wife. They walk in the gardens; then word comes that her mother and brother were killed, and he leaves her to her grief.',
+      it: 'Sua moglie. Passeggiano nei giardini; poi arriva la notizia che sua madre e suo fratello sono stati uccisi, e lui la lascia al suo dolore.',
+    },
+  },
+  tyrJoffreyHead: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'The king, who wants Robb’s head served to Sansa at his wedding feast. Tyrion forbids it.',
+      it: 'Il re, che vuole far servire a Sansa la testa di Robb al suo banchetto di nozze. Tyrion glielo proibisce.',
+    },
+  },
+  // Tyrion, the books
+  tyrTywinRock: {
+    character: 'tywin-lannister',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, now Hand. He gives Tyrion no thanks for the battle, refuses him Casterly Rock, and warns that he will hang the next prostitute Tyrion sleeps with.',
+      it: 'Suo padre, ora Primo Cavaliere. Non lo ringrazia per la battaglia, gli nega Castel Granito e lo avverte che impiccherà la prossima prostituta con cui Tyrion andrà a letto.',
+    },
+  },
+  tyrBronnNews: {
+    character: 'bronn',
+    type: { en: 'Sellsword', it: 'Mercenario' },
+    summary: {
+      en: 'Ser Bronn now, knighted for the battle. He brings Tyrion the city’s news and carries him up the steps to his father.',
+      it: 'Ora è ser Bronn, fatto cavaliere per la battaglia. Porta a Tyrion le notizie della città e lo porta in braccio su per le scale fino dal padre.',
+    },
+  },
+  tyrPodDress: {
+    character: 'podrick-payne',
+    type: { en: 'Squire', it: 'Scudiero' },
+    summary: {
+      en: 'His squire, who helps him dress to go to his father.',
+      it: 'Il suo scudiero, che lo aiuta a vestirsi per andare dal padre.',
+    },
+  },
+  tyrCerseiMandon: {
+    character: 'cersei-lannister',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister. He sets Bronn to find out whether she sent Ser Mandon to kill him.',
+      it: 'Sua sorella. Incarica Bronn di scoprire se è stata lei a mandare ser Mandon a ucciderlo.',
+    },
+  },
+  tyrShaeStays: {
+    character: 'shae',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'His lover, brought to him in Varys’s rooms. He means to send her out of his father’s reach; she wants to stay, and he cannot part with her.',
+      it: 'La sua amante, che gli viene portata nelle stanze di Varys. Lui vuole mandarla lontano dal padre; lei vuole restare, e lui non riesce a separarsene.',
+    },
+  },
+  tyrVarysOnce: {
+    character: 'varys',
+    type: { en: 'Master of whisperers', it: 'Maestro dei sussurri' },
+    summary: {
+      en: 'The eunuch whose rooms he searches for hidden passages. Varys gives him the court’s news and brings Shae to him. Tyrion means to use him this one last time.',
+      it: 'L’eunuco nelle cui stanze cerca passaggi segreti. Varys gli dà le notizie della corte e gli porta Shae. Tyrion conta di servirsene un’ultima volta.',
+    },
+  },
+  tyrBronnSinger: {
+    character: 'bronn',
+    type: { en: 'Sellsword', it: 'Mercenario' },
+    summary: {
+      en: 'Ser Bronn, fetched from a brothel and sent to find the singer who knows about Shae.',
+      it: 'Ser Bronn, ripescato in un bordello e mandato a cercare il cantore che sa di Shae.',
+    },
+  },
+  tyrTywinSansaBook: {
+    character: 'tywin-lannister',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who orders him to marry Sansa Stark so that their son could one day hold Winterfell. If he refuses, Sansa goes to a cousin and Tyrion to Lollys.',
+      it: 'Suo padre, che gli ordina di sposare Sansa Stark perché un loro figlio possa un giorno avere Grande Inverno. Se rifiuta, Sansa andrà a un cugino e Tyrion a Lollys.',
+    },
+  },
+  tyrSansaPromised: {
+    character: 'sansa-stark',
+    type: { en: 'Bride forced on him', it: 'Sposa imposta' },
+    summary: {
+      en: 'The Stark girl he is ordered to marry. He argues that she is still a child, and that she should be sent back to her mother.',
+      it: 'La ragazza Stark che gli viene ordinato di sposare. Obietta che è ancora una bambina, e che bisognerebbe rimandarla da sua madre.',
+    },
+  },
+  tyrPetyrWary: {
+    character: 'petyr-baelish',
+    type: { en: 'Predecessor', it: 'Predecessore' },
+    summary: {
+      en: 'The master of coin who leaves to marry Lysa Arryn. Tyrion takes his post, and warns his family not to trust him.',
+      it: 'Il maestro del conio che parte per sposare Lysa Arryn. Tyrion prende il suo posto, e avverte la famiglia di non fidarsi di lui.',
+    },
+  },
+  tyrCerseiWillas: {
+    character: 'cersei-lannister',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, whom their father offers to Willas Tyrell. She refuses and storms out.',
+      it: 'Sua sorella, che il padre offre in moglie a Willas Tyrell. Lei rifiuta ed esce furiosa.',
+    },
+  },
+  tyrSansaWifeBook: {
+    character: 'sansa-stark',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His bride. At the ceremony she will not bend for his cloak; that night he sees her fear, and promises not to touch her until she wants him.',
+      it: 'La sua sposa. Alla cerimonia non si piega perché lui le metta il mantello; quella notte lui vede la sua paura, e le promette che non la toccherà finché non sarà lei a volerlo.',
+    },
+  },
+  tyrJoffreyBedding: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'The king, who wants the bedding at the wedding. Tyrion has to threaten him to stop it.',
+      it: 'Il re, che alle nozze vuole la messa a letto degli sposi. Tyrion deve minacciarlo per fermarla.',
+    },
+  },
+  tyrOberyn: {
+    character: 'oberyn-martell',
+    type: { en: 'Dornish prince', it: 'Principe dorniano' },
+    summary: {
+      en: 'The prince he rides out to meet, leading the Dornishmen in his brother’s place. Oberyn recalls him as a baby and asks when justice will be done for Elia.',
+      it: 'Il principe che va ad accogliere, alla testa dei dorniani al posto del fratello. Oberyn lo ricorda in fasce e gli chiede quando sarà fatta giustizia per Elia.',
+    },
+  },
+  tyrTywinConsummate: {
+    character: 'tywin-lannister',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who tells him to bed his wife, and shows him the two Valyrian steel swords made for Joffrey and Jaime.',
+      it: 'Suo padre, che gli ordina di consumare il matrimonio e gli mostra le due spade d’acciaio di Valyria forgiate per Joffrey e Jaime.',
+    },
+  },
+  tyrBronnKill: {
+    character: 'bronn',
+    type: { en: 'Sellsword', it: 'Mercenario' },
+    summary: {
+      en: 'Ser Bronn, whom he orders to kill the singer who threatens to tell about Shae.',
+      it: 'Ser Bronn, a cui ordina di uccidere il cantore che minaccia di rivelare la storia di Shae.',
+    },
+  },
+
+  // Sansa, the show
+  sanOlenna: {
+    character: 'olenna-tyrell',
+    type: { en: 'Margaery’s grandmother', it: 'Nonna di Margaery' },
+    summary: {
+      en: 'Lady Olenna, who wants the truth about Joffrey. Sansa tells her how he killed her father, then blurts out that the king is a monster.',
+      it: 'Lady Olenna, che vuole la verità su Joffrey. Sansa le racconta come ha ucciso suo padre, poi si lascia sfuggire che il re è un mostro.',
+    },
+  },
+  sanLorasEscort: {
+    character: 'loras-tyrell',
+    type: { en: 'Knight of Flowers', it: 'Cavaliere di Fiori' },
+    summary: {
+      en: 'Margaery’s brother, who escorts her to the gardens. She reminds him that they met at the Hand’s tourney.',
+      it: 'Il fratello di Margaery, che la accompagna nei giardini. Lei gli ricorda che si sono conosciuti al torneo del Primo Cavaliere.',
+    },
+  },
+  sanMargaeryWelcome: {
+    character: 'margaery-tyrell',
+    type: { en: 'Joffrey’s bride to be', it: 'Futura sposa di Joffrey' },
+    summary: {
+      en: 'The king’s bride to be, who welcomes her among the Tyrells with her grandmother.',
+      it: 'La futura sposa del re, che insieme alla nonna la accoglie tra i Tyrell.',
+    },
+  },
+  sanShaeWarns: {
+    character: 'shae',
+    type: { en: 'Handmaiden', it: 'Ancella' },
+    summary: {
+      en: 'Her handmaiden, who warns her that Littlefinger’s help is not free and that he wants her.',
+      it: 'La sua ancella, che la avverte che l’aiuto di Ditocorto non è gratis e che lui la desidera.',
+    },
+  },
+  sanPetyrShip: {
+    character: 'petyr-baelish',
+    type: { en: 'Lord who offers help', it: 'Lord che offre aiuto' },
+    summary: {
+      en: 'Littlefinger, who finds her at the docks and offers to take her away on his ship when he leaves the city.',
+      it: 'Ditocorto, che la trova al porto e le offre di portarla via sulla sua nave quando lascerà la città.',
+    },
+  },
+  sanMargaeryLoras: {
+    character: 'margaery-tyrell',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'Margaery, who finds her in the godswood and proposes that she marry Loras and live among the Tyrells. Sansa weeps for joy.',
+      it: 'Margaery, che la trova nel parco degli dei e le propone di sposare Loras e vivere tra i Tyrell. Sansa piange di gioia.',
+    },
+  },
+  sanLorasMatch: {
+    character: 'loras-tyrell',
+    type: { en: 'Intended husband', it: 'Promesso sposo' },
+    summary: {
+      en: 'The Knight of Flowers, whom the Tyrells now mean her to marry.',
+      it: 'Il Cavaliere di Fiori, che ora i Tyrell vogliono darle in sposo.',
+    },
+  },
+  sanTyrionNews: {
+    character: 'tyrion-lannister',
+    type: { en: 'Husband to be', it: 'Futuro marito' },
+    summary: {
+      en: 'The queen’s brother, who comes to her chambers to tell her she is to marry him.',
+      it: 'Il fratello della regina, che viene nelle sue stanze a dirle che dovrà sposare lui.',
+    },
+  },
+  sanLorasWedding: {
+    character: 'loras-tyrell',
+    type: { en: 'Intended husband', it: 'Promesso sposo' },
+    summary: {
+      en: 'The Knight of Flowers. He talks of the feast and her gown more than of her, and agrees that the Red Keep is the worst place there is.',
+      it: 'Il Cavaliere di Fiori. Parla del banchetto e dell’abito di Sansa più che di lei, e conviene che la Fortezza Rossa sia il posto peggiore che ci sia.',
+    },
+  },
+  sanPetyrGone: {
+    character: 'petyr-baelish',
+    type: { en: 'Lord who offered help', it: 'Lord che offriva aiuto' },
+    summary: {
+      en: 'Littlefinger, whose offer to take her away she put off. She weeps as his ship sails without her.',
+      it: 'Ditocorto, di cui ha rimandato l’offerta di portarla via. Piange mentre la sua nave parte senza di lei.',
+    },
+  },
+  sanTyrionHusband: {
+    character: 'tyrion-lannister',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'Her husband. Before the wedding he promises not to mistreat her; that night he says he will not touch her unless she wants it.',
+      it: 'Suo marito. Prima delle nozze le promette che non la tratterà male; quella notte le dice che non la toccherà se non sarà lei a volerlo.',
+    },
+  },
+  sanJoffreyWedding: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Former betrothed', it: 'Ex promesso sposo' },
+    summary: {
+      en: 'The king, who walks her to the altar in her father’s place, mocks her at the feast and says he may take her after Tyrion.',
+      it: 'Il re, che la accompagna all’altare al posto di suo padre, la deride al banchetto e dice che potrebbe prenderla dopo Tyrion.',
+    },
+  },
+  sanMargaeryConsoles: {
+    character: 'margaery-tyrell',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'Margaery, who consoles her about the match and tells her Tyrion is far from the worst Lannister.',
+      it: 'Margaery, che la consola per il matrimonio e le dice che Tyrion è tutt’altro che il peggiore dei Lannister.',
+    },
+  },
+  sanTyrionGardens: {
+    character: 'tyrion-lannister',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'Her husband. She walks the gardens with him and jokes about paying back those who mock him, before word comes of her family.',
+      it: 'Suo marito. Passeggia con lui nei giardini e scherza su come vendicarsi di chi lo deride, prima che arrivi la notizia sulla sua famiglia.',
+    },
+  },
+  sanRobbDead: {
+    character: 'robb-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, the King in the North. She learns that he was killed at a wedding.',
+      it: 'Suo fratello, il Re del Nord. Viene a sapere che è stato ucciso durante un matrimonio.',
+    },
+  },
+  sanCatelynDead: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'Her mother, killed at the same wedding as Robb.',
+      it: 'Sua madre, uccisa allo stesso matrimonio di Robb.',
+    },
+  },
+  // Sansa, the books
+  sanOlennaBooks: {
+    character: 'olenna-tyrell',
+    type: { en: 'Margaery’s grandmother', it: 'Nonna di Margaery' },
+    summary: {
+      en: 'The Queen of Thorns. She drowns their talk in a fool’s song, hears Sansa whisper that Joffrey is a monster, and offers her a visit to Highgarden and her grandson Willas.',
+      it: 'La Regina di Spine. Copre le loro parole con la canzone di un buffone, sente Sansa sussurrare che Joffrey è un mostro e le propone di andare ad Alto Giardino e di sposare suo nipote Willas.',
+    },
+  },
+  sanMargaeryInvite: {
+    character: 'margaery-tyrell',
+    type: { en: 'Joffrey’s bride to be', it: 'Futura sposa di Joffrey' },
+    summary: {
+      en: 'The king’s bride to be, who invites her to sup with her grandmother.',
+      it: 'La futura sposa del re, che la invita a cena con la nonna.',
+    },
+  },
+  sanLorasForgets: {
+    character: 'loras-tyrell',
+    type: { en: 'Knight of Flowers', it: 'Cavaliere di Fiori' },
+    summary: {
+      en: 'Margaery’s brother, now of the Kingsguard, who escorts her. He does not remember the rose he gave her, and her talk of Renly upsets him.',
+      it: 'Il fratello di Margaery, ora nella Guardia reale, che la accompagna. Non ricorda la rosa che le aveva dato, e le sue parole su Renly lo turbano.',
+    },
+  },
+  sanJoffreyMonster: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Former betrothed', it: 'Ex promesso sposo' },
+    summary: {
+      en: 'The king she is no longer to marry. She fears for Margaery, who will.',
+      it: 'Il re che non deve più sposare. Teme per Margaery, che lo sposerà.',
+    },
+  },
+  sanMargaeryClose: {
+    character: 'margaery-tyrell',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'Margaery, a friend now. She says she does not fear Joffrey, because Loras is in the Kingsguard to protect her.',
+      it: 'Margaery, ormai un’amica. Dice di non temere Joffrey, perché Loras è nella Guardia reale per proteggerla.',
+    },
+  },
+  sanDontosWary: {
+    character: 'dontos-hollard',
+    type: { en: 'Would-be rescuer', it: 'Possibile salvatore' },
+    summary: {
+      en: 'The fool she meets in the godswood. He warns her that the Tyrells want her only for Winterfell, and says they will escape on Joffrey’s wedding day.',
+      it: 'Il buffone che incontra nel parco degli dei. La avverte che i Tyrell la vogliono solo per Grande Inverno, e le dice che fuggiranno il giorno delle nozze di Joffrey.',
+    },
+  },
+  sanTyrionWedBook: {
+    character: 'tyrion-lannister',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'Her husband, wed the day she learns of it. He tells her the match was his father’s wish; that night he promises not to touch her until she wants him.',
+      it: 'Suo marito, sposato il giorno stesso in cui lo viene a sapere. Le dice che è stato suo padre a volerlo; quella notte le promette che non la toccherà finché non sarà lei a volerlo.',
+    },
+  },
+  sanCerseiNews: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen, who has a gown made for her and tells her, as she dresses, that she will marry Tyrion that afternoon.',
+      it: 'La regina, che le fa fare un abito e, mentre Sansa si veste, le annuncia che quel pomeriggio sposerà Tyrion.',
+    },
+  },
+  sanGarlan: {
+    character: 'garlan-tyrell',
+    type: { en: 'Wedding guest', it: 'Invitato alle nozze' },
+    summary: {
+      en: 'Margaery’s brother, who comforts her at the wedding feast and tells her there is more to Tyrion than his size.',
+      it: 'Il fratello di Margaery, che la consola al banchetto di nozze e le dice che in Tyrion c’è più di quanto lasci credere la sua statura.',
+    },
+  },
+  sanJoffreyBedding: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Former betrothed', it: 'Ex promesso sposo' },
+    summary: {
+      en: 'The king, who presses for the bedding at her wedding until Tyrion threatens him.',
+      it: 'Il re, che alle sue nozze insiste per la messa a letto degli sposi finché Tyrion non lo minaccia.',
+    },
+  },
+
+  // Tywin, the show
+  tywTyrionDisown: {
+    character: 'tyrion-lannister',
+    type: { en: 'Younger son', it: 'Figlio minore' },
+    summary: {
+      en: 'His younger son, who asks for Casterly Rock. Tywin refuses, gives him no credit for the battle and blames him for his mother’s death.',
+      it: 'Il figlio minore, che gli chiede Castel Granito. Tywin rifiuta, non gli riconosce alcun merito per la battaglia e gli rinfaccia la morte della madre.',
+    },
+  },
+  tywShae: {
+    character: 'shae',
+    type: { en: 'Son’s mistress', it: 'Amante del figlio' },
+    summary: {
+      en: 'Tyrion’s mistress, brought to the capital against his order.',
+      it: 'L’amante di Tyrion, portata nella capitale contro il suo ordine.',
+    },
+  },
+  tywPetyr: {
+    character: 'petyr-baelish',
+    type: { en: 'Master of coin', it: 'Maestro del conio' },
+    summary: {
+      en: 'Littlefinger, who pushes to sit beside him at the first council. Tywin sends him to win Lysa Arryn, with the title of Harrenhal to make him worthy of her.',
+      it: 'Ditocorto, che al primo concilio si fa largo per sedergli accanto. Tywin lo manda a conquistare Lysa Arryn, con il titolo di Harrenhal a renderlo degno di lei.',
+    },
+  },
+  tywVarys: {
+    character: 'varys',
+    type: { en: 'Master of whisperers', it: 'Maestro dei sussurri' },
+    summary: {
+      en: 'The eunuch, who reports the war to the council. For all his spies, he cannot find Jaime.',
+      it: 'L’eunuco, che riferisce al concilio sulla guerra. Nonostante tutte le sue spie, non riesce a trovare Jaime.',
+    },
+  },
+  tywPycelle: {
+    character: 'pycelle',
+    type: { en: 'Grand Maester', it: 'Gran maestro' },
+    summary: {
+      en: 'The Grand Maester, who takes his seat at the council without fighting for a better one.',
+      it: 'Il gran maestro, che prende posto al concilio senza contendersi un posto migliore.',
+    },
+  },
+  tywCerseiChair: {
+    character: 'cersei-lannister',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, who pulls up a chair at his right hand at the first council.',
+      it: 'Sua figlia, che al primo concilio si porta una sedia alla sua destra.',
+    },
+  },
+  tywTyrionCoin: {
+    character: 'tyrion-lannister',
+    type: { en: 'Younger son', it: 'Figlio minore' },
+    summary: {
+      en: 'His younger son, who drags his chair to the far end of the table. Tywin names him master of coin in Littlefinger’s place.',
+      it: 'Il figlio minore, che trascina la sua sedia in fondo al tavolo. Tywin lo nomina maestro del conio al posto di Ditocorto.',
+    },
+  },
+  tywTyrionMarry: {
+    character: 'tyrion-lannister',
+    type: { en: 'Younger son', it: 'Figlio minore' },
+    summary: {
+      en: 'His younger son, whom he orders to marry Sansa Stark as his reward for the battle.',
+      it: 'Il figlio minore, a cui ordina di sposare Sansa Stark come ricompensa per la battaglia.',
+    },
+  },
+  tywCerseiMarry: {
+    character: 'cersei-lannister',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, whom he tells she is not as clever as she thinks, then orders to marry Loras Tyrell. He will not hear her plead.',
+      it: 'Sua figlia, a cui dice che non è intelligente quanto crede, e poi ordina di sposare Loras Tyrell. Non ascolta le sue suppliche.',
+    },
+  },
+  tywOlenna: {
+    character: 'olenna-tyrell',
+    type: { en: 'Tyrell matriarch', it: 'Matriarca dei Tyrell' },
+    summary: {
+      en: 'Lady Olenna, who refuses Loras for Cersei until he threatens to put Loras in the Kingsguard.',
+      it: 'Lady Olenna, che rifiuta Loras per Cersei finché Tywin non minaccia di metterlo nella Guardia reale.',
+    },
+  },
+  tywSansaKey: {
+    character: 'sansa-stark',
+    type: { en: 'Key to the North', it: 'Chiave del Nord' },
+    summary: {
+      en: 'The Stark girl, whose younger brothers are thought dead. He will not let the Tyrells take the North through her.',
+      it: 'La ragazza Stark, i cui fratelli minori sono creduti morti. Tywin non lascerà che i Tyrell si prendano il Nord attraverso di lei.',
+    },
+  },
+  tywLoras: {
+    character: 'loras-tyrell',
+    type: { en: 'Daughter’s intended', it: 'Promesso della figlia' },
+    summary: {
+      en: 'The Knight of Flowers, whom he means Cersei to marry.',
+      it: 'Il Cavaliere di Fiori, che vuole dare in sposo a Cersei.',
+    },
+  },
+  tywJoffreyBed: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Grandson', it: 'Nipote' },
+    summary: {
+      en: 'His grandson the king. When Joffrey defies him before the council, Tywin tells him a true king has no need to say so, and has him sent to bed.',
+      it: 'Suo nipote, il re. Quando Joffrey lo sfida davanti al concilio, Tywin gli dice che un vero re non ha bisogno di ricordarlo, e lo fa mandare a letto.',
+    },
+  },
+  tywTyrionFrey: {
+    character: 'tyrion-lannister',
+    type: { en: 'Younger son', it: 'Figlio minore' },
+    summary: {
+      en: 'His younger son, who guesses that Tywin arranged the slaughter at the Frey wedding. Tywin admits it, and presses him to give Sansa a child.',
+      it: 'Il figlio minore, che capisce che dietro la strage al matrimonio dei Frey c’è suo padre. Tywin lo ammette, e insiste perché dia un figlio a Sansa.',
+    },
+  },
+  tywWalder: {
+    character: 'walder-frey',
+    type: { en: 'Ally', it: 'Alleato' },
+    summary: {
+      en: 'The old lord he dealt with to destroy Robb Stark at a wedding under Frey’s roof.',
+      it: 'Il vecchio lord con cui si è accordato per eliminare Robb Stark a un matrimonio sotto il tetto dei Frey.',
+    },
+  },
+  tywRobbDead: {
+    character: 'robb-stark',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The King in the North, killed with his mother at the Frey wedding Tywin arranged.',
+      it: 'Il Re del Nord, ucciso con la madre al matrimonio dei Frey organizzato da Tywin.',
+    },
+  },
+  tywCerseiBed: {
+    character: 'cersei-lannister',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, whom he tells to see the king to bed.',
+      it: 'Sua figlia, a cui dice di accompagnare il re a letto.',
+    },
+  },
+  // Tywin, the books
+  tywTyrionBook: {
+    character: 'tyrion-lannister',
+    type: { en: 'Younger son', it: 'Figlio minore' },
+    summary: {
+      en: 'His son, who asks for gratitude and for Casterly Rock. Tywin gives neither, and warns that he will hang the next prostitute Tyrion sleeps with.',
+      it: 'Il figlio, che gli chiede gratitudine e Castel Granito. Tywin non gli concede né l’una né l’altro, e lo avverte che impiccherà la prossima prostituta con cui andrà a letto.',
+    },
+  },
+  tywPetyrBook: {
+    character: 'petyr-baelish',
+    type: { en: 'Lord of Harrenhal', it: 'Lord di Harrenhal' },
+    summary: {
+      en: 'Lord of Harrenhal in name only while Roose Bolton holds the castle, but useful in winning the Tyrells.',
+      it: 'Lord di Harrenhal solo di nome finché Roose Bolton tiene il castello, ma utile per conquistare i Tyrell.',
+    },
+  },
+  tywGregorBook: {
+    character: 'gregor-clegane',
+    type: { en: 'Bannerman', it: 'Alfiere' },
+    summary: {
+      en: 'The knight he sends with Lord Tarly against the northmen marching on the coast. He is loath to hand him over to Prince Doran.',
+      it: 'Il cavaliere che manda con lord Tarly contro i nordici in marcia verso la costa. È restio a consegnarlo al principe Doran.',
+    },
+  },
+  tywTyrionSansaBook: {
+    character: 'tyrion-lannister',
+    type: { en: 'Younger son', it: 'Figlio minore' },
+    summary: {
+      en: 'His son, whom he orders to marry Sansa Stark so that their son might rule Winterfell. If Tyrion refuses, Sansa goes to a cousin and he to Lollys.',
+      it: 'Il figlio, a cui ordina di sposare Sansa Stark perché un loro figlio possa governare Grande Inverno. Se Tyrion rifiuta, Sansa andrà a un cugino e lui a Lollys.',
+    },
+  },
+  tywCerseiWillas: {
+    character: 'cersei-lannister',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, whom he offers to Willas Tyrell. She refuses; the last word is his.',
+      it: 'Sua figlia, che offre in moglie a Willas Tyrell. Lei rifiuta; l’ultima parola spetta a lui.',
+    },
+  },
+  tywPetyrVale: {
+    character: 'petyr-baelish',
+    type: { en: 'Envoy to the Vale', it: 'Inviato nella Valle' },
+    summary: {
+      en: 'Littlefinger, who goes to wed Lysa Arryn and deliver the Vale. He has proved loyal by telling of the Tyrells’ plan for Sansa.',
+      it: 'Ditocorto, che parte per sposare Lysa Arryn e consegnargli la Valle. Si è dimostrato leale rivelando il piano dei Tyrell su Sansa.',
+    },
+  },
+  tywSansaBook: {
+    character: 'sansa-stark',
+    type: { en: 'Key to the North', it: 'Chiave del Nord' },
+    summary: {
+      en: 'The Stark girl the Tyrells mean to wed to Willas. Tywin gives her to Tyrion instead.',
+      it: 'La ragazza Stark che i Tyrell vogliono dare in moglie a Willas. Tywin la dà invece a Tyrion.',
+    },
+  },
+  tywKevan: {
+    character: 'kevan-lannister',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who brings Balon Greyjoy’s terms to the council and stays behind with the family.',
+      it: 'Suo fratello, che porta al concilio le condizioni di Balon Greyjoy e resta con la famiglia dopo la riunione.',
+    },
+  },
+  tywTyrionBed: {
+    character: 'tyrion-lannister',
+    type: { en: 'Younger son', it: 'Figlio minore' },
+    summary: {
+      en: 'His son, whom he tells to bed his wife. He shows him the two Valyrian steel swords forged for Joffrey and Jaime.',
+      it: 'Il figlio, a cui ordina di consumare il matrimonio. Gli mostra le due spade d’acciaio di Valyria forgiate per Joffrey e Jaime.',
+    },
+  },
+  tywMace: {
+    character: 'mace-tyrell',
+    type: { en: 'Ally', it: 'Alleato' },
+    summary: {
+      en: 'Lord Tyrell, who turns down Cersei as a bride for Willas.',
+      it: 'Lord Tyrell, che rifiuta Cersei come sposa per Willas.',
+    },
+  },
+  tywPycelleBook: {
+    character: 'pycelle',
+    type: { en: 'Grand Maester', it: 'Gran maestro' },
+    summary: {
+      en: 'The Grand Maester, who brings word that the Lord Commander of the Night’s Watch may be dead. Tywin has him answer that no men will go north unless Janos Slynt is considered for the post.',
+      it: 'Il gran maestro, che porta la notizia che il Lord Comandante dei Guardiani della notte potrebbe essere morto. Tywin gli fa rispondere che nessun uomo andrà a nord se Janos Slynt non sarà preso in considerazione per la carica.',
+    },
+  },
+
+  // Cersei, the show
+  cerMargaeryCharity: {
+    character: 'margaery-tyrell',
+    type: { en: 'Rival', it: 'Rivale' },
+    summary: {
+      en: 'Joffrey’s bride to be. Cersei chides her for her charity in the streets, and sees her winning the people and the king.',
+      it: 'La futura sposa di Joffrey. Cersei la rimprovera per la carità fatta nelle strade, e si accorge che si sta conquistando il popolo e il re.',
+    },
+  },
+  cerJoffreyDefies: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'Her son the king, who takes Margaery’s side against her.',
+      it: 'Suo figlio, il re, che si schiera con Margaery contro di lei.',
+    },
+  },
+  cerJaimeMissing: {
+    character: 'jaime-lannister',
+    type: { en: 'Brother and lover', it: 'Fratello e amante' },
+    summary: {
+      en: 'Her brother and her lover, the father of her children, lost somewhere between Robb Stark’s camp and the capital.',
+      it: 'Suo fratello e suo amante, il padre dei suoi figli, disperso da qualche parte tra l’accampamento di Robb Stark e la capitale.',
+    },
+  },
+  cerTywinMarry: {
+    character: 'tywin-lannister',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father. He tells her she is not as clever as she thinks, then orders her to marry Loras Tyrell and will not hear her plead.',
+      it: 'Suo padre. Le dice che non è intelligente quanto crede, poi le ordina di sposare Loras Tyrell e non ascolta le sue suppliche.',
+    },
+  },
+  cerLorasBetrothed: {
+    character: 'loras-tyrell',
+    type: { en: 'Intended husband', it: 'Promesso sposo' },
+    summary: {
+      en: 'The Knight of Flowers, the husband her father has chosen for her.',
+      it: 'Il Cavaliere di Fiori, il marito che suo padre ha scelto per lei.',
+    },
+  },
+  cerPetyrSpy: {
+    character: 'petyr-baelish',
+    type: { en: 'Spy', it: 'Spia' },
+    summary: {
+      en: 'Littlefinger, whom she asks to spy on the Tyrells. She reminds him that he never found Arya.',
+      it: 'Ditocorto, a cui chiede di spiare i Tyrell. Gli ricorda che non ha mai trovato Arya.',
+    },
+  },
+  cerTyrionGloat: {
+    character: 'tyrion-lannister',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, to be married to Sansa. She gloats until her own match is announced.',
+      it: 'Suo fratello, che dovrà sposare Sansa. Lei gongola finché non viene annunciato il suo matrimonio.',
+    },
+  },
+  cerMargaeryThreat: {
+    character: 'margaery-tyrell',
+    type: { en: 'Rival', it: 'Rivale' },
+    summary: {
+      en: 'The queen to be, who speaks of them as sisters. Cersei tells her how the Reynes ended, and threatens to have her strangled if she says it again.',
+      it: 'La futura regina, che parla di loro come di sorelle. Cersei le racconta come sono finiti i Reyne, e minaccia di farla strangolare se lo ripeterà.',
+    },
+  },
+  cerJoffreyFeast: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'Her son, who torments Sansa at Tyrion’s wedding feast over her feeble protests.',
+      it: 'Suo figlio, che al banchetto di nozze di Tyrion tormenta Sansa nonostante le deboli proteste della madre.',
+    },
+  },
+  cerJaimeBack: {
+    character: 'jaime-lannister',
+    type: { en: 'Brother and lover', it: 'Fratello e amante' },
+    summary: {
+      en: 'Her brother and her lover, who reaches her chambers at last, filthy and missing a hand.',
+      it: 'Suo fratello e suo amante, che infine raggiunge le sue stanze, sporco e senza una mano.',
+    },
+  },
+  cerJoffreyBed: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'Her son. Before the council she calls his wish to serve Robb’s head to Sansa a jest, then sees him to bed at her father’s word.',
+      it: 'Suo figlio. Davanti al concilio Cersei fa passare per uno scherzo il suo proposito di servire a Sansa la testa di Robb, poi su ordine del padre lo accompagna a letto.',
+    },
+  },
+  // Cersei, the books
+  cerTywinWillas: {
+    character: 'tywin-lannister',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, who offers her hand to Willas Tyrell. She refuses and storms out.',
+      it: 'Suo padre, che offre la sua mano a Willas Tyrell. Lei rifiuta ed esce furiosa.',
+    },
+  },
+  cerTyrionSansa: {
+    character: 'tyrion-lannister',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, to whom their father gives Sansa. Her word that the girl has flowered answers his objection that she is a child.',
+      it: 'Suo fratello, a cui il padre dà Sansa. È la sua testimonianza che la ragazza è fiorita a rispondere all’obiezione di Tyrion che sia una bambina.',
+    },
+  },
+  cerSansaWed: {
+    character: 'sansa-stark',
+    type: { en: 'Hostage', it: 'Ostaggio' },
+    summary: {
+      en: 'The Stark girl she dresses for a wedding, then tells that she will marry Tyrion that afternoon.',
+      it: 'La ragazza Stark che fa vestire per le nozze, e a cui poi annuncia che quel pomeriggio sposerà Tyrion.',
+    },
+  },
+
+  // Joffrey, the show
+  jofMargaeryCharmed: {
+    character: 'margaery-tyrell',
+    type: { en: 'Bride to be', it: 'Futura sposa' },
+    summary: {
+      en: 'His bride to be, who stops his litter to visit an orphanage. He takes her side against his mother.',
+      it: 'La sua futura sposa, che ferma la sua lettiga per visitare un orfanotrofio. Lui prende le sue parti contro la madre.',
+    },
+  },
+  jofCerseiChided: {
+    character: 'cersei-lannister',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, whose warnings about Margaery he brushes off.',
+      it: 'Sua madre, di cui liquida gli avvertimenti su Margaery.',
+    },
+  },
+  jofMargaeryCrossbow: {
+    character: 'margaery-tyrell',
+    type: { en: 'Bride to be', it: 'Futura sposa' },
+    summary: {
+      en: 'His bride to be. Asked about Renly, she plays the frustrated bride, then admires his new crossbow until he offers to take her hunting.',
+      it: 'La sua futura sposa. Quando lui le chiede di Renly, recita la parte della sposa delusa, poi ammira la sua nuova balestra finché lui non le propone di portarla a caccia.',
+    },
+  },
+  jofRos: {
+    character: 'ros',
+    type: { en: 'Prostitute given to him', it: 'Prostituta consegnatagli' },
+    summary: {
+      en: 'The prostitute Littlefinger gave him. He killed her with his crossbow.',
+      it: 'La prostituta che Ditocorto gli ha consegnato. Lui l’ha uccisa con la sua balestra.',
+    },
+  },
+  jofTyrionThreat: {
+    character: 'tyrion-lannister',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who threatens him with a dagger at the wedding feast when he calls for the bedding.',
+      it: 'Suo zio, che al banchetto di nozze lo minaccia con il pugnale quando lui pretende la messa a letto degli sposi.',
+    },
+  },
+  jofSansaWed: {
+    character: 'sansa-stark',
+    type: { en: 'Former betrothed', it: 'Ex promessa sposa' },
+    summary: {
+      en: 'The girl he walks to the altar to give to Tyrion. At the feast he says he might take her when his uncle is done.',
+      it: 'La ragazza che accompagna all’altare per darla a Tyrion. Al banchetto dice che potrebbe prenderla quando lo zio avrà finito.',
+    },
+  },
+  jofTywinThrone: {
+    character: 'tywin-lannister',
+    type: { en: 'Grandfather', it: 'Nonno' },
+    summary: {
+      en: 'His grandfather, who climbs the steps of the throne to put him in his place, and at the wedding feast ends the quarrel with Tyrion.',
+      it: 'Suo nonno, che sale i gradini del trono per rimetterlo al suo posto, e al banchetto di nozze chiude la lite con Tyrion.',
+    },
+  },
+  jofTywinBed: {
+    character: 'tywin-lannister',
+    type: { en: 'Grandfather', it: 'Nonno' },
+    summary: {
+      en: 'His grandfather, who tells him a true king has no need to say so, and has him sent to bed.',
+      it: 'Suo nonno, che gli dice che un vero re non ha bisogno di ricordarlo, e lo fa mandare a letto.',
+    },
+  },
+  jofRobbHead: {
+    character: 'robb-stark',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The King in the North, killed at the Frey wedding. Joffrey wants his head served to Sansa at his own wedding feast.',
+      it: 'Il Re del Nord, ucciso al matrimonio dei Frey. Joffrey vuole far servire la sua testa a Sansa al proprio banchetto di nozze.',
+    },
+  },
+  jofTyrionForbids: {
+    character: 'tyrion-lannister',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who forbids him to torment Sansa now that she is his wife.',
+      it: 'Suo zio, che gli proibisce di tormentare Sansa ora che è sua moglie.',
+    },
+  },
+  // Joffrey, the books
+  jofTyrionBook: {
+    character: 'tyrion-lannister',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle, who has to threaten him to stop the bedding at his wedding to Sansa.',
+      it: 'Suo zio, che deve minacciarlo per fermare la messa a letto alle sue nozze con Sansa.',
+    },
+  },
+  jofSansaBook: {
+    character: 'sansa-stark',
+    type: { en: 'Former betrothed', it: 'Ex promessa sposa' },
+    summary: {
+      en: 'His former betrothed, now his uncle’s wife. At the wedding he wants the bedding.',
+      it: 'La sua ex promessa sposa, ora moglie dello zio. Alle nozze lui vuole la messa a letto degli sposi.',
+    },
+  },
+
+  // Petyr, the show
+  petSansaDocks: {
+    character: 'sansa-stark',
+    type: { en: 'Girl he will help', it: 'Ragazza da aiutare' },
+    summary: {
+      en: 'The Stark girl he meets at the docks. He offers to smuggle her out on his ship when he leaves.',
+      it: 'La ragazza Stark che incontra al porto. Le offre di portarla via di nascosto sulla sua nave quando partirà.',
+    },
+  },
+  petRosAide: {
+    character: 'ros',
+    type: { en: 'Employee', it: 'Dipendente' },
+    summary: {
+      en: 'The prostitute who now helps him run his business.',
+      it: 'La prostituta che ora lo aiuta a mandare avanti i suoi affari.',
+    },
+  },
+  petTywin: {
+    character: 'tywin-lannister',
+    type: { en: 'Hand of the King', it: 'Primo Cavaliere del re' },
+    summary: {
+      en: 'The new Hand, at whose side he pushes to sit. Tywin sends him to win Lysa Arryn.',
+      it: 'Il nuovo Primo Cavaliere, accanto al quale si fa largo per sedersi. Tywin lo manda a conquistare Lysa Arryn.',
+    },
+  },
+  petLysa: {
+    character: 'lysa-arryn',
+    type: { en: 'Widow he is to win', it: 'Vedova da conquistare' },
+    summary: {
+      en: 'The widow he has known since childhood. He tells the council she has always adored him and will marry him.',
+      it: 'La vedova che conosce fin da bambino. Dice al concilio che lei lo ha sempre adorato e lo sposerà.',
+    },
+  },
+  petTyrionCoin: {
+    character: 'tyrion-lannister',
+    type: { en: 'Successor', it: 'Successore' },
+    summary: {
+      en: 'The new master of coin, who collects the ledgers from his brothel and finds the crown deep in debt.',
+      it: 'Il nuovo maestro del conio, che ritira i registri dal suo bordello e scopre che la corona è piena di debiti.',
+    },
+  },
+  petVarys: {
+    character: 'varys',
+    type: { en: 'Rival', it: 'Rivale' },
+    summary: {
+      en: 'The eunuch, whom he tells in the throne room that he knows about Ros. To Varys chaos is a pit; to Petyr it is a ladder.',
+      it: 'L’eunuco, a cui nella sala del trono dice di sapere di Ros. Per Varys il caos è un pozzo; per Petyr è una scala.',
+    },
+  },
+  petRosGiven: {
+    character: 'ros',
+    type: { en: 'Employee', it: 'Dipendente' },
+    summary: {
+      en: 'The prostitute who spied on him for Varys. He gave her to Joffrey, who killed her.',
+      it: 'La prostituta che lo spiava per conto di Varys. Lui l’ha consegnata a Joffrey, che l’ha uccisa.',
+    },
+  },
+  petSansaLeft: {
+    character: 'sansa-stark',
+    type: { en: 'Girl he offered help', it: 'Ragazza a cui offriva aiuto' },
+    summary: {
+      en: 'The Stark girl who put off his offer. His ship leaves without her.',
+      it: 'La ragazza Stark che ha rimandato la sua offerta. La sua nave parte senza di lei.',
+    },
+  },
+  petCersei: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen regent', it: 'Regina reggente' },
+    summary: {
+      en: 'The queen, who asks him to spy on the Tyrells. Through a squire in his pay he learns of their plan to wed Sansa to Loras.',
+      it: 'La regina, che gli chiede di spiare i Tyrell. Tramite uno scudiero al suo soldo scopre il loro piano di far sposare Sansa a Loras.',
+    },
+  },
+  // Petyr, the books
+  petTywinBook: {
+    character: 'tywin-lannister',
+    type: { en: 'Hand of the King', it: 'Primo Cavaliere del re' },
+    summary: {
+      en: 'The Hand, who sends him to wed Lysa Arryn and bring the Vale to the crown. Petyr has told him of the Tyrells’ plan for Sansa.',
+      it: 'Il Primo Cavaliere, che lo manda a sposare Lysa Arryn e a portare la Valle alla corona. Petyr gli ha rivelato il piano dei Tyrell per Sansa.',
+    },
+  },
+  petLysaBook: {
+    character: 'lysa-arryn',
+    type: { en: 'Widow he is to win', it: 'Vedova da conquistare' },
+    summary: {
+      en: 'The widow he agrees to marry, to deliver the Vale into Tywin’s hands as her consort.',
+      it: 'La vedova che accetta di sposare, per consegnare la Valle nelle mani di Tywin come suo consorte.',
+    },
+  },
+  petTyrionBook: {
+    character: 'tyrion-lannister',
+    type: { en: 'Successor', it: 'Successore' },
+    summary: {
+      en: 'The Hand’s son, named master of coin in his place.',
+      it: 'Il figlio del Primo Cavaliere, nominato maestro del conio al suo posto.',
+    },
+  },
+  petSansaBook: {
+    character: 'sansa-stark',
+    type: { en: 'Stark girl', it: 'Ragazza Stark' },
+    summary: {
+      en: 'The Stark girl the Tyrells want for Willas. He tells Tywin of their plan.',
+      it: 'La ragazza Stark che i Tyrell vogliono per Willas. Lui rivela il loro piano a Tywin.',
+    },
+  },
+
+  // Varys, the show
+  varTyrionSorcerer: {
+    character: 'tyrion-lannister',
+    type: { en: 'Master of coin', it: 'Maestro del conio' },
+    summary: {
+      en: 'Tyrion, who asks who sent Ser Mandon to kill him. Varys tells him how he was cut as a boy, and shows him the sorcerer who did it, caught in a crate.',
+      it: 'Tyrion, che gli chiede chi abbia mandato ser Mandon a ucciderlo. Varys gli racconta come fu evirato da ragazzo, e gli mostra in una cassa lo stregone che lo fece.',
+    },
+  },
+  varRosSpy: {
+    character: 'ros',
+    type: { en: 'Spy', it: 'Spia' },
+    summary: {
+      en: 'The prostitute who spies on Littlefinger for him. She shows him the ship’s manifest that gives away Littlefinger’s plan for Sansa.',
+      it: 'La prostituta che spia Ditocorto per lui. Gli mostra il registro della nave che tradisce il piano di Ditocorto per Sansa.',
+    },
+  },
+  varOlenna: {
+    character: 'olenna-tyrell',
+    type: { en: 'Ally', it: 'Alleata' },
+    summary: {
+      en: 'Lady Olenna, who sees through his courtesies. He warns her of Littlefinger’s designs on Sansa.',
+      it: 'Lady Olenna, che vede oltre le sue cortesie. Lui la avverte delle mire di Ditocorto su Sansa.',
+    },
+  },
+  varPetyrFear: {
+    character: 'petyr-baelish',
+    type: { en: 'Rival', it: 'Rivale' },
+    summary: {
+      en: 'Littlefinger, the one rival who frightens him: a man who would burn the realm to rule the ashes.',
+      it: 'Ditocorto, l’unico rivale che lo spaventa: un uomo capace di bruciare il regno pur di regnare sulle ceneri.',
+    },
+  },
+  varSansa: {
+    character: 'sansa-stark',
+    type: { en: 'Stark heir', it: 'Erede degli Stark' },
+    summary: {
+      en: 'The Stark girl, whose younger brothers are thought dead. Whoever holds her may one day hold the North.',
+      it: 'La ragazza Stark, i cui fratelli minori sono creduti morti. Chi la tiene potrebbe un giorno tenere il Nord.',
+    },
+  },
+  varPetyrLadder: {
+    character: 'petyr-baelish',
+    type: { en: 'Rival', it: 'Rivale' },
+    summary: {
+      en: 'Littlefinger, who tells him in the throne room that he knows about Ros. Varys sees chaos as a pit, Littlefinger as a ladder.',
+      it: 'Ditocorto, che nella sala del trono gli dice di sapere di Ros. Per Varys il caos è un pozzo, per Ditocorto una scala.',
+    },
+  },
+  varRosDead: {
+    character: 'ros',
+    type: { en: 'Spy', it: 'Spia' },
+    summary: {
+      en: 'The prostitute who spied on Littlefinger for him. Littlefinger found out and gave her to Joffrey, who killed her.',
+      it: 'La prostituta che spiava Ditocorto per lui. Ditocorto l’ha scoperta e l’ha consegnata a Joffrey, che l’ha uccisa.',
+    },
+  },
+  varShae: {
+    character: 'shae',
+    type: { en: 'Tyrion’s lover', it: 'Amante di Tyrion' },
+    summary: {
+      en: 'Tyrion’s lover. He offers her diamonds to leave for Essos, sure she puts Tyrion at risk; she refuses unless Tyrion asks her himself.',
+      it: 'L’amante di Tyrion. Le offre dei diamanti perché parta per Essos, convinto che metta Tyrion in pericolo; lei rifiuta, a meno che non sia Tyrion a chiederlo.',
+    },
+  },
+  varTyrionHope: {
+    character: 'tyrion-lannister',
+    type: { en: 'Master of coin', it: 'Maestro del conio' },
+    summary: {
+      en: 'Tyrion, in whom he sees the realm’s best hope under this king.',
+      it: 'Tyrion, in cui vede la migliore speranza del regno sotto questo re.',
+    },
+  },
+  varJoffrey: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king. When Joffrey wants Robb’s head served to Sansa, Varys reminds him that she is now his aunt.',
+      it: 'Il re. Quando Joffrey vuole far servire a Sansa la testa di Robb, Varys gli ricorda che ora lei è sua zia.',
+    },
+  },
+  // Varys, the books
+  varTyrionBook: {
+    character: 'tyrion-lannister',
+    type: { en: 'Former Hand', it: 'Ex Primo Cavaliere' },
+    summary: {
+      en: 'Tyrion, who waits in his rooms hunting for passages. Varys gives him the court’s news and, at moonrise, brings Shae to him, himself dressed as a matron.',
+      it: 'Tyrion, che lo aspetta nelle sue stanze cercando passaggi segreti. Varys gli dà le notizie della corte e, al sorgere della luna, gli porta Shae, travestito da matrona.',
+    },
+  },
+  varShaeBook: {
+    character: 'shae',
+    type: { en: 'Tyrion’s lover', it: 'Amante di Tyrion' },
+    summary: {
+      en: 'Tyrion’s lover, whom he brings to his rooms by night and leaves alone with Tyrion.',
+      it: 'L’amante di Tyrion, che porta di notte nelle sue stanze e lascia sola con lui.',
+    },
+  },
+  varPycelleBook: {
+    character: 'pycelle',
+    type: { en: 'Grand Maester', it: 'Gran maestro' },
+    summary: {
+      en: 'The old Grand Maester, whom Tywin means to restore, as Varys tells Tyrion.',
+      it: 'Il vecchio gran maestro, che Tywin intende reintegrare, come Varys riferisce a Tyrion.',
+    },
+  },
+  varCerseiOsmund: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen regent', it: 'Regina reggente' },
+    summary: {
+      en: 'The queen, who he says has been flirting with Ser Osmund Kettleblack.',
+      it: 'La regina, che a suo dire civetta con ser Osmund Kettleblack.',
+    },
+  },
+  varTywinBook: {
+    character: 'tywin-lannister',
+    type: { en: 'Hand of the King', it: 'Primo Cavaliere del re' },
+    summary: {
+      en: 'The Hand, who moved at once to keep another Tyrell off the council.',
+      it: 'Il Primo Cavaliere, che si è mosso subito per non avere un altro Tyrell nel concilio.',
+    },
+  },
+
+  // Pycelle
+  pycTywinShow: {
+    character: 'tywin-lannister',
+    type: { en: 'Hand of the King', it: 'Primo Cavaliere del re' },
+    summary: {
+      en: 'The new Hand, who calls the council to his tower. Pycelle takes the third seat, away from the fight for the nearest.',
+      it: 'Il nuovo Primo Cavaliere, che convoca il concilio nella sua torre. Pycelle prende il terzo posto, lontano dalla contesa per quello più vicino.',
+    },
+  },
+  pycPetyrShow: {
+    character: 'petyr-baelish',
+    type: { en: 'Fellow councillor', it: 'Collega del concilio' },
+    summary: {
+      en: 'Littlefinger, who is to wed Lysa Arryn. Pycelle notes that it will make him Defender of the Vale.',
+      it: 'Ditocorto, che sposerà Lysa Arryn. Pycelle osserva che così diventerà Protettore della Valle.',
+    },
+  },
+  pycTyrionCoin: {
+    character: 'tyrion-lannister',
+    type: { en: 'Master of coin', it: 'Maestro del conio' },
+    summary: {
+      en: 'The new master of coin, named at the council in Littlefinger’s place.',
+      it: 'Il nuovo maestro del conio, nominato al concilio al posto di Ditocorto.',
+    },
+  },
+  pycCerseiChair: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen regent', it: 'Regina reggente' },
+    summary: {
+      en: 'The queen regent, who pulls up a chair at her father’s right hand.',
+      it: 'La regina reggente, che si porta una sedia alla destra del padre.',
+    },
+  },
+  pycTywinBook: {
+    character: 'tywin-lannister',
+    type: { en: 'Hand of the King', it: 'Primo Cavaliere del re' },
+    summary: {
+      en: 'The Hand, who has restored him as Grand Maester. Pycelle tells his council that three hundred Dornishmen ride for the city.',
+      it: 'Il Primo Cavaliere, che lo ha reintegrato come gran maestro. Pycelle annuncia al suo concilio che trecento dorniani cavalcano verso la città.',
+    },
+  },
+  pycMace: {
+    character: 'mace-tyrell',
+    type: { en: 'Fellow councillor', it: 'Collega del concilio' },
+    summary: {
+      en: 'Lord Tyrell, who dislikes the news of Dornishmen riding across his lands.',
+      it: 'Lord Tyrell, a cui non piace sapere che i dorniani attraversano le sue terre.',
+    },
+  },
+
+  // Loras, the show
+  lorSansaEscort: {
+    character: 'sansa-stark',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Stark girl he escorts to the gardens. She reminds him that they met at the Hand’s tourney.',
+      it: 'La ragazza Stark che accompagna nei giardini. Lei gli ricorda che si sono conosciuti al torneo del Primo Cavaliere.',
+    },
+  },
+  lorOlenna: {
+    character: 'olenna-tyrell',
+    type: { en: 'Grandmother', it: 'Nonna' },
+    summary: {
+      en: 'His grandmother, to whom he brings Sansa.',
+      it: 'Sua nonna, da cui porta Sansa.',
+    },
+  },
+  lorRenlyDead: {
+    character: 'renly-baratheon',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The king, his lover, who was killed in his tent.',
+      it: 'Il re, suo amante, che è stato ucciso nella sua tenda.',
+    },
+  },
+  lorSansaPlans: {
+    character: 'sansa-stark',
+    type: { en: 'Intended bride', it: 'Promessa sposa' },
+    summary: {
+      en: 'The Stark girl he is to marry. He talks happily of the feast and her gown, and agrees with her that the Red Keep is a terrible place.',
+      it: 'La ragazza Stark che deve sposare. Parla volentieri del banchetto e dell’abito di Sansa, e conviene con lei che la Fortezza Rossa è un posto terribile.',
+    },
+  },
+  // Loras, the books
+  lorSansaBook: {
+    character: 'sansa-stark',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The Stark girl he escorts to Margaery’s supper. He does not recall the rose he once gave her, and her talk of Renly’s death upsets him.',
+      it: 'La ragazza Stark che accompagna alla cena di Margaery. Non ricorda la rosa che un tempo le aveva dato, e le sue parole sulla morte di Renly lo turbano.',
+    },
+  },
+  lorMargaeryBook: {
+    character: 'margaery-tyrell',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, the king’s bride to be, whose guest he escorts.',
+      it: 'Sua sorella, la futura sposa del re, di cui accompagna l’ospite.',
+    },
+  },
+
+  // Shae, the show
+  shaSansaWarns: {
+    character: 'sansa-stark',
+    type: { en: 'Mistress', it: 'Padrona' },
+    summary: {
+      en: 'The Stark girl she serves, whom she warns that Littlefinger’s help has a price.',
+      it: 'La ragazza Stark che serve, e che Shae mette in guardia: l’aiuto di Ditocorto ha un prezzo.',
+    },
+  },
+  shaTyrionFavour: {
+    character: 'tyrion-lannister',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'Her lover, who tells her that his father has threatened her life. She asks him to protect Sansa from Littlefinger.',
+      it: 'Il suo amante, che le dice che il padre ha minacciato di ucciderla. Lei gli chiede di proteggere Sansa da Ditocorto.',
+    },
+  },
+  shaPetyr: {
+    character: 'petyr-baelish',
+    type: { en: 'Man she distrusts', it: 'Uomo di cui diffida' },
+    summary: {
+      en: 'Littlefinger, who offers Sansa a way out. Shae trusts nothing he does for free.',
+      it: 'Ditocorto, che offre a Sansa una via di fuga. Shae non si fida di nulla che lui faccia gratis.',
+    },
+  },
+  shaRos: {
+    character: 'ros',
+    type: { en: 'Littlefinger’s aide', it: 'Aiutante di Ditocorto' },
+    summary: {
+      en: 'The prostitute who works for Littlefinger. She asks Shae to watch over Sansa, and to watch Littlefinger above all.',
+      it: 'La prostituta che lavora per Ditocorto. Chiede a Shae di vegliare su Sansa, e soprattutto di tenere d’occhio Ditocorto.',
+    },
+  },
+  shaRosDead: {
+    character: 'ros',
+    type: { en: 'Littlefinger’s aide', it: 'Aiutante di Ditocorto' },
+    summary: {
+      en: 'The prostitute who worked for Littlefinger, and who asked Shae to watch over Sansa.',
+      it: 'La prostituta che lavorava per Ditocorto, e che aveva chiesto a Shae di vegliare su Sansa.',
+    },
+  },
+  shaTyrionApology: {
+    character: 'tyrion-lannister',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'Her lover, who comes to Sansa’s chambers with news of his match, and in veiled words apologises to Shae for not telling her first.',
+      it: 'Il suo amante, che viene nelle stanze di Sansa a darle la notizia delle nozze, e con parole velate si scusa con Shae per non averglielo detto prima.',
+    },
+  },
+  shaTyrionEnds: {
+    character: 'tyrion-lannister',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'Her lover, now to marry Sansa. She tells him she will not sleep with him once he is wed.',
+      it: 'Il suo amante, che ora dovrà sposare Sansa. Gli dice che non dormirà più con lui quando sarà sposato.',
+    },
+  },
+  shaVarysDiamonds: {
+    character: 'varys',
+    type: { en: 'Eunuch', it: 'Eunuco' },
+    summary: {
+      en: 'The eunuch, who offers her diamonds to leave for Essos, for Tyrion’s sake. She refuses unless Tyrion asks her.',
+      it: 'L’eunuco, che le offre dei diamanti perché parta per Essos, per il bene di Tyrion. Lei rifiuta, a meno che non sia Tyrion a chiederlo.',
+    },
+  },
+  shaSansaCares: {
+    character: 'sansa-stark',
+    type: { en: 'Mistress', it: 'Padrona' },
+    summary: {
+      en: 'The Stark girl she serves, now Tyrion’s wife. Shae tells Varys she cares deeply for her.',
+      it: 'La ragazza Stark che serve, ora moglie di Tyrion. Shae dice a Varys che le vuole molto bene.',
+    },
+  },
+  // Shae, the books
+  shaTyrionStays: {
+    character: 'tyrion-lannister',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'Her lover, who wants to send her away from his father. She wants to stay, and shows him the steps beneath Varys’s bed.',
+      it: 'Il suo amante, che vuole mandarla lontano dal padre. Lei vuole restare, e gli mostra i gradini sotto il letto di Varys.',
+    },
+  },
+  shaVarysBrings: {
+    character: 'varys',
+    type: { en: 'Go-between', it: 'Intermediario' },
+    summary: {
+      en: 'The eunuch who brings her to Tyrion in his rooms, then leaves them alone.',
+      it: 'L’eunuco che la porta da Tyrion nelle sue stanze, poi li lascia soli.',
+    },
+  },
+
+  // Ros (show only)
+  rosPetyrAide: {
+    character: 'petyr-baelish',
+    type: { en: 'Employer', it: 'Datore di lavoro' },
+    summary: {
+      en: 'The owner of the brothel, whom she now helps run his business.',
+      it: 'Il proprietario del bordello, che ora aiuta a mandare avanti i suoi affari.',
+    },
+  },
+  rosSansa: {
+    character: 'sansa-stark',
+    type: { en: 'Stark girl', it: 'Ragazza Stark' },
+    summary: {
+      en: 'Eddard’s daughter, whose birth she remembers from the north. She asks Shae to look out for her.',
+      it: 'La figlia di Eddard, di cui ricorda la nascita nel Nord. Chiede a Shae di vegliare su di lei.',
+    },
+  },
+  rosShae: {
+    character: 'shae',
+    type: { en: 'Handmaiden', it: 'Ancella' },
+    summary: {
+      en: 'Sansa’s handmaiden, whom she asks to watch over the girl, and to watch Littlefinger above all.',
+      it: 'L’ancella di Sansa, a cui chiede di vegliare sulla ragazza, e soprattutto di tenere d’occhio Ditocorto.',
+    },
+  },
+  rosVarysSpy: {
+    character: 'varys',
+    type: { en: 'Spymaster', it: 'Capo delle spie' },
+    summary: {
+      en: 'The eunuch she spies for. She tells him Littlefinger is obsessed with Sansa, and shows him the manifest of his ship.',
+      it: 'L’eunuco per cui fa la spia. Gli dice che Ditocorto è ossessionato da Sansa, e gli mostra il registro della sua nave.',
+    },
+  },
+  rosPetyrWatched: {
+    character: 'petyr-baelish',
+    type: { en: 'Employer', it: 'Datore di lavoro' },
+    summary: {
+      en: 'The owner of the brothel, whom she watches for Varys.',
+      it: 'Il proprietario del bordello, che sorveglia per conto di Varys.',
+    },
+  },
+  rosPetyrBetrayed: {
+    character: 'petyr-baelish',
+    type: { en: 'Employer', it: 'Datore di lavoro' },
+    summary: {
+      en: 'The owner of the brothel, who found out she spied for Varys and gave her to Joffrey.',
+      it: 'Il proprietario del bordello, che ha scoperto che lei faceva la spia per Varys e l’ha consegnata a Joffrey.',
+    },
+  },
+  rosJoffreyKilled: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King she was given to', it: 'Re a cui fu consegnata' },
+    summary: {
+      en: 'The king Littlefinger gave her to. He killed her with his crossbow.',
+      it: 'Il re a cui Ditocorto l’ha consegnata. Il re l’ha uccisa con la balestra.',
+    },
+  },
+  rosVarysPast: {
+    character: 'varys',
+    type: { en: 'Spymaster', it: 'Capo delle spie' },
+    summary: {
+      en: 'The eunuch she spied for.',
+      it: 'L’eunuco per cui faceva la spia.',
+    },
+  },
+
+  // Bronn
+  brnTyrionKnight: {
+    character: 'tyrion-lannister',
+    type: { en: 'Employer', it: 'Datore di lavoro' },
+    summary: {
+      en: 'His employer, whose anger at his father he hears out. Knighted for the battle, Bronn wants better pay.',
+      it: 'Il suo datore di lavoro, di cui ascolta la rabbia contro il padre. Fatto cavaliere per la battaglia, Bronn vuole una paga più alta.',
+    },
+  },
+  brnTyrionAdvice: {
+    character: 'tyrion-lannister',
+    type: { en: 'Employer', it: 'Datore di lavoro' },
+    summary: {
+      en: 'His employer, who is to marry Sansa. Bronn tells him to get an heir on her and keep Shae on the side.',
+      it: 'Il suo datore di lavoro, che dovrà sposare Sansa. Bronn gli consiglia di darle un erede e di tenersi Shae di nascosto.',
+    },
+  },
+  brnPodShow: {
+    character: 'podrick-payne',
+    type: { en: 'Tyrion’s squire', it: 'Scudiero di Tyrion' },
+    summary: {
+      en: 'Tyrion’s squire, rewarded with a night at Littlefinger’s brothel. Bronn wants to hear every detail.',
+      it: 'Lo scudiero di Tyrion, ricompensato con una notte al bordello di Ditocorto. Bronn vuole sapere ogni dettaglio.',
+    },
+  },
+  brnTyrionNews: {
+    character: 'tyrion-lannister',
+    type: { en: 'Employer', it: 'Datore di lavoro' },
+    summary: {
+      en: 'His employer, still healing. A knight now, Bronn brings him the city’s news and carries him up the steps to his father.',
+      it: 'Il suo datore di lavoro, ancora convalescente. Ora che è cavaliere, Bronn gli porta le notizie della città e lo porta in braccio su per le scale fino dal padre.',
+    },
+  },
+  brnPodBook: {
+    character: 'podrick-payne',
+    type: { en: 'Tyrion’s squire', it: 'Scudiero di Tyrion' },
+    summary: {
+      en: 'Tyrion’s squire, who helps him get his lord dressed.',
+      it: 'Lo scudiero di Tyrion, che lo aiuta a vestire il suo signore.',
+    },
+  },
+  brnTyrionSinger: {
+    character: 'tyrion-lannister',
+    type: { en: 'Employer', it: 'Datore di lavoro' },
+    summary: {
+      en: 'His employer, who orders him to kill the singer threatening to tell about Shae.',
+      it: 'Il suo datore di lavoro, che gli ordina di uccidere il cantore che minaccia di rivelare la storia di Shae.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season1Relationships = {
   // The show weds her in episode 1; its wedding entry waits for episode 2,
   // the book's pair, which is later and so safe.
@@ -15734,6 +17191,105 @@ export const season1Relationships = {
         kingsLanding2.sanJoffreyVoid,
         kingsLanding2.sanMargaery,
         kingsLanding2.sanDontosEscape,
+      ],
+    },
+    // Stage 3 (#1651). The show: "Dark Wings, Dark Words" (22, with the
+    // docks of 21), "And Now His Watch Is Ended" (24), "The Climb" (26),
+    // "Second Sons" (28) and "Mhysa" (30).
+    {
+      episode: 22,
+      chapter: 150,
+      source: 'episode',
+      value: [
+        kingsLanding3.sanOlenna,
+        kingsLanding3.sanLorasEscort,
+        kingsLanding3.sanMargaeryWelcome,
+        kingsLanding3.sanShaeWarns,
+        kingsLanding3.sanPetyrShip,
+      ],
+    },
+    {
+      episode: 24,
+      chapter: 160,
+      source: 'episode',
+      value: [
+        kingsLanding3.sanMargaeryLoras,
+        kingsLanding3.sanLorasMatch,
+        kingsLanding3.sanOlenna,
+        kingsLanding3.sanPetyrShip,
+        kingsLanding3.sanShaeWarns,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 163,
+      source: 'episode',
+      value: [
+        kingsLanding3.sanTyrionNews,
+        kingsLanding3.sanLorasWedding,
+        kingsLanding3.sanPetyrGone,
+        kingsLanding3.sanMargaeryLoras,
+        kingsLanding3.sanShaeWarns,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 172,
+      source: 'episode',
+      value: [
+        kingsLanding3.sanTyrionHusband,
+        kingsLanding3.sanJoffreyWedding,
+        kingsLanding3.sanMargaeryConsoles,
+        kingsLanding3.sanShaeWarns,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 196,
+      source: 'episode',
+      value: [
+        kingsLanding3.sanTyrionGardens,
+        kingsLanding3.sanRobbDead,
+        kingsLanding3.sanCatelynDead,
+        kingsLanding3.sanJoffreyWedding,
+        kingsLanding3.sanShaeWarns,
+      ],
+    },
+    // The books: Sansa I (150), II (160) and III (172).
+    {
+      episode: 22,
+      chapter: 150,
+      source: 'chapter',
+      value: [
+        kingsLanding3.sanOlennaBooks,
+        kingsLanding3.sanMargaeryInvite,
+        kingsLanding3.sanLorasForgets,
+        kingsLanding3.sanJoffreyMonster,
+        kingsLanding2.sanDontosEscape,
+      ],
+    },
+    {
+      episode: 24,
+      chapter: 160,
+      source: 'chapter',
+      value: [
+        kingsLanding3.sanMargaeryClose,
+        kingsLanding3.sanDontosWary,
+        kingsLanding3.sanOlennaBooks,
+        kingsLanding3.sanLorasForgets,
+        kingsLanding3.sanJoffreyMonster,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 172,
+      source: 'chapter',
+      value: [
+        kingsLanding3.sanTyrionWedBook,
+        kingsLanding3.sanCerseiNews,
+        kingsLanding3.sanGarlan,
+        kingsLanding3.sanJoffreyBedding,
+        kingsLanding3.sanDontosWary,
       ],
     },
   ],
@@ -17955,6 +19511,116 @@ export const season1Relationships = {
         kingsLanding2.tyrBronnCalled,
       ],
     },
+    // Stage 3 (#1651): season 3 and A Storm of Swords through chapter 52.
+    // The show: "Valar Dohaeris" (21), "Kissed by Fire" (25), "Second
+    // Sons" (28) and "Mhysa" (30).
+    {
+      episode: 21,
+      chapter: 148,
+      source: 'episode',
+      value: [
+        kingsLanding3.tyrTywinDisowns,
+        kingsLanding3.tyrBronnKnight,
+        kingsLanding3.tyrShaeHidden,
+        kingsLanding2.tyrVarysAfter,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 163,
+      source: 'episode',
+      value: [
+        kingsLanding3.tyrTywinSansa,
+        kingsLanding3.tyrSansaBride,
+        kingsLanding3.tyrOlenna,
+        kingsLanding3.tyrCerseiGloats,
+        kingsLanding3.tyrShaeSansa,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 172,
+      source: 'episode',
+      value: [
+        kingsLanding3.tyrSansaWife,
+        kingsLanding3.tyrJoffreyThreat,
+        kingsLanding3.tyrTywinWedding,
+        kingsLanding3.tyrShaeEnds,
+        kingsLanding3.tyrBronnAdvice,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 196,
+      source: 'episode',
+      value: [
+        kingsLanding3.tyrTywinRedWedding,
+        kingsLanding3.tyrSansaGrief,
+        kingsLanding3.tyrJoffreyHead,
+        kingsLanding3.tyrShaeEnds,
+      ],
+    },
+    // The books: Tyrion I (148), II (156), III (163), Sansa III (172) and
+    // Tyrion V (182, with Tyrion IV's orders at 176).
+    {
+      episode: 21,
+      chapter: 148,
+      source: 'chapter',
+      value: [
+        kingsLanding3.tyrTywinRock,
+        kingsLanding3.tyrBronnNews,
+        kingsLanding3.tyrPodDress,
+        kingsLanding3.tyrCerseiMandon,
+      ],
+    },
+    {
+      episode: 22,
+      chapter: 156,
+      source: 'chapter',
+      value: [
+        kingsLanding3.tyrShaeStays,
+        kingsLanding3.tyrVarysOnce,
+        kingsLanding3.tyrBronnSinger,
+        kingsLanding3.tyrPodDress,
+        kingsLanding3.tyrTywinRock,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 163,
+      source: 'chapter',
+      value: [
+        kingsLanding3.tyrTywinSansaBook,
+        kingsLanding3.tyrSansaPromised,
+        kingsLanding3.tyrPetyrWary,
+        kingsLanding3.tyrCerseiWillas,
+        kingsLanding3.tyrShaeStays,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 172,
+      source: 'chapter',
+      value: [
+        kingsLanding3.tyrSansaWifeBook,
+        kingsLanding3.tyrJoffreyBedding,
+        kingsLanding3.tyrTywinSansaBook,
+        kingsLanding3.tyrShaeStays,
+        kingsLanding3.tyrCerseiWillas,
+      ],
+    },
+    {
+      episode: 31,
+      chapter: 182,
+      source: 'chapter',
+      value: [
+        kingsLanding3.tyrOberyn,
+        kingsLanding3.tyrTywinConsummate,
+        kingsLanding3.tyrSansaWifeBook,
+        kingsLanding3.tyrShaeStays,
+        kingsLanding3.tyrBronnKill,
+      ],
+    },
   ],
   'cersei-lannister': [
     {
@@ -18046,6 +19712,79 @@ export const season1Relationships = {
         kingsLanding2.cerTyrionBook,
         kingsLanding2.cerAlayaya,
         kingsLanding2.cerOsmund,
+        crown.cerJoffreyKing,
+        crown.cerJaimeCaptive,
+      ],
+    },
+    // Stage 3 (#1651). The show: "Valar Dohaeris" (21), "Kissed by Fire"
+    // (25, with Tywin's rebuke of 24), "Second Sons" (28) and "Mhysa" (30).
+    {
+      episode: 21,
+      chapter: 150,
+      source: 'episode',
+      value: [
+        kingsLanding3.cerMargaeryCharity,
+        kingsLanding3.cerJoffreyDefies,
+        kingsLanding3.cerJaimeMissing,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 163,
+      source: 'episode',
+      value: [
+        kingsLanding3.cerTywinMarry,
+        kingsLanding3.cerLorasBetrothed,
+        kingsLanding3.cerPetyrSpy,
+        kingsLanding3.cerTyrionGloat,
+        kingsLanding3.cerMargaeryCharity,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 172,
+      source: 'episode',
+      value: [
+        kingsLanding3.cerMargaeryThreat,
+        kingsLanding3.cerJoffreyFeast,
+        kingsLanding3.cerTywinMarry,
+        kingsLanding3.cerLorasBetrothed,
+        kingsLanding3.cerJaimeMissing,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 196,
+      source: 'episode',
+      value: [
+        kingsLanding3.cerJaimeBack,
+        kingsLanding3.cerJoffreyBed,
+        kingsLanding3.cerTywinMarry,
+        kingsLanding3.cerLorasBetrothed,
+        kingsLanding3.cerMargaeryThreat,
+      ],
+    },
+    // The books: Tyrion III (163) and Sansa III (172).
+    {
+      episode: 23,
+      chapter: 163,
+      source: 'chapter',
+      value: [
+        kingsLanding3.cerTywinWillas,
+        kingsLanding3.cerTyrionSansa,
+        crown.cerJoffreyKing,
+        crown.cerJaimeCaptive,
+        kingsLanding2.cerOsmund,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 172,
+      source: 'chapter',
+      value: [
+        kingsLanding3.cerSansaWed,
+        kingsLanding3.cerTywinWillas,
+        kingsLanding3.cerTyrionSansa,
         crown.cerJoffreyKing,
         crown.cerJaimeCaptive,
       ],
@@ -18227,6 +19966,86 @@ export const season1Relationships = {
         riverlands2.tywKevanBook,
       ],
     },
+    // Stage 3 (#1651). The show: "Valar Dohaeris" (21), "Walk of
+    // Punishment" (23), "The Climb" (26, with the orders of "Kissed by
+    // Fire") and "Mhysa" (30).
+    {
+      episode: 21,
+      chapter: 148,
+      source: 'episode',
+      value: [kingsLanding3.tywTyrionDisown, kingsLanding3.tywShae],
+    },
+    {
+      episode: 23,
+      chapter: 163,
+      source: 'episode',
+      value: [
+        kingsLanding3.tywPetyr,
+        kingsLanding3.tywVarys,
+        kingsLanding3.tywPycelle,
+        kingsLanding3.tywCerseiChair,
+        kingsLanding3.tywTyrionCoin,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 172,
+      source: 'episode',
+      value: [
+        kingsLanding3.tywOlenna,
+        kingsLanding3.tywCerseiMarry,
+        kingsLanding3.tywTyrionMarry,
+        kingsLanding3.tywSansaKey,
+        kingsLanding3.tywLoras,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 196,
+      source: 'episode',
+      value: [
+        kingsLanding3.tywJoffreyBed,
+        kingsLanding3.tywTyrionFrey,
+        kingsLanding3.tywWalder,
+        kingsLanding3.tywRobbDead,
+        kingsLanding3.tywCerseiBed,
+      ],
+    },
+    // The books: Tyrion I (148), III (163) and IV (176).
+    {
+      episode: 21,
+      chapter: 148,
+      source: 'chapter',
+      value: [
+        kingsLanding3.tywTyrionBook,
+        kingsLanding3.tywPetyrBook,
+        kingsLanding3.tywGregorBook,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 163,
+      source: 'chapter',
+      value: [
+        kingsLanding3.tywTyrionSansaBook,
+        kingsLanding3.tywCerseiWillas,
+        kingsLanding3.tywPetyrVale,
+        kingsLanding3.tywSansaBook,
+        kingsLanding3.tywKevan,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 176,
+      source: 'chapter',
+      value: [
+        kingsLanding3.tywTyrionBed,
+        kingsLanding3.tywMace,
+        kingsLanding3.tywPycelleBook,
+        kingsLanding3.tywCerseiWillas,
+        kingsLanding3.tywSansaBook,
+      ],
+    },
   ],
   'joffrey-baratheon': [
     {
@@ -18322,6 +20141,66 @@ export const season1Relationships = {
         kingsLanding2.jofSansaShow,
         kingsLanding2.jofMargaeryShow,
         kingsLanding2.jofCerseiShow,
+      ],
+    },
+    // Stage 3 (#1651). The show: "Valar Dohaeris" (21), "The Climb" (26,
+    // with Margaery's visit of 22), "Second Sons" (28, with Tywin at the
+    // throne in 27) and "Mhysa" (30).
+    {
+      episode: 21,
+      chapter: 150,
+      source: 'episode',
+      value: [
+        kingsLanding3.jofMargaeryCharmed,
+        kingsLanding3.jofCerseiChided,
+        kingsLanding2.jofSansaShow,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 163,
+      source: 'episode',
+      value: [
+        kingsLanding3.jofRos,
+        kingsLanding3.jofMargaeryCrossbow,
+        kingsLanding3.jofCerseiChided,
+        kingsLanding2.jofSansaShow,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 172,
+      source: 'episode',
+      value: [
+        kingsLanding3.jofTyrionThreat,
+        kingsLanding3.jofSansaWed,
+        kingsLanding3.jofTywinThrone,
+        kingsLanding3.jofMargaeryCrossbow,
+        kingsLanding3.jofRos,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 196,
+      source: 'episode',
+      value: [
+        kingsLanding3.jofTywinBed,
+        kingsLanding3.jofRobbHead,
+        kingsLanding3.jofTyrionForbids,
+        kingsLanding3.jofSansaWed,
+        kingsLanding3.jofRos,
+      ],
+    },
+    // The books: Sansa III (172).
+    {
+      episode: 28,
+      chapter: 172,
+      source: 'chapter',
+      value: [
+        kingsLanding3.jofTyrionBook,
+        kingsLanding3.jofSansaBook,
+        kingsLanding2.jofMargaery,
+        kingsLanding2.jofGarlan,
       ],
     },
   ],
@@ -18617,6 +20496,33 @@ export const season1Relationships = {
       source: 'chapter',
       value: [kingsLanding2.brnTyrionGuard],
     },
+    // Stage 3 (#1651). The show: "Valar Dohaeris" (21) and "The Bear and
+    // the Maiden Fair" (27, with Podrick's night of 23). The books: Tyrion
+    // I (148) and IV (176).
+    {
+      episode: 21,
+      chapter: 148,
+      source: 'episode',
+      value: [kingsLanding3.brnTyrionKnight],
+    },
+    {
+      episode: 27,
+      chapter: 172,
+      source: 'episode',
+      value: [kingsLanding3.brnTyrionAdvice, kingsLanding3.brnPodShow],
+    },
+    {
+      episode: 21,
+      chapter: 148,
+      source: 'chapter',
+      value: [kingsLanding3.brnTyrionNews, kingsLanding3.brnPodBook],
+    },
+    {
+      episode: 28,
+      chapter: 176,
+      source: 'chapter',
+      value: [kingsLanding3.brnTyrionSinger, kingsLanding3.brnPodBook],
+    },
   ],
   'shae': [
     { episode: 9, chapter: 63, value: [crown.shaTyrion, crown.shaBronn] },
@@ -18646,6 +20552,67 @@ export const season1Relationships = {
         kingsLanding2.shaTyrionBook,
         kingsLanding2.shaLollys,
         kingsLanding2.shaVarysBook,
+      ],
+    },
+    // Stage 3 (#1651). The show: "Dark Wings, Dark Words" (22, with Ros's
+    // request of 21), "The Climb" (26, where Ros dies), "The Bear and the
+    // Maiden Fair" (27) and "Mhysa" (30). The books: Tyrion II (156).
+    {
+      episode: 22,
+      chapter: 150,
+      source: 'episode',
+      value: [
+        kingsLanding3.shaSansaWarns,
+        kingsLanding3.shaTyrionFavour,
+        kingsLanding3.shaPetyr,
+        kingsLanding3.shaRos,
+        kingsLanding2.shaVarysShow,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 163,
+      source: 'episode',
+      value: [
+        kingsLanding3.shaTyrionApology,
+        kingsLanding3.shaSansaWarns,
+        kingsLanding3.shaPetyr,
+        kingsLanding3.shaRosDead,
+        kingsLanding2.shaVarysShow,
+      ],
+    },
+    {
+      episode: 27,
+      chapter: 172,
+      source: 'episode',
+      value: [
+        kingsLanding3.shaTyrionEnds,
+        kingsLanding3.shaSansaWarns,
+        kingsLanding3.shaPetyr,
+        kingsLanding3.shaRosDead,
+        kingsLanding2.shaVarysShow,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 196,
+      source: 'episode',
+      value: [
+        kingsLanding3.shaVarysDiamonds,
+        kingsLanding3.shaTyrionEnds,
+        kingsLanding3.shaSansaCares,
+        kingsLanding3.shaPetyr,
+        kingsLanding3.shaRosDead,
+      ],
+    },
+    {
+      episode: 22,
+      chapter: 156,
+      source: 'chapter',
+      value: [
+        kingsLanding3.shaTyrionStays,
+        kingsLanding3.shaVarysBrings,
+        kingsLanding2.shaLollys,
       ],
     },
   ],
@@ -18704,6 +20671,40 @@ export const season1Relationships = {
       chapter: 141,
       source: 'episode',
       value: [kingsLanding2.rosVarys, kingsLanding2.rosPetyrFear],
+    },
+    // Stage 3 (#1651): "Valar Dohaeris" (21), "And Now His Watch Is Ended"
+    // (24) and "The Climb" (26), where she dies.
+    {
+      episode: 21,
+      chapter: 150,
+      source: 'episode',
+      value: [
+        kingsLanding3.rosPetyrAide,
+        kingsLanding3.rosSansa,
+        kingsLanding3.rosShae,
+        kingsLanding2.rosVarys,
+      ],
+    },
+    {
+      episode: 24,
+      chapter: 160,
+      source: 'episode',
+      value: [
+        kingsLanding3.rosVarysSpy,
+        kingsLanding3.rosPetyrWatched,
+        kingsLanding3.rosSansa,
+        kingsLanding3.rosShae,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 175,
+      source: 'episode',
+      value: [
+        kingsLanding3.rosPetyrBetrayed,
+        kingsLanding3.rosJoffreyKilled,
+        kingsLanding3.rosVarysPast,
+      ],
     },
   ],
   'ilyn-payne': [
@@ -18853,6 +20854,55 @@ export const season1Relationships = {
       source: 'chapter',
       value: [kingsLanding2.petJoffreyHarrenhal],
     },
+    // Stage 3 (#1651). The show: "Valar Dohaeris" (21), "Walk of
+    // Punishment" (23) and "The Climb" (26, with Cersei's request of 25).
+    {
+      episode: 21,
+      chapter: 150,
+      source: 'episode',
+      value: [
+        kingsLanding3.petSansaDocks,
+        kingsLanding3.petRosAide,
+        kingsLanding2.petJoffreyHarrenhal,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 163,
+      source: 'episode',
+      value: [
+        kingsLanding3.petTywin,
+        kingsLanding3.petLysa,
+        kingsLanding3.petTyrionCoin,
+        kingsLanding3.petSansaDocks,
+        kingsLanding3.petRosAide,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 172,
+      source: 'episode',
+      value: [
+        kingsLanding3.petVarys,
+        kingsLanding3.petRosGiven,
+        kingsLanding3.petSansaLeft,
+        kingsLanding3.petCersei,
+        kingsLanding3.petLysa,
+      ],
+    },
+    // The books: Tyrion III (163).
+    {
+      episode: 23,
+      chapter: 163,
+      source: 'chapter',
+      value: [
+        kingsLanding3.petTywinBook,
+        kingsLanding3.petLysaBook,
+        kingsLanding3.petTyrionBook,
+        kingsLanding3.petSansaBook,
+        kingsLanding2.petJoffreyHarrenhal,
+      ],
+    },
   ],
   // The show's Varys meets Illyrio and hears from Jorah; the books never
   // name the man Arya overhears and bring Jorah's reports to the council in
@@ -18929,6 +20979,57 @@ export const season1Relationships = {
       source: 'episode',
       value: [kingsLanding2.varTyrionWounded, kingsLanding2.varRos],
     },
+    // Stage 3 (#1651). The show: "And Now His Watch Is Ended" (24), "The
+    // Climb" (26) and "Mhysa" (30).
+    {
+      episode: 24,
+      chapter: 160,
+      source: 'episode',
+      value: [
+        kingsLanding3.varTyrionSorcerer,
+        kingsLanding3.varRosSpy,
+        kingsLanding3.varOlenna,
+        kingsLanding3.varPetyrFear,
+        kingsLanding3.varSansa,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 172,
+      source: 'episode',
+      value: [
+        kingsLanding3.varPetyrLadder,
+        kingsLanding3.varRosDead,
+        kingsLanding3.varTyrionSorcerer,
+        kingsLanding3.varOlenna,
+        kingsLanding3.varSansa,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 196,
+      source: 'episode',
+      value: [
+        kingsLanding3.varShae,
+        kingsLanding3.varTyrionHope,
+        kingsLanding3.varJoffrey,
+        kingsLanding3.varPetyrLadder,
+        kingsLanding3.varRosDead,
+      ],
+    },
+    // The books: Tyrion II (156).
+    {
+      episode: 22,
+      chapter: 156,
+      source: 'chapter',
+      value: [
+        kingsLanding3.varTyrionBook,
+        kingsLanding3.varShaeBook,
+        kingsLanding3.varPycelleBook,
+        kingsLanding3.varCerseiOsmund,
+        kingsLanding3.varTywinBook,
+      ],
+    },
   ],
   'pycelle': [
     {
@@ -18991,6 +21092,29 @@ export const season1Relationships = {
         kingsLanding2.pycCersei,
         kingsLanding2.pycShagga,
         kingsLanding2.pycVarys,
+      ],
+    },
+    // Stage 3 (#1651). The show: "Walk of Punishment" (23). The books:
+    // Tyrion III (163).
+    {
+      episode: 23,
+      chapter: 163,
+      source: 'episode',
+      value: [
+        kingsLanding3.pycTywinShow,
+        kingsLanding3.pycPetyrShow,
+        kingsLanding3.pycTyrionCoin,
+        kingsLanding3.pycCerseiChair,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 163,
+      source: 'chapter',
+      value: [
+        kingsLanding3.pycTywinBook,
+        kingsLanding3.pycTyrionCoin,
+        kingsLanding3.pycMace,
       ],
     },
   ],
@@ -19304,6 +21428,44 @@ export const season1Relationships = {
       chapter: 139,
       source: 'chapter',
       value: [stormlands2.lorMace, stormlands2.lorJoffreyBook],
+    },
+    // Stage 3 (#1651). The show: "Dark Wings, Dark Words" (22) and "The
+    // Climb" (26). The books: Sansa I (150).
+    {
+      episode: 22,
+      chapter: 150,
+      source: 'episode',
+      value: [
+        kingsLanding3.lorSansaEscort,
+        kingsLanding3.lorOlenna,
+        stormlands2.lorMargaeryHand,
+        stormlands2.lorJoffrey,
+        kingsLanding3.lorRenlyDead,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 172,
+      source: 'episode',
+      value: [
+        kingsLanding3.lorSansaPlans,
+        kingsLanding3.lorOlenna,
+        stormlands2.lorMargaeryHand,
+        stormlands2.lorJoffrey,
+        kingsLanding3.lorRenlyDead,
+      ],
+    },
+    {
+      episode: 22,
+      chapter: 150,
+      source: 'chapter',
+      value: [
+        kingsLanding3.lorSansaBook,
+        kingsLanding3.lorMargaeryBook,
+        stormlands2.lorRenlyDeadBook,
+        stormlands2.lorMace,
+        stormlands2.lorJoffreyBook,
+      ],
     },
   ],
   // The Hound is named in the show only in episode 4.

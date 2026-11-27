@@ -1,8 +1,14 @@
-import type { ReactElement, ReactNode } from 'react'
+import type { ReactElement } from 'react'
 
 import { ControlBar } from '~/components/ControlBar'
-import { SearchField } from '~/components/SearchField'
+import { SearchField, type SearchFieldProps } from '~/components/SearchField'
 import { useT } from '~/i18n/LocaleContext'
+
+/** The field's id and query, and the status line under it. */
+export type CharacterSearchProps = Pick<
+  SearchFieldProps,
+  'fieldId' | 'onQuery' | 'query' | 'status'
+>
 
 /**
  * The search, pinned in a control bar as the other listings pin theirs, so
@@ -14,12 +20,7 @@ export function CharacterSearch({
   onQuery,
   query,
   status,
-}: {
-  fieldId: string
-  onQuery: (query: string) => void
-  query: string
-  status: ReactNode
-}): ReactElement {
+}: CharacterSearchProps): ReactElement {
   const t = useT()
   const trimmed = query.trim()
 

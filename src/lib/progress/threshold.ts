@@ -95,6 +95,12 @@ export function describeThreshold<S extends SeriesSlug = never>({
 /** The sentences that name the reader's own bookmark. */
 export type BookmarkSentence = 'chart.hereSet' | 'mark'
 
+/** The bookmark `describeBookmark` says, and the series' books. */
+export interface DescribeBookmarkOptions {
+  bookmark: NonNullable<Bookmark>
+  books: Book[] | undefined
+}
+
 /**
  * The reader's bookmark, said in its own unit, and a chapter on a series
  * with books as its book and the chapter in it.
@@ -102,10 +108,7 @@ export type BookmarkSentence = 'chart.hereSet' | 'mark'
 export function describeBookmark(
   t: Translate,
   sentence: BookmarkSentence,
-  {
-    bookmark,
-    books,
-  }: { bookmark: NonNullable<Bookmark>; books: Book[] | undefined },
+  { bookmark, books }: DescribeBookmarkOptions,
 ): string {
   const book = bookmarkBook(bookmark, books)
   return book === null ?

@@ -8,7 +8,7 @@ import type { Entity, SeriesArchive } from '~/data/types'
 import type { Locale } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Gated, Source } from '~/lib/progress/spoiler'
-import type { CoveredRecord, Slot } from '~/lib/view/records'
+import type { CoveredRecord, PageUnit, Slot } from '~/lib/view/records'
 
 import { handleOf, markedCopy, markOf } from './handle.server'
 
@@ -93,6 +93,18 @@ export function readerFor(
   })
 }
 
+/** What a reader sees, and the language they read in. */
+interface ReaderSight {
+  at: Reveal
+  locale: Locale
+}
+
+/** A reader's sight, bookmark and copy of the archive. */
+interface ReaderSeeingOptions extends ReaderSight {
+  bookmark: Bookmark
+  told?: ReaderArchive
+}
+
 /**
  * A reader who sees what `at` sees: the bookmark's own, unless `pageReader`
  * draws a page for a reader with none. `told` is the bookmark's own copy
@@ -105,7 +117,7 @@ function readerSeeing(
     bookmark,
     locale,
     told = archiveIn(archive, sourceOf(bookmark)),
-  }: { at: Reveal; bookmark: Bookmark; locale: Locale; told?: ReaderArchive },
+  }: ReaderSeeingOptions,
 ): Reader {
   const order = (entries: Entity[]): Entity[] => orderByMode(entries, at.mode)
 
@@ -153,6 +165,12 @@ function readerSeeing(
   return reader
 }
 
+/** The record a page is about, if any, and the reader's language. */
+export interface PageReaderOptions {
+  id?: string
+  locale: Locale
+}
+
 /**
  * The reader a record page or a list is drawn for (#1430).
  *
@@ -175,7 +193,7 @@ function readerSeeing(
 export function pageReader(
   archive: SeriesArchive,
   bookmark: Bookmark,
-  { id, locale }: { id?: string; locale: Locale },
+  { id, locale }: PageReaderOptions,
 ): Reader {
   if (bookmark !== null) {
     return readerFor(archive, bookmark, locale)
@@ -198,6 +216,12 @@ export function pageReader(
       })
 }
 
+/** The handle a reader lifts, and their language. */
+export interface LiftReaderOptions {
+  handle: string
+  locale: Locale
+}
+
 /**
  * The reader "Show anyway" lifts a handle for: the bookmark's own, or, with
  * no bookmark, a reader of the copy a marked handle names (`markOf`), who
@@ -209,7 +233,7 @@ export function pageReader(
 export function liftReader(
   archive: SeriesArchive,
   bookmark: Bookmark,
-  { handle, locale }: { handle: string; locale: Locale },
+  { handle, locale }: LiftReaderOptions,
 ): Reader {
   const source = bookmark === null ? markOf(handle, archive) : undefined
   if (source === undefined) {
@@ -227,7 +251,7 @@ const FIRST: Gated = { revealedAtEpisode: 1, revealedAtChapter: 1 }
 function toldBy(
   archive: SeriesArchive,
   source: Source,
-  { at, locale }: { at: Reveal; locale: Locale },
+  { at, locale }: ReaderSight,
 ): Reader {
   return readerSeeing(archive, {
     at,
@@ -253,7 +277,7 @@ export function ownBookmark(
  * page about a record only the manga or the books tell. Nothing on any other
  * page, which the browser draws in the unit of its bookmark.
  */
-export function pageUnit(r: Reader): { unit?: 'chapter' } {
+export function pageUnit(r: Reader): PageUnit {
   return r.bookmark === null && r.mode === 'chapter' ? { unit: 'chapter' } : {}
 }
 

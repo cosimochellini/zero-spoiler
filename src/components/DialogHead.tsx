@@ -3,6 +3,14 @@ import type { ReactElement } from 'react'
 
 import { styles } from '~/components/BookmarkDialog.styles'
 
+/** The title and the lede, and the ids the dialog names itself by. */
+export interface DialogHeadProps {
+  lede: string
+  ledeId: string
+  title: string
+  titleId: string
+}
+
 /**
  * The title and the lede together. They carry the two ids the dialog points
  * its `aria-labelledby` and `aria-describedby` at, so neither can be moved
@@ -14,12 +22,7 @@ export function DialogHead({
   ledeId,
   title,
   titleId,
-}: {
-  lede: string
-  ledeId: string
-  title: string
-  titleId: string
-}): ReactElement {
+}: DialogHeadProps): ReactElement {
   return (
     <div {...stylex.props(styles.head)}>
       <h2

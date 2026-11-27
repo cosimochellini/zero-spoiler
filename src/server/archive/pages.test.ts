@@ -20,15 +20,17 @@ function seasonFour(episode: number): Bookmark {
 const robinHead = (bookmark: Bookmark): string =>
   JSON.stringify(characterPage('nico-robin', bookmark, 'en')?.head ?? null)
 
+interface UnderFogResult {
+  covered: CoveredRecord
+  detail: CharacterDetail
+}
+
 /**
  * A page still under fog, or a failure saying it was not. Hoisted out of the
  * tests: a guard inside one reads as a test deciding what to assert, and here
  * it is a precondition, with the assertions left in the test.
  */
-function underFog(
-  id: string,
-  bookmark: Bookmark,
-): { covered: CoveredRecord; detail: CharacterDetail } {
+function underFog(id: string, bookmark: Bookmark): UnderFogResult {
   const detail = characterPage(id, bookmark, 'en')?.detail
   if (detail?.slot.open !== false) {
     throw new Error(`${id} is not under fog at this bookmark`)
@@ -37,12 +39,22 @@ function underFog(
   return { detail, covered: detail.slot.covered }
 }
 
+/** A character's view with its summary sent. */
+interface SummarisedView extends CharacterView {
+  summary: string
+}
+
+interface OpenDetailResult {
+  detail: CharacterDetail
+  record: SummarisedView
+}
+
 /** The same the other way round: a page the reader has already reached. */
 function openDetail(
   id: string,
   bookmark: Bookmark,
   locale: Locale,
-): { detail: CharacterDetail; record: CharacterView & { summary: string } } {
+): OpenDetailResult {
   const detail = characterPage(id, bookmark, locale)?.detail
   if (detail?.slot.open !== true) {
     throw new Error(`${id} is still under fog at this bookmark`)

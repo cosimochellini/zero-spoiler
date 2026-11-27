@@ -4497,11 +4497,14 @@ function rowsOf(chronicles: Record<string, Dated<Story>[]>): Row[] {
   )
 }
 
+/** The last chapter and episode of a stage. */
+interface StageEnd {
+  chapter: number
+  episode: number
+}
+
 /** Whether a row opens by a stage's end in each medium it is told in. */
-function inStage(
-  { chapter, episode, medium }: Row,
-  stage: { chapter: number; episode: number },
-): boolean {
+function inStage({ chapter, episode, medium }: Row, stage: StageEnd): boolean {
   const shown = medium === 'books' || episode <= stage.episode
   const told = medium === 'show' || chapter <= stage.chapter
 

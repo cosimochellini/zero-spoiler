@@ -91,23 +91,19 @@ export function AlbumControls({
   )
 }
 
+/** The chips, the count, and the pick and query the line is about. */
+interface StatusOfOptions extends Pick<SummaryOfOptions, 'pick' | 'query'> {
+  choices: Choice<FormPick>[]
+  count: number
+}
+
 /**
  * The line under the field: how many open fruits the query finds out of the
  * picked chip's own number, or that it finds none.
  */
 function statusOf(
   t: Translate<'one-piece'>,
-  {
-    choices,
-    count,
-    pick,
-    query,
-  }: {
-    choices: Choice<FormPick>[]
-    count: number
-    pick: FormPick
-    query: string
-  },
+  { choices, count, pick, query }: StatusOfOptions,
 ): string {
   if (query !== '' && count === 0) {
     return t('fruits.noMatch', { query })
@@ -117,16 +113,31 @@ function statusOf(
   return t('fruits.shown', { count, total })
 }
 
+/** The picks the folded bar names. */
+interface SummaryOfOptions {
+  pick: FormPick
+  query: string
+  view: AlbumView
+}
+
 /** The folded bar's words: "Type · Zoan · “gum”". */
 function summaryOf(
   t: Translate<'one-piece'>,
-  { pick, query, view }: { pick: FormPick; query: string; view: AlbumView },
+  { pick, query, view }: SummaryOfOptions,
 ): string {
   return [
     t(`fruits.view.${view}`),
     t(pick === 'all' ? 'fruits.form.all' : `fruitForm.${pick}`),
     ...(query === '' ? [] : [`“${query}”`]),
   ].join(' · ')
+}
+
+/** The chips, the picks, and what a pick in either group calls. */
+interface AlbumChoicesProps extends Omit<SummaryOfOptions, 'query'> {
+  choices: Choice<FormPick>[]
+  fieldId: string
+  onPick: (next: FormPick) => void
+  onView: (next: AlbumView) => void
 }
 
 /**
@@ -141,14 +152,7 @@ function AlbumChoices({
   onView,
   pick,
   view,
-}: {
-  choices: Choice<FormPick>[]
-  fieldId: string
-  onPick: (next: FormPick) => void
-  onView: (next: AlbumView) => void
-  pick: FormPick
-  view: AlbumView
-}): ReactElement {
+}: AlbumChoicesProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
 
   return (

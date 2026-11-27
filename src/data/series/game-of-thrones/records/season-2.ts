@@ -1666,10 +1666,11 @@ export const season2: ThronesSaga = {
         en: 'Tyrion Lannister visits her at the brothel to cover his visits to Shae. The queen has her seized, taking her for his lover.',
       },
       // Tywin has her whipped and thrown out of the Red Keep, as Bronn tells
-      // Tyrion in Tyrion I of A Storm of Swords (site chapter 148); her
-      // release is left to a status issue of a later stage.
+      // Tyrion in Tyrion I of A Storm of Swords (site chapter 148), where her
+      // chronicle tells her release (#1660); episode 21 only orders it.
       status: [
         { episode: 18, chapter: 128, source: 'chapter', value: 'captured' },
+        { episode: 21, chapter: 148, source: 'chapter', value: 'alive' },
       ],
       affiliation: [
         {

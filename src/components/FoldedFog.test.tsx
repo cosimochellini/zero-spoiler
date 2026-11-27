@@ -40,6 +40,12 @@ function fog(count: number): CoveredRecord[] {
   return Array.from({ length: count }, () => coveredRecord({ kind: 'fruit' }))
 }
 
+interface OpenAlbumOptions {
+  later?: string[]
+  params?: FruitParams
+  sagas?: Album['sagas']
+}
+
 /**
  * The album at episode 20: Paramecia with Gum-Gum open and these covered,
  * Zoan with two covered. The saga view groups as `sagas` says.
@@ -50,7 +56,7 @@ function openAlbum(
     later = [],
     params = {},
     sagas = [{ saga: 'East Blue Saga', open: [{ id: GUM.id }], covered: [] }],
-  }: { later?: string[]; params?: FruitParams; sagas?: Album['sagas'] } = {},
+  }: OpenAlbumOptions = {},
 ): () => void {
   const bands = [
     fruitBand({ form: 'paramecia', open: [GUM], covered: paramecia }),
@@ -195,19 +201,19 @@ const ROUTED = [
   fruitBand({ form: 'logia', open: [], covered: [] }),
 ]
 
+interface OnRouterResult {
+  go: (move: (history: RouterHistory) => void) => Promise<void>
+  history: RouterHistory
+  loads: () => number
+  navigations: () => number
+}
+
 /**
  * The album on a real route, `/fruits`, beside another page, `/away`. Hands
  * back the history, a way to move it and wait for the router to settle, and
  * counts of the album route's loads and of the router's navigations.
  */
-async function onRouter(
-  start: string,
-): Promise<{
-  go: (move: (history: RouterHistory) => void) => Promise<void>
-  history: RouterHistory
-  loads: () => number
-  navigations: () => number
-}> {
+async function onRouter(start: string): Promise<OnRouterResult> {
   let loads = 0
   let navigations = 0
   let resolved = 0

@@ -792,6 +792,68 @@ export const season2Chronicles = {
         en: 'After the battle of the Blackwater, Lord Mace Tyrell and his sons, Ser [[garlan-tyrell|Garlan]] and Ser [[loras-tyrell|Loras]], are presented to King [[joffrey-baratheon|Joffrey]] among the heroes of the victory. Garlan asks the king to wed their sister Margaery. Joffrey is already promised to [[sansa-stark|Sansa Stark]], but the High Septon declares the betrothal void because of the Starks’ rebellion. Sansa, in the gallery, is delighted that Margaery will marry Joffrey in her place.',
       },
     ),
+    onScreen(
+      [21, 148],
+      {
+        it: 'Gli orfani di Fondo delle Pulci',
+        en: 'The orphans of Flea Bottom',
+      },
+      {
+        it: 'Tornando con [[joffrey-baratheon|Joffrey]] dal Grande Tempio di Baelor, Margaery fa fermare il corteo a Fondo delle Pulci, scende tra la gente e visita un orfanotrofio, mentre i suoi servitori distribuiscono pane e giocattoli. Il popolo la ama per questo. A cena quella sera, [[cersei-lannister|Cersei]] la rimprovera per aver camminato nelle strade dove la famiglia reale è stata aggredita, ma Joffrey difende Margaery contro la sua stessa madre.',
+        en: 'Riding with [[joffrey-baratheon|Joffrey]] from the Great Sept of Baelor, Margaery stops the procession in Flea Bottom, steps out among the people and visits an orphanage, while her servants hand out bread and toys. The smallfolk love her for it. At supper that evening, [[cersei-lannister|Cersei]] reproaches her for walking the streets where the royal party was attacked, but Joffrey defends Margaery against his own mother.',
+      },
+    ),
+    onScreen(
+      [22, 150],
+      { it: 'La sposa di Renly', en: 'Renly’s bride' },
+      {
+        it: 'Convocata da [[joffrey-baratheon|Joffrey]] prima che parta per la caccia, Margaery affronta le domande del re sul suo matrimonio con [[renly-baratheon|Renly]], un dubbio che gli ha messo in testa la madre. Recita la parte della sposa obbediente e delusa: Renly trovava sempre una scusa per evitare il suo letto. Joffrey si addolcisce. Capendo che la violenza lo eccita, Margaery passa alla balestra nuova del re, si chiede come sarebbe uccidere qualcosa, e si fa invitare alla caccia.',
+        en: 'Summoned before [[joffrey-baratheon|Joffrey]] leaves to hunt, Margaery faces his questions about her marriage to [[renly-baratheon|Renly]], a doubt his mother has planted. She plays the dutiful, frustrated bride: Renly always found excuses to avoid her bed. Joffrey softens. Seeing that violence excites him, she turns to his new crossbow, wonders what it would be like to kill something, and gets herself invited to the hunt.',
+      },
+    ),
+    onScreen(
+      [24, 150],
+      { it: 'Un’amica o una sorella', en: 'A friend or a sister' },
+      {
+        it: 'Margaery si fa mostrare da [[joffrey-baratheon|Joffrey]] il Grande Tempio di Baelor, fingendo interesse per le sue storie più cupe, poi lo porta fuori a salutare la folla che li acclama. Più tardi trova [[sansa-stark|Sansa]] che prega nel parco degli dei, manda via le guardie e la invita ad Alto Giardino. La regina reggente potrà opporsi, ma la regina Margaery sarebbe felice di condividerlo con un’amica, o con una sorella: se Sansa sposasse [[loras-tyrell|Loras]], Alto Giardino diventerebbe la casa di Sansa.',
+        en: 'Margaery lets [[joffrey-baratheon|Joffrey]] show her the Great Sept of Baelor, feigning interest in its darkest tales, then leads him out to wave to the cheering crowd. Later she finds [[sansa-stark|Sansa]] praying in the godswood, sends the guards off and invites her to Highgarden. The queen regent may object, but Queen Margaery would be glad to share it with a friend, or a sister: if Sansa married [[loras-tyrell|Loras]], Highgarden would be her home.',
+      },
+    ),
+    onScreen(
+      [27, 172],
+      { it: 'Non il peggiore dei Lannister', en: 'Not the worst Lannister' },
+      {
+        it: 'Margaery ha detto a [[sansa-stark|Sansa]] che, una volta regina, proporrà a [[joffrey-baratheon|Joffrey]] di farle sposare [[loras-tyrell|Loras]], e che il re accetterà per compiacerla. Ma ora Sansa deve sposare [[tyrion-lannister|Tyrion]], ed è disperata. Margaery la consola. Tyrion è tutt’altro che il peggiore dei Lannister, osserva, e vista la sua fama di amante, potrebbe perfino rendere felice Sansa.',
+        en: 'Margaery has told [[sansa-stark|Sansa]] that once she is queen she will put the idea of a match with [[loras-tyrell|Loras]] to [[joffrey-baratheon|Joffrey]], who will agree to please her. But now Sansa is to marry [[tyrion-lannister|Tyrion]], and she is miserable. Margaery consoles her. Tyrion is far from the worst of the Lannisters, she points out, and given his reputation as a lover, he may yet make Sansa happy.',
+      },
+    ),
+    onScreen(
+      [28, 172],
+      { it: 'Non chiamarmi sorella', en: 'Never call me sister' },
+      {
+        it: 'Prima delle nozze di [[tyrion-lannister|Tyrion]] e [[sansa-stark|Sansa]], Margaery cerca di conquistare [[cersei-lannister|Cersei]] osservando che presto saranno sorelle. Cersei le risponde con la storia delle Piogge di Castamere, di come Casa Reyne sfidò Casa Lannister e fu distrutta, e la avverte che se Margaery la chiamerà ancora sorella, la farà strangolare nel sonno.',
+        en: 'Before [[tyrion-lannister|Tyrion]] and [[sansa-stark|Sansa]] marry, Margaery tries to win over [[cersei-lannister|Cersei]], remarking that they will soon be sisters. Cersei answers with the story of The Rains of Castamere, how House Reyne defied House Lannister and was destroyed, and warns that if Margaery ever calls her sister again, she will have her strangled in her sleep.',
+      },
+    ),
+    inBooks(
+      [22, 150],
+      { it: 'Un invito a cena', en: 'An invitation to supper' },
+      {
+        it: 'Margaery Tyrell manda a [[sansa-stark|Sansa]] un invito personale a cena con lei e con la nonna, [[olenna-tyrell|lady Olenna]], e la fa accompagnare dal fratello, [[loras-tyrell|ser Loras]]. A cena Sansa conosce le cugine e le compagne di Margaery. Quando Sansa esita a parlare di [[joffrey-baratheon|Joffrey]], Margaery si unisce alla nonna nell’insistere perché dica la verità. Sansa sussurra che il re è un mostro, e che teme per Margaery. Le nozze si faranno comunque.',
+        en: 'Margaery Tyrell sends [[sansa-stark|Sansa]] a personal invitation to sup with her and her grandmother, [[olenna-tyrell|Lady Olenna]], and has her brother [[loras-tyrell|Ser Loras]] escort her. At supper Sansa meets Margaery’s cousins and companions. When Sansa hesitates to speak of [[joffrey-baratheon|Joffrey]], Margaery joins her grandmother in urging the truth. Sansa whispers that he is a monster, and that she fears for Margaery. The wedding will still go ahead.',
+      },
+    ),
+    inBooks(
+      [26, 160],
+      {
+        it: 'Il mantello bianco del fratello',
+        en: 'Her brother’s white cloak',
+      },
+      {
+        it: '[[sansa-stark|Sansa]] si lega sempre di più a Margaery, alle sue dame e alle sue cugine. Margaery le dice di non temere [[joffrey-baratheon|Joffrey]]: il padre ha accettato il matrimonio solo a patto che il fratello [[loras-tyrell|Loras]] fosse nominato nella Guardia reale, e Loras la proteggerà dal re, qualunque cosa faccia.',
+        en: '[[sansa-stark|Sansa]] grows close to Margaery and to her ladies and cousins. Margaery tells her she does not fear [[joffrey-baratheon|Joffrey]]: her father agreed to the match only on condition that her brother [[loras-tyrell|Loras]] be named to the Kingsguard, and Loras will protect her from the king, whatever he may do.',
+      },
+    ),
   ],
   'mace-tyrell': [
     inBooks(
@@ -803,6 +865,14 @@ export const season2Chronicles = {
       {
         it: 'I Tyrell hanno salvato Approdo del Re insieme a lord [[tywin-lannister|Tywin]], e Mace ha guidato l’ala sinistra nella battaglia delle Acque Nere. Nella sala del trono viene presentato a re [[joffrey-baratheon|Joffrey]] con i figli ser [[garlan-tyrell|Garlan]] e ser [[loras-tyrell|Loras]], tra gli eroi della vittoria. Loras entra nella Guardia reale, e Mace ottiene un seggio nel Concilio ristretto. Garlan chiede al re di sposare la loro sorella [[margaery-tyrell|Margaery]], e l’Alto Septon dichiara nullo il fidanzamento di Joffrey con [[sansa-stark|Sansa Stark]].',
         en: 'The Tyrells have saved King’s Landing together with Lord [[tywin-lannister|Tywin]], and Mace commanded the left in the battle of the Blackwater. In the throne room he is presented to King [[joffrey-baratheon|Joffrey]] with his sons, Ser [[garlan-tyrell|Garlan]] and Ser [[loras-tyrell|Loras]], among the heroes of the victory. Loras is named to the Kingsguard, and Mace is given a seat on the small council. Garlan asks the king to wed their sister [[margaery-tyrell|Margaery]], and the High Septon declares Joffrey’s betrothal to [[sansa-stark|Sansa Stark]] void.',
+      },
+    ),
+    inBooks(
+      [32, 176],
+      { it: 'Il lord di Alto Giardino', en: 'The Lord of Highgarden' },
+      {
+        it: 'Mace Tyrell siede nel Concilio ristretto. Non gli piace l’idea di trecento dorniani che attraversano l’Altopiano, e parla da generale, anche se [[tyrion-lannister|Tyrion]] ricorda che la vittoria di Mace ad Ashford la vinse un altro lord, e che il suo assedio di Capo Tempesta durò un anno senza risultati, finché [[eddard-stark|Eddard Stark]] non lo spezzò. Il figlio [[garlan-tyrell|Garlan]] viene fatto lord. Quando [[tywin-lannister|Tywin]] offre [[cersei-lannister|Cersei]] in sposa all’erede di Mace, Willas, Mace rifiuta, forse su consiglio della madre, [[olenna-tyrell|Olenna]].',
+        en: 'Mace Tyrell sits on the small council. He dislikes the idea of three hundred Dornishmen riding across the Reach, and talks like a general, though [[tyrion-lannister|Tyrion]] recalls that Mace’s victory at Ashford was won by another lord, and that his year-long siege of Storm’s End achieved nothing until [[eddard-stark|Eddard Stark]] relieved it. His son [[garlan-tyrell|Garlan]] is made a lord. When [[tywin-lannister|Tywin]] offers [[cersei-lannister|Cersei]] as a bride for Mace’s heir, Willas, Mace refuses, perhaps on the advice of his mother, [[olenna-tyrell|Olenna]].',
       },
     ),
   ],
@@ -1181,6 +1251,14 @@ export const season2Chronicles = {
         en: 'Alayaya, Chataya’s daughter, leads [[tyrion-lannister|Tyrion]] to the turret room of her mother’s brothel, where a hidden shaft lets him slip away to [[shae|Shae]]; Alayaya sleeps in the turret room until he returns. Taking her for Tyrion’s lover, [[cersei-lannister|Cersei]] has her seized and beaten, and has [[osmund-kettleblack|Ser Osmund]]’s brothers bring her before him. Alayaya does not give him away. The queen says the girl will be unharmed as long as [[joffrey-baratheon|Joffrey]] and [[tommen-baratheon|Tommen]] are safe.',
       },
     ),
+    inBooks(
+      [21, 148],
+      { it: 'Frustata e liberata', en: 'Whipped and freed' },
+      {
+        it: 'Dopo la battaglia, Alayaya viene legata a un palo nella Fortezza Rossa, frustata e cacciata dal castello. [[tywin-lannister|Tywin]] dice a [[tyrion-lannister|Tyrion]] di averlo ordinato lui, in risposta alle minacce di Tyrion contro i nipoti di Tywin, [[joffrey-baratheon|Joffrey]] e [[tommen-baratheon|Tommen]]. Tywin avverte il figlio che impiccherà la prossima prostituta che troverà nel letto di Tyrion.',
+        en: 'After the battle, Alayaya is tied to a post in the Red Keep, whipped and thrown out of the castle. [[tywin-lannister|Tywin]] tells [[tyrion-lannister|Tyrion]] that he ordered it, in answer to Tyrion’s threats against his grandsons, [[joffrey-baratheon|Joffrey]] and [[tommen-baratheon|Tommen]]. He warns that he will hang the next whore he finds in Tyrion’s bed.',
+      },
+    ),
   ],
   'garlan-tyrell': [
     inBooks(
@@ -1189,6 +1267,14 @@ export const season2Chronicles = {
       {
         it: 'Ser Garlan Tyrell, uno degli eroi delle Acque Nere, viene presentato a [[joffrey-baratheon|Joffrey]] nella sala del trono con il padre, lord Mace Tyrell, e il fratello [[loras-tyrell|ser Loras]]. Loras entra nella Guardia reale e il padre nel Concilio ristretto. Garlan chiede al re di sposare la sorella [[margaery-tyrell|Margaery]]. L’Alto Septon dichiara nullo il fidanzamento del re con [[sansa-stark|Sansa Stark]], per la ribellione di Casa Stark.',
         en: 'Ser Garlan Tyrell, one of the heroes of the Blackwater, is presented to [[joffrey-baratheon|Joffrey]] in the throne room with his father, Lord Mace Tyrell, and his brother [[loras-tyrell|Ser Loras]]. Loras is named to the Kingsguard and their father joins the small council. Garlan asks the king to wed his sister [[margaery-tyrell|Margaery]]. The High Septon declares the king’s betrothal to [[sansa-stark|Sansa Stark]] void, because of House Stark’s rebellion.',
+      },
+    ),
+    inBooks(
+      [28, 172],
+      { it: 'Più grande di quanto sembri', en: 'A bigger man than he seems' },
+      {
+        it: 'Garlan Tyrell ha ricevuto le terre e il castello di un lord dichiarato traditore. Al banchetto dopo le nozze di [[sansa-stark|Sansa]] e [[tyrion-lannister|Tyrion]], mentre quasi tutti i Tyrell si tengono a distanza, Garlan consola la sposa e balla con lei. Quando Sansa gli confida la sua disperazione, Garlan le assicura che Tyrion è più grande di quanto sembri, e che con lui sarà più felice di quanto sarebbe stata con [[loras-tyrell|Loras]].',
+        en: 'Garlan Tyrell has been given the lands and castle of a lord attainted as a traitor. At the feast after [[sansa-stark|Sansa]]’s wedding to [[tyrion-lannister|Tyrion]], while most of the Tyrells keep their distance, Garlan comforts the bride and dances with her. When she voices her despair, he assures her that Tyrion is a bigger man than he seems, and that she will be happier with him than she would have been with [[loras-tyrell|Loras]].',
       },
     ),
   ],

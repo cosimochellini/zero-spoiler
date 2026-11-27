@@ -1,12 +1,15 @@
 import { describe, expect, it } from 'vitest'
 
+import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import { season3 } from '~/data/series/game-of-thrones/records/season-3'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
+import { drawnIn, recordIn, sidesOf, unlisted } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage } from './pages.server'
+import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
@@ -51,8 +54,13 @@ function character(id: string): Entity {
   return record
 }
 
+/** An entry, as far as `unitsOf` reads it. */
+interface Sourced {
+  source?: Unit
+}
+
 /** Each unit an entry is told in: both, or its `source` alone. */
-function unitsOf(entry: { source?: Unit }): Unit[] {
+function unitsOf(entry: Sourced): Unit[] {
   return UNITS.filter((unit) => (entry.source ?? unit) === unit)
 }
 
@@ -226,6 +234,20 @@ const BROTHERHOOD_STATUSES: {
   },
 ]
 
+/**
+ * Every stage the group's drawings take after their first, pinned in both
+ * media (#1644): Lem's own helm swapped for the Hound's, the books' alone.
+ * `source` for a stage one medium alone tells; `stage` counts a record's
+ * stages from 0.
+ */
+const STAGES: {
+  chapter: number
+  episode: number
+  id: keyof typeof DRAWINGS
+  source?: Unit
+  stage?: number
+}[] = [{ id: 'lem', episode: 57, chapter: 268, source: 'chapter' }]
+
 /** Each record in each locale and in each unit that tells it, at its gate. */
 const BROTHERHOOD_GATES = BROTHERHOOD_RECORDS.flatMap((record) =>
   LOCALES.flatMap((locale) =>
@@ -355,6 +377,55 @@ describe('the statuses one medium alone tells', () => {
       ),
     ).toBe('captured')
   })
+})
+
+describe('the table of stages', () => {
+  it('lists every stage of each record it redraws', () => {
+    expect(unlisted(STAGES, REDRAWINGS)).toStrictEqual([])
+  })
+})
+
+/** The drawings the table's stages are read against. */
+const ART = { drawings: DRAWINGS, redrawings: REDRAWINGS }
+
+describe.each(
+  STAGES.flatMap((stage) =>
+    sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
+  ),
+)(
+  '$id is redrawn by $unit at $episode/$chapter',
+  ({ id, episode, chapter, source, unit, stage: index = 0, ...side }) => {
+    const stage = REDRAWINGS[id]?.[index]
+    // The drawing just before is the last earlier stage this unit reads, by
+    // the table: a stage the other medium alone tells is never shown here.
+    const previous = drawnIn(STAGES, ART, { id, unit, below: index })
+
+    it('at its pin, not one before', () => {
+      const owner = recordIn(archive, id)
+
+      expect(stage?.episode).toBe(episode)
+      expect(stage?.chapter).toBe(chapter)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? stage?.source).toBe(source)
+      expect(
+        drawingOf(owner, readerFor(archive, side.before, 'en')).strokes,
+      ).toStrictEqual(previous)
+      expect(
+        drawingOf(owner, readerFor(archive, side.reached, 'en')).strokes,
+      ).toStrictEqual(stage?.value)
+    })
+  },
+)
+
+describe('the Brotherhood stages one medium alone tells', () => {
+  // Every record of the group is the books' alone, so a viewer of the show
+  // never opens one, and its stages never reach them.
+  it.each(STAGES.filter(({ source }) => source !== undefined))(
+    'never opens $id to a reader of the other medium',
+    ({ id, source = 'episode' }) => {
+      expect(opened(id, otherAtTheEnd(source))).toBe(false)
+    },
+  )
 })
 
 describe('the season’s leads', () => {

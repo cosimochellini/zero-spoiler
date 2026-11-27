@@ -156,3 +156,7 @@ export const loadAbility = createServerFn()
 export const liftAbility = createServerFn()
   .validator(INPUTS.handled)
   .handler(async ({ data }) => serve(ENDPOINTS.liftAbility, data))
+
+export const loadTour = createServerFn()
+  .validator(INPUTS.located)
+  .handler(async ({ data }) => serve(ENDPOINTS.loadTour, data))

@@ -118,6 +118,12 @@ function shownOf(
   return bands.filter((band) => type === undefined || typeOf(band) === type)
 }
 
+/** What the plates and the fog band show, folded or not. */
+interface AbilityResultsProps extends Omit<AbilityFoldedProps, 'folded'> {
+  noMatch: boolean
+  onClear: () => void
+}
+
 /**
  * The plates and the fog band. While the query has no match they are folded
  * away behind the button that clears it and a line on what is under fog:
@@ -132,14 +138,7 @@ function AbilityResults({
   onClear,
   peek,
   shown,
-}: Pick<AbilityAlbumProps, 'peek'> & {
-  covered: AbilitySheetView['covered']
-  fieldId: string
-  needle: string
-  noMatch: boolean
-  onClear: () => void
-  shown: AbilityBandView[]
-}): ReactElement {
+}: AbilityResultsProps): ReactElement {
   const t = useSeriesOnlyT(SERIES)
   const { bookmark } = useBookmark()
 
@@ -165,6 +164,15 @@ function AbilityResults({
   )
 }
 
+/** The open plates, the covered abilities, and whether they fold away. */
+interface AbilityFoldedProps extends Pick<AbilityAlbumProps, 'peek'> {
+  covered: AbilitySheetView['covered']
+  fieldId: string
+  folded: boolean
+  needle: string
+  shown: AbilityBandView[]
+}
+
 /**
  * The plates and the fog band themselves. On a phone the band folds to its
  * first row (`FoldedFog`, #1592).
@@ -176,13 +184,7 @@ function AbilityFolded({
   needle,
   peek,
   shown,
-}: Pick<AbilityAlbumProps, 'peek'> & {
-  covered: AbilitySheetView['covered']
-  fieldId: string
-  folded: boolean
-  needle: string
-  shown: AbilityBandView[]
-}): ReactElement {
+}: AbilityFoldedProps): ReactElement {
   const t = useSeriesOnlyT(SERIES)
 
   return (
@@ -226,16 +228,19 @@ function AbilityFolded({
   )
 }
 
+/** A plate's band, its heading's id and the folded query. */
+interface AbilityPlateProps {
+  band: AbilityBandView
+  headingId: string
+  needle: string
+}
+
 /** One plate: its count, its Nen type, and its open tiles the query finds. */
 function AbilityPlate({
   band,
   headingId,
   needle,
-}: {
-  band: AbilityBandView
-  headingId: string
-  needle: string
-}): ReactElement {
+}: AbilityPlateProps): ReactElement {
   const t = useSeriesOnlyT(SERIES)
   const matches = matchesIn(band.open, needle)
 

@@ -51,16 +51,16 @@ const CURRENTS: Point[][] = [
   ],
 ]
 
+export interface DecorProps {
+  orientation: Orientation
+}
+
 /**
  * The Red Line as land: a ridge every so often down each of its three
  * stretches, and Reverse Mountain where the right edge meets the Grand
  * Line, with the currents of East Blue and South Blue climbing to it.
  */
-export function Continent({
-  orientation,
-}: {
-  orientation: Orientation
-}): ReactElement {
+export function Continent({ orientation }: DecorProps): ReactElement {
   const ridges = REGIONS['red-line']
     .map((rect) => ridgesOf(rect, orientation))
     .join('')
@@ -143,11 +143,7 @@ const HUMPS: Point[][] = [
 ]
 
 /** The Sea King, drawn once the Calm Belt is open. */
-export function SeaKing({
-  orientation,
-}: {
-  orientation: Orientation
-}): ReactElement {
+export function SeaKing({ orientation }: DecorProps): ReactElement {
   return (
     <g>
       {HUMPS.map((points) => {
@@ -183,11 +179,7 @@ const STAR = [
 ]
 
 /** The compass rose: north is the top across, turned with the chart upright. */
-export function Compass({
-  orientation,
-}: {
-  orientation: Orientation
-}): ReactElement {
+export function Compass({ orientation }: DecorProps): ReactElement {
   const centre = project(ROSE, orientation)
 
   return (

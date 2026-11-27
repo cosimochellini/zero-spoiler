@@ -78,6 +78,12 @@ function unitAt(
   return first + position - 1
 }
 
+/** A run's number, and a unit's one-based position within it. */
+export interface RunPosition {
+  number: number
+  position: number
+}
+
 /**
  * The run of `table` an absolute unit falls in, by each run's last unit, and
  * the unit's one-based position within it; `null` outside every run.
@@ -86,7 +92,7 @@ export function runAt<T extends { first: number; number: number }>(
   table: T[],
   absolute: number,
   lastOf: (run: T) => number,
-): null | { number: number; position: number } {
+): null | RunPosition {
   if (!Number.isSafeInteger(absolute)) {
     return null
   }

@@ -33,11 +33,13 @@ function ask(body: unknown, cookie = '', site = 'same-origin'): Request {
   })
 }
 
-/** Start, recorded: what it was handed, answering with `response`. */
-function start(response = new Response('page')): {
+interface StartResult {
   next: (request: Request) => Promise<Response>
   seen: Request[]
-} {
+}
+
+/** Start, recorded: what it was handed, answering with `response`. */
+function start(response = new Response('page')): StartResult {
   const seen: Request[] = []
   return {
     next: async (request) => {

@@ -46,14 +46,13 @@ export function FruitRail({ fruits, peek }: FruitRailProps): ReactElement {
   )
 }
 
-/** One drawing and one name, with the threshold under both either way. */
-function RailSpecimen({
-  peek,
-  slot,
-}: {
+interface RailSpecimenProps {
   peek: (handle: string) => Promise<FruitView>
   slot: Slot<FruitView>
-}): ReactElement {
+}
+
+/** One drawing and one name, with the threshold under both either way. */
+function RailSpecimen({ peek, slot }: RailSpecimenProps): ReactElement {
   const { locale } = useLocale()
   const t = useSeriesOnlyT('one-piece')
   const { series } = useSeriesParams()

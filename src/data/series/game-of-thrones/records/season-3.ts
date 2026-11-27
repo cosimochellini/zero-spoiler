@@ -208,6 +208,7 @@ export const season3: ThronesSaga = {
     },
     // #1634: King's Landing.
     'olenna-tyrell': {
+      relationships: season3Relationships['olenna-tyrell'],
       role: {
         it: 'Nonna di Margaery Tyrell',
         en: 'Margaery Tyrell’s grandmother',
@@ -229,8 +230,10 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
       ],
+      chronicle: season3Chronicles['olenna-tyrell'],
     },
     'megga-tyrell': {
+      relationships: season3Relationships['megga-tyrell'],
       role: {
         it: 'Cugina e compagna di Margaery Tyrell',
         en: 'Margaery Tyrell’s cousin and companion',
@@ -250,8 +253,10 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
       ],
+      chronicle: season3Chronicles['megga-tyrell'],
     },
     'alla-tyrell': {
+      relationships: season3Relationships['alla-tyrell'],
       role: {
         it: 'Cugina e compagna di Margaery Tyrell',
         en: 'Margaery Tyrell’s cousin and companion',
@@ -271,8 +276,10 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
       ],
+      chronicle: season3Chronicles['alla-tyrell'],
     },
     'elinor-tyrell': {
+      relationships: season3Relationships['elinor-tyrell'],
       role: {
         it: 'Cugina e compagna di Margaery Tyrell',
         en: 'Margaery Tyrell’s cousin and companion',
@@ -292,8 +299,10 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
       ],
+      chronicle: season3Chronicles['elinor-tyrell'],
     },
     'oberyn-martell': {
+      relationships: season3Relationships['oberyn-martell'],
       role: {
         it: 'Fratello del principe di Dorne',
         en: 'Brother of the Prince of Dorne',
@@ -316,8 +325,10 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Martell', en: 'House Martell' },
         },
       ],
+      chronicle: season3Chronicles['oberyn-martell'],
     },
     'ellaria-sand': {
+      relationships: season3Relationships['ellaria-sand'],
       role: { it: 'Amante di Oberyn Martell', en: 'Oberyn Martell’s paramour' },
       log: {
         it: 'Segue il principe Oberyn ad Approdo del Re per le nozze del re.',
@@ -331,6 +342,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Martell', en: 'House Martell' },
         },
       ],
+      chronicle: season3Chronicles['ellaria-sand'],
     },
     // #1635: Robb's war and the Riverlands.
     'jeyne-westerling': {
@@ -1864,7 +1876,7 @@ export const season3: ThronesSaga = {
         it: 'Un arciere della Fratellanza senza vessilli, i fuorilegge che combattono in nome del defunto re Robert.',
         en: 'An archer of the Brotherhood Without Banners, outlaws who fight in the name of the late King Robert.',
       },
-      visual: { art: 'anguy', tint: 'wine' },
+      visual: { art: 'anguy', tint: 'teal' },
     },
     // Books: Arya II (site chapter 157), the same scene; he sings on the
     // road to the inn and gives Arya a paper for their horses.

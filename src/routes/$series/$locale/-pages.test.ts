@@ -38,7 +38,17 @@ function isGuard(value: unknown): value is Guard {
   return typeof value === 'function'
 }
 
-function guardOf(route: { options: { beforeLoad?: unknown } }): Guard {
+/** The one option of a route `guardOf` reads. */
+interface GuardOption {
+  beforeLoad?: unknown
+}
+
+/** A route, as far as `guardOf` reads it. */
+interface GuardedRoute {
+  options: GuardOption
+}
+
+function guardOf(route: GuardedRoute): Guard {
   const guard: unknown = route.options.beforeLoad
   if (!isGuard(guard)) {
     throw new TypeError('A route guard is required')
@@ -46,7 +56,12 @@ function guardOf(route: { options: { beforeLoad?: unknown } }): Guard {
   return guard
 }
 
-function isSeriesContext(value: unknown): value is { series: Series } {
+/** A route context that carries its series. */
+interface SeriesContext {
+  series: Series
+}
+
+function isSeriesContext(value: unknown): value is SeriesContext {
   return typeof value === 'object' && value !== null && 'series' in value
 }
 

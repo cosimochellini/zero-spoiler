@@ -631,9 +631,14 @@ episode only orders it.
 - Ghost of High Heart: role seer of High Heart, no allegiance, alive. Italian
   "Fantasma di Cuore Alto".
 
-Every new record shows the shared `PERSON` placeholder until its drawing child
-(#1631), and is under `pending` for #1654 in
-`game-of-thrones-relationships.json`.
+The drawing child (#1644) draws the eight in `art/brotherhood.ts`. Every one is
+alive at the end of the books read, so the only stage is Lem's: the Hound's helm
+in place of his own from Brienne VIII of _A Feast for Crows_ (268), which
+episode 57 only orders. Anguy's tint moves from wine to teal, since no mark of
+his is red in the show (#851).
+
+Each new record showed the shared `PERSON` placeholder until #1644 drew it, and
+is under `pending` for #1654 in `game-of-thrones-relationships.json`.
 
 ### Earlier records stepped
 

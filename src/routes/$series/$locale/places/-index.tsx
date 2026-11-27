@@ -199,8 +199,13 @@ function useGroupInView(indexRef: RefObject<HTMLDivElement | null>): number {
   )
 }
 
+/** How many stops are under fog. */
+interface FogLineProps {
+  count: number
+}
+
 /** The stops under fog, one line for all of them; nothing with none. */
-function FogLine({ count }: { count: number }): null | ReactElement {
+function FogLine({ count }: FogLineProps): null | ReactElement {
   const t = useT()
   if (count === 0) {
     return null
@@ -257,16 +262,15 @@ function groupsOf(open: StopView[], shown: StopView[]): SeaGroup[] {
   })
 }
 
-/** One sea's stops, as plates. */
-function Stops({
-  needle,
-  open,
-  stops,
-}: {
+/** A sea's stops, the open ones, and the query they are marked by. */
+interface StopsProps {
   needle: string
   open: StopView[]
   stops: StopView[]
-}): ReactElement {
+}
+
+/** One sea's stops, as plates. */
+function Stops({ needle, open, stops }: StopsProps): ReactElement {
   return (
     <ol {...stylex.props(styles.grid)}>
       {stops.map((stop) => {
@@ -287,20 +291,19 @@ function Stops({
   )
 }
 
+/** A stop, its number, and the part of its name the query matches. */
+interface EntryProps {
+  highlight: [number, number] | null
+  number: number
+  stop: StopView
+}
+
 /**
  * One place, one link: its number on the route, its plate, its name with a
  * search match marked and the episode it first appears in. The drawing
  * leads.
  */
-function Entry({
-  highlight,
-  number,
-  stop,
-}: {
-  highlight: [number, number] | null
-  number: number
-  stop: StopView
-}): ReactElement {
+function Entry({ highlight, number, stop }: EntryProps): ReactElement {
   const { locale, series } = useSeriesParams()
   const threshold = useThreshold()
 
