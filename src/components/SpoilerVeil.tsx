@@ -136,6 +136,17 @@ export function SpoilerVeil<T extends Gated>({
   )
 }
 
+interface CoveredProps {
+  children: ReactNode
+  /** The control that lifts this content, when it was sent covered. */
+  control: Lift<unknown>['button']['ref'] | undefined
+  density: Density
+  strength: Strength
+  /** Where the content sits in its caller's frame. */
+  sx?: stylex.StyleXStyles
+  visible: boolean
+}
+
 /**
  * What is under the fog. While it is covered it is `inert` and `aria-hidden`,
  * so neither a Tab press nor a screen reader can walk into a spoiler the eye
@@ -149,16 +160,7 @@ export function Covered({
   sx,
   visible,
   children,
-}: {
-  children: ReactNode
-  /** The control that lifts this content, when it was sent covered. */
-  control: Lift<unknown>['button']['ref'] | undefined
-  density: Density
-  strength: Strength
-  /** Where the content sits in its caller's frame. */
-  sx?: stylex.StyleXStyles
-  visible: boolean
-}): ReactElement {
+}: CoveredProps): ReactElement {
   return (
     <div
       // `undefined` rather than `false`: an explicit `aria-hidden="false"`
@@ -184,6 +186,14 @@ export function Covered({
   )
 }
 
+interface CurtainProps {
+  button: Lift<unknown>['button']
+  density: CurtainDensity
+  lifted: boolean
+  notice: string
+  state: LiftState
+}
+
 /**
  * The curtain over it, and the control that lifts it. It stays mounted after
  * the lift instead of unmounting, because a node that disappears cannot fade;
@@ -200,13 +210,7 @@ export function Curtain({
   lifted,
   notice,
   state,
-}: {
-  button: Lift<unknown>['button']
-  density: CurtainDensity
-  lifted: boolean
-  notice: string
-  state: LiftState
-}): ReactElement {
+}: CurtainProps): ReactElement {
   const t = useT()
   const verbOnly = density !== 'block'
   const asking = state === 'asking'
@@ -243,16 +247,14 @@ export function Curtain({
   )
 }
 
-/** What the control shows, per density. */
-function Face({
-  density,
-  notice,
-  state,
-}: {
+interface FaceProps {
   density: CurtainDensity
   notice: string
   state: LiftState
-}): ReactElement {
+}
+
+/** What the control shows, per density. */
+function Face({ density, notice, state }: FaceProps): ReactElement {
   if (density === 'stage') {
     // A stage prints the threshold in its meta line, once.
     return (
@@ -279,17 +281,16 @@ function Face({
   )
 }
 
+interface SignProps {
+  notice: string | undefined
+  state: LiftState
+}
+
 /**
  * What a one-press curtain says: the threshold, unless the page already
  * prints it, then the verb or the state.
  */
-function Sign({
-  notice,
-  state,
-}: {
-  notice: string | undefined
-  state: LiftState
-}): ReactElement {
+function Sign({ notice, state }: SignProps): ReactElement {
   const t = useT()
 
   return (
@@ -304,17 +305,16 @@ function Sign({
   )
 }
 
+interface VerbProps {
+  inline: boolean
+  state: LiftState
+}
+
 /**
  * What a verb-only curtain says: the verb at rest, and from the first press
  * the words a fog tile says, the question and its answer or the state.
  */
-function Verb({
-  inline,
-  state,
-}: {
-  inline: boolean
-  state: LiftState
-}): ReactElement {
+function Verb({ inline, state }: VerbProps): ReactElement {
   const t = useT()
 
   if (state !== 'resting') {

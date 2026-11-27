@@ -20,6 +20,12 @@ import type {
 
 const requests = new Map<string, Promise<DemoDrawings>>()
 
+interface OnboardingWakeProps {
+  loadDrawings?: (() => Promise<DemoDrawings>) | undefined
+  point: DialPoint
+  view: OnboardingView
+}
+
 /**
  * The preview under the dial: East Blue's arcs, its leads, its places and
  * its ship, each open or under fog at the dial's point, and the covered
@@ -36,11 +42,7 @@ export function OnboardingWake({
   point,
   view,
   loadDrawings,
-}: {
-  loadDrawings?: (() => Promise<DemoDrawings>) | undefined
-  point: DialPoint
-  view: OnboardingView
-}): ReactElement {
+}: OnboardingWakeProps): ReactElement {
   const t = useSeriesT()
   const { slug } = useBookmarkSeries()
   const [drawings, setDrawings] = useState<DemoDrawings>({})
@@ -93,6 +95,16 @@ export function OnboardingWake({
   )
 }
 
+interface ShelfProps {
+  drawings: DemoDrawings
+  entries: DemoEntry[]
+  here?: string | undefined
+  observe?: RefCallback<HTMLUListElement>
+  point: DialPoint
+  title: string
+  wide?: boolean
+}
+
 /** One shelf of the preview: a title and a grid of cards. */
 function Shelf({
   entries,
@@ -102,15 +114,7 @@ function Shelf({
   point,
   title,
   wide = false,
-}: {
-  drawings: DemoDrawings
-  entries: DemoEntry[]
-  here?: string | undefined
-  observe?: RefCallback<HTMLUListElement>
-  point: DialPoint
-  title: string
-  wide?: boolean
-}): ReactElement {
+}: ShelfProps): ReactElement {
   return (
     <section {...stylex.props(styles.shelf)}>
       <h2 {...stylex.props(styles.shelfTitle)}>{title}</h2>
@@ -141,16 +145,14 @@ function Shelf({
   )
 }
 
-/** The covered records past East Blue, and how many there are; none, nothing. */
-function Tail({
-  fogged,
-  point,
-  tail,
-}: {
+interface TailProps {
   fogged: number
   point: DialPoint
   tail: CoveredRecord[]
-}): null | ReactElement {
+}
+
+/** The covered records past East Blue, and how many there are; none, nothing. */
+function Tail({ fogged, point, tail }: TailProps): null | ReactElement {
   const t = useSeriesT()
 
   if (tail.length === 0) {
@@ -187,18 +189,16 @@ function Tail({
   )
 }
 
+interface ObserveDemoOptions {
+  load: () => Promise<DemoDrawings>
+  series: string
+  show: (drawings: DemoDrawings) => void
+}
+
 /** One observer on the demo's first grid; headings and padding do not fetch art. */
 function observeDemo(
   section: HTMLUListElement,
-  {
-    series,
-    load,
-    show,
-  }: {
-    load: () => Promise<DemoDrawings>
-    series: string
-    show: (drawings: DemoDrawings) => void
-  },
+  { series, load, show }: ObserveDemoOptions,
 ): () => void {
   let active = true
   let started = false

@@ -130,8 +130,12 @@ export function HomeMoreStories({
   )
 }
 
+interface StoryProps {
+  story: HomeStory
+}
+
 /** The mark in the reader's unit, and whose story it is, as one line. */
-function Byline({ story }: { story: HomeStory }): ReactElement {
+function Byline({ story }: StoryProps): ReactElement {
   const { series, locale } = useSeriesParams()
   const threshold = useThreshold()
 
@@ -152,7 +156,7 @@ function Byline({ story }: { story: HomeStory }): ReactElement {
 }
 
 /** A story's paragraph, the same open or closed. */
-function StoryBody({ story }: { story: HomeStory }): ReactElement {
+function StoryBody({ story }: StoryProps): ReactElement {
   return (
     <p {...stylex.props(styles.body)}>
       <Prose segments={story.body} />
@@ -161,7 +165,7 @@ function StoryBody({ story }: { story: HomeStory }): ReactElement {
 }
 
 /** A story set whole: the byline, the title, the paragraph. */
-function OpenStory({ story }: { story: HomeStory }): ReactElement {
+function OpenStory({ story }: StoryProps): ReactElement {
   return (
     <article {...stylex.props(styles.story)}>
       <Byline story={story} />
@@ -172,7 +176,7 @@ function OpenStory({ story }: { story: HomeStory }): ReactElement {
 }
 
 /** A story closed under its title, which is the whole of the summary. */
-function ClosedStory({ story }: { story: HomeStory }): ReactElement {
+function ClosedStory({ story }: StoryProps): ReactElement {
   return (
     <details {...stylex.props(styles.closed)}>
       <summary {...stylex.props(styles.summary)}>

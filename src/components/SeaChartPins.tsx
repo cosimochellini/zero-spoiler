@@ -44,18 +44,14 @@ export function Spot({ at, orientation }: AtProps): ReactElement {
   )
 }
 
-/** Words set beside a point, on the side that keeps them on the chart. */
-function Pin({
-  at,
-  children,
-  orientation,
-  side,
-  sx,
-}: AtProps & {
+interface PinProps extends AtProps {
   children: ReactNode
   side: null | Side
   sx: stylex.StyleXStyles
-}): ReactElement {
+}
+
+/** Words set beside a point, on the side that keeps them on the chart. */
+function Pin({ at, children, orientation, side, sx }: PinProps): ReactElement {
   const { left, top } = placeOf(at, orientation)
 
   return (
@@ -71,6 +67,12 @@ function Pin({
   )
 }
 
+interface RegionNamesProps {
+  orientation: Orientation
+  regions: Region[]
+  seas: Partial<Record<string, string>> | undefined
+}
+
 /**
  * The names of the seas the reader has opened, each centred on its point,
  * as the server sent them with the page.
@@ -79,11 +81,7 @@ export function RegionNames({
   orientation,
   regions,
   seas,
-}: {
-  orientation: Orientation
-  regions: Region[]
-  seas: Partial<Record<string, string>> | undefined
-}): ReactElement {
+}: RegionNamesProps): ReactElement {
   return (
     <>
       {regions.map((region) => {
@@ -110,6 +108,11 @@ export function RegionNames({
   )
 }
 
+interface SagaNamesProps {
+  names: SagaName[]
+  orientation: Orientation
+}
+
 /**
  * Each saga's name, large and faint over the middle of its stops, in its
  * hue: behind the stops' own names, so it reads as the stretch's title.
@@ -118,10 +121,7 @@ export function RegionNames({
 export function SagaNames({
   names,
   orientation,
-}: {
-  names: SagaName[]
-  orientation: Orientation
-}): ReactElement {
+}: SagaNamesProps): ReactElement {
   return (
     <>
       {names.map((name) => {
@@ -143,16 +143,14 @@ export function SagaNames({
   )
 }
 
-/** Where the reader is: the stop's name and its number, beside it. */
-export function Here({
-  orientation,
-  port,
-  stage,
-}: {
+interface HereProps {
   orientation: Orientation
   port: StopView
   stage: string
-}): ReactElement {
+}
+
+/** Where the reader is: the stop's name and its number, beside it. */
+export function Here({ orientation, port, stage }: HereProps): ReactElement {
   return (
     <Pin
       at={pointOf(port)}
@@ -174,6 +172,12 @@ const SHIP_SIDE: Record<Side, stylex.StyleXStyles> = {
   right: styles.shipRight,
 }
 
+interface ShipOnRouteProps {
+  mark: ShipMark
+  orientation: Orientation
+  trigger: TriggerProps
+}
+
 /**
  * A ship on the route: her own drawing, as it stands at the bookmark, in a
  * gold ring on the side of the stop away from the label. An earlier ship is
@@ -183,11 +187,7 @@ export function ShipOnRoute({
   mark,
   orientation,
   trigger,
-}: {
-  mark: ShipMark
-  orientation: Orientation
-  trigger: TriggerProps
-}): ReactElement {
+}: ShipOnRouteProps): ReactElement {
   const { left, top } = placeOf(mark.at, orientation)
   const side = across(sideOf(mark.at, orientation))
 

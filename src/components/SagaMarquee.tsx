@@ -101,8 +101,12 @@ function headline(
   )
 }
 
+interface RailProps {
+  fruits: FruitView[]
+}
+
 /** The rail: the latest fruit first and larger, then the rest, oldest first. */
-function Rail({ fruits }: { fruits: FruitView[] }): ReactElement {
+function Rail({ fruits }: RailProps): ReactElement {
   const lead = fruits.at(-1)
 
   return (
@@ -126,8 +130,12 @@ function Rail({ fruits }: { fruits: FruitView[] }): ReactElement {
   )
 }
 
+interface BehindProps {
+  last: FruitView | null
+}
+
 /** No fruit in the saga yet: say so, and point back to the last one. */
-function Behind({ last }: { last: FruitView | null }): ReactElement {
+function Behind({ last }: BehindProps): ReactElement {
   const { locale } = useLocale()
   const t = useSeriesOnlyT('one-piece')
   const { series } = useSeriesParams()
@@ -156,18 +164,17 @@ function Behind({ last }: { last: FruitView | null }): ReactElement {
   )
 }
 
+interface TileProps {
+  lead: boolean
+  record: FruitView
+}
+
 /**
  * One tile of the rail: the drawing, the name and the episode the story
  * names it in, as one link to the fruit. Its drawing is asked for once it
  * scrolls near (`useDrawing`); the server sends the first few whole.
  */
-function Tile({
-  lead,
-  record,
-}: {
-  lead: boolean
-  record: FruitView
-}): ReactElement {
+function Tile({ lead, record }: TileProps): ReactElement {
   const { series, locale } = useSeriesParams()
   const threshold = useThreshold()
   const { ref, strokes } = useDrawing(record.id, record.visual)

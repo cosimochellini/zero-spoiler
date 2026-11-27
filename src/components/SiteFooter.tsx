@@ -10,6 +10,10 @@ import { color, font, leading, rule, space, text } from '~/styles/tokens.stylex'
 
 export const REPOSITORY = 'https://github.com/cosimochellini/zero-spoiler'
 
+interface SiteFooterProps {
+  shared?: boolean
+}
+
 /**
  * The footer, a dense colophon.
  *
@@ -22,11 +26,7 @@ export const REPOSITORY = 'https://github.com/cosimochellini/zero-spoiler'
  * footer also points to its filler guide, which is not in the bar, so every
  * page of the series links to it at any bookmark (#1382).
  */
-export function SiteFooter({
-  shared = false,
-}: {
-  shared?: boolean
-}): ReactElement {
+export function SiteFooter({ shared = false }: SiteFooterProps): ReactElement {
   const { locale } = useLocale()
   const t = useT()
 

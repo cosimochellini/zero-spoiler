@@ -79,6 +79,15 @@ export function SearchField({
   )
 }
 
+interface SearchNoMatchProps {
+  clearLabel: string
+  /** The search field's id: where focus goes once the query is cleared. */
+  fieldId: string
+  /** What is under fog and why the search does not find it, if anything. */
+  note?: string | undefined
+  onClear: () => void
+}
+
 /**
  * What stands in for a listing's groups while a query has no match: the
  * way back, and what the listing still holds under fog. The line saying so
@@ -90,14 +99,7 @@ export function SearchNoMatch({
   fieldId,
   note,
   onClear,
-}: {
-  clearLabel: string
-  /** The search field's id: where focus goes once the query is cleared. */
-  fieldId: string
-  /** What is under fog and why the search does not find it, if anything. */
-  note?: string | undefined
-  onClear: () => void
-}): ReactElement {
+}: SearchNoMatchProps): ReactElement {
   return (
     <div {...stylex.props(styles.noMatch)}>
       <Button
@@ -119,6 +121,11 @@ export function SearchNoMatch({
   )
 }
 
+interface SearchStatusProps {
+  noMatch: boolean
+  words: string
+}
+
 /**
  * The `aria-live` line under the field: how many open records the query
  * finds, or that it finds none. It settles before it is announced. With no
@@ -128,10 +135,7 @@ export function SearchNoMatch({
 export function SearchStatus({
   noMatch,
   words,
-}: {
-  noMatch: boolean
-  words: string
-}): ReactElement {
+}: SearchStatusProps): ReactElement {
   const large = useSettled(noMatch, ANNOUNCE_DELAY_MS)
 
   return (
@@ -144,6 +148,11 @@ export function SearchStatus({
   )
 }
 
+interface SearchResultsProps {
+  children: ReactNode
+  folded: boolean
+}
+
 /**
  * A listing's groups, folded away while a query has no match. Hidden, not
  * unmounted: a lifted tile and a drawing already loaded are still there when
@@ -153,10 +162,7 @@ export function SearchStatus({
 export function SearchResults({
   children,
   folded,
-}: {
-  children: ReactNode
-  folded: boolean
-}): ReactElement {
+}: SearchResultsProps): ReactElement {
   return (
     <div
       // The attribute says it to assistive technology; the class is what
@@ -169,6 +175,12 @@ export function SearchResults({
   )
 }
 
+interface ClearSlotProps {
+  blank: boolean
+  label: string
+  onClear: () => void
+}
+
 /**
  * The × that empties the field, and the space it keeps whether or not there is
  * anything to clear.
@@ -179,15 +191,7 @@ export function SearchResults({
  * takes it out of the tab order. The `hidden` attribute alone would not: the
  * button's own `display` wins over the user agent's `[hidden]` rule.
  */
-function ClearSlot({
-  blank,
-  label,
-  onClear,
-}: {
-  blank: boolean
-  label: string
-  onClear: () => void
-}): ReactElement {
+function ClearSlot({ blank, label, onClear }: ClearSlotProps): ReactElement {
   return (
     <span {...stylex.props(styles.clearSlot)}>
       <Button

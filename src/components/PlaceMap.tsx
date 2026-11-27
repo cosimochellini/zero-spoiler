@@ -41,6 +41,11 @@ function percent(value: number, of: number): string {
   return `${String((value / of) * PERCENT)}%`
 }
 
+interface PlaceMapProps {
+  label: string
+  map: PlaceChartView
+}
+
 /**
  * The stretch of the sea chart around one place: the stop before it and the
  * stop after it, with the route through them. The places page's chart drawn
@@ -54,13 +59,7 @@ function percent(value: number, of: number): string {
  * reader's is an anonymous dot with no name. The drawing is one image with
  * one label: the names are for the eye.
  */
-export function PlaceMap({
-  label,
-  map,
-}: {
-  label: string
-  map: PlaceChartView
-}): ReactElement {
+export function PlaceMap({ label, map }: PlaceMapProps): ReactElement {
   const id = useId()
   const { crop, from, tail } = stretchOf(map)
 
@@ -132,17 +131,16 @@ function islesOf({ route }: PlaceChartView): IsleMark[] {
   return isles
 }
 
+interface NamesProps {
+  crop: Rect
+  map: PlaceChartView
+}
+
 /**
  * The names of the reached stops inside the stretch, kept inside it, this
  * one's in gold. For the eye only: the frame's label speaks for the map.
  */
-function Names({
-  crop,
-  map,
-}: {
-  crop: Rect
-  map: PlaceChartView
-}): ReactElement {
+function Names({ crop, map }: NamesProps): ReactElement {
   // The layer spans the whole chart, so its width over the chart's is the
   // scale; a phone's frame is assumed until the browser measures it.
   const [layer, setLayer] = useState<HTMLDivElement | null>(null)
@@ -194,17 +192,19 @@ function namesIn({ here, route }: PlaceChartView, crop: Rect): StopName[] {
   return names
 }
 
+interface StretchOfResult {
+  crop: Rect
+  from: Point
+  tail: Point[]
+}
+
 /**
  * The stretch to frame, and the fog tail: from the reader's last stop, as on
  * the places page. The frame holds this stop and the ones either side; the
  * one before the first stop is the origin, and the one after the reader's
  * is the first dot of the tail.
  */
-function stretchOf({ fogged, here, route }: PlaceChartView): {
-  crop: Rect
-  from: Point
-  tail: Point[]
-} {
+function stretchOf({ fogged, here, route }: PlaceChartView): StretchOfResult {
   // From the last stop the ship sails to, as on the places page: not
   // Luffy's own way, not a place only shown.
   const from = route.findLast(({ at }) => isOnRoute(at))?.at ?? ORIGIN
@@ -218,18 +218,17 @@ function stretchOf({ fogged, here, route }: PlaceChartView): {
   return { crop: cropAround(near), from, tail }
 }
 
+interface StopsProps {
+  map: PlaceChartView
+  tail: Point[]
+}
+
 /**
  * The origin, every stop the reader has reached in its saga's hue with
  * this one ringed in gold, and the dots under fog. The frame cuts off the
  * ones outside the stretch.
  */
-function Stops({
-  map,
-  tail,
-}: {
-  map: PlaceChartView
-  tail: Point[]
-}): ReactElement {
+function Stops({ map, tail }: StopsProps): ReactElement {
   return (
     <>
       <Spot
@@ -266,8 +265,13 @@ function keyOf({ x, y }: Point): string {
   return `${String(x)}-${String(y)}`
 }
 
+interface DotProps {
+  at: Point
+  sx: stylex.StyleXStyles
+}
+
 /** One stop's dot, centred on its point. */
-function Dot({ at, sx }: { at: Point; sx: stylex.StyleXStyles }): ReactElement {
+function Dot({ at, sx }: DotProps): ReactElement {
   const { left, top } = placeOf(at, 'across')
 
   return (

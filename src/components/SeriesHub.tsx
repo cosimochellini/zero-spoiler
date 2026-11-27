@@ -18,6 +18,12 @@ import {
   text,
 } from '~/styles/tokens.stylex'
 
+interface SeriesHubProps {
+  /** The series filed but not open: a name, no link, no count. */
+  coming: ComingSeries[]
+  series: HubSeries[]
+}
+
 /**
  * The hub (the "Stage" direction, owner 2026-10-24): the house lights
  * are down, as on every page with no series, and each series is a stage in
@@ -33,14 +39,7 @@ import {
  * On a phone a stage is a row, the drawing beside the words, so the three
  * series fit on one screen; from 40rem it stands tall again.
  */
-export function SeriesHub({
-  coming,
-  series,
-}: {
-  /** The series filed but not open: a name, no link, no count. */
-  coming: ComingSeries[]
-  series: HubSeries[]
-}): ReactElement {
+export function SeriesHub({ coming, series }: SeriesHubProps): ReactElement {
   const { locale } = useLocale()
   const t = useT()
 
@@ -83,8 +82,12 @@ export function SeriesHub({
   )
 }
 
+interface StageProps {
+  entry: HubSeries
+}
+
 /** A series a reader can open: its stage, lit in its own colours. */
-function Stage({ entry }: { entry: HubSeries }): ReactElement {
+function Stage({ entry }: StageProps): ReactElement {
   const { locale } = useLocale()
   const t = useT()
 
@@ -123,8 +126,12 @@ function Stage({ entry }: { entry: HubSeries }): ReactElement {
   )
 }
 
+interface DarkStageProps {
+  name: string
+}
+
 /** A series announced but not open: no link, and the lights still off. */
-function DarkStage({ name }: { name: string }): ReactElement {
+function DarkStage({ name }: DarkStageProps): ReactElement {
   const t = useT()
 
   return (

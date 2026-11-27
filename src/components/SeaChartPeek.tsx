@@ -45,6 +45,11 @@ export interface PeekFrameProps {
   view?: Rect
 }
 
+interface FrameProps extends PeekFrameProps {
+  children: ReactNode
+  label: string
+}
+
 /**
  * The popover itself: below its point in the top half of the window, above
  * it in the bottom half, and its ✕ in the corner. A dialog that does not
@@ -57,7 +62,7 @@ function Frame({
   orientation,
   peek,
   view,
-}: PeekFrameProps & { children: ReactNode; label: string }): ReactElement {
+}: FrameProps): ReactElement {
   const t = useT()
   const window = view ?? wholeOf(orientation)
   const { left, top } = placeIn(at, orientation, window)
@@ -97,20 +102,16 @@ function Frame({
   )
 }
 
-/** The plate beside the words, and the link under both. */
-function Card({
-  episode,
-  link,
-  meta,
-  name,
-  plate,
-}: {
+interface CardProps {
   episode?: string | undefined
   link?: ReactNode
   meta?: string | undefined
   name: string
   plate: ReactNode
-}): ReactElement {
+}
+
+/** The plate beside the words, and the link under both. */
+function Card({ episode, link, meta, name, plate }: CardProps): ReactElement {
   return (
     <div {...stylex.props(styles.card)}>
       <span {...stylex.props(styles.plate)}>{plate}</span>
@@ -128,14 +129,13 @@ function Card({
   )
 }
 
-/** "Open the entry", to a place's own page. */
-function PlaceLink({
-  id,
-  onDismiss,
-}: {
+interface PlaceLinkProps {
   id: string
   onDismiss: () => void
-}): ReactElement {
+}
+
+/** "Open the entry", to a place's own page. */
+function PlaceLink({ id, onDismiss }: PlaceLinkProps): ReactElement {
   const { locale } = useLocale()
   const t = useT()
   const { series } = useSeriesParams()
@@ -152,19 +152,21 @@ function PlaceLink({
   )
 }
 
-/** A place the reader has reached, as its peek shows it. */
-function PlaceCard({
-  onDismiss,
-  port,
-}: {
+/** A reached place, with the words its peek labels it by. */
+interface PeekPlace extends RecordView {
+  form?: string | undefined
+  sea?: string | undefined
+  seaName?: string | undefined
+  words?: PlaceWordsView | undefined
+}
+
+interface PlaceCardProps {
   onDismiss: () => void
-  port: RecordView & {
-    form?: string | undefined
-    sea?: string | undefined
-    seaName?: string | undefined
-    words?: PlaceWordsView | undefined
-  }
-}): ReactElement {
+  port: PeekPlace
+}
+
+/** A place the reader has reached, as its peek shows it. */
+function PlaceCard({ onDismiss, port }: PlaceCardProps): ReactElement {
   const { formOf, regionOf } = usePlaceLabels(port.words)
   const threshold = useThreshold()
   const meta =
@@ -188,18 +190,20 @@ function PlaceCard({
   )
 }
 
+interface StopPeekProps extends PeekFrameProps {
+  port: StopView
+  /** The names of the seas the reader has opened, from the places page. */
+  seas: Partial<Record<string, string>> | undefined
+  stage: string
+}
+
 /** The peek of a stop the reader has reached. */
 export function StopPeek({
   port,
   seas,
   stage,
   ...frame
-}: PeekFrameProps & {
-  port: StopView
-  /** The names of the seas the reader has opened, from the places page. */
-  seas: Partial<Record<string, string>> | undefined
-  stage: string
-}): ReactElement {
+}: StopPeekProps): ReactElement {
   const { onDismiss } = frame.peek
 
   return (
@@ -216,6 +220,12 @@ export function StopPeek({
   )
 }
 
+interface FogPeekProps extends PeekFrameProps {
+  entry: CoveredRecord
+  peekPort: (handle: string) => Promise<PortView>
+  stage: string
+}
+
 /**
  * The peek of a stop under fog: its number and, on the veil, its episode.
  * Nothing else of it is in the page until the reader asks; the place then
@@ -226,11 +236,7 @@ export function FogPeek({
   peekPort,
   stage,
   ...frame
-}: PeekFrameProps & {
-  entry: CoveredRecord
-  peekPort: (handle: string) => Promise<PortView>
-  stage: string
-}): ReactElement {
+}: FogPeekProps): ReactElement {
   const t = useT()
   const { onDismiss } = frame.peek
 
@@ -271,14 +277,15 @@ export function FogPeek({
   )
 }
 
+interface ShipPeekProps extends PeekFrameProps {
+  ship: ShipView
+}
+
 /**
  * The peek of a ship: what her own page shows at this bookmark, so her
  * drawing and her fate follow her own timeline.
  */
-export function ShipPeek({
-  ship,
-  ...frame
-}: PeekFrameProps & { ship: ShipView }): ReactElement {
+export function ShipPeek({ ship, ...frame }: ShipPeekProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const threshold = useThreshold()
   const { fate } = ship.dossier

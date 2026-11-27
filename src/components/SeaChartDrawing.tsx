@@ -30,6 +30,10 @@ export interface DrawingProps {
   orientation: Orientation
 }
 
+interface SeaWorldProps extends DrawingProps {
+  regions: Region[]
+}
+
 /**
  * The seas the reader has opened, over the fog, each with its own ground:
  * the Blues open sea with waves, the Grand Line a ruled band, the Calm
@@ -41,7 +45,7 @@ export function SeaWorld({
   id,
   orientation,
   regions,
-}: DrawingProps & { regions: Region[] }): ReactElement {
+}: SeaWorldProps): ReactElement {
   const box = boxOf(orientation)
   const opened = new Set(regions)
 
@@ -83,8 +87,12 @@ export function SeaWorld({
   )
 }
 
+interface PatternsProps {
+  id: string
+}
+
 /** The waves of the Blues, the stipple of the Calm Belts, and the fog's cloud. */
-function Patterns({ id }: { id: string }): ReactElement {
+function Patterns({ id }: PatternsProps): ReactElement {
   return (
     <defs>
       <pattern
@@ -171,6 +179,13 @@ const LINE = {
   second: styles.second,
 } as const
 
+interface SeaRouteProps extends Omit<DrawingProps, 'id'> {
+  from: Point
+  legs: Leg[]
+  still?: boolean
+  tail: Point[]
+}
+
 /**
  * The route sailed, drawn in once from the origin to the ship, and the fog
  * tail past it from the last stop the ship sailed to, along the Grand Line
@@ -183,12 +198,7 @@ export function SeaRoute({
   orientation,
   still = false,
   tail,
-}: Omit<DrawingProps, 'id'> & {
-  from: Point
-  legs: Leg[]
-  still?: boolean
-  tail: Point[]
-}): ReactElement {
+}: SeaRouteProps): ReactElement {
   const delays = startsOf(legs).map(
     (share) => `${String(Math.round(share * DRAW_MS))}ms`,
   )
@@ -241,18 +251,17 @@ export interface IsleMark {
   tint: TintId
 }
 
+interface IslesProps {
+  isles: IsleMark[]
+  orientation: Orientation
+}
+
 /**
  * The islands the reader has reached, each its own outline in its saga's
  * hue, at its point: drawn in the chart's units, so they grow as it zooms.
  * Drawn after the route, so the route runs into each island, not over it.
  */
-export function Isles({
-  isles,
-  orientation,
-}: {
-  isles: IsleMark[]
-  orientation: Orientation
-}): ReactElement {
+export function Isles({ isles, orientation }: IslesProps): ReactElement {
   return (
     <g aria-hidden="true">
       {isles.map((isle) => {

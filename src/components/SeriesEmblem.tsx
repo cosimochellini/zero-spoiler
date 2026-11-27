@@ -5,12 +5,16 @@ import { ART_VIEWBOX } from '~/components/drawing'
 import { EMBLEMS } from '~/components/seriesEmblems'
 import { color, rule } from '~/styles/tokens.stylex'
 
+interface SeriesEmblemProps {
+  slug: string
+}
+
 /**
  * A series' hub drawing, decorative: the card beside it names the series.
  * Drawn the way `ArtStrokes` draws a record, but with the theme's accent for
  * the accent line rather than a record's tint.
  */
-export function SeriesEmblem({ slug }: { slug: string }): ReactElement {
+export function SeriesEmblem({ slug }: SeriesEmblemProps): ReactElement {
   return (
     <svg
       aria-hidden="true"

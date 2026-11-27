@@ -26,6 +26,16 @@ interface PlacedName {
   name: string
 }
 
+interface StopNamesProps {
+  bounds?: Rect | undefined
+  here: null | StopView
+  /** The id of the stop whose name is set in gold. */
+  marked?: string | undefined
+  names: StopName[]
+  orientation: Orientation
+  scale: number
+}
+
 /**
  * Reached names stay written at every zoom, with leaders when they need room.
  * A place's map keeps them inside its stretch (`bounds`) and sets its own
@@ -38,15 +48,7 @@ export function StopNames({
   marked,
   orientation,
   scale,
-}: {
-  bounds?: Rect | undefined
-  here: null | StopView
-  /** The id of the stop whose name is set in gold. */
-  marked?: string | undefined
-  names: StopName[]
-  orientation: Orientation
-  scale: number
-}): ReactElement {
+}: StopNamesProps): ReactElement {
   const world = boxOf(orientation)
   const placed = placedOf(names, here, { bounds, marked, orientation, scale })
   const room = { x: world.x * scale, y: world.y * scale }
@@ -69,11 +71,15 @@ export function StopNames({
   )
 }
 
+interface PlacedOfOptions extends LabelFrame {
+  marked?: string | undefined
+}
+
 /** Every name with its box, the reader's own label's room kept clear. */
 function placedOf(
   names: StopName[],
   here: null | StopView,
-  { marked, ...frame }: LabelFrame & { marked?: string | undefined },
+  { marked, ...frame }: PlacedOfOptions,
 ): PlacedName[] {
   const { orientation } = frame
   const spots = names.map(({ port, side }) => ({
@@ -107,16 +113,14 @@ function placedOf(
   })
 }
 
-/** Leaders keep a displaced name visibly attached to its own reached island. */
-function Leaders({
-  labels,
-  orientation,
-  scale,
-}: {
+interface LeadersProps {
   labels: PlacedName[]
   orientation: Orientation
   scale: number
-}): ReactElement {
+}
+
+/** Leaders keep a displaced name visibly attached to its own reached island. */
+function Leaders({ labels, orientation, scale }: LeadersProps): ReactElement {
   const world = boxOf(orientation)
   return (
     <svg
@@ -136,14 +140,13 @@ function Leaders({
   )
 }
 
-/** A bounded wrapping label; its source is always an open stop. */
-function NameLabel({
-  label,
-  room,
-}: {
+interface NameLabelProps {
   label: PlacedName
   room: Point
-}): ReactElement {
+}
+
+/** A bounded wrapping label; its source is always an open stop. */
+function NameLabel({ label, room }: NameLabelProps): ReactElement {
   return (
     <span
       data-chart-name={label.id}

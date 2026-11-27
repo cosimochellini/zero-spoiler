@@ -76,12 +76,16 @@ export function SiteBar(): ReactElement {
   )
 }
 
+interface SeriesCrumbProps {
+  slug: string
+}
+
 /**
  * The series' home, after the wordmark: its short name ("HxH"), then its
  * full name in the reader's language, read and not shown, so the link's name
  * holds its visible text, "HxH Hunter x Hunter" (WCAG 2.5.3).
  */
-function SeriesCrumb({ slug }: { slug: string }): ReactElement {
+function SeriesCrumb({ slug }: SeriesCrumbProps): ReactElement {
   const { locale } = useLocale()
   const described = useMatch({ from: '/$series', shouldThrow: false })?.context
     .series

@@ -118,11 +118,16 @@ export function SpecimenBands({
   )
 }
 
+interface FoundInOptions {
+  form: FruitForm | undefined
+  needle: string
+}
+
 /** The open fruits the picks find: the chip's own number until the album. */
 function foundIn(
   album: Album | null,
   plates: FruitPlateCount[],
-  { form, needle }: { form: FruitForm | undefined; needle: string },
+  { form, needle }: FoundInOptions,
 ): number {
   return album === null ?
       openIn(plates, form)
@@ -130,6 +135,19 @@ function foundIn(
         shownOf(album.bands, form).flatMap((band) => band.open),
         needle,
       ).length
+}
+
+interface AlbumResultsProps extends Pick<
+  SpecimenBandsProps,
+  'onParams' | 'params' | 'peek'
+> {
+  album: Album
+  fieldId: string
+  /** The open fruits the query finds. */
+  found: number
+  needle: string
+  /** False with no fruit open: no bar, so no query to clear. */
+  searchable: boolean
 }
 
 /**
@@ -141,15 +159,7 @@ function AlbumResults({
   onParams,
   searchable,
   ...shown
-}: Pick<SpecimenBandsProps, 'onParams' | 'params' | 'peek'> & {
-  album: Album
-  fieldId: string
-  /** The open fruits the query finds. */
-  found: number
-  needle: string
-  /** False with no fruit open: no bar, so no query to clear. */
-  searchable: boolean
-}): ReactElement {
+}: AlbumResultsProps): ReactElement {
   const noMatch = searchable && shown.needle !== '' && found === 0
 
   return (
@@ -177,8 +187,12 @@ function shownOf(
   return bands.filter((band) => form === undefined || band.form === form)
 }
 
+interface AlbumFailedProps {
+  onRetry: () => void
+}
+
 /** The album could not be fetched: one line, and a button that asks again. */
-function AlbumFailed({ onRetry }: { onRetry: () => void }): ReactElement {
+function AlbumFailed({ onRetry }: AlbumFailedProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   return (
     <LoadFailed<'one-piece'>
@@ -200,6 +214,12 @@ function openIn(
     .reduce((sum, plate) => sum + plate.opened, 0)
 }
 
+interface PlatesProps extends Pick<SpecimenBandsProps, 'params' | 'peek'> {
+  album: Album
+  fieldId: string
+  needle: string
+}
+
 /** The plates shown, or the groups of the saga or faction view. */
 function Plates({
   album: { bands, ...sent },
@@ -207,11 +227,7 @@ function Plates({
   needle,
   params,
   peek,
-}: Pick<SpecimenBandsProps, 'params' | 'peek'> & {
-  album: Album
-  fieldId: string
-  needle: string
-}): ReactElement {
+}: PlatesProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const grouping = groupingOf(t, { ...sent, fieldId, view: params.view })
 
@@ -246,6 +262,14 @@ function Plates({
   )
 }
 
+interface PlateProps {
+  band: FruitBandView
+  fieldId: string
+  index: number
+  needle: string
+  peek: (handle: string) => Promise<FruitView>
+}
+
 /** One plate: its label, its heading, its open tiles and its fog band. */
 function Plate({
   band,
@@ -253,13 +277,7 @@ function Plate({
   index,
   needle,
   peek,
-}: {
-  band: FruitBandView
-  fieldId: string
-  index: number
-  needle: string
-  peek: (handle: string) => Promise<FruitView>
-}): ReactElement {
+}: PlateProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const headingId = `${fieldId}-${band.form}`
   const matches = matchesIn(band.open, needle)
