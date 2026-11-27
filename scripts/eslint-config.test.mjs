@@ -29,6 +29,26 @@ function hasSliceBan(messages) {
     message.startsWith('Do not reuse another drawing'),
   )
 }
+/**
+ * Whether the opt-in effect ban fired.
+ * @param {import('eslint').Linter.LintMessage[]} messages - Lint diagnostics.
+ * @returns {number} How many effect calls it flagged.
+ */
+function effectBans(messages) {
+  return messages.filter(({ message }) =>
+    message.startsWith('Effects are opt-in'),
+  ).length
+}
+/**
+ * Whether the inline-signature-type ban fired.
+ * @param {import('eslint').Linter.LintMessage[]} messages - Lint diagnostics.
+ * @returns {number} How many type literals it flagged.
+ */
+function inlineTypeBans(messages) {
+  return messages.filter(({ message }) =>
+    message.startsWith('Declare the shape as an `interface`'),
+  ).length
+}
 const optionalChainRule = '@typescript-eslint/prefer-optional-chain'
 const eslint = new ESLint({ cwd: repositoryRoot })
 
@@ -268,6 +288,109 @@ export const strokes = ${call}
       expect(messages.map(({ ruleId }) => ruleId)).toContain(
         'no-restricted-syntax',
       )
+    })
+
+    // Every effect is an exception its author names, and every shape in a
+    // signature has a name. Both bans live in the shared list, so they hold
+    // in the blocks that replace `no-restricted-syntax` (the readers, the art
+    // files) and in the tests.
+    const banPaths = [
+      'src/components/SiteFooter.tsx',
+      'src/routes/__root.tsx',
+      'src/components/ArchivePage.test.tsx',
+      'src/data/series/game-of-thrones/art/essos.ts',
+    ]
+
+    it.each(banPaths)('bars every kind of effect in %s', async (file) => {
+      const { messages } = await lint(
+        `import React, { useEffect, useInsertionEffect, useLayoutEffect } from 'react'
+export function useAll(): void {
+  useEffect(() => undefined, [])
+  useLayoutEffect(() => undefined, [])
+  useInsertionEffect(() => undefined, [])
+  React.useEffect(() => undefined, [])
+}
+`,
+        path.join(repositoryRoot, file),
+      )
+
+      expect(effectBans(messages)).toBe(4)
+    })
+
+    it('lets an effect through under a disable that names its system', async () => {
+      const { messages } = await lint(
+        `import { useEffect } from 'react'
+export function useTitle(title: string): void {
+  // eslint-disable-next-line no-restricted-syntax -- the document title lives outside React.
+  useEffect(() => {
+    document.title = title
+  }, [title])
+}
+`,
+        path.join(repositoryRoot, 'src/components/SiteFooter.tsx'),
+      )
+
+      expect(effectBans(messages)).toBe(0)
+      expect(messages.filter(({ fatal }) => fatal)).toStrictEqual([])
+    })
+
+    it.each([
+      [
+        'a parameter',
+        'export function f(options: { a: string }): string {\n  return options.a\n}\n',
+      ],
+      [
+        'a destructured parameter',
+        'export function f({ a }: { a: string }): string {\n  return a\n}\n',
+      ],
+      [
+        'a return type',
+        "export function f(): { a: string } {\n  return { a: 'x' }\n}\n",
+      ],
+      [
+        'a nested return type',
+        "export async function f(): Promise<{ a: string }> {\n  return Promise.resolve({ a: 'x' })\n}\n",
+      ],
+      [
+        'an array parameter',
+        'export function f(rows: { a: string }[]): number {\n  return rows.length\n}\n',
+      ],
+      [
+        'an intersection',
+        'interface Base {\n  b: string\n}\nexport function f(options: Base & { a: string }): string {\n  return options.a + options.b\n}\n',
+      ],
+      [
+        'an arrow callback',
+        "export const lengths = [{ a: 'x' }].map((row: { a: string }) => row.a.length)\n",
+      ],
+      [
+        'a function expression',
+        'export const f = function named(options: { a: string }): string {\n  return options.a\n}\n',
+      ],
+    ])('bars an inline object type in %s', async (_label, source) => {
+      for (const file of banPaths) {
+        const { messages } = await lint(source, path.join(repositoryRoot, file))
+
+        expect(inlineTypeBans(messages), file).toBe(1)
+      }
+    })
+
+    it('lets a named interface through', async () => {
+      const { messages } = await lint(
+        `interface FOptions {
+  a: string
+}
+interface FResult {
+  b: string
+}
+export function f({ a }: FOptions): FResult {
+  return { b: a }
+}
+`,
+        path.join(repositoryRoot, 'src/components/SiteFooter.tsx'),
+      )
+
+      expect(inlineTypeBans(messages)).toBe(0)
     })
   },
 )
