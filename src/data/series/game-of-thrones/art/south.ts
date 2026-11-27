@@ -845,6 +845,29 @@ const BARE_BENCH: Stroke[] = [
   shadow(80, 155, 52),
 ]
 
+/**
+ * Jaime Lannister's golden hand, drawn about its wrist at the origin:
+ * the fingers held together and up, the thumb out, the palm to the
+ * viewer, set in the cuff that straps it to his arm, the cuff's far side
+ * hatched. The hand is the accent.
+ */
+const GOLDEN_HAND: Stroke[] = [
+  {
+    d: 'M-9 -14 Q-11 -26 -10 -36 Q-11 -44 -8 -45 Q-5 -45 -5 -38 Q-5 -48 -2 -49 Q1 -49 1 -40 Q1 -51 4 -51 Q7 -51 7 -40 Q8 -48 10 -47 Q13 -46 12 -36 L12 -28 L18 -34 Q22 -35 21 -31 L13 -18 Q11 -15 10 -14',
+    role: 'accent',
+  },
+  { d: 'M-5 -38 V-30 M1 -40 V-30 M7 -40 V-30', role: 'soft' },
+  { d: `${ellipse(0, -13, 11, 3.5)} M-11 -13 V-1 M11 -13 V-1` },
+  { d: 'M-11 -1 Q0 4 11 -1 M-11 -7 Q0 -2 11 -7', role: 'soft' },
+  { d: 'M6 -8 l4 -2 M6 -2 l4 -2', role: 'ambient' },
+]
+
+/** The golden hand stood on its cuff on the floor, right of the bench. */
+const HAND_STOOD = moved(GOLDEN_HAND, 'translate(138 150)')
+
+/** A bench drawing moved left to make room for the hand. */
+const BENCH_LEFT = 'translate(-14 0)'
+
 /** A small gold crown seen side on, three points over a plain band. */
 const LITTLE_CROWN =
   'M48 58 L49 46 L54 52 L59 42 L64 52 L69 46 L70 58 Q59 62 48 58'
@@ -918,30 +941,68 @@ export const southRedrawn: Redrawings = {
     },
   ],
   'jaime-lannister': [
-    // The bench bare, the cloak gone and the clasp left on the wood: Tommen
-    // removes him from the Kingsguard in "Blood of My Blood" (episode 56).
-    // The show's alone (in the books he stays Lord Commander); chapter 344
-    // orders it.
-    { episode: 56, chapter: 344, source: 'episode', value: BARE_BENCH },
+    // The cloak on its bench and, beside it, the golden hand stood on its
+    // cuff, the accent moved to the hand: the hand he lost is a new object
+    // once it is made in gold (#1645). Cersei has it made and Qyburn fits it
+    // in "Two Swords" (episode 31); in the books he has an armourer forge
+    // it before he leaves King's Landing, in Jaime III of A Feast for Crows
+    // (chapter 253). The cut itself (episode 23, chapter 165) changes
+    // nothing on the cloak, so it is not drawn.
+    {
+      episode: 31,
+      chapter: 253,
+      value: [
+        ...moved(softened(WHITE_CLOAK.slice(0, 8)), BENCH_LEFT),
+        ...HAND_STOOD,
+        shadow(76, 155, 66),
+      ],
+    },
+    // The bench bare, the cloak gone and the clasp left on the wood, the
+    // golden hand still beside it: Tommen removes him from the Kingsguard
+    // in "Blood of My Blood" (episode 56). The show's alone (in the books
+    // he stays Lord Commander); chapter 344 orders it.
+    {
+      episode: 56,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(softened(BARE_BENCH.slice(0, 6)), BENCH_LEFT),
+        ...HAND_STOOD,
+        shadow(76, 155, 66),
+      ],
+    },
     // The bench broken under fallen stones and the white cloak on the
-    // floor: he dies with Cersei under the Red Keep in "The Bells" (episode
-    // 72). The show's alone; chapter 344 orders it.
+    // floor, the golden hand lying beside them, as Tyrion finds it in the
+    // rubble: he dies with Cersei under the Red Keep in "The Bells"
+    // (episode 72). The show's alone; chapter 344 orders it.
     {
       episode: 72,
       chapter: 344,
       source: 'episode',
       value: [
-        { d: 'M16 146 L120 96 L134 102 L30 152 Z' },
-        { d: 'M124 104 V150 M40 152 l18 -4', role: 'soft' },
-        {
-          d: 'M58 130 L62 112 L84 108 L88 124 Z M94 114 L98 98 L114 96 L116 108 Z',
-        },
-        {
-          d: 'M44 156 Q48 138 70 142 Q86 128 108 138 Q124 132 136 146 Q142 150 140 157 Q92 164 44 156',
-        },
-        { d: 'M60 155 Q68 144 80 146 M94 158 Q100 144 116 142', role: 'soft' },
-        { d: `${circle(74, 148, 4)} M78 148 H84`, role: 'accent' },
-        { d: 'M84 116 l4 -3 M84 124 l4 -3 M112 102 l4 -3', role: 'ambient' },
+        ...moved(
+          [
+            { d: 'M16 146 L120 96 L134 102 L30 152 Z' },
+            { d: 'M124 104 V150 M40 152 l18 -4', role: 'soft' },
+            {
+              d: 'M58 130 L62 112 L84 108 L88 124 Z M94 114 L98 98 L114 96 L116 108 Z',
+            },
+            {
+              d: 'M44 156 Q48 138 70 142 Q86 128 108 138 Q124 132 136 146 Q142 150 140 157 Q92 164 44 156',
+            },
+            {
+              d: 'M60 155 Q68 144 80 146 M94 158 Q100 144 116 142',
+              role: 'soft',
+            },
+            { d: `${circle(74, 148, 4)} M78 148 H84`, role: 'soft' },
+            {
+              d: 'M84 116 l4 -3 M84 124 l4 -3 M112 102 l4 -3',
+              role: 'ambient',
+            },
+          ],
+          'translate(-16 0)',
+        ),
+        ...moved(GOLDEN_HAND, 'translate(122 148) rotate(90) scale(0.7)'),
         FLOOR,
       ],
     },
