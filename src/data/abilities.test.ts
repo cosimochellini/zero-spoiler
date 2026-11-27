@@ -17,15 +17,16 @@ const ARCHIVES: { archive: SeriesArchive; slug: string }[] = [
   { archive: ABILITY_ARCHIVE, slug: 'abilities fixture' },
 ]
 
-/** Every `ability` entry of an archive, with its character's id. */
-function entriesOf(
-  archive: SeriesArchive,
-): {
+/** One `ability` entry, labelled with its character's id. */
+interface AbilityEntry {
   chapter: number | undefined
   episode: number
   label: string
   value: string[]
-}[] {
+}
+
+/** Every `ability` entry of an archive, with its character's id. */
+function entriesOf(archive: SeriesArchive): AbilityEntry[] {
   return archive.timelines.flatMap(({ field, owner, timeline }) =>
     field === 'ability' ?
       timeline.flatMap((entry) =>

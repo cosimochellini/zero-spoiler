@@ -723,10 +723,16 @@ function filed(id: string): Entity {
   return entity
 }
 
+/** A stage's counts: its episode, and its chapter when one is pinned. */
+interface StageCounts {
+  chapter?: number
+  episode: number
+}
+
 /** A stage's count in one unit: its chapter, or its episode. */
 function countIn(
   unit: 'chapter' | 'episode',
-  { chapter = 0, episode }: { chapter?: number; episode: number },
+  { chapter = 0, episode }: StageCounts,
 ): number {
   return unit === 'chapter' ? chapter : episode
 }

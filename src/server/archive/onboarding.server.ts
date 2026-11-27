@@ -1,5 +1,5 @@
 import { orderByMode } from '~/data/order'
-import type { Entity } from '~/data/types'
+import type { Entity, Opened } from '~/data/types'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Gated } from '~/lib/progress/spoiler'
 import type {
@@ -49,7 +49,7 @@ function gateOf(gated: Gated): Gated {
 
 /** A record's dated facts inside East Blue, as steps the dial picks from. */
 export function stepsOf<T, V>(
-  entries: { gate: Gated; value: T }[],
+  entries: Pick<Opened<T>, 'gate' | 'value'>[],
   value: (raw: T) => V,
   r: Reader,
 ): Step<V>[] {

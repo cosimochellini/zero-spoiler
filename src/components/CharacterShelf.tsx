@@ -23,6 +23,16 @@ import type {
 } from '~/lib/view/records'
 import { stickyStyles } from '~/styles/sticky'
 
+export interface CharacterShelfProps {
+  featured: Set<string>
+  /** A shelf under fog past the next one: its count and threshold, no tiles. */
+  folded?: boolean
+  headingId: string
+  needle: string
+  peek: (handle: string) => Promise<CharacterView>
+  section: ShelfView
+}
+
 /**
  * One shelf: its head, then the open tiles and every covered one; folded, the
  * head alone.
@@ -34,15 +44,7 @@ export function CharacterShelf({
   headingId,
   needle,
   peek,
-}: {
-  featured: Set<string>
-  /** A shelf under fog past the next one: its count and threshold, no tiles. */
-  folded?: boolean
-  headingId: string
-  needle: string
-  peek: (handle: string) => Promise<CharacterView>
-  section: ShelfView
-}): null | ReactElement {
+}: CharacterShelfProps): null | ReactElement {
   const shown = matchesIn(section.open, needle)
 
   if (needle !== '' && shown.length === 0 && section.covered.length === 0) {
@@ -76,18 +78,20 @@ export function CharacterShelf({
 // Pinned under the listing's control bar, as the other listings' heads are.
 const SHELF_HEAD = [stickyStyles.bar, stickyStyles.underBar, styles.shelfHead]
 
+interface ShelfHeadProps {
+  arc: Slot<RecordView>
+  count: number
+  headingId: string
+  peek: (handle: string) => Promise<RecordView>
+}
+
 /** The arc's name and threshold; its name stays veiled until it opens. */
 function ShelfHead({
   arc,
   count,
   headingId,
   peek,
-}: {
-  arc: Slot<RecordView>
-  count: number
-  headingId: string
-  peek: (handle: string) => Promise<RecordView>
-}): ReactElement {
+}: ShelfHeadProps): ReactElement {
   const t = useSeriesT()
   const threshold = useThreshold()
 
@@ -138,6 +142,14 @@ function ShelfHead({
   )
 }
 
+interface ShelfTilesProps extends Pick<
+  CharacterShelfProps,
+  'featured' | 'needle' | 'peek'
+> {
+  covered: CoveredRecord[]
+  shown: Match<SearchableCharacter>[]
+}
+
 /** Tile lists are one screen ahead of the viewport; search bypasses the wait. */
 function ShelfTiles({
   shown,
@@ -145,13 +157,7 @@ function ShelfTiles({
   featured,
   needle,
   peek,
-}: {
-  covered: CoveredRecord[]
-  featured: Set<string>
-  needle: string
-  peek: (handle: string) => Promise<CharacterView>
-  shown: Match<SearchableCharacter>[]
-}): ReactElement {
+}: ShelfTilesProps): ReactElement {
   const listRef = useRef<HTMLUListElement>(null)
   const near = useNearViewport(listRef)
   const renderTiles = near || needle !== ''
@@ -178,6 +184,7 @@ function useNearViewport(listRef: RefObject<HTMLUListElement | null>): boolean {
     () => typeof IntersectionObserver === 'undefined',
   )
 
+  // eslint-disable-next-line no-restricted-syntax -- an IntersectionObserver on the shelf
   useEffect(() => {
     const target = listRef.current
     if (near || target === null) {
@@ -201,17 +208,14 @@ function useNearViewport(listRef: RefObject<HTMLUListElement | null>): boolean {
   return near
 }
 
+type ShelfTileEntriesProps = Omit<ShelfTilesProps, 'needle'>
+
 function ShelfTileEntries({
   shown,
   covered,
   featured,
   peek,
-}: {
-  covered: CoveredRecord[]
-  featured: Set<string>
-  peek: (handle: string) => Promise<CharacterView>
-  shown: Match<SearchableCharacter>[]
-}): ReactElement {
+}: ShelfTileEntriesProps): ReactElement {
   return (
     <>
       {shown.map(({ entry, match }) => {
@@ -239,7 +243,13 @@ function ShelfTileEntries({
   )
 }
 
-function ShelfTilePlaceholders({ count }: { count: number }): ReactElement {
+interface ShelfTilePlaceholdersProps {
+  count: number
+}
+
+function ShelfTilePlaceholders({
+  count,
+}: ShelfTilePlaceholdersProps): ReactElement {
   return (
     <>
       {Array.from({ length: count }, (_, index) => {

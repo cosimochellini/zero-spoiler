@@ -127,10 +127,13 @@ function names(entry: Dated<unknown>, record: Entity): boolean {
   ].some((name) => text.includes(name))
 }
 
+/** A dated entry a reader opens, with the chapter of its gate. */
+interface OpenedCase extends DatedCase {
+  chapter: number
+}
+
 /** Every entry a reader opens, with its gate, labelled. */
-function openedCases(
-  archive: SeriesArchive,
-): (DatedCase & { chapter: number })[] {
+function openedCases(archive: SeriesArchive): OpenedCase[] {
   return archive.timelines.flatMap(({ field, owner }) => {
     return archive
       .datedOf(owner, field)
@@ -143,6 +146,11 @@ function openedCases(
   })
 }
 
+interface OpeningOfResult {
+  gate: number
+  opens: number | undefined
+}
+
 /**
  * Where a medium's reader first meets a status timeline, and the record's
  * gate in that medium's unit; `undefined` when the record is not told in it.
@@ -153,7 +161,7 @@ function openingOf(
   character: Entity,
   timeline: Timeline<unknown>,
   source: Source,
-): undefined | { gate: number; opens: number | undefined } {
+): OpeningOfResult | undefined {
   if (!toldIn(character, source)) {
     return undefined
   }
@@ -185,10 +193,15 @@ function unanchoredLeaks(archive: SeriesArchive): string[] {
   })
 }
 
+/** An origin entry that links a place, labelled with its character. */
+interface LinkedOrigin {
+  chapter: number | undefined
+  label: string
+  place: string
+}
+
 /** Every origin entry that links a place, with the character it is on. */
-function linkedOrigins(
-  archive: SeriesArchive,
-): { chapter: number | undefined; label: string; place: string }[] {
+function linkedOrigins(archive: SeriesArchive): LinkedOrigin[] {
   return archive.characters.flatMap((character) => {
     return (archive.dossierOf(character)?.origin ?? []).flatMap((entry) => {
       return entry.place === undefined ?
@@ -251,10 +264,14 @@ const KIND_FLOORS: Partial<Record<string, (keyof Counts)[]>> = {
   visit: ['visits'],
 }
 
+/** A place and its later visits. */
+interface PlaceVisits {
+  place: Entity
+  visits: Visit[]
+}
+
 /** Every place's later visits, with the place they return to. */
-function visitsOf(
-  archive: SeriesArchive,
-): { place: Entity; visits: Visit[] }[] {
+function visitsOf(archive: SeriesArchive): PlaceVisits[] {
   return archive.places.flatMap((place) => {
     const visits = archive.placeDossierOf(place)?.visits ?? []
 

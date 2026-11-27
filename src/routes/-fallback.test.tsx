@@ -60,7 +60,17 @@ const root = createRootRouteWithContext<{ series: null | Series }>()({
   },
 })
 
-function localeOf({ locale }: { locale: string }): false | { locale: Locale } {
+/** The locale param as the address spells it. */
+interface RawLocaleParams {
+  locale: string
+}
+
+/** The locale param once it is known to name a locale. */
+interface LocaleParams {
+  locale: Locale
+}
+
+function localeOf({ locale }: RawLocaleParams): false | LocaleParams {
   return isLocale(locale) ? { locale } : false
 }
 

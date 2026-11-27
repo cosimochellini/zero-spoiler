@@ -75,6 +75,14 @@ export function CharacterChronicle({
   )
 }
 
+/** The older stories, the button's state, and what a press asks for. */
+interface UseOlderResult {
+  failed: boolean
+  loading: boolean
+  more: (() => void) | undefined
+  older: ChronicleEntry[]
+}
+
 /**
  * The older stories the reader asked for, and the button's state. They belong
  * to the chronicle they were asked for: a moved bookmark brings a new one, and
@@ -83,12 +91,7 @@ export function CharacterChronicle({
 function useOlder(
   chronicle: Chronicle,
   loadRest: CharacterChronicleProps['loadRest'],
-): {
-  failed: boolean
-  loading: boolean
-  more: (() => void) | undefined
-  older: ChronicleEntry[]
-} {
+): UseOlderResult {
   const [loaded, setLoaded] = useState<null | {
     entries: ChronicleEntry[]
     of: Chronicle
@@ -116,16 +119,13 @@ function useOlder(
   }
 }
 
-/** The button under the ledger, and what went wrong if it did. */
-function ShowMore({
-  failed,
-  loading,
-  onClick,
-}: {
-  failed: boolean
-  loading: boolean
+/** The button's state, and what a press calls. */
+interface ShowMoreProps extends Pick<UseOlderResult, 'failed' | 'loading'> {
   onClick: () => void
-}): ReactElement {
+}
+
+/** The button under the ledger, and what went wrong if it did. */
+function ShowMore({ failed, loading, onClick }: ShowMoreProps): ReactElement {
   const t = useT()
 
   return (
@@ -149,8 +149,13 @@ function ShowMore({
   )
 }
 
+/** The story a row draws. */
+interface StoryRowProps {
+  entry: ChronicleEntry
+}
+
 /** One story: the mark in the reader's unit, the title, the paragraph. */
-function StoryRow({ entry }: { entry: ChronicleEntry }): ReactElement {
+function StoryRow({ entry }: StoryRowProps): ReactElement {
   const threshold = useThreshold()
 
   return (
@@ -166,6 +171,11 @@ function StoryRow({ entry }: { entry: ChronicleEntry }): ReactElement {
   )
 }
 
+/** The paragraph, cut into words and names. */
+export interface ProseProps {
+  segments: ProseSegment[]
+}
+
 /**
  * A paragraph cut into words and names. A name is a link to the character's
  * own page, which is always one the reader may open: the server only builds
@@ -173,11 +183,7 @@ function StoryRow({ entry }: { entry: ChronicleEntry }): ReactElement {
  * character filed no later than its own episode. The home page sets its
  * stories in the same prose.
  */
-export function Prose({
-  segments,
-}: {
-  segments: ProseSegment[]
-}): ReactElement {
+export function Prose({ segments }: ProseProps): ReactElement {
   const { series, locale } = useSeriesParams()
 
   return (
@@ -198,14 +204,18 @@ export function Prose({
   )
 }
 
+/** A segment, and the key it is drawn under. */
+interface KeyedSegment {
+  key: string
+  segment: ProseSegment
+}
+
 /**
  * Segments have no identity of their own, so each is keyed by where in the
  * paragraph it starts: stable for as long as the paragraph is, and the
  * paragraph is only ever replaced whole with the story it belongs to.
  */
-function keyed(
-  segments: ProseSegment[],
-): { key: string; segment: ProseSegment }[] {
+function keyed(segments: ProseSegment[]): KeyedSegment[] {
   let offset = 0
 
   return segments.map((segment) => {

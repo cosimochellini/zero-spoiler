@@ -3,6 +3,13 @@ import type { Bookmark } from '~/lib/progress/episode'
 import type { Payload } from '~/server/archive/payloads.server'
 import { ownBookmark, pointOf } from '~/server/archive/reader.server'
 
+/** One ask of a payload: the bookmark, the key and the payload's sweep rule. */
+export interface HeldToOptions {
+  bookmark: Bookmark
+  key: string
+  payload: Pick<Payload, 'drawnAt'>
+}
+
 /**
  * The bookmarks a payload asked for at this one is held to. A page drawn for
  * a reader with no bookmark at a point (`Payload.drawnAt`, #1430) must name
@@ -14,11 +21,7 @@ import { ownBookmark, pointOf } from '~/server/archive/reader.server'
  */
 export function heldTo(
   archive: SeriesArchive,
-  {
-    bookmark,
-    key,
-    payload,
-  }: { bookmark: Bookmark; key: string; payload: Pick<Payload, 'drawnAt'> },
+  { bookmark, key, payload }: HeldToOptions,
 ): Bookmark[] {
   if (!sweptInFull(payload, bookmark)) {
     return [bookmark]

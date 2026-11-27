@@ -168,7 +168,7 @@ function stands(body: PowerBody, r: Reader): boolean {
 }
 
 /** A chain's or a crew's name, which its seat titles do not say. */
-function nameIfUntold(body: PowerBody, r: Reader): { body?: string } {
+function nameIfUntold(body: PowerBody, r: Reader): Pick<SeatLink, 'body'> {
   return body.kind === 'council' ? {} : { body: labelOf(body, r) }
 }
 

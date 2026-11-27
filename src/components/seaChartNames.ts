@@ -170,6 +170,11 @@ interface Claims {
   placed: Placed[]
 }
 
+export interface NamesOfResult {
+  sagaNames: SagaName[]
+  stopNames: StopName[]
+}
+
 /**
  * Every name on the chart and the scale it shows from. They claim room in
  * order: the reader's own label (`Here`), the first stop of each saga, the
@@ -179,7 +184,7 @@ export function namesOf(
   open: StopView[],
   here: null | StopView,
   sagas: SagaPick[],
-): { sagaNames: SagaName[]; stopNames: StopName[] } {
+): NamesOfResult {
   const claims = {
     here,
     ordered: claimOrder(open, here),

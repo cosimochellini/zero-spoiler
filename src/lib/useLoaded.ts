@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react'
 export function useLoaded<T>(ask: () => Promise<T>): null | T {
   const [answer, setAnswer] = useState<null | T>(null)
 
+  // eslint-disable-next-line no-restricted-syntax -- the network call `ask` makes
   useEffect(() => {
     let live = true
     const settle = async (): Promise<void> => {

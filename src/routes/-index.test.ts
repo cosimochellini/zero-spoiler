@@ -4,10 +4,14 @@ import { negotiateLocale } from '~/i18n/negotiate'
 
 import { Route } from '.'
 
+/** The request headers `readPreferredLocale` reads. */
+interface LocaleHeaders {
+  acceptLanguage: string
+  cookie?: string
+}
+
 // The request's own headers, as `readPreferredLocale` reads them on the server.
-const request = vi.hoisted((): { acceptLanguage: string; cookie?: string } => ({
-  acceptLanguage: '',
-}))
+const request = vi.hoisted((): LocaleHeaders => ({ acceptLanguage: '' }))
 
 vi.mock(import('~/i18n/readLocale'), () => ({
   readPreferredLocale: () =>

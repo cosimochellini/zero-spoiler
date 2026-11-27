@@ -133,7 +133,7 @@ export function scalesOf(
     box: DOT_BOX,
     drawn: project(dot, orientation),
   }))
-  const placed: { from: number; name: Obstacle }[] = []
+  const placed: PlacedName[] = []
   for (const name of names) {
     const { x, y } = name.spot.at
     const others = marks.filter((mark) => mark.at.x !== x || mark.at.y !== y)
@@ -146,17 +146,23 @@ export function scalesOf(
 /** The scales tried, the closest zoom first. */
 const DOWNWARD = SCALES.toReversed()
 
+/** A name already placed, and the least scale it is shown from. */
+interface PlacedName {
+  from: number
+  name: Obstacle
+}
+
+/** The other stops' dots, and the names placed before this one. */
+interface LeastForOptions {
+  others: Obstacle[]
+  placed: PlacedName[]
+}
+
 /**
  * The least scale one name stands clear from: the step past its last clash
  * with another stop's dot or a name before it, shown there.
  */
-function leastFor(
-  name: Obstacle,
-  {
-    others,
-    placed,
-  }: { others: Obstacle[]; placed: { from: number; name: Obstacle }[] },
-): number {
+function leastFor(name: Obstacle, { others, placed }: LeastForOptions): number {
   for (const scale of DOWNWARD) {
     const clash =
       others.some((dot) => overlapAt(name, dot, scale))

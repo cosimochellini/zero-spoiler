@@ -104,18 +104,18 @@ const MARKER_AT = {
   chapter: styles.markerAt2,
 } as const
 
+/** The unit picked, and what picking another calls. */
+interface ModeChooserProps {
+  mode: BookmarkMode
+  onChoose: (mode: BookmarkMode) => void
+}
+
 /**
  * The three units as a segmented control: three radios, each drawn by the
  * label beside it, so the keyboard and the screen reader get a real radio
  * group and the eye gets one track with a marker that slides to the choice.
  */
-function ModeChooser({
-  mode,
-  onChoose,
-}: {
-  mode: BookmarkMode
-  onChoose: (mode: BookmarkMode) => void
-}): ReactElement {
+function ModeChooser({ mode, onChoose }: ModeChooserProps): ReactElement {
   const t = useT()
   const groupId = useId()
   const series = useBookmarkSeries()
@@ -170,6 +170,21 @@ function ModeChooser({
   )
 }
 
+/** One season or book in the picker: its number and how it reads. */
+interface GroupOption {
+  number: number
+  words: string
+}
+
+/** The picker's words, its options, and the group picked. */
+interface GroupPickerProps {
+  label: TranslationKey
+  onChoose: (group: string) => void
+  options: GroupOption[]
+  placeholder: TranslationKey
+  value: string
+}
+
 /**
  * The season or the book, as a `<select>` with an empty first option:
  * nothing is assumed. Each option is its number and how it reads.
@@ -180,13 +195,7 @@ function GroupPicker({
   options,
   placeholder,
   value,
-}: {
-  label: TranslationKey
-  onChoose: (group: string) => void
-  options: { number: number; words: string }[]
-  placeholder: TranslationKey
-  value: string
-}): ReactElement {
+}: GroupPickerProps): ReactElement {
   const t = useT()
   const id = useId()
 
@@ -307,20 +316,19 @@ export function NumberField({
   )
 }
 
+/** The draft the hint is about, the error if any, and the line's id. */
+interface FieldMessageProps {
+  draft: Draft
+  error: null | TranslationKey
+  id: string
+}
+
 /**
  * One slot for both the hint and the error, reserving a line of text so the
  * layout does not jump the first time a message appears. `role=alert` is
  * withheld until there is something to announce.
  */
-function FieldMessage({
-  draft,
-  error,
-  id,
-}: {
-  draft: Draft
-  error: null | TranslationKey
-  id: string
-}): ReactElement {
+function FieldMessage({ draft, error, id }: FieldMessageProps): ReactElement {
   const t = useT()
   const series = useBookmarkSeries()
   const { ceiling } = stepperOf(draft, series)

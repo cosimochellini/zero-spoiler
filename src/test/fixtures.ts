@@ -1,4 +1,5 @@
 import { SEA_LABELS } from '~/i18n/dictionaries/one-piece/seas'
+import type { Gated } from '~/lib/progress/spoiler'
 import { foldName } from '~/lib/search/fold'
 import type { AbilityView } from '~/lib/view/abilities'
 import { regionsFor } from '~/lib/view/chart'
@@ -55,10 +56,9 @@ export function drawing(tint: TintId = 'orange'): Drawing {
 }
 
 /** A record filed at the same number in both units, which most tests want. */
-export function at(episode: number): {
-  revealedAtChapter: number
-  revealedAtEpisode: number
-} {
+export function at(
+  episode: number,
+): Pick<Gated, 'revealedAtChapter' | 'revealedAtEpisode'> {
   return { revealedAtEpisode: episode, revealedAtChapter: episode }
 }
 
@@ -227,7 +227,7 @@ export function stop(over: Partial<StopView> = {}): StopView {
  * Piece's places page sends them (`seas`).
  */
 export function seasOf(
-  stops: { sea: string }[],
+  stops: Pick<StopView, 'sea'>[],
 ): Partial<Record<string, string>> {
   const names: Partial<Record<string, string>> = SEA_LABELS.en
 
@@ -280,9 +280,7 @@ export function shelf(over: Partial<ShelfView> = {}): ShelfView {
   }
 }
 
-export function facts(
-  over: Partial<Extract<CharacterFacts, { mode: 'facts' }>> = {},
-): CharacterFacts {
+export function facts(over: Partial<CharacterFacts> = {}): CharacterFacts {
   return { mode: 'facts', ...over }
 }
 
@@ -350,14 +348,16 @@ export function peekFails<T>(): (handle: string) => Promise<T> {
   return refused
 }
 
+export interface SpyPeek<T> {
+  asked: string[]
+  peek: (handle: string) => Promise<T>
+}
+
 /**
  * Records the handles it was asked for, so a test can hold that a component
  * passes the opaque handle through untouched and never invents one.
  */
-export function spyPeek<T>(value: T): {
-  asked: string[]
-  peek: (handle: string) => Promise<T>
-} {
+export function spyPeek<T>(value: T): SpyPeek<T> {
   const asked: string[] = []
   const settle = peekTo(value)
 

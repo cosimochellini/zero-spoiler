@@ -112,10 +112,14 @@ const SWEEPS: Partial<Record<string, Sweep>> = Object.fromEntries(
 
 const alphabetically = (a: string, b: string): number => a.localeCompare(b)
 
+/** One bookmark of a sweep, in one locale. */
+interface Ask {
+  bookmark: Bookmark
+  locale: Locale
+}
+
 /** Every bookmark of a series' sweep, in every locale. */
-const asksOf = ({
-  bookmarks,
-}: ListedSeries): { bookmark: Bookmark; locale: Locale }[] =>
+const asksOf = ({ bookmarks }: ListedSeries): Ask[] =>
   bookmarks.flatMap((bookmark) =>
     LOCALES.map((locale) => ({ bookmark, locale })),
   )
@@ -140,10 +144,15 @@ function sampled(keys: string[] | undefined, at: number): string[] {
     : keys.filter((_, index) => (index + at) % STRIDE === 0)
 }
 
+interface KeysAtOptions {
+  at: number
+  bookmark: Bookmark
+}
+
 /** The keys a payload is asked for at one ask: a sample, or all of them. */
 function keysAt(
   payload: Pick<Payload, 'drawnAt' | 'keys'>,
-  { at, bookmark }: { at: number; bookmark: Bookmark },
+  { at, bookmark }: KeysAtOptions,
 ): string[] {
   const all = payload.keys?.()
   return sweptInFull(payload, bookmark) ? (all ?? ['']) : sampled(all, at)
@@ -438,15 +447,17 @@ function factionOf(slug: string, locale: Locale): Map<string, string> {
  */
 const AFFILIATION_PROSE = new Set(['loadCharacter', 'loadHome', 'loadTour'])
 
+interface EarlyLabelsOptions {
+  groups: Set<null | string>
+  locale: Locale
+  name: string
+  slug: string
+}
+
 /** The factions a payload labels whose group the album has not sent. */
 function earlyLabels(
   payload: unknown,
-  {
-    groups,
-    locale,
-    name,
-    slug,
-  }: { groups: Set<null | string>; locale: Locale; name: string; slug: string },
+  { groups, locale, name, slug }: EarlyLabelsOptions,
 ): string[] {
   const skip = AFFILIATION_PROSE.has(name) ? 'affiliation' : undefined
   const labels = factionOf(slug, locale)
@@ -526,6 +537,11 @@ const groupedOf = (series: ListedSeries): Grouped[] =>
     groupedAt(series, bookmark, locale),
   )
 
+interface WithoutSeatsResult {
+  page: unknown
+  seats: SeatLink[]
+}
+
 /**
  * A character page as `loadCharacter` sends it, its seats taken out of the
  * facts, and the bodies those seats name: the one place on the page a body's
@@ -534,7 +550,7 @@ const groupedOf = (series: ListedSeries): Grouped[] =>
 function withoutSeats(
   { bookmark, locale, series }: Grouped,
   id: string,
-): { page: unknown; seats: SeatLink[] } {
+): WithoutSeatsResult {
   const page = characterPage(
     id,
     pageReader(series.archive, bookmark, { id, locale }),
@@ -561,11 +577,17 @@ function earlyAt(payload: Payload, asked: Grouped, key: string): string[] {
   )
 }
 
+/** The ask a page is sent at, and the ask whose groups it is read against. */
+interface GroupedPair {
+  asked: Grouped
+  held: Grouped
+}
+
 /** `earlyAt`, the page sent at one ask and read against another's groups. */
 function earlyAgainst(
   { name, run }: Payload,
   key: string,
-  { asked, held }: { asked: Grouped; held: Grouped },
+  { asked, held }: GroupedPair,
 ): string[] {
   const { bookmark, locale, series } = asked
   const { slug } = series

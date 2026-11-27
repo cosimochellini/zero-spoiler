@@ -266,8 +266,13 @@ function citesNone(hosts: Set<string>, wanted: string[]): boolean {
   return wanted.every((host) => !hosts.has(host))
 }
 
+/** A snapshot of a timeline, by the one source that alone tells it. */
+interface Told {
+  source?: Source
+}
+
 /** The units in which some snapshot of a timeline is told. */
-function toldUnits(timeline: { source?: Source }[]): Source[] {
+function toldUnits(timeline: Told[]): Source[] {
   const units: Source[] = ['episode', 'chapter']
 
   return units.filter((unit) => timeline.some((entry) => toldIn(entry, unit)))
@@ -293,6 +298,13 @@ describe('the wiki revisions the provenance files cite', () => {
     ).toStrictEqual([])
   })
 })
+
+/** A cited revision a ledger leaves unpinned, and why. */
+interface Unpinned {
+  file: string
+  href: string
+  why: string
+}
 
 describe.each(PROVENANCE)(
   '$name relationship provenance',
@@ -426,10 +438,7 @@ describe.each(PROVENANCE)(
           href,
           why: unpinnedBecause(url),
         }))
-        .filter(
-          (entry): entry is { file: string; href: string; why: string } =>
-            entry.why !== undefined,
-        )
+        .filter((entry): entry is Unpinned => entry.why !== undefined)
         .map(({ file, href, why }) => `${file}: ${href} (${why})`)
 
       expect(unpinned).toStrictEqual([])

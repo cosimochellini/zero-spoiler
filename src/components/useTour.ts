@@ -21,6 +21,7 @@ export function useTour(
   const key = `${series}:${locale}`
   const [loaded, setLoaded] = useState<Partial<Record<string, TourView>>>({})
 
+  // eslint-disable-next-line no-restricted-syntax -- fetches the series' tour from the server.
   useEffect(() => {
     let live = true
     async function fetchTour(): Promise<void> {

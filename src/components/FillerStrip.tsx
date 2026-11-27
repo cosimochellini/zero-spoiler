@@ -81,18 +81,15 @@ function countOf(marks: FillerMark[], kind: FillerKind): number {
   return marks.filter((mark) => mark.kind === kind).length
 }
 
-/** One row of cells, from `first` to `last`. */
-function StripRow({
-  first,
-  last,
-  here,
-  kinds,
-}: {
+/** A row's first and last episode, the kinds by episode, and the reader's. */
+interface StripRowProps extends Pick<FillerStripProps, 'here'> {
   first: number
-  here: null | number
   kinds: Map<number, FillerKind>
   last: number
-}): ReactElement {
+}
+
+/** One row of cells, from `first` to `last`. */
+function StripRow({ first, last, here, kinds }: StripRowProps): ReactElement {
   const episodes = Array.from(
     { length: last - first + 1 },
     (_, at) => first + at,
@@ -129,12 +126,13 @@ function StripRow({
   )
 }
 
-/** The key under the strip: one swatch per kind of cell. */
-export function FillerLegend({
-  hasBookmark,
-}: {
+/** Whether the key names the reader's cell. */
+export interface FillerLegendProps {
   hasBookmark: boolean
-}): ReactElement {
+}
+
+/** The key under the strip: one swatch per kind of cell. */
+export function FillerLegend({ hasBookmark }: FillerLegendProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const items = [
     { label: t('filler.kind.filler'), swatch: styles.swatchFiller },

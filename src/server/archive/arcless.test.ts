@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { castOf } from '~/data/shelves'
 import { sweepOf } from '~/data/sweep'
-import type { Entity, Saga, SeriesArchive } from '~/data/types'
+import type { Entity, LocalizedText, Saga, SeriesArchive } from '~/data/types'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Source } from '~/lib/progress/spoiler'
 import { OP_ARCHIVE } from '~/test/archive'
@@ -18,7 +18,7 @@ import { sagaLabels, sagaStarts } from './sagaLabels.server'
  * page and in the saga dialog under its own heading.
  */
 
-const text = (en: string): { en: string; it: string } => ({ en, it: en })
+const text = (en: string): LocalizedText => ({ en, it: en })
 
 function record(
   id: string,

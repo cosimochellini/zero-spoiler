@@ -14,16 +14,17 @@ vi.mock(import('~/server/series'), async (importOriginal) => {
   }
 })
 
+/** A route, as far as these tests read it: its options, untyped. */
+interface OptionedRoute {
+  options: object
+}
+
 /** One option of a route, reached through `unknown`: the typed ones want a whole router context. */
-function option(route: { options: object }, name: string): unknown {
+function option(route: OptionedRoute, name: string): unknown {
   return Reflect.get(route.options, name)
 }
 
-function call(
-  route: { options: object },
-  name: string,
-  input: object,
-): unknown {
+function call(route: OptionedRoute, name: string, input: object): unknown {
   const handler = option(route, name)
   if (typeof handler !== 'function') {
     throw new TypeError(`the route has no ${name}`)
@@ -32,7 +33,7 @@ function call(
 }
 
 /** What a route's guard throws: the redirect, as the router would catch it. */
-function thrownBy(route: { options: object }, input: object): unknown {
+function thrownBy(route: OptionedRoute, input: object): unknown {
   try {
     call(route, 'beforeLoad', input)
   } catch (error) {

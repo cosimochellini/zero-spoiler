@@ -75,6 +75,14 @@ export function GridView({
   )
 }
 
+interface GridCardProps {
+  at: DialPoint
+  card: TourCard
+  dim: boolean
+  onOpen: (() => void) | null
+  opened: boolean
+}
+
 /** A card in the grid: open with its drawing and name, or under fog. */
 function GridCard({
   at,
@@ -82,13 +90,7 @@ function GridCard({
   dim,
   onOpen,
   opened,
-}: {
-  at: DialPoint
-  card: TourCard
-  dim: boolean
-  onOpen: (() => void) | null
-  opened: boolean
-}): ReactElement {
+}: GridCardProps): ReactElement {
   const t = useT()
   if (opened || dialSees(at, card)) {
     return (
@@ -121,18 +123,10 @@ function GridCard({
   )
 }
 
+type OpenCardProps = Omit<GridCardProps, 'onOpen'>
+
 /** An open card: its drawing at the point, its name, and if opened by hand, so. */
-function OpenCard({
-  at,
-  card,
-  dim,
-  opened,
-}: {
-  at: DialPoint
-  card: TourCard
-  dim: boolean
-  opened: boolean
-}): ReactElement {
+function OpenCard({ at, card, dim, opened }: OpenCardProps): ReactElement {
   const t = useT()
 
   return (
@@ -270,8 +264,10 @@ export function BondsView({ at, tour }: ViewProps): ReactElement {
   )
 }
 
+type OwnerProps = Pick<GridCardProps, 'at' | 'card'>
+
 /** Whose list it is: named once the point reaches them, under fog before. */
-function Owner({ at, card }: { at: DialPoint; card: TourCard }): ReactElement {
+function Owner({ at, card }: OwnerProps): ReactElement {
   const t = useT()
   const open = dialSees(at, card)
 
@@ -289,8 +285,12 @@ function Owner({ at, card }: { at: DialPoint; card: TourCard }): ReactElement {
   )
 }
 
+interface CoveredChipProps {
+  covered: CoveredRecord
+}
+
 /** A record past the demo: "Entry under fog" and where it opens. */
-function CoveredChip({ covered }: { covered: CoveredRecord }): ReactElement {
+function CoveredChip({ covered }: CoveredChipProps): ReactElement {
   const t = useT()
 
   return (
@@ -319,8 +319,12 @@ function focusOpened(id: string): void {
   })
 }
 
+interface CrestProps {
+  visual: Drawing | undefined
+}
+
 /** A record's drawing in its seal, or the bare seal with none to draw. */
-function Crest({ visual }: { visual: Drawing | undefined }): ReactElement {
+function Crest({ visual }: CrestProps): ReactElement {
   return visual === undefined ?
       <CharacterCrest />
     : <CharacterCrest visual={visual} />

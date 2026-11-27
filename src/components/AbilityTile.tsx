@@ -13,6 +13,14 @@ const SERIES = 'hunter-x-hunter'
 /** How wide a covered tile's number is printed. `01`, never `1`. */
 const NUMBER_WIDTH = 2
 
+/** An open ability, and what the search found in it. */
+export interface AbilityTileProps {
+  highlight: [number, number] | null
+  /** The folded query, which picks the user the tile shows. */
+  needle: string
+  record: AbilityView
+}
+
 /**
  * An open ability's tile: the drawing and the name as one link to its page,
  * the user the search found (or the first), and its Nen type at the foot,
@@ -22,12 +30,7 @@ export function AbilityTile({
   highlight,
   needle,
   record,
-}: {
-  highlight: [number, number] | null
-  /** The folded query, which picks the user the tile shows. */
-  needle: string
-  record: AbilityView
-}): ReactElement {
+}: AbilityTileProps): ReactElement {
   const t = useSeriesOnlyT(SERIES)
 
   return (
@@ -51,6 +54,14 @@ export function AbilityTile({
   )
 }
 
+/** A covered ability, its place in the band, and how to peek at it. */
+export interface FoggedAbilityTileProps {
+  covered: CoveredRecord
+  /** Zero-based within the fog band; printed plus one. */
+  index: number
+  peek: (handle: string) => Promise<AbilityView>
+}
+
 /**
  * A covered ability's tile: a number and the episode it is first shown in,
  * and no Nen type, so the fog says nothing a covered record may not.
@@ -59,12 +70,7 @@ export function FoggedAbilityTile({
   covered,
   index,
   peek,
-}: {
-  covered: CoveredRecord
-  /** Zero-based within the fog band; printed plus one. */
-  index: number
-  peek: (handle: string) => Promise<AbilityView>
-}): ReactElement {
+}: FoggedAbilityTileProps): ReactElement {
   const t = useSeriesOnlyT(SERIES)
   const threshold = onlyUnder(useThreshold(SERIES), SERIES)
 

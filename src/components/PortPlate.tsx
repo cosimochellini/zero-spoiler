@@ -16,12 +16,16 @@ import { emblemStyles } from '~/components/emblem.styles'
 import { useDrawing } from '~/lib/view/drawings'
 import type { Drawing, RecordView } from '~/lib/view/records'
 
+interface FrameProps {
+  hue: null | string
+}
+
 /**
  * The plate itself: the border, the dashed inner rule, the graticule, the
  * corner ticks and the north mark. The port's own hue tints the border, the
  * corners and the mark; everything else is the second ink.
  */
-function Frame({ hue }: { hue: null | string }): ReactElement {
+function Frame({ hue }: FrameProps): ReactElement {
   return (
     <>
       <path
@@ -65,6 +69,11 @@ function Frame({ hue }: { hue: null | string }): ReactElement {
   )
 }
 
+export interface PortPlateProps {
+  ref?: RefCallback<Element>
+  visual?: Drawing
+}
+
 /**
  * A place's plate: the drawing that stands for it, set inside a chart frame.
  *
@@ -85,13 +94,7 @@ function Frame({ hue }: { hue: null | string }): ReactElement {
  * nothing in the middle. That is what stands in for a fogged place, so the
  * served HTML carries neither its drawing nor its colour.
  */
-export function PortPlate({
-  ref,
-  visual,
-}: {
-  ref?: RefCallback<Element>
-  visual?: Drawing
-}): ReactElement {
+export function PortPlate({ ref, visual }: PortPlateProps): ReactElement {
   const hue = visual === undefined ? null : tintOf(visual.tint)
 
   return (
@@ -120,8 +123,12 @@ export function PortPlate({
   )
 }
 
+export interface OpenPortPlateProps {
+  port: RecordView
+}
+
 /** An open place's plate, its strokes asked for once near the screen. */
-export function OpenPortPlate({ port }: { port: RecordView }): ReactElement {
+export function OpenPortPlate({ port }: OpenPortPlateProps): ReactElement {
   const { ref, strokes } = useDrawing(port.id, port.visual)
 
   return (

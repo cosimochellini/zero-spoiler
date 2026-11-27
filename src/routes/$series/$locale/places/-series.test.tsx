@@ -65,7 +65,11 @@ const onRoute = {
   series: OTHER_BOOKMARK,
 }
 
-function Index({ stops }: { stops: StopView[] }): ReactElement {
+interface IndexProps {
+  stops: StopView[]
+}
+
+function Index({ stops }: IndexProps): ReactElement {
   const { needle, onParams, params, shown } = usePlacePicks(stops)
 
   return (

@@ -22,6 +22,10 @@ export interface HubProps {
   series: HubSeries[]
 }
 
+export interface SeriesHubProps extends HubProps {
+  load: LoadTour
+}
+
 /**
  * The hub (the "Stage" direction, owner 2026-10-24): the house lights
  * are down, as on every page with no series, and each series is a stage in
@@ -42,7 +46,7 @@ export function SeriesHub({
   coming,
   load,
   series,
-}: HubProps & { load: LoadTour }): ReactElement {
+}: SeriesHubProps): ReactElement {
   return (
     <main
       id="content"

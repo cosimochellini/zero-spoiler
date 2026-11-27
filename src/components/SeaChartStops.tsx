@@ -76,6 +76,13 @@ function useRoving(
   })
 }
 
+interface UseTargetsOptions {
+  count: number
+  onReach: (index: number) => void
+  start: number
+  trigger: (target: PeekTarget, link: boolean) => PeekTrigger
+}
+
 /**
  * Each stop's target: one tab stop for the lot (`useRoving`) and the peek's
  * handlers, both listening for the focus.
@@ -85,12 +92,11 @@ function useTargets({
   onReach,
   start,
   trigger,
-}: {
-  count: number
-  onReach: (index: number) => void
-  start: number
-  trigger: (target: PeekTarget, link: boolean) => PeekTrigger
-}): (index: number, label: string, link?: boolean) => Target {
+}: UseTargetsOptions): (
+  index: number,
+  label: string,
+  link?: boolean,
+) => Target {
   const roving = useRoving(count, start)
 
   return (index, label, link = false) => {
@@ -110,6 +116,14 @@ function useTargets({
   }
 }
 
+export interface SeaChartStopsProps {
+  model: ChartModel
+  /** Brings a stop the focus reaches into the window, when it zooms. */
+  onReach?: ((point: Point) => void) | undefined
+  orientation: Orientation
+  trigger: (target: PeekTarget, link: boolean) => PeekTrigger
+}
+
 /**
  * The stops, in route order: a link to its page for an open one, a button
  * that says its number and episode for one under fog. One tab stop for the
@@ -123,13 +137,7 @@ export function SeaChartStops({
   onReach,
   orientation,
   trigger,
-}: {
-  model: ChartModel
-  /** Brings a stop the focus reaches into the window, when it zooms. */
-  onReach?: ((point: Point) => void) | undefined
-  orientation: Orientation
-  trigger: (target: PeekTarget, link: boolean) => PeekTrigger
-}): ReactElement {
+}: SeaChartStopsProps): ReactElement {
   const t = useT()
   const { open, total } = model
   const target = useTargets({
@@ -175,6 +183,13 @@ function stopPoint(model: ChartModel, index: number): Point {
     : pointOf(port)
 }
 
+interface OpenStopsProps {
+  model: ChartModel
+  orientation: Orientation
+  stage: (index: number) => string
+  target: (index: number, label: string, link?: boolean) => Target
+}
+
 /**
  * The open stops, each a link to its page with its dot in its saga's hue;
  * the reader's own marked as where they are.
@@ -184,12 +199,7 @@ function OpenStops({
   orientation,
   stage,
   target,
-}: {
-  model: ChartModel
-  orientation: Orientation
-  stage: (index: number) => string
-  target: (index: number, label: string, link?: boolean) => Target
-}): ReactElement {
+}: OpenStopsProps): ReactElement {
   const { series, locale } = useSeriesParams()
   const { here, lit, open } = model
 
@@ -223,6 +233,15 @@ function OpenStops({
   )
 }
 
+interface FogStopsProps {
+  dim: boolean
+  from: number
+  model: ChartModel
+  orientation: Orientation
+  stage: (index: number) => string
+  target: (index: number, label: string) => Target
+}
+
 /**
  * The stops under fog, numbered on from the open ones: each a button that
  * says its number and episode and opens the veiled peek, its dot on the
@@ -236,14 +255,7 @@ function FogStops({
   orientation,
   stage,
   target,
-}: {
-  dim: boolean
-  from: number
-  model: ChartModel
-  orientation: Orientation
-  stage: (index: number) => string
-  target: (index: number, label: string) => Target
-}): ReactElement {
+}: FogStopsProps): ReactElement {
   const t = useT()
   const threshold = useThreshold()
 
@@ -299,22 +311,19 @@ const PILE: Record<string, stylex.StyleXStyles> = {
   false: styles.stopOpen,
 }
 
+interface OpenDotProps {
+  dim: boolean
+  here: boolean
+  seen: boolean
+  tint: TintId
+}
+
 /**
  * An open stop's dot, in its saga's hue; an eye for a place the story only
  * shows; ringed in gold where you are, and faint when the index's picks
  * leave it out.
  */
-function OpenDot({
-  dim,
-  here,
-  seen,
-  tint,
-}: {
-  dim: boolean
-  here: boolean
-  seen: boolean
-  tint: TintId
-}): ReactElement {
+function OpenDot({ dim, here, seen, tint }: OpenDotProps): ReactElement {
   return (
     <span
       {...stylex.props(

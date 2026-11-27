@@ -43,6 +43,7 @@ export function useTourScroll(
   const [active, setActive] = useState(0)
   const [point, setPoint] = useState(1)
 
+  // eslint-disable-next-line no-restricted-syntax -- window scroll and resize listeners, read once a frame.
   useEffect(() => {
     function measure(): void {
       const line = readingLine()
@@ -80,6 +81,7 @@ export function useTourScroll(
 function useNear(ref: RefObject<HTMLElement | null>): boolean {
   const [near, setNear] = useState(false)
 
+  // eslint-disable-next-line no-restricted-syntax -- an IntersectionObserver on the tour's section.
   useEffect(() => {
     const target = ref.current
     // With no observer (jsdom, an old browser) the words stand alone.

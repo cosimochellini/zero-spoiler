@@ -8,6 +8,18 @@ import { useBookmark, useThreshold } from '~/lib/progress/BookmarkContext'
 import type { RecordView, Slot } from '~/lib/view/records'
 import { space } from '~/styles/tokens.stylex'
 
+export interface VisitorBannerProps {
+  /**
+   * A list with no row open at the end of the demo (#1432): the banner says
+   * so rather than that the start of the story is open on it.
+   */
+  nothingOpen?: boolean
+  /** The record page's own record, as the banner names it; none on a list. */
+  slot?: Slot<
+    Pick<RecordView, 'name' | 'revealedAtChapter' | 'revealedAtEpisode'>
+  >
+}
+
 /**
  * What a page drawn for a reader with no bookmark says about itself (#1430):
  * a record page shows the record as it stands at its first appearance, a list
@@ -24,17 +36,7 @@ import { space } from '~/styles/tokens.stylex'
 export function VisitorBanner({
   nothingOpen = false,
   slot,
-}: {
-  /**
-   * A list with no row open at the end of the demo (#1432): the banner says
-   * so rather than that the start of the story is open on it.
-   */
-  nothingOpen?: boolean
-  /** The record page's own record, as the banner names it; none on a list. */
-  slot?: Slot<
-    Pick<RecordView, 'name' | 'revealedAtChapter' | 'revealedAtEpisode'>
-  >
-}): null | ReactElement {
+}: VisitorBannerProps): null | ReactElement {
   const t = useT()
   const threshold = useThreshold()
   const { bookmark } = useBookmark()

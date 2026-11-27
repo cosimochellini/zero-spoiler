@@ -46,11 +46,14 @@ const MERRY_REPAIRS = {
   chapters: [41, 103, 231, 235, 237, 248, 254],
 }
 
+interface ShipAtResult {
+  drawings: number[]
+  fate: string | undefined
+  ports: string[]
+}
+
 /** A ship's fate and drawings at a bookmark: `null` under fog. */
-function shipAt(
-  id: string,
-  bookmark: Bookmark,
-): null | { drawings: number[]; fate: string | undefined; ports: string[] } {
+function shipAt(id: string, bookmark: Bookmark): null | ShipAtResult {
   const { ship } = shipPageOf(id, bookmark)
   if (!ship.slot.open) {
     return null

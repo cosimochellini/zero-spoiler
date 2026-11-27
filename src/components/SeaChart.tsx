@@ -186,18 +186,17 @@ function Chart({ model, orientation, peekPort }: ChartProps): ReactElement {
   )
 }
 
+interface ClipProps {
+  children: ReactNode
+  world: stylex.StyleXStyles
+}
+
 /**
  * One layer of the world, cut off at the window's edge. It never scrolls: a
  * focus the browser would scroll into view is the window's to show, and a
  * scrolled clip would set its layer off the others.
  */
-function Clip({
-  children,
-  world,
-}: {
-  children: ReactNode
-  world: stylex.StyleXStyles
-}): ReactElement {
+function Clip({ children, world }: ClipProps): ReactElement {
   return (
     <div
       onScroll={(event) => {
@@ -210,16 +209,15 @@ function Clip({
   )
 }
 
-/** The peek of the ship at a mark, if there is one there. */
-function ShipPeekAt({
-  mark,
-  ...frame
-}: {
+interface ShipPeekAtProps {
   mark: ShipMark | undefined
   orientation: Orientation
   peek: PeekProps
   view: Rect
-}): null | ReactElement {
+}
+
+/** The peek of the ship at a mark, if there is one there. */
+function ShipPeekAt({ mark, ...frame }: ShipPeekAtProps): null | ReactElement {
   return mark === undefined ? null : (
       <ShipPeek
         at={mark.at}
@@ -229,19 +227,21 @@ function ShipPeekAt({
     )
 }
 
+interface ShipLayerProps {
+  marks: ShipMark[]
+  /** Brings a ship the focus reaches into the window, when it zooms. */
+  onReach: (point: ShipMark['at']) => void
+  orientation: Orientation
+  trigger: ChartPeek['trigger']
+}
+
 /** The ships on the route, each a button, under the stops where they meet. */
 function ShipLayer({
   marks,
   onReach,
   orientation,
   trigger,
-}: {
-  marks: ShipMark[]
-  /** Brings a ship the focus reaches into the window, when it zooms. */
-  onReach: (point: ShipMark['at']) => void
-  orientation: Orientation
-  trigger: ChartPeek['trigger']
-}): ReactElement {
+}: ShipLayerProps): ReactElement {
   return (
     <div {...stylex.props(styles.layer)}>
       {marks.map((mark, index) => {
@@ -267,18 +267,16 @@ function ShipLayer({
   )
 }
 
-/** The peek of the stop at `index` in the route: open, or under fog. */
-function Peek({
-  index,
-  model,
-  ...rest
-}: Omit<ChartProps, 'model'> & {
+interface RoutePeekProps extends Omit<ChartProps, 'model'> {
   /** The stop whose peek is open; `null` with none. */
   index: null | number
   model: ChartModel
   peek: PeekProps
   view: Rect
-}): null | ReactElement {
+}
+
+/** The peek of the stop at `index` in the route: open, or under fog. */
+function Peek({ index, model, ...rest }: RoutePeekProps): null | ReactElement {
   const t = useT()
   if (index === null) {
     return null

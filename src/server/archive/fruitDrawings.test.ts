@@ -118,6 +118,11 @@ function firstRedrawingOf(
 /** The two units a pin is told in, each at the bookmarks below. */
 const UNITS = ['episode', 'chapter'] as const
 
+interface BookmarksInResult {
+  at: Bookmark[]
+  before: Bookmark[]
+}
+
 /**
  * A pin's bookmarks in one unit: one count before it, and at it; a season
  * viewer counts episodes.
@@ -125,7 +130,7 @@ const UNITS = ['episode', 'chapter'] as const
 function bookmarksIn(
   unit: (typeof UNITS)[number],
   { chapter, episode }: Pin,
-): { at: Bookmark[]; before: Bookmark[] } {
+): BookmarksInResult {
   return unit === 'chapter' ?
       { before: [ch(chapter - 1)], at: [ch(chapter)] }
     : {

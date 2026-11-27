@@ -100,18 +100,17 @@ function FormSlot(props: BookmarkFormProps): ReactElement {
   )
 }
 
+/** The form's props, the fetch of its code, and how to ask again. */
+interface SettledProps extends BookmarkFormProps {
+  attempt: null | Promise<boolean>
+  onRetry: () => void
+}
+
 /**
  * Suspends until the fetch has settled, then the form once its code is here,
  * or the failure with its Retry.
  */
-function Settled({
-  attempt,
-  onRetry,
-  ...form
-}: BookmarkFormProps & {
-  attempt: null | Promise<boolean>
-  onRetry: () => void
-}): ReactElement {
+function Settled({ attempt, onRetry, ...form }: SettledProps): ReactElement {
   const t = useT()
 
   return attempt === null || use(attempt) ?
@@ -122,12 +121,17 @@ function Settled({
       />
 }
 
+/** What the cross calls to close the dialog. */
+interface CloseButtonProps {
+  onClose: () => void
+}
+
 /**
  * The way out that keeps the bookmark as it was, drawn as a cross in the top
  * corner. It comes last in the panel, so the keyboard meets the unit first;
  * Escape and a click on the backdrop do the same thing.
  */
-function CloseButton({ onClose }: { onClose: () => void }): ReactElement {
+function CloseButton({ onClose }: CloseButtonProps): ReactElement {
   const t = useT()
 
   return (

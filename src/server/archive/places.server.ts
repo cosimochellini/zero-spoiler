@@ -1,5 +1,5 @@
 import type { ReaderArchive } from '~/data/features'
-import type { Entity, LocalizedText } from '~/data/types'
+import type { Entity, LocalizedText, PlaceDossier } from '~/data/types'
 import { type ChartPoint, regionsFor } from '~/lib/view/chart'
 import type { PlacesView, SagaPick, StopView } from '~/lib/view/places'
 import type {
@@ -60,14 +60,19 @@ function sagasOf(open: StopView[], r: Reader): SagaPick[] {
   return picks
 }
 
+/** A saga by its place in route order, from 1, and the places it files. */
+interface FiledSaga {
+  ids: Set<string>
+  name: LocalizedText
+  number: number
+}
+
 /** Every saga by its place in route order, from 1, and the places it files. */
 const picksByArchive = new WeakMap<
   ReaderArchive,
   ReturnType<typeof buildPicks>
 >()
-function buildPicks(
-  r: Reader,
-): { ids: Set<string>; name: LocalizedText; number: number }[] {
+function buildPicks(r: Reader): FiledSaga[] {
   const picks = r.archive.sagas.map((saga, at) => ({
     number: at + 1,
     name: saga.name,
@@ -184,7 +189,7 @@ export function portOf(entity: Entity, r: Reader): PortView {
  * would open with it.
  */
 function labelsOf(
-  dossier: { form: string; region: string },
+  dossier: Pick<PlaceDossier, 'form' | 'region'>,
   r: Reader,
 ): Pick<PortDossier, 'seaName' | 'words'> {
   const words = wordsOf([{ sea: dossier.region, form: dossier.form }], r)

@@ -4,6 +4,13 @@ import type { ReactElement } from 'react'
 import { styles } from '~/components/SpecimenBands.styles'
 import { stickyStyles } from '~/styles/sticky'
 
+export interface PlateHeadProps {
+  headingId: string
+  label: string
+  lede?: string | undefined
+  title: string
+}
+
 /**
  * A plate's label, its heading and the sentence under it, if it has one: a
  * fruit plate's and an ability plate's.
@@ -13,12 +20,7 @@ export function PlateHead({
   label,
   lede,
   title,
-}: {
-  headingId: string
-  label: string
-  lede?: string | undefined
-  title: string
-}): ReactElement {
+}: PlateHeadProps): ReactElement {
   return (
     <>
       <div

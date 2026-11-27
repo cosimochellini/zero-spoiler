@@ -2,10 +2,9 @@ import * as stylex from '@stylexjs/stylex'
 import { lazy, type ReactElement, Suspense, useMemo, useRef } from 'react'
 
 import { styles } from '~/components/HubTour.styles'
-import type { LoadTour } from '~/components/useTour'
+import type { TourScreenProps } from '~/components/TourScreen'
 import { useTourScroll } from '~/components/useTourScroll'
 import { useT } from '~/i18n/LocaleContext'
-import type { HubSeries } from '~/lib/view/hub'
 import { TOUR_ID, type TourStep, tourStepsFor } from '~/lib/view/tourSteps'
 import { THEMES } from '~/styles/themes'
 
@@ -16,6 +15,9 @@ const TourScreen = lazy(async () => {
   return { default: screen }
 })
 
+/** What the tour is handed: the series it shows and how to load its records. */
+export type HubTourProps = Pick<TourScreenProps, 'load' | 'series'>
+
 /**
  * The hub's tour (#1703): six steps of text beside a screen that stays in
  * view, on a phone above them. Scrolling a step moves the screen's bookmark
@@ -25,13 +27,7 @@ const TourScreen = lazy(async () => {
  * no script. The screen and its records, the demo's, load apart
  * (`TourScreen`, `loadTour`).
  */
-export function HubTour({
-  load,
-  series,
-}: {
-  load: LoadTour
-  series: HubSeries[]
-}): ReactElement {
+export function HubTour({ load, series }: HubTourProps): ReactElement {
   const t = useT()
   const steps = useMemo(() => tourStepsFor(series), [series])
   const sectionRef = useRef<HTMLElement>(null)
@@ -83,16 +79,14 @@ export function HubTour({
   )
 }
 
-/** One step's words: in view while its block scrolls, quieter when not read. */
-function Words({
-  blockRef,
-  here,
-  step,
-}: {
+interface WordsProps {
   blockRef: (element: HTMLElement | null) => void
   here: boolean
   step: TourStep
-}): ReactElement {
+}
+
+/** One step's words: in view while its block scrolls, quieter when not read. */
+function Words({ blockRef, here, step }: WordsProps): ReactElement {
   const t = useT()
 
   return (
@@ -113,6 +107,11 @@ function Words({
   )
 }
 
+interface ScreenProps extends Omit<TourScreenProps, 'step'> {
+  near: boolean
+  step: TourStep | undefined
+}
+
 /**
  * The screen's frame, in the colours of the series it shows; its paper
  * changes with the series, as a page's would. What it shows loads once the
@@ -125,14 +124,7 @@ function Screen({
   point,
   series,
   step,
-}: {
-  load: LoadTour
-  near: boolean
-  onPoint: (value: number) => void
-  point: number
-  series: HubSeries[]
-  step: TourStep | undefined
-}): ReactElement {
+}: ScreenProps): ReactElement {
   const theme = series.find(({ slug }) => slug === step?.series)?.theme
 
   return (
