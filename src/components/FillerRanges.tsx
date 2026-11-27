@@ -22,6 +22,12 @@ function follow(event: MouseEvent<HTMLAnchorElement>): void {
   openTo(event.currentTarget.hash.slice(1))
 }
 
+/** The runs to skip by saga, and the reader's unit. */
+export interface FillerRangesProps {
+  groups: SkipGroup[]
+  mode: BookmarkMode
+}
+
 /**
  * The runs that can be skipped whole, grouped by the saga they air in, the
  * saga's name pinned to the top of the screen while its runs scroll under
@@ -32,10 +38,7 @@ function follow(event: MouseEvent<HTMLAnchorElement>): void {
 export function FillerRanges({
   groups,
   mode,
-}: {
-  groups: SkipGroup[]
-  mode: BookmarkMode
-}): ReactElement {
+}: FillerRangesProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const series = useBookmarkSeries()
   return (

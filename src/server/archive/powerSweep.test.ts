@@ -60,6 +60,53 @@ function stringsIn(payload: unknown): string[] {
   return Object.values(payload).flatMap((value) => stringsIn(value))
 }
 
+/** One sweep point, in one locale. */
+interface Ask {
+  bookmark: Bookmark
+  locale: Locale
+}
+
+/** One ask, with its reader and the label a failure names it by. */
+interface HolderAsk {
+  at: string
+  bookmark: Bookmark
+  r: Reader
+}
+
+/** The label a failure names an ask by, and its locale. */
+interface LabelAsk {
+  at: string
+  locale: Locale
+}
+
+interface SeatsAtResult {
+  onPages: string[]
+  onPower: string[]
+}
+
+/** The bodies the power page lists at one sweep point. */
+interface ListedPoint {
+  listed: string[]
+  point: Bookmark
+}
+
+/** What is wrong with one holder's seats at one ask (`seatFaults`). */
+function holderFaults(
+  holder: Entity,
+  { at, bookmark, r }: HolderAsk,
+  leaksIn: ReturnType<typeof leaksOf>,
+): string[] {
+  const seats = seatsHeldBy(holder, r)
+  const open = r.archive.getCharacter(holder.id) !== undefined && r.sees(holder)
+  if (!open) {
+    return seats.length === 0 ? [] : [`${holder.id} seated under fog ${at}`]
+  }
+
+  return leaksIn(seats, bookmark).map(
+    (id) => `${id} via ${holder.id}'s seats ${at}`,
+  )
+}
+
 /** The power feature of one series, swept at every dated change. */
 function sweepPower(series: LoadedSeries): void {
   const { archive } = series
@@ -94,10 +141,7 @@ function sweepPower(series: LoadedSeries): void {
    * Each held seat of a body still standing, as `body|title|holder`: from the
    * power page, and from every holder's own page (`seatsHeldBy`).
    */
-  function seatsAt(
-    bookmark: Bookmark,
-    locale: Locale,
-  ): { onPages: string[]; onPower: string[] } {
+  function seatsAt(bookmark: Bookmark, locale: Locale): SeatsAtResult {
     const r = readerFor(archive, bookmark, locale)
     const onPower: string[] = []
     for (const body of powerPage(r).bodies) {
@@ -126,7 +170,7 @@ function sweepPower(series: LoadedSeries): void {
    * open, any record the seats name that the reader has not reached.
    */
   function seatFaults(
-    { bookmark, locale }: { bookmark: Bookmark; locale: Locale },
+    { bookmark, locale }: Ask,
     leaksIn: ReturnType<typeof leaksOf>,
   ): string[] {
     const r = readerFor(archive, bookmark, locale)
@@ -137,27 +181,9 @@ function sweepPower(series: LoadedSeries): void {
     )
   }
 
-  /** What is wrong with one holder's seats at one ask (`seatFaults`). */
-  function holderFaults(
-    holder: Entity,
-    { at, bookmark, r }: { at: string; bookmark: Bookmark; r: Reader },
-    leaksIn: ReturnType<typeof leaksOf>,
-  ): string[] {
-    const seats = seatsHeldBy(holder, r)
-    const open =
-      r.archive.getCharacter(holder.id) !== undefined && r.sees(holder)
-    if (!open) {
-      return seats.length === 0 ? [] : [`${holder.id} seated under fog ${at}`]
-    }
-
-    return leaksIn(seats, bookmark).map(
-      (id) => `${id} via ${holder.id}'s seats ${at}`,
-    )
-  }
-
   /** The records the power page names at one ask that the reader has not reached. */
   function powerLeaks(
-    { bookmark, locale }: { bookmark: Bookmark; locale: Locale },
+    { bookmark, locale }: Ask,
     leaksIn: ReturnType<typeof leaksOf>,
   ): string[] {
     const page = powerPage(readerFor(archive, bookmark, locale))
@@ -183,13 +209,7 @@ function sweepPower(series: LoadedSeries): void {
    * that body's word); a key besides `bodies` and `fogged`; and a `fogged`
    * line missing, or set with no such body.
    */
-  function hiddenFaults({
-    bookmark,
-    locale,
-  }: {
-    bookmark: Bookmark
-    locale: Locale
-  }): string[] {
+  function hiddenFaults({ bookmark, locale }: Ask): string[] {
     const r = readerFor(archive, bookmark, locale)
     const page = powerPage(r)
     const at = `@ ${JSON.stringify(bookmark)} ${locale}`
@@ -252,10 +272,7 @@ function sweepPower(series: LoadedSeries): void {
    * any other version, or of a body not listed, in the payload; and a text that
    * prints the label of a group the page does not list, in either language.
    */
-  function descriptionFaults(ask: {
-    bookmark: Bookmark
-    locale: Locale
-  }): string[] {
+  function descriptionFaults(ask: Ask): string[] {
     const { bookmark, locale } = ask
     const page = powerPage(readerFor(archive, bookmark, locale))
     const at = `@ ${JSON.stringify(bookmark)} ${locale}`
@@ -294,7 +311,7 @@ function sweepPower(series: LoadedSeries): void {
    */
   function labelFaults(
     page: PowerPageView,
-    { at, locale }: { at: string; locale: Locale },
+    { at, locale }: LabelAsk,
   ): string[] {
     const listed = new Set(page.bodies.map(({ id }) => id))
     const labels = bodies
@@ -319,9 +336,7 @@ function sweepPower(series: LoadedSeries): void {
   }
 
   /** The bodies listed at each sweep point of one medium, in reading order. */
-  function listedIn(
-    mode: 'chapter' | 'episode',
-  ): { listed: string[]; point: Bookmark }[] {
+  function listedIn(mode: 'chapter' | 'episode'): ListedPoint[] {
     return POINTS.filter((point) => point?.mode === mode)
       .toSorted((a, b) => countOf(a) - countOf(b))
       .map((point) => ({

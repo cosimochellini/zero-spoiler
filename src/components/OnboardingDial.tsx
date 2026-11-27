@@ -30,6 +30,11 @@ export interface OnboardingDialProps {
   point: DialPoint
 }
 
+interface ReadingOfResult {
+  unit: string
+  value: number
+}
+
 /**
  * The dial's unit in words and its point in that unit: "Episode" 12,
  * "Chapter" 45, or on a series with books "Book 1, chapter" 45, counted
@@ -39,7 +44,7 @@ function readingOf(
   t: Translate,
   point: DialPoint,
   books: Book[] | undefined,
-): { unit: string; value: number } {
+): ReadingOfResult {
   const book =
     point.mode === 'chapter' ? locateChapter(point.value, books) : null
   if (book !== null) {
@@ -158,14 +163,15 @@ function HereButton({
   )
 }
 
+interface DialHeadProps extends Pick<OnboardingDialProps, 'arc'> {
+  rangeId: string
+}
+
 /**
  * Over the dial, scrolling away when it pins: what the range is, and the
  * arc its point is in, announced politely as the dial moves.
  */
-function DialHead({
-  arc,
-  rangeId,
-}: Pick<OnboardingDialProps, 'arc'> & { rangeId: string }): ReactElement {
+function DialHead({ arc, rangeId }: DialHeadProps): ReactElement {
   const t = useT()
 
   return (
@@ -279,14 +285,13 @@ function UnitSwitch({
   )
 }
 
-/** The bookmark fields, inline: the same draft the dialog edits. */
-function FurtherForm({
-  id,
-  save,
-}: {
+interface FurtherFormProps {
   id: string
   save: (next: NonNullable<Bookmark>) => void
-}): ReactElement {
+}
+
+/** The bookmark fields, inline: the same draft the dialog edits. */
+function FurtherForm({ id, save }: FurtherFormProps): ReactElement {
   const t = useT()
   const {
     canSave,

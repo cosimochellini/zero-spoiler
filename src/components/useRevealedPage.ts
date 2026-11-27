@@ -46,6 +46,7 @@ export function useRevealedPage(
   boxRef: RefObject<HTMLElement | null>,
   router: RenderedEvents,
 ): void {
+  // eslint-disable-next-line no-restricted-syntax -- focusin listener, ResizeObserver and router.subscribe('onRendered')
   useEffect(() => {
     const box = boxRef.current
     if (box === null) {

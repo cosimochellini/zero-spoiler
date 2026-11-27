@@ -78,6 +78,16 @@ export function ChoiceGroup<V extends string>({
   )
 }
 
+/** One option of the group, its look, and whether it is the picked one. */
+interface OptionProps<V extends string> extends Pick<
+  ChoiceGroupProps<V>,
+  'name' | 'onChoose'
+> {
+  chips: boolean
+  choice: Choice<V>
+  picked: boolean
+}
+
 /** One option: the invisible radio, and the label that shows its state. */
 function Option<V extends string>({
   choice,
@@ -85,11 +95,7 @@ function Option<V extends string>({
   name,
   onChoose,
   picked,
-}: Pick<ChoiceGroupProps<V>, 'name' | 'onChoose'> & {
-  chips: boolean
-  choice: Choice<V>
-  picked: boolean
-}): ReactElement {
+}: OptionProps<V>): ReactElement {
   const disabled = choice.disabled === true
   const counted = choice.count !== undefined
 

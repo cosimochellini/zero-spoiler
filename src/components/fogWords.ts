@@ -37,6 +37,12 @@ export function fogHint<S extends SeriesSlug>(
   return t(bookmark === null ? words.hintUnset : words.hint)
 }
 
+/** The reader's bookmark, and how many records are under fog. */
+export interface FogNoteOptions {
+  bookmark: Bookmark
+  count: number
+}
+
 /**
  * The band in one line, for a search with no match: how many records are
  * under fog and why the search does not find them. `undefined` with nothing
@@ -47,7 +53,7 @@ export function fogHint<S extends SeriesSlug>(
 export function fogNote<S extends SeriesSlug>(
   t: Translate<S>,
   words: FogTitles<S>,
-  { bookmark, count }: { bookmark: Bookmark; count: number },
+  { bookmark, count }: FogNoteOptions,
 ): string | undefined {
   return count === 0 ? undefined : (
       `${fogTitle(t, count, words)}. ${fogHint(t, words, bookmark)}`

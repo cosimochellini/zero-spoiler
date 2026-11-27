@@ -34,14 +34,13 @@ const fogged = [
   coveredRecord({ kind: 'place', handle: 'h2', ...at(80) }),
 ]
 
-/** The index as the page wires it, with the lit stops printed beside it. */
-function Index({
-  covered,
-  stops,
-}: {
+interface IndexProps {
   covered: CoveredRecord[]
   stops: StopView[]
-}): ReactElement {
+}
+
+/** The index as the page wires it, with the lit stops printed beside it. */
+function Index({ covered, stops }: IndexProps): ReactElement {
   const { lit, ...picks } = usePlacePicks(stops)
 
   return (

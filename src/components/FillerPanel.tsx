@@ -12,16 +12,19 @@ import type { FillerRowView, FillerSlot } from '~/lib/view/filler'
 /** The id the countdown's cells point their `aria-controls` at. */
 export const FILLER_PANEL_ID = 'filler-countdown-panel'
 
+/** The entry opened, the reader's unit, and how to lift a covered one. */
+export interface FillerPanelProps {
+  mode: BookmarkMode
+  peek: (handle: string) => Promise<FillerRowView>
+  slot: FillerSlot
+}
+
 /** The entry a cell or mark opened, under the veil past the bookmark. */
 export function FillerPanel({
   mode,
   peek,
   slot,
-}: {
-  mode: BookmarkMode
-  peek: (handle: string) => Promise<FillerRowView>
-  slot: FillerSlot
-}): ReactElement {
+}: FillerPanelProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const series = useBookmarkSeries()
   const entry = entryOf(slot)

@@ -182,6 +182,29 @@ const RESTRICTED_SYNTAX = [
     message:
       '`readonly` is banned: it is noise the code never relies on. `as const` is the one exception.',
   },
+  // The you-might-not-need-an-effect rules catch the known misuses; this
+  // makes every effect an exception the author has to name. One that syncs
+  // with a system outside React (a listener, an observer, a timer, the
+  // network) stays, under a disable comment that says which system.
+  {
+    selector: [
+      'CallExpression[callee.name=/^use(?:Layout|Insertion)?Effect$/]',
+      'CallExpression[callee.property.name=/^use(?:Layout|Insertion)?Effect$/]',
+    ].join(', '),
+    message:
+      'Effects are opt-in: derive the value in render, act in the event handler, or use useSyncExternalStore, a ref callback or useEffectEvent (https://react.dev/learn/you-might-not-need-an-effect). An effect that syncs with an external system stays under `// eslint-disable-next-line no-restricted-syntax -- <the system it syncs>`.',
+  },
+  // An object type written into a signature has no name to grep for and
+  // cannot be reused. Nested ones count too: `Promise<{ … }>`, `{ … }[]`,
+  // `Pick<Props, 'x'> & { … }`.
+  {
+    selector: [
+      ':function > .params TSTypeLiteral',
+      ':function > .returnType TSTypeLiteral',
+    ].join(', '),
+    message:
+      'Declare the shape as an `interface` above the function (`<Component>Props`, `<Function>Options`, `<Function>Result`) and name it in the signature.',
+  },
 ]
 
 /**
@@ -546,7 +569,7 @@ const config = defineConfig(
   // finds them by their `use*` name, with no JSX needed.
   {
     files: [...TSX, 'src/**/*.ts'],
-    extends: [noNeedlessEffect.configs.recommended],
+    extends: [noNeedlessEffect.configs.strict],
   },
   // Vite refreshes a module in place only when every export is a component; a
   // hook exported beside a provider throws the whole tree away on each edit.

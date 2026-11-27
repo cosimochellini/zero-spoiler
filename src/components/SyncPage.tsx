@@ -28,6 +28,10 @@ type Step =
   | { id: string; kind: 'ready'; record: SyncRecord }
   | { kind: 'already' | 'checking' | 'incomplete' | 'joined' | 'unknown' }
 
+export interface SyncPageProps {
+  series: Series[]
+}
+
 /**
  * The page a link from "More devices?" opens (#1560). The record's id is in
  * the address's fragment, which never reaches the server, so the page reads
@@ -35,7 +39,7 @@ type Step =
  * this device. Connecting is always a press of the button: a link someone
  * else sent never takes over this device's bookmarks on its own.
  */
-export function SyncPage({ series }: { series: Series[] }): ReactElement {
+export function SyncPage({ series }: SyncPageProps): ReactElement {
   const words = syncTranslator(useLocale().locale)
   const [step, setStep] = useState<Step>({ kind: 'checking' })
 
@@ -57,6 +61,7 @@ export function SyncPage({ series }: { series: Series[] }): ReactElement {
     }
   }
 
+  // eslint-disable-next-line no-restricted-syntax -- reads the URL fragment once on arrival and asks the sync endpoint
   useEffect(() => {
     void arrive(setStep, check)
     // Once, on arrival: the fragment is read when the page opens.
@@ -83,6 +88,12 @@ export function SyncPage({ series }: { series: Series[] }): ReactElement {
   )
 }
 
+interface StepBodyProps extends SyncPageProps {
+  onConnect: (id: string) => void
+  onRetry: (id: string) => void
+  step: Step
+}
+
 /**
  * What the page shows at one step. Once joined, a full load of the hub,
  * which reads the cookies the join has just set.
@@ -92,12 +103,7 @@ function StepBody({
   onRetry,
   series,
   step,
-}: {
-  onConnect: (id: string) => void
-  onRetry: (id: string) => void
-  series: Series[]
-  step: Step
-}): ReactElement {
+}: StepBodyProps): ReactElement {
   const t = useT()
   const { locale } = useLocale()
 
@@ -173,14 +179,13 @@ function joinedStep(answer: unknown): Step {
     : { kind: 'joined' }
 }
 
-/** What connecting changes, and the button that does it. */
-function Connect({
-  changes,
-  onConnect,
-}: {
+interface ConnectProps {
   changes: string[]
   onConnect: () => void
-}): ReactElement {
+}
+
+/** What connecting changes, and the button that does it. */
+function Connect({ changes, onConnect }: ConnectProps): ReactElement {
   const words = syncTranslator(useLocale().locale)
 
   return (
@@ -197,12 +202,12 @@ function Connect({
   )
 }
 
-/** A link that cannot connect this device, and the way out. */
-function Notice({
-  kind,
-}: {
+interface NoticeProps {
   kind: 'already' | 'incomplete' | 'unknown'
-}): ReactElement {
+}
+
+/** A link that cannot connect this device, and the way out. */
+function Notice({ kind }: NoticeProps): ReactElement {
   const { locale } = useLocale()
   const words = syncTranslator(locale)
 
@@ -227,6 +232,11 @@ function Notice({
   )
 }
 
+interface ChangesOfOptions {
+  locale: Locale
+  t: Translate
+}
+
 /**
  * One sentence per series whose bookmark connecting would set or change on
  * this device. A series the record lacks keeps this device's bookmark, and
@@ -235,7 +245,7 @@ function Notice({
 function changesOf(
   record: SyncRecord,
   series: Series[],
-  { locale, t }: { locale: Locale; t: Translate },
+  { locale, t }: ChangesOfOptions,
 ): string[] {
   const words = syncTranslator(locale)
   const jar = parseCookieHeader(document.cookie)

@@ -59,11 +59,16 @@ export function placeLabel(
   })
 }
 
+/** How the reader counts, and how many episodes have aired. */
+export interface SentenceOfOptions extends Counting {
+  aired: number
+}
+
 /** The one sentence the countdown leads with. */
 export function sentenceOf(
   t: Translate<'one-piece'>,
   countdown: Countdown,
-  { aired, ...counting }: Counting & { aired: number },
+  { aired, ...counting }: SentenceOfOptions,
 ): string {
   return (
     runSentenceOf(t, countdown, counting)
@@ -101,10 +106,17 @@ export function runSentenceOf(
     : t('filler.countdown.next', { count: next.distance })
 }
 
+/** A cell's episode as said, its kind, and whether it is the reader's. */
+export interface CellNameParts {
+  here: boolean
+  kind: FillerKind | null
+  number: string
+}
+
 /** A cell's name: its episode, its kind, and whether it is the reader's. */
 export function cellName(
   t: Translate<'one-piece'>,
-  parts: { here: boolean; kind: FillerKind | null; number: string },
+  parts: CellNameParts,
 ): string {
   return [
     parts.number,

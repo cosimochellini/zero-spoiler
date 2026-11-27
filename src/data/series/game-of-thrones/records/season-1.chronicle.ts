@@ -2718,6 +2718,118 @@ export const season1Chronicles = {
         en: 'Tyrion wakes from fevered dreams in Maegor’s Holdfast, his face bandaged. Most of his nose is gone and part of his lip, he has a broken rib, and an arrow nearly cost him his arm. His father [[tywin-lannister|Tywin]], now Hand of the King, has taken the Tower of the Hand. Tyrion knocks the poppy from the queen’s maester’s hands, demands wine, sends [[podrick-payne|Podrick]] for dreamwine from Maester Frenken and for [[bronn|Bronn]], and swears the squire to silence about what happened at the docks.',
       },
     ),
+    onScreen(
+      [21, 148],
+      { it: 'Nessun diritto su Castel Granito', en: 'No claim to the Rock' },
+      {
+        it: 'Tyrion chiede al padre [[tywin-lannister|Tywin]] ciò che gli spetta di diritto: con [[jaime-lannister|Jaime]] nella Guardia reale, Castel Granito dovrebbe passare a lui. Tywin rifiuta. Non gli riconosce alcun merito nella difesa della città, lo disprezza come un ubriacone che va a prostitute e che ha portato una prostituta a corte contro i suoi ordini, e dice che, se potesse, dimostrerebbe che Tyrion non è suo figlio, perché nascendo ha ucciso la madre. Tyrion si sfoga con [[bronn|Bronn]], appena fatto cavaliere per la battaglia come ser Bronn delle Acque Nere, che ora si aspetta una paga più alta.',
+        en: 'Tyrion asks his father [[tywin-lannister|Tywin]] for what is his by right: with [[jaime-lannister|Jaime]] in the Kingsguard, Casterly Rock should pass to him. Tywin refuses. He gives Tyrion no credit for the defence of the city, scorns him as a drunken whoremonger who brought a whore to court against orders, and says he would prove Tyrion was not his son if he could, since Tyrion killed his mother coming into the world. Tyrion vents to [[bronn|Bronn]], now knighted for the battle as Ser Bronn of the Blackwater, who expects to be paid more.',
+      },
+    ),
+    onScreen(
+      [23, 176],
+      { it: 'I debiti della corona', en: 'The crown’s debts' },
+      {
+        it: 'Al primo Concilio ristretto di [[tywin-lannister|Tywin]], Tyrion trascina una sedia fino al capo opposto del tavolo, di fronte al padre. Tywin lo nomina maestro del conio al posto di [[petyr-baelish|Petyr Baelish]], che deve corteggiare [[lysa-arryn|Lysa Arryn]], e [[cersei-lannister|Cersei]] lascia capire che è un’occasione perché Tyrion sbagli. Ritirando i registri al bordello di Petyr, Tyrion paga tre donne per ricompensare [[podrick-payne|Podrick]], che gli ha salvato la vita in battaglia. Studiando i conti, scopre che la corona è piena di debiti, molti con la Banca di Ferro di Braavos, che appoggerà i suoi nemici se non verrà ripagata.',
+        en: 'At [[tywin-lannister|Tywin]]’s first small council, Tyrion drags a chair to the far end of the table, facing his father. Tywin names him master of coin in place of [[petyr-baelish|Petyr Baelish]], who is to court [[lysa-arryn|Lysa Arryn]], and [[cersei-lannister|Cersei]] makes clear it is a chance for him to fail. Collecting the ledgers at Petyr’s brothel, Tyrion pays three women to reward [[podrick-payne|Podrick]] for saving his life in the battle. Reading the books, he finds the crown deep in debt, much of it to the Iron Bank of Braavos, which will back its enemies if it is not repaid.',
+      },
+    ),
+    onScreen(
+      [24, 150],
+      { it: 'L’uomo nella cassa', en: 'The man in the crate' },
+      {
+        it: 'Tyrion chiede a [[varys|Varys]] di aiutarlo a scoprire chi abbia mandato [[mandon-moore|ser Mandon Moore]] a ucciderlo durante la battaglia. Varys ha solo voci che indicano [[cersei-lannister|Cersei]]. Gli racconta invece come è stato evirato: venduto da ragazzo a uno stregone di Myr, drogato e castrato, con le sue parti bruciate in un fuoco dal quale ha risposto una voce. Partito dalla strada, è arrivato fino al Concilio ristretto. Poi apre la cassa che sta schiodando: dentro, imbavagliato, c’è lo stregone. La vendetta arriva a chi sa aspettare, dice a Tyrion, e richiude il coperchio.',
+        en: 'Tyrion asks [[varys|Varys]] to help him prove who sent [[mandon-moore|Ser Mandon Moore]] to kill him in the battle. Varys has only whispers that it was [[cersei-lannister|Cersei]]. Instead he tells how he was cut: a boy sold to a sorcerer in Myr, drugged and gelded, his parts burned in a fire from which a voice answered. From the streets he clawed his way up to the small council. Then he opens the crate he has been prying at: inside, gagged, is the sorcerer. Revenge comes to the patient, he tells Tyrion, and closes the lid.',
+      },
+    ),
+    onScreen(
+      [25, 163],
+      { it: 'La chiave del Nord', en: 'The key to the North' },
+      {
+        it: 'Tyrion si preoccupa del costo delle nozze del re, ma [[olenna-tyrell|lady Olenna]] gli elenca i soldati e le provviste che i Tyrell hanno dato alla corona, e alla fine si offre di pagarne la metà. Tyrion porta la notizia al padre [[tywin-lannister|Tywin]] e ci trova anche [[cersei-lannister|Cersei]]. I Tyrell vogliono dare [[sansa-stark|Sansa]] in sposa a [[loras-tyrell|Loras]], e Tywin non permetterà che si prendano la chiave del Nord: sarà Tyrion a sposarla. Tyrion protesta che Sansa è una bambina e che lui è già stato sposato una volta. Poi Tywin ordina a Cersei di sposare Loras.',
+        en: 'Tyrion worries over the cost of the royal wedding, but [[olenna-tyrell|Lady Olenna]] lists the soldiers and supplies the Tyrells have given the crown, and in the end offers to pay half. He brings the news to his father [[tywin-lannister|Tywin]] and finds [[cersei-lannister|Cersei]] there. The Tyrells mean to wed [[sansa-stark|Sansa]] to [[loras-tyrell|Loras]], and Tywin will not let them take the key to the North: Tyrion is to marry her himself. He protests that she is a child and that he was married once already. Then Tywin orders Cersei to marry Loras.',
+      },
+    ),
+    onScreen(
+      [26, 172],
+      { it: 'L’ordine di Joffrey', en: 'Joffrey’s order' },
+      {
+        it: 'Dalla finestra di [[cersei-lannister|Cersei]], Tyrion guarda [[sansa-stark|Sansa]] passeggiare in giardino con [[loras-tyrell|Loras]]. Accusa infine la sorella di aver mandato [[mandon-moore|ser Mandon Moore]] a ucciderlo, poi ci arriva da solo: solo due persone possono dare ordini alla Guardia reale, e Cersei non è tanto sciocca da tentarlo davanti a tutti. È stato [[joffrey-baratheon|Joffrey]]. Cersei risponde che, ora che il padre è Primo Cavaliere, Joffrey non oserà. Tyrion va a dire a Sansa del matrimonio. Lei non vuole congedare [[shae|Shae]], e Tyrion rivolge a Shae delle scuse che solo Shae può capire.',
+        en: 'From [[cersei-lannister|Cersei]]’s window, Tyrion watches [[sansa-stark|Sansa]] walk with [[loras-tyrell|Loras]] in the garden. He finally accuses his sister of sending [[mandon-moore|Ser Mandon Moore]] to kill him, then works it out himself: only two people command the Kingsguard, and Cersei is not foolish enough to try it in the open. It was [[joffrey-baratheon|Joffrey]]. Cersei says Joffrey will not dare now that their father is Hand. Tyrion goes to tell Sansa of the match. She will not send [[shae|Shae]] away, and he gives Shae an apology only she can understand.',
+      },
+    ),
+    onScreen(
+      [27, 172],
+      { it: 'Una moglie e un’amante', en: 'A wife and a mistress' },
+      {
+        it: 'Tyrion teme le sue nozze. [[bronn|Bronn]] gli consiglia di sposare [[sansa-stark|Sansa]], dare un erede al padre e tenersi [[shae|Shae]] in disparte: due donne e un regno. Tyrion dubita che Shae sia d’accordo, e non gli piace l’idea di avere una moglie, un’amante e tutto il Nord che lo disprezzano. Bronn risponde che nessuno è amato da tutti. Shae dà ragione a Tyrion: quando sarà sposato, gli dice, non andrà più a letto con lui.',
+        en: 'Tyrion dreads his wedding. [[bronn|Bronn]] tells him to marry [[sansa-stark|Sansa]], give his father an heir and keep [[shae|Shae]] on the side: two women and a kingdom. Tyrion doubts Shae will agree, and does not relish a wife, a mistress and the whole North despising him. Bronn answers that nobody is loved by everyone. Shae proves Tyrion right: once he is married, she tells him, she will no longer share his bed.',
+      },
+    ),
+    onScreen(
+      [28, 172],
+      { it: 'Il pugnale nel tavolo', en: 'A dagger in the table' },
+      {
+        it: 'Prima della cerimonia nel Grande Tempio di Baelor, Tyrion promette a [[sansa-stark|Sansa]] che non la maltratterà. All’altare [[joffrey-baratheon|Joffrey]] porta via lo sgabello che serve a Tyrion per metterle il mantello sulle spalle, e Tyrion deve chiederle di inginocchiarsi. Al banchetto beve molto. Quando Joffrey reclama la cerimonia della messa a letto e provoca Sansa, Tyrion pianta il pugnale nel tavolo e minaccia il re. [[tywin-lannister|Tywin]] calma gli animi, e Tyrion finge di essere più ubriaco di quanto sia. Da solo con Sansa, le dice che non la toccherà finché non sarà lei a volerlo, e si addormenta sul divano.',
+        en: 'Before the ceremony in the Great Sept of Baelor, Tyrion promises [[sansa-stark|Sansa]] he will not mistreat her. At the altar [[joffrey-baratheon|Joffrey]] takes away the stool Tyrion needs to cloak her, and Tyrion has to ask her to kneel. At the feast he drinks heavily. When Joffrey calls for the bedding and taunts Sansa, Tyrion drives his dagger into the table and threatens the king. [[tywin-lannister|Tywin]] calms the room, and Tyrion plays drunker than he is. Alone with Sansa, he tells her he will not touch her until she wants him to, and falls asleep on the couch.',
+      },
+    ),
+    onScreen(
+      [30, 197],
+      { it: 'Notizie dalle Torri Gemelle', en: 'Word from the Twins' },
+      {
+        it: 'Mentre passeggia in giardino con [[sansa-stark|Sansa]], Tyrion ride dell’idea di Sansa per uno scherzo contro chi lo deride, finché [[podrick-payne|Podrick]] non lo chiama al Concilio ristretto. Una lettera di [[walder-frey|Walder Frey]] annuncia che [[robb-stark|Robb]] e [[catelyn-stark|Catelyn Stark]] sono morti. [[joffrey-baratheon|Joffrey]] vuole far servire a Sansa la testa di Robb al suo banchetto di nozze, e Tyrion glielo proibisce. Da solo con [[tywin-lannister|Tywin]], costringe il padre ad ammettere di aver organizzato il massacro a un matrimonio. Tywin gli dice che, quando Tyrion è nato, voleva gettarlo in mare. Nelle sue stanze Tyrion trova Sansa in lacrime: sa già tutto.',
+        en: 'Walking in the garden with [[sansa-stark|Sansa]], Tyrion laughs at her idea for a prank on those who mock him, until [[podrick-payne|Podrick]] calls him to the small council. A letter from [[walder-frey|Walder Frey]] says that [[robb-stark|Robb]] and [[catelyn-stark|Catelyn Stark]] are dead. [[joffrey-baratheon|Joffrey]] wants Robb’s head served to Sansa at his wedding, and Tyrion forbids it. Alone with [[tywin-lannister|Tywin]], he gets his father to admit he planned the slaughter at a wedding. Tywin tells him he once meant to throw him into the sea. In his chambers, Tyrion finds Sansa in tears: she already knows.',
+      },
+    ),
+    inBooks(
+      [21, 148],
+      { it: 'L’erede di Castel Granito', en: 'Heir to the Rock' },
+      {
+        it: 'Tyrion si riprende dalle ferite nella Fortezza di Maegor. [[bronn|Bronn]], ora cavaliere, gli racconta che il padre [[tywin-lannister|Tywin]] ha fatto in modo che a Tyrion vada poco merito per aver salvato la città, che [[sandor-clegane|Sandor Clegane]] è fuggito e che [[addam-marbrand|ser Addam Marbrand]] comanda le cappe dorate. Tyrion si fa portare in braccio da Bronn fino alla Torre del Primo Cavaliere. Lì Tywin non lo ringrazia: gli applausi, dice, li vogliono i guitti e le scimmie. Tyrion reclama Castel Granito, che gli spetta di diritto con [[jaime-lannister|Jaime]] nella Guardia reale. Tywin non glielo darà mai, e avverte che impiccherà la prossima prostituta che troverà nel letto di Tyrion.',
+        en: 'Tyrion recovers from his wounds in Maegor’s Holdfast. [[bronn|Bronn]], now a knight, tells him that his father [[tywin-lannister|Tywin]] has seen that Tyrion gets little credit for saving the city, that [[sandor-clegane|Sandor Clegane]] has fled and that [[addam-marbrand|Ser Addam Marbrand]] commands the gold cloaks. Tyrion has Bronn carry him up to the Tower of the Hand. There Tywin offers him no thanks: mummers and monkeys need applause. Tyrion claims Casterly Rock, his by right with [[jaime-lannister|Jaime]] in the Kingsguard. Tywin will never give it to him, and warns that he will hang the next whore he finds in Tyrion’s bed.',
+      },
+    ),
+    inBooks(
+      [22, 156],
+      { it: 'Un ultimo favore', en: 'One last favour' },
+      {
+        it: 'Tyrion aspetta [[varys|Varys]] nelle stanze dell’eunuco per il loro primo colloquio dopo la battaglia. Varys gli dice che [[tywin-lannister|Tywin]] intende rimettere [[pycelle|Pycelle]] al suo posto di gran maestro, e che [[cersei-lannister|Cersei]] amoreggia con [[osmund-kettleblack|ser Osmund Kettleblack]]. Tyrion non si fida più di Varys, ma gli chiede di portargli [[shae|Shae]] lì al sorgere della luna. Vuole mandarla via per proteggerla; lei vuole restare, gli mostra una scala segreta sotto il letto di Varys, e Tyrion non riesce a separarsene. Poi incarica [[bronn|Bronn]] di trovare Symon Lingua d’Argento, il cantore che sa di Shae.',
+        en: 'Tyrion waits in [[varys|Varys]]’s chambers for their first talk since the battle. Varys tells him that [[tywin-lannister|Tywin]] means to restore [[pycelle|Pycelle]] as Grand Maester, and that [[cersei-lannister|Cersei]] has been flirting with [[osmund-kettleblack|Ser Osmund Kettleblack]]. Tyrion no longer trusts Varys, but asks him to bring [[shae|Shae]] there at moonrise. He means to send her away for her own safety; she wants to stay, shows him secret steps beneath Varys’s bed, and he cannot bear to part with her. He sets [[bronn|Bronn]] to find Symon Silver Tongue, the singer who knows about her.',
+      },
+    ),
+    inBooks(
+      [25, 163],
+      { it: 'Maestro del conio', en: 'Master of coin' },
+      {
+        it: 'Al Concilio ristretto Tyrion viene nominato maestro del conio, perché [[petyr-baelish|Petyr Baelish]] parte per sposare [[lysa-arryn|Lysa Arryn]]. Dopo, il padre [[tywin-lannister|Tywin]] gli annuncia che sposerà [[sansa-stark|Sansa]]: se [[robb-stark|Robb]] muore, il loro figlio potrebbe diventare lord di Grande Inverno. Tyrion protesta che Sansa è una bambina e propone invece di rimandarla dalla madre. Tywin minaccia di darla a un cugino e di trovare a Tyrion un’altra sposa, e Tyrion cede. Viene anche a sapere che Robb ha rotto la promessa fatta ai Frey sposando [[jeyne-westerling|Jeyne Westerling]].',
+        en: 'At the small council Tyrion is named master of coin, since [[petyr-baelish|Petyr Baelish]] is leaving to wed [[lysa-arryn|Lysa Arryn]]. Afterwards his father [[tywin-lannister|Tywin]] tells him he will marry [[sansa-stark|Sansa]]: if [[robb-stark|Robb]] dies, their son could be Lord of Winterfell. Tyrion protests that she is a child and suggests sending her home to her mother instead. Tywin threatens to give her to a cousin and find Tyrion another bride, and Tyrion gives in. He also learns that Robb has broken his pledge to the Freys by marrying [[jeyne-westerling|Jeyne Westerling]].',
+      },
+    ),
+    inBooks(
+      [28, 172],
+      { it: 'Un mantello per la sposa', en: 'A cloak for the bride' },
+      {
+        it: 'Prima delle nozze Tyrion si scusa con [[sansa-stark|Sansa]]: il matrimonio è un desiderio di [[tywin-lannister|lord Tywin]]. Nel tempio reale Sansa non si piega perché lui le metta il mantello sulle spalle, e Tyrion resta in imbarazzo. Al banchetto dichiara che non ci sarà nessuna cerimonia della messa a letto, e deve minacciare [[joffrey-baratheon|Joffrey]] perché smetta di pretenderla. Quella notte, a letto, vede che Sansa è terrorizzata e le dice che non la toccherà finché non sarà lei a volerlo.',
+        en: 'Tyrion apologizes to [[sansa-stark|Sansa]] before the wedding: the match is [[tywin-lannister|Lord Tywin]]’s wish. In the royal sept she will not bend for him to put his cloak on her shoulders, and he is left embarrassed. At the feast he declares there will be no bedding, and has to threaten [[joffrey-baratheon|Joffrey]] to stop him pushing for it. In bed that night he sees that Sansa is terrified, and tells her he will not touch her until she wants him to.',
+      },
+    ),
+    inBooks(
+      [28, 176],
+      { it: 'Acciaio di Valyria', en: 'Valyrian steel' },
+      {
+        it: 'Tyrion offre a Symon Lingua d’Argento del denaro perché lasci la città, ma il cantore vuole un posto nella gara alle nozze di [[joffrey-baratheon|Joffrey]], e lascia intendere che potrebbe parlare di [[shae|Shae]]. Tyrion gli promette il posto e, uscito, ordina a [[bronn|Bronn]] di uccidere il cantore. Il padre [[tywin-lannister|Tywin]] gli mostra due nuove spade di acciaio di Valyria, rifuse da [[tobho-mott|Tobho Mott]], per Joffrey e per [[jaime-lannister|Jaime]]. Tywin gli ordina di consumare il matrimonio, e gli dice che lord Tyrell ha rifiutato di dare Willas in sposo a [[cersei-lannister|Cersei]].',
+        en: 'Tyrion offers Symon Silver Tongue money to leave the city, but the singer wants a place in the contest at [[joffrey-baratheon|Joffrey]]’s wedding, and hints that he could talk about [[shae|Shae]]. Tyrion promises him a place and, outside, tells [[bronn|Bronn]] to kill him. His father [[tywin-lannister|Tywin]] shows him two new swords of Valyrian steel, reworked by [[tobho-mott|Tobho Mott]], for Joffrey and [[jaime-lannister|Jaime]]. Tywin tells him to consummate his marriage, and that Lord Tyrell has refused to wed Willas to [[cersei-lannister|Cersei]].',
+      },
+    ),
+    inBooks(
+      [31, 182],
+      { it: 'La Vipera Rossa', en: 'The Red Viper' },
+      {
+        it: 'Mandato con una piccola scorta ad accogliere i dorniani, Tyrion scopre che a guidarli non è il principe Doran ma suo fratello [[oberyn-martell|Oberyn]], la Vipera Rossa, che anni prima ha reso storpio in un torneo l’erede dei Tyrell. Oberyn ricorda di essere stato a Castel Granito con la sorella Elia quando Tyrion era in fasce, e chiede quando sarà fatta giustizia. Intende uccidere [[gregor-clegane|Gregor Clegane]], ma non prima di sapere da chi venivano gli ordini. Tyrion gli ricorda che in città ci sono decine di migliaia di uomini dei Tyrell, e che i Tyrell odiano Oberyn.',
+        en: 'Sent with a small escort to greet the Dornishmen, Tyrion finds them led not by Prince Doran but by his brother [[oberyn-martell|Oberyn]], the Red Viper, who once crippled the Tyrell heir in a tourney. Oberyn recalls visiting Casterly Rock with his sister Elia when Tyrion was a baby, and asks when justice will be served. He means to kill [[gregor-clegane|Gregor Clegane]], but not before learning who gave the orders. Tyrion reminds him that tens of thousands of Tyrell men are in the city, and that the Tyrells hate him.',
+      },
+    ),
   ],
   // Chapter 5 only shows Jaime riding in beside the prince, so the book side
   // opens at chapter 9, where he acts.
@@ -2991,6 +3103,86 @@ export const season1Chronicles = {
         en: 'Lord Tywin’s men hold the right wing as the Tyrells and his host save King’s Landing from [[stannis-baratheon|Stannis]]. In the throne room Tywin rides his warhorse down the hall, and it drops dung before the Iron Throne. [[joffrey-baratheon|Joffrey]] names him Hand of the King, and Tywin accepts until the king comes of age. When a captive knight calls Joffrey an abomination born of incest, Tywin has Ser [[meryn-trant|Meryn Trant]] kill him, and stays to hear the rest of the captives.',
       },
     ),
+    onScreen(
+      [21, 148],
+      { it: 'Un’onta per il nome', en: 'A mockery of the name' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] chiede al padre Castel Granito, che gli spetta di diritto con [[jaime-lannister|Jaime]] nella Guardia reale. Tywin rifiuta. Non crede a nulla di ciò che Tyrion dice sulla difesa della città, lo chiama una creatura deforme e meschina che ha portato una prostituta a corte contro i suoi ordini, e gli rinfaccia la morte della madre, morta nel darlo alla luce. La legge, dice Tywin, gli impone di lasciare a Tyrion il nome dei Lannister, ma se potesse dimostrerebbe che non è suo figlio. Tyrion non avrà mai Castel Granito.',
+        en: '[[tyrion-lannister|Tyrion]] asks his father for Casterly Rock, his by right with [[jaime-lannister|Jaime]] in the Kingsguard. Tywin refuses. He believes none of Tyrion’s claims about the city’s defence, calls him a misshapen, spiteful creature who brought a whore to court against orders, and blames him for his mother’s death in childbirth. The law obliges him to let Tyrion bear the name, Tywin says, but he would prove Tyrion was not his son if he could. Tyrion will never have the Rock.',
+      },
+    ),
+    onScreen(
+      [23, 163],
+      { it: 'Il tavolo del Primo Cavaliere', en: 'The Hand’s table' },
+      {
+        it: 'Tywin convoca il suo primo Concilio ristretto in una stanza accanto ai suoi alloggi, con tutte le sedie dallo stesso lato del tavolo. [[petyr-baelish|Petyr Baelish]] prende la più vicina, poi [[varys|Varys]] e [[pycelle|Pycelle]]; [[cersei-lannister|Cersei]] porta una sedia alla destra del padre, e [[tyrion-lannister|Tyrion]] trascina la sua fino al capo opposto. Tywin rimprovera i tre consiglieri, che con tutte le loro spie non trovano [[jaime-lannister|Jaime]]. Lascia Harrenhal a [[roose-bolton|Roose Bolton]], perché a Petyr basta il titolo per corteggiare [[lysa-arryn|Lysa Arryn]], e nomina Tyrion maestro del conio al posto di Petyr.',
+        en: 'Tywin calls his first small council to a room by his own quarters, with all the seats on one side of the table. [[petyr-baelish|Petyr Baelish]] takes the closest, then [[varys|Varys]] and [[pycelle|Pycelle]]; [[cersei-lannister|Cersei]] brings a chair to his right, and [[tyrion-lannister|Tyrion]] drags his to the far end. Tywin scolds his three spymasters for failing to find [[jaime-lannister|Jaime]]. He lets [[roose-bolton|Roose Bolton]] keep Harrenhal, since the title alone lets Petyr court [[lysa-arryn|Lysa Arryn]], and names Tyrion master of coin in Petyr’s place.',
+      },
+    ),
+    onScreen(
+      [24, 150],
+      { it: 'Meno abile di quanto crede', en: 'Not as clever as she thinks' },
+      {
+        it: '[[cersei-lannister|Cersei]] vuole essere sicura che il padre stia facendo il possibile per trovare [[jaime-lannister|Jaime]]. Tywin le ricorda che ha cominciato una guerra quando hanno preso [[tyrion-lannister|Tyrion]], e chiarisce che il suo erede resta Jaime. Quando Cersei dice di essere l’unica dei figli ad aver preso sul serio le sue lezioni sulla famiglia, Tywin risponde che non diffida di lei perché è una donna, ma perché non è abile quanto crede. Cersei ha lasciato che [[joffrey-baratheon|Joffrey]] facesse ciò che voleva, e Tywin intende tenere a freno il re. Cersei lo sfida a provarci. Tywin dice che lo farà.',
+        en: '[[cersei-lannister|Cersei]] wants to be sure her father is doing all he can to find [[jaime-lannister|Jaime]]. Tywin reminds her that he went to war when [[tyrion-lannister|Tyrion]] was taken, and makes clear that Jaime is still his heir. When Cersei says she is the one who took his lessons on family to heart, Tywin answers that he distrusts her not because she is a woman, but because she is not as clever as she thinks. She has let [[joffrey-baratheon|Joffrey]] run wild, and he means to rein the king in. Cersei dares him to try. He says he will.',
+      },
+    ),
+    onScreen(
+      [25, 163],
+      { it: 'Due matrimoni', en: 'Two marriages' },
+      {
+        it: 'Tywin viene a sapere che i Tyrell vogliono dare [[sansa-stark|Sansa]] in sposa a [[loras-tyrell|Loras]]. Senza i Karstark, i giorni di [[robb-stark|Robb]] sono contati, e Sansa è la sua erede: Tywin non lascerà che i Tyrell rubino la chiave del Nord. Il loro piano è segreto, quindi rifiutarlo non offende nessuno. Annuncia a [[tyrion-lannister|Tyrion]] che sarà lui a sposare Sansa: è la ricompensa per la battaglia che lamentava di non aver mai avuto. Poi ordina a [[cersei-lannister|Cersei]] di sposare Loras e di avere altri figli. Quando lei lo supplica, se ne va disgustato.',
+        en: 'Tywin learns that the Tyrells plan to wed [[sansa-stark|Sansa]] to [[loras-tyrell|Loras]]. With the Karstarks gone, [[robb-stark|Robb]]’s days are numbered, and Sansa is his heir: Tywin will not let the Tyrells steal the key to the North. Since their plot is secret, refusing it offends no one. He tells [[tyrion-lannister|Tyrion]] he will marry Sansa himself, as the reward for the battle he complained of never getting. Then he orders [[cersei-lannister|Cersei]] to marry Loras and bear more children. When she begs, he leaves in disgust.',
+      },
+    ),
+    onScreen(
+      [26, 172],
+      { it: 'Un fiore nel fango', en: 'A flower in the dirt' },
+      {
+        it: 'Tywin chiede a [[olenna-tyrell|lady Olenna]] di dare [[loras-tyrell|Loras]] in sposo a [[cersei-lannister|Cersei]]. Si scambiano frecciate sull’età di Cersei, sulle voci su di lei e [[jaime-lannister|Jaime]] e sui gusti di Loras, e Olenna rifiuta, lasciando intendere che [[joffrey-baratheon|Joffrey]] sia nato da un incesto. Allora i Tyrell hanno gettato un fiore nel fango, risponde Tywin. Quando Olenna rifiuta ancora, Tywin minaccia di nominare Loras nella Guardia reale, cosa che costerebbe a Loras il matrimonio e Alto Giardino. Olenna cede.',
+        en: 'Tywin asks [[olenna-tyrell|Lady Olenna]] to marry [[loras-tyrell|Loras]] to [[cersei-lannister|Cersei]]. They trade barbs over Cersei’s age, the rumours about her and [[jaime-lannister|Jaime]], and Loras’s tastes, and Olenna refuses, hinting that [[joffrey-baratheon|Joffrey]] was born of incest. Then the Tyrells have thrown a flower into the dirt, Tywin answers. When she still refuses, he threatens to name Loras to the Kingsguard, which would cost Loras marriage and Highgarden. Olenna gives way.',
+      },
+    ),
+    onScreen(
+      [27, 172],
+      { it: 'I gradini del trono', en: 'The steps to the throne' },
+      {
+        it: 'Convocato da [[joffrey-baratheon|Joffrey]] nella sala del trono, Tywin ascolta il re lamentarsi che il Concilio ristretto ora si riunisca nella Torre del Primo Cavaliere, in cima a troppi gradini. Tywin sale i gradini del Trono di Spade, si ferma accanto al re e si offre di farlo portare su. Joffrey passa a [[daenerys-targaryen|Daenerys Targaryen]] e ai suoi draghi. Tywin risponde che sono curiosità dall’altra parte del mondo, e che un re deve ascoltare i consiglieri sulle questioni che non capisce. Informerà Joffrey quando lo riterrà necessario.',
+        en: 'Summoned by [[joffrey-baratheon|Joffrey]] to the throne room, Tywin hears the king complain that the small council now meets in the Tower of the Hand, up too many steps. Tywin climbs the steps of the Iron Throne, stands beside him, and offers to have him carried. Joffrey turns to [[daenerys-targaryen|Daenerys Targaryen]] and her dragons. Tywin says they are curiosities on the far side of the world, and that a king should heed his counsellors on matters he does not understand. He will tell Joffrey when he deems it necessary.',
+      },
+    ),
+    onScreen(
+      [30, 197],
+      { it: 'Nessun vero re', en: 'No true king' },
+      {
+        it: 'A un Concilio ristretto nelle stanze di Tywin, [[joffrey-baratheon|Joffrey]] esulta per la notizia che [[robb-stark|Robb]] e [[catelyn-stark|Catelyn Stark]] sono morti, e vuole far servire a [[sansa-stark|Sansa]] la testa di Robb. Quando il re grida che chiunque è suo da tormentare, Tywin risponde che un uomo che deve ricordare di essere re non è un vero re, lo manda a letto e chiede a [[pycelle|Pycelle]] di dargli un sonnifero. Da solo con [[tyrion-lannister|Tyrion]], ammette di aver organizzato le uccisioni con [[walder-frey|Walder Frey]]. Poi dice al figlio che, quando è nato, voleva gettarlo in mare.',
+        en: 'At a small council in his chambers, [[joffrey-baratheon|Joffrey]] gloats over the news that [[robb-stark|Robb]] and [[catelyn-stark|Catelyn Stark]] are dead, and wants Robb’s head served to [[sansa-stark|Sansa]]. When the king shouts that everyone is his to torment, Tywin answers that a man who must say he is king is no true king, sends him to bed, and has [[pycelle|Pycelle]] give him something to sleep. Alone with [[tyrion-lannister|Tyrion]], he admits he planned the killings with [[walder-frey|Walder Frey]]. Then he tells his son he once wanted to drown him at birth.',
+      },
+    ),
+    inBooks(
+      [21, 148],
+      { it: 'Guitti e scimmie', en: 'Mummers and monkeys' },
+      {
+        it: 'Tywin, ora Primo Cavaliere, riceve [[tyrion-lannister|Tyrion]] nel suo solario mentre scrive lettere: certe battaglie si vincono con le penne e i corvi. Le nozze di [[joffrey-baratheon|Joffrey]] e [[margaery-tyrell|Margaery]] sono fissate per il primo giorno del nuovo anno. Contro [[stannis-baratheon|Stannis]] bisogna aspettare la flotta dei Redwyne, e [[gregor-clegane|Gregor Clegane]] viene mandato contro gli uomini del Nord. Quando Tyrion chiede un ringraziamento, Tywin risponde che gli applausi li vogliono i guitti e le scimmie. Non darà mai Castel Granito a Tyrion, e ha fatto frustare [[alayaya|Alayaya]] per le minacce di Tyrion contro i nipoti di Tywin.',
+        en: 'Tywin, now Hand, receives [[tyrion-lannister|Tyrion]] in his solar while he writes letters: some battles are won with quills and ravens. The wedding of [[joffrey-baratheon|Joffrey]] and [[margaery-tyrell|Margaery]] is set for the first day of the new year. [[stannis-baratheon|Stannis]] must wait until the Redwyne fleet is free, and [[gregor-clegane|Gregor Clegane]] is sent against the northmen. When Tyrion asks for thanks, Tywin says mummers and monkeys need applause. He will never give Tyrion Casterly Rock, and he had [[alayaya|Alayaya]] whipped for Tyrion’s threats against his grandsons.',
+      },
+    ),
+    inBooks(
+      [25, 163],
+      { it: 'Un figlio per Grande Inverno', en: 'A son for Winterfell' },
+      {
+        it: 'Tywin riunisce il Concilio sulla guerra. Non tratterà con [[balon-greyjoy|Balon Greyjoy]], e manda [[petyr-baelish|Petyr Baelish]] a conquistare la Valle sposando [[lysa-arryn|Lysa Arryn]]. Petyr gli ha rivelato che i Tyrell tramano di far sposare [[sansa-stark|Sansa]] a Willas, così Tywin offre a Willas [[cersei-lannister|Cersei]], che se ne va furiosa. [[tyrion-lannister|Tyrion]] sposerà Sansa: se [[robb-stark|Robb]] morisse, il loro figlio sarebbe lord di Grande Inverno. Robb ha sposato [[jeyne-westerling|Jeyne Westerling]], figlia di un vassallo dei Lannister, ma Tywin non mostra alcuna rabbia.',
+        en: 'Tywin holds council on the war. He will not treat with [[balon-greyjoy|Balon Greyjoy]], and sends [[petyr-baelish|Petyr Baelish]] to win the Vale by wedding [[lysa-arryn|Lysa Arryn]]. Petyr has told him of a Tyrell plot to wed [[sansa-stark|Sansa]] to Willas, so Tywin offers [[cersei-lannister|Cersei]] to Willas instead, and she storms out. [[tyrion-lannister|Tyrion]] is to marry Sansa: should [[robb-stark|Robb]] die, their son would be Lord of Winterfell. Robb has married [[jeyne-westerling|Jeyne Westerling]], the daughter of a Lannister bannerman, but Tywin shows no anger.',
+      },
+    ),
+    inBooks(
+      [28, 176],
+      { it: 'Spade nuove', en: 'New swords' },
+      {
+        it: 'Tywin mostra a [[tyrion-lannister|Tyrion]] due nuove spade per [[joffrey-baratheon|Joffrey]] e [[jaime-lannister|Jaime]], rifuse in acciaio di Valyria da [[tobho-mott|Tobho Mott]]: Casa Lannister non ha una lama simile da secoli. Ordina a Tyrion di consumare il matrimonio, e gli dice che lord Tyrell ha rifiutato le nozze con [[cersei-lannister|Cersei]], probabilmente su consiglio della [[olenna-tyrell|Regina di Spine]]. Quando [[pycelle|Pycelle]] porta brutte notizie dalla Barriera, Tywin gli fa rispondere che non verrà mandato nessuno se [[janos-slynt|Janos Slynt]] non sarà preso in considerazione come Lord Comandante.',
+        en: 'Tywin shows [[tyrion-lannister|Tyrion]] two new swords for [[joffrey-baratheon|Joffrey]] and [[jaime-lannister|Jaime]], reforged from Valyrian steel by [[tobho-mott|Tobho Mott]]: House Lannister has had no such blade in centuries. He tells Tyrion to consummate his marriage, and says Lord Tyrell has refused the match with [[cersei-lannister|Cersei]], probably on the advice of the [[olenna-tyrell|Queen of Thorns]]. When [[pycelle|Pycelle]] brings dire news from the Wall, Tywin has him answer that no men will be sent unless [[janos-slynt|Janos Slynt]] is considered for Lord Commander.',
+      },
+    ),
   ],
   'kevan-lannister': [
     inBoth(
@@ -3007,6 +3199,14 @@ export const season1Chronicles = {
       {
         it: 'Dopo la cattura di [[jaime-lannister|Jaime]] da parte di [[robb-stark|Robb Stark]], Kevan siede al consiglio del fratello [[tywin-lannister|Tywin]] e definisce la guerra una catastrofe. Riferisce che sia [[renly-baratheon|Renly]] sia Stannis Baratheon hanno reclamato il Trono di Spade, e che gli Stark e i Tully hanno unito i loro eserciti. Con metà delle loro forze distrutta, chiede se non convenga trattare la pace con Robb. Il nipote [[tyrion-lannister|Tyrion]] risponde che ogni speranza di pace è morta con [[eddard-stark|Eddard Stark]]. Tywin decide di ripiegare con Kevan su Harrenhal.',
         en: 'After [[jaime-lannister|Jaime]] is captured by [[robb-stark|Robb Stark]], Kevan sits at the council of his brother [[tywin-lannister|Tywin]] and calls the war a catastrophe. He reports that both [[renly-baratheon|Renly]] and Stannis Baratheon have claimed the Iron Throne, and that the Starks and the Tullys have joined their armies. With half their forces destroyed, he asks whether they should seek peace with Robb. His nephew [[tyrion-lannister|Tyrion]] answers that any chance of peace died with [[eddard-stark|Eddard Stark]]. Tywin decides to fall back on Harrenhal with Kevan.',
+      },
+    ),
+    inBooks(
+      [25, 163],
+      { it: 'Le condizioni di Balon Greyjoy', en: 'Terms from Balon Greyjoy' },
+      {
+        it: 'Al Concilio ristretto Kevan riferisce che [[balon-greyjoy|Balon Greyjoy]] ha scritto offrendo un’alleanza: vuole il Nord. [[tywin-lannister|Tywin]] non tratterà con lui finché ci sono altre possibilità. Dopo, trattenuto con [[tyrion-lannister|Tyrion]] e [[cersei-lannister|Cersei]], Kevan aggiunge un dettaglio alla notizia che [[robb-stark|Robb]] ha sposato [[jeyne-westerling|Jeyne Westerling]]: la madre di lei, Sybell, è una Spicer, di una casata discesa da mercanti.',
+        en: 'At the small council Kevan reports that [[balon-greyjoy|Balon Greyjoy]] has written offering terms of alliance: he wants the north. [[tywin-lannister|Tywin]] will not treat with him while other options remain. Afterwards, kept back with [[tyrion-lannister|Tyrion]] and [[cersei-lannister|Cersei]], Kevan adds to the news that [[robb-stark|Robb]] has married [[jeyne-westerling|Jeyne Westerling]]: her mother, Sybell, is a Spicer, of a house descended from traders.',
       },
     ),
   ],
@@ -3245,6 +3445,70 @@ export const season1Chronicles = {
         en: 'At the court that rewards the victors, [[loras-tyrell|Loras Tyrell]] asks the king to wed his sister [[margaery-tyrell|Margaery]]. Cersei and [[pycelle|Pycelle]] make a show of persuading [[joffrey-baratheon|Joffrey]] to set aside his betrothal to [[sansa-stark|Sansa Stark]] for her family’s treachery, and Joffrey agrees to marry Margaery. Cersei’s father [[tywin-lannister|Tywin]] is named Hand of the King, and [[petyr-baelish|Littlefinger]] is given Harrenhal.',
       },
     ),
+    onScreen(
+      [21, 148],
+      { it: 'A cena con i Tyrell', en: 'Supper with the Tyrells' },
+      {
+        it: 'Cersei e [[joffrey-baratheon|Joffrey]] cenano con [[margaery-tyrell|Margaery]] e [[loras-tyrell|Loras]]. Quel giorno Margaery ha fermato la lettiga del re a Fondo delle Pulci e ha distribuito pane e giocattoli in un orfanotrofio. Cersei la rimprovera: sono le strade dove la famiglia reale è stata aggredita. Joffrey prende le parti di Margaery contro la madre, e Cersei capisce che la stanno superando in astuzia. Cersei governa con la paura; Margaery sa farsi amare dal popolo.',
+        en: 'Cersei and [[joffrey-baratheon|Joffrey]] dine with [[margaery-tyrell|Margaery]] and [[loras-tyrell|Loras]]. That day Margaery has stopped the king’s litter in Flea Bottom and handed out bread and toys at an orphanage. Cersei chides her: those are the streets where the royal party was attacked. Joffrey takes Margaery’s side against his mother, and Cersei sees that she is being outplayed. Cersei rules through fear; Margaery knows how to make the people love her.',
+      },
+    ),
+    onScreen(
+      [24, 150],
+      { it: 'L’erede del padre', en: 'Her father’s heir' },
+      {
+        it: 'Nel Grande Tempio di Baelor Cersei segue [[joffrey-baratheon|Joffrey]] e [[margaery-tyrell|Margaery]] insieme a [[olenna-tyrell|lady Olenna]], che si fa beffe delle doti militari del proprio figlio, mentre Margaery porta il re fuori dalla folla che li acclama. Cersei non controlla più Joffrey. Chiede al padre [[tywin-lannister|Tywin]] di fare di più per trovare [[jaime-lannister|Jaime]], e dice che l’erede dovrebbe essere lei, l’unica dei figli che lo abbia ascoltato. Tywin le risponde che non è abile quanto crede, e che terrà a freno Joffrey di persona.',
+        en: 'In the Great Sept of Baelor, Cersei follows [[joffrey-baratheon|Joffrey]] and [[margaery-tyrell|Margaery]] with [[olenna-tyrell|Lady Olenna]], who mocks her own son’s soldiering, while Margaery leads the king out to the cheering crowd. Cersei has lost control of her son. She asks her father [[tywin-lannister|Tywin]] to do more to find [[jaime-lannister|Jaime]], and says she should be his heir, the only one of his children who listened. He tells her she is not as clever as she thinks, and that he will rein in Joffrey himself.',
+      },
+    ),
+    onScreen(
+      [25, 163],
+      { it: 'Di nuovo in sposa', en: 'Married off again' },
+      {
+        it: 'Cersei chiede a [[petyr-baelish|Petyr Baelish]] di scoprire cosa tramano i Tyrell, visto che il padre non la ascolta, e gli ricorda che non è mai riuscito a trovare [[arya-stark|Arya]]. Poco dopo è con [[tywin-lannister|Tywin]] mentre annuncia a [[tyrion-lannister|Tyrion]] che sposerà [[sansa-stark|Sansa]], e se la gode, finché Tywin non le ordina di sposare [[loras-tyrell|Loras]]. È la regina reggente, non una giumenta da riproduzione, protesta Cersei; è figlia sua, ruggisce Tywin. Cersei lo supplica di non imporle un secondo matrimonio, ma Tywin se ne va, e lei si volta verso Tyrion, troppo cupo per accorgersene.',
+        en: 'Cersei asks [[petyr-baelish|Petyr Baelish]] to find out what the Tyrells are plotting, since her father will not listen, and reminds him that he never found [[arya-stark|Arya]]. Soon she is with [[tywin-lannister|Tywin]] as he tells [[tyrion-lannister|Tyrion]] that he will marry [[sansa-stark|Sansa]], and enjoys it, until Tywin orders her to marry [[loras-tyrell|Loras]]. She is queen regent, not a brood mare, she protests; she is his daughter, he roars. She begs him not to force a second marriage on her, but he leaves, and she looks to Tyrion, who is too glum to notice.',
+      },
+    ),
+    onScreen(
+      [26, 172],
+      { it: 'Chi di noi sta peggio', en: 'Which of us has it worst' },
+      {
+        it: 'Dalle stanze di Cersei, lei e [[tyrion-lannister|Tyrion]] guardano [[sansa-stark|Sansa]] e [[loras-tyrell|Loras]] nel giardino sottostante. Tyrion chiede chi di loro quattro stia peggio, poi accusa la sorella di aver mandato [[mandon-moore|ser Mandon Moore]] a ucciderlo. Cersei tace mentre Tyrion capisce che è stato [[joffrey-baratheon|Joffrey]], e gli assicura che il re non oserà riprovarci ora che il padre è Primo Cavaliere. Si chiedono dove sia [[jaime-lannister|Jaime]]. Poi Cersei chiede chi dei due debba dare la notizia a Sansa.',
+        en: 'From her chambers, Cersei and [[tyrion-lannister|Tyrion]] watch [[sansa-stark|Sansa]] and [[loras-tyrell|Loras]] in the garden below. Tyrion asks which of the four of them has it worst, then accuses her of sending [[mandon-moore|Ser Mandon Moore]] to kill him. Cersei stays silent while he works out that it was [[joffrey-baratheon|Joffrey]], and tells him the king will not dare try again with their father as Hand. They wonder where [[jaime-lannister|Jaime]] is. Then she asks which of them should tell Sansa.',
+      },
+    ),
+    onScreen(
+      [28, 172],
+      { it: 'Le piogge di Castamere', en: 'The Rains of Castamere' },
+      {
+        it: 'Prima delle nozze di [[tyrion-lannister|Tyrion]], [[margaery-tyrell|Margaery]] osserva che presto lei e Cersei saranno sorelle. Cersei le risponde con la storia delle Piogge di Castamere: Casa Reyne si ribellò a Casa Lannister e fu spazzata via. Se Margaery la chiamerà ancora sorella, dice Cersei, la farà strangolare nel sonno. Al banchetto Cersei protesta debolmente mentre [[joffrey-baratheon|Joffrey]] beve e provoca gli sposi.',
+        en: 'Before [[tyrion-lannister|Tyrion]]’s wedding, [[margaery-tyrell|Margaery]] remarks that she and Cersei will soon be sisters. Cersei answers with the story behind The Rains of Castamere: House Reyne rose against House Lannister and was wiped out. If Margaery ever calls her sister again, Cersei says, she will have her strangled in her sleep. At the feast Cersei protests feebly as [[joffrey-baratheon|Joffrey]] drinks and taunts the bride and groom.',
+      },
+    ),
+    onScreen(
+      [30, 206],
+      { it: 'Il ritorno di Jaime', en: 'Jaime’s return' },
+      {
+        it: 'Quando [[joffrey-baratheon|Joffrey]] annuncia al Concilio ristretto che servirà a [[sansa-stark|Sansa]] la testa di [[robb-stark|Robb Stark]] al suo banchetto di nozze, Cersei, imbarazzata, insiste che sta scherzando. Non è così. Dopo che il re ha insultato [[tywin-lannister|Tywin]], il padre dice a Cersei di accompagnare a letto il re stanco, e lei lo porta via. Più tardi [[jaime-lannister|Jaime]] entra senza preavviso nelle stanze di Cersei nella Fortezza Rossa, sporco, cambiato e senza una mano. Cersei lo fissa.',
+        en: 'When [[joffrey-baratheon|Joffrey]] tells the small council that he will serve [[robb-stark|Robb Stark]]’s head to [[sansa-stark|Sansa]] at his wedding, an embarrassed Cersei insists he is joking. He is not. After he insults [[tywin-lannister|Tywin]], her father tells her to see the tired king to bed, and she leads him out. Later, unannounced, [[jaime-lannister|Jaime]] walks into her rooms in the Red Keep, filthy, changed and missing a hand. Cersei stares at him.',
+      },
+    ),
+    inBooks(
+      [25, 163],
+      { it: 'Promessa a Willas', en: 'Offered to Willas' },
+      {
+        it: 'Al Concilio ristretto Cersei illustra i piani per il banchetto delle nozze del re. Dopo, il padre [[tywin-lannister|Tywin]] la trattiene con [[tyrion-lannister|Tyrion]] e [[kevan-lannister|Kevan]]. Per sventare il piano dei Tyrell, che vogliono portare [[sansa-stark|Sansa]] ad Alto Giardino e darla in sposa a Willas, Tywin intende offrire a Willas la mano di Cersei. Lei rifiuta senza mezzi termini, ma l’ultima parola spetta al padre, e Cersei esce furiosa. È stata lei a dire a Tywin che Sansa è ormai una donna.',
+        en: 'At the small council Cersei sets out her plans for the royal wedding feast. Afterwards her father [[tywin-lannister|Tywin]] keeps her back with [[tyrion-lannister|Tyrion]] and [[kevan-lannister|Kevan]]. To head off the Tyrells’ plan to take [[sansa-stark|Sansa]] to Highgarden and wed her to Willas, Tywin means to offer Cersei’s own hand to Willas. Cersei refuses outright, but her father has the last word, and she storms out in a fury. It was she who told Tywin that Sansa has flowered.',
+      },
+    ),
+    inBooks(
+      [28, 172],
+      { it: 'L’abito della sposa', en: 'The bride’s gown' },
+      {
+        it: 'Cersei fa fare un abito nuovo per [[sansa-stark|Sansa]], i cui vestiti sono rovinati dal fumo o ormai troppo piccoli. Il giorno in cui Sansa lo indossa, sognando Willas Tyrell, Cersei le annuncia che sposerà [[tyrion-lannister|Tyrion]] quel pomeriggio stesso. Sansa non vede via d’uscita e accetta. Al banchetto Tyrion deve minacciare [[joffrey-baratheon|Joffrey]], il figlio di Cersei, perché smetta di pretendere la cerimonia della messa a letto.',
+        en: 'Cersei has a new gown made for [[sansa-stark|Sansa]], whose clothes have been spoiled by smoke or outgrown. On the day Sansa puts it on, dreaming of Willas Tyrell, Cersei tells her that she is to marry [[tyrion-lannister|Tyrion]] that very afternoon. Sansa sees no way out and goes through with it. At the feast, Tyrion has to threaten [[joffrey-baratheon|Joffrey]], Cersei’s son, to stop him pressing for the bedding.',
+      },
+    ),
   ],
   'joffrey-baratheon': [
     inBoth(
@@ -3408,6 +3672,70 @@ export const season1Chronicles = {
       {
         it: 'Nella sala del trono Joffrey nomina Primo Cavaliere il nonno [[tywin-lannister|Tywin]]. [[garlan-tyrell|Ser Garlan Tyrell]] gli chiede di sposare la sorella [[margaery-tyrell|Margaery]], e l’Alto Septon dichiara nullo il fidanzamento del re con [[sansa-stark|Sansa]] per la ribellione della casa di lei. Joffrey ricompensa i vincitori: fa di [[petyr-baelish|Ditocorto]] il signore di Harrenhal e del piromante [[hallyne|Hallyne]] un lord senza terre. Quando un cavaliere prigioniero lo chiama abominio nato dall’incesto, Joffrey nella rabbia si taglia la mano sul Trono di Spade, e viene portato via per farsi curare.',
         en: 'In the throne room Joffrey names his grandfather [[tywin-lannister|Tywin]] Hand of the King. [[garlan-tyrell|Ser Garlan Tyrell]] asks him to wed his sister [[margaery-tyrell|Margaery]], and the High Septon declares his betrothal to [[sansa-stark|Sansa]] void for her house’s rebellion. Joffrey rewards the victors, making [[petyr-baelish|Littlefinger]] lord of Harrenhal and the pyromancer [[hallyne|Hallyne]] a lord without lands. When a captive knight calls him an abomination born of incest, Joffrey cuts his hand on the Iron Throne in his anger, and is taken away to be tended.',
+      },
+    ),
+    onScreen(
+      [21, 148],
+      { it: 'Pane a Fondo delle Pulci', en: 'Bread in Flea Bottom' },
+      {
+        it: 'Di ritorno dal Grande Tempio di Baelor su una lettiga scortata, Joffrey resta sconcertato quando la sua promessa sposa, [[margaery-tyrell|Margaery Tyrell]], si ferma a Fondo delle Pulci, entra in un orfanotrofio e gioca con i bambini mentre i servitori di lei distribuiscono pane e giocattoli. Quella sera, a cena con Margaery e [[loras-tyrell|Loras]], Joffrey prende le parti di Margaery quando la madre [[cersei-lannister|Cersei]] la rimprovera per essere andata nelle strade dove la famiglia reale è stata aggredita.',
+        en: 'Riding back from the Great Sept of Baelor in a guarded litter, Joffrey is baffled when his betrothed, [[margaery-tyrell|Margaery Tyrell]], stops in Flea Bottom, walks into an orphanage and plays with the children while her servants hand out bread and toys. That evening, dining with Margaery and [[loras-tyrell|Loras]], he takes Margaery’s side when his mother [[cersei-lannister|Cersei]] scolds her for going into the streets where the royal party was attacked.',
+      },
+    ),
+    onScreen(
+      [22, 150],
+      { it: 'La balestra nuova', en: 'The new crossbow' },
+      {
+        it: 'Mentre prova gli abiti per le nozze, Joffrey zittisce [[cersei-lannister|Cersei]], che critica [[margaery-tyrell|Margaery]]. Prima di partire per la caccia convoca Margaery e la interroga sul suo matrimonio con lo zio [[renly-baratheon|Renly]], che Cersei ha definito un traditore e un degenerato. Margaery racconta che Renly evitava il suo letto, e Joffrey si impietosisce; dice di aver pensato di punire con la morte il vizio di Renly. Poi Margaery ammira la balestra nuova del re e si chiede ad alta voce cosa si provi a uccidere, e Joffrey la invita alla caccia.',
+        en: 'Joffrey tells [[cersei-lannister|Cersei]] off when she criticizes [[margaery-tyrell|Margaery]] during his fitting for the wedding. Before he leaves to hunt, he summons Margaery and questions her about her marriage to his uncle [[renly-baratheon|Renly]], whom Cersei has called a traitor and a degenerate. Margaery says Renly avoided her bed, which wins his sympathy; he says he thought of making Renly’s vice punishable by death. Then she admires his new crossbow and wonders aloud what killing feels like, and he invites her to the hunt.',
+      },
+    ),
+    onScreen(
+      [24, 150],
+      { it: 'Le storie del Grande Tempio', en: 'Tales of the Great Sept' },
+      {
+        it: 'Joffrey mostra a [[margaery-tyrell|Margaery]] il Grande Tempio di Baelor, dove si sposeranno, e le racconta le sue storie più cupe, mentre [[cersei-lannister|Cersei]] e [[olenna-tyrell|lady Olenna]] li seguono. Margaery ascolta come affascinata, poi lo convince a uscire a salutare la folla. La gente, conquistata dalla carità di Margaery, acclama la coppia, e Joffrey ricambia il saluto. Cersei capisce che il figlio ormai dà ascolto ai Tyrell.',
+        en: 'Joffrey shows [[margaery-tyrell|Margaery]] the Great Sept of Baelor, where they will marry, and tells her its grimmest stories, with [[cersei-lannister|Cersei]] and [[olenna-tyrell|Lady Olenna]] behind them. Margaery listens as if fascinated, then coaxes him outside to greet the crowd. The people, won over by her charity, cheer the couple, and Joffrey waves back. Cersei sees that her son now listens to the Tyrells.',
+      },
+    ),
+    onScreen(
+      [26, 175],
+      { it: 'Un dono di Ditocorto', en: 'A gift from Littlefinger' },
+      {
+        it: '[[petyr-baelish|Petyr Baelish]] ha scoperto che [[ros|Ros]] fa rapporto su di lui a [[varys|Varys]]. Nella sala del trono dice a Varys di averla data a un amico desideroso di un’esperienza nuova. L’amico è Joffrey. Mentre la nave di Petyr lascia la città, il re, nella sua camera da letto, guarda freddamente il corpo di Ros, trafitto dai dardi di una balestra.',
+        en: '[[petyr-baelish|Petyr Baelish]] has found out that [[ros|Ros]] reports on him to [[varys|Varys]]. In the throne room he tells Varys that he has given her to a friend eager for a new experience. The friend is Joffrey. As Petyr’s ship leaves the city, the king, in his bedchamber, coldly looks at Ros’s body, shot through with crossbow bolts.',
+      },
+    ),
+    onScreen(
+      [27, 172],
+      { it: 'Chi governa', en: 'Who rules' },
+      {
+        it: 'Joffrey convoca il nonno [[tywin-lannister|Tywin]] nella sala del trono e gli chiede di cosa si occupi il Concilio ristretto, e perché ora si riunisca nella Torre del Primo Cavaliere. Joffrey dice di essere troppo impegnato per partecipare, e che ci sono troppi gradini. Tywin sale fino al Trono di Spade, gli si ferma accanto e si offre di farlo portare su. Joffrey chiede di [[daenerys-targaryen|Daenerys Targaryen]] e dei suoi draghi, e si sente dire che un re dà ascolto ai consiglieri. Tywin accenna un inchino e se ne va, lasciando il re a disagio sul trono.',
+        en: 'Joffrey summons his grandfather [[tywin-lannister|Tywin]] to the throne room and asks what the small council has been doing, and why it now meets in the Tower of the Hand. He says he is too busy to attend, and there are too many steps. Tywin climbs up to the Iron Throne, stands beside him and offers to have him carried. Joffrey asks about [[daenerys-targaryen|Daenerys Targaryen]] and her dragons, and is told that a king heeds his counsellors. Tywin bows slightly and leaves him squirming on the throne.',
+      },
+    ),
+    onScreen(
+      [28, 172],
+      { it: 'Lo sgabello', en: 'The stool' },
+      {
+        it: 'Alle nozze di [[tyrion-lannister|Tyrion]], Joffrey accompagna [[sansa-stark|Sansa]] all’altare al posto del padre, poi porta via lo sgabello che serve allo zio per metterle il mantello, e gli invitati ridacchiano. Al banchetto beve troppo, ignora la madre [[cersei-lannister|Cersei]], schernisce Sansa perché alla fine ha sposato un Lannister, e dice che potrebbe andare nel letto di Sansa dopo Tyrion, facendola tenere ferma dalla Guardia reale. Quando reclama la cerimonia della messa a letto, Tyrion pianta un pugnale nel tavolo e minaccia il re. [[tywin-lannister|Tywin]] dà la colpa al vino, e Joffrey lascia perdere.',
+        en: 'At [[tyrion-lannister|Tyrion]]’s wedding, Joffrey walks [[sansa-stark|Sansa]] to the altar in her father’s place, then takes away the stool his uncle needs to cloak her, and the guests snigger. At the feast he drinks too much, ignores his mother [[cersei-lannister|Cersei]], taunts Sansa that she has married a Lannister after all, and says he may come to her bed after Tyrion, with his Kingsguard holding her down. When he calls for the bedding, Tyrion drives a dagger into the table and threatens him. [[tywin-lannister|Tywin]] blames the wine, and Joffrey lets it go.',
+      },
+    ),
+    onScreen(
+      [30, 197],
+      { it: 'La testa di Robb Stark', en: 'Robb Stark’s head' },
+      {
+        it: 'Joffrey spiega esultante una lettera di [[walder-frey|Walder Frey]]: [[robb-stark|Robb]] e [[catelyn-stark|Catelyn Stark]] sono morti. Vuole far servire a [[sansa-stark|Sansa]] la testa di Robb al suo banchetto di nozze. Quando [[tyrion-lannister|Tyrion]] glielo proibisce, Joffrey grida di essere il re e che chiunque è suo da tormentare. Il nonno [[tywin-lannister|Tywin]] risponde che un uomo che deve ricordare di essere re non è un vero re. Joffrey accusa Tywin di essersi nascosto a Castel Granito come un codardo mentre [[robert-baratheon|Robert]] vinceva la guerra, e viene mandato a letto.',
+        en: 'Joffrey gleefully explains a letter from [[walder-frey|Walder Frey]]: [[robb-stark|Robb]] and [[catelyn-stark|Catelyn Stark]] are dead. He means to have Robb’s head served to [[sansa-stark|Sansa]] at his wedding feast. When [[tyrion-lannister|Tyrion]] forbids it, Joffrey shouts that he is the king and everyone is his to torment. His grandfather [[tywin-lannister|Tywin]] answers that a man who must say he is king is no true king. Joffrey calls Tywin a coward who hid at Casterly Rock while [[robert-baratheon|Robert]] won the war, and is sent to bed.',
+      },
+    ),
+    inBooks(
+      [28, 172],
+      { it: 'La messa a letto negata', en: 'The bedding refused' },
+      {
+        it: '[[tyrion-lannister|Tyrion]] ha sposato [[sansa-stark|Sansa]] nel tempio reale, per volere di lord Tywin. Al banchetto di nozze, quando arriva il momento della cerimonia della messa a letto, Tyrion dichiara che non ci sarà. Joffrey continua a pretenderla anche dopo che lo zio ha parlato, e rende ancora più tesa la situazione, finché Tyrion non deve minacciarlo.',
+        en: '[[tyrion-lannister|Tyrion]] has married [[sansa-stark|Sansa]] in the royal sept, on Lord Tywin’s orders. At the wedding feast, when the time comes for the bedding, Tyrion declares there will be none. Joffrey keeps pushing for it after his uncle has spoken, and makes the tense moment worse, until Tyrion has to threaten him.',
       },
     ),
   ],
@@ -3950,6 +4278,49 @@ export const season1Chronicles = {
         en: 'At the court of rewards [[joffrey-baratheon|Joffrey]] grants Petyr Harrenhal and names him Lord Paramount of the Trident, for negotiating the treaty that brought the Tyrells to the city’s aid. With them came [[garlan-tyrell|Ser Garlan]] and [[loras-tyrell|Ser Loras Tyrell]], and Garlan asks the king to wed his sister [[margaery-tyrell|Margaery]]. The High Septon declares the king’s betrothal to [[sansa-stark|Sansa]] void.',
       },
     ),
+    onScreen(
+      [21, 148],
+      { it: 'Un posto su una nave', en: 'A place on a ship' },
+      {
+        it: 'Petyr trova [[sansa-stark|Sansa]] al porto con [[shae|Shae]], a guardare le navi. Sansa vuole lasciare la città il prima possibile, e lui le suggerisce che, la prossima volta che salperà, potrebbe imbarcarsi di nascosto con lui. Lei gli chiede di non darle troppi dettagli, perché è una pessima bugiarda. Intanto [[ros|Ros]], ora assistente di Petyr, chiede a Shae di vegliare su Sansa, soprattutto quando c’è di mezzo Petyr.',
+        en: 'Petyr finds [[sansa-stark|Sansa]] on the docks with [[shae|Shae]], watching the ships. Sansa is eager to leave the city as soon as possible, and he suggests that when he next sails she might stow away with him. She asks him not to give her too many details, because she is a terrible liar. Meanwhile [[ros|Ros]], now Petyr’s aide, asks Shae to look out for Sansa, especially where Petyr is concerned.',
+      },
+    ),
+    onScreen(
+      [23, 163],
+      {
+        it: 'Il posto accanto al Primo Cavaliere',
+        en: 'The seat nearest the Hand',
+      },
+      {
+        it: 'Al primo Concilio ristretto di [[tywin-lannister|Tywin]], Petyr si fa largo tra gli altri per prendere il posto più vicino al Primo Cavaliere, con una tunica ricamata d’oro. Il suo titolo di lord di Harrenhal è vuoto finché [[roose-bolton|Roose Bolton]] tiene il castello, ma gli basta per corteggiare [[lysa-arryn|Lysa Arryn]], che lo adora fin da bambina. La sposerà e terrà la Valle fuori dalla guerra, e [[tyrion-lannister|Tyrion]] prende il suo posto come maestro del conio. Quando Tyrion va al bordello di Petyr a ritirare i registri, Petyr lo ringrazia per aver fatto liberare [[ros|Ros]].',
+        en: 'At [[tywin-lannister|Tywin]]’s first small council, Petyr pushes past the others to take the seat nearest the Hand, in a tunic laced with gold. His title of Lord of Harrenhal is empty while [[roose-bolton|Roose Bolton]] holds the castle, but it lets him court [[lysa-arryn|Lysa Arryn]], who has adored him since childhood. He will marry her and keep the Vale out of the war, and [[tyrion-lannister|Tyrion]] replaces him as master of coin. When Tyrion comes to his brothel for the ledgers, Petyr thanks him for freeing [[ros|Ros]].',
+      },
+    ),
+    onScreen(
+      [25, 163],
+      { it: 'Una spia nel letto di Loras', en: 'A spy in Loras’s bed' },
+      {
+        it: '[[cersei-lannister|Cersei]] chiede a Petyr di scoprire cosa tramano i Tyrell, avvertendolo di fare meglio di quando non è riuscito a trovare [[arya-stark|Arya]]. Il suo uomo Olyvar, nuovo scudiero di [[loras-tyrell|Loras]], va a letto con Loras e scopre che Loras si sposerà. Petyr offre a [[sansa-stark|Sansa]] un passaggio sulla sua nave per la Valle, ma lei chiede di aspettare la fine delle nozze del re, per il bene di lui. Petyr sospetta una bugia, non insiste, e le dice di chiamarlo Petyr.',
+        en: '[[cersei-lannister|Cersei]] asks Petyr to find out what the Tyrells are up to, warning him to do better than when he failed to find [[arya-stark|Arya]]. His man Olyvar, [[loras-tyrell|Loras]]’s new squire, beds Loras and learns that he is to marry. Petyr offers [[sansa-stark|Sansa]] passage on his ship to the Vale, but she asks to wait until after the royal wedding, for his sake. He suspects a lie, does not press her, and tells her to call him Petyr.',
+      },
+    ),
+    onScreen(
+      [26, 172],
+      { it: 'Il caos è una scala', en: 'Chaos is a ladder' },
+      {
+        it: 'Nella sala del trono Petyr e [[varys|Varys]] parlano del Trono di Spade e delle storie che tengono insieme i regni. Varys dice di servire il regno; Petyr ribatte che il regno è un’invenzione di Aegon il Conquistatore. Sa che Varys si serve di [[ros|Ros]] contro di lui, dice, e l’ha data a un amico desideroso di qualcosa di nuovo. Il caos non è un abisso, aggiunge, ma una scala. Poi la nave di Petyr salpa per la Valle, e [[sansa-stark|Sansa]] la guarda partire senza di lei.',
+        en: 'In the throne room Petyr and [[varys|Varys]] talk of the Iron Throne and the stories that hold realms together. Varys says he serves the realm; Petyr scoffs that the realm is an invention of Aegon the Conqueror. He knows Varys has been using [[ros|Ros]] against him, he says, and has given her to a friend eager for something new. Chaos is not a pit, he tells Varys, but a ladder. Then his ship sails for the Vale, and [[sansa-stark|Sansa]] watches it go without her.',
+      },
+    ),
+    inBooks(
+      [23, 163],
+      { it: 'Verso il Nido dell’Aquila', en: 'To the Eyrie' },
+      {
+        it: 'Al Concilio ristretto Petyr accetta di andare al Nido dell’Aquila, sposare [[lysa-arryn|Lysa Arryn]] e, una volta suo consorte, consegnare la Valle nelle mani di [[tywin-lannister|Tywin]]. Partirà entro un giorno, così [[tyrion-lannister|Tyrion]] diventa maestro del conio. Tyrion avverte la famiglia di non fidarsi di Petyr, ma Tywin risponde che Petyr ha dato prova di lealtà: pochi giorni prima ha rivelato loro un piano dei Tyrell per portare [[sansa-stark|Sansa]] ad Alto Giardino e darla in sposa a Willas.',
+        en: 'At the small council Petyr agrees to go to the Eyrie, marry [[lysa-arryn|Lysa Arryn]] and, once he is her consort, deliver the Vale into [[tywin-lannister|Tywin]]’s hands. He is to leave within a day, so [[tyrion-lannister|Tyrion]] becomes master of coin. Tyrion warns his family not to trust him, but Tywin answers that Petyr has proved his loyalty: only days ago he told them of a Tyrell plot to take [[sansa-stark|Sansa]] to Highgarden and wed her to Willas.',
+      },
+    ),
   ],
   'varys': [
     inBooks(
@@ -4080,6 +4451,46 @@ export const season1Chronicles = {
         en: 'Varys visits the wounded [[tyrion-lannister|Tyrion]], tells him that [[bronn|Bronn]] has lost his command of the City Watch and the hill tribes have gone home, and thanks him for the city’s defence, since no one else will. Then he calls on [[ros|Ros]] in [[petyr-baelish|Littlefinger]]’s brothel. She does not know who he is until she finds he is a eunuch. He gets her to admit she fears her employer, and tells her that he protects those who work for him.',
       },
     ),
+    onScreen(
+      [24, 150],
+      { it: 'La voce nelle fiamme', en: 'The voice in the flames' },
+      {
+        it: 'Varys racconta a [[tyrion-lannister|Tyrion]] come è stato evirato: venduto da ragazzo a uno stregone di Myr, che lo ha drogato e castrato e ne ha bruciato le parti, mentre dalle fiamme rispondeva una voce. Da allora odia la magia. Poi apre una cassa con dentro lo stregone, imbavagliato e vivo. Più tardi [[ros|Ros]], che spia [[petyr-baelish|Petyr Baelish]] per lui, gli mostra il registro rubato di una nave con due letti di piume: Petyr vuole portare via [[sansa-stark|Sansa]]. Varys avverte [[olenna-tyrell|lady Olenna]], che vede subito la soluzione.',
+        en: 'Varys tells [[tyrion-lannister|Tyrion]] how he was cut: sold as a boy to a sorcerer in Myr, who drugged and gelded him and burned his parts, and a voice answered from the flames. Since then he has hated magic. Then he opens a crate holding the sorcerer, gagged and alive. Later [[ros|Ros]], who spies on [[petyr-baelish|Petyr Baelish]] for him, shows him a stolen ship’s manifest with two feather beds: Petyr means to take [[sansa-stark|Sansa]]. Varys warns [[olenna-tyrell|Lady Olenna]], who sees the answer at once.',
+      },
+    ),
+    onScreen(
+      [26, 175],
+      { it: 'Al servizio del regno', en: 'Serving the realm' },
+      {
+        it: 'Varys trova [[petyr-baelish|Petyr Baelish]] nella sala del trono, e parlano del Trono di Spade e delle storie che fanno un regno. Varys dice di servire il regno. Petyr ribatte che il regno è solo una storia, poi gli dice di sapere di [[ros|Ros]] e di averla data a un amico. Varys vede il caos come un abisso; Petyr lo chiama una scala. Poco dopo Ros giace morta nella camera da letto di [[joffrey-baratheon|Joffrey]].',
+        en: 'Varys finds [[petyr-baelish|Petyr Baelish]] in the throne room, and they speak of the Iron Throne and the stories that make a realm. Varys says he serves the realm. Petyr scoffs that the realm is only a story, then tells him he knows about [[ros|Ros]] and has given her to a friend. Where Varys sees chaos as a pit, Petyr calls it a ladder. Soon after, Ros lies dead in the bedchamber of [[joffrey-baratheon|Joffrey]].',
+      },
+    ),
+    onScreen(
+      [30, 197],
+      { it: 'Diamanti per Shae', en: 'Diamonds for Shae' },
+      {
+        it: 'Quando [[joffrey-baratheon|Joffrey]] vuole far servire a [[sansa-stark|Sansa]] la testa di [[robb-stark|Robb Stark]], Varys ricorda al re che ora Sansa è sua zia acquisita. Più tardi offre a [[shae|Shae]] un sacchetto di diamanti perché parta per Essos e si rifaccia una vita. Varys sa che Shae ama [[tyrion-lannister|Tyrion]], e crede che Tyrion sia la migliore speranza del regno: Shae è una debolezza che Tyrion non può permettersi. Shae ammette di amarlo, e di tenere anche a Sansa, ma non partirà se non sarà Tyrion a chiederglielo.',
+        en: 'When [[joffrey-baratheon|Joffrey]] wants [[robb-stark|Robb Stark]]’s head served to [[sansa-stark|Sansa]], Varys reminds the king that she is now his aunt by marriage. Later he offers [[shae|Shae]] a bag of diamonds to leave for Essos and a new life. He knows she loves [[tyrion-lannister|Tyrion]], and he believes Tyrion is the realm’s best hope, so she is a weakness Tyrion cannot afford. Shae admits she loves him, and cares for Sansa too, but she will not go unless Tyrion asks her.',
+      },
+    ),
+    inBooks(
+      [22, 156],
+      { it: 'Sussurratori alla Cittadella', en: 'Whisperers at the Citadel' },
+      {
+        it: 'Tornato nelle sue stanze, Varys vi trova [[tyrion-lannister|Tyrion]], che ha cercato invano dei passaggi segreti. Varys conferma che [[tywin-lannister|Tywin]] rimetterà [[pycelle|Pycelle]] al suo posto di gran maestro, e che ha agito subito per impedire al Conclave di mandare un maestro dei Tyrell; Tyrion scopre che Varys ha sussurratori perfino alla Cittadella. Gli riferisce anche che [[cersei-lannister|Cersei]] amoreggia con [[osmund-kettleblack|ser Osmund Kettleblack]]. Quella notte, travestito da matrona, Varys porta lì [[shae|Shae]] per Tyrion, e si dilegua.',
+        en: 'Back in his chambers, Varys finds [[tyrion-lannister|Tyrion]] waiting, after searching in vain for hidden passages. Varys confirms that [[tywin-lannister|Tywin]] will restore [[pycelle|Pycelle]] as Grand Maester, acting at once to keep the Conclave from sending a Tyrell maester, and Tyrion learns that Varys has whisperers even in the Citadel. He also passes on that [[cersei-lannister|Cersei]] has been flirting with [[osmund-kettleblack|Ser Osmund Kettleblack]]. That night, dressed as a matronly woman, he brings [[shae|Shae]] there for Tyrion, and slips away.',
+      },
+    ),
+    inBooks(
+      [23, 163],
+      { it: 'Un drago a tre teste', en: 'A three-headed dragon' },
+      {
+        it: 'Al Concilio ristretto Varys porta notizia di un drago a tre teste nato a Qarth, e dei Guardiani della notte che chiedono aiuto contro un esercito di bruti. [[tywin-lannister|Tywin]] non vuole sentir parlare di draghi e si cura poco dei bruti: se la Barriera cade, gli Stark e i Greyjoy avranno un nuovo nemico. Pensa perfino a un accordo con [[mance-rayder|Mance Rayder]], e liquida Varys e [[tyrion-lannister|Tyrion]] quando chiedono che le cappe dorate che hanno disertato in battaglia vengano mandate a prendere il nero.',
+        en: 'At the small council Varys brings word of a three-headed dragon born in Qarth, and of the Night’s Watch begging for help against a wildling army. [[tywin-lannister|Tywin]] will not hear rumours of dragons and cares little for the wildlings: if the Wall falls, the Starks and the Greyjoys will have a new enemy. Tywin even thinks of a deal with [[mance-rayder|Mance Rayder]], and brushes aside Varys and [[tyrion-lannister|Tyrion]] when they want the gold cloaks who deserted in the battle sent to take the black.',
+      },
+    ),
   ],
   'pycelle': [
     inBoth(
@@ -4155,6 +4566,38 @@ export const season1Chronicles = {
       {
         it: 'Prima della battaglia Pycelle procura a [[cersei-lannister|Cersei]] l’essenza di belladonna. Dopo, annuncia compiaciuto a [[tyrion-lannister|Tyrion]] ferito che non è più Primo Cavaliere, perché [[tywin-lannister|Tywin]] è tornato. A corte si unisce a Cersei per convincere [[joffrey-baratheon|Joffrey]] a sciogliere il fidanzamento con [[sansa-stark|Sansa]]: ha parlato con il nuovo Alto Septon, che approva.',
         en: 'Before the battle Pycelle gives [[cersei-lannister|Cersei]] essence of nightshade. Afterwards he gloats to the wounded [[tyrion-lannister|Tyrion]] that he is no longer acting Hand, since [[tywin-lannister|Tywin]] has returned. At court he joins Cersei in persuading [[joffrey-baratheon|Joffrey]] to set aside his betrothal to [[sansa-stark|Sansa]]: he has spoken with the new High Septon, who approves.',
+      },
+    ),
+    onScreen(
+      [23, 163],
+      { it: 'Il terzo posto', en: 'The third seat' },
+      {
+        it: 'Al primo Concilio ristretto di [[tywin-lannister|Tywin]], il gran maestro Pycelle, che sopravvive evitando i contrasti, lascia a [[petyr-baelish|Petyr Baelish]] e a [[varys|Varys]] i posti più vicini al Primo Cavaliere e si siede in silenzio al terzo. Quando Tywin spiega che il titolo di lord di Harrenhal permette a Petyr di corteggiare [[lysa-arryn|Lysa Arryn]], Pycelle osserva che il matrimonio farebbe di Petyr il Difensore della Valle facente funzione.',
+        en: 'At [[tywin-lannister|Tywin]]’s first small council, Grand Maester Pycelle, who survives by avoiding fights, lets [[petyr-baelish|Petyr Baelish]] and [[varys|Varys]] take the seats nearest the Hand and quietly sits third. When Tywin explains that the title of Lord of Harrenhal lets Petyr court [[lysa-arryn|Lysa Arryn]], Pycelle points out that the marriage would make Petyr the acting Defender of the Vale.',
+      },
+    ),
+    onScreen(
+      [30, 197],
+      { it: 'La lettera di lord Frey', en: 'Lord Frey’s letter' },
+      {
+        it: 'Nelle stanze di [[tywin-lannister|Tywin]], Pycelle esita a consegnare a [[tyrion-lannister|Tyrion]] una lettera in codice di [[walder-frey|Walder Frey]], e [[joffrey-baratheon|Joffrey]] ne spiega esultante il senso: [[robb-stark|Robb]] e [[catelyn-stark|Catelyn Stark]] sono morti. Quando Joffrey si scaglia contro il nonno e viene mandato a letto, Tywin chiede a Pycelle di dare al re qualcosa per farlo dormire.',
+        en: 'In [[tywin-lannister|Tywin]]’s chambers, Pycelle fumbles over handing [[tyrion-lannister|Tyrion]] a coded letter from [[walder-frey|Walder Frey]], and [[joffrey-baratheon|Joffrey]] gleefully explains it: [[robb-stark|Robb]] and [[catelyn-stark|Catelyn Stark]] are dead. When Joffrey rages at his grandfather and is sent to bed, Tywin asks Pycelle to give the king something to make him sleep.',
+      },
+    ),
+    inBooks(
+      [23, 163],
+      { it: 'Di nuovo gran maestro', en: 'Grand Maester again' },
+      {
+        it: '[[tywin-lannister|Tywin]] rimette Pycelle al suo posto di gran maestro: gli arcimaestri sostengono che solo il Conclave può destituirne uno, e quando il Conclave ha voluto mandare un altro maestro, Tywin ha agito subito per tenere un Tyrell fuori dal Concilio ristretto. Tornato al tavolo del Concilio, Pycelle annuncia che trecento dorniani cavalcano verso Approdo del Re, in risposta ai negoziati di [[tyrion-lannister|Tyrion]] con Dorne, benché Dorne e Alto Giardino si odino da secoli.',
+        en: '[[tywin-lannister|Tywin]] restores Pycelle as Grand Maester: the archmaesters hold that only the Conclave can unmake one, and when the Conclave meant to send another maester, Tywin acted at once to keep a Tyrell off the small council. Back at the council table, Pycelle tells it that three hundred Dornishmen are riding for King’s Landing, answering [[tyrion-lannister|Tyrion]]’s talks with Dorne, though Dorne and Highgarden have hated each other for centuries.',
+      },
+    ),
+    inBooks(
+      [28, 176],
+      { it: 'Notizie dalla Barriera', en: 'Word from the Wall' },
+      {
+        it: 'Pycelle porta a [[tywin-lannister|Tywin]] brutte notizie dalla Barriera: i Guardiani della notte temono che il loro Lord Comandante, [[jeor-mormont|lord Mormont]], sia morto. Tywin gli fa mandare una risposta velata: nessun uomo andrà alla Barriera se [[janos-slynt|Janos Slynt]] non sarà preso in considerazione come Lord Comandante. Assistendo alla scena, [[tyrion-lannister|Tyrion]] pensa che avrebbe dovuto far giustiziare sia Slynt sia Pycelle quando ne aveva l’occasione.',
+        en: 'Pycelle brings [[tywin-lannister|Tywin]] dire tidings from the Wall: the Night’s Watch fears that its Lord Commander, [[jeor-mormont|Lord Mormont]], is dead. Tywin has him send a veiled answer: no men will go to the Wall unless [[janos-slynt|Janos Slynt]] is considered for Lord Commander. Watching, [[tyrion-lannister|Tyrion]] thinks he should have had both Slynt and Pycelle put to death when he had the chance.',
       },
     ),
   ],
@@ -4540,6 +4983,30 @@ export const season1Chronicles = {
         en: 'Freed after the battle, Ros is visited by [[varys|Varys]], though she does not know who he is until she discovers he is a eunuch. He gets her to admit she is afraid of [[petyr-baelish|Littlefinger]], and tells her that, unlike her employer, he protects those who work for him.',
       },
     ),
+    onScreen(
+      [21, 148],
+      { it: 'Le campane di Grande Inverno', en: 'The bells of Winterfell' },
+      {
+        it: 'Ros ora lavora come assistente di [[petyr-baelish|Petyr Baelish]]. Al porto, mentre Petyr parla con [[sansa-stark|Sansa]], racconta a [[shae|Shae]] di ricordare il giorno in cui Sansa è nata, quando suonavano tutte le campane di Grande Inverno. Chiede a Shae di vegliare sulla ragazza, soprattutto quando c’è di mezzo Petyr.',
+        en: 'Ros now works as [[petyr-baelish|Petyr Baelish]]’s aide. On the docks, while Petyr speaks with [[sansa-stark|Sansa]], she tells [[shae|Shae]] that she remembers the day Sansa was born, when every bell in Winterfell rang. She asks Shae to look out for the girl, especially where Petyr is concerned.',
+      },
+    ),
+    onScreen(
+      [24, 150],
+      { it: 'Due letti di piume', en: 'Two feather beds' },
+      {
+        it: 'Ros fa segretamente rapporto su [[petyr-baelish|Petyr Baelish]] a [[varys|Varys]]. Gli racconta che le ragazze non sanno ben descrivere cosa abbia fatto con loro [[podrick-payne|Podrick Payne]], e che Petyr va spesso da [[sansa-stark|Sansa]] e sembra ossessionato da lei. Poi consegna a Varys una copia rubata del registro della nave che porterà Petyr nella Valle. Varys è sorpreso che sappia leggere. Ros gli fa notare ciò che gli è sfuggito: Petyr ha pagato per due letti di piume.',
+        en: 'Ros secretly reports on [[petyr-baelish|Petyr Baelish]] to [[varys|Varys]]. She tells him the girls cannot quite describe what [[podrick-payne|Podrick Payne]] did with them, and that Petyr visits [[sansa-stark|Sansa]] often and seems obsessed with her. Then she hands Varys a stolen copy of the manifest for Petyr’s ship to the Vale. Varys is surprised she can read. She points out what he missed: Petyr has paid for two feather beds.',
+      },
+    ),
+    onScreen(
+      [26, 175],
+      { it: 'Data a un amico', en: 'Given to a friend' },
+      {
+        it: '[[petyr-baelish|Petyr Baelish]] ha scoperto che Ros lo spia per conto di [[varys|Varys]]. Nella sala del trono dice a Varys di averla data a un amico desideroso di un’esperienza nuova. L’amico è [[joffrey-baratheon|Joffrey]]. Mentre la nave di Petyr lascia la città, il re, nella sua camera da letto, guarda il corpo di Ros, trafitto dai dardi di una balestra.',
+        en: '[[petyr-baelish|Petyr Baelish]] has learned that Ros spies on him for [[varys|Varys]]. In the throne room he tells Varys that he has given her to a friend who wanted a new experience. The friend is [[joffrey-baratheon|Joffrey]]. As Petyr’s ship leaves the city, the king, in his bedchamber, looks at Ros’s body, shot through with crossbow bolts.',
+      },
+    ),
   ],
   'mhaegen': [
     onScreen(
@@ -4635,6 +5102,17 @@ export const season1Chronicles = {
       {
         it: 'Ser Dontos Hollard è un cavaliere della corte di Approdo del Re. Quando [[sansa-stark|Sansa Stark]] entra nella sala del trono per implorare il nuovo re, [[joffrey-baratheon|Joffrey]], di risparmiare suo padre, Dontos, ubriaco, comincia a salutarla ad alta voce, ma ser [[balon-swann|Balon Swann]] lo ammonisce e lo fa tacere. Nella sala Sansa vede anche [[petyr-baelish|Petyr Baelish]] chiacchierare con Dontos e con ser Balon.',
         en: 'Ser Dontos Hollard is a knight of the court in King’s Landing. When [[sansa-stark|Sansa Stark]] enters the throne room to beg the new king, [[joffrey-baratheon|Joffrey]], to spare her father, a drunken Dontos starts to hail her aloud, but Ser [[balon-swann|Balon Swann]] warns him away. In the hall Sansa also sees [[petyr-baelish|Petyr Baelish]] chatting with Dontos and Ser Balon.',
+      },
+    ),
+    inBooks(
+      [26, 160],
+      {
+        it: 'Un avvertimento nel parco degli dei',
+        en: 'A warning in the godswood',
+      },
+      {
+        it: 'Nel parco degli dei [[sansa-stark|Sansa]] racconta a Dontos del piano di [[olenna-tyrell|lady Olenna]] di darla in sposa a Willas, il nipote dell’anziana signora. Il giullare ubriacone la avverte che i Tyrell vogliono Sansa solo per il suo diritto su Grande Inverno: questi Tyrell non sono che Lannister con i fiori. Le dice che fuggiranno, come le ha promesso, il giorno delle nozze di [[joffrey-baratheon|Joffrey]].',
+        en: 'In the godswood, [[sansa-stark|Sansa]] tells Dontos of [[olenna-tyrell|Lady Olenna]]’s plan to marry her to Willas, the old lady’s grandson. The drunken fool warns her that the Tyrells only want her for her claim to Winterfell: these Tyrells are only Lannisters with flowers. He tells her that they will escape, as he promised, on [[joffrey-baratheon|Joffrey]]’s wedding day.',
       },
     ),
   ],
@@ -4760,6 +5238,38 @@ export const season1Chronicles = {
       {
         it: 'Dopo la battaglia delle Acque Nere, Loras viene presentato a re [[joffrey-baratheon|Joffrey]] tra gli eroi della vittoria, insieme al padre, lord Mace Tyrell, e al fratello ser [[garlan-tyrell|Garlan]]. Il re nomina Loras cavaliere della Guardia reale, e dà a lord Mace un seggio nel Concilio ristretto. Garlan chiede a Joffrey di sposare la loro sorella [[margaery-tyrell|Margaery]], e l’Alto Septon dichiara nullo il fidanzamento del re con [[sansa-stark|Sansa Stark]].',
         en: 'After the battle of the Blackwater, Loras is presented to King [[joffrey-baratheon|Joffrey]] among the heroes of the victory, with his father, Lord Mace Tyrell, and his brother, Ser [[garlan-tyrell|Garlan]]. The king names Loras a knight of the Kingsguard, and gives Lord Mace a seat on the small council. Garlan asks Joffrey to wed their sister [[margaery-tyrell|Margaery]], and the High Septon declares the king’s betrothal to [[sansa-stark|Sansa Stark]] void.',
+      },
+    ),
+    onScreen(
+      [22, 150],
+      { it: 'Una scorta per Sansa', en: 'An escort for Sansa' },
+      {
+        it: 'Ser Loras Tyrell va a prendere [[sansa-stark|Sansa]] per accompagnarla nei giardini, dove lo aspettano la sorella [[margaery-tyrell|Margaery]] e la nonna, [[olenna-tyrell|lady Olenna]]. Lungo la strada Sansa gli ricorda che si sono già incontrati una volta, al torneo del Primo Cavaliere. Loras la presenta e si congeda, e Olenna, che giudica uno sciocco il proprio figlio per aver appoggiato [[renly-baratheon|Renly]], comincia a interrogare Sansa sul re.',
+        en: 'Ser Loras Tyrell comes to [[sansa-stark|Sansa]]’s door to escort her to the gardens, where his sister [[margaery-tyrell|Margaery]] and their grandmother [[olenna-tyrell|Lady Olenna]] are waiting. On the way Sansa reminds him that they met once before, at the Hand’s tourney. Loras introduces her and takes his leave, and Olenna, who thinks her son a fool for backing [[renly-baratheon|Renly]], sets about questioning Sansa about the king.',
+      },
+    ),
+    onScreen(
+      [25, 163],
+      { it: 'Un nuovo scudiero', en: 'A new squire' },
+      {
+        it: 'Loras si allena con il suo nuovo scudiero, Olyvar, mentre [[sansa-stark|Sansa]] e [[margaery-tyrell|Margaery]] guardano e Sansa chiede quando lei e Loras si sposeranno. Dopo l’incontro Olyvar flirta con Loras, e i due finiscono a letto nelle stanze di Loras. Dopo, Loras accenna al fatto che presto si sposerà. Il vero padrone di Olyvar è [[petyr-baelish|Petyr Baelish]], e la notizia arriva subito a lui.',
+        en: 'Loras spars with his new squire, Olyvar, as [[sansa-stark|Sansa]] and [[margaery-tyrell|Margaery]] watch and Sansa asks when she and Loras will wed. After the match Olyvar flirts with him, and they end up in bed in Loras’s chambers. Afterwards Loras mentions that he is to be married. Olyvar’s real master is [[petyr-baelish|Petyr Baelish]], and the news goes straight to him.',
+      },
+    ),
+    onScreen(
+      [26, 172],
+      { it: 'Il posto più terribile', en: 'The most terrible place' },
+      {
+        it: 'Passeggiando in giardino con [[sansa-stark|Sansa]], Loras è a disagio quando lei gli si avvicina, ma si anima descrivendo le nozze che ha in mente: il banchetto, la giostra e l’abito che immagina per lei. Sansa dice che non vede l’ora di lasciare Approdo del Re e vedere Alto Giardino, e Loras conviene che la Fortezza Rossa è il posto più terribile che esista. Da una finestra, più in alto, [[cersei-lannister|Cersei]] e [[tyrion-lannister|Tyrion]] li osservano.',
+        en: 'Walking in the garden with [[sansa-stark|Sansa]], Loras is uneasy when she draws close, but brightens as he describes the wedding he has planned: the food, the joust and the gown he imagines for her. Sansa says she cannot wait to leave King’s Landing and see Highgarden, and Loras agrees that the Red Keep is the most terrible place there is. From a window above, [[cersei-lannister|Cersei]] and [[tyrion-lannister|Tyrion]] watch the pair.',
+      },
+    ),
+    inBooks(
+      [22, 150],
+      { it: 'Una rosa dimenticata', en: 'A forgotten rose' },
+      {
+        it: 'Ser Loras della Guardia reale accompagna [[sansa-stark|Sansa]] a cena dalla sorella [[margaery-tyrell|Margaery]] e dalla nonna, [[olenna-tyrell|lady Olenna]]. Nel cortile passano accanto a due dozzine di uomini che si addestrano, tra cui il fratello maggiore di Loras, [[garlan-tyrell|ser Garlan]]. Sansa gli ricorda la rosa rossa che le ha regalato al torneo del Primo Cavaliere, e capisce che lui non se ne ricorda. Poi, senza volerlo, lo turba parlando della morte di [[renly-baratheon|Renly]].',
+        en: 'Ser Loras of the Kingsguard escorts [[sansa-stark|Sansa]] to supper with his sister [[margaery-tyrell|Margaery]] and their grandmother [[olenna-tyrell|Lady Olenna]]. In the yard they pass two dozen men at practice, his elder brother [[garlan-tyrell|Ser Garlan]] among them. Sansa reminds him of the red rose he gave her at the Hand’s tourney, and sees that he does not remember. Then, without meaning to, she upsets him by speaking of [[renly-baratheon|Renly]]’s death.',
       },
     ),
   ],
@@ -5198,6 +5708,46 @@ export const season1Chronicles = {
         en: 'After the battle Tyrion’s father, [[tywin-lannister|Tywin]], returns as Hand, and Bronn is relieved of his command of the City Watch. [[varys|Varys]] brings the news to the wounded [[tyrion-lannister|Tyrion]], with word that the hill tribes have gone home with their plunder: Tyrion has lost all his power.',
       },
     ),
+    onScreen(
+      [21, 148],
+      { it: 'Ser Bronn delle Acque Nere', en: 'Ser Bronn of the Blackwater' },
+      {
+        it: 'Fatto cavaliere per il suo ruolo nella battaglia delle Acque Nere, Bronn ora si fa chiamare ser Bronn delle Acque Nere. Non ha terre né ricchezze, ma la sua posizione è salita, e secondo lui anche il suo prezzo. Ascolta [[tyrion-lannister|Tyrion]] sfogarsi contro il padre, [[tywin-lannister|Tywin]], che gli ha negato Castel Granito e gli ha detto che vorrebbe poter dimostrare che Tyrion non è suo figlio.',
+        en: 'Knighted for his part in the Battle of the Blackwater, Bronn now styles himself Ser Bronn of the Blackwater. He has no lands or wealth, but his standing has risen, and in his view so has his price. He listens as [[tyrion-lannister|Tyrion]] fumes about his father [[tywin-lannister|Tywin]], who has refused him Casterly Rock and told him he wishes he could prove Tyrion was not his son.',
+      },
+    ),
+    onScreen(
+      [23, 163],
+      { it: 'Appunti dettagliati', en: 'Copious notes' },
+      {
+        it: 'Bronn accompagna [[tyrion-lannister|Tyrion]] e [[podrick-payne|Podrick]] al bordello di [[petyr-baelish|Petyr Baelish]] a ritirare i registri del nuovo maestro del conio. Lì Tyrion ricompensa Podrick, che gli ha salvato la vita, con tre donne. Quando Podrick torna con il denaro, dicendo che hanno rifiutato di farsi pagare, Bronn e Tyrion gli chiedono di raccontare tutto, nei minimi dettagli.',
+        en: 'Bronn goes with [[tyrion-lannister|Tyrion]] and [[podrick-payne|Podrick]] to [[petyr-baelish|Petyr Baelish]]’s brothel to collect the ledgers of the new master of coin. There Tyrion rewards Podrick for saving his life with three women. When Podrick comes back with the money, saying they refused payment, Bronn and Tyrion ask him to tell them everything, in detail.',
+      },
+    ),
+    onScreen(
+      [27, 172],
+      { it: 'Due donne e un regno', en: 'Two women and a kingdom' },
+      {
+        it: 'Bronn non vede problemi nel matrimonio di [[tyrion-lannister|Tyrion]]: può sposare [[sansa-stark|Sansa]], darle un figlio ed erede per accontentare il padre, e tenersi [[shae|Shae]] in privato. Due donne e un regno da governare, dice Bronn. Quando Tyrion si tormenta all’idea che la moglie, l’amante e tutto il Nord lo disprezzeranno, Bronn gli dice che perde tempo a cercare di farsi amare da tutti.',
+        en: 'Bronn sees no problem with [[tyrion-lannister|Tyrion]]’s marriage: he can wed [[sansa-stark|Sansa]], get a son and heir to please his father, and keep [[shae|Shae]] in private. Two women and a kingdom to rule, Bronn says. When Tyrion frets that his wife, his mistress and the whole North will despise him, Bronn tells him he is wasting his time trying to be loved by everyone.',
+      },
+    ),
+    inBooks(
+      [21, 148],
+      { it: 'Notizie per un ferito', en: 'News for a wounded man' },
+      {
+        it: 'Bronn, fatto cavaliere dopo la battaglia e ora ser Bronn delle Acque Nere, porta notizie a [[tyrion-lannister|Tyrion]] mentre Tyrion si riprende: [[mandon-moore|ser Mandon Moore]] è annegato, [[sandor-clegane|Sandor Clegane]] è fuggito, [[addam-marbrand|ser Addam Marbrand]] comanda le cappe dorate, e [[alayaya|Alayaya]] è stata frustata prima che la regina la lasciasse andare. Tyrion gli chiede di scoprire se è stata la sorella a mandare Mandon a ucciderlo. Poi Bronn porta in braccio Tyrion su per i gradini a spirale fino alle stanze di lord Tywin.',
+        en: 'Bronn, knighted after the battle and now Ser Bronn of the Blackwater, brings [[tyrion-lannister|Tyrion]] the news as Tyrion recovers: [[mandon-moore|Ser Mandon Moore]] drowned, [[sandor-clegane|Sandor Clegane]] has fled, [[addam-marbrand|Ser Addam Marbrand]] commands the gold cloaks, and [[alayaya|Alayaya]] has been whipped before the queen let her go. Tyrion asks him to find out whether his sister sent Mandon to kill him. Then Bronn carries Tyrion up the serpentine steps to see Lord Tywin.',
+      },
+    ),
+    inBooks(
+      [28, 176],
+      { it: 'Il cantore', en: 'The singer' },
+      {
+        it: 'Quando [[tyrion-lannister|Tyrion]] ha bisogno di lui per rintracciare Symon Lingua d’Argento, il cantore che sa di [[shae|Shae]], [[podrick-payne|Podrick]] trova Bronn al bordello di Chataya, che ora può permettersi. Quando Symon cerca di ricattare Tyrion per avere un posto alle nozze di [[joffrey-baratheon|Joffrey]], Tyrion gli promette che fra tre giorni riceverà la visita di Bronn. Uscito, ordina a Bronn di uccidere il cantore.',
+        en: 'When [[tyrion-lannister|Tyrion]] needs him to track down Symon Silver Tongue, the singer who knows about [[shae|Shae]], [[podrick-payne|Podrick]] finds Bronn at Chataya’s brothel, which he can now afford. When Symon tries to blackmail Tyrion for a place at [[joffrey-baratheon|Joffrey]]’s wedding, Tyrion promises that Bronn will visit him in three days. Outside, he orders Bronn to kill the singer.',
+      },
+    ),
   ],
   'shae': [
     onScreen(
@@ -5307,6 +5857,46 @@ export const season1Chronicles = {
         en: '[[cersei-lannister|Cersei]] seizes a girl from Chataya’s brothel, taking her for [[tyrion-lannister|Tyrion]]’s lover, and has her beaten: [[alayaya|Alayaya]], not Shae. Tyrion is relieved that his sister has not found her. That night he finds Shae in his room in the Tower of the Hand. She has come through the secret passage, but [[varys|Varys]] blindfolded her, so she does not know where it begins.',
       },
     ),
+    onScreen(
+      [21, 148],
+      { it: 'La richiesta di Ros', en: 'Ros’s request' },
+      {
+        it: 'Shae siede al porto con [[sansa-stark|Sansa]], che vuole inventare storie su dove siano dirette le navi; a Shae il gioco non interessa. [[petyr-baelish|Petyr Baelish]] arriva a parlare con Sansa, e la sua assistente [[ros|Ros]] ricorda le campane di Grande Inverno che suonavano il giorno in cui Sansa è nata. Ros chiede a Shae di vegliare sulla ragazza, soprattutto quando c’è di mezzo Petyr.',
+        en: 'Shae sits on the docks with [[sansa-stark|Sansa]], who wants to make up stories about where the ships are going; Shae has no interest in the game. [[petyr-baelish|Petyr Baelish]] comes to speak with Sansa, and his aide [[ros|Ros]] remembers the bells of Winterfell ringing on the day Sansa was born. Ros asks Shae to look out for the girl, especially where Petyr is concerned.',
+      },
+    ),
+    onScreen(
+      [22, 150],
+      { it: 'Una cosa sola', en: 'One thing' },
+      {
+        it: 'Mentre veste [[sansa-stark|Sansa]], Shae la avverte che [[petyr-baelish|Petyr Baelish]] la aiuta senza chiedere nulla, quindi deve volere qualcosa, e che di solito dalle ragazze giovani e graziose gli uomini vogliono una cosa sola. Sansa lo crede impossibile. Più tardi Shae si intrufola nelle nuove stanze di [[tyrion-lannister|Tyrion]], anche se il padre di lui ha minacciato di ucciderla se la trova con il figlio, e gli chiede di proteggere Sansa da Petyr. Tyrion risponde che non ha più il potere di farlo. Shae lo prende in giro per [[ros|Ros]].',
+        en: 'Dressing [[sansa-stark|Sansa]], Shae warns her that [[petyr-baelish|Petyr Baelish]] offers help for nothing, so he must want something, and that men usually want one thing from pretty young girls. Sansa thinks it impossible. Later Shae slips into [[tyrion-lannister|Tyrion]]’s new chambers, though his father has threatened to kill her if he finds her with him, and asks him to protect Sansa from Petyr. Tyrion says he no longer has the power. She teases him about [[ros|Ros]].',
+      },
+    ),
+    onScreen(
+      [27, 172],
+      { it: 'Non dopo le nozze', en: 'Not after the wedding' },
+      {
+        it: 'Shae è la cameriera di [[sansa-stark|Sansa]], e ora Sansa deve sposare [[tyrion-lannister|Tyrion]]. [[bronn|Bronn]] dice a Tyrion che può prendere moglie, dare un erede al padre e continuare a vedere Shae di nascosto. Tyrion teme che lei non sarà d’accordo, e ha ragione. Quando Tyrion sarà sposato, gli dice Shae senza giri di parole, non andrà più a letto con lui.',
+        en: 'Shae serves [[sansa-stark|Sansa]] as her maid, and now Sansa is to marry [[tyrion-lannister|Tyrion]]. [[bronn|Bronn]] tells Tyrion he can take a wife, give his father an heir and still keep Shae on the side. Tyrion fears she will not go along with it, and he is right. Once he is married, Shae tells him bluntly, she will no longer sleep with him.',
+      },
+    ),
+    onScreen(
+      [30, 197],
+      { it: 'Solo se lui lo chiede', en: 'Only if he asks' },
+      {
+        it: '[[varys|Varys]] offre a Shae un sacchetto di diamanti perché parta subito per Essos e si costruisca una nuova vita. Varys sa che lei ama davvero [[tyrion-lannister|Tyrion]], dice, ed è per questo che deve andarsene: Tyrion è l’ultima speranza del regno, e Shae è una debolezza che non può permettersi. Shae ammette di amare Tyrion, e di tenere anche a [[sansa-stark|Sansa]], nonostante il dolore di vederli insieme. Ma non partirà se non sarà Tyrion a chiederglielo.',
+        en: '[[varys|Varys]] offers Shae a bag of diamonds to leave for Essos at once and build a new life. He knows she truly loves [[tyrion-lannister|Tyrion]], he says, and that is why she must go: Tyrion is the realm’s last hope, and she is a weakness he cannot afford. Shae admits that she loves Tyrion, and that she cares for [[sansa-stark|Sansa]] too, despite the pain of seeing them together. But she will not leave unless Tyrion asks her to.',
+      },
+    ),
+    inBooks(
+      [22, 156],
+      { it: 'La scala sotto il letto', en: 'Steps beneath the bed' },
+      {
+        it: 'Al sorgere della luna [[varys|Varys]] porta Shae nelle sue stanze, dove la aspetta [[tyrion-lannister|Tyrion]], e li lascia soli. Tyrion vuole mandarla via per proteggerla da lord Tywin, ma Shae vuole restare. Dopo che sono stati insieme una seconda volta, gli mostra una scala segreta sotto il letto di Varys, e ancora una volta Tyrion non riesce a separarsi da lei. Per tenerla in città, decide di occuparsi del confidente di Shae, Symon Lingua d’Argento.',
+        en: '[[varys|Varys]] brings Shae to his chambers at moonrise to meet [[tyrion-lannister|Tyrion]], and leaves them alone. Tyrion means to send her away to protect her from his father, but Shae wants to stay. After they have lain together a second time, she shows him secret steps beneath Varys’s bed, and Tyrion again cannot bear to part with her. To keep her in the city, he sets out to deal with her confidant, Symon Silver Tongue.',
+      },
+    ),
   ],
   'podrick-payne': [
     inBooks(
@@ -5315,6 +5905,22 @@ export const season1Chronicles = {
       {
         it: 'Podrick Payne è un ragazzo timido e di poche parole, di un ramo minore di Casa Payne. Nell’accampamento dei Lannister, alla vigilia della battaglia sulla Forca Verde, ser [[kevan-lannister|Kevan Lannister]] lo assegna come scudiero al nipote [[tyrion-lannister|Tyrion]]. Il mattino dopo Tyrion va in battaglia con gli uomini dei clan che ha portato con sé dalle montagne.',
         en: 'Podrick Payne is a shy boy of few words, from a lesser branch of House Payne. In the Lannister camp, on the eve of the battle on the Green Fork, Ser [[kevan-lannister|Kevan Lannister]] gives him to his nephew [[tyrion-lannister|Tyrion]] as a squire. The next morning Tyrion goes into battle with the clansmen he brought with him from the mountains.',
+      },
+    ),
+    onScreen(
+      [23, 163],
+      { it: 'Tre donne', en: 'Three women' },
+      {
+        it: 'Per ricompensare Podrick, che gli ha salvato la vita nella battaglia delle Acque Nere, [[tyrion-lannister|Tyrion]] paga perché lo scudiero, che non è mai stato con una donna, passi del tempo con tre delle ragazze del bordello di [[petyr-baelish|Petyr Baelish]]. Podrick torna con tutto il denaro: non l’hanno voluto. Sbalorditi, Tyrion e [[bronn|Bronn]] gli chiedono di raccontare esattamente cosa sia successo, per prendere appunti.',
+        en: 'To reward Podrick for saving his life in the Battle of the Blackwater, [[tyrion-lannister|Tyrion]] pays for the squire, who has never been with a woman, to spend time with three of the women at [[petyr-baelish|Petyr Baelish]]’s brothel. Podrick comes back with all the money: they would not take it. Amazed, Tyrion and [[bronn|Bronn]] ask him to tell them exactly what happened, so they can take notes.',
+      },
+    ),
+    inBooks(
+      [21, 148],
+      { it: 'Di nuovo in piedi', en: 'Back on his feet' },
+      {
+        it: 'Podrick aiuta [[bronn|Bronn]] a vestire [[tyrion-lannister|Tyrion]], ancora debole per le ferite, perché possa recarsi dal padre, il Primo Cavaliere. Con la Fortezza di Maegor chiusa per la notte, Tyrion usa il nome del padre per far abbassare il ponte levatoio a [[meryn-trant|ser Meryn Trant]], e Bronn lo porta in braccio su per i gradini. Podrick e Bronn aspettano fuori dal solario della Torre del Primo Cavaliere mentre Tyrion parla con [[tywin-lannister|Tywin]].',
+        en: 'Podrick helps [[bronn|Bronn]] dress [[tyrion-lannister|Tyrion]], still weak from his wounds, so that he can call on his father, the Hand. With Maegor’s Holdfast closed for the night, Tyrion invokes his father’s name to have [[meryn-trant|Ser Meryn Trant]] lower the drawbridge, and Bronn carries him up the steps. Podrick and Bronn wait outside the solar in the Tower of the Hand while Tyrion speaks with [[tywin-lannister|Tywin]].',
       },
     ),
   ],
@@ -5336,6 +5942,17 @@ export const season1Chronicles = {
       {
         it: 'Ser Addam Marbrand, che guida gli esploratori dell’esercito di [[tywin-lannister|lord Tywin]], siede al consiglio che Tywin tiene dopo due sconfitte, nel Bosco dei Sussurri e nella battaglia che spezza l’assedio dei Lannister. Quando qualcuno propone di chiedere una tregua, Addam risponde che due battaglie non fanno una guerra e si offre di misurare la propria spada con [[robb-stark|Robb Stark]]. Tywin decide di spostare l’esercito a Harrenhal e manda gli esploratori di Addam a coprirne la marcia.',
         en: 'Ser Addam Marbrand, who leads the outriders of [[tywin-lannister|Lord Tywin]]’s army, sits in the council Tywin holds after two defeats, in the Whispering Wood and in the battle that breaks the Lannister siege. When some speak of asking for a truce, Addam answers that two battles do not make a war and offers to try his own steel against [[robb-stark|Robb Stark]]. Tywin decides to move his army to Harrenhal and sends Addam’s outriders to screen the march.',
+      },
+    ),
+    inBooks(
+      [21, 148],
+      {
+        it: 'Comandante delle cappe dorate',
+        en: 'Commander of the gold cloaks',
+      },
+      {
+        it: 'Ucciso [[jacelyn-bywater|lord Jacelyn Bywater]] dai suoi stessi uomini nella battaglia delle Acque Nere, ser Addam Marbrand ha preso il suo posto al comando della Guardia cittadina, le cappe dorate. [[tyrion-lannister|Tyrion]] lo incontra sulla scala a chiocciola della Torre del Primo Cavaliere, mentre va dal padre. Addam gli dice che il cugino di Tyrion, Tyrek, scomparso durante la rivolta, non è ancora stato trovato e si teme sia morto.',
+        en: 'With [[jacelyn-bywater|Lord Jacelyn Bywater]] killed by his own men in the Battle of the Blackwater, Ser Addam Marbrand has replaced him as commander of the City Watch, the gold cloaks. [[tyrion-lannister|Tyrion]] meets him on the turnpike stair of the Tower of the Hand, on his way to see his father. Addam tells him that his cousin Tyrek, lost in the riots, has still not been found and is feared dead.',
       },
     ),
   ],
@@ -6232,6 +6849,86 @@ export const season1Chronicles = {
       {
         it: 'Dalla galleria Sansa guarda [[joffrey-baratheon|Joffrey]] ricompensare i vincitori. Quando [[garlan-tyrell|ser Garlan Tyrell]] chiede al re di sposare la sorella [[margaery-tyrell|Margaery]], l’Alto Septon dichiara nullo il fidanzamento di Sansa, e lei ne è felice. Quella notte nel parco degli dèi [[dontos-hollard|Dontos]] la avverte che [[cersei-lannister|Cersei]] vuole tenerla con sé e che Joffrey potrebbe comunque portarla a letto. Fuggiranno durante le nozze del re, tra circa un mese, dice, e le regala una reticella d’argento con delle ametiste.',
         en: 'From the gallery Sansa watches [[joffrey-baratheon|Joffrey]] reward the victors. When [[garlan-tyrell|Ser Garlan Tyrell]] asks the king to wed his sister [[margaery-tyrell|Margaery]], the High Septon declares Sansa’s betrothal void, and she is delighted. That night in the godswood [[dontos-hollard|Dontos]] warns her that [[cersei-lannister|Cersei]] means to keep her and that Joffrey may still bed her. They will escape during the king’s wedding, in about a month, he says, and he gives her a silver hair net set with amethysts.',
+      },
+    ),
+    onScreen(
+      [21, 148],
+      { it: 'Navi nella baia', en: 'Ships in the bay' },
+      {
+        it: 'Al porto Sansa guarda le navi con [[shae|Shae]] e vorrebbe inventare storie su dove siano dirette; a Shae non interessa. Le raggiunge [[petyr-baelish|Petyr Baelish]], e Sansa gli confida quanto desideri andarsene. Lui le suggerisce che potrebbe imbarcarsi di nascosto la prossima volta che salperà, e lei gli chiede di non dirle troppo, perché è una pessima bugiarda. [[ros|Ros]], che accompagna Petyr, ricorda il giorno in cui Sansa è nata, quando suonavano tutte le campane di Grande Inverno, e chiede a Shae di vegliare su Sansa.',
+        en: 'On the docks Sansa watches the ships with [[shae|Shae]] and wants to make up stories about where they are going; Shae is not interested. [[petyr-baelish|Petyr Baelish]] joins them, and Sansa tells him how badly she wants to leave. He suggests she might stow away when he next sails, and she asks him not to tell her too much, because she is a terrible liar. [[ros|Ros]], with Petyr, remembers the day Sansa was born, when every bell in Winterfell rang, and asks Shae to look out for her.',
+      },
+    ),
+    onScreen(
+      [22, 150],
+      { it: 'È un mostro', en: 'He is a monster' },
+      {
+        it: '[[shae|Shae]] avverte Sansa che [[petyr-baelish|Petyr Baelish]] vuole qualcosa in cambio del suo aiuto. Poi [[loras-tyrell|ser Loras]] la accompagna nei giardini, dove [[margaery-tyrell|Margaery]] e la nonna, [[olenna-tyrell|lady Olenna]], le chiedono come sia davvero [[joffrey-baratheon|Joffrey]]. Sansa si trattiene, finché il ricordo del padre non la travolge: racconta che Joffrey le ha promesso di risparmiarlo e poi l’ha fatto decapitare davanti a lei. Terrorizzata all’idea di essere ascoltata, alla fine dice che Joffrey è un mostro. Olenna non si stupisce, e la rassicura: le nozze si faranno.',
+        en: '[[shae|Shae]] warns Sansa that [[petyr-baelish|Petyr Baelish]] wants something for his help. Then [[loras-tyrell|Ser Loras]] escorts her to the gardens, where [[margaery-tyrell|Margaery]] and her grandmother, [[olenna-tyrell|Lady Olenna]], ask what [[joffrey-baratheon|Joffrey]] is really like. Sansa holds back, until the mention of her father breaks her: she tells how Joffrey promised mercy and had him beheaded in front of her. Frightened of being overheard, she at last says that Joffrey is a monster. Olenna is not surprised, and assures her that the wedding will go ahead.',
+      },
+    ),
+    onScreen(
+      [24, 150],
+      { it: 'Alto Giardino', en: 'Highgarden' },
+      {
+        it: 'Mentre Sansa prega nel parco degli dei, [[margaery-tyrell|Margaery]] manda via le guardie dei Lannister e la prende in giro con la storia di una cugina a cui si è sciolta la faccia. Poi la invita ad Alto Giardino. La regina reggente non lo permetterebbe mai, dice Sansa, ma Margaery risponde che la regina Margaery lo permetterà. E se Sansa sposasse il fratello di Margaery, [[loras-tyrell|Loras]], Alto Giardino diventerebbe la casa di Sansa. L’idea di sfuggire a [[joffrey-baratheon|Joffrey]] e sposare Loras fa piangere Sansa di gioia.',
+        en: 'While Sansa prays in the godswood, [[margaery-tyrell|Margaery]] sends the Lannister guards away and teases her with a joke about a cousin whose face melted off. Then she invites Sansa to Highgarden. The queen regent would never allow it, Sansa says, but Margaery answers that Queen Margaery would. And if Sansa married her brother [[loras-tyrell|Loras]], Highgarden would be her home. The thought of escaping [[joffrey-baratheon|Joffrey]] and marrying Loras brings Sansa to tears of joy.',
+      },
+    ),
+    onScreen(
+      [25, 163],
+      { it: 'Chiamami Petyr', en: 'Call me Petyr' },
+      {
+        it: 'Sansa guarda [[loras-tyrell|Loras]] allenarsi e chiede a [[margaery-tyrell|Margaery]] quando lei e Loras si sposeranno; dopo le nozze con il re, risponde Margaery, quando [[joffrey-baratheon|Joffrey]] farà qualunque cosa per compiacerla. Poi [[petyr-baelish|Petyr Baelish]] offre a Sansa un posto sulla sua nave per la Valle. Per una volta lei mente: meglio aspettare la fine delle nozze del re, dice, perché teme per lui se il piano fallisse. Petyr sospetta qualcosa ma non insiste, e le chiede di chiamarlo Petyr.',
+        en: 'Sansa watches [[loras-tyrell|Loras]] spar and asks [[margaery-tyrell|Margaery]] when she and Loras will wed; after Margaery’s own wedding, Margaery answers, once [[joffrey-baratheon|Joffrey]] will do anything to please her. [[petyr-baelish|Petyr Baelish]] then offers Sansa a place on his ship to the Vale. For once she lies: they should wait until after the royal wedding, she says, for fear of what would happen to him if they failed. Petyr is suspicious but does not press her, and asks her to call him Petyr.',
+      },
+    ),
+    onScreen(
+      [26, 172],
+      { it: 'Due vie di fuga', en: 'Two ways out' },
+      {
+        it: 'In giardino Sansa parla con [[loras-tyrell|Loras]] delle loro nozze. Loras si anima parlando del banchetto, della giostra e dell’abito che immagina per lei, e per un momento Sansa si insospettisce; poi lui ammette che la Fortezza Rossa è il posto più terribile che esista. Più tardi [[tyrion-lannister|Tyrion]] va nelle stanze di Sansa e, con [[shae|Shae]] presente, le annuncia che sposerà lui, non Loras. Sansa guarda partire senza di lei la nave di [[petyr-baelish|Petyr Baelish]] e piange: entrambe le sue vie di fuga sono svanite.',
+        en: 'In the garden Sansa talks to [[loras-tyrell|Loras]] about their wedding. He grows lively over the feast, the joust and the gown he imagines for her, which makes her wonder for a moment, and he agrees that the Red Keep is the most terrible place there is. Later [[tyrion-lannister|Tyrion]] comes to her rooms and, with [[shae|Shae]] present, tells her that she is to marry him, not Loras. Sansa watches [[petyr-baelish|Petyr Baelish]]’s ship leave without her and weeps: both her ways out of the city are gone.',
+      },
+    ),
+    onScreen(
+      [28, 172],
+      { it: 'Il mantello dei Lannister', en: 'A Lannister cloak' },
+      {
+        it: 'Prima delle nozze [[tyrion-lannister|Tyrion]] promette di non maltrattarla, e Sansa ammette che esistono Lannister peggiori. [[joffrey-baratheon|Joffrey]] la accompagna all’altare al posto del padre e porta via lo sgabello di Tyrion; Sansa si inginocchia perché Tyrion possa metterle il mantello. Al banchetto Joffrey la provoca e dice che potrebbe andare nel letto di Sansa dopo lo zio, finché Tyrion non lo minaccia. Nelle loro stanze Sansa comincia a spogliarsi, ma Tyrion la ferma: non la toccherà se non sarà lei a volerlo. Al mattino [[shae|Shae]] vede che le lenzuola sono pulite.',
+        en: 'Before the wedding [[tyrion-lannister|Tyrion]] promises not to mistreat her, and Sansa allows that there are worse Lannisters. [[joffrey-baratheon|Joffrey]] walks her to the altar in her father’s place and takes away Tyrion’s stool; she kneels so Tyrion can cloak her. At the feast Joffrey taunts her and says he may come to her bed after his uncle, until Tyrion threatens him. In their chambers Sansa begins to undress, but Tyrion stops her: he will not touch her unless she wants it. In the morning [[shae|Shae]] sees the sheets unstained.',
+      },
+    ),
+    onScreen(
+      [30, 197],
+      { it: 'Una passeggiata in giardino', en: 'A walk in the garden' },
+      {
+        it: 'Passeggiando in giardino con [[tyrion-lannister|Tyrion]], Sansa gli dice di non badare agli uomini che ridono di lui, e propone uno scherzo che faceva sua sorella [[arya-stark|Arya]]: nascondere dello sterco nel materasso di qualcuno. Tyrion si diverte, finché [[podrick-payne|Podrick]] non lo chiama al Concilio ristretto. Quando Tyrion torna nelle loro stanze, Sansa ha già saputo che sua madre [[catelyn-stark|Catelyn]] e suo fratello [[robb-stark|Robb]] sono stati uccisi. Lo guarda in lacrime, e lui la lascia sola.',
+        en: 'Walking in the garden with [[tyrion-lannister|Tyrion]], Sansa tells him to pay no mind to the men who snigger at him, and suggests a prank her sister [[arya-stark|Arya]] used to play: hiding dung in someone’s mattress. Tyrion is amused, until [[podrick-payne|Podrick]] calls him away to the small council. When Tyrion comes back to their chambers, Sansa has already heard that her mother [[catelyn-stark|Catelyn]] and her brother [[robb-stark|Robb]] have been killed. She looks at him in tears, and he leaves her alone.',
+      },
+    ),
+    inBooks(
+      [22, 150],
+      { it: 'A cena con i Tyrell', en: 'Supper with the Tyrells' },
+      {
+        it: 'Invitata da [[margaery-tyrell|Margaery Tyrell]], Sansa va a cena con lei e con la nonna, [[olenna-tyrell|lady Olenna]], rimpiangendo che [[sandor-clegane|Sandor Clegane]] non sia più lì a proteggerla. La accompagna [[loras-tyrell|ser Loras]], che non ricorda la rosa che le ha regalato al torneo del Primo Cavaliere. Sansa conosce le cugine di Margaery, [[megga-tyrell|Megga]], [[alla-tyrell|Alla]] ed [[elinor-tyrell|Elinor]]. Olenna la incalza perché dica la verità su [[joffrey-baratheon|Joffrey]], e fa cantare a squarciagola il suo giullare perché nessuno senta. Sansa sussurra che il re è un mostro. Olenna le propone di andare ad Alto Giardino dopo le nozze e di sposare suo nipote Willas.',
+        en: 'Invited by [[margaery-tyrell|Margaery Tyrell]], Sansa goes to sup with her and her grandmother, [[olenna-tyrell|Lady Olenna]], wishing [[sandor-clegane|Sandor Clegane]] were still there to protect her. [[loras-tyrell|Ser Loras]] escorts her, and does not remember the rose he gave her at the Hand’s tourney. Sansa meets Margaery’s cousins, [[megga-tyrell|Megga]], [[alla-tyrell|Alla]] and [[elinor-tyrell|Elinor]]. Olenna presses her for the truth about [[joffrey-baratheon|Joffrey]], and has her fool sing loudly so nobody can overhear. Sansa whispers that he is a monster. Olenna proposes that she visit Highgarden after the wedding and marry her grandson Willas.',
+      },
+    ),
+    inBooks(
+      [26, 160],
+      { it: 'Lannister con i fiori', en: 'Lannisters with flowers' },
+      {
+        it: 'Sansa prova un nuovo abito, dono di [[cersei-lannister|Cersei]], e passa le giornate con [[margaery-tyrell|Margaery]] e le cugine di lei. Margaery dice di non temere [[joffrey-baratheon|Joffrey]], perché il padre ha accettato il matrimonio solo a patto che il fratello [[loras-tyrell|Loras]] entrasse nella Guardia reale. Nel parco degli dei Sansa racconta a [[dontos-hollard|Dontos]] del progetto di farle sposare Willas. I Tyrell vogliono solo il diritto di Sansa su Grande Inverno, la avverte Dontos: sono Lannister con i fiori. Fuggiranno il giorno delle nozze di Joffrey, come promesso. Sansa sogna ancora una vita con Willas ad Alto Giardino.',
+        en: 'Sansa is fitted for a new gown from [[cersei-lannister|Cersei]] and spends her days with [[margaery-tyrell|Margaery]] and her cousins. Margaery says she does not fear [[joffrey-baratheon|Joffrey]], because her father agreed to the match only if her brother [[loras-tyrell|Loras]] were named to the Kingsguard. In the godswood Sansa tells [[dontos-hollard|Dontos]] of the plan to wed her to Willas. The Tyrells only want her claim to Winterfell, he warns: they are Lannisters with flowers. They will escape on Joffrey’s wedding day, as promised. Sansa still dreams of a life at Highgarden with Willas.',
+      },
+    ),
+    inBooks(
+      [28, 172],
+      { it: 'Sposa di un Lannister', en: 'Wed to a Lannister' },
+      {
+        it: 'Mentre indossa l’abito che [[cersei-lannister|Cersei]] le ha fatto fare, Sansa sogna a occhi aperti Willas, finché la regina non le annuncia che sposerà [[tyrion-lannister|Tyrion]] quel pomeriggio stesso. Sansa non vede via d’uscita. Tyrion le chiede scusa. Nel tempio reale lei non si piega perché lui possa metterle il mantello, e Tyrion viene umiliato. Al banchetto [[garlan-tyrell|ser Garlan Tyrell]] la consola: Tyrion è più grande di quanto sembri. Tyrion rifiuta la cerimonia della messa a letto, e quella notte, vedendola terrorizzata, promette di non toccarla finché non sarà lei a volerlo.',
+        en: 'Dressing in the gown [[cersei-lannister|Cersei]] had made for her, Sansa daydreams about Willas, until the queen tells her she will marry [[tyrion-lannister|Tyrion]] that very afternoon. Sansa sees no way out. Tyrion apologizes to her. In the royal sept she will not bend for him to cloak her, and he is shamed. At the feast [[garlan-tyrell|Ser Garlan Tyrell]] comforts her: Tyrion is a bigger man than he seems. Tyrion refuses the bedding, and in bed that night, seeing her terror, promises not to touch her until she wants him.',
       },
     ),
   ],

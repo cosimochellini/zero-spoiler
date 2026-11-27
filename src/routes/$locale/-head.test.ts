@@ -36,8 +36,18 @@ function isHead(value: unknown): value is Head {
   return typeof value === 'function'
 }
 
+/** The one option of a route `headOf` reads. */
+interface HeadOption {
+  head?: unknown
+}
+
+/** A route, as far as `headOf` reads it. */
+interface HeadedRoute {
+  options: HeadOption
+}
+
 function headOf(
-  route: { options: { head?: unknown } },
+  route: HeadedRoute,
   pathname: string,
   series: Series = ONE_PIECE_SERIES,
 ): ReturnType<Head> {

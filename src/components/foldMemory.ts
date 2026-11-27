@@ -70,6 +70,7 @@ export function useEntryFold(id: string): [open: boolean, unfold: () => void] {
     open = left === undefined ? shown.open : left.get(id) === true
     setShown({ key, open })
   }
+  // eslint-disable-next-line no-restricted-syntax -- the module notes per history entry, written only for a committed render
   useEffect(() => {
     note({ index, key }, id, open)
   }, [id, index, key, open])

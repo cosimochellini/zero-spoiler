@@ -89,16 +89,15 @@ export function RecordStage<T extends RecordView & { summary: string }>({
   )
 }
 
-/** An open record's name, its chips and its sentence. */
-function StageWords({
-  chips,
-  morph,
-  record,
-}: {
+/** An open record, its chips, and the morph that names its name. */
+interface StageWordsProps {
   chips: StageChip[]
   morph: 'fruit' | undefined
   record: RecordView & { summary: string }
-}): ReactElement {
+}
+
+/** An open record's name, its chips and its sentence. */
+function StageWords({ chips, morph, record }: StageWordsProps): ReactElement {
   return (
     <>
       <h1

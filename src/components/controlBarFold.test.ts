@@ -39,13 +39,15 @@ function stubObservers(): void {
   )
 }
 
-/** A container whose first child is the bar: controls, then the folded row. */
-function mountBar(): {
+interface MountBarResult {
   bar: HTMLElement
   container: HTMLElement
   radio: HTMLInputElement
   toggle: HTMLButtonElement
-} {
+}
+
+/** A container whose first child is the bar: controls, then the folded row. */
+function mountBar(): MountBarResult {
   const container = document.createElement('div')
   const bar = document.createElement('div')
   const controls = document.createElement('div')

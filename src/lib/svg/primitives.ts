@@ -78,6 +78,12 @@ export const shadow = (cx: number, cy: number, rx: number): Stroke => {
   }
 }
 
+/** A point on the drawing's grid. */
+interface Point {
+  x: number
+  y: number
+}
+
 /**
  * A sheathed sword lying at the same angle as its two companions: the
  * sheath and its two ends, the round guard seen edge on as an oval across
@@ -88,7 +94,7 @@ export function sheath(dx: number, role: StrokeRole): Stroke[] {
   const b = { x: 100 + dx, y: 46 }
   // Perpendicular offset for the sheath's width.
   const o = { x: 4.6, y: 2 }
-  function at(t: number): { x: number; y: number } {
+  function at(t: number): Point {
     return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t }
   }
   const guard = at(0.3)

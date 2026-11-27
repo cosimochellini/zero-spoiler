@@ -100,6 +100,12 @@ export function StepperRow({
   )
 }
 
+interface NumberInputProps extends Omit<StepperRowProps, 'draft'> {
+  disabled: boolean
+  roll: Roll
+  value: string
+}
+
 /**
  * The field itself. A step remounts its wrapper so the numeral rolls in from
  * the side the step went; typing does not, so the caret stays where it is.
@@ -113,11 +119,7 @@ function NumberInput({
   onChange,
   roll,
   value,
-}: Omit<StepperRowProps, 'draft'> & {
-  disabled: boolean
-  roll: Roll
-  value: string
-}): ReactElement {
+}: NumberInputProps): ReactElement {
   const rolled = roll.count > 0
 
   return (
@@ -156,6 +158,13 @@ const REPEAT_FIRST_MS = 90
 const REPEAT_LAST_MS = 30
 const REPEAT_SPEEDUP_MS = 6
 
+interface StepButtonProps {
+  disabled: boolean
+  label: string
+  sign: -1 | 1
+  ticker: () => () => boolean
+}
+
 /**
  * One stepper. A press steps once; held, it repeats and speeds up until it
  * is let go or reaches the end of the range. The pointer drives the hold; a
@@ -167,12 +176,7 @@ function StepButton({
   label,
   sign,
   ticker,
-}: {
-  disabled: boolean
-  label: string
-  sign: -1 | 1
-  ticker: () => () => boolean
-}): ReactElement {
+}: StepButtonProps): ReactElement {
   const hold = useHold()
   const handleRelease = hold.stop
 
@@ -232,6 +236,7 @@ function useHold(): Hold {
     timerRef.current = undefined
   }, [])
 
+  // eslint-disable-next-line no-restricted-syntax -- the hold-to-repeat timer, cleared when the counter goes
   useEffect(() => stop, [stop])
 
   return {
@@ -256,18 +261,17 @@ function useHold(): Hold {
   }
 }
 
+export interface SagaLineProps {
+  draft: Draft
+  id: string
+}
+
 /**
  * The saga the number falls in, in the accent, under the numeral. Empty
  * until the table arrives and while the draft is not a bookmark yet; the
  * line keeps its height either way.
  */
-export function SagaLine({
-  draft,
-  id,
-}: {
-  draft: Draft
-  id: string
-}): ReactElement {
+export function SagaLine({ draft, id }: SagaLineProps): ReactElement {
   const t = useSeriesT()
   const onePiece = useSeriesT('one-piece')
   const table = useSagaTable()

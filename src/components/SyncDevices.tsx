@@ -4,7 +4,6 @@ import {
   type RefObject,
   useCallback,
   useEffect,
-  useRef,
   useState,
 } from 'react'
 import type { QrCodeGenerateResult } from 'uqr'
@@ -31,6 +30,11 @@ interface SyncLink {
 /** What asking for the link came to: the link, or that it could not be had. */
 type LinkAnswer = 'failed' | SyncLink
 
+export interface DevicesLinkProps {
+  linkRef: RefObject<HTMLButtonElement | null>
+  onOpen: () => void
+}
+
 /**
  * "More devices?" under the bookmark form (#1560). It only asks the dialog to
  * swap the form for `DevicesView`.
@@ -38,10 +42,7 @@ type LinkAnswer = 'failed' | SyncLink
 export function DevicesLink({
   linkRef,
   onOpen,
-}: {
-  linkRef: RefObject<HTMLButtonElement | null>
-  onOpen: () => void
-}): ReactElement {
+}: DevicesLinkProps): ReactElement {
   const words = syncTranslator(useLocale().locale)
 
   return (
@@ -57,6 +58,17 @@ export function DevicesLink({
   )
 }
 
+export interface DevicesViewProps {
+  /** The ids the dialog names itself by, passed on to the head shown here. */
+  ledeId: string
+  onBack: () => void
+  /** Closes the dialog. */
+  onDone: () => void
+  /** What takes the focus back when the view goes: the link that opened it. */
+  returnFocusTo: RefObject<HTMLButtonElement | null>
+  titleId: string
+}
+
 /**
  * What the dialog shows in place of the bookmark form once "More devices?" is
  * pressed: the link that ties another device to the same record, as a QR code
@@ -70,16 +82,7 @@ export function DevicesView({
   onDone,
   returnFocusTo,
   titleId,
-}: {
-  /** The ids the dialog names itself by, passed on to the head shown here. */
-  ledeId: string
-  onBack: () => void
-  /** Closes the dialog. */
-  onDone: () => void
-  /** What takes the focus back when the view goes: the link that opened it. */
-  returnFocusTo: RefObject<HTMLButtonElement | null>
-  titleId: string
-}): ReactElement {
+}: DevicesViewProps): ReactElement {
   const words = syncTranslator(useLocale().locale)
   // Each press of Retry is a new `LinkLoaded`, which asks for the link again.
   const [attempt, setAttempt] = useState(0)
@@ -119,6 +122,7 @@ export function DevicesView({
  * cleanup runs once the form is back in sight.
  */
 function useReturnFocus(link: RefObject<HTMLButtonElement | null>): void {
+  // eslint-disable-next-line no-restricted-syntax -- DOM focus, moved once the commit has unhidden the form; a ref cleanup here runs before that and would focus a hidden link.
   useEffect(
     () => () => {
       link.current?.focus()
@@ -127,27 +131,20 @@ function useReturnFocus(link: RefObject<HTMLButtonElement | null>): void {
   )
 }
 
+interface BackButtonProps {
+  label: string
+  onBack: () => void
+}
+
 /**
  * The way back, drawn with a chevron. It takes the focus on arrival: the
  * link that opened the view is out of sight and cannot keep it.
  */
-function BackButton({
-  label,
-  onBack,
-}: {
-  label: string
-  onBack: () => void
-}): ReactElement {
-  const ref = useRef<HTMLButtonElement>(null)
-
-  useEffect(() => {
-    ref.current?.focus()
-  }, [])
-
+function BackButton({ label, onBack }: BackButtonProps): ReactElement {
   return (
     <Button
       onClick={onBack}
-      ref={ref}
+      ref={focusOnArrival}
       sx={styles.back}
     >
       <svg
@@ -171,16 +168,23 @@ function BackButton({
 }
 
 /**
+ * A ref callback with one identity, so it runs when the button attaches and
+ * not on every render.
+ */
+function focusOnArrival(button: HTMLButtonElement | null): void {
+  button?.focus()
+}
+
+interface LinkLoadedProps {
+  onDisconnect: () => void
+  onRetry: () => void
+}
+
+/**
  * Asks for the link as soon as it is mounted, and shows a loading line, then
  * the code, or a way to ask again.
  */
-function LinkLoaded({
-  onDisconnect,
-  onRetry,
-}: {
-  onDisconnect: () => void
-  onRetry: () => void
-}): ReactElement {
+function LinkLoaded({ onDisconnect, onRetry }: LinkLoadedProps): ReactElement {
   const t = useT()
   const { locale } = useLocale()
   const ask = useCallback(async () => answerFor(locale), [locale])
@@ -234,14 +238,15 @@ async function linkFor(locale: Locale): Promise<SyncLink> {
   return { code: qr.encode(url, { border: 0 }), url }
 }
 
+interface SyncLinkPanelProps extends Pick<LinkLoadedProps, 'onDisconnect'> {
+  link: SyncLink
+}
+
 /** The code, the warning that comes with it, and the two actions. */
 function SyncLinkPanel({
   link,
   onDisconnect,
-}: {
-  link: SyncLink
-  onDisconnect: () => void
-}): ReactElement {
+}: SyncLinkPanelProps): ReactElement {
   const words = syncTranslator(useLocale().locale)
   const [copied, setCopied] = useState<'copied' | 'failed' | null>(null)
 
@@ -289,17 +294,16 @@ function SyncLinkPanel({
   )
 }
 
+interface QrCodeProps {
+  code: QrCodeGenerateResult
+  label: string
+}
+
 /**
  * The code as one path of unit squares on a light ground with its quiet
  * zone: dark on light, the way every camera app reads one.
  */
-function QrCode({
-  code,
-  label,
-}: {
-  code: QrCodeGenerateResult
-  label: string
-}): ReactElement {
+function QrCode({ code, label }: QrCodeProps): ReactElement {
   const side = code.size + QUIET_ZONE + QUIET_ZONE
   const modules = code.data
     .flatMap((row, y) =>

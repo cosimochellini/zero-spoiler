@@ -19,15 +19,18 @@ import {
 
 import { styles } from './-$id.styles'
 
+/** A character's relationships, and the band's place down the page. */
+export interface RelationshipBandProps {
+  /** Which band down the page this is, for the settle delay. */
+  band: number
+  relationships: RelationshipView[]
+}
+
 /** The people the server can name, with the connection rather than their role. */
 export function RelationshipBand({
   band,
   relationships,
-}: {
-  /** Which band down the page this is, for the settle delay. */
-  band: number
-  relationships: RelationshipView[]
-}): null | ReactElement {
+}: RelationshipBandProps): null | ReactElement {
   const t = useT()
   if (relationships.length === 0) {
     return null
@@ -63,12 +66,13 @@ export function RelationshipBand({
   )
 }
 
-/** Current words stay outside the independent native disclosure. */
-function RelationshipCard({
-  relation,
-}: {
+/** One relationship. */
+interface RelationshipCardProps {
   relation: RelationshipView
-}): ReactElement {
+}
+
+/** Current words stay outside the independent native disclosure. */
+function RelationshipCard({ relation }: RelationshipCardProps): ReactElement {
   const t = useT()
   const { locale, series } = useSeriesParams()
   const threshold = useThreshold()

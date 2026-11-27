@@ -46,6 +46,12 @@ function islesOf(open: StopView[]): IsleMark[] {
   return isles
 }
 
+export interface LayerProps {
+  model: ChartModel
+  orientation: Orientation
+  scale: number
+}
+
 /**
  * The world, its route and its islands, and the words written over them at
  * this scale (`Words`).
@@ -54,11 +60,7 @@ export function Drawing({
   model,
   orientation,
   scale,
-}: {
-  model: ChartModel
-  orientation: Orientation
-  scale: number
-}): ReactElement {
+}: LayerProps): ReactElement {
   const id = useId()
   const box = boxOf(orientation)
   const main = model.open.findLast((port) => isOnRoute(pointOf(port)))
@@ -96,6 +98,14 @@ export function Drawing({
   )
 }
 
+export interface ZoomButtonsProps extends Pick<
+  ChartZoom,
+  'isIn' | 'isOut' | 'isWhole' | 'toggle' | 'zoomBy'
+> {
+  /** Only across: upright, the chart does not zoom. */
+  shown: boolean
+}
+
 /**
  * Under the chart across: how the window moves, then + and −, and the
  * switch between the whole chart and the reader's saga, with a bookmark.
@@ -107,10 +117,7 @@ export function ZoomButtons({
   shown,
   toggle,
   zoomBy,
-}: Pick<ChartZoom, 'isIn' | 'isOut' | 'isWhole' | 'toggle' | 'zoomBy'> & {
-  /** Only across: upright, the chart does not zoom. */
-  shown: boolean
-}): null | ReactElement {
+}: ZoomButtonsProps): null | ReactElement {
   const t = useT()
   if (!shown) {
     return null
@@ -147,18 +154,16 @@ export function ZoomButtons({
   )
 }
 
+interface ZoomStepProps extends Pick<ChartZoom, 'zoomBy'> {
+  direction: -1 | 1
+  limit: boolean
+}
+
 /**
  * One step of the zoom, out or in. At its limit it stays focusable
  * (`aria-disabled`) and does nothing, so the focus never falls to the page.
  */
-function ZoomStep({
-  direction,
-  limit,
-  zoomBy,
-}: Pick<ChartZoom, 'zoomBy'> & {
-  direction: -1 | 1
-  limit: boolean
-}): ReactElement {
+function ZoomStep({ direction, limit, zoomBy }: ZoomStepProps): ReactElement {
   const t = useT()
 
   return (
@@ -183,15 +188,7 @@ function ZoomStep({
  * eye only; the drawing's label and the stops say the same to a screen
  * reader.
  */
-function Words({
-  model,
-  orientation,
-  scale,
-}: {
-  model: ChartModel
-  orientation: Orientation
-  scale: number
-}): ReactElement {
+function Words({ model, orientation, scale }: LayerProps): ReactElement {
   const t = useT()
   const { here } = model
 

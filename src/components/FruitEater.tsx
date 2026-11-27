@@ -20,6 +20,14 @@ import {
   text,
 } from '~/styles/tokens.stylex'
 
+export interface FruitEaterProps {
+  eater: EaterView
+  highlight: [number, number] | null
+  more: number
+  /** The count of the others, said in full: "and 2 more characters…". */
+  said: string
+}
+
 /**
  * Who ate the fruit, or who uses the ability: one user's crest and name, a
  * link to their page, and "+N" for the others the reader has reached. A
@@ -36,13 +44,7 @@ export function FruitEater({
   highlight,
   more,
   said,
-}: {
-  eater: EaterView
-  highlight: [number, number] | null
-  more: number
-  /** The count of the others, said in full: "and 2 more characters…". */
-  said: string
-}): ReactElement {
+}: FruitEaterProps): ReactElement {
   const { locale } = useLocale()
   const { series } = useSeriesParams()
   const { ref, strokes } = useDrawing(eater.id, eater.visual)
@@ -80,14 +82,13 @@ export function FruitEater({
   )
 }
 
-/** How many more characters there are: a number, said in full aloud. */
-function MoreEaters({
-  more,
-  said,
-}: {
+interface MoreEatersProps {
   more: number
   said: string
-}): ReactElement {
+}
+
+/** How many more characters there are: a number, said in full aloud. */
+function MoreEaters({ more, said }: MoreEatersProps): ReactElement {
   return (
     <span {...stylex.props(styles.more)}>
       <span aria-hidden="true">{`+${String(more)}`}</span>

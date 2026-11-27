@@ -40,13 +40,22 @@ function useWorldMap(): boolean {
   )
 }
 
+/** The stretch of the chart around a place, and the place's name. */
+interface PlaceMap {
+  chart: NonNullable<PlaceDetail['chart']>
+  name: string
+}
+
 /** The stretch of the chart to draw, with the place's name: none under fog. */
-function mapOf(
-  detail: PlaceDetail,
-): null | { chart: NonNullable<PlaceDetail['chart']>; name: string } {
+function mapOf(detail: PlaceDetail): null | PlaceMap {
   return detail.chart === null || !detail.slot.open ?
       null
     : { chart: detail.chart, name: detail.slot.record.name }
+}
+
+/** A place's page. */
+export interface MapBandProps {
+  detail: PlaceDetail
 }
 
 /**
@@ -57,7 +66,7 @@ function mapOf(
  * with no world map (`features.worldMap`) has no map to be on, so the stop
  * number is the band's title.
  */
-export function MapBand({ detail }: { detail: PlaceDetail }): ReactElement {
+export function MapBand({ detail }: MapBandProps): ReactElement {
   const t = useT()
   const titleId = useId()
   const worldMap = useWorldMap()
@@ -97,12 +106,17 @@ export function MapBand({ detail }: { detail: PlaceDetail }): ReactElement {
   )
 }
 
+/** The later visits the reader has reached. */
+interface VisitsProps {
+  visits: VisitView[]
+}
+
 /**
  * The later visits the reader has reached, each in their unit with its
  * note, in the facts' ledger. Nothing while there are none: the server sends
  * only the visits reached, so an empty list is all a reader is owed.
  */
-function Visits({ visits }: { visits: VisitView[] }): null | ReactElement {
+function Visits({ visits }: VisitsProps): null | ReactElement {
   const t = useT()
   const threshold = useThreshold()
 
@@ -125,6 +139,17 @@ function Visits({ visits }: { visits: VisitView[] }): null | ReactElement {
       </div>
 }
 
+/** A place or a ship, and its drawings up to the bookmark. */
+export interface DrawnRecord {
+  drawings: PlaceDrawing[]
+  slot: Slot<RecordView>
+}
+
+/** A place or a ship, with its drawings. */
+export interface DrawingsBandProps {
+  detail: DrawnRecord
+}
+
 /**
  * Every drawing the place or the ship has had up to the bookmark, oldest
  * first, each with the episode it is drawn from. Nothing while there is only
@@ -132,9 +157,7 @@ function Visits({ visits }: { visits: VisitView[] }): null | ReactElement {
  */
 export function DrawingsBand({
   detail,
-}: {
-  detail: { drawings: PlaceDrawing[]; slot: Slot<RecordView> }
-}): null | ReactElement {
+}: DrawingsBandProps): null | ReactElement {
   const t = useT()
   const onePiece = useSeriesT('one-piece')
   const threshold = useThreshold()

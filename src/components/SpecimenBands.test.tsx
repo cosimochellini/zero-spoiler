@@ -87,8 +87,12 @@ const BANDS = [
   }),
 ]
 
+interface LateProps {
+  initial: FruitParams
+}
+
 /** The bar on its own, then the album when the button says it has come. */
-function Late({ initial }: { initial: FruitParams }): ReactElement {
+function Late({ initial }: LateProps): ReactElement {
   const [album, setAlbum] = useState<AlbumView | null>(null)
   const [params, setParams] = useState(initial)
 

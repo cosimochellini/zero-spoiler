@@ -9,11 +9,14 @@ import { syncStoreFromEnv } from './kv'
 
 const ID = '0f8fad5b-d9cb-469f-a165-70867728950e'
 
-/** A KV namespace that holds `stored` under every key. */
-function namespace(stored: unknown): {
+/** A mocked KV namespace: the two calls the store makes. */
+interface MockNamespace {
   get: Mock<(key: string, type: 'json') => Promise<unknown>>
   put: Mock<(key: string, value: string, options: object) => Promise<undefined>>
-} {
+}
+
+/** A KV namespace that holds `stored` under every key. */
+function namespace(stored: unknown): MockNamespace {
   return {
     get: vi
       .fn<(key: string, type: 'json') => Promise<unknown>>()

@@ -109,12 +109,15 @@ function CharacterPage(): ReactElement {
   )
 }
 
+/** The character's relationships, as they stream in. */
+interface RelationshipsBandProps {
+  relationships: Promise<RelationshipView[]>
+}
+
 /** The latest server-filtered selection, with no teaser while it streams. */
 function RelationshipsBand({
   relationships,
-}: {
-  relationships: Promise<RelationshipView[]>
-}): ReactElement {
+}: RelationshipsBandProps): ReactElement {
   return (
     <RelationshipBand
       band={BAND.relationships}

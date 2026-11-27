@@ -80,14 +80,11 @@ export function CharacterCard({
   )
 }
 
+/** The open record, and the span of its name a search matched. */
+type CardLinkProps = Pick<NameAndRoleProps, 'highlight' | 'record'>
+
 /** An open card: the crest, the name and the role, as a link to the page. */
-function CardLink({
-  record,
-  highlight,
-}: {
-  highlight: [number, number] | null
-  record: CharacterView
-}): ReactElement {
+function CardLink({ record, highlight }: CardLinkProps): ReactElement {
   const { series, locale } = useSeriesParams()
   // ponytail: a modified click that opens a tab also sets it; harmless, the
   // names pair only on this tab's next navigation.
@@ -123,6 +120,15 @@ function CardLink({
   )
 }
 
+/** The record, the match to mark, and the styles the caller sets them in. */
+export interface NameAndRoleProps {
+  highlight: [number, number] | null
+  nameSx: stylex.StyleXStyles
+  record: CharacterView
+  roleSx: stylex.StyleXStyles
+  travels: boolean
+}
+
 /**
  * The name, with a search match marked, and the role under it when there is
  * one. The card and the shelf tile set the two in their own styles.
@@ -133,13 +139,7 @@ export function NameAndRole({
   travels,
   nameSx,
   roleSx,
-}: {
-  highlight: [number, number] | null
-  nameSx: stylex.StyleXStyles
-  record: CharacterView
-  roleSx: stylex.StyleXStyles
-  travels: boolean
-}): ReactElement {
+}: NameAndRoleProps): ReactElement {
   return (
     <>
       <span
@@ -160,14 +160,14 @@ export function NameAndRole({
   )
 }
 
-/** The name with the matched letters in a `<mark>`, or the name alone. */
-export function Marked({
-  text: value,
-  span,
-}: {
+/** A name, and the span of it a search matched. */
+export interface MarkedProps {
   span: [number, number] | null
   text: string
-}): ReactNode {
+}
+
+/** The name with the matched letters in a `<mark>`, or the name alone. */
+export function Marked({ text: value, span }: MarkedProps): ReactNode {
   if (span === null) {
     return value
   }

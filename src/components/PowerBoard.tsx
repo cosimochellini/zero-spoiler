@@ -24,6 +24,10 @@ import {
 } from '~/lib/view/power'
 import { settleStyles } from '~/styles/settle'
 
+export interface PowerBoardProps {
+  page: PowerPageView
+}
+
 /**
  * The ranks page (#1086, the power page until #1194): a hall of thrones,
  * one row of them for each body the reader has met and sees a held or vacant
@@ -40,7 +44,7 @@ import { settleStyles } from '~/styles/settle'
  * motion; the title never animates (#929). The glow is decorative and
  * carries no text.
  */
-export function PowerBoard({ page }: { page: PowerPageView }): ReactElement {
+export function PowerBoard({ page }: PowerBoardProps): ReactElement {
   const t = useRanksT()
   const { bookmark } = useBookmark()
 
@@ -91,7 +95,12 @@ function useRanksT():
 /** A body's number, `01` on: two digits hold every body the epic lists. */
 const NUMERAL_DIGITS = 2
 
-function Body({ body, at }: { at: number; body: BodyView }): ReactElement {
+interface BodyProps {
+  at: number
+  body: BodyView
+}
+
+function Body({ body, at }: BodyProps): ReactElement {
   const t = useRanksT()
   // The section is what a seat on a character's page links to; its heading
   // names it.
@@ -175,12 +184,16 @@ function Throne({ seat, lead, lights }: ThroneProps): ReactElement {
   )
 }
 
+interface SeatProps {
+  seat: SeatView
+}
+
 /**
  * The throne itself: dashed and unlit while its holder is under fog, solid
  * and empty once vacated, in the holder's colour with their drawing once
  * held. Only the held throne has a colour to give.
  */
-function ThroneArt({ seat }: { seat: SeatView }): ReactElement {
+function ThroneArt({ seat }: SeatProps): ReactElement {
   return (
     <svg
       viewBox={THRONE_VIEWBOX}
@@ -220,7 +233,7 @@ function ThroneArt({ seat }: { seat: SeatView }): ReactElement {
   )
 }
 
-function Holder({ seat }: { seat: SeatView }): ReactElement | string {
+function Holder({ seat }: SeatProps): ReactElement | string {
   const t = useRanksT()
   const { series, locale } = useSeriesParams()
 

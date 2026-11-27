@@ -16,6 +16,7 @@ export function useScrollBackOnceTall(served: boolean): void {
     getElement: () => window,
   })?.scrollY
 
+  // eslint-disable-next-line no-restricted-syntax -- a ResizeObserver on the body and window input listeners
   useEffect(() => {
     if (
       !served

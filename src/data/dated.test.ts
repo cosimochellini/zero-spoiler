@@ -13,7 +13,7 @@ import {
 } from './dated'
 import { type Reveal, reveal } from './reveal'
 import { castOf, keptOf } from './shelves'
-import type { CharacterDossier, Entity } from './types'
+import type { CharacterDossier, Entity, LocalizedText } from './types'
 
 /** A record of a fixture series, filed at one episode and one chapter. */
 function record(
@@ -34,7 +34,7 @@ function record(
   }
 }
 
-const text = (en: string): { en: string; it: string } => ({ en, it: en })
+const text = (en: string): LocalizedText => ({ en, it: en })
 
 /**
  * A fixture series: one arc, one place and one character whose dossier dates

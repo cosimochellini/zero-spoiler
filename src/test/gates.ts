@@ -118,11 +118,16 @@ export function sideIn(pin: Pin, unit: string, series: BookmarkSeries): Side {
   return side
 }
 
+/** The locale a gate case is read in. */
+export interface InLocale {
+  locale: Locale
+}
+
 /** Each row in each locale, at both sides of its gate in each unit (`sidesOf`). */
 export function gateCases<Row extends Pin>(
   rows: Row[],
   series: BookmarkSeries,
-): (Row & Side & { locale: Locale })[] {
+): (InLocale & Row & Side)[] {
   return rows.flatMap((row) =>
     LOCALES.flatMap((locale) =>
       sidesOf(row, series).map((side) => ({ ...row, ...side, locale })),

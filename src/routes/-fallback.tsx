@@ -20,6 +20,10 @@ import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { recordStyles } from '~/routes/$series/$locale/-record.styles'
 import { LocaleShell } from '~/routes/-LocaleShell'
 
+interface InShellProps {
+  children: ReactNode
+}
+
 /**
  * The shell, when the page is not in one already. Under a locale route the
  * shell is that route's, the series' own on a series page. An unknown series
@@ -31,7 +35,7 @@ import { LocaleShell } from '~/routes/-LocaleShell'
  * that changes when a navigation starts, before the new copy is loaded
  * (#1386).
  */
-function InShell({ children }: { children: ReactNode }): ReactNode {
+function InShell({ children }: InShellProps): ReactNode {
   const inShell = useInLocale()
   const locale = useRouteContext({
     from: '__root__',
@@ -84,6 +88,7 @@ function HomeLink(): ReactElement {
  */
 function useFocusOnArrival(): void {
   const router = useRouter()
+  // eslint-disable-next-line no-restricted-syntax -- reads the router's resolved location once the page commits, then moves DOM focus
   useEffect(() => {
     // Read once, on arrival: the page resolves a moment after it mounts.
     const { location, resolvedLocation } = router.state
@@ -96,8 +101,12 @@ function useFocusOnArrival(): void {
   }, [router])
 }
 
+interface NoticeProps {
+  kind: 'error' | 'notFound'
+}
+
 /** The heading, the sentence and the link. */
-function Notice({ kind }: { kind: 'error' | 'notFound' }): ReactElement {
+function Notice({ kind }: NoticeProps): ReactElement {
   const t = useT()
   useFocusOnArrival()
 

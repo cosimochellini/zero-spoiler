@@ -42,7 +42,6 @@ const EPISODE_19 = `${SHOW}Blackwater`
 const EPISODE_20 = `${SHOW}Valar_Morghulis`
 // Season 3 (#1627). Episodes 23, 27, 28 and 29 carry "(episode)": their bare
 // titles are a place, a song, a sellsword company and a song.
-/* eslint-disable @typescript-eslint/no-unused-vars -- cited by the season-3 chronicles of #1633 */
 const EPISODE_21 = `${SHOW}Valar_Dohaeris`
 const EPISODE_22 = `${SHOW}Dark_Wings,_Dark_Words`
 const EPISODE_23 = `${SHOW}Walk_of_Punishment_(episode)`
@@ -53,7 +52,6 @@ const EPISODE_27 = `${SHOW}The_Bear_and_the_Maiden_Fair_(episode)`
 const EPISODE_28 = `${SHOW}Second_Sons_(episode)`
 const EPISODE_29 = `${SHOW}The_Rains_of_Castamere_(episode)`
 const EPISODE_30 = `${SHOW}Mhysa`
-/* eslint-enable @typescript-eslint/no-unused-vars -- back on after the season-3 episodes */
 const DANY_I = `${BOOKS}Daenerys_I_-_A_Game_of_Thrones`
 const DANY_II = `${BOOKS}Daenerys_II_-_A_Game_of_Thrones`
 const DANY_III = `${BOOKS}Daenerys_III_-_A_Game_of_Thrones`
@@ -194,6 +192,16 @@ const ESSOS_152 = `${ASOS_AWOIAF}8`
 const ESSOS_167 = `${ASOS_AWOIAF}23`
 const ESSOS_171 = `${ASOS_AWOIAF}27`
 const ESSOS_186 = `${ASOS_AWOIAF}42`
+// The King’s Landing cast of the third stage (#1660): Tyrion I to V and
+// Sansa I to III of A Storm of Swords, site chapters 148 to 182.
+const KL_148 = `${ASOS_AWOIAF}4`
+const KL_150 = `${ASOS_AWOIAF}6`
+const KL_156 = `${ASOS_AWOIAF}12`
+const KL_160 = `${ASOS_AWOIAF}16`
+const KL_163 = `${ASOS_AWOIAF}19`
+const KL_172 = `${ASOS_AWOIAF}28`
+const KL_176 = `${ASOS_AWOIAF}32`
+const KL_182 = `${ASOS_AWOIAF}38`
 
 /** The note on a book pin past the Ice and Fire Wiki's chapter pages. */
 const PAST_CHAPTER_PAGES =
@@ -1556,6 +1564,62 @@ export const GAME_OF_THRONES_SOURCES = {
       source: KL_123,
       note: 'Tyrion XI (site 123): the clansmen sent across the Blackwater Rush, the houses by the quay burned, Osmund chosen over Tyrion’s disapproval in place of Boros, stripped for surrendering Tommen to Jacelyn’s men, Hallyne’s thirteen thousand jars, and the merchants’ plot to seize the Old Gate, with the arrest order. Boros opens on screen only at episode 19, so he stays unlinked.',
     },
+    '21:episode': {
+      source: EPISODE_21,
+      note: 'Show: the King’s Landing synopsis: Tyrion asks for his inheritance with Jaime in the Kingsguard, Tywin refuses, denies him any credit for the city’s defence, calls him a whoremongering drunk who brought a whore to court against orders, blames him for his mother’s death in childbirth and wishes he could prove him no son of his; Bronn, knighted as Ser Bronn of the Blackwater, expects higher pay (GOT301). Tyrion I (site 148), which the episode adapts (its “In the books” list), orders it.',
+    },
+    '23:176': {
+      source: EPISODE_23,
+      note: 'Show: the King’s Landing synopsis: the seats at Tywin’s council, Tyrion dragging his chair to the far end, master of coin in Littlefinger’s place while Petyr courts Lysa, Cersei’s backhanded remark that it is a chance to fail, the ledgers at the brothel, the three women paid for Podrick, the crown borrowing heavily, much of it from the Iron Bank, which backs rebels against debtors (GOT303). Tyrion IV (site 176), the debts, is the latest chapter the episode adapts (its “In the books” list), so it orders the story.',
+    },
+    '24:150': {
+      source: EPISODE_24,
+      note: 'Show: the King’s Landing synopsis: who sent Mandon Moore, only whispers of Cersei, Varys sold to a sorcerer in Myr, the potion, the gelding, the parts burned and a voice answering from the flames, his rise from the streets to the small council, the sorcerer gagged in the crate, patience and revenge (GOT304). Sansa I (site 150), the episode’s A Storm of Swords chapter for King’s Landing, orders it; the tale itself is A Clash of Kings’ Tyrion X.',
+    },
+    '25:episode': {
+      source: EPISODE_25,
+      note: 'Show: the King’s Landing synopsis: Olenna on the Tyrells’ soldiers and supplies and her offer to pay half the wedding, Tywin with Cersei on the plot to wed Sansa to Loras, “the key to the north”, Tyrion to marry her, his protests that she is a child and that he was wed before, and Cersei ordered to marry Loras (GOT305). Tyrion III (site 163), which the episode adapts, orders it.',
+    },
+    '26:172': {
+      source: EPISODE_26,
+      note: 'Show: the King’s Landing synopsis: Cersei and Tyrion watching Sansa and Loras, the accusation over Mandon Moore, only two people commanding the Kingsguard, Joffrey as the one who gave the order, Cersei saying he will not dare with Tywin as Hand, Sansa refusing to dismiss Shae, and the coded apology (GOT306). Sansa III (site 172), which the episode adapts, orders it.',
+    },
+    '27:172': {
+      source: EPISODE_27,
+      note: 'Show: the King’s Landing synopsis: Bronn’s advice to wed Sansa, get an heir and keep Shae in private, “two women and a kingdom”, Tyrion’s fear of a wife, a mistress and the North despising him, Bronn on trying to be loved by all, and Shae refusing to sleep with him once he is wed (GOT307). Sansa III (site 172), the wedding the episode leads up to, orders it.',
+    },
+    '28:episode': {
+      source: EPISODE_28,
+      note: 'Show: the King’s Landing synopsis: the promise not to mistreat her, the ceremony at the Great Sept, Joffrey removing the stool, Sansa asked to kneel, the drinking, Joffrey calling for the bedding, the dagger slammed into the table and the threat, Tywin defusing it, Tyrion feigning drunkenness, his refusal to consummate unless she wants it, and the couch (GOT308). Sansa III (site 172), which the episode adapts, orders it.',
+    },
+    '30:197': {
+      source: EPISODE_30,
+      note: 'Show: the King’s Landing synopsis: the walk in the garden and Sansa’s prank, Podrick summoning him, Pycelle’s coded letter from Lord Frey, Robb and Catelyn dead, Joffrey and Robb’s head, Tyrion forbidding it, Tywin confirming he orchestrated it, the wish to throw his newborn son into the sea, and Sansa already informed (GOT310). Tyrion VI (site 197), which the episode adapts, orders it; the show tells it alone in the stage.',
+    },
+    '21:chapter': {
+      source: KL_148,
+      note: 'Tyrion I (site 148), cached A Wiki of Ice and Fire synopsis: Bronn’s visit, Tywin seeing that Tyrion gets little credit, Bronn knighted, Sandor fled, Addam Marbrand commanding the City Watch, Bronn carrying him up the serpentine steps, “Mummers and monkeys require applause”, Casterly Rock asked for as Jaime’s heir and refused, and the threat to hang the next whore. Episode 21 adapts the chapter.',
+    },
+    '22:156': {
+      source: KL_156,
+      note: 'Tyrion II (site 156), cached synopsis: Tyrion waiting in Varys’s chambers, Pycelle to be restored as Grand Maester, Cersei flirting with Osmund Kettleblack, Shae brought at moonrise, his plan to send her away and her wish to stay, the secret steps beneath Varys’s bed, and Bronn sent to find Symon Silver Tongue, her confidant. No episode adapts the chapter (the season-3 “In the books” lists); 22, between the episodes of Tyrion I and Tyrion III, orders it.',
+    },
+    '25:chapter': {
+      source: KL_163,
+      note: 'Tyrion III (site 163), cached synopsis: Petyr agreeing to wed Lysa, Tyrion named master of coin, the marriage to Sansa for a son who would be Lord of Winterfell, the protests, the offer to send her back to her mother, the threat of a cousin for her and another bride for him, and Robb’s marriage to Jeyne Westerling. Episode 25, which adapts the marriage pact, orders it; Jeyne opens there too (23).',
+    },
+    '28:chapter': {
+      source: KL_172,
+      note: 'Sansa III (site 172), cached synopsis: Tyrion’s apology and his father’s wish, Sansa not bending in the royal sept for the cloak, his embarrassment, no bedding declared, then the threat to Joffrey, and his promise not to touch her until she wants him. Episode 28 adapts the chapter.',
+    },
+    '28:176': {
+      source: KL_176,
+      note: 'Tyrion IV (site 176), cached synopsis: Symon wanting the singers’ contest at the wedding and the blackmail over Shae, the order to Bronn, the two Valyrian swords reworked by Tobho Mott for Joffrey and Jaime, the order to consummate, and the Cersei and Willas match rejected. Mace opens on screen only at 32, so he is “Lord Tyrell”. Episode 23 adapts only the chapter’s debts; 28, after the wedding of site 172, orders it.',
+    },
+    '31:182': {
+      source: KL_182,
+      note: 'Tyrion V (site 182), cached synopsis: the small retinue, Oberyn instead of Doran, the Red Viper who crippled Willas Tyrell, the visit to Casterly Rock with Elia when Tyrion was an infant, “when will justice be served?”, Gregor and whence came his orders, and Tyrion’s warning about the Tyrell host. Episode 31, Oberyn’s show gate, orders it.',
+    },
   },
   'jaime-lannister': {
     '1:5': {
@@ -1692,6 +1756,46 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${ACOK_AWOIAF}45`,
       note: 'Catelyn VI (site 119): the probes at the fords held by the river lords, Lefford drowned, Crakehall taken, Marbrand thrice driven back, Gregor held off at the Stone Mill, Tywin marching southeast, and Catelyn at the map seeing the road to the headwaters of the Blackwater Rush. Episode 18 orders it, after his 18/112 story.',
     },
+    '21:episode': {
+      source: EPISODE_21,
+      note: 'Show: the King’s Landing synopsis: Tywin means to disinherit Tyrion, refuses to believe he helped defend the city, calls him an ill-made, spiteful little creature who brought his whore to court, blames him for Joanna’s death in childbirth, and wishes he could prove him no son of his (GOT301). Tyrion I (site 148), which the episode adapts, orders it.',
+    },
+    '23:163': {
+      source: EPISODE_23,
+      note: 'Show: the King’s Landing synopsis: the meeting moved beside the Hand’s quarters, the seats on one side, Littlefinger, Varys and Pycelle in that order, Cersei’s chair at his right, Tyrion at the far end, the spymasters scolded over Jaime, Roose Bolton left with Harrenhal while the title lets Petyr court Lysa, and Tyrion made master of coin (GOT303). Tyrion III (site 163), which the episode adapts, orders it.',
+    },
+    '24:150': {
+      source: EPISODE_24,
+      note: 'Show: the King’s Landing synopsis: Cersei pressing her father about Jaime, the war started when Tyrion was captured, Jaime as his heir, Cersei’s claim to have taken his lessons seriously, his distrust because she is not as smart as she thinks, Joffrey running roughshod, and “I will” (GOT304). Sansa I (site 150), the episode’s King’s Landing chapter, orders it.',
+    },
+    '25:episode': {
+      source: EPISODE_25,
+      note: 'Show: the King’s Landing synopsis: the Tyrell plot, the Karstarks’ desertion, Sansa as Robb’s heir and the key to the north, a secret plot that cannot be refused, Sansa as Tyrion’s reward for the Blackwater, Cersei ordered to marry Loras and breed, her pleading, and Tywin storming out (GOT305). Tyrion III (site 163), which the episode adapts, orders it.',
+    },
+    '26:172': {
+      source: EPISODE_26,
+      note: 'Show: the King’s Landing synopsis: Tywin and Olenna on Loras and Cersei, the barbs about age, incest and Loras, the hint about Joffrey, the flower thrown into the dirt, the threat of the Kingsguard with no marriage and no Highgarden, and Olenna’s consent (GOT306). Sansa III (site 172), which the episode adapts, orders it.',
+    },
+    '27:172': {
+      source: EPISODE_27,
+      note: 'Show: the King’s Landing synopsis: the summons, the council moved to the Tower of the Hand, too many steps, Tywin ascending to stand by the throne and offering to have him carried, the dragons dismissed as curiosities far away, heeding counsel, and the slight bow (GOT307). Sansa III (site 172), the last King’s Landing chapter before the episode, orders it.',
+    },
+    '30:197': {
+      source: EPISODE_30,
+      note: 'Show: the King’s Landing synopsis: the council in Tywin’s chambers, Lord Frey’s letter, Robb and Catelyn dead, Robb’s head for Sansa, everyone his to torment, a man who must say he is king is “no true king”, Joffrey sent to bed with a sedative from Pycelle, Tywin confirming he orchestrated it, and the newborn he wanted to throw into the sea (GOT310). Tyrion VI (site 197), which the episode adapts, orders it.',
+    },
+    '21:chapter': {
+      source: KL_148,
+      note: 'Tyrion I (site 148), cached synopsis: the letters, battles won by quills and ravens, the wedding set for the first day of 300 AC, Stannis left until the Redwyne fleet is free, Gregor sent with Lord Tarly against the northmen, “Mummers and monkeys require applause”, Casterly Rock refused, and Alayaya whipped for Tyrion’s threats against Joffrey and Tommen. Episode 21 adapts the chapter.',
+    },
+    '25:chapter': {
+      source: KL_163,
+      note: 'Tyrion III (site 163), cached synopsis: the war council, no treating with Balon, Petyr sent to wed Lysa and deliver the Vale, Petyr’s report of the plot to wed Sansa to Willas, Cersei offered to Willas and storming out, Tyrion to wed Sansa for a son who would be Lord of Winterfell, Robb married to Jeyne Westerling of a house sworn to Casterly Rock, and no fury in Tywin’s eyes. Episode 25, which adapts the marriage pact, orders it.',
+    },
+    '28:176': {
+      source: KL_176,
+      note: 'Tyrion IV (site 176), cached synopsis: the two Valyrian swords reworked by Tobho Mott for Joffrey and Jaime, no Valyrian sword in the house for hundreds of years, the order to consummate, Mace rejecting the Cersei and Willas match, probably on the Queen of Thorns’ word, Pycelle’s tidings from the Wall, and Janos Slynt for Lord Commander. Mace opens on screen only at 32, so he is “Lord Tyrell”. Episode 28 orders it, as for Tyrion’s story of the chapter.',
+    },
   },
   'kevan-lannister': {
     '8:57': {
@@ -1701,6 +1805,10 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:70': {
       source: EPISODE_10,
       note: 'Show only. Synopsis and the Kevan page (GOT110): the war called a catastrophe, Stannis and Renly both claiming the throne, the Stark and Tully armies joined, half their forces destroyed and a truce suggested, Tyrion’s answer about Eddard, and the retreat to Harrenhal.',
+    },
+    '25:163': {
+      source: KL_163,
+      note: 'Tyrion III (site 163), cached synopsis: Kevan revealing Balon Greyjoy’s letters with terms of alliance, the north as his price, Tywin refusing while other options present themselves, Tyrion, Cersei and Kevan kept back, Robb’s marriage to Jeyne Westerling, and Kevan on Sybell, a Spicer of low birth descended from traders. Episode 25 orders it, as for Tywin’s story of the chapter; Jeyne opens there too (23).',
     },
   },
   'cersei-lannister': {
@@ -1820,6 +1928,38 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_13,
       note: 'The King’s Landing synopsis: the awkward dinner with her children and Sansa, Cersei confronting Tyrion about the plan fed to Pycelle, Pycelle exposed and arrested, and the Martell match pursued over her protests (GOT203). Chapter 99 orders it.',
     },
+    '21:148': {
+      source: EPISODE_21,
+      note: 'Show: the King’s Landing synopsis: Margaery stopping the procession in Flea Bottom, the orphanage, bread and toys, the small dinner with Joffrey, Margaery and Loras, Cersei’s rebuke about the streets of the riot, Joffrey defending Margaery, and Cersei ruling through fear while Margaery wins love (GOT301). Tyrion I (site 148), the episode’s King’s Landing chapter, orders it.',
+    },
+    '24:150': {
+      source: EPISODE_24,
+      note: 'Show: the King’s Landing synopsis: the tour of the Great Sept, Olenna scoffing at her son’s soldiering, Margaery taking Joffrey out to the crowd, Cersei realizing she has lost control of him, then Cersei with Tywin on Jaime, the heir, her claim to have listened, not as smart as she thinks, and reining in Joffrey (GOT304). Sansa I (site 150), the episode’s King’s Landing chapter, orders it.',
+    },
+    '25:episode': {
+      source: EPISODE_25,
+      note: 'Show: the King’s Landing synopsis: Cersei asking Littlefinger to spy on the Tyrells and recalling the failed search for Arya, then the scene with Tywin and Tyrion: her gloating, the order to marry Loras, Queen Regent and not a brood mare, “you are my daughter”, the plea against a second arranged marriage, Tywin storming out, and Tyrion too glum (GOT305). Tyrion III (site 163), which the episode adapts, orders it.',
+    },
+    '26:172': {
+      source: EPISODE_26,
+      note: 'Show: the King’s Landing synopsis: Cersei and Tyrion watching the couple from her chambers, which of the four has it worst, the accusation over Mandon Moore, Cersei silent while he deduces Joffrey, no danger now that Tywin is Hand, Jaime’s whereabouts, and who should break the news to Sansa (GOT306). Sansa III (site 172), which the episode adapts, orders it.',
+    },
+    '28:episode': {
+      source: EPISODE_28,
+      note: 'Show: the King’s Landing synopsis: Margaery calling them sisters to be, the story of House Reyne behind “The Rains of Castamere”, the threat of strangling, and Cersei’s ineffectual protests as Joffrey drinks and taunts (GOT308). Sansa III (site 172), which the episode adapts, orders it; Castamere opens on screen at 28.',
+    },
+    '30:206': {
+      source: EPISODE_30,
+      note: 'Show: the King’s Landing synopsis: Cersei’s forced smile and insistence that Joffrey was joking, his saying he meant it, the insult to Tywin, the Queen Regent told to see him to bed, and Jaime arriving unrecognized and calling on Cersei, who takes in his appearance and missing hand (GOT310). Jaime VII (site 206), which the episode adapts for the arrival, orders it.',
+    },
+    '25:chapter': {
+      source: KL_163,
+      note: 'Tyrion III (site 163), cached synopsis: Cersei detailing the wedding feast, Tyrion, Cersei and Kevan kept back, the Tyrell plot for Sansa and Willas, Cersei’s hand offered to Willas, her refusal, her father’s final say, her storming out, and her testimony that Sansa has flowered. Episode 25, which adapts the marriage pact, orders it.',
+    },
+    '28:chapter': {
+      source: KL_172,
+      note: 'Sansa III (site 172), cached synopsis: the gown Cersei had made, the daydream of Willas, the queen revealing the wedding that afternoon, no way out, and Tyrion threatening Joffrey over the bedding. The smoke-spoiled and outgrown clothes are Sansa II’s (site 160), in the same cache. Episode 28 adapts the chapter.',
+    },
   },
   'joffrey-baratheon': {
     '1:5': {
@@ -1901,6 +2041,38 @@ export const GAME_OF_THRONES_SOURCES = {
     '20:chapter': {
       source: KL_139,
       note: 'Sansa VIII (site 139): Tywin named Hand, Garlan’s request for Margaery, the High Septon voiding the betrothal, Littlefinger granted Harrenhal, Hallyne named lord with no lands, the knight who calls Joffrey an abomination, and the cut on the Iron Throne.',
+    },
+    '21:148': {
+      source: EPISODE_21,
+      note: 'Show: the King’s Landing synopsis: the palanquin from the Great Sept, Margaery stopping in Flea Bottom, the orphanage, bread and toys, Joffrey bewildered, the dinner with Margaery and Loras, and Joffrey defending her against Cersei (GOT301). Tyrion I (site 148), the episode’s King’s Landing chapter, orders it.',
+    },
+    '22:150': {
+      source: EPISODE_22,
+      note: 'Show: the King’s Landing synopsis: the fitting, Cersei’s criticism of Margaery dismissed, the summons before the hunt, the questions about Renly, “traitor and known degenerate”, Renly avoiding her bed, the thought of making his perversion punishable by death, the crossbow, and the invitation to the hunt (GOT302). Sansa I (site 150), which the episode adapts, orders it.',
+    },
+    '24:150': {
+      source: EPISODE_24,
+      note: 'Show: the King’s Landing synopsis: Joffrey’s tour of the Great Sept, the darker chapters of its history, Margaery’s feigned interest, Cersei and Olenna following, the crowd cheering the pair, and Cersei realizing she has lost control of Joffrey to the Tyrells (GOT304). Sansa I (site 150), the episode’s King’s Landing chapter, orders it.',
+    },
+    '26:175': {
+      source: EPISODE_26,
+      note: 'Show: the King’s Landing synopsis: Littlefinger telling Varys he knows of the arrangement with Ros and has given her to “a friend” eager for a new experience, the ship departing, and Joffrey in his bedchamber coldly contemplating Ros’s quarrel-ridden corpse (GOT306). Site 175 orders it, the pair of Ros’s deceased step in season-1.ts (26/175).',
+    },
+    '27:172': {
+      source: EPISODE_27,
+      note: 'Show: the King’s Landing synopsis: the summons, what the council has been doing, the meetings moved to the Tower of the Hand, too busy and too many steps, Tywin at the throne offering to have him carried, Daenerys and her dragons, heeding counsel, and Joffrey left squirming (GOT307). Sansa III (site 172), the last King’s Landing chapter before the episode, orders it.',
+    },
+    '28:episode': {
+      source: EPISODE_28,
+      note: 'Show: the King’s Landing synopsis: Joffrey escorting Sansa in her father’s place, the stool removed and the snickers, the drinking against Cersei’s protests, the taunts, the threat with the Kingsguard holding her down, the bedding called for, the dagger and Tyrion’s threat, and Tywin blaming the drink (GOT308). Sansa III (site 172), which the episode adapts, orders it.',
+    },
+    '30:197': {
+      source: EPISODE_30,
+      note: 'Show: the King’s Landing synopsis: Joffrey explaining Lord Frey’s coded message, Robb and Catelyn dead, Robb’s head for Sansa at the wedding feast, Tyrion forbidding it, everyone his to torment, “no true king”, the coward who hid under Casterly Rock while Robert won the war, and Joffrey sent to bed (GOT310). Tyrion VI (site 197), which the episode adapts, orders it.',
+    },
+    '28:chapter': {
+      source: KL_172,
+      note: 'Sansa III (site 172), cached synopsis: the wedding in the royal sept, Tywin’s wish, the feast in the Small Hall, Tyrion demanding no bedding, and Tyrion having to threaten Joffrey to keep him from making the tense moment worse. Added after verification (#1660). Episode 28 adapts the chapter.',
     },
   },
   'robert-baratheon': {
@@ -2174,6 +2346,26 @@ export const GAME_OF_THRONES_SOURCES = {
       source: KL_139,
       note: 'Sansa VIII (site 139): Harrenhal and Lord Paramount of the Trident for the Tyrell treaty, the Tyrells presented, Garlan’s request for Margaery, and the High Septon voiding the betrothal. His role step “Master of coin and Lord of Harrenhal” is at 20/139.',
     },
+    '21:148': {
+      source: EPISODE_21,
+      note: 'Show: the King’s Landing synopsis: Littlefinger on the docks with Sansa and Shae, her eagerness to leave, the suggestion that she stow away when he next leaves by sea, the terrible liar, and Ros, acting as his aide, asking Shae to watch over Sansa (GOT301). Tyrion I (site 148), the episode’s King’s Landing chapter, orders it.',
+    },
+    '23:episode': {
+      source: EPISODE_23,
+      note: 'Show: the King’s Landing synopsis: Littlefinger pushing past to sit closest to Tywin, the gold-laced tunic, the title of Lord of Harrenhal while Roose Bolton holds it, Lysa adoring him since childhood, the Vale kept from Robb, Tyrion as master of coin, the ledgers at the brothel, and his debt to Tyrion for Ros’s release (GOT303). Tyrion III (site 163), which the episode adapts, orders it.',
+    },
+    '25:163': {
+      source: EPISODE_25,
+      note: 'Show: the King’s Landing synopsis: Cersei’s request to spy on the Tyrells and the failed search for Arya, Olyvar as Loras’s squire passing the engagement to his real master, Littlefinger, the offer of passage to the Vale, Sansa’s lie about his safety, and “call me Petyr” (GOT305). Olyvar has no record. Tyrion III (site 163), which the episode adapts, orders it.',
+    },
+    '26:172': {
+      source: EPISODE_26,
+      note: 'Show: the King’s Landing synopsis: Varys and Littlefinger in the throne room, pageantry and propaganda, “the realm” as Aegon’s invention, Ros given to “a friend”, chaos as a ladder rather than a pit, and Sansa weeping as his ship departs (GOT306). Sansa III (site 172), which the episode adapts, orders it.',
+    },
+    '23:chapter': {
+      source: KL_163,
+      note: 'Tyrion III (site 163), cached synopsis: Petyr agreeing to go to the Eyrie and wed Lysa, the Vale delivered to Tywin, leaving within a day, Tyrion master of coin, Tyrion’s warning, and Tywin citing Petyr’s report of the plot to wed Sansa to Willas. Episode 23 adapts the council (its “In the books” list).',
+    },
   },
   'varys': {
     '3:19': {
@@ -2240,6 +2432,26 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Varys`,
       note: 'Varys page: helping Tyrion plan the defence, the two disparaging Joffrey, the compliment on his play of the game and his work as Hand, Daenerys alive with three dragons and her enemies with nowhere to hide, and “One Game at a time” (GOT208). Chapter 128 orders it.',
     },
+    '24:150': {
+      source: EPISODE_24,
+      note: 'Show: the King’s Landing synopsis: the sorcerer in Myr, the potion, the gelding, the voice from the flames, his hatred of magic, the sorcerer in the crate, Ros spying on Littlefinger with the manifest and its two feather beds, and Varys warning Olenna, who says the solution is obvious (GOT304). Sansa I (site 150), the episode’s King’s Landing chapter, orders it.',
+    },
+    '26:175': {
+      source: EPISODE_26,
+      note: 'Show: the King’s Landing synopsis: Varys finding Littlefinger in the throne room, the realm and its invention, the arrangement with Ros known and Ros given to “a friend”, chaos as a ladder, and Joffrey contemplating Ros’s corpse (GOT306). Site 175 orders it, the pair of Ros’s deceased step in season-1.ts.',
+    },
+    '30:197': {
+      source: EPISODE_30,
+      note: 'Show: the King’s Landing synopsis: Varys noting that Sansa is Joffrey’s aunt by marriage, then the diamonds offered to Shae to leave for Essos, her love for Tyrion, Tyrion as the realm’s hope and Shae as his weakness, and her refusal to leave unless he asks (GOT310). Tyrion VI (site 197), which the episode adapts, orders it.',
+    },
+    '22:156': {
+      source: KL_156,
+      note: 'Tyrion II (site 156), cached synopsis: Tyrion searching Varys’s chambers for passages, Pycelle’s restoration and the Conclave’s Maester Gormon, a Tyrell, whisperers in the Citadel, Cersei flirting with Osmund Kettleblack, Varys disguised as a matronly woman, and Shae brought to his chambers. No episode adapts the chapter; 22 orders it, as for Tyrion’s story of the chapter.',
+    },
+    '23:163': {
+      source: KL_163,
+      note: 'Tyrion III (site 163), cached synopsis: Varys on the three-headed dragon born in Qarth and the Night’s Watch begging for help against a wildling army, Tywin dismissing dragons and wildlings, the Starks and Greyjoys facing a new enemy, a possible deal with Mance Rayder, and the deserting gold cloaks. Episode 23 adapts the council.',
+    },
   },
   'pycelle': {
     '3:21': {
@@ -2277,6 +2489,22 @@ export const GAME_OF_THRONES_SOURCES = {
     '14:103': {
       source: EPISODE_14,
       note: 'The King’s Landing synopsis: Lancel’s message to free Pycelle, and Tyrion agreeing to let Cersei have him as a pet but not back on the Small Council; the Pycelle page has the demand that he be released and reinstated, and Tyrion’s refusal of the council seat (GOT204). Chapter 103 orders it; the show’s status step “alive” is at 14/103.',
+    },
+    '23:episode': {
+      source: EPISODE_23,
+      note: 'Show: the King’s Landing synopsis: Pycelle, focused on survival, quietly taking the third seat, and noting that the marriage to Lysa would make Littlefinger acting Defender of the Vale (GOT303). Tyrion III (site 163), which the episode adapts, orders it.',
+    },
+    '30:197': {
+      source: EPISODE_30,
+      note: 'Show: the King’s Landing synopsis: Pycelle dithering over the coded message from Lord Frey, Joffrey explaining it, and Tywin asking Pycelle to give his grandson a sedative (GOT310). Tyrion VI (site 197), which the episode adapts, orders it.',
+    },
+    '23:chapter': {
+      source: KL_163,
+      note: 'Tyrion II (site 156), cached synopsis: Tywin restoring Pycelle, only the Conclave able to unmake a Grand Maester, and Maester Gormon, a Tyrell, kept off the council. Tyrion III (site 163), cached synopsis: Pycelle reporting three hundred Dornishmen riding in answer to Tyrion’s negotiations, despite the old hatred of Dorne and Highgarden. Episode 23 adapts the council.',
+    },
+    '28:176': {
+      source: KL_176,
+      note: 'Tyrion IV (site 176), cached synopsis: Pycelle’s dire tidings from the Wall, the fear that Lord Mormont is dead, the veiled message about Janos Slynt for Lord Commander, and Tyrion’s regret at sparing Slynt and Pycelle. The Watch officer who sends the letter opens on screen only at 41 and stays unnamed. Episode 28 orders it, as for the chapter’s other stories.',
     },
   },
   'sandor-clegane': {
@@ -2474,6 +2702,18 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_20,
       note: 'The Ros page: freed some time after the Battle of the Blackwater, Varys’s visit, the eunuch discovered, her fear of Littlefinger admitted, and his protection of those who work for him (GOT210). Chapter 141 orders it; her status step “alive” is at 20/141.',
     },
+    '21:148': {
+      source: EPISODE_21,
+      note: 'Show only: the King’s Landing synopsis: Ros acting as Littlefinger’s aide, reminiscing about the day Sansa was born and the bells of Winterfell, and asking Shae to look out for Sansa, particularly regarding Littlefinger (GOT301). Tyrion I (site 148) orders it.',
+    },
+    '24:150': {
+      source: EPISODE_24,
+      note: 'Show only: the King’s Landing synopsis: Ros spying on Littlefinger for Varys, the girls’ report on Podrick Payne, Littlefinger’s visits to Sansa and his obsession, the stolen manifest, Varys surprised that she can read, and the two feather beds (GOT304). Sansa I (site 150) orders it.',
+    },
+    '26:175': {
+      source: EPISODE_26,
+      note: 'Show only: the King’s Landing synopsis: Littlefinger aware of Varys’s arrangement with Ros, Ros given to “a friend” eager for a new experience, the ship departing, and Joffrey contemplating her quarrel-ridden corpse (GOT306). Site 175 orders it, the pair of her deceased step in season-1.ts (26/175).',
+    },
   },
   'mhaegen': {
     '5:36': {
@@ -2527,6 +2767,10 @@ export const GAME_OF_THRONES_SOURCES = {
     '11:58': {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_57`,
       note: 'Corrected after review: the rescue at the name-day tourney is A Clash of Kings. Sansa V (site 58): at Joffrey’s court a drunken Dontos starts to hail Sansa as she comes to plead for her father, Ser Balon Swann warns him away, and Sansa sees Littlefinger chatting with Dontos and Balon. Book only: his show gate is episode 11.',
+    },
+    '26:160': {
+      source: KL_160,
+      note: 'Sansa II (site 160), cached synopsis: Sansa telling Dontos in the godswood of Olenna’s plan to wed her to Willas, the warning that the Tyrells want her claim to Winterfell, “These Tyrells are only Lannisters with flowers”, and the escape on Joffrey’s wedding day. Episode 26 adapts the chapter.',
     },
   },
   'balon-swann': {
@@ -2591,6 +2835,22 @@ export const GAME_OF_THRONES_SOURCES = {
     '20:chapter': {
       source: ST_139,
       note: 'Sansa VIII (site 139): Mace with Garlan and Loras presented among the heroes, Loras named to the Kingsguard, Mace on the small council, Garlan asking for Margaery and the betrothal to Sansa voided. Episode 20, Garlan’s show gate, orders it.',
+    },
+    '22:episode': {
+      source: EPISODE_22,
+      note: 'Show: the King’s Landing synopsis: Loras at Sansa’s door, the escort to the gardens, the reminder of the Hand’s tournament, his leave-taking after the introduction, and Olenna calling her son a fool for supporting Renly before questioning Sansa about Joffrey (GOT302). Sansa I (site 150), which the episode adapts, orders it.',
+    },
+    '25:163': {
+      source: EPISODE_25,
+      note: 'Show: the King’s Landing synopsis: Sansa and Margaery watching Loras spar with his squire, Sansa asking when they will wed, Olyvar flirting, the two in Loras’s chambers, the mention of his engagement, and Olyvar passing it on to his real master, Littlefinger (GOT305). Olyvar has no record. Tyrion III (site 163), which the episode adapts, orders it.',
+    },
+    '26:172': {
+      source: EPISODE_26,
+      note: 'Show: the King’s Landing synopsis: Loras uncomfortable when Sansa is close, brightening over the food, the wedding joust and the gown, Sansa longing to leave and see Highgarden, “the most terrible place there is”, and Cersei and Tyrion watching from her chambers (GOT306). Sansa III (site 172), which the episode adapts, orders it.',
+    },
+    '22:chapter': {
+      source: KL_150,
+      note: 'Sansa I (site 150), cached synopsis: Ser Loras of the Kingsguard as escort, the two dozen men in the yard with his elder brother Garlan, the red rose of the Hand’s tourney he does not remember, and Sansa unknowingly upsetting him by speaking of Renly’s death. Episode 22 adapts the chapter.',
     },
   },
   'masha-heddle': {
@@ -2816,6 +3076,26 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Bronn`,
       note: 'Bronn page: crime cut by culling the known thieves, the clash with Tyrion over the brutality, the defence planning, his dismissal of Tyrion’s books, food as the key in a siege, and the thieves rounded up to protect the stores (GOT208). Chapter 128 orders it.',
     },
+    '21:episode': {
+      source: EPISODE_21,
+      note: 'Show: the King’s Landing synopsis: Bronn knighted for the Blackwater, styled Ser Bronn of the Blackwater, no lands, wealth or title but a higher standing and, in his mind, higher pay, and Tyrion fuming to him after Tywin’s refusal (GOT301). Tyrion I (site 148), which the episode adapts, orders it.',
+    },
+    '23:163': {
+      source: EPISODE_23,
+      note: 'Show: the King’s Landing synopsis: Tyrion, Podrick and Bronn at Littlefinger’s brothel for the ledgers, the three prostitutes as Podrick’s reward for the Blackwater, the money returned because they refused payment, and the request for “copious notes” (GOT303). Tyrion III (site 163), which the episode adapts, orders it.',
+    },
+    '27:172': {
+      source: EPISODE_27,
+      note: 'Show: the King’s Landing synopsis: Bronn on wedding Sansa, getting an heir, keeping Shae in private, two women and a kingdom, and Tyrion wasting his time trying to be universally loved (GOT307). Sansa III (site 172), the wedding the episode leads up to, orders it.',
+    },
+    '21:chapter': {
+      source: KL_148,
+      note: 'Tyrion I (site 148), cached synopsis: Bronn knighted as Ser Bronn of the Blackwater, Mandon drowned, Sandor fled, Addam commanding the City Watch, Alayaya whipped before Cersei allowed her to be freed, the errand about Mandon, and Bronn carrying Tyrion up the serpentine steps. Episode 21 adapts the chapter.',
+    },
+    '28:176': {
+      source: KL_176,
+      note: 'Tyrion II (site 156), cached synopsis: Podrick finding Bronn at Chataya’s and the errand to find Symon. Tyrion IV (site 176), cached synopsis: Symon’s blackmail over Shae and the singers’ contest, Bronn to visit him in three days, and the order to kill him. That Bronn can now afford Chataya’s is the Ice and Fire Wiki’s Bronn page. Episode 28 orders it, as for the chapter’s other stories.',
+    },
   },
   'shae': {
     '9:episode': {
@@ -2870,11 +3150,39 @@ export const GAME_OF_THRONES_SOURCES = {
       source: KL_128,
       note: 'Tyrion XII (site 128): Alayaya brought in beaten, Tyrion relieved that Cersei has not found Shae, and Shae in his room through the secret passage, blindfolded by Varys.',
     },
+    '21:148': {
+      source: EPISODE_21,
+      note: 'Show: the King’s Landing synopsis: Sansa and Shae on the docks, Shae uninterested in the game, Littlefinger arriving, and Ros recalling the bells of Winterfell and asking Shae to look out for Sansa (GOT301). Tyrion I (site 148), the episode’s King’s Landing chapter, orders it.',
+    },
+    '22:150': {
+      source: EPISODE_22,
+      note: 'Show: the King’s Landing synopsis: Shae dressing Sansa and warning her about Littlefinger, help for nothing in return, men wanting “one thing”, Sansa’s disbelief, Shae in Tyrion’s new chambers despite his father’s threat, the favour to protect Sansa, Tyrion no longer having the power, and the bickering over Ros (GOT302). Sansa I (site 150), which the episode adapts, orders it.',
+    },
+    '27:172': {
+      source: EPISODE_27,
+      note: 'Show: the King’s Landing synopsis: Bronn’s advice to wed Sansa and keep Shae in private, Tyrion’s concern that his mistress will not go along, and Shae bluntly telling him she will not sleep with him after he weds Sansa (GOT307). Sansa III (site 172), the wedding the episode leads up to, orders it.',
+    },
+    '30:197': {
+      source: EPISODE_30,
+      note: 'Show: the King’s Landing synopsis: the diamonds, Essos, her genuine love for Tyrion, Tyrion as the last hope of the regime, Shae as a weakness, her care for Sansa despite the pain, and her refusal to leave unless Tyrion asks (GOT310). Tyrion VI (site 197), which the episode adapts, orders it.',
+    },
+    '22:156': {
+      source: KL_156,
+      note: 'Tyrion II (site 156), cached synopsis: Shae brought to Varys’s chambers at moonrise, Varys departing, Tyrion’s plan to send her away from his father, her wish to remain, the secret steps beneath Varys’s bed, and Symon Silver Tongue, her confidant, to be dealt with. No episode adapts the chapter; 22 orders it.',
+    },
   },
   'podrick-payne': {
     '19:63': {
       source: `${SHOW}Podrick_Payne`,
       note: `In the books section: a shy member of a cadet branch of House Payne, assigned by Kevan to Tyrion as squire shortly before the battle on the Green Fork. Relationship pin 19/63 chapter: the show's gate moved to episode 19, where the wiki first has his name said (#1457). Tyrion going into battle with the clansmen follows Tywin’s agreement in the Bronn page; unverified on the chapter text. ${PAST_CHAPTER_PAGES}`,
+    },
+    '23:163': {
+      source: EPISODE_23,
+      note: 'Show: the King’s Landing synopsis: the reward for saving Tyrion’s life at the Blackwater, Podrick never having been with a woman, three prostitutes at Littlefinger’s brothel, the payment refused, and Tyrion and Bronn asking for every detail (GOT303). Tyrion III (site 163), which the episode adapts, orders it.',
+    },
+    '21:148': {
+      source: KL_148,
+      note: 'Tyrion I (site 148), cached synopsis: Bronn and Podrick helping Tyrion dress to see his father, the drawbridge of Maegor’s Holdfast raised for the night and lowered by Meryn Trant at his father’s name, Bronn carrying him up the serpentine steps, and Bronn and Podrick waiting outside Tywin’s solar. Episode 21 adapts the chapter.',
     },
   },
   'addam-marbrand': {
@@ -2885,6 +3193,10 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:70': {
       source: `${SHOW}Addam_Marbrand`,
       note: `In the books section: at Tywin’s council after the Whispering Wood and the Camps he says two battles do not make a war and offers his steel against the Stark boy; Tywin orders the host to Harrenhal with Addam’s outriders screening. Filed at Tyrion IX, which episode 10 adapts. ${PAST_CHAPTER_PAGES}`,
+    },
+    '21:148': {
+      source: KL_148,
+      note: 'Books only: Tyrion I (site 148), cached synopsis: Jacelyn Bywater killed by his own men in the battle, Addam Marbrand replacing him as Commander of the City Watch, the meeting on the turnpike stair of the Tower of the Hand, and Tyrek still missing after the riots and feared dead. His role step at 148 is from #1673. Episode 21 adapts the chapter.',
     },
   },
   'hot-pie': {
@@ -3346,6 +3658,46 @@ export const GAME_OF_THRONES_SOURCES = {
     '16:chapter': {
       source: KL_115,
       note: 'Tyrion IX (site 115): the riot on the way back from the harbour, Sansa among the missing, Boros and Meryn ordered back to find her, Sandor returning her covered in blood, and the High Septon, Preston Greenfield and Aron Santagar dead.',
+    },
+    '21:148': {
+      source: EPISODE_21,
+      note: 'Show: the King’s Landing synopsis: Sansa and Shae on the docks, the game of stories about the ships, Littlefinger’s offer that she might stow away, her warning that she is a terrible liar, and Ros on the bells rung at Winterfell when Sansa was born, asking Shae to look out for her (GOT301). Tyrion I (site 148), the episode’s King’s Landing chapter, orders it.',
+    },
+    '22:episode': {
+      source: EPISODE_22,
+      note: 'Show: the King’s Landing synopsis: Shae’s warning about Littlefinger, Loras escorting Sansa to the gardens, Olenna and Margaery pressing her about Joffrey, the outburst about her father’s execution, the fear of being overheard, “a monster”, and Olenna’s assurance that the marriage goes ahead (GOT302). Sansa I (site 150), which the episode adapts, orders it.',
+    },
+    '24:150': {
+      source: EPISODE_24,
+      note: 'Show: the King’s Landing synopsis: Margaery finding Sansa in the godswood, the guards dismissed, the joke about the cousin’s melted face, the invitation to Highgarden, Queen Regent against Queen Margaery, the marriage to Loras, and Sansa’s tears of joy (GOT304). Sansa I (site 150), which the episode adapts for the Tyrell plan, orders it.',
+    },
+    '25:163': {
+      source: EPISODE_25,
+      note: 'Show: the King’s Landing synopsis: Loras sparring, Sansa asking when they will wed, Margaery planting the seed after her own wedding, Littlefinger’s offer of passage to the Vale, Sansa practising a lie about his safety, his suspicion, and “call me Petyr” (GOT305). Tyrion III (site 163), which the episode adapts, orders it.',
+    },
+    '26:172': {
+      source: EPISODE_26,
+      note: 'Show: the King’s Landing synopsis: Sansa and Loras in the garden, his enthusiasm for the feast, the joust and the gown, her suspicion, the Red Keep as the most terrible place, Tyrion breaking the news with Shae present, and Sansa weeping as Littlefinger’s ship departs, both plans in tatters (GOT306). Sansa III (site 172), which the episode adapts, orders it.',
+    },
+    '28:episode': {
+      source: EPISODE_28,
+      note: 'Show: the King’s Landing synopsis: Tyrion’s promise, worse Lannisters, Joffrey escorting her in her father’s place and removing the stool, Tyrion asking her to kneel, Joffrey’s taunts and threat, Tyrion’s outburst, the undressing stopped, and Shae noticing the unstained sheets the next morning (GOT308). Sansa III (site 172), which the episode adapts, orders it.',
+    },
+    '30:197': {
+      source: EPISODE_30,
+      note: 'Show: the King’s Landing synopsis: the walk in the gardens, the sniggering gentlemen, the dung hidden in a mattress as Arya used to do, Podrick summoning Tyrion to the council, and Sansa’s tear-streaked face showing she already knows her family’s deaths (GOT310). Tyrion VI (site 197), which the episode adapts, orders it.',
+    },
+    '22:chapter': {
+      source: KL_150,
+      note: 'Sansa I (site 150), cached synopsis: Margaery’s invitation, the wish that Sandor were still with her, Loras as escort and the forgotten rose, the cousins and companions, Olenna’s questions, the fool singing at the top of his voice, “a monster”, and the proposal to visit Highgarden and marry Willas. The three cousins are named on their A Wiki of Ice and Fire pages (cached), citing this chapter. Episode 22 adapts it.',
+    },
+    '26:160': {
+      source: KL_160,
+      note: 'Sansa II (site 160), cached synopsis: the gown from Cersei, Margaery’s ladies and cousins, Loras in the Kingsguard as her father’s condition, Dontos in the godswood, “Lannisters with flowers”, the escape on Joffrey’s wedding day, and the dream of Willas and Highgarden. Episode 26 adapts the chapter.',
+    },
+    '28:chapter': {
+      source: KL_172,
+      note: 'Sansa III (site 172), cached synopsis: the gown, the daydream of Willas, Cersei’s news of the wedding that afternoon, no way out, Tyrion’s apology, the cloak refused in the royal sept, Garlan’s “He is a bigger man than he seems”, no bedding, and Tyrion’s promise. Episode 28 adapts the chapter.',
     },
   },
   'arya-stark': {
@@ -5015,11 +5367,43 @@ export const GAME_OF_THRONES_SOURCES = {
       source: ST_139,
       note: 'Sansa VIII (site 139): Mace and his sons Garlan and Loras presented among the heroes, Garlan asking Joffrey to wed Margaery, the betrothal to Sansa declared void by the High Septon, and Sansa delighted. Episode 20, Garlan’s show gate, orders it.',
     },
+    '21:148': {
+      source: EPISODE_21,
+      note: 'Show: the King’s Landing synopsis: the procession stopped in Flea Bottom, the orphanage, the bread and toys handed out by her servants, the smallfolk’s love, Cersei’s rebuke at dinner about the streets of the attack, and Joffrey defending her (GOT301). Tyrion I (site 148), the episode’s King’s Landing chapter, orders it; the Flea Bottom scene adapts A Feast for Crows.',
+    },
+    '22:episode': {
+      source: EPISODE_22,
+      note: 'Show: the King’s Landing synopsis: the summons before the hunting trip, Cersei’s seed of doubt about Renly, the dutiful but frustrated bride, Renly’s excuses to avoid sex, Joffrey’s sympathy, the crossbow, killing something herself, and the invitation (GOT302). Sansa I (site 150), which the episode adapts, orders it.',
+    },
+    '24:150': {
+      source: EPISODE_24,
+      note: 'Show: the King’s Landing synopsis: the tour of the Great Sept with feigned interest, the crowd cheering the pair, then Sansa in the godswood, the guards dismissed, the invitation to Highgarden, Queen Regent against Queen Margaery, a friend or a sister, and marriage to Loras (GOT304). Sansa I (site 150), which the episode adapts, orders it.',
+    },
+    '27:172': {
+      source: EPISODE_27,
+      note: 'Show: the King’s Landing synopsis: Margaery consoling Sansa, Tyrion far from the worst Lannister, and his skill as a lover (GOT307); the plan to plant the seed with Joffrey once wed is episode 25’s synopsis (GOT305). Sansa III (site 172), the wedding the episode leads up to, orders it.',
+    },
+    '28:172': {
+      source: EPISODE_28,
+      note: 'Show: the King’s Landing synopsis: Margaery ingratiating herself with Cersei as a sister to be, the story of House Reyne behind “The Rains of Castamere”, and the threat to have her strangled in her sleep (GOT308). Sansa III (site 172), which the episode adapts, orders it; Castamere opens on screen at 28.',
+    },
+    '22:chapter': {
+      source: KL_150,
+      note: 'Sansa I (site 150), cached synopsis: the personal invitation, Loras as escort, the cousins and companions, Olenna and Margaery urging the truth about Joffrey, “a monster”, Sansa’s fear for Margaery, and the wedding going on. Episode 22 adapts the chapter.',
+    },
+    '26:160': {
+      source: KL_160,
+      note: 'Sansa II (site 160), cached synopsis: Sansa closer to Margaery and her ladies and cousins, Margaery unafraid of Joffrey because her father conceded her hand only if Loras were named to the Kingsguard, and Loras to protect her. Mace opens on screen only at 32, so he is “her father”. Episode 26 adapts the chapter.',
+    },
   },
   'mace-tyrell': {
     '32:139': {
       source: ST_139,
       note: `Sansa VIII (site 139): Mace and his sons Garlan and Loras presented among the heroes of the Blackwater, Loras named to the Kingsguard, Mace given a small council seat, Garlan asking for Margaery, the High Septon voiding the betrothal. Mace commanding the left: Sansa VII (${ST_136}). Episode 32, his show gate, orders it.`,
+    },
+    '32:176': {
+      source: KL_176,
+      note: 'Books: Tyrion III (site 163), cached synopsis: Mace disliking the Dornishmen crossing the Reach, talking like a general, Ashford won by Randyll Tarly, the year-long siege of Storm’s End relieved by Eddard Stark, and Garlan named Lord of Brightwater Keep; Tywin’s plan to offer Cersei to Willas. Tyrion IV (site 176), cached synopsis: Mace rejecting the match, probably because the Queen of Thorns told him to. Episode 32, his show gate, orders it.',
     },
   },
   'cortnay-penrose': {
@@ -5111,11 +5495,19 @@ export const GAME_OF_THRONES_SOURCES = {
       source: KL_128,
       note: 'Tyrion III and VII (sites 89 and 103): Chataya’s daughter, the turret room, the wardrobe and the shaft, her sleeping while he is gone; Tyrion XII (site 128): Osney and Osfryd bringing her in beaten, Cersei taking her for his whore, Alayaya keeping his secret, and the promise tied to Joffrey and Tommen. Her record opens at 128, so the story is told from there.',
     },
+    '21:148': {
+      source: KL_148,
+      note: 'Books only: Tyrion I (site 148), cached synopsis: Alayaya whipped before she was freed, Tywin having her whipped for Tyrion’s threats against Joffrey and Tommen, and the next whore to be hanged. Tied to a post and thrown out of the Red Keep is A Wiki of Ice and Fire’s Alayaya page (cached), citing the chapter. Episode 21 orders it.',
+    },
   },
   'garlan-tyrell': {
     '20:139': {
       source: KL_139,
       note: 'Sansa VIII (site 139): Mace Tyrell and his sons Garlan and Loras among the heroes of the Blackwater, Loras to the Kingsguard, Mace to the small council, Garlan’s request that Joffrey wed Margaery, and the High Septon declaring the betrothal void for House Stark’s rebellion. Mace opens on screen only at episode 32, so he stays unlinked.',
+    },
+    '28:172': {
+      source: KL_172,
+      note: 'Books only: Sansa III (site 172), cached synopsis: Garlan comforting Sansa at the feast, “He is a bigger man than he seems”. The dance and happier than with Loras are the Ice and Fire Wiki’s Garlan Tyrell page; the attainted lord’s lands (Brightwater Keep, from the traitor Alester Florent) are Tyrion III (site 163), left unnamed because Alester opens at 180. The cousins ignoring the bride are their A Wiki of Ice and Fire pages. Episode 28 adapts the chapter.',
     },
   },
   // Winterfell and the Iron Islands (#1487).
@@ -5589,6 +5981,71 @@ export const GAME_OF_THRONES_SOURCES = {
     '28:186': {
       source: ESSOS_186,
       note: 'Books only: Daenerys IV (site 186), cached synopsis (the three Stormcrow captains first to arrive, spurning her offer) and A Wiki of Ice and Fire’s Daario Naharis page (cached): gold and plunder offered, rebuffed by Prendahl, the question put to each man of a company of freedmen, Daario killing Prendahl and Sallor the Bald and bringing their heads. Ghiscari is the Game of Thrones Wiki’s Prendahl na Ghezn page (In the books). Episode 28 orders it.',
+    },
+  },
+  // King’s Landing (#1660).
+  'olenna-tyrell': {
+    '22:episode': {
+      source: EPISODE_22,
+      note: 'Show: the King’s Landing synopsis: Olenna introduced to Sansa in the gardens, her son a fool to support Renly, the insistence on the truth about Joffrey, the outburst about Eddard’s execution, the backtracking, “a monster”, Olenna disappointed but unsurprised, and her son too intent on a royal marriage to cancel it (GOT302). Her son, Mace, opens on screen only at 32 and stays unnamed. Sansa I (site 150), her book gate, orders it.',
+    },
+    '24:150': {
+      source: EPISODE_24,
+      note: 'Show: the King’s Landing synopsis: Olenna with two of Margaery’s cousins, the dullest sigil and motto, “Growing Strong”, Varys’s pleasantries seen through, Littlefinger and Sansa as Robb’s heir with her brothers presumed dead, king of the ashes, and the obvious solution (GOT304). The cousins are unnamed on screen. Sansa I (site 150) orders it.',
+    },
+    '25:163': {
+      source: EPISODE_25,
+      note: 'Show: the King’s Landing synopsis: Tyrion on the cost of the wedding, Olenna bored by finance but listing the soldiers and supplies, the wedding to keep the people happy, and her decision to pay half (GOT305). Tyrion III (site 163), which the episode adapts, orders it.',
+    },
+    '26:172': {
+      source: EPISODE_26,
+      note: 'Show: the King’s Landing synopsis: Tywin and Olenna on Loras and Cersei, the barbs about age, incest and Loras, the refusal and the hint about Joffrey, Tywin’s flower thrown into the dirt and Olenna’s refusal to throw another if Cersei cannot bear heirs, the Kingsguard threat with no marriage and no Highgarden, and her consent (GOT306). Sansa III (site 172), which the episode adapts, orders it.',
+    },
+    '22:chapter': {
+      source: KL_150,
+      note: 'Sansa I (site 150), cached synopsis: the Queen of Thorns taking the most interest in Sansa, scoffing at Renly’s ambitions, her son an oaf for the Lannister alliance, the truth about Joffrey, the fool Butterbumps singing at the top of his voice, “a monster”, the wedding going on, and Willas proposed. Mace opens on screen only at 32, so the story calls him her son. Episode 22 adapts the chapter.',
+    },
+  },
+  'megga-tyrell': {
+    '22:150': {
+      source: KL_150,
+      note: 'Books only: Sansa I (site 150), cached synopsis: Sansa introduced to all of Margaery’s cousins and companions at the supper, and Olenna taking the most interest in her. A Wiki of Ice and Fire’s Megga Tyrell page (cached), citing Sansa I: she meets and befriends Sansa at the dinner. Episode 22 orders it, her show gate.',
+    },
+    '28:172': {
+      source: KL_172,
+      note: 'Books only: A Wiki of Ice and Fire’s Megga Tyrell page (cached): round and loud, following Elinor with Alla, dreaming of being kissed by a man (Sansa II, site 160); at the feast for Sansa’s marriage to Tyrion she and her cousins ignore the bride over the lost Willas match, and she dances with Prince Tommen (Sansa III, site 172). The Ice and Fire Wiki’s Megga Tyrell page agrees. Episode 28 adapts Sansa III.',
+    },
+  },
+  'alla-tyrell': {
+    '22:150': {
+      source: KL_150,
+      note: 'Books only: Sansa I (site 150), cached synopsis: the cousins and companions at the supper and Olenna’s questions about Joffrey. A Wiki of Ice and Fire’s Alla Tyrell page (cached), citing Sansa I: a constant companion of Margaery who meets and befriends Sansa at the dinner. Episode 22 orders it, her show gate.',
+    },
+    '26:160': {
+      source: KL_160,
+      note: 'Books only: A Wiki of Ice and Fire’s Alla Tyrell page (cached), citing Sansa II (site 160): shy and pretty, close to Sansa in age, following Elinor, who has flowered, with Megga, the lovely voice, the woodharp, songs of chivalry and lost loves, and the kissing game with Megga. Episode 26 adapts Sansa II.',
+    },
+  },
+  'elinor-tyrell': {
+    '22:150': {
+      source: KL_150,
+      note: 'Books only: Sansa I (site 150), cached synopsis: Sansa introduced to all of Margaery’s cousins and companions, and the proposal of Willas at the end. A Wiki of Ice and Fire’s Elinor Tyrell page (cached) cites Sansa I for her attending Margaery. Episode 22 orders it, her show gate.',
+    },
+    '28:172': {
+      source: KL_172,
+      note: 'Books only: A Wiki of Ice and Fire’s Elinor Tyrell page (cached): a bedmaid, friend and confidante of Margaery who becomes Sansa’s friend, Alyn Ambrose wearing her favour at the Blackwater (Sansa II, site 160); at the feast for Sansa and Tyrion she and her cousins ignore the bride, and she dances with Alyn (Sansa III, site 172). That Megga and Alla follow her, who has flowered, is A Wiki of Ice and Fire’s Alla Tyrell page (cached), citing Sansa II. Episode 28 adapts Sansa III.',
+    },
+  },
+  'oberyn-martell': {
+    '31:182': {
+      source: KL_182,
+      note: 'Tyrion V (site 182), cached synopsis: Oberyn leading the Dornishmen instead of Doran, the poisoned weapons, his sellsword company, the Citadel, Willas crippled in a tourney and never forgotten by the Tyrells, the visit to Casterly Rock with Elia when Tyrion was an infant, “when will justice be served?”, and Gregor made to say whence came his orders. Episode 31, his show gate, orders it.',
+    },
+  },
+  'ellaria-sand': {
+    '32:182': {
+      source: KL_182,
+      note: 'Tyrion V (site 182): A Wiki of Ice and Fire’s Ellaria Sand page (cached), citing Chapter 38: she accompanies Oberyn, who comes in Doran’s place; as a baseborn paramour her placement at the wedding worries Tyrion; Oberyn’s hint that they have never shared a beautiful blonde woman, “and Ellaria is curious”. Episode 32, her show gate, orders it.',
     },
   },
 }

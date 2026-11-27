@@ -101,6 +101,15 @@ export function PlaceControls({
   )
 }
 
+/** The query, how many places it matches, and how to change it. */
+interface PlaceSearchProps {
+  count: number
+  fieldId: string
+  pick: Pick
+  query: string
+  total: number
+}
+
 /**
  * The search field, and the line under it: how many open places are left
  * of how many, or that the query finds none. It settles before it is
@@ -112,13 +121,7 @@ function PlaceSearch({
   pick,
   query,
   total,
-}: {
-  count: number
-  fieldId: string
-  pick: Pick
-  query: string
-  total: number
-}): ReactElement {
+}: PlaceSearchProps): ReactElement {
   const t = useT()
   const trimmed = query.trim()
   const empty = trimmed !== '' && count === 0
@@ -154,6 +157,15 @@ function PlaceSearch({
   )
 }
 
+/** The pickers' words, what they pick from, and how to pick. */
+interface PlaceChoicesProps {
+  labels: PlaceLabels
+  open: StopView[]
+  params: PlaceParams
+  pick: Pick
+  sagas: SagaPick[]
+}
+
 /** The sea, type and saga pickers. */
 function PlaceChoices({
   labels: { allRegions, formOf, region, regionOf },
@@ -161,13 +173,7 @@ function PlaceChoices({
   params,
   pick,
   sagas,
-}: {
-  labels: PlaceLabels
-  open: StopView[]
-  params: PlaceParams
-  pick: Pick
-  sagas: SagaPick[]
-}): ReactElement {
+}: PlaceChoicesProps): ReactElement {
   const t = useSeriesT()
 
   return (
@@ -273,6 +279,11 @@ function counted(
   return rows
 }
 
+/** The page's parameters, and the group the reader has scrolled into. */
+interface SummaryParams extends PlaceParams {
+  inView?: string | undefined
+}
+
 /**
  * The folded bar's words: "New World · Island · “wano”". With no sea
  * picked, the group in view stands for "All seas" once the reader has
@@ -281,13 +292,7 @@ function counted(
  */
 function summaryOf(
   { allRegions, formOf, regionOf }: PlaceLabels,
-  {
-    form,
-    inView = allRegions,
-    q = '',
-    saga,
-    sea,
-  }: PlaceParams & { inView?: string | undefined },
+  { form, inView = allRegions, q = '', saga, sea }: SummaryParams,
   sagas: SagaPick[],
 ): string {
   const title = sagas.find((candidate) => candidate.number === saga)?.title
@@ -301,22 +306,20 @@ function summaryOf(
   ].join(' · ')
 }
 
+/** A picker's label, its options, its value and what a pick does. */
+interface PickerProps {
+  label: string
+  onPick: (value: string) => void
+  options: Option[]
+  value: string
+}
+
 /**
  * A native `<select>` for a pick: the types and the sagas run to twelve each,
  * too many for chips, and the seas take the same control so the three read
  * as one row. Its first option is every value.
  */
-function Picker({
-  label,
-  onPick,
-  options,
-  value,
-}: {
-  label: string
-  onPick: (value: string) => void
-  options: Option[]
-  value: string
-}): ReactElement {
+function Picker({ label, onPick, options, value }: PickerProps): ReactElement {
   return (
     <select
       aria-label={label}
