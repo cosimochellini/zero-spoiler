@@ -14,6 +14,11 @@ import { ART_VIEWBOX, tintOf } from '~/components/drawing'
 import { emblemStyles } from '~/components/emblem.styles'
 import type { Drawing } from '~/lib/view/records'
 
+/** The drawing the seal holds, or none for a fogged character. */
+interface CharacterCrestProps {
+  visual?: Drawing
+}
+
 /**
  * A character's crest: the drawing that stands for them, set inside a seal.
  *
@@ -33,7 +38,7 @@ import type { Drawing } from '~/lib/view/records'
  * nothing in the middle. That is what stands in for a fogged character, so
  * the served HTML carries neither their drawing nor their colour.
  */
-export function CharacterCrest({ visual }: { visual?: Drawing }): ReactElement {
+export function CharacterCrest({ visual }: CharacterCrestProps): ReactElement {
   const hue = visual === undefined ? null : tintOf(visual.tint)
 
   return (

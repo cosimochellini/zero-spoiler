@@ -40,6 +40,17 @@ const TILE_PAGE = {
 /** The kind of record an album tile is: a devil fruit, or a Nen ability. */
 export type TileKind = keyof typeof TILE_PAGE
 
+/** A covered record, how to peek at it, and the public lines under it. */
+interface CoveredTileProps<T extends RecordView> {
+  covered: CoveredRecord
+  kind: TileKind
+  lines: string[]
+  peek: (handle: string) => Promise<T>
+  phase: number
+  /** Its place among the covered tiles of a folded grid, from 0. */
+  rank?: number | undefined
+}
+
 /**
  * A covered album tile: a `FogTile`, the same drifting fog for every record,
  * and under it only the `lines` already public. Lifted by hand, the fog
@@ -52,15 +63,7 @@ export function CoveredTile<T extends RecordView>({
   peek,
   phase,
   rank,
-}: {
-  covered: CoveredRecord
-  kind: TileKind
-  lines: string[]
-  peek: (handle: string) => Promise<T>
-  phase: number
-  /** Its place among the covered tiles of a folded grid, from 0. */
-  rank?: number | undefined
-}): ReactElement {
+}: CoveredTileProps<T>): ReactElement {
   const folded = useFolded()
 
   return (
@@ -154,6 +157,12 @@ export function UsedTile({
   )
 }
 
+/** The record a tile links to, and what of its name a search matched. */
+type TileLinkProps = Pick<
+  UsedTileProps,
+  'highlight' | 'kind' | 'morph' | 'record'
+>
+
 /**
  * An open tile's link: the drawing and the name, which lead to the record's
  * page, and travel there for a fruit. The kind is printed under the tile
@@ -164,12 +173,7 @@ function TileLink({
   kind,
   morph: asked,
   record,
-}: {
-  highlight: [number, number] | null
-  kind: TileKind
-  morph: boolean
-  record: RecordView
-}): ReactElement {
+}: TileLinkProps): ReactElement {
   const { series, locale } = useSeriesParams()
   // Only a fruit travels to its page; an ability's page has no morph.
   const morph = asked && kind === 'fruit'

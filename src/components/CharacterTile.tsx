@@ -88,16 +88,15 @@ export function CharacterTile({
   )
 }
 
-/** An open tile: the drawing and the name, as a link to the page. */
-function TileLink({
-  record,
-  highlight,
-  morph,
-}: {
+/** The open record, the match to mark, and whether the tile travels. */
+interface TileLinkProps {
   highlight: [number, number] | null
   morph: boolean
   record: CharacterView
-}): ReactElement {
+}
+
+/** An open tile: the drawing and the name, as a link to the page. */
+function TileLink({ record, highlight, morph }: TileLinkProps): ReactElement {
   const { series, locale } = useSeriesParams()
   const travels = useTravels('character', record.id) && morph
   const { ref, strokes } = useDrawing(record.id, record.visual)

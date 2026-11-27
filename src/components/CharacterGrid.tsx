@@ -164,6 +164,12 @@ function useUnmatched(
   return matchesIn(open, needle).length === 0 ? landed : null
 }
 
+/** The shelves the fog is counted on, and the query the button clears. */
+interface CharactersNoMatchProps extends Pick<SearchCountProps, 'sections'> {
+  fieldId: string
+  onQuery: (query: string) => void
+}
+
 /**
  * What stands in for the crests and the shelves while the query has no
  * match: the button that clears it, and how many characters are under fog.
@@ -172,11 +178,7 @@ function CharactersNoMatch({
   fieldId,
   onQuery,
   sections,
-}: {
-  fieldId: string
-  onQuery: (query: string) => void
-  sections: ShelfView[]
-}): ReactElement {
+}: CharactersNoMatchProps): ReactElement {
   const t = useT()
   const { bookmark } = useBookmark()
   const count = sections.reduce((sum, shelf) => sum + shelf.covered.length, 0)
@@ -204,20 +206,24 @@ function StatusPending(): ReactElement {
   )
 }
 
+/** The folded query the count is of, and the query as typed. */
+interface StatusAsked {
+  needle: string
+  query: string
+}
+
+/** The query, and the shelves, however far along they are. */
+interface SearchStatusProps extends StatusAsked {
+  shelves: ShelvesSource
+}
+
 /**
  * The line under the field. The count is over every open character, so it
  * cannot be said until the shelves have landed. Its own boundary, so the
  * field beside it never suspends: an input that unmounts mid-word loses the
  * word and the focus with it.
  */
-function SearchStatus({
-  shelves,
-  ...asked
-}: {
-  needle: string
-  query: string
-  shelves: ShelvesSource
-}): ReactElement {
+function SearchStatus({ shelves, ...asked }: SearchStatusProps): ReactElement {
   return shelves === null ?
       <StatusPending />
     : <Suspense fallback={<StatusPending />}>
@@ -228,6 +234,11 @@ function SearchStatus({
       </Suspense>
 }
 
+/** The query, and the shelves once the browser has asked for them. */
+interface LandedStatusProps extends StatusAsked {
+  shelves: Promise<Shelves> | Shelves
+}
+
 /**
  * How many open characters the query answers, out of how many there are.
  * Reads the shelves, so it lives inside the boundary.
@@ -236,11 +247,7 @@ function LandedStatus({
   shelves,
   needle,
   query,
-}: {
-  needle: string
-  query: string
-  shelves: Promise<Shelves> | Shelves
-}): ReactElement {
+}: LandedStatusProps): ReactElement {
   const sections = shelves instanceof Promise ? use(shelves) : shelves
 
   return sections === 'failed' ?
@@ -252,16 +259,17 @@ function LandedStatus({
       />
 }
 
+/** The query, and the shelves it is counted over. */
+interface SearchCountProps extends StatusAsked {
+  sections: ShelfView[]
+}
+
 /** The count itself, once the shelves are here. */
 function SearchCount({
   sections,
   needle,
   query,
-}: {
-  needle: string
-  query: string
-  sections: ShelfView[]
-}): ReactElement {
+}: SearchCountProps): ReactElement {
   const t = useT()
   const open = sections.flatMap((section) => section.open)
   useOpenEntries(open.length)
@@ -280,6 +288,14 @@ function SearchCount({
   )
 }
 
+/** The featured characters, open and covered, and the query over them. */
+interface FeaturedCrestsProps extends Pick<CharacterGridProps, 'peek'> {
+  covered: CoveredRecord[]
+  fieldId: string
+  needle: string
+  open: SearchableCharacter[]
+}
+
 /**
  * The crests: the featured characters the reader has reached, filtered by the
  * query, and below them a band of the ones they have not. The two never trade
@@ -291,13 +307,7 @@ function FeaturedCrests({
   fieldId,
   needle,
   peek,
-}: {
-  covered: CoveredRecord[]
-  fieldId: string
-  needle: string
-  open: SearchableCharacter[]
-  peek: (handle: string) => Promise<CharacterView>
-}): ReactElement {
+}: FeaturedCrestsProps): ReactElement {
   const t = useSeriesT()
   const matches = matchesIn(open, needle)
 

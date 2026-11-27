@@ -28,6 +28,14 @@ import { settleStyles } from '~/styles/settle'
  * not, under fog.
  */
 
+/** A reached record, its drawings, the dial's point, and whether it is here. */
+interface OpenCardProps {
+  drawings: Step<Drawing>[]
+  entry: DemoEntry
+  here: boolean
+  point: DialPoint
+}
+
 /**
  * A record the dial has reached, with its drawing and the facts it has
  * reached. A character, a place or a ship is a link to its page at this
@@ -42,12 +50,7 @@ export function OpenCard({
   here,
   point,
   drawings,
-}: {
-  drawings: Step<Drawing>[]
-  entry: DemoEntry
-  here: boolean
-  point: DialPoint
-}): ReactElement {
+}: OpenCardProps): ReactElement {
   const look = [
     styles.card,
     here && styles.here,
@@ -84,6 +87,12 @@ export function OpenCard({
   )
 }
 
+/** The record the link leads to, the point it stands the reader at. */
+interface TrialLinkProps extends Pick<OpenCardProps, 'entry' | 'point'> {
+  children: ReactElement
+  sx: stylex.StyleXStyles
+}
+
 /**
  * A link to a record's own page that stands the reader at the dial's point
  * first, on a trial: the cookie is written on the click, before the router
@@ -95,12 +104,7 @@ function TrialLink({
   entry,
   point,
   sx,
-}: {
-  children: ReactElement
-  entry: DemoEntry
-  point: DialPoint
-  sx: stylex.StyleXStyles
-}): ReactElement {
+}: TrialLinkProps): ReactElement {
   const { series, locale } = useSeriesParams()
   const { enterTrial } = useBookmark()
   const onClick = (): void => {
@@ -135,16 +139,11 @@ function TrialLink({
   )
 }
 
+/** A reached record, its drawings, and the dial's point. */
+type CardBodyProps = Omit<OpenCardProps, 'here'>
+
 /** The drawing, the name, and each fact the dial has reached, in a stack. */
-function CardBody({
-  entry,
-  point,
-  drawings,
-}: {
-  drawings: Step<Drawing>[]
-  entry: DemoEntry
-  point: DialPoint
-}): ReactElement {
+function CardBody({ entry, point, drawings }: CardBodyProps): ReactElement {
   const { locale } = useLocale()
   const onePiece = useSeriesT('one-piece')
   const facts = [
@@ -198,14 +197,14 @@ function CardBody({
   )
 }
 
-/** A record's drawing in the frame its kind is drawn in. */
-function Drawn({
-  drawing,
-  kind,
-}: {
+/** The drawing reached, if any, and the kind of record it is. */
+interface DrawnProps {
   drawing: Drawing | undefined
   kind: DemoEntry['kind']
-}): null | ReactElement {
+}
+
+/** A record's drawing in the frame its kind is drawn in. */
+function Drawn({ drawing, kind }: DrawnProps): null | ReactElement {
   if (drawing === undefined) {
     return null
   }
@@ -219,18 +218,18 @@ function Drawn({
   return <PortPlate visual={drawing} />
 }
 
+/** A covered record, and the dial's point. */
+interface FogCardProps {
+  entry: CoveredRecord | DemoEntry
+  point: DialPoint
+}
+
 /**
  * A record under fog: the bare seal or the bare plate, "Entry under fog" in
  * the glossary's words, and where it opens. The name and the drawing are not
  * drawn, though for an East Blue record its name is in the dial's data.
  */
-export function FogCard({
-  entry,
-  point,
-}: {
-  entry: CoveredRecord | DemoEntry
-  point: DialPoint
-}): ReactElement {
+export function FogCard({ entry, point }: FogCardProps): ReactElement {
   const t = useT()
   const series = useBookmarkSeries()
 

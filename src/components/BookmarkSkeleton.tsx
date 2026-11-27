@@ -61,6 +61,15 @@ export function BookmarkSkeleton(): ReactElement {
   )
 }
 
+/** The words of the failure and its retry, and what retry calls. */
+interface LoadFailedProps<S extends SeriesSlug> {
+  message?: TranslationKey<S>
+  onRetry: () => void
+  retry?: TranslationKey<S>
+  /** The page's translate, typed by the keys the words are. */
+  t: Translate<S>
+}
+
 /**
  * Something could not be fetched (the form, by default): it says so, and
  * offers to ask again.
@@ -70,13 +79,7 @@ export function LoadFailed<S extends SeriesSlug = never>({
   onRetry,
   retry = 'dialog.retry',
   t,
-}: {
-  message?: TranslationKey<S>
-  onRetry: () => void
-  retry?: TranslationKey<S>
-  /** The page's translate, typed by the keys the words are. */
-  t: Translate<S>
-}): ReactElement {
+}: LoadFailedProps<S>): ReactElement {
   return (
     <div {...stylex.props(styles.failed)}>
       <p

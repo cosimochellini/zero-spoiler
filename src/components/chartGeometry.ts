@@ -217,6 +217,12 @@ function percent(value: number, of: number): string {
   return `${((value / of) * PERCENT).toFixed(DECIMALS)}%`
 }
 
+/** Where something stands over a frame, as CSS `left` and `top`. */
+interface Placement {
+  left: string
+  top: string
+}
+
 /**
  * Where a point is drawn in the window (`view`, as drawn), as CSS `left` and
  * `top` over the frame: what stands outside the world, a peek, is placed so.
@@ -225,7 +231,7 @@ export function placeIn(
   point: Point,
   orientation: Orientation,
   view: Rect,
-): { left: string; top: string } {
+): Placement {
   const drawn = project(point, orientation)
 
   return {
@@ -235,10 +241,7 @@ export function placeIn(
 }
 
 /** Where a point is drawn, as CSS `left` and `top` over the drawing. */
-export function placeOf(
-  point: Point,
-  orientation: Orientation,
-): { left: string; top: string } {
+export function placeOf(point: Point, orientation: Orientation): Placement {
   const drawn = project(point, orientation)
   const box = boxOf(orientation)
 
@@ -269,11 +272,17 @@ export function pullOf(
   return pullIn(point, side, { orientation, view: wholeOf(orientation) })
 }
 
+/** The orientation drawn, and the window the pull is in proportion to. */
+interface PullInOptions {
+  orientation: Orientation
+  view: Rect
+}
+
 /** As `pullOf`, in proportion to where the point is in a zoomed window. */
 export function pullIn(
   point: Point,
   side: null | Side,
-  { orientation, view }: { orientation: Orientation; view: Rect },
+  { orientation, view }: PullInOptions,
 ): string {
   const drawn = project(point, orientation)
   const share = Math.min(Math.max(drawn.x - view.x, 0), view.width)

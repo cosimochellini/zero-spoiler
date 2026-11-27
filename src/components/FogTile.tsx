@@ -105,14 +105,14 @@ export function FogTile<T>({
   )
 }
 
-/** The fog itself: two banks drifting in the frame, cleared once lifted. */
-function Fog({
-  cleared,
-  phase,
-}: {
+/** Whether the fog has cleared, and which drift it starts on. */
+interface FogProps {
   cleared: boolean
   phase: number
-}): ReactElement {
+}
+
+/** The fog itself: two banks drifting in the frame, cleared once lifted. */
+function Fog({ cleared, phase }: FogProps): ReactElement {
   return (
     <span
       aria-hidden="true"
@@ -136,21 +136,17 @@ function Fog({
   )
 }
 
-/** The button over the whole tile, and the words it says once pressed. */
-function Ask({
-  button,
-  covered,
-  name,
-  spent,
-  state,
-}: {
+/** The lift's button and state, and the record it asks about. */
+interface AskProps extends Pick<WordsProps, 'state'> {
   button: Lift<unknown>['button']
   covered: Gated
   /** What tells this tile from the next to a screen reader: its first line. */
   name: string
   spent: boolean
-  state: LiftState
-}): ReactElement {
+}
+
+/** The button over the whole tile, and the words it says once pressed. */
+function Ask({ button, covered, name, spent, state }: AskProps): ReactElement {
   const t = useT()
   const threshold = useThreshold()
   const resting = state === 'resting'
@@ -180,6 +176,13 @@ function Ask({
   )
 }
 
+/** The lift's state, and whether the words keep to one line. */
+interface WordsProps {
+  /** Set on one line, where a second would break the row it sits in. */
+  line?: boolean
+  state: LiftState
+}
+
 /**
  * What a pressed fog control says: the question and its answer, or the
  * state. Resting, nothing. A verb-only `SpoilerVeil` says the same words.
@@ -187,11 +190,7 @@ function Ask({
 export function Words({
   line = false,
   state,
-}: {
-  /** Set on one line, where a second would break the row it sits in. */
-  line?: boolean
-  state: LiftState
-}): null | ReactElement {
+}: WordsProps): null | ReactElement {
   const t = useT()
 
   if (state === 'resting') {

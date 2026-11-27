@@ -22,18 +22,21 @@ function kindLabel(
   return here ? t('filler.cell.here') : ''
 }
 
+/** A cell's episode, its kind, and whether the reader is on it. */
+interface CellFaceProps {
+  episode: number
+  here: boolean
+  kind: FillerKind | null
+  mode: BookmarkMode
+}
+
 /** What a cell reads: its number, and the word under it. */
 export function CellFace({
   episode,
   here,
   kind,
   mode,
-}: {
-  episode: number
-  here: boolean
-  kind: FillerKind | null
-  mode: BookmarkMode
-}): ReactElement {
+}: CellFaceProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const series = useBookmarkSeries()
 

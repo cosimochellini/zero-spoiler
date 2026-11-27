@@ -34,6 +34,12 @@ interface MarkFace {
   look: stylex.StyleXStyles
 }
 
+/** Which home the mark stands in, and whether its point is a trial. */
+interface FaceOfOptions {
+  inFold: boolean
+  trial: boolean
+}
+
 /**
  * Turns the bookmark, as the mark says it (`null` when there is none), into
  * what the control shows and its name.
@@ -46,7 +52,7 @@ interface MarkFace {
 function faceOf(
   t: Translate,
   said: null | string,
-  { inFold, trial }: { inFold: boolean; trial: boolean },
+  { inFold, trial }: FaceOfOptions,
 ): MarkFace {
   const mark = said ?? t('mark.unset')
 

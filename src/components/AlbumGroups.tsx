@@ -139,6 +139,11 @@ export function AlbumGroups({
   )
 }
 
+/** An open tile a group shows, with the eater it chose among, if it did. */
+interface GroupMatch extends Match<SpecimenView> {
+  eater?: EaterMatch
+}
+
 /**
  * The open tiles of a group the picks find, each with the eater it shows when
  * the group chose among them (the faction view). A fruit the query found only
@@ -148,7 +153,7 @@ function matchesOf(
   group: AlbumGroup,
   lookup: Lookup,
   needle: string,
-): (Match<SpecimenView> & { eater?: EaterMatch })[] {
+): GroupMatch[] {
   const among = new Map(group.open.map((ref) => [ref.id, ref.eaters]))
   const ids = group.open.map(({ id }) => id)
 
@@ -165,6 +170,13 @@ function matchesOf(
   )
 }
 
+/** A group, the plates' lookup, and the open tiles the picks found in it. */
+interface GroupProps extends Pick<AlbumGroupsProps, 'needle' | 'peek'> {
+  group: AlbumGroup
+  lookup: Lookup
+  matches: ComponentProps<typeof OpenTiles>['matches']
+}
+
 /**
  * One group: its title pinned over the open tiles the search finds, then its
  * fog tiles. With nothing left to show it leaves the page, as a character's
@@ -176,13 +188,7 @@ function Group({
   matches,
   needle,
   peek,
-}: {
-  group: AlbumGroup
-  lookup: Lookup
-  matches: ComponentProps<typeof OpenTiles>['matches']
-  needle: string
-  peek: (handle: string) => Promise<FruitView>
-}): null | ReactElement {
+}: GroupProps): null | ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const fog = pickedOf(lookup.form, lookup.covered, group.covered)
   if (matches.length === 0 && fog.length === 0) {
@@ -219,14 +225,13 @@ function Group({
   )
 }
 
-/** Covered tiles, each with its plate's kind and number. */
-function CoveredTiles({
-  peek,
-  tiles,
-}: {
-  peek: (handle: string) => Promise<FruitView>
+/** The covered tiles to draw, and how to peek at one. */
+interface CoveredTilesProps extends Pick<AlbumGroupsProps, 'peek'> {
   tiles: CoveredTile[]
-}): ReactElement {
+}
+
+/** Covered tiles, each with its plate's kind and number. */
+function CoveredTiles({ peek, tiles }: CoveredTilesProps): ReactElement {
   return (
     <>
       {tiles.map((tile, rank) => {
@@ -249,10 +254,7 @@ function CoveredTiles({
  * Every fruit of the plates, open by id and covered by handle. A covered
  * fruit's number carries on from its plate's open ones, as on the plate.
  */
-function byRef(bands: FruitBandView[]): {
-  covered: Map<string, CoveredTile>
-  open: Map<string, SpecimenView>
-} {
+function byRef(bands: FruitBandView[]): Omit<Lookup, 'form'> {
   const open = new Map<string, SpecimenView>()
   const covered = new Map<string, CoveredTile>()
   for (const band of bands) {
