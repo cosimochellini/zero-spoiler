@@ -13806,7 +13806,7 @@ const riverlands3 = {
     type: { en: 'Mother', it: 'Madre' },
     summary: {
       en: 'His mother, still held under guard for freeing Jaime. He tells her that her father has died and that Winterfell has been burned.',
-      it: 'Sua madre, ancora sotto custodia per aver liberato Jaime. Robb le dice che suo padre è morto e che Grande Inverno è stata data alle fiamme.',
+      it: 'Sua madre, ancora sotto custodia per aver liberato Jaime. Robb le dice che il nonno è morto e che Grande Inverno è stata data alle fiamme.',
     },
   },
   rbRoose22: {
@@ -14022,8 +14022,8 @@ const riverlands3 = {
     character: 'edmure-tully',
     type: { en: 'Uncle', it: 'Zio' },
     summary: {
-      en: 'His uncle, whom he praises in the hall for his victory at the fords. In private he and the Blackfish tell Edmure that the victory ruined their plan.',
-      it: 'Suo zio, che loda nella sala per la vittoria ai guadi. In privato lui e il Pesce Nero gli dicono che quella vittoria ha rovinato il loro piano.',
+      en: 'His uncle, whom he praises in the hall for his victory at the fords. In private Robb and the Blackfish tell Edmure that the victory ruined their plan.',
+      it: 'Suo zio, che loda nella sala per la vittoria ai guadi. In privato Robb e il Pesce Nero gli dicono che quella vittoria ha rovinato il loro piano.',
     },
   },
   rbRickard158: {
@@ -14241,7 +14241,7 @@ const riverlands3 = {
     type: { en: 'Son and king', it: 'Figlio e re' },
     summary: {
       en: 'Her son, who keeps her under guard at Harrenhal. He tells her that her father has died and that Winterfell has been burned.',
-      it: 'Suo figlio, che la tiene sotto custodia a Harrenhal. Le dice che suo padre è morto e che Grande Inverno è stata data alle fiamme.',
+      it: 'Suo figlio, che la tiene sotto custodia a Harrenhal. Le dice che il padre di lei è morto e che Grande Inverno è stata data alle fiamme.',
     },
   },
   ctTalisa22: {
@@ -14281,7 +14281,7 @@ const riverlands3 = {
     type: { en: 'Uncle', it: 'Zio' },
     summary: {
       en: 'Her uncle, who tells her he made peace with her father before he died, and urges her to be strong for Robb.',
-      it: 'Suo zio, che le racconta di aver fatto pace con suo padre prima che morisse, e la esorta a essere forte per Robb.',
+      it: 'Suo zio, che le racconta di aver fatto pace con il padre di lei prima che morisse, e la esorta a essere forte per Robb.',
     },
   },
   ctEdmure23: {
@@ -14739,8 +14739,8 @@ const riverlands3 = {
     character: 'robb-stark',
     type: { en: 'Nephew and king', it: 'Nipote e re' },
     summary: {
-      en: 'His nephew. Edmure urges him to bury the dead hostages quietly and keep Lord Karstark alive; Robb refuses to lie and beheads him.',
-      it: 'Suo nipote. Edmure lo esorta a seppellire in silenzio gli ostaggi morti e a tenere in vita lord Karstark; Robb si rifiuta di mentire e lo decapita.',
+      en: 'His nephew. Edmure urges him to bury the dead hostages quietly and keep Lord Karstark alive; Robb refuses to lie and beheads Lord Karstark.',
+      it: 'Suo nipote. Edmure lo esorta a seppellire in silenzio gli ostaggi morti e a tenere in vita lord Karstark; Robb si rifiuta di mentire e decapita lord Karstark.',
     },
   },
   edRickard25: {
@@ -15736,8 +15736,8 @@ const riverlands3 = {
     character: 'robb-stark',
     type: { en: 'King', it: 'Re' },
     summary: {
-      en: 'The young lord he once drew steel on, and the first he proclaimed King in the North. Robb was killed at the Twins.',
-      it: 'Il giovane lord contro cui aveva sguainato la spada, e il primo che aveva proclamato Re del Nord. Robb è stato ucciso alle Torri Gemelle.',
+      en: 'The young lord he once drew steel on, and was the first to proclaim King in the North. Robb was killed at the Twins.',
+      it: 'Il giovane lord contro cui aveva sguainato la spada, e che lui per primo aveva proclamato Re del Nord. Robb è stato ucciso alle Torri Gemelle.',
     },
   },
   gjGreyWind29: {
@@ -15752,8 +15752,8 @@ const riverlands3 = {
     character: 'robb-stark',
     type: { en: 'King', it: 'Re' },
     summary: {
-      en: 'The young lord he once drew steel on, and the first he proclaimed King in the North. Robb was killed at the wedding feast.',
-      it: 'Il giovane lord contro cui aveva sguainato la spada, e il primo che aveva proclamato Re del Nord. Robb è stato ucciso alla festa nuziale.',
+      en: 'The young lord he once drew steel on, and was the first to proclaim King in the North. Robb was killed at the wedding feast.',
+      it: 'Il giovane lord contro cui aveva sguainato la spada, e che lui per primo aveva proclamato Re del Nord. Robb è stato ucciso alla festa nuziale.',
     },
   },
   gjSmalljon195: {
