@@ -863,7 +863,7 @@ const GOLDEN_HAND: Stroke[] = [
 ]
 
 /** The golden hand stood on its cuff on the floor, right of the bench. */
-const HAND_STOOD = moved(GOLDEN_HAND, 'translate(138 150)')
+const HAND_STOOD = moved(GOLDEN_HAND, 'translate(136 150)')
 
 /** A bench drawing moved left to make room for the hand. */
 const BENCH_LEFT = 'translate(-14 0)'
@@ -1002,7 +1002,7 @@ export const southRedrawn: Redrawings = {
           ],
           'translate(-16 0)',
         ),
-        ...moved(GOLDEN_HAND, 'translate(122 148) rotate(90) scale(0.7)'),
+        ...moved(GOLDEN_HAND, 'translate(129 149) rotate(90) scale(0.6)'),
         FLOOR,
       ],
     },
