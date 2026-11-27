@@ -57,6 +57,7 @@ export function SyncPage({ series }: { series: Series[] }): ReactElement {
     }
   }
 
+  // eslint-disable-next-line no-restricted-syntax -- reads the URL fragment once on arrival and asks the sync endpoint
   useEffect(() => {
     void arrive(setStep, check)
     // Once, on arrival: the fragment is read when the page opens.

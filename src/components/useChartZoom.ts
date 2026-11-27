@@ -116,6 +116,7 @@ function useWindow(opening: Rect): {
     setOpened(opening)
     setView(opening)
   }
+  // eslint-disable-next-line no-restricted-syntax -- mirrors a new bookmark's window into the ref the gesture listeners read; a ref cannot be written in render
   useEffect(() => {
     viewRef.current = view
   }, [view])
@@ -170,6 +171,7 @@ function useWheel(
 ): void {
   const onMove = useEffectEvent(move)
 
+  // eslint-disable-next-line no-restricted-syntax -- a non-passive wheel listener on the frame
   useEffect(() => {
     if (element === null) {
       return

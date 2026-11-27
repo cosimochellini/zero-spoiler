@@ -93,6 +93,7 @@ interface Timer {
 
 function useTimer(): Timer {
   const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+  // eslint-disable-next-line no-restricted-syntax -- the peek timer, cleared on unmount
   useEffect(
     () => () => {
       clearTimeout(timerRef.current)
@@ -164,6 +165,7 @@ interface Dismiss {
 function useDismiss({ element, onEscape, open, set }: Dismiss): void {
   const escape = useEffectEvent(onEscape)
 
+  // eslint-disable-next-line no-restricted-syntax -- document keydown, pointerdown and focusin listeners
   useEffect(() => {
     if (open === null) {
       return

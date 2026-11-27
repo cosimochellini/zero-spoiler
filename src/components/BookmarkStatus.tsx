@@ -81,6 +81,7 @@ function useArrivingNotice(): {
   const { notice } = useBookmark()
   const stripRef = useRef<HTMLDivElement>(null)
 
+  // eslint-disable-next-line no-restricted-syntax -- DOM focus and scroll when a notice arrives from the bookmark context, raised by a save elsewhere
   useEffect(() => {
     if (notice === null) {
       return

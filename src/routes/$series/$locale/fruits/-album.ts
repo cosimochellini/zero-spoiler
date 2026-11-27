@@ -109,6 +109,7 @@ export function useFruitAlbum(): {
     () => false,
   )
 
+  // eslint-disable-next-line no-restricted-syntax -- fetches the album from the network
   useEffect(() => {
     if (!albums.has(key) && !failed.has(key)) {
       void fetchAlbum({ series, locale }, key)
@@ -145,6 +146,7 @@ function useRestoredScroll(album: Album | null): void {
   })
   const waitedRef = useRef(album === null)
 
+  // eslint-disable-next-line no-restricted-syntax -- window scroll once the album arrives from the network
   useEffect(() => {
     // eslint-disable-next-line react-you-might-not-need-an-effect/no-event-handler -- the album arrives from the network, not from an event, and the scroll has to follow the plates it waits for.
     if (album === null || !waitedRef.current) {

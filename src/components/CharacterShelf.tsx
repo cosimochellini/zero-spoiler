@@ -178,6 +178,7 @@ function useNearViewport(listRef: RefObject<HTMLUListElement | null>): boolean {
     () => typeof IntersectionObserver === 'undefined',
   )
 
+  // eslint-disable-next-line no-restricted-syntax -- an IntersectionObserver on the shelf
   useEffect(() => {
     const target = listRef.current
     if (near || target === null) {

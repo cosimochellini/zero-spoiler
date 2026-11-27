@@ -42,6 +42,7 @@ export function FillerCatalogue({
 }: FillerCatalogueProps): ReactElement {
   // A row's saga may be folded, and the browser cannot scroll into a closed
   // `<details>`: open the way to `#ep-N` on arrival and on every hash change.
+  // eslint-disable-next-line no-restricted-syntax -- the window's hashchange event and the closed `<details>` it opens
   useEffect(() => {
     const stop = new AbortController()
     followHash()

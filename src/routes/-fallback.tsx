@@ -84,6 +84,7 @@ function HomeLink(): ReactElement {
  */
 function useFocusOnArrival(): void {
   const router = useRouter()
+  // eslint-disable-next-line no-restricted-syntax -- reads the router's resolved location once the page commits, then moves DOM focus
   useEffect(() => {
     // Read once, on arrival: the page resolves a moment after it mounts.
     const { location, resolvedLocation } = router.state

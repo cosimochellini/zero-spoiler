@@ -232,6 +232,7 @@ function useHold(): Hold {
     timerRef.current = undefined
   }, [])
 
+  // eslint-disable-next-line no-restricted-syntax -- the hold-to-repeat timer, cleared when the counter goes
   useEffect(() => stop, [stop])
 
   return {

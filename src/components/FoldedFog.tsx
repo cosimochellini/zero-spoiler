@@ -61,6 +61,7 @@ export function FoldedFog({
   // keyboard carries on down the wall from where the button was.
   const nextRef = useRef<HTMLElement | null>(null)
   const listRef = useRef<HTMLUListElement>(null)
+  // eslint-disable-next-line no-restricted-syntax -- DOM focus on a tile that has no box until the commit draws it
   useEffect(() => {
     // It is drawn where the button was, so the window stays where it is.
     nextRef.current?.focus({ preventScroll: true })

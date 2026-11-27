@@ -4,7 +4,6 @@ import {
   type RefObject,
   useCallback,
   useEffect,
-  useRef,
   useState,
 } from 'react'
 import type { QrCodeGenerateResult } from 'uqr'
@@ -119,6 +118,7 @@ export function DevicesView({
  * cleanup runs once the form is back in sight.
  */
 function useReturnFocus(link: RefObject<HTMLButtonElement | null>): void {
+  // eslint-disable-next-line no-restricted-syntax -- DOM focus, moved once the commit has unhidden the form; a ref cleanup here runs before that and would focus a hidden link.
   useEffect(
     () => () => {
       link.current?.focus()
@@ -138,16 +138,10 @@ function BackButton({
   label: string
   onBack: () => void
 }): ReactElement {
-  const ref = useRef<HTMLButtonElement>(null)
-
-  useEffect(() => {
-    ref.current?.focus()
-  }, [])
-
   return (
     <Button
       onClick={onBack}
-      ref={ref}
+      ref={focusOnArrival}
       sx={styles.back}
     >
       <svg
@@ -168,6 +162,14 @@ function BackButton({
       {label}
     </Button>
   )
+}
+
+/**
+ * A ref callback with one identity, so it runs when the button attaches and
+ * not on every render.
+ */
+function focusOnArrival(button: HTMLButtonElement | null): void {
+  button?.focus()
 }
 
 /**

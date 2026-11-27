@@ -166,6 +166,7 @@ function useFold(barRef: RefObject<HTMLDivElement | null>): {
   const [pinned, setPinned] = useState(false)
   const [open, setOpen] = useState(false)
 
+  // eslint-disable-next-line no-restricted-syntax -- the bar's pin watcher and its focus listeners
   useEffect(() => {
     const bar = barRef.current
     if (bar === null) {

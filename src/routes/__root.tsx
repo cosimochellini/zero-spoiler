@@ -288,6 +288,7 @@ function RootDocument({
   // import the SSR pass would evaluate. Note the module id: under
   // `devMode: 'css-only'` the plugin resolves this one and never
   // `virtual:stylex:runtime`.
+  // eslint-disable-next-line no-restricted-syntax -- the dev-only StyleX HMR shim rewrites the React-rendered stylesheet link; imported before hydration it would mismatch the href
   useEffect(() => {
     if (!import.meta.env.DEV) {
       return

@@ -65,6 +65,7 @@ function CharactersPage(): ReactElement {
 
   const peek = usePeek(liftCharacter)
 
+  // eslint-disable-next-line no-restricted-syntax -- flags in module state, read by the client loader, that the page has committed in the browser, hydration included
   useEffect(shelvesShown, [])
 
   return (
