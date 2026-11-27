@@ -31,6 +31,7 @@ export function hubSeries(
     // Blue included though no shelf carries it.
     open: entities.filter((entity) => sees(entity)).length,
     bookmark,
+    demoLastEpisode: series.demoLastEpisode,
     ...(series.books !== undefined && { books: series.books }),
   }
 }

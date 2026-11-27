@@ -25,6 +25,7 @@ describe('hubSeries', () => {
       name: { en: 'One Piece', it: 'One Piece' },
       theme: 'one-piece',
       bookmark,
+      demoLastEpisode: 61,
     })
     expect(count).toBe(archiveIn(archive, 'episode').entities.length)
     expect(open).toBeLessThanOrEqual(count)
