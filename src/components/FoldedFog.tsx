@@ -20,6 +20,16 @@ export interface FoldWords {
   open: string
 }
 
+interface FoldedFogProps {
+  /** The tiles: any open ones, then the covered ones, each with its rank. */
+  children: ReactNode
+  /** How many of the tiles are covered. */
+  count: number
+  /** The list's id, unique on the page and the same after Back. */
+  id: string
+  words: FoldWords
+}
+
 /**
  * A grid of fog tiles, folded on a phone (#1381): a fog band's, or a saga
  * group's tiles, the open ones first. The fruits page folds its groups and
@@ -47,20 +57,13 @@ export function FoldedFog({
   count,
   id,
   words,
-}: {
-  /** The tiles: any open ones, then the covered ones, each with its rank. */
-  children: ReactNode
-  /** How many of the tiles are covered. */
-  count: number
-  /** The list's id, unique on the page and the same after Back. */
-  id: string
-  words: FoldWords
-}): ReactElement {
+}: FoldedFogProps): ReactElement {
   const [open, unfold] = useEntryFold(id)
   // The first tile the fold hid: it takes focus once it is drawn, so a
   // keyboard carries on down the wall from where the button was.
   const nextRef = useRef<HTMLElement | null>(null)
   const listRef = useRef<HTMLUListElement>(null)
+  // eslint-disable-next-line no-restricted-syntax -- DOM focus on a tile that has no box until the commit draws it
   useEffect(() => {
     // It is drawn where the button was, so the window stays where it is.
     nextRef.current?.focus({ preventScroll: true })
@@ -98,24 +101,19 @@ export function FoldedFog({
   )
 }
 
+interface FoldRowProps extends Pick<FoldedFogProps, 'count' | 'words'> {
+  /** The id of the list the button unfolds. */
+  list: string
+  onOpen: () => void
+}
+
 /**
  * The line under a folded grid and its button, on a phone only. How many
  * the fold hides depends on the row: two tiles across, or three from 37.5rem.
  * The button goes once pressed, so it says what it opens by `aria-controls`
  * and the line rather than by a state it would never leave.
  */
-function FoldRow({
-  count,
-  list,
-  onOpen,
-  words,
-}: {
-  count: number
-  /** The id of the list the button unfolds. */
-  list: string
-  onOpen: () => void
-  words: FoldWords
-}): ReactElement {
+function FoldRow({ count, list, onOpen, words }: FoldRowProps): ReactElement {
   const lineId = useId()
 
   return (

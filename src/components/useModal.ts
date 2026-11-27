@@ -23,6 +23,7 @@ export interface Modal {
 export function useModal(): Modal {
   const dialogRef = useRef<HTMLDialogElement>(null)
 
+  // eslint-disable-next-line no-restricted-syntax -- the native `<dialog>`: showModal, and its backdrop click listener
   useEffect(() => {
     const dialog = dialogRef.current
     const closeOnBackdrop = (event: MouseEvent): void => {

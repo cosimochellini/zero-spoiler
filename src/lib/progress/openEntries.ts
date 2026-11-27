@@ -38,6 +38,7 @@ export function readOpenEntries(): null | number {
  * so the status line has the new count before the browser paints the move.
  */
 export function useOpenEntries(count: number): void {
+  // eslint-disable-next-line no-restricted-syntax -- reports the count to the status line store before paint
   useLayoutEffect(() => {
     report(count)
 

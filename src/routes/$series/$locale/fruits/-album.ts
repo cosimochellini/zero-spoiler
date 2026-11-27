@@ -78,6 +78,11 @@ async function fetchAlbum(data: Asked, wanted?: string): Promise<void> {
  */
 export const primeAlbum = createIsomorphicFn().client(fetchAlbum)
 
+interface FruitAlbumResult {
+  album: Album | null
+  retry: (() => void) | undefined
+}
+
 /**
  * The album for the page's series, locale and bookmark, or `null` until it
  * is here. The server renders `null`, and so does the render that hydrates
@@ -87,10 +92,7 @@ export const primeAlbum = createIsomorphicFn().client(fetchAlbum)
  * (another tab moved it, a trial ran out), is not asked again on its own:
  * `retry` is set instead, for the page to offer, and asks once more.
  */
-export function useFruitAlbum(): {
-  album: Album | null
-  retry: (() => void) | undefined
-} {
+export function useFruitAlbum(): FruitAlbumResult {
   const { locale, series } = useSeriesParams()
   const { bookmark } = useBookmark()
   const key = keyOf(
@@ -109,6 +111,7 @@ export function useFruitAlbum(): {
     () => false,
   )
 
+  // eslint-disable-next-line no-restricted-syntax -- fetches the album from the network
   useEffect(() => {
     if (!albums.has(key) && !failed.has(key)) {
       void fetchAlbum({ series, locale }, key)
@@ -145,6 +148,7 @@ function useRestoredScroll(album: Album | null): void {
   })
   const waitedRef = useRef(album === null)
 
+  // eslint-disable-next-line no-restricted-syntax -- window scroll once the album arrives from the network
   useEffect(() => {
     // eslint-disable-next-line react-you-might-not-need-an-effect/no-event-handler -- the album arrives from the network, not from an event, and the scroll has to follow the plates it waits for.
     if (album === null || !waitedRef.current) {

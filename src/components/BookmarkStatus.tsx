@@ -70,17 +70,20 @@ export function BookmarkStatus(): ReactElement {
   )
 }
 
+interface ArrivingNotice {
+  notice: BookmarkNotice | null
+  stripRef: React.RefObject<HTMLDivElement | null>
+}
+
 /**
  * The notice, and a ref for its strip. When a notice arrives the reader is
  * brought to it.
  */
-function useArrivingNotice(): {
-  notice: BookmarkNotice | null
-  stripRef: React.RefObject<HTMLDivElement | null>
-} {
+function useArrivingNotice(): ArrivingNotice {
   const { notice } = useBookmark()
   const stripRef = useRef<HTMLDivElement>(null)
 
+  // eslint-disable-next-line no-restricted-syntax -- DOM focus and scroll when a notice arrives from the bookmark context, raised by a save elsewhere
   useEffect(() => {
     if (notice === null) {
       return
@@ -114,14 +117,16 @@ function useSaid(notice: BookmarkNotice | null): string {
   return notice === null ? '' : settled
 }
 
+interface WordsOfOptions {
+  books: Book[] | undefined
+  notice: BookmarkNotice
+  open: null | number
+}
+
 /** Where the bookmark is now, and what that changed on this listing. */
 function wordsOf(
   t: Translate,
-  {
-    books,
-    notice,
-    open,
-  }: { books: Book[] | undefined; notice: BookmarkNotice; open: null | number },
+  { books, notice, open }: WordsOfOptions,
 ): string {
   const moved = movedWords(t, notice, books)
   const change = changeOf(notice, open)

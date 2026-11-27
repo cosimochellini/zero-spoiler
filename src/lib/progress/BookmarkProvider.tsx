@@ -169,6 +169,7 @@ function useStored(
   const router = useRouter()
   const [stored, setStored] = useState(initial)
 
+  // eslint-disable-next-line no-restricted-syntax -- router.subscribe('onBeforeLoad')
   useEffect(
     () =>
       router.subscribe('onBeforeLoad', ({ toLocation }) => {
