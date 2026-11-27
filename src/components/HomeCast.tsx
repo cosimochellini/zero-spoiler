@@ -4,11 +4,18 @@ import type { ReactElement } from 'react'
 import { CharacterCard } from '~/components/CharacterCard'
 import { useT } from '~/i18n/LocaleContext'
 import type { CharacterView } from '~/lib/view/records'
+import { settleStyles } from '~/styles/settle'
 import { color, font, leading, space, text } from '~/styles/tokens.stylex'
 
-/** The arc's leads the stories name most, most named first. */
+/** A row of crests under one of the home's two character headings. */
 export interface HomeCastProps {
+  /** The step it settles in on, as the home's other bands. */
+  band: number
   cast: CharacterView[]
+  /** Which row: its heading and the id that labels the section go together. */
+  row: 'cast' | 'met'
+  /** The crests are the previous arc's, because this one has none yet. */
+  before?: boolean
 }
 
 /**
@@ -22,27 +29,42 @@ async function neverPeeked(): Promise<CharacterView> {
 }
 
 /**
- * Who matters now: the arc's leads the stories name most, as the same crests
- * the characters page puts in evidence, most named first.
+ * A row of the same crests the characters page puts in evidence: who matters
+ * now (the arc's leads the stories name most, most named first) or who was
+ * just met (the arc's newcomers, latest first). A row taken from the arc
+ * before says so beside its heading, which stays the same.
  */
-export function HomeCast({ cast }: HomeCastProps): null | ReactElement {
+export function HomeCast({
+  band,
+  cast,
+  row,
+  before = false,
+}: HomeCastProps): null | ReactElement {
   const t = useT()
 
   if (cast.length === 0) {
     return null
   }
+  const id = `home-${row}` as const
 
   return (
     <section
-      aria-labelledby="home-cast"
-      {...stylex.props(styles.section)}
+      aria-labelledby={id}
+      {...stylex.props(
+        settleStyles.band,
+        settleStyles.at(band),
+        styles.section,
+      )}
     >
-      <h2
-        id="home-cast"
-        {...stylex.props(styles.heading)}
-      >
-        {t('home.cast')}
-      </h2>
+      <div {...stylex.props(styles.head)}>
+        <h2
+          id={id}
+          {...stylex.props(styles.heading)}
+        >
+          {t(`home.${row}`)}
+        </h2>
+        {before && <p {...stylex.props(styles.before)}>{t('home.before')}</p>}
+      </div>
       <ul {...stylex.props(styles.grid)}>
         {cast.map((record) => {
           return (
@@ -60,6 +82,13 @@ export function HomeCast({ cast }: HomeCastProps): null | ReactElement {
 
 const styles = stylex.create({
   section: { gap: space.lg, display: 'grid', minWidth: 0 },
+  head: {
+    alignItems: 'baseline',
+    columnGap: space.md,
+    display: 'flex',
+    flexWrap: 'wrap',
+    rowGap: space.xs,
+  },
   heading: {
     color: color.ink,
     fontFamily: font.display,
@@ -67,6 +96,18 @@ const styles = stylex.create({
     fontWeight: 800,
     letterSpacing: '-0.02em',
     lineHeight: leading.heading,
+  },
+  // Said in the voice of the ledger's episode marks, but quiet: it qualifies
+  // the heading rather than competing with it.
+  before: {
+    margin: 0,
+    color: color.ink2,
+    fontFamily: font.mono,
+    fontSize: text.xs,
+    fontWeight: 700,
+    letterSpacing: '0.1em',
+    lineHeight: leading.body,
+    textTransform: 'uppercase',
   },
   // Six to a row on a wide screen, which is the most the section shows.
   grid: {

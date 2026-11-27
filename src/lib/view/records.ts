@@ -562,6 +562,10 @@ export interface HomeView {
   cast: CharacterView[]
   /** Filler in the reader's next few episodes, or `null` with none. */
   filler: FillerAhead | null
+  /** The characters first met in the arc so far, latest first, at most six. */
+  met: CharacterView[]
+  /** The characters met are the previous arc's, because this one has none yet. */
+  metBefore: boolean
   /** The arc the reader is in: the last one that opens at or before them. */
   saga: WaypointView
   /** The reader's bookmark, which the fold states in the reader's unit. */
