@@ -539,14 +539,16 @@ describe('the power page', () => {
   )
 })
 
+interface HeldAtOptions {
+  archive?: SeriesArchive
+  locale?: Locale
+}
+
 /** The seats a character's page lists at a bookmark, as `title` or `title, body`. */
 function heldAt(
   holder: Entity,
   bookmark: Bookmark,
-  {
-    archive = POWER_ARCHIVE,
-    locale = 'en',
-  }: { archive?: SeriesArchive; locale?: Locale } = {},
+  { archive = POWER_ARCHIVE, locale = 'en' }: HeldAtOptions = {},
 ): string[] {
   return seatsHeldBy(holder, readerFor(archive, bookmark, locale)).map(
     ({ body, title }) => (body === undefined ? title : `${title}, ${body}`),

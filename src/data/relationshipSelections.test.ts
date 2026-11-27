@@ -60,9 +60,15 @@ function endpointErrors(
     .filter((error) => error !== undefined)
 }
 
+/** A character's relationship timeline, with the character. */
+interface RelationshipTimeline {
+  owner: Entity
+  timeline: Timeline<Relationship[]>
+}
+
 function sourceErrors(
   archive: SeriesArchive,
-  { owner, timeline }: { owner: Entity; timeline: Timeline<Relationship[]> },
+  { owner, timeline }: RelationshipTimeline,
   source: Source,
 ): string[] {
   if (!toldIn(owner, source)) {

@@ -42,8 +42,18 @@ export const Route = createFileRoute('/$series/$locale/places/$id')({
   notFoundComponent: PlaceNotFound,
 })
 
+/** A place's page, as far as its unit goes. */
+interface PlaceUnit {
+  detail: PageUnit
+}
+
+/** A ship's page, as far as its unit goes. */
+interface ShipUnit {
+  ship: PageUnit
+}
+
 /** What says which unit a place's or a ship's page counts in (#1431). */
-function unitOf(page: { detail: PageUnit } | { ship: PageUnit }): PageUnit {
+function unitOf(page: PlaceUnit | ShipUnit): PageUnit {
   return 'ship' in page ? page.ship : page.detail
 }
 
@@ -116,14 +126,14 @@ function PlacePage(): ReactElement {
   )
 }
 
-/** One band, settling into place in its turn. */
-function Band({
-  at,
-  children,
-}: {
+/** The band's turn to settle, and what it holds. */
+interface BandProps {
   at: number
   children: ReactNode
-}): ReactElement {
+}
+
+/** One band, settling into place in its turn. */
+function Band({ at, children }: BandProps): ReactElement {
   return (
     <div {...stylex.props(settleStyles.band, settleStyles.at(at))}>
       {children}

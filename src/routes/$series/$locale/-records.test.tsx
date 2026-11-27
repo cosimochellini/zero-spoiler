@@ -59,14 +59,17 @@ function sample(ids: string[]): string[] {
   return ids.filter((_, index) => index % step === 0)
 }
 
+/** A page's address under its series, and the reader's bookmark. */
+interface PageAddress {
+  bookmark?: Bookmark
+  path: string
+}
+
 /** The page's address, its series and the reader's bookmark. */
 function optionsFor(
   archive: SeriesArchive,
   locale: Locale,
-  {
-    path,
-    bookmark = ep(archive.series.episodeCeiling),
-  }: { bookmark?: Bookmark; path: string },
+  { path, bookmark = ep(archive.series.episodeCeiling) }: PageAddress,
 ): RenderOptions {
   return {
     bookmark,
@@ -95,11 +98,14 @@ function bookmarksOf(archive: SeriesArchive): Bookmark[] {
       ]
 }
 
+/** One record's page at one bookmark. */
+interface PageAsk {
+  bookmark: Bookmark
+  id: string
+}
+
 /** Every id at every bookmark its series is drawn at. */
-function pagesOf(
-  archive: SeriesArchive,
-  ids: string[],
-): { bookmark: Bookmark; id: string }[] {
+function pagesOf(archive: SeriesArchive, ids: string[]): PageAsk[] {
   return bookmarksOf(archive).flatMap((bookmark) =>
     ids.map((id) => ({ bookmark, id })),
   )
@@ -115,17 +121,19 @@ function readsIn(source: Source | undefined, bookmark: Bookmark): boolean {
   return source === undefined || (bookmark !== null && source === unit)
 }
 
+interface BandsProps {
+  archive: SeriesArchive
+  bookmark: Bookmark
+  id: string
+  locale: Locale
+}
+
 function CharacterBands({
   archive,
   bookmark,
   id,
   locale,
-}: {
-  archive: SeriesArchive
-  bookmark: Bookmark
-  id: string
-  locale: Locale
-}): null | ReactElement {
+}: BandsProps): null | ReactElement {
   const r = readerFor(archive, bookmark, locale)
   const page = characterPage(id, r)
   if (page === undefined) {
@@ -152,12 +160,7 @@ function PlaceBands({
   bookmark,
   id,
   locale,
-}: {
-  archive: SeriesArchive
-  bookmark: Bookmark
-  id: string
-  locale: Locale
-}): null | ReactElement {
+}: BandsProps): null | ReactElement {
   const r = readerFor(archive, bookmark, locale)
   const page = placePage(id, r)
   if (page === undefined || !('detail' in page)) {

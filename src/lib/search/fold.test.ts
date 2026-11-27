@@ -22,6 +22,13 @@ function must(id: string): NonNullable<ReturnType<typeof getCharacter>> {
   return entity
 }
 
+interface SearchOptions {
+  bookmark: Bookmark
+  id: string
+  locale: Locale
+  query: string
+}
+
 /**
  * The search as the page runs it, end to end: the server folds the name and
  * gates the epithets, the browser matches a folded query against what it was
@@ -33,12 +40,7 @@ function search({
   id,
   locale,
   query,
-}: {
-  bookmark: Bookmark
-  id: string
-  locale: Locale
-  query: string
-}): ReturnType<typeof matchFolded> {
+}: SearchOptions): ReturnType<typeof matchFolded> {
   return matchFolded(
     searchableOf(must(id), readerFor(bookmark, locale)),
     foldName(query.trim()),

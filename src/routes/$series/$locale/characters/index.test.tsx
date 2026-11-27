@@ -44,11 +44,13 @@ async function load(locale: Locale = 'en'): ReturnType<Loader> {
   return loader({ context: { locale, series: { slug: 'one-piece' } } })
 }
 
-/** A shelf response whose arrival the test controls independently of the page. */
-function delayedShelves(): {
+interface DelayedShelvesResult {
   deliver: () => void
   promise: Promise<Plain<ShelfView[]>>
-} {
+}
+
+/** A shelf response whose arrival the test controls independently of the page. */
+function delayedShelves(): DelayedShelvesResult {
   const line = new EventTarget()
   const promise = new Promise<Plain<ShelfView[]>>((resolve) => {
     line.addEventListener('deliver', () => {

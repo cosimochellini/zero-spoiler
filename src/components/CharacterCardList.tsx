@@ -19,6 +19,11 @@ const styles = stylex.create({
   },
 })
 
+/** The cards the grid holds. */
+export interface CharacterCardListProps {
+  children: ReactNode
+}
+
 /**
  * The grid the cards sit on: two across on a phone, up to five on a wide
  * page, every column the same width. `minmax(0, 1fr)` rather than `1fr`
@@ -32,8 +37,6 @@ const styles = stylex.create({
  */
 export function CharacterCardList({
   children,
-}: {
-  children: ReactNode
-}): ReactElement {
+}: CharacterCardListProps): ReactElement {
   return <ul {...stylex.props(styles.grid)}>{children}</ul>
 }

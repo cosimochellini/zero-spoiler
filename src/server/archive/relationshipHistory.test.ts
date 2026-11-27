@@ -33,14 +33,16 @@ const CHANGES: Timeline<Relationship[]> = [
   { episode: 8, chapter: 10, value: [FRIEND, OTHER_CHANGED] },
 ]
 
+interface PageOptions {
+  locale?: Locale
+  ownerId?: string
+}
+
 /** Exercise the actual source-filtered reader, with both directed perspectives. */
 function page(
   archive: SeriesArchive,
   bookmark: Bookmark,
-  {
-    locale = 'en',
-    ownerId = 'owner',
-  }: { locale?: Locale; ownerId?: string } = {},
+  { locale = 'en', ownerId = 'owner' }: PageOptions = {},
 ): RelationshipView[] {
   const r = readerFor(archive, bookmark, locale)
   const owner = r.archive.getCharacter(ownerId)

@@ -12,14 +12,13 @@ import type {
   SourceCredit,
 } from '~/lib/view/credits'
 
-/** A part of the page in one series' own words. */
-export function InSeries({
-  copy,
-  children,
-}: {
+export interface InSeriesProps {
   children: ReactNode
   copy: SeriesCopy
-}): ReactElement {
+}
+
+/** A part of the page in one series' own words. */
+export function InSeries({ copy, children }: InSeriesProps): ReactElement {
   const { locale } = useLocale()
 
   return (
@@ -32,12 +31,12 @@ export function InSeries({
   )
 }
 
-/** Only the server-filtered references reach this component. */
-export function SourceCredits({
-  series,
-}: {
+export interface SourceCreditsProps {
   series: SeriesCredits[]
-}): ReactElement {
+}
+
+/** Only the server-filtered references reach this component. */
+export function SourceCredits({ series }: SourceCreditsProps): ReactElement {
   const t = legalTranslator(useLocale().locale)
   return (
     <section id="sources">
@@ -84,13 +83,12 @@ function Coverage(): ReactElement {
   return <p {...stylex.props(styles.paragraph)}>{t('credits.coverage')}</p>
 }
 
-function CreditEntry({
-  credit,
-  licenses,
-}: {
+interface CreditEntryProps {
   credit: SourceCredit
   licenses: SeriesSources['licenses']
-}): ReactElement {
+}
+
+function CreditEntry({ credit, licenses }: CreditEntryProps): ReactElement {
   const t = useSeriesT()
   const legal = legalTranslator(useLocale().locale)
   const onePiece = useSeriesT('one-piece')
@@ -144,7 +142,11 @@ function CreditEntry({
   )
 }
 
-function LicenseNotices({ series }: { series: SeriesCredits[] }): ReactElement {
+interface LicenseNoticesProps {
+  series: SeriesCredits[]
+}
+
+function LicenseNotices({ series }: LicenseNoticesProps): ReactElement {
   const t = legalTranslator(useLocale().locale)
   return (
     <>
@@ -183,8 +185,12 @@ function LicenseNotices({ series }: { series: SeriesCredits[] }): ReactElement {
   )
 }
 
+interface SourceTermsProps {
+  sources: SeriesSources
+}
+
 /** A series' sources: their terms, their licenses and where they are. */
-function SourceTerms({ sources }: { sources: SeriesSources }): ReactElement {
+function SourceTerms({ sources }: SourceTermsProps): ReactElement {
   const t = useSeriesT()
   const { licenses, links } = sources
   // One paragraph per license, though both wikis may share one.

@@ -1,5 +1,6 @@
 import type { Holding, PowerBody, Seat } from '~/data/features'
 import type { HunterVocabulary } from '~/data/series/hunter-x-hunter/records/saga'
+import type { LocalizedText } from '~/data/types'
 
 /**
  * The Association's airship lands at the Second Phase and Menchi calls the
@@ -44,11 +45,7 @@ const ROSTER_TOLD = {
  * 321, Mizaistom and Saccho at 326), and their seats stay a title alone
  * until then.
  */
-function zodiac(
-  sign: { en: string; it: string },
-  first: string,
-  ...later: Holding[]
-): Seat {
+function zodiac(sign: LocalizedText, first: string, ...later: Holding[]): Seat {
   return {
     told: ROSTER_TOLD,
     title: { en: `${sign.en} of the Zodiacs`, it: `${sign.it} dello Zodiaco` },

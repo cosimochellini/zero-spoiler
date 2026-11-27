@@ -80,20 +80,22 @@ function isADrawing(id: string, strokes: Stroke[]): void {
   expect(distinct.size, id).toBe(keys.length)
 }
 
+interface StageAtOptions {
+  chapter?: number
+  episode: number
+  told: string | undefined
+}
+
 /**
  * A stage's name in `~/test/accents`: its episode, or its chapter when only
  * the manga tells it, since several such stages may share one episode.
  */
-function stageAt({
-  chapter,
-  episode,
-  told,
-}: {
-  chapter?: number
-  episode: number
-  told: string | undefined
-}): string {
+function stageAt({ chapter, episode, told }: StageAtOptions): string {
   return told === 'chapter' ? `c${String(chapter)}` : String(episode)
+}
+
+interface IsLateEnoughOptions extends StageAtOptions {
+  source?: Source | undefined
 }
 
 /**
@@ -106,12 +108,7 @@ function stageAt({
  * medium alone tells has no other reader, so its stages stay strictly later.
  */
 function isLateEnough(
-  {
-    chapter = 0,
-    episode,
-    source,
-    told,
-  }: Parameters<typeof stageAt>[0] & { source?: Source | undefined },
+  { chapter = 0, episode, source, told }: IsLateEnoughOptions,
   record: Pick<Entity, 'revealedAtChapter' | 'revealedAtEpisode' | 'source'>,
 ): boolean {
   if (told === 'chapter') {

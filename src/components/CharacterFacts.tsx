@@ -160,14 +160,14 @@ function linkRow(links: RecordLink[] | undefined, to: RecordPage): ReactNode {
     )
 }
 
-/** One link per record, comma-separated: an entry may name more than one. */
-function RecordLinks({
-  links,
-  to,
-}: {
+/** The records a row names, and the page they lead to. */
+interface RecordLinksProps {
   links: RecordLink[]
   to: RecordPage
-}): ReactElement {
+}
+
+/** One link per record, comma-separated: an entry may name more than one. */
+function RecordLinks({ links, to }: RecordLinksProps): ReactElement {
   const { series, locale } = useSeriesParams()
 
   return (
@@ -195,12 +195,17 @@ function seatRow(seats: SeatLink[] | undefined): ReactNode {
   return seats === undefined ? undefined : <SeatLinks seats={seats} />
 }
 
+/** The seats a row names. */
+interface SeatLinksProps {
+  seats: SeatLink[]
+}
+
 /**
  * One line per seat, each leading to its body on the ranks page. The server
  * sends only the seats that page shows the character in, so a link here
  * opens nothing the reader has not reached.
  */
-function SeatLinks({ seats }: { seats: SeatLink[] }): ReactElement {
+function SeatLinks({ seats }: SeatLinksProps): ReactElement {
   const { series, locale } = useSeriesParams()
 
   return (

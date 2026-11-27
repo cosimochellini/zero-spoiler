@@ -104,16 +104,13 @@ export function FillerCountdown({
   )
 }
 
-/** The cells, with each film or special set after the cell it follows. */
-function Row({
-  choice,
-  countdown,
-  mode,
-}: {
+/** The countdown, the reader's unit, and the panel's pick. */
+interface RowProps extends Pick<FillerCountdownProps, 'countdown' | 'mode'> {
   choice: Choice
-  countdown: Countdown
-  mode: BookmarkMode
-}): ReactElement {
+}
+
+/** The cells, with each film or special set after the cell it follows. */
+function Row({ choice, countdown, mode }: RowProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
 
   return (
@@ -139,24 +136,20 @@ function Row({
   )
 }
 
+/** One cell, the marks after it, and whether the reader is on it. */
+interface CellProps extends Pick<FillerCountdownProps, 'mode'> {
+  cell: CountdownCell
+  choice: Choice
+  here: boolean
+  marks: CountdownMark[]
+}
+
 /**
  * One episode: a plain cell for canon, a button for anything else. A film or
  * special watched after it sits on its trailing edge, between this cell and
  * the next, so the six cells keep the row's whole width.
  */
-function Cell({
-  cell,
-  choice,
-  here,
-  marks,
-  mode,
-}: {
-  cell: CountdownCell
-  choice: Choice
-  here: boolean
-  marks: CountdownMark[]
-  mode: BookmarkMode
-}): ReactElement {
+function Cell({ cell, choice, here, marks, mode }: CellProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const series = useBookmarkSeries()
   const { slot } = cell
@@ -206,16 +199,14 @@ function Cell({
   )
 }
 
-/** A film or special, as a diamond on the edge between two cells. */
-function Mark({
-  choice,
-  mode,
-  slot,
-}: {
+/** The film or special a mark stands for, and the panel's pick. */
+interface MarkProps extends Pick<FillerCountdownProps, 'mode'> {
   choice: Choice
-  mode: BookmarkMode
   slot: FillerSlot
-}): ReactElement {
+}
+
+/** A film or special, as a diamond on the edge between two cells. */
+function Mark({ choice, mode, slot }: MarkProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const series = useBookmarkSeries()
   const entry = entryOf(slot)
@@ -239,6 +230,15 @@ function Mark({
   )
 }
 
+/** What a cell or mark shows, its name, and the entry it opens, if any. */
+interface PressableProps {
+  children: ReactNode
+  choice: Choice
+  looks: stylex.StyleXStyles[]
+  name: string
+  slot: FillerSlot | null
+}
+
 /** The face of a cell or mark: a button when there is an entry to open. */
 function Pressable({
   children,
@@ -246,13 +246,7 @@ function Pressable({
   looks,
   name,
   slot,
-}: {
-  children: ReactNode
-  choice: Choice
-  looks: stylex.StyleXStyles[]
-  name: string
-  slot: FillerSlot | null
-}): ReactElement {
+}: PressableProps): ReactElement {
   if (slot === null) {
     return (
       <span

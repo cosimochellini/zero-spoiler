@@ -82,11 +82,17 @@ function preferredBox(spot: NameSpot, frame: LabelFrame, room: Rect): LabelBox {
   return { ...raw, width, height: Math.ceil(raw.width / width) * raw.height }
 }
 
+/** The boxes a label must stand clear of, and the room it must stay in. */
+interface ScanRowsOptions {
+  obstacles: LabelBox[]
+  room: Rect
+}
+
 /** Search nearby rows and columns instead of suppressing a crowded label. */
 function scanRows(
   wanted: LabelBox,
   shifts: number[],
-  { obstacles, room }: { obstacles: LabelBox[]; room: Rect },
+  { obstacles, room }: ScanRowsOptions,
 ): LabelBox | undefined {
   const rows = Math.ceil(room.height / STEP) * HALVES
   for (let step = 0; step <= rows; step += 1) {

@@ -650,11 +650,17 @@ describe('peekFruit', () => {
 
 const byName = (a: string, b: string): number => a.localeCompare(b)
 
+interface MarqueeAtResult {
+  ids: string[]
+  last: null | string
+  saga: string
+}
+
 /** The marquee's saga, its fruit ids and the one it points back to. */
 function marqueeAt(
   bookmark: Bookmark,
   locale: Locale = 'en',
-): null | { ids: string[]; last: null | string; saga: string } {
+): MarqueeAtResult | null {
   const marquee = fruitSheet(bookmark, locale).marquee
 
   return marquee === null ? null : (

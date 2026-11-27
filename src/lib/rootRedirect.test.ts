@@ -4,17 +4,15 @@ import { rootRedirect } from './rootRedirect'
 
 const ORIGIN = 'https://example.test'
 
+interface VisitOptions {
+  country?: string
+  headers?: Record<string, string>
+  method?: string
+}
+
 function visit(
   path: string,
-  {
-    country,
-    headers = {},
-    method = 'GET',
-  }: {
-    country?: string
-    headers?: Record<string, string>
-    method?: string
-  } = {},
+  { country, headers = {}, method = 'GET' }: VisitOptions = {},
 ): Response | undefined {
   const request = new Request(`${ORIGIN}${path}`, { headers, method })
   // What the Cloudflare Workers runtime attaches; absent everywhere else.

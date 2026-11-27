@@ -58,6 +58,7 @@ async function sagaTableIn(series: string, locale: Locale): Promise<SagaTable> {
 function SeriesLayout(): ReactElement {
   const { series, locale, copy } = Route.useRouteContext()
   // What the page was served with, kept for the client's own navigations.
+  // eslint-disable-next-line no-restricted-syntax -- seeds the client's module caches with what the page was served, after hydration and never on the server
   useEffect(() => {
     keepSeriesDescription(series)
     keepSeriesCopy(copy, locale)

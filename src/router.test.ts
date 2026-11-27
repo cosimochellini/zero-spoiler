@@ -24,22 +24,21 @@ vi.mock(import('./lib/progress/readBookmark'), () => ({
   readTrial: vi.fn<() => null>().mockReturnValue(null),
 }))
 
+interface FreshResult {
+  failedImports: () => number
+  hydrate: () => Promise<void>
+  loaded: (locale: Locale) => boolean
+  root: Guarded
+  translate: typeof Translate
+}
+
 /**
  * The router and the dictionary registry, from fresh modules: the test setup
  * has already loaded every locale, which would hide a locale the hook forgot
  * to load. With `failing`, every import of the English copy fails, as it
  * does for a chunk a deploy has replaced.
  */
-async function fresh(
-  path: string,
-  failing = false,
-): Promise<{
-  failedImports: () => number
-  hydrate: () => Promise<void>
-  loaded: (locale: Locale) => boolean
-  root: Guarded
-  translate: typeof Translate
-}> {
+async function fresh(path: string, failing = false): Promise<FreshResult> {
   let failedImports = 0
   vi.resetModules()
   globalThis.history.replaceState(null, '', path)
@@ -76,11 +75,17 @@ interface Guarded {
   options: { beforeLoad?: unknown }
 }
 
+/** The parts of a client navigation the root's guard reads. */
+interface ClientNavigation {
+  abortController?: AbortController
+  preload?: boolean
+}
+
 /** Runs the root's real `beforeLoad` on a client navigation to an address. */
 async function enter(
   route: Guarded,
   pathname: string,
-  navigation: { abortController?: AbortController; preload?: boolean } = {},
+  navigation: ClientNavigation = {},
 ): Promise<unknown> {
   const guard: unknown = route.options.beforeLoad
   if (typeof guard !== 'function') {
@@ -270,15 +275,17 @@ async function moment(): Promise<void> {
   })
 }
 
+interface MountedResult {
+  open: (path: string) => Promise<void>
+  page: () => string
+}
+
 /**
  * The real root route, mounted over one page per language, from the fresh
  * modules `fresh` leaves: React and the router are imported after it, so the
  * page and the root share one copy of each.
  */
-async function mounted(): Promise<{
-  open: (path: string) => Promise<void>
-  page: () => string
-}> {
+async function mounted(): Promise<MountedResult> {
   const { root } = await fresh('/it', true)
   vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true)
   const { act, createElement } = await import('react')

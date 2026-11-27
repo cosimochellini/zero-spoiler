@@ -101,6 +101,13 @@ export function ControlBar({
   )
 }
 
+interface FoldedRowProps
+  extends Omit<ControlBarProps, 'children'>, Pick<Fold, 'open' | 'pinned'> {
+  controlsId: string
+  onSearch: () => void
+  onToggle: () => void
+}
+
 /** The row a phone keeps on screen: the search button and the toggle. */
 function FoldedRow({
   controlsId,
@@ -111,13 +118,7 @@ function FoldedRow({
   searchLabel,
   summary,
   toggleLabel,
-}: Omit<ControlBarProps, 'children'> & {
-  controlsId: string
-  onSearch: () => void
-  onToggle: () => void
-  open: boolean
-  pinned: boolean
-}): ReactElement {
+}: FoldedRowProps): ReactElement {
   return (
     <div {...stylex.props(styles.row, !pinned && styles.rowHidden)}>
       <Button
@@ -157,15 +158,18 @@ function FoldedRow({
   )
 }
 
-/** The bar's folding: whether it has pinned, and whether it is opened. */
-function useFold(barRef: RefObject<HTMLDivElement | null>): {
+interface Fold {
   open: boolean
   pinned: boolean
   setOpen: (open: boolean) => void
-} {
+}
+
+/** The bar's folding: whether it has pinned, and whether it is opened. */
+function useFold(barRef: RefObject<HTMLDivElement | null>): Fold {
   const [pinned, setPinned] = useState(false)
   const [open, setOpen] = useState(false)
 
+  // eslint-disable-next-line no-restricted-syntax -- the bar's pin watcher and its focus listeners
   useEffect(() => {
     const bar = barRef.current
     if (bar === null) {

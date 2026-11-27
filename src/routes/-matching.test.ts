@@ -33,9 +33,22 @@ function isParser<Key extends string>(
   return typeof value === 'function'
 }
 
-function parserOf<Key extends string>(route: {
-  options: { params?: { parse?: unknown } }
-}): PrefixParser<Key> {
+/** The params option of a route, as far as `parserOf` reads it. */
+interface ParamsOption {
+  parse?: unknown
+}
+
+/** The options of a route, as far as `parserOf` reads them. */
+interface ParserOptions {
+  params?: ParamsOption
+}
+
+/** A route, as far as `parserOf` reads it. */
+interface ParsedRoute {
+  options: ParserOptions
+}
+
+function parserOf<Key extends string>(route: ParsedRoute): PrefixParser<Key> {
   const parser: unknown = route.options.params?.parse
   if (!isParser<Key>(parser)) {
     throw new TypeError('A prefix parser is required')
@@ -47,11 +60,26 @@ function isGuard(value: unknown): value is RouteGuard {
   return typeof value === 'function'
 }
 
-function isSeriesContext(value: unknown): value is { series: Series } {
+/** A route context that carries its series. */
+interface SeriesContext {
+  series: Series
+}
+
+function isSeriesContext(value: unknown): value is SeriesContext {
   return typeof value === 'object' && value !== null && 'series' in value
 }
 
-function guardOf(route: { options: { beforeLoad?: unknown } }): RouteGuard {
+/** The one option of a route `guardOf` reads. */
+interface GuardOption {
+  beforeLoad?: unknown
+}
+
+/** A route, as far as `guardOf` reads it. */
+interface GuardedRoute {
+  options: GuardOption
+}
+
+function guardOf(route: GuardedRoute): RouteGuard {
   const guard: unknown = route.options.beforeLoad
   if (!isGuard(guard)) {
     throw new TypeError('A route guard is required')

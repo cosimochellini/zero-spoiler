@@ -14,8 +14,13 @@ vi.mock(import('@tanstack/react-start/server'), async (importOriginal) => {
   return { ...original, createStartHandler: () => start.handler }
 })
 
+/** What the hint filter is handed. */
+interface HintInput {
+  hint: object
+}
+
 /** The filter the entry gave the handler, reached through `unknown`. */
-function hintFilter(options: unknown): (input: { hint: object }) => unknown {
+function hintFilter(options: unknown): (input: HintInput) => unknown {
   const link: unknown = Reflect.get(new Object(options), 'responseLinkHeader')
   const filter: unknown = Reflect.get(new Object(link), 'filter')
   if (typeof filter !== 'function') {

@@ -15,6 +15,10 @@ import { settleStyles } from '~/styles/settle'
 // is there from the first frame.
 const BAND = { controls: 0, wake: 1, faq: 2 } as const
 
+export interface OnboardingLandingProps extends OnboardingView {
+  loadDrawings?: (() => Promise<DemoDrawings>) | undefined
+}
+
 /**
  * The landing page for a visitor with no bookmark: a control and its
  * playground.
@@ -30,9 +34,7 @@ const BAND = { controls: 0, wake: 1, faq: 2 } as const
 export function OnboardingLanding({
   loadDrawings,
   ...view
-}: OnboardingView & {
-  loadDrawings?: (() => Promise<DemoDrawings>) | undefined
-}): ReactElement {
+}: OnboardingLandingProps): ReactElement {
   const t = useSeriesT()
   const { slug } = useBookmarkSeries()
   const [point, setPoint] = useState(() => dialStart(view.start))

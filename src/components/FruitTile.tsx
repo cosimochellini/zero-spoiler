@@ -122,6 +122,18 @@ export function FruitTile({
   )
 }
 
+/** A match an open tile shows, with the eater the search or a group picked. */
+export interface OpenMatch extends Match<SpecimenView> {
+  eater?: EaterMatch
+  morph?: boolean
+}
+
+export interface OpenTilesProps {
+  matches: OpenMatch[]
+  needle: string
+  peek: (handle: string) => Promise<FruitView>
+}
+
 /**
  * The open tiles a search found, in order, each showing the eater the search
  * matched, or the one a group picked for it (`eater`). An open tile prints no
@@ -131,11 +143,7 @@ export function OpenTiles({
   matches,
   needle,
   peek,
-}: {
-  matches: (Match<SpecimenView> & { eater?: EaterMatch; morph?: boolean })[]
-  needle: string
-  peek: (handle: string) => Promise<FruitView>
-}): ReactElement {
+}: OpenTilesProps): ReactElement {
   return (
     <>
       {matches.map(({ eater, entry, match, morph = true }) => {
@@ -157,6 +165,11 @@ export function OpenTiles({
   )
 }
 
+export interface PlateFogProps {
+  band: FruitBandView
+  peek: (handle: string) => Promise<FruitView>
+}
+
 /**
  * A plate's covered tiles, folded on a phone: a number, a kind and a
  * threshold, and no more.
@@ -166,13 +179,7 @@ export function OpenTiles({
  * it, so the count is the plate's own order and a fruit keeps its number when
  * the reader's bookmark passes it.
  */
-export function PlateFog({
-  band,
-  peek,
-}: {
-  band: FruitBandView
-  peek: (handle: string) => Promise<FruitView>
-}): ReactElement {
+export function PlateFog({ band, peek }: PlateFogProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   return (
     <FoldedFog

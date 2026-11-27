@@ -71,8 +71,12 @@ export function RecordTile({ slot, peek }: RecordTileProps): ReactElement {
   )
 }
 
+interface RecordProps {
+  record: RecordView
+}
+
 /** The record's drawing in its frame, asked for once near the screen. */
-function Plate({ record }: { record: RecordView }): ReactElement {
+function Plate({ record }: RecordProps): ReactElement {
   const { ref, strokes } = useDrawing(record.id, record.visual)
 
   return (
@@ -111,7 +115,7 @@ const RECORD_PAGE = {
  * the data that decides, not another edit here, and a tile that met one
  * would otherwise print a name it had a page for and no way to reach it.
  */
-function Card({ record }: { record: RecordView }): ReactElement {
+function Card({ record }: RecordProps): ReactElement {
   const { series, locale } = useSeriesParams()
   const body = (
     <>

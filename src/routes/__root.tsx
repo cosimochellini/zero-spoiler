@@ -259,6 +259,15 @@ function RootError(): ReactElement {
   )
 }
 
+interface RootDocumentProps {
+  children: ReactNode
+  locale: Locale
+  /** A series page, as `SiteBar` reads it: its bar keeps two rows longer. */
+  seriesPage: boolean
+  /** The title of a page whose `head` has none: this route's error page. */
+  title?: string
+}
+
 // The default client entry hydrates the whole document, so the root route has
 // to render <html> itself.
 function RootDocument({
@@ -266,14 +275,7 @@ function RootDocument({
   locale,
   seriesPage,
   title,
-}: {
-  children: ReactNode
-  locale: Locale
-  /** A series page, as `SiteBar` reads it: its bar keeps two rows longer. */
-  seriesPage: boolean
-  /** The title of a page whose `head` has none: this route's error page. */
-  title?: string
-}): ReactElement {
+}: RootDocumentProps): ReactElement {
   // A series page, its 404s included, wears the theme its description names;
   // the hub, the legal notices and an unknown address keep the site's own.
   const theme = themeOf(
@@ -288,6 +290,7 @@ function RootDocument({
   // import the SSR pass would evaluate. Note the module id: under
   // `devMode: 'css-only'` the plugin resolves this one and never
   // `virtual:stylex:runtime`.
+  // eslint-disable-next-line no-restricted-syntax -- the dev-only StyleX HMR shim rewrites the React-rendered stylesheet link; imported before hydration it would mismatch the href
   useEffect(() => {
     if (!import.meta.env.DEV) {
       return

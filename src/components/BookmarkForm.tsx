@@ -63,6 +63,14 @@ export function BookmarkForm({
   )
 }
 
+/** The form's share of the dialog's props, and the link focus returns to. */
+interface DraftFormProps extends Pick<
+  BookmarkFormProps,
+  'devices' | 'onDevices' | 'onDone'
+> {
+  linkRef: RefObject<HTMLButtonElement | null>
+}
+
 /**
  * The draft from the unit down to the number, and the two ways out of it that
  * live inside it: save and forget.
@@ -78,9 +86,7 @@ function DraftForm({
   linkRef,
   onDevices,
   onDone,
-}: Pick<BookmarkFormProps, 'devices' | 'onDevices' | 'onDone'> & {
-  linkRef: RefObject<HTMLButtonElement | null>
-}): ReactElement {
+}: DraftFormProps): ReactElement {
   const { bookmark, setBookmark } = useBookmark()
 
   const commit = (next: Bookmark): void => {
@@ -155,21 +161,20 @@ function focusOnArrival(form: HTMLFormElement | null): void {
   }
 }
 
+/** Which of the two ways out are on offer, and what forget calls. */
+interface ActionsProps {
+  canForget: boolean
+  canSave: boolean
+  onForget: () => void
+}
+
 /**
  * Save, and under it the way to drop the bookmark. Save is disabled until the
  * draft grades to a real bookmark, so it cannot be pressed into a silent
  * no-op; the forget line is absent rather than disabled when there is no
  * bookmark to drop.
  */
-function Actions({
-  canSave,
-  canForget,
-  onForget,
-}: {
-  canForget: boolean
-  canSave: boolean
-  onForget: () => void
-}): ReactElement {
+function Actions({ canSave, canForget, onForget }: ActionsProps): ReactElement {
   const t = useT()
 
   return (

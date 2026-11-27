@@ -18,6 +18,12 @@ export interface Fold {
   tuck: number
 }
 
+/** Reads the bar's fold as it stands, and stops watching it. */
+export interface WatchResult {
+  read: () => Fold
+  stop: () => void
+}
+
 /**
  * Measures the bar and watches whether it has pinned.
  *
@@ -31,7 +37,7 @@ export function watch(
   /** The custom property the bar's folded top reads its tuck from. */
   tuckProperty: string,
   onPin: (pinned: boolean) => void,
-): { read: () => Fold; stop: () => void } {
+): WatchResult {
   let tuck = 0
   let offset = 0
   const row = bar.lastElementChild
@@ -77,6 +83,12 @@ export function watch(
   }
 }
 
+/** Whether the bar is pinned, and how to look again or stop looking. */
+interface WatchPinResult extends Pick<WatchResult, 'stop'> {
+  pinned: () => boolean
+  redraw: () => void
+}
+
 /**
  * Whether the bar has pinned: its top has reached the line it pins at, the
  * foot of the site bar on a phone and the top of the window elsewhere.
@@ -93,7 +105,7 @@ function watchPin(
   /** How far down the window the line is, in pixels. */
   line: () => number,
   onPin: (pinned: boolean) => void,
-): { pinned: () => boolean; redraw: () => void; stop: () => void } {
+): WatchPinResult {
   let pinned = false
   const decide = (top: number): void => {
     if (top < line() + 1 === pinned) {

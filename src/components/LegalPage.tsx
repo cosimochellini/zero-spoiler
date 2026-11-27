@@ -45,12 +45,12 @@ function isPrivacyKey(key: string): key is PrivacyKey {
   return key.startsWith('privacy.')
 }
 
-/** Every notice on one page, so the footer carries a single link. */
-export function LegalPage({
-  series,
-}: {
+export interface LegalPageProps {
   series: SeriesCredits[]
-}): ReactElement {
+}
+
+/** Every notice on one page, so the footer carries a single link. */
+export function LegalPage({ series }: LegalPageProps): ReactElement {
   const t = useT()
   const legal = legalTranslator(useLocale().locale)
 
@@ -135,8 +135,13 @@ function Contents(): ReactElement {
   )
 }
 
+interface RightsProps {
+  name: string
+  url: string
+}
+
 /** A series' rights holders, in its own words, and where they say so. */
-function Rights({ name, url }: { name: string; url: string }): ReactElement {
+function Rights({ name, url }: RightsProps): ReactElement {
   const t = useSeriesT()
   const legal = legalTranslator(useLocale().locale)
 

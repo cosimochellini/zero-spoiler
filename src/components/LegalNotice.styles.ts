@@ -81,9 +81,11 @@ export const styles = stylex.create({
   },
 })
 
+export interface PartResult extends ReturnType<typeof stylex.props> {
+  id: string
+}
+
 /** The props of a part's `<h3>`: its id is what the list of sections links to. */
-export function part(
-  id: string,
-): ReturnType<typeof stylex.props> & { id: string } {
+export function part(id: string): PartResult {
   return { id, ...stylex.props(styles.subheading) }
 }

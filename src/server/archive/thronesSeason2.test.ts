@@ -327,14 +327,13 @@ describe('the steps one medium alone tells', () => {
   )
 })
 
-/** A record's stage by its index, and the drawing just before it. */
-function stageOf(
-  id: keyof typeof DRAWINGS,
-  index: number,
-): {
+interface StageOfResult {
   previous: unknown
   stage: (typeof REDRAWINGS)[string][number] | undefined
-} {
+}
+
+/** A record's stage by its index, and the drawing just before it. */
+function stageOf(id: keyof typeof DRAWINGS, index: number): StageOfResult {
   const stages = REDRAWINGS[id] ?? []
 
   return {

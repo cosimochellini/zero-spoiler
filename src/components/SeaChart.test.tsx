@@ -73,6 +73,15 @@ const fogged = [
   coveredRecord({ kind: 'place', handle: 'h2', ...at(70) }),
 ]
 
+interface DrawOptions {
+  bookmark: Bookmark
+  covered?: CoveredRecord[]
+  open?: StopView[]
+  peekPort?: (handle: string) => Promise<PortView>
+  sagas?: SagaPick[]
+  ships?: ShipView[]
+}
+
 /** Draws the chart in a wide window, so across. */
 function draw({
   bookmark,
@@ -81,14 +90,7 @@ function draw({
   peekPort = peekTo(port()),
   sagas = [],
   ships = [],
-}: {
-  bookmark: Bookmark
-  covered?: CoveredRecord[]
-  open?: StopView[]
-  peekPort?: (handle: string) => Promise<PortView>
-  sagas?: SagaPick[]
-  ships?: ShipView[]
-}): ReturnType<typeof renderWithProviders> {
+}: DrawOptions): ReturnType<typeof renderWithProviders> {
   return renderWithProviders(
     <SeaChart
       bookmark={bookmark}
@@ -104,8 +106,12 @@ function draw({
   )
 }
 
+interface ServedProps {
+  drawn: string[]
+}
+
 /** The orientation a page served upright draws, each render noted. */
-function Served({ drawn }: { drawn: string[] }): string {
+function Served({ drawn }: ServedProps): string {
   const orientation = useChartOrientation('down')
   drawn.push(orientation)
   return orientation

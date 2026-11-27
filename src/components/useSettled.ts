@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 export function useSettled<T>(value: T, delay: number): T {
   const [settled, setSettled] = useState(value)
 
+  // eslint-disable-next-line no-restricted-syntax -- a debounce timer
   useEffect(() => {
     const timer = setTimeout(() => {
       setSettled(value)
