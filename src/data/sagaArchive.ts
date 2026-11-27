@@ -30,6 +30,14 @@ export interface FiledAbilities {
   records: Entity[]
 }
 
+/** What the abilities slice is read from. */
+interface AbilityFeatureOptions
+  extends
+    Pick<DatedArchive, 'datedOf'>,
+    Pick<FiledAbilities, 'nen' | 'records'> {
+  characters: Entity[]
+}
+
 /**
  * The abilities slice: the records in route order, each one's Nen type, and
  * who uses it, read off the characters' `ability` entries.
@@ -39,10 +47,7 @@ function abilityFeature({
   datedOf,
   nen,
   records,
-}: Pick<DatedArchive, 'datedOf'>
-  & Pick<FiledAbilities, 'nen' | 'records'> & {
-    characters: Entity[]
-  }): AbilityFeature {
+}: AbilityFeatureOptions): AbilityFeature {
   const byId = new Map(records.map((entity) => [entity.id, entity]))
 
   return {
@@ -62,6 +67,17 @@ export interface SagaArchive<V extends Vocabulary> {
   core: Omit<SeriesArchive<V>, 'bookmarks' | 'drawings' | 'leads' | 'series'>
 }
 
+/** What a series that files every record in its sagas hands the engine. */
+interface SagaArchiveOptions<V extends Vocabulary> {
+  abilities?: FiledAbilities
+  /** The main characters: the landing chart and the featured row. */
+  featured: string[]
+  placeDossiers: Record<string, PlaceDossier<V>>
+  redrawings: Redrawings
+  sagas: Saga<V>[]
+  series: Series
+}
+
 /**
  * The archive the engine derives from a series' sagas: its records, their
  * dossiers and dated facts, the chapter table, the cast and the places, as
@@ -76,15 +92,7 @@ export function sagaArchive<V extends Vocabulary>({
   redrawings,
   sagas,
   series,
-}: {
-  abilities?: FiledAbilities
-  /** The main characters: the landing chart and the featured row. */
-  featured: string[]
-  placeDossiers: Record<string, PlaceDossier<V>>
-  redrawings: Redrawings
-  sagas: Saga<V>[]
-  series: Series
-}): SagaArchive<V> {
+}: SagaArchiveOptions<V>): SagaArchive<V> {
   const filedInSagas: Entity[] = sagas.flatMap((saga) => saga.entries)
   const dossiers = dossiersOf(sagas)
   const filed = filedTimelines(dossiers, { redrawing: (id) => redrawings[id] })

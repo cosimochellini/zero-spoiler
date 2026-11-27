@@ -25,6 +25,12 @@ import { styles } from './-$id.styles'
 export type DossierRecord =
   CharacterDetail['slot'] extends Slot<infer T> ? T : never
 
+/** A character's page, and how to lift its record from under the fog. */
+interface DossierDiptychProps {
+  detail: CharacterDetail
+  peek: (handle: string) => Promise<DossierRecord>
+}
+
 /**
  * The crest beside the dossier: the page's first diptych.
  *
@@ -35,10 +41,7 @@ export type DossierRecord =
 export function DossierDiptych({
   detail,
   peek,
-}: {
-  detail: CharacterDetail
-  peek: (handle: string) => Promise<DossierRecord>
-}): ReactElement {
+}: DossierDiptychProps): ReactElement {
   const veil = useStageVeil(detail.slot, peek)
 
   return (
@@ -52,12 +55,13 @@ export function DossierDiptych({
   )
 }
 
-/** The seal, framed. Under fog it is drawn empty rather than blurred. */
-function CrestPlate({
-  veil,
-}: {
+/** The veil the seal is drawn behind. */
+interface CrestPlateProps {
   veil: StageVeil<DossierRecord>
-}): ReactElement {
+}
+
+/** The seal, framed. Under fog it is drawn empty rather than blurred. */
+function CrestPlate({ veil }: CrestPlateProps): ReactElement {
   return veil.drawing(
     // A bare seal under fog: the drawing and its colour stay out of the
     // served HTML along with the name.
@@ -79,6 +83,11 @@ function CrestPlate({
   )
 }
 
+/** A character's page, and the veil its words are behind. */
+interface DossierColumnProps extends CrestPlateProps {
+  detail: CharacterDetail
+}
+
 /**
  * The words half: the kind and the threshold in mono, then everything the
  * fog decides.
@@ -87,13 +96,7 @@ function CrestPlate({
  * is the promise the page makes to a reader who has not got there yet, and
  * covering it would leave them with nothing at all.
  */
-function DossierColumn({
-  detail,
-  veil,
-}: {
-  detail: CharacterDetail
-  veil: StageVeil<DossierRecord>
-}): ReactElement {
+function DossierColumn({ detail, veil }: DossierColumnProps): ReactElement {
   const t = useT()
   const threshold = useThreshold()
   const kindLabel = useKindLabel()
@@ -128,14 +131,14 @@ function DossierColumn({
   )
 }
 
-/** The name, the role, the sentence, the facts and the log entry. */
-function DossierWords({
-  detail,
-  record,
-}: {
+/** A character's page, and their open record. */
+interface DossierWordsProps {
   detail: CharacterDetail
   record: DossierRecord
-}): ReactElement {
+}
+
+/** The name, the role, the sentence, the facts and the log entry. */
+function DossierWords({ detail, record }: DossierWordsProps): ReactElement {
   return (
     <div {...stylex.props(styles.words)}>
       <h1

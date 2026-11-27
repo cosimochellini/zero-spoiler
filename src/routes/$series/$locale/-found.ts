@@ -48,15 +48,18 @@ export interface RecordMatch {
   params: { id: string }
 }
 
+/** The argument a record page's server functions are called with. */
+interface RecordArgs {
+  data: { id: string; locale: Locale; series: string }
+}
+
 /**
  * What every server function of a record page is called with: the record's
  * id from the address, in the reader's locale.
  * @param match What the route's loader is handed.
  * @returns The argument, built once and shared by the page's calls.
  */
-export function recordArgs(match: RecordMatch): {
-  data: { id: string; locale: Locale; series: string }
-} {
+export function recordArgs(match: RecordMatch): RecordArgs {
   return {
     data: {
       id: match.params.id,

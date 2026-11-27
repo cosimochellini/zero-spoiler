@@ -79,10 +79,15 @@ interface FiledList {
   title: string
 }
 
+/** The open record an entry's body draws. */
+interface EntryBodyProps<T> {
+  record: T
+}
+
 /** What the band is given: the record, how to lift its fog, and its body. */
 interface EntryProps<T extends Entry> {
   /** Its facts and its log entry, beside the plate once open. */
-  Body: ComponentType<{ record: T }>
+  Body: ComponentType<EntryBodyProps<T>>
   kind: 'place' | 'ship'
   /**
    * The records it names, under the plate and the entry once open: never
@@ -144,6 +149,11 @@ function EntryDiptych<T extends Entry>(props: EntryProps<T>): ReactElement {
   )
 }
 
+/** An entry's band, and the veil its words are behind. */
+interface EntryColumnProps<T extends Entry> extends EntryProps<T> {
+  veil: StageVeil<T>
+}
+
 /**
  * The words half: the kind and the episode in mono, then everything the fog
  * decides. The meta line sits outside the veil on purpose: "place, episode
@@ -154,7 +164,7 @@ function EntryColumn<T extends Entry>({
   kind,
   slot,
   veil,
-}: EntryProps<T> & { veil: StageVeil<T> }): ReactElement {
+}: EntryColumnProps<T>): ReactElement {
   const gate = slot.open ? slot.record : slot.covered
   const words = useEntryWords(kind, gate)
 
@@ -185,16 +195,15 @@ function EntryColumn<T extends Entry>({
   )
 }
 
-/** The name, the only display line, and the sentence: generic under fog. */
-function Words({
-  children,
-  name,
-  summary,
-}: {
+/** A record's name and sentence, and what follows them. */
+interface WordsProps {
   children?: ReactNode
   name: string
   summary: string
-}): ReactElement {
+}
+
+/** The name, the only display line, and the sentence: generic under fog. */
+function Words({ children, name, summary }: WordsProps): ReactElement {
   return (
     <div {...stylex.props(styles.words)}>
       <h1 {...stylex.props(styles.name)}>{name}</h1>
@@ -205,7 +214,9 @@ function Words({
 }
 
 /** A port's facts and its log entry. */
-function PortBody({ record: port }: { record: PortView }): null | ReactElement {
+function PortBody({
+  record: port,
+}: EntryBodyProps<PortView>): null | ReactElement {
   return port.dossier === null ?
       null
     : <>
@@ -219,6 +230,14 @@ function allOpen(records: RecordView[]): Slot<RecordView>[] {
   return records.map((record) => ({ open: true, record }))
 }
 
+/** A place's page, and how to lift its records from under the fog. */
+interface PlaceDiptychProps extends Pick<
+  EntryProps<PortView>,
+  'peek' | 'peekRecord'
+> {
+  detail: PlaceDetail
+}
+
 /**
  * A place's entry: the diptych with its facts and its log entry, then the
  * records found there and the characters who come from it. Only the natives
@@ -228,11 +247,7 @@ export function PlaceDiptych({
   detail,
   peek,
   peekRecord,
-}: {
-  detail: PlaceDetail
-  peek: (handle: string) => Promise<PortView>
-  peekRecord: PeekRecord
-}): ReactElement {
+}: PlaceDiptychProps): ReactElement {
   const t = useT()
 
   return (
@@ -256,7 +271,7 @@ export function PlaceDiptych({
 }
 
 /** A ship's facts and her log entry. */
-function ShipBody({ record: ship }: { record: ShipView }): ReactElement {
+function ShipBody({ record: ship }: EntryBodyProps<ShipView>): ReactElement {
   return (
     <>
       <ShipFacts entry={ship.dossier} />
@@ -274,11 +289,7 @@ export function ShipDiptych({
   peek,
   peekRecord,
   slot,
-}: {
-  peek: (handle: string) => Promise<ShipView>
-  peekRecord: PeekRecord
-  slot: Slot<ShipView>
-}): ReactElement {
+}: Pick<EntryProps<ShipView>, 'peek' | 'peekRecord' | 'slot'>): ReactElement {
   // A ship is One Piece's: only its pages draw one.
   const t = useSeriesOnlyT('one-piece')
 

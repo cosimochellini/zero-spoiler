@@ -60,11 +60,19 @@ export interface WordsPage<R> extends Swept {
   reads: 'none'
 }
 
+/** What a reader is drawn from: the bookmark, the language and the key. */
+interface ReaderAsk {
+  bookmark: Bookmark
+  handle?: string
+  id?: string
+  locale: Locale
+}
+
 /** The reader an entry draws its page for. */
 export function readerAt(
   reads: Reads,
   archive: SeriesArchive,
-  ask: { bookmark: Bookmark; handle?: string; id?: string; locale: Locale },
+  ask: ReaderAsk,
 ): Reader {
   switch (reads) {
     case 'demo': {
@@ -97,13 +105,10 @@ export function archivePage<K extends InputKind, R, P extends boolean = false>({
   page,
   plain,
   reads,
-}: {
-  input: K
-  keys?: (archive: SeriesArchive) => string[]
-  page: (data: Inputs[K], r: Reader, trial: Bookmark) => R
-  plain?: P
-  reads: Reads
-}): ArchivePage<K, R, P> {
+}: Pick<
+  ArchivePage<K, R, P>,
+  'input' | 'keys' | 'page' | 'plain' | 'reads'
+>): ArchivePage<K, R, P> {
   return {
     // A page with an id is drawn at its record; any other, at the demo's end.
     ...(reads === 'page' && {

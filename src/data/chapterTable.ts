@@ -1,4 +1,4 @@
-import type { Gated, Source } from '~/lib/progress/spoiler'
+import type { Gated } from '~/lib/progress/spoiler'
 
 import type { Dated, Entity } from './types'
 
@@ -44,7 +44,7 @@ import type { Dated, Entity } from './types'
  * when one source alone tells it, and not when it is marked `unanchored`.
  */
 export function vouches(
-  dated: Pick<Entity, 'unanchored'> & { source?: Source },
+  dated: Pick<Entity, 'unanchored'> & Pick<Gated, 'source'>,
 ): boolean {
   return dated.source === undefined && dated.unanchored !== true
 }

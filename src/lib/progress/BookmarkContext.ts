@@ -89,8 +89,14 @@ export function useBookmarkSeries(): BookmarkSeries {
   return series
 }
 
+/** The route parameters of a content link. */
+interface SeriesParams {
+  locale: Locale
+  series: string
+}
+
 /** The selected series and language for content links. */
-export function useSeriesParams(): { locale: Locale; series: string } {
+export function useSeriesParams(): SeriesParams {
   const { slug } = useBookmarkSeries()
   const { locale } = useLocale()
   return { locale, series: slug }

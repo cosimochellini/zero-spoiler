@@ -21,18 +21,18 @@ const FORM_KEY: Record<FruitForm, TranslationKey<'one-piece'>> = {
   zoan: 'fruitForm.zoan',
 }
 
+/** A fruit's page, and how to lift its record from under the fog. */
+interface StageBandProps {
+  detail: FruitDetail
+  peek: (handle: string) => Promise<FruitView>
+}
+
 /**
  * The stage: the drawing large in a glow of its own tint, drawing itself in
  * on arrival, then the name at display size, its kind and its saga, and the
  * sentence. Under fog no saga is named.
  */
-export function StageBand({
-  detail,
-  peek,
-}: {
-  detail: FruitDetail
-  peek: (handle: string) => Promise<FruitView>
-}): ReactElement {
+export function StageBand({ detail, peek }: StageBandProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const threshold = onlyUnder(useThreshold('one-piece'), 'one-piece')
   const { saga, slot } = detail
