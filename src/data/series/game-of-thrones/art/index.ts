@@ -188,8 +188,10 @@ const PERSON: Stroke[] = [
  * cast, in `essos.ts` (#1475). The seasons' own, which the home page's
  * frame draws, are in `seasons.ts` (#1601). The third stage's King's
  * Landing cast is drawn in `court.ts` (#1642), its Robb's war and Riverlands
- * cast in `riverlands.ts` (#1643) and its Essos cast in `essos.ts` (#1647);
- * its other casts show `PERSON` until their drawing children draw them.
+ * cast in `riverlands.ts` (#1643), its Essos cast in `essos.ts` (#1647) and
+ * its Wall and beyond cast, the brothers of Chett's plot in `wall.ts` and
+ * the wildlings in `wildlings.ts` (#1646); its other casts show `PERSON`
+ * until their drawing children draw them.
  * `satisfies` rather than an annotation, so `ArtId` below stays the literal
  * keys.
  */
@@ -211,18 +213,6 @@ export const DRAWINGS = {
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': DRAGON_EGG,
-  // #1638: the Wall and beyond.
-  'mance-rayder': PERSON,
-  'tormund': PERSON,
-  'orell': PERSON,
-  'styr': PERSON,
-  'dalla': PERSON,
-  'val': PERSON,
-  'jarl': PERSON,
-  'small-paul': PERSON,
-  'dirk': PERSON,
-  'ollo-lophand': PERSON,
-  'clubfoot-karl': PERSON,
   // #1636: Arya, the Brotherhood Without Banners and the Hound.
   'anguy': PERSON,
   'tom-of-sevenstreams': PERSON,

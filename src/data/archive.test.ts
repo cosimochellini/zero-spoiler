@@ -473,6 +473,9 @@ describe.each(LOADED_SERIES)(
           'catelyn-stark': { chapter: 225, episode: 30, source: 'chapter' },
           // Melisandre brings Jon back in the show alone (#1292).
           'jon-snow': { chapter: 344, episode: 52, source: 'episode' },
+          // The books burn Rattleshirt in Mance's place, which Melisandre
+          // tells in A Dance with Dragons (#1646).
+          'mance-rayder': { chapter: 303, episode: 41, source: 'chapter' },
         },
         'hunter-x-hunter': {
           kite: { chapter: 316, episode: 136 },
