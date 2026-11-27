@@ -20,7 +20,9 @@ import { preloadLanding } from './-landing.branches'
 const saga = waypoint({ name: 'Dressrosa', summary: 'The toy kingdom.' })
 
 /** A gate at one episode and the chapter beside it. */
-function at(episode: number): Gated {
+function at(
+  episode: number,
+): Pick<Gated, 'revealedAtChapter' | 'revealedAtEpisode'> {
   return { revealedAtEpisode: episode, revealedAtChapter: episode * 2 }
 }
 

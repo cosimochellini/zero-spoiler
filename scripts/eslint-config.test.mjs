@@ -30,7 +30,7 @@ function hasSliceBan(messages) {
   )
 }
 /**
- * Whether the opt-in effect ban fired.
+ * How many effect calls the opt-in ban flagged.
  * @param {import('eslint').Linter.LintMessage[]} messages - Lint diagnostics.
  * @returns {number} How many effect calls it flagged.
  */
@@ -40,7 +40,7 @@ function effectBans(messages) {
   ).length
 }
 /**
- * Whether the inline-signature-type ban fired.
+ * How many type literals the signature ban flagged.
  * @param {import('eslint').Linter.LintMessage[]} messages - Lint diagnostics.
  * @returns {number} How many type literals it flagged.
  */

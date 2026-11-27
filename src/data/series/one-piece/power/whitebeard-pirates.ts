@@ -10,11 +10,16 @@ const TOLD = { revealedAtEpisode: 94, revealedAtChapter: 157 }
 /** Shanks boards Whitebeard's ship and calls on Marco and Jozu: ch. 434, ep 316. */
 const AT_THE_MEETING = { episode: 316, chapter: 434 }
 
+/** Where a commander takes the seat, and the commander's name. */
+interface CommanderHolding extends Pick<Holding, 'chapter' | 'episode'> {
+  value: string
+}
+
 /** A division commander's seat, told and taken at the same point. */
 function commander(
   en: string,
   it: string,
-  { chapter, episode, value }: Holding,
+  { chapter, episode, value }: CommanderHolding,
 ): Seat {
   return {
     told: { revealedAtEpisode: episode, revealedAtChapter: chapter },

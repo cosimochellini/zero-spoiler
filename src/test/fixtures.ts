@@ -56,7 +56,9 @@ export function drawing(tint: TintId = 'orange'): Drawing {
 }
 
 /** A record filed at the same number in both units, which most tests want. */
-export function at(episode: number): Gated {
+export function at(
+  episode: number,
+): Pick<Gated, 'revealedAtChapter' | 'revealedAtEpisode'> {
   return { revealedAtEpisode: episode, revealedAtChapter: episode }
 }
 
