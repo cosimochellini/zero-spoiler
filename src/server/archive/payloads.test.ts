@@ -63,6 +63,11 @@ function byDesignOf({
       entity.source === undefined
       && entity.revealedAtEpisode <= demoLastEpisode
       && entity.revealedAtChapter <= demoLastChapter,
+    // The hub's tour shows a few records of the same demo (owner, 2026-11-26).
+    loadTour: (entity) =>
+      entity.source === undefined
+      && entity.revealedAtEpisode <= demoLastEpisode
+      && entity.revealedAtChapter <= demoLastChapter,
     // The saga names are always shown, so a reader can find their way by them
     // (owner, 2026-10-12).
     loadFiller: isArc,
@@ -425,12 +430,13 @@ function factionOf(slug: string, locale: Locale): Map<string, string> {
  * The payloads that send an affiliation's own prose, which can read the same
  * as a label ("Seven Warlords of the Sea" on Mihawk's page): the character
  * page's facts (`latestOf` in `wordFactsOf`, `./project.server`) and the
- * demo's steps (`inDemo` in `stepsOf`, `./onboarding.server`). Both send
- * only the entries the reader has reached, and the leak scan reads each at
- * its own gate (`dated` in `~/data/leaks.test.ts`), so here their
- * `affiliation` values are not read; every other key of theirs is.
+ * demo's steps (`inDemo` in `stepsOf`, `./onboarding.server`), on the landing
+ * and in the hub's tour. They send only the entries the reader has reached,
+ * and the leak scan reads each at its own gate (`dated` in
+ * `~/data/leaks.test.ts`), so here their `affiliation` values are not read;
+ * every other key of theirs is.
  */
-const AFFILIATION_PROSE = new Set(['loadCharacter', 'loadHome'])
+const AFFILIATION_PROSE = new Set(['loadCharacter', 'loadHome', 'loadTour'])
 
 /** The factions a payload labels whose group the album has not sent. */
 function earlyLabels(

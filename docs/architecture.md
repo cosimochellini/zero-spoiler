@@ -43,7 +43,10 @@ gates.
   (`src/data/source.ts`).
 - Without a bookmark, `reveal` opens no records. Onboarding receives the series'
   bounded demo, with every record and dated fact inside both limits. Trial
-  cookies are restricted to that demo and yield to a saved bookmark.
+  cookies are restricted to that demo and yield to a saved bookmark. The hub's
+  tour (`loadTour`, `src/server/archive/tour.server.ts`, #1703) reads the same
+  demo for a few picked records of each series, with no cookie, and past it
+  sends covered records only.
 - A record page and a list drawn with no bookmark are the one other exception,
   and what they open reads no request header but the cookies: a search engine
   and a person get the same records (#1430). The places chart's orientation is
@@ -545,7 +548,7 @@ Copy rules live in the
   Start's compiler needs one per export. The sweep, the dump and the JSON
   round-trip checks read the same entry. A new entry goes at the end of the
   table, after the deployed ones, so One Piece's sweep and dump stay byte for
-  byte: `loadAbilities`, `loadAbility` and `liftAbility` (#923) are the last.
+  byte: `loadTour` (#1703) is the last.
 - Register new prose outside a series' `records/` in its `EXTRA.prose` entry in
   `scripts/archive-gate.mjs` and in `textsOf` in `src/data/leaks.test.ts`, using
   the page's actual gate.

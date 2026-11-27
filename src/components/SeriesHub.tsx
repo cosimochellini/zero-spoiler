@@ -1,267 +1,175 @@
 import * as stylex from '@stylexjs/stylex'
-import { Link } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
-import { SeriesEmblem } from '~/components/SeriesEmblem'
-import { useLocale, useT } from '~/i18n/LocaleContext'
-import { bookmarkPoint } from '~/lib/progress/threshold'
-import type { ComingSeries, HubSeries } from '~/lib/view/hub'
-import { settleStyles } from '~/styles/settle'
-import { THEMES } from '~/styles/themes'
 import {
-  color,
-  font,
-  leading,
-  radius,
-  rule,
-  space,
-  text,
-} from '~/styles/tokens.stylex'
+  ComingCard,
+  REQUEST_URL,
+  RequestTicket,
+  SeriesCard,
+} from '~/components/HubCards'
+import { HubTour } from '~/components/HubTour'
+import { styles } from '~/components/SeriesHub.styles'
+import type { LoadTour } from '~/components/useTour'
+import { useLocale, useT } from '~/i18n/LocaleContext'
+import type { ComingSeries, HubSeries } from '~/lib/view/hub'
+import { TOUR_ID } from '~/lib/view/tourSteps'
+import { settleStyles } from '~/styles/settle'
+
+/** What the hub's sections are handed: the open series and the coming ones. */
+export interface HubProps {
+  /** The series filed but not open: a name, no link, no count. */
+  coming: ComingSeries[]
+  series: HubSeries[]
+}
 
 /**
  * The hub (the "Stage" direction, owner 2026-10-24): the house lights
  * are down, as on every page with no series, and each series is a stage in
- * its own colours. The card wears the series' whole theme, so One Piece's
- * stage is its night blue and gold inside the black page. A series still to
- * come is a dark stage: fog and its name, nothing else.
+ * its own colours. A series still to come is a dark stage: fog and its name,
+ * nothing else.
+ *
+ * Since #1703 the hub opens on a compact row, every wiki at a glance and a
+ * card that asks for a new one, then the tour (`HubTour`), and closes on the
+ * tall stages, where a reader who has followed the tour picks a series.
  *
  * A card says the series' name, how many entries it holds and where the
  * reader's saved bookmark on it stands, and with a bookmark how many of the
  * entries are open. It names no record: the counts are numbers, and the
- * drawing is the series' own (`SeriesEmblem`).
- *
- * On a phone a stage is a row, the drawing beside the words, so the three
- * series fit on one screen; from 40rem it stands tall again.
+ * drawing is the series' own (`SeriesEmblem`). The tour is the one part of
+ * the hub that shows records, the demo's, and it loads them apart (`load`).
  */
 export function SeriesHub({
   coming,
+  load,
   series,
-}: {
-  /** The series filed but not open: a name, no link, no count. */
-  coming: ComingSeries[]
-  series: HubSeries[]
-}): ReactElement {
-  const { locale } = useLocale()
-  const t = useT()
-
+}: HubProps & { load: LoadTour }): ReactElement {
   return (
     <main
       id="content"
       {...stylex.props(styles.page)}
     >
+      <Opening
+        coming={coming}
+        series={series}
+      />
+      <HubTour
+        load={load}
+        series={series}
+      />
+      <Choose
+        coming={coming}
+        series={series}
+      />
+    </main>
+  )
+}
+
+/** A card of the opening row, settling in at its turn. */
+function settle(index: number): stylex.StyleXStyles[] {
+  return [styles.item, settleStyles.band, settleStyles.at(index)]
+}
+
+/** The headline, every wiki in one row, the request card, and the tour's link. */
+function Opening({ coming, series }: HubProps): ReactElement {
+  const { locale } = useLocale()
+  const t = useT()
+
+  return (
+    <section {...stylex.props(styles.opening)}>
       <header {...stylex.props(styles.head)}>
         <h1 {...stylex.props(styles.headline)}>{t('hub.headline')}</h1>
         <p {...stylex.props(styles.lede)}>{t('hub.lede')}</p>
       </header>
-      <ul {...stylex.props(styles.stages)}>
+      <ul {...stylex.props(styles.row)}>
         {series.map((entry, index) => (
           <li
             key={entry.slug}
-            {...stylex.props(
-              styles.item,
-              settleStyles.band,
-              settleStyles.at(index),
-            )}
+            {...stylex.props(settle(index))}
           >
-            <Stage entry={entry} />
+            <SeriesCard
+              entry={entry}
+              size="ticket"
+            />
           </li>
         ))}
         {coming.map((announced, index) => (
           <li
             key={announced.slug}
-            {...stylex.props(
-              styles.item,
-              settleStyles.band,
-              settleStyles.at(series.length + index),
-            )}
+            {...stylex.props(settle(series.length + index))}
           >
-            <DarkStage name={announced.name[locale]} />
+            <ComingCard
+              name={announced.name[locale]}
+              size="ticket"
+            />
           </li>
         ))}
+        <li {...stylex.props(settle(series.length + coming.length))}>
+          <RequestTicket />
+        </li>
       </ul>
-    </main>
+      <a
+        href={`#${TOUR_ID}`}
+        {...stylex.props(styles.how)}
+      >
+        {t('hub.how')}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 16 16"
+          {...stylex.props(styles.howArrow)}
+        >
+          <path d="M8 2v11M3 8.5 8 13.5l5-5" />
+        </svg>
+      </a>
+    </section>
   )
 }
 
-/** A series a reader can open: its stage, lit in its own colours. */
-function Stage({ entry }: { entry: HubSeries }): ReactElement {
+/** The tour's close: the tall stages, and the request once more. */
+function Choose({ coming, series }: HubProps): ReactElement {
   const { locale } = useLocale()
   const t = useT()
 
   return (
-    <Link
-      params={{ series: entry.slug, locale }}
-      to="/$series/$locale"
-      {...stylex.props(THEMES[entry.theme], styles.stage, styles.lit)}
+    <section
+      aria-labelledby="choose"
+      {...stylex.props(styles.choose)}
     >
-      <span
-        aria-hidden="true"
-        {...stylex.props(styles.art)}
+      <h2
+        id="choose"
+        {...stylex.props(styles.chooseTitle)}
       >
-        <SeriesEmblem slug={entry.slug} />
-      </span>
-      <div {...stylex.props(styles.copy)}>
-        <h2 {...stylex.props(styles.name)}>{entry.name[locale]}</h2>
-        <span
-          {...stylex.props(
-            styles.mono,
-            styles.point,
-            entry.bookmark === null && styles.unset,
-          )}
-        >
-          {entry.bookmark === null ?
-            t('hub.noBookmark')
-          : bookmarkPoint(t, entry.bookmark, entry.books)}
-        </span>
-        <span {...stylex.props(styles.mono, styles.count)}>
-          {entry.bookmark === null ?
-            t('hub.count', { count: entry.count })
-          : t('hub.countOpen', { count: entry.count, open: entry.open })}
-        </span>
-      </div>
-    </Link>
+        {t('hub.tour.end')}
+      </h2>
+      <ul {...stylex.props(styles.stages)}>
+        {series.map((entry) => (
+          <li
+            key={entry.slug}
+            {...stylex.props(styles.item)}
+          >
+            <SeriesCard
+              entry={entry}
+              size="stage"
+            />
+          </li>
+        ))}
+        {coming.map((announced) => (
+          <li
+            key={announced.slug}
+            {...stylex.props(styles.item)}
+          >
+            <ComingCard
+              name={announced.name[locale]}
+              size="stage"
+            />
+          </li>
+        ))}
+      </ul>
+      <a
+        href={REQUEST_URL}
+        {...stylex.props(styles.requestLine)}
+      >
+        {t('hub.request')}
+      </a>
+    </section>
   )
 }
-
-/** A series announced but not open: no link, and the lights still off. */
-function DarkStage({ name }: { name: string }): ReactElement {
-  const t = useT()
-
-  return (
-    <div {...stylex.props(styles.stage, styles.dark)}>
-      <span
-        aria-hidden="true"
-        {...stylex.props(styles.fog)}
-      />
-      <div {...stylex.props(styles.copy, styles.wholeRow)}>
-        <h2 {...stylex.props(styles.name, styles.unlitName)}>{name}</h2>
-        <span {...stylex.props(styles.mono, styles.point, styles.unset)}>
-          {t('hub.coming')}
-        </span>
-      </div>
-    </div>
-  )
-}
-
-// Below this a stage is a row; from it, a tall stage with the words at its foot.
-const TALL = '@media (min-width: 40rem)'
-// The stages sit side by side once two fit at a readable width.
-const WIDE = '@media (min-width: 48rem)'
-// One column that never grows past its box.
-const ONE_COLUMN = 'minmax(0, 1fr)'
-
-const styles = stylex.create({
-  page: {
-    paddingBlock: { [TALL]: space.xl, default: space.lg },
-    paddingInline: space.md,
-    alignContent: 'start',
-    display: 'grid',
-    rowGap: { [TALL]: space.xl, default: space.lg },
-  },
-  head: { display: 'grid', rowGap: space.sm, maxWidth: '44rem' },
-  headline: {
-    color: color.ink,
-    fontFamily: font.display,
-    fontSize: text.display,
-    fontWeight: 800,
-    letterSpacing: '-0.02em',
-    lineHeight: leading.display,
-    overflowWrap: 'anywhere',
-    minWidth: 0,
-  },
-  lede: {
-    color: color.ink2,
-    fontSize: text.lg,
-    lineHeight: leading.body,
-    maxWidth: '40rem',
-  },
-  stages: {
-    gap: space.md,
-    listStyle: 'none',
-    display: 'grid',
-    gridTemplateColumns: {
-      [WIDE]: 'repeat(2, minmax(0, 1fr))',
-      default: ONE_COLUMN,
-    },
-    paddingInlineStart: 0,
-  },
-  item: { display: 'grid', minWidth: 0 },
-
-  // One box for a lit stage and a dark one: the words sit at the foot, under
-  // the drawing, or on a phone beside it.
-  stage: {
-    padding: { [TALL]: space.lg, default: space.md },
-    borderColor: color.rule,
-    borderRadius: radius.card,
-    borderStyle: 'solid',
-    borderWidth: rule.hair,
-    overflow: 'clip',
-    alignContent: { [TALL]: 'end', default: 'center' },
-    alignItems: 'center',
-    backgroundColor: color.paper,
-    color: color.ink,
-    columnGap: space.md,
-    display: 'grid',
-    // On a phone the drawing takes the row's start, and the words the rest.
-    gridTemplateColumns: { [TALL]: ONE_COLUMN, default: '34% minmax(0, 1fr)' },
-    position: 'relative',
-    minHeight: { [TALL]: '28rem', [WIDE]: '36rem', default: '10rem' },
-  },
-  lit: {
-    outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
-    outlineOffset: space.xs3,
-    outlineStyle: 'solid',
-    outlineWidth: rule.fine,
-    textDecorationLine: 'none',
-  },
-  dark: { backgroundColor: color.paper2, gridTemplateColumns: ONE_COLUMN },
-
-  art: {
-    insetInline: { [TALL]: '12%', default: 'auto' },
-    insetBlockStart: { [TALL]: '4%', default: 'auto' },
-    position: { [TALL]: 'absolute', default: 'relative' },
-    height: { [TALL]: '60%', default: '8.5rem' },
-  },
-  // A dark stage holds only the fog drifting in it.
-  fog: {
-    inset: 0,
-    backgroundImage: `radial-gradient(60% 40% at 30% 40%, ${color.paper3}, transparent 70%), radial-gradient(50% 45% at 75% 60%, ${color.paper3}, transparent 70%)`,
-    filter: 'blur(20px)',
-    position: 'absolute',
-  },
-
-  copy: {
-    gridColumn: { [TALL]: '1', default: '2' },
-    display: 'grid',
-    position: 'relative',
-    rowGap: space.xs,
-  },
-  // A dark stage has no drawing, so on a phone its words take the whole row.
-  wholeRow: { gridColumn: '1' },
-  name: {
-    gridRow: '2',
-    color: color.ink,
-    fontFamily: font.display,
-    fontSize: { [TALL]: text.hero, default: text.display },
-    fontStretch: 'semi-condensed',
-    fontWeight: 800,
-    letterSpacing: '-0.02em',
-    lineHeight: leading.display,
-    overflowWrap: 'anywhere',
-    minWidth: 0,
-  },
-  unlitName: { color: color.muted },
-  mono: {
-    fontFamily: font.mono,
-    fontSize: text.xs,
-    fontVariantNumeric: 'tabular-nums',
-    fontWeight: 700,
-    letterSpacing: '0.12em',
-    lineHeight: leading.body,
-    textTransform: 'uppercase',
-  },
-  // Above the name, as the fold of a series page sets the reader's point.
-  point: { gridRow: '1', color: color.accent },
-  unset: { color: color.muted },
-  count: { gridRow: '3', color: color.muted },
-})

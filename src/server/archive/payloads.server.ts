@@ -45,6 +45,7 @@ import { placePage } from './placePage.server'
 import { placesPage } from './places.server'
 import { powerPage } from './power.server'
 import { sagaLabels } from './sagaLabels.server'
+import { tourPage } from './tour.server'
 
 /**
  * Every server function, described once: `~/server/api` serves each entry
@@ -250,6 +251,14 @@ export const ENDPOINTS = {
     reads: 'cookie',
     keys: handles,
     page: ({ handle }, r) => peekAbility(handle, r) ?? null,
+  }),
+  // The hub's tour (#1703): the same public demo as the landing, a few of its
+  // records and covered ones past it, whatever the bookmark.
+  loadTour: archivePage({
+    input: 'located',
+    reads: 'demo',
+    plain: true,
+    page: (_, r) => tourPage(r),
   }),
 }
 

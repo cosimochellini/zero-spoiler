@@ -22,6 +22,37 @@ export const itDictionary: Dictionary = {
   'hub.countOpen': '{open} su {count} visibili',
   'hub.noBookmark': 'Nessun segnalibro',
   'hub.coming': 'In arrivo',
+  'hub.request': 'Richiedi una nuova wiki',
+  'hub.requestHint': 'Apre un modulo su GitHub',
+  'hub.how': 'Come funziona',
+  'hub.tour.title': 'Come funziona',
+  'hub.tour.lede':
+    'Scorri la pagina e lo schermo segue il testo. Puoi anche spostare il segnalibro a mano.',
+  'hub.tour.bookmark.title': 'Un segnalibro per ogni serie',
+  'hub.tour.bookmark.body':
+    'Indichi l’ultimo episodio che hai visto o l’ultimo capitolo che hai letto. Ogni voce diventa visibile quando il segnalibro la raggiunge.',
+  'hub.tour.fog.title': 'Il resto è nella nebbia',
+  'hub.tour.fog.body':
+    'Di una voce nella nebbia vedi solo da quale episodio diventa visibile. Oltre il segnalibro, le pagine della serie non ne contengono né il nome, né il disegno, né il testo.',
+  'hub.tour.anyway.title': 'Mostra comunque',
+  'hub.tour.anyway.body':
+    'Puoi aprire a mano una sola voce. Le altre restano nella nebbia e il segnalibro non si sposta.',
+  'hub.tour.grows.title': 'Ogni voce segue il segnalibro',
+  'hub.tour.grows.body':
+    'Ruolo, affiliazione, taglia e disegno cambiano quando arrivi al cambiamento. Prima vedi la versione che conosci.',
+  'hub.tour.groups.title': 'Ciurme e casate',
+  'hub.tour.groups.body':
+    'Anche ciurme, casate e fazioni seguono il segnalibro. Se qualcuno cambia schieramento, lo vedi quando arrivi a quell’episodio.',
+  'hub.tour.bonds.title': 'Relazioni e Nen',
+  'hub.tour.bonds.body':
+    'Le relazioni tra i personaggi cambiano con il segnalibro. Le abilità Nen che non hai raggiunto restano nella nebbia.',
+  'hub.tour.end': 'Scegli la tua serie',
+  'hub.tour.screen': 'Anteprima di {series}',
+  'hub.tour.past':
+    'Altre {count} voci dopo l’episodio {last}, tutte nella nebbia',
+  'hub.tour.anywayDone': 'Aperta a mano',
+  'hub.tour.nen': 'Abilità Nen',
+  'hub.tour.bondsOf': 'Relazioni di {name}',
   'seo.imageAlt':
     'La card di Zero Spoiler: il logo sopra una rotta che sparisce nella nebbia.',
 

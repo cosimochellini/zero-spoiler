@@ -1,0 +1,30 @@
+name: Request a new wiki
+description: Ask for a series to get its own spoiler-free wiki.
+title: 'Wiki request: '
+labels: [type:feature, status:triage]
+body:
+  - type: input
+    id: series
+    attributes:
+      label: Series
+      description: Its name, as you know it.
+    validations:
+      required: true
+  - type: checkboxes
+    id: media
+    attributes:
+      label: How you follow it
+      options:
+        - label: Anime or TV series
+        - label: Manga or comics
+        - label: Books
+  - type: input
+    id: link
+    attributes:
+      label: A page about it
+      description: A wiki or an official page, so we know which series you mean.
+  - type: textarea
+    id: why
+    attributes:
+      label: Anything else
+      description: Optional. What you would look up first, for example.

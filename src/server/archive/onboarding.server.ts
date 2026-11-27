@@ -31,7 +31,7 @@ const TAIL_COUNT = 6
  * that a single source tells is not, wherever it is filed: the dial moves in
  * either unit, in the browser.
  */
-function inDemo(gated: Gated, r: Reader): boolean {
+export function inDemo(gated: Gated, r: Reader): boolean {
   return (
     gated.source === undefined
     && gated.revealedAtEpisode <= r.archive.series.demoLastEpisode
@@ -48,7 +48,7 @@ function gateOf(gated: Gated): Gated {
 }
 
 /** A record's dated facts inside East Blue, as steps the dial picks from. */
-function stepsOf<T, V>(
+export function stepsOf<T, V>(
   entries: { gate: Gated; value: T }[],
   value: (raw: T) => V,
   r: Reader,
@@ -69,7 +69,7 @@ function drawn(strokes: Drawing['strokes'], tint: Drawing['tint']): Drawing {
 }
 
 /** Every drawing the demo dial can reach, independent of the saved bookmark. */
-function demoDrawings(entity: Entity, r: Reader): Step<Drawing>[] {
+export function demoDrawings(entity: Entity, r: Reader): Step<Drawing>[] {
   const tint = entity.visual.tint
   return [
     {
@@ -101,7 +101,7 @@ function roleStepsOf(entity: Entity, r: Reader): Pick<DemoEntry, 'role'> {
 }
 
 /** One demo record, with every fact the dial can reach about it. */
-function demoOf(entity: Entity, r: Reader): DemoEntry {
+export function demoOf(entity: Entity, r: Reader): DemoEntry {
   const { locale } = r
   return {
     id: entity.id,
@@ -120,14 +120,14 @@ function demoOf(entity: Entity, r: Reader): DemoEntry {
 }
 
 /** The arcs of East Blue: the ones with leads of their own, not the saga. */
-function demoArcs(r: Reader): Entity[] {
+export function demoArcs(r: Reader): Entity[] {
   return r.archive.arcs.filter(
     (arc) => inDemo(arc, r) && Object.hasOwn(r.archive.leads, arc.id),
   )
 }
 
 /** Every lead of those arcs, once each, in the order they first appear. */
-function demoCast(arcsHere: Entity[], r: Reader): Entity[] {
+export function demoCast(arcsHere: Entity[], r: Reader): Entity[] {
   const ids = new Set(arcsHere.flatMap((arc) => r.archive.leads[arc.id] ?? []))
 
   return orderByMode(
