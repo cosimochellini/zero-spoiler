@@ -78,6 +78,11 @@ async function fetchAlbum(data: Asked, wanted?: string): Promise<void> {
  */
 export const primeAlbum = createIsomorphicFn().client(fetchAlbum)
 
+interface FruitAlbumResult {
+  album: Album | null
+  retry: (() => void) | undefined
+}
+
 /**
  * The album for the page's series, locale and bookmark, or `null` until it
  * is here. The server renders `null`, and so does the render that hydrates
@@ -87,10 +92,7 @@ export const primeAlbum = createIsomorphicFn().client(fetchAlbum)
  * (another tab moved it, a trial ran out), is not asked again on its own:
  * `retry` is set instead, for the page to offer, and asks once more.
  */
-export function useFruitAlbum(): {
-  album: Album | null
-  retry: (() => void) | undefined
-} {
+export function useFruitAlbum(): FruitAlbumResult {
   const { locale, series } = useSeriesParams()
   const { bookmark } = useBookmark()
   const key = keyOf(

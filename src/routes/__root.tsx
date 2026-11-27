@@ -259,6 +259,15 @@ function RootError(): ReactElement {
   )
 }
 
+interface RootDocumentProps {
+  children: ReactNode
+  locale: Locale
+  /** A series page, as `SiteBar` reads it: its bar keeps two rows longer. */
+  seriesPage: boolean
+  /** The title of a page whose `head` has none: this route's error page. */
+  title?: string
+}
+
 // The default client entry hydrates the whole document, so the root route has
 // to render <html> itself.
 function RootDocument({
@@ -266,14 +275,7 @@ function RootDocument({
   locale,
   seriesPage,
   title,
-}: {
-  children: ReactNode
-  locale: Locale
-  /** A series page, as `SiteBar` reads it: its bar keeps two rows longer. */
-  seriesPage: boolean
-  /** The title of a page whose `head` has none: this route's error page. */
-  title?: string
-}): ReactElement {
+}: RootDocumentProps): ReactElement {
   // A series page, its 404s included, wears the theme its description names;
   // the hub, the legal notices and an unknown address keep the site's own.
   const theme = themeOf(

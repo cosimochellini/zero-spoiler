@@ -112,8 +112,13 @@ function useTimer(): Timer {
   }
 }
 
+interface Quiet {
+  hush: (run: () => void) => void
+  quiet: () => boolean
+}
+
 /** A flag raised for the length of one call. */
-function useQuiet(): { hush: (run: () => void) => void; quiet: () => boolean } {
+function useQuiet(): Quiet {
   const quietRef = useRef(false)
 
   return {
@@ -126,15 +131,17 @@ function useQuiet(): { hush: (run: () => void) => void; quiet: () => boolean } {
   }
 }
 
+interface PointerKind {
+  press: (event: PointerEvent<HTMLElement>) => void
+  take: () => string
+}
+
 /**
  * The kind of pointer that pressed a target, read once by the click that
  * follows: `mouse`, `touch` or `pen`, and `''` for a click no press came
  * before (a key, an assistive technology).
  */
-function usePointer(): {
-  press: (event: PointerEvent<HTMLElement>) => void
-  take: () => string
-} {
+function usePointer(): PointerKind {
   const pointerRef = useRef('')
 
   return {

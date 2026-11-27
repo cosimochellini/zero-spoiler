@@ -97,18 +97,20 @@ export function useChartZoom(
   }
 }
 
-/**
- * The window and the one way to move it, which keeps a ref of it for the
- * hands to read mid-gesture. A new bookmark opens a new saga: the window
- * opens on it again.
- */
-function useWindow(opening: Rect): {
+interface ZoomWindow {
   move: (next: Rect) => void
   /** The window as it stands, for a handler to read. */
   read: () => Rect
   view: Rect
   viewRef: RefObject<Rect>
-} {
+}
+
+/**
+ * The window and the one way to move it, which keeps a ref of it for the
+ * hands to read mid-gesture. A new bookmark opens a new saga: the window
+ * opens on it again.
+ */
+function useWindow(opening: Rect): ZoomWindow {
   const [view, setView] = useState(opening)
   const [opened, setOpened] = useState(opening)
   const viewRef = useRef(view)
@@ -132,6 +134,13 @@ function useWindow(opening: Rect): {
   }
 }
 
+interface MovesOfOptions extends Pick<ZoomWindow, 'move' | 'read'> {
+  opening: Rect
+  /** Moves the window and leaves an open peek alone. */
+  place: (next: Rect) => void
+  zoomable: boolean
+}
+
 /** What the buttons and the focus do to the window, read as it stands. */
 function movesOf({
   move,
@@ -139,14 +148,7 @@ function movesOf({
   place,
   read,
   zoomable,
-}: {
-  move: (next: Rect) => void
-  opening: Rect
-  /** Moves the window and leaves an open peek alone. */
-  place: (next: Rect) => void
-  read: () => Rect
-  zoomable: boolean
-}): Pick<ChartZoom, 'show' | 'toggle' | 'zoomBy'> {
+}: MovesOfOptions): Pick<ChartZoom, 'show' | 'toggle' | 'zoomBy'> {
   return {
     show: (point) => {
       place(zoomable ? showing(read(), point) : read())

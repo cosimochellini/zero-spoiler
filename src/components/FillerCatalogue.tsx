@@ -111,16 +111,12 @@ function stretches(rows: FillerSlot[]): FillerSlot[][] {
   return out
 }
 
-/** A filler arc, named; or a stretch of rows that belong to none. */
-function Run({
-  mode,
-  peek,
-  run,
-}: {
-  mode: BookmarkMode
-  peek: (handle: string) => Promise<FillerRowView>
+interface RunProps extends Pick<FillerCatalogueProps, 'mode' | 'peek'> {
   run: FillerRun
-}): ReactElement {
+}
+
+/** A filler arc, named; or a stretch of rows that belong to none. */
+function Run({ mode, peek, run }: RunProps): ReactElement {
   const rows = (
     <ol {...stylex.props(styles.rows)}>
       {stretches(run.rows).map((stretch) => {
@@ -162,16 +158,12 @@ function Run({
   )
 }
 
-/** Two or more covered rows in a row, folded into one that opens. */
-function FogFold({
-  mode,
-  peek,
-  rows,
-}: {
-  mode: BookmarkMode
-  peek: (handle: string) => Promise<FillerRowView>
+interface FogFoldProps extends Pick<FillerCatalogueProps, 'mode' | 'peek'> {
   rows: FillerSlot[]
-}): ReactElement {
+}
+
+/** Two or more covered rows in a row, folded into one that opens. */
+function FogFold({ mode, peek, rows }: FogFoldProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
 
   return (
@@ -203,16 +195,12 @@ function FogFold({
   )
 }
 
-/** One entry: its place and kind in the clear, the rest behind the veil. */
-function Row({
-  mode,
-  peek,
-  slot,
-}: {
-  mode: BookmarkMode
-  peek: (handle: string) => Promise<FillerRowView>
+interface RowProps extends Pick<FillerCatalogueProps, 'mode' | 'peek'> {
   slot: FillerSlot
-}): ReactElement {
+}
+
+/** One entry: its place and kind in the clear, the rest behind the veil. */
+function Row({ mode, peek, slot }: RowProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const series = useBookmarkSeries()
   const entry = slot.open ? slot.record : slot.covered
@@ -273,14 +261,13 @@ function keyOf(slot: FillerSlot): string {
   return slot.open ? slot.record.handle : slot.covered.handle
 }
 
-/** The existing saga control, pinned only while its details are open. */
-function ArcLabel({
-  count,
-  name,
-}: {
+interface ArcLabelProps {
   count: number
   name: string
-}): ReactElement {
+}
+
+/** The existing saga control, pinned only while its details are open. */
+function ArcLabel({ count, name }: ArcLabelProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   return (
     <>
