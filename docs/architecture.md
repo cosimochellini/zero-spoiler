@@ -414,7 +414,11 @@ visits and the book only names (#1252), and the 7 both media name and neither
 visits, each with its own drawing; Harrenhal, the Fist of the First Men,
 Craster's Keep, the Dreadfort and Flea Bottom take the stage's changes as dated
 `visits` entries, and Harrenhal, the Fist, Astapor and Yunkai a drawing stage,
-and Maidenpool a books-only one.
+and Maidenpool a books-only one. The stage's drawing audit (#1667) redraws
+Castamere as a ruin and Meereen as its Great Pyramid, and adds Meereen's taking
+and the show's bombardment of it, Last Hearth overrun in the show, Missandei
+freed, Brienne's empty stand in the show, Theon's escape, and Steelshanks
+Walton's book gate at 181.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -658,9 +662,9 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Characters             | 261                                                                                     |
 | Places                 | 107                                                                                     |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 371, one per record and 3 for the seasons' headings, plus 250 redrawings of 184 records |
+| Line drawings          | 371, one per record and 3 for the seasons' headings, plus 256 redrawings of 186 records |
 | Chronicle stories      | 1344, for 226 characters                                                                |
-| Dated timelines        | 1232                                                                                    |
+| Dated timelines        | 1235                                                                                    |
 | Affiliation steps      | 307                                                                                     |
 | Status steps           | 468                                                                                     |
 | Later visits to places | 16                                                                                      |

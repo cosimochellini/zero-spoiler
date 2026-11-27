@@ -733,10 +733,10 @@ stepped.
 Gates as episode / site chapter. `source` records give the other number only to
 order them.
 
-| Record                       | Show                                                                                                                                        | Books                                                                                                                                              |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `qyburn`                     | 21, "Valar Dohaeris": found alive among the slain prisoners at Harrenhal, he gives Robb his name while Talisa tends his wound (Qyburn page) | 175, Jaime IV: Roose Bolton has Qyburn clean and bandage the stump; A Clash of Kings lists him with no scene (#1465)                               |
-| `steelshanks-walton` (books) | none: the show's Steelshanks is named only in narration in the pages read (owner check); 27 orders him                                      | 188, Jaime VI: he leads the two hundred Dreadfort men who escort Jaime, and Jaime forces him back to Harrenhal; 175 lists him unnamed (safe later) |
+| Record                       | Show                                                                                                                                        | Books                                                                                                                 |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `qyburn`                     | 21, "Valar Dohaeris": found alive among the slain prisoners at Harrenhal, he gives Robb his name while Talisa tends his wound (Qyburn page) | 175, Jaime IV: Roose Bolton has Qyburn clean and bandage the stump; A Clash of Kings lists him with no scene (#1465)  |
+| `steelshanks-walton` (books) | none: the show's Steelshanks is named only in narration in the pages read (owner check); 27 orders him                                      | 181, Jaime V: Roose names him to Jaime ("Steelshanks, he is called"; #1667, was 188, Jaime VI); 175 lists him unnamed |
 
 - Qyburn: alive. The summary, the log and the first role step ("With the
   northmen at Harrenhal") hold only what both media tell at the gates: he is at

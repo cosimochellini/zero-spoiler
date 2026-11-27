@@ -104,11 +104,18 @@ const STAGES: {
   source?: 'chapter' | 'episode'
   stage?: number
 }[] = [
-  { id: 'harrenhal', episode: 22, chapter: 121 },
+  // Harrenhal's drawing at the show's taking in episode 21 (#1667); its
+  // visit step, which names Roose left in command, stays at 22.
+  { id: 'harrenhal', episode: 21, chapter: 121 },
   { id: 'fist-of-the-first-men', episode: 21, chapter: 159 },
   { id: 'astapor', episode: 24, chapter: 171 },
   { id: 'yunkai', episode: 29, chapter: 186 },
   { id: 'maidenpool', episode: 23, chapter: 165, source: 'chapter' },
+  // The drawing audit's stages (#1667): Meereen taken and bombarded, Last
+  // Hearth overrun.
+  { id: 'meereen', episode: 34, chapter: 215 },
+  { id: 'meereen', episode: 58, chapter: 344, source: 'episode', stage: 1 },
+  { id: 'last-hearth', episode: 68, chapter: 344, source: 'episode' },
 ]
 
 /** The bookmark of the other medium at the stage's last count. */
@@ -260,6 +267,23 @@ describe.each(
     })
   },
 )
+
+describe('the place stages one medium alone tells', () => {
+  // A reader of the other medium at the stage's last count still sees the
+  // first drawing: every stage the table lists falls past that count there.
+  it.each(STAGES.filter(({ source }) => source !== undefined))(
+    'never redraws $id at $episode/$chapter for a reader of the other medium',
+    ({ id, source = 'episode', stage: index = 0 }) => {
+      const drawn = drawingOf(
+        recordIn(archive, id),
+        otherAtTheEnd(source),
+      ).strokes
+
+      expect(drawn).toStrictEqual(DRAWINGS[id])
+      expect(drawn).not.toStrictEqual(REDRAWINGS[id]?.[index]?.value)
+    },
+  )
+})
 
 describe('the visits one medium alone tells', () => {
   it.each(VISITS.filter(({ source }) => source !== undefined))(

@@ -946,6 +946,11 @@ export const winterfellRedrawn: Redrawings = {
         { d: 'M14 152 H146', role: 'ambient', dashed: true },
       ],
     },
+    // The kraken back in the sea, as at 20/140: Theon escapes Winterfell and
+    // the Boltons with Sansa in "Mother's Mercy" (episode 50), and with Jeyne
+    // Poole in Theon I of A Dance with Dragons (chapter 323), so Reek ends
+    // as a temporary identity does (#1667, as Arya's Needle comes back).
+    { episode: 50, chapter: 323, value: KRAKEN },
     // The same kraken capsized on the waves, its arms thrown loose: he dies
     // defending Bran in "The Long Night" (episode 70). He lives in the books,
     // so the stage is the show's alone and chapter 344 only orders it.

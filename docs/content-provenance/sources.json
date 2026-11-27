@@ -39691,6 +39691,36 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27450",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27450",
       "contentSha256": "ec67e02d3abad9d64fec96d30c93698fd543d355fdea249e1b070fddd1bddb63"
+    },
+    "got-en-Oathkeeper_(episode)-729801.json": {
+      "locale": "en",
+      "title": "Oathkeeper (episode)",
+      "revision": 729801,
+      "revisionDate": "2026-02-12T12:52:12Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Oathkeeper_%28episode%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729801",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729801",
+      "contentSha256": "1abf2427152537df9611d2bfebbd9f9edb762f3a10d0dae21e31d0f1c174b1af"
+    },
+    "got-en-Winterfell_(Game_of_Thrones)-729847.json": {
+      "locale": "en",
+      "title": "Winterfell (Game of Thrones)",
+      "revision": 729847,
+      "revisionDate": "2026-02-14T14:48:13Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Winterfell_%28Game_of_Thrones%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=729847",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=729847",
+      "contentSha256": "683b2e635018a2c30fbe4b252df6df864049fe213fe029f859313678ef222878"
+    },
+    "iaf-en-House_Spicer-19560.json": {
+      "locale": "en",
+      "title": "House Spicer",
+      "revision": 19560,
+      "revisionDate": "2017-09-14T18:29:52Z",
+      "url": "https://iceandfire.fandom.com/wiki/House_Spicer",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=19560",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=19560",
+      "contentSha256": "cbf4ba106de4c57d592980bd5c1a897b706b5e319542bb19174dc54ad9acc3d2"
     }
   }
 }

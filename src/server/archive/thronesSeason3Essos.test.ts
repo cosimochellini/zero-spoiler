@@ -108,7 +108,9 @@ const STAGES: {
   { id: 'mero', episode: 28, chapter: 201, source: 'episode' },
   { id: 'mero', episode: 28, chapter: 201, source: 'chapter', stage: 1 },
   { id: 'grazdan-mo-eraz', episode: 59, chapter: 344, source: 'episode' },
-  { id: 'missandei', episode: 71, chapter: 344, source: 'episode' },
+  // Freed, the collar open (#1667), at her book gate's own chapter.
+  { id: 'missandei', episode: 24, chapter: 171 },
+  { id: 'missandei', episode: 71, chapter: 344, source: 'episode', stage: 1 },
 ]
 
 /**

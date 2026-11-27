@@ -138,7 +138,15 @@ const STAGES: {
   { id: 'brienne-of-tarth', episode: 15, chapter: 107, source: 'chapter' },
   // Brienne's gown at Harrenhal, stage 3's drawing child (#1645).
   { id: 'brienne-of-tarth', episode: 26, chapter: 181, stage: 1 },
-  { id: 'brienne-of-tarth', episode: 34, chapter: 216, stage: 2 },
+  // The empty stand, the show's alone, from episode 31 (#1667).
+  {
+    id: 'brienne-of-tarth',
+    episode: 31,
+    chapter: 216,
+    source: 'episode',
+    stage: 2,
+  },
+  { id: 'brienne-of-tarth', episode: 34, chapter: 216, stage: 3 },
   { id: 'margaery-tyrell', episode: 32, chapter: 204, source: 'episode' },
   {
     id: 'margaery-tyrell',

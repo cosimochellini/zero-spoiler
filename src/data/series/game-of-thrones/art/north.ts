@@ -530,11 +530,18 @@ const PRISON_BED: Stroke[] = [
  * side from "The Lion and the Rose" (episode 32) and corners Sansa with it
  * in "Mother's Mercy" (episode 50). Its stage and her death share it.
  */
-const HUNTING_BOW: Stroke[] = [
+const HUNTING_BOW_LIMBS: Stroke[] = [
   { d: 'M66 30 Q104 46 104 92 Q104 138 66 154' },
   { d: 'M66 30 Q98 48 98 92 Q98 136 66 154', role: 'soft' },
+]
+const HUNTING_BOW_GRIP: Stroke = {
+  d: 'M98 84 h8 M98 100 h8 M99 88 h6 M99 92 h6 M99 96 h6',
+  role: 'soft',
+}
+const HUNTING_BOW: Stroke[] = [
+  ...HUNTING_BOW_LIMBS,
   { d: 'M66 30 L66 154', role: 'soft' },
-  { d: 'M98 84 h8 M98 100 h8 M99 88 h6 M99 92 h6 M99 96 h6', role: 'soft' },
+  HUNTING_BOW_GRIP,
 ]
 
 /** The arrow on the bow's string, its head in the accent and its fletching soft. */
@@ -1101,7 +1108,8 @@ export const northRedrawn: Redrawings = {
       chapter: 284,
       value: [...HUNTING_BOW, ...HUNTING_ARROW, shadow(84, 158, 34)],
     },
-    // The bow fallen flat on the ground and the arrow lying apart from it:
+    // The bow fallen at an angle on the ground in 3/4, its string slack, and
+    // the arrow lying apart from it (#1667):
     // she dies at Winterfell in "Mother's Mercy" (episode 50). Theon I of A
     // Dance with Dragons (chapter 323), where Theon escapes the castle,
     // orders it. How she dies is not drawn.
@@ -1110,11 +1118,15 @@ export const northRedrawn: Redrawings = {
       chapter: 323,
       value: [
         ...moved(
-          HUNTING_BOW,
-          'translate(0 150) scale(1 0.45) translate(0 -111) rotate(-90 85 92)',
+          [
+            ...HUNTING_BOW_LIMBS,
+            HUNTING_BOW_GRIP,
+            { d: 'M66 30 Q82 92 66 154', role: 'soft' },
+          ],
+          'translate(0 150) scale(1 0.62) translate(0 -150) translate(-6 32) rotate(-62 85 92)',
         ),
-        ...moved(HUNTING_ARROW, 'translate(-6 65) rotate(3 100 92)'),
-        { d: 'M10 164 H150', role: 'ambient', dashed: true },
+        ...moved(HUNTING_ARROW, 'translate(-14 56) rotate(16 100 92)'),
+        { d: 'M8 166 H152', role: 'ambient', dashed: true },
       ],
     },
   ],
