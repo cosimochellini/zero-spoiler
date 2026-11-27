@@ -71,15 +71,13 @@ export function HomeLanding({
         <HomeCast
           band={at(BAND.cast)}
           cast={cast}
-          id="home-cast"
-          title="home.cast"
+          row="cast"
         />
         <HomeCast
           band={at(BAND.met)}
           before={metBefore}
           cast={met}
-          id="home-met"
-          title="home.met"
+          row="met"
         />
         <Band index={at(BAND.more)}>
           <HomeMoreStories stories={stories} />

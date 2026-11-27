@@ -12,9 +12,8 @@ export interface HomeCastProps {
   /** The step it settles in on, as the home's other bands. */
   band: number
   cast: CharacterView[]
-  /** The heading's id, which labels the section. */
-  id: 'home-cast' | 'home-met'
-  title: 'home.cast' | 'home.met'
+  /** Which row: its heading and the id that labels the section go together. */
+  row: 'cast' | 'met'
   /** The crests are the previous arc's, because this one has none yet. */
   before?: boolean
 }
@@ -38,8 +37,7 @@ async function neverPeeked(): Promise<CharacterView> {
 export function HomeCast({
   band,
   cast,
-  id,
-  title,
+  row,
   before = false,
 }: HomeCastProps): null | ReactElement {
   const t = useT()
@@ -47,6 +45,7 @@ export function HomeCast({
   if (cast.length === 0) {
     return null
   }
+  const id = `home-${row}` as const
 
   return (
     <section
@@ -62,7 +61,7 @@ export function HomeCast({
           id={id}
           {...stylex.props(styles.heading)}
         >
-          {t(title)}
+          {t(`home.${row}`)}
         </h2>
         {before && <p {...stylex.props(styles.before)}>{t('home.before')}</p>}
       </div>
