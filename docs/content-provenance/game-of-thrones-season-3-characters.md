@@ -855,7 +855,9 @@ and its Axell is first seen at his burning in "The Lion and the Rose" (episode
   prologue's feast and in Davos I, where the second stage left him out as a bit
   part; if the show says his name in episode 32, the record becomes both media's
   at 32, dead in the show from its gate. Italian "Axell Florent" (the Italian
-  Game of Thrones Wiki; "castellano di Roccia del Drago").
+  Game of Thrones Wiki; "castellano di Roccia del Drago"). #1648 moves his tint
+  from red to orange: his drawing is the torch he takes from the cells, with
+  nothing red on it.
 - Alester Florent: role "Former Hand of King Stannis", House Florent,
   `imprisoned` from his gate: Davos III has Axell throw him into Davos's cell
   for the letter he wrote to Tywin offering peace, and Davos IV, the chapter
@@ -863,8 +865,10 @@ and its Axell is first seen at his burning in "The Lion and the Rose" (episode
   Sathmantes tells Davos in Davos II (154) that Lord Alester Florent is
   Stannis's Hand, before he is seen in the stage. `nameSaidAt: 14` lets Cortnay
   Penrose's books-only story of the parley (A Clash of Kings, Davos II, 116,
-  ordered at episode 14) name him. His death is after the stage. Italian
-  "Alester Florent" (Italian Wikipedia, in Salladhor Saan's section).
+  ordered at episode 14) name him. His death is after the stage: #1648 files it
+  as `deceased` at 41 / 281, the books' alone, with his drawing's stage (Davos I
+  of A Dance with Dragons; #1238). Italian "Alester Florent" (Italian Wikipedia,
+  in Salladhor Saan's section).
 - Edric Storm: role King Robert's bastard son, House Baratheon, alive. Owner
   check: Davos II (154), where Davos meets him playing monsters and maidens with
   Shireen and Patchface and he talks of his father, names him in narration only;

@@ -39651,6 +39651,46 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748545",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748545",
       "contentSha256": "acd374fd64d453bd1b90999475394494548bad2f2fcf8b4c6082c15d4b566975"
+    },
+    "got-en-House_Florent-748145.json": {
+      "locale": "en",
+      "title": "House Florent",
+      "revision": 748145,
+      "revisionDate": "2026-08-17T08:03:45Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_Florent",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748145",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748145",
+      "contentSha256": "6ba13330e5942957187b862e2484dd40c8b108cb106ad18abeb2e80b2e951720"
+    },
+    "got-en-House_Seaworth-735407.json": {
+      "locale": "en",
+      "title": "House Seaworth",
+      "revision": 735407,
+      "revisionDate": "2026-05-12T10:21:19Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_Seaworth",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735407",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735407",
+      "contentSha256": "891ab5daeb7ce5e0fe5fc862dea88b27252d63a70ca095bf4fdf98ed6ae4e97c"
+    },
+    "iaf-en-House_Florent-21459.json": {
+      "locale": "en",
+      "title": "House Florent",
+      "revision": 21459,
+      "revisionDate": "2018-02-28T23:22:57Z",
+      "url": "https://iceandfire.fandom.com/wiki/House_Florent",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21459",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21459",
+      "contentSha256": "831a4fac4d98e63a86b8a2b265725ced8334247f8449872c41491ad8c5cf780b"
+    },
+    "iaf-en-House_Seaworth-27450.json": {
+      "locale": "en",
+      "title": "House Seaworth",
+      "revision": 27450,
+      "revisionDate": "2025-05-19T03:57:45Z",
+      "url": "https://iceandfire.fandom.com/wiki/House_Seaworth",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27450",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27450",
+      "contentSha256": "ec67e02d3abad9d64fec96d30c93698fd543d355fdea249e1b070fddd1bddb63"
     }
   }
 }

@@ -158,21 +158,6 @@ const GOBLET: Stroke[] = [
 ]
 
 /**
- * What a third-stage person shows until its drawing child draws it (#1631):
- * a bust with a blank head and no face, the collar in the record's tint. It
- * stands for nobody, so it tells a reader nothing.
- */
-const PERSON: Stroke[] = [
-  { d: circle(80, 58, 19) },
-  { d: 'M72 76 V88 M88 76 V88', role: 'soft' },
-  { d: 'M72 88 Q44 92 38 118 L36 150 M88 88 Q116 92 122 118 L124 150' },
-  { d: 'M64 90 Q80 104 96 90', role: 'accent' },
-  { d: 'M56 112 Q60 130 58 148 M104 112 Q100 130 102 148', role: 'soft' },
-  { d: 'M30 150 H130', role: 'ambient' },
-  shadow(80, 154, 46),
-]
-
-/**
  * Game of Thrones' drawings, keyed by the id of the record each was drawn
  * for. The Winterfell household's are in `winterfell.ts` (#854), the
  * southern cast's in `south.ts` (#1051), the Night's Watch's in `wall.ts`
@@ -191,11 +176,10 @@ const PERSON: Stroke[] = [
  * Landing cast is drawn in `court.ts` (#1642), its Robb's war and Riverlands
  * cast in `riverlands.ts` (#1643), its Essos cast in `essos.ts` (#1647),
  * Arya's group, the Brotherhood Without Banners, in `brotherhood.ts` (#1644),
- * its Jaime, Brienne and Harrenhal cast in `riverlands.ts` (#1645) and its
+ * its Jaime, Brienne and Harrenhal cast in `riverlands.ts` (#1645), its
  * Wall and beyond cast, the brothers of Chett's plot in `wall.ts` and the
- * wildlings in `wildlings.ts` (#1646), and its Bran's road and Theon cast,
- * Myranda, in `north.ts` (#1649); its other casts show `PERSON` until
- * their drawing children draw them.
+ * wildlings in `wildlings.ts` (#1646), its Dragonstone cast in `stormlands.ts`
+ * (#1648) and its Bran's road and Theon cast, Myranda, in `north.ts` (#1649).
  * `satisfies` rather than an annotation, so `ArtId` below stays the literal
  * keys.
  */
@@ -218,10 +202,6 @@ export const DRAWINGS = {
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': DRAGON_EGG,
-  // #1640: the third stage's Dragonstone cast.
-  'axell-florent': PERSON,
-  'alester-florent': PERSON,
-  'edric-storm': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */
