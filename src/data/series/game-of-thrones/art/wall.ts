@@ -912,8 +912,102 @@ const DALBRIDGE_BOW: Stroke[] = [
 ]
 
 /**
- * The first season's Night's Watch (#1052) and the second season's rangers
- * (#1474), keyed by record id.
+ * A long-hafted axe stood on the butt of its haft: the bearded head with
+ * its edge, the poll behind it, the bindings low on the haft.
+ */
+const LONG_AXE: Stroke[] = [
+  { d: 'M77 26 H83 V150 H77 Z' },
+  { d: 'M77 32 L60 24 Q48 46 60 70 L77 60', role: 'accent' },
+  { d: 'M83 30 H90 V58 H83', role: 'soft' },
+  { d: 'M64 34 Q58 47 64 60', role: 'soft' },
+  { d: 'M77 120 L83 116 M77 128 L83 124 M77 136 L83 132', role: 'soft' },
+  {
+    d: 'M81 76 l2 -2 M81 112 l2 -2 M81 124 l2 -2 M81 136 l2 -2',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Small Paul: the long-hafted axe he straps to his back, which he charges
+ * the Other with in Samwell I of A Storm of Swords (chapter 162; A Wiki of
+ * Ice and Fire, Small Paul). The record is the books'. The accent is the
+ * axe's head.
+ */
+const SMALL_PAUL_AXE: Stroke[] = [...LONG_AXE, shadow(80, 154, 26)]
+
+/**
+ * Dirk: his dirk laid across a whetstone, the blade's far edge soft. He
+ * takes his name from the weapon, which he sharpens every night without a
+ * word, in the prologue of A Storm of Swords (chapter 144; A Wiki of Ice
+ * and Fire, Dirk). The record is the books'. The accent is the blade.
+ */
+const DIRK_WHETSTONE: Stroke[] = [
+  {
+    d: 'M30 132 L104 132 L118 120 L44 120 Z M30 132 V140 H104 L118 128 V120 M104 132 V140',
+  },
+  { d: 'M54 104 L122 86 L136 84 L124 94 L58 112', role: 'accent' },
+  { d: 'M58 108 L128 89', role: 'soft' },
+  { d: 'M52 102 L48 94 L54 92 L60 112 L62 120 L56 122 Z' },
+  { d: 'M52 106 L24 114 L26 120 L56 112' },
+  { d: circle(21, 118, 4) },
+  { d: 'M32 112 l2 6 M40 110 l2 6', role: 'soft' },
+  { d: 'M106 136 l5 -4 M112 132 l5 -4', role: 'ambient' },
+  shadow(74, 146, 50),
+]
+
+/**
+ * A forearm raised out of a black sleeve, the hand gone and the stump
+ * bound round in leather: the sleeve with its cuff, its folds soft and its
+ * far side hatched.
+ */
+const STUMP: Stroke[] = [
+  { d: 'M44 150 Q48 120 56 104 H104 Q112 120 116 150' },
+  { d: 'M54 104 Q80 96 106 104 Q108 98 104 94 Q80 88 56 94 Q52 98 54 104 Z' },
+  { d: 'M66 93 L68 60 Q70 46 80 46 Q90 46 92 60 L94 93' },
+  {
+    d: 'M68 62 L92 54 M68 72 L93 64 M68 82 L94 74 M70 50 L90 62',
+    role: 'accent',
+  },
+  { d: 'M64 116 Q66 132 62 148 M96 116 Q94 132 98 148', role: 'soft' },
+  {
+    d: 'M100 118 l6 -4 M103 130 l6 -4 M106 142 l6 -4 M54 124 l6 -4 M52 138 l6 -4',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Ollo Lophand: the stump of the hand he lost for thieving in Tyrosh, as
+ * Chett remembers it in the prologue (chapter 144); A Dance with Dragons
+ * has it bound in leather (A Wiki of Ice and Fire, Ollo Lophand). The
+ * record is the books'. The accent is the leather.
+ */
+const OLLO_STUMP: Stroke[] = [...STUMP, shadow(80, 154, 40)]
+
+/**
+ * Clubfoot Karl: a pair of boots, the right one turned in on a club foot,
+ * its heel built up. Samwell II (chapter 177) has him a large man with a
+ * clubfoot (A Wiki of Ice and Fire, Clubfoot Karl); the boots are drawn by
+ * eye. The record is the books'. The accent is the club foot's boot.
+ */
+const KARL_BOOTS: Stroke[] = [
+  { d: 'M30 66 H52 V130 Q68 132 72 142 V150 H30 Z' },
+  { d: 'M30 76 H52 M30 140 H72', role: 'soft' },
+  {
+    d: 'M108 66 H130 V124 Q134 134 128 140 V150 H100 Q92 150 94 142 Q96 134 108 128 Z',
+    role: 'accent',
+  },
+  { d: 'M108 76 H130 M98 140 H128', role: 'soft' },
+  {
+    d: 'M46 88 l5 -3 M46 102 l5 -3 M46 116 l5 -3 M124 88 l5 -3 M124 102 l5 -3 M124 116 l5 -3',
+    role: 'ambient',
+  },
+  shadow(80, 154, 56),
+]
+
+/**
+ * The first season's Night's Watch (#1052), the second season's rangers
+ * (#1474) and the third season's brothers of Chett's plot (#1646), keyed
+ * by record id.
  */
 export const WALL_DRAWINGS = {
   'jeor-mormont': BEAR,
@@ -945,6 +1039,10 @@ export const WALL_DRAWINGS = {
   'stonesnake': STONESNAKE_CLIMB,
   'ebben': EBBEN_SADDLE,
   'dalbridge': DALBRIDGE_BOW,
+  'small-paul': SMALL_PAUL_AXE,
+  'dirk': DIRK_WHETSTONE,
+  'ollo-lophand': OLLO_STUMP,
+  'clubfoot-karl': KARL_BOOTS,
 } satisfies Drawings
 
 /** The Night's Watch drawn again later in the story. */
@@ -1313,6 +1411,39 @@ export const wallRedrawn: Redrawings = {
       chapter: 142,
       value: [
         ...moved(SADDLE, 'rotate(180 80 110)'),
+        { d: 'M10 152 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'small-paul': [
+    // The axe fallen flat on the snow: the Other kills him as he carries
+    // Sam, in Samwell I (chapter 162). The record is the books', and
+    // "Valar Dohaeris" (episode 21), where the show reaches the aftermath
+    // of the Fist, orders it.
+    {
+      episode: 21,
+      chapter: 162,
+      value: [
+        ...moved(
+          LONG_AXE,
+          'translate(80 140) rotate(-80) scale(0.9) translate(-72 -88)',
+        ),
+        shadow(80, 156, 62),
+      ],
+    },
+  ],
+  'ollo-lophand': [
+    // The arm laid down on its side: Coldhands' ravens kill the deserters
+    // in the haunted forest, and Summer finds the largest of the bodies,
+    // its hand missing and the stump bound in leather, in Bran I of A Dance
+    // with Dragons (chapter 276). The record is the books', and "First of
+    // His Name" (episode 35), where the show ends the mutineers at
+    // Craster's Keep, orders it.
+    {
+      episode: 35,
+      chapter: 276,
+      value: [
+        ...moved(STUMP, 'translate(2 16) rotate(-90 80 100)'),
         { d: 'M10 152 H150', role: 'ambient', dashed: true },
       ],
     },

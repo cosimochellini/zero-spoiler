@@ -10,6 +10,8 @@ avvisa dei filler in arrivo: vedi “Occhio ai filler”):
    primi.
 3. **Chi conta adesso?** I personaggi al centro delle puntate appena viste.
 
+Sotto, “Appena incontrati” mostra i personaggi conosciuti da poco.
+
 È pensata per chi riprende la serie dopo una pausa e vuole ricordare dove era
 rimasto. Vale allo stesso modo per chi guarda l’anime e per chi legge il manga.
 
@@ -145,6 +147,24 @@ I protagonisti della saga citati nelle storie del blocco “Appena successo”.
 - Al massimo sei.
 - Per ognuno: disegno, nome e ruolo, come nelle schede che il sito ha già.
 - Ogni scheda porta alla pagina del personaggio.
+
+### 5. Appena incontrati
+
+Subito sotto “Chi conta adesso”: i personaggi che compaiono per la prima volta
+nella saga in cui sei, fino al tuo punto.
+
+- Contano tutti i personaggi, non solo i protagonisti. Uno che è anche in “Chi
+  conta adesso” compare in tutte e due le sezioni.
+- Ordinati dal più recente al più vecchio. A EP 784 sono Vinsmoke Yonji,
+  Vinsmoke Reiju e Gotti, e nessuno della saga di Zou.
+- Al massimo sei, con le stesse schede di “Chi conta adesso”: disegno, nome,
+  ruolo e il punto in cui compaiono.
+- La saga è la stessa del primo blocco, contata nella tua unità: episodio,
+  stagione o capitolo.
+- **Se nella saga non è ancora comparso nessuno**, mostra gli ultimi comparsi
+  nella saga precedente, con “Poco prima” accanto al titolo. Il titolo resta
+  “Appena incontrati”.
+- Se non c’è nessuno da mostrare, la sezione non compare.
 
 ## Come si comporta
 

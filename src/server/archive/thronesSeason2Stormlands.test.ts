@@ -120,7 +120,9 @@ const STAGES: {
   },
   { id: 'shireen-baratheon', episode: 49, chapter: 344, source: 'episode' },
   { id: 'brienne-of-tarth', episode: 15, chapter: 107, source: 'chapter' },
-  { id: 'brienne-of-tarth', episode: 34, chapter: 216, stage: 1 },
+  // Brienne's gown at Harrenhal, stage 3's drawing child (#1645).
+  { id: 'brienne-of-tarth', episode: 26, chapter: 181, stage: 1 },
+  { id: 'brienne-of-tarth', episode: 34, chapter: 216, stage: 2 },
   { id: 'margaery-tyrell', episode: 32, chapter: 204, source: 'episode' },
   {
     id: 'margaery-tyrell',

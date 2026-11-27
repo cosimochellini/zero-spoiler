@@ -1640,13 +1640,21 @@ const STAGES: {
   { id: 'loras-tyrell', episode: 60, chapter: 344, source: 'episode' },
   // The southern cast's later looks and deaths (#1286).
   { id: 'cersei-lannister', episode: 72, chapter: 344, source: 'episode' },
-  { id: 'jaime-lannister', episode: 56, chapter: 344, source: 'episode' },
+  // Jaime's golden hand, stage 3's drawing child (#1645).
+  { id: 'jaime-lannister', episode: 31, chapter: 253 },
+  {
+    id: 'jaime-lannister',
+    episode: 56,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
   {
     id: 'jaime-lannister',
     episode: 72,
     chapter: 344,
     source: 'episode',
-    stage: 1,
+    stage: 2,
   },
   { id: 'tywin-lannister', episode: 40, chapter: 221 },
   { id: 'joffrey-baratheon', episode: 7, chapter: 50 },
