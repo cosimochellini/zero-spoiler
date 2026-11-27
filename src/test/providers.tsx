@@ -84,6 +84,11 @@ export interface RenderOptions {
   series?: BookmarkSeries
 }
 
+/** The router a render was given, handed back beside the render result. */
+interface WithRouter {
+  router: TestRouter
+}
+
 /**
  * Renders a component inside the three contexts every part of the UI assumes.
  *
@@ -110,7 +115,7 @@ export function renderWithProviders(
     series,
     trial = false,
   }: RenderOptions = {},
-): RenderResult & { router: TestRouter } {
+): RenderResult & WithRouter {
   const router = contextRouter([path ?? `/one-piece/${locale}`])
   const pageSeries = series ?? seriesAt(path ?? `/one-piece/${locale}`)
 

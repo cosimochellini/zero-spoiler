@@ -26,12 +26,14 @@ function slots(page: FillerPageView): FillerSlot[] {
   return page.groups.flatMap((group) => group.runs.flatMap((run) => run.rows))
 }
 
-/** What a row says about itself, open or covered. */
-function entryOf(slot: FillerSlot): {
+interface FillerEntry {
   after?: number
   episode?: number
   revealedAtChapter: number
-} {
+}
+
+/** What a row says about itself, open or covered. */
+function entryOf(slot: FillerSlot): FillerEntry {
   return slot.open ? slot.record : slot.covered
 }
 

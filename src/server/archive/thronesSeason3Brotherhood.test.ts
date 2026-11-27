@@ -54,8 +54,13 @@ function character(id: string): Entity {
   return record
 }
 
+/** An entry, as far as `unitsOf` reads it. */
+interface Sourced {
+  source?: Unit
+}
+
 /** Each unit an entry is told in: both, or its `source` alone. */
-function unitsOf(entry: { source?: Unit }): Unit[] {
+function unitsOf(entry: Sourced): Unit[] {
   return UNITS.filter((unit) => (entry.source ?? unit) === unit)
 }
 

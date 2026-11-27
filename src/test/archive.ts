@@ -302,10 +302,16 @@ export function opFillerAheadOf(
   return core_fillerAheadOf(coreReader(OP_ARCHIVE, b, 'en'))
 }
 
+/** How a reader looks: their locale, and what they have reached. */
+interface CountdownLook {
+  locale: Locale
+  sees: (gate: Gated) => boolean
+}
+
 /** One Piece-bound fixture for countdownOf. */
 export function opCountdownOf(
   b: Bookmark,
-  look: { locale: Locale; sees: (gate: Gated) => boolean },
+  look: CountdownLook,
 ): ReturnType<typeof core_countdownOf> {
   return core_countdownOf({
     ...coreReader(OP_ARCHIVE, b, look.locale),

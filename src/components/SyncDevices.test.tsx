@@ -17,9 +17,12 @@ function endpoint(): MockInstance<typeof fetch> {
   })
 }
 
-function renderView(
-  handlers: { onBack?: () => void; onDone?: () => void } = {},
-): void {
+interface RenderViewOptions {
+  onBack?: () => void
+  onDone?: () => void
+}
+
+function renderView(handlers: RenderViewOptions = {}): void {
   renderWithProviders(
     <DevicesView
       ledeId="lede"

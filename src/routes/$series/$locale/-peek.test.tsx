@@ -9,8 +9,12 @@ import { renderWithProviders, settle } from '~/test/providers'
 
 import { type Lift, usePeek } from './-peek'
 
+interface ProbeProps {
+  lift: Lift<CharacterView>
+}
+
 /** Two veils on one slot, in miniature: one press asks twice at once. */
-function Probe({ lift }: { lift: Lift<CharacterView> }): ReactElement {
+function Probe({ lift }: ProbeProps): ReactElement {
   const peek = usePeek(lift)
   const [names, setNames] = useState<string[]>([])
   const askTwice = async (): Promise<void> => {

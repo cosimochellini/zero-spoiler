@@ -24,7 +24,11 @@ const SERIES: BookmarkSeries = {
 
 const done = vi.fn<() => void>()
 
-function SeriesForm({ series }: { series: BookmarkSeries }): ReactElement {
+interface SeriesFormProps {
+  series: BookmarkSeries
+}
+
+function SeriesForm({ series }: SeriesFormProps): ReactElement {
   const bookmark = useBookmark()
   const value = useMemo(() => ({ ...bookmark, series }), [bookmark, series])
 

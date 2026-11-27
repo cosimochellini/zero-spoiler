@@ -24,15 +24,17 @@ function stubResizeObserver(): void {
   )
 }
 
+interface RowResult {
+  first: HTMLElement
+  scrollBy: ReturnType<typeof vi.fn<(options: ScrollToOptions) => void>>
+}
+
 /**
  * The bar's row at 320px in Italian: the box from x 52 to the window's edge,
  * with its padding (4px, 16px). "Personaggi" scrolled out at the start,
  * "Cariche", the current page, cut at the edge (284 to 350).
  */
-function row(): {
-  first: HTMLElement
-  scrollBy: ReturnType<typeof vi.fn<(options: ScrollToOptions) => void>>
-} {
+function row(): RowResult {
   const box = document.createElement('nav')
   const first = document.createElement('a')
   const ranks = document.createElement('a')

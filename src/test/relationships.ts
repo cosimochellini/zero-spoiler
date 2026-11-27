@@ -10,6 +10,14 @@ import type {
 import type { Source } from '~/lib/progress/spoiler'
 import { OP_ARCHIVE } from '~/test/archive'
 
+interface RelationshipArchiveOptions {
+  extraCharacters?: string[]
+  snapshots?: Timeline<Relationship[]>
+  source?: Source
+  targetOpens?: number
+  targetSource?: Source
+}
+
 /** A tiny real dated-field archive, independent of the pilot's cast. */
 export function relationshipArchive({
   extraCharacters = [],
@@ -17,13 +25,7 @@ export function relationshipArchive({
   targetSource,
   targetOpens = 2,
   snapshots,
-}: {
-  extraCharacters?: string[]
-  snapshots?: Timeline<Relationship[]>
-  source?: Source
-  targetOpens?: number
-  targetSource?: Source
-} = {}): SeriesArchive {
+}: RelationshipArchiveOptions = {}): SeriesArchive {
   const text = { en: 'A connection.', it: 'Un legame.' }
   const owner: Entity = {
     id: 'owner',

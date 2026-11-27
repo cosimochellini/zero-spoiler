@@ -19,8 +19,13 @@ import { characterPage } from './pages.server'
 import { placePage } from './placePage.server'
 import { pageReader, readerFor as readerIn } from './reader.server'
 
+/** A page's detail, as far as these tests read it. */
+interface UnitDetail {
+  unit?: string
+}
+
 /** A page's own detail, a ship's included. */
-function detailOf(page: unknown): undefined | { unit?: string } {
+function detailOf(page: unknown): undefined | UnitDetail {
   if (typeof page !== 'object' || page === null) {
     return undefined
   }

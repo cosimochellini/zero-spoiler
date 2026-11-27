@@ -7,6 +7,11 @@ import { renderWithProviders, settle } from '~/test/providers'
 
 import { OnboardingLanding } from './OnboardingLanding'
 
+/** The one field of an observer entry the section reads. */
+interface Intersection {
+  isIntersecting: boolean
+}
+
 describe('demo drawing section', () => {
   it('loads the demo once on viewport entry and changes drawing steps locally', async () => {
     let enter: (() => void) | undefined
@@ -15,7 +20,7 @@ describe('demo drawing section', () => {
       'IntersectionObserver',
       class {
         observe = observe
-        constructor(notify: (entries: { isIntersecting: boolean }[]) => void) {
+        constructor(notify: (entries: Intersection[]) => void) {
           enter = () => {
             notify([{ isIntersecting: true }])
           }

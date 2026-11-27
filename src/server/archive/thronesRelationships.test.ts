@@ -342,16 +342,24 @@ function byId(a: string, b: string): number {
   return a.localeCompare(b)
 }
 
+/** A snapshot's counts: its episode, and its chapter when one is pinned. */
+interface SnapshotCounts {
+  chapter?: number
+  episode: number
+}
+
 /** A snapshot's number in one unit; a chapter left unpinned counts as none. */
-function dateIn(
-  entry: { chapter?: number; episode: number },
-  unit: Source,
-): number {
+function dateIn(entry: SnapshotCounts, unit: Source): number {
   return unit === 'episode' ? entry.episode : (entry.chapter ?? 0)
 }
 
+interface UnitAtResult {
+  at: number
+  unit: Source
+}
+
 /** The unit a bookmark counts in and its number there, seasons as episodes. */
-function unitAt(bookmark: Bookmark): { at: number; unit: Source } {
+function unitAt(bookmark: Bookmark): UnitAtResult {
   if (bookmark === null) {
     throw new Error('An edge bookmark is never empty')
   }

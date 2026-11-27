@@ -119,6 +119,12 @@ function fogOf(
   return fog
 }
 
+/** A name a record goes by, with the record. */
+interface RecordName {
+  entity: Entity
+  name: string
+}
+
 /**
  * The names in one locale that a reader has not reached, each with its
  * record, less any a reached record goes by.
@@ -127,7 +133,7 @@ function unreachedNames(
   at: Reveal,
   locale: Locale,
   entities: Entity[],
-): { entity: Entity; name: string }[] {
+): RecordName[] {
   const taken = reachedNames(at, locale, entities)
 
   return entities.flatMap((entity) =>
@@ -369,15 +375,19 @@ function wordFogOf(
   return fog
 }
 
+/** One region or form of a series' own words, with what files and names it. */
+interface WordFiled {
+  filed: Entity[]
+  owners: Entity[]
+  said: string[]
+}
+
 /**
  * Each region and form of a series' own words: what says it, its id and its
  * label in every locale, the places filed under it, and the records a leak
  * of it names: those places, or the word itself when none is filed.
  */
-function wordsFiled(
-  archive: SeriesArchive,
-  words: OwnPlaceWords,
-): { filed: Entity[]; owners: Entity[]; said: string[] }[] {
+function wordsFiled(archive: SeriesArchive, words: OwnPlaceWords): WordFiled[] {
   const tables = [
     ['region', words.regions],
     ['form', words.forms],

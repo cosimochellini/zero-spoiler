@@ -110,8 +110,13 @@ function otherThan(source: Source): Source {
   return source === 'episode' ? 'chapter' : 'episode'
 }
 
+/** A row of a table of saga labels, as far as `names` reads it. */
+interface NamedRow {
+  name: string
+}
+
 /** The names of a table of saga labels. */
-function names(rows: { name: string }[]): string[] {
+function names(rows: NamedRow[]): string[] {
   return rows.map(({ name }) => name)
 }
 
