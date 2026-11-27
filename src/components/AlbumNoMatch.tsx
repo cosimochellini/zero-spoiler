@@ -8,6 +8,15 @@ import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { type FruitParams, fruitParams } from '~/lib/search/fruitParams'
 import type { FruitBandView } from '~/lib/view/records'
 
+/** The plates on the page, and the picks the clear button resets. */
+interface AlbumNoMatchProps {
+  /** The plates on the page: the picked kind's, or all of them. */
+  bands: FruitBandView[]
+  fieldId: string
+  onParams: (next: FruitParams, replace: boolean) => void
+  params: FruitParams
+}
+
 /**
  * What stands in for the album while the query finds no open fruit: the
  * button that clears it, and how many fruits are under fog, if any.
@@ -17,13 +26,7 @@ export function AlbumNoMatch({
   fieldId,
   onParams,
   params,
-}: {
-  /** The plates on the page: the picked kind's, or all of them. */
-  bands: FruitBandView[]
-  fieldId: string
-  onParams: (next: FruitParams, replace: boolean) => void
-  params: FruitParams
-}): ReactElement {
+}: AlbumNoMatchProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const { bookmark } = useBookmark()
   const covered = bands.reduce((sum, band) => sum + band.covered.length, 0)

@@ -4,15 +4,23 @@ import type { ReactElement } from 'react'
 import { ArchivePage } from '~/components/ArchivePage'
 import { CatalogueSection } from '~/components/CatalogueSection'
 import { FillerCatalogue } from '~/components/FillerCatalogue'
-import { FillerCountdown } from '~/components/FillerCountdown'
+import {
+  FillerCountdown,
+  type FillerCountdownProps,
+} from '~/components/FillerCountdown'
 import { FillerRanges } from '~/components/FillerRanges'
 import { FillerLegend, FillerStrip } from '~/components/FillerStrip'
 import { VisitorBanner } from '~/components/VisitorBanner'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import { useBookmark, useBookmarkSeries } from '~/lib/progress/BookmarkContext'
 import { absoluteEpisodeOf, modeOf } from '~/lib/progress/episode'
-import type { FillerPageView, FillerRowView } from '~/lib/view/filler'
+import type { FillerPageView } from '~/lib/view/filler'
 import { space } from '~/styles/tokens.stylex'
+
+/** The page the server built, and how to lift a covered entry. */
+interface FillerGuideProps extends Pick<FillerCountdownProps, 'peek'> {
+  page: FillerPageView
+}
 
 /**
  * The filler guide, a map of the whole series. It is not in the bar; the
@@ -24,13 +32,7 @@ import { space } from '~/styles/tokens.stylex'
  * under fog past the bookmark like every other page. With no bookmark the
  * server draws it at the end of the demo, under the visitor banner (#1432).
  */
-export function FillerGuide({
-  page,
-  peek,
-}: {
-  page: FillerPageView
-  peek: (handle: string) => Promise<FillerRowView>
-}): ReactElement {
+export function FillerGuide({ page, peek }: FillerGuideProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const { bookmark } = useBookmark()
   const { aired, countdown, groups, marks, skipGroups, unnumbered } = page
@@ -81,14 +83,11 @@ export function FillerGuide({
   )
 }
 
+/** The run's length, and its marks. */
+type OverviewProps = Pick<FillerPageView, 'aired' | 'marks'>
+
 /** The whole series as one strip, lower on the page, with its key. */
-function Overview({
-  aired,
-  marks,
-}: {
-  aired: number
-  marks: FillerPageView['marks']
-}): ReactElement {
+function Overview({ aired, marks }: OverviewProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const { bookmark } = useBookmark()
   const series = useBookmarkSeries()

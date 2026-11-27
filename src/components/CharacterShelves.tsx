@@ -93,6 +93,14 @@ export function CharacterShelves({
   )
 }
 
+/** What the shelves need, once the browser has asked for them. */
+interface ShelvesProps extends Omit<
+  CharacterShelvesProps,
+  'shelfCount' | 'shelves'
+> {
+  shelves: Promise<Shelves> | Shelves
+}
+
 /**
  * The shelves once they are here. Keyed and labelled by position rather than
  * by the arc's id: a covered shelf has no id to use, and the one it used to
@@ -105,14 +113,7 @@ function Shelves({
   needle,
   onRetry,
   peek,
-}: {
-  featured: Set<string>
-  fieldId: string
-  needle: string
-  onRetry: () => void
-  peek: (handle: string) => Promise<CharacterView>
-  shelves: Promise<Shelves> | Shelves
-}): ReactElement {
+}: ShelvesProps): ReactElement {
   const t = useT()
   const sections = useShelves(shelves)
 
@@ -191,11 +192,16 @@ function useShelves(source: Promise<Shelves> | Shelves): Shelves {
   return source instanceof Promise ? use(source) : source
 }
 
+/** How many shelves are on their way. */
+interface ShelvesPendingProps {
+  count: number
+}
+
 /**
  * The shelves' height before they arrive, so the page does not jump when they
  * do. Once they arrive, their real height lets Back restore the long list.
  */
-function ShelvesPending({ count }: { count: number }): ReactElement {
+function ShelvesPending({ count }: ShelvesPendingProps): ReactElement {
   const t = useT()
 
   return (

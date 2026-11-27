@@ -175,10 +175,16 @@ export function pathsOf(legs: Leg[], orientation: Orientation): string[] {
 /** The point before a leg's last: where the next leg bends from. */
 const BEFORE_LAST = -2
 
+/** The points either side of a leg that its curve bends to, if any. */
+interface CurveOfOptions {
+  lead: Point | undefined
+  trail: Point | undefined
+}
+
 /** A curve through these points, as drawn, with a point either side to bend to. */
 function curveOf(
   points: Point[],
-  { lead, trail }: { lead: Point | undefined; trail: Point | undefined },
+  { lead, trail }: CurveOfOptions,
   orientation: Orientation,
 ): string {
   const drawn = points.map((point) => project(point, orientation))

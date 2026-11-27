@@ -5,6 +5,13 @@ import { styles } from '~/components/PortEntry.styles'
 import { RecordTile } from '~/components/RecordTile'
 import type { RecordView, Slot } from '~/lib/view/records'
 
+/** The records filed, how to peek at a covered one, and the band's title. */
+interface FiledHereProps {
+  filed: Slot<RecordView>[]
+  peekRecord: (handle: string) => Promise<RecordView>
+  title: string
+}
+
 /**
  * The records the archive files at a place, or the places a ship reaches.
  * Each tile keeps its own fog: a swordsman who reaches the restaurant four
@@ -20,11 +27,7 @@ export function FiledHere({
   filed,
   peekRecord,
   title,
-}: {
-  filed: Slot<RecordView>[]
-  peekRecord: (handle: string) => Promise<RecordView>
-  title: string
-}): null | ReactElement {
+}: FiledHereProps): null | ReactElement {
   const titleId = useId()
 
   if (filed.length === 0) {
