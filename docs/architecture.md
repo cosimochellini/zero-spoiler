@@ -388,29 +388,31 @@ whose show gates are in season 4 (#852), with the stage's steps of six earlier
 characters. The stage-3 characters show the shared `PERSON` placeholder until
 their drawing children (#1631) draw them: King's Landing in `court.ts` (#1642),
 Robb's war and the Riverlands in `riverlands.ts` (#1643), Essos in `essos.ts`
-(#1647) and Arya's group in `brotherhood.ts` (#1644). Robb's war and the
-Riverlands (#1635) adds ten characters, five the books' alone, one the show's
-and four both media's, with the stage's steps of three season-1 characters. The
-Wall and beyond (#1638) adds eleven characters, eight of them the books' alone:
-Mance Rayder, Tormund and Orell, Styr, Dalla, Val and Jarl from Mance's host,
-and Small Paul and three mutineers of Craster's Keep, with the stage's steps of
-Jon Snow, Rast, Chett, Ygritte and Gilly. Arya, the Brotherhood and the Hound
-(#1636) adds eight outlaws and their allies, all the books' alone (Anguy is in
-the show but never named in the pages read), with the stage's steps of seven
-earlier characters, drawn in #1644. Jaime, Brienne and Harrenhal (#1637) adds
-two characters, one both media's and one the books' alone, with the stage's
-steps of five earlier records. Dragonstone (#1640) adds three, all the books'
-alone (Axell and Alester Florent, Edric Storm), with stage-3 steps on Davos
-Seaworth. Bran's road and Theon (#1641) adds Myranda, the show's alone, moves
-Ramsay Snow's show gate to episode 30, where his name is first said, and adds
-the stage's steps of Bran, Osha and Theon, Bran's passing beyond the Wall
-keeping its later book chapter (#852). The stage's places (#1630) are the 13 a
-scene of the stage is set in: Astapor and Yunkai in both media, ten the book's
-alone, and the Nightfort, which the show visits and the book only names (#1252),
-and the 7 both media name and neither visits, each with its own drawing;
-Harrenhal, the Fist of the First Men, Craster's Keep, the Dreadfort and Flea
-Bottom take the stage's changes as dated `visits` entries, and Harrenhal, the
-Fist, Astapor and Yunkai a drawing stage, and Maidenpool a books-only one.
+(#1647), Arya's group in `brotherhood.ts` (#1644) and the Jaime, Brienne and
+Harrenhal cast, Qyburn and Steelshanks Walton, in `riverlands.ts` (#1645).
+Robb's war and the Riverlands (#1635) adds ten characters, five the books'
+alone, one the show's and four both media's, with the stage's steps of three
+season-1 characters. The Wall and beyond (#1638) adds eleven characters, eight
+of them the books' alone: Mance Rayder, Tormund and Orell, Styr, Dalla, Val and
+Jarl from Mance's host, and Small Paul and three mutineers of Craster's Keep,
+with the stage's steps of Jon Snow, Rast, Chett, Ygritte and Gilly. Arya, the
+Brotherhood and the Hound (#1636) adds eight outlaws and their allies, all the
+books' alone (Anguy is in the show but never named in the pages read), with the
+stage's steps of seven earlier characters, drawn in #1644. Jaime, Brienne and
+Harrenhal (#1637) adds two characters, one both media's and one the books'
+alone, with the stage's steps of five earlier records. Dragonstone (#1640) adds
+three, all the books' alone (Axell and Alester Florent, Edric Storm), with
+stage-3 steps on Davos Seaworth. Bran's road and Theon (#1641) adds Myranda, the
+show's alone, moves Ramsay Snow's show gate to episode 30, where his name is
+first said, and adds the stage's steps of Bran, Osha and Theon, Bran's passing
+beyond the Wall keeping its later book chapter (#852). The stage's places
+(#1630) are the 13 a scene of the stage is set in: Astapor and Yunkai in both
+media, ten the book's alone, and the Nightfort, which the show visits and the
+book only names (#1252), and the 7 both media name and neither visits, each with
+its own drawing; Harrenhal, the Fist of the First Men, Craster's Keep, the
+Dreadfort and Flea Bottom take the stage's changes as dated `visits` entries,
+and Harrenhal, the Fist, Astapor and Yunkai a drawing stage, and Maidenpool a
+books-only one.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -654,11 +656,11 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Characters             | 261                                                                                     |
 | Places                 | 107                                                                                     |
 | Saga modules           | 3                                                                                       |
-| Line drawings          | 371, one per record and 3 for the seasons' headings, plus 242 redrawings of 181 records |
+| Line drawings          | 371, one per record and 3 for the seasons' headings, plus 245 redrawings of 182 records |
 | Chronicle stories      | 1344, for 226 characters                                                                |
-| Dated timelines        | 1219                                                                                    |
+| Dated timelines        | 1220                                                                                    |
 | Affiliation steps      | 307                                                                                     |
-| Status steps           | 465                                                                                     |
+| Status steps           | 466                                                                                     |
 | Later visits to places | 16                                                                                      |
 
 <!-- End of the generated counts. -->

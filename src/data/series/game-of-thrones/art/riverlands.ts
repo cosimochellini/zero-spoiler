@@ -921,6 +921,69 @@ const FALLEN_BELL_CROWN: Stroke[] = [
   { d: 'M8 158 H152', role: 'ambient', dashed: true },
 ]
 
+/** The wall peg Qyburn's robe hangs from, empty once it has fallen. */
+const ROBE_PEG: Stroke = { d: `${circle(80, 24, 4)} M80 28 V34`, role: 'soft' }
+
+/**
+ * Qyburn: a grey robe hung from a peg, frayed at the hem, with nothing at
+ * its collar: the healer at Harrenhal whose maester's chain the Citadel
+ * took. "You're no maester. Where's your chain?", Jaime asks him in "Kissed
+ * by Fire" (episode 25); the books have Roose Bolton set him to clean
+ * Jaime's stump in Jaime IV (chapter 175). The accent is the bare collar,
+ * where the chain would lie.
+ */
+const BARE_ROBE: Stroke[] = [
+  ROBE_PEG,
+  { d: 'M66 42 Q80 34 94 42' },
+  {
+    d: 'M66 42 Q56 46 48 56 Q36 80 32 112 L46 116 Q50 96 54 82 Q50 116 46 150 L52 146 L58 152 L64 146 L70 152 L76 146 L82 152 L88 146 L94 152 L100 146 L106 152 L114 148 Q110 116 106 82 Q110 96 114 116 L128 112 Q124 80 112 56 Q104 46 94 42',
+  },
+  { d: 'M66 42 Q80 56 94 42', role: 'accent' },
+  {
+    d: 'M66 58 Q64 100 60 140 M94 58 Q96 100 100 140 M80 56 V146',
+    role: 'soft',
+  },
+  { d: 'M32 112 Q39 108 46 116 M114 116 Q121 108 128 112', role: 'soft' },
+  {
+    d: 'M104 66 l5 -3 M106 82 l5 -3 M108 122 l5 -3 M110 136 l5 -3 M118 90 l5 -3',
+    role: 'ambient',
+  },
+  shadow(80, 160, 40),
+]
+
+/** The ridge down the shin of a steel greave. */
+const GREAVE_RIDGE = 'M15 8 Q19 52 15 98'
+
+/**
+ * One steel greave, its knee cop at the origin and its foot at y 100; its
+ * ridge is drawn apart, so that one greave can carry the accent.
+ */
+const GREAVE: Stroke[] = [
+  { d: 'M0 0 Q14 -16 28 0 Q14 8 0 0 Z' },
+  { d: 'M28 -2 Q38 0 36 10 Q30 8 26 4' },
+  {
+    d: 'M2 8 Q-6 34 0 56 Q4 76 2 92 L4 100 H26 L28 92 Q26 76 30 56 Q36 34 26 8',
+  },
+  { d: 'M2 92 Q14 98 28 92 M-2 28 H-6 M0 70 H-4', role: 'soft' },
+  { d: 'M21 24 l6 -3 M22 40 l6 -3 M22 56 l6 -3 M21 72 l6 -3', role: 'ambient' },
+]
+/**
+ * Steelshanks Walton: a pair of steel greaves stood side by side, each with
+ * its knee cop and its wing, the ridge down the shin and the strap stubs,
+ * the far side hatched. A Wiki of Ice and Fire gives the steel greaves he
+ * wears over his long legs as the reason for his name; he leads Jaime's
+ * escort out of Harrenhal in Jaime VI (chapter 188). The books' alone. The
+ * accent is the ridge of the nearer greave.
+ */
+const STEEL_GREAVES: Stroke[] = [
+  ...moved([...GREAVE, { d: GREAVE_RIDGE, role: 'soft' }], 'translate(36 46)'),
+  ...moved(
+    [...GREAVE, { d: GREAVE_RIDGE, role: 'accent' }],
+    'translate(90 50)',
+  ),
+  shadow(80, 154, 52),
+]
+
 /** The first season's Riverlands and kingsroad cast (#1057), keyed by record id. */
 export const RIVERLANDS_DRAWINGS = {
   'jason-mallister': EAGLE_HELM,
@@ -960,6 +1023,9 @@ export const RIVERLANDS_DRAWINGS = {
   'roslin-frey': BRIDAL_VEIL,
   'ryman-frey': FLAGON_CUP,
   'aegon-frey': FALLEN_BELL_CROWN,
+  // The third season's Jaime, Brienne and Harrenhal cast (#1645).
+  'qyburn': BARE_ROBE,
+  'steelshanks-walton': STEEL_GREAVES,
 } satisfies Drawings
 
 /** The Riverlands cast drawn again later in the story. */
@@ -1499,6 +1565,35 @@ export const riverlandsRedrawn: Redrawings = {
           'translate(40 -8) rotate(-90 112 150)',
         ),
         { d: 'M6 160 H154', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'qyburn': [
+    // The peg empty and the robe fallen in a heap on the floor, its frayed
+    // hem out to one side, a sleeve to the other, the bare collar still the
+    // accent: he dies in the fall of King's Landing in "The Bells" (episode
+    // 72). The show's alone (the books leave him alive); chapter 344, their
+    // last, only orders it. How he dies is not drawn.
+    {
+      episode: 72,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ROBE_PEG,
+        {
+          d: 'M20 150 L24 142 L30 148 L34 140 L40 146 Q48 116 72 118 Q86 108 100 120 Q118 118 126 134 Q140 138 142 150 Z',
+        },
+        {
+          d: 'M48 128 Q54 138 52 150 M72 118 Q80 132 76 150 M100 120 Q98 136 104 150',
+          role: 'soft',
+        },
+        {
+          d: 'M126 134 Q138 124 148 128 L146 136 Q138 134 134 140',
+          role: 'soft',
+        },
+        { d: 'M60 126 Q72 136 86 124', role: 'accent' },
+        { d: 'M110 132 l5 -3 M116 142 l5 -3 M126 146 l5 -3', role: 'ambient' },
+        { d: 'M8 152 H152', role: 'ambient', dashed: true },
       ],
     },
   ],

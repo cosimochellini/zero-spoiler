@@ -10,7 +10,7 @@ import {
   welcomeOwed,
 } from '~/lib/progress/welcome'
 import type { DemoEntry, HomeView, OnboardingView } from '~/lib/view/records'
-import { coveredRecord, waypoint } from '~/test/fixtures'
+import { character, coveredRecord, waypoint } from '~/test/fixtures'
 import { renderWithProviders } from '~/test/providers'
 import { settleDelay } from '~/test/settle'
 
@@ -70,6 +70,8 @@ const home: HomeView = {
   before: false,
   cast: [],
   filler: null,
+  met: [],
+  metBefore: false,
   point: { mode: 'episode', episode: 650 },
   saga,
   stories: [],
@@ -294,6 +296,32 @@ describe('LandingPage', () => {
     expect(screen.getByRole('listitem', { current: 'step' })).toHaveTextContent(
       'S05E01',
     )
+  })
+
+  it.each([
+    { metBefore: false, label: 'from this arc' },
+    { metBefore: true, label: 'from the arc before' },
+  ])('shows who was just met $label', ({ metBefore }) => {
+    const gotti = character({ id: 'gotti', name: 'Gotti' })
+    renderWithProviders(
+      <LandingPage landing={{ home: { ...home, met: [gotti], metBefore } }} />,
+      { bookmark: { mode: 'episode', episode: 650 } },
+    )
+
+    const section = screen.getByRole('region', { name: 'Just met' })
+
+    expect(section).toHaveTextContent('Gotti')
+    expect(section.textContent.includes('Just before')).toBe(metBefore)
+  })
+
+  it('leaves the just-met section off with no one to show', () => {
+    renderWithProviders(<LandingPage landing={{ home }} />, {
+      bookmark: { mode: 'episode', episode: 650 },
+    })
+
+    expect(
+      screen.queryByRole('heading', { name: 'Just met' }),
+    ).not.toBeInTheDocument()
   })
 
   it('has no filler warning with none ahead', () => {

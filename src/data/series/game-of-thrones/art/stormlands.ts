@@ -378,6 +378,30 @@ const BREASTPLATE: Stroke[] = [
 const BRIENNE_PLATE: Stroke[] = BREASTPLATE
 
 /**
+ * The gown Brienne is made to wear at Harrenhal, on the same stand as her
+ * plate: broad at the shoulders, long sleeves, a full skirt to the floor,
+ * the far side hatched. The accent is the fur along its neckline.
+ */
+const HARRENHAL_GOWN: Stroke[] = [
+  { d: `${ellipse(80, 36, 8, 4)} M80 40 V48`, role: 'soft' },
+  {
+    d: 'M54 54 Q80 46 106 54 L122 62 Q128 82 124 100 L116 98 Q116 84 110 72 Q106 86 100 100 Q120 124 128 150 Q80 162 32 150 Q40 124 60 100 Q54 86 50 72 Q44 84 44 98 L36 100 Q32 82 38 62 Z',
+  },
+  { d: 'M54 54 q4 5 8 1 t8 2 t10 1 t10 -1 t8 -2 t8 -1', role: 'accent' },
+  { d: 'M60 100 Q80 108 100 100', role: 'soft' },
+  {
+    d: 'M70 106 Q62 128 58 154 M80 108 V158 M90 106 Q98 128 102 154',
+    role: 'soft',
+  },
+  { d: 'M36 100 q4 3 8 -2 M116 98 q4 3 8 -2', role: 'soft' },
+  {
+    d: 'M108 122 l6 -3 M114 136 l6 -3 M118 64 l5 -3 M120 78 l5 -3',
+    role: 'ambient',
+  },
+  shadow(80, 160, 50),
+]
+
+/**
  * A folded cloak of many colours, the stripes of King Renly's Rainbow
  * Guard across its folds, lying on the ground; the stripes are the accent.
  */
@@ -731,6 +755,15 @@ export const stormlandsRedrawn: Redrawings = {
     // keeps her plate, so the stage is the book's alone and episode 15,
     // where she flees, only orders it.
     { episode: 15, chapter: 107, source: 'chapter', value: RAINBOW_CLOAK },
+    // A gown on the stand where the plate was: her captors take her armour
+    // at Harrenhal and give her an old pink dress to wear, which she sups
+    // with Roose Bolton in, in "The Climb" (episode 26), and fights the bear
+    // in, in "The Bear and the Maiden Fair" (episode 27). In the books
+    // Qyburn brings her a pink gown for the same supper, in Jaime V
+    // (chapter 181). A costume that takes the place of her object (#1645).
+    // Neither medium gives her plate back before Jaime arms her, so it
+    // holds until the next stage.
+    { episode: 26, chapter: 181, value: HARRENHAL_GOWN },
     // Oathkeeper, one of the two swords forged from Ice, which Jaime gives
     // her when he sends her after Sansa, in "Oathkeeper" (episode 34) and in
     // Jaime IX of A Storm of Swords (chapter 216). The ripple of its steel

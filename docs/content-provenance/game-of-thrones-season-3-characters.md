@@ -747,11 +747,14 @@ order them.
   25 / 175, shared. The books' maester background and Brave Companions are in
   none of the cached chapter synopses through 196 and are not filed. He leaves
   Harrenhal with Jaime at 27 / 188 and reaches King's Landing in "Mhysa" (30);
-  neither changes a field. Italian "Qyburn" (Personaggi).
+  neither changes a field. Italian "Qyburn" (Personaggi). His death in "The
+  Bells" (72), the show's alone, is filed by #1645, `deceased` with his
+  drawing's stage, chapter 344 ordering it (#1238).
 - Steelshanks Walton: books only, role captain in Roose Bolton's service, House
   Bolton, alive. His log holds Jaime VI: the escort, the turn back for Brienne,
   his men's crossbows against the bear. Italian kept: Italian Wikipedia has no
-  entry and the Mondadori form was not checked.
+  entry and the Mondadori form was not checked. #1645 moves his tint from red to
+  azure: his drawing is a pair of steel greaves, with nothing red on it.
 
 ### Pending
 

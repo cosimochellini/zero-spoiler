@@ -131,6 +131,7 @@ export const enDictionary = {
   'home.storyAt.book': 'About book {book}, chapter {chapter}',
   'home.more': 'More stories',
   'home.cast': 'Who matters now',
+  'home.met': 'Just met',
 
   'mark.unset': 'Set episode',
   'mark.unsetShort': 'EP ?',
