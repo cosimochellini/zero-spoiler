@@ -609,7 +609,7 @@ const EDRIC_LEECHES: Stroke[] = [
  * The circle of flowers round the fox's head, one flower left out where
  * its chin pokes through.
  */
-const FLOWER_RING = `${circle(120, 72, 3)} ${circle(113, 91.3, 3)} ${circle(67, 91.3, 3)} ${circle(60, 72, 3)} ${circle(67, 52.7, 3)} ${circle(90, 42, 3)} ${circle(113, 52.7, 3)}`
+const FLOWER_RING = `${circle(120, 72, 3)} ${circle(113, 91.3, 3)} ${circle(67, 91.3, 3)} ${circle(60, 72, 3)} ${circle(62.8, 59.3, 3)} ${circle(90, 42, 3)} ${circle(117.2, 59.3, 3)}`
 
 /**
  * A banner of House Florent as the books blazon it: the fox's head, with
