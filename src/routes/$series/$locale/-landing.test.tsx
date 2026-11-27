@@ -3,6 +3,7 @@ import { afterEach, beforeAll, describe, expect, it } from 'vitest'
 
 import { expireCookie, parseCookieHeader } from '~/lib/cookies'
 import { ONE_PIECE_BOOKMARK } from '~/lib/progress/series'
+import type { Gated } from '~/lib/progress/spoiler'
 import {
   dismissWelcome,
   markWelcome,
@@ -19,10 +20,7 @@ import { preloadLanding } from './-landing.branches'
 const saga = waypoint({ name: 'Dressrosa', summary: 'The toy kingdom.' })
 
 /** A gate at one episode and the chapter beside it. */
-function at(episode: number): {
-  revealedAtChapter: number
-  revealedAtEpisode: number
-} {
+function at(episode: number): Gated {
   return { revealedAtEpisode: episode, revealedAtChapter: episode * 2 }
 }
 

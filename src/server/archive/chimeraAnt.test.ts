@@ -237,12 +237,15 @@ describe.each(DEATHS)(
   },
 )
 
+/** One dated field of one character. */
+interface StepRef {
+  field: 'affiliation' | 'relationships' | 'role' | 'status'
+  id: string
+}
+
 /** A dated step as one string a reader at a bookmark sees, in its locale. */
 function stepAt(
-  {
-    id,
-    field,
-  }: { field: 'affiliation' | 'relationships' | 'role' | 'status'; id: string },
+  { id, field }: StepRef,
   bookmark: Bookmark,
   locale: Locale,
 ): string | undefined {

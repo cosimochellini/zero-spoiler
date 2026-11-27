@@ -90,18 +90,20 @@ function season(episode: number): ShelfView {
   })
 }
 
+interface BookOptions {
+  featuredCovered?: CoveredRecord[]
+  featuredOpen?: SearchableCharacter[]
+  locale?: Locale
+  shelves?: ShelfView[]
+}
+
 /** Characters, with the shelves already here rather than streaming. */
 function book({
   featuredCovered = [robinCovered],
   featuredOpen = [luffy, nami],
   locale = 'en',
   shelves = [eastBlue, alabasta],
-}: {
-  featuredCovered?: CoveredRecord[]
-  featuredOpen?: SearchableCharacter[]
-  locale?: Locale
-  shelves?: ShelfView[]
-} = {}): void {
+}: BookOptions = {}): void {
   renderWithProviders(
     <CharacterGrid
       featuredCovered={featuredCovered}
@@ -162,14 +164,19 @@ function shelf(name: RegExp): HTMLElement {
   return screen.getByRole('region', { name })
 }
 
+/** The one field of an observer entry the shelves read. */
+interface Intersection {
+  isIntersecting: boolean
+}
+
 function observeShelves(): (list: Element) => void {
   const observed: {
-    callback: (entries: { isIntersecting: boolean }[]) => void
+    callback: (entries: Intersection[]) => void
     target: Element
   }[] = []
 
   class Observer {
-    private notify: (entries: { isIntersecting: boolean }[]) => void
+    private notify: (entries: Intersection[]) => void
     disconnect = vi.fn<() => void>()
     observe = vi.fn<(target: Element) => void>((target) => {
       observed.push({ callback: this.notify, target })
@@ -177,7 +184,7 @@ function observeShelves(): (list: Element) => void {
     takeRecords = (): IntersectionObserverEntry[] => []
     unobserve = vi.fn<(target: Element) => void>()
 
-    constructor(notify: (entries: { isIntersecting: boolean }[]) => void) {
+    constructor(notify: (entries: Intersection[]) => void) {
       this.notify = notify
     }
   }

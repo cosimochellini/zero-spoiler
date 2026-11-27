@@ -15,7 +15,11 @@ const WORDS: FogTitles = {
   one: 'characters.foggedTitleOne',
 }
 
-function Band({ count }: { count: number }): ReactElement {
+interface BandProps {
+  count: number
+}
+
+function Band({ count }: BandProps): ReactElement {
   return (
     <FogBand
       count={count}

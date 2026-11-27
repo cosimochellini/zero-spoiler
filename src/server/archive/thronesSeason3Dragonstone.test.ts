@@ -158,10 +158,13 @@ function character(id: string): Entity {
   return record
 }
 
+/** An entry's unit, beside the entry. */
+interface InUnit {
+  unit: Unit
+}
+
 /** Each entry of these lists in each unit that tells it. */
-function byUnit<T extends { source?: Unit }>(
-  list: T[],
-): (T & { unit: Unit })[] {
+function byUnit<T extends { source?: Unit }>(list: T[]): (InUnit & T)[] {
   return list.flatMap((entry) =>
     UNITS.filter((unit) => (entry.source ?? unit) === unit).map((unit) => ({
       ...entry,

@@ -47,15 +47,17 @@ const SHEET: AbilitySheetView = {
   filed: 4,
 }
 
+interface RenderAlbumResult {
+  onParams: ReturnType<
+    typeof vi.fn<(next: AbilityParams, replace: boolean) => void>
+  >
+}
+
 /** The album under Hunter x Hunter, with the picks it is given. */
 async function renderAlbum(
   params: AbilityParams = {},
   locale: Locale = 'en',
-): Promise<{
-  onParams: ReturnType<
-    typeof vi.fn<(next: AbilityParams, replace: boolean) => void>
-  >
-}> {
+): Promise<RenderAlbumResult> {
   const onParams = vi.fn<(next: AbilityParams, replace: boolean) => void>()
   await renderUnderSeries(
     <AbilityAlbum
@@ -74,8 +76,12 @@ async function renderAlbum(
   return { onParams }
 }
 
+interface HeldProps {
+  sheet: AbilitySheetView
+}
+
 /** The album with its picks held in state, as the route holds them. */
-function Held({ sheet }: { sheet: AbilitySheetView }): ReactElement {
+function Held({ sheet }: HeldProps): ReactElement {
   const [params, setParams] = useState<AbilityParams>({})
 
   return (

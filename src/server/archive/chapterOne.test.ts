@@ -45,21 +45,28 @@ describe.each(CASES)('$id in $locale', ({ id, locale }) => {
   })
 })
 
+/** A dated entry, as far as `waitsForGing` reads it. */
+interface GingEntry {
+  source?: string
+  value: unknown
+}
+
+/** A relationship's target, as far as `waitsForGing` reads it. */
+interface RelationTarget {
+  character?: string
+}
+
 /**
  * Kite's manga selection waits for Ging's record (chapter 66); being
  * unanchored, it vouches for no pair either. Anime readers have Ging already.
  */
-function waitsForGing(
-  field: string,
-  { source, value }: { source?: string; value: unknown },
-): boolean {
+function waitsForGing(field: string, { source, value }: GingEntry): boolean {
   return (
     field === 'relationships'
     && source === 'chapter'
     && Array.isArray(value)
     && value.some(
-      (relation: { character?: string }) =>
-        relation.character === 'ging-freecss',
+      (relation: RelationTarget) => relation.character === 'ging-freecss',
     )
   )
 }
@@ -79,9 +86,14 @@ const CHRONICLE_CHAPTERS: Record<number, number> = {
 /** Kite's later stages: Crazy Slots, his death and his return (#1325). */
 const STAGE_CHAPTERS: Record<number, number> = { 82: 193, 85: 199, 136: 316 }
 
+/** A dated entry with the episode it is filed at. */
+interface EpisodeEntry extends GingEntry {
+  episode: number
+}
+
 function expectedChapter(
   field: Parameters<typeof waitsForGing>[0],
-  entry: Parameters<typeof waitsForGing>[1] & { episode: number },
+  entry: EpisodeEntry,
 ): number {
   // Chimera Ant: the survey at 77/186, and Kite's death and the Neferpitou
   // row at 85/199 (#1020, #1021).

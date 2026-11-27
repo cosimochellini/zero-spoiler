@@ -134,15 +134,18 @@ function follows(holding: Holding, previous: Holding): boolean {
   return later && holding.chapter >= previous.chapter
 }
 
+/** The seat a holding is of, its archive and the label a failure names. */
+interface HoldingContext {
+  archive: SeriesArchive
+  label: string
+  seat: Seat
+}
+
 /** What is wrong with one holding of a seat, after the one before it. */
 function holdingFaults(
   holding: Holding,
   previous: Holding | undefined,
-  {
-    archive,
-    label,
-    seat,
-  }: { archive: SeriesArchive; label: string; seat: Seat },
+  { archive, label, seat }: HoldingContext,
 ): string[] {
   const ceiling = {
     revealedAtEpisode: archive.series.episodeCeiling,
@@ -170,11 +173,17 @@ function holdingFaults(
   ]
 }
 
+/** The body a seat is of, and its archive. */
+interface SeatContext {
+  archive: SeriesArchive
+  body: PowerBody
+}
+
 /** What is wrong with one seat of a body. */
 function seatFaults(
   seat: Seat,
   label: string,
-  { archive, body }: { archive: SeriesArchive; body: PowerBody },
+  { archive, body }: SeatContext,
 ): string[] {
   return [
     ...(noEarlier(seat.told, body) ? [] : [`${label} opens before its body`]),

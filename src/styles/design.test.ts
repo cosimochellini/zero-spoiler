@@ -54,10 +54,15 @@ function unquoted(value: string): string {
     : value
 }
 
+/** A `key: value` line of YAML, with its indent. */
+interface YamlEntry {
+  indent: number
+  key: string
+  value: string
+}
+
 /** A `key: value` line of YAML with its indent, or `null` for any other line. */
-function entryOf(
-  line: string,
-): null | { indent: number; key: string; value: string } {
+function entryOf(line: string): null | YamlEntry {
   const text = line.trim()
   const colon = text.indexOf(':')
   const key = text.slice(0, colon)
@@ -277,10 +282,15 @@ function bullets(text: string): string[] {
   return allCollapsed(text.split('\n- ').slice(1))
 }
 
+/** A `**The X Rule.** body` paragraph, with its `##` section. */
+interface DesignRule {
+  body: string
+  name: string
+  section: string
+}
+
 /** Every `**The X Rule.** body` paragraph, with its `##` section. */
-function rulesOf(
-  prose: string,
-): { body: string; name: string; section: string }[] {
+function rulesOf(prose: string): DesignRule[] {
   return prose.split('\n## ').flatMap((section) =>
     section.split('\n\n').flatMap((paragraph) => {
       const rule = /^\*\*(?<name>The .+? Rule)\.\*\* (?<body>.+)$/su.exec(

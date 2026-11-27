@@ -236,15 +236,23 @@ function otherAtTheEnd(source: Unit): Reader {
     : reader('episode', archive.series.episodeCeiling)
 }
 
+/** An entry, as far as `unitsOf` reads it. */
+interface Sourced {
+  source?: Unit
+}
+
 /** The units that tell an entry: both, or its `source` alone. */
-function unitsOf(entry: { source?: Unit }): Unit[] {
+function unitsOf(entry: Sourced): Unit[] {
   return UNITS.filter((unit) => (entry.source ?? unit) === unit)
 }
 
-function pinOf(
-  entry: { chapter: number; episode: number },
-  unit: Unit,
-): number {
+/** An entry's chapter and episode. */
+interface PinCounts {
+  chapter: number
+  episode: number
+}
+
+function pinOf(entry: PinCounts, unit: Unit): number {
   return unit === 'chapter' ? entry.chapter : entry.episode
 }
 

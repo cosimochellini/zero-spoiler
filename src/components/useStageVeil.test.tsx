@@ -18,16 +18,14 @@ import { useStageVeil } from './useStageVeil'
 
 const record = character({ name: 'Spoiler body', ...at(1089) })
 
-/** A record page's first band, cut down to what the veil decides. */
-function Stage({
-  peek,
-  slot,
-  withLink = false,
-}: {
+interface StageProps {
   peek: (handle: string) => Promise<CharacterView>
   slot: Slot<CharacterView>
   withLink?: boolean
-}): ReactElement {
+}
+
+/** A record page's first band, cut down to what the veil decides. */
+function Stage({ peek, slot, withLink = false }: StageProps): ReactElement {
   const veil = useStageVeil(slot, peek)
 
   return (
