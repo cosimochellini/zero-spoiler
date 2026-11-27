@@ -1,5 +1,5 @@
 import { type DialPoint, dialSees, latestStep } from '~/components/dial'
-import type { TourBonds, TourCard } from '~/lib/view/tour'
+import type { TourBonds, TourCard, TourLink } from '~/lib/view/tour'
 
 /**
  * The open cards by group: an affiliation's head, so "House Stark, small
@@ -21,14 +21,16 @@ export function groupsAt(
   return [...groups]
 }
 
+/** A link in a character's list, with the name of the person it names. */
+interface NamedLink extends TourLink {
+  name: string
+}
+
 /** The people a character's list names at the point, each once they open. */
-export function linksAt(
-  bonds: TourBonds,
-  at: DialPoint,
-): { id: string; name: string; type: string }[] {
+export function linksAt(bonds: TourBonds, at: DialPoint): NamedLink[] {
   const people = new Map(bonds.people.map((person) => [person.id, person]))
   const snapshot = latestStep(bonds.snapshots, at)
-  const links: { id: string; name: string; type: string }[] = []
+  const links: NamedLink[] = []
   if (snapshot === undefined) {
     return links
   }

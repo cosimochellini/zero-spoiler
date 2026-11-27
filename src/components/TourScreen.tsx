@@ -28,6 +28,14 @@ const VIEWS: Record<TourStepKey, (props: ViewProps) => null | ReactElement> = {
 /** The slider's id, so the episode read out above it names it. */
 const SLIDER_ID = 'tour-point'
 
+export interface TourScreenProps {
+  load: LoadTour
+  onPoint: (value: number) => void
+  point: number
+  series: HubSeries[]
+  step: TourStep
+}
+
 /**
  * The tour's screen (#1703): one series' demo at the tour's point, drawn as
  * the wiki draws it. A record the point has reached is open, with the facts
@@ -41,13 +49,7 @@ export function TourScreen({
   point,
   series,
   step,
-}: {
-  load: LoadTour
-  onPoint: (value: number) => void
-  point: number
-  series: HubSeries[]
-  step: TourStep
-}): ReactElement {
+}: TourScreenProps): ReactElement {
   const { locale } = useLocale()
   const t = useT()
   const tour = useTour(load, step.series, locale)
@@ -87,18 +89,19 @@ export function TourScreen({
   )
 }
 
+interface ScreenBarProps extends Pick<TourScreenProps, 'onPoint'> {
+  last: number
+  name: string
+  value: number
+}
+
 /** The screen's head: the series, the episode it stands at, and the slider. */
 function ScreenBar({
   last,
   name,
   onPoint,
   value,
-}: {
-  last: number
-  name: string
-  onPoint: (value: number) => void
-  value: number
-}): ReactElement {
+}: ScreenBarProps): ReactElement {
   const t = useT()
 
   return (

@@ -8,11 +8,14 @@ import { activeAt, scrubbed, useTourScroll } from './useTourScroll'
 /** Every block's height in the window. */
 const HEIGHT = 1000
 
-/** A block whose box sits at `start` until the scroll moves it. */
-function blockAt(start: number): {
+/** A block, and the hand that moves it. */
+interface BlockAtResult {
   element: HTMLElement
   move: (top: number) => void
-} {
+}
+
+/** A block whose box sits at `start` until the scroll moves it. */
+function blockAt(start: number): BlockAtResult {
   let top = start
   const element = document.createElement('li')
   vi.spyOn(element, 'getBoundingClientRect').mockImplementation(

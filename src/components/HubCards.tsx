@@ -13,8 +13,12 @@ import { THEMES } from '~/styles/themes'
 /** The issue form a reader asks for a new series with (#1703). */
 export const REQUEST_URL = `${REPOSITORY}/issues/new?template=series.yml`
 
+interface StandingProps {
+  entry: HubSeries
+}
+
 /** Where the reader's bookmark on a series stands, and its counts. */
-function Standing({ entry }: { entry: HubSeries }): ReactElement {
+function Standing({ entry }: StandingProps): ReactElement {
   const t = useT()
 
   return (
@@ -91,17 +95,15 @@ const LOOK = {
   },
 } as const
 
+interface SeriesCardProps extends StandingProps {
+  size: CardSize
+}
+
 /**
  * A series a reader can open, lit in its own colours: small in the opening
  * row, one tap away, or a tall stage at the tour's close.
  */
-export function SeriesCard({
-  entry,
-  size,
-}: {
-  entry: HubSeries
-  size: CardSize
-}): ReactElement {
+export function SeriesCard({ entry, size }: SeriesCardProps): ReactElement {
   const { locale } = useLocale()
   const look = LOOK[size]
 
@@ -127,14 +129,13 @@ export function SeriesCard({
   )
 }
 
-/** A series announced but not open: no link, and the lights still off. */
-export function ComingCard({
-  name,
-  size,
-}: {
+interface ComingCardProps {
   name: string
   size: CardSize
-}): ReactElement {
+}
+
+/** A series announced but not open: no link, and the lights still off. */
+export function ComingCard({ name, size }: ComingCardProps): ReactElement {
   const t = useT()
   const look = LOOK[size]
 
