@@ -39,46 +39,6 @@ function Standing({ entry }: { entry: HubSeries }): ReactElement {
   )
 }
 
-/** A series in the opening row: small, in its own colours, one tap away. */
-export function Ticket({ entry }: { entry: HubSeries }): ReactElement {
-  const { locale } = useLocale()
-
-  return (
-    <Link
-      params={{ series: entry.slug, locale }}
-      to="/$series/$locale"
-      {...stylex.props(THEMES[entry.theme], styles.ticket, styles.lit)}
-    >
-      <span
-        aria-hidden="true"
-        {...stylex.props(styles.ticketArt)}
-      >
-        <SeriesEmblem slug={entry.slug} />
-      </span>
-      <div {...stylex.props(styles.copy, styles.besideArt)}>
-        <h2 {...stylex.props(styles.ticketName)}>{entry.name[locale]}</h2>
-        <Standing entry={entry} />
-      </div>
-    </Link>
-  )
-}
-
-/** A series announced but not open, in the opening row. */
-export function DarkTicket({ name }: { name: string }): ReactElement {
-  const t = useT()
-
-  return (
-    <div {...stylex.props(styles.ticket, styles.dark, styles.wordsOnly)}>
-      <div {...stylex.props(styles.copy, styles.wholeRow)}>
-        <h2 {...stylex.props(styles.ticketName, styles.unlitName)}>{name}</h2>
-        <span {...stylex.props(styles.mono, styles.point, styles.unset)}>
-          {t('hub.coming')}
-        </span>
-      </div>
-    </div>
-  )
-}
-
 /** The card that asks for a series the site does not have: a GitHub form. */
 export function RequestTicket(): ReactElement {
   const t = useT()
@@ -110,24 +70,57 @@ export function RequestTicket(): ReactElement {
   )
 }
 
-/** A series a reader can open: its tall stage, lit in its own colours. */
-export function Stage({ entry }: { entry: HubSeries }): ReactElement {
+/** Where a card stands: in the opening row, or among the closing stages. */
+export type CardSize = 'stage' | 'ticket'
+
+/** Each size's boxes, and the level its name takes under the section's. */
+const LOOK = {
+  stage: {
+    art: styles.art,
+    box: styles.stage,
+    copy: null,
+    Heading: 'h3',
+    name: styles.name,
+  },
+  ticket: {
+    art: styles.ticketArt,
+    box: styles.ticket,
+    copy: styles.besideArt,
+    Heading: 'h2',
+    name: styles.ticketName,
+  },
+} as const
+
+/**
+ * A series a reader can open, lit in its own colours: small in the opening
+ * row, one tap away, or a tall stage at the tour's close.
+ */
+export function SeriesCard({
+  entry,
+  size,
+}: {
+  entry: HubSeries
+  size: CardSize
+}): ReactElement {
   const { locale } = useLocale()
+  const look = LOOK[size]
 
   return (
     <Link
       params={{ series: entry.slug, locale }}
       to="/$series/$locale"
-      {...stylex.props(THEMES[entry.theme], styles.stage, styles.lit)}
+      {...stylex.props(THEMES[entry.theme], look.box, styles.lit)}
     >
       <span
         aria-hidden="true"
-        {...stylex.props(styles.art)}
+        {...stylex.props(look.art)}
       >
         <SeriesEmblem slug={entry.slug} />
       </span>
-      <div {...stylex.props(styles.copy)}>
-        <h3 {...stylex.props(styles.name)}>{entry.name[locale]}</h3>
+      <div {...stylex.props(styles.copy, look.copy)}>
+        <look.Heading {...stylex.props(look.name)}>
+          {entry.name[locale]}
+        </look.Heading>
         <Standing entry={entry} />
       </div>
     </Link>
@@ -135,17 +128,34 @@ export function Stage({ entry }: { entry: HubSeries }): ReactElement {
 }
 
 /** A series announced but not open: no link, and the lights still off. */
-export function DarkStage({ name }: { name: string }): ReactElement {
+export function ComingCard({
+  name,
+  size,
+}: {
+  name: string
+  size: CardSize
+}): ReactElement {
   const t = useT()
+  const look = LOOK[size]
 
   return (
-    <div {...stylex.props(styles.stage, styles.dark)}>
-      <span
-        aria-hidden="true"
-        {...stylex.props(styles.fog)}
-      />
+    <div
+      {...stylex.props(
+        look.box,
+        styles.dark,
+        size === 'ticket' && styles.wordsOnly,
+      )}
+    >
+      {size === 'stage' && (
+        <span
+          aria-hidden="true"
+          {...stylex.props(styles.fog)}
+        />
+      )}
       <div {...stylex.props(styles.copy, styles.wholeRow)}>
-        <h3 {...stylex.props(styles.name, styles.unlitName)}>{name}</h3>
+        <look.Heading {...stylex.props(look.name, styles.unlitName)}>
+          {name}
+        </look.Heading>
         <span {...stylex.props(styles.mono, styles.point, styles.unset)}>
           {t('hub.coming')}
         </span>

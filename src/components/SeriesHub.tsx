@@ -2,12 +2,10 @@ import * as stylex from '@stylexjs/stylex'
 import type { ReactElement } from 'react'
 
 import {
-  DarkStage,
-  DarkTicket,
+  ComingCard,
   REQUEST_URL,
   RequestTicket,
-  Stage,
-  Ticket,
+  SeriesCard,
 } from '~/components/HubCards'
 import { HubTour } from '~/components/HubTour'
 import { styles } from '~/components/SeriesHub.styles'
@@ -17,7 +15,8 @@ import type { ComingSeries, HubSeries } from '~/lib/view/hub'
 import { TOUR_ID } from '~/lib/view/tourSteps'
 import { settleStyles } from '~/styles/settle'
 
-interface HubProps {
+/** What the hub's sections are handed: the open series and the coming ones. */
+export interface HubProps {
   /** The series filed but not open: a name, no link, no count. */
   coming: ComingSeries[]
   series: HubSeries[]
@@ -87,7 +86,10 @@ function Opening({ coming, series }: HubProps): ReactElement {
             key={entry.slug}
             {...stylex.props(settle(index))}
           >
-            <Ticket entry={entry} />
+            <SeriesCard
+              entry={entry}
+              size="ticket"
+            />
           </li>
         ))}
         {coming.map((announced, index) => (
@@ -95,7 +97,10 @@ function Opening({ coming, series }: HubProps): ReactElement {
             key={announced.slug}
             {...stylex.props(settle(series.length + index))}
           >
-            <DarkTicket name={announced.name[locale]} />
+            <ComingCard
+              name={announced.name[locale]}
+              size="ticket"
+            />
           </li>
         ))}
         <li {...stylex.props(settle(series.length + coming.length))}>
@@ -141,7 +146,10 @@ function Choose({ coming, series }: HubProps): ReactElement {
             key={entry.slug}
             {...stylex.props(styles.item)}
           >
-            <Stage entry={entry} />
+            <SeriesCard
+              entry={entry}
+              size="stage"
+            />
           </li>
         ))}
         {coming.map((announced) => (
@@ -149,7 +157,10 @@ function Choose({ coming, series }: HubProps): ReactElement {
             key={announced.slug}
             {...stylex.props(styles.item)}
           >
-            <DarkStage name={announced.name[locale]} />
+            <ComingCard
+              name={announced.name[locale]}
+              size="stage"
+            />
           </li>
         ))}
       </ul>

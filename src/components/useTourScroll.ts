@@ -22,7 +22,7 @@ export interface TourElements {
 const NEAR = '800px 0px'
 
 // The screen stands beside the words from this width; under it, above them.
-export const SIDE_BY_SIDE_QUERY = '(min-width: 56rem)'
+const SIDE_BY_SIDE_QUERY = '(min-width: 56rem)'
 
 /** Where a step's words are read: mid-window, or under the screen on a phone. */
 const LINE = { beside: 0.5, under: 0.75 }
