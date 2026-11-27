@@ -122,6 +122,7 @@ export const itDictionary: Dictionary = {
   'home.storyAt.book': 'Circa libro {book}, capitolo {chapter}',
   'home.more': 'Altre storie',
   'home.cast': 'Chi conta adesso',
+  'home.met': 'Appena incontrati',
 
   'mark.unset': 'Imposta episodio',
   'mark.unsetShort': 'EP ?',

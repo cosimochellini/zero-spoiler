@@ -98,6 +98,7 @@ export function homePage(r: Reader): HomeView {
       }
     }),
     cast: cast.map((character) => characterOf(character, r)),
+    ...justMet(saga, previous, r),
   }
 }
 
@@ -137,6 +138,41 @@ function leadsNamed(shown: FiledStory[], told: Entity, r: Reader): Entity[] {
     .toSorted(byValue(([, count]) => count, byNumber({ desc: true })))
     .slice(0, CAST_COUNT)
     .flatMap(([id]) => r.archive.getCharacter(id) ?? [])
+}
+
+/**
+ * The characters just met, with the same fallback as the stories: with no one
+ * new in this arc yet, the last met in the one before. No upper bound is
+ * needed there either, because nothing reached is past this arc's start.
+ */
+function justMet(
+  saga: Entity,
+  previous: Entity | undefined,
+  r: Reader,
+): Pick<HomeView, 'met' | 'metBefore'> {
+  const here = metSince(saga, r)
+  const before = here.length === 0 && previous !== undefined
+  const met = before ? metSince(previous, r) : here
+
+  return {
+    met: met.map((character) => characterOf(character, r)),
+    metBefore: before && met.length > 0,
+  }
+}
+
+/**
+ * Just met: every character first met from the arc's start up to the
+ * bookmark, in the reader's own unit, the latest first. Floored at the arc so
+ * an arc that has only just begun does not reach back into older ones.
+ */
+function metSince(floor: Entity, r: Reader): Entity[] {
+  const from = r.threshold(floor)
+
+  return r
+    .order(r.archive.characters)
+    .filter((character) => r.sees(character) && r.threshold(character) >= from)
+    .toReversed()
+    .slice(0, CAST_COUNT)
 }
 
 /**

@@ -11,7 +11,8 @@ related_targets: ["src/routes/$series/$locale/-landing.tsx","src/components/Home
 
 **For:** the home answers three questions for a reader picking a series back
 up, in order: where am I, what just happened, who matters now
-(`docs/homepage.md`). The hub shows every wiki at a glance, offers a GitHub
+(`docs/homepage.md`), and under the last a row of the characters just met in
+the arc (owner, 2026-11-27). The hub shows every wiki at a glance, offers a GitHub
 form to request a new one, and walks a visitor through the features in a scroll
 tour before they pick a series (#1703).
 
