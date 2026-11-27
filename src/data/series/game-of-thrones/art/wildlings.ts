@@ -437,8 +437,11 @@ export const wildlingsRedrawn: Redrawings = {
       episode: 41,
       chapter: 282,
       value: [
-        ...moved(LUTE, 'translate(0 20) rotate(-90 80 100)'),
-        shadow(80, 158, 66),
+        ...moved(
+          LUTE,
+          'translate(80 120) rotate(-90) scale(0.85) translate(-83 -81)',
+        ),
+        shadow(80, 156, 62),
       ],
     },
     // The lute stood up again beside a shirt of bones: Melisandre tells
@@ -482,7 +485,10 @@ export const wildlingsRedrawn: Redrawings = {
       episode: 39,
       chapter: 199,
       value: [
-        ...moved(GREATSWORD, 'translate(8 60) rotate(-56 80 90)'),
+        ...moved(
+          GREATSWORD,
+          'translate(80 138) rotate(-56) scale(0.8) translate(-82 -90)',
+        ),
         shadow(80, 156, 64),
       ],
     },
@@ -513,14 +519,14 @@ export const wildlingsRedrawn: Redrawings = {
       chapter: 174,
       value: [
         {
-          d: 'M14 146 Q30 134 48 142 T84 140 T118 142 Q134 144 146 136',
+          d: 'M14 140 Q30 128 48 136 T84 134 T118 136 Q134 138 146 130',
           role: 'accent',
         },
         {
           d: `${ellipse(40, 138, 14, 4)} ${ellipse(42, 134, 10, 3)}`,
           role: 'soft',
         },
-        ...moved(SPIKES, 'translate(-10 18) rotate(48 128 128)'),
+        ...moved(SPIKES, 'translate(-14 12) rotate(48 128 128)'),
         { d: 'M10 152 H150', role: 'ambient', dashed: true },
       ],
     },

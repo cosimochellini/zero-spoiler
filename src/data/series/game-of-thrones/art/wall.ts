@@ -1424,7 +1424,10 @@ export const wallRedrawn: Redrawings = {
       episode: 21,
       chapter: 162,
       value: [
-        ...moved(LONG_AXE, 'translate(-6 54) rotate(-80 80 100)'),
+        ...moved(
+          LONG_AXE,
+          'translate(80 140) rotate(-80) scale(0.9) translate(-72 -88)',
+        ),
         shadow(80, 156, 62),
       ],
     },
@@ -1440,7 +1443,7 @@ export const wallRedrawn: Redrawings = {
       episode: 35,
       chapter: 276,
       value: [
-        ...moved(STUMP, 'translate(-4 30) rotate(-90 80 100)'),
+        ...moved(STUMP, 'translate(2 16) rotate(-90 80 100)'),
         { d: 'M10 152 H150', role: 'ambient', dashed: true },
       ],
     },
