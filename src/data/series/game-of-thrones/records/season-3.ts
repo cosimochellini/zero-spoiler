@@ -230,6 +230,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
       ],
+      chronicle: season3Chronicles['olenna-tyrell'],
     },
     'megga-tyrell': {
       relationships: season3Relationships['megga-tyrell'],
@@ -252,6 +253,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
       ],
+      chronicle: season3Chronicles['megga-tyrell'],
     },
     'alla-tyrell': {
       relationships: season3Relationships['alla-tyrell'],
@@ -274,6 +276,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
       ],
+      chronicle: season3Chronicles['alla-tyrell'],
     },
     'elinor-tyrell': {
       relationships: season3Relationships['elinor-tyrell'],
@@ -296,6 +299,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
       ],
+      chronicle: season3Chronicles['elinor-tyrell'],
     },
     'oberyn-martell': {
       relationships: season3Relationships['oberyn-martell'],
@@ -321,6 +325,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Martell', en: 'House Martell' },
         },
       ],
+      chronicle: season3Chronicles['oberyn-martell'],
     },
     'ellaria-sand': {
       relationships: season3Relationships['ellaria-sand'],
@@ -337,6 +342,7 @@ export const season3: ThronesSaga = {
           value: { it: 'Casa Martell', en: 'House Martell' },
         },
       ],
+      chronicle: season3Chronicles['ellaria-sand'],
     },
     // #1635: Robb's war and the Riverlands.
     'jeyne-westerling': {

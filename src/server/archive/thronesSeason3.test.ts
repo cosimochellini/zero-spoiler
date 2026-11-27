@@ -274,8 +274,9 @@ describe('the season’s leads', () => {
 
 /**
  * Every later death the King's Landing drawing child files on the group's
- * new records, with its drawing's stage (#1642); `source` for a death one
- * medium alone tells.
+ * new records, with its drawing's stage (#1642), and Alayaya's release, which
+ * the group's chronicles tell (#1660); `source` for a change one medium alone
+ * tells.
  */
 const CHANGES: {
   chapter: number
@@ -284,6 +285,14 @@ const CHANGES: {
   source?: 'chapter' | 'episode'
   value: CharacterStatus
 }[] = [
+  // Alayaya's release, which her chronicle tells at Tyrion I (#1660).
+  {
+    id: 'alayaya',
+    episode: 21,
+    chapter: 148,
+    source: 'chapter',
+    value: 'alive',
+  },
   { id: 'oberyn-martell', episode: 38, chapter: 214, value: 'deceased' },
   {
     id: 'olenna-tyrell',

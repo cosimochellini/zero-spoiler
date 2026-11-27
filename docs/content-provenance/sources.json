@@ -39621,6 +39621,16 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27156",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27156",
       "contentSha256": "68234679f4e70973323e5fc49abbe29d7445a652d9669e5fbb5b37cd65c1ad99"
+    },
+    "iaf-en-Sansa_Stark-26276.json": {
+      "locale": "en",
+      "title": "Sansa Stark",
+      "revision": 26276,
+      "revisionDate": "2023-01-30T22:36:48Z",
+      "url": "https://iceandfire.fandom.com/wiki/Sansa_Stark",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26276",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26276",
+      "contentSha256": "a7969ecceb2140fca0c62301b8c25ef7f02e162da8d19fef5573d1716c24e445"
     }
   }
 }
