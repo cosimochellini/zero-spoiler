@@ -744,7 +744,13 @@
         "got-en-A_Man_Without_Honor-740171.json",
         "got-en-The_Prince_of_Winterfell-740172.json",
         "got-en-Valar_Morghulis-740176.json",
-        "got-en-Talisa_Stark-728450.json"
+        "got-en-Talisa_Stark-728450.json",
+        "got-en-Dark_Wings,_Dark_Words-740180.json",
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json",
+        "got-en-Robb_Stark-749427.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -754,7 +760,14 @@
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_7",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_39",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_55"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_55",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_2",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_20",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_35",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_45",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_49",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
         ]
       }
     },
@@ -776,7 +789,13 @@
         "got-en-The_Old_Gods_and_the_New-740283.json",
         "got-en-A_Man_Without_Honor-740171.json",
         "got-en-The_Prince_of_Winterfell-740172.json",
-        "got-en-Valar_Morghulis-740176.json"
+        "got-en-Valar_Morghulis-740176.json",
+        "got-en-Dark_Wings,_Dark_Words-740180.json",
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-The_Climb-740184.json",
+        "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -787,7 +806,13 @@
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_7"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_7",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_20",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_35",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_45",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_49",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
         ]
       }
     },
@@ -966,12 +991,16 @@
         "got-en-The_Pointy_End-749071.json",
         "got-en-Grey_Wind-728151.json",
         "got-en-Greatjon_Umber-728516.json",
-        "iaf-en-Jon_II_-_A_Game_of_Thrones-24347.json"
+        "iaf-en-Jon_II_-_A_Game_of_Thrones-24347.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
-          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53"
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_49",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
         ]
       }
     },
@@ -1261,7 +1290,8 @@
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
-          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14"
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
         ]
       }
     },
@@ -1271,13 +1301,15 @@
         "got-en-Fire_and_Blood-723065.json",
         "got-en-Greatjon_Umber-728516.json",
         "got-en-Smalljon_Umber-739891.json",
-        "iaf-en-Robb_Stark's_Battle_Guard-25493.json"
+        "iaf-en-Robb_Stark's_Battle_Guard-25493.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
-          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
         ]
       }
     },
@@ -1291,17 +1323,25 @@
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
-          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
         ]
       }
     },
     "rickard-karstark": {
-      "sources": ["got-en-Rickard_Karstark-734793.json"],
+      "sources": [
+        "got-en-Rickard_Karstark-734793.json",
+        "got-en-Dark_Wings,_Dark_Words-740180.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-Robb_Stark-749427.json"
+      ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
-          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_20"
         ]
       }
     },
@@ -1328,12 +1368,15 @@
         "got-en-The_Pointy_End-749071.json",
         "got-en-Fire_and_Blood-723065.json",
         "got-en-Galbart_Glover-728142.json",
-        "iaf-en-Galbart_Glover-22533.json"
+        "iaf-en-Galbart_Glover-22533.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
-          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_45",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
         ]
       }
     },
@@ -1341,20 +1384,30 @@
       "sources": [
         "got-en-Robett_Glover-728143.json",
         "iaf-en-Robett_Glover-27280.json"
-      ]
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_35",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
     },
     "maege-mormont": {
       "sources": [
         "got-en-The_Pointy_End-749071.json",
         "got-en-Fire_and_Blood-723065.json",
         "got-en-Maege_Mormont-730693.json",
-        "iaf-en-Dacey_Mormont-26995.json"
+        "iaf-en-Dacey_Mormont-26995.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
-          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_45",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
         ]
       }
     },
@@ -1367,7 +1420,8 @@
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
-          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63"
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
         ]
       }
     },
@@ -1375,7 +1429,13 @@
       "sources": [
         "got-en-Wendel_Manderly-728262.json",
         "iaf-en-Wendel_Manderly-23482.json"
-      ]
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
     },
     "vayon-poole": {
       "sources": [
@@ -1656,16 +1716,30 @@
         "got-en-Robin_Arryn-727939.json",
         "got-en-The_Wolf_and_the_Lion-740156.json",
         "iaf-en-Lysa_Arryn-27348.json",
-        "iaf-en-Vardis_Egen-25295.json"
-      ]
+        "iaf-en-Vardis_Egen-25295.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
     },
     "robin-arryn": {
       "sources": [
         "got-en-A_Golden_Crown-749117.json",
         "got-en-Robin_Arryn-727939.json",
         "got-en-The_Wolf_and_the_Lion-740156.json",
-        "iaf-en-Robert_Arryn-23206.json"
-      ]
+        "iaf-en-Robert_Arryn-23206.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
     },
     "bronn": {
       "sources": [
@@ -1718,8 +1792,17 @@
         "got-en-Baelor-734837.json",
         "got-en-Stevron_Frey-728127.json",
         "got-en-Walder_Frey-728091.json",
-        "iaf-en-Walder_Frey-26270.json"
-      ]
+        "iaf-en-Walder_Frey-26270.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json",
+        "got-en-Mhysa-740189.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_49",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
     },
     "ros": {
       "sources": [
@@ -1991,8 +2074,15 @@
         "got-en-Fire_and_Blood-723065.json",
         "got-en-Marillion-735860.json",
         "iaf-en-Catelyn_V_-_A_Game_of_Thrones-24850.json",
-        "iaf-en-Marillion-27180.json"
-      ]
+        "iaf-en-Marillion-27180.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
     },
     "willis-wode": {
       "sources": [
@@ -2000,16 +2090,44 @@
         "got-en-Willis_Wode-728545.json",
         "iaf-en-Catelyn_V_-_A_Game_of_Thrones-24850.json",
         "iaf-en-Willis_Wode-15180.json"
-      ]
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
     },
     "donnel-waynwood": {
       "sources": [
         "iaf-en-Catelyn_Stark-26349.json",
         "iaf-en-Donnel_Waynwood-21212.json"
-      ]
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
     },
-    "nestor-royce": { "sources": ["iaf-en-Catelyn_Stark-26349.json"] },
-    "mya-stone": { "sources": ["iaf-en-Mya_Stone-26574.json"] },
+    "nestor-royce": {
+      "sources": ["iaf-en-Catelyn_Stark-26349.json"],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
+    },
+    "mya-stone": {
+      "sources": ["iaf-en-Mya_Stone-26574.json"],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
+    },
     "vardis-egen": {
       "sources": [
         "got-en-A_Golden_Crown-749117.json",
@@ -2196,14 +2314,22 @@
       "sources": [
         "iaf-en-Catelyn_V_-_A_Game_of_Thrones-24850.json",
         "iaf-en-Jason_Mallister-27174.json"
-      ]
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_45",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
     },
     "masha-heddle": {
       "sources": [
         "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
         "got-en-Masha_Heddle-728167.json",
         "iaf-en-Catelyn_V_-_A_Game_of_Thrones-24850.json",
-        "iaf-en-Masha_Heddle-26963.json"
+        "iaf-en-Masha_Heddle-26963.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
       ]
     },
     "kevan-lannister": {
@@ -2232,34 +2358,67 @@
       "sources": [
         "got-en-Baelor-734837.json",
         "got-en-Stevron_Frey-728127.json",
-        "iaf-en-Stevron_Frey-25134.json"
+        "iaf-en-Stevron_Frey-25134.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
       ]
     },
     "edmure-tully": {
       "sources": [
         "iaf-en-Brynden_Tully-27245.json",
         "iaf-en-Edmure_Tully-24011.json",
-        "iaf-en-Hoster_Tully-22486.json"
+        "iaf-en-Hoster_Tully-22486.json",
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-The_Climb-740184.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json",
+        "got-en-Robb_Stark-749427.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_7",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_39"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_39",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_2",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_20",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_35",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_49",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
         ]
       }
     },
     "hoster-tully": {
       "sources": [
         "iaf-en-Edmure_Tully-24011.json",
-        "iaf-en-Hoster_Tully-22486.json"
-      ]
+        "iaf-en-Hoster_Tully-22486.json",
+        "got-en-Walk_of_Punishment_(episode)-737648.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_2",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_35"
+        ]
+      }
     },
     "brynden-tully": {
       "sources": [
         "iaf-en-Brynden_Tully-27245.json",
-        "iaf-en-Catelyn_Stark-26349.json"
-      ]
+        "iaf-en-Catelyn_Stark-26349.json",
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json",
+        "got-en-Brynden_Tully-748924.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_20",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_35",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
     },
     "hot-pie": {
       "sources": [
@@ -2815,7 +2974,14 @@
         "got-en-The_Old_Gods_and_the_New-740283.json",
         "got-en-A_Man_Without_Honor-740171.json",
         "got-en-The_Prince_of_Winterfell-740172.json",
-        "got-en-Valar_Morghulis-740176.json"
+        "got-en-Valar_Morghulis-740176.json",
+        "got-en-Dark_Wings,_Dark_Words-740180.json",
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json",
+        "got-en-Robb_Stark-749427.json",
+        "got-en-Willem_Lannister-728229.json"
       ]
     },
     "amory-lorch": {
@@ -3284,20 +3450,120 @@
           "https://awoiaf.westeros.org/index.php/Ellaria_Sand"
         ]
       }
+    },
+    "jeyne-westerling": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_20",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_45",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
+    },
+    "rolph-spicer": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_45",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
+    },
+    "raynald-westerling": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_49",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
+    },
+    "willem-lannister": {
+      "sources": [
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-Willem_Lannister-728229.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_20"
+        ]
+      }
+    },
+    "martyn-lannister": {
+      "sources": [
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-Martyn_Lannister-728225.json",
+        "got-en-Willem_Lannister-728229.json"
+      ]
+    },
+    "lothar-frey": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_35",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_49",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
+    },
+    "walder-rivers": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_35",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
+    },
+    "roslin-frey": {
+      "sources": [
+        "got-en-The_Climb-740184.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json",
+        "got-en-Roslin_Tully-728505.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_35",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_49",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
+    },
+    "ryman-frey": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_49",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
+    },
+    "aegon-frey": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+        ]
+      }
     }
   },
   "omitted": {},
   "pending": {
-    "jeyne-westerling": "#1653",
-    "rolph-spicer": "#1653",
-    "raynald-westerling": "#1653",
-    "willem-lannister": "#1653",
-    "martyn-lannister": "#1653",
-    "lothar-frey": "#1653",
-    "walder-rivers": "#1653",
-    "roslin-frey": "#1653",
-    "ryman-frey": "#1653",
-    "aegon-frey": "#1653",
     "mance-rayder": "#1656",
     "tormund": "#1656",
     "orell": "#1656",

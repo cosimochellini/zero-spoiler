@@ -3754,6 +3754,150 @@ const essos3 = {
 } satisfies Record<string, Relationship>
 
 /**
+ * Stage 3's Robb's war and Riverlands cards for the season-2 cast (#1653):
+ * Talisa, in season 3 of the show. The new characters' own cards are in
+ * `season-3.relationships.ts`.
+ */
+const riverlands3 = {
+  taRobb22: {
+    character: 'robb-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'The king she married. His lords are losing faith in him, and Lord Karstark blames the turn of the war on their marriage.',
+      it: 'Il re che ha sposato. I suoi lord stanno perdendo fiducia in lui, e lord Karstark dà la colpa della piega della guerra al loro matrimonio.',
+    },
+  },
+  taCatelyn22: {
+    character: 'catelyn-stark',
+    type: { en: 'Husband’s mother', it: 'Madre del marito' },
+    summary: {
+      en: 'Robb’s mother, grieving her father and her missing sons. Talisa offers to help with her prayer wheel, and hears from her the story of Jon and the pox.',
+      it: 'La madre di Robb, in lutto per il padre e per i figli scomparsi. Talisa si offre di aiutarla con la ruota di preghiera, e da lei sente la storia di Jon e del vaiolo.',
+    },
+  },
+  taRobb23: {
+    character: 'robb-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'The king she married, who brings his host to Riverrun for his grandfather’s funeral.',
+      it: 'Il re che ha sposato, che porta il suo esercito a Delta delle Acque per il funerale del nonno.',
+    },
+  },
+  taCatelyn23: {
+    character: 'catelyn-stark',
+    type: { en: 'Husband’s mother', it: 'Madre del marito' },
+    summary: {
+      en: 'Robb’s mother, beside whom she watches the funeral from the bank.',
+      it: 'La madre di Robb, accanto a cui assiste al funerale dalla riva.',
+    },
+  },
+  taWillem23: {
+    character: 'willem-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'A young Lannister squire held in the cells, who watches in silence while she dresses the other boy’s hand.',
+      it: 'Un giovane scudiero Lannister rinchiuso nelle celle, che osserva in silenzio mentre lei medica la mano dell’altro ragazzo.',
+    },
+  },
+  taMartyn23: {
+    character: 'martyn-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'A young Lannister prisoner whose wounded hand she dresses. When he asks if Robb eats his enemies, she teases him, then tells him he is safe.',
+      it: 'Un giovane prigioniero Lannister a cui medica la mano ferita. Quando lui le chiede se Robb divori i nemici, lei lo prende in giro, poi gli dice che è al sicuro.',
+    },
+  },
+  taRobb25: {
+    character: 'robb-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'The king she married. She warns him that executing Lord Karstark will cost him the Karstark men; afterwards he admits she was right, and they study the map together.',
+      it: 'Il re che ha sposato. Lei lo avverte che giustiziare lord Karstark gli costerà gli uomini dei Karstark; dopo lui le ammette che aveva ragione, e studiano insieme la mappa.',
+    },
+  },
+  taCatelyn25: {
+    character: 'catelyn-stark',
+    type: { en: 'Husband’s mother', it: 'Madre del marito' },
+    summary: {
+      en: 'Robb’s mother, who joins her in warning Robb against executing Lord Karstark.',
+      it: 'La madre di Robb, che si unisce a lei nell’avvertire Robb di non giustiziare lord Karstark.',
+    },
+  },
+  taRickard25: {
+    character: 'rickard-karstark',
+    type: { en: 'Murderer', it: 'Assassino' },
+    summary: {
+      en: 'The Karstark lord who murdered the two boys she had tended. Robb beheaded him in the rain.',
+      it: 'Il lord dei Karstark che ha ucciso i due ragazzi che lei aveva curato. Robb lo ha decapitato sotto la pioggia.',
+    },
+  },
+  taWillem25: {
+    character: 'willem-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The silent Lannister squire from the cells, killed there by the Karstark men.',
+      it: 'Lo scudiero Lannister silenzioso delle celle, ucciso lì dagli uomini dei Karstark.',
+    },
+  },
+  taMartyn25: {
+    character: 'martyn-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The boy whose hand she dressed, stabbed in his cell by Lord Karstark.',
+      it: 'Il ragazzo a cui aveva medicato la mano, pugnalato nella cella da lord Karstark.',
+    },
+  },
+  taRobb27: {
+    character: 'robb-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'The king she married. In their tent on the road to the Twins she tells him she is carrying his child, and he is glad.',
+      it: 'Il re che ha sposato. Nella tenda, sulla strada per le Torri Gemelle, gli dice che aspetta un figlio da lui, e Robb ne è felice.',
+    },
+  },
+  taCatelyn27: {
+    character: 'catelyn-stark',
+    type: { en: 'Husband’s mother', it: 'Madre del marito' },
+    summary: {
+      en: 'Robb’s mother, who looks at her and Robb as she says that Lord Walder wanted one of his daughters married to a king.',
+      it: 'La madre di Robb, che guarda lei e Robb mentre dice che lord Walder voleva una delle sue figlie sposata a un re.',
+    },
+  },
+  taRobb29: {
+    character: 'robb-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'The king she married. At the wedding feast she told him that if their child was a boy they should name him Eddard. She was stabbed, and died in his arms.',
+      it: 'Il re che aveva sposato. Alla festa nuziale gli aveva detto che, se il figlio fosse stato un maschio, lo avrebbero chiamato Eddard. È stata pugnalata, ed è morta fra le sue braccia.',
+    },
+  },
+  taCatelyn29: {
+    character: 'catelyn-stark',
+    type: { en: 'Husband’s mother', it: 'Madre del marito' },
+    summary: {
+      en: 'Robb’s mother, who came to the Twins with them. She was killed in the same slaughter.',
+      it: 'La madre di Robb, venuta con loro alle Torri Gemelle. È stata uccisa nello stesso massacro.',
+    },
+  },
+  taWalder29: {
+    character: 'walder-frey',
+    type: { en: 'Host', it: 'Ospite che accoglie' },
+    summary: {
+      en: 'The lord of the Twins, who insulted her when she arrived. She was stabbed to death at his feast.',
+      it: 'Il signore delle Torri Gemelle, che l’ha insultata al suo arrivo. È stata uccisa a coltellate al suo banchetto.',
+    },
+  },
+  taEdmure29: {
+    character: 'edmure-tully',
+    type: { en: 'Husband’s uncle', it: 'Zio del marito' },
+    summary: {
+      en: 'Robb’s uncle, whose wedding brought them to the Twins.',
+      it: 'Lo zio di Robb, le cui nozze li hanno portati alle Torri Gemelle.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
+/**
  * Stage 3's King's Landing cards for the season-2 cast (#1651): season 3
  * and A Storm of Swords through chapter 52, episodes 21 to 30 and chapters
  * 144 to 196. The new characters' own cards are in
@@ -4933,6 +5077,54 @@ export const season2Relationships = {
       chapter: 137,
       source: 'episode',
       value: [riverlands.talRobbWed],
+    },
+    // Stage 3 (#1653): "Dark Wings, Dark Words" (22) to "The Rains of
+    // Castamere" (29), where she dies. Her chapters only order her.
+    {
+      episode: 22,
+      chapter: 146,
+      source: 'episode',
+      value: [riverlands3.taRobb22, riverlands3.taCatelyn22],
+    },
+    {
+      episode: 23,
+      chapter: 158,
+      source: 'episode',
+      value: [
+        riverlands3.taRobb23,
+        riverlands3.taCatelyn23,
+        riverlands3.taWillem23,
+        riverlands3.taMartyn23,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 164,
+      source: 'episode',
+      value: [
+        riverlands3.taRobb25,
+        riverlands3.taCatelyn25,
+        riverlands3.taRickard25,
+        riverlands3.taWillem25,
+        riverlands3.taMartyn25,
+      ],
+    },
+    {
+      episode: 27,
+      chapter: 189,
+      source: 'episode',
+      value: [riverlands3.taRobb27, riverlands3.taCatelyn27],
+    },
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'episode',
+      value: [
+        riverlands3.taRobb29,
+        riverlands3.taCatelyn29,
+        riverlands3.taWalder29,
+        riverlands3.taEdmure29,
+      ],
     },
   ],
   // The show's Amory dies in episode 16, where his record opens; the

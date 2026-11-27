@@ -346,6 +346,7 @@ export const season3: ThronesSaga = {
     },
     // #1635: Robb's war and the Riverlands.
     'jeyne-westerling': {
+      relationships: season3Relationships['jeyne-westerling'],
       role: { it: 'Moglie di Robb Stark', en: 'Robb Stark’s wife' },
       log: {
         it: 'Ha curato Robb Stark dalla ferita che lui ha preso espugnando il Crag, il castello della sua famiglia, e lo ha consolato la notte in cui lui ha saputo della morte dei fratelli. Robb l’ha sposata il mattino dopo, rompendo la promessa di sposare una Frey.',
@@ -364,6 +365,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'rolph-spicer': {
+      relationships: season3Relationships['rolph-spicer'],
       role: { it: 'Zio di Jeyne Westerling', en: 'Jeyne Westerling’s uncle' },
       log: {
         it: 'Arriva a Delta delle Acque al seguito di Robb Stark, con la sorella lady Sybell e i figli di lei. Vento Grigio ringhia ogni volta che lui si avvicina, e Catelyn Stark convince Robb ad allontanarlo con un incarico.',
@@ -382,6 +384,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'raynald-westerling': {
+      relationships: season3Relationships['raynald-westerling'],
       role: [
         {
           episode: 23,
@@ -431,6 +434,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'willem-lannister': {
+      relationships: season3Relationships['willem-lannister'],
       role: {
         it: 'Scudiero di Casa Lannister',
         en: 'Squire of House Lannister',
@@ -458,6 +462,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'martyn-lannister': {
+      relationships: season3Relationships['martyn-lannister'],
       role: {
         it: 'Scudiero di Casa Lannister',
         en: 'Squire of House Lannister',
@@ -482,6 +487,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'lothar-frey': {
+      relationships: season3Relationships['lothar-frey'],
       role: { it: 'Figlio di lord Walder Frey', en: 'Son of Lord Walder Frey' },
       log: {
         it: 'Lui e il fratellastro Walder Rivers portano a Delta delle Acque le condizioni del padre per una nuova alleanza con Robb Stark: delle scuse, e le nozze tra Edmure Tully e una delle figlie di lord Walder.',
@@ -504,6 +510,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'walder-rivers': {
+      relationships: season3Relationships['walder-rivers'],
       role: { it: 'Figlio di lord Walder Frey', en: 'Son of Lord Walder Frey' },
       log: {
         it: 'Arriva a Delta delle Acque con il fratellastro Lothar per portare a Robb Stark le condizioni di lord Walder Frey, e le espone senza giri di parole.',
@@ -525,6 +532,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'roslin-frey': {
+      relationships: season3Relationships['roslin-frey'],
       role: [
         {
           episode: 26,
@@ -556,6 +564,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'ryman-frey': {
+      relationships: season3Relationships['ryman-frey'],
       role: {
         it: 'Nipote di lord Walder Frey',
         en: 'Lord Walder Frey’s grandson',
@@ -581,6 +590,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'aegon-frey': {
+      relationships: season3Relationships['aegon-frey'],
       role: {
         it: 'Nipote di lord Walder Frey',
         en: 'Lord Walder Frey’s grandson',
