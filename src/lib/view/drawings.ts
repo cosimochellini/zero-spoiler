@@ -115,16 +115,19 @@ function enqueue(next: Ask): void {
   queued.set(next.scope, [...(queued.get(next.scope) ?? []), next])
 }
 
+/** A record's strokes, and the ref of the box they are drawn in. */
+interface DrawingResult {
+  ref: RefCallback<Element>
+  strokes: Stroke[]
+}
+
 /**
  * A record's strokes, and the ref to put on the box they are drawn in. A
  * drawing sent whole is returned as is; a deferred one is empty until its box
  * comes within a screen of the viewport, then asked for in one batch with
  * its neighbours. The box keeps its size either way, so nothing moves.
  */
-export function useDrawing(
-  id: string,
-  visual: Drawing,
-): { ref: RefCallback<Element>; strokes: Stroke[] } {
+export function useDrawing(id: string, visual: Drawing): DrawingResult {
   const load = use(DrawingsContext)
   const { locale } = useLocale()
   const { bookmark } = useBookmark()

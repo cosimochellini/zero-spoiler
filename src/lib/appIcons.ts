@@ -27,6 +27,26 @@ export function appShortName(series: null | Series, locale: Locale): string {
   return SHORT_NAMES[series.slug]?.[locale] ?? series.name[locale]
 }
 
+/** One `<link>` in the head. */
+interface HeadLink {
+  href: string
+  rel: string
+  sizes?: string
+  type?: string
+}
+
+/** One `<meta>` in the head. */
+interface HeadMeta {
+  content: string
+  name: string
+}
+
+/** The head tags of a page's icons and app. */
+interface AppHead {
+  links: HeadLink[]
+  meta: HeadMeta[]
+}
+
 /**
  * The tab icons and the installable app of a page: under a series its own
  * (scripts/make-icons.mjs draws them from its hub emblem), anywhere else the
@@ -36,13 +56,7 @@ export function appShortName(series: null | Series, locale: Locale): string {
  * @param locale The page's language, which the app opens in.
  * @returns The links and the one meta tag for the head.
  */
-export function appHead(
-  series: null | Series,
-  locale: Locale,
-): {
-  links: { href: string; rel: string; sizes?: string; type?: string }[]
-  meta: { content: string; name: string }[]
-} {
+export function appHead(series: null | Series, locale: Locale): AppHead {
   const files =
     series === null ?
       {

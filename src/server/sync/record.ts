@@ -83,6 +83,12 @@ export function joinedRecord(stored: SyncRecord, own: SyncRecord): SyncRecord {
   return validRecord({ ...stored, ...Object.fromEntries(filled) })
 }
 
+/** A record filled from the device, and the series it was filled for. */
+interface PendingRecord {
+  pending: string[]
+  record: SyncRecord
+}
+
 /**
  * The record with this device's bookmark for each series its last push did
  * not deliver (`SYNC_PENDING_COOKIE`), and those series, by cookie name.
@@ -90,7 +96,7 @@ export function joinedRecord(stored: SyncRecord, own: SyncRecord): SyncRecord {
 export function withPending(
   record: SyncRecord,
   jar: Map<string, string>,
-): { pending: string[]; record: SyncRecord } {
+): PendingRecord {
   const listed = new Set((jar.get(SYNC_PENDING_COOKIE) ?? '').split(','))
   const pending = openSeries().filter(({ slug }) => listed.has(slug))
   let local = record
@@ -109,10 +115,14 @@ export function sameRecord(a: SyncRecord, b: SyncRecord): boolean {
   )
 }
 
+/** A cookie, by name, with its value. */
+interface NamedCookie {
+  name: string
+  value: string
+}
+
 /** The cookie each stored series' bookmark lives in, with its value. */
-export function cookiesOf(
-  record: SyncRecord,
-): { name: string; value: string }[] {
+export function cookiesOf(record: SyncRecord): NamedCookie[] {
   return openSeries().flatMap((series) => {
     const value = record[series.slug]
     return value === undefined ? [] : { name: series.cookie, value }

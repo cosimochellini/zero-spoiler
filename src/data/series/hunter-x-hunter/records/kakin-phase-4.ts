@@ -16,6 +16,15 @@ const TYSON_EMPLOYER: Link = {
   },
 }
 
+/** What `introduced` files for one record. */
+interface IntroducedOptions {
+  affiliation: Name
+  log: Name
+  met?: number
+  role: Name
+  status?: CharacterStatus
+}
+
 /** A record whose facts all open at its naming chapter: one affiliation, one status (alive unless the page says otherwise), one selection. */
 function introduced(
   chapter: number,
@@ -25,13 +34,7 @@ function introduced(
     affiliation,
     status = 'alive',
     met = chapter,
-  }: {
-    affiliation: Name
-    log: Name
-    met?: number
-    role: Name
-    status?: CharacterStatus
-  },
+  }: IntroducedOptions,
   links: Link[],
 ): Dossier {
   const gate = { episode: 148, chapter, source: 'chapter' } as const

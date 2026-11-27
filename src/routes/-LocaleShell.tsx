@@ -13,14 +13,8 @@ import { getDictionary, translate } from '~/i18n/translate'
 import type { SeriesCopy } from '~/i18n/types'
 import { color, font, rule, space, text, z } from '~/styles/tokens.stylex'
 
-/** Shared site frame; archive contexts belong to the series route. */
-export function LocaleShell({
-  locale,
-  copy,
-  children,
-  shared = false,
-  series = false,
-}: {
+/** What the site frame wraps, and for which kind of page. */
+interface LocaleShellProps {
   children: ReactNode
   /** The series' own copy, on a page of a series. */
   copy?: SeriesCopy
@@ -32,7 +26,16 @@ export function LocaleShell({
    * series' bookmark, the trial strip and the status after a save.
    */
   series?: boolean
-}): ReactElement {
+}
+
+/** Shared site frame; archive contexts belong to the series route. */
+export function LocaleShell({
+  locale,
+  copy,
+  children,
+  shared = false,
+  series = false,
+}: LocaleShellProps): ReactElement {
   return (
     <LocaleProvider
       copy={copy}

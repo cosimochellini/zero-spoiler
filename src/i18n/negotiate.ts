@@ -38,6 +38,12 @@ export function negotiateLocale(
 // pattern backtrack quadratically on a hostile header.
 const QUALITY_PARAM = /^q=(?<quality>.*)$/u
 
+/** A language the header asks for that the site speaks, with its weight. */
+interface RankedLocale {
+  language: Locale
+  quality: number
+}
+
 /**
  * Reads the highest-weighted supported language out of an `Accept-Language`
  * header.
@@ -73,9 +79,8 @@ export function parseAcceptLanguage(
     .filter((entry) => entry.quality > 0)
     .toSorted(byValue('quality', byNumber({ desc: true })))
 
-  const best = ranked.find(
-    (entry): entry is { language: Locale; quality: number } =>
-      isLocale(entry.language),
+  const best = ranked.find((entry): entry is RankedLocale =>
+    isLocale(entry.language),
   )
 
   return best?.language

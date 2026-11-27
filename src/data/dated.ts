@@ -5,6 +5,7 @@ import type { Gated } from '~/lib/progress/spoiler'
 import { type ChapterTable, vouches } from './chapterTable'
 import type { Eater, FeatureTimelines } from './features'
 import { type Reveal, toldIn } from './reveal'
+import type { CastSource } from './shelves'
 import type {
   CharacterDossier,
   Entity,
@@ -60,7 +61,7 @@ type DossierField = Exclude<Field, keyof OtherReaders>
  * sagas throws rather than keep one dossier and drop the other.
  */
 export function dossiersOf<D>(
-  sagas: { dossiers: Record<string, D> }[],
+  sagas: Pick<CastSource<D>, 'dossiers'>[],
 ): Record<string, D> {
   const merged = new Map<string, D>()
   const filed = sagas.flatMap((saga) => Object.entries(saga.dossiers))

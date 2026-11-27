@@ -172,13 +172,18 @@ export const THEMES: Record<SeriesTheme, typeof onePiece> = {
   'game-of-thrones': gameOfThrones,
 }
 
+/** A series, as far as its colours go. */
+interface Themed {
+  theme: SeriesTheme
+}
+
 /**
  * The overrides for the series a page belongs to, or none for the site's own.
  * `null` is not only "no series": a `/$series` match whose guard threw
  * (`/nope/xx`) keeps the root's context, whose series is `null`.
  */
 export function themeOf(
-  series: null | undefined | { theme: SeriesTheme },
+  series: null | Themed | undefined,
 ): false | typeof onePiece {
   return series !== null && series !== undefined && THEMES[series.theme]
 }

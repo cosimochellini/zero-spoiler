@@ -49,16 +49,19 @@ export function parseFruitParams(search: Record<string, unknown>): FruitParams {
   })
 }
 
+/** A view, a kind (or `all`) and a query, as the album holds them. */
+interface FruitParamsOptions {
+  form: 'all' | FruitForm
+  query: string
+  view: AlbumView
+}
+
 /** The parameters for a view, a kind (or `all`) and a query, defaults left out. */
 export function fruitParams({
   form,
   query,
   view,
-}: {
-  form: 'all' | FruitForm
-  query: string
-  view: AlbumView
-}): FruitParams {
+}: FruitParamsOptions): FruitParams {
   const params: FruitParams = {}
   if (view !== 'type') {
     params.view = view

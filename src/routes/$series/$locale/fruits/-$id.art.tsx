@@ -15,6 +15,12 @@ import { morphPart } from '~/styles/morph'
 
 import { styles } from './-$id.styles'
 
+/** A fruit, and the drawings of it the reader has reached. */
+interface StageArtProps {
+  drawings: FruitDrawing[]
+  record: FruitView
+}
+
 /**
  * The drawing, in a glow of its tint, drawn in once as it arrives. The pen
  * scales its line with the box while it draws (`ChartArt`), and the stage is
@@ -27,13 +33,7 @@ import { styles } from './-$id.styles'
  * the latest picked: the server sends `drawings` only then. A pick stops the
  * drawing in, so no stroke is drawn again; the drawings only cross-fade.
  */
-export function StageArt({
-  drawings,
-  record,
-}: {
-  drawings: FruitDrawing[]
-  record: FruitView
-}): ReactElement {
+export function StageArt({ drawings, record }: StageArtProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const [drawing, setDrawing] = useState(true)
   const [picked, setPicked] = useState<FruitLook | null>(null)
@@ -91,21 +91,18 @@ export function StageArt({
   )
 }
 
+/** A fruit, its drawings, and the look picked among them. */
+interface LooksProps extends StageArtProps {
+  look: FruitLook
+}
+
 /**
  * Every drawing the fruit has had, stacked in one place, the picked one on
  * top. The one coming in fades in over the one going out, which stays whole
  * underneath until it is covered, so the frame never shows through. Only
  * the latest draws itself in: it is the one shown on arrival.
  */
-function Looks({
-  drawings,
-  look,
-  record,
-}: {
-  drawings: FruitDrawing[]
-  look: FruitLook
-  record: FruitView
-}): ReactElement {
+function Looks({ drawings, look, record }: LooksProps): ReactElement {
   const drawIn = use(DrawInContext)
   const latest = drawings.at(-1)
 

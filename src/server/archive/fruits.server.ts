@@ -269,6 +269,12 @@ function groupsOfEater(eater: Entity, r: Reader): (Faction | null)[] {
   return factions.length === 0 ? [null] : factions
 }
 
+/** A fruit, and the eater who files it, by their place among its eaters. */
+interface FiledEater {
+  at: number
+  id: string
+}
+
 /**
  * Files a fruit under a faction, naming the eater who put it there. The
  * fruits come in order, so a fruit already there is the group's last.
@@ -276,7 +282,7 @@ function groupsOfEater(eater: Entity, r: Reader): (Faction | null)[] {
 function fileUnder(
   groups: Map<Faction | null, FruitFactionRef[]>,
   faction: Faction | null,
-  { at, id }: { at: number; id: string },
+  { at, id }: FiledEater,
 ): void {
   const group = groups.get(faction) ?? []
   const last = group.at(-1)

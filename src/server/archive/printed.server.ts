@@ -2,6 +2,7 @@ import { groupsOf, placeWordsOf } from '~/data/series'
 import type { LocalizedText } from '~/data/types'
 import { SEA_LABELS } from '~/i18n/dictionaries/one-piece/seas'
 import { FACTIONS } from '~/lib/view/factions'
+import type { StopView } from '~/lib/view/places'
 import type { Faction, PlaceWordsView } from '~/lib/view/records'
 
 import type { Reader } from './reader.server'
@@ -57,7 +58,7 @@ function labelled(
  * (One Piece), whose pages send none.
  */
 export function wordsOf(
-  places: { form: string; sea: string }[],
+  places: Pick<StopView, 'form' | 'sea'>[],
   r: Reader,
 ): PlaceWordsView | undefined {
   const words = placeWordsOf(r.archive.series.slug)

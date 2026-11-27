@@ -9,6 +9,12 @@ export const LANDING_CHUNKS = {
   onboarding: 'OnboardingLanding',
 } as const
 
+/** One `<link>` that fetches a chunk. */
+interface PreloadLink {
+  href: string
+  rel: 'modulepreload'
+}
+
 /**
  * The `<head>` links that fetch a chunk beside the entry: the chunk and the
  * chunks it imports. Start's route manifest holds only what a route imports
@@ -24,6 +30,6 @@ export function preloadChunk(
   name: string,
   chunks: Record<string, string[]> | undefined = import.meta.env
     .PRELOADED_CHUNKS,
-): { href: string; rel: 'modulepreload' }[] {
+): PreloadLink[] {
   return (chunks?.[name] ?? []).map((href) => ({ rel: 'modulepreload', href }))
 }

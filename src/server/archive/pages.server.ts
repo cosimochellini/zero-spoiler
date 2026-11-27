@@ -178,11 +178,13 @@ export function characterPage(
   }
 }
 
+/** A character with the summary their own page prints. */
+interface CharacterPageRecord extends CharacterView {
+  summary: string
+}
+
 /** A character as their own page draws them, which prints the summary. */
-function pageRecordOf(
-  entity: Entity,
-  r: Reader,
-): CharacterView & { summary: string } {
+function pageRecordOf(entity: Entity, r: Reader): CharacterPageRecord {
   return { ...characterOf(entity, r), summary: entity.summary[r.locale] }
 }
 

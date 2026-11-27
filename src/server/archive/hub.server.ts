@@ -52,6 +52,12 @@ export function hubFor(
   )
 }
 
+/** The hub's cards, and the series coming. */
+interface HubPage {
+  coming: ComingSeries[]
+  series: HubSeries[]
+}
+
 /**
  * The hub's whole answer: a card for each open series, and the name of each
  * series filed but not open.
@@ -59,7 +65,7 @@ export function hubFor(
 export function hubPageFor(
   jar: Map<string, string>,
   archives: SeriesArchive[],
-): { coming: ComingSeries[]; series: HubSeries[] } {
+): HubPage {
   return { series: hubFor(jar, archives), coming: COMING_SERIES }
 }
 

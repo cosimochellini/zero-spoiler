@@ -1,4 +1,4 @@
-import type { PowerBody, Seat } from '~/data/features'
+import type { Holding, PowerBody, Seat } from '~/data/features'
 import type { OnePieceVocabulary } from '~/data/series/one-piece/records/saga'
 
 /**
@@ -14,11 +14,7 @@ const AT_THE_MEETING = { episode: 316, chapter: 434 }
 function commander(
   en: string,
   it: string,
-  {
-    chapter,
-    episode,
-    value,
-  }: { chapter: number; episode: number; value: string },
+  { chapter, episode, value }: Holding,
 ): Seat {
   return {
     told: { revealedAtEpisode: episode, revealedAtChapter: chapter },

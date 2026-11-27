@@ -42,11 +42,16 @@ export function peekCharacter(
   return entity === undefined ? undefined : characterOf(entity, r)
 }
 
+/** A character with the summary their dossier prints. */
+interface PeekedDossier extends CharacterView {
+  summary: string
+}
+
 /** The crest and the dossier are one record, so they lift as one shape. */
 export function peekDossier(
   handle: string,
   r: Reader,
-): (CharacterView & { summary: string }) | undefined {
+): PeekedDossier | undefined {
   const { locale } = r
 
   const entity = entityForHandle(handle, r.archive)

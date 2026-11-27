@@ -53,14 +53,14 @@ export type EatersSource = FruitEatersView | Promise<FruitEatersView>
 /** The rail of the same kind, or the promise of it. Same reason. */
 export type KinSource = Promise<Slot<FruitView>[]> | Slot<FruitView>[]
 
-/** Who the dossiers say ate it, each character under its own fog. */
-export function EatersBand({
-  eaters,
-  peek,
-}: {
+/** The eaters, sent or on their way, and how to lift one from the fog. */
+interface EatersBandProps {
   eaters: EatersSource
   peek: (handle: string) => Promise<CharacterView>
-}): ReactElement {
+}
+
+/** Who the dossiers say ate it, each character under its own fog. */
+export function EatersBand({ eaters, peek }: EatersBandProps): ReactElement {
   return (
     <StreamedBand
       id="eaters"
@@ -75,13 +75,7 @@ export function EatersBand({
 }
 
 /** The eaters once they arrive. `use` has to sit inside the boundary. */
-function Eaters({
-  eaters,
-  peek,
-}: {
-  eaters: EatersSource
-  peek: (handle: string) => Promise<CharacterView>
-}): ReactElement {
+function Eaters({ eaters, peek }: EatersBandProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const answer = eaters instanceof Promise ? use(eaters) : eaters
 
@@ -108,14 +102,14 @@ function Eaters({
   )
 }
 
-/** The other fruits of the same kind, filed nearest this one. */
-export function KinBand({
-  peek,
-  siblings,
-}: {
+/** The kin, sent or on their way, and how to lift one from the fog. */
+interface KinBandProps {
   peek: (handle: string) => Promise<FruitView>
   siblings: KinSource
-}): ReactElement {
+}
+
+/** The other fruits of the same kind, filed nearest this one. */
+export function KinBand({ peek, siblings }: KinBandProps): ReactElement {
   return (
     <StreamedBand
       id="siblings"
@@ -130,13 +124,7 @@ export function KinBand({
 }
 
 /** The rail once it arrives, or the sentence that stands where it would. */
-function Kin({
-  peek,
-  siblings,
-}: {
-  peek: (handle: string) => Promise<FruitView>
-  siblings: KinSource
-}): ReactElement {
+function Kin({ peek, siblings }: KinBandProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const rail = siblings instanceof Promise ? use(siblings) : siblings
 
@@ -155,18 +143,18 @@ function Kin({
   )
 }
 
+/** The saga's fruits, and how to lift one from the fog. */
+interface SagaBandProps {
+  peek: (handle: string) => Promise<FruitView>
+  rail: Slot<FruitView>[]
+}
+
 /**
  * The open fruits of the same saga nearest this one, or nothing at all when
  * the server sends none (a covered fruit, or a saga with fewer than two
  * others open): a heading over a lonely tile says less than no band.
  */
-export function SagaBand({
-  peek,
-  rail,
-}: {
-  peek: (handle: string) => Promise<FruitView>
-  rail: Slot<FruitView>[]
-}): null | ReactElement {
+export function SagaBand({ peek, rail }: SagaBandProps): null | ReactElement {
   const t = useSeriesOnlyT('one-piece')
   if (rail.length === 0) {
     return null
@@ -186,6 +174,13 @@ export function SagaBand({
   )
 }
 
+/** What a streamed band holds, its anchor and its words. */
+interface StreamedBandProps {
+  children: ReactNode
+  id: string
+  words: BandWords
+}
+
 /**
  * A band whose content the loader streams: the heading and the lede at once,
  * and what fills it inside its own boundary, so the plate above never waits.
@@ -194,11 +189,7 @@ function StreamedBand({
   children,
   id,
   words,
-}: {
-  children: ReactNode
-  id: string
-  words: BandWords
-}): ReactElement {
+}: StreamedBandProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
 
   return (
@@ -214,18 +205,16 @@ function StreamedBand({
   )
 }
 
-/** A band under the stage: its heading, its lede and a hairline over both. */
-export function Band({
-  children,
-  id,
-  lede,
-  title,
-}: {
+/** What a band holds, its anchor, its title and its lede. */
+interface BandProps {
   children: ReactNode
   id: string
   lede: string
   title: string
-}): ReactElement {
+}
+
+/** A band under the stage: its heading, its lede and a hairline over both. */
+export function Band({ children, id, lede, title }: BandProps): ReactElement {
   return (
     <section
       aria-labelledby={id}
@@ -245,12 +234,13 @@ export function Band({
   )
 }
 
-/** What a band says while what fills it is still on its way. */
-function Pending({
-  words,
-}: {
+/** What the band says while it waits. */
+interface PendingProps {
   words: TranslationKey<'one-piece'>
-}): ReactElement {
+}
+
+/** What a band says while what fills it is still on its way. */
+function Pending({ words }: PendingProps): ReactElement {
   const t = useSeriesOnlyT('one-piece')
 
   return (

@@ -20,18 +20,18 @@ import { styles } from '~/routes/$series/$locale/fruits/-$id.styles'
 
 const SERIES = 'hunter-x-hunter'
 
+/** An ability's slot, and how to lift it from under the fog. */
+interface AbilityStageProps {
+  peek: (handle: string) => Promise<AbilityView>
+  slot: Slot<AbilityView>
+}
+
 /**
  * The stage: the drawing large in a glow of its tint, the kind and the
  * episode it is first shown in, then the name, its Nen type as a chip when
  * the story told one by then, and the sentence.
  */
-export function AbilityStage({
-  peek,
-  slot,
-}: {
-  peek: (handle: string) => Promise<AbilityView>
-  slot: Slot<AbilityView>
-}): ReactElement {
+export function AbilityStage({ peek, slot }: AbilityStageProps): ReactElement {
   const t = useSeriesOnlyT(SERIES)
   const threshold = onlyUnder(useThreshold(SERIES), SERIES)
   const gate = slot.open ? slot.record : slot.covered
@@ -74,9 +74,7 @@ export function AbilityStage({
  */
 export function UsersBand({
   slot,
-}: {
-  slot: Slot<AbilityView>
-}): null | ReactElement {
+}: Pick<AbilityStageProps, 'slot'>): null | ReactElement {
   const t = useSeriesOnlyT(SERIES)
   if (!slot.open) {
     return null

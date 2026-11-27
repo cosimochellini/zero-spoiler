@@ -36,12 +36,13 @@ function useBackLabel(section: keyof typeof BACK): string {
     : onlyUnder(onePiece, 'one-piece')('fruit.back')
 }
 
-/** The record pages return to their own index in the selected series. */
-export function RecordBackLink({
-  section,
-}: {
+/** The index a record page returns to. */
+interface RecordBackLinkProps {
   section: keyof typeof BACK
-}): ReactElement {
+}
+
+/** The record pages return to their own index in the selected series. */
+export function RecordBackLink({ section }: RecordBackLinkProps): ReactElement {
   const params = useSeriesParams()
   const { to } = BACK[section]
   const label = useBackLabel(section)
@@ -57,6 +58,13 @@ export function RecordBackLink({
   )
 }
 
+/** The section a missing record belongs to, and its index's words. */
+interface SectionNotFoundProps {
+  body: string | undefined
+  section: 'abilities' | 'fruits'
+  title: string | undefined
+}
+
 /**
  * `/fruits/<not-a-fruit>` or `/abilities/<not-an-ability>`: says so, and
  * points at the index. A series without the page gets the site's not-found
@@ -67,11 +75,7 @@ export function SectionNotFound({
   body,
   section,
   title,
-}: {
-  body: string | undefined
-  section: 'abilities' | 'fruits'
-  title: string | undefined
-}): ReactElement {
+}: SectionNotFoundProps): ReactElement {
   const declares = useDeclares()
   if (body === undefined || title === undefined || !declares(section)) {
     return <NotFoundPage />

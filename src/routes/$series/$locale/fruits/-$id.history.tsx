@@ -28,17 +28,18 @@ const EVENT_KEY: Record<
   'presumed-dead': 'fruit.history.presumed-dead',
 }
 
+/** A fruit's page. */
+interface HistoryBandProps {
+  detail: FruitDetail
+}
+
 /**
  * The fruit's history, oldest first, as far as the reader has reached: when
  * the story names it, who eats it, and who of them dies. The server sends
  * nothing past the bookmark and no count of it, so with nothing to say (a
  * covered fruit) there is no band at all.
  */
-export function HistoryBand({
-  detail,
-}: {
-  detail: FruitDetail
-}): null | ReactElement {
+export function HistoryBand({ detail }: HistoryBandProps): null | ReactElement {
   const t = useSeriesOnlyT('one-piece')
   if (detail.history.length === 0) {
     return null
@@ -65,14 +66,14 @@ export function HistoryBand({
   )
 }
 
-/** One entry: the mark in the reader's unit, and what happens. */
-function HistoryRow({
-  entry,
-  saga,
-}: {
+/** One history entry, and the saga it falls in. */
+interface HistoryRowProps {
   entry: FruitHistoryEntry
   saga: string
-}): ReactElement {
+}
+
+/** One entry: the mark in the reader's unit, and what happens. */
+function HistoryRow({ entry, saga }: HistoryRowProps): ReactElement {
   const { locale } = useLocale()
   const t = useSeriesOnlyT('one-piece')
   const { series } = useSeriesParams()
