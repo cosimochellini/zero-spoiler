@@ -423,6 +423,54 @@ const riverlands = {
       it: 'Suo zio, che Robb manda al Dente d’Oro a consegnare un prigioniero Lannister in uno scambio di ostaggi.',
     },
   },
+  jeyGreyWindPast: {
+    character: 'grey-wind',
+    type: { en: 'Wolf she fears', it: 'Lupo che teme' },
+    summary: {
+      en: 'Robb’s direwolf. She was afraid of him, so Robb kept him away from her side.',
+      it: 'Il metalupo di Robb. Lei ne aveva paura, e per questo Robb lo teneva lontano da lei.',
+    },
+  },
+  jeyRaynaldPast: {
+    character: 'raynald-westerling',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, the one of her family who rode with Robb to the Twins.',
+      it: 'Suo fratello, l’unico della famiglia che ha seguito Robb alle Torri Gemelle.',
+    },
+  },
+  jeyRolphPast: {
+    character: 'rolph-spicer',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'Her uncle, whom Robb sent to the Golden Tooth to hand over a Lannister prisoner in an exchange of captives.',
+      it: 'Suo zio, che Robb ha mandato al Dente d’Oro a consegnare un prigioniero Lannister in uno scambio di ostaggi.',
+    },
+  },
+  rolJeynePast: {
+    character: 'jeyne-westerling',
+    type: { en: 'Niece', it: 'Nipote' },
+    summary: {
+      en: 'His sister’s daughter, whom Robb married. The family left the Lannisters’ side with her.',
+      it: 'La figlia di sua sorella, che Robb aveva sposato. La famiglia ha lasciato i Lannister insieme a lei.',
+    },
+  },
+  rayGreyWindPast: {
+    character: 'grey-wind',
+    type: { en: 'Wolf in his keeping', it: 'Lupo affidato a lui' },
+    summary: {
+      en: 'Robb’s direwolf, which would not go through the gatehouse of the Twins. Robb left Raynald outside with him.',
+      it: 'Il metalupo di Robb, che non voleva passare dal corpo di guardia delle Torri Gemelle. Robb aveva lasciato Raynald fuori con lui.',
+    },
+  },
+  lotGreyWindPast: {
+    character: 'grey-wind',
+    type: { en: 'Wolf at the gate', it: 'Lupo alla porta' },
+    summary: {
+      en: 'Robb’s direwolf, which would not go through the gatehouse. Lothar offered to hand him to the master of hounds; Robb left him outside with Ser Raynald.',
+      it: 'Il metalupo di Robb, che non voleva passare dal corpo di guardia. Lothar si era offerto di affidarlo al maestro dei cani; Robb lo aveva lasciato fuori con ser Raynald.',
+    },
+  },
   jeyRobbDead: {
     character: 'robb-stark',
     type: { en: 'Husband', it: 'Marito' },
@@ -802,8 +850,8 @@ const riverlands = {
     character: 'walder-frey',
     type: { en: 'Father', it: 'Padre' },
     summary: {
-      en: 'His father, who welcomes Robb with bread and salt and calls for the bedding at the wedding feast.',
-      it: 'Suo padre, che accoglie Robb con pane e sale e alla festa nuziale chiama la cerimonia della consumazione.',
+      en: 'His father, who welcomed Robb with bread and salt and called for the bedding at the wedding feast.',
+      it: 'Suo padre, che ha accolto Robb con pane e sale e alla festa nuziale ha chiamato la cerimonia della consumazione.',
     },
   },
 
@@ -860,8 +908,8 @@ const riverlands = {
     character: 'edmure-tully',
     type: { en: 'Promised husband', it: 'Promesso sposo' },
     summary: {
-      en: 'The lord of Riverrun her father means her to marry. He has never met her, and agrees only when the others press him.',
-      it: 'Il signore di Delta delle Acque che suo padre vuole farle sposare. Non l’ha mai vista, e accetta solo quando gli altri insistono.',
+      en: 'The lord of Riverrun her father means her to marry.',
+      it: 'Il signore di Delta delle Acque che suo padre vuole farle sposare.',
     },
   },
   rosEdmureShow: {
@@ -1483,9 +1531,9 @@ export const season3Relationships = {
       value: [
         riverlands.jeyRobbDead,
         riverlands.jeyCatelynDead,
-        riverlands.jeyRaynaldBanner,
-        riverlands.jeyRolphErrand,
-        riverlands.jeyGreyWind,
+        riverlands.jeyRaynaldPast,
+        riverlands.jeyRolphPast,
+        riverlands.jeyGreyWindPast,
       ],
     },
   ],
@@ -1518,7 +1566,7 @@ export const season3Relationships = {
       chapter: 195,
       source: 'chapter',
       value: [
-        riverlands.rolJeyne,
+        riverlands.rolJeynePast,
         riverlands.rolRobbDead,
         riverlands.rolGreyWind,
         riverlands.rolCatelynDead,
@@ -1550,7 +1598,7 @@ export const season3Relationships = {
       source: 'chapter',
       value: [
         riverlands.rayRobbDead,
-        riverlands.rayGreyWind,
+        riverlands.rayGreyWindPast,
         riverlands.rayJeyneHome,
         riverlands.rayCatelynDead,
       ],
@@ -1650,7 +1698,7 @@ export const season3Relationships = {
         riverlands.lotRobbDead,
         riverlands.lotCatelynDead,
         riverlands.lotEdmureFeast,
-        riverlands.lotGreyWind,
+        riverlands.lotGreyWindPast,
       ],
     },
   ],

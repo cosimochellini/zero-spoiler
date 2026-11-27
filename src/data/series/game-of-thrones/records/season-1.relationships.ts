@@ -14401,7 +14401,7 @@ const riverlands3 = {
     type: { en: 'Betrayer', it: 'Traditore' },
     summary: {
       en: 'The lord seated beside her at the feast. She noticed the mail under his clothes and slapped him, too late; he killed Robb.',
-      it: 'Il lord seduto accanto a lei al banchetto. Ha notato la cotta di maglia sotto i suoi vestiti e lo ha schiaffeggiato, troppo tardi; è stato lui a uccidere Robb.',
+      it: 'Il lord seduto accanto a lei al banchetto. Catelyn ha notato la cotta di maglia sotto i vestiti di lui e lo ha schiaffeggiato, troppo tardi; è stato lui a uccidere Robb.',
     },
   },
   ctTalisa29: {
@@ -15722,6 +15722,14 @@ const riverlands3 = {
       it: 'Un figlio di lord Walder, che dice che il lupo deve aver paura dell’acqua e si offre di affidarlo al maestro dei cani.',
     },
   },
+  gwRaynald195: {
+    character: 'raynald-westerling',
+    type: { en: 'Keeper', it: 'Custode' },
+    summary: {
+      en: 'The queen’s brother, whom Robb left outside the gatehouse with him.',
+      it: 'Il fratello della regina, che Robb aveva lasciato fuori dal corpo di guardia con lui.',
+    },
+  },
   gwRobb195: {
     character: 'robb-stark',
     type: { en: 'Master', it: 'Padrone' },
@@ -15744,8 +15752,8 @@ const riverlands3 = {
     character: 'grey-wind',
     type: { en: 'Wolf that bit him', it: 'Lupo che lo ha morso' },
     summary: {
-      en: 'Robb’s direwolf, which knocked him down and bit off two of his fingers. He was killed at the Twins.',
-      it: 'Il metalupo di Robb, che lo aveva atterrato e gli aveva staccato due dita. È stato ucciso alle Torri Gemelle.',
+      en: 'Robb’s direwolf, which knocked him down and bit off two of his fingers. Grey Wind was killed at the Twins.',
+      it: 'Il metalupo di Robb, che lo aveva atterrato e gli aveva staccato due dita. Vento Grigio è stato ucciso alle Torri Gemelle.',
     },
   },
   gjRobb195: {
@@ -20210,7 +20218,7 @@ export const season1Relationships = {
       source: 'chapter',
       value: [
         riverlands3.gwRobb195,
-        riverlands3.gwRaynald193,
+        riverlands3.gwRaynald195,
         riverlands3.gwLothar193,
       ],
     },
