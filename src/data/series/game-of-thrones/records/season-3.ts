@@ -610,7 +610,17 @@ export const season3: ThronesSaga = {
         it: 'Jon Snow viene portato nella sua tenda e all’inizio scambia un altro uomo per il re. Mance sa che Jon ha ucciso Qhorin il Monco, e gli chiede perché vuole lasciare i Guardiani della notte.',
         en: 'Jon Snow is brought into his tent and at first takes another man for the king. Mance knows that Jon killed Qhorin Halfhand, and asks him why he wants to leave the Night’s Watch.',
       },
-      status: [{ episode: 21, chapter: 151, value: 'alive' }],
+      status: [
+        { episode: 21, chapter: 151, value: 'alive' },
+        // Burned at Castle Black in "The Wars to Come" (episode 41) and in
+        // Jon III of A Dance with Dragons (site chapter 282), filed with his
+        // drawing's stages (#1646).
+        { episode: 41, chapter: 282, value: 'deceased' },
+        // The books' alone: Melisandre tells Jon that the man burned was
+        // Rattleshirt under a glamour, and Mance lives, in Melisandre I of A
+        // Dance with Dragons (site chapter 303). Episode 41 only orders it.
+        { episode: 41, chapter: 303, source: 'chapter', value: 'alive' },
+      ],
       affiliation: [
         { episode: 21, chapter: 151, value: { it: 'Bruti', en: 'Wildlings' } },
       ],
@@ -656,6 +666,11 @@ export const season3: ThronesSaga = {
       },
       status: [
         { episode: 21, chapter: 151, source: 'chapter', value: 'alive' },
+        // He dies with his Thenns when the stair at Castle Black comes down
+        // on them, in Jon VII (site chapter 199), filed with his drawing's
+        // stage (#1646). Episode 39, the show's attack on Castle Black, only
+        // orders it.
+        { episode: 39, chapter: 199, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -674,6 +689,11 @@ export const season3: ThronesSaga = {
       },
       status: [
         { episode: 21, chapter: 151, source: 'chapter', value: 'alive' },
+        // She dies giving birth to Mance's son in the battle beneath the
+        // Wall, which Samwell IV (site chapter 219) tells, filed with her
+        // drawing's stage (#1646). Episode 40, the show's battle, only
+        // orders it.
+        { episode: 40, chapter: 219, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -817,6 +837,12 @@ export const season3: ThronesSaga = {
       },
       status: [
         { episode: 21, chapter: 144, source: 'chapter', value: 'alive' },
+        // Coldhands' ravens kill the deserters in the haunted forest, and
+        // Summer finds the largest body, its hand missing and the stump bound
+        // in leather, in Bran I of A Dance with Dragons (site chapter 276),
+        // filed with his drawing's stage (#1646). Episode 35, where the show
+        // ends the mutineers at Craster's Keep, only orders it.
+        { episode: 35, chapter: 276, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -1666,7 +1692,7 @@ export const season3: ThronesSaga = {
         it: 'Il Re oltre la Barriera, un disertore dei Guardiani della notte che guida i bruti.',
         en: 'The King-Beyond-the-Wall, a deserter of the Night’s Watch who leads the wildlings.',
       },
-      visual: { art: 'mance-rayder', tint: 'red' },
+      visual: { art: 'mance-rayder', tint: 'ocher' },
     },
     // Show: "Walk of Punishment" (episode 23), Mance orders Tormund to take
     // twenty men and Jon over the Wall. Episodes 21 and 22 name him only in

@@ -471,7 +471,11 @@ order them.
   he wants to leave the Night's Watch. `nameSaidAt: 4`: the show says his name
   from "Cripples, Bastards, and Broken Things", where Alliser Thorne speaks of
   the wildlings under him, and earlier texts (Craster's log, season-2
-  relationships and chronicles) name him. Italian "Mance Rayder".
+  relationships and chronicles) name him. Italian "Mance Rayder". The drawing
+  child (#1646) files his burning, `deceased` at 41 / 282 ("The Wars to Come";
+  Jon III of _A Dance with Dragons_), and the books' `alive` at 303 (Melisandre
+  I, where Melisandre tells Jon that Rattleshirt burned in his place), each with
+  his drawing's stage, and moves his tint from red to ocher (#851).
 - Tormund: role wildling chief in Mance Rayder's host, Wildlings, alive. Named
   "Tormund" in both media and locales; "Giantsbane" (Italian "Veleno dei
   Giganti") waits for a show line that says it. Owner check: episodes 21 and 22
@@ -487,11 +491,14 @@ order them.
   Stonesnake in stage 2, would hide a six-episode show character. Italian kept.
 - Styr, books only: role Magnar of Thenn, Wildlings, alive. Owner check: the
   show's Styr (season 4); if a line there says his name, the record takes that
-  show gate (#852). Italian "Styr".
+  show gate (#852). Italian "Styr". #1646 files his death on the stair at Castle
+  Black, `deceased` at 199 (Jon VII), with his drawing's stage, episode 39
+  ordering it (#1238).
 - Dalla, Val and Jarl, books only: Mance's wife, her sister and Val's lover,
   Wildlings. Jarl dies in the climb of the Wall, Jon IV (174). Dalla is
   `commonWord` ("dalla" is an Italian word). Italian "Dalla" and "Val" (Italian
-  Wikipedia); Jarl kept.
+  Wikipedia); Jarl kept. #1646 files Dalla's death in childbirth, `deceased` at
+  219 (Samwell IV), with her drawing's stage, episode 40 ordering it (#1238).
 - Small Paul, books only: role brother of the Night's Watch; dead at 162
   (Samwell I: the Other kills him as he carries Sam). Italian kept.
 - Dirk, Ollo Lophand and Clubfoot Karl, books only: roles ranger, brother and
@@ -499,6 +506,10 @@ order them.
   (177), where Craster attacks Karl, Dirk slits Craster's throat and Ollo stabs
   the Lord Commander. All alive in the stage. Italian "Dirk" and "Karl
   Piededuro" (Italian Wikipedia, Guardiani della notte); Ollo Lophand kept.
+  #1646 files Ollo `deceased` at 276 (Bran I of _A Dance with Dragons_, where
+  Summer finds the one-handed body among Coldhands' kills), with his drawing's
+  stage, episode 35 ordering it (#1238). Whether Dirk and Karl are among those
+  bodies the chapter does not say, so neither gains a status.
 
 ### Earlier records stepped
 
