@@ -39641,6 +39641,16 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26276",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26276",
       "contentSha256": "a7969ecceb2140fca0c62301b8c25ef7f02e162da8d19fef5573d1716c24e445"
+    },
+    "got-en-Mother's_Mercy-748545.json": {
+      "locale": "en",
+      "title": "Mother's Mercy",
+      "revision": 748545,
+      "revisionDate": "2026-08-31T16:51:45Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Mother's_Mercy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748545",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748545",
+      "contentSha256": "acd374fd64d453bd1b90999475394494548bad2f2fcf8b4c6082c15d4b566975"
     }
   }
 }
