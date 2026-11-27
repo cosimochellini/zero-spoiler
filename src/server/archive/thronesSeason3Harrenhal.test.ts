@@ -1,13 +1,16 @@
 import { describe, expect, it } from 'vitest'
 
+import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import { season3 } from '~/data/series/game-of-thrones/records/season-3'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
+import { drawnIn, recordIn, sidesOf, unlisted } from '~/test/gates'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage } from './pages.server'
+import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
@@ -47,6 +50,35 @@ const CHANGES: {
   { id: 'brienne-of-tarth', episode: 27, chapter: 188, value: 'alive' },
   { id: 'jaime-lannister', episode: 27, chapter: 188, value: 'alive' },
 ]
+
+/**
+ * Every status change the group's drawing child files on its own records
+ * (#1645): Qyburn's death, which only the show tells.
+ */
+const DEATHS: typeof CHANGES = [
+  {
+    id: 'qyburn',
+    episode: 72,
+    chapter: 344,
+    source: 'episode',
+    value: 'deceased',
+  },
+]
+
+/**
+ * Every stage the group's own drawings take after their first, pinned in
+ * both media (#1645); `source` for a stage one medium alone tells, `stage`
+ * a record's stage counted from 0. Jaime's golden hand and Brienne's gown
+ * are stages of records earlier seasons filed, so their rows are in
+ * `thronesSeason1.test.ts` and `thronesSeason2Stormlands.test.ts`.
+ */
+const STAGES: {
+  chapter: number
+  episode: number
+  id: keyof typeof DRAWINGS
+  source?: 'chapter' | 'episode'
+  stage?: number
+}[] = [{ id: 'qyburn', episode: 72, chapter: 344, source: 'episode' }]
 
 /**
  * Every role and affiliation step the group files after a record's gate, by
@@ -215,7 +247,7 @@ describe('the third season’s Jaime, Brienne and Harrenhal cast', () => {
 })
 
 describe.each(
-  CHANGES.flatMap((change) =>
+  [...CHANGES, ...DEATHS].flatMap((change) =>
     UNITS.filter((unit) => (change.source ?? unit) === unit).map((unit) => ({
       ...change,
       unit,
@@ -259,6 +291,55 @@ describe('the steps one medium alone tells', () => {
       expect(pageOf(id, otherAtTheEnd(source))).not.toContain(
         JSON.stringify(en),
       )
+    },
+  )
+})
+
+describe('the table of stages', () => {
+  it('lists every stage of each record it redraws', () => {
+    expect(unlisted(STAGES, REDRAWINGS)).toStrictEqual([])
+  })
+})
+
+/** The drawings the table's stages are read against. */
+const ART = { drawings: DRAWINGS, redrawings: REDRAWINGS }
+
+describe.each(
+  STAGES.flatMap((stage) =>
+    sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
+  ),
+)(
+  '$id is redrawn by $unit at $episode/$chapter',
+  ({ id, episode, chapter, source, unit, stage: index = 0, ...side }) => {
+    const stage = REDRAWINGS[id]?.[index]
+    // The drawing just before is the last earlier stage this unit reads, by
+    // the table: a stage the other medium alone tells is never shown here.
+    const previous = drawnIn(STAGES, ART, { id, unit, below: index })
+
+    it('at its pin, not one before', () => {
+      const owner = recordIn(archive, id)
+
+      expect(stage?.episode).toBe(episode)
+      expect(stage?.chapter).toBe(chapter)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? stage?.source).toBe(source)
+      expect(
+        drawingOf(owner, readerFor(archive, side.before, 'en')).strokes,
+      ).toStrictEqual(previous)
+      expect(
+        drawingOf(owner, readerFor(archive, side.reached, 'en')).strokes,
+      ).toStrictEqual(stage?.value)
+    })
+  },
+)
+
+describe('the group’s stages one medium alone tells', () => {
+  it.each(STAGES.filter(({ source }) => source !== undefined))(
+    'never redraws $id for a reader of the other medium',
+    ({ id, source = 'episode', stage: index = 0 }) => {
+      const drawn = drawingOf(recordIn(archive, id), otherAtTheEnd(source))
+
+      expect(drawn.strokes).not.toStrictEqual(REDRAWINGS[id]?.[index]?.value)
     },
   )
 })

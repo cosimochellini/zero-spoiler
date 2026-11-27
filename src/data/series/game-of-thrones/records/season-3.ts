@@ -1104,7 +1104,13 @@ export const season3: ThronesSaga = {
         it: 'Si trova a Harrenhal mentre il castello è in mano agli uomini del Nord.',
         en: 'He is at Harrenhal while the northmen hold the castle.',
       },
-      status: [{ episode: 21, chapter: 175, value: 'alive' }],
+      status: [
+        { episode: 21, chapter: 175, value: 'alive' },
+        // The Mountain kills him in the fall of King's Landing, in "The
+        // Bells" (episode 72, #1645). The show's alone: the books leave him
+        // alive, so chapter 344, their last, only orders it.
+        { episode: 72, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         // Show only: the northmen find him alive among the prisoners Ser
         // Gregor's men put to the sword, and he gives Robb his name, in
@@ -2002,7 +2008,7 @@ export const season3: ThronesSaga = {
         it: 'Un capitano al servizio di Roose Bolton.',
         en: 'A captain in Roose Bolton’s service.',
       },
-      visual: { art: 'steelshanks-walton', tint: 'red' },
+      visual: { art: 'steelshanks-walton', tint: 'azure' },
     },
     // #1640: Dragonstone, the books' new cast. The show has none of the
     // three in season 3: its Gendry takes Edric's part, and its Axell is
