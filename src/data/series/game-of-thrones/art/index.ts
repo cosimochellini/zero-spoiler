@@ -193,7 +193,8 @@ const PERSON: Stroke[] = [
  * Arya's group, the Brotherhood Without Banners, in `brotherhood.ts` (#1644),
  * its Jaime, Brienne and Harrenhal cast in `riverlands.ts` (#1645) and its
  * Wall and beyond cast, the brothers of Chett's plot in `wall.ts` and the
- * wildlings in `wildlings.ts` (#1646); its other casts show `PERSON` until
+ * wildlings in `wildlings.ts` (#1646), and its Bran's road and Theon cast,
+ * Myranda, in `north.ts` (#1649); its other casts show `PERSON` until
  * their drawing children draw them.
  * `satisfies` rather than an annotation, so `ArtId` below stays the literal
  * keys.
@@ -221,8 +222,6 @@ export const DRAWINGS = {
   'axell-florent': PERSON,
   'alester-florent': PERSON,
   'edric-storm': PERSON,
-  // #1641: Bran's road and Theon.
-  'myranda': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */

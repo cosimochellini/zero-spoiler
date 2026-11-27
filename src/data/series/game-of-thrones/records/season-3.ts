@@ -1273,6 +1273,10 @@ export const season3: ThronesSaga = {
       },
       status: [
         { episode: 27, chapter: 284, source: 'episode', value: 'alive' },
+        // She dies at Winterfell in "Mother's Mercy" (episode 50), filed
+        // with her drawing's stage (#1649). Theon I of A Dance with Dragons
+        // (chapter 323), where Theon escapes the castle, orders it.
+        { episode: 50, chapter: 323, source: 'episode', value: 'deceased' },
       ],
       affiliation: [
         {
