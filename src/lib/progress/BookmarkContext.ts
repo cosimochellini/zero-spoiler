@@ -90,7 +90,7 @@ export function useBookmarkSeries(): BookmarkSeries {
 }
 
 /** The route parameters of a content link. */
-interface SeriesParams {
+export interface SeriesParams {
   locale: Locale
   series: string
 }

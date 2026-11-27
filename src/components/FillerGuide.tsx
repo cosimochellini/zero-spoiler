@@ -18,7 +18,7 @@ import type { FillerPageView } from '~/lib/view/filler'
 import { space } from '~/styles/tokens.stylex'
 
 /** The page the server built, and how to lift a covered entry. */
-interface FillerGuideProps extends Pick<FillerCountdownProps, 'peek'> {
+export interface FillerGuideProps extends Pick<FillerCountdownProps, 'peek'> {
   page: FillerPageView
 }
 

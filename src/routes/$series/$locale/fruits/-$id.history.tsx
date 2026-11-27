@@ -29,7 +29,7 @@ const EVENT_KEY: Record<
 }
 
 /** A fruit's page. */
-interface HistoryBandProps {
+export interface HistoryBandProps {
   detail: FruitDetail
 }
 

@@ -15,7 +15,7 @@ import { emblemStyles } from '~/components/emblem.styles'
 import type { Drawing } from '~/lib/view/records'
 
 /** The drawing the seal holds, or none for a fogged character. */
-interface CharacterCrestProps {
+export interface CharacterCrestProps {
   visual?: Drawing
 }
 

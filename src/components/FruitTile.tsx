@@ -123,12 +123,12 @@ export function FruitTile({
 }
 
 /** A match an open tile shows, with the eater the search or a group picked. */
-interface OpenMatch extends Match<SpecimenView> {
+export interface OpenMatch extends Match<SpecimenView> {
   eater?: EaterMatch
   morph?: boolean
 }
 
-interface OpenTilesProps {
+export interface OpenTilesProps {
   matches: OpenMatch[]
   needle: string
   peek: (handle: string) => Promise<FruitView>
@@ -165,7 +165,7 @@ export function OpenTiles({
   )
 }
 
-interface PlateFogProps {
+export interface PlateFogProps {
   band: FruitBandView
   peek: (handle: string) => Promise<FruitView>
 }

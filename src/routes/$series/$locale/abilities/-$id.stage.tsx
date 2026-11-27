@@ -21,7 +21,7 @@ import { styles } from '~/routes/$series/$locale/fruits/-$id.styles'
 const SERIES = 'hunter-x-hunter'
 
 /** An ability's slot, and how to lift it from under the fog. */
-interface AbilityStageProps {
+export interface AbilityStageProps {
   peek: (handle: string) => Promise<AbilityView>
   slot: Slot<AbilityView>
 }

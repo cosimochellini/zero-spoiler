@@ -29,7 +29,7 @@ import { settleStyles } from '~/styles/settle'
  */
 
 /** A reached record, its drawings, the dial's point, and whether it is here. */
-interface OpenCardProps {
+export interface OpenCardProps {
   drawings: Step<Drawing>[]
   entry: DemoEntry
   here: boolean
@@ -219,7 +219,7 @@ function Drawn({ drawing, kind }: DrawnProps): null | ReactElement {
 }
 
 /** A covered record, and the dial's point. */
-interface FogCardProps {
+export interface FogCardProps {
   entry: CoveredRecord | DemoEntry
   point: DialPoint
 }

@@ -22,7 +22,7 @@ export interface HubProps {
   series: HubSeries[]
 }
 
-interface SeriesHubProps extends HubProps {
+export interface SeriesHubProps extends HubProps {
   load: LoadTour
 }
 

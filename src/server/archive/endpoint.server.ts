@@ -61,7 +61,7 @@ export interface WordsPage<R> extends Swept {
 }
 
 /** What a reader is drawn from: the bookmark, the language and the key. */
-interface ReaderAsk {
+export interface ReaderAsk {
   bookmark: Bookmark
   handle?: string
   id?: string

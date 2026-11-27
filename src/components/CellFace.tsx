@@ -23,7 +23,7 @@ function kindLabel(
 }
 
 /** A cell's episode, its kind, and whether the reader is on it. */
-interface CellFaceProps {
+export interface CellFaceProps {
   episode: number
   here: boolean
   kind: FillerKind | null

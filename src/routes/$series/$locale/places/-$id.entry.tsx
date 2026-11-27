@@ -68,24 +68,24 @@ function useEntryWords(kind: 'place' | 'ship', gate: Gated): EntryWords {
 }
 
 /** A place's or a ship's record, as the entry draws it. */
-type Entry = RecordView & { summary: string }
+export type Entry = RecordView & { summary: string }
 
 /** How to lift the fog on a record the entry names. */
 export type PeekRecord = (handle: string) => Promise<RecordView>
 
 /** One titled list of records in the band under the entry. */
-interface FiledList {
+export interface FiledList {
   filed: Slot<RecordView>[]
   title: string
 }
 
 /** The open record an entry's body draws. */
-interface EntryBodyProps<T> {
+export interface EntryBodyProps<T> {
   record: T
 }
 
 /** What the band is given: the record, how to lift its fog, and its body. */
-interface EntryProps<T extends Entry> {
+export interface EntryProps<T extends Entry> {
   /** Its facts and its log entry, beside the plate once open. */
   Body: ComponentType<EntryBodyProps<T>>
   kind: 'place' | 'ship'
@@ -231,7 +231,7 @@ function allOpen(records: RecordView[]): Slot<RecordView>[] {
 }
 
 /** A place's page, and how to lift its records from under the fog. */
-interface PlaceDiptychProps extends Pick<
+export interface PlaceDiptychProps extends Pick<
   EntryProps<PortView>,
   'peek' | 'peekRecord'
 > {

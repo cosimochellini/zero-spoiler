@@ -20,7 +20,7 @@ import {
   text,
 } from '~/styles/tokens.stylex'
 
-interface FruitEaterProps {
+export interface FruitEaterProps {
   eater: EaterView
   highlight: [number, number] | null
   more: number

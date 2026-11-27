@@ -166,7 +166,7 @@ function readerSeeing(
 }
 
 /** The record a page is about, if any, and the reader's language. */
-interface PageReaderOptions {
+export interface PageReaderOptions {
   id?: string
   locale: Locale
 }
@@ -217,7 +217,7 @@ export function pageReader(
 }
 
 /** The handle a reader lifts, and their language. */
-interface LiftReaderOptions {
+export interface LiftReaderOptions {
   handle: string
   locale: Locale
 }

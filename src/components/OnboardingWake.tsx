@@ -20,7 +20,7 @@ import type {
 
 const requests = new Map<string, Promise<DemoDrawings>>()
 
-interface OnboardingWakeProps {
+export interface OnboardingWakeProps {
   loadDrawings?: (() => Promise<DemoDrawings>) | undefined
   point: DialPoint
   view: OnboardingView

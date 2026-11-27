@@ -28,7 +28,7 @@ export function appShortName(series: null | Series, locale: Locale): string {
 }
 
 /** One `<link>` in the head. */
-interface HeadLink {
+export interface HeadLink {
   href: string
   rel: string
   sizes?: string
@@ -36,13 +36,13 @@ interface HeadLink {
 }
 
 /** One `<meta>` in the head. */
-interface HeadMeta {
+export interface HeadMeta {
   content: string
   name: string
 }
 
 /** The head tags of a page's icons and app. */
-interface AppHead {
+export interface AppHead {
   links: HeadLink[]
   meta: HeadMeta[]
 }

@@ -10,7 +10,7 @@ export const LANDING_CHUNKS = {
 } as const
 
 /** One `<link>` that fetches a chunk. */
-interface PreloadLink {
+export interface PreloadLink {
   href: string
   rel: 'modulepreload'
 }

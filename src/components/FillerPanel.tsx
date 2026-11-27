@@ -13,7 +13,7 @@ import type { FillerRowView, FillerSlot } from '~/lib/view/filler'
 export const FILLER_PANEL_ID = 'filler-countdown-panel'
 
 /** The entry opened, the reader's unit, and how to lift a covered one. */
-interface FillerPanelProps {
+export interface FillerPanelProps {
   mode: BookmarkMode
   peek: (handle: string) => Promise<FillerRowView>
   slot: FillerSlot

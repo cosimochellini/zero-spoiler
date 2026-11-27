@@ -136,7 +136,7 @@ export function SpoilerVeil<T extends Gated>({
   )
 }
 
-interface CoveredProps {
+export interface CoveredProps {
   children: ReactNode
   /** The control that lifts this content, when it was sent covered. */
   control: Lift<unknown>['button']['ref'] | undefined
@@ -186,7 +186,7 @@ export function Covered({
   )
 }
 
-interface CurtainProps {
+export interface CurtainProps {
   button: Lift<unknown>['button']
   density: CurtainDensity
   lifted: boolean

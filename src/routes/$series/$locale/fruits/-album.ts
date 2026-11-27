@@ -78,7 +78,7 @@ async function fetchAlbum(data: Asked, wanted?: string): Promise<void> {
  */
 export const primeAlbum = createIsomorphicFn().client(fetchAlbum)
 
-interface FruitAlbumResult {
+export interface FruitAlbumResult {
   album: Album | null
   retry: (() => void) | undefined
 }

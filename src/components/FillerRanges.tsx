@@ -23,7 +23,7 @@ function follow(event: MouseEvent<HTMLAnchorElement>): void {
 }
 
 /** The runs to skip by saga, and the reader's unit. */
-interface FillerRangesProps {
+export interface FillerRangesProps {
   groups: SkipGroup[]
   mode: BookmarkMode
 }

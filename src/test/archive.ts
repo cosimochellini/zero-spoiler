@@ -303,7 +303,7 @@ export function opFillerAheadOf(
 }
 
 /** How a reader looks: their locale, and what they have reached. */
-interface CountdownLook {
+export interface CountdownLook {
   locale: Locale
   sees: (gate: Gated) => boolean
 }

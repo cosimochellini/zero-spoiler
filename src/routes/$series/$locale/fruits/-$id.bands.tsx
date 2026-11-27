@@ -54,7 +54,7 @@ export type EatersSource = FruitEatersView | Promise<FruitEatersView>
 export type KinSource = Promise<Slot<FruitView>[]> | Slot<FruitView>[]
 
 /** The eaters, sent or on their way, and how to lift one from the fog. */
-interface EatersBandProps {
+export interface EatersBandProps {
   eaters: EatersSource
   peek: (handle: string) => Promise<CharacterView>
 }
@@ -103,7 +103,7 @@ function Eaters({ eaters, peek }: EatersBandProps): ReactElement {
 }
 
 /** The kin, sent or on their way, and how to lift one from the fog. */
-interface KinBandProps {
+export interface KinBandProps {
   peek: (handle: string) => Promise<FruitView>
   siblings: KinSource
 }
@@ -144,7 +144,7 @@ function Kin({ peek, siblings }: KinBandProps): ReactElement {
 }
 
 /** The saga's fruits, and how to lift one from the fog. */
-interface SagaBandProps {
+export interface SagaBandProps {
   peek: (handle: string) => Promise<FruitView>
   rail: Slot<FruitView>[]
 }
@@ -206,7 +206,7 @@ function StreamedBand({
 }
 
 /** What a band holds, its anchor, its title and its lede. */
-interface BandProps {
+export interface BandProps {
   children: ReactNode
   id: string
   lede: string

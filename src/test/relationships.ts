@@ -10,7 +10,7 @@ import type {
 import type { Source } from '~/lib/progress/spoiler'
 import { OP_ARCHIVE } from '~/test/archive'
 
-interface RelationshipArchiveOptions {
+export interface RelationshipArchiveOptions {
   extraCharacters?: string[]
   snapshots?: Timeline<Relationship[]>
   source?: Source

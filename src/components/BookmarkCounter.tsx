@@ -261,7 +261,7 @@ function useHold(): Hold {
   }
 }
 
-interface SagaLineProps {
+export interface SagaLineProps {
   draft: Draft
   id: string
 }

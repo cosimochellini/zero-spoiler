@@ -20,7 +20,7 @@ export interface FoldWords {
   open: string
 }
 
-interface FoldedFogProps {
+export interface FoldedFogProps {
   /** The tiles: any open ones, then the covered ones, each with its rank. */
   children: ReactNode
   /** How many of the tiles are covered. */

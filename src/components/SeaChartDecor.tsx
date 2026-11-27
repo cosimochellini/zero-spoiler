@@ -51,7 +51,7 @@ const CURRENTS: Point[][] = [
   ],
 ]
 
-interface DecorProps {
+export interface DecorProps {
   orientation: Orientation
 }
 

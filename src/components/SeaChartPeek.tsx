@@ -190,7 +190,7 @@ function PlaceCard({ onDismiss, port }: PlaceCardProps): ReactElement {
   )
 }
 
-interface StopPeekProps extends PeekFrameProps {
+export interface StopPeekProps extends PeekFrameProps {
   port: StopView
   /** The names of the seas the reader has opened, from the places page. */
   seas: Partial<Record<string, string>> | undefined
@@ -220,7 +220,7 @@ export function StopPeek({
   )
 }
 
-interface FogPeekProps extends PeekFrameProps {
+export interface FogPeekProps extends PeekFrameProps {
   entry: CoveredRecord
   peekPort: (handle: string) => Promise<PortView>
   stage: string
@@ -277,7 +277,7 @@ export function FogPeek({
   )
 }
 
-interface ShipPeekProps extends PeekFrameProps {
+export interface ShipPeekProps extends PeekFrameProps {
   ship: ShipView
 }
 

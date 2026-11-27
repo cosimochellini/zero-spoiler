@@ -4,7 +4,7 @@ import type { ReactElement } from 'react'
 import { styles } from '~/components/SpecimenBands.styles'
 import { stickyStyles } from '~/styles/sticky'
 
-interface PlateHeadProps {
+export interface PlateHeadProps {
   headingId: string
   label: string
   lede?: string | undefined

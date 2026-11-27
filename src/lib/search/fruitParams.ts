@@ -50,7 +50,7 @@ export function parseFruitParams(search: Record<string, unknown>): FruitParams {
 }
 
 /** A view, a kind (or `all`) and a query, as the album holds them. */
-interface FruitParamsOptions {
+export interface FruitParamsOptions {
   form: 'all' | FruitForm
   query: string
   view: AlbumView

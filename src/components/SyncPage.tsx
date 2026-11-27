@@ -28,7 +28,7 @@ type Step =
   | { id: string; kind: 'ready'; record: SyncRecord }
   | { kind: 'already' | 'checking' | 'incomplete' | 'joined' | 'unknown' }
 
-interface SyncPageProps {
+export interface SyncPageProps {
   series: Series[]
 }
 

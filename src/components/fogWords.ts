@@ -38,7 +38,7 @@ export function fogHint<S extends SeriesSlug>(
 }
 
 /** The reader's bookmark, and how many records are under fog. */
-interface FogNoteOptions {
+export interface FogNoteOptions {
   bookmark: Bookmark
   count: number
 }

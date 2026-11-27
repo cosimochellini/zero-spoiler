@@ -49,7 +49,7 @@ export interface RecordMatch {
 }
 
 /** The argument a record page's server functions are called with. */
-interface RecordArgs {
+export interface RecordArgs {
   data: { id: string; locale: Locale; series: string }
 }
 

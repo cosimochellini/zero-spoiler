@@ -22,7 +22,7 @@ export function groupsAt(
 }
 
 /** A link in a character's list, with the name of the person it names. */
-interface NamedLink extends TourLink {
+export interface NamedLink extends TourLink {
   name: string
 }
 

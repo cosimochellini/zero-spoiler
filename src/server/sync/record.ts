@@ -84,7 +84,7 @@ export function joinedRecord(stored: SyncRecord, own: SyncRecord): SyncRecord {
 }
 
 /** A record filled from the device, and the series it was filled for. */
-interface PendingRecord {
+export interface PendingRecord {
   pending: string[]
   record: SyncRecord
 }
@@ -116,7 +116,7 @@ export function sameRecord(a: SyncRecord, b: SyncRecord): boolean {
 }
 
 /** A cookie, by name, with its value. */
-interface NamedCookie {
+export interface NamedCookie {
   name: string
   value: string
 }

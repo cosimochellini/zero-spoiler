@@ -14,7 +14,7 @@ const SERIES = 'hunter-x-hunter'
 const NUMBER_WIDTH = 2
 
 /** An open ability, and what the search found in it. */
-interface AbilityTileProps {
+export interface AbilityTileProps {
   highlight: [number, number] | null
   /** The folded query, which picks the user the tile shows. */
   needle: string
@@ -55,7 +55,7 @@ export function AbilityTile({
 }
 
 /** A covered ability, its place in the band, and how to peek at it. */
-interface FoggedAbilityTileProps {
+export interface FoggedAbilityTileProps {
   covered: CoveredRecord
   /** Zero-based within the fog band; printed plus one. */
   index: number

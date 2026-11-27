@@ -79,7 +79,7 @@ function unitAt(
 }
 
 /** A run's number, and a unit's one-based position within it. */
-interface RunPosition {
+export interface RunPosition {
   number: number
   position: number
 }

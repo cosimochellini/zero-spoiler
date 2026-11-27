@@ -20,7 +20,7 @@ import {
 import { styles } from './-$id.styles'
 
 /** A character's relationships, and the band's place down the page. */
-interface RelationshipBandProps {
+export interface RelationshipBandProps {
   /** Which band down the page this is, for the settle delay. */
   band: number
   relationships: RelationshipView[]

@@ -16,7 +16,7 @@ import { morphPart } from '~/styles/morph'
 import { styles } from './-$id.styles'
 
 /** A fruit, and the drawings of it the reader has reached. */
-interface StageArtProps {
+export interface StageArtProps {
   drawings: FruitDrawing[]
   record: FruitView
 }

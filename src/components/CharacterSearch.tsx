@@ -5,7 +5,7 @@ import { SearchField, type SearchFieldProps } from '~/components/SearchField'
 import { useT } from '~/i18n/LocaleContext'
 
 /** The field's id and query, and the status line under it. */
-type CharacterSearchProps = Pick<
+export type CharacterSearchProps = Pick<
   SearchFieldProps,
   'fieldId' | 'onQuery' | 'query' | 'status'
 >

@@ -68,7 +68,7 @@ export interface SagaArchive<V extends Vocabulary> {
 }
 
 /** What a series that files every record in its sagas hands the engine. */
-interface SagaArchiveOptions<V extends Vocabulary> {
+export interface SagaArchiveOptions<V extends Vocabulary> {
   abilities?: FiledAbilities
   /** The main characters: the landing chart and the featured row. */
   featured: string[]

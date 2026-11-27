@@ -6,7 +6,7 @@ import { usePlaceLabels } from '~/components/usePlaceLabels'
 import { useSeriesOnlyT, useSeriesT } from '~/i18n/LocaleContext'
 import type { PortDossier, ShipEntry } from '~/lib/view/records'
 
-interface PortFactsProps {
+export interface PortFactsProps {
   dossier: PortDossier
 }
 
@@ -43,7 +43,7 @@ export function PortFacts({ dossier }: PortFactsProps): ReactElement {
   )
 }
 
-interface ShipFactsProps {
+export interface ShipFactsProps {
   entry: ShipEntry
 }
 
@@ -77,7 +77,7 @@ export function ShipFacts({ entry }: ShipFactsProps): ReactElement {
   )
 }
 
-interface FactProps {
+export interface FactProps {
   label: string
   value: string
 }

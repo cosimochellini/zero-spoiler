@@ -6,7 +6,7 @@ import { RecordTile } from '~/components/RecordTile'
 import type { RecordView, Slot } from '~/lib/view/records'
 
 /** The records filed, how to peek at a covered one, and the band's title. */
-interface FiledHereProps {
+export interface FiledHereProps {
   filed: Slot<RecordView>[]
   peekRecord: (handle: string) => Promise<RecordView>
   title: string

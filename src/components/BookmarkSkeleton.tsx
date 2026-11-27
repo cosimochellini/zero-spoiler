@@ -62,7 +62,7 @@ export function BookmarkSkeleton(): ReactElement {
 }
 
 /** The words of the failure and its retry, and what retry calls. */
-interface LoadFailedProps<S extends SeriesSlug> {
+export interface LoadFailedProps<S extends SeriesSlug> {
   message?: TranslationKey<S>
   onRetry: () => void
   retry?: TranslationKey<S>

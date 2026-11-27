@@ -79,7 +79,7 @@ export function SearchField({
   )
 }
 
-interface SearchNoMatchProps {
+export interface SearchNoMatchProps {
   clearLabel: string
   /** The search field's id: where focus goes once the query is cleared. */
   fieldId: string
@@ -121,7 +121,7 @@ export function SearchNoMatch({
   )
 }
 
-interface SearchStatusProps {
+export interface SearchStatusProps {
   noMatch: boolean
   words: string
 }
@@ -148,7 +148,7 @@ export function SearchStatus({
   )
 }
 
-interface SearchResultsProps {
+export interface SearchResultsProps {
   children: ReactNode
   folded: boolean
 }

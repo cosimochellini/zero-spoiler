@@ -45,7 +45,7 @@ function isPrivacyKey(key: string): key is PrivacyKey {
   return key.startsWith('privacy.')
 }
 
-interface LegalPageProps {
+export interface LegalPageProps {
   series: SeriesCredits[]
 }
 

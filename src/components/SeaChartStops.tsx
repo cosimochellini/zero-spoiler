@@ -116,7 +116,7 @@ function useTargets({
   }
 }
 
-interface SeaChartStopsProps {
+export interface SeaChartStopsProps {
   model: ChartModel
   /** Brings a stop the focus reaches into the window, when it zooms. */
   onReach?: ((point: Point) => void) | undefined

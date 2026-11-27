@@ -54,7 +54,7 @@ export function hubFor(
 }
 
 /** The hub's cards, and the series coming. */
-interface HubPage {
+export interface HubPage {
   coming: ComingSeries[]
   series: HubSeries[]
 }

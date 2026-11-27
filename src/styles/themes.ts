@@ -173,7 +173,7 @@ export const THEMES: Record<SeriesTheme, typeof onePiece> = {
 }
 
 /** A series, as far as its colours go. */
-interface Themed {
+export interface Themed {
   theme: SeriesTheme
 }
 

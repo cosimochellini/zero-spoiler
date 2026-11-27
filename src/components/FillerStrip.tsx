@@ -127,7 +127,7 @@ function StripRow({ first, last, here, kinds }: StripRowProps): ReactElement {
 }
 
 /** Whether the key names the reader's cell. */
-interface FillerLegendProps {
+export interface FillerLegendProps {
   hasBookmark: boolean
 }
 

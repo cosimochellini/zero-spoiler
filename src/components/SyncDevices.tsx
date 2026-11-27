@@ -30,7 +30,7 @@ interface SyncLink {
 /** What asking for the link came to: the link, or that it could not be had. */
 type LinkAnswer = 'failed' | SyncLink
 
-interface DevicesLinkProps {
+export interface DevicesLinkProps {
   linkRef: RefObject<HTMLButtonElement | null>
   onOpen: () => void
 }
@@ -58,7 +58,7 @@ export function DevicesLink({
   )
 }
 
-interface DevicesViewProps {
+export interface DevicesViewProps {
   /** The ids the dialog names itself by, passed on to the head shown here. */
   ledeId: string
   onBack: () => void

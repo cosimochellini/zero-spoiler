@@ -121,7 +121,7 @@ function CardLink({ record, highlight }: CardLinkProps): ReactElement {
 }
 
 /** The record, the match to mark, and the styles the caller sets them in. */
-interface NameAndRoleProps {
+export interface NameAndRoleProps {
   highlight: [number, number] | null
   nameSx: stylex.StyleXStyles
   record: CharacterView
@@ -161,7 +161,7 @@ export function NameAndRole({
 }
 
 /** A name, and the span of it a search matched. */
-interface MarkedProps {
+export interface MarkedProps {
   span: [number, number] | null
   text: string
 }

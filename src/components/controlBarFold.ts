@@ -19,7 +19,7 @@ export interface Fold {
 }
 
 /** Reads the bar's fold as it stands, and stops watching it. */
-interface WatchResult {
+export interface WatchResult {
   read: () => Fold
   stop: () => void
 }

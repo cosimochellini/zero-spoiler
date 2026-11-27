@@ -15,7 +15,8 @@ const TourScreen = lazy(async () => {
   return { default: screen }
 })
 
-type HubTourProps = Pick<TourScreenProps, 'load' | 'series'>
+/** What the tour is handed: the series it shows and how to load its records. */
+export type HubTourProps = Pick<TourScreenProps, 'load' | 'series'>
 
 /**
  * The hub's tour (#1703): six steps of text beside a screen that stays in

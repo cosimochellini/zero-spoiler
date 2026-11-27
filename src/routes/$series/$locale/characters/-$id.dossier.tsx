@@ -26,7 +26,7 @@ export type DossierRecord =
   CharacterDetail['slot'] extends Slot<infer T> ? T : never
 
 /** A character's page, and how to lift its record from under the fog. */
-interface DossierDiptychProps {
+export interface DossierDiptychProps {
   detail: CharacterDetail
   peek: (handle: string) => Promise<DossierRecord>
 }

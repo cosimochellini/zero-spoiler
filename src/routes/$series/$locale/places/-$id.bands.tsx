@@ -54,7 +54,7 @@ function mapOf(detail: PlaceDetail): null | PlaceMap {
 }
 
 /** A place's page. */
-interface MapBandProps {
+export interface MapBandProps {
   detail: PlaceDetail
 }
 
@@ -140,13 +140,13 @@ function Visits({ visits }: VisitsProps): null | ReactElement {
 }
 
 /** A place or a ship, and its drawings up to the bookmark. */
-interface DrawnRecord {
+export interface DrawnRecord {
   drawings: PlaceDrawing[]
   slot: Slot<RecordView>
 }
 
 /** A place or a ship, with its drawings. */
-interface DrawingsBandProps {
+export interface DrawingsBandProps {
   detail: DrawnRecord
 }
 

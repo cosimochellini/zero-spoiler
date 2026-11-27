@@ -7,7 +7,7 @@ import type { RecordView } from '~/lib/view/records'
 import { morphPart, useTravels } from '~/styles/morph'
 
 /** The record drawn, and whether it travels or glows. */
-interface OpenArtProps {
+export interface OpenArtProps {
   always: boolean
   glow?: boolean
   morph?: boolean

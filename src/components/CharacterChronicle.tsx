@@ -172,7 +172,7 @@ function StoryRow({ entry }: StoryRowProps): ReactElement {
 }
 
 /** The paragraph, cut into words and names. */
-interface ProseProps {
+export interface ProseProps {
   segments: ProseSegment[]
 }
 

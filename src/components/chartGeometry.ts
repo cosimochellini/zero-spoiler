@@ -218,7 +218,7 @@ function percent(value: number, of: number): string {
 }
 
 /** Where something stands over a frame, as CSS `left` and `top`. */
-interface Placement {
+export interface Placement {
   left: string
   top: string
 }
@@ -273,7 +273,7 @@ export function pullOf(
 }
 
 /** The orientation drawn, and the window the pull is in proportion to. */
-interface PullInOptions {
+export interface PullInOptions {
   orientation: Orientation
   view: Rect
 }

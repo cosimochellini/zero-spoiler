@@ -51,7 +51,7 @@ function summaryOf(
 }
 
 /** The plates, the count the album worked out, and the picks. */
-interface AbilityControlsProps {
+export interface AbilityControlsProps {
   bands: AbilityBandView[]
   /** The open abilities the query finds on the plates shown. */
   count: number

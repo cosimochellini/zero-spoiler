@@ -23,7 +23,7 @@ import type {
 } from '~/lib/view/records'
 import { stickyStyles } from '~/styles/sticky'
 
-interface CharacterShelfProps {
+export interface CharacterShelfProps {
   featured: Set<string>
   /** A shelf under fog past the next one: its count and threshold, no tiles. */
   folded?: boolean

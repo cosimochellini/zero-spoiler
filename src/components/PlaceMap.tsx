@@ -41,7 +41,7 @@ function percent(value: number, of: number): string {
   return `${String((value / of) * PERCENT)}%`
 }
 
-interface PlaceMapProps {
+export interface PlaceMapProps {
   label: string
   map: PlaceChartView
 }

@@ -116,7 +116,7 @@ function enqueue(next: Ask): void {
 }
 
 /** A record's strokes, and the ref of the box they are drawn in. */
-interface DrawingResult {
+export interface DrawingResult {
   ref: RefCallback<Element>
   strokes: Stroke[]
 }

@@ -20,7 +20,7 @@ const styles = stylex.create({
 })
 
 /** The cards the grid holds. */
-interface CharacterCardListProps {
+export interface CharacterCardListProps {
   children: ReactNode
 }
 

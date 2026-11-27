@@ -28,7 +28,7 @@ import {
   text,
 } from '~/styles/tokens.stylex'
 
-interface HomeFillerAheadProps {
+export interface HomeFillerAheadProps {
   ahead: FillerAhead
   mode: BookmarkMode
 }

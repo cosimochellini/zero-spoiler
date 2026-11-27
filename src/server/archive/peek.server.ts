@@ -43,7 +43,7 @@ export function peekCharacter(
 }
 
 /** A character with the summary their dossier prints. */
-interface PeekedDossier extends CharacterView {
+export interface PeekedDossier extends CharacterView {
   summary: string
 }
 

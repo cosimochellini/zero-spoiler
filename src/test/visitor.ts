@@ -4,7 +4,7 @@ import type { Payload } from '~/server/archive/payloads.server'
 import { ownBookmark, pointOf } from '~/server/archive/reader.server'
 
 /** One ask of a payload: the bookmark, the key and the payload's sweep rule. */
-interface HeldToOptions {
+export interface HeldToOptions {
   bookmark: Bookmark
   key: string
   payload: Pick<Payload, 'drawnAt'>

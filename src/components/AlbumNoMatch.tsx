@@ -9,7 +9,7 @@ import { type FruitParams, fruitParams } from '~/lib/search/fruitParams'
 import type { FruitBandView } from '~/lib/view/records'
 
 /** The plates on the page, and the picks the clear button resets. */
-interface AlbumNoMatchProps {
+export interface AlbumNoMatchProps {
   /** The plates on the page: the picked kind's, or all of them. */
   bands: FruitBandView[]
   fieldId: string

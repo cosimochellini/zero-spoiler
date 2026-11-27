@@ -119,7 +119,7 @@ export function sideIn(pin: Pin, unit: string, series: BookmarkSeries): Side {
 }
 
 /** The locale a gate case is read in. */
-interface InLocale {
+export interface InLocale {
   locale: Locale
 }
 

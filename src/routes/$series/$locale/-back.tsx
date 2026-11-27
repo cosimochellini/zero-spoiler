@@ -37,7 +37,7 @@ function useBackLabel(section: keyof typeof BACK): string {
 }
 
 /** The index a record page returns to. */
-interface RecordBackLinkProps {
+export interface RecordBackLinkProps {
   section: keyof typeof BACK
 }
 
@@ -59,7 +59,7 @@ export function RecordBackLink({ section }: RecordBackLinkProps): ReactElement {
 }
 
 /** The section a missing record belongs to, and its index's words. */
-interface SectionNotFoundProps {
+export interface SectionNotFoundProps {
   body: string | undefined
   section: 'abilities' | 'fruits'
   title: string | undefined

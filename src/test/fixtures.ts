@@ -346,7 +346,7 @@ export function peekFails<T>(): (handle: string) => Promise<T> {
   return refused
 }
 
-interface SpyPeek<T> {
+export interface SpyPeek<T> {
   asked: string[]
   peek: (handle: string) => Promise<T>
 }

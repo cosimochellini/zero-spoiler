@@ -5,7 +5,7 @@ import { ART_VIEWBOX } from '~/components/drawing'
 import { EMBLEMS } from '~/components/seriesEmblems'
 import { color, rule } from '~/styles/tokens.stylex'
 
-interface SeriesEmblemProps {
+export interface SeriesEmblemProps {
   slug: string
 }
 

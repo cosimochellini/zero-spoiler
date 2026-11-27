@@ -46,7 +46,7 @@ function islesOf(open: StopView[]): IsleMark[] {
   return isles
 }
 
-interface LayerProps {
+export interface LayerProps {
   model: ChartModel
   orientation: Orientation
   scale: number
@@ -98,7 +98,7 @@ export function Drawing({
   )
 }
 
-interface ZoomButtonsProps extends Pick<
+export interface ZoomButtonsProps extends Pick<
   ChartZoom,
   'isIn' | 'isOut' | 'isWhole' | 'toggle' | 'zoomBy'
 > {

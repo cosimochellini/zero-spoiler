@@ -60,7 +60,7 @@ export function placeLabel(
 }
 
 /** How the reader counts, and how many episodes have aired. */
-interface SentenceOfOptions extends Counting {
+export interface SentenceOfOptions extends Counting {
   aired: number
 }
 
@@ -107,7 +107,7 @@ export function runSentenceOf(
 }
 
 /** A cell's episode as said, its kind, and whether it is the reader's. */
-interface CellNameParts {
+export interface CellNameParts {
   here: boolean
   kind: FillerKind | null
   number: string

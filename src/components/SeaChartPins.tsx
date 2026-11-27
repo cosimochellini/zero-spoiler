@@ -67,7 +67,7 @@ function Pin({ at, children, orientation, side, sx }: PinProps): ReactElement {
   )
 }
 
-interface RegionNamesProps {
+export interface RegionNamesProps {
   orientation: Orientation
   regions: Region[]
   seas: Partial<Record<string, string>> | undefined
@@ -108,7 +108,7 @@ export function RegionNames({
   )
 }
 
-interface SagaNamesProps {
+export interface SagaNamesProps {
   names: SagaName[]
   orientation: Orientation
 }
@@ -143,7 +143,7 @@ export function SagaNames({
   )
 }
 
-interface HereProps {
+export interface HereProps {
   orientation: Orientation
   port: StopView
   stage: string
@@ -172,7 +172,7 @@ const SHIP_SIDE: Record<Side, stylex.StyleXStyles> = {
   right: styles.shipRight,
 }
 
-interface ShipOnRouteProps {
+export interface ShipOnRouteProps {
   mark: ShipMark
   orientation: Orientation
   trigger: TriggerProps

@@ -85,7 +85,7 @@ export interface RenderOptions {
 }
 
 /** The router a render was given, handed back beside the render result. */
-interface WithRouter {
+export interface WithRouter {
   router: TestRouter
 }
 

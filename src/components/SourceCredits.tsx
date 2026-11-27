@@ -12,7 +12,7 @@ import type {
   SourceCredit,
 } from '~/lib/view/credits'
 
-interface InSeriesProps {
+export interface InSeriesProps {
   children: ReactNode
   copy: SeriesCopy
 }
@@ -31,7 +31,7 @@ export function InSeries({ copy, children }: InSeriesProps): ReactElement {
   )
 }
 
-interface SourceCreditsProps {
+export interface SourceCreditsProps {
   series: SeriesCredits[]
 }
 

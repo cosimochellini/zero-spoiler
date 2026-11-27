@@ -41,7 +41,7 @@ const TILE_PAGE = {
 export type TileKind = keyof typeof TILE_PAGE
 
 /** A covered record, how to peek at it, and the public lines under it. */
-interface CoveredTileProps<T extends RecordView> {
+export interface CoveredTileProps<T extends RecordView> {
   covered: CoveredRecord
   kind: TileKind
   lines: string[]

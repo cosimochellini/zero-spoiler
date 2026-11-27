@@ -26,7 +26,7 @@ interface PlacedName {
   name: string
 }
 
-interface StopNamesProps {
+export interface StopNamesProps {
   bounds?: Rect | undefined
   here: null | StopView
   /** The id of the stop whose name is set in gold. */

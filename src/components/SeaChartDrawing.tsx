@@ -30,7 +30,7 @@ export interface DrawingProps {
   orientation: Orientation
 }
 
-interface SeaWorldProps extends DrawingProps {
+export interface SeaWorldProps extends DrawingProps {
   regions: Region[]
 }
 
@@ -179,7 +179,7 @@ const LINE = {
   second: styles.second,
 } as const
 
-interface SeaRouteProps extends Omit<DrawingProps, 'id'> {
+export interface SeaRouteProps extends Omit<DrawingProps, 'id'> {
   from: Point
   legs: Leg[]
   still?: boolean
@@ -251,7 +251,7 @@ export interface IsleMark {
   tint: TintId
 }
 
-interface IslesProps {
+export interface IslesProps {
   isles: IsleMark[]
   orientation: Orientation
 }

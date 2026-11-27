@@ -22,7 +22,7 @@ const FORM_KEY: Record<FruitForm, TranslationKey<'one-piece'>> = {
 }
 
 /** A fruit's page, and how to lift its record from under the fog. */
-interface StageBandProps {
+export interface StageBandProps {
   detail: FruitDetail
   peek: (handle: string) => Promise<FruitView>
 }

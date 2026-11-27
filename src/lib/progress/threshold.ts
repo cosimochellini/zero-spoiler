@@ -96,7 +96,7 @@ export function describeThreshold<S extends SeriesSlug = never>({
 export type BookmarkSentence = 'chart.hereSet' | 'mark'
 
 /** The bookmark `describeBookmark` says, and the series' books. */
-interface DescribeBookmarkOptions {
+export interface DescribeBookmarkOptions {
   bookmark: NonNullable<Bookmark>
   books: Book[] | undefined
 }

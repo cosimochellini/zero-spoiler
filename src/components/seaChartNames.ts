@@ -170,7 +170,7 @@ interface Claims {
   placed: Placed[]
 }
 
-interface NamesOfResult {
+export interface NamesOfResult {
   sagaNames: SagaName[]
   stopNames: StopName[]
 }

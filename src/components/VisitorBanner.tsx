@@ -8,7 +8,7 @@ import { useBookmark, useThreshold } from '~/lib/progress/BookmarkContext'
 import type { RecordView, Slot } from '~/lib/view/records'
 import { space } from '~/styles/tokens.stylex'
 
-interface VisitorBannerProps {
+export interface VisitorBannerProps {
   /**
    * A list with no row open at the end of the demo (#1432): the banner says
    * so rather than that the start of the story is open on it.

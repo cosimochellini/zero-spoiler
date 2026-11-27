@@ -1,7 +1,7 @@
 /** Reading the router's matches for a 404. */
 
 /** What a router match says about being found. */
-interface MatchState {
+export interface MatchState {
   _notFound?: boolean
   status: string
 }

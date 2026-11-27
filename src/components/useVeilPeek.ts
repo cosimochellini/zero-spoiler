@@ -10,12 +10,12 @@ export type VeilSlot<T> =
   | { covered: Gated & { handle: string }; open: false }
   | { open: true; record: T }
 
-interface UseVeilPeekOptions {
+export interface UseVeilPeekOptions {
   twoStep: boolean
 }
 
 /** A lift, with the record the curtain shows: the open one or the lifted one. */
-interface UseVeilPeekResult<T> extends Lift<T> {
+export interface UseVeilPeekResult<T> extends Lift<T> {
   shown: null | T
 }
 

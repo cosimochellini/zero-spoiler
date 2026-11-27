@@ -94,7 +94,7 @@ export function CharacterShelves({
 }
 
 /** What the shelves need, once the browser has asked for them. */
-interface ShelvesProps extends Omit<
+export interface ShelvesProps extends Omit<
   CharacterShelvesProps,
   'shelfCount' | 'shelves'
 > {

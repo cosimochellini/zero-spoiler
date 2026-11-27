@@ -13,7 +13,7 @@ import { THEMES } from '~/styles/themes'
 /** The issue form a reader asks for a new series with (#1703). */
 export const REQUEST_URL = `${REPOSITORY}/issues/new?template=series.yml`
 
-interface StandingProps {
+export interface StandingProps {
   entry: HubSeries
 }
 
@@ -95,7 +95,7 @@ const LOOK = {
   },
 } as const
 
-interface SeriesCardProps extends StandingProps {
+export interface SeriesCardProps extends StandingProps {
   size: CardSize
 }
 
@@ -129,7 +129,7 @@ export function SeriesCard({ entry, size }: SeriesCardProps): ReactElement {
   )
 }
 
-interface ComingCardProps {
+export interface ComingCardProps {
   name: string
   size: CardSize
 }

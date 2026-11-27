@@ -177,7 +177,7 @@ function Ask({ button, covered, name, spent, state }: AskProps): ReactElement {
 }
 
 /** The lift's state, and whether the words keep to one line. */
-interface WordsProps {
+export interface WordsProps {
   /** Set on one line, where a second would break the row it sits in. */
   line?: boolean
   state: LiftState

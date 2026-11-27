@@ -81,7 +81,7 @@ export const styles = stylex.create({
   },
 })
 
-interface PartResult extends ReturnType<typeof stylex.props> {
+export interface PartResult extends ReturnType<typeof stylex.props> {
   id: string
 }
 

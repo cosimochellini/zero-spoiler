@@ -4,7 +4,7 @@ import type { ReactElement } from 'react'
 import { styles } from '~/components/BookmarkDialog.styles'
 
 /** The title and the lede, and the ids the dialog names itself by. */
-interface DialogHeadProps {
+export interface DialogHeadProps {
   lede: string
   ledeId: string
   title: string

@@ -17,7 +17,7 @@ import { settleStyles } from '~/styles/settle'
 import { styles } from './-$id.styles'
 
 /** A character's page, its place down it, and the rest of its chronicle. */
-interface ChronicleBandProps {
+export interface ChronicleBandProps {
   /** Which band down the page this is, for the settle delay. */
   band: number
   detail: CharacterDetail

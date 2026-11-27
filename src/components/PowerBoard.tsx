@@ -24,7 +24,7 @@ import {
 } from '~/lib/view/power'
 import { settleStyles } from '~/styles/settle'
 
-interface PowerBoardProps {
+export interface PowerBoardProps {
   page: PowerPageView
 }
 

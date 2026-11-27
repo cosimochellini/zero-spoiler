@@ -10,7 +10,7 @@ import { color, font, leading, rule, space, text } from '~/styles/tokens.stylex'
 
 export const REPOSITORY = 'https://github.com/cosimochellini/zero-spoiler'
 
-interface SiteFooterProps {
+export interface SiteFooterProps {
   shared?: boolean
 }
 

@@ -69,7 +69,7 @@ function Frame({ hue }: FrameProps): ReactElement {
   )
 }
 
-interface PortPlateProps {
+export interface PortPlateProps {
   ref?: RefCallback<Element>
   visual?: Drawing
 }
@@ -123,7 +123,7 @@ export function PortPlate({ ref, visual }: PortPlateProps): ReactElement {
   )
 }
 
-interface OpenPortPlateProps {
+export interface OpenPortPlateProps {
   port: RecordView
 }
 
