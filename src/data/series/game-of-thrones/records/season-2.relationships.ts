@@ -4024,6 +4024,613 @@ const kingsLanding3 = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 3's Dragonstone cards for the season-2 cast (#1657): season 3 and
+ * A Storm of Swords through chapter 52. The show: "Valar Dohaeris" (21),
+ * "Walk of Punishment" (23), "Kissed by Fire" (25), "The Climb" (26), "The
+ * Bear and the Maiden Fair" (27), "Second Sons" (28) and "Mhysa" (30). The
+ * books: Davos II to IV (chapters 154, 169 and 180). Axell, Alester and
+ * Edric open only at Davos IV (180), so no earlier card names them. The new
+ * characters' own cards are in `season-3.relationships.ts`.
+ */
+const dragonstone3 = {
+  // Stannis, the show
+  staDavosKnife21: {
+    character: 'davos-seaworth',
+    type: { en: 'Knight in the dungeon', it: 'Cavaliere in cella' },
+    summary: {
+      en: 'The knight who came back from the Blackwater and drew a knife on Melisandre in front of him. Stannis had him thrown in the dungeon.',
+      it: 'Il cavaliere tornato dalle Acque Nere che ha estratto un coltello contro Melisandre davanti a lui. Stannis lo ha fatto gettare in cella.',
+    },
+  },
+  staMelisandreAlone21: {
+    character: 'melisandre',
+    type: { en: 'Priestess', it: 'Sacerdotessa' },
+    summary: {
+      en: 'The red priestess, the only one he lets near him after the defeat. When Davos accuses her, she answers that it was his advice that kept her away from the battle.',
+      it: 'La sacerdotessa rossa, l’unica che lascia avvicinare dopo la sconfitta. Quando Davos la accusa, lei risponde che è stato il suo consiglio a tenerla lontana dalla battaglia.',
+    },
+  },
+  staMelisandreLeaves23: {
+    character: 'melisandre',
+    type: { en: 'Priestess', it: 'Sacerdotessa' },
+    summary: {
+      en: 'The red priestess who sails from Dragonstone against his wishes. She will not give him another son like the shadow, because it would kill him. What she seeks needs a king’s blood, and Robert’s bastards carry his.',
+      it: 'La sacerdotessa rossa che lascia Roccia del Drago contro la sua volontà. Non gli darà un altro figlio come l’ombra, perché lo ucciderebbe. Ciò che cerca richiede sangue di re, e i bastardi di Robert hanno il suo.',
+    },
+  },
+  staSelyseJars25: {
+    character: 'selyse-baratheon',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His queen, whom he visits for the first time since the battle. He starts to confess what he did with Melisandre, but she already knows and calls it no sin. She keeps their stillborn sons in jars.',
+      it: 'La sua regina, che va a trovare per la prima volta dopo la battaglia. Comincia a confessarle quello che ha fatto con Melisandre, ma lei lo sa già e dice che non è peccato. Tiene i loro figli nati morti in vasi di vetro.',
+    },
+  },
+  staShireenDavos25: {
+    character: 'shireen-baratheon',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, whom he visits against her mother’s advice. She asks after Davos, and he tells her the knight is a traitor in the dungeon and she should forget him.',
+      it: 'Sua figlia, che va a trovare nonostante il parere della madre. Lei gli chiede di Davos, e Stannis le risponde che il cavaliere è un traditore chiuso in cella e che deve dimenticarlo.',
+    },
+  },
+  staGendryLeeches28: {
+    character: 'gendry',
+    type: { en: 'Nephew to sacrifice', it: 'Nipote da sacrificare' },
+    summary: {
+      en: 'His brother Robert’s bastard, whom Melisandre brings to Dragonstone to burn. Stannis throws three leeches full of his blood into the fire, naming three rival kings.',
+      it: 'Il bastardo di suo fratello Robert, che Melisandre porta a Roccia del Drago per bruciarlo. Stannis getta nel fuoco tre sanguisughe piene del suo sangue, nominando tre re rivali.',
+    },
+  },
+  staDavosFreed28: {
+    character: 'davos-seaworth',
+    type: { en: 'Loyal knight', it: 'Cavaliere fedele' },
+    summary: {
+      en: 'The knight he visits in his cell and frees, on his promise never again to raise a hand against Melisandre. Davos tells him Gendry has never done him any wrong.',
+      it: 'Il cavaliere che va a trovare in cella e libera, dopo avergli fatto promettere di non alzare più la mano contro Melisandre. Davos gli dice che Gendry non gli ha mai fatto alcun torto.',
+    },
+  },
+  staMelisandreLamb28: {
+    character: 'melisandre',
+    type: { en: 'Priestess', it: 'Sacerdotessa' },
+    summary: {
+      en: 'The red priestess who has Gendry fed, bathed and dressed, so that he stays calm like a lamb before the knife. At her word Stannis burns the leeches.',
+      it: 'La sacerdotessa rossa che fa nutrire, lavare e vestire Gendry, perché resti tranquillo come un agnello prima del coltello. Su sua indicazione Stannis brucia le sanguisughe.',
+    },
+  },
+  staDavosLetter30: {
+    character: 'davos-seaworth',
+    type: { en: 'Loyal knight', it: 'Cavaliere fedele' },
+    summary: {
+      en: 'The knight who set Gendry free. Stannis sentenced him to death, but Davos showed him a letter from the Night’s Watch and told him his duty lay in the North. Stannis spared him to raise an army.',
+      it: 'Il cavaliere che ha liberato Gendry. Stannis lo ha condannato a morte, ma Davos gli ha mostrato una lettera dei Guardiani della notte e gli ha detto che il suo dovere è al Nord. Stannis lo ha risparmiato perché gli trovi un esercito.',
+    },
+  },
+  staMelisandreNorth30: {
+    character: 'melisandre',
+    type: { en: 'Priestess', it: 'Sacerdotessa' },
+    summary: {
+      en: 'The red priestess who tells him the leeches killed Robb Stark. She burns the Night’s Watch letter, says the true war is in the North, and asks him to spare Davos.',
+      it: 'La sacerdotessa rossa che gli dice che sono state le sanguisughe a uccidere Robb Stark. Brucia la lettera dei Guardiani della notte, dice che la vera guerra è al Nord e gli chiede di risparmiare Davos.',
+    },
+  },
+  staGendryFreed30: {
+    character: 'gendry',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His brother Robert’s bastard, whom Melisandre meant to burn. Davos set him free in a rowboat before the sacrifice.',
+      it: 'Il bastardo di suo fratello Robert, che Melisandre voleva bruciare. Davos lo ha liberato su una barca a remi prima del sacrificio.',
+    },
+  },
+  staRobbLeech30: {
+    character: 'robb-stark',
+    type: { en: 'Rival king', it: 'Re rivale' },
+    summary: {
+      en: 'One of the three kings he named as he burned the leeches. Robb was killed at the Twins, and Melisandre told Stannis the leeches had done it.',
+      it: 'Uno dei tre re che ha nominato bruciando le sanguisughe. Robb è stato ucciso alle Torri Gemelle, e Melisandre ha detto a Stannis che è stata opera delle sanguisughe.',
+    },
+  },
+  // Stannis, the books
+  staDavosHand180: {
+    character: 'davos-seaworth',
+    type: { en: 'Hand of the King', it: 'Primo Cavaliere' },
+    summary: {
+      en: 'The knight he has brought up from the dungeon. Davos calls Axell’s plan a folly, and Stannis makes him a lord, admiral of the narrow sea and his Hand.',
+      it: 'Il cavaliere che fa portare su dalla cella. Davos definisce una follia il piano di Axell, e Stannis lo nomina lord, ammiraglio del Mare Stretto e suo Primo Cavaliere.',
+    },
+  },
+  staAxell180: {
+    character: 'axell-florent',
+    type: { en: 'Castellan', it: 'Castellano' },
+    summary: {
+      en: 'The queen’s uncle, whom he has explain to Davos the plan to attack the island of a lord who bent the knee to Joffrey. Stannis sends him out when Davos calls it a folly.',
+      it: 'Lo zio della regina, a cui fa spiegare a Davos il piano per attaccare l’isola di un lord che si è piegato a Joffrey. Stannis lo manda via quando Davos lo definisce una follia.',
+    },
+  },
+  staAlester180: {
+    character: 'alester-florent',
+    type: { en: 'Traitor', it: 'Traditore' },
+    summary: {
+      en: 'His Hand after the Blackwater, who wrote to Tywin Lannister offering peace in his name. Stannis proclaims that Alester will die for treason.',
+      it: 'Il suo Primo Cavaliere dopo le Acque Nere, che ha scritto a Tywin Lannister offrendo la pace a suo nome. Stannis proclama che Alester morirà per tradimento.',
+    },
+  },
+  staMelisandreEdric180: {
+    character: 'melisandre',
+    type: { en: 'Priestess', it: 'Sacerdotessa' },
+    summary: {
+      en: 'The red priestess who speaks of the great battle against the cold and the endless night, and asks him to give Edric to the fire for the power in a king’s blood. He refuses.',
+      it: 'La sacerdotessa rossa che parla della grande battaglia contro il freddo e la notte senza fine, e gli chiede di dare Edric alle fiamme per il potere del sangue di re. Lui rifiuta.',
+    },
+  },
+  staEdric180: {
+    character: 'edric-storm',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His brother Robert’s bastard. Stannis will not let Melisandre burn him, but throws three leeches fat with his blood into the brazier, naming three false kings.',
+      it: 'Il bastardo di suo fratello Robert. Stannis non permette a Melisandre di bruciarlo, ma getta nel braciere tre sanguisughe gonfie del suo sangue, nominando tre falsi re.',
+    },
+  },
+  // Davos, the show
+  davSalladhorRescue21: {
+    character: 'salladhor-saan',
+    type: { en: 'Rescuer', it: 'Soccorritore' },
+    summary: {
+      en: 'The pirate who pulls him from the sea after the Blackwater. Salladhor has left Stannis and warns him that Melisandre burns anyone who speaks against her, but agrees to put him ashore on Dragonstone.',
+      it: 'Il pirata che lo ripesca in mare dopo le Acque Nere. Salladhor ha lasciato Stannis e lo avverte che Melisandre brucia chiunque parli contro di lei, ma accetta di sbarcarlo a Roccia del Drago.',
+    },
+  },
+  davMelisandreKnife21: {
+    character: 'melisandre',
+    type: { en: 'Enemy', it: 'Nemica' },
+    summary: {
+      en: 'The red priestess he blames for the defeat. When she says the dead, his son among them, are on him for keeping her from the battle, he draws a knife on her and is seized.',
+      it: 'La sacerdotessa rossa che accusa della sconfitta. Quando lei gli dice che i morti, suo figlio compreso, sono colpa sua perché l’ha tenuta lontana dalla battaglia, Davos estrae un coltello e viene fermato.',
+    },
+  },
+  davStannisDungeon21: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king he finds despondent on Dragonstone, alone with Melisandre. Stannis has him thrown in the dungeon.',
+      it: 'Il re che trova abbattuto a Roccia del Drago, solo con Melisandre. Stannis lo fa gettare in cella.',
+    },
+  },
+  davShireenBook25: {
+    character: 'shireen-baratheon',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The king’s daughter, who sneaks down to his cell with a book about Aegon the Conqueror. When he admits he cannot read, she starts teaching him.',
+      it: 'La figlia del re, che scende di nascosto nella sua cella con un libro su Aegon il Conquistatore. Quando lui ammette di non saper leggere, comincia a insegnarglielo.',
+    },
+  },
+  davStannisFreed28: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who comes to his cell, says he is sorry about Matthos, and frees him on his promise never again to raise a hand against Melisandre. He tells Davos of the plan to sacrifice Gendry.',
+      it: 'Il re che scende nella sua cella, gli dice di essere dispiaciuto per Matthos e lo libera dopo avergli fatto promettere di non alzare più la mano contro Melisandre. Gli racconta del piano di sacrificare Gendry.',
+    },
+  },
+  davGendryLeeches28: {
+    character: 'gendry',
+    type: { en: 'Boy to save', it: 'Ragazzo da salvare' },
+    summary: {
+      en: 'King Robert’s bastard, whom Melisandre means to sacrifice. Davos tells Stannis the boy has never done him any wrong, then watches her leech him.',
+      it: 'Il bastardo di re Robert, che Melisandre vuole sacrificare. Davos dice a Stannis che il ragazzo non gli ha mai fatto alcun torto, poi assiste mentre lei gli mette le sanguisughe.',
+    },
+  },
+  davMelisandreLeeches28: {
+    character: 'melisandre',
+    type: { en: 'Enemy', it: 'Nemica' },
+    summary: {
+      en: 'The red priestess who shows him the power in a king’s blood. She puts leeches on Gendry, and Stannis burns them.',
+      it: 'La sacerdotessa rossa che gli mostra il potere del sangue di re. Mette le sanguisughe su Gendry, e Stannis le brucia.',
+    },
+  },
+  davGendryFreed30: {
+    character: 'gendry',
+    type: { en: 'Boy he saved', it: 'Ragazzo che ha salvato' },
+    summary: {
+      en: 'The boy he frees before the sacrifice, with a rowboat and the way to King’s Landing.',
+      it: 'Il ragazzo che libera prima del sacrificio, con una barca a remi e le indicazioni per Approdo del Re.',
+    },
+  },
+  davStannisLetter30: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who sentences him to death for freeing Gendry. Davos shows him a letter from the Night’s Watch and says his duty lies in the North, and Stannis spares him.',
+      it: 'Il re che lo condanna a morte per aver liberato Gendry. Davos gli mostra una lettera dei Guardiani della notte e gli dice che il suo dovere è al Nord, e Stannis lo risparmia.',
+    },
+  },
+  davMelisandreSpared30: {
+    character: 'melisandre',
+    type: { en: 'Enemy', it: 'Nemica' },
+    summary: {
+      en: 'The red priestess who burns the Night’s Watch letter, agrees that the true war is in the North, and tells Stannis that Davos has a part to play in it.',
+      it: 'La sacerdotessa rossa che brucia la lettera dei Guardiani della notte, conviene che la vera guerra è al Nord e dice a Stannis che Davos vi avrà una parte.',
+    },
+  },
+  davShireenLetters30: {
+    character: 'shireen-baratheon',
+    type: { en: 'Teacher', it: 'Maestra' },
+    summary: {
+      en: 'The princess who taught him to read. Now he reads the king’s letters, and turns down her offer of more stories about Aegon.',
+      it: 'La principessa che gli ha insegnato a leggere. Ora lui legge le lettere del re, e rifiuta la sua proposta di leggere altre storie su Aegon.',
+    },
+  },
+  // Davos, the books
+  davSalladhorHarbour154: {
+    character: 'salladhor-saan',
+    type: { en: 'Old friend', it: 'Vecchio amico' },
+    summary: {
+      en: 'The old friend he meets in the harbour on his return. Salladhor offers him a ship of his own and warns him against killing Melisandre, but Davos will not leave Stannis.',
+      it: 'Il vecchio amico che incontra nel porto al suo ritorno. Salladhor gli offre una nave tutta sua e lo sconsiglia di uccidere Melisandre, ma Davos non vuole lasciare Stannis.',
+    },
+  },
+  davMelisandreDirk154: {
+    character: 'melisandre',
+    type: { en: 'Enemy', it: 'Nemica' },
+    summary: {
+      en: 'The red priestess he means to kill with a dirk a captain gave him. He blames her for Cressen, Renly, Cortnay Penrose and his sons. Queen’s men arrest him in the castle first.',
+      it: 'La sacerdotessa rossa che vuole uccidere con il pugnale che gli ha regalato un capitano. La ritiene colpevole della morte di Cressen, di Renly, di Cortnay Penrose e dei suoi figli. Gli uomini della regina lo arrestano al castello prima che possa farlo.',
+    },
+  },
+  davStannisDrum154: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who has shut himself away since the Blackwater and sees no one but Melisandre. Davos comes back to serve him, and is arrested before he reaches him.',
+      it: 'Il re che dopo le Acque Nere si è chiuso nelle sue stanze e non vede nessuno tranne Melisandre. Davos torna per servirlo, e viene arrestato prima di raggiungerlo.',
+    },
+  },
+  davShireenGarden154: {
+    character: 'shireen-baratheon',
+    type: { en: 'Princess', it: 'Principessa' },
+    summary: {
+      en: 'The king’s daughter, whom he sees playing in the castle garden with her fool and another child while he waits to see her father.',
+      it: 'La figlia del re, che vede giocare nel giardino del castello con il suo giullare e un altro bambino mentre aspetta di vedere il padre.',
+    },
+  },
+  davMatthosSons154: {
+    character: 'matthos-seaworth',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son, second on the Black Betha, killed when the wildfire destroyed the ship. Back on Dragonstone Davos learns that two more of his sons died in the battle.',
+      it: 'Suo figlio, secondo sulla Black Betha, ucciso quando l’altofuoco ha distrutto la nave. Tornato a Roccia del Drago, Davos scopre che nella battaglia sono morti altri due suoi figli.',
+    },
+  },
+  davMelisandreCell169: {
+    character: 'melisandre',
+    type: { en: 'Enemy', it: 'Nemica' },
+    summary: {
+      en: 'The red priestess who visits him in his cell. She saw in her flames that he meant to kill her, and he admits it. She tells him of her god’s war with the darkness and says he will serve the Lord of Light again.',
+      it: 'La sacerdotessa rossa che va a trovarlo in cella. Ha visto nelle fiamme che voleva ucciderla, e lui lo ammette. Gli parla della guerra del suo dio contro le tenebre e gli dice che servirà di nuovo il Signore della Luce.',
+    },
+  },
+  davStannisHand180: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who sends for him and hears him call Axell’s plan a folly. Stannis makes him a lord, admiral of the narrow sea and Hand of the King.',
+      it: 'Il re che lo manda a chiamare e lo sente definire una follia il piano di Axell. Stannis lo nomina lord, ammiraglio del Mare Stretto e Primo Cavaliere.',
+    },
+  },
+  davAxell180: {
+    character: 'axell-florent',
+    type: { en: 'Jailer', it: 'Carceriere' },
+    summary: {
+      en: 'The queen’s uncle, who arrested him on his return. He brings Davos before the king, and threatens to have him killed if he does not help Axell become Hand.',
+      it: 'Lo zio della regina, che lo ha arrestato al suo ritorno. Lo porta davanti al re, e minaccia di farlo uccidere se non lo aiuta a diventare Primo Cavaliere.',
+    },
+  },
+  davAlester180: {
+    character: 'alester-florent',
+    type: { en: 'Cellmate', it: 'Compagno di cella' },
+    summary: {
+      en: 'The Hand thrown into his cell for writing to Tywin Lannister to offer peace. Davos told him Stannis would rather die a king than bend the knee. Stannis now proclaims that Alester will die for treason.',
+      it: 'Il Primo Cavaliere gettato nella sua cella per aver scritto a Tywin Lannister offrendo la pace. Davos gli ha detto che Stannis preferirebbe morire da re piuttosto che piegare il ginocchio. Ora Stannis proclama che Alester morirà per tradimento.',
+    },
+  },
+  davMelisandreBattle180: {
+    character: 'melisandre',
+    type: { en: 'Enemy', it: 'Nemica' },
+    summary: {
+      en: 'The red priestess who speaks of the great battle against the cold and the night that never ends, and asks Stannis to burn Edric for the power in his blood.',
+      it: 'La sacerdotessa rossa che parla della grande battaglia contro il freddo e la notte che non finisce, e chiede a Stannis di bruciare Edric per il potere del suo sangue.',
+    },
+  },
+  davEdric180: {
+    character: 'edric-storm',
+    type: { en: 'King Robert’s son', it: 'Figlio di re Robert' },
+    summary: {
+      en: 'The boy he met playing with Shireen, who told him his uncle should never have cut off Davos’s fingers. Melisandre wants him burned, and Stannis burns three leeches full of his blood instead.',
+      it: 'Il ragazzo che ha incontrato mentre giocava con Shireen, e che gli ha detto che suo zio non avrebbe mai dovuto tagliargli le dita. Melisandre vuole bruciarlo, e Stannis brucia invece tre sanguisughe piene del suo sangue.',
+    },
+  },
+  // Melisandre, the show
+  melDavosKnife21: {
+    character: 'davos-seaworth',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The knight who comes back calling her his enemy. She tells him it was his advice that kept her from the Blackwater and cost his son’s life. He draws a knife, and Stannis has him taken away.',
+      it: 'Il cavaliere che torna chiamandola sua nemica. Lei gli dice che è stato il suo consiglio a tenerla lontana dalle Acque Nere, e a costare la vita a suo figlio. Lui estrae un coltello, e Stannis lo fa portare via.',
+    },
+  },
+  melStannisDespair21: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who, after the defeat, lets no one near him but her.',
+      it: 'Il re che, dopo la sconfitta, non lascia avvicinare nessuno tranne lei.',
+    },
+  },
+  melStannisLeave23: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who wants her to stay. She will not make him another son, because it would kill him, and leaves to find what she needs: a king’s blood.',
+      it: 'Il re che vuole che resti. Lei non gli farà un altro figlio, perché lo ucciderebbe, e parte a cercare ciò che le serve: sangue di re.',
+    },
+  },
+  melThoros26: {
+    character: 'thoros-of-myr',
+    type: { en: 'Fellow priest', it: 'Confratello' },
+    summary: {
+      en: 'The red priest from Myr, whom she asks what became of his mission to convert King Robert. She is shaken to learn that his prayers have brought Beric back from death six times.',
+      it: 'Il prete rosso di Myr, a cui chiede che fine abbia fatto la sua missione di convertire re Robert. È turbata nello scoprire che le sue preghiere hanno riportato Beric dalla morte sei volte.',
+    },
+  },
+  melBeric26: {
+    character: 'beric-dondarrion',
+    type: { en: 'Man brought back', it: 'Uomo riportato in vita' },
+    summary: {
+      en: 'The leader of the Brotherhood, who has died six times. He tells her there is only darkness on the other side.',
+      it: 'Il capo della Fratellanza, morto sei volte. Le dice che dall’altra parte c’è solo il buio.',
+    },
+  },
+  melGendryBought26: {
+    character: 'gendry',
+    type: { en: 'King’s blood', it: 'Sangue di re' },
+    summary: {
+      en: 'The young smith she buys from the Brotherhood for two bags of gold, because the Lord of Light needs him.',
+      it: 'Il giovane fabbro che compra dalla Fratellanza per due sacchi d’oro, perché serve al Signore della Luce.',
+    },
+  },
+  melArya26: {
+    character: 'arya-stark',
+    type: { en: 'Girl she will meet again', it: 'Ragazza che rivedrà' },
+    summary: {
+      en: 'The girl who calls her a witch for taking Gendry. In Arya’s eyes Melisandre sees the eyes she will shut forever, and tells her they will meet again.',
+      it: 'La ragazza che la chiama strega perché porta via Gendry. Negli occhi di Arya Melisandre vede gli occhi che lei chiuderà per sempre, e le dice che si rivedranno.',
+    },
+  },
+  melGendryTold27: {
+    character: 'gendry',
+    type: { en: 'King’s blood', it: 'Sangue di re' },
+    summary: {
+      en: 'The young smith she takes by ship to Dragonstone. Sailing past the Red Keep, she tells him he is King Robert’s bastard son.',
+      it: 'Il giovane fabbro che porta per mare a Roccia del Drago. Passando sotto la Fortezza Rossa, gli rivela che è figlio bastardo di re Robert.',
+    },
+  },
+  melGendryLeeches28: {
+    character: 'gendry',
+    type: { en: 'King’s blood', it: 'Sangue di re' },
+    summary: {
+      en: 'Robert’s bastard, whom she has fed, bathed and dressed so that he stays calm before the sacrifice. She seduces him, ties him to the bed and puts leeches on him.',
+      it: 'Il bastardo di Robert, che fa nutrire, lavare e vestire perché resti tranquillo prima del sacrificio. Lo seduce, lo lega al letto e gli mette addosso le sanguisughe.',
+    },
+  },
+  melStannisLamb28: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who cannot see why she treats the boy so well. At her word he throws the leeches into the fire, naming three rival kings.',
+      it: 'Il re che non capisce perché lei tratti così bene il ragazzo. Su sua indicazione getta le sanguisughe nel fuoco, nominando tre re rivali.',
+    },
+  },
+  melDavosDemo28: {
+    character: 'davos-seaworth',
+    type: { en: 'Doubter', it: 'Scettico' },
+    summary: {
+      en: 'The knight Stannis has freed. She leeches Gendry in front of him, to show him the power in a king’s blood.',
+      it: 'Il cavaliere che Stannis ha liberato. Mette le sanguisughe a Gendry davanti a lui, per mostrargli il potere del sangue di re.',
+    },
+  },
+  melStannisRobb30: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king she convinces that the leeches killed Robb Stark. When Davos brings the Night’s Watch letter, she tells Stannis that the true war is in the North.',
+      it: 'Il re che convince che sono state le sanguisughe a uccidere Robb Stark. Quando Davos porta la lettera dei Guardiani della notte, lei dice a Stannis che la vera guerra è al Nord.',
+    },
+  },
+  melDavosSpared30: {
+    character: 'davos-seaworth',
+    type: { en: 'Doubter', it: 'Scettico' },
+    summary: {
+      en: 'The knight who freed Gendry. She burns the letter he brings from the Night’s Watch, and tells Stannis not to kill him, because the Lord of Light has a part for him.',
+      it: 'Il cavaliere che ha liberato Gendry. Lei brucia la lettera che lui porta dai Guardiani della notte, e dice a Stannis di non ucciderlo, perché il Signore della Luce ha un ruolo per lui.',
+    },
+  },
+  melGendryEscaped30: {
+    character: 'gendry',
+    type: { en: 'King’s blood', it: 'Sangue di re' },
+    summary: {
+      en: 'The boy she meant to burn, set free by Davos before the sacrifice.',
+      it: 'Il ragazzo che voleva bruciare, liberato da Davos prima del sacrificio.',
+    },
+  },
+  // Melisandre, the books
+  melDavosCell169: {
+    character: 'davos-seaworth',
+    type: { en: 'Would-be killer', it: 'Aspirante assassino' },
+    summary: {
+      en: 'The knight in the dungeon who meant to kill her, as she saw in her flames. She tells him of the war between her god and the Other, and that he will serve the Lord of Light again.',
+      it: 'Il cavaliere in cella che voleva ucciderla, come ha visto nelle fiamme. Gli parla della guerra fra il suo dio e l’Altro, e gli dice che servirà di nuovo il Signore della Luce.',
+    },
+  },
+  melStannisWeak169: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king she believes is Azor Ahai reborn. He is too weak now for another shadow: taking more of his life would kill him.',
+      it: 'Il re che crede sia Azor Ahai rinato. Ora è troppo debole per un’altra ombra: prendergli altra vita lo ucciderebbe.',
+    },
+  },
+  melStannisLeeches180: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king she urges to burn Edric. He refuses and burns three leeches full of the boy’s blood instead, and she tells him that this both will and will not work.',
+      it: 'Il re che esorta a bruciare Edric. Lui rifiuta e brucia invece tre sanguisughe piene del sangue del ragazzo, e lei gli dice che funzionerà e non funzionerà.',
+    },
+  },
+  melEdric180: {
+    character: 'edric-storm',
+    type: { en: 'King’s blood', it: 'Sangue di re' },
+    summary: {
+      en: 'Robert’s bastard, whose death she believes would wake the stone dragon. Stannis will not give him to the fire.',
+      it: 'Il bastardo di Robert, la cui morte secondo lei sveglierebbe il drago di pietra. Stannis non vuole darlo alle fiamme.',
+    },
+  },
+  melDavosHand180: {
+    character: 'davos-seaworth',
+    type: { en: 'Hand of the King', it: 'Primo Cavaliere' },
+    summary: {
+      en: 'The knight Stannis names his Hand. She tells them both of the great battle to come, the cold and the night that never ends.',
+      it: 'Il cavaliere che Stannis nomina Primo Cavaliere. Lei parla a entrambi della grande battaglia che verrà, del freddo e della notte che non finisce.',
+    },
+  },
+  // Selyse, the show
+  selStannisJars25: {
+    character: 'stannis-baratheon',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'Her husband the king, who comes to her for the first time since the battle. She tells him that what he did with Melisandre is no sin, and weeps over the sons she bore dead.',
+      it: 'Suo marito, il re, che viene da lei per la prima volta dopo la battaglia. Lei gli dice che ciò che ha fatto con Melisandre non è peccato, e piange i figli nati morti.',
+    },
+  },
+  selMelisandreShow25: {
+    character: 'melisandre',
+    type: { en: 'Priestess', it: 'Sacerdotessa' },
+    summary: {
+      en: 'The red priestess who told her what she did with Stannis. Selyse wept for joy, because Melisandre gave him a son, which she never could.',
+      it: 'La sacerdotessa rossa che le ha raccontato ciò che ha fatto con Stannis. Selyse ha pianto di gioia, perché Melisandre gli ha dato un figlio, cosa che lei non è mai riuscita a fare.',
+    },
+  },
+  selShireenShow25: {
+    character: 'shireen-baratheon',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'Her daughter, whom she calls a distraction Stannis should not waste his time on.',
+      it: 'Sua figlia, che definisce una distrazione su cui Stannis non dovrebbe perdere tempo.',
+    },
+  },
+  // Shireen, the show
+  shiStannisShow25: {
+    character: 'stannis-baratheon',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, who visits her after the battle he lost. When she asks for Davos, he tells her the knight is a traitor in the dungeon.',
+      it: 'Suo padre, che va a trovarla dopo la battaglia che ha perso. Quando lei gli chiede di Davos, le risponde che il cavaliere è un traditore chiuso in cella.',
+    },
+  },
+  shiDavosCell25: {
+    character: 'davos-seaworth',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Her friend, who once made her a toy ship. She sneaks down to his cell with a book about Aegon the Conqueror and starts teaching him to read.',
+      it: 'Il suo amico, che una volta le ha fatto una nave giocattolo. Scende di nascosto nella sua cella con un libro su Aegon il Conquistatore e comincia a insegnargli a leggere.',
+    },
+  },
+  shiSelyseShow25: {
+    character: 'selyse-baratheon',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'Her mother, who tells Stannis not to waste his time on her.',
+      it: 'Sua madre, che dice a Stannis di non perdere tempo con lei.',
+    },
+  },
+  shiDavosReads30: {
+    character: 'davos-seaworth',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Her friend, who can read now. She wants to read him more about Aegon, but he would rather go through her father’s letters.',
+      it: 'Il suo amico, che ora sa leggere. Lei vorrebbe leggergli altre storie su Aegon, ma lui preferisce occuparsi delle lettere di suo padre.',
+    },
+  },
+  // Shireen, the books
+  shiEdric180: {
+    character: 'edric-storm',
+    type: { en: 'Playmate', it: 'Compagno di giochi' },
+    summary: {
+      en: 'King Robert’s bastard son, who plays monsters and maidens with her and her fool in the castle garden.',
+      it: 'Il figlio bastardo di re Robert, che gioca a mostri e fanciulle con lei e il suo giullare nel giardino del castello.',
+    },
+  },
+  shiCressenDead180: {
+    character: 'cressen',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The old maester who showed her the white raven and told her the comet would soon be gone. He died at the feast that night.',
+      it: 'Il vecchio maestro che le ha mostrato il corvo bianco e le ha detto che la cometa sarebbe presto scomparsa. È morto quella sera stessa, alla festa.',
+    },
+  },
+  // Salladhor, the show
+  salDavosRescue21: {
+    character: 'davos-seaworth',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The friend he pulls from the sea after the Blackwater. He tries to talk Davos out of killing Melisandre, then agrees to put him ashore on Dragonstone.',
+      it: 'L’amico che ripesca in mare dopo le Acque Nere. Cerca di dissuaderlo dall’uccidere Melisandre, poi accetta di sbarcarlo a Roccia del Drago.',
+    },
+  },
+  salMelisandreShow21: {
+    character: 'melisandre',
+    type: { en: 'Danger', it: 'Pericolo' },
+    summary: {
+      en: 'The red priestess who has been burning anyone who speaks against her. Salladhor means to keep well away from her.',
+      it: 'La sacerdotessa rossa che fa bruciare chiunque parli contro di lei. Salladhor vuole starle il più lontano possibile.',
+    },
+  },
+  salStannisLeft21: {
+    character: 'stannis-baratheon',
+    type: { en: 'Former king', it: 'Ex re' },
+    summary: {
+      en: 'The king whose service he left after the Blackwater.',
+      it: 'Il re di cui ha lasciato il servizio dopo le Acque Nere.',
+    },
+  },
+  // Salladhor, the books
+  salDavosHarbour154: {
+    character: 'davos-seaworth',
+    type: { en: 'Old friend', it: 'Vecchio amico' },
+    summary: {
+      en: 'The old friend whom one of his captains picked up after the Blackwater. He offers Davos a ship and warns him not to try to kill Melisandre, but Davos stays loyal to Stannis.',
+      it: 'Il vecchio amico che uno dei suoi capitani ha raccolto dopo le Acque Nere. Gli offre una nave e lo avverte di non provare a uccidere Melisandre, ma Davos resta fedele a Stannis.',
+    },
+  },
+  salStannisUnpaid154: {
+    character: 'stannis-baratheon',
+    type: { en: 'Employer', it: 'Committente' },
+    summary: {
+      en: 'The king who still has not paid him, and who sees no one but Melisandre.',
+      it: 'Il re che non lo ha ancora pagato, e che non vede nessuno tranne Melisandre.',
+    },
+  },
+  salMelisandreBook154: {
+    character: 'melisandre',
+    type: { en: 'Danger', it: 'Pericolo' },
+    summary: {
+      en: 'The red priestess who, with the queen, has burned lords as traitors. He tells Davos that trying to kill her would be his death.',
+      it: 'La sacerdotessa rossa che, insieme alla regina, ha fatto bruciare dei lord come traditori. Dice a Davos che provare a ucciderla sarebbe la sua morte.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season2Relationships = {
   // Daisy, show only: shown round at her gate, in Pycelle’s bed at 13 and
   // sent to the king at 14. Her chapters only order her.
@@ -5354,6 +5961,76 @@ export const season2Relationships = {
         stormlands.staDavosBeneath,
       ],
     },
+    // Stage 3 (#1657). The show: "Valar Dohaeris" (21) to "Mhysa" (30). The
+    // books: Davos IV (180), the first chapter of the stage he is in.
+    {
+      episode: 21,
+      chapter: 154,
+      source: 'episode',
+      value: [
+        dragonstone3.staMelisandreAlone21,
+        dragonstone3.staDavosKnife21,
+        stormlands.staRenlyDeadShow,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 169,
+      source: 'episode',
+      value: [
+        dragonstone3.staMelisandreLeaves23,
+        dragonstone3.staDavosKnife21,
+        stormlands.staRenlyDeadShow,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 169,
+      source: 'episode',
+      value: [
+        dragonstone3.staMelisandreLeaves23,
+        dragonstone3.staDavosKnife21,
+        dragonstone3.staSelyseJars25,
+        dragonstone3.staShireenDavos25,
+        stormlands.staRenlyDeadShow,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'episode',
+      value: [
+        dragonstone3.staGendryLeeches28,
+        dragonstone3.staMelisandreLamb28,
+        dragonstone3.staDavosFreed28,
+        dragonstone3.staSelyseJars25,
+        dragonstone3.staShireenDavos25,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 196,
+      source: 'episode',
+      value: [
+        dragonstone3.staDavosLetter30,
+        dragonstone3.staMelisandreNorth30,
+        dragonstone3.staGendryFreed30,
+        dragonstone3.staRobbLeech30,
+        dragonstone3.staShireenDavos25,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'chapter',
+      value: [
+        dragonstone3.staDavosHand180,
+        dragonstone3.staAxell180,
+        dragonstone3.staAlester180,
+        dragonstone3.staMelisandreEdric180,
+        dragonstone3.staEdric180,
+      ],
+    },
   ],
   'melisandre': [
     {
@@ -5406,6 +6083,89 @@ export const season2Relationships = {
       chapter: 116,
       source: 'chapter',
       value: [stormlands.melStannisPavilion, stormlands.melDavosAccuser],
+    },
+    // Stage 3 (#1657). The show: Dragonstone, then the Brotherhood's hollow
+    // hill in "The Climb" (26), the voyage back with Gendry (27), and
+    // Dragonstone again (28, 30). The books: Davos III and IV (169, 180).
+    {
+      episode: 21,
+      chapter: 154,
+      source: 'episode',
+      value: [
+        dragonstone3.melStannisDespair21,
+        dragonstone3.melDavosKnife21,
+        stormlands.melRenlyShadow,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 169,
+      source: 'episode',
+      value: [
+        dragonstone3.melStannisLeave23,
+        dragonstone3.melDavosKnife21,
+        stormlands.melRenlyShadow,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 179,
+      source: 'episode',
+      value: [
+        dragonstone3.melThoros26,
+        dragonstone3.melBeric26,
+        dragonstone3.melGendryBought26,
+        dragonstone3.melArya26,
+        dragonstone3.melStannisLeave23,
+      ],
+    },
+    {
+      episode: 27,
+      chapter: 180,
+      source: 'episode',
+      value: [
+        dragonstone3.melGendryTold27,
+        dragonstone3.melStannisLeave23,
+        dragonstone3.melThoros26,
+        dragonstone3.melBeric26,
+        dragonstone3.melArya26,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'episode',
+      value: [
+        dragonstone3.melGendryLeeches28,
+        dragonstone3.melStannisLamb28,
+        dragonstone3.melDavosDemo28,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 196,
+      source: 'episode',
+      value: [
+        dragonstone3.melStannisRobb30,
+        dragonstone3.melDavosSpared30,
+        dragonstone3.melGendryEscaped30,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 169,
+      source: 'chapter',
+      value: [dragonstone3.melDavosCell169, dragonstone3.melStannisWeak169],
+    },
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'chapter',
+      value: [
+        dragonstone3.melStannisLeeches180,
+        dragonstone3.melEdric180,
+        dragonstone3.melDavosHand180,
+      ],
     },
   ],
   'davos-seaworth': [
@@ -5486,6 +6246,92 @@ export const season2Relationships = {
       source: 'chapter',
       value: [stormlands.davMatthosBetha, stormlands.davStannisShore],
     },
+    // Stage 3 (#1657). The show: "Valar Dohaeris" (21) to "Mhysa" (30). The
+    // books: Davos II to IV (154, 169, 180). Davos I (149) has him alone on
+    // a rock, and changes no card.
+    {
+      episode: 21,
+      chapter: 154,
+      source: 'episode',
+      value: [
+        dragonstone3.davSalladhorRescue21,
+        dragonstone3.davMelisandreKnife21,
+        dragonstone3.davStannisDungeon21,
+        stormlands.davMatthosDead,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 169,
+      source: 'episode',
+      value: [
+        dragonstone3.davStannisDungeon21,
+        dragonstone3.davMelisandreKnife21,
+        dragonstone3.davSalladhorRescue21,
+        stormlands.davMatthosDead,
+        dragonstone3.davShireenBook25,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'episode',
+      value: [
+        dragonstone3.davStannisFreed28,
+        dragonstone3.davGendryLeeches28,
+        dragonstone3.davMelisandreLeeches28,
+        dragonstone3.davShireenBook25,
+        stormlands.davMatthosDead,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 196,
+      source: 'episode',
+      value: [
+        dragonstone3.davGendryFreed30,
+        dragonstone3.davStannisLetter30,
+        dragonstone3.davMelisandreSpared30,
+        dragonstone3.davShireenLetters30,
+        stormlands.davMatthosDead,
+      ],
+    },
+    {
+      episode: 21,
+      chapter: 154,
+      source: 'chapter',
+      value: [
+        dragonstone3.davMelisandreDirk154,
+        dragonstone3.davSalladhorHarbour154,
+        dragonstone3.davStannisDrum154,
+        dragonstone3.davShireenGarden154,
+        dragonstone3.davMatthosSons154,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 169,
+      source: 'chapter',
+      value: [
+        dragonstone3.davMelisandreCell169,
+        dragonstone3.davStannisDrum154,
+        dragonstone3.davSalladhorHarbour154,
+        dragonstone3.davShireenGarden154,
+        dragonstone3.davMatthosSons154,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'chapter',
+      value: [
+        dragonstone3.davStannisHand180,
+        dragonstone3.davAxell180,
+        dragonstone3.davAlester180,
+        dragonstone3.davMelisandreBattle180,
+        dragonstone3.davEdric180,
+      ],
+    },
   ],
   // He opens deceased in both media.
   'cressen': [
@@ -5562,9 +6408,31 @@ export const season2Relationships = {
       source: 'chapter',
       value: [stormlands.salDavosBook, stormlands.salStannisBook],
     },
+    // Stage 3 (#1657). The show: "Valar Dohaeris" (21). The books: Davos II
+    // (154).
+    {
+      episode: 21,
+      chapter: 154,
+      source: 'episode',
+      value: [
+        dragonstone3.salDavosRescue21,
+        dragonstone3.salMelisandreShow21,
+        dragonstone3.salStannisLeft21,
+      ],
+    },
+    {
+      episode: 21,
+      chapter: 154,
+      source: 'chapter',
+      value: [
+        dragonstone3.salDavosHarbour154,
+        dragonstone3.salStannisUnpaid154,
+        dragonstone3.salMelisandreBook154,
+      ],
+    },
   ],
-  // The show names her only in episode 25: her cards are the books' in this
-  // stage, and episode 25 orders them.
+  // The show names her only in episode 25: her cards are the books' in the
+  // second stage, and episode 25 orders them.
   'selyse-baratheon': [
     {
       episode: 25,
@@ -5574,6 +6442,17 @@ export const season2Relationships = {
         stormlands.selStannis,
         stormlands.selMelisandre,
         stormlands.selShireen,
+      ],
+    },
+    // Stage 3 (#1657): her first show cards, "Kissed by Fire" (25).
+    {
+      episode: 25,
+      chapter: 169,
+      source: 'episode',
+      value: [
+        dragonstone3.selStannisJars25,
+        dragonstone3.selMelisandreShow25,
+        dragonstone3.selShireenShow25,
       ],
     },
   ],
@@ -5587,6 +6466,41 @@ export const season2Relationships = {
         stormlands.shiSelyse,
         stormlands.shiMelisandre,
         stormlands.shiStannis,
+      ],
+    },
+    // Stage 3 (#1657). The show: "Kissed by Fire" (25), her first show
+    // cards, and "Mhysa" (30). The books: Davos IV (180), where Edric, whom
+    // Davos saw playing with her in Davos II (154), is named.
+    {
+      episode: 25,
+      chapter: 169,
+      source: 'episode',
+      value: [
+        dragonstone3.shiStannisShow25,
+        dragonstone3.shiDavosCell25,
+        dragonstone3.shiSelyseShow25,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 196,
+      source: 'episode',
+      value: [
+        dragonstone3.shiStannisShow25,
+        dragonstone3.shiDavosReads30,
+        dragonstone3.shiSelyseShow25,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'chapter',
+      value: [
+        dragonstone3.shiEdric180,
+        stormlands.shiSelyse,
+        stormlands.shiMelisandre,
+        stormlands.shiStannis,
+        dragonstone3.shiCressenDead180,
       ],
     },
   ],

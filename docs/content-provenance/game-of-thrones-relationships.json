@@ -3129,14 +3129,20 @@
         "got-en-The_Ghost_of_Harrenhal-748633.json",
         "got-en-The_Prince_of_Winterfell-740172.json",
         "got-en-Blackwater-729787.json",
-        "got-en-Valar_Morghulis-740176.json"
+        "got-en-Valar_Morghulis-740176.json",
+        "got-en-Valar_Dohaeris-746438.json",
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-Second_Sons_(episode)-740340.json",
+        "got-en-Mhysa-740189.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_31",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_42"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_42",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_36"
         ]
       }
     },
@@ -3146,14 +3152,22 @@
         "got-en-The_North_Remembers-740163.json",
         "got-en-Garden_of_Bones_(episode)-729784.json",
         "got-en-The_Ghost_of_Harrenhal-748633.json",
-        "got-en-Valar_Morghulis-740176.json"
+        "got-en-Valar_Morghulis-740176.json",
+        "got-en-Valar_Dohaeris-746438.json",
+        "got-en-Walk_of_Punishment_(episode)-737648.json",
+        "got-en-The_Climb-740184.json",
+        "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json",
+        "got-en-Second_Sons_(episode)-740340.json",
+        "got-en-Mhysa-740189.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_10",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_42"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_42",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_25",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_36"
         ]
       }
     },
@@ -3165,7 +3179,11 @@
         "got-en-Garden_of_Bones_(episode)-729784.json",
         "got-en-The_Ghost_of_Harrenhal-748633.json",
         "got-en-The_Prince_of_Winterfell-740172.json",
-        "got-en-Blackwater-729787.json"
+        "got-en-Blackwater-729787.json",
+        "got-en-Valar_Dohaeris-746438.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-Second_Sons_(episode)-740340.json",
+        "got-en-Mhysa-740189.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -3173,7 +3191,11 @@
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_10",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_42",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_58"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_58",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_5",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_10",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_25",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_36"
         ]
       }
     },
@@ -3207,17 +3229,22 @@
     "salladhor-saan": {
       "sources": [
         "got-en-Salladhor_Saan-728409.json",
-        "got-en-The_Night_Lands-740164.json"
+        "got-en-The_Night_Lands-740164.json",
+        "got-en-Valar_Dohaeris-746438.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_10"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_10",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_10"
         ]
       }
     },
     "selyse-baratheon": {
-      "sources": [],
+      "sources": [
+        "got-en-Selyse_Baratheon-719683.json",
+        "got-en-Kissed_by_Fire-740183.json"
+      ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
@@ -3226,11 +3253,17 @@
       }
     },
     "shireen-baratheon": {
-      "sources": [],
+      "sources": [
+        "got-en-Shireen_Baratheon-734920.json",
+        "got-en-Kissed_by_Fire-740183.json",
+        "got-en-Mhysa-740189.json"
+      ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_10",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_36"
         ]
       }
     },
@@ -3560,6 +3593,37 @@
           "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
         ]
       }
+    },
+    "axell-florent": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_10",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_25",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_36"
+        ]
+      }
+    },
+    "alester-florent": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_25",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_36"
+        ]
+      }
+    },
+    "edric-storm": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_10",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_36"
+        ]
+      }
     }
   },
   "omitted": {},
@@ -3585,9 +3649,6 @@
     "ghost-of-high-heart": "#1654",
     "qyburn": "#1655",
     "steelshanks-walton": "#1655",
-    "axell-florent": "#1657",
-    "alester-florent": "#1657",
-    "edric-storm": "#1657",
     "myranda": "#1658"
   }
 }
