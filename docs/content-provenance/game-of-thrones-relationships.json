@@ -824,7 +824,8 @@
         "got-en-Rickon_Stark-736322.json",
         "got-en-Luwin-736973.json",
         "got-en-The_Old_Gods_and_the_New-740283.json",
-        "got-en-Valar_Morghulis-740176.json"
+        "got-en-Valar_Morghulis-740176.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -954,7 +955,10 @@
         "got-en-The_North_Remembers-740163.json",
         "got-en-What_Is_Dead_May_Never_Die-740166.json",
         "got-en-The_Old_Gods_and_the_New-740283.json",
-        "got-en-Valar_Morghulis-740176.json"
+        "got-en-Valar_Morghulis-740176.json",
+        "got-en-Dark_Wings,_Dark_Words-740180.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json",
+        "got-en-Mhysa-740189.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -966,7 +970,9 @@
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_4",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_28",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_46",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_9",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_40"
         ]
       }
     },
@@ -1039,14 +1045,18 @@
         "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
         "got-en-Summer-745333.json",
         "iaf-en-Bran_III_-_A_Game_of_Thrones-24683.json",
-        "got-en-What_Is_Dead_May_Never_Die-740166.json"
+        "got-en-What_Is_Dead_May_Never_Die-740166.json",
+        "got-en-Dark_Wings,_Dark_Words-740180.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_4",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_28"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_28",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_9",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_40"
         ]
       }
     },
@@ -1055,7 +1065,8 @@
         "got-en-Fire_and_Blood-723065.json",
         "got-en-Shaggydog-728428.json",
         "got-en-Luwin-736973.json",
-        "got-en-The_Old_Gods_and_the_New-740283.json"
+        "got-en-The_Old_Gods_and_the_New-740283.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -1103,7 +1114,11 @@
         "got-en-Valar_Morghulis-740176.json",
         "got-en-Balon_Greyjoy-728154.json",
         "got-en-Yara_Greyjoy-732245.json",
-        "got-en-A_Man_Without_Honor-740171.json"
+        "got-en-A_Man_Without_Honor-740171.json",
+        "got-en-Dark_Wings,_Dark_Words-740180.json",
+        "got-en-And_Now_His_Watch_Is_Ended-740182.json",
+        "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json",
+        "got-en-Mhysa-740189.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -1189,7 +1204,10 @@
         "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
         "got-en-Hodor-728180.json",
         "got-en-The_Old_Gods_and_the_New-740283.json",
-        "got-en-Valar_Morghulis-740176.json"
+        "got-en-Valar_Morghulis-740176.json",
+        "got-en-Dark_Wings,_Dark_Words-740180.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json",
+        "got-en-Mhysa-740189.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -1197,7 +1215,9 @@
           "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_16",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_28",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_9",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_40"
         ]
       }
     },
@@ -1211,7 +1231,11 @@
         "got-en-Luwin-736973.json",
         "got-en-The_Old_Gods_and_the_New-740283.json",
         "got-en-The_Prince_of_Winterfell-740172.json",
-        "got-en-Valar_Morghulis-740176.json"
+        "got-en-Valar_Morghulis-740176.json",
+        "got-en-Dark_Wings,_Dark_Words-740180.json",
+        "got-en-The_Climb-740184.json",
+        "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -2778,13 +2802,15 @@
       "sources": [
         "got-en-The_Night_Lands-740164.json",
         "got-en-What_Is_Dead_May_Never_Die-740166.json",
-        "got-en-Balon_Greyjoy-728154.json"
+        "got-en-Balon_Greyjoy-728154.json",
+        "got-en-Mhysa-740189.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_11",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_24"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_24",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_45"
         ]
       }
     },
@@ -2792,7 +2818,8 @@
       "sources": [
         "got-en-The_Night_Lands-740164.json",
         "got-en-The_Prince_of_Winterfell-740172.json",
-        "got-en-Yara_Greyjoy-732245.json"
+        "got-en-Yara_Greyjoy-732245.json",
+        "got-en-Mhysa-740189.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -2809,7 +2836,8 @@
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_11",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_24",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_37"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_37",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_45"
         ]
       }
     },
@@ -2818,7 +2846,8 @@
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_24"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_24",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_45"
         ]
       }
     },
@@ -2827,7 +2856,8 @@
         "got-en-The_Ghost_of_Harrenhal-748633.json",
         "got-en-The_Old_Gods_and_the_New-740283.json",
         "got-en-Valar_Morghulis-740176.json",
-        "got-en-Dagmer-728016.json"
+        "got-en-Dagmer-728016.json",
+        "got-en-Mhysa-740189.json"
       ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
@@ -2873,30 +2903,43 @@
       }
     },
     "meera-reed": {
-      "sources": [],
+      "sources": [
+        "got-en-Dark_Wings,_Dark_Words-740180.json",
+        "got-en-The_Climb-740184.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json",
+        "got-en-Mhysa-740189.json"
+      ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_21",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_50",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_9",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_24"
         ]
       }
     },
     "jojen-reed": {
-      "sources": [],
+      "sources": [
+        "got-en-Dark_Wings,_Dark_Words-740180.json",
+        "got-en-The_Climb-740184.json",
+        "got-en-The_Rains_of_Castamere_(episode)-729892.json",
+        "got-en-Mhysa-740189.json"
+      ],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_21",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_28",
           "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_35",
-          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69"
+          "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69",
+          "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_9"
         ]
       }
     },
     "ramsay-snow": {
-      "sources": [],
+      "sources": ["got-en-Mhysa-740189.json"],
       "unpinned": {
         "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
         "urls": [
@@ -3624,6 +3667,12 @@
           "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_36"
         ]
       }
+    },
+    "myranda": {
+      "sources": [
+        "got-en-The_Bear_and_the_Maiden_Fair_(episode)-729794.json",
+        "got-en-Myranda-728306.json"
+      ]
     }
   },
   "omitted": {},
@@ -3648,7 +3697,6 @@
     "edric-dayne": "#1654",
     "ghost-of-high-heart": "#1654",
     "qyburn": "#1655",
-    "steelshanks-walton": "#1655",
-    "myranda": "#1658"
+    "steelshanks-walton": "#1655"
   }
 }

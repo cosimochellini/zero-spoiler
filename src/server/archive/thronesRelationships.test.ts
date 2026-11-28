@@ -384,7 +384,28 @@ const STAGE_3_GROUPS: { group: string; issue: string; owners: string[] }[] = [
       'salladhor-saan',
     ],
   },
-  { group: 'Bran’s road and Theon', issue: '#1658', owners: [] },
+  {
+    group: 'Bran’s road and Theon',
+    issue: '#1658',
+    owners: [
+      'myranda',
+      'bran-stark',
+      'rickon-stark',
+      'osha',
+      'hodor',
+      'jojen-reed',
+      'meera-reed',
+      'summer-direwolf',
+      'shaggydog',
+      'theon-greyjoy',
+      'ramsay-snow',
+      'balon-greyjoy',
+      'asha-greyjoy',
+      'aeron-greyjoy',
+      'victarion-greyjoy',
+      'dagmer',
+    ],
+  },
 ]
 
 /**
@@ -3486,6 +3507,204 @@ describe.each(LOCALES)(
         unit: 'episode',
         at: 30,
         person: 'davos-seaworth',
+      },
+    ] as const)(
+      'rewords $owner’s card in its $unit $at snapshot for $person',
+      ({ owner, unit, at, person }) => {
+        const mark = unit === 'episode' ? ep : ch
+
+        expect(said(owner, person, mark(at - 1))).toBeDefined()
+        expect(said(owner, person, mark(at))).toBeDefined()
+        expect(said(owner, person, mark(at))).not.toBe(
+          said(owner, person, mark(at - 1)),
+        )
+      },
+    )
+  },
+)
+
+// Bran's road and Theon in stage 3 (#1658): the Reeds' first show cards,
+// the parting from Rickon and Osha, the Nightfort, Theon's captivity (the
+// show's alone), Ramsay's show gate, Dagmer's show death and Balon's book
+// death. Each check compares the bookmark before a pin with the pin.
+describe.each(LOCALES)(
+  'Game of Thrones stage-3 Bran’s road and Theon revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    const said = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.summary
+    const bookCeiling = ch(archive.series.chapterCeiling)
+
+    it('keeps Theon’s captivity and Myranda off book pages', () => {
+      expect(projected('myranda', bookCeiling, locale)).toStrictEqual([])
+      expect(people('theon-greyjoy', bookCeiling)).not.toContain('myranda')
+      expect(people('ramsay-snow', ch(196))).not.toContain('balon-greyjoy')
+      expect(people('asha-greyjoy', ch(196))).not.toContain('ramsay-snow')
+    })
+
+    it('names Ramsay on show pages only from episode 30', () => {
+      for (const owner of ['theon-greyjoy', 'balon-greyjoy', 'dagmer']) {
+        expect(people(owner, ep(29)), owner).not.toContain('ramsay-snow')
+        expect(people(owner, ep(30)), owner).toContain('ramsay-snow')
+      }
+
+      expect(projected('ramsay-snow', ep(29), locale)).toStrictEqual([])
+      expect(people('ramsay-snow', ep(30))).toContain('theon-greyjoy')
+    })
+
+    it('turns Balon to the past tense at his book death, on book pages alone', () => {
+      for (const owner of ['aeron-greyjoy', 'victarion-greyjoy']) {
+        expect(said(owner, 'balon-greyjoy', ch(189)), owner).toBeDefined()
+        expect(said(owner, 'balon-greyjoy', ch(189)), owner).not.toBe(
+          said(owner, 'balon-greyjoy', ch(188)),
+        )
+      }
+
+      expect(said('asha-greyjoy', 'balon-greyjoy', ep(30))).toBeDefined()
+      expect(said('balon-greyjoy', 'theon-greyjoy', ep(30))).not.toBe(
+        said('balon-greyjoy', 'theon-greyjoy', ch(189)),
+      )
+    })
+
+    it('opens the Reeds’ show cards at episode 22', () => {
+      for (const id of ['jojen-reed', 'meera-reed']) {
+        expect(projected(id, ep(21), locale), id).toStrictEqual([])
+        expect(people(id, ep(22)), id).toContain('bran-stark')
+      }
+    })
+
+    it.each([
+      // owner, the medium, the number of a snapshot, a person it adds there
+      { owner: 'bran-stark', unit: 'episode', at: 22, person: 'jojen-reed' },
+      { owner: 'bran-stark', unit: 'episode', at: 29, person: 'hodor' },
+      { owner: 'bran-stark', unit: 'episode', at: 30, person: 'samwell-tarly' },
+      {
+        owner: 'bran-stark',
+        unit: 'chapter',
+        at: 153,
+        person: 'summer-direwolf',
+      },
+      { owner: 'rickon-stark', unit: 'episode', at: 29, person: 'shaggydog' },
+      { owner: 'osha', unit: 'episode', at: 22, person: 'meera-reed' },
+      { owner: 'osha', unit: 'episode', at: 29, person: 'shaggydog' },
+      { owner: 'hodor', unit: 'episode', at: 22, person: 'jojen-reed' },
+      { owner: 'hodor', unit: 'episode', at: 30, person: 'samwell-tarly' },
+      {
+        owner: 'summer-direwolf',
+        unit: 'episode',
+        at: 22,
+        person: 'jojen-reed',
+      },
+      { owner: 'summer-direwolf', unit: 'episode', at: 29, person: 'jon-snow' },
+      {
+        owner: 'shaggydog',
+        unit: 'episode',
+        at: 29,
+        person: 'summer-direwolf',
+      },
+      {
+        owner: 'theon-greyjoy',
+        unit: 'episode',
+        at: 22,
+        person: 'balon-greyjoy',
+      },
+      {
+        owner: 'theon-greyjoy',
+        unit: 'episode',
+        at: 24,
+        person: 'eddard-stark',
+      },
+      { owner: 'theon-greyjoy', unit: 'episode', at: 27, person: 'myranda' },
+      {
+        owner: 'theon-greyjoy',
+        unit: 'episode',
+        at: 30,
+        person: 'ramsay-snow',
+      },
+      { owner: 'jojen-reed', unit: 'episode', at: 22, person: 'bran-stark' },
+      { owner: 'jojen-reed', unit: 'episode', at: 29, person: 'jon-snow' },
+      { owner: 'jojen-reed', unit: 'episode', at: 30, person: 'samwell-tarly' },
+      {
+        owner: 'jojen-reed',
+        unit: 'chapter',
+        at: 153,
+        person: 'summer-direwolf',
+      },
+      { owner: 'meera-reed', unit: 'episode', at: 22, person: 'jojen-reed' },
+      { owner: 'meera-reed', unit: 'episode', at: 29, person: 'hodor' },
+      { owner: 'meera-reed', unit: 'episode', at: 30, person: 'samwell-tarly' },
+      {
+        owner: 'ramsay-snow',
+        unit: 'episode',
+        at: 30,
+        person: 'theon-greyjoy',
+      },
+      { owner: 'myranda', unit: 'episode', at: 27, person: 'theon-greyjoy' },
+      {
+        owner: 'balon-greyjoy',
+        unit: 'episode',
+        at: 30,
+        person: 'ramsay-snow',
+      },
+      {
+        owner: 'asha-greyjoy',
+        unit: 'episode',
+        at: 30,
+        person: 'balon-greyjoy',
+      },
+      { owner: 'dagmer', unit: 'episode', at: 30, person: 'ramsay-snow' },
+    ] as const)(
+      'opens $owner’s $unit $at snapshot with $person',
+      ({ owner, unit, at, person }) => {
+        const mark = unit === 'episode' ? ep : ch
+
+        expect(people(owner, mark(at - 1))).not.toContain(person)
+        expect(people(owner, mark(at))).toContain(person)
+      },
+    )
+
+    it.each([
+      // owner, the medium, the number of a snapshot, a person it rewords
+      { owner: 'bran-stark', unit: 'chapter', at: 184, person: 'hodor' },
+      { owner: 'osha', unit: 'episode', at: 27, person: 'jojen-reed' },
+      { owner: 'hodor', unit: 'episode', at: 29, person: 'bran-stark' },
+      { owner: 'hodor', unit: 'chapter', at: 153, person: 'bran-stark' },
+      { owner: 'hodor', unit: 'chapter', at: 184, person: 'bran-stark' },
+      {
+        owner: 'summer-direwolf',
+        unit: 'chapter',
+        at: 153,
+        person: 'bran-stark',
+      },
+      {
+        owner: 'summer-direwolf',
+        unit: 'chapter',
+        at: 184,
+        person: 'bran-stark',
+      },
+      { owner: 'meera-reed', unit: 'chapter', at: 153, person: 'jojen-reed' },
+      { owner: 'meera-reed', unit: 'chapter', at: 168, person: 'bran-stark' },
+      {
+        owner: 'balon-greyjoy',
+        unit: 'chapter',
+        at: 189,
+        person: 'theon-greyjoy',
+      },
+      {
+        owner: 'aeron-greyjoy',
+        unit: 'chapter',
+        at: 189,
+        person: 'balon-greyjoy',
+      },
+      {
+        owner: 'victarion-greyjoy',
+        unit: 'chapter',
+        at: 189,
+        person: 'balon-greyjoy',
       },
     ] as const)(
       'rewords $owner’s card in its $unit $at snapshot for $person',

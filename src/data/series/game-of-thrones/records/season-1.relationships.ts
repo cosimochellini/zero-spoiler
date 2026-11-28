@@ -17465,6 +17465,587 @@ const kingsLanding3 = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 3's Bran's road and Theon cards for the season-1 cast (#1658):
+ * season 3 and A Storm of Swords through chapter 52. The show: "Dark Wings,
+ * Dark Words" (episode 22) to "Mhysa" (30). The books: Bran I (chapter 153)
+ * and Bran III (184). Theon's captivity is the show's alone: A Dance with
+ * Dragons tells it, past the stage, so its chapters only order his
+ * entries. The new characters' own cards are in `season-3.relationships.ts`.
+ */
+const bran3 = {
+  // Bran, the show
+  brJojen22: {
+    character: 'jojen-reed',
+    type: { en: 'Greenseer', it: 'Veggente verde' },
+    summary: {
+      en: 'A boy of House Reed who has come looking for him and Rickon. He has walked in Bran’s dreams, and tells him he is a warg who can enter his wolf’s mind.',
+      it: 'Un ragazzo della casa Reed venuto a cercare lui e Rickon. È entrato nei sogni di Bran, e gli spiega che è un warg, capace di entrare nella mente del suo lupo.',
+    },
+  },
+  brMeera22: {
+    character: 'meera-reed',
+    type: { en: 'Protector', it: 'Protettrice' },
+    summary: {
+      en: 'Jojen’s sister, who holds a knife to Osha’s throat when they meet. The Reeds are sworn to the Starks and have come to protect the boys.',
+      it: 'La sorella di Jojen, che al loro primo incontro punta un coltello alla gola di Osha. I Reed sono fedeli agli Stark e sono venuti a proteggere i ragazzi.',
+    },
+  },
+  brOsha22: {
+    character: 'osha',
+    type: { en: 'Wildling guide', it: 'Guida dei bruti' },
+    summary: {
+      en: 'The wildling who is taking them north to the Wall. She has no patience for his dark dreams.',
+      it: 'La bruta che li sta portando a nord, verso la Barriera. Non ha pazienza per i suoi sogni cupi.',
+    },
+  },
+  brRickon22: {
+    character: 'rickon-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His little brother, on the road north with him.',
+      it: 'Il suo fratellino, in viaggio con lui verso nord.',
+    },
+  },
+  brSummer22: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His direwolf. Jojen says the dreams in which Bran sees through Summer’s eyes are a warg’s dreams.',
+      it: 'Il suo meta-lupo. Jojen dice che i sogni in cui Bran vede con gli occhi di Estate sono sogni da warg.',
+    },
+  },
+  brHodor29: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Chi lo porta' },
+    summary: {
+      en: 'Hodor, who carries him. In the mill, when the thunder makes Hodor shout and wildlings are close by, Bran enters his mind and makes him fall senseless.',
+      it: 'Hodor, che lo porta in braccio. Nel mulino, quando il tuono lo fa urlare e i bruti sono lì vicino, Bran entra nella sua mente e gli fa perdere i sensi.',
+    },
+  },
+  brSummer29: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His direwolf. At Jojen’s urging Bran enters Summer, who kills wildlings attacking Jon.',
+      it: 'Il suo meta-lupo. Spinto da Jojen, Bran entra in Estate, che uccide i bruti che attaccano Jon.',
+    },
+  },
+  brJon29: {
+    character: 'jon-snow',
+    type: { en: 'Half-brother', it: 'Fratellastro' },
+    summary: {
+      en: 'His half-brother, with the wildlings who raid a farm near the mill. Through Summer, Bran helps him fight them off and get away.',
+      it: 'Il suo fratellastro, con i bruti che assaltano una fattoria vicino al mulino. Attraverso Estate, Bran lo aiuta a tenerli a bada e a fuggire.',
+    },
+  },
+  brRickon29: {
+    character: 'rickon-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His little brother. Bran sends him away with Osha to the Umbers at Last Hearth, to keep him safe while Bran goes beyond the Wall.',
+      it: 'Il suo fratellino. Bran lo manda con Osha dagli Umber, a Ultimo Focolare, perché sia al sicuro mentre lui va oltre la Barriera.',
+    },
+  },
+  brOsha29: {
+    character: 'osha',
+    type: { en: 'Wildling guide', it: 'Guida dei bruti' },
+    summary: {
+      en: 'The wildling who leaves in the night with Rickon and Shaggydog, promising to look after his brother.',
+      it: 'La bruta che parte nella notte con Rickon e Cagnaccio, promettendo di badare a suo fratello.',
+    },
+  },
+  brSam30: {
+    character: 'samwell-tarly',
+    type: { en: 'Guide through the Wall', it: 'Guida oltre la Barriera' },
+    summary: {
+      en: 'A man of the Night’s Watch who climbs out of the well at the Nightfort with Gilly. He takes them through the gate beneath it and gives them dragonglass.',
+      it: 'Un uomo dei Guardiani della notte che sale dal pozzo del Forte della Notte insieme a Gilly. Li accompagna al passaggio sotto il castello e dà loro del vetro di drago.',
+    },
+  },
+  brGilly30: {
+    character: 'gilly',
+    type: { en: 'Sam’s companion', it: 'Compagna di Sam' },
+    summary: {
+      en: 'The young woman who comes up the well with Sam, carrying a baby.',
+      it: 'La ragazza che sale dal pozzo con Sam, con un bambino in braccio.',
+    },
+  },
+  brMeera30: {
+    character: 'meera-reed',
+    type: { en: 'Protector', it: 'Protettrice' },
+    summary: {
+      en: 'Jojen’s sister, who makes sure the Nightfort is safe, then overpowers the stranger climbing out of the well.',
+      it: 'La sorella di Jojen, che si assicura che il Forte della Notte sia sicuro, poi atterra lo sconosciuto che sale dal pozzo.',
+    },
+  },
+  brJojen30: {
+    character: 'jojen-reed',
+    type: { en: 'Greenseer', it: 'Veggente verde' },
+    summary: {
+      en: 'The Reed boy who is taking him beyond the Wall to find the three-eyed raven.',
+      it: 'Il ragazzo dei Reed che lo sta portando oltre la Barriera a cercare il corvo con tre occhi.',
+    },
+  },
+  brHodor30: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Chi lo porta' },
+    summary: {
+      en: 'Hodor, who carries him through the gate beneath the Nightfort and beyond the Wall.',
+      it: 'Hodor, che lo porta attraverso il passaggio sotto il Forte della Notte, oltre la Barriera.',
+    },
+  },
+  // Bran, the books
+  brSummer153: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His direwolf. Bran spends long hours in Summer’s skin hunting in the wolfswood, and enjoys the wolf’s freedom more than Jojen likes.',
+      it: 'Il suo meta-lupo. Bran passa lunghe ore nella pelle di Estate a cacciare nella Foresta del Lupo, e la libertà del lupo gli piace più di quanto Jojen vorrebbe.',
+    },
+  },
+  brJojen153: {
+    character: 'jojen-reed',
+    type: { en: 'Greenseer', it: 'Veggente verde' },
+    summary: {
+      en: 'The Reed boy, who reminds him that he and Summer are not the same. Jojen can teach him nothing more, and says they must go beyond the Wall to find the three-eyed crow.',
+      it: 'Il ragazzo dei Reed, che gli ricorda che lui ed Estate non sono la stessa cosa. Jojen non ha più niente da insegnargli, e dice che devono andare oltre la Barriera a cercare il corvo con tre occhi.',
+    },
+  },
+  brMeera153: {
+    character: 'meera-reed',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The Reed girl, who brings back frogs and trout and has him help her clean them. She would rather stay at the ruined tower where they shelter.',
+      it: 'La ragazza dei Reed, che torna con rane e trote e si fa aiutare da lui a pulirle. Preferirebbe restare nella torre in rovina dove si sono rifugiati.',
+    },
+  },
+  brHodor153: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Chi lo porta' },
+    summary: {
+      en: 'Hodor, who carries him north. His voice calls Bran back from Summer’s hunt.',
+      it: 'Hodor, che lo porta verso nord. È la sua voce a richiamare Bran dalla caccia di Estate.',
+    },
+  },
+  brHodor184: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Chi lo porta' },
+    summary: {
+      en: 'Hodor, who screams at the thunder in the island tower where they spend the night. Bran reaches into him as he does into Summer, and calms him.',
+      it: 'Hodor, che urla per il tuono nella torre sull’isola dove passano la notte. Bran entra in lui come fa con Estate, e lo calma.',
+    },
+  },
+  brSummer184: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His direwolf. When men come to the empty village by the lake, Bran slips into Summer to see who they are.',
+      it: 'Il suo meta-lupo. Quando arrivano degli uomini nel villaggio deserto sul lago, Bran entra in Estate per vedere chi sono.',
+    },
+  },
+  brJojen184: {
+    character: 'jojen-reed',
+    type: { en: 'Greenseer', it: 'Veggente verde' },
+    summary: {
+      en: 'The Reed boy, who is leading them to the Wall. He is the one who spots the men on the shore.',
+      it: 'Il ragazzo dei Reed, che li sta guidando verso la Barriera. È lui a vedere gli uomini sulla riva.',
+    },
+  },
+  brMeera184: {
+    character: 'meera-reed',
+    type: { en: 'Friend', it: 'Amica' },
+    summary: {
+      en: 'The Reed girl, travelling north with him. On the way she told him the tale of the knight of the laughing tree.',
+      it: 'La ragazza dei Reed, in viaggio con lui verso nord. Lungo la strada gli ha raccontato la storia del cavaliere dell’albero che ride.',
+    },
+  },
+  // Rickon, the show
+  rkBran29: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who sends him away with Osha to Last Hearth while he goes beyond the Wall.',
+      it: 'Suo fratello, che lo manda via con Osha a Ultimo Focolare mentre lui va oltre la Barriera.',
+    },
+  },
+  rkOsha29: {
+    character: 'osha',
+    type: { en: 'Guardian', it: 'Custode' },
+    summary: {
+      en: 'The wildling who takes him and Shaggydog to the Umbers at Last Hearth.',
+      it: 'La bruta che porta lui e Cagnaccio dagli Umber, a Ultimo Focolare.',
+    },
+  },
+  rkShaggydog29: {
+    character: 'shaggydog',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His direwolf, who leaves Bran’s party with him and Osha.',
+      it: 'Il suo meta-lupo, che lascia con lui e Osha il gruppo di Bran.',
+    },
+  },
+  // Osha, the show
+  osMeera22: {
+    character: 'meera-reed',
+    type: { en: 'Reed girl', it: 'Ragazza dei Reed' },
+    summary: {
+      en: 'The stranger’s sister, who comes up behind her and puts a knife to her throat when Osha threatens Jojen with a spear.',
+      it: 'La sorella dello sconosciuto, che le arriva alle spalle e le punta un coltello alla gola quando Osha minaccia Jojen con una lancia.',
+    },
+  },
+  osJojen22: {
+    character: 'jojen-reed',
+    type: { en: 'Reed boy', it: 'Ragazzo dei Reed' },
+    summary: {
+      en: 'A boy who walks into their camp unarmed. He says the Reeds have come to protect the Stark boys.',
+      it: 'Un ragazzo che entra disarmato nel loro accampamento. Dice che i Reed sono venuti a proteggere i ragazzi Stark.',
+    },
+  },
+  osBran22: {
+    character: 'bran-stark',
+    type: { en: 'Boy she guards', it: 'Ragazzo che protegge' },
+    summary: {
+      en: 'The boy lord she is taking north to the Wall. She wants nothing to do with his dark dreams.',
+      it: 'Il giovane signore che sta portando a nord, verso la Barriera. Non vuole saperne dei suoi sogni cupi.',
+    },
+  },
+  osRickon22: {
+    character: 'rickon-stark',
+    type: { en: 'Boy she guards', it: 'Ragazzo che protegge' },
+    summary: {
+      en: 'The youngest Stark, on the road north with them.',
+      it: 'Il più piccolo degli Stark, in viaggio con loro verso nord.',
+    },
+  },
+  osHodor22: {
+    character: 'hodor',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'Hodor, who carries Bran on the road north.',
+      it: 'Hodor, che porta Bran in braccio lungo la strada verso nord.',
+    },
+  },
+  osMeera27: {
+    character: 'meera-reed',
+    type: { en: 'Reed girl', it: 'Ragazza dei Reed' },
+    summary: {
+      en: 'Jojen’s sister. The two women keep clashing at the camp, and Osha does not trust the Reeds.',
+      it: 'La sorella di Jojen. Al campo le due donne si scontrano di continuo, e Osha non si fida dei Reed.',
+    },
+  },
+  osJojen27: {
+    character: 'jojen-reed',
+    type: { en: 'Reed boy', it: 'Ragazzo dei Reed' },
+    summary: {
+      en: 'The Reed boy, who means to take Bran beyond the Wall. Osha refuses to go back there: her husband died beyond it and rose again to kill her.',
+      it: 'Il ragazzo dei Reed, che vuole portare Bran oltre la Barriera. Osha si rifiuta di tornarci: là è morto suo marito, che poi si è rialzato per ucciderla.',
+    },
+  },
+  osRickon29: {
+    character: 'rickon-stark',
+    type: { en: 'Boy she guards', it: 'Ragazzo che protegge' },
+    summary: {
+      en: 'The youngest Stark, whom Bran asks her to take to the Umbers at Last Hearth. She promises to look after him.',
+      it: 'Il più piccolo degli Stark, che Bran le chiede di portare dagli Umber, a Ultimo Focolare. Lei promette di badare a lui.',
+    },
+  },
+  osBran29: {
+    character: 'bran-stark',
+    type: { en: 'Boy she guarded', it: 'Ragazzo che proteggeva' },
+    summary: {
+      en: 'The boy lord who goes on beyond the Wall without her.',
+      it: 'Il giovane signore che prosegue oltre la Barriera senza di lei.',
+    },
+  },
+  osMeera29: {
+    character: 'meera-reed',
+    type: { en: 'Reed girl', it: 'Ragazza dei Reed' },
+    summary: {
+      en: 'Jojen’s sister, whom Osha orders to look after Bran before she leaves.',
+      it: 'La sorella di Jojen, a cui Osha ordina di badare a Bran prima di partire.',
+    },
+  },
+  osShaggydog29: {
+    character: 'shaggydog',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'Rickon’s direwolf, who leaves with them in the night.',
+      it: 'Il meta-lupo di Rickon, che parte con loro nella notte.',
+    },
+  },
+  // Hodor, the show
+  hoBran22: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy he carries north towards the Wall.',
+      it: 'Il ragazzo che porta in braccio verso nord, verso la Barriera.',
+    },
+  },
+  hoOsha22: {
+    character: 'osha',
+    type: { en: 'Companion', it: 'Compagna di viaggio' },
+    summary: {
+      en: 'The wildling who leads them north.',
+      it: 'La bruta che li guida verso nord.',
+    },
+  },
+  hoRickon22: {
+    character: 'rickon-stark',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The youngest Stark, on the road north with them.',
+      it: 'Il più piccolo degli Stark, in viaggio con loro verso nord.',
+    },
+  },
+  hoJojen22: {
+    character: 'jojen-reed',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The Reed boy who joins them on the road north.',
+      it: 'Il ragazzo dei Reed che si unisce a loro lungo la strada verso nord.',
+    },
+  },
+  hoMeera22: {
+    character: 'meera-reed',
+    type: { en: 'Companion', it: 'Compagna di viaggio' },
+    summary: {
+      en: 'The Reed girl who joins them with her brother.',
+      it: 'La ragazza dei Reed che si unisce a loro con il fratello.',
+    },
+  },
+  hoBran29: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy he carries. In the mill, when the thunder frightens Hodor into shouting, Bran enters his mind and Hodor falls senseless.',
+      it: 'Il ragazzo che porta in braccio. Nel mulino, quando il tuono lo spaventa e lo fa urlare, Bran entra nella sua mente e Hodor perde i sensi.',
+    },
+  },
+  hoRickon29: {
+    character: 'rickon-stark',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The youngest Stark, who leaves them in the night with Osha.',
+      it: 'Il più piccolo degli Stark, che li lascia nella notte insieme a Osha.',
+    },
+  },
+  hoOsha29: {
+    character: 'osha',
+    type: { en: 'Companion', it: 'Compagna di viaggio' },
+    summary: {
+      en: 'The wildling who leaves with Rickon.',
+      it: 'La bruta che parte con Rickon.',
+    },
+  },
+  hoBran30: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy he carries through the gate beneath the Nightfort, beyond the Wall.',
+      it: 'Il ragazzo che porta attraverso il passaggio sotto il Forte della Notte, oltre la Barriera.',
+    },
+  },
+  hoSam30: {
+    character: 'samwell-tarly',
+    type: { en: 'Guide through the Wall', it: 'Guida oltre la Barriera' },
+    summary: {
+      en: 'The man of the Night’s Watch who knows Bran by his wolf and by Hodor, and leads them through the Wall.',
+      it: 'L’uomo dei Guardiani della notte che riconosce Bran dal suo lupo e da Hodor, e li porta oltre la Barriera.',
+    },
+  },
+  // Hodor, the books
+  hoBran153: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy lord he carries north. Hodor’s voice wakes him from his wolf dream.',
+      it: 'Il giovane signore che porta verso nord. È la voce di Hodor a svegliarlo dal suo sogno di lupo.',
+    },
+  },
+  hoBran184: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo che porta' },
+    summary: {
+      en: 'The boy lord he carries. When Hodor screams at the thunder in the island tower, Bran reaches into him and calms him.',
+      it: 'Il giovane signore che porta in braccio. Quando Hodor urla per il tuono nella torre sull’isola, Bran entra in lui e lo calma.',
+    },
+  },
+  // Summer, the show
+  suBran22: {
+    character: 'bran-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to. Jojen tells Bran that the dreams in which he sees through Summer’s eyes make him a warg.',
+      it: 'Il ragazzo a cui appartiene. Jojen spiega a Bran che i sogni in cui vede con gli occhi di Estate fanno di lui un warg.',
+    },
+  },
+  suJojen22: {
+    character: 'jojen-reed',
+    type: { en: 'Stranger he accepts', it: 'Sconosciuto che accetta' },
+    summary: {
+      en: 'The boy who walks into the camp. Summer snarls at him, then sniffs his hand and turns away.',
+      it: 'Il ragazzo che entra nell’accampamento. Estate gli ringhia contro, poi gli annusa la mano e si allontana.',
+    },
+  },
+  suBran29: {
+    character: 'bran-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to. Bran enters him to help Jon against the wildlings.',
+      it: 'Il ragazzo a cui appartiene. Bran entra in lui per aiutare Jon contro i bruti.',
+    },
+  },
+  suJon29: {
+    character: 'jon-snow',
+    type: { en: 'Bran’s half-brother', it: 'Fratellastro di Bran' },
+    summary: {
+      en: 'Bran’s half-brother. Summer and Shaggydog kill two wildlings who are threatening him, and Jon gets away.',
+      it: 'Il fratellastro di Bran. Estate e Cagnaccio uccidono due bruti che lo minacciano, e Jon riesce a fuggire.',
+    },
+  },
+  suShaggydog29: {
+    character: 'shaggydog',
+    type: { en: 'Fellow direwolf', it: 'Altro metalupo' },
+    summary: {
+      en: 'Rickon’s direwolf, who fights the wildlings beside him.',
+      it: 'Il meta-lupo di Rickon, che combatte i bruti al suo fianco.',
+    },
+  },
+  // Summer, the books
+  suBran153: {
+    character: 'bran-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to, who hunts in his skin in the wolfswood. With Bran inside him, Summer makes a wolf pack submit.',
+      it: 'Il ragazzo a cui appartiene, che caccia nella sua pelle nella Foresta del Lupo. Con Bran dentro di sé, Estate costringe un branco di lupi a sottomettersi.',
+    },
+  },
+  suBran184: {
+    character: 'bran-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to, who enters him to look at the men in the village by the lake.',
+      it: 'Il ragazzo a cui appartiene, che entra in lui per guardare gli uomini nel villaggio sul lago.',
+    },
+  },
+  // Shaggydog, the show
+  shRickon29: {
+    character: 'rickon-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to. Shaggydog leaves with him and Osha for Last Hearth.',
+      it: 'Il ragazzo a cui appartiene. Cagnaccio parte con lui e Osha per Ultimo Focolare.',
+    },
+  },
+  shOsha29: {
+    character: 'osha',
+    type: { en: 'Guardian', it: 'Custode' },
+    summary: {
+      en: 'The wildling who takes him and Rickon to Last Hearth.',
+      it: 'La bruta che porta lui e Rickon a Ultimo Focolare.',
+    },
+  },
+  shSummer29: {
+    character: 'summer-direwolf',
+    type: { en: 'Fellow direwolf', it: 'Altro metalupo' },
+    summary: {
+      en: 'Bran’s direwolf, with whom he kills two wildlings at the farm.',
+      it: 'Il meta-lupo di Bran, con cui uccide due bruti alla fattoria.',
+    },
+  },
+  shJon29: {
+    character: 'jon-snow',
+    type: { en: 'Stark he defends', it: 'Stark che difende' },
+    summary: {
+      en: 'Rickon’s half-brother, whom he and Summer defend from the wildlings at the farm.',
+      it: 'Il fratellastro di Rickon, che lui ed Estate difendono dai bruti alla fattoria.',
+    },
+  },
+  shBran29: {
+    character: 'bran-stark',
+    type: { en: 'Rickon’s brother', it: 'Fratello di Rickon' },
+    summary: {
+      en: 'Rickon’s brother, whom they leave behind to go beyond the Wall.',
+      it: 'Il fratello di Rickon, che lasciano indietro perché vada oltre la Barriera.',
+    },
+  },
+  // Theon, the show
+  thBalon22: {
+    character: 'balon-greyjoy',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father. Under torture Theon says he took Winterfell to impress him.',
+      it: 'Suo padre. Sotto tortura Theon dice di aver preso Grande Inverno per fare colpo su di lui.',
+    },
+  },
+  thAsha22: {
+    character: 'asha-greyjoy',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister. A boy who serves his captors tells him she has sent him to set Theon free.',
+      it: 'Sua sorella. Un ragazzo al servizio dei suoi carcerieri gli dice che è stata lei a mandarlo a liberarlo.',
+    },
+  },
+  thEddard24: {
+    character: 'eddard-stark',
+    type: { en: 'Guardian', it: 'Tutore' },
+    summary: {
+      en: 'The lord who raised him, beheaded in King’s Landing. Theon now calls him his real father, and says that between two families he chose the wrong one.',
+      it: 'Il lord che lo ha cresciuto, decapitato ad Approdo del Re. Ora Theon lo chiama il suo vero padre, e dice che tra due famiglie ha scelto quella sbagliata.',
+    },
+  },
+  thBran24: {
+    character: 'bran-stark',
+    type: { en: 'Boy who escaped him', it: 'Ragazzo che gli è sfuggito' },
+    summary: {
+      en: 'The Stark boy who got away from him with Rickon. Theon confesses that he had two farm boys killed and passed off as them.',
+      it: 'Il ragazzo Stark che gli è sfuggito insieme a Rickon. Theon confessa di aver fatto uccidere due ragazzi di una fattoria per farli passare per loro.',
+    },
+  },
+  thRickon24: {
+    character: 'rickon-stark',
+    type: { en: 'Boy who escaped him', it: 'Ragazzo che gli è sfuggito' },
+    summary: {
+      en: 'The youngest Stark, who escaped with Bran. One of the farm boys died in his place.',
+      it: 'Il più piccolo degli Stark, fuggito con Bran. Uno dei ragazzi della fattoria è morto al posto suo.',
+    },
+  },
+  thBalon24: {
+    character: 'balon-greyjoy',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who Theon thinks knew he was taken and left him for dead.',
+      it: 'Suo padre, che secondo Theon sapeva della sua cattura e lo ha lasciato al suo destino.',
+    },
+  },
+  thAsha24: {
+    character: 'asha-greyjoy',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister. The boy says he is taking Theon to her castle, but leads him back to the cell he escaped from.',
+      it: 'Sua sorella. Il ragazzo dice di portarlo al castello di lei, ma lo riconduce nella cella da cui era fuggito.',
+    },
+  },
+  thMyranda27: {
+    character: 'myranda',
+    type: { en: 'Seducer', it: 'Seduttrice' },
+    summary: {
+      en: 'One of two young women who untie him from the cross and seduce him, until his tormentor comes in and has him held down to be gelded.',
+      it: 'Una delle due ragazze che lo slegano dalla croce e lo seducono, finché non entra il suo aguzzino, che lo fa tenere fermo per evirarlo.',
+    },
+  },
+  thRamsay30: {
+    character: 'ramsay-snow',
+    type: { en: 'Captor', it: 'Carceriere' },
+    summary: {
+      en: 'Roose Bolton’s bastard: the boy who posed as his rescuer, then flayed his finger and gelded him. Now he beats Theon until he answers to the name Reek.',
+      it: 'Il bastardo di Roose Bolton: il ragazzo che ha finto di salvarlo, poi gli ha scuoiato un dito e lo ha evirato. Ora lo picchia finché Theon non risponde al nome di Reek.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season1Relationships = {
   // The show weds her in episode 1; its wedding entry waits for episode 2,
   // the book's pair, which is later and so safe.
@@ -19528,6 +20109,14 @@ export const season1Relationships = {
         winterfell2.riBBran143,
       ],
     },
+    // Stage 3 (#1658): Bran sends him to Last Hearth with Osha, "The Rains
+    // of Castamere" (29). The books leave him off the page in the stage.
+    {
+      episode: 29,
+      chapter: 184,
+      source: 'episode',
+      value: [bran3.rkBran29, bran3.rkOsha29, bran3.rkShaggydog29],
+    },
   ],
   'jory-cassel': [
     { episode: 1, chapter: 2, value: [north.joryEddard] },
@@ -20152,6 +20741,68 @@ export const season1Relationships = {
         winterfell2.brBHodor143,
       ],
     },
+    // Stage 3 (#1658). The show: the Reeds join them in "Dark Wings, Dark
+    // Words" (22); the mill and the parting from Rickon in "The Rains of
+    // Castamere" (29); the Nightfort in "Mhysa" (30). The books: Bran I
+    // (153) and Bran III (184).
+    {
+      episode: 22,
+      chapter: 153,
+      source: 'episode',
+      value: [
+        bran3.brJojen22,
+        bran3.brMeera22,
+        bran3.brOsha22,
+        bran3.brRickon22,
+        bran3.brSummer22,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 184,
+      source: 'episode',
+      value: [
+        bran3.brHodor29,
+        bran3.brSummer29,
+        bran3.brJon29,
+        bran3.brRickon29,
+        bran3.brOsha29,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 200,
+      source: 'episode',
+      value: [
+        bran3.brSam30,
+        bran3.brGilly30,
+        bran3.brMeera30,
+        bran3.brJojen30,
+        bran3.brHodor30,
+      ],
+    },
+    {
+      episode: 22,
+      chapter: 153,
+      source: 'chapter',
+      value: [
+        bran3.brSummer153,
+        bran3.brJojen153,
+        bran3.brMeera153,
+        bran3.brHodor153,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 184,
+      source: 'chapter',
+      value: [
+        bran3.brHodor184,
+        bran3.brSummer184,
+        bran3.brJojen184,
+        bran3.brMeera184,
+      ],
+    },
   ],
   'benjen-stark': [
     { episode: 1, chapter: 6, value: [north.benJon, north.benEddard] },
@@ -20274,6 +20925,40 @@ export const season1Relationships = {
         winterfell2.suBMeera102,
       ],
     },
+    // Stage 3 (#1658). The show: "Dark Wings, Dark Words" (22) and "The
+    // Rains of Castamere" (29). The books: Bran I (153) and Bran III (184).
+    {
+      episode: 22,
+      chapter: 153,
+      source: 'episode',
+      value: [bran3.suBran22, bran3.suJojen22],
+    },
+    {
+      episode: 29,
+      chapter: 184,
+      source: 'episode',
+      value: [bran3.suBran29, bran3.suJon29, bran3.suShaggydog29],
+    },
+    {
+      episode: 22,
+      chapter: 153,
+      source: 'chapter',
+      value: [
+        bran3.suBran153,
+        winterfell2.suBJojen102,
+        winterfell2.suBMeera102,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 184,
+      source: 'chapter',
+      value: [
+        bran3.suBran184,
+        winterfell2.suBJojen102,
+        winterfell2.suBMeera102,
+      ],
+    },
   ],
   'shaggydog': [
     { episode: 10, chapter: 25, source: 'chapter', value: [north.shaRickon] },
@@ -20314,6 +20999,20 @@ export const season1Relationships = {
       chapter: 143,
       source: 'chapter',
       value: [winterfell2.shBRickon143, winterfell2.shBOsha143],
+    },
+    // Stage 3 (#1658): the farm and the parting, "The Rains of Castamere"
+    // (29). The books leave him off the page in the stage.
+    {
+      episode: 29,
+      chapter: 184,
+      source: 'episode',
+      value: [
+        bran3.shRickon29,
+        bran3.shOsha29,
+        bran3.shSummer29,
+        bran3.shJon29,
+        bran3.shBran29,
+      ],
     },
   ],
   'ghost-direwolf': [
@@ -20450,6 +21149,52 @@ export const season1Relationships = {
         winterfell2.thBRamsay140,
         winterfell2.thBLorren140,
         winterfell2.thBWex140,
+      ],
+    },
+    // Stage 3 (#1658): his captivity, the show's alone (owner,
+    // 2026-11-28). A Dance with Dragons tells it, from Reek I (284), past
+    // the stage, so that chapter only orders these entries. Ramsay is
+    // named only in "Mhysa" (30); until then his cards say "a boy".
+    {
+      episode: 22,
+      chapter: 284,
+      source: 'episode',
+      value: [bran3.thBalon22, bran3.thAsha22, winterfell2.thShowDagmer20],
+    },
+    {
+      episode: 24,
+      chapter: 284,
+      source: 'episode',
+      value: [
+        bran3.thEddard24,
+        bran3.thBran24,
+        bran3.thRickon24,
+        bran3.thBalon24,
+        bran3.thAsha24,
+      ],
+    },
+    {
+      episode: 27,
+      chapter: 284,
+      source: 'episode',
+      value: [
+        bran3.thMyranda27,
+        bran3.thEddard24,
+        bran3.thBran24,
+        bran3.thRickon24,
+        bran3.thBalon24,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 284,
+      source: 'episode',
+      value: [
+        bran3.thRamsay30,
+        bran3.thMyranda27,
+        bran3.thBalon24,
+        bran3.thEddard24,
+        bran3.thBran24,
       ],
     },
   ],
@@ -20701,6 +21446,59 @@ export const season1Relationships = {
         winterfell2.hoBOsha143,
       ],
     },
+    // Stage 3 (#1658). The show: "Dark Wings, Dark Words" (22), "The Rains
+    // of Castamere" (29) and "Mhysa" (30). The books: Bran I (153) and
+    // Bran III (184).
+    {
+      episode: 22,
+      chapter: 153,
+      source: 'episode',
+      value: [
+        bran3.hoBran22,
+        bran3.hoOsha22,
+        bran3.hoRickon22,
+        bran3.hoJojen22,
+        bran3.hoMeera22,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 184,
+      source: 'episode',
+      value: [
+        bran3.hoBran29,
+        bran3.hoRickon29,
+        bran3.hoOsha29,
+        bran3.hoJojen22,
+        bran3.hoMeera22,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 200,
+      source: 'episode',
+      value: [bran3.hoBran30, bran3.hoJojen22, bran3.hoMeera22, bran3.hoSam30],
+    },
+    {
+      episode: 22,
+      chapter: 153,
+      source: 'chapter',
+      value: [
+        bran3.hoBran153,
+        winterfell2.hoBJojen143,
+        winterfell2.hoBMeera143,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 184,
+      source: 'chapter',
+      value: [
+        bran3.hoBran184,
+        winterfell2.hoBJojen143,
+        winterfell2.hoBMeera143,
+      ],
+    },
   ],
   'osha': [
     {
@@ -20795,6 +21593,46 @@ export const season1Relationships = {
         winterfell2.osBBran143,
         winterfell2.osBRickon143,
         winterfell2.osBLuwin143,
+      ],
+    },
+    // Stage 3 (#1658), the show alone: the Reeds in "Dark Wings, Dark
+    // Words" (22), her refusal to go beyond the Wall in "The Bear and the
+    // Maiden Fair" (27), and the parting in "The Rains of Castamere" (29).
+    // The books leave her off the page in the stage.
+    {
+      episode: 22,
+      chapter: 153,
+      source: 'episode',
+      value: [
+        bran3.osMeera22,
+        bran3.osJojen22,
+        bran3.osBran22,
+        bran3.osRickon22,
+        bran3.osHodor22,
+      ],
+    },
+    {
+      episode: 27,
+      chapter: 168,
+      source: 'episode',
+      value: [
+        bran3.osMeera27,
+        bran3.osJojen27,
+        bran3.osBran22,
+        bran3.osRickon22,
+        bran3.osHodor22,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 184,
+      source: 'episode',
+      value: [
+        bran3.osRickon29,
+        bran3.osBran29,
+        bran3.osMeera29,
+        bran3.osJojen27,
+        bran3.osShaggydog29,
       ],
     },
   ],
