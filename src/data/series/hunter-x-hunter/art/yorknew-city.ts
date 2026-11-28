@@ -644,6 +644,25 @@ const PHINKS_NEMES: Stroke[] = [
 ]
 
 export const YORKNEW_CITY_DRAWINGS = {
+  // Noko from behind, no face: her hair parted down the middle and kept in
+  // two braids, the braids in tint, down the back of her long-sleeved shirt.
+  // She is in the crowd and at the docks in chapter 1; Gon names her to
+  // Killua in chapter 64.
+  'noko': [
+    {
+      d: 'M56 66 Q56 32 80 32 Q104 32 104 66 Q104 80 96 86 M56 66 Q56 80 64 86',
+    },
+    { d: 'M80 32 V80 M70 36 Q62 54 66 82 M90 36 Q98 54 94 82', role: 'soft' },
+    { d: 'M94 50 l5 -3 M96 62 l5 -3', role: 'ambient' },
+    {
+      d: 'M66 82 Q54.8 84.4 63.7 94 M65.6 88 Q76.8 90.4 66.5 100 M65.3 94 Q54.1 96.4 63 106 M64.9 100 Q76.1 102.4 65.8 112 M64.6 106 Q53.4 108.4 62.2 118 M64.2 112 Q75.4 114.4 65.1 124 M63.8 118 Q52.6 120.4 61.5 130 M63.5 124 Q74.7 126.4 64.4 136 M63.1 130 Q51.9 132.4 60.8 142 M62.8 136 Q74 138.4 63.6 148 M59 146 l-2 9 M62 148 v10 M65 146 l2 9 M94 82 Q82.8 84.4 93.1 94 M94.4 88 Q105.6 90.4 96.7 100 M94.7 94 Q83.5 96.4 93.8 106 M95.1 100 Q106.3 102.4 97.4 112 M95.4 106 Q84.2 108.4 94.6 118 M95.8 112 Q107 114.4 98.1 124 M96.2 118 Q85 120.4 95.3 130 M96.5 124 Q107.7 126.4 98.8 136 M96.9 130 Q85.7 132.4 96 142 M97.2 136 Q108.4 138.4 99.6 148 M95 146 l-2 9 M98 148 v10 M101 146 l2 9',
+      role: 'accent',
+    },
+    { d: 'M62 90 Q38 94 32 120 L28 152 M98 90 Q122 94 128 120 L132 152' },
+    { d: 'M44 112 Q46 132 44 152 M116 112 Q114 132 116 152', role: 'soft' },
+    { d: 'M120 122 l6 -4 M122 136 l6 -4', role: 'ambient' },
+    shadow(80, 158, 56),
+  ],
   // Melody's brimmed hat in 3/4, the band in tint and the crown's far side
   // hatched: she wears a hat in public, and is one of the six applicants
   // in the mansion's test, episode 40 / chapter 68. No flute, which she

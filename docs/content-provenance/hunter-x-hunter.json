@@ -7549,5 +7549,21 @@
       "#1335: a six-shot revolver (Pakunoda/Equipment, chapter 119) with a conjured bullet leaving the muzzle (Memory Bomb, chapter 112). The revolver's model is not checked against a frame.",
       "#1337: the revolver and bullet lifted into shared consts (PAKUNODA_REVOLVER, MEMORY_BOMB_SHOT) for Pakunoda's stages; same strokes, the grip's hatching now drawn before the bullet."
     ]
+  },
+  "noko": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/index.php?oldid=424225",
+      "https://hunterxhunter.fandom.com/index.php?oldid=400712",
+      "https://hunterxhunter.fandom.com/index.php?oldid=416406",
+      "https://hunterxhunter.fandom.com/index.php?oldid=416129",
+      "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter"
+    ],
+    "unverified": [
+      "#1702: chapter gate from the Chapter 64 synopsis (Gon tells Killua the only other kid on the island is a girl named Noko, in conversation by the fire); the licensed manga page is not viewed.",
+      "#1702: episode 37 (2011) adapts chapter 64, but its synopsis and cast list leave Noko out and the episode is not viewed, so the record is source: 'chapter'. If the episode says her name, the record can take episode 37 as its anime gate.",
+      "#1702: the log's crowd and docks scenes come from the Noko page's chapter 1 plot (she smiles at the docks in the manga; the 2011 anime has her crying, not used).",
+      "#1702: Italian Wikipedia has no entry for her; the Italian manga and dub forms are not viewed, so the name stays Noko.",
+      "#1702: the drawing is her hair from behind, parted in the middle and kept in two braids, from the Noko page's Appearance section; frames not viewed. Graded B (flat, from behind)."
+    ]
   }
 }

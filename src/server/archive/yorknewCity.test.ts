@@ -19,6 +19,7 @@ import { type Reader, readerFor } from './reader.server'
 
 const { archive } = loadedSeries('hunter-x-hunter')
 const RECORDS = [
+  { id: 'noko', episode: 37, chapter: 64, source: 'chapter' as const },
   { id: 'melody', episode: 40, chapter: 68 },
   { id: 'basho', episode: 40, chapter: 68 },
   { id: 'baise', episode: 40, chapter: 68 },

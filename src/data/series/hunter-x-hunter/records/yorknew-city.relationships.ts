@@ -19,6 +19,18 @@ const links = {
       en: 'The Troupe searches Greed Island for an Exorcist who can free Chrollo from Kurapika’s Nen.',
     },
   },
+  // Noko
+  nokoGon: {
+    character: 'gon-freecss',
+    type: {
+      en: 'The island’s only other child',
+      it: 'L’unico altro bambino dell’isola',
+    },
+    summary: {
+      en: 'Gon tells Killua that, apart from him, Noko is the only child on Whale Island.',
+      it: 'Gon racconta a Killua che, a parte lui, Noko è l’unica bambina dell’Isola Balena.',
+    },
+  },
   // Ging Freecss
   gingGon: {
     character: 'gon-freecss',
@@ -1938,6 +1950,9 @@ export const yorknewCityRelationships = {
       source: 'chapter',
       value: [links.gingGon, links.gingKite, links.gingMito],
     },
+  ],
+  'noko': [
+    { episode: 37, chapter: 64, source: 'chapter', value: [links.nokoGon] },
   ],
   'melody': [
     {
