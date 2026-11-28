@@ -172,9 +172,9 @@ nella saga in cui sei, fino al tuo punto.
 **Quando cambi il segnalibro**, la pagina si aggiorna subito sul nuovo punto:
 saga, storie, personaggi e avviso sui filler.
 
-**Chi arriva per la prima volta**, senza segnalibro, vede il cursore su East
-Blue descritto sopra, non questa pagina. Il resto del sito resta nella nebbia
-finché il segnalibro non c’è.
+**Chi arriva per la prima volta**, senza segnalibro, vede il cursore sulle prime
+quattro saghe descritto sopra, non questa pagina. Il resto del sito resta nella
+nebbia finché il segnalibro non c’è.
 
 **Chi legge il manga** vede lo stesso contenuto. Le storie però sono datate per
 episodio dell’anime, quindi il capitolo va tradotto in un episodio. La

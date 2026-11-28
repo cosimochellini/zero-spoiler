@@ -160,7 +160,7 @@ describe('LandingPage', () => {
     ).not.toBeInTheDocument()
   })
 
-  it('wakes East Blue up as the dial moves, for a visitor with no bookmark', () => {
+  it('wakes the demo up as the dial moves, for a visitor with no bookmark', () => {
     renderWithProviders(<LandingPage landing={{ onboarding: onboarding() }} />)
 
     expect(

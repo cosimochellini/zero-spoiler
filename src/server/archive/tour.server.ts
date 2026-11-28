@@ -74,6 +74,7 @@ function cardOf(entity: Entity, r: Reader): TourCard {
 /**
  * The demo's leads who lead the most of its arcs, as many as the grid holds,
  * in the order the story opens them: the crew before the one-arc villains.
+ * A tie for the last cards goes to whoever the story opens first.
  */
 function castOf(r: Reader): Entity[] {
   const arcs = demoArcs(r)
