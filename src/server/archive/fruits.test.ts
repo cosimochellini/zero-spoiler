@@ -793,16 +793,10 @@ describe('the saga view', () => {
   it('is drawn at the end of the demo without a bookmark (#1432)', () => {
     const r = pageReader(ONE_PIECE.archive, null, { locale: 'en' })
     const album = core_fruitAlbum(r)
-    const { demoLastEpisode, demoLastChapter } = r.archive.series
-    const reached = r.archive.fruits.filter(
-      (fruit) =>
-        fruit.revealedAtEpisode <= demoLastEpisode
-        && fruit.revealedAtChapter <= demoLastChapter,
-    )
     const open = album.sagas.flatMap((saga) => saga.open)
 
-    // The sagas through Water Seven, their fruits open, every later one
-    // under fog unnamed.
+    // The sagas through Water Seven, their 33 fruits open, every later
+    // one under fog unnamed.
     expect(album.sagas.map(({ saga }) => saga)).toStrictEqual([
       'East Blue Saga',
       'Alabasta Saga',
@@ -810,9 +804,44 @@ describe('the saga view', () => {
       'Water Seven Saga',
     ])
     expect(new Set(open.map(({ id }) => id))).toStrictEqual(
-      new Set(reached.map(({ id }) => id)),
+      new Set([
+        'gum-gum-fruit',
+        'chop-chop-fruit',
+        'slip-slip-fruit',
+        'smoke-smoke-fruit',
+        'bomb-bomb-fruit',
+        'kilo-kilo-fruit',
+        'wax-wax-fruit',
+        'clone-clone-fruit',
+        'munch-munch-fruit',
+        'ox-ox-fruit-model-bison',
+        'human-human-fruit',
+        'bird-bird-fruit-model-falcon',
+        'dog-dog-fruit-model-jackal',
+        'flame-flame-fruit',
+        'dice-dice-fruit',
+        'mole-mole-fruit',
+        'spike-spike-fruit',
+        'sand-sand-fruit',
+        'dog-dog-fruit-model-dachshund',
+        'cage-cage-fruit',
+        'flower-flower-fruit',
+        'spring-spring-fruit',
+        'horse-horse-fruit',
+        'rumble-rumble-fruit',
+        'slow-slow-fruit',
+        'ice-ice-fruit',
+        'bubble-bubble-fruit',
+        'cat-cat-fruit-model-leopard',
+        'dog-dog-fruit-model-wolf',
+        'door-door-fruit',
+        'ox-ox-fruit-model-giraffe',
+        'elephant-elephant-fruit',
+        'dark-dark-fruit',
+      ]),
     )
-    expect(album.later).toHaveLength(r.archive.fruits.length - reached.length)
+    expect(album.sagas.flatMap(({ covered }) => covered)).toStrictEqual([])
+    expect(album.later).toHaveLength(r.archive.fruits.length - 33)
     expect(core_fruitSheet(r).marquee?.saga).toBe('Water Seven Saga')
   })
 
