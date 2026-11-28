@@ -41,8 +41,8 @@ const CASES = [
     series: ONE_PIECE_BOOKMARK,
     absolute: 73,
     seasonTwo: 16,
-    lastEpisode: 61,
-    lastChapter: 100,
+    lastEpisode: 336,
+    lastChapter: 441,
   },
   {
     series: HUNTER_X_HUNTER_SERIES,

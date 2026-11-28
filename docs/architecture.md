@@ -122,10 +122,10 @@ flowchart LR
   E --> F
 ```
 
-The landing page for a visitor with no bookmark also carries the series’
-introduction, East Blue, the Hunter Exam or the first season of Game of Thrones,
-so its dial can open and cover those entries in the browser, and nothing past
-it.
+The landing page for a visitor with no bookmark also carries the series’ demo:
+One Piece through Enies Lobby, the Hunter Exam or the first season of Game of
+Thrones, so its dial can open and cover those entries in the browser, and
+nothing past it.
 
 The two landings, the onboarding and the home page, are a chunk each, because
 the loader sends one of them (#1573). The loader fetches the one it chose

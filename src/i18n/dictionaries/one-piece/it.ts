@@ -36,13 +36,13 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
     'Tutti e due. Puoi contare per episodio dell’anime, per stagione ed episodio o per capitolo del manga. Ogni voce ha un numero di episodio e uno di capitolo. Quando il punto esatto è incerto si usa quello più avanti, così è più facile che una voce si apra tardi che presto.',
   'faq.animeQ': 'Anime o manga?',
   'faq.bookmarkA':
-    'In un cookie su questo dispositivo e, se colleghi altri dispositivi da “Altri dispositivi?”, in un record che condividono. Il server lo legge prima di generare la pagina, quindi le voci dopo il segnalibro non sono nella pagina che ricevi. Senza segnalibro, questa pagina contiene East Blue per il cursore e niente dopo. Non serve un account e non c’è nessun tracciamento.',
+    'In un cookie su questo dispositivo e, se colleghi altri dispositivi da “Altri dispositivi?”, in un record che condividono. Il server lo legge prima di generare la pagina, quindi le voci dopo il segnalibro non sono nella pagina che ricevi. Senza segnalibro, questa pagina contiene le prime quattro saghe per il cursore e niente dopo. Non serve un account e non c’è nessun tracciamento.',
   'legal.credits':
     'One Piece è un’opera di Eiichiro Oda. Crediti dell’anime: © Eiichiro Oda/Shueisha, Toei Animation.',
   'onboarding.lede':
-    'Sposta il cursore lungo East Blue. Le voci fino a quel punto sono visibili, quelle dopo restano nella nebbia. Quando imposti il segnalibro, ogni pagina della wiki funziona così.',
+    'Sposta il cursore lungo le prime quattro saghe. Le voci fino a quel punto sono visibili, quelle dopo restano nella nebbia. Quando imposti il segnalibro, ogni pagina della wiki funziona così.',
   'onboarding.places': 'Luoghi e navi',
-  'onboarding.tailTitle': 'Dopo East Blue',
+  'onboarding.tailTitle': 'Dopo le prime quattro saghe',
   'places.count':
     '{count} luoghi, nell’ordine in cui la ciurma li raggiunge. Ognuno si apre all’episodio in cui compare per la prima volta.',
   'places.pageDescription':

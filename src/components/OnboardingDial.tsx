@@ -66,8 +66,8 @@ function readingOf(
 
 /**
  * The dial: the arc its point is in, then one row, the point in large
- * figures, a native range input over the series' demo span (East Blue for
- * One Piece) and the button that saves it.
+ * figures, a native range input over the series' demo span (through Enies
+ * Lobby for One Piece) and the button that saves it.
  *
  * The row is pinned while the preview scrolls under it, folded: the arc and
  * the label scroll away above it, and the unit and the scale tuck under the

@@ -27,12 +27,12 @@ export interface OnboardingWakeProps {
 }
 
 /**
- * The preview under the dial: East Blue's arcs, its leads, its places and
- * its ship, each open or under fog at the dial's point, and the covered
+ * The preview under the dial: the demo's arcs, its leads, its places and
+ * its ships, each open or under fog at the dial's point, and the covered
  * records past it.
  *
  * Every card decides for itself from the dial, in the browser: the server
- * sent East Blue and nothing past it, so there is nothing here the dial
+ * sent the demo and nothing past it, so there is nothing here the dial
  * could open by mistake.
  *
  * A series with no places yet shows no places shelf, and one with no
@@ -151,7 +151,7 @@ interface TailProps {
   tail: CoveredRecord[]
 }
 
-/** The covered records past East Blue, and how many there are; none, nothing. */
+/** The covered records past the demo, and how many there are; none, nothing. */
 function Tail({ fogged, point, tail }: TailProps): null | ReactElement {
   const t = useSeriesT()
 

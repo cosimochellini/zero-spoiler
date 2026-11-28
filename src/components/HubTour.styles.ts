@@ -19,7 +19,7 @@ import {
 const SIDE_BY_SIDE = '@media (min-width: 56rem)'
 const TALL = '@media (min-width: 40rem)'
 // On a phone the screen keeps the top of the window under the bar.
-const PHONE_SCREEN = '54svh'
+const PHONE_SCREEN = '64svh'
 
 export const styles = stylex.create({
   tour: {

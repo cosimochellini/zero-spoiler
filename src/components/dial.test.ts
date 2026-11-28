@@ -19,8 +19,8 @@ const CHAPTER_AT = [2, 5, 7, 7]
 
 describe('the onboarding dial', () => {
   it("stops at the end of the series' own demo span", () => {
-    expect(dialLast('episode', ONE_PIECE_BOOKMARK)).toBe(61)
-    expect(dialLast('chapter', ONE_PIECE_BOOKMARK)).toBe(100)
+    expect(dialLast('episode', ONE_PIECE_BOOKMARK)).toBe(336)
+    expect(dialLast('chapter', ONE_PIECE_BOOKMARK)).toBe(441)
     expect(dialLast('episode', HUNTER_X_HUNTER_SERIES)).toBe(26)
     expect(dialLast('chapter', HUNTER_X_HUNTER_SERIES)).toBe(43)
   })

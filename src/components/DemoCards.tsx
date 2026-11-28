@@ -227,7 +227,7 @@ export interface FogCardProps {
 /**
  * A record under fog: the bare seal or the bare plate, "Entry under fog" in
  * the glossary's words, and where it opens. The name and the drawing are not
- * drawn, though for an East Blue record its name is in the dial's data.
+ * drawn, though for a demo record its name is in the dial's data.
  */
 export function FogCard({ entry, point }: FogCardProps): ReactElement {
   const t = useT()

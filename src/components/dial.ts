@@ -5,7 +5,7 @@ import type { Step } from '~/lib/view/records'
 
 /**
  * The onboarding dial's point: an episode or a chapter inside the series'
- * demo span (East Blue, for One Piece). A season is not offered; the dial is
+ * demo span (through Enies Lobby, for One Piece). A season is not offered; the dial is
  * a demonstration, and the season form is in the fields under it.
  */
 export interface DialPoint {

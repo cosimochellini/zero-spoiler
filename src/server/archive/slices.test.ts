@@ -231,7 +231,7 @@ describe('the slice of the archive a page is given', () => {
     })
   })
 
-  it('wakes East Blue up on the onboarding, and only covers past it', () => {
+  it('wakes the demo up on the onboarding, and only covers past it', () => {
     const page = onboardingPage(null, 'en')
     const entries = [page.arcs, page.cast, page.places].flat()
     const steps = entries.flatMap((entry) => {
@@ -239,7 +239,7 @@ describe('the slice of the archive a page is given', () => {
     })
 
     expect(page.arcs.map((arc) => arc.id)).toContain('romance-dawn')
-    expect(page.arcs.map((arc) => arc.id)).toContain('loguetown')
+    expect(page.arcs.map((arc) => arc.id)).toContain('enies-lobby-arc')
     expect(page.cast.map((entry) => entry.id)).toContain('roronoa-zoro')
     expect(page.places.map((entry) => entry.id)).toContain('going-merry')
     expect(page.chapterAt).toHaveLength(ONE_PIECE_BOOKMARK.demoLastEpisode)
@@ -264,8 +264,8 @@ describe('the slice of the archive a page is given', () => {
     expect(page.fogged).toBeGreaterThan(page.tail.length)
   })
 
-  it('ends East Blue where the next arc starts', () => {
-    const next = onFile('reverse-mountain')
+  it('ends the demo where the next saga starts', () => {
+    const next = onFile('thriller-bark-arc')
 
     expect(next.revealedAtEpisode).toBe(ONE_PIECE_BOOKMARK.demoLastEpisode + 1)
     expect(next.revealedAtChapter).toBe(ONE_PIECE_BOOKMARK.demoLastChapter + 1)

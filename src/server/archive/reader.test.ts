@@ -205,8 +205,8 @@ describe('pageReader', () => {
 
     const seen = entities.filter((entity) => r.sees(entity))
 
-    expect(seen).not.toContain(must('nico-robin'))
-    expect(seen).toContain(must('shanks'))
+    expect(seen).not.toContain(must('brook'))
+    expect(seen).toContain(must('nico-robin'))
     expect(
       seen.every(
         (entity) =>

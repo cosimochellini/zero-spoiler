@@ -18,7 +18,7 @@ const onePiece = (bookmark: HubSeries['bookmark']): HubSeries => ({
   name: { en: 'One Piece', it: 'One Piece' },
   theme: 'one-piece',
   count: 737,
-  demoLastEpisode: 61,
+  demoLastEpisode: 336,
   open: bookmark === null ? 0 : 58,
   bookmark,
 })

@@ -27,7 +27,10 @@ import { coveredOf, type Reader } from './reader.server'
  * (`archive-gate`).
  */
 
-/** How many cards the screen's grid holds: four across, three down. */
+/**
+ * How many cards the screen's grid holds: four across and three down, or
+ * three across and four down on a phone.
+ */
 const CAST_COUNT = 12
 
 /** How many abilities under fog stand for the rest: one row of tiles. */
@@ -71,6 +74,7 @@ function cardOf(entity: Entity, r: Reader): TourCard {
 /**
  * The demo's leads who lead the most of its arcs, as many as the grid holds,
  * in the order the story opens them: the crew before the one-arc villains.
+ * A tie for the last cards goes to whoever the story opens first.
  */
 function castOf(r: Reader): Entity[] {
   const arcs = demoArcs(r)

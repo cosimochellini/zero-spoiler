@@ -54,11 +54,11 @@ describe('a trial point from the onboarding', () => {
     expect(trialForRequest('650', '12', ONE_PIECE_BOOKMARK)).toBeNull()
   })
 
-  it('counts only inside East Blue, and never as a season', () => {
-    expect(parseTrial('61', ONE_PIECE_BOOKMARK)).not.toBeNull()
-    expect(parseTrial('62', ONE_PIECE_BOOKMARK)).toBeNull()
-    expect(parseTrial('c100', ONE_PIECE_BOOKMARK)).not.toBeNull()
-    expect(parseTrial('c101', ONE_PIECE_BOOKMARK)).toBeNull()
+  it('counts only inside the demo, and never as a season', () => {
+    expect(parseTrial('336', ONE_PIECE_BOOKMARK)).not.toBeNull()
+    expect(parseTrial('337', ONE_PIECE_BOOKMARK)).toBeNull()
+    expect(parseTrial('c441', ONE_PIECE_BOOKMARK)).not.toBeNull()
+    expect(parseTrial('c442', ONE_PIECE_BOOKMARK)).toBeNull()
     expect(parseTrial('s1e3', ONE_PIECE_BOOKMARK)).toBeNull()
     expect(bookmarkForRequest(undefined, '650', ONE_PIECE_BOOKMARK)).toBeNull()
   })

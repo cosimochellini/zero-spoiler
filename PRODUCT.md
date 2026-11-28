@@ -78,7 +78,8 @@ for this project, and no official artwork is used.
     facts and relationships inside it, and covered records past it (handle, kind
     and thresholds only). The one copy of the demo outside the landing, shown
     whole at any saved bookmark, even one below the demo's end (owner,
-    2026-11-26 and 2026-11-27, #1703).
+    2026-11-26 and 2026-11-27, #1703). One Piece's demo stretch runs through the
+    Water Seven saga, Enies Lobby included (owner, 2026-11-28).
   - Counts of entries, where the contract allows them.
   - The sitemap: the address and square picture of every record both sources
     tell, with no bookmark (`docs/architecture.md`; the code gives no dated

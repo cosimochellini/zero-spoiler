@@ -28,17 +28,18 @@ serve il sito provandolo. Vale per chi è a metà serie e per chi non ha ancora
 iniziato.
 
 - In cima il titolo e una riga che spiega cosa fa il cursore.
-- Sotto, il **cursore**: va dall’episodio 1 al 61, cioè tutto East Blue. Mostra
-  il punto in grande e il nome della saga in cui cade. Resta fermo in alto
-  mentre scorri la pagina. Un interruttore lo fa contare per capitolo (da 1
-  a 100) invece che per episodio, restando allo stesso punto della storia.
-- Sotto il cursore, **East Blue che si sveglia**: le saghe, i loro protagonisti
-  (la stessa lista scritta a mano di “Chi conta adesso”), i luoghi e la Going
-  Merry. Quello che il cursore ha raggiunto è visibile, con il disegno e i fatti
-  di quel punto: epiteto, ruolo, affiliazione, taglia. Quello che viene dopo è
-  nella nebbia, con il solo punto in cui si apre.
-- Poi **“Dopo East Blue”**: qualche sagoma nella nebbia, senza nome, e il conto
-  delle voci che restano coperte.
+- Sotto, il **cursore**: va dall’episodio 1 al 336, cioè le prime quattro saghe
+  fino a Enies Lobby. Mostra il punto in grande e il nome della saga in cui
+  cade. Resta fermo in alto mentre scorri la pagina. Un interruttore lo fa
+  contare per capitolo (da 1 a 441) invece che per episodio, restando allo
+  stesso punto della storia.
+- Sotto il cursore, **le prime quattro saghe che si svegliano**: le saghe, i
+  loro protagonisti (la stessa lista scritta a mano di “Chi conta adesso”), i
+  luoghi e le navi. Quello che il cursore ha raggiunto è visibile, con il
+  disegno e i fatti di quel punto: epiteto, ruolo, affiliazione, taglia. Quello
+  che viene dopo è nella nebbia, con il solo punto in cui si apre.
+- Poi **“Dopo le prime quattro saghe”**: qualche sagoma nella nebbia, senza
+  nome, e il conto delle voci che restano coperte.
 - In fondo le tre domande (“Anime o manga?”, “Dove viene salvato il
   segnalibro?”, “Posso vedere una voce nascosta?”).
 
@@ -46,7 +47,7 @@ Per salvare il punto ci sono tre modi:
 
 - **“Sono qui”**, accanto al cursore, salva il punto del cursore.
 - **“Sono più avanti”** apre nella pagina gli stessi campi della finestra del
-  segnalibro, per chi è oltre East Blue.
+  segnalibro, per chi è oltre Enies Lobby.
 - **“Inizio ora · EP 1”** salva l’episodio 1, per chi parte da zero.
 
 **La prova.** Toccare una scheda visibile apre la sua pagina al punto del
@@ -54,7 +55,7 @@ cursore, senza salvarlo. Il punto resta in un cookie che di solito si cancella
 quando chiudi il browser, e una striscia sotto la barra dice “Stai provando
 l’episodio 12” con “Salva questo punto” ed “Esci dalla prova”. Durante la prova
 la homepage resta questa, con il cursore fermo sul punto di prova. Una prova
-vale solo dentro East Blue.
+vale solo dentro le prime quattro saghe.
 
 **Il benvenuto.** Appena salvi il segnalibro da questa pagina, la homepage con
 il segnalibro mostra una volta sola il blocco “Cosa puoi fare ora”, con i link a
@@ -171,9 +172,9 @@ nella saga in cui sei, fino al tuo punto.
 **Quando cambi il segnalibro**, la pagina si aggiorna subito sul nuovo punto:
 saga, storie, personaggi e avviso sui filler.
 
-**Chi arriva per la prima volta**, senza segnalibro, vede il cursore su East
-Blue descritto sopra, non questa pagina. Il resto del sito resta nella nebbia
-finché il segnalibro non c’è.
+**Chi arriva per la prima volta**, senza segnalibro, vede il cursore sulle prime
+quattro saghe descritto sopra, non questa pagina. Il resto del sito resta nella
+nebbia finché il segnalibro non c’è.
 
 **Chi legge il manga** vede lo stesso contenuto. Le storie però sono datate per
 episodio dell’anime, quindi il capitolo va tradotto in un episodio. La
@@ -205,9 +206,10 @@ da mostrare, la sezione non compare.
   del sito: la pagina che ricevi contiene solo il passato, più i numeri e i tipi
   di episodio di “Occhio ai filler”, che la pagina Episodi filler manda a
   chiunque.
-- **Senza segnalibro arriva East Blue, e niente oltre.** La pagina del cursore
-  contiene East Blue fino all’episodio 61 e al capitolo 100, tutti e due. Oltre,
-  solo sagome senza nome e un numero. Un test controlla che sia così.
+- **Senza segnalibro arrivano le prime quattro saghe, e niente oltre.** La
+  pagina del cursore arriva fino all’episodio 336 e al capitolo 441, tutti e
+  due. Oltre, solo sagome senza nome e un numero. Un test controlla che sia
+  così.
 - **Due lingue.** Ogni testo nuovo va scritto in italiano e in inglese, seguendo
   le regole di scrittura del progetto (in italiano si dice “saga”, mai “arco”).
 

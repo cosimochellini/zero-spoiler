@@ -23,8 +23,8 @@ export interface OnboardingLandingProps extends OnboardingView {
  * The landing page for a visitor with no bookmark: a control and its
  * playground.
  *
- * The page is one control and its live preview. A dial runs over East Blue;
- * moving it opens the arcs, the leads, the places and the ship the story has
+ * The page is one control and its live preview. A dial runs over the demo;
+ * moving it opens the arcs, the leads, the places and the ships the story has
  * reached by then, with the epithet, the crew and the bounty each one has at
  * that point, and leaves the rest under fog. That is the whole wiki in
  * miniature, and the page shows it rather than describing it. The point can

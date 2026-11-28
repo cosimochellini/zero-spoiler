@@ -93,10 +93,11 @@ export const ONE_PIECE_BOOKMARK: BookmarkSeries = {
   // 99999 would quietly reveal the whole site.
   episodeCeiling: 1300,
   chapterCeiling: 1300,
-  // The last episode and chapter of East Blue, the stretch the onboarding
-  // dial covers. The data tests hold both against the first arc after it.
-  demoLastEpisode: 61,
-  demoLastChapter: 100,
+  // The last episode and chapter of the Water Seven saga, through Enies Lobby:
+  // the stretch the onboarding dial covers (owner, 2026-11-28). The data
+  // tests hold both against the first arc of the saga after it.
+  demoLastEpisode: 336,
+  demoLastChapter: 441,
   seasons: [
     { number: 1, first: 1, last: 61 },
     { number: 2, first: 62, last: 77 },
