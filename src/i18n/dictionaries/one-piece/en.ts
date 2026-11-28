@@ -39,13 +39,13 @@ export const onePieceEn = {
     'Both. You can count by anime episode, by season and episode, or by manga chapter. Every entry has an episode number and a chapter number. When the exact point is uncertain, the later one is used, so an entry is more likely to open late than early.',
   'faq.animeQ': 'Anime or manga?',
   'faq.bookmarkA':
-    'In a cookie on this device, and, if you connect other devices under “More devices?”, in a record they share. The server reads it before it builds the page, so entries past your bookmark are not in the page you receive. Without a bookmark, this page carries the story through Enies Lobby for the dial and nothing past it. There is no account and no tracking.',
+    'In a cookie on this device, and, if you connect other devices under “More devices?”, in a record they share. The server reads it before it builds the page, so entries past your bookmark are not in the page you receive. Without a bookmark, this page carries the first four sagas for the dial and nothing past it. There is no account and no tracking.',
   'legal.credits':
     'One Piece was created by Eiichiro Oda. Anime credit: © Eiichiro Oda/Shueisha, Toei Animation.',
   'onboarding.lede':
-    'Move the dial through Enies Lobby. Entries up to that point open, and the ones after it stay under fog. Once you set your bookmark, every page of the wiki works this way.',
+    'Move the dial through the first four sagas. Entries up to that point open, and the ones after it stay under fog. Once you set your bookmark, every page of the wiki works this way.',
   'onboarding.places': 'Places and ships',
-  'onboarding.tailTitle': 'After Enies Lobby',
+  'onboarding.tailTitle': 'After the first four sagas',
   'places.count':
     '{count} places, in the order the crew reaches them. Each one opens at the episode where it first appears.',
   'places.pageDescription':

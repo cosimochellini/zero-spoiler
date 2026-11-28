@@ -96,7 +96,9 @@ describe('useSeriesT', () => {
     expect(
       screen.getByRole('heading', { name: 'Devil fruits' }),
     ).toBeInTheDocument()
-    expect(screen.getByText(/through Enies Lobby/u)).toBeInTheDocument()
+    expect(
+      screen.getByText(/through the first four sagas/u),
+    ).toBeInTheDocument()
   })
 
   it('gives a series’ translate on its own pages only', () => {

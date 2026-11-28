@@ -143,7 +143,7 @@ describe('demo drawing section', () => {
       screen.queryByRole('heading', { name: 'Places and ships' }),
     ).not.toBeInTheDocument()
     expect(
-      screen.queryByRole('heading', { name: 'After Enies Lobby' }),
+      screen.queryByRole('heading', { name: 'After the first four sagas' }),
     ).not.toBeInTheDocument()
     expect(
       screen.queryByText(/more entries stay under fog/u),
@@ -162,7 +162,7 @@ describe('demo drawing section', () => {
       screen.getByRole('heading', { name: 'Places and ships' }),
     ).toBeInTheDocument()
     expect(
-      screen.getByRole('heading', { name: 'After Enies Lobby' }),
+      screen.getByRole('heading', { name: 'After the first four sagas' }),
     ).toBeInTheDocument()
   })
 })
