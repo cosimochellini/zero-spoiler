@@ -4024,6 +4024,418 @@ const kingsLanding3 = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 3's Bran's road and Theon cards for the season-2 cast (#1658). The
+ * show: "Dark Wings, Dark Words" (episode 22) to "Mhysa" (30), where Ramsay
+ * is first named and Dagmer's death is told. The books: Bran I (chapter
+ * 153), Bran II (168), and Balon's death, told in Catelyn V (189); every
+ * living owner whose card named Balon turns it to the past tense there.
+ */
+const bran3 = {
+  // Jojen, the show
+  joBran22: {
+    character: 'bran-stark',
+    type: { en: 'Warg', it: 'Warg' },
+    summary: {
+      en: 'The Stark boy he and his sister have come to protect. Jojen reached into his dream, and tells him he is a warg.',
+      it: 'Il ragazzo Stark che lui e sua sorella sono venuti a proteggere. Jojen è entrato nel suo sogno, e gli spiega che è un warg.',
+    },
+  },
+  joMeera22: {
+    character: 'meera-reed',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who puts a knife to Osha’s throat when the wildling comes at him with a spear.',
+      it: 'Sua sorella, che punta un coltello alla gola di Osha quando la bruta gli si avvicina con una lancia.',
+    },
+  },
+  joOsha22: {
+    character: 'osha',
+    type: { en: 'Wary guide', it: 'Guida diffidente' },
+    summary: {
+      en: 'The wildling who comes up behind him with a sharpened stick when he walks into the camp.',
+      it: 'La bruta che gli arriva alle spalle con un bastone appuntito quando lui entra nell’accampamento.',
+    },
+  },
+  joRickon22: {
+    character: 'rickon-stark',
+    type: { en: 'Stark boy', it: 'Ragazzo Stark' },
+    summary: {
+      en: 'Bran’s little brother, the other boy the Reeds have been looking for.',
+      it: 'Il fratellino di Bran, l’altro ragazzo che i Reed stavano cercando.',
+    },
+  },
+  joSummer22: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'Bran’s direwolf, who snarls at him, then sniffs his hand and lets him be. Jojen says Bran sees through Summer’s eyes.',
+      it: 'Il meta-lupo di Bran, che gli ringhia contro, poi gli annusa la mano e lo lascia stare. Jojen dice che Bran vede con gli occhi di Estate.',
+    },
+  },
+  joBran29: {
+    character: 'bran-stark',
+    type: { en: 'Warg', it: 'Warg' },
+    summary: {
+      en: 'The boy he is taking beyond the Wall. At the mill Jojen urges him to enter Summer and help Jon.',
+      it: 'Il ragazzo che sta portando oltre la Barriera. Al mulino Jojen lo spinge a entrare in Estate per aiutare Jon.',
+    },
+  },
+  joJon29: {
+    character: 'jon-snow',
+    type: { en: 'Man in his vision', it: 'Uomo della sua visione' },
+    summary: {
+      en: 'Bran’s half-brother. In a vision Jojen saw him surrounded by enemies. At the farm by the mill, Bran saves him through Summer.',
+      it: 'Il fratellastro di Bran. In una visione Jojen lo ha visto circondato da nemici. Alla fattoria vicino al mulino, Bran lo salva attraverso Estate.',
+    },
+  },
+  joOsha29: {
+    character: 'osha',
+    type: { en: 'Wary guide', it: 'Guida diffidente' },
+    summary: {
+      en: 'The wildling who will not go beyond the Wall. She leaves with Rickon, and orders the Reeds to look after Bran.',
+      it: 'La bruta che non vuole andare oltre la Barriera. Parte con Rickon, e ordina ai Reed di badare a Bran.',
+    },
+  },
+  joRickon29: {
+    character: 'rickon-stark',
+    type: { en: 'Stark boy', it: 'Ragazzo Stark' },
+    summary: {
+      en: 'Bran’s little brother, sent away with Osha to Last Hearth.',
+      it: 'Il fratellino di Bran, mandato via con Osha a Ultimo Focolare.',
+    },
+  },
+  joBran30: {
+    character: 'bran-stark',
+    type: { en: 'Warg', it: 'Warg' },
+    summary: {
+      en: 'The boy he is taking beyond the Wall, through the gate beneath the Nightfort, to find the three-eyed raven.',
+      it: 'Il ragazzo che sta portando oltre la Barriera, attraverso il passaggio sotto il Forte della Notte, a cercare il corvo con tre occhi.',
+    },
+  },
+  joMeera30: {
+    character: 'meera-reed',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who scouts the Nightfort and overpowers the man who climbs out of its well.',
+      it: 'Sua sorella, che esplora il Forte della Notte e atterra l’uomo che sale dal pozzo.',
+    },
+  },
+  joHodor30: {
+    character: 'hodor',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The giant who carries Bran beyond the Wall with them.',
+      it: 'Il gigante che porta Bran oltre la Barriera con loro.',
+    },
+  },
+  joSam30: {
+    character: 'samwell-tarly',
+    type: { en: 'Guide through the Wall', it: 'Guida oltre la Barriera' },
+    summary: {
+      en: 'A man of the Night’s Watch who climbs out of the well at the Nightfort. He leads them through the Wall and gives them dragonglass.',
+      it: 'Un uomo dei Guardiani della notte che sale dal pozzo del Forte della Notte. Li porta oltre la Barriera e dà loro del vetro di drago.',
+    },
+  },
+  joGilly30: {
+    character: 'gilly',
+    type: { en: 'Sam’s companion', it: 'Compagna di Sam' },
+    summary: {
+      en: 'The young woman with Sam, carrying a baby.',
+      it: 'La ragazza che è con Sam, con un bambino in braccio.',
+    },
+  },
+  // Jojen, the books
+  joBran153: {
+    character: 'bran-stark',
+    type: { en: 'Pupil', it: 'Allievo' },
+    summary: {
+      en: 'The boy he is teaching. Jojen warns him not to lose himself in Summer, and says he can teach him no more: they must go beyond the Wall to find the three-eyed crow.',
+      it: 'Il ragazzo a cui insegna. Jojen lo avverte di non perdersi in Estate, e gli dice che non ha più niente da insegnargli: devono andare oltre la Barriera a cercare il corvo con tre occhi.',
+    },
+  },
+  joMeera153: {
+    character: 'meera-reed',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'His sister, who hunts for them all. She would rather stay at the ruined tower; Jojen insists they move on.',
+      it: 'Sua sorella, che caccia per tutti loro. Preferirebbe restare nella torre in rovina; Jojen insiste per ripartire.',
+    },
+  },
+  joSummer153: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'Bran’s direwolf. Jojen reminds Bran that he and Summer are two different beings.',
+      it: 'Il meta-lupo di Bran. Jojen ricorda a Bran che lui ed Estate sono due esseri diversi.',
+    },
+  },
+  // Meera, the show
+  meJojen22: {
+    character: 'jojen-reed',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who has seen Bran in his dreams. When Osha threatens him with a spear, Meera puts a knife to her throat.',
+      it: 'Suo fratello, che ha visto Bran nei suoi sogni. Quando Osha lo minaccia con una lancia, Meera le punta un coltello alla gola.',
+    },
+  },
+  meBran22: {
+    character: 'bran-stark',
+    type: { en: 'Boy she protects', it: 'Ragazzo che protegge' },
+    summary: {
+      en: 'The Stark boy she and her brother have come to find. The Reeds are sworn to his house.',
+      it: 'Il ragazzo Stark che lei e suo fratello sono venuti a cercare. I Reed sono fedeli alla sua casa.',
+    },
+  },
+  meOsha22: {
+    character: 'osha',
+    type: { en: 'Rival', it: 'Rivale' },
+    summary: {
+      en: 'The wildling travelling with the Stark boys, who goes for Jojen with a spear until Meera’s knife stops her.',
+      it: 'La bruta che viaggia con i ragazzi Stark, e che punta una lancia contro Jojen finché il coltello di Meera non la ferma.',
+    },
+  },
+  meRickon22: {
+    character: 'rickon-stark',
+    type: { en: 'Boy she protects', it: 'Ragazzo che protegge' },
+    summary: {
+      en: 'Bran’s little brother, whom the Reeds have also come to protect.',
+      it: 'Il fratellino di Bran, che i Reed sono venuti a proteggere.',
+    },
+  },
+  meBran29: {
+    character: 'bran-stark',
+    type: { en: 'Boy she protects', it: 'Ragazzo che protegge' },
+    summary: {
+      en: 'The boy she is taking beyond the Wall. Before leaving with Rickon, Osha orders her to look after him.',
+      it: 'Il ragazzo che sta portando oltre la Barriera. Prima di partire con Rickon, Osha le ordina di badare a lui.',
+    },
+  },
+  meOsha29: {
+    character: 'osha',
+    type: { en: 'Rival', it: 'Rivale' },
+    summary: {
+      en: 'The wildling she keeps clashing with. Osha will not go beyond the Wall, and leaves with Rickon.',
+      it: 'La bruta con cui si scontra di continuo. Osha non vuole andare oltre la Barriera, e parte con Rickon.',
+    },
+  },
+  meRickon29: {
+    character: 'rickon-stark',
+    type: { en: 'Stark boy', it: 'Ragazzo Stark' },
+    summary: {
+      en: 'Bran’s little brother, who leaves for Last Hearth with Osha.',
+      it: 'Il fratellino di Bran, che parte con Osha per Ultimo Focolare.',
+    },
+  },
+  meHodor29: {
+    character: 'hodor',
+    type: { en: 'Companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The giant who carries Bran. His shouting at the thunder almost gives them away to the wildlings near the mill.',
+      it: 'Il gigante che porta Bran in braccio. Le sue urla per il tuono rischiano di tradirli con i bruti vicino al mulino.',
+    },
+  },
+  meSam30: {
+    character: 'samwell-tarly',
+    type: { en: 'Stranger she overpowers', it: 'Sconosciuto che atterra' },
+    summary: {
+      en: 'The man she overpowers as he climbs out of the Nightfort’s well. He is of the Night’s Watch, and leads them through the Wall.',
+      it: 'L’uomo che atterra mentre sale dal pozzo del Forte della Notte. È un Guardiano della notte, e li porta oltre la Barriera.',
+    },
+  },
+  meGilly30: {
+    character: 'gilly',
+    type: { en: 'Sam’s companion', it: 'Compagna di Sam' },
+    summary: {
+      en: 'The young woman who comes up the well after Sam, carrying a baby.',
+      it: 'La ragazza che sale dal pozzo dopo Sam, con un bambino in braccio.',
+    },
+  },
+  meBran30: {
+    character: 'bran-stark',
+    type: { en: 'Boy she protects', it: 'Ragazzo che protegge' },
+    summary: {
+      en: 'The boy she goes beyond the Wall with, through the gate beneath the Nightfort.',
+      it: 'Il ragazzo con cui va oltre la Barriera, attraverso il passaggio sotto il Forte della Notte.',
+    },
+  },
+  // Meera, the books
+  meBran153: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord she hunts for. She has him help her clean the frogs and trout she brings back.',
+      it: 'Il giovane signore per cui va a caccia. Si fa aiutare da lui a pulire le rane e le trote che porta.',
+    },
+  },
+  meJojen153: {
+    character: 'jojen-reed',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, who insists they leave the ruined tower for the Wall. Meera would rather stay.',
+      it: 'Suo fratello, che insiste per lasciare la torre in rovina e partire per la Barriera. Meera preferirebbe restare.',
+    },
+  },
+  meBran168: {
+    character: 'bran-stark',
+    type: { en: 'Boy lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The boy lord she travels north with. In the mountains she tells him the tale of the knight of the laughing tree, and is surprised his father never did.',
+      it: 'Il giovane signore con cui viaggia verso nord. Tra le montagne gli racconta la storia del cavaliere dell’albero che ride, e si stupisce che suo padre non lo abbia mai fatto.',
+    },
+  },
+  // Ramsay, the show
+  raTheon30: {
+    character: 'theon-greyjoy',
+    type: { en: 'Captive', it: 'Prigioniero' },
+    summary: {
+      en: 'His captive. Ramsay posed as his rescuer, led him back to his cell and gelded him. Now he beats Theon until he answers to the name Reek.',
+      it: 'Il suo prigioniero. Ramsay ha finto di salvarlo, lo ha ricondotto nella sua cella e lo ha evirato. Ora lo picchia finché Theon non risponde al nome di Reek.',
+    },
+  },
+  raRoose30: {
+    character: 'roose-bolton',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who tells Lord Walder that Ramsay took the ironborn’s surrender at Winterfell and has his own way of doing things.',
+      it: 'Suo padre, che racconta a lord Walder come Ramsay abbia ottenuto la resa degli uomini di ferro a Grande Inverno, e come abbia i suoi metodi.',
+    },
+  },
+  raBalon30: {
+    character: 'balon-greyjoy',
+    type: { en: 'Theon’s father', it: 'Padre di Theon' },
+    summary: {
+      en: 'Theon’s father. Ramsay sends him a box with a piece of his son and a letter: the ironborn must leave the North by the full moon.',
+      it: 'Il padre di Theon. Ramsay gli manda una scatola con un pezzo di suo figlio e una lettera: gli uomini di ferro devono lasciare il Nord entro la luna piena.',
+    },
+  },
+  // Balon, the show
+  baTheon30: {
+    character: 'theon-greyjoy',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son, held by the Boltons, who send a piece of him in a box. Balon will not bargain: Theon disobeyed him, and can no longer give him heirs.',
+      it: 'Suo figlio, prigioniero dei Bolton, che ne mandano un pezzo in una scatola. Balon non tratterà: Theon gli ha disobbedito, e non potrà più dargli eredi.',
+    },
+  },
+  baAsha30: {
+    character: 'asha-greyjoy',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, who goes against him and sets out with her fastest ship and fifty men to free her brother.',
+      it: 'Sua figlia, che va contro di lui e parte con la sua nave più veloce e cinquanta uomini per liberare il fratello.',
+    },
+  },
+  baRamsay30: {
+    character: 'ramsay-snow',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'Lord Bolton’s bastard. His letter orders the ironborn out of the North by the full moon, or he will send more of Theon and flay every ironman who stays.',
+      it: 'Il bastardo di lord Bolton. La sua lettera intima agli uomini di ferro di lasciare il Nord entro la luna piena, o manderà altri pezzi di Theon e scuoierà ogni uomo di ferro che resterà.',
+    },
+  },
+  // Balon, the books: his death, told in Catelyn V
+  baTheon189: {
+    character: 'theon-greyjoy',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son, whom he would not hear out. He gave Theon eight ships to raid the coast, with his uncle Aeron beside him.',
+      it: 'Suo figlio, che non ha voluto ascoltare. Gli ha dato otto navi per razziare la costa, con lo zio Aeron al suo fianco.',
+    },
+  },
+  baAsha189: {
+    character: 'asha-greyjoy',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, whom he seated at his right hand and sent with thirty ships to take Deepwood Motte.',
+      it: 'Sua figlia, che ha fatto sedere alla sua destra e ha mandato con trenta navi a prendere Deepwood Motte.',
+    },
+  },
+  baVictarion189: {
+    character: 'victarion-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His younger brother, whom he sent at the head of the main attack to take Moat Cailin.',
+      it: 'Il fratello minore, che ha messo a capo dell’attacco principale per prendere Moat Cailin.',
+    },
+  },
+  baAeron189: {
+    character: 'aeron-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother the priest, who sat with them in the solar and sailed with Theon on the raid.',
+      it: 'Suo fratello il sacerdote, che sedeva con loro nel solario ed è salpato con Theon per la razzia.',
+    },
+  },
+  // Asha, the show
+  asTheon30: {
+    character: 'theon-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'Her brother, a captive of the Boltons, who send a piece of him in a box. She sets out with her fastest ship and fifty men to free him.',
+      it: 'Suo fratello, prigioniero dei Bolton, che ne mandano un pezzo in una scatola. Lei parte con la sua nave più veloce e cinquanta uomini per liberarlo.',
+    },
+  },
+  asBalon30: {
+    character: 'balon-greyjoy',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, who refuses to bargain for his son. She goes against him.',
+      it: 'Suo padre, che si rifiuta di trattare per il figlio. Lei va contro di lui.',
+    },
+  },
+  asRamsay30: {
+    character: 'ramsay-snow',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'Lord Bolton’s bastard, whose letter threatens more of Theon unless the ironborn leave the North.',
+      it: 'Il bastardo di lord Bolton, la cui lettera minaccia altri pezzi di Theon se gli uomini di ferro non lasciano il Nord.',
+    },
+  },
+  // Aeron and Victarion, the books: Balon's death
+  aeBalon189: {
+    character: 'balon-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, the lord of the Iron Islands, who called him to the solar to hear the plan for the war. A wind blew Balon off a bridge at Pyke, and he died.',
+      it: 'Suo fratello, il signore delle Isole di Ferro, che lo ha chiamato nel solario per illustrargli il piano di guerra. Il vento lo ha fatto cadere da un ponte di Pyke, e Balon è morto.',
+    },
+  },
+  viBalon189: {
+    character: 'balon-greyjoy',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His older brother, who laid out the war in the solar and sent him against Moat Cailin. A wind blew Balon off a bridge at Pyke, and he died.',
+      it: 'Il fratello maggiore, che ha esposto la guerra nel solario e lo ha mandato contro Moat Cailin. Il vento lo ha fatto cadere da un ponte di Pyke, e Balon è morto.',
+    },
+  },
+  // Dagmer, the show: his death, told in "Mhysa"
+  daTheon30: {
+    character: 'theon-greyjoy',
+    type: { en: 'Young commander', it: 'Giovane comandante' },
+    summary: {
+      en: 'The prince he served. When the ironmen turned on Theon, Dagmer knocked him out and handed him over to the Boltons.',
+      it: 'Il principe che serviva. Quando gli uomini di ferro si sono rivoltati contro Theon, Dagmer lo ha tramortito e consegnato ai Bolton.',
+    },
+  },
+  daLuwin30: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester who tried to stop the ironmen from taking Theon. Dagmer stabbed him with a spear.',
+      it: 'Il maestro che ha cercato di impedire agli uomini di ferro di prendere Theon. Dagmer lo ha trafitto con una lancia.',
+    },
+  },
+  daRamsay30: {
+    character: 'ramsay-snow',
+    type: { en: 'Killer', it: 'Assassino' },
+    summary: {
+      en: 'Lord Bolton’s bastard, who promised the ironborn at Winterfell safe passage in exchange for Theon, then had them flayed alive.',
+      it: 'Il bastardo di lord Bolton, che ha promesso agli uomini di ferro di Grande Inverno di lasciarli andare in cambio di Theon, poi li ha fatti scuoiare vivi.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season2Relationships = {
   // Daisy, show only: shown round at her gate, in Pycelle’s bed at 13 and
   // sent to the king at 14. Her chapters only order her.
@@ -4720,6 +5132,26 @@ export const season2Relationships = {
         winterfell.balAeronPlan,
       ],
     },
+    // Stage 3 (#1658). The show: the box from the Dreadfort, "Mhysa" (30).
+    // The books: his death, told in Catelyn V (189); episode 52, where the
+    // show kills him, only orders that entry.
+    {
+      episode: 30,
+      chapter: 298,
+      source: 'episode',
+      value: [bran3.baTheon30, bran3.baAsha30, bran3.baRamsay30],
+    },
+    {
+      episode: 52,
+      chapter: 189,
+      source: 'chapter',
+      value: [
+        bran3.baTheon189,
+        bran3.baAsha189,
+        bran3.baVictarion189,
+        bran3.baAeron189,
+      ],
+    },
   ],
   'asha-greyjoy': [
     {
@@ -4751,6 +5183,16 @@ export const season2Relationships = {
       source: 'chapter',
       value: [winterfell.ashTheonWinterfellBook, winterfell.ashDagmerBook],
     },
+    // Stage 3 (#1658): the box from the Dreadfort, "Mhysa" (30). The
+    // Wayward Bride of A Dance with Dragons (298), where the books give her
+    // Ramsay's letter, only orders the entry. The books keep her off the
+    // page in the stage, and her book cards name no one who dies in it.
+    {
+      episode: 30,
+      chapter: 298,
+      source: 'episode',
+      value: [bran3.asTheon30, bran3.asBalon30, bran3.asRamsay30],
+    },
   ],
   'aeron-greyjoy': [
     {
@@ -4776,6 +5218,13 @@ export const season2Relationships = {
       source: 'chapter',
       value: [winterfell.aerTheon111, winterfell.aerBalon98],
     },
+    // Stage 3 (#1658): Balon's death, told in Catelyn V (189).
+    {
+      episode: 55,
+      chapter: 189,
+      source: 'chapter',
+      value: [winterfell.aerTheon111, bran3.aeBalon189],
+    },
   ],
   'victarion-greyjoy': [
     {
@@ -4784,6 +5233,19 @@ export const season2Relationships = {
       source: 'chapter',
       value: [
         winterfell.vicBalon,
+        winterfell.vicAeron,
+        winterfell.vicTheon,
+        winterfell.vicAsha,
+      ],
+    },
+    // Stage 3 (#1658): Balon's death, told in Catelyn V (189). Episode 52,
+    // where the show kills Balon, only orders the entry.
+    {
+      episode: 52,
+      chapter: 189,
+      source: 'chapter',
+      value: [
+        bran3.viBalon189,
         winterfell.vicAeron,
         winterfell.vicTheon,
         winterfell.vicAsha,
@@ -4828,6 +5290,15 @@ export const season2Relationships = {
         winterfell.dagAshaBook130,
         winterfell.dagRodrikBook130,
       ],
+    },
+    // Stage 3 (#1658): his death, the show's alone, told in the letter
+    // read at Pyke in "Mhysa" (30). Chapter 344 only orders it, as it does
+    // his status.
+    {
+      episode: 30,
+      chapter: 344,
+      source: 'episode',
+      value: [bran3.daTheon30, bran3.daLuwin30, bran3.daRamsay30],
     },
   ],
   'black-lorren': [
@@ -4909,6 +5380,57 @@ export const season2Relationships = {
         winterfell.meeHodor143,
       ],
     },
+    // Stage 3 (#1658): her first show cards, "Dark Wings, Dark Words" (22),
+    // "The Rains of Castamere" (29) and "Mhysa" (30). The books: Bran I
+    // (153) and Bran II (168), where she tells the tale of the knight of
+    // the laughing tree; the episode only orders that entry.
+    {
+      episode: 22,
+      chapter: 153,
+      source: 'episode',
+      value: [
+        bran3.meJojen22,
+        bran3.meBran22,
+        bran3.meOsha22,
+        bran3.meRickon22,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 184,
+      source: 'episode',
+      value: [
+        bran3.meBran29,
+        bran3.meJojen22,
+        bran3.meOsha29,
+        bran3.meRickon29,
+        bran3.meHodor29,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 200,
+      source: 'episode',
+      value: [
+        bran3.meSam30,
+        bran3.meGilly30,
+        bran3.meBran30,
+        bran3.meJojen22,
+        bran3.meHodor29,
+      ],
+    },
+    {
+      episode: 22,
+      chapter: 153,
+      source: 'chapter',
+      value: [bran3.meBran153, bran3.meJojen153, winterfell.meeHodor143],
+    },
+    {
+      episode: 24,
+      chapter: 168,
+      source: 'chapter',
+      value: [bran3.meBran168, bran3.meJojen153, winterfell.meeHodor143],
+    },
   ],
   'jojen-reed': [
     {
@@ -4941,6 +5463,56 @@ export const season2Relationships = {
         winterfell.jojHodor143,
       ],
     },
+    // Stage 3 (#1658): his first show cards, "Dark Wings, Dark Words" (22),
+    // "The Rains of Castamere" (29) and "Mhysa" (30). The books: Bran I
+    // (153).
+    {
+      episode: 22,
+      chapter: 153,
+      source: 'episode',
+      value: [
+        bran3.joBran22,
+        bran3.joMeera22,
+        bran3.joOsha22,
+        bran3.joRickon22,
+        bran3.joSummer22,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 184,
+      source: 'episode',
+      value: [
+        bran3.joBran29,
+        bran3.joJon29,
+        bran3.joOsha29,
+        bran3.joRickon29,
+        bran3.joMeera22,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 200,
+      source: 'episode',
+      value: [
+        bran3.joBran30,
+        bran3.joMeera30,
+        bran3.joHodor30,
+        bran3.joSam30,
+        bran3.joGilly30,
+      ],
+    },
+    {
+      episode: 22,
+      chapter: 153,
+      source: 'chapter',
+      value: [
+        bran3.joBran153,
+        bran3.joMeera153,
+        bran3.joSummer153,
+        winterfell.jojHodor143,
+      ],
+    },
   ],
   'ramsay-snow': [
     {
@@ -4948,6 +5520,14 @@ export const season2Relationships = {
       chapter: 140,
       source: 'chapter',
       value: [winterfell.ramTheon, winterfell.ramRoose, winterfell.ramRodrik],
+    },
+    // Stage 3 (#1658): his first show cards, at his show gate, "Mhysa"
+    // (30). Reek I of A Dance with Dragons (284) only orders the entry.
+    {
+      episode: 30,
+      chapter: 284,
+      source: 'episode',
+      value: [bran3.raTheon30, bran3.raRoose30, bran3.raBalon30],
     },
   ],
   'big-walder-frey': [

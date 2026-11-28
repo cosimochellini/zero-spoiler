@@ -1311,6 +1311,24 @@ const kingsLanding = {
 } satisfies Record<string, Relationship>
 
 /**
+ * Bran's road and Theon (#1658): the cards of the group's new character,
+ * Myranda, whom the show alone has. "The Bear and the Maiden Fair" (episode
+ * 27); Reek I of A Dance with Dragons (chapter 284), the chapter the scene
+ * adapts, only orders the entry.
+ */
+const bran = {
+  // Myranda (show only)
+  myrTheon27: {
+    character: 'theon-greyjoy',
+    type: { en: 'Captive', it: 'Prigioniero' },
+    summary: {
+      en: 'The captive she and Violet untie from his cross and seduce, until his tormentor comes in and has him held down to be gelded.',
+      it: 'Il prigioniero che lei e Violet slegano dalla croce e seducono, finché non entra il suo aguzzino, che lo fa tenere fermo per evirarlo.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
+/**
  * Megga's and Alla's snapshots before the wedding, the same in both: Margaery
  * and Sansa from Sansa I (150), and Elinor from Sansa II (160), where the
  * cousins' ranks are told. Books only; the episodes only order them.
@@ -1920,5 +1938,10 @@ export const season3Relationships = {
       source: 'chapter',
       value: [kingsLanding.ellOberyn, kingsLanding.ellTyrion],
     },
+  ],
+  // Bran's road and Theon (#1658). Show only: "The Bear and the Maiden
+  // Fair" (27); Reek I of A Dance with Dragons (284) only orders the entry.
+  'myranda': [
+    { episode: 27, chapter: 284, source: 'episode', value: [bran.myrTheon27] },
   ],
 } satisfies Record<string, Timeline<Relationship[]>>

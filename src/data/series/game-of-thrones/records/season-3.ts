@@ -1287,6 +1287,7 @@ export const season3: ThronesSaga = {
     // only the scene: whom she serves and her bond with Ramsay are told in
     // season 4, steps for the stage that reaches it.
     'myranda': {
+      relationships: season3Relationships.myranda,
       role: {
         it: 'Giovane donna nella prigione di Theon',
         en: 'Young woman at Theon’s prison',
