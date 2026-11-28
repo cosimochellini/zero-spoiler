@@ -1214,6 +1214,7 @@ export const season3: ThronesSaga = {
     // Davos IV (chapter 180), the first chapter whose synopsis has his name
     // in speech (see the entries).
     'axell-florent': {
+      relationships: season3Relationships['axell-florent'],
       role: {
         it: 'Castellano di Roccia del Drago',
         en: 'Castellan of Dragonstone',
@@ -1235,6 +1236,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'alester-florent': {
+      relationships: season3Relationships['alester-florent'],
       role: {
         it: 'Ex Primo Cavaliere di re Stannis',
         en: 'Former Hand of King Stannis',
@@ -1261,6 +1263,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'edric-storm': {
+      relationships: season3Relationships['edric-storm'],
       role: {
         it: 'Figlio bastardo di re Robert',
         en: 'King Robert’s bastard son',

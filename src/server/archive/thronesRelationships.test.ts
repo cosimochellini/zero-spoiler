@@ -369,7 +369,21 @@ const STAGE_3_GROUPS: { group: string; issue: string; owners: string[] }[] = [
   },
   { group: 'Jaime, Brienne and Harrenhal', issue: '#1655', owners: [] },
   { group: 'The Wall and beyond', issue: '#1656', owners: [] },
-  { group: 'Dragonstone', issue: '#1657', owners: [] },
+  {
+    group: 'Dragonstone',
+    issue: '#1657',
+    owners: [
+      'axell-florent',
+      'alester-florent',
+      'edric-storm',
+      'stannis-baratheon',
+      'davos-seaworth',
+      'melisandre',
+      'selyse-baratheon',
+      'shireen-baratheon',
+      'salladhor-saan',
+    ],
+  },
   { group: 'Bran’s road and Theon', issue: '#1658', owners: [] },
 ]
 
@@ -3246,6 +3260,232 @@ describe.each(LOCALES)(
         unit: 'episode',
         at: 29,
         person: 'catelyn-stark',
+      },
+    ] as const)(
+      'rewords $owner’s card in its $unit $at snapshot for $person',
+      ({ owner, unit, at, person }) => {
+        const mark = unit === 'episode' ? ep : ch
+
+        expect(said(owner, person, mark(at - 1))).toBeDefined()
+        expect(said(owner, person, mark(at))).toBeDefined()
+        expect(said(owner, person, mark(at))).not.toBe(
+          said(owner, person, mark(at - 1)),
+        )
+      },
+    )
+  },
+)
+
+// Dragonstone (#1657): stage 3's cards for Stannis's court, season 3 and
+// Davos II to IV (chapters 154, 169 and 180). Each check compares the
+// bookmark before a pin with the pin.
+describe.each(LOCALES)(
+  'Game of Thrones stage-3 Dragonstone revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    const said = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.summary
+    const showCeiling = ep(archive.series.episodeCeiling)
+
+    it('opens the books’ Axell, Alester and Edric at Davos IV, off show pages', () => {
+      for (const id of ['axell-florent', 'alester-florent', 'edric-storm']) {
+        expect(projected(id, showCeiling, locale), id).toStrictEqual([])
+        expect(projected(id, ch(179), locale), id).toStrictEqual([])
+        expect(projected(id, ch(180), locale), id).not.toStrictEqual([])
+      }
+
+      for (const owner of ['stannis-baratheon', 'davos-seaworth']) {
+        expect(people(owner, ch(179)), owner).not.toContain('axell-florent')
+        expect(people(owner, ch(180)), owner).toContain('axell-florent')
+        expect(people(owner, showCeiling), owner).not.toContain('edric-storm')
+      }
+    })
+
+    it('gives Selyse and Shireen their first show cards at episode 25', () => {
+      for (const id of ['selyse-baratheon', 'shireen-baratheon']) {
+        expect(projected(id, ep(24), locale), id).toStrictEqual([])
+        expect(projected(id, ep(25), locale), id).not.toStrictEqual([])
+      }
+    })
+
+    it('keeps Gendry’s sacrifice on show pages alone', () => {
+      for (const owner of [
+        'stannis-baratheon',
+        'davos-seaworth',
+        'melisandre',
+      ]) {
+        expect(people(owner, ep(30)), owner).toContain('gendry')
+        expect(people(owner, ch(196)), owner).not.toContain('gendry')
+      }
+    })
+
+    it.each([
+      // owner, the medium, the number of a snapshot, a person it adds there
+      {
+        owner: 'stannis-baratheon',
+        unit: 'episode',
+        at: 25,
+        person: 'selyse-baratheon',
+      },
+      { owner: 'stannis-baratheon', unit: 'episode', at: 28, person: 'gendry' },
+      {
+        owner: 'stannis-baratheon',
+        unit: 'episode',
+        at: 30,
+        person: 'robb-stark',
+      },
+      {
+        owner: 'stannis-baratheon',
+        unit: 'chapter',
+        at: 180,
+        person: 'axell-florent',
+      },
+      {
+        owner: 'davos-seaworth',
+        unit: 'episode',
+        at: 21,
+        person: 'salladhor-saan',
+      },
+      {
+        owner: 'davos-seaworth',
+        unit: 'episode',
+        at: 25,
+        person: 'shireen-baratheon',
+      },
+      { owner: 'davos-seaworth', unit: 'episode', at: 28, person: 'gendry' },
+      {
+        owner: 'davos-seaworth',
+        unit: 'chapter',
+        at: 154,
+        person: 'salladhor-saan',
+      },
+      {
+        owner: 'davos-seaworth',
+        unit: 'chapter',
+        at: 180,
+        person: 'axell-florent',
+      },
+      { owner: 'melisandre', unit: 'episode', at: 26, person: 'thoros-of-myr' },
+      {
+        owner: 'melisandre',
+        unit: 'episode',
+        at: 28,
+        person: 'davos-seaworth',
+      },
+      { owner: 'melisandre', unit: 'chapter', at: 180, person: 'edric-storm' },
+      {
+        owner: 'selyse-baratheon',
+        unit: 'episode',
+        at: 25,
+        person: 'stannis-baratheon',
+      },
+      {
+        owner: 'shireen-baratheon',
+        unit: 'episode',
+        at: 25,
+        person: 'davos-seaworth',
+      },
+      {
+        owner: 'shireen-baratheon',
+        unit: 'chapter',
+        at: 180,
+        person: 'edric-storm',
+      },
+      {
+        owner: 'salladhor-saan',
+        unit: 'episode',
+        at: 21,
+        person: 'melisandre',
+      },
+      {
+        owner: 'salladhor-saan',
+        unit: 'chapter',
+        at: 154,
+        person: 'melisandre',
+      },
+      {
+        owner: 'axell-florent',
+        unit: 'chapter',
+        at: 180,
+        person: 'davos-seaworth',
+      },
+      {
+        owner: 'alester-florent',
+        unit: 'chapter',
+        at: 180,
+        person: 'axell-florent',
+      },
+      {
+        owner: 'edric-storm',
+        unit: 'chapter',
+        at: 180,
+        person: 'shireen-baratheon',
+      },
+    ] as const)(
+      'opens $owner’s $unit $at snapshot with $person',
+      ({ owner, unit, at, person }) => {
+        const mark = unit === 'episode' ? ep : ch
+
+        expect(people(owner, mark(at - 1))).not.toContain(person)
+        expect(people(owner, mark(at))).toContain(person)
+      },
+    )
+
+    it.each([
+      // owner, the medium, the number of a snapshot, a person it rewords
+      {
+        owner: 'stannis-baratheon',
+        unit: 'episode',
+        at: 21,
+        person: 'davos-seaworth',
+      },
+      {
+        owner: 'stannis-baratheon',
+        unit: 'episode',
+        at: 23,
+        person: 'melisandre',
+      },
+      { owner: 'davos-seaworth', unit: 'episode', at: 30, person: 'gendry' },
+      {
+        owner: 'davos-seaworth',
+        unit: 'chapter',
+        at: 169,
+        person: 'melisandre',
+      },
+      {
+        owner: 'melisandre',
+        unit: 'episode',
+        at: 21,
+        person: 'davos-seaworth',
+      },
+      {
+        owner: 'melisandre',
+        unit: 'episode',
+        at: 23,
+        person: 'stannis-baratheon',
+      },
+      { owner: 'melisandre', unit: 'episode', at: 27, person: 'gendry' },
+      {
+        owner: 'melisandre',
+        unit: 'episode',
+        at: 30,
+        person: 'davos-seaworth',
+      },
+      {
+        owner: 'melisandre',
+        unit: 'chapter',
+        at: 169,
+        person: 'davos-seaworth',
+      },
+      {
+        owner: 'shireen-baratheon',
+        unit: 'episode',
+        at: 30,
+        person: 'davos-seaworth',
       },
     ] as const)(
       'rewords $owner’s card in its $unit $at snapshot for $person',

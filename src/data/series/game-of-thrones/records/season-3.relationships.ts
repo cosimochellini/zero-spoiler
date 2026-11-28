@@ -1311,6 +1311,114 @@ const kingsLanding = {
 } satisfies Record<string, Relationship>
 
 /**
+ * Dragonstone (#1657): the cards of the group's new characters, all three
+ * the books' alone. Each opens at Davos IV (chapter 180), and its cards
+ * hold what Davos II and III (154, 169) told of them before their names
+ * were said.
+ */
+const dragonstone = {
+  // Axell Florent (books only)
+  axeDavos: {
+    character: 'davos-seaworth',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The knight he arrested on his return to Dragonstone for plotting to kill Melisandre. He brings Davos before the king, and threatens to have him killed if Davos does not help make him Hand.',
+      it: 'Il cavaliere che ha arrestato al suo ritorno a Roccia del Drago perché tramava di uccidere Melisandre. Lo porta davanti al re, e minaccia di farlo uccidere se Davos non lo aiuta a diventare Primo Cavaliere.',
+    },
+  },
+  axeStannis: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king he serves. Stannis has him explain to Davos his plan to attack the island of a lord who bent the knee to Joffrey, and sends him out when Davos calls it a folly.',
+      it: 'Il re che serve. Stannis gli fa spiegare a Davos il suo piano per attaccare l’isola di un lord che si è piegato a Joffrey, e lo manda via quando Davos lo definisce una follia.',
+    },
+  },
+  axeAlester: {
+    character: 'alester-florent',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, whom he threw into Davos’s cell. When he takes Davos up to the king, he takes the torch too, and leaves Alester in the dark.',
+      it: 'Suo fratello, che ha gettato nella cella di Davos. Quando porta Davos dal re si prende anche la torcia, e lascia Alester al buio.',
+    },
+  },
+  // Alester Florent (books only)
+  aleAxell: {
+    character: 'axell-florent',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who threw him into a cell beneath Dragonstone and leaves him there in the dark.',
+      it: 'Suo fratello, che lo ha gettato in una cella sotto Roccia del Drago e ve lo lascia al buio.',
+    },
+  },
+  aleDavos: {
+    character: 'davos-seaworth',
+    type: { en: 'Cellmate', it: 'Compagno di cella' },
+    summary: {
+      en: 'The knight he shares a cell with. Alester tells him of his letter to Tywin, and Davos answers that Stannis would rather die a king than bend the knee.',
+      it: 'Il cavaliere con cui divide la cella. Alester gli racconta della sua lettera a Tywin, e Davos risponde che Stannis preferirebbe morire da re piuttosto che piegare il ginocchio.',
+    },
+  },
+  aleStannis: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who made him Hand after the Blackwater. Alester wrote to Tywin Lannister offering peace in his name, and Stannis proclaims that he will die for treason.',
+      it: 'Il re che lo ha nominato Primo Cavaliere dopo le Acque Nere. Alester ha scritto a Tywin Lannister offrendo la pace a suo nome, e Stannis proclama che morirà per tradimento.',
+    },
+  },
+  aleShireen: {
+    character: 'shireen-baratheon',
+    type: { en: 'The king’s daughter', it: 'Figlia del re' },
+    summary: {
+      en: 'The princess whose hand he offered to Tommen in his letter to Tywin.',
+      it: 'La principessa di cui ha offerto la mano a Tommen nella lettera a Tywin.',
+    },
+  },
+  aleMelisandre: {
+    character: 'melisandre',
+    type: { en: 'Priestess', it: 'Sacerdotessa' },
+    summary: {
+      en: 'The red priestess whose talk of a stone dragon he calls madness. No good, he says, has ever come of dreams of dragons.',
+      it: 'La sacerdotessa rossa i cui discorsi su un drago di pietra lui chiama follia. Dice che dai sogni di draghi non è mai venuto niente di buono.',
+    },
+  },
+  // Edric Storm (books only)
+  edrShireen: {
+    character: 'shireen-baratheon',
+    type: { en: 'Playmate', it: 'Compagna di giochi' },
+    summary: {
+      en: 'The king’s daughter, with whom he plays monsters and maidens in the castle garden, her fool joining in.',
+      it: 'La figlia del re, con cui gioca a mostri e fanciulle nel giardino del castello, insieme al giullare di lei.',
+    },
+  },
+  edrRobert: {
+    character: 'robert-baratheon',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the late king, whom he reveres.',
+      it: 'Suo padre, il defunto re, che venera.',
+    },
+  },
+  edrDavos: {
+    character: 'davos-seaworth',
+    type: { en: 'Knight he meets', it: 'Cavaliere che incontra' },
+    summary: {
+      en: 'The knight who finds him playing in the garden. Edric tells him his uncle Stannis should never have cut off his fingers.',
+      it: 'Il cavaliere che lo trova a giocare in giardino. Edric gli dice che suo zio Stannis non avrebbe mai dovuto tagliargli le dita.',
+    },
+  },
+  edrStannis: {
+    character: 'stannis-baratheon',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle the king. Melisandre asks Stannis to burn Edric, and he refuses, but throws three leeches full of the boy’s blood into the brazier.',
+      it: 'Suo zio, il re. Melisandre chiede a Stannis di bruciare Edric e lui rifiuta, ma getta nel braciere tre sanguisughe piene del sangue del ragazzo.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
+/**
  * Megga's and Alla's snapshots before the wedding, the same in both: Margaery
  * and Sansa from Sansa I (150), and Elinor from Sansa II (160), where the
  * cousins' ranks are told. Books only; the episodes only order them.
@@ -1919,6 +2027,47 @@ export const season3Relationships = {
       chapter: 182,
       source: 'chapter',
       value: [kingsLanding.ellOberyn, kingsLanding.ellTyrion],
+    },
+  ],
+  // Dragonstone (#1657). Books only: Davos IV (180), their gate. Episode 28,
+  // their show-side order, only orders the entries.
+  'axell-florent': [
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'chapter',
+      value: [
+        dragonstone.axeDavos,
+        dragonstone.axeStannis,
+        dragonstone.axeAlester,
+      ],
+    },
+  ],
+  'alester-florent': [
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'chapter',
+      value: [
+        dragonstone.aleAxell,
+        dragonstone.aleDavos,
+        dragonstone.aleStannis,
+        dragonstone.aleShireen,
+        dragonstone.aleMelisandre,
+      ],
+    },
+  ],
+  'edric-storm': [
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'chapter',
+      value: [
+        dragonstone.edrShireen,
+        dragonstone.edrRobert,
+        dragonstone.edrDavos,
+        dragonstone.edrStannis,
+      ],
     },
   ],
 } satisfies Record<string, Timeline<Relationship[]>>
