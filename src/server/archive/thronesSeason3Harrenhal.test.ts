@@ -31,7 +31,8 @@ const RECORDS: {
   source?: 'chapter' | 'episode'
 }[] = [
   { id: 'qyburn', episode: 21, chapter: 175 },
-  { id: 'steelshanks-walton', episode: 27, chapter: 188, source: 'chapter' },
+  // Roose names him to Jaime in Jaime V (chapter 181, #1667).
+  { id: 'steelshanks-walton', episode: 27, chapter: 181, source: 'chapter' },
 ]
 
 /**
@@ -118,6 +119,13 @@ const STEPS: {
     en: 'Brave Companions',
     episode: 22,
     chapter: 165,
+    source: 'chapter',
+  },
+  {
+    id: 'steelshanks-walton',
+    en: 'Captain of Jaime Lannister’s escort',
+    episode: 27,
+    chapter: 188,
     source: 'chapter',
   },
 ]

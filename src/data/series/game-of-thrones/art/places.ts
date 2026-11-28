@@ -2297,19 +2297,22 @@ const STONEY_SEPT: Stroke[] = [
 ]
 
 /**
- * The hollow hill: a wooded hill with a cave mouth among the roots and a
- * fire burning inside, where the outlaws bring Arya blindfolded in Arya VI
- * (chapter 178); the show's cave is never named. The far flank is hatched;
- * the accent is the fire.
+ * The hollow hill: a long, low hill with bare trees along its crest and the
+ * cave mouth at one end among the roots, a fire burning inside, where the
+ * outlaws bring Arya blindfolded in Arya VI (chapter 178); the show's cave
+ * is never named. The far flank is hatched; the accent is the fire.
  */
 const HOLLOW_HILL: Stroke[] = [
-  { d: 'M10 150 Q26 104 80 94 Q134 104 150 150' },
-  { d: 'M56 150 V134 Q80 108 104 134 V150' },
-  { d: 'M64 126 q6 6 2 16 M96 126 q-6 6 -2 16 M80 112 v10', role: 'soft' },
-  { d: 'M80 148 q-7 -8 -1 -18 q2 7 5 3 q5 9 -4 15', role: 'accent' },
-  { d: 'M36 112 L42 96 L48 112 M118 110 L124 92 L130 110', role: 'soft' },
-  { d: 'M110 120 l6 -3 M120 132 l6 -3 M128 144 l6 -3', role: 'ambient' },
-  shadow(80, 156, 70),
+  { d: 'M6 150 Q18 116 64 108 Q118 102 154 150' },
+  { d: 'M100 150 V142 Q114 124 128 142 V150' },
+  { d: 'M106 132 q2 4 0 8 M122 132 q-2 4 0 8', role: 'soft' },
+  { d: 'M114 148 q-6 -7 -1 -15 q2 6 4 2 q5 8 -3 13', role: 'accent' },
+  {
+    d: 'M30 122 V108 M30 114 l-5 -6 M30 112 l5 -5 M52 112 V96 M52 104 l-6 -6 M52 100 l5 -6 M76 108 V94 M76 101 l5 -5 M96 108 V98 M96 103 l-4 -4',
+    role: 'soft',
+  },
+  { d: 'M134 126 l6 -3 M140 136 l6 -3 M144 146 l6 -3', role: 'ambient' },
+  shadow(80, 156, 72),
 ]
 
 /**
@@ -2383,29 +2386,43 @@ const LORD_HARROWAYS_TOWN: Stroke[] = [
   { d: 'M34 112 l5 -3 M60 116 l5 -3 M134 108 l4 -2', role: 'ambient' },
 ]
 
-/**
- * Meereen: a far city's walls and towers round its gate, named in episode
- * 28 and in Daenerys I (chapter 152) and never visited in the stage, so it
- * shows nothing either medium has described yet (its pyramids wait for the
- * drawing audit, #1667). The towers' far faces are hatched; the accent is
- * the gate.
- */
-const MEEREEN: Stroke[] = [
-  { d: 'M14 150 V92 H34 V150 M126 150 V92 H146 V150' },
-  { d: 'M34 150 V108 H126 V150' },
+/** Meereen's Great Pyramid over a stretch of the city wall, which its later drawings keep. */
+const MEEREEN_PYRAMID: Stroke[] = [
   {
-    d: 'M14 92 V86 H20 V92 M28 92 V86 H34 V92 M126 92 V86 H132 V92 M140 92 V86 H146 V92',
-    role: 'soft',
+    d: 'M30 132 V118 H40 V104 H50 V90 H60 V76 H70 V62 H90 V76 H100 V90 H110 V104 H120 V118 H130 V132',
   },
-  { d: 'M50 108 V80 H66 V108 M94 108 V74 H110 V108', role: 'soft' },
-  { d: 'M66 150 V128 Q80 112 94 128 V150', role: 'accent' },
+  { d: 'M40 118 H120 M50 104 H110 M60 90 H100 M70 76 H90', role: 'soft' },
   {
-    d: 'M138 102 l5 -3 M138 118 l5 -3 M138 134 l5 -3 M104 84 l4 -2 M104 96 l4 -2',
+    d: 'M104 98 l5 -3 M114 112 l5 -3 M94 84 l5 -3 M124 126 l5 -3',
     role: 'ambient',
   },
+  { d: 'M10 150 V132 H150 V150' },
+  {
+    d: 'M10 132 V127 H16 V132 M26 132 V127 H32 V132 M128 132 V127 H134 V132 M144 132 V127 H150 V132',
+    role: 'soft',
+  },
+  { d: 'M72 150 V140 Q80 134 88 140 V150', role: 'soft' },
   GROUND,
   shadow(80, 156, 70),
 ]
+
+/** The bronze harpy on the pyramid's top, wings spread, with no face. */
+const MEEREEN_HARPY: Stroke = {
+  d: 'M77 48 Q66 36 56 42 Q62 48 62 56 Q70 52 77 56 M83 48 Q94 36 104 42 Q98 48 98 56 Q90 52 83 56 M77 62 Q76 52 78 46 Q80 42 82 46 Q84 52 83 62 Z M77 42 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0',
+  role: 'accent',
+}
+
+/**
+ * Meereen: the Great Pyramid, stepped and tall, with the bronze harpy on
+ * its top, over a stretch of the city wall, for the city named in episode
+ * 28 and in Daenerys I (chapter 152). Neither medium shows it in the stage;
+ * the show first sails to it in season 4 and the books in Daenerys V
+ * (chapter 201), and the owner ruled that a named city may open on the look
+ * a later season gives it (#1667, as Braavos and the Citadel do). Unlike
+ * Astapor's it stands on land, taller, with the harpy. The tiers' far sides
+ * are hatched; the accent is the harpy.
+ */
+const MEEREEN: Stroke[] = [MEEREEN_HARPY, ...MEEREEN_PYRAMID]
 
 /**
  * Karhold: a keep between two towers under a banner with a sunburst,
@@ -2502,39 +2519,53 @@ const SHADOW_TOWER: Stroke[] = [
 
 /**
  * The Bay of Seals: a wide bay opening to the sea between high cliffs, its
- * far shore curving away, named in episode 29 and in Jon IV (chapter 174)
- * and never visited in the stage. The cliffs are hatched; the accent is the
- * bay's far shore.
+ * far shore a low line of hills on the horizon, named in episode 29 and in
+ * Jon IV (chapter 174) and never visited in the stage. The cliffs are
+ * hatched; the accent is the bay's far shore.
  */
 const BAY_OF_SEALS: Stroke[] = [
   { d: 'M10 150 V92 Q22 78 40 84 L52 112 Q56 128 50 150' },
   { d: 'M150 150 V98 Q138 86 122 92 L110 116 Q106 132 112 150' },
-  { d: 'M52 112 Q80 96 110 116', role: 'accent' },
-  { d: 'M58 124 Q80 116 104 126 M60 138 Q80 132 102 140', role: 'ambient' },
+  {
+    d: 'M60 106 Q68 100 76 102 Q88 97 98 102 Q102 104 104 106',
+    role: 'accent',
+  },
+  {
+    d: 'M56 114 H106 M58 124 Q80 116 104 126 M60 138 Q80 132 102 140',
+    role: 'ambient',
+  },
   { d: 'M40 96 l5 -3 M44 110 l5 -3 M46 126 l5 -3', role: 'ambient' },
   { d: 'M20 100 V120 M136 104 V122', role: 'soft' },
   ...SEA,
 ]
 
 /**
- * Castamere: a castle's towers and wall on a hill of the Westerlands, named
- * in episode 28 and in Tyrion III (chapter 163) and never visited in the
- * stage. Its fall is history in the show by its gate, but the book's gate
- * chapter does not tell it, so the drawing shows the castle as both media
- * name it. The towers' far faces are hatched; the accent is the gate.
+ * Castamere: the Reynes' castle in ruins on its hill of the Westerlands,
+ * its towers broken off and its gate arch standing alone, for the place
+ * named in episode 28 and in Tyrion III (chapter 163) and never visited in
+ * the stage. Tywin destroyed it long before the story: Cersei tells
+ * Margaery of its fall in "Second Sons" (episode 28), the Game of Thrones
+ * Wiki gives it as ruined, and Tyrion III lists the Reyne-Tarbeck revolt
+ * among its events, so the record draws what is left (#1667). The towers'
+ * far faces are hatched; the accent is the empty gate arch.
  */
 const CASTAMERE: Stroke[] = [
   { d: 'M10 150 Q30 124 60 120 H100 Q130 124 150 150' },
-  { d: 'M40 122 V70 H58 V120 M102 120 V78 H120 V124' },
-  { d: 'M58 120 V96 H102 V120' },
   {
-    d: 'M40 70 V64 H46 V70 M52 70 V64 H58 V70 M102 78 V72 H108 V78 M114 78 V72 H120 V78',
+    d: 'M40 122 V84 L45 78 L49 86 L54 74 L58 82 V120 M102 120 V102 L107 96 L111 104 L116 98 L120 104 V124',
+  },
+  {
+    d: 'M58 108 L62 104 L66 110 V120 M94 120 V112 L98 106 L102 110',
     role: 'soft',
   },
-  { d: 'M72 120 V106 Q80 98 88 106 V120', role: 'accent' },
-  { d: 'M49 84 V92 M111 90 V98', role: 'soft' },
+  { d: 'M70 120 V104 Q80 94 90 104 V120', role: 'accent' },
   {
-    d: 'M114 92 l4 -2 M114 104 l4 -2 M114 116 l4 -2 M52 80 l4 -2 M52 106 l4 -2',
+    d: 'M24 140 l6 -2 l4 3 M126 136 l6 -1 l3 4 M64 126 l5 -1 l3 3 M98 128 l4 -2 l4 2',
+    role: 'soft',
+  },
+  { d: 'M49 96 V102 M111 110 V114', role: 'soft' },
+  {
+    d: 'M52 92 l4 -2 M52 106 l4 -2 M114 110 l4 -2 M114 118 l4 -2',
     role: 'ambient',
   },
   shadow(80, 156, 66),
@@ -2936,7 +2967,7 @@ const FIST_OF_THE_FIRST_MEN_OVERRUN: Stroke[] = [
 
 /**
  * Harrenhal held for Robb Stark: the same five towers, with banners flying
- * over them, as the castle passes to the northmen in episode 22 and in
+ * over them, as the castle passes to the northmen in episode 21 and in
  * Arya IX (chapter 121), where the flayed man and the direwolf go up over
  * the gatehouse.
  */
@@ -2976,6 +3007,65 @@ const YUNKAI_TAKEN: Stroke[] = [
 ]
 
 /**
+ * Meereen taken: the same pyramid and wall, the Targaryen banner flying
+ * from a tier beside the harpy, clear of its wing, as the freed slaves open the gates in
+ * "Oathkeeper" (episode 34) and Daenerys's men in the sewers do in
+ * Daenerys VI (chapter 215). The accent moves to the banner.
+ */
+const MEEREEN_TAKEN: Stroke[] = [
+  { ...MEEREEN_HARPY, role: 'soft' },
+  ...MEEREEN_PYRAMID,
+  { d: 'M106 90 V30 M106 32 H132 V62 L119 56 L106 62', role: 'accent' },
+]
+
+/**
+ * Meereen bombarded: the masters' fleet batters the city in "No One"
+ * (episode 58), the show's alone: two tiers broken and smoke over it. The
+ * harpy came down in "The Wars to Come" (episode 41), so the banner flies
+ * alone from the top, the accent.
+ */
+const MEEREEN_BOMBARDED: Stroke[] = [
+  ...MEEREEN_PYRAMID.slice(0, 1),
+  {
+    d: 'M40 118 H62 M76 118 H120 M50 104 H110 M60 90 H84 M70 76 H90',
+    role: 'soft',
+  },
+  { d: 'M62 118 L66 112 L72 116 L76 118 M84 90 L88 86 L94 90', role: 'soft' },
+  ...MEEREEN_PYRAMID.slice(2),
+  { d: 'M80 62 V18 M80 20 H106 V50 L93 44 L80 50', role: 'accent' },
+  { d: `${smokeAt(28, 112)} ${smokeAt(118, 96)}`, role: 'soft' },
+]
+
+/** The White Walkers' spiral: a ring of short strokes winding inwards. */
+function spiralAt(cx: number, cy: number, r: number): string {
+  return Array.from({ length: 16 }, (_, index) => {
+    const t = index * 0.9
+    const rad = r * (1 - index / 18)
+    const x = cx + rad * Math.cos(t)
+    const y = cy + rad * Math.sin(t)
+    return `M${x.toFixed(1)} ${y.toFixed(1)} l${(-Math.sin(t) * 3).toFixed(1)} ${(Math.cos(t) * 3).toFixed(1)}`
+  }).join(' ')
+}
+
+/**
+ * Last Hearth overrun: the same hall dark, no smoke from the chimney, the
+ * door broken, and the dead's spiral on its wall, as Tormund, Beric and
+ * Edd find it abandoned and ravaged in "Winterfell" (episode 68), the
+ * show's alone. Nothing of the body inside is drawn. The accent is the
+ * spiral.
+ */
+const LAST_HEARTH_OVERRUN: Stroke[] = [
+  ...LAST_HEARTH.slice(0, 3),
+  { d: 'M60 150 V128 Q70 120 80 128 V150 M80 150 L92 140', role: 'soft' },
+  {
+    d: 'M36 112 h8 v10 h-8 Z M96 112 h8 v10 h-8 Z M38 120 l4 -6 M98 120 l4 -6',
+    role: 'soft',
+  },
+  { d: spiralAt(70, 112, 10), role: 'accent' },
+  ...LAST_HEARTH.slice(6),
+]
+
+/**
  * The places later seasons and books destroy, badly damage or rebuild
  * (#1236), each stage pinned in the units that tell it. A show-only stage
  * past the books takes chapter 344, the last, only to order it.
@@ -3007,9 +3097,10 @@ export const placesRedrawn: Redrawings = {
     { episode: 41, chapter: 256, value: DARRY },
   ],
   'moles-town': [{ episode: 38, chapter: 199, value: MOLES_TOWN_SACKED }],
-  // Taken (#1630): Robb's host holds the castle in "Dark Wings, Dark Words"
-  // (episode 22); the northmen take it in Arya IX (ACOK 47, site 121).
-  'harrenhal': [{ episode: 22, chapter: 121, value: HARRENHAL_HELD }],
+  // Taken (#1630): Robb's host takes the abandoned castle in "Valar
+  // Dohaeris" (episode 21, #1667); the northmen take it in Arya IX (ACOK
+  // 47, site 121).
+  'harrenhal': [{ episode: 21, chapter: 121, value: HARRENHAL_HELD }],
   // Overrun (#1630): "Valar Dohaeris" (episode 21) and Jon II (ASOS 15,
   // site 159), the dead horses on the slope.
   'fist-of-the-first-men': [
@@ -3026,6 +3117,24 @@ export const placesRedrawn: Redrawings = {
   // Taken (#1630): "The Rains of Castamere" (episode 29) and Daenerys IV
   // (ASOS 42, site 186).
   'yunkai': [{ episode: 29, chapter: 186, value: YUNKAI_TAKEN }],
+  'meereen': [
+    // Taken (#1667): "Oathkeeper" (episode 34) and Daenerys VI (ASOS 71,
+    // site 215).
+    { episode: 34, chapter: 215, value: MEEREEN_TAKEN },
+    // Bombarded, the show alone (#1667): "No One" (episode 58); the books
+    // never batter it so, and chapter 344, their last, only orders it.
+    { episode: 58, chapter: 344, source: 'episode', value: MEEREEN_BOMBARDED },
+  ],
+  // Overrun, the show alone (#1667): "Winterfell" (episode 68); the books
+  // never get there, so chapter 344 only orders it.
+  'last-hearth': [
+    {
+      episode: 68,
+      chapter: 344,
+      source: 'episode',
+      value: LAST_HEARTH_OVERRUN,
+    },
+  ],
   // Burned: the wildfire takes Stannis's fleet in "Blackwater" (episode
   // 19) and in Davos III (ACOK 58, site 132), the chapter the bay opens in.
   'blackwater-bay': [

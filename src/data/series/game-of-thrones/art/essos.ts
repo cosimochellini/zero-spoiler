@@ -748,25 +748,62 @@ const STAFF_AND_BOX: Stroke[] = [
   shadow(82, 154, 52),
 ]
 
+/** The low block in 3/4 that Missandei's collar rests on, in every drawing. */
+const COLLAR_BLOCK: Stroke[] = [
+  { d: 'M20 150 V140 H124 V150 Z M124 150 L140 142 V132 L124 140' },
+  { d: 'M20 140 L36 132 H140', role: 'soft' },
+  { d: 'M128 146 l8 -4', role: 'ambient' },
+]
+
+/** The hinge at the back of the collar, which every drawing of it keeps. */
+const COLLAR_HINGE: Stroke = { d: 'M76 99 h8 v6 h-8 Z M80 99 v6', role: 'soft' }
+/** The hatching on the collar band's turned-away side. */
+const COLLAR_HATCH: Stroke = {
+  d: 'M110 126 l6 -3 M118 120 l4 -3',
+  role: 'ambient',
+}
+
 /**
- * Missandei's slave collar standing on its edge in 3/4: the front rim, the
- * band's depth on the far side, and the inside of the back band through the
- * opening. Her first drawing and her death share it.
+ * Missandei: the slave collar she wears as Kraznys's interpreter (the Game
+ * of Thrones Wiki has it as her "obligatory slave collar" in her first
+ * appearance), lying shut on a low block in 3/4: the band's depth, its
+ * inner rim, the hinge at the back and the clasp at the front. It is the
+ * one thing she brings across the sea ("The Bells", episode 72). The
+ * accent is the clasp.
  */
-const COLLAR: Stroke[] = [
-  { d: ellipse(72, 102, 30, 40), role: 'accent' },
-  { d: 'M72 62 H84 A30 40 0 0 1 84 142 H72' },
-  { d: 'M84 70 A23 32 0 0 0 84 134', role: 'soft' },
-  { d: 'M72 68 A25 34 0 0 0 72 136', role: 'soft' },
-  { d: 'M104 82 l6 -2 M106 98 l6 -2 M104 114 l6 -2', role: 'ambient' },
+const STANDING_COLLAR: Stroke[] = [
+  { d: ellipse(80, 118, 44, 16) },
+  { d: 'M36 118 V125 A44 16 0 0 0 124 125 V118' },
+  { d: ellipse(80, 117, 37, 11), role: 'soft' },
+  COLLAR_HINGE,
+  COLLAR_HATCH,
+  { d: 'M74 130 h12 v12 h-12 Z M80 134 v4', role: 'accent' },
+  ...COLLAR_BLOCK,
+  shadow(80, 156, 64),
+]
+
+/** The collar sprung open at the front, its clasp hanging undone. */
+const OPEN_COLLAR: Stroke[] = [
+  { d: 'M66 133.2 A44 16 0 1 1 94 133.2' },
+  {
+    d: 'M36 118 V125 A44 16 0 0 0 66 140.2 V133.2 M124 118 V125 A44 16 0 0 1 94 140.2 V133.2',
+  },
+  { d: 'M70 127.4 A37 11 0 1 1 90 127.4', role: 'soft' },
+  COLLAR_HINGE,
+  COLLAR_HATCH,
+  { d: 'M66 134 l-6 10 l10 5 l6 -10 Z M66 141 l3 2', role: 'accent' },
 ]
 
 /**
- * Missandei: the slave collar she wears as Kraznys's interpreter in
- * "Valar Dohaeris" (episode 21), the one thing she brings across the sea.
- * The accent is its front rim.
+ * Freed: the same collar on its block, open, the clasp undone. Daenerys
+ * frees her in "And Now His Watch Is Ended" (episode 24) and in Daenerys
+ * III (chapter 171), and she no longer wears it.
  */
-const STANDING_COLLAR: Stroke[] = [...COLLAR, shadow(78, 146, 34)]
+const FREED_COLLAR: Stroke[] = [
+  ...OPEN_COLLAR,
+  ...COLLAR_BLOCK,
+  shadow(80, 156, 64),
+]
 
 /**
  * Kraznys mo Nakloz: the scourge with the harpy hilt he hands Daenerys for
@@ -908,31 +945,39 @@ const CROSSED_BLADES: Stroke[] = [
 ]
 
 /**
- * Prendahl na Ghezn: the banner of the Stormcrows, four crows between
- * crossed thunderbolts, fallen with its pole flat on the ground. He refuses
- * Daenerys at the parley in Daenerys IV (chapter 186), and Daario brings her
- * his head the same night, so the record opens on what he left. The crows
- * are the accent.
+ * Prendahl na Ghezn: the banner of the Stormcrows, crows between crossed
+ * thunderbolts, hanging slack from the crossbar of its broken, leaning
+ * pole, the cloth slumped on the ground. He refuses Daenerys at the parley
+ * in Daenerys IV (chapter 186), and Daario brings her his head the same
+ * night, so the record opens on what he left. Two of the four crows show;
+ * the others are lost in the folds. The crows are the accent.
  */
 const FALLEN_STORMCROWS: Stroke[] = [
-  { d: `M10 150 H142 ${circle(146, 150, 4)}` },
-  { d: 'M22 150 L40 90 H132 L118 150' },
-  { d: 'M50 96 L78 118 L72 122 L104 146 M120 96 L90 116 L96 120 L40 146' },
+  { d: 'M30 150 L56 36 L53 30 L60 33' },
+  { d: 'M52 46 H124' },
+  { d: 'M60 46 V122 Q62 136 50 150 H136 Q122 138 120 122 V46' },
   {
-    d: 'M78 102 q5 -5 10 0 q5 -5 10 0 M42 122 q4 -4 8 0 q4 -4 8 0 M110 122 q4 -4 8 0 q4 -4 8 0 M66 141 q4 -4 8 0 q4 -4 8 0',
+    d: 'M66 54 L86 78 L78 82 L100 112 M114 54 L94 76 L102 80 L80 112',
+    role: 'soft',
+  },
+  {
+    d: 'M66 92 q7 -9 14 0 q7 -9 14 0 M80 94 v4 M86 66 q7 -9 14 0 q7 -9 14 0 M100 68 v4',
     role: 'accent',
   },
-  { d: 'M120 112 l6 -3 M116 128 l6 -3 M112 142 l6 -3', role: 'ambient' },
-  { d: 'M6 156 H154', role: 'ambient', dashed: true },
+  { d: 'M64 128 Q90 120 116 128 M84 132 Q86 140 82 150', role: 'soft' },
+  { d: 'M110 92 l6 -3 M110 108 l6 -3', role: 'ambient' },
+  { d: 'M14 150 H146', role: 'ambient', dashed: true },
 ]
 
 /**
- * The collar fallen over on its side on the ground, whole, with nothing of
- * how: the show executes her in "The Last of the Starks" (episode 71).
+ * The open collar slid off its block and tipped on the ground, whole,
+ * with nothing of how: the show executes her in "The Last of the Starks"
+ * (episode 71).
  */
 const FALLEN_COLLAR: Stroke[] = [
-  ...moved(COLLAR, 'translate(6 18) rotate(-90 78 102)'),
-  { d: 'M10 160 H150', role: 'ambient', dashed: true },
+  ...COLLAR_BLOCK,
+  ...moved(OPEN_COLLAR, 'translate(-14 22) rotate(-20 80 120) scale(0.9)'),
+  { d: 'M8 158 H152', role: 'ambient', dashed: true },
 ]
 
 /**
@@ -1338,6 +1383,9 @@ export const essosRedrawn: Redrawings = {
   ],
   // #1647: the third stage's Essos cast.
   'missandei': [
+    // Freed (#1667): "And Now His Watch Is Ended" (episode 24) and Daenerys
+    // III (chapter 171), her record's own chapter, as Matthos's 19/132 is.
+    { episode: 24, chapter: 171, value: FREED_COLLAR },
     // The show alone: the books leave her alive, so chapter 344, their
     // last, only orders it.
     { episode: 71, chapter: 344, source: 'episode', value: FALLEN_COLLAR },

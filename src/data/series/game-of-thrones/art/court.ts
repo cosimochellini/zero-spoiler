@@ -695,17 +695,18 @@ const OLENNA_LUNCH: Stroke[] = [
 ]
 
 /**
- * Sansa's necklace laid out in a curve, a crystal set at each link and one
- * setting empty: the stone Olenna takes from it at the king's wedding.
+ * Sansa's necklace laid large across the front of the platter (#1667):
+ * three crystals in faceted settings and the fourth setting plainly empty,
+ * the stone Olenna takes from it at the king's wedding.
  */
 const EMPTY_SETTING_NECKLACE: Stroke[] = [
-  { d: 'M34 130 Q80 176 126 130' },
+  { d: 'M26 118 Q80 168 134 118' },
   {
-    d: 'M52.4 140.7 l3 4 l-3 4 l-3 -4 Z M66.2 146.9 l3 4 l-3 4 l-3 -4 Z M93.8 146.9 l3 4 l-3 4 l-3 -4 Z M107.6 140.7 l3 4 l-3 4 l-3 -4 Z',
+    d: 'M47.6 134 l7 8 l-7 11 l-7 -11 Z M40.6 142 h14 M69.2 142 l7 8 l-7 11 l-7 -11 Z M62.2 150 h14 M112.4 134 l7 8 l-7 11 l-7 -11 Z M105.4 142 h14',
     role: 'soft',
   },
   {
-    d: `${circle(80, 157, 3.5)} M77 154.5 l-2 -2.5 M83 154.5 l2 -2.5`,
+    d: `${circle(90.8, 150, 7)} M85.8 145 l-3 -3 M95.8 145 l3 -3 M85.8 155 l-3 3 M95.8 155 l3 3`,
     role: 'accent',
   },
 ]

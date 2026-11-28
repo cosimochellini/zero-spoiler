@@ -1171,21 +1171,40 @@ export const season3: ThronesSaga = {
       ],
     },
     'steelshanks-walton': {
-      role: {
-        it: 'Capitano al servizio di Roose Bolton',
-        en: 'Captain in Roose Bolton’s service',
-      },
+      role: [
+        {
+          episode: 27,
+          chapter: 181,
+          source: 'chapter',
+          value: {
+            it: 'Soldato al servizio di Roose Bolton',
+            en: 'Soldier in Roose Bolton’s service',
+          },
+        },
+        // He leads the two hundred Dreadfort men who take Jaime to King's
+        // Landing, and Jaime turns him back to Harrenhal for Brienne, in
+        // Jaime VI (chapter 188).
+        {
+          episode: 27,
+          chapter: 188,
+          source: 'chapter',
+          value: {
+            it: 'Capitano della scorta di Jaime Lannister',
+            en: 'Captain of Jaime Lannister’s escort',
+          },
+        },
+      ],
       log: {
-        it: 'Guida i duecento uomini di Forte Terrore che scortano Jaime Lannister ad Approdo del Re. Quando Jaime lo costringe a tornare a Harrenhal per Brienne, i suoi uomini abbattono l’orso con le balestre.',
-        en: 'He leads the two hundred Dreadfort men who escort Jaime Lannister to King’s Landing. When Jaime makes him turn back to Harrenhal for Brienne, his men bring down the bear with their crossbows.',
+        it: 'È un soldato di Roose Bolton a Harrenhal. Roose lo nomina a Jaime Lannister come un uomo di ferrea lealtà.',
+        en: 'A soldier of Roose Bolton’s at Harrenhal. Roose names him to Jaime Lannister as a man of iron loyalty.',
       },
       status: [
-        { episode: 27, chapter: 188, source: 'chapter', value: 'alive' },
+        { episode: 27, chapter: 181, source: 'chapter', value: 'alive' },
       ],
       affiliation: [
         {
           episode: 27,
-          chapter: 188,
+          chapter: 181,
           source: 'chapter',
           value: { it: 'Casa Bolton', en: 'House Bolton' },
         },
@@ -2038,20 +2057,23 @@ export const season3: ThronesSaga = {
       },
       visual: { art: 'qyburn', tint: 'ivory' },
     },
-    // Books only: Jaime VI (site chapter 188), he leads Jaime's escort out
-    // of Harrenhal. Jaime IV (175) lists him in the hall without naming him
-    // in its synopsis. The show's Steelshanks is named only in narration in
-    // the pages read, so episode 27 only orders him, as Rorge's record does.
+    // Books only: Jaime V (site chapter 181), Roose Bolton names him to
+    // Jaime in speech ("Steelshanks, he is called"; A Wiki of Ice and Fire,
+    // Steelshanks Walton), an explicit signal (#1667; it was Jaime VI, 188,
+    // where he leads Jaime's escort out of Harrenhal). Jaime IV (175) lists
+    // him in the hall without naming him in its synopsis. The show's
+    // Steelshanks is named only in narration in the pages read, so episode
+    // 27 only orders him, as Rorge's record does.
     {
       id: 'steelshanks-walton',
       kind: 'character',
       source: 'chapter',
       revealedAtEpisode: 27,
-      revealedAtChapter: 188,
+      revealedAtChapter: 181,
       name: { it: 'Steelshanks Walton', en: 'Steelshanks Walton' },
       summary: {
-        it: 'Un capitano al servizio di Roose Bolton.',
-        en: 'A captain in Roose Bolton’s service.',
+        it: 'Un soldato al servizio di Roose Bolton.',
+        en: 'A soldier in Roose Bolton’s service.',
       },
       visual: { art: 'steelshanks-walton', tint: 'azure' },
     },

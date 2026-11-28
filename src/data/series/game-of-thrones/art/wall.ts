@@ -956,9 +956,9 @@ const DIRK_WHETSTONE: Stroke[] = [
 ]
 
 /**
- * A forearm raised out of a black sleeve, the hand gone and the stump
- * bound round in leather: the sleeve with its cuff, its folds soft and its
- * far side hatched.
+ * A forearm out of a black sleeve, the hand gone and the stump bound round
+ * in leather: the sleeve with its cuff, its folds soft and its far side
+ * hatched. Ollo's death lays it down on its side.
  */
 const STUMP: Stroke[] = [
   { d: 'M44 150 Q48 120 56 104 H104 Q112 120 116 150' },
@@ -978,10 +978,31 @@ const STUMP: Stroke[] = [
 /**
  * Ollo Lophand: the stump of the hand he lost for thieving in Tyrosh, as
  * Chett remembers it in the prologue (chapter 144); A Dance with Dragons
- * has it bound in leather (A Wiki of Ice and Fire, Ollo Lophand). The
- * record is the books'. The accent is the leather.
+ * has it bound in leather (A Wiki of Ice and Fire, Ollo Lophand). The arm
+ * rests on its elbow in 3/4, the upper arm in its black sleeve along the
+ * ground, the forearm raised out of the cuff with the cut end seen as an
+ * ellipse (#1667). The sleeve is hatched; the accent is the leather. The
+ * record is the books'.
  */
-const OLLO_STUMP: Stroke[] = [...STUMP, shadow(80, 154, 40)]
+const OLLO_STUMP: Stroke[] = [
+  { d: 'M12 120 Q40 112 66 114 L72 100 M12 150 H84 Q100 146 100 128 L104 106' },
+  { d: ellipse(88, 103, 17, 6), transform: 'rotate(-14 88 103)' },
+  { d: 'M76 100 L84 62 M100 106 L104 68' },
+  { d: ellipse(94, 64, 10, 4), transform: 'rotate(-14 94 64)', role: 'soft' },
+  {
+    d: 'M83 70 L104 70 M82 78 L103 80 M81 86 L102 90 M84 64 L103 76',
+    role: 'accent',
+  },
+  {
+    d: 'M30 118 Q34 132 30 148 M54 116 Q58 132 52 148 M70 122 Q80 128 90 124',
+    role: 'soft',
+  },
+  {
+    d: 'M20 140 l6 -4 M38 140 l6 -4 M62 140 l6 -4 M84 138 l6 -4 M92 122 l6 -4',
+    role: 'ambient',
+  },
+  shadow(64, 156, 54),
+]
 
 /**
  * Clubfoot Karl: a pair of boots, the right one turned in on a club foot,

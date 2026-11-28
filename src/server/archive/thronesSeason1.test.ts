@@ -1522,12 +1522,14 @@ const STAGES: {
   { id: 'theon-greyjoy', episode: 16, chapter: 120 },
   { id: 'theon-greyjoy', episode: 20, chapter: 140, stage: 1 },
   { id: 'theon-greyjoy', episode: 30, chapter: 284, stage: 2 },
+  // The kraken back in the sea when he escapes the Boltons (#1667).
+  { id: 'theon-greyjoy', episode: 50, chapter: 323, stage: 3 },
   {
     id: 'theon-greyjoy',
     episode: 70,
     chapter: 344,
     source: 'episode',
-    stage: 3,
+    stage: 4,
   },
   { id: 'luwin', episode: 20, chapter: 143 },
   { id: 'rodrik-cassel', episode: 16, chapter: 140 },

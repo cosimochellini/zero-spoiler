@@ -402,6 +402,20 @@ const HARRENHAL_GOWN: Stroke[] = [
 ]
 
 /**
+ * The stand Brienne's plate and then the gown hung on, empty: its round
+ * head, the shoulder yoke, the post and its feet, the post's far side
+ * hatched. The accent is the yoke, where her plate hung.
+ */
+const EMPTY_STAND: Stroke[] = [
+  { d: `${ellipse(80, 36, 8, 4)} M80 40 V48`, role: 'soft' },
+  { d: 'M46 58 Q80 46 114 58 M46 58 V66 M114 58 V66', role: 'accent' },
+  { d: 'M77 50 V146 M83 50 V146' },
+  { d: 'M80 146 L62 152 M80 146 L98 152 M80 146 V154', role: 'soft' },
+  { d: 'M83 80 l4 -2 M83 100 l4 -2 M83 120 l4 -2', role: 'ambient' },
+  shadow(80, 158, 30),
+]
+
+/**
  * A folded cloak of many colours, the stripes of King Renly's Rainbow
  * Guard across its folds, lying on the ground; the stripes are the accent.
  */
@@ -562,14 +576,17 @@ const AXELL_TORCH: Stroke[] = [
   shadow(80, 176, 24),
 ]
 
-/** A leech, fat with blood, at the origin: its body and its rings. */
+/**
+ * A leech lying on the ground (#1667): fat at its head end, where the
+ * sucker is, tapering and curled at its tail, drawn about its middle.
+ */
 const LEECH_BODY =
-  'M-26 4 Q-22 -3 -10 -7 Q4 -12 16 -8 Q26 -4 26 2 Q24 9 10 9 Q-6 10 -18 7 Q-24 6 -26 4 Z'
-const LEECH_RINGS: Stroke = {
-  d: 'M-14 -5 Q-16 1 -13 8 M-5 -8 Q-7 1 -4 9 M4 -10 Q2 0 5 9 M13 -9 Q11 0 14 9',
+  'M-24 -2 Q-24 -12 -12 -12 Q6 -12 18 -4 Q28 2 30 10 Q22 4 12 4 Q-2 6 -14 6 Q-24 6 -24 -2 Z'
+const LEECH_MARKS: Stroke = {
+  d: 'M-20 -3 a3 2.5 0 1 0 0.1 0 M-4 -8 Q6 -6 14 -1',
   role: 'soft',
 }
-const LEECH: Stroke[] = [{ d: LEECH_BODY }, LEECH_RINGS]
+const LEECH: Stroke[] = [{ d: LEECH_BODY }, LEECH_MARKS]
 
 /**
  * A brazier on three legs: the bowl in 3/4 with its rim, the coals heaped
@@ -592,16 +609,17 @@ const BRAZIER: Stroke[] = [
  * into the brazier one at a time, naming the three false kings, in Davos IV
  * (chapter 180), the chapter where Melisandre asks for the boy himself to
  * burn. The record is the books' alone (the show gives the leeches to
- * Gendry). The leeches lie by the brazier; the nearest is the accent.
+ * Gendry). The leeches lie large in the foreground, the brazier smaller
+ * behind them (#1667); the nearest is the accent.
  */
 const EDRIC_LEECHES: Stroke[] = [
-  ...BRAZIER,
+  ...moved(BRAZIER, 'translate(124 150) scale(0.62) translate(-122 -150)'),
   ...moved(
-    [{ d: LEECH_BODY, role: 'accent' }, LEECH_RINGS],
-    'translate(26 145) scale(0.78)',
+    [{ d: LEECH_BODY, role: 'accent' }, LEECH_MARKS],
+    'translate(32 144) scale(0.95)',
   ),
-  ...moved(LEECH, 'translate(66 145) scale(-0.78 0.78)'),
-  ...moved(LEECH, 'translate(46 126) rotate(-8) scale(0.78)'),
+  ...moved(LEECH, 'translate(84 146) scale(-0.9 0.9)'),
+  ...moved(LEECH, 'translate(60 126) scale(0.8)'),
   { d: 'M8 152 H152', role: 'ambient', dashed: true },
 ]
 
@@ -925,9 +943,15 @@ export const stormlandsRedrawn: Redrawings = {
     // in, in "The Bear and the Maiden Fair" (episode 27). In the books
     // Qyburn brings her a pink gown for the same supper, in Jaime V
     // (chapter 181). A costume that takes the place of her object (#1645).
-    // Neither medium gives her plate back before Jaime arms her, so it
-    // holds until the next stage.
+    // Neither medium gives her plate back before Jaime arms her; the books
+    // keep the gown until then, the show only until episode 31.
     { episode: 26, chapter: 181, value: HARRENHAL_GOWN },
+    // The stand empty, the gown gone and the plate not yet given back: the
+    // show's Brienne wears a jerkin, then a tunic, in King's Landing from
+    // "Two Swords" (episode 31) until Jaime arms her (#1667). The show's
+    // alone; Jaime IX (chapter 216), where the books' Jaime arms her,
+    // orders it.
+    { episode: 31, chapter: 216, source: 'episode', value: EMPTY_STAND },
     // Oathkeeper, one of the two swords forged from Ice, which Jaime gives
     // her when he sends her after Sansa, in "Oathkeeper" (episode 34) and in
     // Jaime IX of A Storm of Swords (chapter 216). The ripple of its steel

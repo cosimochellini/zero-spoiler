@@ -761,8 +761,24 @@ const PEPPERPOT_SHIELD: Stroke[] = [
   shadow(82, 158, 32),
 ]
 
-/** The lion of House Lannister on a field, the walking lion of `LION`. */
-const SMALL_LION: Stroke[] = LION.slice(0, 5)
+/**
+ * The lion of House Lannister drawn for a shield or a pennon (#1667):
+ * walking, as Kevan's does, but its mane one scalloped mass round the head,
+ * a short muzzle with no face, and the tail raised with its tuft, so that
+ * it still reads as a lion when scaled down to a badge. The accent is the
+ * mane. Centred on Kevan's lion, so the same transforms place it.
+ */
+const SMALL_LION: Stroke[] = [
+  {
+    d: 'M78 78 Q98 74 118 80 Q130 86 128 104 L130 150 H116 L114 124 Q96 130 80 126 L78 150 H64 L62 102',
+  },
+  {
+    d: 'M58 60 A6.5 6.5 0 0 1 69.9 63.5 A6.5 6.5 0 0 1 78 72.9 A6.5 6.5 0 0 1 79.8 85.1 A6.5 6.5 0 0 1 74.6 96.4 A6.5 6.5 0 0 1 64.2 103.1 A6.5 6.5 0 0 1 51.8 103.1 A6.5 6.5 0 0 1 41.4 96.4 A6.5 6.5 0 0 1 36.2 85.1 A6.5 6.5 0 0 1 38 72.9 A6.5 6.5 0 0 1 46.1 63.5 A6.5 6.5 0 0 1 58 60 Z',
+    role: 'accent',
+  },
+  { d: 'M42 76 Q30 76 30 84 Q32 90 42 90' },
+  { d: 'M128 98 Q144 94 146 76 M146 76 q-6 -8 2 -10 q6 4 -2 10' },
+]
 /** A round shield in 3/4, its far rim seen on the right and hatched. */
 const ROUNDEL: Stroke[] = [
   { d: ellipse(76, 96, 38, 50) },
@@ -1481,7 +1497,7 @@ export const riverlandsRedrawn: Redrawings = {
       source: 'episode',
       value: [
         ...moved(
-          [...ROUNDEL.slice(0, 1), ...LION_ROUNDEL.slice(3, 9)],
+          [...ROUNDEL.slice(0, 1), ...LION_ROUNDEL.slice(3, 8)],
           'translate(0 150) scale(1 0.35) translate(0 -146)',
         ),
         { d: 'M38 132.5 V137 A38 17.5 0 0 0 114 137 V132.5' },
