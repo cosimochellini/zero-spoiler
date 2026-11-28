@@ -1311,6 +1311,818 @@ const kingsLanding = {
 } satisfies Record<string, Relationship>
 
 /**
+ * Dragonstone (#1657): the cards of the group's new characters, all three
+ * the books' alone. Each opens at Davos IV (chapter 180), and its cards
+ * hold what Davos II and III (154, 169) told of them before their names
+ * were said.
+ */
+const dragonstone = {
+  // Axell Florent (books only)
+  axeDavos: {
+    character: 'davos-seaworth',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The knight he arrested on his return to Dragonstone for plotting to kill Melisandre. He brings Davos before the king, and threatens to have him killed if Davos does not help make him Hand.',
+      it: 'Il cavaliere che ha arrestato al suo ritorno a Roccia del Drago perché tramava di uccidere Melisandre. Lo porta davanti al re, e minaccia di farlo uccidere se Davos non lo aiuta a diventare Primo Cavaliere.',
+    },
+  },
+  axeStannis: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king he serves. Stannis has him explain to Davos his plan to attack the island of a lord who bent the knee to Joffrey, and sends him out when Davos calls it a folly.',
+      it: 'Il re che serve. Stannis gli fa spiegare a Davos il suo piano per attaccare l’isola di un lord che si è piegato a Joffrey, e lo manda via quando Davos lo definisce una follia.',
+    },
+  },
+  axeAlester: {
+    character: 'alester-florent',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, whom he threw into Davos’s cell. When he takes Davos up to the king, he takes the torch too, and leaves Alester in the dark.',
+      it: 'Suo fratello, che ha gettato nella cella di Davos. Quando porta Davos dal re si prende anche la torcia, e lascia Alester al buio.',
+    },
+  },
+  // Alester Florent (books only)
+  aleAxell: {
+    character: 'axell-florent',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who threw him into a cell beneath Dragonstone and leaves him there in the dark.',
+      it: 'Suo fratello, che lo ha gettato in una cella sotto Roccia del Drago e ve lo lascia al buio.',
+    },
+  },
+  aleDavos: {
+    character: 'davos-seaworth',
+    type: { en: 'Cellmate', it: 'Compagno di cella' },
+    summary: {
+      en: 'The knight he shares a cell with. Alester tells him of his letter to Tywin, and Davos answers that Stannis would rather die a king than bend the knee.',
+      it: 'Il cavaliere con cui divide la cella. Alester gli racconta della sua lettera a Tywin, e Davos risponde che Stannis preferirebbe morire da re piuttosto che piegare il ginocchio.',
+    },
+  },
+  aleStannis: {
+    character: 'stannis-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king who made him Hand after the Blackwater. Alester wrote to Tywin Lannister offering peace in his name, and Stannis proclaims that he will die for treason.',
+      it: 'Il re che lo ha nominato Primo Cavaliere dopo le Acque Nere. Alester ha scritto a Tywin Lannister offrendo la pace a suo nome, e Stannis proclama che morirà per tradimento.',
+    },
+  },
+  aleShireen: {
+    character: 'shireen-baratheon',
+    type: { en: 'The king’s daughter', it: 'Figlia del re' },
+    summary: {
+      en: 'The princess whose hand he offered to Tommen in his letter to Tywin.',
+      it: 'La principessa di cui ha offerto la mano a Tommen nella lettera a Tywin.',
+    },
+  },
+  aleMelisandre: {
+    character: 'melisandre',
+    type: { en: 'Priestess', it: 'Sacerdotessa' },
+    summary: {
+      en: 'The red priestess whose talk of a stone dragon he calls madness. No good, he says, has ever come of dreams of dragons.',
+      it: 'La sacerdotessa rossa i cui discorsi su un drago di pietra lui chiama follia. Dice che dai sogni di draghi non è mai venuto niente di buono.',
+    },
+  },
+  // Edric Storm (books only)
+  edrShireen: {
+    character: 'shireen-baratheon',
+    type: { en: 'Playmate', it: 'Compagna di giochi' },
+    summary: {
+      en: 'The king’s daughter, with whom he plays monsters and maidens in the castle garden, her fool joining in.',
+      it: 'La figlia del re, con cui gioca a mostri e fanciulle nel giardino del castello, insieme al giullare di lei.',
+    },
+  },
+  edrRobert: {
+    character: 'robert-baratheon',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the late king, whom he reveres.',
+      it: 'Suo padre, il defunto re, che venera.',
+    },
+  },
+  edrDavos: {
+    character: 'davos-seaworth',
+    type: { en: 'Knight he meets', it: 'Cavaliere che incontra' },
+    summary: {
+      en: 'The knight who finds him playing in the garden. Edric tells him his uncle Stannis should never have cut off his fingers.',
+      it: 'Il cavaliere che lo trova a giocare in giardino. Edric gli dice che suo zio Stannis non avrebbe mai dovuto tagliargli le dita.',
+    },
+  },
+  edrStannis: {
+    character: 'stannis-baratheon',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His uncle the king. Melisandre asks Stannis to burn Edric, and he refuses, but throws three leeches full of the boy’s blood into the brazier.',
+      it: 'Suo zio, il re. Melisandre chiede a Stannis di bruciare Edric e lui rifiuta, ma getta nel braciere tre sanguisughe piene del sangue del ragazzo.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
+/**
+ * Bran's road and Theon (#1658): the cards of the group's new character,
+ * Myranda, whom the show alone has. "The Bear and the Maiden Fair" (episode
+ * 27); Reek I of A Dance with Dragons (chapter 284), the chapter the scene
+ * adapts, only orders the entry.
+ */
+const bran = {
+  // Myranda (show only)
+  myrTheon27: {
+    character: 'theon-greyjoy',
+    type: { en: 'Captive', it: 'Prigioniero' },
+    summary: {
+      en: 'The captive she and Violet untie from his cross and seduce, until his tormentor comes in and has him held down to be gelded.',
+      it: 'Il prigioniero che lei e Violet slegano dalla croce e seducono, finché non entra il suo aguzzino, che lo fa tenere fermo per evirarlo.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
+/**
+ * The Wall and beyond (#1656): the cards of the group's new characters. The
+ * show: "Valar Dohaeris" (episode 21) to "The Rains of Castamere" (29). The
+ * books: the prologue (chapter 144), Jon I to V (151, 159, 170, 174 and
+ * 185), Samwell I (162) and II (177). Returning characters' stage-3 cards
+ * are in the `wall3` blocks of `season-1.relationships.ts` and
+ * `season-2.relationships.ts`.
+ */
+const wall = {
+  // Mance Rayder, the show
+  manJon21: {
+    character: 'jon-snow',
+    type: { en: 'Deserter he questions', it: 'Disertore che interroga' },
+    summary: {
+      en: 'The bastard of Winterfell who killed Qhorin Halfhand. Jon kneels to the wrong man, then tells Mance he left the Watch to fight for the living. Mance takes him in.',
+      it: 'Il bastardo di Grande Inverno che ha ucciso Qhorin il Monco. Jon si inginocchia davanti all’uomo sbagliato, poi gli dice di aver lasciato i Guardiani della notte per combattere dalla parte dei vivi. Mance lo accoglie tra i suoi.',
+    },
+  },
+  manYgritte21: {
+    character: 'ygritte',
+    type: { en: 'Wildling of his host', it: 'Bruta del suo esercito' },
+    summary: {
+      en: 'The wildling girl who leads Jon into his camp.',
+      it: 'La ragazza dei bruti che conduce Jon nel suo accampamento.',
+    },
+  },
+  manQhorin21: {
+    character: 'qhorin-halfhand',
+    type: { en: 'Old enemy', it: 'Vecchio nemico' },
+    summary: {
+      en: 'The ranger who killed many of his people. Qhorin was his brother in the Watch once, and Mance is glad he is dead.',
+      it: 'Il ranger che ha ucciso molti dei suoi. Un tempo Qhorin era suo confratello nei Guardiani della notte, e Mance è contento che sia morto.',
+    },
+  },
+  manTormund23: {
+    character: 'tormund',
+    type: { en: 'War leader', it: 'Condottiero' },
+    summary: {
+      en: 'His lieutenant, whom he sends with twenty men to climb the Wall and strike Castle Black from behind when Mance lights his signal fire.',
+      it: 'Il suo luogotenente, che manda con venti uomini a scalare la Barriera e ad attaccare Castello Nero alle spalle quando Mance accenderà il suo fuoco di segnalazione.',
+    },
+  },
+  manJon23: {
+    character: 'jon-snow',
+    type: { en: 'Recruit on trial', it: 'Recluta alla prova' },
+    summary: {
+      en: 'The deserter who sees the Fist with him. Mance sends Jon to climb the Wall with Tormund, who is to throw him off it if he proves false.',
+      it: 'Il disertore che vede il Pugno insieme a lui. Mance lo manda a scalare la Barriera con Tormund, che dovrà buttarlo giù se si rivelerà falso.',
+    },
+  },
+  // Mance Rayder, the books
+  manJonBook: {
+    character: 'jon-snow',
+    type: { en: 'Deserter he questions', it: 'Disertore che interroga' },
+    summary: {
+      en: 'Ned Stark’s bastard, brought to his tent as the man who killed Qhorin Halfhand. Mance has seen him twice at Winterfell, the second time as a singer at King Robert’s feast, and asks him why he left the Watch.',
+      it: 'Il bastardo di Ned Stark, portato nella sua tenda come l’uomo che ha ucciso Qhorin il Monco. Mance lo ha già visto due volte a Grande Inverno, la seconda travestito da cantore al banchetto di re Robert, e gli chiede perché ha lasciato i Guardiani della notte.',
+    },
+  },
+  manDalla: {
+    character: 'dalla',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His wife, who is carrying his child. Mance introduces her to Jon in his tent.',
+      it: 'Sua moglie, che aspetta un figlio da lui. Mance la presenta a Jon nella sua tenda.',
+    },
+  },
+  manVal: {
+    character: 'val',
+    type: { en: 'Wife’s sister', it: 'Sorella della moglie' },
+    summary: {
+      en: 'Dalla’s sister, in the tent when Jon is brought in.',
+      it: 'La sorella di Dalla, nella tenda quando vi viene portato Jon.',
+    },
+  },
+  manTormundBook: {
+    character: 'tormund',
+    type: { en: 'War leader', it: 'Condottiero' },
+    summary: {
+      en: 'One of his chiefs, whom Mance introduces to Jon in the tent.',
+      it: 'Uno dei suoi capi, che Mance presenta a Jon nella tenda.',
+    },
+  },
+  manStyr: {
+    character: 'styr',
+    type: { en: 'Chief', it: 'Capo' },
+    summary: {
+      en: 'The Magnar of Thenn, whom Jon takes for the king when he walks into the tent.',
+      it: 'Il Magnar di Thenn, che Jon scambia per il re quando entra nella tenda.',
+    },
+  },
+  manJonFist: {
+    character: 'jon-snow',
+    type: { en: 'Deserter he questions', it: 'Disertore che interroga' },
+    summary: {
+      en: 'The deserter he questions again at the Fist of the First Men. Jon tells him the truth: three hundred men under the Lord Commander. Ygritte claims him as her lover, and Mance sends him to climb the Wall with the Magnar.',
+      it: 'Il disertore che interroga di nuovo al Pugno dei Primi Uomini. Jon gli dice la verità: trecento uomini agli ordini del lord comandante. Ygritte lo reclama come suo amante, e Mance lo manda a scalare la Barriera con il Magnar.',
+    },
+  },
+  manYgritteBook: {
+    character: 'ygritte',
+    type: { en: 'Spearwife', it: 'Lancera' },
+    summary: {
+      en: 'The spearwife who says Jon is her lover when Mance doubts him. Mance sends her to climb the Wall with Jon.',
+      it: 'La lancera che dice che Jon è il suo amante quando Mance dubita di lui. Mance la manda a scalare la Barriera insieme a Jon.',
+    },
+  },
+  manStyrFist: {
+    character: 'styr',
+    type: { en: 'Chief', it: 'Capo' },
+    summary: {
+      en: 'The Magnar of Thenn, who still distrusts Jon. Mance sends him to climb the Wall, and to make use of what Jon knows of the Watch.',
+      it: 'Il Magnar di Thenn, che continua a non fidarsi di Jon. Mance lo manda a scalare la Barriera, servendosi di quello che Jon sa dei Guardiani della notte.',
+    },
+  },
+
+  // Tormund, the show
+  torMance: {
+    character: 'mance-rayder',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The King-Beyond-the-Wall, who sends him with twenty men to climb the Wall and attack Castle Black from behind.',
+      it: 'Il Re oltre la Barriera, che lo manda con venti uomini a scalare la Barriera e ad attaccare Castello Nero alle spalle.',
+    },
+  },
+  torJon23: {
+    character: 'jon-snow',
+    type: { en: 'Crow on trial', it: 'Corvo alla prova' },
+    summary: {
+      en: 'The deserter Mance sends with him. If Jon proves false, Tormund is to throw him off the Wall.',
+      it: 'Il disertore che Mance gli affida. Se Jon si rivelerà falso, Tormund dovrà buttarlo giù dalla Barriera.',
+    },
+  },
+  torJon26: {
+    character: 'jon-snow',
+    type: { en: 'Crow on trial', it: 'Corvo alla prova' },
+    summary: {
+      en: 'The deserter in his band. When Jon puts a thousand men at Castle Black, Tormund threatens to gut him if he is lying. Jon reaches the top of the Wall with them.',
+      it: 'Il disertore della sua banda. Quando Jon dice che a Castello Nero ci sono mille uomini, Tormund minaccia di sventrarlo se sta mentendo. Jon arriva in cima alla Barriera con loro.',
+    },
+  },
+  torOrell26: {
+    character: 'orell',
+    type: { en: 'Warg of his band', it: 'Warg della sua banda' },
+    summary: {
+      en: 'The warg who climbs on his rope. When the ice gives way under Jon and Ygritte, Orell starts to cut the rope, because their weight is dragging Tormund down.',
+      it: 'Il warg che sale sulla sua stessa corda. Quando il ghiaccio cede sotto Jon e Ygritte, Orell comincia a tagliare la corda, perché il loro peso trascina giù Tormund.',
+    },
+  },
+  torYgritte26: {
+    character: 'ygritte',
+    type: { en: 'Raider of his band', it: 'Razziatrice della sua banda' },
+    summary: {
+      en: 'A raider of his band, who climbs the Wall with Jon.',
+      it: 'Una razziatrice della sua banda, che scala la Barriera con Jon.',
+    },
+  },
+  torJon29: {
+    character: 'jon-snow',
+    type: { en: 'Traitor', it: 'Traditore' },
+    summary: {
+      en: 'The crow who would not kill the old horse breeder. Tormund ordered his men to kill Jon, but Jon fought his way out, killed Orell and rode off.',
+      it: 'Il corvo che non ha voluto uccidere il vecchio allevatore di cavalli. Tormund ha ordinato ai suoi di ucciderlo, ma Jon si è aperto la strada, ha ucciso Orell ed è fuggito a cavallo.',
+    },
+  },
+  torYgritte29: {
+    character: 'ygritte',
+    type: { en: 'Raider of his band', it: 'Razziatrice della sua banda' },
+    summary: {
+      en: 'A raider of his band. Tormund held her back when she tried to help Jon.',
+      it: 'Una razziatrice della sua banda. Tormund l’ha trattenuta quando ha cercato di aiutare Jon.',
+    },
+  },
+  torOrell29: {
+    character: 'orell',
+    type: { en: 'Warg of his band', it: 'Warg della sua banda' },
+    summary: {
+      en: 'The warg of his band, who told him to make Jon kill the old man. Jon killed him.',
+      it: 'Il warg della sua banda, che gli aveva detto di far uccidere il vecchio a Jon. Jon lo ha ucciso.',
+    },
+  },
+  // Tormund, the books
+  torManceBook: {
+    character: 'mance-rayder',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The King-Beyond-the-Wall, in whose tent he sits when Jon is brought in.',
+      it: 'Il Re oltre la Barriera, nella cui tenda si trova quando vi viene portato Jon.',
+    },
+  },
+  torJonBook: {
+    character: 'jon-snow',
+    type: { en: 'Crow', it: 'Corvo' },
+    summary: {
+      en: 'The crow who killed Qhorin Halfhand, brought to Mance’s tent while Tormund is there.',
+      it: 'Il corvo che ha ucciso Qhorin il Monco, portato nella tenda di Mance mentre Tormund è lì.',
+    },
+  },
+  torJonMarch: {
+    character: 'jon-snow',
+    type: { en: 'Crow', it: 'Corvo' },
+    summary: {
+      en: 'The crow who rides with his war band down the Milkwater. Tormund tells him tall tales about himself.',
+      it: 'Il corvo che viaggia con la sua banda lungo il Fiumelatte. Tormund gli racconta storie esagerate su sé stesso.',
+    },
+  },
+  torYgritteMarch: {
+    character: 'ygritte',
+    type: { en: 'Spearwife of his band', it: 'Lancera della sua banda' },
+    summary: {
+      en: 'A spearwife who joins his band with Jon, and weeps when his men sing of the last of the giants.',
+      it: 'Una lancera che si unisce alla sua banda con Jon, e piange quando i suoi uomini cantano dell’ultimo dei giganti.',
+    },
+  },
+
+  // Orell, the show
+  orMance: {
+    character: 'mance-rayder',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The King-Beyond-the-Wall, who shows him to Jon as a warg. Orell tells Mance that his eagle has seen the Fist of the First Men, and many dead crows.',
+      it: 'Il Re oltre la Barriera, che lo mostra a Jon come warg. Orell gli dice che la sua aquila ha visto il Pugno dei Primi Uomini, e molti corvi morti.',
+    },
+  },
+  orJon22: {
+    character: 'jon-snow',
+    type: { en: 'Crow', it: 'Corvo' },
+    summary: {
+      en: 'The deserter Mance brings to watch him at work. Jon does not know what a warg is.',
+      it: 'Il disertore che Mance porta a guardarlo all’opera. Jon non sa cosa sia un warg.',
+    },
+  },
+  orJon25: {
+    character: 'jon-snow',
+    type: { en: 'Crow', it: 'Corvo' },
+    summary: {
+      en: 'The crow he questions on the Watch’s patrols and castles. Under his threats Jon says only three castles are manned, and puts a thousand men at Castle Black.',
+      it: 'Il corvo che interroga sulle pattuglie e sui castelli dei Guardiani della notte. Sotto le sue minacce Jon dice che i castelli presidiati sono solo tre, e che a Castello Nero ci sono mille uomini.',
+    },
+  },
+  orTormund: {
+    character: 'tormund',
+    type: { en: 'Leader of the band', it: 'Capo della banda' },
+    summary: {
+      en: 'The leader of the band sent to climb the Wall. Tormund warns Jon what will happen to him if he lies.',
+      it: 'Il capo della banda mandata a scalare la Barriera. Tormund avverte Jon di cosa gli succederà se mente.',
+    },
+  },
+  orJon27: {
+    character: 'jon-snow',
+    type: { en: 'Rival', it: 'Rivale' },
+    summary: {
+      en: 'The crow whose rope he cut on the climb. Jon confronts him on the march, and Orell tells him he will never keep Ygritte.',
+      it: 'Il corvo di cui ha tagliato la corda durante la scalata. Jon lo affronta durante la marcia, e Orell gli dice che non riuscirà mai a tenersi Ygritte.',
+    },
+  },
+  orYgritte27: {
+    character: 'ygritte',
+    type: { en: 'Woman he wants', it: 'Donna che desidera' },
+    summary: {
+      en: 'A raider of the band. Orell tells her he would be a better man for her than Jon.',
+      it: 'Una razziatrice della banda. Orell le dice che sarebbe per lei un uomo migliore di Jon.',
+    },
+  },
+  orJon29: {
+    character: 'jon-snow',
+    type: { en: 'Killer', it: 'Assassino' },
+    summary: {
+      en: 'The crow who would not kill the old horse breeder. They fought, and Jon killed him. With his last strength Orell sent his eagle at Jon’s face.',
+      it: 'Il corvo che non ha voluto uccidere il vecchio allevatore di cavalli. Hanno combattuto, e Jon lo ha ucciso. Con le ultime forze Orell ha scagliato la sua aquila contro il viso di Jon.',
+    },
+  },
+  orTormund29: {
+    character: 'tormund',
+    type: { en: 'Leader of the band', it: 'Capo della banda' },
+    summary: {
+      en: 'The leader of the band. Orell told him to have Jon kill the old man, to prove himself.',
+      it: 'Il capo della banda. Orell gli aveva detto di far uccidere il vecchio a Jon, perché desse prova di sé.',
+    },
+  },
+  orYgritte29: {
+    character: 'ygritte',
+    type: { en: 'Woman he wanted', it: 'Donna che desiderava' },
+    summary: {
+      en: 'The raider who chose Jon over him. She killed the old man with an arrow when Jon would not.',
+      it: 'La razziatrice che gli aveva preferito Jon. Ha ucciso il vecchio con una freccia quando Jon si è rifiutato.',
+    },
+  },
+  orMance29: {
+    character: 'mance-rayder',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The King-Beyond-the-Wall, for whom he scouted with his eagle.',
+      it: 'Il Re oltre la Barriera, per cui faceva da esploratore con la sua aquila.',
+    },
+  },
+  // Orell, the books: he opens dead, the watcher Jon killed in A Clash of
+  // Kings.
+  orJonBook: {
+    character: 'jon-snow',
+    type: { en: 'Killer', it: 'Assassino' },
+    summary: {
+      en: 'The ranger who cut him down by the fire at his post in the Skirling Pass. Ygritte later told Jon that the eagle was Orell.',
+      it: 'Il ranger che lo ha abbattuto accanto al fuoco, al suo posto di guardia nel Passo Skirling. Ygritte ha poi detto a Jon che l’aquila era Orell.',
+    },
+  },
+  orYgritteBook: {
+    character: 'ygritte',
+    type: { en: 'Fellow lookout', it: 'Compagna di guardia' },
+    summary: {
+      en: 'The spearwife who kept watch with him in the pass. She was taken alive when he was killed.',
+      it: 'La lancera che faceva la guardia con lui nel passo. È stata presa viva quando lui è stato ucciso.',
+    },
+  },
+
+  // Styr (books only)
+  styMance: {
+    character: 'mance-rayder',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The King-Beyond-the-Wall. When Jon is brought into the tent, he takes Styr for the king.',
+      it: 'Il Re oltre la Barriera. Quando Jon viene portato nella tenda, scambia Styr per il re.',
+    },
+  },
+  styJon: {
+    character: 'jon-snow',
+    type: { en: 'Crow', it: 'Corvo' },
+    summary: {
+      en: 'The deserter who takes him for Mance when he walks into the tent.',
+      it: 'Il disertore che, entrando nella tenda, lo scambia per Mance.',
+    },
+  },
+  styManceFist: {
+    character: 'mance-rayder',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The King-Beyond-the-Wall, who sends him and Jarl to climb the Wall, with Jon to tell them what he knows of the Watch.',
+      it: 'Il Re oltre la Barriera, che manda lui e Jarl a scalare la Barriera, con Jon a dire loro quello che sa dei Guardiani della notte.',
+    },
+  },
+  styJonFist: {
+    character: 'jon-snow',
+    type: { en: 'Crow he distrusts', it: 'Corvo di cui diffida' },
+    summary: {
+      en: 'The crow he does not trust. Ygritte saves Jon by claiming him as her lover, and Mance sends Jon with Styr to climb the Wall.',
+      it: 'Il corvo di cui non si fida. Ygritte salva Jon dicendo che è il suo amante, e Mance lo manda con Styr a scalare la Barriera.',
+    },
+  },
+  styJarl: {
+    character: 'jarl',
+    type: { en: 'Fellow leader', it: 'Altro capo' },
+    summary: {
+      en: 'The young raider who is to lead the climb with him.',
+      it: 'Il giovane razziatore che guiderà la scalata con lui.',
+    },
+  },
+  styYgritte: {
+    character: 'ygritte',
+    type: { en: 'Raider of the party', it: 'Razziatrice del gruppo' },
+    summary: {
+      en: 'The spearwife who claims Jon as her lover, and goes to climb the Wall with them.',
+      it: 'La lancera che dice che Jon è il suo amante, e va a scalare la Barriera con loro.',
+    },
+  },
+  styJonClimb: {
+    character: 'jon-snow',
+    type: { en: 'Crow he distrusts', it: 'Corvo di cui diffida' },
+    summary: {
+      en: 'The crow he and Jarl press for the Watch’s patrols, to choose where to climb.',
+      it: 'Il corvo a cui lui e Jarl strappano notizie sulle pattuglie dei Guardiani della notte, per scegliere dove scalare.',
+    },
+  },
+  styJarlDead: {
+    character: 'jarl',
+    type: { en: 'Fellow leader', it: 'Altro capo' },
+    summary: {
+      en: 'The raider who led the climb with him. Jarl fell to his death from the Wall.',
+      it: 'Il razziatore che guidava la scalata con lui. Jarl è precipitato dalla Barriera ed è morto.',
+    },
+  },
+  styJonFled: {
+    character: 'jon-snow',
+    type: { en: 'Deserter', it: 'Disertore' },
+    summary: {
+      en: 'The crow he ordered to kill an old man at a village by a lake. Jon balked, and fled on the old man’s horse when a direwolf fell on the Thenns.',
+      it: 'Il corvo a cui ha ordinato di uccidere un vecchio in un villaggio sul lago. Jon ha esitato, ed è fuggito sul cavallo del vecchio quando un meta-lupo si è avventato sui Thenn.',
+    },
+  },
+  styYgritteOld: {
+    character: 'ygritte',
+    type: { en: 'Raider of the party', it: 'Razziatrice del gruppo' },
+    summary: {
+      en: 'The spearwife who slit the old man’s throat when Jon would not.',
+      it: 'La lancera che ha tagliato la gola al vecchio quando Jon si è rifiutato.',
+    },
+  },
+
+  // Dalla (books only)
+  dalMance: {
+    character: 'mance-rayder',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'Her husband, the King-Beyond-the-Wall, whose child she is carrying.',
+      it: 'Suo marito, il Re oltre la Barriera, di cui aspetta un figlio.',
+    },
+  },
+  dalVal: {
+    character: 'val',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'Her sister, with her in Mance’s tent.',
+      it: 'Sua sorella, con lei nella tenda di Mance.',
+    },
+  },
+
+  // Val (books only)
+  valDalla: {
+    character: 'dalla',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'Her sister, Mance’s wife, who is with child.',
+      it: 'Sua sorella, la moglie di Mance, che aspetta un figlio.',
+    },
+  },
+  valJarl: {
+    character: 'jarl',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'Her lover, a young raider. Mance introduces him so to Jon.',
+      it: 'Il suo amante, un giovane razziatore. Mance lo presenta così a Jon.',
+    },
+  },
+  valMance: {
+    character: 'mance-rayder',
+    type: { en: 'Sister’s husband', it: 'Cognato' },
+    summary: {
+      en: 'Her sister’s husband, the King-Beyond-the-Wall.',
+      it: 'Il marito di sua sorella, il Re oltre la Barriera.',
+    },
+  },
+  valJarlDead: {
+    character: 'jarl',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'Her lover, a young raider, who fell to his death climbing the Wall.',
+      it: 'Il suo amante, un giovane razziatore, morto precipitando durante la scalata della Barriera.',
+    },
+  },
+
+  // Jarl (books only)
+  jarVal: {
+    character: 'val',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'His lover, Dalla’s sister.',
+      it: 'La sua amante, la sorella di Dalla.',
+    },
+  },
+  jarMance: {
+    character: 'mance-rayder',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The King-Beyond-the-Wall, who introduces him to Jon as Val’s lover.',
+      it: 'Il Re oltre la Barriera, che lo presenta a Jon come l’amante di Val.',
+    },
+  },
+  jarStyr: {
+    character: 'styr',
+    type: { en: 'Fellow leader', it: 'Altro capo' },
+    summary: {
+      en: 'The Magnar of Thenn, with whom Mance sends him to climb the Wall.',
+      it: 'Il Magnar di Thenn, con cui Mance lo manda a scalare la Barriera.',
+    },
+  },
+  jarJon: {
+    character: 'jon-snow',
+    type: { en: 'Crow', it: 'Corvo' },
+    summary: {
+      en: 'The deserter Mance sends with them, for what he knows of the Watch.',
+      it: 'Il disertore che Mance manda con loro, per quello che sa dei Guardiani della notte.',
+    },
+  },
+  jarStyrDead: {
+    character: 'styr',
+    type: { en: 'Fellow leader', it: 'Altro capo' },
+    summary: {
+      en: 'The Magnar of Thenn, with whom he led the climb. Their men raced each other up the Wall.',
+      it: 'Il Magnar di Thenn, con cui guidava la scalata. I loro uomini hanno fatto a gara per arrivare in cima alla Barriera.',
+    },
+  },
+  jarJonDead: {
+    character: 'jon-snow',
+    type: { en: 'Crow', it: 'Corvo' },
+    summary: {
+      en: 'The deserter he and the Magnar pressed for the Watch’s patrols, to choose where to climb.',
+      it: 'Il disertore a cui lui e il Magnar avevano strappato notizie sulle pattuglie dei Guardiani della notte, per scegliere dove scalare.',
+    },
+  },
+  jarValDead: {
+    character: 'val',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'His lover, Dalla’s sister. He fell to his death from the Wall.',
+      it: 'La sua amante, la sorella di Dalla. Lui è precipitato dalla Barriera ed è morto.',
+    },
+  },
+  jarManceDead: {
+    character: 'mance-rayder',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The King-Beyond-the-Wall, who sent him to climb it.',
+      it: 'Il Re oltre la Barriera, che lo aveva mandato a scalarla.',
+    },
+  },
+
+  // Small Paul (books only)
+  spaChett: {
+    character: 'chett',
+    type: { en: 'Ringleader', it: 'Capo del complotto' },
+    summary: {
+      en: 'The brother he hunts with near the Milkwater, who leads the plot to desert. Paul is one of the fourteen.',
+      it: 'Il confratello con cui va a caccia vicino al Fiumelatte, a capo del complotto per disertare. Paul è uno dei quattordici.',
+    },
+  },
+  spaJeor: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander the plotters mean to kill. Paul wants his raven for himself.',
+      it: 'Il lord comandante che i congiurati vogliono uccidere. Paul vuole per sé il suo corvo.',
+    },
+  },
+  spaSam: {
+    character: 'samwell-tarly',
+    type: { en: 'Brother he carried', it: 'Confratello che ha portato' },
+    summary: {
+      en: 'The fat steward who fell in the snow on the flight from the Fist. Paul carried him until an Other killed Paul with its sword.',
+      it: 'Il grasso attendente caduto nella neve durante la fuga dal Pugno. Paul lo ha portato in spalla finché un Estraneo non lo ha ucciso con la sua spada.',
+    },
+  },
+  spaGrenn: {
+    character: 'grenn',
+    type: { en: 'Fellow brother', it: 'Confratello' },
+    summary: {
+      en: 'The brother who stayed behind with him and Sam.',
+      it: 'Il confratello rimasto indietro con lui e con Sam.',
+    },
+  },
+  spaChettDead: {
+    character: 'chett',
+    type: { en: 'Ringleader', it: 'Capo del complotto' },
+    summary: {
+      en: 'The brother who led the plot to desert. The snow ruined it before the Fist was attacked.',
+      it: 'Il confratello a capo del complotto per disertare. La neve lo ha mandato a monte prima dell’attacco al Pugno.',
+    },
+  },
+  spaJeorDead: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander whose raven Paul wanted. Jeor led the survivors out of the Fist.',
+      it: 'Il lord comandante di cui Paul voleva il corvo. Jeor ha guidato i sopravvissuti fuori dal Pugno.',
+    },
+  },
+
+  // Dirk, Ollo Lophand and Clubfoot Karl (books only)
+  plotChett: {
+    character: 'chett',
+    type: { en: 'Ringleader', it: 'Capo del complotto' },
+    summary: {
+      en: 'The brother who leads the plot to kill the Lord Commander and desert, fourteen men in all.',
+      it: 'Il confratello a capo del complotto per uccidere il lord comandante e disertare, quattordici uomini in tutto.',
+    },
+  },
+  plotJeor: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander the plotters mean to kill, so that no one will hunt them.',
+      it: 'Il lord comandante che i congiurati vogliono uccidere, perché nessuno dia loro la caccia.',
+    },
+  },
+  dirCraster: {
+    character: 'craster',
+    type: { en: 'Host he killed', it: 'Padrone di casa che ha ucciso' },
+    summary: {
+      en: 'The master of the keep, who wanted the crows gone and was hiding food. When Craster went for Clubfoot Karl, Dirk slit his throat.',
+      it: 'Il padrone della fortezza, che voleva i corvi fuori dai piedi e nascondeva il cibo. Quando Craster si è scagliato contro Karl Piededuro, Dirk gli ha tagliato la gola.',
+    },
+  },
+  dirJeor: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who cried that there was no worse crime than murder at a host’s table. Ollo stabbed him.',
+      it: 'Il lord comandante, che ha gridato che non c’è delitto peggiore di un omicidio alla tavola di chi ti ospita. Ollo lo ha pugnalato.',
+    },
+  },
+  dirOllo: {
+    character: 'ollo-lophand',
+    type: { en: 'Fellow mutineer', it: 'Altro ammutinato' },
+    summary: {
+      en: 'The brother who stabbed the Lord Commander once Dirk had killed Craster.',
+      it: 'Il confratello che ha pugnalato il lord comandante dopo che Dirk aveva ucciso Craster.',
+    },
+  },
+  dirKarl: {
+    character: 'clubfoot-karl',
+    type: { en: 'Fellow mutineer', it: 'Altro ammutinato' },
+    summary: {
+      en: 'The brother Craster attacked first, which started the mutiny.',
+      it: 'Il confratello che Craster ha attaccato per primo, dando inizio all’ammutinamento.',
+    },
+  },
+  olJeor: {
+    character: 'jeor-mormont',
+    type: {
+      en: 'Lord Commander he stabbed',
+      it: 'Lord comandante che ha pugnalato',
+    },
+    summary: {
+      en: 'The Lord Commander, who cried out against the murder of their host at his own table. Ollo stabbed him.',
+      it: 'Il lord comandante, che ha gridato contro l’omicidio del loro ospite alla sua stessa tavola. Ollo lo ha pugnalato.',
+    },
+  },
+  olCraster: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, killed by Dirk when he went for Clubfoot Karl.',
+      it: 'Il padrone della fortezza, ucciso da Dirk quando si è scagliato contro Karl Piededuro.',
+    },
+  },
+  olDirk: {
+    character: 'dirk',
+    type: { en: 'Fellow mutineer', it: 'Altro ammutinato' },
+    summary: {
+      en: 'The brother who slit Craster’s throat and began the killing.',
+      it: 'Il confratello che ha tagliato la gola a Craster e ha dato il via alla strage.',
+    },
+  },
+  olKarl: {
+    character: 'clubfoot-karl',
+    type: { en: 'Fellow mutineer', it: 'Altro ammutinato' },
+    summary: {
+      en: 'The brother Craster went for first.',
+      it: 'Il confratello contro cui Craster si è scagliato per primo.',
+    },
+  },
+  kaCraster: {
+    character: 'craster',
+    type: {
+      en: 'Host who attacked him',
+      it: 'Padrone di casa che lo ha aggredito',
+    },
+    summary: {
+      en: 'The master of the keep. When the brothers accused him of hiding food, Craster attacked Karl, and Dirk slit his throat.',
+      it: 'Il padrone della fortezza. Quando i confratelli lo hanno accusato di nascondere il cibo, Craster ha aggredito Karl, e Dirk gli ha tagliato la gola.',
+    },
+  },
+  kaJeor: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, stabbed by Ollo in the mutiny that followed.',
+      it: 'Il lord comandante, pugnalato da Ollo nell’ammutinamento che è seguito.',
+    },
+  },
+  kaDirk: {
+    character: 'dirk',
+    type: { en: 'Fellow mutineer', it: 'Altro ammutinato' },
+    summary: {
+      en: 'The brother who killed Craster when Craster went for Karl.',
+      it: 'Il confratello che ha ucciso Craster quando Craster si è scagliato contro Karl.',
+    },
+  },
+  kaOllo: {
+    character: 'ollo-lophand',
+    type: { en: 'Fellow mutineer', it: 'Altro ammutinato' },
+    summary: {
+      en: 'The brother who stabbed the Lord Commander.',
+      it: 'Il confratello che ha pugnalato il lord comandante.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
+/**
  * Megga's and Alla's snapshots before the wedding, the same in both: Margaery
  * and Sansa from Sansa I (150), and Elinor from Sansa II (160), where the
  * cousins' ranks are told. Books only; the episodes only order them.
@@ -1919,6 +2731,314 @@ export const season3Relationships = {
       chapter: 182,
       source: 'chapter',
       value: [kingsLanding.ellOberyn, kingsLanding.ellTyrion],
+    },
+  ],
+  // Dragonstone (#1657). Books only: Davos IV (180), their gate. Episode 28,
+  // their show-side order, only orders the entries.
+  'axell-florent': [
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'chapter',
+      value: [
+        dragonstone.axeDavos,
+        dragonstone.axeStannis,
+        dragonstone.axeAlester,
+      ],
+    },
+  ],
+  'alester-florent': [
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'chapter',
+      value: [
+        dragonstone.aleAxell,
+        dragonstone.aleDavos,
+        dragonstone.aleStannis,
+        dragonstone.aleShireen,
+        dragonstone.aleMelisandre,
+      ],
+    },
+  ],
+  'edric-storm': [
+    {
+      episode: 28,
+      chapter: 180,
+      source: 'chapter',
+      value: [
+        dragonstone.edrShireen,
+        dragonstone.edrRobert,
+        dragonstone.edrDavos,
+        dragonstone.edrStannis,
+      ],
+    },
+  ],
+  // Bran's road and Theon (#1658). Show only: "The Bear and the Maiden
+  // Fair" (27); Reek I of A Dance with Dragons (284) only orders the entry.
+  'myranda': [
+    { episode: 27, chapter: 284, source: 'episode', value: [bran.myrTheon27] },
+  ],
+  // The Wall and beyond (#1656). The show: "Valar Dohaeris" (21) and "Walk
+  // of Punishment" (23). The books: Jon I (151) and II (159).
+  'mance-rayder': [
+    {
+      episode: 21,
+      chapter: 151,
+      source: 'episode',
+      value: [wall.manJon21, wall.manYgritte21, wall.manQhorin21],
+    },
+    {
+      episode: 23,
+      chapter: 159,
+      source: 'episode',
+      value: [
+        wall.manTormund23,
+        wall.manJon23,
+        wall.manYgritte21,
+        wall.manQhorin21,
+      ],
+    },
+    {
+      episode: 21,
+      chapter: 151,
+      source: 'chapter',
+      value: [
+        wall.manJonBook,
+        wall.manDalla,
+        wall.manVal,
+        wall.manTormundBook,
+        wall.manStyr,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 159,
+      source: 'chapter',
+      value: [
+        wall.manJonFist,
+        wall.manYgritteBook,
+        wall.manStyrFist,
+        wall.manDalla,
+        wall.manTormundBook,
+      ],
+    },
+  ],
+  // The show: "Walk of Punishment" (23), where it names him, "The Climb"
+  // (26) and "The Rains of Castamere" (29). The books: Jon I (151) and II
+  // (159).
+  'tormund': [
+    {
+      episode: 23,
+      chapter: 159,
+      source: 'episode',
+      value: [wall.torMance, wall.torJon23],
+    },
+    {
+      episode: 26,
+      chapter: 174,
+      source: 'episode',
+      value: [wall.torJon26, wall.torOrell26, wall.torYgritte26, wall.torMance],
+    },
+    {
+      episode: 29,
+      chapter: 185,
+      source: 'episode',
+      value: [wall.torJon29, wall.torYgritte29, wall.torOrell29, wall.torMance],
+    },
+    {
+      episode: 23,
+      chapter: 151,
+      source: 'chapter',
+      value: [wall.torManceBook, wall.torJonBook],
+    },
+    {
+      episode: 23,
+      chapter: 159,
+      source: 'chapter',
+      value: [wall.torJonMarch, wall.torYgritteMarch, wall.torManceBook],
+    },
+  ],
+  // The show: "Dark Wings, Dark Words" (22) to "The Rains of Castamere"
+  // (29), where Jon kills him. The books open him dead in Jon I (151): the
+  // watcher Jon killed in the Skirling Pass.
+  'orell': [
+    {
+      episode: 22,
+      chapter: 151,
+      source: 'episode',
+      value: [wall.orMance, wall.orJon22],
+    },
+    {
+      episode: 25,
+      chapter: 170,
+      source: 'episode',
+      value: [wall.orJon25, wall.orTormund, wall.orMance],
+    },
+    {
+      episode: 27,
+      chapter: 174,
+      source: 'episode',
+      value: [wall.orJon27, wall.orYgritte27, wall.orTormund, wall.orMance],
+    },
+    {
+      episode: 29,
+      chapter: 185,
+      source: 'episode',
+      value: [wall.orJon29, wall.orTormund29, wall.orYgritte29, wall.orMance29],
+    },
+    {
+      episode: 22,
+      chapter: 151,
+      source: 'chapter',
+      value: [wall.orJonBook, wall.orYgritteBook],
+    },
+  ],
+  // Books only: Jon I (151), II (159), IV (174), where Jarl falls, and V
+  // (185). The episodes only order the entries.
+  'styr': [
+    {
+      episode: 21,
+      chapter: 151,
+      source: 'chapter',
+      value: [wall.styMance, wall.styJon],
+    },
+    {
+      episode: 23,
+      chapter: 159,
+      source: 'chapter',
+      value: [
+        wall.styManceFist,
+        wall.styJonFist,
+        wall.styJarl,
+        wall.styYgritte,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 174,
+      source: 'chapter',
+      value: [
+        wall.styJonClimb,
+        wall.styJarlDead,
+        wall.styYgritte,
+        wall.styManceFist,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 185,
+      source: 'chapter',
+      value: [
+        wall.styJonFled,
+        wall.styYgritteOld,
+        wall.styJarlDead,
+        wall.styManceFist,
+      ],
+    },
+  ],
+  // Books only: Jon I (151).
+  'dalla': [
+    {
+      episode: 21,
+      chapter: 151,
+      source: 'chapter',
+      value: [wall.dalMance, wall.dalVal],
+    },
+  ],
+  // Books only: Jon I (151), and Jarl in the past tense from his fall in Jon
+  // IV (174).
+  'val': [
+    {
+      episode: 21,
+      chapter: 151,
+      source: 'chapter',
+      value: [wall.valDalla, wall.valJarl, wall.valMance],
+    },
+    {
+      episode: 26,
+      chapter: 174,
+      source: 'chapter',
+      value: [wall.valDalla, wall.valJarlDead, wall.valMance],
+    },
+  ],
+  // Books only: Jon I (151), II (159) and IV (174), where he falls.
+  'jarl': [
+    {
+      episode: 21,
+      chapter: 151,
+      source: 'chapter',
+      value: [wall.jarVal, wall.jarMance],
+    },
+    {
+      episode: 23,
+      chapter: 159,
+      source: 'chapter',
+      value: [wall.jarStyr, wall.jarJon, wall.jarVal, wall.jarMance],
+    },
+    {
+      episode: 26,
+      chapter: 174,
+      source: 'chapter',
+      value: [
+        wall.jarStyrDead,
+        wall.jarJonDead,
+        wall.jarValDead,
+        wall.jarManceDead,
+      ],
+    },
+  ],
+  // Books only: the prologue (144), and Samwell I (162), where he dies.
+  'small-paul': [
+    {
+      episode: 21,
+      chapter: 144,
+      source: 'chapter',
+      value: [wall.spaChett, wall.spaJeor],
+    },
+    {
+      episode: 21,
+      chapter: 162,
+      source: 'chapter',
+      value: [wall.spaSam, wall.spaGrenn, wall.spaChettDead, wall.spaJeorDead],
+    },
+  ],
+  // Books only: the prologue (144) and the mutiny in Samwell II (177).
+  'dirk': [
+    {
+      episode: 21,
+      chapter: 144,
+      source: 'chapter',
+      value: [wall.plotChett, wall.plotJeor],
+    },
+    {
+      episode: 24,
+      chapter: 177,
+      source: 'chapter',
+      value: [wall.dirCraster, wall.dirJeor, wall.dirOllo, wall.dirKarl],
+    },
+  ],
+  'ollo-lophand': [
+    {
+      episode: 21,
+      chapter: 144,
+      source: 'chapter',
+      value: [wall.plotChett, wall.plotJeor],
+    },
+    {
+      episode: 24,
+      chapter: 177,
+      source: 'chapter',
+      value: [wall.olJeor, wall.olCraster, wall.olDirk, wall.olKarl],
+    },
+  ],
+  'clubfoot-karl': [
+    { episode: 21, chapter: 144, source: 'chapter', value: [wall.plotChett] },
+    {
+      episode: 24,
+      chapter: 177,
+      source: 'chapter',
+      value: [wall.kaCraster, wall.kaJeor, wall.kaDirk, wall.kaOllo],
     },
   ],
 } satisfies Record<string, Timeline<Relationship[]>>
