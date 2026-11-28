@@ -644,10 +644,11 @@ const PHINKS_NEMES: Stroke[] = [
 ]
 
 export const YORKNEW_CITY_DRAWINGS = {
-  // Noko from behind, no face: her hair parted down the middle and kept in
-  // two braids, the braids in tint, down the back of her long-sleeved shirt.
-  // She is in the crowd and at the docks in chapter 1; Gon names her to
-  // Killua in chapter 64.
+  // Noko's two braids, in tint, over a long-sleeved shirt: the wiki's
+  // Appearance section gives both. Seen from behind so there is no face; the
+  // view and the parting are the composition, not a scene. She is in the
+  // crowd and at the docks in chapter 1; Gon names her to Killua in chapter
+  // 64.
   'noko': [
     {
       d: 'M56 66 Q56 32 80 32 Q104 32 104 66 Q104 80 96 86 M56 66 Q56 80 64 86',

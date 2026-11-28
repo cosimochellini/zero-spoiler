@@ -3,7 +3,8 @@ import type { Relationship, Timeline } from '~/data/types'
 /**
  * Facts and threshold revisions: docs/content-provenance/hunter-x-hunter-relationships.json.
  * Except Ging's, every entry pins an episode and a chapter it adapts, and
- * its wording is what both pages show by then; where the media differ, the
+ * its wording is what both pages show by then, unless the entry names the one
+ * medium that tells it (`source`); where the media differ, the
  * cards keep to what they share. Chrollo is linked only from 54/104, the
  * first such pair after the episode that names him (#974).
  */
@@ -1951,6 +1952,7 @@ export const yorknewCityRelationships = {
       value: [links.gingGon, links.gingKite, links.gingMito],
     },
   ],
+  // Manga-only: episode 37's page leaves her out (#1702).
   'noko': [
     { episode: 37, chapter: 64, source: 'chapter', value: [links.nokoGon] },
   ],
