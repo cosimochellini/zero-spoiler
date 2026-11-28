@@ -18046,6 +18046,927 @@ const bran3 = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 3's cards for the season-1 cast of the Wall and beyond (#1656):
+ * season 3 and A Storm of Swords through chapter 52. The show: "Valar
+ * Dohaeris" (episode 21) to "Mhysa" (30). The books: the prologue (chapter
+ * 144), Jon I to VI (151, 159, 170, 174, 185 and 192) and Samwell I to III
+ * (162, 177 and 190). Jeor Mormont dies in the mutiny at Craster's Keep,
+ * episode 24 and chapter 177; from there every card that names him is in
+ * the past tense, as are the cards on Chett from Samwell III (190). The
+ * new characters' own cards are in `season-3.relationships.ts`.
+ */
+const wall3 = {
+  // Jon Snow, the show
+  jnMance21: {
+    character: 'mance-rayder',
+    type: { en: 'King-Beyond-the-Wall', it: 'Re oltre la Barriera' },
+    summary: {
+      en: 'The wildling king, who sits unnoticed in a corner while Jon kneels to another man. Jon tells him what he saw Craster give to the creatures in the woods, and that he wants to fight for the living.',
+      it: 'Il re dei bruti, seduto in disparte in un angolo mentre Jon si inginocchia davanti a un altro uomo. Jon gli racconta cosa ha visto Craster consegnare alle creature del bosco, e gli dice di voler combattere dalla parte dei vivi.',
+    },
+  },
+  jnYgritte21: {
+    character: 'ygritte',
+    type: { en: 'Guide', it: 'Guida' },
+    summary: {
+      en: 'The wildling who leads him into Mance’s camp and chases off the boys who throw stones at him.',
+      it: 'La bruta che lo conduce nell’accampamento di Mance e scaccia i ragazzini che gli tirano sassi.',
+    },
+  },
+  jnTormund23: {
+    character: 'tormund',
+    type: { en: 'Leader of his band', it: 'Capo della sua banda' },
+    summary: {
+      en: 'The wildling he knelt to by mistake. Mance sends Jon to climb the Wall with Tormund, who is to throw him off it if he proves false.',
+      it: 'Il bruto davanti a cui si era inginocchiato per errore. Mance lo manda a scalare la Barriera con Tormund, che dovrà buttarlo giù se si rivelerà falso.',
+    },
+  },
+  jnMance23: {
+    character: 'mance-rayder',
+    type: { en: 'King-Beyond-the-Wall', it: 'Re oltre la Barriera' },
+    summary: {
+      en: 'The wildling king, who shows him the Fist with no bodies left on it. Mance tells him the dead men of the Watch now serve the White Walkers.',
+      it: 'Il re dei bruti, che gli mostra il Pugno senza più un cadavere. Mance gli dice che gli uomini morti dei Guardiani della notte ora servono gli Estranei.',
+    },
+  },
+  jnOrell23: {
+    character: 'orell',
+    type: { en: 'Warg', it: 'Warg' },
+    summary: {
+      en: 'The warg who scouts through an eagle’s eyes, and saw the dead at the Fist before they vanished.',
+      it: 'Il warg che esplora il terreno con gli occhi di un’aquila, e ha visto i morti al Pugno prima che sparissero.',
+    },
+  },
+  jnYgritte25: {
+    character: 'ygritte',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'She takes his sword and leads him into a cave of hot springs, to have him break his vow with her. He does, and she wishes they could stay there forever.',
+      it: 'Gli prende la spada e lo attira in una grotta di sorgenti calde, perché rompa il voto con lei. Lui lo fa, e lei vorrebbe restare lì per sempre.',
+    },
+  },
+  jnOrell25: {
+    character: 'orell',
+    type: { en: 'Warg', it: 'Warg' },
+    summary: {
+      en: 'The warg who questions him about the Watch’s patrols and castles. Jon tells him three castles are manned, and lies about the men at Castle Black.',
+      it: 'Il warg che lo interroga sulle pattuglie e sui castelli dei Guardiani della notte. Jon gli dice che i castelli presidiati sono tre, e mente sul numero degli uomini a Castello Nero.',
+    },
+  },
+  jnTormund25: {
+    character: 'tormund',
+    type: { en: 'Leader of his band', it: 'Capo della sua banda' },
+    summary: {
+      en: 'The leader of the band, who says he likes Jon but will gut him if he is lying.',
+      it: 'Il capo della banda, che dice che Jon gli piace ma che lo sventrerà se sta mentendo.',
+    },
+  },
+  jnYgritte26: {
+    character: 'ygritte',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'His lover, who knows he is still loyal to the Watch and asks him to be loyal to her. When the ice gives way he saves them both, and at the top of the Wall they kiss.',
+      it: 'La sua amante, che sa che lui è ancora fedele ai Guardiani della notte e gli chiede di essere fedele a lei. Quando il ghiaccio cede lui li salva entrambi, e in cima alla Barriera si baciano.',
+    },
+  },
+  jnOrell26: {
+    character: 'orell',
+    type: { en: 'Warg', it: 'Warg' },
+    summary: {
+      en: 'The warg who began to cut the rope while Jon and Ygritte hung from it.',
+      it: 'Il warg che ha cominciato a tagliare la corda mentre Jon e Ygritte vi erano appesi.',
+    },
+  },
+  jnOrell29: {
+    character: 'orell',
+    type: { en: 'Enemy he killed', it: 'Nemico che ha ucciso' },
+    summary: {
+      en: 'The warg who told Tormund to make Jon kill the old horse breeder. Jon killed him in the fight that followed, and Orell’s eagle clawed his face.',
+      it: 'Il warg che ha detto a Tormund di far uccidere a Jon il vecchio allevatore di cavalli. Jon lo ha ucciso nello scontro che è seguito, e l’aquila di Orell gli ha artigliato il viso.',
+    },
+  },
+  jnYgritte29: {
+    character: 'ygritte',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'His lover, who shot the old man when Jon would not. Jon rode away and left her behind.',
+      it: 'La sua amante, che ha ucciso il vecchio con una freccia quando Jon si è rifiutato. Jon è fuggito a cavallo e l’ha lasciata indietro.',
+    },
+  },
+  jnTormund29: {
+    character: 'tormund',
+    type: { en: 'Leader of his band', it: 'Capo della sua banda' },
+    summary: {
+      en: 'The leader of the band, who ordered his men to kill Jon once he saw where his loyalty lay.',
+      it: 'Il capo della banda, che ha ordinato ai suoi di uccidere Jon quando ha capito da che parte stava.',
+    },
+  },
+  jnYgritte30: {
+    character: 'ygritte',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'His lover, who caught up with him on the road. He told her he loved her and had never stopped being loyal to the Watch, and she shot him three times as he rode off.',
+      it: 'La sua amante, che lo ha raggiunto per strada. Lui le ha detto di amarla e di non aver mai smesso di essere fedele ai Guardiani della notte, e lei lo ha colpito con tre frecce mentre fuggiva.',
+    },
+  },
+  jnSam30: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, back at Castle Black, who is overjoyed to see him alive when he is carried in wounded.',
+      it: 'Il suo amico, tornato a Castello Nero, che è felicissimo di vederlo vivo quando lui viene portato dentro ferito.',
+    },
+  },
+  jnPyp30: {
+    character: 'pypar',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A friend who welcomes him back at Castle Black with Sam.',
+      it: 'Un amico che lo accoglie a Castello Nero insieme a Sam.',
+    },
+  },
+  // Jon Snow, the books
+  jnManceBook: {
+    character: 'mance-rayder',
+    type: { en: 'King-Beyond-the-Wall', it: 'Re oltre la Barriera' },
+    summary: {
+      en: 'The grey-haired singer in the tent, not the man Jon took for the king. Mance saw Jon twice at Winterfell, and asks him why he left the Watch.',
+      it: 'Il cantore dai capelli grigi nella tenda, non l’uomo che Jon aveva scambiato per il re. Mance lo ha visto due volte a Grande Inverno, e gli chiede perché ha lasciato i Guardiani della notte.',
+    },
+  },
+  jnYgritte151: {
+    character: 'ygritte',
+    type: { en: 'Guard', it: 'Sorvegliante' },
+    summary: {
+      en: 'The spearwife who guards him on the way to the camp, and tells Mance’s people he is a deserter who killed Qhorin Halfhand.',
+      it: 'La lancera che lo sorveglia lungo la strada per l’accampamento, e spiega alla gente di Mance che lui è un disertore che ha ucciso Qhorin il Monco.',
+    },
+  },
+  jnLord151: {
+    character: 'lord-of-bones',
+    type: { en: 'Captor', it: 'Chi lo ha catturato' },
+    summary: {
+      en: 'The leader of the band that brings him to Mance. He still does not trust Jon.',
+      it: 'Il capo della banda che lo porta da Mance. Continua a non fidarsi di lui.',
+    },
+  },
+  jnStyr151: {
+    character: 'styr',
+    type: { en: 'Wildling chief', it: 'Capo dei bruti' },
+    summary: {
+      en: 'The Magnar of Thenn, whom Jon takes for the king when he walks into the tent.',
+      it: 'Il Magnar di Thenn, che Jon scambia per il re quando entra nella tenda.',
+    },
+  },
+  jnTormund151: {
+    character: 'tormund',
+    type: { en: 'Wildling chief', it: 'Capo dei bruti' },
+    summary: {
+      en: 'One of Mance’s chiefs, introduced to him in the tent.',
+      it: 'Uno dei capi di Mance, che gli viene presentato nella tenda.',
+    },
+  },
+  jnYgritte159: {
+    character: 'ygritte',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'The spearwife who flirts with him on the march. At the Fist she tells Mance that Jon is her lover, which saves him, and that night they sleep together for the first time.',
+      it: 'La lancera che flirta con lui durante la marcia. Al Pugno dice a Mance che Jon è il suo amante, e questo lo salva; quella notte dormono insieme per la prima volta.',
+    },
+  },
+  jnMance159: {
+    character: 'mance-rayder',
+    type: { en: 'King-Beyond-the-Wall', it: 'Re oltre la Barriera' },
+    summary: {
+      en: 'The wildling king, who questions him at the Fist of the First Men. Jon tells him the truth about the men who held it, and is sent to climb the Wall with the Magnar.',
+      it: 'Il re dei bruti, che lo interroga al Pugno dei Primi Uomini. Jon gli dice la verità sugli uomini che lo tenevano, e viene mandato a scalare la Barriera con il Magnar.',
+    },
+  },
+  jnStyr159: {
+    character: 'styr',
+    type: { en: 'Wildling chief', it: 'Capo dei bruti' },
+    summary: {
+      en: 'The Magnar of Thenn, who distrusts him. Mance sends Jon with him to climb the Wall, for what Jon knows of the Watch.',
+      it: 'Il Magnar di Thenn, che non si fida di lui. Mance manda Jon con lui a scalare la Barriera, per quello che Jon sa dei Guardiani della notte.',
+    },
+  },
+  jnTormund159: {
+    character: 'tormund',
+    type: { en: 'Wildling chief', it: 'Capo dei bruti' },
+    summary: {
+      en: 'The chief whose war band Jon and Ygritte join on the march. Tormund tells him tall tales about himself.',
+      it: 'Il capo della banda a cui Jon e Ygritte si uniscono durante la marcia. Tormund gli racconta storie esagerate su sé stesso.',
+    },
+  },
+  jnOrell159: {
+    character: 'orell',
+    type: { en: 'Warg he killed', it: 'Warg che ha ucciso' },
+    summary: {
+      en: 'The wildling he killed in the Skirling Pass. Orell’s eagle rakes Jon’s face on the march.',
+      it: 'Il bruto che ha ucciso nel Passo Skirling. L’aquila di Orell gli artiglia il viso durante la marcia.',
+    },
+  },
+  jnGhost170: {
+    character: 'ghost-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'His direwolf, whom he tells to stay behind on the eve of the climb. They will meet again at Castle Black, Jon tells him.',
+      it: 'Il suo meta-lupo, a cui dice di restare indietro alla vigilia della scalata. Si ritroveranno a Castello Nero, gli dice Jon.',
+    },
+  },
+  jnYgritte170: {
+    character: 'ygritte',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'His lover. In a cave said to run under the Wall, she asks him to hide there with her forever.',
+      it: 'La sua amante. In una grotta che si dice passi sotto la Barriera, gli chiede di nascondersi lì con lei per sempre.',
+    },
+  },
+  jnStyr170: {
+    character: 'styr',
+    type: { en: 'Wildling chief', it: 'Capo dei bruti' },
+    summary: {
+      en: 'The Magnar of Thenn, who with Jarl presses him about the Watch’s patrols, to choose where to climb.',
+      it: 'Il Magnar di Thenn, che con Jarl gli strappa notizie sulle pattuglie dei Guardiani della notte, per scegliere dove scalare.',
+    },
+  },
+  jnStyr185: {
+    character: 'styr',
+    type: { en: 'Leader of the raiders', it: 'Capo dei razziatori' },
+    summary: {
+      en: 'The Magnar, who ordered Jon to kill an old man at a village by a lake. When a direwolf fell on the Thenns, Jon fled on the old man’s horse.',
+      it: 'Il Magnar, che gli ha ordinato di uccidere un vecchio in un villaggio sul lago. Quando un meta-lupo si è avventato sui Thenn, Jon è fuggito sul cavallo del vecchio.',
+    },
+  },
+  jnYgritte185: {
+    character: 'ygritte',
+    type: { en: 'Lover', it: 'Amante' },
+    summary: {
+      en: 'His lover, who slit the old man’s throat when Jon balked. As he fled an arrow struck his leg, and he believes she shot it.',
+      it: 'La sua amante, che ha tagliato la gola al vecchio quando Jon ha esitato. Mentre fuggiva una freccia lo ha colpito alla gamba, e lui crede che l’abbia scoccata lei.',
+    },
+  },
+  jnAemon192: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester of Castle Black, who dresses his wound and tells him the Lord Commander was betrayed and killed at Craster’s Keep.',
+      it: 'Il maestro di Castello Nero, che gli medica la ferita e gli dice che il lord comandante è stato tradito e ucciso alla Fortezza di Craster.',
+    },
+  },
+  jnGrenn192: {
+    character: 'grenn',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, one of the few back from Craster’s Keep. Grenn tells him Winterfell has been burned and that Bran and Rickon are dead, killed by Theon Greyjoy.',
+      it: 'Il suo amico, uno dei pochi tornati dalla Fortezza di Craster. Grenn gli dice che Grande Inverno è stata bruciata e che Bran e Rickon sono morti, uccisi da Theon Greyjoy.',
+    },
+  },
+  jnJeor192: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander he served as steward. Jeor was betrayed by his own men and killed beyond the Wall.',
+      it: 'Il lord comandante di cui era attendente. Jeor è stato tradito dai suoi uomini e ucciso oltre la Barriera.',
+    },
+  },
+  jnBran192: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, whom Grenn says Theon killed. Jon is not sure: he saw a direwolf at Queenscrown, and wonders whether Bran lives on through his wolf.',
+      it: 'Suo fratello, che secondo Grenn è stato ucciso da Theon. Jon non ne è sicuro: ha visto un meta-lupo a Corona della Regina, e si chiede se Bran viva ancora attraverso il suo lupo.',
+    },
+  },
+
+  // Samwell Tarly, the show
+  smJeor21: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who burns the wight that attacks Sam and rallies the survivors of the Fist. He is angry that Sam sent no ravens.',
+      it: 'Il lord comandante, che dà fuoco al non morto che aggredisce Sam e raduna i sopravvissuti del Pugno. È furioso perché Sam non ha mandato i corvi.',
+    },
+  },
+  smGhost21: {
+    character: 'ghost-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'Jon’s direwolf, which knocks down the wight about to kill Sam in the snow.',
+      it: 'Il meta-lupo di Jon, che atterra il non morto che sta per uccidere Sam nella neve.',
+    },
+  },
+  smGilly23: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'Craster’s daughter, whose child Sam sees born in the birthing hut. It is a boy, and they both know what Craster will do with him.',
+      it: 'La figlia di Craster, di cui Sam vede nascere il bambino nella capanna del parto. È un maschio, ed entrambi sanno cosa ne farà Craster.',
+    },
+  },
+  smCraster23: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, who takes the survivors in grudgingly, feeds his pigs better than them, and jokes that they could eat Sam.',
+      it: 'Il padrone della fortezza, che accoglie i sopravvissuti controvoglia, nutre i maiali meglio di loro e scherza dicendo che potrebbero mangiarsi Sam.',
+    },
+  },
+  smGilly24: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'Craster’s daughter and wife. When the mutiny breaks out Sam runs to her hut, and they flee into the night with her baby.',
+      it: 'Figlia e moglie di Craster. Quando scoppia l’ammutinamento Sam corre alla sua capanna, e fuggono nella notte con il suo bambino.',
+    },
+  },
+  smRast24: {
+    character: 'rast',
+    type: { en: 'Mutineer', it: 'Ammutinato' },
+    summary: {
+      en: 'The brother the Lord Commander charged with keeping Sam alive on the march. In the mutiny Rast stabbed Mormont, and shouted after Sam that he would cut his throat too.',
+      it: 'Il confratello a cui il lord comandante aveva ordinato di tenere in vita Sam durante la marcia. Nell’ammutinamento Rast ha pugnalato Mormont, e ha gridato dietro a Sam che avrebbe tagliato la gola anche a lui.',
+    },
+  },
+  smJeor24: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who forbade Sam to die on the march. He was killed in the mutiny at Craster’s Keep.',
+      it: 'Il lord comandante, che durante la marcia aveva proibito a Sam di morire. È stato ucciso nell’ammutinamento alla Fortezza di Craster.',
+    },
+  },
+  smCraster24: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, who mocked the survivors and was killed by one of them at his own table.',
+      it: 'Il padrone della fortezza, che ha deriso i sopravvissuti ed è stato ucciso da uno di loro alla sua stessa tavola.',
+    },
+  },
+  smGilly28: {
+    character: 'gilly',
+    type: { en: 'Woman in his care', it: 'Donna affidata a lui' },
+    summary: {
+      en: 'The woman he is taking to Castle Black with her son. He helps her look for a name for the boy, and when a White Walker comes for the child Sam kills it with his dragonglass dagger.',
+      it: 'La donna che sta portando a Castello Nero con suo figlio. La aiuta a cercare un nome per il bambino, e quando un Estraneo viene a prenderlo Sam lo uccide con il pugnale di vetro di drago.',
+    },
+  },
+  smBran30: {
+    character: 'bran-stark',
+    type: { en: 'Jon’s brother', it: 'Fratello di Jon' },
+    summary: {
+      en: 'Jon’s brother, whom Sam finds at the Nightfort and knows by Hodor and the direwolf. Sam leads Bran’s party through the Wall and gives them his dragonglass.',
+      it: 'Il fratello di Jon, che Sam incontra al Forte della Notte e riconosce da Hodor e dal meta-lupo. Sam guida il gruppo di Bran attraverso la Barriera e gli dà il suo vetro di drago.',
+    },
+  },
+  smAemon30: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester of Castle Black, angry at first that Sam has brought a wildling woman. He lets Gilly stay, and has Sam send every raven to warn the realm of the White Walkers.',
+      it: 'Il maestro di Castello Nero, all’inizio furioso perché Sam ha portato una donna dei bruti. Lascia restare Gilly, e fa mandare a Sam tutti i corvi per avvertire il regno del ritorno degli Estranei.',
+    },
+  },
+  smJon30: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, carried into Castle Black wounded. Sam is overjoyed to see him alive.',
+      it: 'Il suo amico, portato a Castello Nero ferito. Sam è felicissimo di vederlo vivo.',
+    },
+  },
+  smGilly30: {
+    character: 'gilly',
+    type: { en: 'Woman in his care', it: 'Donna affidata a lui' },
+    summary: {
+      en: 'The woman he brought to Castle Black with her son, through the Wall at the Nightfort.',
+      it: 'La donna che ha portato a Castello Nero con suo figlio, passando attraverso la Barriera al Forte della Notte.',
+    },
+  },
+  // Samwell Tarly, the books
+  smGrenn162: {
+    character: 'grenn',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'The brother who tries to get Sam on his feet in the snow, and picks up the dragonglass dagger after Sam kills the Other.',
+      it: 'Il confratello che cerca di rimettere in piedi Sam nella neve, e raccoglie il pugnale di vetro di drago dopo che Sam ha ucciso l’Estraneo.',
+    },
+  },
+  smPaul162: {
+    character: 'small-paul',
+    type: {
+      en: 'Brother who carried him',
+      it: 'Confratello che lo ha portato',
+    },
+    summary: {
+      en: 'The huge brother who carried Sam when he could not walk. An Other killed him, and Sam stabbed it with Jon’s dragonglass.',
+      it: 'L’enorme confratello che ha portato Sam in spalla quando lui non riusciva più a camminare. Un Estraneo lo ha ucciso, e Sam lo ha pugnalato con il vetro di drago di Jon.',
+    },
+  },
+  smJeor162: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who had him send the ravens as the dead fell on the Fist, and led the survivors out in a wedge.',
+      it: 'Il lord comandante, che gli ha fatto mandare i corvi mentre i morti assalivano il Pugno, e ha guidato i sopravvissuti fuori a cuneo.',
+    },
+  },
+  smJon162: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who gave him the dragonglass dagger.',
+      it: 'Il suo amico, che gli ha dato il pugnale di vetro di drago.',
+    },
+  },
+  smJeor177: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who talked with Sam about dragonglass at Craster’s Keep. Ollo stabbed him in the mutiny, and dying he told Sam to reach the Wall and to ask his son Jorah to take the black.',
+      it: 'Il lord comandante, che alla Fortezza di Craster ha parlato con Sam del vetro di drago. Ollo lo ha pugnalato nell’ammutinamento, e morendo ha detto a Sam di raggiungere la Barriera e di chiedere a suo figlio Jorah di prendere il nero.',
+    },
+  },
+  smCraster177: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, who wanted the crows gone. Dirk slit his throat when the mutiny began.',
+      it: 'Il padrone della fortezza, che voleva i corvi fuori dai piedi. Dirk gli ha tagliato la gola quando è cominciato l’ammutinamento.',
+    },
+  },
+  smGilly177: {
+    character: 'gilly',
+    type: { en: 'Craster’s wife', it: 'Moglie di Craster' },
+    summary: {
+      en: 'Craster’s daughter, who has just borne a son. In the chaos she asks Sam to take her away, somewhere warm.',
+      it: 'La figlia di Craster, che ha appena partorito un maschio. Nel caos chiede a Sam di portarla via, in un posto caldo.',
+    },
+  },
+  smGrenn177: {
+    character: 'grenn',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A brother who got away from the mutineers with Dolorous Edd and a few others.',
+      it: 'Un confratello che è sfuggito agli ammutinati con Edd l’Addolorato e pochi altri.',
+    },
+  },
+  smGilly190: {
+    character: 'gilly',
+    type: { en: 'Woman in his care', it: 'Donna affidata a lui' },
+    summary: {
+      en: 'The woman he is taking south with her son. At Whitetree the dead kill their horse and close in on her, until thousands of ravens tear them apart.',
+      it: 'La donna che sta portando a sud con suo figlio. A Whitetree i morti uccidono il loro cavallo e la circondano, finché migliaia di corvi non li fanno a pezzi.',
+    },
+  },
+  smPaul190: {
+    character: 'small-paul',
+    type: {
+      en: 'Brother who carried him',
+      it: 'Confratello che lo ha portato',
+    },
+    summary: {
+      en: 'The brother who carried him and was killed by an Other. At Whitetree his corpse came for Sam, the dagger shattered on his mail, and Sam set him on fire.',
+      it: 'Il confratello che lo aveva portato in spalla ed era stato ucciso da un Estraneo. A Whitetree il suo cadavere è venuto a prendere Sam, il pugnale si è spezzato contro la sua cotta di maglia, e Sam gli ha dato fuoco.',
+    },
+  },
+  smChett190: {
+    character: 'chett',
+    type: { en: 'Brother who hated him', it: 'Confratello che lo odiava' },
+    summary: {
+      en: 'The brother he replaced as Maester Aemon’s steward. Chett died at the Fist, and Sam meets him among the dead at Whitetree.',
+      it: 'Il confratello che ha sostituito come attendente di maestro Aemon. Chett è morto al Pugno, e Sam lo ritrova tra i morti a Whitetree.',
+    },
+  },
+
+  // Jeor Mormont, the show
+  joSam22: {
+    character: 'samwell-tarly',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'The steward who sent no ravens from the Fist. On the march Jeor forbids him to die, and orders Rast to keep him alive.',
+      it: 'L’attendente che non ha mandato i corvi dal Pugno. Durante la marcia Jeor gli proibisce di morire, e ordina a Rast di tenerlo in vita.',
+    },
+  },
+  joRast22: {
+    character: 'rast',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A brother who wants to leave Sam behind. Jeor orders him to keep Sam alive to the Wall, or answer for it with his life.',
+      it: 'Un confratello che vuole lasciare indietro Sam. Jeor gli ordina di tenerlo in vita fino alla Barriera, pena la sua stessa vita.',
+    },
+  },
+  joCraster24: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, who took in the survivors of the Fist and mocked them. He was killed at his own table, and Jeor cried out that the gods would curse his killer.',
+      it: 'Il padrone della fortezza, che ha accolto i sopravvissuti del Pugno e li ha derisi. È stato ucciso alla sua stessa tavola, e Jeor ha gridato che gli dèi avrebbero maledetto il suo assassino.',
+    },
+  },
+  joRast24: {
+    character: 'rast',
+    type: { en: 'Killer', it: 'Assassino' },
+    summary: {
+      en: 'The brother he pulled back from Craster’s axe. In the mutiny Rast stabbed Jeor in the back, then finished him.',
+      it: 'Il confratello che aveva trattenuto davanti all’ascia di Craster. Nell’ammutinamento Rast lo ha pugnalato alla schiena, e poi lo ha finito.',
+    },
+  },
+  joSam24: {
+    character: 'samwell-tarly',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'The steward he forbade to die on the march from the Fist.',
+      it: 'L’attendente a cui aveva proibito di morire durante la marcia dal Pugno.',
+    },
+  },
+  joGrenn24: {
+    character: 'grenn',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A brother who charged the mutineers when Jeor was stabbed.',
+      it: 'Un confratello che si è lanciato contro gli ammutinati quando Jeor è stato pugnalato.',
+    },
+  },
+  // Jeor Mormont, the books
+  joThoren144: {
+    character: 'thoren-smallwood',
+    type: { en: 'Ranger', it: 'Ranger' },
+    summary: {
+      en: 'The ranger who came back from the Milkwater with word of Mance Rayder’s host, and wants to give battle. Jeor waits for the other parties, then decides to march at dawn.',
+      it: 'Il ranger tornato dal Fiumelatte con notizie dell’esercito di Mance Rayder, che vuole dare battaglia. Jeor aspetta gli altri gruppi, poi decide di marciare all’alba.',
+    },
+  },
+  joMallador144: {
+    character: 'mallador-locke',
+    type: { en: 'Officer', it: 'Ufficiale' },
+    summary: {
+      en: 'One of the officers who would rather fall back to the Wall.',
+      it: 'Uno degli ufficiali che preferirebbero ripiegare sulla Barriera.',
+    },
+  },
+  joJarman144: {
+    character: 'jarman-buckwell',
+    type: { en: 'Ranger', it: 'Ranger' },
+    summary: {
+      en: 'The ranger whose party has not come back to the Fist. Jeor wants to wait for him.',
+      it: 'Il ranger il cui gruppo non è ancora tornato al Pugno. Jeor vuole aspettarlo.',
+    },
+  },
+  joSam162: {
+    character: 'samwell-tarly',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'The steward he ordered to send ravens to Castle Black and the Shadow Tower when the dead attacked the Fist.',
+      it: 'L’attendente a cui ha ordinato di mandare i corvi a Castello Nero e alla Torre delle Ombre quando i morti hanno attaccato il Pugno.',
+    },
+  },
+  joThoren162: {
+    character: 'thoren-smallwood',
+    type: { en: 'Ranger', it: 'Ranger' },
+    summary: {
+      en: 'The ranger who wanted to give battle to Mance Rayder. He died at the Fist.',
+      it: 'Il ranger che voleva dare battaglia a Mance Rayder. È morto al Pugno.',
+    },
+  },
+  joSam177: {
+    character: 'samwell-tarly',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'The steward he talked to about dragonglass, which the Watch once knew how to use against the Others. Dying, Jeor told Sam to reach the Wall.',
+      it: 'L’attendente con cui ha parlato del vetro di drago, che un tempo i Guardiani della notte sapevano usare contro gli Estranei. Morendo, Jeor gli ha detto di raggiungere la Barriera.',
+    },
+  },
+  joOllo177: {
+    character: 'ollo-lophand',
+    type: { en: 'Killer', it: 'Assassino' },
+    summary: {
+      en: 'The brother who stabbed him after Craster’s murder.',
+      it: 'Il confratello che lo ha pugnalato dopo l’omicidio di Craster.',
+    },
+  },
+  joDirk177: {
+    character: 'dirk',
+    type: { en: 'Mutineer', it: 'Ammutinato' },
+    summary: {
+      en: 'The brother who slit Craster’s throat at his own table. Jeor cried that there was no worse crime.',
+      it: 'Il confratello che ha tagliato la gola a Craster alla sua stessa tavola. Jeor ha gridato che non c’è delitto peggiore.',
+    },
+  },
+  joCraster177: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, who wanted the crows gone and was killed by Dirk at his own table.',
+      it: 'Il padrone della fortezza, che voleva i corvi fuori dai piedi ed è stato ucciso da Dirk alla sua stessa tavola.',
+    },
+  },
+  joJorah177: {
+    character: 'jorah-mormont',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son. Dying, Jeor asked Sam to tell Jorah to take the black, and that he forgave him.',
+      it: 'Suo figlio. Morendo, Jeor ha chiesto a Sam di dire a Jorah di prendere il nero, e che lo perdonava.',
+    },
+  },
+
+  // Grenn
+  grJeor24: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, stabbed in the back by Rast. Grenn charged the mutineers when Jeor fell.',
+      it: 'Il lord comandante, pugnalato alla schiena da Rast. Grenn si è lanciato contro gli ammutinati quando Jeor è caduto.',
+    },
+  },
+  grSam24: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A friend he and Edd left behind at the Fist, though they would not leave him on the march.',
+      it: 'Un amico che lui ed Edd hanno lasciato indietro al Pugno, anche se poi durante la marcia non lo hanno abbandonato.',
+    },
+  },
+  grEdd24: {
+    character: 'eddison-tollett',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A brother who shovels the pigsties with him at Craster’s Keep, and will not talk about Rast’s fears.',
+      it: 'Un confratello che spala con lui i porcili alla Fortezza di Craster, e non vuole parlare delle paure di Rast.',
+    },
+  },
+  grSam162: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, who fell in the snow on the flight from the Fist. Grenn stayed with him, and saw Sam kill an Other with dragonglass.',
+      it: 'Il suo amico, caduto nella neve durante la fuga dal Pugno. Grenn è rimasto con lui, e lo ha visto uccidere un Estraneo con il vetro di drago.',
+    },
+  },
+  grPaul162: {
+    character: 'small-paul',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'The brother who carried Sam for them, until an Other killed him.',
+      it: 'Il confratello che ha portato Sam in spalla al posto loro, finché un Estraneo non lo ha ucciso.',
+    },
+  },
+  grJon192: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, back at Castle Black with a wound in the leg. Grenn tells him Winterfell has burned and that Bran and Rickon are dead, killed by Theon Greyjoy.',
+      it: 'Il suo amico, tornato a Castello Nero con una ferita alla gamba. Grenn gli dice che Grande Inverno è bruciata e che Bran e Rickon sono morti, uccisi da Theon Greyjoy.',
+    },
+  },
+  grJeor192: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, betrayed and killed at Craster’s Keep. Grenn is one of the few who made it back to the Wall.',
+      it: 'Il lord comandante, tradito e ucciso alla Fortezza di Craster. Grenn è uno dei pochi che sono tornati alla Barriera.',
+    },
+  },
+
+  // Ghost
+  ghSam21: {
+    character: 'samwell-tarly',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'The steward he saves in the snow, knocking down the wight about to kill him.',
+      it: 'L’attendente che salva nella neve, atterrando il non morto che sta per ucciderlo.',
+    },
+  },
+  ghJon170: {
+    character: 'jon-snow',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'His master, who on the eve of the climb tells him to stay behind and meet him at Castle Black.',
+      it: 'Il suo padrone, che alla vigilia della scalata gli dice di restare indietro e di aspettarlo a Castello Nero.',
+    },
+  },
+  ghYgritte170: {
+    character: 'ygritte',
+    type: { en: 'Spearwife', it: 'Lancera' },
+    summary: {
+      en: 'The spearwife who stays close to Jon on the march.',
+      it: 'La lancera che sta sempre vicino a Jon durante la marcia.',
+    },
+  },
+
+  // Maester Aemon
+  aeJeorPast: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch, whose maester Aemon was.',
+      it: 'Il capo dei Guardiani della notte, di cui Aemon era il maestro.',
+    },
+  },
+  aeSam30: {
+    character: 'samwell-tarly',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, who comes back from beyond the Wall with a wildling woman. Aemon is angry until he hears she is Craster’s wife, then has Sam send every raven.',
+      it: 'Il suo attendente, che torna da oltre la Barriera con una donna dei bruti. Aemon è furioso finché non sente che è una moglie di Craster, poi gli fa mandare tutti i corvi.',
+    },
+  },
+  aeGilly30: {
+    character: 'gilly',
+    type: { en: 'Refugee', it: 'Rifugiata' },
+    summary: {
+      en: 'One of Craster’s wives, whom Sam brings to Castle Black. Aemon lets her stay.',
+      it: 'Una delle mogli di Craster, che Sam porta a Castello Nero. Aemon le permette di restare.',
+    },
+  },
+  aeJon192: {
+    character: 'jon-snow',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'The young brother who comes back from the wildlings with an arrow wound. Aemon dresses it, and tells him the Lord Commander is dead.',
+      it: 'Il giovane confratello che torna dai bruti con una ferita di freccia. Aemon gliela medica, e gli dice che il lord comandante è morto.',
+    },
+  },
+
+  // Jeor in the past tense on the pages of those who served under him
+  alJeorPast: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch, who sent Alliser to King’s Landing with the dead man’s hand to ask the king for help.',
+      it: 'Il capo dei Guardiani della notte, che aveva mandato Alliser ad Approdo del Re con la mano del morto, per chiedere aiuto al re.',
+    },
+  },
+  daJeorPast: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch, who took Dareon’s group of recruits into the Watch.',
+      it: 'Il capo dei Guardiani della notte, che aveva accolto nei Guardiani il gruppo di reclute di Dareon.',
+    },
+  },
+  haJeorPast: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch, who took Halder’s group into the Watch and sent Halder to the builders.',
+      it: 'Il capo dei Guardiani della notte, che aveva accolto nei Guardiani il gruppo di Halder e lo aveva assegnato ai costruttori.',
+    },
+  },
+  boJeorPast: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch. Bowen sat at his table among the officers.',
+      it: 'Il capo dei Guardiani della notte. Bowen sedeva alla sua tavola con gli altri ufficiali.',
+    },
+  },
+  boChettPast: {
+    character: 'chett',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'Maester Aemon’s steward until Sam took his place. Bowen announced that he had been moved to the kennels.',
+      it: 'L’attendente di maestro Aemon finché Sam non aveva preso il suo posto. Bowen aveva annunciato che era stato spostato ai canili.',
+    },
+  },
+
+  // Chett (books only)
+  chSam144: {
+    character: 'samwell-tarly',
+    type: { en: 'Hated rival', it: 'Rivale odiato' },
+    summary: {
+      en: 'The fat steward who took his place with Maester Aemon. Chett mocks his archery, and on the night of the snow creeps up to kill him, until a horn sounds three times.',
+      it: 'Il grasso attendente che ha preso il suo posto accanto a maestro Aemon. Chett si fa beffe di lui mentre tira con l’arco, e la notte della neve gli si avvicina per ucciderlo, finché un corno non suona tre volte.',
+    },
+  },
+  chJon144: {
+    character: 'jon-snow',
+    type: { en: 'Hated rival', it: 'Rivale odiato' },
+    summary: {
+      en: 'The bastard who cost him his place as Maester Aemon’s steward. Chett hates him as much as Sam.',
+      it: 'Il bastardo che gli ha fatto perdere il posto di attendente di maestro Aemon. Chett lo odia quanto Sam.',
+    },
+  },
+  chJeor144: {
+    character: 'jeor-mormont',
+    type: { en: 'Target', it: 'Bersaglio' },
+    summary: {
+      en: 'The Lord Commander, whom Chett’s plotters mean to kill before they desert, so that no one hunts them. The snow ruins the plan.',
+      it: 'Il lord comandante, che i congiurati di Chett vogliono uccidere prima di disertare, perché nessuno dia loro la caccia. La neve manda a monte il piano.',
+    },
+  },
+  chDirk144: {
+    character: 'dirk',
+    type: { en: 'Fellow plotter', it: 'Complice' },
+    summary: {
+      en: 'One of the fourteen brothers in his plot to desert.',
+      it: 'Uno dei quattordici confratelli del suo complotto per disertare.',
+    },
+  },
+  chOllo144: {
+    character: 'ollo-lophand',
+    type: { en: 'Fellow plotter', it: 'Complice' },
+    summary: {
+      en: 'Another of the brothers in his plot to desert.',
+      it: 'Un altro dei confratelli del suo complotto per disertare.',
+    },
+  },
+  chJeorPast: {
+    character: 'jeor-mormont',
+    type: { en: 'Target', it: 'Bersaglio' },
+    summary: {
+      en: 'The Lord Commander, whom Chett’s plotters meant to kill before they deserted. The snow ruined the plan.',
+      it: 'Il lord comandante, che i congiurati di Chett volevano uccidere prima di disertare. La neve aveva mandato a monte il piano.',
+    },
+  },
+  chSamPast: {
+    character: 'samwell-tarly',
+    type: { en: 'Hated rival', it: 'Rivale odiato' },
+    summary: {
+      en: 'The fat steward who took his place with Maester Aemon. Chett crept up to kill him on the night of the snow, until a horn sounded three times.',
+      it: 'Il grasso attendente che aveva preso il suo posto accanto a maestro Aemon. Chett gli si era avvicinato per ucciderlo la notte della neve, finché un corno non aveva suonato tre volte.',
+    },
+  },
+  chJonPast: {
+    character: 'jon-snow',
+    type: { en: 'Hated rival', it: 'Rivale odiato' },
+    summary: {
+      en: 'The bastard who cost him his place as Maester Aemon’s steward.',
+      it: 'Il bastardo che gli aveva fatto perdere il posto di attendente di maestro Aemon.',
+    },
+  },
+  chOlloPast: {
+    character: 'ollo-lophand',
+    type: { en: 'Fellow plotter', it: 'Complice' },
+    summary: {
+      en: 'Another of the brothers who had joined his plot to desert.',
+      it: 'Un altro dei confratelli che si erano uniti al suo complotto per disertare.',
+    },
+  },
+
+  // Rast (the show)
+  raSam22: {
+    character: 'samwell-tarly',
+    type: { en: 'Brother in his charge', it: 'Confratello affidato a lui' },
+    summary: {
+      en: 'The fat steward who hid at the Fist and slows the march. Rast wants to leave him, but the Lord Commander orders him to keep Sam alive.',
+      it: 'Il grasso attendente che si è nascosto al Pugno e rallenta la marcia. Rast vuole abbandonarlo, ma il lord comandante gli ordina di tenerlo in vita.',
+    },
+  },
+  raJeor22: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The Lord Commander, who orders him to keep Sam alive to the Wall, on pain of death.',
+      it: 'Il lord comandante, che gli ordina di tenere in vita Sam fino alla Barriera, pena la morte.',
+    },
+  },
+  raJeor24: {
+    character: 'jeor-mormont',
+    type: { en: 'Victim', it: 'Vittima' },
+    summary: {
+      en: 'The Lord Commander, who pulled him away from Craster’s axe. When the killing began Rast stabbed him in the back, and finished him with a knife to the throat.',
+      it: 'Il lord comandante, che lo aveva allontanato dall’ascia di Craster. Quando è cominciata la strage Rast lo ha pugnalato alla schiena, e lo ha finito con un coltello alla gola.',
+    },
+  },
+  raCraster24: {
+    character: 'craster',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The master of the keep, who kept his winter stores to himself. When Rast called him a bastard Craster threatened him with an axe; another brother killed him.',
+      it: 'Il padrone della fortezza, che teneva per sé le provviste per l’inverno. Quando Rast gli ha dato del bastardo, Craster lo ha minacciato con un’ascia; poi un altro confratello lo ha ucciso.',
+    },
+  },
+  raSam24: {
+    character: 'samwell-tarly',
+    type: { en: 'Brother in his charge', it: 'Confratello affidato a lui' },
+    summary: {
+      en: 'The fat steward who fled into the night with Gilly. Rast shouted after him that he would soon cut his throat.',
+      it: 'Il grasso attendente fuggito nella notte con Gilly. Rast gli ha gridato dietro che presto gli avrebbe tagliato la gola.',
+    },
+  },
+
+  // Pyp (the show)
+  pyJon30: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His friend, carried into Castle Black wounded. Pyp is overjoyed to see him.',
+      it: 'Il suo amico, portato a Castello Nero ferito. Pyp è felicissimo di vederlo.',
+    },
+  },
+  pySam30: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A friend back from beyond the Wall, with him when Jon is brought in.',
+      it: 'Un amico tornato da oltre la Barriera, con lui quando portano dentro Jon.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season1Relationships = {
   // The show weds her in episode 1; its wedding entry waits for episode 2,
   // the book's pair, which is later and so safe.
@@ -21036,6 +21957,20 @@ export const season1Relationships = {
       source: 'chapter',
       value: [wall2.ghoJonDream, wall2.ghoQhorin],
     },
+    // Stage 3 (#1656). The show: "Valar Dohaeris" (21). The books: Jon III
+    // (170).
+    {
+      episode: 21,
+      chapter: 151,
+      source: 'episode',
+      value: [wall3.ghSam21, wall2.ghoJonNorth, wall2.ghoGilly],
+    },
+    {
+      episode: 25,
+      chapter: 170,
+      source: 'chapter',
+      value: [wall3.ghJon170, wall3.ghYgritte170],
+    },
   ],
   'theon-greyjoy': [
     { episode: 1, chapter: 2, value: [north.theEddard, north.theRobb] },
@@ -22325,6 +23260,135 @@ export const season1Relationships = {
         wall2.jonEbben,
       ],
     },
+    // Stage 3 (#1656). The show: "Valar Dohaeris" (21) to "Mhysa" (30). The
+    // books: Jon I to VI (151 to 192).
+    {
+      episode: 21,
+      chapter: 151,
+      source: 'episode',
+      value: [
+        wall3.jnMance21,
+        wall3.jnYgritte21,
+        wall2.jonQhorinKilled,
+        wall2.jonSamMissing,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 159,
+      source: 'episode',
+      value: [
+        wall3.jnTormund23,
+        wall3.jnMance23,
+        wall3.jnOrell23,
+        wall3.jnYgritte21,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 170,
+      source: 'episode',
+      value: [
+        wall3.jnYgritte25,
+        wall3.jnOrell25,
+        wall3.jnTormund25,
+        wall3.jnMance23,
+      ],
+    },
+    {
+      episode: 26,
+      chapter: 174,
+      source: 'episode',
+      value: [
+        wall3.jnYgritte26,
+        wall3.jnOrell26,
+        wall3.jnTormund25,
+        wall3.jnMance23,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 185,
+      source: 'episode',
+      value: [
+        wall3.jnOrell29,
+        wall3.jnYgritte29,
+        wall3.jnTormund29,
+        wall3.jnMance23,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 192,
+      source: 'episode',
+      value: [
+        wall3.jnYgritte30,
+        wall3.jnSam30,
+        wall3.jnPyp30,
+        wall3.jnOrell29,
+        wall3.jnTormund29,
+      ],
+    },
+    {
+      episode: 21,
+      chapter: 151,
+      source: 'chapter',
+      value: [
+        wall3.jnManceBook,
+        wall3.jnYgritte151,
+        wall3.jnLord151,
+        wall3.jnStyr151,
+        wall3.jnTormund151,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 159,
+      source: 'chapter',
+      value: [
+        wall3.jnYgritte159,
+        wall3.jnMance159,
+        wall3.jnStyr159,
+        wall3.jnTormund159,
+        wall3.jnOrell159,
+      ],
+    },
+    {
+      episode: 25,
+      chapter: 170,
+      source: 'chapter',
+      value: [
+        wall3.jnGhost170,
+        wall3.jnYgritte170,
+        wall3.jnStyr170,
+        wall3.jnMance159,
+        wall3.jnTormund159,
+      ],
+    },
+    {
+      episode: 29,
+      chapter: 185,
+      source: 'chapter',
+      value: [
+        wall3.jnStyr185,
+        wall3.jnYgritte185,
+        wall3.jnGhost170,
+        wall3.jnMance159,
+        wall3.jnTormund159,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 192,
+      source: 'chapter',
+      value: [
+        wall3.jnAemon192,
+        wall3.jnGrenn192,
+        wall3.jnJeor192,
+        wall3.jnBran192,
+        wall3.jnYgritte185,
+      ],
+    },
   ],
   // Books: Jon III (chapter 20) has him give Jon word of Bran; the show has
   // no such scene, and its Jeor first deals with Jon at the oath.
@@ -22466,6 +23530,67 @@ export const season1Relationships = {
         wall2.jeoJarmanParty,
       ],
     },
+    // Stage 3 (#1656). The show: "Dark Wings, Dark Words" (22) and "And Now
+    // His Watch Is Ended" (24), where he dies. The books: the prologue
+    // (144), Samwell I (162) and II (177), where he dies.
+    {
+      episode: 22,
+      chapter: 151,
+      source: 'episode',
+      value: [
+        wall3.joSam22,
+        wall3.joRast22,
+        wall2.jeoJonGo,
+        wall2.jeoCrasterOut,
+      ],
+    },
+    {
+      episode: 24,
+      chapter: 177,
+      source: 'episode',
+      value: [
+        wall3.joCraster24,
+        wall3.joRast24,
+        wall3.joSam24,
+        wall3.joGrenn24,
+        wall2.jeoJonGo,
+      ],
+    },
+    {
+      episode: 21,
+      chapter: 144,
+      source: 'chapter',
+      value: [
+        wall3.joThoren144,
+        wall3.joMallador144,
+        wall3.joJarman144,
+        wall2.jeoJonQhorin,
+      ],
+    },
+    {
+      episode: 21,
+      chapter: 162,
+      source: 'chapter',
+      value: [
+        wall3.joSam162,
+        wall3.joThoren162,
+        wall3.joJarman144,
+        wall3.joMallador144,
+        wall2.jeoJonQhorin,
+      ],
+    },
+    {
+      episode: 24,
+      chapter: 177,
+      source: 'chapter',
+      value: [
+        wall3.joSam177,
+        wall3.joOllo177,
+        wall3.joDirk177,
+        wall3.joCraster177,
+        wall3.joJorah177,
+      ],
+    },
   ],
   // The two media give his talk with Tyrion different words.
   'aemon': [
@@ -22497,6 +23622,31 @@ export const season1Relationships = {
       episode: 9,
       chapter: 61,
       value: [links.aemJonTold, links.aemSamwell, links.aemJeor],
+    },
+    // Stage 3 (#1656): Jeor in the past tense from his death, "And Now His
+    // Watch Is Ended" (24) and Samwell II (177); then Sam's return in "Mhysa"
+    // (30) and Jon's in Jon VI (192).
+    {
+      episode: 24,
+      chapter: 177,
+      value: [links.aemJonTold, links.aemSamwell, wall3.aeJeorPast],
+    },
+    {
+      episode: 30,
+      chapter: 192,
+      source: 'episode',
+      value: [
+        wall3.aeSam30,
+        wall3.aeGilly30,
+        wall3.aeJeorPast,
+        links.aemJonTold,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 192,
+      source: 'chapter',
+      value: [wall3.aeJon192, wall3.aeJeorPast, links.aemSamwell],
     },
   ],
   'samwell-tarly': [
@@ -22565,6 +23715,103 @@ export const season1Relationships = {
         wall2.samCrasterBook,
       ],
     },
+    // Stage 3 (#1656). The show: "Valar Dohaeris" (21) to "Mhysa" (30). The
+    // books: Samwell I to III (162, 177 and 190).
+    {
+      episode: 21,
+      chapter: 151,
+      source: 'episode',
+      value: [
+        wall3.smJeor21,
+        wall3.smGhost21,
+        wall2.samJonMissing,
+        wall2.samGrennCache,
+        wall2.samEdd,
+      ],
+    },
+    {
+      episode: 23,
+      chapter: 159,
+      source: 'episode',
+      value: [
+        wall3.smGilly23,
+        wall3.smCraster23,
+        wall3.smJeor21,
+        wall2.samJonMissing,
+      ],
+    },
+    {
+      episode: 24,
+      chapter: 177,
+      source: 'episode',
+      value: [
+        wall3.smGilly24,
+        wall3.smRast24,
+        wall3.smJeor24,
+        wall3.smCraster24,
+        wall2.samJonMissing,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 190,
+      source: 'episode',
+      value: [
+        wall3.smGilly28,
+        wall3.smRast24,
+        wall3.smJeor24,
+        wall3.smCraster24,
+        wall2.samJonMissing,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 192,
+      source: 'episode',
+      value: [
+        wall3.smBran30,
+        wall3.smAemon30,
+        wall3.smJon30,
+        wall3.smGilly30,
+        wall3.smJeor24,
+      ],
+    },
+    {
+      episode: 21,
+      chapter: 162,
+      source: 'chapter',
+      value: [
+        wall3.smGrenn162,
+        wall3.smPaul162,
+        wall3.smJeor162,
+        wall3.smJon162,
+        wall2.samGillyBook,
+      ],
+    },
+    {
+      episode: 24,
+      chapter: 177,
+      source: 'chapter',
+      value: [
+        wall3.smJeor177,
+        wall3.smCraster177,
+        wall3.smGilly177,
+        wall3.smGrenn177,
+        wall3.smJon162,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 190,
+      source: 'chapter',
+      value: [
+        wall3.smGilly190,
+        wall3.smPaul190,
+        wall3.smChett190,
+        wall3.smJeor177,
+        wall3.smJon162,
+      ],
+    },
   ],
   // Tyrion mocks him at the officers' table in the book alone.
   'alliser-thorne': [
@@ -22596,6 +23843,13 @@ export const season1Relationships = {
       episode: 9,
       chapter: 61,
       value: [links.allJeorSent, links.allJonKnife, links.allSamwell],
+    },
+    // Stage 3 (#1656): Jeor in the past tense from his death, "And Now His
+    // Watch Is Ended" (24) and Samwell II (177).
+    {
+      episode: 24,
+      chapter: 177,
+      value: [wall3.alJeorPast, links.allJonKnife, links.allSamwell],
     },
   ],
   // The show names him at Castle Black as he leaves with Tyrion; the book
@@ -22717,6 +23971,36 @@ export const season1Relationships = {
       source: 'episode',
       value: [wall2.greSamFist, wall2.greEdd, wall2.greJonMissing],
     },
+    // Stage 3 (#1656). The show: "And Now His Watch Is Ended" (24). The
+    // books: Samwell I (162) and Jon VI (192).
+    {
+      episode: 24,
+      chapter: 177,
+      source: 'episode',
+      value: [
+        wall3.grJeor24,
+        wall3.grSam24,
+        wall3.grEdd24,
+        wall2.greJonMissing,
+      ],
+    },
+    {
+      episode: 21,
+      chapter: 162,
+      source: 'chapter',
+      value: [
+        wall3.grSam162,
+        wall3.grPaul162,
+        links.greJonDesert,
+        links.grePyp,
+      ],
+    },
+    {
+      episode: 30,
+      chapter: 192,
+      source: 'chapter',
+      value: [wall3.grJon192, wall3.grJeor192, wall3.grSam162, links.grePyp],
+    },
   ],
   'pypar': [
     { episode: 3, chapter: 20, value: [links.pypJon, links.pypAlliser] },
@@ -22734,6 +24018,13 @@ export const season1Relationships = {
       episode: 10,
       chapter: 71,
       value: [links.pypJonDesert, links.pypGrenn, links.pypSamwell10],
+    },
+    // Stage 3 (#1656): Jon's return in "Mhysa" (30), the show alone.
+    {
+      episode: 30,
+      chapter: 192,
+      source: 'episode',
+      value: [wall3.pyJon30, wall3.pySam30, links.pypGrenn],
     },
   ],
   // The show beats and names him in the yard in episode 3; the book opens
@@ -22755,10 +24046,26 @@ export const season1Relationships = {
         links.rastAlliser,
       ],
     },
+    // Stage 3 (#1656), the show alone: "Dark Wings, Dark Words" (22) and the
+    // mutiny in "And Now His Watch Is Ended" (24).
+    {
+      episode: 22,
+      chapter: 151,
+      source: 'episode',
+      value: [wall3.raSam22, wall3.raJeor22, links.rastJon, links.rastGhost],
+    },
+    {
+      episode: 24,
+      chapter: 177,
+      source: 'episode',
+      value: [wall3.raJeor24, wall3.raCraster24, wall3.raSam24],
+    },
   ],
   'dareon': [
     { episode: 7, chapter: 20, source: 'chapter', value: [links.darJon] },
     { episode: 7, chapter: 49, value: [links.darJon, links.darJeor] },
+    // Stage 3 (#1656): Jeor in the past tense from his death (24 / 177).
+    { episode: 24, chapter: 177, value: [links.darJon, wall3.daJeorPast] },
   ],
   // The book has him beaten by Jon over Sam and riding after Jon; the show,
   // within the stage, has him only at the assignments.
@@ -22781,6 +24088,14 @@ export const season1Relationships = {
       chapter: 71,
       source: 'chapter',
       value: [links.halJonDesert, links.halSamwell71],
+    },
+    // Stage 3 (#1656): Jeor in the past tense from his death in "And Now His
+    // Watch Is Ended" (24). His book cards do not name Jeor.
+    {
+      episode: 24,
+      chapter: 177,
+      source: 'episode',
+      value: [links.halJon, wall3.haJeorPast],
     },
   ],
   // Books only: his show gate (episode 30) is past the stage.
@@ -22821,6 +24136,25 @@ export const season1Relationships = {
       source: 'chapter',
       value: [links.bowJon, links.bowSamwell, links.bowJeor, links.bowChett],
     },
+    // Stage 3 (#1656): Jeor in the past tense from Samwell II (177), Chett
+    // from Samwell III (190).
+    {
+      episode: 41,
+      chapter: 177,
+      source: 'chapter',
+      value: [links.bowJon, links.bowSamwell, wall3.boJeorPast, links.bowChett],
+    },
+    {
+      episode: 41,
+      chapter: 190,
+      source: 'chapter',
+      value: [
+        links.bowJon,
+        links.bowSamwell,
+        wall3.boJeorPast,
+        wall3.boChettPast,
+      ],
+    },
   ],
   // The show has him escort Jon and Sam to their vows; only the book kills
   // him within the stage, at the hands of Jafer's corpse (Jon VIII).
@@ -22847,6 +24181,14 @@ export const season1Relationships = {
       chapter: 61,
       source: 'chapter',
       value: [links.jarJaferKiller, links.jarOthorDead, links.jarJeorDead],
+    },
+    // Stage 3 (#1656): on the show, where he is still alive, Jeor in the past
+    // tense from "And Now His Watch Is Ended" (24).
+    {
+      episode: 24,
+      chapter: 177,
+      source: 'episode',
+      value: [links.jarOthor, links.jarJafer, links.jarJeorDead],
     },
   ],
   // Both media bring him back dead at 8 / 53, where he opens.
@@ -22893,6 +24235,44 @@ export const season1Relationships = {
       chapter: 49,
       source: 'chapter',
       value: [links.cheSamwell, links.cheAemonFormer, links.cheJon],
+    },
+    // Stage 3 (#1656), books only: the prologue (144), Jeor in the past tense
+    // from Samwell II (177), and his own death, told in Samwell III (190).
+    {
+      episode: 21,
+      chapter: 144,
+      source: 'chapter',
+      value: [
+        wall3.chSam144,
+        wall3.chJon144,
+        wall3.chJeor144,
+        wall3.chDirk144,
+        wall3.chOllo144,
+      ],
+    },
+    {
+      episode: 24,
+      chapter: 177,
+      source: 'chapter',
+      value: [
+        wall3.chSam144,
+        wall3.chJon144,
+        wall3.chJeorPast,
+        wall3.chDirk144,
+        wall3.chOllo144,
+      ],
+    },
+    {
+      episode: 28,
+      chapter: 190,
+      source: 'chapter',
+      value: [
+        wall3.chSamPast,
+        wall3.chJonPast,
+        wall3.chJeorPast,
+        wall3.chDirk144,
+        wall3.chOlloPast,
+      ],
     },
   ],
   // King's Landing, the riverlands and the Vale (#1346). A death a card

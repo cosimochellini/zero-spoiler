@@ -615,6 +615,7 @@ export const season3: ThronesSaga = {
     },
     // #1638: the Wall and beyond.
     'mance-rayder': {
+      relationships: season3Relationships['mance-rayder'],
       role: { it: 'Re oltre la Barriera', en: 'King-Beyond-the-Wall' },
       log: {
         it: 'Jon Snow viene portato nella sua tenda e all’inizio scambia un altro uomo per il re. Mance sa che Jon ha ucciso Qhorin il Monco, e gli chiede perché vuole lasciare i Guardiani della notte.',
@@ -636,6 +637,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'tormund': {
+      relationships: season3Relationships.tormund,
       role: {
         it: 'Capo dei bruti nell’esercito di Mance Rayder',
         en: 'Wildling chief in Mance Rayder’s host',
@@ -650,6 +652,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'orell': {
+      relationships: season3Relationships.orell,
       role: { it: 'Warg dei bruti', en: 'Wildling warg' },
       log: {
         it: 'La sua aquila esplora il terreno davanti all’esercito di Mance Rayder.',
@@ -669,6 +672,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'styr': {
+      relationships: season3Relationships.styr,
       role: { it: 'Magnar di Thenn', en: 'Magnar of Thenn' },
       log: {
         it: 'È nella tenda di Mance Rayder quando vi viene portato Jon Snow, che all’inizio lo scambia per il re.',
@@ -692,6 +696,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'dalla': {
+      relationships: season3Relationships.dalla,
       role: { it: 'Moglie di Mance Rayder', en: 'Mance Rayder’s wife' },
       log: {
         it: 'È nella tenda di Mance Rayder, incinta, quando Jon Snow viene portato davanti al re.',
@@ -715,6 +720,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'val': {
+      relationships: season3Relationships.val,
       role: { it: 'Sorella di Dalla', en: 'Dalla’s sister' },
       log: {
         it: 'È nella tenda di Mance Rayder con la sorella Dalla e con Jarl, il suo amante, quando Jon Snow viene portato davanti al re.',
@@ -733,6 +739,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'jarl': {
+      relationships: season3Relationships.jarl,
       role: { it: 'Razziatore dei bruti', en: 'Wildling raider' },
       log: {
         it: 'È nella tenda di Mance Rayder quando Jon Snow viene portato davanti al re, e Mance lo presenta come l’amante di Val.',
@@ -755,6 +762,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'small-paul': {
+      relationships: season3Relationships['small-paul'],
       role: {
         it: 'Confratello dei Guardiani della notte',
         en: 'Brother of the Night’s Watch',
@@ -779,6 +787,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'dirk': {
+      relationships: season3Relationships.dirk,
       role: [
         {
           episode: 21,
@@ -819,6 +828,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'ollo-lophand': {
+      relationships: season3Relationships['ollo-lophand'],
       role: [
         {
           episode: 21,
@@ -864,6 +874,7 @@ export const season3: ThronesSaga = {
       ],
     },
     'clubfoot-karl': {
+      relationships: season3Relationships['clubfoot-karl'],
       role: [
         {
           episode: 21,
