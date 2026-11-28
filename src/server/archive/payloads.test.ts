@@ -52,8 +52,8 @@ function byDesignOf({
   }
 
   return {
-    // A visitor with no bookmark lands on the demo under the dial (East Blue,
-    // the Hunter Exam), and on nothing past it in either unit.
+    // A visitor with no bookmark lands on the demo under the dial (through Enies
+    // Lobby, the Hunter Exam), and on nothing past it in either unit.
     loadHome: (entity, _, bookmark) =>
       bookmark === null
       && entity.revealedAtEpisode <= demoLastEpisode

@@ -585,8 +585,8 @@ export interface Step<T> {
 }
 
 /**
- * One East Blue record as the onboarding's dial wakes it: its thresholds,
- * and every dated fact about it up to the end of East Blue. Its artwork
+ * One demo record as the onboarding's dial wakes it: its thresholds,
+ * and every dated fact about it up to the end of the demo. Its artwork
  * arrives separately when the preview enters the viewport.
  */
 export interface DemoEntry {
@@ -607,26 +607,26 @@ export interface DemoEntry {
 export type DemoDrawings = Record<string, Step<Drawing>[]>
 
 /**
- * The landing page for a visitor with no bookmark: East Blue, which the dial
+ * The landing page for a visitor with no bookmark: the demo, which the dial
  * wakes up point by point, and a tail of covered records past it.
  *
- * Nothing in it is past the end of East Blue in either unit. The tail says
+ * Nothing in it is past the end of the demo in either unit. The tail says
  * only what a covered record may, and `fogged` is a count.
  */
 export interface OnboardingView {
-  /** The arcs of East Blue, in route order. */
+  /** The demo's arcs, in route order. */
   arcs: DemoEntry[]
   /** Their leads, in the order they first appear. */
   cast: DemoEntry[]
-  /** The chapter each East Blue episode reaches, index 0 for episode 1. */
+  /** The chapter each demo episode reaches, index 0 for episode 1. */
   chapterAt: number[]
-  /** How many entries of the wiki lie past East Blue. */
+  /** How many entries of the wiki lie past the demo. */
   fogged: number
-  /** East Blue's places and its ship, in the order they first appear. */
+  /** The demo's places and ships, in the order they first appear. */
   places: DemoEntry[]
   /** Where the dial starts: the trial point, if the visitor is on one. */
   start: Bookmark
-  /** The first few covered records past East Blue, as silhouettes. */
+  /** The first few covered records past the demo, as silhouettes. */
   tail: CoveredRecord[]
 }
 

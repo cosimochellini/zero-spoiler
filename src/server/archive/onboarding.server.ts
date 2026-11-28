@@ -16,8 +16,8 @@ import { coveredOf, type Reader } from './reader.server'
  * The onboarding: the series' demo span, sent to a visitor with no bookmark.
  *
  * The one page that sends a record the visitor has not reached. It is sent
- * so the dial can wake East Blue up in the browser as it moves, and it stops
- * at the last episode and the last chapter of East Blue, in both units at
+ * so the dial can wake the demo up in the browser as it moves, and it stops
+ * at the demo's last episode and last chapter, in both units at
  * once: a fact past either is left out, so a manga reader's chapter dial and
  * an anime viewer's episode dial read from the same safe set. Past it there
  * are only covered records and a count.
@@ -47,7 +47,7 @@ function gateOf(gated: Gated): Gated {
   }
 }
 
-/** A record's dated facts inside East Blue, as steps the dial picks from. */
+/** A record's dated facts inside the demo, as steps the dial picks from. */
 export function stepsOf<T, V>(
   entries: Pick<Opened<T>, 'gate' | 'value'>[],
   value: (raw: T) => V,
@@ -119,7 +119,7 @@ export function demoOf(entity: Entity, r: Reader): DemoEntry {
   }
 }
 
-/** The arcs of East Blue: the ones with leads of their own, not the saga. */
+/** The demo's arcs: the ones with leads of their own, not the sagas. */
 export function demoArcs(r: Reader): Entity[] {
   return r.archive.arcs.filter(
     (arc) => inDemo(arc, r) && Object.hasOwn(r.archive.leads, arc.id),

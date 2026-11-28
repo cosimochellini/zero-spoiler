@@ -27,7 +27,10 @@ import { coveredOf, type Reader } from './reader.server'
  * (`archive-gate`).
  */
 
-/** How many cards the screen's grid holds: four across, three down. */
+/**
+ * How many cards the screen's grid holds: four across and three down, or
+ * three across and four down on a phone.
+ */
 const CAST_COUNT = 12
 
 /** How many abilities under fog stand for the rest: one row of tiles. */

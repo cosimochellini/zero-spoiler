@@ -76,8 +76,10 @@ describe('the hub tour', () => {
     },
   )
 
+  // One Piece's tour runs through Enies Lobby (owner, 2026-11-28), its cards'
+  // redrawings with it: about 47,000 characters.
   it.each(TOURS)('keeps the tour of $slug small', ({ tour }) => {
-    expect(JSON.stringify(tour).length).toBeLessThan(40_000)
+    expect(JSON.stringify(tour).length).toBeLessThan(54_000)
   })
 
   it('follows one lead’s list through the demo, and covers the Nen abilities', () => {

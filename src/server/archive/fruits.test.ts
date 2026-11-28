@@ -793,21 +793,27 @@ describe('the saga view', () => {
   it('is drawn at the end of the demo without a bookmark (#1432)', () => {
     const r = pageReader(ONE_PIECE.archive, null, { locale: 'en' })
     const album = core_fruitAlbum(r)
-    const [eastBlue] = album.sagas
+    const { demoLastEpisode, demoLastChapter } = r.archive.series
+    const reached = r.archive.fruits.filter(
+      (fruit) =>
+        fruit.revealedAtEpisode <= demoLastEpisode
+        && fruit.revealedAtChapter <= demoLastChapter,
+    )
+    const open = album.sagas.flatMap((saga) => saga.open)
 
-    // East Blue only, its fruits open, every later one under fog unnamed.
+    // The sagas through Water Seven, their fruits open, every later one
+    // under fog unnamed.
     expect(album.sagas.map(({ saga }) => saga)).toStrictEqual([
       'East Blue Saga',
+      'Alabasta Saga',
+      'Skypiea Saga',
+      'Water Seven Saga',
     ])
-    expect(eastBlue?.open.map(({ id }) => id)).toStrictEqual([
-      'gum-gum-fruit',
-      'chop-chop-fruit',
-      'slip-slip-fruit',
-      'smoke-smoke-fruit',
-    ])
-    expect(eastBlue?.covered).toStrictEqual([])
-    expect(album.later).toHaveLength(r.archive.fruits.length - 4)
-    expect(core_fruitSheet(r).marquee?.saga).toBe('East Blue Saga')
+    expect(new Set(open.map(({ id }) => id))).toStrictEqual(
+      new Set(reached.map(({ id }) => id)),
+    )
+    expect(album.later).toHaveLength(r.archive.fruits.length - reached.length)
+    expect(core_fruitSheet(r).marquee?.saga).toBe('Water Seven Saga')
   })
 
   it('names a saga with no bookmark only once the demo reaches it in both units', () => {

@@ -707,21 +707,32 @@ describe.each(LOADED_SERIES)(
       }
     })
 
-    // A series whose records stop at its first saga (Game of Thrones, #852)
-    // has no second one for its demo to end before.
-    // A second saga with no arc record (a Game of Thrones season) opens with
+    // The saga after the demo: the first whose arcs open past its last
+    // episode. A series whose records stop at its first saga (Game of
+    // Thrones, #852) has none for its demo to end before.
+    // A next saga with no arc record (a Game of Thrones season) opens with
     // its heading instead, tested below.
-    const second =
-      archive.sagas[1]?.entries.filter((entry) => isArc(entry)) ?? []
+    const nextSaga =
+      archive.sagas
+        .slice(1)
+        .find(({ entries }) =>
+          entries.some(
+            (entry) =>
+              isArc(entry)
+              && entry.revealedAtEpisode > archive.series.demoLastEpisode,
+          ),
+        ) ?? archive.sagas[1]
+    const second = nextSaga?.entries.filter((entry) => isArc(entry)) ?? []
     const heading = archive.arcs.filter(
-      ({ id }) => id === archive.sagas[1]?.heading?.id,
+      ({ id }) => id === nextSaga?.heading?.id,
     )
 
     it.skipIf(second.length === 0)(
-      'ends its demo the episode and the chapter before its second saga',
+      'ends its demo the episode and the chapter before a saga',
       () => {
-        // The demo is the first saga: a visitor with no bookmark is sent all of
-        // it and nothing of the next.
+        // The demo is whole sagas (One Piece's run through Water Seven, owner
+        // 2026-11-28): a visitor with no bookmark is sent all of them and
+        // nothing of the next.
         expect(Math.min(...second.map((arc) => arc.revealedAtEpisode))).toBe(
           archive.series.demoLastEpisode + 1,
         )

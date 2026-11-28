@@ -73,7 +73,11 @@ export const styles = stylex.create({
     gap: { [TALL]: space.sm, default: space.xs },
     listStyle: 'none',
     display: 'grid',
-    gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+    // Three across on a phone, so each drawing is large enough to read.
+    gridTemplateColumns: {
+      [TALL]: 'repeat(4, minmax(0, 1fr))',
+      default: 'repeat(3, minmax(0, 1fr))',
+    },
     paddingInlineStart: 0,
   },
   card: {

@@ -4,8 +4,8 @@ import type { BookmarkSeries } from './series'
 /**
  * A trial point as the onboarding wrote it, or `null`.
  *
- * Only an episode or a chapter inside the series' demo span (East Blue for
- * One Piece) counts. The dial cannot set anything else, so a trial cookie
+ * Only an episode or a chapter inside the series' demo span (through Enies
+ * Lobby for One Piece) counts. The dial cannot set anything else, so a trial cookie
  * past it was not written by the site, and reading it as a bookmark would
  * turn a session cookie into a way round the one the reader saves.
  */

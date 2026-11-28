@@ -13,7 +13,7 @@ import type { EntityKind, Stroke } from '~/lib/view/records'
 
 /**
  * An archive with records of one source only planted in it, which no real
- * record is yet: for every kind, a twin of an East Blue record under its own
+ * record is yet: for every kind, a twin of a demo record under its own
  * id and name, filed in every list the real one is in. The twin character
  * also ate the real fruit the twin fruit copies, is met at the real place
  * the twin place copies, and is shelved alone under a real arc. On the first featured character, an epithet inside
