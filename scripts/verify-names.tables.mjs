@@ -306,6 +306,9 @@ export const NAMES_KEPT = {
   // episode 37, "Ging e Gon" (`Episodi di Hunter × Hunter (serie animata
   // 2011)`).
   'ging-freecss': 'Ging Freecss',
+  // Italian Wikipedia has no entry for her (#1702); dub and Italian manga not
+  // viewed.
+  'noko': 'Noko',
   // Italian Wikipedia has no entry for these Nostrade bodyguards (#900);
   // keep the English forms pending a 2011 dub check.
   'squala': 'Squala',

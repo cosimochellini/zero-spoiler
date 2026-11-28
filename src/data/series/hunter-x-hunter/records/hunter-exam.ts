@@ -25,7 +25,7 @@ import { zevil } from './zevil'
  * `manga debut` and its `Episode N (2011)` debut, the episode's `Adapted`
  * chapters agreeing. The unnamed (the captain, the old woman of the quiz,
  * Gon's great-grandmother, the applicant who answers the quiz first) are not
- * records, and Noko is named only in chapter 64.
+ * records, and Noko is named only in chapter 64 (yorknew-city.ts, #1702).
  *
  * Coverage ends at chapter 43: episode 25's chapter-44 departure plans are
  * out, and the recap episodes (13, 26) add no records. Named animals

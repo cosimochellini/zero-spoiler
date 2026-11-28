@@ -12,13 +12,14 @@ import {
 import { loadedSeries } from '~/test/series'
 
 import { homePage } from './home.server'
-import { drawingsFor } from './pages.server'
+import { characterPage, drawingsFor } from './pages.server'
 import { placePage } from './placePage.server'
 import { factsOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
 const { archive } = loadedSeries('hunter-x-hunter')
 const RECORDS = [
+  { id: 'noko', episode: 37, chapter: 64, source: 'chapter' as const },
   { id: 'melody', episode: 40, chapter: 68 },
   { id: 'basho', episode: 40, chapter: 68 },
   { id: 'baise', episode: 40, chapter: 68 },
@@ -66,6 +67,31 @@ describe.each(CASES)('$id in $locale by $unit', (row) => {
     expect(opened(row.id, reached)).toBe(true)
   })
 })
+
+// Records only the manga names, read in episodes: from their own episode
+// to the anime's ceiling, no page and no drawing.
+const MANGA_ONLY_CASES = RECORDS.filter((row) => 'source' in row).flatMap(
+  (row) =>
+    LOCALES.flatMap((locale: Locale) =>
+      [row.episode, archive.series.episodeCeiling].map((episode) => ({
+        episode,
+        id: row.id,
+        locale,
+      })),
+    ),
+)
+
+describe.each(MANGA_ONLY_CASES)(
+  '$id at episode $episode in $locale',
+  ({ episode, id, locale }) => {
+    it('sends neither a page nor a drawing to an anime reader', () => {
+      const reader = readerFor(archive, at('episode', episode), locale)
+
+      expect(characterPage(id, reader)).toBeUndefined()
+      expect(drawingsFor([id], reader)).toStrictEqual({})
+    })
+  },
+)
 
 const NEON_GUARD = 'Nostrade family, Neon’s bodyguard'
 

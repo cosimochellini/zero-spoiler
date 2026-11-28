@@ -3,7 +3,8 @@ import type { Relationship, Timeline } from '~/data/types'
 /**
  * Facts and threshold revisions: docs/content-provenance/hunter-x-hunter-relationships.json.
  * Except Ging's, every entry pins an episode and a chapter it adapts, and
- * its wording is what both pages show by then; where the media differ, the
+ * its wording is what both pages show by then, unless the entry names the one
+ * medium that tells it (`source`); where the media differ, the
  * cards keep to what they share. Chrollo is linked only from 54/104, the
  * first such pair after the episode that names him (#974).
  */
@@ -17,6 +18,18 @@ const links = {
     summary: {
       it: 'La Brigata cerca a Greed Island un esorcista che possa liberare Chrollo dal Nen di Kurapika.',
       en: 'The Troupe searches Greed Island for an Exorcist who can free Chrollo from Kurapika’s Nen.',
+    },
+  },
+  // Noko
+  nokoGon: {
+    character: 'gon-freecss',
+    type: {
+      en: 'The island’s only other child',
+      it: 'L’unico altro bambino dell’isola',
+    },
+    summary: {
+      en: 'Gon tells Killua that, besides Gon, Noko is the only child on Whale Island.',
+      it: 'Gon racconta a Killua che, a parte Gon, Noko è l’unica bambina dell’Isola Balena.',
     },
   },
   // Ging Freecss
@@ -1938,6 +1951,10 @@ export const yorknewCityRelationships = {
       source: 'chapter',
       value: [links.gingGon, links.gingKite, links.gingMito],
     },
+  ],
+  // Manga-only: episode 37's page leaves her out (#1702).
+  'noko': [
+    { episode: 37, chapter: 64, source: 'chapter', value: [links.nokoGon] },
   ],
   'melody': [
     {

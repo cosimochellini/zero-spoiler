@@ -200,53 +200,53 @@ Exam coverage through episode 26 / chapter 43, including the manga's chapter-one
 characters introduced later by the anime, the Heavens Arena characters and place
 up to episode 34 / chapter 59 (#896), and Yorknew City through episode 58 /
 chapter 119 (#900): the Nostrade household and bodyguards, the twelve Phantom
-Troupe members, five Shadow Beasts, Zepile, Zenji and five places. Greed Island
-recruitment (#1016) and arrival/training through chapter 141 (#1017) add
-verified named characters and visited places, with source-only records where the
-naming evidence reaches only one medium. Alliances and the Bomber revelations
-through chapter 159 (#1018) add source-verified names and visited places; the
-finale and the full candidate audit (#1019) close the arc. Of the 31 candidates
-the audit left unnamed, #1032 files Michael, named at the intercom in chapter
-148 (manga-only), and records an owner-ruled exclusion with the missing evidence
-for the other 30. Greed Island chronicles cover every character filed through
-#1019 and returning characters’ events through episode 75 / chapter 185 (#906),
-preserving the records’ source restrictions. Chimera Ant phase 1 (#1020) adds
-the opening survey team records, a Royal Guard and NGL. Phase 2 (#1021), through
-episode 95 / chapter 222, adds the extermination team and its students, the rest
-of the survey team, the NGL villagers, the King, the other Royal Guards and the
-Squadron Leaders named so far, and eight visited places, each at the first
-chapter and episode whose synopsis names it, with source-only records where only
-one medium does. Phase 3 (#1022), through episode 109 / chapter 260, adds the
-Squadron Leaders, captains and soldiers named on the road to the palace (Ikalgo,
-Meleoron, Welfin, Bloster, Flutter, Remora, Pell, Bihorn), Komugi, Bizeff and
-Tsukuma, and four visited places, Meteor City at the Troupe's visit in chapter
-224 / episode 96 rather than at its earlier mentions. Hagya keeps one record:
-the anime, which never says his manga name, opens it as Leol at episode 106
-(`Entity.episodeName`), and the manga gives the name in his role at chapter 240.
-Phase 4 (#1023) covers the palace assault through chapter 298, adds Taragetter
-in the manga, and opens Peijin in the anime at episode 116. Phase 5 (#1024)
-files the finale through chapter 318 and episode 136, with the full cast
-reconciliation in the phase 5 inventory. The Chimera Ant Queen, left out of the
-phases as a title, is filed for the ranks page (#1447), where she holds the
-Chimera Ants' top seat. Chimera Ant chronicles (#910) cover all 46 newly filed
-characters and 17 returning characters through episode 136 / chapter 318, with
-255 bilingual timeline entries and source-specific versions. Election (#912)
-files named characters and visited places through chapter 339 and episode 148,
-drawn in #913 with five stages (three deaths, two ability reveals). Election
-chronicles (#914) add 91 bilingual stories for all 28 new characters and 15
-returning characters, with separate source restrictions for anime-only records
-and scenes, and a manga-only item trade. Kakin (#916) is manga-only and files in
-five phases; phase 1 (#1134) covers chapters 340–357 and phase 2 (#1135)
-chapters 358–370 and phase 3 (#1136) chapters 371–383, phase 4 (#1137) chapters
-384–400 and phase 5 (#1138) chapters 401–420, the last published. Phases 1 and 2
-are drawn in #1154, with 22 manga-only stages through chapter 370 (eleven
-princes' Guardian Spirit Beasts, four deaths, four returning records' reveals,
-Hisoka's return, and Chrollo's disguise and its end); phases 3 and 4 are drawn
-in #1156, with 14 more stages through chapter 400 (eight abilities first shown,
-five deaths or presumed deaths, Kacho's with her beast taking her form, and
-Salé-salé's lost beast); phase 5 is drawn in #1158, with 9 more stages through
-chapter 420 (four reveals of identity or allegiance, two abilities first shown,
-and three deaths). Kakin chronicles for chapters 340–370 (#1155) add 99
+Troupe members, five Shadow Beasts, Zepile, Zenji, Noko (manga-only, #1702) and
+five places. Greed Island recruitment (#1016) and arrival/training through
+chapter 141 (#1017) add verified named characters and visited places, with
+source-only records where the naming evidence reaches only one medium. Alliances
+and the Bomber revelations through chapter 159 (#1018) add source-verified names
+and visited places; the finale and the full candidate audit (#1019) close the
+arc. Of the 31 candidates the audit left unnamed, #1032 files Michael, named at
+the intercom in chapter 148 (manga-only), and records an owner-ruled exclusion
+with the missing evidence for the other 30. Greed Island chronicles cover every
+character filed through #1019 and returning characters’ events through episode
+75 / chapter 185 (#906), preserving the records’ source restrictions. Chimera
+Ant phase 1 (#1020) adds the opening survey team records, a Royal Guard and NGL.
+Phase 2 (#1021), through episode 95 / chapter 222, adds the extermination team
+and its students, the rest of the survey team, the NGL villagers, the King, the
+other Royal Guards and the Squadron Leaders named so far, and eight visited
+places, each at the first chapter and episode whose synopsis names it, with
+source-only records where only one medium does. Phase 3 (#1022), through episode
+109 / chapter 260, adds the Squadron Leaders, captains and soldiers named on the
+road to the palace (Ikalgo, Meleoron, Welfin, Bloster, Flutter, Remora, Pell,
+Bihorn), Komugi, Bizeff and Tsukuma, and four visited places, Meteor City at the
+Troupe's visit in chapter 224 / episode 96 rather than at its earlier mentions.
+Hagya keeps one record: the anime, which never says his manga name, opens it as
+Leol at episode 106 (`Entity.episodeName`), and the manga gives the name in his
+role at chapter 240. Phase 4 (#1023) covers the palace assault through chapter
+298, adds Taragetter in the manga, and opens Peijin in the anime at episode 116.
+Phase 5 (#1024) files the finale through chapter 318 and episode 136, with the
+full cast reconciliation in the phase 5 inventory. The Chimera Ant Queen, left
+out of the phases as a title, is filed for the ranks page (#1447), where she
+holds the Chimera Ants' top seat. Chimera Ant chronicles (#910) cover all 46
+newly filed characters and 17 returning characters through episode 136 / chapter
+318, with 255 bilingual timeline entries and source-specific versions. Election
+(#912) files named characters and visited places through chapter 339 and episode
+148, drawn in #913 with five stages (three deaths, two ability reveals).
+Election chronicles (#914) add 91 bilingual stories for all 28 new characters
+and 15 returning characters, with separate source restrictions for anime-only
+records and scenes, and a manga-only item trade. Kakin (#916) is manga-only and
+files in five phases; phase 1 (#1134) covers chapters 340–357 and phase 2
+(#1135) chapters 358–370 and phase 3 (#1136) chapters 371–383, phase 4 (#1137)
+chapters 384–400 and phase 5 (#1138) chapters 401–420, the last published.
+Phases 1 and 2 are drawn in #1154, with 22 manga-only stages through chapter 370
+(eleven princes' Guardian Spirit Beasts, four deaths, four returning records'
+reveals, Hisoka's return, and Chrollo's disguise and its end); phases 3 and 4
+are drawn in #1156, with 14 more stages through chapter 400 (eight abilities
+first shown, five deaths or presumed deaths, Kacho's with her beast taking her
+form, and Salé-salé's lost beast); phase 5 is drawn in #1158, with 9 more stages
+through chapter 420 (four reveals of identity or allegiance, two abilities first
+shown, and three deaths). Kakin chronicles for chapters 340–370 (#1155) add 99
 manga-only stories for the 45 characters filed there and 20 returning
 characters; all sit at episode 148, so the home ledger and the uniqueness test
 key a story by its chapter as well. Chapters 371–400 (#1157) add 120 more for
@@ -641,18 +641,18 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                     | Count                                                   |
 | ------------------------- | ------------------------------------------------------- |
-| Records                   | 369                                                     |
-| Characters                | 291                                                     |
+| Records                   | 370                                                     |
+| Characters                | 292                                                     |
 | Nen abilities             | 28                                                      |
 | Bodies of power           | 5, with 61 seats                                        |
 | Arcs, places              | 7 · 43                                                  |
 | Saga modules              | 7                                                       |
-| Line drawings             | 369, one per record, plus 168 redrawings of 118 records |
+| Line drawings             | 370, one per record, plus 168 redrawings of 118 records |
 | Chronicle stories         | 1001, for 289 characters                                |
-| Dated timelines           | 1375                                                    |
-| Affiliation steps         | 466                                                     |
-| Status steps              | 395                                                     |
-| Origins that link a place | 10                                                      |
+| Dated timelines           | 1379                                                    |
+| Affiliation steps         | 467                                                     |
+| Status steps              | 396                                                     |
+| Origins that link a place | 11                                                      |
 
 ### `game-of-thrones`
 

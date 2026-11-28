@@ -95,6 +95,23 @@ export const yorknewCity: HunterSaga = {
       },
       visual: { art: 'yorknew-city-arc', tint: 'wine' },
     },
+    // In the crowd and at the docks, unnamed, in chapter 1 and episode 1;
+    // Gon names her to Killua by the fire in chapter 64. Episode 37's
+    // synopsis and cast list leave her out, so the record is the manga's
+    // (#1702).
+    {
+      id: 'noko',
+      kind: 'character',
+      revealedAtEpisode: 37,
+      revealedAtChapter: 64,
+      source: 'chapter',
+      name: { it: 'Noko', en: 'Noko' },
+      summary: {
+        it: 'L’unica bambina dell’Isola Balena oltre a Gon, come lui racconta a Killua.',
+        en: 'The only child on Whale Island besides Gon, as he tells Killua.',
+      },
+      visual: { art: 'noko', tint: 'orange' },
+    },
     {
       id: 'ging-freecss',
       kind: 'character',
@@ -591,6 +608,32 @@ export const yorknewCity: HunterSaga = {
     },
   ],
   dossiers: {
+    'noko': {
+      relationships: yorknewCityRelationships.noko,
+      role: { it: 'Bambina dell’Isola Balena', en: 'Girl on Whale Island' },
+      log: {
+        it: 'È tra la folla quando Gon porta in paese il pesce più grosso della palude, e al porto il giorno in cui parte. Gon racconta a Killua che l’isola è un porto per pescatori lontani da casa, dove vive poca gente, e che l’unica altra bambina è lei.',
+        en: 'She is in the crowd when Gon brings the biggest fish in the swamp into the village, and at the docks the day he leaves. Gon tells Killua that the island is a port for fishermen far from home, where few people live, and that the only other child is her.',
+      },
+      status: [{ episode: 37, chapter: 64, source: 'chapter', value: 'alive' }],
+      affiliation: [
+        {
+          episode: 37,
+          chapter: 64,
+          source: 'chapter',
+          value: { it: 'Isola Balena', en: 'Whale Island' },
+        },
+      ],
+      origin: [
+        {
+          episode: 37,
+          chapter: 64,
+          source: 'chapter',
+          place: 'whale-island',
+          value: { it: 'Isola Balena', en: 'Whale Island' },
+        },
+      ],
+    },
     'ging-freecss': {
       relationships: yorknewCityRelationships['ging-freecss'],
       chronicle: [
