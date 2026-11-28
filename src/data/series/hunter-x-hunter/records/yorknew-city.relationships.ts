@@ -28,8 +28,8 @@ const links = {
       it: 'L’unico altro bambino dell’isola',
     },
     summary: {
-      en: 'Gon tells Killua that, apart from him, Noko is the only child on Whale Island.',
-      it: 'Gon racconta a Killua che, a parte lui, Noko è l’unica bambina dell’Isola Balena.',
+      en: 'Gon tells Killua that, besides Gon, Noko is the only child on Whale Island.',
+      it: 'Gon racconta a Killua che, a parte Gon, Noko è l’unica bambina dell’Isola Balena.',
     },
   },
   // Ging Freecss
