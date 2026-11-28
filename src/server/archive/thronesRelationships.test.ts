@@ -368,7 +368,46 @@ const STAGE_3_GROUPS: { group: string; issue: string; owners: string[] }[] = [
     owners: [],
   },
   { group: 'Jaime, Brienne and Harrenhal', issue: '#1655', owners: [] },
-  { group: 'The Wall and beyond', issue: '#1656', owners: [] },
+  {
+    group: 'The Wall and beyond',
+    issue: '#1656',
+    owners: [
+      'mance-rayder',
+      'tormund',
+      'orell',
+      'styr',
+      'dalla',
+      'val',
+      'jarl',
+      'small-paul',
+      'dirk',
+      'ollo-lophand',
+      'clubfoot-karl',
+      'jon-snow',
+      'ygritte',
+      'samwell-tarly',
+      'gilly',
+      'jeor-mormont',
+      'craster',
+      'eddison-tollett',
+      'grenn',
+      'ghost-direwolf',
+      'aemon',
+      'alliser-thorne',
+      'dareon',
+      'halder',
+      'bowen-marsh',
+      'jarman-buckwell',
+      'mallador-locke',
+      'stonesnake',
+      'jaremy-rykker',
+      'chett',
+      'lord-of-bones',
+      'thoren-smallwood',
+      'rast',
+      'pypar',
+    ],
+  },
   { group: 'Dragonstone', issue: '#1657', owners: [] },
   { group: 'Bran’s road and Theon', issue: '#1658', owners: [] },
 ]
@@ -1061,15 +1100,16 @@ describe.each(LOCALES)(
       )
     })
 
-    it('names Jorah on Jeor’s page in the show alone', () => {
+    it('names Jorah on Jeor’s page in the show alone until his death', () => {
       expect(people('jeor-mormont', ep(8))).not.toContain('jorah-mormont')
       expect(people('jeor-mormont', ep(9))).toContain('jorah-mormont')
       expect(people('jeor-mormont', ep(10))).toContain('jorah-mormont')
       expect(people('jeor-mormont', ch(61))).toContain('jon-snow')
       expect(people('jeor-mormont', ch(61))).not.toContain('jorah-mormont')
-      expect(
-        people('jeor-mormont', ch(archive.series.chapterCeiling)),
-      ).not.toContain('jorah-mormont')
+      // The books name Jorah on his page only at Jeor's death, in Samwell
+      // II (177, #1656).
+      expect(people('jeor-mormont', ch(176))).not.toContain('jorah-mormont')
+      expect(people('jeor-mormont', ch(177))).toContain('jorah-mormont')
     })
 
     it('has Sam bring Jon word of Robb in the show alone', () => {
@@ -3247,6 +3287,299 @@ describe.each(LOCALES)(
         at: 29,
         person: 'catelyn-stark',
       },
+    ] as const)(
+      'rewords $owner’s card in its $unit $at snapshot for $person',
+      ({ owner, unit, at, person }) => {
+        const mark = unit === 'episode' ? ep : ch
+
+        expect(said(owner, person, mark(at - 1))).toBeDefined()
+        expect(said(owner, person, mark(at))).toBeDefined()
+        expect(said(owner, person, mark(at))).not.toBe(
+          said(owner, person, mark(at - 1)),
+        )
+      },
+    )
+  },
+)
+
+// The Wall and beyond in stage 3 (#1656): every snapshot the group adds,
+// checked just before its pin and at it, and the links one medium alone
+// tells.
+describe.each(LOCALES)(
+  'Game of Thrones stage-3 Wall revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    const said = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.summary
+    const showCeiling = ep(archive.series.episodeCeiling)
+
+    it('keeps the books’ wildlings and mutineers off show pages', () => {
+      for (const id of [
+        'styr',
+        'dalla',
+        'val',
+        'jarl',
+        'small-paul',
+        'dirk',
+        'ollo-lophand',
+        'clubfoot-karl',
+      ]) {
+        expect(projected(id, showCeiling, locale), id).toStrictEqual([])
+        expect(projected(id, ch(196), locale), id).not.toStrictEqual([])
+      }
+
+      expect(people('jon-snow', ep(30))).not.toContain('styr')
+      expect(people('jon-snow', ch(151))).toContain('styr')
+    })
+
+    it('opens Tormund’s show cards at 23, and Orell’s at 22 but dead in the books', () => {
+      expect(projected('tormund', ep(22), locale)).toStrictEqual([])
+      expect(projected('tormund', ep(23), locale)).not.toStrictEqual([])
+      expect(projected('tormund', ch(150), locale)).toStrictEqual([])
+      expect(projected('tormund', ch(151), locale)).not.toStrictEqual([])
+
+      expect(projected('orell', ep(21), locale)).toStrictEqual([])
+      expect(people('orell', ep(22))).toContain('mance-rayder')
+      expect(projected('orell', ch(150), locale)).toStrictEqual([])
+      expect(people('orell', ch(196))).toStrictEqual(['jon-snow', 'ygritte'])
+    })
+
+    it('keeps Rast’s and Pyp’s stage-3 cards on show pages', () => {
+      expect(people('rast', ep(24))).toContain('craster')
+      expect(people('rast', ch(196))).not.toContain('craster')
+      expect(people('pypar', ep(30))).toContain('jon-snow')
+      expect(said('pypar', 'jon-snow', ch(196))).toBe(
+        said('pypar', 'jon-snow', ch(143)),
+      )
+    })
+
+    it('turns Jeor and Craster to the past tense at the mutiny in each medium', () => {
+      for (const [owner, person] of [
+        ['aemon', 'jeor-mormont'],
+        ['alliser-thorne', 'jeor-mormont'],
+        ['dareon', 'jeor-mormont'],
+        ['eddison-tollett', 'craster'],
+        ['gilly', 'craster'],
+      ] as const) {
+        expect(said(owner, person, ep(24)), owner).toBeDefined()
+        expect(said(owner, person, ep(24)), owner).not.toBe(
+          said(owner, person, ep(23)),
+        )
+        expect(said(owner, person, ch(177)), owner).toBeDefined()
+        expect(said(owner, person, ch(177)), owner).not.toBe(
+          said(owner, person, ch(176)),
+        )
+      }
+    })
+
+    it.each([
+      // owner, the medium, the number of a snapshot, a person it adds there
+      { owner: 'mance-rayder', unit: 'episode', at: 21, person: 'jon-snow' },
+      { owner: 'mance-rayder', unit: 'episode', at: 23, person: 'tormund' },
+      { owner: 'mance-rayder', unit: 'chapter', at: 151, person: 'jon-snow' },
+      { owner: 'mance-rayder', unit: 'chapter', at: 159, person: 'ygritte' },
+      { owner: 'tormund', unit: 'episode', at: 23, person: 'mance-rayder' },
+      { owner: 'tormund', unit: 'episode', at: 26, person: 'orell' },
+      { owner: 'tormund', unit: 'chapter', at: 151, person: 'mance-rayder' },
+      { owner: 'tormund', unit: 'chapter', at: 159, person: 'ygritte' },
+      { owner: 'orell', unit: 'episode', at: 22, person: 'mance-rayder' },
+      { owner: 'orell', unit: 'episode', at: 25, person: 'tormund' },
+      { owner: 'orell', unit: 'episode', at: 27, person: 'ygritte' },
+      { owner: 'orell', unit: 'chapter', at: 151, person: 'jon-snow' },
+      { owner: 'styr', unit: 'chapter', at: 151, person: 'mance-rayder' },
+      { owner: 'styr', unit: 'chapter', at: 159, person: 'jarl' },
+      { owner: 'dalla', unit: 'chapter', at: 151, person: 'mance-rayder' },
+      { owner: 'val', unit: 'chapter', at: 151, person: 'dalla' },
+      { owner: 'jarl', unit: 'chapter', at: 151, person: 'val' },
+      { owner: 'jarl', unit: 'chapter', at: 159, person: 'styr' },
+      { owner: 'small-paul', unit: 'chapter', at: 144, person: 'chett' },
+      {
+        owner: 'small-paul',
+        unit: 'chapter',
+        at: 162,
+        person: 'samwell-tarly',
+      },
+      { owner: 'dirk', unit: 'chapter', at: 144, person: 'chett' },
+      { owner: 'dirk', unit: 'chapter', at: 177, person: 'craster' },
+      { owner: 'ollo-lophand', unit: 'chapter', at: 144, person: 'chett' },
+      { owner: 'ollo-lophand', unit: 'chapter', at: 177, person: 'craster' },
+      { owner: 'clubfoot-karl', unit: 'chapter', at: 144, person: 'chett' },
+      { owner: 'clubfoot-karl', unit: 'chapter', at: 177, person: 'craster' },
+      { owner: 'jon-snow', unit: 'episode', at: 21, person: 'mance-rayder' },
+      { owner: 'jon-snow', unit: 'episode', at: 23, person: 'tormund' },
+      { owner: 'jon-snow', unit: 'episode', at: 30, person: 'samwell-tarly' },
+      { owner: 'jon-snow', unit: 'chapter', at: 151, person: 'mance-rayder' },
+      { owner: 'jon-snow', unit: 'chapter', at: 159, person: 'orell' },
+      { owner: 'jon-snow', unit: 'chapter', at: 170, person: 'ghost-direwolf' },
+      { owner: 'jon-snow', unit: 'chapter', at: 192, person: 'aemon' },
+      { owner: 'ygritte', unit: 'episode', at: 21, person: 'mance-rayder' },
+      { owner: 'ygritte', unit: 'episode', at: 25, person: 'orell' },
+      { owner: 'ygritte', unit: 'chapter', at: 151, person: 'mance-rayder' },
+      { owner: 'ygritte', unit: 'chapter', at: 159, person: 'tormund' },
+      {
+        owner: 'samwell-tarly',
+        unit: 'episode',
+        at: 21,
+        person: 'jeor-mormont',
+      },
+      { owner: 'samwell-tarly', unit: 'episode', at: 23, person: 'gilly' },
+      { owner: 'samwell-tarly', unit: 'episode', at: 24, person: 'rast' },
+      { owner: 'samwell-tarly', unit: 'episode', at: 30, person: 'bran-stark' },
+      { owner: 'samwell-tarly', unit: 'chapter', at: 162, person: 'grenn' },
+      { owner: 'samwell-tarly', unit: 'chapter', at: 177, person: 'craster' },
+      {
+        owner: 'samwell-tarly',
+        unit: 'chapter',
+        at: 190,
+        person: 'small-paul',
+      },
+      { owner: 'gilly', unit: 'episode', at: 30, person: 'aemon' },
+      { owner: 'jeor-mormont', unit: 'episode', at: 22, person: 'rast' },
+      { owner: 'jeor-mormont', unit: 'episode', at: 24, person: 'grenn' },
+      {
+        owner: 'jeor-mormont',
+        unit: 'chapter',
+        at: 144,
+        person: 'mallador-locke',
+      },
+      {
+        owner: 'jeor-mormont',
+        unit: 'chapter',
+        at: 162,
+        person: 'samwell-tarly',
+      },
+      {
+        owner: 'jeor-mormont',
+        unit: 'chapter',
+        at: 177,
+        person: 'ollo-lophand',
+      },
+      { owner: 'craster', unit: 'episode', at: 23, person: 'samwell-tarly' },
+      { owner: 'craster', unit: 'episode', at: 24, person: 'rast' },
+      { owner: 'craster', unit: 'chapter', at: 177, person: 'clubfoot-karl' },
+      {
+        owner: 'eddison-tollett',
+        unit: 'episode',
+        at: 24,
+        person: 'jeor-mormont',
+      },
+      { owner: 'eddison-tollett', unit: 'chapter', at: 177, person: 'grenn' },
+      { owner: 'grenn', unit: 'episode', at: 24, person: 'jeor-mormont' },
+      { owner: 'grenn', unit: 'chapter', at: 162, person: 'small-paul' },
+      { owner: 'grenn', unit: 'chapter', at: 192, person: 'jeor-mormont' },
+      { owner: 'ghost-direwolf', unit: 'chapter', at: 170, person: 'ygritte' },
+      { owner: 'aemon', unit: 'episode', at: 30, person: 'gilly' },
+      { owner: 'chett', unit: 'chapter', at: 144, person: 'jeor-mormont' },
+      {
+        owner: 'lord-of-bones',
+        unit: 'chapter',
+        at: 151,
+        person: 'mance-rayder',
+      },
+      {
+        owner: 'thoren-smallwood',
+        unit: 'chapter',
+        at: 162,
+        person: 'mallador-locke',
+      },
+      { owner: 'rast', unit: 'episode', at: 22, person: 'jeor-mormont' },
+      { owner: 'rast', unit: 'episode', at: 24, person: 'craster' },
+    ] as const)(
+      'opens $owner’s $unit $at snapshot with $person',
+      ({ owner, unit, at, person }) => {
+        const mark = unit === 'episode' ? ep : ch
+
+        expect(people(owner, mark(at - 1))).not.toContain(person)
+        expect(people(owner, mark(at))).toContain(person)
+      },
+    )
+
+    it.each([
+      // owner, the medium, the number of a snapshot, a person it rewords
+      { owner: 'tormund', unit: 'episode', at: 29, person: 'jon-snow' },
+      { owner: 'orell', unit: 'episode', at: 29, person: 'jon-snow' },
+      { owner: 'styr', unit: 'chapter', at: 174, person: 'jon-snow' },
+      { owner: 'styr', unit: 'chapter', at: 185, person: 'jon-snow' },
+      { owner: 'val', unit: 'chapter', at: 174, person: 'jarl' },
+      { owner: 'jarl', unit: 'chapter', at: 174, person: 'styr' },
+      { owner: 'jon-snow', unit: 'episode', at: 25, person: 'ygritte' },
+      { owner: 'jon-snow', unit: 'episode', at: 26, person: 'ygritte' },
+      { owner: 'jon-snow', unit: 'episode', at: 29, person: 'orell' },
+      { owner: 'jon-snow', unit: 'chapter', at: 185, person: 'styr' },
+      { owner: 'ygritte', unit: 'episode', at: 29, person: 'jon-snow' },
+      { owner: 'ygritte', unit: 'episode', at: 30, person: 'jon-snow' },
+      { owner: 'ygritte', unit: 'chapter', at: 170, person: 'jon-snow' },
+      { owner: 'ygritte', unit: 'chapter', at: 185, person: 'jon-snow' },
+      { owner: 'samwell-tarly', unit: 'episode', at: 28, person: 'gilly' },
+      { owner: 'gilly', unit: 'episode', at: 23, person: 'craster' },
+      { owner: 'gilly', unit: 'episode', at: 24, person: 'samwell-tarly' },
+      { owner: 'gilly', unit: 'episode', at: 28, person: 'samwell-tarly' },
+      { owner: 'gilly', unit: 'chapter', at: 177, person: 'samwell-tarly' },
+      { owner: 'gilly', unit: 'chapter', at: 190, person: 'samwell-tarly' },
+      {
+        owner: 'ghost-direwolf',
+        unit: 'episode',
+        at: 21,
+        person: 'samwell-tarly',
+      },
+      { owner: 'aemon', unit: 'episode', at: 24, person: 'jeor-mormont' },
+      { owner: 'aemon', unit: 'chapter', at: 177, person: 'jeor-mormont' },
+      { owner: 'aemon', unit: 'chapter', at: 192, person: 'jon-snow' },
+      {
+        owner: 'alliser-thorne',
+        unit: 'episode',
+        at: 24,
+        person: 'jeor-mormont',
+      },
+      {
+        owner: 'alliser-thorne',
+        unit: 'chapter',
+        at: 177,
+        person: 'jeor-mormont',
+      },
+      { owner: 'dareon', unit: 'episode', at: 24, person: 'jeor-mormont' },
+      { owner: 'dareon', unit: 'chapter', at: 177, person: 'jeor-mormont' },
+      { owner: 'halder', unit: 'episode', at: 24, person: 'jeor-mormont' },
+      {
+        owner: 'bowen-marsh',
+        unit: 'chapter',
+        at: 177,
+        person: 'jeor-mormont',
+      },
+      { owner: 'bowen-marsh', unit: 'chapter', at: 190, person: 'chett' },
+      {
+        owner: 'jarman-buckwell',
+        unit: 'chapter',
+        at: 162,
+        person: 'thoren-smallwood',
+      },
+      { owner: 'jarman-buckwell', unit: 'chapter', at: 177, person: 'craster' },
+      {
+        owner: 'mallador-locke',
+        unit: 'chapter',
+        at: 162,
+        person: 'thoren-smallwood',
+      },
+      {
+        owner: 'mallador-locke',
+        unit: 'chapter',
+        at: 177,
+        person: 'jeor-mormont',
+      },
+      { owner: 'stonesnake', unit: 'chapter', at: 177, person: 'jeor-mormont' },
+      {
+        owner: 'jaremy-rykker',
+        unit: 'episode',
+        at: 24,
+        person: 'jeor-mormont',
+      },
+      { owner: 'chett', unit: 'chapter', at: 177, person: 'jeor-mormont' },
+      { owner: 'chett', unit: 'chapter', at: 190, person: 'samwell-tarly' },
+      { owner: 'pypar', unit: 'episode', at: 30, person: 'jon-snow' },
     ] as const)(
       'rewords $owner’s card in its $unit $at snapshot for $person',
       ({ owner, unit, at, person }) => {
