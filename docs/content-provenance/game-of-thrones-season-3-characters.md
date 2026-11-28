@@ -750,11 +750,12 @@ order them.
   neither changes a field. Italian "Qyburn" (Personaggi). His death in "The
   Bells" (72), the show's alone, is filed by #1645, `deceased` with his
   drawing's stage, chapter 344 ordering it (#1238).
-- Steelshanks Walton: books only, role captain in Roose Bolton's service, House
-  Bolton, alive. His log holds Jaime VI: the escort, the turn back for Brienne,
-  his men's crossbows against the bear. Italian kept: Italian Wikipedia has no
-  entry and the Mondadori form was not checked. #1645 moves his tint from red to
-  azure: his drawing is a pair of steel greaves, with nothing red on it.
+- Steelshanks Walton: books only, role soldier in Roose Bolton's service at 181
+  (Roose's "a soldier of iron loyalty"; #1667, was captain), then captain of
+  Jaime Lannister's escort at 188 (Jaime VI), House Bolton, alive. His log holds
+  only Jaime V (181): Roose names him to Jaime. Italian kept: Italian Wikipedia
+  has no entry and the Mondadori form was not checked. #1645 moves his tint from
+  red to azure: his drawing is a pair of steel greaves, with nothing red on it.
 
 ### Pending
 

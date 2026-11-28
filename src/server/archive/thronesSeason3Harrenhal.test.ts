@@ -121,6 +121,13 @@ const STEPS: {
     chapter: 165,
     source: 'chapter',
   },
+  {
+    id: 'steelshanks-walton',
+    en: 'Captain of Jaime Lannister’s escort',
+    episode: 27,
+    chapter: 188,
+    source: 'chapter',
+  },
 ]
 
 type Unit = 'chapter' | 'episode'

@@ -3008,14 +3008,14 @@ const YUNKAI_TAKEN: Stroke[] = [
 
 /**
  * Meereen taken: the same pyramid and wall, the Targaryen banner flying
- * from its top beside the harpy, as the freed slaves open the gates in
+ * from a tier beside the harpy, clear of its wing, as the freed slaves open the gates in
  * "Oathkeeper" (episode 34) and Daenerys's men in the sewers do in
  * Daenerys VI (chapter 215). The accent moves to the banner.
  */
 const MEEREEN_TAKEN: Stroke[] = [
   { ...MEEREEN_HARPY, role: 'soft' },
   ...MEEREEN_PYRAMID,
-  { d: 'M90 62 V18 M90 20 H116 V50 L103 44 L90 50', role: 'accent' },
+  { d: 'M106 90 V30 M106 32 H132 V62 L119 56 L106 62', role: 'accent' },
 ]
 
 /**

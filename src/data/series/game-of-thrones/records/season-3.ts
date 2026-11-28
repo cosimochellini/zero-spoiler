@@ -1177,8 +1177,8 @@ export const season3: ThronesSaga = {
           chapter: 181,
           source: 'chapter',
           value: {
-            it: 'Capitano al servizio di Roose Bolton',
-            en: 'Captain in Roose Bolton’s service',
+            it: 'Soldato al servizio di Roose Bolton',
+            en: 'Soldier in Roose Bolton’s service',
           },
         },
         // He leads the two hundred Dreadfort men who take Jaime to King's
@@ -1195,8 +1195,8 @@ export const season3: ThronesSaga = {
         },
       ],
       log: {
-        it: 'È un capitano di Roose Bolton a Harrenhal, che Roose nomina parlando con Jaime Lannister.',
-        en: 'A captain of Roose Bolton’s at Harrenhal, whom Roose names to Jaime Lannister.',
+        it: 'È un soldato di Roose Bolton a Harrenhal. Roose lo nomina a Jaime Lannister come un uomo di ferrea lealtà.',
+        en: 'A soldier of Roose Bolton’s at Harrenhal. Roose names him to Jaime Lannister as a man of iron loyalty.',
       },
       status: [
         { episode: 27, chapter: 181, source: 'chapter', value: 'alive' },
@@ -2072,8 +2072,8 @@ export const season3: ThronesSaga = {
       revealedAtChapter: 181,
       name: { it: 'Steelshanks Walton', en: 'Steelshanks Walton' },
       summary: {
-        it: 'Un capitano al servizio di Roose Bolton.',
-        en: 'A captain in Roose Bolton’s service.',
+        it: 'Un soldato al servizio di Roose Bolton.',
+        en: 'A soldier in Roose Bolton’s service.',
       },
       visual: { art: 'steelshanks-walton', tint: 'azure' },
     },
